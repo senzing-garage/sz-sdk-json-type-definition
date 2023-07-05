@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [0.1.1] - 2023-07-05
+
+### Added to 0.1.0
+
+- Rename `test_cases_all.py` to `test_cases.py`
+
 ## [0.1.0] - 2023-07-05
 
 ### Added to 0.1.0

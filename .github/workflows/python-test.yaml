@@ -1,0 +1,12 @@
+name: python-test.yaml
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Python
+    steps:
+      - uses: actions/checkout@v3
+      - run: pwd
+      - run: ./test.py
