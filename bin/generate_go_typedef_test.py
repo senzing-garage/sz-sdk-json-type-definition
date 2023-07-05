@@ -52,12 +52,12 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func testError(test *testing.T, ctx context.Context, err error) {{
-	if err != nil {{
+func testError(test *testing.T, ctx context.Context, err error) {
+	if err != nil {
 		test.Log("Error:", err.Error())
 		assert.FailNow(test, err.Error())
-	}}
-}}
+	}
+}
 
 // ----------------------------------------------------------------------------
 // --- Test cases
