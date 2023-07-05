@@ -8,7 +8,7 @@ import logging
 import json
 import os
 import re
-from test_cases_all import TEST_CASES
+from test_cases import TEST_CASES
 
 IS_DEBUG = False
 FINAL_RESULT = {}

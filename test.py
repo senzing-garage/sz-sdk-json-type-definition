@@ -10,7 +10,7 @@ import builtins
 import os
 import sys
 from python.typedef import *
-from bin.test_cases_all import TEST_CASES
+from bin.test_cases import TEST_CASES
 
 DEBUG = False
 ERROR_COUNT = 0
