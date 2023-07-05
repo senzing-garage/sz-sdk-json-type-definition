@@ -1,5 +1,27 @@
 # g2-sdk-json-type-definition development
 
+## Prerequisites
+
+1. [git](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/git.md)
+1. [go](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/go.md)
+1. [jtg-codegen](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/jtd-codegen.md)
+1. [make](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/make.md)
+
+## Install Git repository
+
+1. Identify git repository.
+
+    ```console
+    export GIT_ACCOUNT=senzing
+    export GIT_REPOSITORY=g2-sdk-json-type-definition
+    export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
+    export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
+
+    ```
+
+1. Using the environment variables values just set, follow steps in
+   [clone-repository](https://github.com/Senzing/knowledge-base/blob/main/HOWTO/clone-repository.md) to install the Git repository.
+
 ## Update senzingapi-RFC8927.json
 
 1. Make changes to [senzingapi-RFC8927.json](../senzingapi-RFC8927.json)
@@ -7,7 +29,9 @@
    Example:
 
     ```console
+    cd ${GIT_REPOSITORY_DIR}
     make analyze
+
     ```
 
     1. Review analysis:
@@ -29,7 +53,9 @@
        Example:
 
         ```console
+        cd ${GIT_REPOSITORY_DIR}
         make pretty-print
+
         ```
 
     1. Compare  `senzingapi-RFC8927-pretty.json` and `senzingapi-RFC8927.json`.
@@ -37,33 +63,43 @@
     Example:
 
         ```console
+        cd ${GIT_REPOSITORY_DIR}
         diff senzingapi-RFC8927-pretty.json senzingapi-RFC8927.json
+
         ```
 
 1. Generate code.
    Example:
 
     ```console
+    cd ${GIT_REPOSITORY_DIR}
     make clean generate-code
+
     ```
 
 1. Generate testcases.
    Example:
 
     ```console
+    cd ${GIT_REPOSITORY_DIR}
     make generate-tests
+
     ```
 
 1. Update dependencies.
    Example:
 
-     ```console
-     make dependencies
-     ```
+    ```console
+    cd ${GIT_REPOSITORY_DIR}
+    make dependencies
+
+    ```
 
 1. Run test cases.
    Example:
 
     ```console
+    cd ${GIT_REPOSITORY_DIR}
     make test
+
     ```
