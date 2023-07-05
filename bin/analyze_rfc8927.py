@@ -1,15 +1,17 @@
 #! /usr/bin/env python3
-# For more information, visit https://jsontypedef.com/docs/python-codegen/
+"""
+For more information, visit https://jsontypedef.com/docs/python-codegen/
+"""
 
 import json
 
-global_keys = {}
-global_key_count = {}
-global_key_type = {}
-global_out_of_order = []
-black_list = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
-exclude_list = []
-senzing_json_keys = [
+GLOBAL_KEYS = {}
+GLOBAL_KEY_COUNT = {}
+GLOBAL_KEY_TYPE = {}
+GLOBAL_OUT_OF_ORDER = []
+BLACK_LIST = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
+EXCLUDE_LIST = []
+SENZING_JSON_KEYS = [
     "ACCT_NUM",
     "ACCOUNT_DOMAIN",
     "ACCOUNT_NUMBER",
@@ -136,69 +138,75 @@ senzing_json_keys = [
 ]
 
 
-def add_to_key_count(key):
-    global global_key_count
-    if key not in black_list:
-        if key not in global_key_count:
-            global_key_count[key] = 1
+def add_to_key_count(key_to_add):
+    """Add a key to GLOBAL_KEY_COUNT."""
+    global GLOBAL_KEY_COUNT
+    if key_to_add not in BLACK_LIST:
+        if key_to_add not in GLOBAL_KEY_COUNT:
+            GLOBAL_KEY_COUNT[key_to_add] = 1
         else:
-            global_key_count[key] += 1
+            GLOBAL_KEY_COUNT[key_to_add] += 1
 
 
-def add_to_key_type(key, value):
-    global global_key_type
-    if key not in black_list:
-        if isinstance(value, dict):
-            if key not in global_key_type:
-                global_key_type[key] = []
-            if "type" in value:
-                the_type = value.get("type")
-                if the_type not in global_key_type[key]:
-                    global_key_type[key] += [the_type]
-            if "ref" in value:
-                the_ref = value.get("ref")
-                if the_ref not in global_key_type[key]:
-                    global_key_type[key] += [the_ref]
+def add_to_key_type(key_to_add, value_to_add):
+    """Add a key to GLOBAL_KEY_TYPE."""
+    global GLOBAL_KEY_TYPE
+    if key_to_add not in BLACK_LIST:
+        if isinstance(value_to_add, dict):
+            if key_to_add not in GLOBAL_KEY_TYPE:
+                GLOBAL_KEY_TYPE[key_to_add] = []
+            if "type" in value_to_add:
+                the_type = value_to_add.get("type")
+                if the_type not in GLOBAL_KEY_TYPE[key_to_add]:
+                    GLOBAL_KEY_TYPE[key_to_add] += [the_type]
+            if "ref" in value_to_add:
+                the_ref = value_to_add.get("ref")
+                if the_ref not in GLOBAL_KEY_TYPE[key_to_add]:
+                    GLOBAL_KEY_TYPE[key_to_add] += [the_ref]
 
 
-def is_sorted(prefix, list):
-    global global_out_of_order
+def is_sorted(prefix, list_to_check):
+    """Determine if list is sorted.  Return boolean"""
+    global GLOBAL_OUT_OF_ORDER
     last_key = ""
-    for key in list:
-        if not key > last_key:
-            global_out_of_order += ["Key out of order: {0}.{1} > {2}".format(prefix, last_key, key)]
-        last_key = key
+    for key_to_check in list_to_check:
+        if not key_to_check > last_key:
+            GLOBAL_OUT_OF_ORDER += ["Key out of order: {0}.{1} > {2}".format(prefix, last_key, key_to_check)]
+        last_key = key_to_check
 
 
-def add_to_list(prefix, list):
-    global global_keys
-    key_list = [x for x in list.keys() if x not in black_list]
+def add_to_list(prefix, list_to_check):
+    """Add a key to GLOBAL_KEYS."""
+    global GLOBAL_KEYS
+    key_list = [x for x in list_to_check.keys() if x not in BLACK_LIST]
     if len(key_list) > 0:
         key_list.sort()
-        global_keys[prefix] = key_list
+        GLOBAL_KEYS[prefix] = key_list
 
 
-def recurse(prefix, list):
-    is_sorted(prefix, list)
-    add_to_list(prefix, list)
-    for key, value in list.items():
-        add_to_key_count(key)
-        add_to_key_type(key, value)
-        if isinstance(value, dict):
-            recurse("{0}.{1}".format(prefix, key), value)
+def recurse(prefix, list_to_check):
+    """Recurse though dictionary."""
+    is_sorted(prefix, list_to_check)
+    add_to_list(prefix, list_to_check)
+    for key_to_check, value_to_check in list_to_check.items():
+        add_to_key_count(key_to_check)
+        add_to_key_type(key_to_check, value_to_check)
+        if isinstance(value_to_check, dict):
+            recurse("{0}.{1}".format(prefix, key_to_check), value_to_check)
 
 
 def search_list(search_term):
-    global global_keys
-    global exclude_list
-    results = []
-    search_value = global_keys.get(search_term)
-    for key, value in global_keys.items():
-        if key not in exclude_list:
-            if value == search_value:
-                exclude_list.append(key)
-                results.append(key)
-    return results
+    """Return a list to compare for identical lists."""
+    global GLOBAL_KEYS
+    global EXCLUDE_LIST
+    search_results = []
+    search_value = GLOBAL_KEYS.get(search_term)
+    for key_to_check, value_to_check in GLOBAL_KEYS.items():
+        if key_to_check not in EXCLUDE_LIST:
+            if value_to_check == search_value:
+                EXCLUDE_LIST.append(key_to_check)
+                search_results.append(key_to_check)
+    return search_results
 
 
 # -----------------------------------------------------------------------------
@@ -207,48 +215,48 @@ def search_list(search_term):
 
 # Read JSON from file.
 
-input_filename = "./senzingapi-RFC8927.json"
-with open(input_filename, "r") as input_file:
-    data = json.load(input_file)
+INPUT_FILENAME = "./senzingapi-RFC8927.json"
+with open(INPUT_FILENAME, "r") as input_file:
+    DATA = json.load(input_file)
 
 # Recurse through dictionary.
 
-recurse("definitions", data.get("definitions"))
+recurse("definitions", DATA.get("definitions"))
 
 # Print "out of order" messages.
 
 print("-"*80)
 print("\nVerify that the JSON keys are in sorted order.\n")
-if len(global_out_of_order) > 0:
-    for message in global_out_of_order:
+if len(GLOBAL_OUT_OF_ORDER) > 0:
+    for message in GLOBAL_OUT_OF_ORDER:
         print(message)
 else:
     print("Everything is sorted properly.")
 
 # Print missing JSON keys.
 
-lists = {
-    "definitions.Features": data.get("definitions", {}).get("Features", {}).get("properties", {}),
-    "definitions.FeatureScores": data.get("definitions", {}).get("FeatureScores", {}).get("properties", {}),
-    "definitions.JsonData": data.get("definitions", {}).get("JsonData", {}).get("properties", {}),
-    "definitions.MatchInfoCandidateKeys": data.get("definitions", {}).get("MatchInfoCandidateKeys", {}).get("properties", {}),
-    "definitions.MatchScores": data.get("definitions", {}).get("MatchScores", {}).get("properties", {}),
+LISTS = {
+    "definitions.Features": DATA.get("definitions", {}).get("Features", {}).get("properties", {}),
+    "definitions.FeatureScores": DATA.get("definitions", {}).get("FeatureScores", {}).get("properties", {}),
+    "definitions.JsonData": DATA.get("definitions", {}).get("JsonData", {}).get("properties", {}),
+    "definitions.MatchInfoCandidateKeys": DATA.get("definitions", {}).get("MatchInfoCandidateKeys", {}).get("properties", {}),
+    "definitions.MatchScores": DATA.get("definitions", {}).get("MatchScores", {}).get("properties", {}),
 }
 
 print("")
 print("-"*80)
 print("\nDetect lists not containing mandatory JSON keys.\n")
-for key, value in lists.items():
-    for senzing_json_key in senzing_json_keys:
+for key, value in LISTS.items():
+    for senzing_json_key in SENZING_JSON_KEYS:
         if senzing_json_key not in value:
             print("Missing {0}.{1}".format(key, senzing_json_key))
 
 print("")
 print("-"*80)
 print("\nDetect JSON keys not in mandatory list.\n")
-for key, value in lists.items():
+for key, value in LISTS.items():
     for key2, value2 in value.items():
-        if key2 not in senzing_json_keys:
+        if key2 not in SENZING_JSON_KEYS:
             print("Key not in master list: {0}.{1}".format(key, key2))
 
 # Print result of test for similar lists.
@@ -257,8 +265,8 @@ print("")
 print("-"*80)
 print("\nDetect lists containing same properties.\n")
 
-for key, value in global_keys.items():
-    exclude_list.append(key)
+for key, value in GLOBAL_KEYS.items():
+    EXCLUDE_LIST.append(key)
     results = search_list(key)
     if len(results) > 0:
         print("\n{0}:".format(key))
@@ -272,8 +280,8 @@ print("-"*80)
 print("\nCount occurance of JSON keys")
 print("\nCOUNT  KEY")
 print("-----  -----------------------------")
-sorted_key_counts = sorted(global_key_count.items(), key=lambda x: x[1], reverse=True)
-for key, value in sorted_key_counts:
+SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)
+for key, value in SORTED_KEY_COUNTS:
     if value > 1:
         print("{0:5d}  {1}".format(value, key))
 
@@ -282,8 +290,8 @@ for key, value in sorted_key_counts:
 print("")
 print("-"*80)
 print("\nCheck for JSON keys having different types\n")
-sorted_global_key_type = dict(sorted(global_key_type.items()))
-for key, value in sorted_global_key_type.items():
+SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
+for key, value in SORTED_GLOBAL_KEY_TYPE.items():
     if len(value) > 1:
         print("{0:30s}  {1}".format(key, sorted(value)))
 

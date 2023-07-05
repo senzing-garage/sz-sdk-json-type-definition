@@ -1,0 +1,19 @@
+[pylint]
+disable=
+    anomalous-backslash-in-string,
+    global-statement,
+    line-too-long,
+    logging-format-interpolation,
+    missing-class-docstring,
+    missing-function-docstring,
+    missing-module-docstring,
+    too-many-instance-attributes
+    trailing-whitespace,
+    unused-wildcard-import,
+    wildcard-import,
+good-names=
+    template-python
+ignore=
+    __init__.py,
+notes=
+    FIXME,

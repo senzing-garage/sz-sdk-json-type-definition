@@ -109,7 +109,7 @@ build-typescript:
 
 .PHONY: analyze
 analyze:
-	@./bin/analyze-RFC8927.py
+	@./bin/analyze_rfc8927.py
 
 .PHONY: pretty-print
 pretty-print:

@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 
+"""
+Test cases.
+"""
+
 TEST_CASES = {
     "ConfigAddDataSourceResponse": {
         "test-101": '{"DSRC_ID": 1}',

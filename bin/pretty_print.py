@@ -1,8 +1,14 @@
 #! /usr/bin/env python3
 
+"""
+Pretty print the JSON.
+"""
+
 import json
 
-black_list = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
+BLACK_LIST = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
+INPUT_FILENAME = "./senzingapi-RFC8927.json"
+OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
 
 
 # -----------------------------------------------------------------------------
@@ -10,10 +16,11 @@ black_list = ["description", "elements", "goType", "metadata", "properties", "re
 # -----------------------------------------------------------------------------
 
 def recurse(prefix, an_object):
+    """Recurse though the dictionary, beautifying as it goes."""
     for key, value in an_object.items():
         if isinstance(value, dict):
             recurse("{0}.{1}".format(prefix, key), value)
-            if key not in black_list:
+            if key not in BLACK_LIST:
                 if not "metadata" in value:
                     value["metadata"] = {}
                 if "description" not in value.get("metadata"):
@@ -29,16 +36,14 @@ def recurse(prefix, an_object):
 
 # Read JSON from file.
 
-input_filename = "./senzingapi-RFC8927.json"
-with open(input_filename, "r") as input_file:
-    data = json.load(input_file)
+with open(INPUT_FILENAME, "r") as input_file:
+    DATA = json.load(input_file)
 
 # Recurse through dictionary.
 
-recurse("definitions", data.get("definitions"))
+recurse("definitions", DATA.get("definitions"))
 
 # Write JSON to file.
 
-output_filename = "./senzingapi-RFC8927-pretty.json"
-with open(output_filename, "w") as output_file:
-    json.dump(data, output_file, indent=4, sort_keys=True)
+with open(OUTPUT_FILENAME, "w") as output_file:
+    json.dump(DATA, output_file, indent=4, sort_keys=True)
