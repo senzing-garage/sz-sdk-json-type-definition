@@ -161,3 +161,4 @@ cython_debug/
 
 .history
 .pydevproject
+senzingapi-RFC8927-pretty.json

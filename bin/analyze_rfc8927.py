@@ -221,7 +221,7 @@ recurse("definitions", DATA.get("definitions"))
 # Print "out of order" messages.
 
 print("-"*80)
-print("\nVerify that the JSON keys are in sorted order.\n")
+print("\nTEST 1: Verify that the JSON keys are in sorted order.\n")
 if len(GLOBAL_OUT_OF_ORDER) > 0:
     for message in GLOBAL_OUT_OF_ORDER:
         print(message)
@@ -240,7 +240,7 @@ LISTS = {
 
 print("")
 print("-"*80)
-print("\nDetect lists not containing mandatory JSON keys.\n")
+print("\nTEST 2: Detect lists not containing mandatory JSON keys.\n")
 for key, value in LISTS.items():
     for senzing_json_key in SENZING_JSON_KEYS:
         if senzing_json_key not in value:
@@ -248,7 +248,7 @@ for key, value in LISTS.items():
 
 print("")
 print("-"*80)
-print("\nDetect JSON keys not in mandatory list.\n")
+print("\nTEST 3: Detect JSON keys not in mandatory list.\n")
 for key, value in LISTS.items():
     for key2, value2 in value.items():
         if key2 not in SENZING_JSON_KEYS:
@@ -258,7 +258,7 @@ for key, value in LISTS.items():
 
 print("")
 print("-"*80)
-print("\nDetect lists containing same properties.\n")
+print("\nTEST 4: Detect lists containing same properties.\n")
 
 for key, value in GLOBAL_KEYS.items():
     EXCLUDE_LIST.append(key)
@@ -272,7 +272,7 @@ for key, value in GLOBAL_KEYS.items():
 
 print("")
 print("-"*80)
-print("\nCount occurance of JSON keys")
+print("\nTEST 5: Count occurance of JSON keys")
 print("\nCOUNT  KEY")
 print("-----  -----------------------------")
 SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)
@@ -284,7 +284,7 @@ for key, value in SORTED_KEY_COUNTS:
 
 print("")
 print("-"*80)
-print("\nCheck for JSON keys having different types\n")
+print("\nTEST 6: Check for JSON keys having different types\n")
 SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
 for key, value in SORTED_GLOBAL_KEY_TYPE.items():
     if len(value) > 1:
