@@ -175,7 +175,6 @@ def is_sorted(prefix, list_to_check):
 
 def add_to_list(prefix, list_to_check):
     """Add a key to GLOBAL_KEYS."""
-    global GLOBAL_KEYS
     key_list = [x for x in list_to_check.keys() if x not in BLACK_LIST]
     if len(key_list) > 0:
         key_list.sort()
@@ -195,8 +194,6 @@ def recurse(prefix, list_to_check):
 
 def search_list(search_term):
     """Return a list to compare for identical lists."""
-    global GLOBAL_KEYS
-    global EXCLUDE_LIST
     search_results = []
     search_value = GLOBAL_KEYS.get(search_term)
     for key_to_check, value_to_check in GLOBAL_KEYS.items():
@@ -214,7 +211,7 @@ def search_list(search_term):
 # Read JSON from file.
 
 INPUT_FILENAME = "./senzingapi-RFC8927.json"
-with open(INPUT_FILENAME, "r") as input_file:
+with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
     DATA = json.load(input_file)
 
 # Recurse through dictionary.

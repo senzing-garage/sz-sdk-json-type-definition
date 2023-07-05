@@ -113,7 +113,7 @@ analyze:
 
 .PHONY: pretty-print
 pretty-print:
-	@./bin/pretty-print.py
+	@./bin/pretty_print.py
 
 # -----------------------------------------------------------------------------
 # Generate
@@ -121,8 +121,8 @@ pretty-print:
 
 .PHONY: generate-go-typedef_test
 generate-go-typedef_test:
-	@rm ./go/typedef/typedef_test.go
-	@./bin/generate-go-typedef_test.py
+	@rm ./go/typedef/typedef_test.go || true
+	@./bin/generate_go_typedef_test.py
 
 # -----------------------------------------------------------------------------
 # Test
