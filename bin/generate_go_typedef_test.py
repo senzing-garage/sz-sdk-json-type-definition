@@ -80,7 +80,7 @@ TEST_FUNCTION_TEMPLATE = f"""
 OUTPUT_FOOTER = f"""
 """
 
-with open(OUTPUT_FILE, "w") as file:
+with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
     file.write(OUTPUT_HEADER)
     for senzing_api_class, method_test_cases in TEST_CASES.items():
         for test_case_name, test_case_json in method_test_cases.items():

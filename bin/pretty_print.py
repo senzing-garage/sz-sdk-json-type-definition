@@ -36,7 +36,7 @@ def recurse(prefix, an_object):
 
 # Read JSON from file.
 
-with open(INPUT_FILENAME, "r") as input_file:
+with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
     DATA = json.load(input_file)
 
 # Recurse through dictionary.
@@ -45,5 +45,5 @@ recurse("definitions", DATA.get("definitions"))
 
 # Write JSON to file.
 
-with open(OUTPUT_FILENAME, "w") as output_file:
+with open(OUTPUT_FILENAME, "w", encoding="utf-8") as output_file:
     json.dump(DATA, output_file, indent=4, sort_keys=True)

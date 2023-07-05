@@ -140,7 +140,6 @@ SENZING_JSON_KEYS = [
 
 def add_to_key_count(key_to_add):
     """Add a key to GLOBAL_KEY_COUNT."""
-    global GLOBAL_KEY_COUNT
     if key_to_add not in BLACK_LIST:
         if key_to_add not in GLOBAL_KEY_COUNT:
             GLOBAL_KEY_COUNT[key_to_add] = 1
@@ -150,7 +149,6 @@ def add_to_key_count(key_to_add):
 
 def add_to_key_type(key_to_add, value_to_add):
     """Add a key to GLOBAL_KEY_TYPE."""
-    global GLOBAL_KEY_TYPE
     if key_to_add not in BLACK_LIST:
         if isinstance(value_to_add, dict):
             if key_to_add not in GLOBAL_KEY_TYPE:
