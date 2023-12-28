@@ -2,10 +2,10 @@
 
 ## Prerequisites
 
-1. [git](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/git.md)
-1. [go](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/go.md)
-1. [jtg-codegen](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/jtd-codegen.md)
-1. [make](https://github.com/Senzing/knowledge-base/blob/main/WHATIS/make.md)
+1. [git](https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/git.md)
+1. [go](https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/go.md)
+1. [jtg-codegen](https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/jtd-codegen.md)
+1. [make](https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/make.md)
 
 ## Install Git repository
 
@@ -20,7 +20,7 @@
     ```
 
 1. Using the environment variables values just set, follow steps in
-   [clone-repository](https://github.com/Senzing/knowledge-base/blob/main/HOWTO/clone-repository.md) to install the Git repository.
+   [clone-repository](https://github.com/senzing-garage/knowledge-base/blob/main/HOWTO/clone-repository.md) to install the Git repository.
 
 ## Update senzingapi-RFC8927.json
 
