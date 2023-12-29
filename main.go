@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/senzing/g2-sdk-json-type-definition/go/typedef"
+	"github.com/senzing-garage/g2-sdk-json-type-definition/go/typedef"
 )
 
 func main() {
