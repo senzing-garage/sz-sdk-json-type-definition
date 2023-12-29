@@ -57,4 +57,4 @@ From this specification, code is generated for the following languages:
 1. [Development](docs/development.md)
 1. [Errors](docs/errors.md)
 1. [Examples](docs/examples.md)
-1. [Package reference](https://pkg.go.dev/github.com/senzing/g2-sdk-json-type-definition)
+1. [Package reference](https://pkg.go.dev/github.com/senzing-garage/g2-sdk-json-type-definition)

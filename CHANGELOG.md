@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [0.2.0] - 2023-12-29
+
+### Changed in 0.2.0
+
+- Migrated from `github.com/senzing/` to `github.com/senzing-garage`
+
 ## [0.1.1] - 2023-07-05
 
 ### Added to 0.1.1
