@@ -1,11 +1,12 @@
-name: python-test.yaml
+name: python test
 
 on: [push]
 
 jobs:
-  build:
+  python-test:
     runs-on: ubuntu-latest
-    name: Python
+    name: python
+
     steps:
       - uses: actions/checkout@v4
       - run: pwd
