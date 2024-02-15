@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Network {
     @JsonProperty("ENTITIES")
@@ -24,7 +21,6 @@ public class Network {
 
     /**
      * Getter for entities.<p>
-     * No description.
      */
     public Entities getEntities() {
         return entities;
@@ -32,7 +28,6 @@ public class Network {
 
     /**
      * Setter for entities.<p>
-     * No description.
      */
     public void setEntities(Entities entities) {
         this.entities = entities;
@@ -40,7 +35,6 @@ public class Network {
 
     /**
      * Getter for entityPaths.<p>
-     * No description.
      */
     public EntityPaths getEntityPaths() {
         return entityPaths;
@@ -48,7 +42,6 @@ public class Network {
 
     /**
      * Setter for entityPaths.<p>
-     * No description.
      */
     public void setEntityPaths(EntityPaths entityPaths) {
         this.entityPaths = entityPaths;
@@ -56,7 +49,6 @@ public class Network {
 
     /**
      * Getter for maxEntityLimitReached.<p>
-     * No description.
      */
     public String getMaxEntityLimitReached() {
         return maxEntityLimitReached;
@@ -64,7 +56,6 @@ public class Network {
 
     /**
      * Setter for maxEntityLimitReached.<p>
-     * No description.
      */
     public void setMaxEntityLimitReached(String maxEntityLimitReached) {
         this.maxEntityLimitReached = maxEntityLimitReached;

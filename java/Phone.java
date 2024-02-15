@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Phone {
     @JsonProperty("PHONE_FROM_DATE")
@@ -27,7 +24,6 @@ public class Phone {
 
     /**
      * Getter for phoneFromDate.<p>
-     * No description.
      */
     public String getPhoneFromDate() {
         return phoneFromDate;
@@ -35,7 +31,6 @@ public class Phone {
 
     /**
      * Setter for phoneFromDate.<p>
-     * No description.
      */
     public void setPhoneFromDate(String phoneFromDate) {
         this.phoneFromDate = phoneFromDate;
@@ -43,7 +38,6 @@ public class Phone {
 
     /**
      * Getter for phoneNumber.<p>
-     * No description.
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -51,7 +45,6 @@ public class Phone {
 
     /**
      * Setter for phoneNumber.<p>
-     * No description.
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -59,7 +52,6 @@ public class Phone {
 
     /**
      * Getter for phoneThruDate.<p>
-     * No description.
      */
     public String getPhoneThruDate() {
         return phoneThruDate;
@@ -67,7 +59,6 @@ public class Phone {
 
     /**
      * Setter for phoneThruDate.<p>
-     * No description.
      */
     public void setPhoneThruDate(String phoneThruDate) {
         this.phoneThruDate = phoneThruDate;
@@ -75,7 +66,6 @@ public class Phone {
 
     /**
      * Getter for phoneType.<p>
-     * No description.
      */
     public String getPhoneType() {
         return phoneType;
@@ -83,7 +73,6 @@ public class Phone {
 
     /**
      * Setter for phoneType.<p>
-     * No description.
      */
     public void setPhoneType(String phoneType) {
         this.phoneType = phoneType;

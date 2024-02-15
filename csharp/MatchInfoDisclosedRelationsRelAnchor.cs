@@ -6,45 +6,24 @@ namespace Senzing
 {
     public class MatchInfoDisclosedRelationsRelAnchor
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_ID")]
         public int FeatId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LINKED_FEAT_DESC")]
         public string LinkedFeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LINKED_FEAT_ID")]
         public int LinkedFeatId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LINKED_FEAT_TYPE")]
         public string LinkedFeatType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LINKED_FEAT_USAGE_TYPE")]
         public string LinkedFeatUsageType { get; set; }
     }

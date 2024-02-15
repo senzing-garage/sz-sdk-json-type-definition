@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class Entity
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RELATED_ENTITIES")]
         public RelatedEntities RelatedEntities { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RESOLVED_ENTITY")]
         public ResolvedEntity ResolvedEntity { get; set; }
     }

@@ -30,7 +30,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Getter for candidateCapReached.<p>
-     * No description.
      */
     public String getCandidateCapReached() {
         return candidateCapReached;
@@ -38,7 +37,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Setter for candidateCapReached.<p>
-     * No description.
      */
     public void setCandidateCapReached(String candidateCapReached) {
         this.candidateCapReached = candidateCapReached;
@@ -46,7 +44,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Getter for estimatedCount.<p>
-     * No description.
      */
     public Integer getEstimatedCount() {
         return estimatedCount;
@@ -54,7 +51,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Setter for estimatedCount.<p>
-     * No description.
      */
     public void setEstimatedCount(Integer estimatedCount) {
         this.estimatedCount = estimatedCount;
@@ -62,7 +58,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -70,7 +65,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -78,7 +72,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -86,7 +79,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -94,7 +86,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -102,7 +93,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -110,7 +100,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Getter for scoringCapReached.<p>
-     * No description.
      */
     public String getScoringCapReached() {
         return scoringCapReached;
@@ -118,7 +107,6 @@ public class DiagnosticGetGenericFeaturesResponse0 {
 
     /**
      * Setter for scoringCapReached.<p>
-     * No description.
      */
     public void setScoringCapReached(String scoringCapReached) {
         this.scoringCapReached = scoringCapReached;

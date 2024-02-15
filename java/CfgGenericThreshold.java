@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgGenericThreshold {
     @JsonProperty("BEHAVIOR")
@@ -33,7 +30,6 @@ public class CfgGenericThreshold {
 
     /**
      * Getter for behavior.<p>
-     * No description.
      */
     public String getBehavior() {
         return behavior;
@@ -41,7 +37,6 @@ public class CfgGenericThreshold {
 
     /**
      * Setter for behavior.<p>
-     * No description.
      */
     public void setBehavior(String behavior) {
         this.behavior = behavior;
@@ -49,7 +44,6 @@ public class CfgGenericThreshold {
 
     /**
      * Getter for candidateCap.<p>
-     * No description.
      */
     public Integer getCandidateCap() {
         return candidateCap;
@@ -57,7 +51,6 @@ public class CfgGenericThreshold {
 
     /**
      * Setter for candidateCap.<p>
-     * No description.
      */
     public void setCandidateCap(Integer candidateCap) {
         this.candidateCap = candidateCap;
@@ -65,7 +58,6 @@ public class CfgGenericThreshold {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -73,7 +65,6 @@ public class CfgGenericThreshold {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -81,7 +72,6 @@ public class CfgGenericThreshold {
 
     /**
      * Getter for gplanId.<p>
-     * No description.
      */
     public Integer getGplanId() {
         return gplanId;
@@ -89,7 +79,6 @@ public class CfgGenericThreshold {
 
     /**
      * Setter for gplanId.<p>
-     * No description.
      */
     public void setGplanId(Integer gplanId) {
         this.gplanId = gplanId;
@@ -97,7 +86,6 @@ public class CfgGenericThreshold {
 
     /**
      * Getter for scoringCap.<p>
-     * No description.
      */
     public Integer getScoringCap() {
         return scoringCap;
@@ -105,7 +93,6 @@ public class CfgGenericThreshold {
 
     /**
      * Setter for scoringCap.<p>
-     * No description.
      */
     public void setScoringCap(Integer scoringCap) {
         this.scoringCap = scoringCap;
@@ -113,7 +100,6 @@ public class CfgGenericThreshold {
 
     /**
      * Getter for sendToRedo.<p>
-     * No description.
      */
     public String getSendToRedo() {
         return sendToRedo;
@@ -121,7 +107,6 @@ public class CfgGenericThreshold {
 
     /**
      * Setter for sendToRedo.<p>
-     * No description.
      */
     public void setSendToRedo(String sendToRedo) {
         this.sendToRedo = sendToRedo;

@@ -15,7 +15,6 @@ public class JsonDataSsnLast4 {
 
     /**
      * Getter for ssnLast4.<p>
-     * No description.
      */
     public Integer getSsnLast4() {
         return ssnLast4;
@@ -23,7 +22,6 @@ public class JsonDataSsnLast4 {
 
     /**
      * Setter for ssnLast4.<p>
-     * No description.
      */
     public void setSsnLast4(Integer ssnLast4) {
         this.ssnLast4 = ssnLast4;

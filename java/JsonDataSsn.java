@@ -18,7 +18,6 @@ public class JsonDataSsn {
 
     /**
      * Getter for passportNumber.<p>
-     * No description.
      */
     public String getPassportNumber() {
         return passportNumber;
@@ -26,7 +25,6 @@ public class JsonDataSsn {
 
     /**
      * Setter for passportNumber.<p>
-     * No description.
      */
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
@@ -34,7 +32,6 @@ public class JsonDataSsn {
 
     /**
      * Getter for ssnNumber.<p>
-     * No description.
      */
     public String getSsnNumber() {
         return ssnNumber;
@@ -42,7 +39,6 @@ public class JsonDataSsn {
 
     /**
      * Setter for ssnNumber.<p>
-     * No description.
      */
     public void setSsnNumber(String ssnNumber) {
         this.ssnNumber = ssnNumber;

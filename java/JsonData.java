@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class JsonData {
     @JsonProperty("ACCOUNT_DOMAIN")
@@ -337,7 +334,6 @@ public class JsonData {
 
     /**
      * Getter for accountDomain.<p>
-     * No description.
      */
     public String getAccountDomain() {
         return accountDomain;
@@ -345,7 +341,6 @@ public class JsonData {
 
     /**
      * Setter for accountDomain.<p>
-     * No description.
      */
     public void setAccountDomain(String accountDomain) {
         this.accountDomain = accountDomain;
@@ -353,7 +348,6 @@ public class JsonData {
 
     /**
      * Getter for accountNumber.<p>
-     * No description.
      */
     public String getAccountNumber() {
         return accountNumber;
@@ -361,7 +355,6 @@ public class JsonData {
 
     /**
      * Setter for accountNumber.<p>
-     * No description.
      */
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
@@ -369,7 +362,6 @@ public class JsonData {
 
     /**
      * Getter for acctNum.<p>
-     * No description.
      */
     public List<JsonDataAcctNum> getAcctNum() {
         return acctNum;
@@ -377,7 +369,6 @@ public class JsonData {
 
     /**
      * Setter for acctNum.<p>
-     * No description.
      */
     public void setAcctNum(List<JsonDataAcctNum> acctNum) {
         this.acctNum = acctNum;
@@ -385,7 +376,6 @@ public class JsonData {
 
     /**
      * Getter for address.<p>
-     * No description.
      */
     public String getAddress() {
         return address;
@@ -393,7 +383,6 @@ public class JsonData {
 
     /**
      * Setter for address.<p>
-     * No description.
      */
     public void setAddress(String address) {
         this.address = address;
@@ -401,7 +390,6 @@ public class JsonData {
 
     /**
      * Getter for addressList.<p>
-     * No description.
      */
     public Addresses getAddressList() {
         return addressList;
@@ -409,7 +397,6 @@ public class JsonData {
 
     /**
      * Setter for addressList.<p>
-     * No description.
      */
     public void setAddressList(Addresses addressList) {
         this.addressList = addressList;
@@ -417,7 +404,6 @@ public class JsonData {
 
     /**
      * Getter for addrFull.<p>
-     * No description.
      */
     public String getAddrFull() {
         return addrFull;
@@ -425,7 +411,6 @@ public class JsonData {
 
     /**
      * Setter for addrFull.<p>
-     * No description.
      */
     public void setAddrFull(String addrFull) {
         this.addrFull = addrFull;
@@ -433,7 +418,6 @@ public class JsonData {
 
     /**
      * Getter for addrKey.<p>
-     * No description.
      */
     public String getAddrKey() {
         return addrKey;
@@ -441,7 +425,6 @@ public class JsonData {
 
     /**
      * Setter for addrKey.<p>
-     * No description.
      */
     public void setAddrKey(String addrKey) {
         this.addrKey = addrKey;
@@ -449,7 +432,6 @@ public class JsonData {
 
     /**
      * Getter for cellPhoneNumber.<p>
-     * No description.
      */
     public String getCellPhoneNumber() {
         return cellPhoneNumber;
@@ -457,7 +439,6 @@ public class JsonData {
 
     /**
      * Setter for cellPhoneNumber.<p>
-     * No description.
      */
     public void setCellPhoneNumber(String cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
@@ -465,7 +446,6 @@ public class JsonData {
 
     /**
      * Getter for citizenship.<p>
-     * No description.
      */
     public String getCitizenship() {
         return citizenship;
@@ -473,7 +453,6 @@ public class JsonData {
 
     /**
      * Setter for citizenship.<p>
-     * No description.
      */
     public void setCitizenship(String citizenship) {
         this.citizenship = citizenship;
@@ -481,7 +460,6 @@ public class JsonData {
 
     /**
      * Getter for countryOfAssociation.<p>
-     * No description.
      */
     public String getCountryOfAssociation() {
         return countryOfAssociation;
@@ -489,7 +467,6 @@ public class JsonData {
 
     /**
      * Setter for countryOfAssociation.<p>
-     * No description.
      */
     public void setCountryOfAssociation(String countryOfAssociation) {
         this.countryOfAssociation = countryOfAssociation;
@@ -497,7 +474,6 @@ public class JsonData {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public String getDataSource() {
         return dataSource;
@@ -505,7 +481,6 @@ public class JsonData {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -513,7 +488,6 @@ public class JsonData {
 
     /**
      * Getter for dateOfBirth.<p>
-     * No description.
      */
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -521,7 +495,6 @@ public class JsonData {
 
     /**
      * Setter for dateOfBirth.<p>
-     * No description.
      */
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -529,7 +502,6 @@ public class JsonData {
 
     /**
      * Getter for dateOfDeath.<p>
-     * No description.
      */
     public String getDateOfDeath() {
         return dateOfDeath;
@@ -537,7 +509,6 @@ public class JsonData {
 
     /**
      * Setter for dateOfDeath.<p>
-     * No description.
      */
     public void setDateOfDeath(String dateOfDeath) {
         this.dateOfDeath = dateOfDeath;
@@ -545,7 +516,6 @@ public class JsonData {
 
     /**
      * Getter for dob.<p>
-     * No description.
      */
     public String getDob() {
         return dob;
@@ -553,7 +523,6 @@ public class JsonData {
 
     /**
      * Setter for dob.<p>
-     * No description.
      */
     public void setDob(String dob) {
         this.dob = dob;
@@ -561,7 +530,6 @@ public class JsonData {
 
     /**
      * Getter for dod.<p>
-     * No description.
      */
     public String getDod() {
         return dod;
@@ -569,7 +537,6 @@ public class JsonData {
 
     /**
      * Setter for dod.<p>
-     * No description.
      */
     public void setDod(String dod) {
         this.dod = dod;
@@ -577,7 +544,6 @@ public class JsonData {
 
     /**
      * Getter for driversLicenseNumber.<p>
-     * No description.
      */
     public String getDriversLicenseNumber() {
         return driversLicenseNumber;
@@ -585,7 +551,6 @@ public class JsonData {
 
     /**
      * Setter for driversLicenseNumber.<p>
-     * No description.
      */
     public void setDriversLicenseNumber(String driversLicenseNumber) {
         this.driversLicenseNumber = driversLicenseNumber;
@@ -593,7 +558,6 @@ public class JsonData {
 
     /**
      * Getter for driversLicenseState.<p>
-     * No description.
      */
     public String getDriversLicenseState() {
         return driversLicenseState;
@@ -601,7 +565,6 @@ public class JsonData {
 
     /**
      * Setter for driversLicenseState.<p>
-     * No description.
      */
     public void setDriversLicenseState(String driversLicenseState) {
         this.driversLicenseState = driversLicenseState;
@@ -609,7 +572,6 @@ public class JsonData {
 
     /**
      * Getter for drlic.<p>
-     * No description.
      */
     public String getDrlic() {
         return drlic;
@@ -617,7 +579,6 @@ public class JsonData {
 
     /**
      * Setter for drlic.<p>
-     * No description.
      */
     public void setDrlic(String drlic) {
         this.drlic = drlic;
@@ -625,7 +586,6 @@ public class JsonData {
 
     /**
      * Getter for dsrcAction.<p>
-     * No description.
      */
     public String getDsrcAction() {
         return dsrcAction;
@@ -633,7 +593,6 @@ public class JsonData {
 
     /**
      * Setter for dsrcAction.<p>
-     * No description.
      */
     public void setDsrcAction(String dsrcAction) {
         this.dsrcAction = dsrcAction;
@@ -641,7 +600,6 @@ public class JsonData {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -649,7 +607,6 @@ public class JsonData {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -657,7 +614,6 @@ public class JsonData {
 
     /**
      * Getter for dunsNumber.<p>
-     * No description.
      */
     public String getDunsNumber() {
         return dunsNumber;
@@ -665,7 +621,6 @@ public class JsonData {
 
     /**
      * Setter for dunsNumber.<p>
-     * No description.
      */
     public void setDunsNumber(String dunsNumber) {
         this.dunsNumber = dunsNumber;
@@ -673,7 +628,6 @@ public class JsonData {
 
     /**
      * Getter for email.<p>
-     * No description.
      */
     public String getEmail() {
         return email;
@@ -681,7 +635,6 @@ public class JsonData {
 
     /**
      * Setter for email.<p>
-     * No description.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -689,7 +642,6 @@ public class JsonData {
 
     /**
      * Getter for emailAddress.<p>
-     * No description.
      */
     public String getEmailAddress() {
         return emailAddress;
@@ -697,7 +649,6 @@ public class JsonData {
 
     /**
      * Setter for emailAddress.<p>
-     * No description.
      */
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
@@ -705,7 +656,6 @@ public class JsonData {
 
     /**
      * Getter for emailKey.<p>
-     * No description.
      */
     public String getEmailKey() {
         return emailKey;
@@ -713,7 +663,6 @@ public class JsonData {
 
     /**
      * Setter for emailKey.<p>
-     * No description.
      */
     public void setEmailKey(String emailKey) {
         this.emailKey = emailKey;
@@ -721,7 +670,6 @@ public class JsonData {
 
     /**
      * Getter for employerName.<p>
-     * No description.
      */
     public String getEmployerName() {
         return employerName;
@@ -729,7 +677,6 @@ public class JsonData {
 
     /**
      * Setter for employerName.<p>
-     * No description.
      */
     public void setEmployerName(String employerName) {
         this.employerName = employerName;
@@ -737,7 +684,6 @@ public class JsonData {
 
     /**
      * Getter for entityType.<p>
-     * No description.
      */
     public String getEntityType() {
         return entityType;
@@ -745,7 +691,6 @@ public class JsonData {
 
     /**
      * Setter for entityType.<p>
-     * No description.
      */
     public void setEntityType(String entityType) {
         this.entityType = entityType;
@@ -753,7 +698,6 @@ public class JsonData {
 
     /**
      * Getter for entSrcDesc.<p>
-     * No description.
      */
     public String getEntSrcDesc() {
         return entSrcDesc;
@@ -761,7 +705,6 @@ public class JsonData {
 
     /**
      * Setter for entSrcDesc.<p>
-     * No description.
      */
     public void setEntSrcDesc(String entSrcDesc) {
         this.entSrcDesc = entSrcDesc;
@@ -769,7 +712,6 @@ public class JsonData {
 
     /**
      * Getter for entSrcKey.<p>
-     * No description.
      */
     public String getEntSrcKey() {
         return entSrcKey;
@@ -777,7 +719,6 @@ public class JsonData {
 
     /**
      * Setter for entSrcKey.<p>
-     * No description.
      */
     public void setEntSrcKey(String entSrcKey) {
         this.entSrcKey = entSrcKey;
@@ -785,7 +726,6 @@ public class JsonData {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -793,7 +733,6 @@ public class JsonData {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -801,7 +740,6 @@ public class JsonData {
 
     /**
      * Getter for facebook.<p>
-     * No description.
      */
     public String getFacebook() {
         return facebook;
@@ -809,7 +747,6 @@ public class JsonData {
 
     /**
      * Setter for facebook.<p>
-     * No description.
      */
     public void setFacebook(String facebook) {
         this.facebook = facebook;
@@ -817,7 +754,6 @@ public class JsonData {
 
     /**
      * Getter for gender.<p>
-     * No description.
      */
     public String getGender() {
         return gender;
@@ -825,7 +761,6 @@ public class JsonData {
 
     /**
      * Setter for gender.<p>
-     * No description.
      */
     public void setGender(String gender) {
         this.gender = gender;
@@ -833,7 +768,6 @@ public class JsonData {
 
     /**
      * Getter for groupAssnIdNumber.<p>
-     * No description.
      */
     public String getGroupAssnIdNumber() {
         return groupAssnIdNumber;
@@ -841,7 +775,6 @@ public class JsonData {
 
     /**
      * Setter for groupAssnIdNumber.<p>
-     * No description.
      */
     public void setGroupAssnIdNumber(String groupAssnIdNumber) {
         this.groupAssnIdNumber = groupAssnIdNumber;
@@ -849,7 +782,6 @@ public class JsonData {
 
     /**
      * Getter for groupAssnIdType.<p>
-     * No description.
      */
     public String getGroupAssnIdType() {
         return groupAssnIdType;
@@ -857,7 +789,6 @@ public class JsonData {
 
     /**
      * Setter for groupAssnIdType.<p>
-     * No description.
      */
     public void setGroupAssnIdType(String groupAssnIdType) {
         this.groupAssnIdType = groupAssnIdType;
@@ -865,7 +796,6 @@ public class JsonData {
 
     /**
      * Getter for groupAssociationOrgName.<p>
-     * No description.
      */
     public String getGroupAssociationOrgName() {
         return groupAssociationOrgName;
@@ -873,7 +803,6 @@ public class JsonData {
 
     /**
      * Setter for groupAssociationOrgName.<p>
-     * No description.
      */
     public void setGroupAssociationOrgName(String groupAssociationOrgName) {
         this.groupAssociationOrgName = groupAssociationOrgName;
@@ -881,7 +810,6 @@ public class JsonData {
 
     /**
      * Getter for groupAssociationType.<p>
-     * No description.
      */
     public String getGroupAssociationType() {
         return groupAssociationType;
@@ -889,7 +817,6 @@ public class JsonData {
 
     /**
      * Setter for groupAssociationType.<p>
-     * No description.
      */
     public void setGroupAssociationType(String groupAssociationType) {
         this.groupAssociationType = groupAssociationType;
@@ -897,7 +824,6 @@ public class JsonData {
 
     /**
      * Getter for idKey.<p>
-     * No description.
      */
     public String getIdKey() {
         return idKey;
@@ -905,7 +831,6 @@ public class JsonData {
 
     /**
      * Setter for idKey.<p>
-     * No description.
      */
     public void setIdKey(String idKey) {
         this.idKey = idKey;
@@ -913,7 +838,6 @@ public class JsonData {
 
     /**
      * Getter for instagram.<p>
-     * No description.
      */
     public String getInstagram() {
         return instagram;
@@ -921,7 +845,6 @@ public class JsonData {
 
     /**
      * Setter for instagram.<p>
-     * No description.
      */
     public void setInstagram(String instagram) {
         this.instagram = instagram;
@@ -929,7 +852,6 @@ public class JsonData {
 
     /**
      * Getter for leiNumber.<p>
-     * No description.
      */
     public String getLeiNumber() {
         return leiNumber;
@@ -937,7 +859,6 @@ public class JsonData {
 
     /**
      * Setter for leiNumber.<p>
-     * No description.
      */
     public void setLeiNumber(String leiNumber) {
         this.leiNumber = leiNumber;
@@ -945,7 +866,6 @@ public class JsonData {
 
     /**
      * Getter for linkedin.<p>
-     * No description.
      */
     public String getLinkedin() {
         return linkedin;
@@ -953,7 +873,6 @@ public class JsonData {
 
     /**
      * Setter for linkedin.<p>
-     * No description.
      */
     public void setLinkedin(String linkedin) {
         this.linkedin = linkedin;
@@ -961,7 +880,6 @@ public class JsonData {
 
     /**
      * Getter for loadId.<p>
-     * No description.
      */
     public String getLoadId() {
         return loadId;
@@ -969,7 +887,6 @@ public class JsonData {
 
     /**
      * Setter for loadId.<p>
-     * No description.
      */
     public void setLoadId(String loadId) {
         this.loadId = loadId;
@@ -977,7 +894,6 @@ public class JsonData {
 
     /**
      * Getter for loginId.<p>
-     * No description.
      */
     public String getLoginId() {
         return loginId;
@@ -985,7 +901,6 @@ public class JsonData {
 
     /**
      * Setter for loginId.<p>
-     * No description.
      */
     public void setLoginId(String loginId) {
         this.loginId = loginId;
@@ -993,7 +908,6 @@ public class JsonData {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public Names getName() {
         return name;
@@ -1001,7 +915,6 @@ public class JsonData {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(Names name) {
         this.name = name;
@@ -1009,7 +922,6 @@ public class JsonData {
 
     /**
      * Getter for nameFull.<p>
-     * No description.
      */
     public String getNameFull() {
         return nameFull;
@@ -1017,7 +929,6 @@ public class JsonData {
 
     /**
      * Setter for nameFull.<p>
-     * No description.
      */
     public void setNameFull(String nameFull) {
         this.nameFull = nameFull;
@@ -1025,7 +936,6 @@ public class JsonData {
 
     /**
      * Getter for nameKey.<p>
-     * No description.
      */
     public String getNameKey() {
         return nameKey;
@@ -1033,7 +943,6 @@ public class JsonData {
 
     /**
      * Setter for nameKey.<p>
-     * No description.
      */
     public void setNameKey(String nameKey) {
         this.nameKey = nameKey;
@@ -1041,7 +950,6 @@ public class JsonData {
 
     /**
      * Getter for nameList.<p>
-     * No description.
      */
     public Names getNameList() {
         return nameList;
@@ -1049,7 +957,6 @@ public class JsonData {
 
     /**
      * Setter for nameList.<p>
-     * No description.
      */
     public void setNameList(Names nameList) {
         this.nameList = nameList;
@@ -1057,7 +964,6 @@ public class JsonData {
 
     /**
      * Getter for nationality.<p>
-     * No description.
      */
     public String getNationality() {
         return nationality;
@@ -1065,7 +971,6 @@ public class JsonData {
 
     /**
      * Setter for nationality.<p>
-     * No description.
      */
     public void setNationality(String nationality) {
         this.nationality = nationality;
@@ -1073,7 +978,6 @@ public class JsonData {
 
     /**
      * Getter for nationalId.<p>
-     * No description.
      */
     public String getNationalId() {
         return nationalId;
@@ -1081,7 +985,6 @@ public class JsonData {
 
     /**
      * Setter for nationalId.<p>
-     * No description.
      */
     public void setNationalId(String nationalId) {
         this.nationalId = nationalId;
@@ -1089,7 +992,6 @@ public class JsonData {
 
     /**
      * Getter for nationalIdCountry.<p>
-     * No description.
      */
     public String getNationalIdCountry() {
         return nationalIdCountry;
@@ -1097,7 +999,6 @@ public class JsonData {
 
     /**
      * Setter for nationalIdCountry.<p>
-     * No description.
      */
     public void setNationalIdCountry(String nationalIdCountry) {
         this.nationalIdCountry = nationalIdCountry;
@@ -1105,7 +1006,6 @@ public class JsonData {
 
     /**
      * Getter for nationalIdNumber.<p>
-     * No description.
      */
     public String getNationalIdNumber() {
         return nationalIdNumber;
@@ -1113,7 +1013,6 @@ public class JsonData {
 
     /**
      * Setter for nationalIdNumber.<p>
-     * No description.
      */
     public void setNationalIdNumber(String nationalIdNumber) {
         this.nationalIdNumber = nationalIdNumber;
@@ -1121,7 +1020,6 @@ public class JsonData {
 
     /**
      * Getter for ninCountry.<p>
-     * No description.
      */
     public String getNinCountry() {
         return ninCountry;
@@ -1129,7 +1027,6 @@ public class JsonData {
 
     /**
      * Setter for ninCountry.<p>
-     * No description.
      */
     public void setNinCountry(String ninCountry) {
         this.ninCountry = ninCountry;
@@ -1137,7 +1034,6 @@ public class JsonData {
 
     /**
      * Getter for ninNumber.<p>
-     * No description.
      */
     public String getNinNumber() {
         return ninNumber;
@@ -1145,7 +1041,6 @@ public class JsonData {
 
     /**
      * Setter for ninNumber.<p>
-     * No description.
      */
     public void setNinNumber(String ninNumber) {
         this.ninNumber = ninNumber;
@@ -1153,7 +1048,6 @@ public class JsonData {
 
     /**
      * Getter for npiNumber.<p>
-     * No description.
      */
     public String getNpiNumber() {
         return npiNumber;
@@ -1161,7 +1055,6 @@ public class JsonData {
 
     /**
      * Setter for npiNumber.<p>
-     * No description.
      */
     public void setNpiNumber(String npiNumber) {
         this.npiNumber = npiNumber;
@@ -1169,7 +1062,6 @@ public class JsonData {
 
     /**
      * Getter for obsSrcKey.<p>
-     * No description.
      */
     public String getObsSrcKey() {
         return obsSrcKey;
@@ -1177,7 +1069,6 @@ public class JsonData {
 
     /**
      * Setter for obsSrcKey.<p>
-     * No description.
      */
     public void setObsSrcKey(String obsSrcKey) {
         this.obsSrcKey = obsSrcKey;
@@ -1185,7 +1076,6 @@ public class JsonData {
 
     /**
      * Getter for otherIdCountry.<p>
-     * No description.
      */
     public String getOtherIdCountry() {
         return otherIdCountry;
@@ -1193,7 +1083,6 @@ public class JsonData {
 
     /**
      * Setter for otherIdCountry.<p>
-     * No description.
      */
     public void setOtherIdCountry(String otherIdCountry) {
         this.otherIdCountry = otherIdCountry;
@@ -1201,7 +1090,6 @@ public class JsonData {
 
     /**
      * Getter for otherIdNumber.<p>
-     * No description.
      */
     public String getOtherIdNumber() {
         return otherIdNumber;
@@ -1209,7 +1097,6 @@ public class JsonData {
 
     /**
      * Setter for otherIdNumber.<p>
-     * No description.
      */
     public void setOtherIdNumber(String otherIdNumber) {
         this.otherIdNumber = otherIdNumber;
@@ -1217,7 +1104,6 @@ public class JsonData {
 
     /**
      * Getter for otherIdType.<p>
-     * No description.
      */
     public String getOtherIdType() {
         return otherIdType;
@@ -1225,7 +1111,6 @@ public class JsonData {
 
     /**
      * Setter for otherIdType.<p>
-     * No description.
      */
     public void setOtherIdType(String otherIdType) {
         this.otherIdType = otherIdType;
@@ -1233,7 +1118,6 @@ public class JsonData {
 
     /**
      * Getter for passport.<p>
-     * No description.
      */
     public String getPassport() {
         return passport;
@@ -1241,7 +1125,6 @@ public class JsonData {
 
     /**
      * Setter for passport.<p>
-     * No description.
      */
     public void setPassport(String passport) {
         this.passport = passport;
@@ -1249,7 +1132,6 @@ public class JsonData {
 
     /**
      * Getter for passports.<p>
-     * No description.
      */
     public Passports getPassports() {
         return passports;
@@ -1257,7 +1139,6 @@ public class JsonData {
 
     /**
      * Setter for passports.<p>
-     * No description.
      */
     public void setPassports(Passports passports) {
         this.passports = passports;
@@ -1265,7 +1146,6 @@ public class JsonData {
 
     /**
      * Getter for passportCountry.<p>
-     * No description.
      */
     public String getPassportCountry() {
         return passportCountry;
@@ -1273,7 +1153,6 @@ public class JsonData {
 
     /**
      * Setter for passportCountry.<p>
-     * No description.
      */
     public void setPassportCountry(String passportCountry) {
         this.passportCountry = passportCountry;
@@ -1281,7 +1160,6 @@ public class JsonData {
 
     /**
      * Getter for passportNumber.<p>
-     * No description.
      */
     public String getPassportNumber() {
         return passportNumber;
@@ -1289,7 +1167,6 @@ public class JsonData {
 
     /**
      * Setter for passportNumber.<p>
-     * No description.
      */
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
@@ -1297,7 +1174,6 @@ public class JsonData {
 
     /**
      * Getter for phone.<p>
-     * No description.
      */
     public String getPhone() {
         return phone;
@@ -1305,7 +1181,6 @@ public class JsonData {
 
     /**
      * Setter for phone.<p>
-     * No description.
      */
     public void setPhone(String phone) {
         this.phone = phone;
@@ -1313,7 +1188,6 @@ public class JsonData {
 
     /**
      * Getter for phones.<p>
-     * No description.
      */
     public Phones getPhones() {
         return phones;
@@ -1321,7 +1195,6 @@ public class JsonData {
 
     /**
      * Setter for phones.<p>
-     * No description.
      */
     public void setPhones(Phones phones) {
         this.phones = phones;
@@ -1329,7 +1202,6 @@ public class JsonData {
 
     /**
      * Getter for phoneKey.<p>
-     * No description.
      */
     public String getPhoneKey() {
         return phoneKey;
@@ -1337,7 +1209,6 @@ public class JsonData {
 
     /**
      * Setter for phoneKey.<p>
-     * No description.
      */
     public void setPhoneKey(String phoneKey) {
         this.phoneKey = phoneKey;
@@ -1345,7 +1216,6 @@ public class JsonData {
 
     /**
      * Getter for placeOfBirth.<p>
-     * No description.
      */
     public String getPlaceOfBirth() {
         return placeOfBirth;
@@ -1353,7 +1223,6 @@ public class JsonData {
 
     /**
      * Setter for placeOfBirth.<p>
-     * No description.
      */
     public void setPlaceOfBirth(String placeOfBirth) {
         this.placeOfBirth = placeOfBirth;
@@ -1361,7 +1230,6 @@ public class JsonData {
 
     /**
      * Getter for primaryNameFirst.<p>
-     * No description.
      */
     public String getPrimaryNameFirst() {
         return primaryNameFirst;
@@ -1369,7 +1237,6 @@ public class JsonData {
 
     /**
      * Setter for primaryNameFirst.<p>
-     * No description.
      */
     public void setPrimaryNameFirst(String primaryNameFirst) {
         this.primaryNameFirst = primaryNameFirst;
@@ -1377,7 +1244,6 @@ public class JsonData {
 
     /**
      * Getter for primaryNameLast.<p>
-     * No description.
      */
     public String getPrimaryNameLast() {
         return primaryNameLast;
@@ -1385,7 +1251,6 @@ public class JsonData {
 
     /**
      * Setter for primaryNameLast.<p>
-     * No description.
      */
     public void setPrimaryNameLast(String primaryNameLast) {
         this.primaryNameLast = primaryNameLast;
@@ -1393,7 +1258,6 @@ public class JsonData {
 
     /**
      * Getter for primaryNameMiddle.<p>
-     * No description.
      */
     public String getPrimaryNameMiddle() {
         return primaryNameMiddle;
@@ -1401,7 +1265,6 @@ public class JsonData {
 
     /**
      * Setter for primaryNameMiddle.<p>
-     * No description.
      */
     public void setPrimaryNameMiddle(String primaryNameMiddle) {
         this.primaryNameMiddle = primaryNameMiddle;
@@ -1409,7 +1272,6 @@ public class JsonData {
 
     /**
      * Getter for primaryNameOrg.<p>
-     * No description.
      */
     public String getPrimaryNameOrg() {
         return primaryNameOrg;
@@ -1417,7 +1279,6 @@ public class JsonData {
 
     /**
      * Setter for primaryNameOrg.<p>
-     * No description.
      */
     public void setPrimaryNameOrg(String primaryNameOrg) {
         this.primaryNameOrg = primaryNameOrg;
@@ -1425,7 +1286,6 @@ public class JsonData {
 
     /**
      * Getter for primaryNamePrefix.<p>
-     * No description.
      */
     public String getPrimaryNamePrefix() {
         return primaryNamePrefix;
@@ -1433,7 +1293,6 @@ public class JsonData {
 
     /**
      * Setter for primaryNamePrefix.<p>
-     * No description.
      */
     public void setPrimaryNamePrefix(String primaryNamePrefix) {
         this.primaryNamePrefix = primaryNamePrefix;
@@ -1441,7 +1300,6 @@ public class JsonData {
 
     /**
      * Getter for primaryNameSuffix.<p>
-     * No description.
      */
     public String getPrimaryNameSuffix() {
         return primaryNameSuffix;
@@ -1449,7 +1307,6 @@ public class JsonData {
 
     /**
      * Setter for primaryNameSuffix.<p>
-     * No description.
      */
     public void setPrimaryNameSuffix(String primaryNameSuffix) {
         this.primaryNameSuffix = primaryNameSuffix;
@@ -1457,7 +1314,6 @@ public class JsonData {
 
     /**
      * Getter for primaryPhoneNumber.<p>
-     * No description.
      */
     public String getPrimaryPhoneNumber() {
         return primaryPhoneNumber;
@@ -1465,7 +1321,6 @@ public class JsonData {
 
     /**
      * Setter for primaryPhoneNumber.<p>
-     * No description.
      */
     public void setPrimaryPhoneNumber(String primaryPhoneNumber) {
         this.primaryPhoneNumber = primaryPhoneNumber;
@@ -1473,7 +1328,6 @@ public class JsonData {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -1481,7 +1335,6 @@ public class JsonData {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;
@@ -1489,7 +1342,6 @@ public class JsonData {
 
     /**
      * Getter for recordType.<p>
-     * No description.
      */
     public String getRecordType() {
         return recordType;
@@ -1497,7 +1349,6 @@ public class JsonData {
 
     /**
      * Setter for recordType.<p>
-     * No description.
      */
     public void setRecordType(String recordType) {
         this.recordType = recordType;
@@ -1505,7 +1356,6 @@ public class JsonData {
 
     /**
      * Getter for registrationCountry.<p>
-     * No description.
      */
     public String getRegistrationCountry() {
         return registrationCountry;
@@ -1513,7 +1363,6 @@ public class JsonData {
 
     /**
      * Setter for registrationCountry.<p>
-     * No description.
      */
     public void setRegistrationCountry(String registrationCountry) {
         this.registrationCountry = registrationCountry;
@@ -1521,7 +1370,6 @@ public class JsonData {
 
     /**
      * Getter for registrationDate.<p>
-     * No description.
      */
     public String getRegistrationDate() {
         return registrationDate;
@@ -1529,7 +1377,6 @@ public class JsonData {
 
     /**
      * Setter for registrationDate.<p>
-     * No description.
      */
     public void setRegistrationDate(String registrationDate) {
         this.registrationDate = registrationDate;
@@ -1537,7 +1384,6 @@ public class JsonData {
 
     /**
      * Getter for relationships.<p>
-     * No description.
      */
     public Relationships getRelationships() {
         return relationships;
@@ -1545,7 +1391,6 @@ public class JsonData {
 
     /**
      * Setter for relationships.<p>
-     * No description.
      */
     public void setRelationships(Relationships relationships) {
         this.relationships = relationships;
@@ -1553,7 +1398,6 @@ public class JsonData {
 
     /**
      * Getter for relAnchor.<p>
-     * No description.
      */
     public String getRelAnchor() {
         return relAnchor;
@@ -1561,7 +1405,6 @@ public class JsonData {
 
     /**
      * Setter for relAnchor.<p>
-     * No description.
      */
     public void setRelAnchor(String relAnchor) {
         this.relAnchor = relAnchor;
@@ -1569,7 +1412,6 @@ public class JsonData {
 
     /**
      * Getter for relAnchorDomain.<p>
-     * No description.
      */
     public String getRelAnchorDomain() {
         return relAnchorDomain;
@@ -1577,7 +1419,6 @@ public class JsonData {
 
     /**
      * Setter for relAnchorDomain.<p>
-     * No description.
      */
     public void setRelAnchorDomain(String relAnchorDomain) {
         this.relAnchorDomain = relAnchorDomain;
@@ -1585,7 +1426,6 @@ public class JsonData {
 
     /**
      * Getter for relAnchorKey.<p>
-     * No description.
      */
     public String getRelAnchorKey() {
         return relAnchorKey;
@@ -1593,7 +1433,6 @@ public class JsonData {
 
     /**
      * Setter for relAnchorKey.<p>
-     * No description.
      */
     public void setRelAnchorKey(String relAnchorKey) {
         this.relAnchorKey = relAnchorKey;
@@ -1601,7 +1440,6 @@ public class JsonData {
 
     /**
      * Getter for relLink.<p>
-     * No description.
      */
     public String getRelLink() {
         return relLink;
@@ -1609,7 +1447,6 @@ public class JsonData {
 
     /**
      * Setter for relLink.<p>
-     * No description.
      */
     public void setRelLink(String relLink) {
         this.relLink = relLink;
@@ -1617,7 +1454,6 @@ public class JsonData {
 
     /**
      * Getter for relPointer.<p>
-     * No description.
      */
     public String getRelPointer() {
         return relPointer;
@@ -1625,7 +1461,6 @@ public class JsonData {
 
     /**
      * Setter for relPointer.<p>
-     * No description.
      */
     public void setRelPointer(String relPointer) {
         this.relPointer = relPointer;
@@ -1633,7 +1468,6 @@ public class JsonData {
 
     /**
      * Getter for relPointerDomain.<p>
-     * No description.
      */
     public String getRelPointerDomain() {
         return relPointerDomain;
@@ -1641,7 +1475,6 @@ public class JsonData {
 
     /**
      * Setter for relPointerDomain.<p>
-     * No description.
      */
     public void setRelPointerDomain(String relPointerDomain) {
         this.relPointerDomain = relPointerDomain;
@@ -1649,7 +1482,6 @@ public class JsonData {
 
     /**
      * Getter for relPointerKey.<p>
-     * No description.
      */
     public String getRelPointerKey() {
         return relPointerKey;
@@ -1657,7 +1489,6 @@ public class JsonData {
 
     /**
      * Setter for relPointerKey.<p>
-     * No description.
      */
     public void setRelPointerKey(String relPointerKey) {
         this.relPointerKey = relPointerKey;
@@ -1665,7 +1496,6 @@ public class JsonData {
 
     /**
      * Getter for relPointerRole.<p>
-     * No description.
      */
     public String getRelPointerRole() {
         return relPointerRole;
@@ -1673,7 +1503,6 @@ public class JsonData {
 
     /**
      * Setter for relPointerRole.<p>
-     * No description.
      */
     public void setRelPointerRole(String relPointerRole) {
         this.relPointerRole = relPointerRole;
@@ -1681,7 +1510,6 @@ public class JsonData {
 
     /**
      * Getter for signal.<p>
-     * No description.
      */
     public String getSignal() {
         return signal;
@@ -1689,7 +1517,6 @@ public class JsonData {
 
     /**
      * Setter for signal.<p>
-     * No description.
      */
     public void setSignal(String signal) {
         this.signal = signal;
@@ -1697,7 +1524,6 @@ public class JsonData {
 
     /**
      * Getter for skype.<p>
-     * No description.
      */
     public String getSkype() {
         return skype;
@@ -1705,7 +1531,6 @@ public class JsonData {
 
     /**
      * Setter for skype.<p>
-     * No description.
      */
     public void setSkype(String skype) {
         this.skype = skype;
@@ -1713,7 +1538,6 @@ public class JsonData {
 
     /**
      * Getter for socialHandle.<p>
-     * No description.
      */
     public String getSocialHandle() {
         return socialHandle;
@@ -1721,7 +1545,6 @@ public class JsonData {
 
     /**
      * Setter for socialHandle.<p>
-     * No description.
      */
     public void setSocialHandle(String socialHandle) {
         this.socialHandle = socialHandle;
@@ -1729,7 +1552,6 @@ public class JsonData {
 
     /**
      * Getter for socialNetwork.<p>
-     * No description.
      */
     public String getSocialNetwork() {
         return socialNetwork;
@@ -1737,7 +1559,6 @@ public class JsonData {
 
     /**
      * Setter for socialNetwork.<p>
-     * No description.
      */
     public void setSocialNetwork(String socialNetwork) {
         this.socialNetwork = socialNetwork;
@@ -1745,7 +1566,6 @@ public class JsonData {
 
     /**
      * Getter for sourceId.<p>
-     * No description.
      */
     public String getSourceId() {
         return sourceId;
@@ -1753,7 +1573,6 @@ public class JsonData {
 
     /**
      * Setter for sourceId.<p>
-     * No description.
      */
     public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
@@ -1761,7 +1580,6 @@ public class JsonData {
 
     /**
      * Getter for ssn.<p>
-     * No description.
      */
     public List<JsonDataSsn> getSsn() {
         return ssn;
@@ -1769,7 +1587,6 @@ public class JsonData {
 
     /**
      * Setter for ssn.<p>
-     * No description.
      */
     public void setSsn(List<JsonDataSsn> ssn) {
         this.ssn = ssn;
@@ -1777,7 +1594,6 @@ public class JsonData {
 
     /**
      * Getter for ssnLast4.<p>
-     * No description.
      */
     public List<JsonDataSsnLast4> getSsnLast4() {
         return ssnLast4;
@@ -1785,7 +1601,6 @@ public class JsonData {
 
     /**
      * Setter for ssnLast4.<p>
-     * No description.
      */
     public void setSsnLast4(List<JsonDataSsnLast4> ssnLast4) {
         this.ssnLast4 = ssnLast4;
@@ -1793,7 +1608,6 @@ public class JsonData {
 
     /**
      * Getter for ssnNumber.<p>
-     * No description.
      */
     public String getSsnNumber() {
         return ssnNumber;
@@ -1801,7 +1615,6 @@ public class JsonData {
 
     /**
      * Setter for ssnNumber.<p>
-     * No description.
      */
     public void setSsnNumber(String ssnNumber) {
         this.ssnNumber = ssnNumber;
@@ -1809,7 +1622,6 @@ public class JsonData {
 
     /**
      * Getter for tango.<p>
-     * No description.
      */
     public String getTango() {
         return tango;
@@ -1817,7 +1629,6 @@ public class JsonData {
 
     /**
      * Setter for tango.<p>
-     * No description.
      */
     public void setTango(String tango) {
         this.tango = tango;
@@ -1825,7 +1636,6 @@ public class JsonData {
 
     /**
      * Getter for taxIdCountry.<p>
-     * No description.
      */
     public String getTaxIdCountry() {
         return taxIdCountry;
@@ -1833,7 +1643,6 @@ public class JsonData {
 
     /**
      * Setter for taxIdCountry.<p>
-     * No description.
      */
     public void setTaxIdCountry(String taxIdCountry) {
         this.taxIdCountry = taxIdCountry;
@@ -1841,7 +1650,6 @@ public class JsonData {
 
     /**
      * Getter for taxIdNumber.<p>
-     * No description.
      */
     public String getTaxIdNumber() {
         return taxIdNumber;
@@ -1849,7 +1657,6 @@ public class JsonData {
 
     /**
      * Setter for taxIdNumber.<p>
-     * No description.
      */
     public void setTaxIdNumber(String taxIdNumber) {
         this.taxIdNumber = taxIdNumber;
@@ -1857,7 +1664,6 @@ public class JsonData {
 
     /**
      * Getter for taxIdType.<p>
-     * No description.
      */
     public String getTaxIdType() {
         return taxIdType;
@@ -1865,7 +1671,6 @@ public class JsonData {
 
     /**
      * Setter for taxIdType.<p>
-     * No description.
      */
     public void setTaxIdType(String taxIdType) {
         this.taxIdType = taxIdType;
@@ -1873,7 +1678,6 @@ public class JsonData {
 
     /**
      * Getter for telegram.<p>
-     * No description.
      */
     public String getTelegram() {
         return telegram;
@@ -1881,7 +1685,6 @@ public class JsonData {
 
     /**
      * Setter for telegram.<p>
-     * No description.
      */
     public void setTelegram(String telegram) {
         this.telegram = telegram;
@@ -1889,7 +1692,6 @@ public class JsonData {
 
     /**
      * Getter for trustedIdNumber.<p>
-     * No description.
      */
     public String getTrustedIdNumber() {
         return trustedIdNumber;
@@ -1897,7 +1699,6 @@ public class JsonData {
 
     /**
      * Setter for trustedIdNumber.<p>
-     * No description.
      */
     public void setTrustedIdNumber(String trustedIdNumber) {
         this.trustedIdNumber = trustedIdNumber;
@@ -1905,7 +1706,6 @@ public class JsonData {
 
     /**
      * Getter for trustedIdType.<p>
-     * No description.
      */
     public String getTrustedIdType() {
         return trustedIdType;
@@ -1913,7 +1713,6 @@ public class JsonData {
 
     /**
      * Setter for trustedIdType.<p>
-     * No description.
      */
     public void setTrustedIdType(String trustedIdType) {
         this.trustedIdType = trustedIdType;
@@ -1921,7 +1720,6 @@ public class JsonData {
 
     /**
      * Getter for twitter.<p>
-     * No description.
      */
     public String getTwitter() {
         return twitter;
@@ -1929,7 +1727,6 @@ public class JsonData {
 
     /**
      * Setter for twitter.<p>
-     * No description.
      */
     public void setTwitter(String twitter) {
         this.twitter = twitter;
@@ -1937,7 +1734,6 @@ public class JsonData {
 
     /**
      * Getter for viber.<p>
-     * No description.
      */
     public String getViber() {
         return viber;
@@ -1945,7 +1741,6 @@ public class JsonData {
 
     /**
      * Setter for viber.<p>
-     * No description.
      */
     public void setViber(String viber) {
         this.viber = viber;
@@ -1953,7 +1748,6 @@ public class JsonData {
 
     /**
      * Getter for websiteAddress.<p>
-     * No description.
      */
     public String getWebsiteAddress() {
         return websiteAddress;
@@ -1961,7 +1755,6 @@ public class JsonData {
 
     /**
      * Setter for websiteAddress.<p>
-     * No description.
      */
     public void setWebsiteAddress(String websiteAddress) {
         this.websiteAddress = websiteAddress;
@@ -1969,7 +1762,6 @@ public class JsonData {
 
     /**
      * Getter for wechat.<p>
-     * No description.
      */
     public String getWechat() {
         return wechat;
@@ -1977,7 +1769,6 @@ public class JsonData {
 
     /**
      * Setter for wechat.<p>
-     * No description.
      */
     public void setWechat(String wechat) {
         this.wechat = wechat;
@@ -1985,7 +1776,6 @@ public class JsonData {
 
     /**
      * Getter for whatsapp.<p>
-     * No description.
      */
     public String getWhatsapp() {
         return whatsapp;
@@ -1993,7 +1783,6 @@ public class JsonData {
 
     /**
      * Setter for whatsapp.<p>
-     * No description.
      */
     public void setWhatsapp(String whatsapp) {
         this.whatsapp = whatsapp;
@@ -2001,7 +1790,6 @@ public class JsonData {
 
     /**
      * Getter for workPhoneNumber.<p>
-     * No description.
      */
     public String getWorkPhoneNumber() {
         return workPhoneNumber;
@@ -2009,7 +1797,6 @@ public class JsonData {
 
     /**
      * Setter for workPhoneNumber.<p>
-     * No description.
      */
     public void setWorkPhoneNumber(String workPhoneNumber) {
         this.workPhoneNumber = workPhoneNumber;
@@ -2017,7 +1804,6 @@ public class JsonData {
 
     /**
      * Getter for zoomroom.<p>
-     * No description.
      */
     public String getZoomroom() {
         return zoomroom;
@@ -2025,7 +1811,6 @@ public class JsonData {
 
     /**
      * Setter for zoomroom.<p>
-     * No description.
      */
     public void setZoomroom(String zoomroom) {
         this.zoomroom = zoomroom;
@@ -2033,7 +1818,6 @@ public class JsonData {
 
     /**
      * Getter for name0.<p>
-     * No description.
      */
     public Names getName0() {
         return name0;
@@ -2041,7 +1825,6 @@ public class JsonData {
 
     /**
      * Setter for name0.<p>
-     * No description.
      */
     public void setName0(Names name0) {
         this.name0 = name0;

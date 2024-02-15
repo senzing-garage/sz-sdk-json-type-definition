@@ -19,48 +19,20 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Address
-    # No description.
     attr_accessor :addr_city
-
-    # No description.
     attr_accessor :addr_country
-
-    # No description.
     attr_accessor :addr_from_date
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_line1
-
-    # No description.
     attr_accessor :addr_line2
-
-    # No description.
     attr_accessor :addr_line3
-
-    # No description.
     attr_accessor :addr_line4
-
-    # No description.
     attr_accessor :addr_line5
-
-    # No description.
     attr_accessor :addr_line6
-
-    # No description.
     attr_accessor :addr_postal_code
-
-    # No description.
     attr_accessor :addr_state
-
-    # No description.
     attr_accessor :addr_thru_date
-
-    # No description.
     attr_accessor :addr_type
 
     def self.from_json_data(data)
@@ -102,7 +74,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Addresses
     attr_accessor :value
 
@@ -117,7 +88,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class AffectedEntities
     attr_accessor :value
 
@@ -132,9 +102,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class AffectedEntity
-    # No description.
     attr_accessor :entity_id
 
     def self.from_json_data(data)
@@ -150,117 +118,43 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class AttributeCounter
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :call_sign
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :entity_count
-
-    # No description.
     attr_accessor :entity_size
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :imo_number
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :max_res_ent_id
-
-    # No description.
     attr_accessor :min_res_ent_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :ofac_id
-
-    # No description.
     attr_accessor :other_id
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :search_key
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :tax_id
-
-    # No description.
     attr_accessor :website
 
     def self.from_json_data(data)
@@ -348,7 +242,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class AttributeCounters
     attr_accessor :value
 
@@ -363,33 +256,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgAttr
-    # No description.
     attr_accessor :advanced
-
-    # No description.
     attr_accessor :attr_class
-
-    # No description.
     attr_accessor :attr_code
-
-    # No description.
     attr_accessor :attr_id
-
-    # No description.
     attr_accessor :default_value
-
-    # No description.
     attr_accessor :felem_code
-
-    # No description.
     attr_accessor :felem_req
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :internal
 
     def self.from_json_data(data)
@@ -421,18 +296,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfbom
-    # No description.
     attr_accessor :cfcall_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -454,18 +321,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfcall
-    # No description.
     attr_accessor :cfcall_id
-
-    # No description.
     attr_accessor :cfunc_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -487,36 +346,16 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfrtn
-    # No description.
     attr_accessor :cfrtn_id
-
-    # No description.
     attr_accessor :cfunc_id
-
-    # No description.
     attr_accessor :cfunc_rtnval
-
-    # No description.
     attr_accessor :close_score
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :likely_score
-
-    # No description.
     attr_accessor :plausible_score
-
-    # No description.
     attr_accessor :same_score
-
-    # No description.
     attr_accessor :un_likely_score
 
     def self.from_json_data(data)
@@ -550,33 +389,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfunc
-    # No description.
     attr_accessor :anon_support
-
-    # No description.
     attr_accessor :cfunc_code
-
-    # No description.
     attr_accessor :cfunc_desc
-
-    # No description.
     attr_accessor :cfunc_id
-
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
 
     def self.from_json_data(data)
@@ -608,18 +429,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDfbom
-    # No description.
     attr_accessor :dfcall_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -641,18 +454,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDfcall
-    # No description.
     attr_accessor :dfcall_id
-
-    # No description.
     attr_accessor :dfunc_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -674,33 +479,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDfunc
-    # No description.
     attr_accessor :anon_support
-
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :dfunc_code
-
-    # No description.
     attr_accessor :dfunc_desc
-
-    # No description.
     attr_accessor :dfunc_id
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
 
     def self.from_json_data(data)
@@ -732,24 +519,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDsrc
-    # No description.
     attr_accessor :conversational
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :dsrc_desc
-
-    # No description.
     attr_accessor :dsrc_id
-
-    # No description.
     attr_accessor :dsrc_rely
-
-    # No description.
     attr_accessor :retention_level
 
     def self.from_json_data(data)
@@ -775,15 +550,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDsrcInterest
-    # No description.
     attr_accessor :dsrc_id
-
-    # No description.
     attr_accessor :interest_flag
-
-    # No description.
     attr_accessor :max_degree
 
     def self.from_json_data(data)
@@ -803,18 +572,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEbom
-    # No description.
     attr_accessor :etype_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :utype_code
 
     def self.from_json_data(data)
@@ -836,18 +597,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEclass
-    # No description.
     attr_accessor :eclass_code
-
-    # No description.
     attr_accessor :eclass_desc
-
-    # No description.
     attr_accessor :eclass_id
-
-    # No description.
     attr_accessor :resolve
 
     def self.from_json_data(data)
@@ -869,21 +622,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEfbom
-    # No description.
     attr_accessor :efcall_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :felem_req
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -907,27 +650,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEfcall
-    # No description.
     attr_accessor :efcall_id
-
-    # No description.
     attr_accessor :efeat_ftype_id
-
-    # No description.
     attr_accessor :efunc_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :is_virtual
 
     def self.from_json_data(data)
@@ -955,30 +684,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEfunc
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :efunc_code
-
-    # No description.
     attr_accessor :efunc_desc
-
-    # No description.
     attr_accessor :efunc_id
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
 
     def self.from_json_data(data)
@@ -1008,21 +721,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgErfrag
-    # No description.
     attr_accessor :erfrag_code
-
-    # No description.
     attr_accessor :erfrag_depends
-
-    # No description.
     attr_accessor :erfrag_desc
-
-    # No description.
     attr_accessor :erfrag_id
-
-    # No description.
     attr_accessor :erfrag_source
 
     def self.from_json_data(data)
@@ -1046,36 +749,16 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgErrule
-    # No description.
     attr_accessor :disq_erfrag_code
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :errule_desc
-
-    # No description.
     attr_accessor :errule_id
-
-    # No description.
     attr_accessor :errule_tier
-
-    # No description.
     attr_accessor :qual_erfrag_code
-
-    # No description.
     attr_accessor :ref_score
-
-    # No description.
     attr_accessor :relate
-
-    # No description.
     attr_accessor :resolve
-
-    # No description.
     attr_accessor :rtype_id
 
     def self.from_json_data(data)
@@ -1109,18 +792,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEtype
-    # No description.
     attr_accessor :eclass_id
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :etype_desc
-
-    # No description.
     attr_accessor :etype_id
 
     def self.from_json_data(data)
@@ -1142,24 +817,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFbom
-    # No description.
     attr_accessor :derived
-
-    # No description.
     attr_accessor :display_delim
-
-    # No description.
     attr_accessor :display_level
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -1185,24 +848,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFbovr
-    # No description.
     attr_accessor :eclass_id
-
-    # No description.
     attr_accessor :ftype_excl
-
-    # No description.
     attr_accessor :ftype_freq
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :ftype_stab
-
-    # No description.
     attr_accessor :utype_code
 
     def self.from_json_data(data)
@@ -1228,15 +879,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFclass
-    # No description.
     attr_accessor :fclass_code
-
-    # No description.
     attr_accessor :fclass_desc
-
-    # No description.
     attr_accessor :fclass_id
 
     def self.from_json_data(data)
@@ -1256,21 +901,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFelem
-    # No description.
     attr_accessor :data_type
-
-    # No description.
     attr_accessor :felem_code
-
-    # No description.
     attr_accessor :felem_desc
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :tokenize
 
     def self.from_json_data(data)
@@ -1294,51 +929,21 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFtype
-    # No description.
     attr_accessor :anonymize
-
-    # No description.
     attr_accessor :derivation
-
-    # No description.
     attr_accessor :derived
-
-    # No description.
     attr_accessor :fclass_id
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :ftype_desc
-
-    # No description.
     attr_accessor :ftype_excl
-
-    # No description.
     attr_accessor :ftype_freq
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :ftype_stab
-
-    # No description.
     attr_accessor :persist_history
-
-    # No description.
     attr_accessor :rtype_id
-
-    # No description.
     attr_accessor :show_in_match_key
-
-    # No description.
     attr_accessor :used_for_cand
-
-    # No description.
     attr_accessor :version
 
     def self.from_json_data(data)
@@ -1382,24 +987,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgGenericThreshold
-    # No description.
     attr_accessor :behavior
-
-    # No description.
     attr_accessor :candidate_cap
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :gplan_id
-
-    # No description.
     attr_accessor :scoring_cap
-
-    # No description.
     attr_accessor :send_to_redo
 
     def self.from_json_data(data)
@@ -1425,15 +1018,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgGplan
-    # No description.
     attr_accessor :gplan_code
-
-    # No description.
     attr_accessor :gplan_desc
-
-    # No description.
     attr_accessor :gplan_id
 
     def self.from_json_data(data)
@@ -1453,15 +1040,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgLens
-    # No description.
     attr_accessor :lens_code
-
-    # No description.
     attr_accessor :lens_desc
-
-    # No description.
     attr_accessor :lens_id
 
     def self.from_json_data(data)
@@ -1481,7 +1062,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgLensrl
     attr_accessor :value
 
@@ -1496,18 +1076,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgRclass
-    # No description.
     attr_accessor :is_disclosed
-
-    # No description.
     attr_accessor :rclass_code
-
-    # No description.
     attr_accessor :rclass_desc
-
-    # No description.
     attr_accessor :rclass_id
 
     def self.from_json_data(data)
@@ -1529,24 +1101,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgRtype
-    # No description.
     attr_accessor :break_res
-
-    # No description.
     attr_accessor :rclass_id
-
-    # No description.
     attr_accessor :rel_strength
-
-    # No description.
     attr_accessor :rtype_code
-
-    # No description.
     attr_accessor :rtype_desc
-
-    # No description.
     attr_accessor :rtype_id
 
     def self.from_json_data(data)
@@ -1572,21 +1132,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgSfcall
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :sfcall_id
-
-    # No description.
     attr_accessor :sfunc_id
 
     def self.from_json_data(data)
@@ -1610,30 +1160,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgSfunc
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
-
-    # No description.
     attr_accessor :sfunc_code
-
-    # No description.
     attr_accessor :sfunc_desc
-
-    # No description.
     attr_accessor :sfunc_id
 
     def self.from_json_data(data)
@@ -1663,24 +1197,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigBaseVersion
-    # No description.
     attr_accessor :build_date
-
-    # No description.
     attr_accessor :build_number
-
-    # No description.
     attr_accessor :build_version
-
-    # No description.
     attr_accessor :compatibility_version
-
-    # No description.
     attr_accessor :product_name
-
-    # No description.
     attr_accessor :version
 
     def self.from_json_data(data)
@@ -1706,9 +1228,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CompatibilityVersion
-    # No description.
     attr_accessor :config_version
 
     def self.from_json_data(data)
@@ -1724,15 +1244,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Config
-    # No description.
     attr_accessor :config_comments
-
-    # No description.
     attr_accessor :config_id
-
-    # No description.
     attr_accessor :sys_create_dt
 
     def self.from_json_data(data)
@@ -1752,9 +1266,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigAddDataSourceResponse
-    # No description.
     attr_accessor :dsrc_id
 
     def self.from_json_data(data)
@@ -1770,9 +1282,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigListDataSourcesResponse
-    # No description.
     attr_accessor :data_sources
 
     def self.from_json_data(data)
@@ -1788,9 +1298,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigSaveResponse
-    # No description.
     attr_accessor :g2_config
 
     def self.from_json_data(data)
@@ -1806,9 +1314,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigmgrGetConfigListResponse
-    # No description.
     attr_accessor :configs
 
     def self.from_json_data(data)
@@ -1824,9 +1330,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigmgrGetConfigResponse
-    # No description.
     attr_accessor :g2_config
 
     def self.from_json_data(data)
@@ -1842,7 +1346,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Configs
     attr_accessor :value
 
@@ -1857,7 +1360,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DataSource
     # The text representation of the datasource.
     attr_accessor :dsrc_code
@@ -1895,12 +1397,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticCheckDbperfResponse
-    # No description.
     attr_accessor :insert_time
-
-    # No description.
     attr_accessor :num_records_inserted
 
     def self.from_json_data(data)
@@ -1919,37 +1417,16 @@ module SenzingTypeDef
   end
 
   class DiagnosticFetchNextEntityBySizeResponse0
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :ent_src_desc
-
-    # No description.
     attr_accessor :ent_src_key
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :er_id
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :json_data
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :obs_ent_id
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :res_ent_id
 
     def self.from_json_data(data)
@@ -1985,7 +1462,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticFetchNextEntityBySizeResponse
     attr_accessor :value
 
@@ -2001,13 +1477,8 @@ module SenzingTypeDef
   end
 
   class DiagnosticFindEntitiesByFeatureIdsResponse0
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :res_ent_id
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -2027,7 +1498,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticFindEntitiesByFeatureIdsResponse
     attr_accessor :value
 
@@ -2043,10 +1513,7 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetDbinfoResponseDetail
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :type
 
     def self.from_json_data(data)
@@ -2064,12 +1531,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetDbinfoResponse
-    # No description.
     attr_accessor :database_details
-
-    # No description.
     attr_accessor :hybrid_mode
 
     def self.from_json_data(data)
@@ -2088,22 +1551,11 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetDataSourceCountsResponse0
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :dsrc_id
-
-    # No description.
     attr_accessor :dsrc_record_count
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :etype_id
-
-    # No description.
     attr_accessor :obs_ent_count
 
     def self.from_json_data(data)
@@ -2129,7 +1581,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetDataSourceCountsResponse
     attr_accessor :value
 
@@ -2145,37 +1596,16 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetEntityDetailsResponse0
-    # No description.
     attr_accessor :derived
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :obs_ent_id
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :res_ent_id
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -2211,7 +1641,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetEntityDetailsResponse
     attr_accessor :value
 
@@ -2227,31 +1656,14 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetEntityResumeResponse0
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :ent_src_desc
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :json_data
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :rel_ent_id
-
-    # No description.
     attr_accessor :res_ent_id
 
     def self.from_json_data(data)
@@ -2283,7 +1695,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetEntityResumeResponse
     attr_accessor :value
 
@@ -2298,7 +1709,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetEntitySizeBreakdownResponse
     attr_accessor :value
 
@@ -2314,10 +1724,7 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetFeatureResponseElements
-    # No description.
     attr_accessor :felem_code
-
-    # No description.
     attr_accessor :felem_value
 
     def self.from_json_data(data)
@@ -2335,15 +1742,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetFeatureResponse
-    # No description.
     attr_accessor :elements
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :lib_feat_id
 
     def self.from_json_data(data)
@@ -2364,22 +1765,11 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetGenericFeaturesResponse0
-    # No description.
     attr_accessor :candidate_cap_reached
-
-    # No description.
     attr_accessor :estimated_count
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :scoring_cap_reached
 
     def self.from_json_data(data)
@@ -2405,7 +1795,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetGenericFeaturesResponse
     attr_accessor :value
 
@@ -2421,37 +1810,16 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetMappingStatisticsResponse0
-    # No description.
     attr_accessor :derived
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :max_feat_desc
-
-    # No description.
     attr_accessor :min_feat_desc
-
-    # No description.
     attr_accessor :rec_count
-
-    # No description.
     attr_accessor :rec_pct
-
-    # No description.
     attr_accessor :uniq_count
-
-    # No description.
     attr_accessor :uniq_pct
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -2487,7 +1855,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetMappingStatisticsResponse
     attr_accessor :value
 
@@ -2503,19 +1870,10 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetRelationshipDetailsResponse0
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :res_ent_id
 
     def self.from_json_data(data)
@@ -2539,7 +1897,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetRelationshipDetailsResponse
     attr_accessor :value
 
@@ -2555,7 +1912,6 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetResolutionStatisticsResponseRawMatchKeys
-    # No description.
     attr_accessor :match_key
 
     def self.from_json_data(data)
@@ -2572,37 +1928,16 @@ module SenzingTypeDef
   end
 
   class DiagnosticGetResolutionStatisticsResponse0
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :errule_id
-
-    # No description.
     attr_accessor :is_ambiguous
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :max_res_ent_id
-
-    # No description.
     attr_accessor :max_res_rel_id
-
-    # No description.
     attr_accessor :min_res_ent_id
-
-    # No description.
     attr_accessor :min_res_rel_id
-
-    # No description.
     attr_accessor :raw_match_keys
-
-    # No description.
     attr_accessor :record_count
 
     def self.from_json_data(data)
@@ -2638,7 +1973,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticGetResolutionStatisticsResponse
     attr_accessor :value
 
@@ -2653,7 +1987,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DiagnosticStreamEntityListBySizeResponse
     attr_accessor :value
 
@@ -2668,7 +2001,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineAddRecordWithInfoResponse
     attr_accessor :value
 
@@ -2683,7 +2015,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineAddRecordWithInfoWithReturnedRecordIdresponse
     attr_accessor :value
 
@@ -2699,31 +2030,14 @@ module SenzingTypeDef
   end
 
   class EngineCheckRecordResponseCheckRecordResponse
-    # No description.
     attr_accessor :candidate_match
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :errule_id
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :non_generic_candidate_match
-
-    # No description.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -2755,9 +2069,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineCheckRecordResponse
-    # No description.
     attr_accessor :check_record_response
 
     def self.from_json_data(data)
@@ -2773,7 +2085,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineDeleteRecordWithInfoResponse
     attr_accessor :value
 
@@ -2788,9 +2099,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineExportConfigAndConfigIdresponse
-    # No description.
     attr_accessor :g2_config
 
     def self.from_json_data(data)
@@ -2806,9 +2115,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineExportConfigResponse
-    # No description.
     attr_accessor :g2_config
 
     def self.from_json_data(data)
@@ -2824,7 +2131,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFetchNextResponse
     attr_accessor :value
 
@@ -2839,7 +2145,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindInterestingEntitiesByEntityIdresponse
     attr_accessor :value
 
@@ -2854,7 +2159,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindInterestingEntitiesByRecordIdresponse
     attr_accessor :value
 
@@ -2869,7 +2173,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindNetworkByEntityIdresponse
     attr_accessor :value
 
@@ -2884,7 +2187,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindNetworkByEntityIdv2response
     attr_accessor :value
 
@@ -2899,7 +2201,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindNetworkByRecordIdresponse
     attr_accessor :value
 
@@ -2914,7 +2215,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindNetworkByRecordIdv2response
     attr_accessor :value
 
@@ -2929,7 +2229,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathByEntityIdresponse
     attr_accessor :value
 
@@ -2944,7 +2243,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathByEntityIdv2response
     attr_accessor :value
 
@@ -2959,7 +2257,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathByRecordIdresponse
     attr_accessor :value
 
@@ -2974,7 +2271,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathByRecordIdv2response
     attr_accessor :value
 
@@ -2989,7 +2285,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathExcludingByEntityIdresponse
     attr_accessor :value
 
@@ -3004,7 +2299,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathExcludingByEntityIdv2response
     attr_accessor :value
 
@@ -3019,7 +2313,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathExcludingByRecordIdresponse
     attr_accessor :value
 
@@ -3034,7 +2327,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathExcludingByRecordIdv2response
     attr_accessor :value
 
@@ -3049,7 +2341,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathIncludingSourceByEntityIdresponse
     attr_accessor :value
 
@@ -3064,7 +2355,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathIncludingSourceByEntityIdv2response
     attr_accessor :value
 
@@ -3079,7 +2369,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathIncludingSourceByRecordIdresponse
     attr_accessor :value
 
@@ -3094,7 +2383,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineFindPathIncludingSourceByRecordIdv2response
     attr_accessor :value
 
@@ -3109,7 +2397,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetEntityByEntityIdresponse
     attr_accessor :value
 
@@ -3124,7 +2411,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetEntityByEntityIdv2response
     attr_accessor :value
 
@@ -3139,7 +2425,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetEntityByRecordIdresponse
     attr_accessor :value
 
@@ -3154,7 +2439,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetEntityByRecordIdv2response
     attr_accessor :value
 
@@ -3169,7 +2453,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetRecordResponse
     attr_accessor :value
 
@@ -3184,7 +2467,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetRecordV2response
     attr_accessor :value
 
@@ -3199,7 +2481,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetVirtualEntityByRecordIdresponse
     attr_accessor :value
 
@@ -3214,7 +2495,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineGetVirtualEntityByRecordIdv2response
     attr_accessor :value
 
@@ -3229,7 +2509,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineHowEntityByEntityIdresponse
     attr_accessor :value
 
@@ -3244,7 +2523,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineHowEntityByEntityIdv2response
     attr_accessor :value
 
@@ -3259,7 +2537,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineProcessRedoRecordResponse
     attr_accessor :value
 
@@ -3274,7 +2551,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineProcessRedoRecordWithInfoResponse
     attr_accessor :value
 
@@ -3289,7 +2565,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineProcessWithInfoResponse
     attr_accessor :value
 
@@ -3304,7 +2579,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineProcessWithResponseResizeResponse
     attr_accessor :value
 
@@ -3319,7 +2593,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineProcessWithResponseResponse
     attr_accessor :value
 
@@ -3334,7 +2607,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineReevaluateEntityWithInfoResponse
     attr_accessor :value
 
@@ -3349,7 +2621,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineReevaluateRecordWithInfoResponse
     attr_accessor :value
 
@@ -3364,7 +2635,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineReplaceRecordWithInfoResponse
     attr_accessor :value
 
@@ -3379,7 +2649,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineSearchByAttributesResponse
     attr_accessor :value
 
@@ -3394,7 +2663,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineSearchByAttributesV2response
     attr_accessor :value
 
@@ -3409,7 +2677,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineSearchByAttributesV3response
     attr_accessor :value
 
@@ -3424,12 +2691,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseDuration
-    # No description.
     attr_accessor :pattern
-
-    # No description.
     attr_accessor :type
 
     def self.from_json_data(data)
@@ -3447,18 +2710,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseReresolveTriggers
-    # No description.
     attr_accessor :abort_retry
-
-    # No description.
     attr_accessor :multiple_resolvable_candidates
-
-    # No description.
     attr_accessor :resolve_new_features
-
-    # No description.
     attr_accessor :unresolve_movement
 
     def self.from_json_data(data)
@@ -3480,12 +2735,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseUnresolveTriggers
-    # No description.
     attr_accessor :extensive_resolve
-
-    # No description.
     attr_accessor :normal_resolve
 
     def self.from_json_data(data)
@@ -3504,13 +2755,8 @@ module SenzingTypeDef
   end
 
   class EngineStatsResponseWorkloadExpressedFeatureCall
-    # No description.
     attr_accessor :efcall_id
-
-    # No description.
     attr_accessor :efunc_code
-
-    # No description.
     attr_accessor :num_calls
 
     def self.from_json_data(data)
@@ -3530,21 +2776,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseWorkloadReresolveTriggers
-    # No description.
     attr_accessor :abort_retry
-
-    # No description.
     attr_accessor :multiple_resolvable_candidates
-
-    # No description.
     attr_accessor :new_feature_ftypes
-
-    # No description.
     attr_accessor :resolve_new_features
-
-    # No description.
     attr_accessor :unresolve_movement
 
     def self.from_json_data(data)
@@ -3569,19 +2805,10 @@ module SenzingTypeDef
   end
 
   class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad
-    # No description.
     attr_accessor :cpu_idle
-
-    # No description.
     attr_accessor :cpu_soft_irq
-
-    # No description.
     attr_accessor :cpu_system
-
-    # No description.
     attr_accessor :cpu_user
-
-    # No description.
     attr_accessor :cpu_wait
 
     def self.from_json_data(data)
@@ -3606,16 +2833,9 @@ module SenzingTypeDef
   end
 
   class EngineStatsResponseWorkloadSystemResourcesCurrResource
-    # No description.
     attr_accessor :active_threads
-
-    # No description.
     attr_accessor :available_memory
-
-    # No description.
     attr_accessor :system_load
-
-    # No description.
     attr_accessor :worker_threads
 
     def self.from_json_data(data)
@@ -3638,16 +2858,9 @@ module SenzingTypeDef
   end
 
   class EngineStatsResponseWorkloadSystemResourcesInitResource
-    # No description.
     attr_accessor :available_memory
-
-    # No description.
     attr_accessor :logical_cores
-
-    # No description.
     attr_accessor :physical_cores
-
-    # No description.
     attr_accessor :total_memory
 
     def self.from_json_data(data)
@@ -3669,12 +2882,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseWorkloadSystemResources
-    # No description.
     attr_accessor :curr_resources
-
-    # No description.
     attr_accessor :init_resources
 
     def self.from_json_data(data)
@@ -3692,33 +2901,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseWorkloadThreadState
-    # No description.
     attr_accessor :active
-
-    # No description.
     attr_accessor :data_latch_contention
-
-    # No description.
     attr_accessor :idle
-
-    # No description.
     attr_accessor :loader
-
-    # No description.
     attr_accessor :obs_ent_contention
-
-    # No description.
     attr_accessor :res_ent_contention
-
-    # No description.
     attr_accessor :resolver
-
-    # No description.
     attr_accessor :scoring
-
-    # No description.
     attr_accessor :sql_executing
 
     def self.from_json_data(data)
@@ -3750,24 +2941,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseWorkloadUnresolveTriggers
-    # No description.
     attr_accessor :ambiguous_multi_resolve
-
-    # No description.
     attr_accessor :ambiguous_no_resolve
-
-    # No description.
     attr_accessor :extensive_resolve
-
-    # No description.
     attr_accessor :normal_resolve
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :update
 
     def self.from_json_data(data)
@@ -3793,129 +2972,47 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponseWorkload
-    # No description.
     attr_accessor :corrupt_entity_test_diagnosis
-
-    # No description.
     attr_accessor :aborted_unresolve
-
-    # No description.
     attr_accessor :actual_ambiguous_test
-
-    # No description.
     attr_accessor :added_records
-
-    # No description.
     attr_accessor :api_version
-
-    # No description.
     attr_accessor :cache_hit
-
-    # No description.
     attr_accessor :cache_miss
-
-    # No description.
     attr_accessor :cached_ambiguous_test
-
-    # No description.
     attr_accessor :candidate_builders
-
-    # No description.
     attr_accessor :candidates
-
-    # No description.
     attr_accessor :deleted_records
-
-    # No description.
     attr_accessor :duration
-
-    # No description.
     attr_accessor :expressed_feature_calls
-
-    # No description.
     attr_accessor :expressed_features_created
-
-    # No description.
     attr_accessor :filtered_obs_feat
-
-    # No description.
     attr_accessor :generic_detect
-
-    # No description.
     attr_accessor :gnr_scorers_used
-
-    # No description.
     attr_accessor :high_contention_feat
-
-    # No description.
     attr_accessor :high_contention_res_ent
-
-    # No description.
     attr_accessor :latch_contention
-
-    # No description.
     attr_accessor :lib_feat_cache_hit
-
-    # No description.
     attr_accessor :lib_feat_cache_miss
-
-    # No description.
     attr_accessor :loaded_records
-
-    # No description.
     attr_accessor :redo_triggers
-
-    # No description.
     attr_accessor :reduced_scored_feature_type
-
-    # No description.
     attr_accessor :reevaluations
-
-    # No description.
     attr_accessor :repaired_entities
-
-    # No description.
     attr_accessor :reresolve_skipped
-
-    # No description.
     attr_accessor :reresolve_triggers
-
-    # No description.
     attr_accessor :res_feat_stat_cache_hit
-
-    # No description.
     attr_accessor :res_feat_stat_cache_miss
-
-    # No description.
     attr_accessor :res_feat_stat_update
-
-    # No description.
     attr_accessor :retries
-
-    # No description.
     attr_accessor :scored_pairs
-
-    # No description.
     attr_accessor :suppressed_candidate_builders
-
-    # No description.
     attr_accessor :suppressed_disclosed_relationship_domain_count
-
-    # No description.
     attr_accessor :suppressed_scored_feature_type
-
-    # No description.
     attr_accessor :system_resources
-
-    # No description.
     attr_accessor :thread_state
-
-    # No description.
     attr_accessor :unresolve_test
-
-    # No description.
     attr_accessor :unresolve_triggers
 
     def self.from_json_data(data)
@@ -4011,87 +3108,33 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStatsResponse
-    # No description.
     attr_accessor :missing_res_ent
-
-    # No description.
     attr_accessor :missing_res_ent_and_okey
-
-    # No description.
     attr_accessor :aborted_unresolve
-
-    # No description.
     attr_accessor :actual_ambiguous_test
-
-    # No description.
     attr_accessor :added_records
-
-    # No description.
     attr_accessor :cache_hit
-
-    # No description.
     attr_accessor :candidate_builders
-
-    # No description.
     attr_accessor :candidates
-
-    # No description.
     attr_accessor :deleted_records
-
-    # No description.
     attr_accessor :duration
-
-    # No description.
     attr_accessor :filtered_obs_feat
-
-    # No description.
     attr_accessor :generic_detect
-
-    # No description.
     attr_accessor :latch_contention
-
-    # No description.
     attr_accessor :loaded_records
-
-    # No description.
     attr_accessor :redo_triggers
-
-    # No description.
     attr_accessor :reduced_scored_feature_type
-
-    # No description.
     attr_accessor :reevaluations
-
-    # No description.
     attr_accessor :repaired_entities
-
-    # No description.
     attr_accessor :reresolve_skipped
-
-    # No description.
     attr_accessor :reresolve_triggers
-
-    # No description.
     attr_accessor :retries
-
-    # No description.
     attr_accessor :scored_pairs
-
-    # No description.
     attr_accessor :suppressed_candidate_builders
-
-    # No description.
     attr_accessor :suppressed_scored_feature_type
-
-    # No description.
     attr_accessor :unresolve_test
-
-    # No description.
     attr_accessor :unresolve_triggers
-
-    # No description.
     attr_accessor :workload
 
     def self.from_json_data(data)
@@ -4159,7 +3202,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineStreamExportJsonentityReportResponse
     attr_accessor :value
 
@@ -4174,7 +3216,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyEntitiesResponse
     attr_accessor :value
 
@@ -4189,7 +3230,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyEntitiesV2response
     attr_accessor :value
 
@@ -4204,7 +3244,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyEntityByEntityIdresponse
     attr_accessor :value
 
@@ -4219,7 +3258,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyEntityByEntityIdv2response
     attr_accessor :value
 
@@ -4234,7 +3272,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyEntityByRecordIdresponse
     attr_accessor :value
 
@@ -4249,7 +3286,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyEntityByRecordIdv2response
     attr_accessor :value
 
@@ -4264,7 +3300,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyRecordsResponse
     attr_accessor :value
 
@@ -4279,7 +3314,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EngineWhyRecordsV2response
     attr_accessor :value
 
@@ -4294,7 +3328,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Entities
     attr_accessor :value
 
@@ -4309,12 +3342,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Entity
-    # No description.
     attr_accessor :related_entities
-
-    # No description.
     attr_accessor :resolved_entity
 
     def self.from_json_data(data)
@@ -4332,15 +3361,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EntityPath
-    # No description.
     attr_accessor :end_entity_id
-
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :start_entity_id
 
     def self.from_json_data(data)
@@ -4360,7 +3383,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class EntityPaths
     attr_accessor :value
 
@@ -4375,30 +3397,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureDescriptionValue
-    # No description.
     attr_accessor :candidate_cap_reached
-
-    # No description.
     attr_accessor :entity_count
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :scoring_cap_reached
-
-    # No description.
     attr_accessor :suppressed
-
-    # No description.
     attr_accessor :used_for_cand
-
-    # No description.
     attr_accessor :used_for_scoring
 
     def self.from_json_data(data)
@@ -4428,7 +3434,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureDescriptionValues
     attr_accessor :value
 
@@ -4443,18 +3448,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureForAttribute
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_desc_values
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -4476,48 +3473,20 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureScoreForAttribute
-    # No description.
     attr_accessor :candidate_feat
-
-    # No description.
     attr_accessor :candidate_feat_id
-
-    # No description.
     attr_accessor :candidate_feat_usage_type
-
-    # No description.
     attr_accessor :full_score
-
-    # No description.
     attr_accessor :generation_match
-
-    # No description.
     attr_accessor :gnr_fn
-
-    # No description.
     attr_accessor :gnr_gn
-
-    # No description.
     attr_accessor :gnr_on
-
-    # No description.
     attr_accessor :gnr_sn
-
-    # No description.
     attr_accessor :inbound_feat
-
-    # No description.
     attr_accessor :inbound_feat_id
-
-    # No description.
     attr_accessor :inbound_feat_usage_type
-
-    # No description.
     attr_accessor :score_behavior
-
-    # No description.
     attr_accessor :score_bucket
 
     def self.from_json_data(data)
@@ -4559,300 +3528,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureScores
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -5062,7 +3835,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureScoresForAttribute
     attr_accessor :value
 
@@ -5077,300 +3849,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Features
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -5580,7 +4156,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeaturesForAttribute
     attr_accessor :value
 
@@ -5595,12 +4170,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FinalState
-    # No description.
     attr_accessor :need_reevaluation
-
-    # No description.
     attr_accessor :virtual_entities
 
     def self.from_json_data(data)
@@ -5618,12 +4189,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FocusRecord
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -5641,7 +4208,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FocusRecords
     attr_accessor :value
 
@@ -5656,105 +4222,39 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class G2config
-    # No description.
     attr_accessor :cfg_attr
-
-    # No description.
     attr_accessor :cfg_cfbom
-
-    # No description.
     attr_accessor :cfg_cfcall
-
-    # No description.
     attr_accessor :cfg_cfrtn
-
-    # No description.
     attr_accessor :cfg_cfunc
-
-    # No description.
     attr_accessor :cfg_dfbom
-
-    # No description.
     attr_accessor :cfg_dfcall
-
-    # No description.
     attr_accessor :cfg_dfunc
-
-    # No description.
     attr_accessor :cfg_dsrc
-
-    # No description.
     attr_accessor :cfg_dsrc_interest
-
-    # No description.
     attr_accessor :cfg_ebom
-
-    # No description.
     attr_accessor :cfg_eclass
-
-    # No description.
     attr_accessor :cfg_efbom
-
-    # No description.
     attr_accessor :cfg_efcall
-
-    # No description.
     attr_accessor :cfg_efunc
-
-    # No description.
     attr_accessor :cfg_erfrag
-
-    # No description.
     attr_accessor :cfg_errule
-
-    # No description.
     attr_accessor :cfg_etype
-
-    # No description.
     attr_accessor :cfg_fbom
-
-    # No description.
     attr_accessor :cfg_fbovr
-
-    # No description.
     attr_accessor :cfg_fclass
-
-    # No description.
     attr_accessor :cfg_felem
-
-    # No description.
     attr_accessor :cfg_ftype
-
-    # No description.
     attr_accessor :cfg_generic_threshold
-
-    # No description.
     attr_accessor :cfg_gplan
-
-    # No description.
     attr_accessor :cfg_lens
-
-    # No description.
     attr_accessor :cfg_lensrl
-
-    # No description.
     attr_accessor :cfg_rclass
-
-    # No description.
     attr_accessor :cfg_rtype
-
-    # No description.
     attr_accessor :cfg_sfcall
-
-    # No description.
     attr_accessor :cfg_sfunc
-
-    # No description.
     attr_accessor :config_base_version
-
-    # No description.
     attr_accessor :sys_oom
 
     def self.from_json_data(data)
@@ -5834,9 +4334,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class How
-    # No description.
     attr_accessor :how_results
 
     def self.from_json_data(data)
@@ -5852,12 +4350,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class HowResults
-    # No description.
     attr_accessor :final_state
-
-    # No description.
     attr_accessor :resolution_steps
 
     def self.from_json_data(data)
@@ -5875,9 +4369,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Interesting
-    # No description.
     attr_accessor :interesting_entities
 
     def self.from_json_data(data)
@@ -5893,12 +4385,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class InterestingEntities
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :notices
 
     def self.from_json_data(data)
@@ -5917,13 +4405,8 @@ module SenzingTypeDef
   end
 
   class InterestingEntitySampleRecords
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :flags
-
-    # No description.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -5943,18 +4426,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class InterestingEntity
-    # No description.
     attr_accessor :degrees
-
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :flags
-
-    # No description.
     attr_accessor :sample_records
 
     def self.from_json_data(data)
@@ -5977,10 +4452,7 @@ module SenzingTypeDef
   end
 
   class JSONDataAcctNum
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
 
     def self.from_json_data(data)
@@ -5999,10 +4471,7 @@ module SenzingTypeDef
   end
 
   class JSONDataSsn
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :ssn_number
 
     def self.from_json_data(data)
@@ -6021,7 +4490,6 @@ module SenzingTypeDef
   end
 
   class JSONDataSsnLast4
-    # No description.
     attr_accessor :ssn_last4
 
     def self.from_json_data(data)
@@ -6037,327 +4505,113 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class JSONData
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :dsrc_action
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :ent_src_desc
-
-    # No description.
     attr_accessor :ent_src_key
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :obs_src_key
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :relationships
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
-
-    # No description.
     attr_accessor :name0
 
     def self.from_json_data(data)
@@ -6586,25 +4840,12 @@ module SenzingTypeDef
   end
 
   class MatchInfoDisclosedRelationsRelAnchor
-    # No description.
     attr_accessor :domain
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
-
-    # No description.
     attr_accessor :linked_feat_desc
-
-    # No description.
     attr_accessor :linked_feat_id
-
-    # No description.
     attr_accessor :linked_feat_type
-
-    # No description.
     attr_accessor :linked_feat_usage_type
 
     def self.from_json_data(data)
@@ -6633,28 +4874,13 @@ module SenzingTypeDef
   end
 
   class MatchInfoDisclosedRelationsRelLink
-    # No description.
     attr_accessor :domain
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
-
-    # No description.
     attr_accessor :feat_usage_type
-
-    # No description.
     attr_accessor :linked_feat_desc
-
-    # No description.
     attr_accessor :linked_feat_id
-
-    # No description.
     attr_accessor :linked_feat_type
-
-    # No description.
     attr_accessor :linked_feat_usage_type
 
     def self.from_json_data(data)
@@ -6685,25 +4911,12 @@ module SenzingTypeDef
   end
 
   class MatchInfoDisclosedRelationsRelPointer
-    # No description.
     attr_accessor :domain
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
-
-    # No description.
     attr_accessor :feat_usage_type
-
-    # No description.
     attr_accessor :linked_feat_desc
-
-    # No description.
     attr_accessor :linked_feat_id
-
-    # No description.
     attr_accessor :linked_feat_type
 
     def self.from_json_data(data)
@@ -6731,15 +4944,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfoDisclosedRelations
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
 
     def self.from_json_data(data)
@@ -6759,33 +4966,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfo
-    # No description.
     attr_accessor :candidate_keys
-
-    # No description.
     attr_accessor :disclosed_relations
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :feature_scores
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :why_errule_code
-
-    # No description.
     attr_accessor :why_key
 
     def self.from_json_data(data)
@@ -6817,300 +5006,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfoCandidateKeys
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -7320,12 +5313,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfoForAttribute
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
 
     def self.from_json_data(data)
@@ -7343,7 +5332,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfosForAttribute
     attr_accessor :value
 
@@ -7358,30 +5346,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchScoreForAttribute
-    # No description.
     attr_accessor :candidate_feat
-
-    # No description.
     attr_accessor :full_score
-
-    # No description.
     attr_accessor :generation_match
-
-    # No description.
     attr_accessor :gnr_fn
-
-    # No description.
     attr_accessor :gnr_gn
-
-    # No description.
     attr_accessor :gnr_on
-
-    # No description.
     attr_accessor :gnr_sn
-
-    # No description.
     attr_accessor :inbound_feat
 
     def self.from_json_data(data)
@@ -7411,300 +5383,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchScores
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -7914,7 +5690,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchScoresForAttribute
     attr_accessor :value
 
@@ -7929,12 +5704,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MemberRecord
-    # No description.
     attr_accessor :internal_id
-
-    # No description.
     attr_accessor :records
 
     def self.from_json_data(data)
@@ -7952,7 +5723,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MemberRecords
     attr_accessor :value
 
@@ -7967,30 +5737,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Name
-    # No description.
     attr_accessor :name_first
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_last
-
-    # No description.
     attr_accessor :name_middle
-
-    # No description.
     attr_accessor :name_org
-
-    # No description.
     attr_accessor :name_prefix
-
-    # No description.
     attr_accessor :name_suffix
-
-    # No description.
     attr_accessor :name_type
 
     def self.from_json_data(data)
@@ -8020,7 +5774,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Names
     attr_accessor :value
 
@@ -8035,15 +5788,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Network
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :entity_paths
-
-    # No description.
     attr_accessor :max_entity_limit_reached
 
     def self.from_json_data(data)
@@ -8063,12 +5810,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Notice
-    # No description.
     attr_accessor :code
-
-    # No description.
     attr_accessor :description
 
     def self.from_json_data(data)
@@ -8086,7 +5829,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Notices
     attr_accessor :value
 
@@ -8101,12 +5843,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Passport
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
 
     def self.from_json_data(data)
@@ -8124,7 +5862,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Passports
     attr_accessor :value
 
@@ -8139,12 +5876,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Path
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :entity_paths
 
     def self.from_json_data(data)
@@ -8162,18 +5895,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Phone
-    # No description.
     attr_accessor :phone_from_date
-
-    # No description.
     attr_accessor :phone_number
-
-    # No description.
     attr_accessor :phone_thru_date
-
-    # No description.
     attr_accessor :phone_type
 
     def self.from_json_data(data)
@@ -8195,7 +5920,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Phones
     attr_accessor :value
 
@@ -8210,12 +5934,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ProcessUmfProc
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :result
 
     def self.from_json_data(data)
@@ -8233,18 +5953,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Process
-    # No description.
     attr_accessor :affected_entities
-
-    # No description.
     attr_accessor :interesting_entities
-
-    # No description.
     attr_accessor :process_result
-
-    # No description.
     attr_accessor :umf_proc
 
     def self.from_json_data(data)
@@ -8267,37 +5979,16 @@ module SenzingTypeDef
   end
 
   class ProcessResultResolvedEntities
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_name
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :features
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :match_scores
-
-    # No description.
     attr_accessor :records
-
-    # No description.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -8333,9 +6024,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ProcessResult
-    # No description.
     attr_accessor :resolved_entities
 
     def self.from_json_data(data)
@@ -8351,30 +6040,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ProductLicenseResponse
-    # No description.
     attr_accessor :billing
-
-    # No description.
     attr_accessor :contract
-
-    # No description.
     attr_accessor :customer
-
-    # No description.
     attr_accessor :expire_date
-
-    # No description.
     attr_accessor :issue_date
-
-    # No description.
     attr_accessor :license_level
-
-    # No description.
     attr_accessor :license_type
-
-    # No description.
     attr_accessor :record_limit
 
     def self.from_json_data(data)
@@ -8404,27 +6077,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ProductVersionResponse
-    # No description.
     attr_accessor :build_date
-
-    # No description.
     attr_accessor :build_number
-
-    # No description.
     attr_accessor :build_version
-
-    # No description.
     attr_accessor :compatibility_version
-
-    # No description.
     attr_accessor :product_name
-
-    # No description.
     attr_accessor :schema_version
-
-    # No description.
     attr_accessor :version
 
     def self.from_json_data(data)
@@ -8453,10 +6112,7 @@ module SenzingTypeDef
   end
 
   class RecordFeatures
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -8474,69 +6130,27 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Record
-    # No description.
     attr_accessor :address_data
-
-    # No description.
     attr_accessor :attribute_data
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :entity_data
-
-    # No description.
     attr_accessor :entity_desc
-
-    # No description.
     attr_accessor :entity_key
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :features
-
-    # No description.
     attr_accessor :identifier_data
-
-    # No description.
     attr_accessor :internal_id
-
-    # No description.
     attr_accessor :json_data
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :name_data
-
-    # No description.
     attr_accessor :other_data
-
-    # No description.
     attr_accessor :phone_data
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :relationship_data
 
     def self.from_json_data(data)
@@ -8592,7 +6206,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class RecordSummary
     attr_accessor :value
 
@@ -8607,18 +6220,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class RecordSummaryElement
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :first_seen_dt
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :record_count
 
     def self.from_json_data(data)
@@ -8640,7 +6245,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Records
     attr_accessor :value
 
@@ -8655,7 +6259,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class RelatedEntities
     attr_accessor :value
 
@@ -8670,39 +6273,17 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class RelatedEntity
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_name
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :is_ambiguous
-
-    # No description.
     attr_accessor :is_disclosed
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :records
-
-    # No description.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -8738,27 +6319,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Relationship
-    # No description.
     attr_accessor :relationship_key
-
-    # No description.
     attr_accessor :relationship_type
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
 
     def self.from_json_data(data)
@@ -8786,7 +6353,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Relationships
     attr_accessor :value
 
@@ -8801,24 +6367,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ResolutionStep
-    # No description.
     attr_accessor :inbound_virtual_entity_id
-
-    # No description.
     attr_accessor :match_info
-
-    # No description.
     attr_accessor :result_virtual_entity_id
-
-    # No description.
     attr_accessor :step
-
-    # No description.
     attr_accessor :virtual_entity
-
-    # No description.
     attr_accessor :virtual_entity0
 
     def self.from_json_data(data)
@@ -8844,7 +6398,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ResolutionSteps
     attr_accessor :value
 
@@ -8859,42 +6412,18 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ResolvedEntity
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_name
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :features
-
-    # No description.
     attr_accessor :is_ambiguous
-
-    # No description.
     attr_accessor :is_disclosed
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :records
-
-    # No description.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -8932,36 +6461,16 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class SysOom
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :lens_id
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :lib_felem_id
-
-    # No description.
     attr_accessor :next_thresh
-
-    # No description.
     attr_accessor :oom_level
-
-    # No description.
     attr_accessor :oom_type
-
-    # No description.
     attr_accessor :thresh1_cnt
-
-    # No description.
     attr_accessor :thresh1_oom
 
     def self.from_json_data(data)
@@ -8995,15 +6504,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class SchemaVersion
-    # No description.
     attr_accessor :engine_schema_version
-
-    # No description.
     attr_accessor :maximum_required_schema_version
-
-    # No description.
     attr_accessor :minimum_required_schema_version
 
     def self.from_json_data(data)
@@ -9023,9 +6526,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class SearchResolvedEntitiesEntity
-    # No description.
     attr_accessor :resolved_entity
 
     def self.from_json_data(data)
@@ -9042,10 +6543,7 @@ module SenzingTypeDef
   end
 
   class SearchResolvedEntities
-    # No description.
     attr_accessor :entity
-
-    # No description.
     attr_accessor :match_info
 
     def self.from_json_data(data)
@@ -9064,16 +6562,9 @@ module SenzingTypeDef
   end
 
   class SearchSearchStatisticsCandidateKeysFeatureTypes
-    # No description.
     attr_accessor :found
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :generic
-
-    # No description.
     attr_accessor :not_found
 
     def self.from_json_data(data)
@@ -9095,15 +6586,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class SearchSearchStatisticsCandidateKeysSummary
-    # No description.
     attr_accessor :found
-
-    # No description.
     attr_accessor :generic
-
-    # No description.
     attr_accessor :not_found
 
     def self.from_json_data(data)
@@ -9123,12 +6608,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class SearchSearchStatisticsCandidateKeys
-    # No description.
     attr_accessor :feature_types
-
-    # No description.
     attr_accessor :summary
 
     def self.from_json_data(data)
@@ -9147,7 +6628,6 @@ module SenzingTypeDef
   end
 
   class SearchSearchStatistics
-    # No description.
     attr_accessor :candidate_keys
 
     def self.from_json_data(data)
@@ -9163,12 +6643,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Search
-    # No description.
     attr_accessor :resolved_entities
-
-    # No description.
     attr_accessor :search_statistics
 
     def self.from_json_data(data)
@@ -9186,9 +6662,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class VirtualEntity
-    # No description.
     attr_accessor :resolved_entity
 
     def self.from_json_data(data)
@@ -9204,12 +6678,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class VirtualEntitySynopsis
-    # No description.
     attr_accessor :member_records
-
-    # No description.
     attr_accessor :virtual_entity_id
 
     def self.from_json_data(data)
@@ -9227,12 +6697,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyEntities
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -9250,12 +6716,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyEntity
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -9273,12 +6735,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyRecords
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -9296,27 +6754,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyResult
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_id0
-
-    # No description.
     attr_accessor :focus_records
-
-    # No description.
     attr_accessor :focus_records0
-
-    # No description.
     attr_accessor :internal_id
-
-    # No description.
     attr_accessor :internal_id0
-
-    # No description.
     attr_accessor :match_info
 
     def self.from_json_data(data)
@@ -9344,7 +6788,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyResults
     attr_accessor :value
 
@@ -9359,18 +6802,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WithInfo
-    # No description.
     attr_accessor :affected_entities
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :interesting_entities
-
-    # No description.
     attr_accessor :record_id
 
     def self.from_json_data(data)

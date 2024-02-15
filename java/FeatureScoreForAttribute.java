@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class FeatureScoreForAttribute {
     @JsonProperty("CANDIDATE_FEAT")
@@ -57,7 +54,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for candidateFeat.<p>
-     * No description.
      */
     public String getCandidateFeat() {
         return candidateFeat;
@@ -65,7 +61,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for candidateFeat.<p>
-     * No description.
      */
     public void setCandidateFeat(String candidateFeat) {
         this.candidateFeat = candidateFeat;
@@ -73,7 +68,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for candidateFeatId.<p>
-     * No description.
      */
     public Integer getCandidateFeatId() {
         return candidateFeatId;
@@ -81,7 +75,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for candidateFeatId.<p>
-     * No description.
      */
     public void setCandidateFeatId(Integer candidateFeatId) {
         this.candidateFeatId = candidateFeatId;
@@ -89,7 +82,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for candidateFeatUsageType.<p>
-     * No description.
      */
     public String getCandidateFeatUsageType() {
         return candidateFeatUsageType;
@@ -97,7 +89,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for candidateFeatUsageType.<p>
-     * No description.
      */
     public void setCandidateFeatUsageType(String candidateFeatUsageType) {
         this.candidateFeatUsageType = candidateFeatUsageType;
@@ -105,7 +96,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for fullScore.<p>
-     * No description.
      */
     public Integer getFullScore() {
         return fullScore;
@@ -113,7 +103,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for fullScore.<p>
-     * No description.
      */
     public void setFullScore(Integer fullScore) {
         this.fullScore = fullScore;
@@ -121,7 +110,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for generationMatch.<p>
-     * No description.
      */
     public Integer getGenerationMatch() {
         return generationMatch;
@@ -129,7 +117,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for generationMatch.<p>
-     * No description.
      */
     public void setGenerationMatch(Integer generationMatch) {
         this.generationMatch = generationMatch;
@@ -137,7 +124,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for gnrFn.<p>
-     * No description.
      */
     public Integer getGnrFn() {
         return gnrFn;
@@ -145,7 +131,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for gnrFn.<p>
-     * No description.
      */
     public void setGnrFn(Integer gnrFn) {
         this.gnrFn = gnrFn;
@@ -153,7 +138,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for gnrGn.<p>
-     * No description.
      */
     public Integer getGnrGn() {
         return gnrGn;
@@ -161,7 +145,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for gnrGn.<p>
-     * No description.
      */
     public void setGnrGn(Integer gnrGn) {
         this.gnrGn = gnrGn;
@@ -169,7 +152,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for gnrOn.<p>
-     * No description.
      */
     public Integer getGnrOn() {
         return gnrOn;
@@ -177,7 +159,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for gnrOn.<p>
-     * No description.
      */
     public void setGnrOn(Integer gnrOn) {
         this.gnrOn = gnrOn;
@@ -185,7 +166,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for gnrSn.<p>
-     * No description.
      */
     public Integer getGnrSn() {
         return gnrSn;
@@ -193,7 +173,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for gnrSn.<p>
-     * No description.
      */
     public void setGnrSn(Integer gnrSn) {
         this.gnrSn = gnrSn;
@@ -201,7 +180,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for inboundFeat.<p>
-     * No description.
      */
     public String getInboundFeat() {
         return inboundFeat;
@@ -209,7 +187,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for inboundFeat.<p>
-     * No description.
      */
     public void setInboundFeat(String inboundFeat) {
         this.inboundFeat = inboundFeat;
@@ -217,7 +194,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for inboundFeatId.<p>
-     * No description.
      */
     public Integer getInboundFeatId() {
         return inboundFeatId;
@@ -225,7 +201,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for inboundFeatId.<p>
-     * No description.
      */
     public void setInboundFeatId(Integer inboundFeatId) {
         this.inboundFeatId = inboundFeatId;
@@ -233,7 +208,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for inboundFeatUsageType.<p>
-     * No description.
      */
     public String getInboundFeatUsageType() {
         return inboundFeatUsageType;
@@ -241,7 +215,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for inboundFeatUsageType.<p>
-     * No description.
      */
     public void setInboundFeatUsageType(String inboundFeatUsageType) {
         this.inboundFeatUsageType = inboundFeatUsageType;
@@ -249,7 +222,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for scoreBehavior.<p>
-     * No description.
      */
     public String getScoreBehavior() {
         return scoreBehavior;
@@ -257,7 +229,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for scoreBehavior.<p>
-     * No description.
      */
     public void setScoreBehavior(String scoreBehavior) {
         this.scoreBehavior = scoreBehavior;
@@ -265,7 +236,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Getter for scoreBucket.<p>
-     * No description.
      */
     public String getScoreBucket() {
         return scoreBucket;
@@ -273,7 +243,6 @@ public class FeatureScoreForAttribute {
 
     /**
      * Setter for scoreBucket.<p>
-     * No description.
      */
     public void setScoreBucket(String scoreBucket) {
         this.scoreBucket = scoreBucket;

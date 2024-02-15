@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseWorkloadThreadState {
     @JsonProperty("active")
@@ -42,7 +39,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for active.<p>
-     * No description.
      */
     public Integer getActive() {
         return active;
@@ -50,7 +46,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for active.<p>
-     * No description.
      */
     public void setActive(Integer active) {
         this.active = active;
@@ -58,7 +53,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for dataLatchContention.<p>
-     * No description.
      */
     public Integer getDataLatchContention() {
         return dataLatchContention;
@@ -66,7 +60,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for dataLatchContention.<p>
-     * No description.
      */
     public void setDataLatchContention(Integer dataLatchContention) {
         this.dataLatchContention = dataLatchContention;
@@ -74,7 +67,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for idle.<p>
-     * No description.
      */
     public Integer getIdle() {
         return idle;
@@ -82,7 +74,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for idle.<p>
-     * No description.
      */
     public void setIdle(Integer idle) {
         this.idle = idle;
@@ -90,7 +81,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for loader.<p>
-     * No description.
      */
     public Integer getLoader() {
         return loader;
@@ -98,7 +88,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for loader.<p>
-     * No description.
      */
     public void setLoader(Integer loader) {
         this.loader = loader;
@@ -106,7 +95,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for obsEntContention.<p>
-     * No description.
      */
     public Integer getObsEntContention() {
         return obsEntContention;
@@ -114,7 +102,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for obsEntContention.<p>
-     * No description.
      */
     public void setObsEntContention(Integer obsEntContention) {
         this.obsEntContention = obsEntContention;
@@ -122,7 +109,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for resEntContention.<p>
-     * No description.
      */
     public Integer getResEntContention() {
         return resEntContention;
@@ -130,7 +116,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for resEntContention.<p>
-     * No description.
      */
     public void setResEntContention(Integer resEntContention) {
         this.resEntContention = resEntContention;
@@ -138,7 +123,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for resolver.<p>
-     * No description.
      */
     public Integer getResolver() {
         return resolver;
@@ -146,7 +130,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for resolver.<p>
-     * No description.
      */
     public void setResolver(Integer resolver) {
         this.resolver = resolver;
@@ -154,7 +137,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for scoring.<p>
-     * No description.
      */
     public Integer getScoring() {
         return scoring;
@@ -162,7 +144,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for scoring.<p>
-     * No description.
      */
     public void setScoring(Integer scoring) {
         this.scoring = scoring;
@@ -170,7 +151,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Getter for sqlExecuting.<p>
-     * No description.
      */
     public Integer getSqlExecuting() {
         return sqlExecuting;
@@ -178,7 +158,6 @@ public class EngineStatsResponseWorkloadThreadState {
 
     /**
      * Setter for sqlExecuting.<p>
-     * No description.
      */
     public void setSqlExecuting(Integer sqlExecuting) {
         this.sqlExecuting = sqlExecuting;

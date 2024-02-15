@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseWorkloadUnresolveTriggers {
     @JsonProperty("ambiguousMultiResolve")
@@ -33,7 +30,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Getter for ambiguousMultiResolve.<p>
-     * No description.
      */
     public Integer getAmbiguousMultiResolve() {
         return ambiguousMultiResolve;
@@ -41,7 +37,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Setter for ambiguousMultiResolve.<p>
-     * No description.
      */
     public void setAmbiguousMultiResolve(Integer ambiguousMultiResolve) {
         this.ambiguousMultiResolve = ambiguousMultiResolve;
@@ -49,7 +44,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Getter for ambiguousNoResolve.<p>
-     * No description.
      */
     public Integer getAmbiguousNoResolve() {
         return ambiguousNoResolve;
@@ -57,7 +51,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Setter for ambiguousNoResolve.<p>
-     * No description.
      */
     public void setAmbiguousNoResolve(Integer ambiguousNoResolve) {
         this.ambiguousNoResolve = ambiguousNoResolve;
@@ -65,7 +58,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Getter for extensiveResolve.<p>
-     * No description.
      */
     public Integer getExtensiveResolve() {
         return extensiveResolve;
@@ -73,7 +65,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Setter for extensiveResolve.<p>
-     * No description.
      */
     public void setExtensiveResolve(Integer extensiveResolve) {
         this.extensiveResolve = extensiveResolve;
@@ -81,7 +72,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Getter for normalResolve.<p>
-     * No description.
      */
     public Integer getNormalResolve() {
         return normalResolve;
@@ -89,7 +79,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Setter for normalResolve.<p>
-     * No description.
      */
     public void setNormalResolve(Integer normalResolve) {
         this.normalResolve = normalResolve;
@@ -97,7 +86,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Getter for relLink.<p>
-     * No description.
      */
     public Integer getRelLink() {
         return relLink;
@@ -105,7 +93,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Setter for relLink.<p>
-     * No description.
      */
     public void setRelLink(Integer relLink) {
         this.relLink = relLink;
@@ -113,7 +100,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Getter for update.<p>
-     * No description.
      */
     public Integer getUpdate() {
         return update;
@@ -121,7 +107,6 @@ public class EngineStatsResponseWorkloadUnresolveTriggers {
 
     /**
      * Setter for update.<p>
-     * No description.
      */
     public void setUpdate(Integer update) {
         this.update = update;

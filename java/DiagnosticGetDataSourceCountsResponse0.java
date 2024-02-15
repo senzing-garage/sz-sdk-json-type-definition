@@ -30,7 +30,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -38,7 +37,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -46,7 +44,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Getter for dsrcId.<p>
-     * No description.
      */
     public Integer getDsrcId() {
         return dsrcId;
@@ -54,7 +51,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Setter for dsrcId.<p>
-     * No description.
      */
     public void setDsrcId(Integer dsrcId) {
         this.dsrcId = dsrcId;
@@ -62,7 +58,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Getter for dsrcRecordCount.<p>
-     * No description.
      */
     public Integer getDsrcRecordCount() {
         return dsrcRecordCount;
@@ -70,7 +65,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Setter for dsrcRecordCount.<p>
-     * No description.
      */
     public void setDsrcRecordCount(Integer dsrcRecordCount) {
         this.dsrcRecordCount = dsrcRecordCount;
@@ -78,7 +72,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -86,7 +79,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -94,7 +86,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Getter for etypeId.<p>
-     * No description.
      */
     public Integer getEtypeId() {
         return etypeId;
@@ -102,7 +93,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Setter for etypeId.<p>
-     * No description.
      */
     public void setEtypeId(Integer etypeId) {
         this.etypeId = etypeId;
@@ -110,7 +100,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Getter for obsEntCount.<p>
-     * No description.
      */
     public Integer getObsEntCount() {
         return obsEntCount;
@@ -118,7 +107,6 @@ public class DiagnosticGetDataSourceCountsResponse0 {
 
     /**
      * Setter for obsEntCount.<p>
-     * No description.
      */
     public void setObsEntCount(Integer obsEntCount) {
         this.obsEntCount = obsEntCount;

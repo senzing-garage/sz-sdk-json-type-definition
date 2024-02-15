@@ -19,80 +19,20 @@ class Senzingapi:
 
 @dataclass
 class Address:
-    """
-    No description.
-    """
-
     addr_city: 'str'
-    """
-    No description.
-    """
-
     addr_country: 'str'
-    """
-    No description.
-    """
-
     addr_from_date: 'str'
-    """
-    No description.
-    """
-
     addr_full: 'str'
-    """
-    No description.
-    """
-
     addr_line1: 'str'
-    """
-    No description.
-    """
-
     addr_line2: 'str'
-    """
-    No description.
-    """
-
     addr_line3: 'str'
-    """
-    No description.
-    """
-
     addr_line4: 'str'
-    """
-    No description.
-    """
-
     addr_line5: 'str'
-    """
-    No description.
-    """
-
     addr_line6: 'str'
-    """
-    No description.
-    """
-
     addr_postal_code: 'str'
-    """
-    No description.
-    """
-
     addr_state: 'str'
-    """
-    No description.
-    """
-
     addr_thru_date: 'str'
-    """
-    No description.
-    """
-
     addr_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Address':
@@ -133,10 +73,6 @@ class Address:
 
 @dataclass
 class Addresses:
-    """
-    No description.
-    """
-
     value: 'List[Address]'
 
     @classmethod
@@ -148,10 +84,6 @@ class Addresses:
 
 @dataclass
 class AffectedEntities:
-    """
-    No description.
-    """
-
     value: 'List[AffectedEntity]'
 
     @classmethod
@@ -163,15 +95,7 @@ class AffectedEntities:
 
 @dataclass
 class AffectedEntity:
-    """
-    No description.
-    """
-
     entity_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AffectedEntity':
@@ -186,195 +110,43 @@ class AffectedEntity:
 
 @dataclass
 class AttributeCounter:
-    """
-    No description.
-    """
-
     address: 'float'
-    """
-    No description.
-    """
-
     addr_key: 'float'
-    """
-    No description.
-    """
-
     call_sign: 'int'
-    """
-    No description.
-    """
-
     citizenship: 'int'
-    """
-    No description.
-    """
-
     country_of_association: 'int'
-    """
-    No description.
-    """
-
     dob: 'float'
-    """
-    No description.
-    """
-
     drlic: 'float'
-    """
-    No description.
-    """
-
     duns_number: 'int'
-    """
-    No description.
-    """
-
     email: 'float'
-    """
-    No description.
-    """
-
     email_key: 'float'
-    """
-    No description.
-    """
-
     entity_count: 'int'
-    """
-    No description.
-    """
-
     entity_size: 'int'
-    """
-    No description.
-    """
-
     gender: 'float'
-    """
-    No description.
-    """
-
     id_key: 'float'
-    """
-    No description.
-    """
-
     imo_number: 'int'
-    """
-    No description.
-    """
-
     lei_number: 'int'
-    """
-    No description.
-    """
-
     login_id: 'float'
-    """
-    No description.
-    """
-
     max_res_ent_id: 'int'
-    """
-    No description.
-    """
-
     min_res_ent_id: 'int'
-    """
-    No description.
-    """
-
     name: 'float'
-    """
-    No description.
-    """
-
     name_key: 'float'
-    """
-    No description.
-    """
-
     nationality: 'int'
-    """
-    No description.
-    """
-
     national_id: 'int'
-    """
-    No description.
-    """
-
     ofac_id: 'int'
-    """
-    No description.
-    """
-
     other_id: 'float'
-    """
-    No description.
-    """
-
     passport: 'float'
-    """
-    No description.
-    """
-
     phone: 'float'
-    """
-    No description.
-    """
-
     phone_key: 'float'
-    """
-    No description.
-    """
-
     record_type: 'float'
-    """
-    No description.
-    """
-
     registration_country: 'int'
-    """
-    No description.
-    """
-
     registration_date: 'int'
-    """
-    No description.
-    """
-
     rel_anchor: 'int'
-    """
-    No description.
-    """
-
     rel_pointer: 'int'
-    """
-    No description.
-    """
-
     search_key: 'float'
-    """
-    No description.
-    """
-
     ssn: 'float'
-    """
-    No description.
-    """
-
     tax_id: 'float'
-    """
-    No description.
-    """
-
     website: 'float'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AttributeCounter':
@@ -461,10 +233,6 @@ class AttributeCounter:
 
 @dataclass
 class AttributeCounters:
-    """
-    No description.
-    """
-
     value: 'List[AttributeCounter]'
 
     @classmethod
@@ -476,55 +244,15 @@ class AttributeCounters:
 
 @dataclass
 class CfgAttr:
-    """
-    No description.
-    """
-
     advanced: 'str'
-    """
-    No description.
-    """
-
     attr_class: 'str'
-    """
-    No description.
-    """
-
     attr_code: 'str'
-    """
-    No description.
-    """
-
     attr_id: 'int'
-    """
-    No description.
-    """
-
     default_value: 'str'
-    """
-    No description.
-    """
-
     felem_code: 'str'
-    """
-    No description.
-    """
-
     felem_req: 'str'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     internal: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgAttr':
@@ -555,30 +283,10 @@ class CfgAttr:
 
 @dataclass
 class CfgCfbom:
-    """
-    No description.
-    """
-
     cfcall_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgCfbom':
@@ -599,30 +307,10 @@ class CfgCfbom:
 
 @dataclass
 class CfgCfcall:
-    """
-    No description.
-    """
-
     cfcall_id: 'int'
-    """
-    No description.
-    """
-
     cfunc_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgCfcall':
@@ -643,60 +331,16 @@ class CfgCfcall:
 
 @dataclass
 class CfgCfrtn:
-    """
-    No description.
-    """
-
     cfrtn_id: 'int'
-    """
-    No description.
-    """
-
     cfunc_id: 'int'
-    """
-    No description.
-    """
-
     cfunc_rtnval: 'str'
-    """
-    No description.
-    """
-
     close_score: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     likely_score: 'int'
-    """
-    No description.
-    """
-
     plausible_score: 'int'
-    """
-    No description.
-    """
-
     same_score: 'int'
-    """
-    No description.
-    """
-
     un_likely_score: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgCfrtn':
@@ -729,55 +373,15 @@ class CfgCfrtn:
 
 @dataclass
 class CfgCfunc:
-    """
-    No description.
-    """
-
     anon_support: 'str'
-    """
-    No description.
-    """
-
     cfunc_code: 'str'
-    """
-    No description.
-    """
-
     cfunc_desc: 'str'
-    """
-    No description.
-    """
-
     cfunc_id: 'int'
-    """
-    No description.
-    """
-
     connect_str: 'str'
-    """
-    No description.
-    """
-
     func_lib: 'str'
-    """
-    No description.
-    """
-
     func_ver: 'str'
-    """
-    No description.
-    """
-
     java_class_name: 'str'
-    """
-    No description.
-    """
-
     language: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgCfunc':
@@ -808,30 +412,10 @@ class CfgCfunc:
 
 @dataclass
 class CfgDfbom:
-    """
-    No description.
-    """
-
     dfcall_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgDfbom':
@@ -852,30 +436,10 @@ class CfgDfbom:
 
 @dataclass
 class CfgDfcall:
-    """
-    No description.
-    """
-
     dfcall_id: 'int'
-    """
-    No description.
-    """
-
     dfunc_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgDfcall':
@@ -896,55 +460,15 @@ class CfgDfcall:
 
 @dataclass
 class CfgDfunc:
-    """
-    No description.
-    """
-
     anon_support: 'str'
-    """
-    No description.
-    """
-
     connect_str: 'str'
-    """
-    No description.
-    """
-
     dfunc_code: 'str'
-    """
-    No description.
-    """
-
     dfunc_desc: 'str'
-    """
-    No description.
-    """
-
     dfunc_id: 'int'
-    """
-    No description.
-    """
-
     func_lib: 'str'
-    """
-    No description.
-    """
-
     func_ver: 'str'
-    """
-    No description.
-    """
-
     java_class_name: 'str'
-    """
-    No description.
-    """
-
     language: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgDfunc':
@@ -975,40 +499,12 @@ class CfgDfunc:
 
 @dataclass
 class CfgDsrc:
-    """
-    No description.
-    """
-
     conversational: 'str'
-    """
-    No description.
-    """
-
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     dsrc_desc: 'str'
-    """
-    No description.
-    """
-
     dsrc_id: 'int'
-    """
-    No description.
-    """
-
     dsrc_rely: 'int'
-    """
-    No description.
-    """
-
     retention_level: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgDsrc':
@@ -1033,25 +529,9 @@ class CfgDsrc:
 
 @dataclass
 class CfgDsrcInterest:
-    """
-    No description.
-    """
-
     dsrc_id: 'int'
-    """
-    No description.
-    """
-
     interest_flag: 'str'
-    """
-    No description.
-    """
-
     max_degree: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgDsrcInterest':
@@ -1070,30 +550,10 @@ class CfgDsrcInterest:
 
 @dataclass
 class CfgEbom:
-    """
-    No description.
-    """
-
     etype_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     utype_code: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgEbom':
@@ -1114,30 +574,10 @@ class CfgEbom:
 
 @dataclass
 class CfgEclass:
-    """
-    No description.
-    """
-
     eclass_code: 'str'
-    """
-    No description.
-    """
-
     eclass_desc: 'str'
-    """
-    No description.
-    """
-
     eclass_id: 'int'
-    """
-    No description.
-    """
-
     resolve: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgEclass':
@@ -1158,35 +598,11 @@ class CfgEclass:
 
 @dataclass
 class CfgEfbom:
-    """
-    No description.
-    """
-
     efcall_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     felem_req: 'str'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgEfbom':
@@ -1209,45 +625,13 @@ class CfgEfbom:
 
 @dataclass
 class CfgEfcall:
-    """
-    No description.
-    """
-
     efcall_id: 'int'
-    """
-    No description.
-    """
-
     efeat_ftype_id: 'int'
-    """
-    No description.
-    """
-
     efunc_id: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     is_virtual: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgEfcall':
@@ -1274,50 +658,14 @@ class CfgEfcall:
 
 @dataclass
 class CfgEfunc:
-    """
-    No description.
-    """
-
     connect_str: 'str'
-    """
-    No description.
-    """
-
     efunc_code: 'str'
-    """
-    No description.
-    """
-
     efunc_desc: 'str'
-    """
-    No description.
-    """
-
     efunc_id: 'int'
-    """
-    No description.
-    """
-
     func_lib: 'str'
-    """
-    No description.
-    """
-
     func_ver: 'str'
-    """
-    No description.
-    """
-
     java_class_name: 'str'
-    """
-    No description.
-    """
-
     language: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgEfunc':
@@ -1346,35 +694,11 @@ class CfgEfunc:
 
 @dataclass
 class CfgErfrag:
-    """
-    No description.
-    """
-
     erfrag_code: 'str'
-    """
-    No description.
-    """
-
     erfrag_depends: 'str'
-    """
-    No description.
-    """
-
     erfrag_desc: 'str'
-    """
-    No description.
-    """
-
     erfrag_id: 'int'
-    """
-    No description.
-    """
-
     erfrag_source: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgErfrag':
@@ -1397,60 +721,16 @@ class CfgErfrag:
 
 @dataclass
 class CfgErrule:
-    """
-    No description.
-    """
-
     disq_erfrag_code: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     errule_desc: 'str'
-    """
-    No description.
-    """
-
     errule_id: 'int'
-    """
-    No description.
-    """
-
     errule_tier: 'int'
-    """
-    No description.
-    """
-
     qual_erfrag_code: 'str'
-    """
-    No description.
-    """
-
     ref_score: 'int'
-    """
-    No description.
-    """
-
     relate: 'str'
-    """
-    No description.
-    """
-
     resolve: 'str'
-    """
-    No description.
-    """
-
     rtype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgErrule':
@@ -1483,30 +763,10 @@ class CfgErrule:
 
 @dataclass
 class CfgEtype:
-    """
-    No description.
-    """
-
     eclass_id: 'int'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     etype_desc: 'str'
-    """
-    No description.
-    """
-
     etype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgEtype':
@@ -1527,40 +787,12 @@ class CfgEtype:
 
 @dataclass
 class CfgFbom:
-    """
-    No description.
-    """
-
     derived: 'str'
-    """
-    No description.
-    """
-
     display_delim: 'str'
-    """
-    No description.
-    """
-
     display_level: 'int'
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgFbom':
@@ -1585,40 +817,12 @@ class CfgFbom:
 
 @dataclass
 class CfgFbovr:
-    """
-    No description.
-    """
-
     eclass_id: 'int'
-    """
-    No description.
-    """
-
     ftype_excl: 'str'
-    """
-    No description.
-    """
-
     ftype_freq: 'str'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     ftype_stab: 'str'
-    """
-    No description.
-    """
-
     utype_code: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgFbovr':
@@ -1643,25 +847,9 @@ class CfgFbovr:
 
 @dataclass
 class CfgFclass:
-    """
-    No description.
-    """
-
     fclass_code: 'str'
-    """
-    No description.
-    """
-
     fclass_desc: 'str'
-    """
-    No description.
-    """
-
     fclass_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgFclass':
@@ -1680,35 +868,11 @@ class CfgFclass:
 
 @dataclass
 class CfgFelem:
-    """
-    No description.
-    """
-
     data_type: 'str'
-    """
-    No description.
-    """
-
     felem_code: 'str'
-    """
-    No description.
-    """
-
     felem_desc: 'str'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     tokenize: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgFelem':
@@ -1731,85 +895,21 @@ class CfgFelem:
 
 @dataclass
 class CfgFtype:
-    """
-    No description.
-    """
-
     anonymize: 'str'
-    """
-    No description.
-    """
-
     derivation: 'str'
-    """
-    No description.
-    """
-
     derived: 'str'
-    """
-    No description.
-    """
-
     fclass_id: 'int'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     ftype_desc: 'str'
-    """
-    No description.
-    """
-
     ftype_excl: 'str'
-    """
-    No description.
-    """
-
     ftype_freq: 'str'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     ftype_stab: 'str'
-    """
-    No description.
-    """
-
     persist_history: 'str'
-    """
-    No description.
-    """
-
     rtype_id: 'int'
-    """
-    No description.
-    """
-
     show_in_match_key: 'str'
-    """
-    No description.
-    """
-
     used_for_cand: 'str'
-    """
-    No description.
-    """
-
     version: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgFtype':
@@ -1852,40 +952,12 @@ class CfgFtype:
 
 @dataclass
 class CfgGenericThreshold:
-    """
-    No description.
-    """
-
     behavior: 'str'
-    """
-    No description.
-    """
-
     candidate_cap: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     gplan_id: 'int'
-    """
-    No description.
-    """
-
     scoring_cap: 'int'
-    """
-    No description.
-    """
-
     send_to_redo: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgGenericThreshold':
@@ -1910,25 +982,9 @@ class CfgGenericThreshold:
 
 @dataclass
 class CfgGplan:
-    """
-    No description.
-    """
-
     gplan_code: 'str'
-    """
-    No description.
-    """
-
     gplan_desc: 'str'
-    """
-    No description.
-    """
-
     gplan_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgGplan':
@@ -1947,25 +1003,9 @@ class CfgGplan:
 
 @dataclass
 class CfgLens:
-    """
-    No description.
-    """
-
     lens_code: 'str'
-    """
-    No description.
-    """
-
     lens_desc: 'str'
-    """
-    No description.
-    """
-
     lens_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgLens':
@@ -1984,10 +1024,6 @@ class CfgLens:
 
 @dataclass
 class CfgLensrl:
-    """
-    No description.
-    """
-
     value: 'List[Any]'
 
     @classmethod
@@ -1999,30 +1035,10 @@ class CfgLensrl:
 
 @dataclass
 class CfgRclass:
-    """
-    No description.
-    """
-
     is_disclosed: 'str'
-    """
-    No description.
-    """
-
     rclass_code: 'str'
-    """
-    No description.
-    """
-
     rclass_desc: 'str'
-    """
-    No description.
-    """
-
     rclass_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgRclass':
@@ -2043,40 +1059,12 @@ class CfgRclass:
 
 @dataclass
 class CfgRtype:
-    """
-    No description.
-    """
-
     break_res: 'str'
-    """
-    No description.
-    """
-
     rclass_id: 'int'
-    """
-    No description.
-    """
-
     rel_strength: 'int'
-    """
-    No description.
-    """
-
     rtype_code: 'str'
-    """
-    No description.
-    """
-
     rtype_desc: 'str'
-    """
-    No description.
-    """
-
     rtype_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgRtype':
@@ -2101,35 +1089,11 @@ class CfgRtype:
 
 @dataclass
 class CfgSfcall:
-    """
-    No description.
-    """
-
     exec_order: 'int'
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     sfcall_id: 'int'
-    """
-    No description.
-    """
-
     sfunc_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgSfcall':
@@ -2152,50 +1116,14 @@ class CfgSfcall:
 
 @dataclass
 class CfgSfunc:
-    """
-    No description.
-    """
-
     connect_str: 'str'
-    """
-    No description.
-    """
-
     func_lib: 'str'
-    """
-    No description.
-    """
-
     func_ver: 'str'
-    """
-    No description.
-    """
-
     java_class_name: 'str'
-    """
-    No description.
-    """
-
     language: 'str'
-    """
-    No description.
-    """
-
     sfunc_code: 'str'
-    """
-    No description.
-    """
-
     sfunc_desc: 'str'
-    """
-    No description.
-    """
-
     sfunc_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgSfunc':
@@ -2224,40 +1152,12 @@ class CfgSfunc:
 
 @dataclass
 class ConfigBaseVersion:
-    """
-    No description.
-    """
-
     build_date: 'str'
-    """
-    No description.
-    """
-
     build_number: 'str'
-    """
-    No description.
-    """
-
     build_version: 'str'
-    """
-    No description.
-    """
-
     compatibility_version: 'CompatibilityVersion'
-    """
-    No description.
-    """
-
     product_name: 'str'
-    """
-    No description.
-    """
-
     version: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ConfigBaseVersion':
@@ -2282,15 +1182,7 @@ class ConfigBaseVersion:
 
 @dataclass
 class CompatibilityVersion:
-    """
-    No description.
-    """
-
     config_version: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CompatibilityVersion':
@@ -2305,25 +1197,9 @@ class CompatibilityVersion:
 
 @dataclass
 class Config:
-    """
-    No description.
-    """
-
     config_comments: 'str'
-    """
-    No description.
-    """
-
     config_id: 'int'
-    """
-    No description.
-    """
-
     sys_create_dt: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Config':
@@ -2342,15 +1218,7 @@ class Config:
 
 @dataclass
 class ConfigAddDataSourceResponse:
-    """
-    No description.
-    """
-
     dsrc_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ConfigAddDataSourceResponse':
@@ -2365,15 +1233,7 @@ class ConfigAddDataSourceResponse:
 
 @dataclass
 class ConfigListDataSourcesResponse:
-    """
-    No description.
-    """
-
     data_sources: 'DataSources'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ConfigListDataSourcesResponse':
@@ -2388,15 +1248,7 @@ class ConfigListDataSourcesResponse:
 
 @dataclass
 class ConfigSaveResponse:
-    """
-    No description.
-    """
-
     g2_config: 'G2config'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ConfigSaveResponse':
@@ -2411,15 +1263,7 @@ class ConfigSaveResponse:
 
 @dataclass
 class ConfigmgrGetConfigListResponse:
-    """
-    No description.
-    """
-
     configs: 'Configs'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ConfigmgrGetConfigListResponse':
@@ -2434,15 +1278,7 @@ class ConfigmgrGetConfigListResponse:
 
 @dataclass
 class ConfigmgrGetConfigResponse:
-    """
-    No description.
-    """
-
     g2_config: 'G2config'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ConfigmgrGetConfigResponse':
@@ -2457,10 +1293,6 @@ class ConfigmgrGetConfigResponse:
 
 @dataclass
 class Configs:
-    """
-    No description.
-    """
-
     value: 'List[Config]'
 
     @classmethod
@@ -2472,10 +1304,6 @@ class Configs:
 
 @dataclass
 class DataSource:
-    """
-    No description.
-    """
-
     dsrc_code: 'str'
     """
     The text representation of the datasource.
@@ -2517,20 +1345,8 @@ class DataSources:
 
 @dataclass
 class DiagnosticCheckDbperfResponse:
-    """
-    No description.
-    """
-
     insert_time: 'int'
-    """
-    No description.
-    """
-
     num_records_inserted: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticCheckDbperfResponse':
@@ -2548,60 +1364,16 @@ class DiagnosticCheckDbperfResponse:
 @dataclass
 class DiagnosticFetchNextEntityBySizeResponse0:
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     ent_src_desc: 'str'
-    """
-    No description.
-    """
-
     ent_src_key: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     er_id: 'int'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     json_data: 'JSONData'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     obs_ent_id: 'int'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
     res_ent_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticFetchNextEntityBySizeResponse0':
@@ -2636,10 +1408,6 @@ class DiagnosticFetchNextEntityBySizeResponse0:
 
 @dataclass
 class DiagnosticFetchNextEntityBySizeResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticFetchNextEntityBySizeResponse0]'
 
     @classmethod
@@ -2652,20 +1420,8 @@ class DiagnosticFetchNextEntityBySizeResponse:
 @dataclass
 class DiagnosticFindEntitiesByFeatureIdsResponse0:
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
     res_ent_id: 'int'
-    """
-    No description.
-    """
-
     usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticFindEntitiesByFeatureIdsResponse0':
@@ -2684,10 +1440,6 @@ class DiagnosticFindEntitiesByFeatureIdsResponse0:
 
 @dataclass
 class DiagnosticFindEntitiesByFeatureIdsResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticFindEntitiesByFeatureIdsResponse0]'
 
     @classmethod
@@ -2700,15 +1452,7 @@ class DiagnosticFindEntitiesByFeatureIdsResponse:
 @dataclass
 class DiagnosticGetDbinfoResponseDetail:
     name: 'str'
-    """
-    No description.
-    """
-
     type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetDbinfoResponseDetail':
@@ -2725,20 +1469,8 @@ class DiagnosticGetDbinfoResponseDetail:
 
 @dataclass
 class DiagnosticGetDbinfoResponse:
-    """
-    No description.
-    """
-
     database_details: 'List[DiagnosticGetDbinfoResponseDetail]'
-    """
-    No description.
-    """
-
     hybrid_mode: 'bool'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetDbinfoResponse':
@@ -2756,35 +1488,11 @@ class DiagnosticGetDbinfoResponse:
 @dataclass
 class DiagnosticGetDataSourceCountsResponse0:
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     dsrc_id: 'int'
-    """
-    No description.
-    """
-
     dsrc_record_count: 'int'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     etype_id: 'int'
-    """
-    No description.
-    """
-
     obs_ent_count: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetDataSourceCountsResponse0':
@@ -2809,10 +1517,6 @@ class DiagnosticGetDataSourceCountsResponse0:
 
 @dataclass
 class DiagnosticGetDataSourceCountsResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetDataSourceCountsResponse0]'
 
     @classmethod
@@ -2825,60 +1529,16 @@ class DiagnosticGetDataSourceCountsResponse:
 @dataclass
 class DiagnosticGetEntityDetailsResponse0:
     derived: 'str'
-    """
-    No description.
-    """
-
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     obs_ent_id: 'int'
-    """
-    No description.
-    """
-
     record_id: 'int'
-    """
-    No description.
-    """
-
     res_ent_id: 'int'
-    """
-    No description.
-    """
-
     usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetEntityDetailsResponse0':
@@ -2913,10 +1573,6 @@ class DiagnosticGetEntityDetailsResponse0:
 
 @dataclass
 class DiagnosticGetEntityDetailsResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetEntityDetailsResponse0]'
 
     @classmethod
@@ -2929,50 +1585,14 @@ class DiagnosticGetEntityDetailsResponse:
 @dataclass
 class DiagnosticGetEntityResumeResponse0:
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     ent_src_desc: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     json_data: 'JSONData'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
     rel_ent_id: 'int'
-    """
-    No description.
-    """
-
     res_ent_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetEntityResumeResponse0':
@@ -3003,10 +1623,6 @@ class DiagnosticGetEntityResumeResponse0:
 
 @dataclass
 class DiagnosticGetEntityResumeResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetEntityResumeResponse0]'
 
     @classmethod
@@ -3018,10 +1634,6 @@ class DiagnosticGetEntityResumeResponse:
 
 @dataclass
 class DiagnosticGetEntitySizeBreakdownResponse:
-    """
-    No description.
-    """
-
     value: 'AttributeCounters'
 
     @classmethod
@@ -3034,15 +1646,7 @@ class DiagnosticGetEntitySizeBreakdownResponse:
 @dataclass
 class DiagnosticGetFeatureResponseElements:
     felem_code: 'str'
-    """
-    No description.
-    """
-
     felem_value: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetFeatureResponseElements':
@@ -3059,25 +1663,9 @@ class DiagnosticGetFeatureResponseElements:
 
 @dataclass
 class DiagnosticGetFeatureResponse:
-    """
-    No description.
-    """
-
     elements: 'List[DiagnosticGetFeatureResponseElements]'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetFeatureResponse':
@@ -3097,35 +1685,11 @@ class DiagnosticGetFeatureResponse:
 @dataclass
 class DiagnosticGetGenericFeaturesResponse0:
     candidate_cap_reached: 'str'
-    """
-    No description.
-    """
-
     estimated_count: 'int'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
     scoring_cap_reached: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetGenericFeaturesResponse0':
@@ -3150,10 +1714,6 @@ class DiagnosticGetGenericFeaturesResponse0:
 
 @dataclass
 class DiagnosticGetGenericFeaturesResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetGenericFeaturesResponse0]'
 
     @classmethod
@@ -3166,60 +1726,16 @@ class DiagnosticGetGenericFeaturesResponse:
 @dataclass
 class DiagnosticGetMappingStatisticsResponse0:
     derived: 'str'
-    """
-    No description.
-    """
-
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     max_feat_desc: 'str'
-    """
-    No description.
-    """
-
     min_feat_desc: 'str'
-    """
-    No description.
-    """
-
     rec_count: 'int'
-    """
-    No description.
-    """
-
     rec_pct: 'float'
-    """
-    No description.
-    """
-
     uniq_count: 'int'
-    """
-    No description.
-    """
-
     uniq_pct: 'float'
-    """
-    No description.
-    """
-
     usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetMappingStatisticsResponse0':
@@ -3254,10 +1770,6 @@ class DiagnosticGetMappingStatisticsResponse0:
 
 @dataclass
 class DiagnosticGetMappingStatisticsResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetMappingStatisticsResponse0]'
 
     @classmethod
@@ -3270,30 +1782,10 @@ class DiagnosticGetMappingStatisticsResponse:
 @dataclass
 class DiagnosticGetRelationshipDetailsResponse0:
     errule_code: 'str'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     res_ent_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetRelationshipDetailsResponse0':
@@ -3316,10 +1808,6 @@ class DiagnosticGetRelationshipDetailsResponse0:
 
 @dataclass
 class DiagnosticGetRelationshipDetailsResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetRelationshipDetailsResponse0]'
 
     @classmethod
@@ -3332,10 +1820,6 @@ class DiagnosticGetRelationshipDetailsResponse:
 @dataclass
 class DiagnosticGetResolutionStatisticsResponseRawMatchKeys:
     match_key: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetResolutionStatisticsResponseRawMatchKeys':
@@ -3351,60 +1835,16 @@ class DiagnosticGetResolutionStatisticsResponseRawMatchKeys:
 @dataclass
 class DiagnosticGetResolutionStatisticsResponse0:
     errule_code: 'str'
-    """
-    No description.
-    """
-
     errule_id: 'int'
-    """
-    No description.
-    """
-
     is_ambiguous: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     max_res_ent_id: 'int'
-    """
-    No description.
-    """
-
     max_res_rel_id: 'int'
-    """
-    No description.
-    """
-
     min_res_ent_id: 'int'
-    """
-    No description.
-    """
-
     min_res_rel_id: 'int'
-    """
-    No description.
-    """
-
     raw_match_keys: 'List[DiagnosticGetResolutionStatisticsResponseRawMatchKeys]'
-    """
-    No description.
-    """
-
     record_count: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DiagnosticGetResolutionStatisticsResponse0':
@@ -3439,10 +1879,6 @@ class DiagnosticGetResolutionStatisticsResponse0:
 
 @dataclass
 class DiagnosticGetResolutionStatisticsResponse:
-    """
-    No description.
-    """
-
     value: 'List[DiagnosticGetResolutionStatisticsResponse0]'
 
     @classmethod
@@ -3454,10 +1890,6 @@ class DiagnosticGetResolutionStatisticsResponse:
 
 @dataclass
 class DiagnosticStreamEntityListBySizeResponse:
-    """
-    No description.
-    """
-
     value: 'Any'
 
     @classmethod
@@ -3469,10 +1901,6 @@ class DiagnosticStreamEntityListBySizeResponse:
 
 @dataclass
 class EngineAddRecordWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -3484,10 +1912,6 @@ class EngineAddRecordWithInfoResponse:
 
 @dataclass
 class EngineAddRecordWithInfoWithReturnedRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -3500,50 +1924,14 @@ class EngineAddRecordWithInfoWithReturnedRecordIdresponse:
 @dataclass
 class EngineCheckRecordResponseCheckRecordResponse:
     candidate_match: 'str'
-    """
-    No description.
-    """
-
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     errule_id: 'int'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     match_level_code: 'str'
-    """
-    No description.
-    """
-
     non_generic_candidate_match: 'str'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineCheckRecordResponseCheckRecordResponse':
@@ -3574,15 +1962,7 @@ class EngineCheckRecordResponseCheckRecordResponse:
 
 @dataclass
 class EngineCheckRecordResponse:
-    """
-    No description.
-    """
-
     check_record_response: 'List[EngineCheckRecordResponseCheckRecordResponse]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineCheckRecordResponse':
@@ -3597,10 +1977,6 @@ class EngineCheckRecordResponse:
 
 @dataclass
 class EngineDeleteRecordWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -3612,15 +1988,7 @@ class EngineDeleteRecordWithInfoResponse:
 
 @dataclass
 class EngineExportConfigAndConfigIdresponse:
-    """
-    No description.
-    """
-
     g2_config: 'G2config'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineExportConfigAndConfigIdresponse':
@@ -3635,15 +2003,7 @@ class EngineExportConfigAndConfigIdresponse:
 
 @dataclass
 class EngineExportConfigResponse:
-    """
-    No description.
-    """
-
     g2_config: 'G2config'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineExportConfigResponse':
@@ -3658,10 +2018,6 @@ class EngineExportConfigResponse:
 
 @dataclass
 class EngineFetchNextResponse:
-    """
-    No description.
-    """
-
     value: 'Any'
 
     @classmethod
@@ -3673,10 +2029,6 @@ class EngineFetchNextResponse:
 
 @dataclass
 class EngineFindInterestingEntitiesByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'Interesting'
 
     @classmethod
@@ -3688,10 +2040,6 @@ class EngineFindInterestingEntitiesByEntityIdresponse:
 
 @dataclass
 class EngineFindInterestingEntitiesByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'Interesting'
 
     @classmethod
@@ -3703,10 +2051,6 @@ class EngineFindInterestingEntitiesByRecordIdresponse:
 
 @dataclass
 class EngineFindNetworkByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'Network'
 
     @classmethod
@@ -3718,10 +2062,6 @@ class EngineFindNetworkByEntityIdresponse:
 
 @dataclass
 class EngineFindNetworkByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'Network'
 
     @classmethod
@@ -3733,10 +2073,6 @@ class EngineFindNetworkByEntityIdv2response:
 
 @dataclass
 class EngineFindNetworkByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'Network'
 
     @classmethod
@@ -3748,10 +2084,6 @@ class EngineFindNetworkByRecordIdresponse:
 
 @dataclass
 class EngineFindNetworkByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'Network'
 
     @classmethod
@@ -3763,10 +2095,6 @@ class EngineFindNetworkByRecordIdv2response:
 
 @dataclass
 class EngineFindPathByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3778,10 +2106,6 @@ class EngineFindPathByEntityIdresponse:
 
 @dataclass
 class EngineFindPathByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3793,10 +2117,6 @@ class EngineFindPathByEntityIdv2response:
 
 @dataclass
 class EngineFindPathByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3808,10 +2128,6 @@ class EngineFindPathByRecordIdresponse:
 
 @dataclass
 class EngineFindPathByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3823,10 +2139,6 @@ class EngineFindPathByRecordIdv2response:
 
 @dataclass
 class EngineFindPathExcludingByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3838,10 +2150,6 @@ class EngineFindPathExcludingByEntityIdresponse:
 
 @dataclass
 class EngineFindPathExcludingByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3853,10 +2161,6 @@ class EngineFindPathExcludingByEntityIdv2response:
 
 @dataclass
 class EngineFindPathExcludingByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3868,10 +2172,6 @@ class EngineFindPathExcludingByRecordIdresponse:
 
 @dataclass
 class EngineFindPathExcludingByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3883,10 +2183,6 @@ class EngineFindPathExcludingByRecordIdv2response:
 
 @dataclass
 class EngineFindPathIncludingSourceByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3898,10 +2194,6 @@ class EngineFindPathIncludingSourceByEntityIdresponse:
 
 @dataclass
 class EngineFindPathIncludingSourceByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3913,10 +2205,6 @@ class EngineFindPathIncludingSourceByEntityIdv2response:
 
 @dataclass
 class EngineFindPathIncludingSourceByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3928,10 +2216,6 @@ class EngineFindPathIncludingSourceByRecordIdresponse:
 
 @dataclass
 class EngineFindPathIncludingSourceByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'Path'
 
     @classmethod
@@ -3943,10 +2227,6 @@ class EngineFindPathIncludingSourceByRecordIdv2response:
 
 @dataclass
 class EngineGetEntityByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'Entity'
 
     @classmethod
@@ -3958,10 +2238,6 @@ class EngineGetEntityByEntityIdresponse:
 
 @dataclass
 class EngineGetEntityByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'Entity'
 
     @classmethod
@@ -3973,10 +2249,6 @@ class EngineGetEntityByEntityIdv2response:
 
 @dataclass
 class EngineGetEntityByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'Entity'
 
     @classmethod
@@ -3988,10 +2260,6 @@ class EngineGetEntityByRecordIdresponse:
 
 @dataclass
 class EngineGetEntityByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'Entity'
 
     @classmethod
@@ -4003,10 +2271,6 @@ class EngineGetEntityByRecordIdv2response:
 
 @dataclass
 class EngineGetRecordResponse:
-    """
-    No description.
-    """
-
     value: 'Record'
 
     @classmethod
@@ -4018,10 +2282,6 @@ class EngineGetRecordResponse:
 
 @dataclass
 class EngineGetRecordV2response:
-    """
-    No description.
-    """
-
     value: 'Record'
 
     @classmethod
@@ -4033,10 +2293,6 @@ class EngineGetRecordV2response:
 
 @dataclass
 class EngineGetVirtualEntityByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'VirtualEntity'
 
     @classmethod
@@ -4048,10 +2304,6 @@ class EngineGetVirtualEntityByRecordIdresponse:
 
 @dataclass
 class EngineGetVirtualEntityByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'VirtualEntity'
 
     @classmethod
@@ -4063,10 +2315,6 @@ class EngineGetVirtualEntityByRecordIdv2response:
 
 @dataclass
 class EngineHowEntityByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'How'
 
     @classmethod
@@ -4078,10 +2326,6 @@ class EngineHowEntityByEntityIdresponse:
 
 @dataclass
 class EngineHowEntityByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'How'
 
     @classmethod
@@ -4093,10 +2337,6 @@ class EngineHowEntityByEntityIdv2response:
 
 @dataclass
 class EngineProcessRedoRecordResponse:
-    """
-    No description.
-    """
-
     value: 'Any'
 
     @classmethod
@@ -4108,10 +2348,6 @@ class EngineProcessRedoRecordResponse:
 
 @dataclass
 class EngineProcessRedoRecordWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -4123,10 +2359,6 @@ class EngineProcessRedoRecordWithInfoResponse:
 
 @dataclass
 class EngineProcessWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -4138,10 +2370,6 @@ class EngineProcessWithInfoResponse:
 
 @dataclass
 class EngineProcessWithResponseResizeResponse:
-    """
-    No description.
-    """
-
     value: 'Process'
 
     @classmethod
@@ -4153,10 +2381,6 @@ class EngineProcessWithResponseResizeResponse:
 
 @dataclass
 class EngineProcessWithResponseResponse:
-    """
-    No description.
-    """
-
     value: 'Process'
 
     @classmethod
@@ -4168,10 +2392,6 @@ class EngineProcessWithResponseResponse:
 
 @dataclass
 class EngineReevaluateEntityWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -4183,10 +2403,6 @@ class EngineReevaluateEntityWithInfoResponse:
 
 @dataclass
 class EngineReevaluateRecordWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -4198,10 +2414,6 @@ class EngineReevaluateRecordWithInfoResponse:
 
 @dataclass
 class EngineReplaceRecordWithInfoResponse:
-    """
-    No description.
-    """
-
     value: 'WithInfo'
 
     @classmethod
@@ -4213,10 +2425,6 @@ class EngineReplaceRecordWithInfoResponse:
 
 @dataclass
 class EngineSearchByAttributesResponse:
-    """
-    No description.
-    """
-
     value: 'Search'
 
     @classmethod
@@ -4228,10 +2436,6 @@ class EngineSearchByAttributesResponse:
 
 @dataclass
 class EngineSearchByAttributesV2response:
-    """
-    No description.
-    """
-
     value: 'Search'
 
     @classmethod
@@ -4243,10 +2447,6 @@ class EngineSearchByAttributesV2response:
 
 @dataclass
 class EngineSearchByAttributesV3response:
-    """
-    No description.
-    """
-
     value: 'Search'
 
     @classmethod
@@ -4258,20 +2458,8 @@ class EngineSearchByAttributesV3response:
 
 @dataclass
 class EngineStatsResponseDuration:
-    """
-    No description.
-    """
-
     pattern: 'str'
-    """
-    No description.
-    """
-
     type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseDuration':
@@ -4288,30 +2476,10 @@ class EngineStatsResponseDuration:
 
 @dataclass
 class EngineStatsResponseReresolveTriggers:
-    """
-    No description.
-    """
-
     abort_retry: 'int'
-    """
-    No description.
-    """
-
     multiple_resolvable_candidates: 'int'
-    """
-    No description.
-    """
-
     resolve_new_features: 'int'
-    """
-    No description.
-    """
-
     unresolve_movement: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseReresolveTriggers':
@@ -4332,20 +2500,8 @@ class EngineStatsResponseReresolveTriggers:
 
 @dataclass
 class EngineStatsResponseUnresolveTriggers:
-    """
-    No description.
-    """
-
     extensive_resolve: 'int'
-    """
-    No description.
-    """
-
     normal_resolve: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseUnresolveTriggers':
@@ -4363,20 +2519,8 @@ class EngineStatsResponseUnresolveTriggers:
 @dataclass
 class EngineStatsResponseWorkloadExpressedFeatureCall:
     efcall_id: 'int'
-    """
-    No description.
-    """
-
     efunc_code: 'str'
-    """
-    No description.
-    """
-
     num_calls: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadExpressedFeatureCall':
@@ -4395,35 +2539,11 @@ class EngineStatsResponseWorkloadExpressedFeatureCall:
 
 @dataclass
 class EngineStatsResponseWorkloadReresolveTriggers:
-    """
-    No description.
-    """
-
     abort_retry: 'int'
-    """
-    No description.
-    """
-
     multiple_resolvable_candidates: 'int'
-    """
-    No description.
-    """
-
     new_feature_ftypes: 'AttributeCounters'
-    """
-    No description.
-    """
-
     resolve_new_features: 'int'
-    """
-    No description.
-    """
-
     unresolve_movement: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadReresolveTriggers':
@@ -4447,30 +2567,10 @@ class EngineStatsResponseWorkloadReresolveTriggers:
 @dataclass
 class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad:
     cpu_idle: 'float'
-    """
-    No description.
-    """
-
     cpu_soft_irq: 'float'
-    """
-    No description.
-    """
-
     cpu_system: 'float'
-    """
-    No description.
-    """
-
     cpu_user: 'float'
-    """
-    No description.
-    """
-
     cpu_wait: 'float'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad':
@@ -4494,25 +2594,9 @@ class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad:
 @dataclass
 class EngineStatsResponseWorkloadSystemResourcesCurrResource:
     active_threads: 'int'
-    """
-    No description.
-    """
-
     available_memory: 'str'
-    """
-    No description.
-    """
-
     system_load: 'List[EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad]'
-    """
-    No description.
-    """
-
     worker_threads: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadSystemResourcesCurrResource':
@@ -4534,25 +2618,9 @@ class EngineStatsResponseWorkloadSystemResourcesCurrResource:
 @dataclass
 class EngineStatsResponseWorkloadSystemResourcesInitResource:
     available_memory: 'str'
-    """
-    No description.
-    """
-
     logical_cores: 'int'
-    """
-    No description.
-    """
-
     physical_cores: 'int'
-    """
-    No description.
-    """
-
     total_memory: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadSystemResourcesInitResource':
@@ -4573,20 +2641,8 @@ class EngineStatsResponseWorkloadSystemResourcesInitResource:
 
 @dataclass
 class EngineStatsResponseWorkloadSystemResources:
-    """
-    No description.
-    """
-
     curr_resources: 'List[EngineStatsResponseWorkloadSystemResourcesCurrResource]'
-    """
-    No description.
-    """
-
     init_resources: 'List[EngineStatsResponseWorkloadSystemResourcesInitResource]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadSystemResources':
@@ -4603,55 +2659,15 @@ class EngineStatsResponseWorkloadSystemResources:
 
 @dataclass
 class EngineStatsResponseWorkloadThreadState:
-    """
-    No description.
-    """
-
     active: 'int'
-    """
-    No description.
-    """
-
     data_latch_contention: 'int'
-    """
-    No description.
-    """
-
     idle: 'int'
-    """
-    No description.
-    """
-
     loader: 'int'
-    """
-    No description.
-    """
-
     obs_ent_contention: 'int'
-    """
-    No description.
-    """
-
     res_ent_contention: 'int'
-    """
-    No description.
-    """
-
     resolver: 'int'
-    """
-    No description.
-    """
-
     scoring: 'int'
-    """
-    No description.
-    """
-
     sql_executing: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadThreadState':
@@ -4682,40 +2698,12 @@ class EngineStatsResponseWorkloadThreadState:
 
 @dataclass
 class EngineStatsResponseWorkloadUnresolveTriggers:
-    """
-    No description.
-    """
-
     ambiguous_multi_resolve: 'int'
-    """
-    No description.
-    """
-
     ambiguous_no_resolve: 'int'
-    """
-    No description.
-    """
-
     extensive_resolve: 'int'
-    """
-    No description.
-    """
-
     normal_resolve: 'int'
-    """
-    No description.
-    """
-
     rel_link: 'int'
-    """
-    No description.
-    """
-
     update: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkloadUnresolveTriggers':
@@ -4740,215 +2728,47 @@ class EngineStatsResponseWorkloadUnresolveTriggers:
 
 @dataclass
 class EngineStatsResponseWorkload:
-    """
-    No description.
-    """
-
     corrupt_entity_test_diagnosis: 'Any'
-    """
-    No description.
-    """
-
     aborted_unresolve: 'int'
-    """
-    No description.
-    """
-
     actual_ambiguous_test: 'int'
-    """
-    No description.
-    """
-
     added_records: 'int'
-    """
-    No description.
-    """
-
     api_version: 'str'
-    """
-    No description.
-    """
-
     cache_hit: 'AttributeCounters'
-    """
-    No description.
-    """
-
     cache_miss: 'AttributeCounters'
-    """
-    No description.
-    """
-
     cached_ambiguous_test: 'int'
-    """
-    No description.
-    """
-
     candidate_builders: 'AttributeCounters'
-    """
-    No description.
-    """
-
     candidates: 'int'
-    """
-    No description.
-    """
-
     deleted_records: 'int'
-    """
-    No description.
-    """
-
     duration: 'int'
-    """
-    No description.
-    """
-
     expressed_feature_calls: 'List[EngineStatsResponseWorkloadExpressedFeatureCall]'
-    """
-    No description.
-    """
-
     expressed_features_created: 'AttributeCounters'
-    """
-    No description.
-    """
-
     filtered_obs_feat: 'int'
-    """
-    No description.
-    """
-
     generic_detect: 'AttributeCounters'
-    """
-    No description.
-    """
-
     gnr_scorers_used: 'int'
-    """
-    No description.
-    """
-
     high_contention_feat: 'AttributeCounters'
-    """
-    No description.
-    """
-
     high_contention_res_ent: 'AttributeCounters'
-    """
-    No description.
-    """
-
     latch_contention: 'AttributeCounters'
-    """
-    No description.
-    """
-
     lib_feat_cache_hit: 'int'
-    """
-    No description.
-    """
-
     lib_feat_cache_miss: 'int'
-    """
-    No description.
-    """
-
     loaded_records: 'int'
-    """
-    No description.
-    """
-
     redo_triggers: 'AttributeCounters'
-    """
-    No description.
-    """
-
     reduced_scored_feature_type: 'AttributeCounters'
-    """
-    No description.
-    """
-
     reevaluations: 'int'
-    """
-    No description.
-    """
-
     repaired_entities: 'int'
-    """
-    No description.
-    """
-
     reresolve_skipped: 'int'
-    """
-    No description.
-    """
-
     reresolve_triggers: 'EngineStatsResponseWorkloadReresolveTriggers'
-    """
-    No description.
-    """
-
     res_feat_stat_cache_hit: 'int'
-    """
-    No description.
-    """
-
     res_feat_stat_cache_miss: 'int'
-    """
-    No description.
-    """
-
     res_feat_stat_update: 'int'
-    """
-    No description.
-    """
-
     retries: 'int'
-    """
-    No description.
-    """
-
     scored_pairs: 'AttributeCounters'
-    """
-    No description.
-    """
-
     suppressed_candidate_builders: 'AttributeCounters'
-    """
-    No description.
-    """
-
     suppressed_disclosed_relationship_domain_count: 'int'
-    """
-    No description.
-    """
-
     suppressed_scored_feature_type: 'AttributeCounters'
-    """
-    No description.
-    """
-
     system_resources: 'EngineStatsResponseWorkloadSystemResources'
-    """
-    No description.
-    """
-
     thread_state: 'EngineStatsResponseWorkloadThreadState'
-    """
-    No description.
-    """
-
     unresolve_test: 'int'
-    """
-    No description.
-    """
-
     unresolve_triggers: 'EngineStatsResponseWorkloadUnresolveTriggers'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponseWorkload':
@@ -5043,145 +2863,33 @@ class EngineStatsResponseWorkload:
 
 @dataclass
 class EngineStatsResponse:
-    """
-    No description.
-    """
-
     missing_res_ent: 'int'
-    """
-    No description.
-    """
-
     missing_res_ent_and_okey: 'int'
-    """
-    No description.
-    """
-
     aborted_unresolve: 'int'
-    """
-    No description.
-    """
-
     actual_ambiguous_test: 'int'
-    """
-    No description.
-    """
-
     added_records: 'int'
-    """
-    No description.
-    """
-
     cache_hit: 'AttributeCounters'
-    """
-    No description.
-    """
-
     candidate_builders: 'AttributeCounters'
-    """
-    No description.
-    """
-
     candidates: 'int'
-    """
-    No description.
-    """
-
     deleted_records: 'int'
-    """
-    No description.
-    """
-
     duration: 'EngineStatsResponseDuration'
-    """
-    No description.
-    """
-
     filtered_obs_feat: 'int'
-    """
-    No description.
-    """
-
     generic_detect: 'AttributeCounters'
-    """
-    No description.
-    """
-
     latch_contention: 'AttributeCounters'
-    """
-    No description.
-    """
-
     loaded_records: 'int'
-    """
-    No description.
-    """
-
     redo_triggers: 'AttributeCounters'
-    """
-    No description.
-    """
-
     reduced_scored_feature_type: 'AttributeCounters'
-    """
-    No description.
-    """
-
     reevaluations: 'int'
-    """
-    No description.
-    """
-
     repaired_entities: 'int'
-    """
-    No description.
-    """
-
     reresolve_skipped: 'int'
-    """
-    No description.
-    """
-
     reresolve_triggers: 'EngineStatsResponseReresolveTriggers'
-    """
-    No description.
-    """
-
     retries: 'int'
-    """
-    No description.
-    """
-
     scored_pairs: 'AttributeCounters'
-    """
-    No description.
-    """
-
     suppressed_candidate_builders: 'AttributeCounters'
-    """
-    No description.
-    """
-
     suppressed_scored_feature_type: 'AttributeCounters'
-    """
-    No description.
-    """
-
     unresolve_test: 'int'
-    """
-    No description.
-    """
-
     unresolve_triggers: 'EngineStatsResponseUnresolveTriggers'
-    """
-    No description.
-    """
-
     workload: 'EngineStatsResponseWorkload'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EngineStatsResponse':
@@ -5248,10 +2956,6 @@ class EngineStatsResponse:
 
 @dataclass
 class EngineStreamExportJsonentityReportResponse:
-    """
-    No description.
-    """
-
     value: 'Any'
 
     @classmethod
@@ -5263,10 +2967,6 @@ class EngineStreamExportJsonentityReportResponse:
 
 @dataclass
 class EngineWhyEntitiesResponse:
-    """
-    No description.
-    """
-
     value: 'WhyEntities'
 
     @classmethod
@@ -5278,10 +2978,6 @@ class EngineWhyEntitiesResponse:
 
 @dataclass
 class EngineWhyEntitiesV2response:
-    """
-    No description.
-    """
-
     value: 'WhyEntities'
 
     @classmethod
@@ -5293,10 +2989,6 @@ class EngineWhyEntitiesV2response:
 
 @dataclass
 class EngineWhyEntityByEntityIdresponse:
-    """
-    No description.
-    """
-
     value: 'WhyEntity'
 
     @classmethod
@@ -5308,10 +3000,6 @@ class EngineWhyEntityByEntityIdresponse:
 
 @dataclass
 class EngineWhyEntityByEntityIdv2response:
-    """
-    No description.
-    """
-
     value: 'WhyEntity'
 
     @classmethod
@@ -5323,10 +3011,6 @@ class EngineWhyEntityByEntityIdv2response:
 
 @dataclass
 class EngineWhyEntityByRecordIdresponse:
-    """
-    No description.
-    """
-
     value: 'WhyEntity'
 
     @classmethod
@@ -5338,10 +3022,6 @@ class EngineWhyEntityByRecordIdresponse:
 
 @dataclass
 class EngineWhyEntityByRecordIdv2response:
-    """
-    No description.
-    """
-
     value: 'WhyEntity'
 
     @classmethod
@@ -5353,10 +3033,6 @@ class EngineWhyEntityByRecordIdv2response:
 
 @dataclass
 class EngineWhyRecordsResponse:
-    """
-    No description.
-    """
-
     value: 'WhyRecords'
 
     @classmethod
@@ -5368,10 +3044,6 @@ class EngineWhyRecordsResponse:
 
 @dataclass
 class EngineWhyRecordsV2response:
-    """
-    No description.
-    """
-
     value: 'WhyRecords'
 
     @classmethod
@@ -5383,10 +3055,6 @@ class EngineWhyRecordsV2response:
 
 @dataclass
 class Entities:
-    """
-    No description.
-    """
-
     value: 'List[Entity]'
 
     @classmethod
@@ -5398,20 +3066,8 @@ class Entities:
 
 @dataclass
 class Entity:
-    """
-    No description.
-    """
-
     related_entities: 'RelatedEntities'
-    """
-    No description.
-    """
-
     resolved_entity: 'ResolvedEntity'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Entity':
@@ -5428,25 +3084,9 @@ class Entity:
 
 @dataclass
 class EntityPath:
-    """
-    No description.
-    """
-
     end_entity_id: 'int'
-    """
-    No description.
-    """
-
     entities: 'List[int]'
-    """
-    No description.
-    """
-
     start_entity_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EntityPath':
@@ -5465,10 +3105,6 @@ class EntityPath:
 
 @dataclass
 class EntityPaths:
-    """
-    No description.
-    """
-
     value: 'List[EntityPath]'
 
     @classmethod
@@ -5480,50 +3116,14 @@ class EntityPaths:
 
 @dataclass
 class FeatureDescriptionValue:
-    """
-    No description.
-    """
-
     candidate_cap_reached: 'str'
-    """
-    No description.
-    """
-
     entity_count: 'int'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
     scoring_cap_reached: 'str'
-    """
-    No description.
-    """
-
     suppressed: 'str'
-    """
-    No description.
-    """
-
     used_for_cand: 'str'
-    """
-    No description.
-    """
-
     used_for_scoring: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureDescriptionValue':
@@ -5552,10 +3152,6 @@ class FeatureDescriptionValue:
 
 @dataclass
 class FeatureDescriptionValues:
-    """
-    No description.
-    """
-
     value: 'List[FeatureDescriptionValue]'
 
     @classmethod
@@ -5567,30 +3163,10 @@ class FeatureDescriptionValues:
 
 @dataclass
 class FeatureForAttribute:
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     feat_desc_values: 'FeatureDescriptionValues'
-    """
-    No description.
-    """
-
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
     usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
@@ -5611,80 +3187,20 @@ class FeatureForAttribute:
 
 @dataclass
 class FeatureScoreForAttribute:
-    """
-    No description.
-    """
-
     candidate_feat: 'str'
-    """
-    No description.
-    """
-
     candidate_feat_id: 'int'
-    """
-    No description.
-    """
-
     candidate_feat_usage_type: 'str'
-    """
-    No description.
-    """
-
     full_score: 'int'
-    """
-    No description.
-    """
-
     generation_match: 'int'
-    """
-    No description.
-    """
-
     gnr_fn: 'int'
-    """
-    No description.
-    """
-
     gnr_gn: 'int'
-    """
-    No description.
-    """
-
     gnr_on: 'int'
-    """
-    No description.
-    """
-
     gnr_sn: 'int'
-    """
-    No description.
-    """
-
     inbound_feat: 'str'
-    """
-    No description.
-    """
-
     inbound_feat_id: 'int'
-    """
-    No description.
-    """
-
     inbound_feat_usage_type: 'str'
-    """
-    No description.
-    """
-
     score_behavior: 'str'
-    """
-    No description.
-    """
-
     score_bucket: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScoreForAttribute':
@@ -5725,500 +3241,104 @@ class FeatureScoreForAttribute:
 
 @dataclass
 class FeatureScores:
-    """
-    No description.
-    """
-
     account_domain: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     account_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     acct_num: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     address: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     address_list: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     addr_full: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     addr_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     cell_phone_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     citizenship: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     country_of_association: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     data_source: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     date_of_birth: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     date_of_death: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     dob: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     dod: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_state: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     drlic: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     duns_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     email: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     email_address: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     email_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     employer_name: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     entity_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     facebook: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     gender: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     group_association_org_name: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     group_association_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     id_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     instagram: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     lei_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     linkedin: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     load_id: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     login_id: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     name: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     name_full: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     name_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     name_list: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     nationality: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     national_id: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     national_id_country: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     national_id_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     nin_country: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     nin_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     npi_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     other_id_country: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     other_id_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     other_id_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     passport: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     passports: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     passport_country: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     passport_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     phone: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     phones: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     phone_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     place_of_birth: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_first: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_last: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_middle: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_org: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_prefix: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_suffix: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_phone_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     record_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     registration_country: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     registration_date: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_domain: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_link: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_domain: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_key: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_role: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     signal: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     skype: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     social_handle: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     social_network: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     source_id: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     ssn: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     ssn_last4: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     ssn_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     tango: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     tax_id_country: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     tax_id_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     tax_id_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     telegram: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_type: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     twitter: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     viber: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     website_address: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     wechat: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     whatsapp: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     work_phone_number: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
     zoomroom: 'FeatureScoresForAttribute'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScores':
@@ -6427,10 +3547,6 @@ class FeatureScores:
 
 @dataclass
 class FeatureScoresForAttribute:
-    """
-    No description.
-    """
-
     value: 'List[FeatureScoreForAttribute]'
 
     @classmethod
@@ -6442,500 +3558,104 @@ class FeatureScoresForAttribute:
 
 @dataclass
 class Features:
-    """
-    No description.
-    """
-
     account_domain: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     account_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     acct_num: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     address: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     address_list: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     addr_full: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     addr_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     cell_phone_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     citizenship: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     country_of_association: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     data_source: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     date_of_birth: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     date_of_death: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     dob: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     dod: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_state: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     drlic: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     duns_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     email: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     email_address: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     email_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     employer_name: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     entity_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     facebook: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     gender: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     group_association_org_name: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     group_association_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     id_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     instagram: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     lei_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     linkedin: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     load_id: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     login_id: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     name: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     name_full: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     name_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     name_list: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     nationality: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     national_id: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     national_id_country: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     national_id_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     nin_country: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     nin_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     npi_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     other_id_country: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     other_id_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     other_id_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     passport: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     passports: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     passport_country: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     passport_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     phone: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     phones: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     phone_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     place_of_birth: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_name_first: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_name_last: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_name_middle: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_name_org: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_name_prefix: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_name_suffix: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     primary_phone_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     record_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     registration_country: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     registration_date: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_domain: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_link: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_domain: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_key: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_role: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     signal: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     skype: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     social_handle: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     social_network: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     source_id: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     ssn: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     ssn_last4: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     ssn_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     tango: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     tax_id_country: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     tax_id_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     tax_id_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     telegram: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_type: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     twitter: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     viber: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     website_address: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     wechat: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     whatsapp: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     work_phone_number: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
     zoomroom: 'FeaturesForAttribute'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Features':
@@ -7144,10 +3864,6 @@ class Features:
 
 @dataclass
 class FeaturesForAttribute:
-    """
-    No description.
-    """
-
     value: 'List[FeatureForAttribute]'
 
     @classmethod
@@ -7159,20 +3875,8 @@ class FeaturesForAttribute:
 
 @dataclass
 class FinalState:
-    """
-    No description.
-    """
-
     need_reevaluation: 'int'
-    """
-    No description.
-    """
-
     virtual_entities: 'List[VirtualEntitySynopsis]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FinalState':
@@ -7189,20 +3893,8 @@ class FinalState:
 
 @dataclass
 class FocusRecord:
-    """
-    No description.
-    """
-
     data_source: 'str'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FocusRecord':
@@ -7219,10 +3911,6 @@ class FocusRecord:
 
 @dataclass
 class FocusRecords:
-    """
-    No description.
-    """
-
     value: 'List[FocusRecord]'
 
     @classmethod
@@ -7234,175 +3922,39 @@ class FocusRecords:
 
 @dataclass
 class G2config:
-    """
-    No description.
-    """
-
     cfg_attr: 'List[CfgAttr]'
-    """
-    No description.
-    """
-
     cfg_cfbom: 'List[CfgCfbom]'
-    """
-    No description.
-    """
-
     cfg_cfcall: 'List[CfgCfcall]'
-    """
-    No description.
-    """
-
     cfg_cfrtn: 'List[CfgCfrtn]'
-    """
-    No description.
-    """
-
     cfg_cfunc: 'List[CfgCfunc]'
-    """
-    No description.
-    """
-
     cfg_dfbom: 'List[CfgDfbom]'
-    """
-    No description.
-    """
-
     cfg_dfcall: 'List[CfgDfcall]'
-    """
-    No description.
-    """
-
     cfg_dfunc: 'List[CfgDfunc]'
-    """
-    No description.
-    """
-
     cfg_dsrc: 'List[CfgDsrc]'
-    """
-    No description.
-    """
-
     cfg_dsrc_interest: 'List[CfgDsrcInterest]'
-    """
-    No description.
-    """
-
     cfg_ebom: 'List[CfgEbom]'
-    """
-    No description.
-    """
-
     cfg_eclass: 'List[CfgEclass]'
-    """
-    No description.
-    """
-
     cfg_efbom: 'List[CfgEfbom]'
-    """
-    No description.
-    """
-
     cfg_efcall: 'List[CfgEfcall]'
-    """
-    No description.
-    """
-
     cfg_efunc: 'List[CfgEfunc]'
-    """
-    No description.
-    """
-
     cfg_erfrag: 'List[CfgErfrag]'
-    """
-    No description.
-    """
-
     cfg_errule: 'List[CfgErrule]'
-    """
-    No description.
-    """
-
     cfg_etype: 'List[CfgEtype]'
-    """
-    No description.
-    """
-
     cfg_fbom: 'List[CfgFbom]'
-    """
-    No description.
-    """
-
     cfg_fbovr: 'List[CfgFbovr]'
-    """
-    No description.
-    """
-
     cfg_fclass: 'List[CfgFclass]'
-    """
-    No description.
-    """
-
     cfg_felem: 'List[CfgFelem]'
-    """
-    No description.
-    """
-
     cfg_ftype: 'List[CfgFtype]'
-    """
-    No description.
-    """
-
     cfg_generic_threshold: 'List[CfgGenericThreshold]'
-    """
-    No description.
-    """
-
     cfg_gplan: 'List[CfgGplan]'
-    """
-    No description.
-    """
-
     cfg_lens: 'List[CfgLens]'
-    """
-    No description.
-    """
-
     cfg_lensrl: 'List[CfgLensrl]'
-    """
-    No description.
-    """
-
     cfg_rclass: 'List[CfgRclass]'
-    """
-    No description.
-    """
-
     cfg_rtype: 'List[CfgRtype]'
-    """
-    No description.
-    """
-
     cfg_sfcall: 'List[CfgSfcall]'
-    """
-    No description.
-    """
-
     cfg_sfunc: 'List[CfgSfunc]'
-    """
-    No description.
-    """
-
     config_base_version: 'ConfigBaseVersion'
-    """
-    No description.
-    """
-
     sys_oom: 'List[SysOom]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2config':
@@ -7481,15 +4033,7 @@ class G2config:
 
 @dataclass
 class How:
-    """
-    No description.
-    """
-
     how_results: 'HowResults'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'How':
@@ -7504,20 +4048,8 @@ class How:
 
 @dataclass
 class HowResults:
-    """
-    No description.
-    """
-
     final_state: 'FinalState'
-    """
-    No description.
-    """
-
     resolution_steps: 'ResolutionSteps'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'HowResults':
@@ -7534,15 +4066,7 @@ class HowResults:
 
 @dataclass
 class Interesting:
-    """
-    No description.
-    """
-
     interesting_entities: 'InterestingEntities'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Interesting':
@@ -7557,20 +4081,8 @@ class Interesting:
 
 @dataclass
 class InterestingEntities:
-    """
-    No description.
-    """
-
     entities: 'List[InterestingEntity]'
-    """
-    No description.
-    """
-
     notices: 'Notices'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntities':
@@ -7588,20 +4100,8 @@ class InterestingEntities:
 @dataclass
 class InterestingEntitySampleRecords:
     data_source: 'str'
-    """
-    No description.
-    """
-
     flags: 'List[str]'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntitySampleRecords':
@@ -7620,30 +4120,10 @@ class InterestingEntitySampleRecords:
 
 @dataclass
 class InterestingEntity:
-    """
-    No description.
-    """
-
     degrees: 'int'
-    """
-    No description.
-    """
-
     entity_id: 'int'
-    """
-    No description.
-    """
-
     flags: 'List[str]'
-    """
-    No description.
-    """
-
     sample_records: 'List[InterestingEntitySampleRecords]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntity':
@@ -7665,15 +4145,7 @@ class InterestingEntity:
 @dataclass
 class JSONDataAcctNum:
     account_domain: 'str'
-    """
-    No description.
-    """
-
     account_number: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'JSONDataAcctNum':
@@ -7691,15 +4163,7 @@ class JSONDataAcctNum:
 @dataclass
 class JSONDataSsn:
     passport_number: 'str'
-    """
-    No description.
-    """
-
     ssn_number: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'JSONDataSsn':
@@ -7717,10 +4181,6 @@ class JSONDataSsn:
 @dataclass
 class JSONDataSsnLast4:
     ssn_last4: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'JSONDataSsnLast4':
@@ -7735,545 +4195,113 @@ class JSONDataSsnLast4:
 
 @dataclass
 class JSONData:
-    """
-    No description.
-    """
-
     account_domain: 'str'
-    """
-    No description.
-    """
-
     account_number: 'str'
-    """
-    No description.
-    """
-
     acct_num: 'List[JSONDataAcctNum]'
-    """
-    No description.
-    """
-
     address: 'str'
-    """
-    No description.
-    """
-
     address_list: 'Addresses'
-    """
-    No description.
-    """
-
     addr_full: 'str'
-    """
-    No description.
-    """
-
     addr_key: 'str'
-    """
-    No description.
-    """
-
     cell_phone_number: 'str'
-    """
-    No description.
-    """
-
     citizenship: 'str'
-    """
-    No description.
-    """
-
     country_of_association: 'str'
-    """
-    No description.
-    """
-
     data_source: 'str'
-    """
-    No description.
-    """
-
     date_of_birth: 'str'
-    """
-    No description.
-    """
-
     date_of_death: 'str'
-    """
-    No description.
-    """
-
     dob: 'str'
-    """
-    No description.
-    """
-
     dod: 'str'
-    """
-    No description.
-    """
-
     drivers_license_number: 'str'
-    """
-    No description.
-    """
-
     drivers_license_state: 'str'
-    """
-    No description.
-    """
-
     drlic: 'str'
-    """
-    No description.
-    """
-
     dsrc_action: 'str'
-    """
-    No description.
-    """
-
     dsrc_code: 'str'
-    """
-    No description.
-    """
-
     duns_number: 'str'
-    """
-    No description.
-    """
-
     email: 'str'
-    """
-    No description.
-    """
-
     email_address: 'str'
-    """
-    No description.
-    """
-
     email_key: 'str'
-    """
-    No description.
-    """
-
     employer_name: 'str'
-    """
-    No description.
-    """
-
     entity_type: 'str'
-    """
-    No description.
-    """
-
     ent_src_desc: 'str'
-    """
-    No description.
-    """
-
     ent_src_key: 'str'
-    """
-    No description.
-    """
-
     etype_code: 'str'
-    """
-    No description.
-    """
-
     facebook: 'str'
-    """
-    No description.
-    """
-
     gender: 'str'
-    """
-    No description.
-    """
-
     group_assn_id_number: 'str'
-    """
-    No description.
-    """
-
     group_assn_id_type: 'str'
-    """
-    No description.
-    """
-
     group_association_org_name: 'str'
-    """
-    No description.
-    """
-
     group_association_type: 'str'
-    """
-    No description.
-    """
-
     id_key: 'str'
-    """
-    No description.
-    """
-
     instagram: 'str'
-    """
-    No description.
-    """
-
     lei_number: 'str'
-    """
-    No description.
-    """
-
     linkedin: 'str'
-    """
-    No description.
-    """
-
     load_id: 'str'
-    """
-    No description.
-    """
-
     login_id: 'str'
-    """
-    No description.
-    """
-
     name: 'Names'
-    """
-    No description.
-    """
-
     name_full: 'str'
-    """
-    No description.
-    """
-
     name_key: 'str'
-    """
-    No description.
-    """
-
     name_list: 'Names'
-    """
-    No description.
-    """
-
     nationality: 'str'
-    """
-    No description.
-    """
-
     national_id: 'str'
-    """
-    No description.
-    """
-
     national_id_country: 'str'
-    """
-    No description.
-    """
-
     national_id_number: 'str'
-    """
-    No description.
-    """
-
     nin_country: 'str'
-    """
-    No description.
-    """
-
     nin_number: 'str'
-    """
-    No description.
-    """
-
     npi_number: 'str'
-    """
-    No description.
-    """
-
     obs_src_key: 'str'
-    """
-    No description.
-    """
-
     other_id_country: 'str'
-    """
-    No description.
-    """
-
     other_id_number: 'str'
-    """
-    No description.
-    """
-
     other_id_type: 'str'
-    """
-    No description.
-    """
-
     passport: 'str'
-    """
-    No description.
-    """
-
     passports: 'Passports'
-    """
-    No description.
-    """
-
     passport_country: 'str'
-    """
-    No description.
-    """
-
     passport_number: 'str'
-    """
-    No description.
-    """
-
     phone: 'str'
-    """
-    No description.
-    """
-
     phones: 'Phones'
-    """
-    No description.
-    """
-
     phone_key: 'str'
-    """
-    No description.
-    """
-
     place_of_birth: 'str'
-    """
-    No description.
-    """
-
     primary_name_first: 'str'
-    """
-    No description.
-    """
-
     primary_name_last: 'str'
-    """
-    No description.
-    """
-
     primary_name_middle: 'str'
-    """
-    No description.
-    """
-
     primary_name_org: 'str'
-    """
-    No description.
-    """
-
     primary_name_prefix: 'str'
-    """
-    No description.
-    """
-
     primary_name_suffix: 'str'
-    """
-    No description.
-    """
-
     primary_phone_number: 'str'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
     record_type: 'str'
-    """
-    No description.
-    """
-
     registration_country: 'str'
-    """
-    No description.
-    """
-
     registration_date: 'str'
-    """
-    No description.
-    """
-
     relationships: 'Relationships'
-    """
-    No description.
-    """
-
     rel_anchor: 'str'
-    """
-    No description.
-    """
-
     rel_anchor_domain: 'str'
-    """
-    No description.
-    """
-
     rel_anchor_key: 'str'
-    """
-    No description.
-    """
-
     rel_link: 'str'
-    """
-    No description.
-    """
-
     rel_pointer: 'str'
-    """
-    No description.
-    """
-
     rel_pointer_domain: 'str'
-    """
-    No description.
-    """
-
     rel_pointer_key: 'str'
-    """
-    No description.
-    """
-
     rel_pointer_role: 'str'
-    """
-    No description.
-    """
-
     signal: 'str'
-    """
-    No description.
-    """
-
     skype: 'str'
-    """
-    No description.
-    """
-
     social_handle: 'str'
-    """
-    No description.
-    """
-
     social_network: 'str'
-    """
-    No description.
-    """
-
     source_id: 'str'
-    """
-    No description.
-    """
-
     ssn: 'List[JSONDataSsn]'
-    """
-    No description.
-    """
-
     ssn_last4: 'List[JSONDataSsnLast4]'
-    """
-    No description.
-    """
-
     ssn_number: 'str'
-    """
-    No description.
-    """
-
     tango: 'str'
-    """
-    No description.
-    """
-
     tax_id_country: 'str'
-    """
-    No description.
-    """
-
     tax_id_number: 'str'
-    """
-    No description.
-    """
-
     tax_id_type: 'str'
-    """
-    No description.
-    """
-
     telegram: 'str'
-    """
-    No description.
-    """
-
     trusted_id_number: 'str'
-    """
-    No description.
-    """
-
     trusted_id_type: 'str'
-    """
-    No description.
-    """
-
     twitter: 'str'
-    """
-    No description.
-    """
-
     viber: 'str'
-    """
-    No description.
-    """
-
     website_address: 'str'
-    """
-    No description.
-    """
-
     wechat: 'str'
-    """
-    No description.
-    """
-
     whatsapp: 'str'
-    """
-    No description.
-    """
-
     work_phone_number: 'str'
-    """
-    No description.
-    """
-
     zoomroom: 'str'
-    """
-    No description.
-    """
-
     name0: 'Names'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'JSONData':
@@ -8501,40 +4529,12 @@ class JSONData:
 @dataclass
 class MatchInfoDisclosedRelationsRelAnchor:
     domain: 'str'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     feat_id: 'int'
-    """
-    No description.
-    """
-
     linked_feat_desc: 'str'
-    """
-    No description.
-    """
-
     linked_feat_id: 'int'
-    """
-    No description.
-    """
-
     linked_feat_type: 'str'
-    """
-    No description.
-    """
-
     linked_feat_usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoDisclosedRelationsRelAnchor':
@@ -8562,45 +4562,13 @@ class MatchInfoDisclosedRelationsRelAnchor:
 @dataclass
 class MatchInfoDisclosedRelationsRelLink:
     domain: 'str'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     feat_id: 'int'
-    """
-    No description.
-    """
-
     feat_usage_type: 'str'
-    """
-    No description.
-    """
-
     linked_feat_desc: 'str'
-    """
-    No description.
-    """
-
     linked_feat_id: 'int'
-    """
-    No description.
-    """
-
     linked_feat_type: 'str'
-    """
-    No description.
-    """
-
     linked_feat_usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoDisclosedRelationsRelLink':
@@ -8630,40 +4598,12 @@ class MatchInfoDisclosedRelationsRelLink:
 @dataclass
 class MatchInfoDisclosedRelationsRelPointer:
     domain: 'str'
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     feat_id: 'int'
-    """
-    No description.
-    """
-
     feat_usage_type: 'str'
-    """
-    No description.
-    """
-
     linked_feat_desc: 'str'
-    """
-    No description.
-    """
-
     linked_feat_id: 'int'
-    """
-    No description.
-    """
-
     linked_feat_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoDisclosedRelationsRelPointer':
@@ -8690,25 +4630,9 @@ class MatchInfoDisclosedRelationsRelPointer:
 
 @dataclass
 class MatchInfoDisclosedRelations:
-    """
-    No description.
-    """
-
     rel_anchor: 'List[MatchInfoDisclosedRelationsRelAnchor]'
-    """
-    No description.
-    """
-
     rel_link: 'List[MatchInfoDisclosedRelationsRelLink]'
-    """
-    No description.
-    """
-
     rel_pointer: 'List[MatchInfoDisclosedRelationsRelPointer]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoDisclosedRelations':
@@ -8727,55 +4651,15 @@ class MatchInfoDisclosedRelations:
 
 @dataclass
 class MatchInfo:
-    """
-    No description.
-    """
-
     candidate_keys: 'MatchInfoCandidateKeys'
-    """
-    No description.
-    """
-
     disclosed_relations: 'MatchInfoDisclosedRelations'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     feature_scores: 'FeatureScores'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     match_level_code: 'str'
-    """
-    No description.
-    """
-
     why_errule_code: 'str'
-    """
-    No description.
-    """
-
     why_key: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfo':
@@ -8806,500 +4690,104 @@ class MatchInfo:
 
 @dataclass
 class MatchInfoCandidateKeys:
-    """
-    No description.
-    """
-
     account_domain: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     account_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     acct_num: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     address: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     address_list: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     addr_full: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     addr_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     cell_phone_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     citizenship: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     country_of_association: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     data_source: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     date_of_birth: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     date_of_death: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     dob: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     dod: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_state: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     drlic: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     duns_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     email: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     email_address: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     email_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     employer_name: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     entity_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     facebook: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     gender: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     group_association_org_name: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     group_association_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     id_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     instagram: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     lei_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     linkedin: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     load_id: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     login_id: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     name: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     name_full: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     name_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     name_list: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     nationality: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     national_id: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     national_id_country: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     national_id_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     nin_country: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     nin_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     npi_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     other_id_country: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     other_id_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     other_id_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     passport: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     passports: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     passport_country: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     passport_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     phone: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     phones: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     phone_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     place_of_birth: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_name_first: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_name_last: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_name_middle: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_name_org: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_name_prefix: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_name_suffix: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     primary_phone_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     record_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     registration_country: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     registration_date: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_domain: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_link: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_domain: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_key: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_role: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     signal: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     skype: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     social_handle: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     social_network: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     source_id: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     ssn: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     ssn_last4: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     ssn_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     tango: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     tax_id_country: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     tax_id_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     tax_id_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     telegram: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_type: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     twitter: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     viber: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     website_address: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     wechat: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     whatsapp: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     work_phone_number: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
     zoomroom: 'MatchInfosForAttribute'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoCandidateKeys':
@@ -9508,20 +4996,8 @@ class MatchInfoCandidateKeys:
 
 @dataclass
 class MatchInfoForAttribute:
-    """
-    No description.
-    """
-
     feat_desc: 'str'
-    """
-    No description.
-    """
-
     feat_id: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoForAttribute':
@@ -9538,10 +5014,6 @@ class MatchInfoForAttribute:
 
 @dataclass
 class MatchInfosForAttribute:
-    """
-    No description.
-    """
-
     value: 'List[MatchInfoForAttribute]'
 
     @classmethod
@@ -9553,50 +5025,14 @@ class MatchInfosForAttribute:
 
 @dataclass
 class MatchScoreForAttribute:
-    """
-    No description.
-    """
-
     candidate_feat: 'str'
-    """
-    No description.
-    """
-
     full_score: 'int'
-    """
-    No description.
-    """
-
     generation_match: 'int'
-    """
-    No description.
-    """
-
     gnr_fn: 'int'
-    """
-    No description.
-    """
-
     gnr_gn: 'int'
-    """
-    No description.
-    """
-
     gnr_on: 'int'
-    """
-    No description.
-    """
-
     gnr_sn: 'int'
-    """
-    No description.
-    """
-
     inbound_feat: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchScoreForAttribute':
@@ -9625,500 +5061,104 @@ class MatchScoreForAttribute:
 
 @dataclass
 class MatchScores:
-    """
-    No description.
-    """
-
     account_domain: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     account_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     acct_num: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     address: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     address_list: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     addr_full: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     addr_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     cell_phone_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     citizenship: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     country_of_association: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     data_source: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     date_of_birth: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     date_of_death: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     dob: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     dod: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     drivers_license_state: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     drlic: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     duns_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     email: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     email_address: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     email_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     employer_name: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     entity_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     facebook: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     gender: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     group_assn_id_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     group_association_org_name: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     group_association_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     id_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     instagram: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     lei_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     linkedin: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     load_id: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     login_id: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     name: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     name_full: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     name_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     name_list: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     nationality: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     national_id: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     national_id_country: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     national_id_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     nin_country: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     nin_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     npi_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     other_id_country: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     other_id_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     other_id_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     passport: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     passports: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     passport_country: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     passport_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     phone: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     phones: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     phone_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     place_of_birth: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_first: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_last: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_middle: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_org: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_prefix: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_name_suffix: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     primary_phone_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     record_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     registration_country: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     registration_date: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_domain: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_anchor_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_link: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_domain: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_key: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     rel_pointer_role: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     signal: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     skype: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     social_handle: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     social_network: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     source_id: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     ssn: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     ssn_last4: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     ssn_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     tango: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     tax_id_country: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     tax_id_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     tax_id_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     telegram: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     trusted_id_type: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     twitter: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     viber: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     website_address: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     wechat: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     whatsapp: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     work_phone_number: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
     zoomroom: 'MatchScoresForAttribute'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchScores':
@@ -10327,10 +5367,6 @@ class MatchScores:
 
 @dataclass
 class MatchScoresForAttribute:
-    """
-    No description.
-    """
-
     value: 'List[MatchScoreForAttribute]'
 
     @classmethod
@@ -10342,20 +5378,8 @@ class MatchScoresForAttribute:
 
 @dataclass
 class MemberRecord:
-    """
-    No description.
-    """
-
     internal_id: 'int'
-    """
-    No description.
-    """
-
     records: 'Records'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MemberRecord':
@@ -10372,10 +5396,6 @@ class MemberRecord:
 
 @dataclass
 class MemberRecords:
-    """
-    No description.
-    """
-
     value: 'List[MemberRecord]'
 
     @classmethod
@@ -10387,50 +5407,14 @@ class MemberRecords:
 
 @dataclass
 class Name:
-    """
-    No description.
-    """
-
     name_first: 'str'
-    """
-    No description.
-    """
-
     name_full: 'str'
-    """
-    No description.
-    """
-
     name_last: 'str'
-    """
-    No description.
-    """
-
     name_middle: 'str'
-    """
-    No description.
-    """
-
     name_org: 'str'
-    """
-    No description.
-    """
-
     name_prefix: 'str'
-    """
-    No description.
-    """
-
     name_suffix: 'str'
-    """
-    No description.
-    """
-
     name_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Name':
@@ -10459,10 +5443,6 @@ class Name:
 
 @dataclass
 class Names:
-    """
-    No description.
-    """
-
     value: 'List[Name]'
 
     @classmethod
@@ -10474,25 +5454,9 @@ class Names:
 
 @dataclass
 class Network:
-    """
-    No description.
-    """
-
     entities: 'Entities'
-    """
-    No description.
-    """
-
     entity_paths: 'EntityPaths'
-    """
-    No description.
-    """
-
     max_entity_limit_reached: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Network':
@@ -10511,20 +5475,8 @@ class Network:
 
 @dataclass
 class Notice:
-    """
-    No description.
-    """
-
     code: 'str'
-    """
-    No description.
-    """
-
     description: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Notice':
@@ -10541,10 +5493,6 @@ class Notice:
 
 @dataclass
 class Notices:
-    """
-    No description.
-    """
-
     value: 'List[Notice]'
 
     @classmethod
@@ -10556,20 +5504,8 @@ class Notices:
 
 @dataclass
 class Passport:
-    """
-    No description.
-    """
-
     passport_country: 'str'
-    """
-    No description.
-    """
-
     passport_number: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Passport':
@@ -10586,10 +5522,6 @@ class Passport:
 
 @dataclass
 class Passports:
-    """
-    No description.
-    """
-
     value: 'List[Passport]'
 
     @classmethod
@@ -10601,20 +5533,8 @@ class Passports:
 
 @dataclass
 class Path:
-    """
-    No description.
-    """
-
     entities: 'Entities'
-    """
-    No description.
-    """
-
     entity_paths: 'EntityPaths'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Path':
@@ -10631,30 +5551,10 @@ class Path:
 
 @dataclass
 class Phone:
-    """
-    No description.
-    """
-
     phone_from_date: 'str'
-    """
-    No description.
-    """
-
     phone_number: 'str'
-    """
-    No description.
-    """
-
     phone_thru_date: 'str'
-    """
-    No description.
-    """
-
     phone_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Phone':
@@ -10675,10 +5575,6 @@ class Phone:
 
 @dataclass
 class Phones:
-    """
-    No description.
-    """
-
     value: 'List[Phone]'
 
     @classmethod
@@ -10690,20 +5586,8 @@ class Phones:
 
 @dataclass
 class ProcessUmfProc:
-    """
-    No description.
-    """
-
     name: 'str'
-    """
-    No description.
-    """
-
     result: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ProcessUmfProc':
@@ -10720,30 +5604,10 @@ class ProcessUmfProc:
 
 @dataclass
 class Process:
-    """
-    No description.
-    """
-
     affected_entities: 'AffectedEntities'
-    """
-    No description.
-    """
-
     interesting_entities: 'InterestingEntities'
-    """
-    No description.
-    """
-
     process_result: 'ProcessResult'
-    """
-    No description.
-    """
-
     umf_proc: 'ProcessUmfProc'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Process':
@@ -10765,60 +5629,16 @@ class Process:
 @dataclass
 class ProcessResultResolvedEntities:
     entity_id: 'int'
-    """
-    No description.
-    """
-
     entity_name: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     features: 'Features'
-    """
-    No description.
-    """
-
     last_seen_dt: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     match_level_code: 'str'
-    """
-    No description.
-    """
-
     match_scores: 'MatchScores'
-    """
-    No description.
-    """
-
     records: 'Records'
-    """
-    No description.
-    """
-
     record_summary: 'RecordSummary'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ProcessResultResolvedEntities':
@@ -10853,15 +5673,7 @@ class ProcessResultResolvedEntities:
 
 @dataclass
 class ProcessResult:
-    """
-    No description.
-    """
-
     resolved_entities: 'List[ProcessResultResolvedEntities]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ProcessResult':
@@ -10876,50 +5688,14 @@ class ProcessResult:
 
 @dataclass
 class ProductLicenseResponse:
-    """
-    No description.
-    """
-
     billing: 'str'
-    """
-    No description.
-    """
-
     contract: 'str'
-    """
-    No description.
-    """
-
     customer: 'str'
-    """
-    No description.
-    """
-
     expire_date: 'str'
-    """
-    No description.
-    """
-
     issue_date: 'str'
-    """
-    No description.
-    """
-
     license_level: 'str'
-    """
-    No description.
-    """
-
     license_type: 'str'
-    """
-    No description.
-    """
-
     record_limit: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ProductLicenseResponse':
@@ -10948,45 +5724,13 @@ class ProductLicenseResponse:
 
 @dataclass
 class ProductVersionResponse:
-    """
-    No description.
-    """
-
     build_date: 'str'
-    """
-    No description.
-    """
-
     build_number: 'str'
-    """
-    No description.
-    """
-
     build_version: 'str'
-    """
-    No description.
-    """
-
     compatibility_version: 'CompatibilityVersion'
-    """
-    No description.
-    """
-
     product_name: 'str'
-    """
-    No description.
-    """
-
     schema_version: 'SchemaVersion'
-    """
-    No description.
-    """
-
     version: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ProductVersionResponse':
@@ -11014,15 +5758,7 @@ class ProductVersionResponse:
 @dataclass
 class RecordFeatures:
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
     usage_type: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordFeatures':
@@ -11039,115 +5775,27 @@ class RecordFeatures:
 
 @dataclass
 class Record:
-    """
-    No description.
-    """
-
     address_data: 'List[str]'
-    """
-    No description.
-    """
-
     attribute_data: 'List[str]'
-    """
-    No description.
-    """
-
     data_source: 'str'
-    """
-    No description.
-    """
-
     entity_data: 'List[str]'
-    """
-    No description.
-    """
-
     entity_desc: 'str'
-    """
-    No description.
-    """
-
     entity_key: 'str'
-    """
-    No description.
-    """
-
     entity_type: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     features: 'List[RecordFeatures]'
-    """
-    No description.
-    """
-
     identifier_data: 'List[str]'
-    """
-    No description.
-    """
-
     internal_id: 'int'
-    """
-    No description.
-    """
-
     json_data: 'JSONData'
-    """
-    No description.
-    """
-
     last_seen_dt: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     match_level_code: 'str'
-    """
-    No description.
-    """
-
     name_data: 'List[str]'
-    """
-    No description.
-    """
-
     other_data: 'List[str]'
-    """
-    No description.
-    """
-
     phone_data: 'List[str]'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
     relationship_data: 'List[str]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Record':
@@ -11202,10 +5850,6 @@ class Record:
 
 @dataclass
 class RecordSummary:
-    """
-    No description.
-    """
-
     value: 'List[RecordSummaryElement]'
 
     @classmethod
@@ -11217,30 +5861,10 @@ class RecordSummary:
 
 @dataclass
 class RecordSummaryElement:
-    """
-    No description.
-    """
-
     data_source: 'str'
-    """
-    No description.
-    """
-
     first_seen_dt: 'str'
-    """
-    No description.
-    """
-
     last_seen_dt: 'str'
-    """
-    No description.
-    """
-
     record_count: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordSummaryElement':
@@ -11261,10 +5885,6 @@ class RecordSummaryElement:
 
 @dataclass
 class Records:
-    """
-    No description.
-    """
-
     value: 'List[Record]'
 
     @classmethod
@@ -11276,10 +5896,6 @@ class Records:
 
 @dataclass
 class RelatedEntities:
-    """
-    No description.
-    """
-
     value: 'List[RelatedEntity]'
 
     @classmethod
@@ -11291,65 +5907,17 @@ class RelatedEntities:
 
 @dataclass
 class RelatedEntity:
-    """
-    No description.
-    """
-
     entity_id: 'int'
-    """
-    No description.
-    """
-
     entity_name: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     is_ambiguous: 'int'
-    """
-    No description.
-    """
-
     is_disclosed: 'int'
-    """
-    No description.
-    """
-
     last_seen_dt: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     match_level_code: 'str'
-    """
-    No description.
-    """
-
     records: 'Records'
-    """
-    No description.
-    """
-
     record_summary: 'RecordSummary'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelatedEntity':
@@ -11384,45 +5952,13 @@ class RelatedEntity:
 
 @dataclass
 class Relationship:
-    """
-    No description.
-    """
-
     relationship_key: 'str'
-    """
-    No description.
-    """
-
     relationship_type: 'str'
-    """
-    No description.
-    """
-
     rel_anchor_domain: 'str'
-    """
-    No description.
-    """
-
     rel_anchor_key: 'str'
-    """
-    No description.
-    """
-
     rel_pointer_domain: 'str'
-    """
-    No description.
-    """
-
     rel_pointer_key: 'str'
-    """
-    No description.
-    """
-
     rel_pointer_role: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Relationship':
@@ -11449,10 +5985,6 @@ class Relationship:
 
 @dataclass
 class Relationships:
-    """
-    No description.
-    """
-
     value: 'List[Relationship]'
 
     @classmethod
@@ -11464,40 +5996,12 @@ class Relationships:
 
 @dataclass
 class ResolutionStep:
-    """
-    No description.
-    """
-
     inbound_virtual_entity_id: 'str'
-    """
-    No description.
-    """
-
     match_info: 'MatchInfo'
-    """
-    No description.
-    """
-
     result_virtual_entity_id: 'str'
-    """
-    No description.
-    """
-
     step: 'int'
-    """
-    No description.
-    """
-
     virtual_entity: 'VirtualEntitySynopsis'
-    """
-    No description.
-    """
-
     virtual_entity0: 'VirtualEntitySynopsis'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ResolutionStep':
@@ -11522,10 +6026,6 @@ class ResolutionStep:
 
 @dataclass
 class ResolutionSteps:
-    """
-    No description.
-    """
-
     value: 'List[ResolutionStep]'
 
     @classmethod
@@ -11537,70 +6037,18 @@ class ResolutionSteps:
 
 @dataclass
 class ResolvedEntity:
-    """
-    No description.
-    """
-
     entity_id: 'int'
-    """
-    No description.
-    """
-
     entity_name: 'str'
-    """
-    No description.
-    """
-
     errule_code: 'str'
-    """
-    No description.
-    """
-
     features: 'Features'
-    """
-    No description.
-    """
-
     is_ambiguous: 'int'
-    """
-    No description.
-    """
-
     is_disclosed: 'int'
-    """
-    No description.
-    """
-
     last_seen_dt: 'str'
-    """
-    No description.
-    """
-
     match_key: 'str'
-    """
-    No description.
-    """
-
     match_level: 'int'
-    """
-    No description.
-    """
-
     match_level_code: 'str'
-    """
-    No description.
-    """
-
     records: 'Records'
-    """
-    No description.
-    """
-
     record_summary: 'RecordSummary'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ResolvedEntity':
@@ -11637,60 +6085,16 @@ class ResolvedEntity:
 
 @dataclass
 class SysOom:
-    """
-    No description.
-    """
-
     felem_id: 'int'
-    """
-    No description.
-    """
-
     ftype_id: 'int'
-    """
-    No description.
-    """
-
     lens_id: 'int'
-    """
-    No description.
-    """
-
     lib_feat_id: 'int'
-    """
-    No description.
-    """
-
     lib_felem_id: 'int'
-    """
-    No description.
-    """
-
     next_thresh: 'int'
-    """
-    No description.
-    """
-
     oom_level: 'str'
-    """
-    No description.
-    """
-
     oom_type: 'str'
-    """
-    No description.
-    """
-
     thresh1_cnt: 'int'
-    """
-    No description.
-    """
-
     thresh1_oom: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SysOom':
@@ -11723,25 +6127,9 @@ class SysOom:
 
 @dataclass
 class SchemaVersion:
-    """
-    No description.
-    """
-
     engine_schema_version: 'str'
-    """
-    No description.
-    """
-
     maximum_required_schema_version: 'str'
-    """
-    No description.
-    """
-
     minimum_required_schema_version: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SchemaVersion':
@@ -11760,15 +6148,7 @@ class SchemaVersion:
 
 @dataclass
 class SearchResolvedEntitiesEntity:
-    """
-    No description.
-    """
-
     resolved_entity: 'ResolvedEntity'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchResolvedEntitiesEntity':
@@ -11784,15 +6164,7 @@ class SearchResolvedEntitiesEntity:
 @dataclass
 class SearchResolvedEntities:
     entity: 'SearchResolvedEntitiesEntity'
-    """
-    No description.
-    """
-
     match_info: 'MatchInfo'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchResolvedEntities':
@@ -11810,25 +6182,9 @@ class SearchResolvedEntities:
 @dataclass
 class SearchSearchStatisticsCandidateKeysFeatureTypes:
     found: 'int'
-    """
-    No description.
-    """
-
     ftype_code: 'str'
-    """
-    No description.
-    """
-
     generic: 'int'
-    """
-    No description.
-    """
-
     not_found: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchSearchStatisticsCandidateKeysFeatureTypes':
@@ -11849,25 +6205,9 @@ class SearchSearchStatisticsCandidateKeysFeatureTypes:
 
 @dataclass
 class SearchSearchStatisticsCandidateKeysSummary:
-    """
-    No description.
-    """
-
     found: 'int'
-    """
-    No description.
-    """
-
     generic: 'int'
-    """
-    No description.
-    """
-
     not_found: 'int'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchSearchStatisticsCandidateKeysSummary':
@@ -11886,20 +6226,8 @@ class SearchSearchStatisticsCandidateKeysSummary:
 
 @dataclass
 class SearchSearchStatisticsCandidateKeys:
-    """
-    No description.
-    """
-
     feature_types: 'List[SearchSearchStatisticsCandidateKeysFeatureTypes]'
-    """
-    No description.
-    """
-
     summary: 'SearchSearchStatisticsCandidateKeysSummary'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchSearchStatisticsCandidateKeys':
@@ -11917,10 +6245,6 @@ class SearchSearchStatisticsCandidateKeys:
 @dataclass
 class SearchSearchStatistics:
     candidate_keys: 'SearchSearchStatisticsCandidateKeys'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchSearchStatistics':
@@ -11935,20 +6259,8 @@ class SearchSearchStatistics:
 
 @dataclass
 class Search:
-    """
-    No description.
-    """
-
     resolved_entities: 'List[SearchResolvedEntities]'
-    """
-    No description.
-    """
-
     search_statistics: 'List[SearchSearchStatistics]'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Search':
@@ -11965,15 +6277,7 @@ class Search:
 
 @dataclass
 class VirtualEntity:
-    """
-    No description.
-    """
-
     resolved_entity: 'ResolvedEntity'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'VirtualEntity':
@@ -11988,20 +6292,8 @@ class VirtualEntity:
 
 @dataclass
 class VirtualEntitySynopsis:
-    """
-    No description.
-    """
-
     member_records: 'MemberRecords'
-    """
-    No description.
-    """
-
     virtual_entity_id: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'VirtualEntitySynopsis':
@@ -12018,20 +6310,8 @@ class VirtualEntitySynopsis:
 
 @dataclass
 class WhyEntities:
-    """
-    No description.
-    """
-
     entities: 'Entities'
-    """
-    No description.
-    """
-
     why_results: 'WhyResults'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyEntities':
@@ -12048,20 +6328,8 @@ class WhyEntities:
 
 @dataclass
 class WhyEntity:
-    """
-    No description.
-    """
-
     entities: 'Entities'
-    """
-    No description.
-    """
-
     why_results: 'WhyResults'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyEntity':
@@ -12078,20 +6346,8 @@ class WhyEntity:
 
 @dataclass
 class WhyRecords:
-    """
-    No description.
-    """
-
     entities: 'Entities'
-    """
-    No description.
-    """
-
     why_results: 'WhyResults'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyRecords':
@@ -12108,45 +6364,13 @@ class WhyRecords:
 
 @dataclass
 class WhyResult:
-    """
-    No description.
-    """
-
     entity_id: 'int'
-    """
-    No description.
-    """
-
     entity_id0: 'int'
-    """
-    No description.
-    """
-
     focus_records: 'FocusRecords'
-    """
-    No description.
-    """
-
     focus_records0: 'FocusRecords'
-    """
-    No description.
-    """
-
     internal_id: 'int'
-    """
-    No description.
-    """
-
     internal_id0: 'int'
-    """
-    No description.
-    """
-
     match_info: 'MatchInfo'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyResult':
@@ -12173,10 +6397,6 @@ class WhyResult:
 
 @dataclass
 class WhyResults:
-    """
-    No description.
-    """
-
     value: 'List[WhyResult]'
 
     @classmethod
@@ -12188,30 +6408,10 @@ class WhyResults:
 
 @dataclass
 class WithInfo:
-    """
-    No description.
-    """
-
     affected_entities: 'AffectedEntities'
-    """
-    No description.
-    """
-
     data_source: 'str'
-    """
-    No description.
-    """
-
     interesting_entities: 'InterestingEntities'
-    """
-    No description.
-    """
-
     record_id: 'str'
-    """
-    No description.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WithInfo':

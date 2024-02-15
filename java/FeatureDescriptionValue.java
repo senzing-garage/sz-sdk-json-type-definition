@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class FeatureDescriptionValue {
     @JsonProperty("CANDIDATE_CAP_REACHED")
@@ -39,7 +36,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for candidateCapReached.<p>
-     * No description.
      */
     public String getCandidateCapReached() {
         return candidateCapReached;
@@ -47,7 +43,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for candidateCapReached.<p>
-     * No description.
      */
     public void setCandidateCapReached(String candidateCapReached) {
         this.candidateCapReached = candidateCapReached;
@@ -55,7 +50,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for entityCount.<p>
-     * No description.
      */
     public Integer getEntityCount() {
         return entityCount;
@@ -63,7 +57,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for entityCount.<p>
-     * No description.
      */
     public void setEntityCount(Integer entityCount) {
         this.entityCount = entityCount;
@@ -71,7 +64,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -79,7 +71,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -87,7 +78,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -95,7 +85,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -103,7 +92,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for scoringCapReached.<p>
-     * No description.
      */
     public String getScoringCapReached() {
         return scoringCapReached;
@@ -111,7 +99,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for scoringCapReached.<p>
-     * No description.
      */
     public void setScoringCapReached(String scoringCapReached) {
         this.scoringCapReached = scoringCapReached;
@@ -119,7 +106,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for suppressed.<p>
-     * No description.
      */
     public String getSuppressed() {
         return suppressed;
@@ -127,7 +113,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for suppressed.<p>
-     * No description.
      */
     public void setSuppressed(String suppressed) {
         this.suppressed = suppressed;
@@ -135,7 +120,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for usedForCand.<p>
-     * No description.
      */
     public String getUsedForCand() {
         return usedForCand;
@@ -143,7 +127,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for usedForCand.<p>
-     * No description.
      */
     public void setUsedForCand(String usedForCand) {
         this.usedForCand = usedForCand;
@@ -151,7 +134,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for usedForScoring.<p>
-     * No description.
      */
     public String getUsedForScoring() {
         return usedForScoring;
@@ -159,7 +141,6 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for usedForScoring.<p>
-     * No description.
      */
     public void setUsedForScoring(String usedForScoring) {
         this.usedForScoring = usedForScoring;

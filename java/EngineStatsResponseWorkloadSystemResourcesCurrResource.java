@@ -25,7 +25,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Getter for activeThreads.<p>
-     * No description.
      */
     public Integer getActiveThreads() {
         return activeThreads;
@@ -33,7 +32,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Setter for activeThreads.<p>
-     * No description.
      */
     public void setActiveThreads(Integer activeThreads) {
         this.activeThreads = activeThreads;
@@ -41,7 +39,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Getter for availableMemory.<p>
-     * No description.
      */
     public String getAvailableMemory() {
         return availableMemory;
@@ -49,7 +46,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Setter for availableMemory.<p>
-     * No description.
      */
     public void setAvailableMemory(String availableMemory) {
         this.availableMemory = availableMemory;
@@ -57,7 +53,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Getter for systemLoad.<p>
-     * No description.
      */
     public List<EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad> getSystemLoad() {
         return systemLoad;
@@ -65,7 +60,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Setter for systemLoad.<p>
-     * No description.
      */
     public void setSystemLoad(List<EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad> systemLoad) {
         this.systemLoad = systemLoad;
@@ -73,7 +67,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Getter for workerThreads.<p>
-     * No description.
      */
     public Integer getWorkerThreads() {
         return workerThreads;
@@ -81,7 +74,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResource {
 
     /**
      * Setter for workerThreads.<p>
-     * No description.
      */
     public void setWorkerThreads(Integer workerThreads) {
         this.workerThreads = workerThreads;

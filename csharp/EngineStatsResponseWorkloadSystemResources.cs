@@ -5,20 +5,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class EngineStatsResponseWorkloadSystemResources
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("currResources")]
         public IList<EngineStatsResponseWorkloadSystemResourcesCurrResource> CurrResources { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("initResources")]
         public IList<EngineStatsResponseWorkloadSystemResourcesInitResource> InitResources { get; set; }
     }

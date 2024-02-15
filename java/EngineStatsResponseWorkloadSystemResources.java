@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseWorkloadSystemResources {
     @JsonProperty("currResources")
@@ -22,7 +19,6 @@ public class EngineStatsResponseWorkloadSystemResources {
 
     /**
      * Getter for currResources.<p>
-     * No description.
      */
     public List<EngineStatsResponseWorkloadSystemResourcesCurrResource> getCurrResources() {
         return currResources;
@@ -30,7 +26,6 @@ public class EngineStatsResponseWorkloadSystemResources {
 
     /**
      * Setter for currResources.<p>
-     * No description.
      */
     public void setCurrResources(List<EngineStatsResponseWorkloadSystemResourcesCurrResource> currResources) {
         this.currResources = currResources;
@@ -38,7 +33,6 @@ public class EngineStatsResponseWorkloadSystemResources {
 
     /**
      * Getter for initResources.<p>
-     * No description.
      */
     public List<EngineStatsResponseWorkloadSystemResourcesInitResource> getInitResources() {
         return initResources;
@@ -46,7 +40,6 @@ public class EngineStatsResponseWorkloadSystemResources {
 
     /**
      * Setter for initResources.<p>
-     * No description.
      */
     public void setInitResources(List<EngineStatsResponseWorkloadSystemResourcesInitResource> initResources) {
         this.initResources = initResources;

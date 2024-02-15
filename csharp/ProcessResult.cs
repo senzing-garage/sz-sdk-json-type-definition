@@ -5,14 +5,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class ProcessResult
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RESOLVED_ENTITIES")]
         public IList<ProcessResultResolvedEntities> ResolvedEntities { get; set; }
     }

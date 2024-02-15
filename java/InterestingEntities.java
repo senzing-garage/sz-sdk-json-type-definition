@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class InterestingEntities {
     @JsonProperty("ENTITIES")
@@ -22,7 +19,6 @@ public class InterestingEntities {
 
     /**
      * Getter for entities.<p>
-     * No description.
      */
     public List<InterestingEntity> getEntities() {
         return entities;
@@ -30,7 +26,6 @@ public class InterestingEntities {
 
     /**
      * Setter for entities.<p>
-     * No description.
      */
     public void setEntities(List<InterestingEntity> entities) {
         this.entities = entities;
@@ -38,7 +33,6 @@ public class InterestingEntities {
 
     /**
      * Getter for notices.<p>
-     * No description.
      */
     public Notices getNotices() {
         return notices;
@@ -46,7 +40,6 @@ public class InterestingEntities {
 
     /**
      * Setter for notices.<p>
-     * No description.
      */
     public void setNotices(Notices notices) {
         this.notices = notices;

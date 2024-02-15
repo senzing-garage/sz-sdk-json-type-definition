@@ -4,32 +4,17 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgRclass
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("IS_DISCLOSED")]
         public string IsDisclosed { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RCLASS_CODE")]
         public string RclassCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RCLASS_DESC")]
         public string RclassDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RCLASS_ID")]
         public int RclassId { get; set; }
     }

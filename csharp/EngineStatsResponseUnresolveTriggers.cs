@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class EngineStatsResponseUnresolveTriggers
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("extensiveResolve")]
         public int ExtensiveResolve { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("normalResolve")]
         public int NormalResolve { get; set; }
     }

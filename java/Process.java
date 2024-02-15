@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Process {
     @JsonProperty("AFFECTED_ENTITIES")
@@ -27,7 +24,6 @@ public class Process {
 
     /**
      * Getter for affectedEntities.<p>
-     * No description.
      */
     public AffectedEntities getAffectedEntities() {
         return affectedEntities;
@@ -35,7 +31,6 @@ public class Process {
 
     /**
      * Setter for affectedEntities.<p>
-     * No description.
      */
     public void setAffectedEntities(AffectedEntities affectedEntities) {
         this.affectedEntities = affectedEntities;
@@ -43,7 +38,6 @@ public class Process {
 
     /**
      * Getter for interestingEntities.<p>
-     * No description.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -51,7 +45,6 @@ public class Process {
 
     /**
      * Setter for interestingEntities.<p>
-     * No description.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;
@@ -59,7 +52,6 @@ public class Process {
 
     /**
      * Getter for processResult.<p>
-     * No description.
      */
     public ProcessResult getProcessResult() {
         return processResult;
@@ -67,7 +59,6 @@ public class Process {
 
     /**
      * Setter for processResult.<p>
-     * No description.
      */
     public void setProcessResult(ProcessResult processResult) {
         this.processResult = processResult;
@@ -75,7 +66,6 @@ public class Process {
 
     /**
      * Getter for umfProc.<p>
-     * No description.
      */
     public ProcessUmfProc getUmfProc() {
         return umfProc;
@@ -83,7 +73,6 @@ public class Process {
 
     /**
      * Setter for umfProc.<p>
-     * No description.
      */
     public void setUmfProc(ProcessUmfProc umfProc) {
         this.umfProc = umfProc;

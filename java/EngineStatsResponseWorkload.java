@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseWorkload {
     @JsonProperty("CorruptEntityTestDiagnosis")
@@ -139,7 +136,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for corruptEntityTestDiagnosis.<p>
-     * No description.
      */
     public Object getCorruptEntityTestDiagnosis() {
         return corruptEntityTestDiagnosis;
@@ -147,7 +143,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for corruptEntityTestDiagnosis.<p>
-     * No description.
      */
     public void setCorruptEntityTestDiagnosis(Object corruptEntityTestDiagnosis) {
         this.corruptEntityTestDiagnosis = corruptEntityTestDiagnosis;
@@ -155,7 +150,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for abortedUnresolve.<p>
-     * No description.
      */
     public Integer getAbortedUnresolve() {
         return abortedUnresolve;
@@ -163,7 +157,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for abortedUnresolve.<p>
-     * No description.
      */
     public void setAbortedUnresolve(Integer abortedUnresolve) {
         this.abortedUnresolve = abortedUnresolve;
@@ -171,7 +164,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for actualAmbiguousTest.<p>
-     * No description.
      */
     public Integer getActualAmbiguousTest() {
         return actualAmbiguousTest;
@@ -179,7 +171,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for actualAmbiguousTest.<p>
-     * No description.
      */
     public void setActualAmbiguousTest(Integer actualAmbiguousTest) {
         this.actualAmbiguousTest = actualAmbiguousTest;
@@ -187,7 +178,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for addedRecords.<p>
-     * No description.
      */
     public Integer getAddedRecords() {
         return addedRecords;
@@ -195,7 +185,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for addedRecords.<p>
-     * No description.
      */
     public void setAddedRecords(Integer addedRecords) {
         this.addedRecords = addedRecords;
@@ -203,7 +192,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for apiVersion.<p>
-     * No description.
      */
     public String getApiVersion() {
         return apiVersion;
@@ -211,7 +199,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for apiVersion.<p>
-     * No description.
      */
     public void setApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
@@ -219,7 +206,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for cacheHit.<p>
-     * No description.
      */
     public AttributeCounters getCacheHit() {
         return cacheHit;
@@ -227,7 +213,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for cacheHit.<p>
-     * No description.
      */
     public void setCacheHit(AttributeCounters cacheHit) {
         this.cacheHit = cacheHit;
@@ -235,7 +220,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for cacheMiss.<p>
-     * No description.
      */
     public AttributeCounters getCacheMiss() {
         return cacheMiss;
@@ -243,7 +227,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for cacheMiss.<p>
-     * No description.
      */
     public void setCacheMiss(AttributeCounters cacheMiss) {
         this.cacheMiss = cacheMiss;
@@ -251,7 +234,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for cachedAmbiguousTest.<p>
-     * No description.
      */
     public Integer getCachedAmbiguousTest() {
         return cachedAmbiguousTest;
@@ -259,7 +241,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for cachedAmbiguousTest.<p>
-     * No description.
      */
     public void setCachedAmbiguousTest(Integer cachedAmbiguousTest) {
         this.cachedAmbiguousTest = cachedAmbiguousTest;
@@ -267,7 +248,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for candidateBuilders.<p>
-     * No description.
      */
     public AttributeCounters getCandidateBuilders() {
         return candidateBuilders;
@@ -275,7 +255,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for candidateBuilders.<p>
-     * No description.
      */
     public void setCandidateBuilders(AttributeCounters candidateBuilders) {
         this.candidateBuilders = candidateBuilders;
@@ -283,7 +262,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for candidates.<p>
-     * No description.
      */
     public Integer getCandidates() {
         return candidates;
@@ -291,7 +269,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for candidates.<p>
-     * No description.
      */
     public void setCandidates(Integer candidates) {
         this.candidates = candidates;
@@ -299,7 +276,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for deletedRecords.<p>
-     * No description.
      */
     public Integer getDeletedRecords() {
         return deletedRecords;
@@ -307,7 +283,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for deletedRecords.<p>
-     * No description.
      */
     public void setDeletedRecords(Integer deletedRecords) {
         this.deletedRecords = deletedRecords;
@@ -315,7 +290,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for duration.<p>
-     * No description.
      */
     public Integer getDuration() {
         return duration;
@@ -323,7 +297,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for duration.<p>
-     * No description.
      */
     public void setDuration(Integer duration) {
         this.duration = duration;
@@ -331,7 +304,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for expressedFeatureCalls.<p>
-     * No description.
      */
     public List<EngineStatsResponseWorkloadExpressedFeatureCall> getExpressedFeatureCalls() {
         return expressedFeatureCalls;
@@ -339,7 +311,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for expressedFeatureCalls.<p>
-     * No description.
      */
     public void setExpressedFeatureCalls(List<EngineStatsResponseWorkloadExpressedFeatureCall> expressedFeatureCalls) {
         this.expressedFeatureCalls = expressedFeatureCalls;
@@ -347,7 +318,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for expressedFeaturesCreated.<p>
-     * No description.
      */
     public AttributeCounters getExpressedFeaturesCreated() {
         return expressedFeaturesCreated;
@@ -355,7 +325,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for expressedFeaturesCreated.<p>
-     * No description.
      */
     public void setExpressedFeaturesCreated(AttributeCounters expressedFeaturesCreated) {
         this.expressedFeaturesCreated = expressedFeaturesCreated;
@@ -363,7 +332,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for filteredObsFeat.<p>
-     * No description.
      */
     public Integer getFilteredObsFeat() {
         return filteredObsFeat;
@@ -371,7 +339,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for filteredObsFeat.<p>
-     * No description.
      */
     public void setFilteredObsFeat(Integer filteredObsFeat) {
         this.filteredObsFeat = filteredObsFeat;
@@ -379,7 +346,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for genericDetect.<p>
-     * No description.
      */
     public AttributeCounters getGenericDetect() {
         return genericDetect;
@@ -387,7 +353,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for genericDetect.<p>
-     * No description.
      */
     public void setGenericDetect(AttributeCounters genericDetect) {
         this.genericDetect = genericDetect;
@@ -395,7 +360,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for gnrScorersUsed.<p>
-     * No description.
      */
     public Integer getGnrScorersUsed() {
         return gnrScorersUsed;
@@ -403,7 +367,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for gnrScorersUsed.<p>
-     * No description.
      */
     public void setGnrScorersUsed(Integer gnrScorersUsed) {
         this.gnrScorersUsed = gnrScorersUsed;
@@ -411,7 +374,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for highContentionFeat.<p>
-     * No description.
      */
     public AttributeCounters getHighContentionFeat() {
         return highContentionFeat;
@@ -419,7 +381,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for highContentionFeat.<p>
-     * No description.
      */
     public void setHighContentionFeat(AttributeCounters highContentionFeat) {
         this.highContentionFeat = highContentionFeat;
@@ -427,7 +388,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for highContentionResEnt.<p>
-     * No description.
      */
     public AttributeCounters getHighContentionResEnt() {
         return highContentionResEnt;
@@ -435,7 +395,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for highContentionResEnt.<p>
-     * No description.
      */
     public void setHighContentionResEnt(AttributeCounters highContentionResEnt) {
         this.highContentionResEnt = highContentionResEnt;
@@ -443,7 +402,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for latchContention.<p>
-     * No description.
      */
     public AttributeCounters getLatchContention() {
         return latchContention;
@@ -451,7 +409,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for latchContention.<p>
-     * No description.
      */
     public void setLatchContention(AttributeCounters latchContention) {
         this.latchContention = latchContention;
@@ -459,7 +416,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for libFeatCacheHit.<p>
-     * No description.
      */
     public Integer getLibFeatCacheHit() {
         return libFeatCacheHit;
@@ -467,7 +423,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for libFeatCacheHit.<p>
-     * No description.
      */
     public void setLibFeatCacheHit(Integer libFeatCacheHit) {
         this.libFeatCacheHit = libFeatCacheHit;
@@ -475,7 +430,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for libFeatCacheMiss.<p>
-     * No description.
      */
     public Integer getLibFeatCacheMiss() {
         return libFeatCacheMiss;
@@ -483,7 +437,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for libFeatCacheMiss.<p>
-     * No description.
      */
     public void setLibFeatCacheMiss(Integer libFeatCacheMiss) {
         this.libFeatCacheMiss = libFeatCacheMiss;
@@ -491,7 +444,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for loadedRecords.<p>
-     * No description.
      */
     public Integer getLoadedRecords() {
         return loadedRecords;
@@ -499,7 +451,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for loadedRecords.<p>
-     * No description.
      */
     public void setLoadedRecords(Integer loadedRecords) {
         this.loadedRecords = loadedRecords;
@@ -507,7 +458,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for redoTriggers.<p>
-     * No description.
      */
     public AttributeCounters getRedoTriggers() {
         return redoTriggers;
@@ -515,7 +465,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for redoTriggers.<p>
-     * No description.
      */
     public void setRedoTriggers(AttributeCounters redoTriggers) {
         this.redoTriggers = redoTriggers;
@@ -523,7 +472,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for reducedScoredFeatureType.<p>
-     * No description.
      */
     public AttributeCounters getReducedScoredFeatureType() {
         return reducedScoredFeatureType;
@@ -531,7 +479,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for reducedScoredFeatureType.<p>
-     * No description.
      */
     public void setReducedScoredFeatureType(AttributeCounters reducedScoredFeatureType) {
         this.reducedScoredFeatureType = reducedScoredFeatureType;
@@ -539,7 +486,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for reevaluations.<p>
-     * No description.
      */
     public Integer getReevaluations() {
         return reevaluations;
@@ -547,7 +493,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for reevaluations.<p>
-     * No description.
      */
     public void setReevaluations(Integer reevaluations) {
         this.reevaluations = reevaluations;
@@ -555,7 +500,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for repairedEntities.<p>
-     * No description.
      */
     public Integer getRepairedEntities() {
         return repairedEntities;
@@ -563,7 +507,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for repairedEntities.<p>
-     * No description.
      */
     public void setRepairedEntities(Integer repairedEntities) {
         this.repairedEntities = repairedEntities;
@@ -571,7 +514,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for reresolveSkipped.<p>
-     * No description.
      */
     public Integer getReresolveSkipped() {
         return reresolveSkipped;
@@ -579,7 +521,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for reresolveSkipped.<p>
-     * No description.
      */
     public void setReresolveSkipped(Integer reresolveSkipped) {
         this.reresolveSkipped = reresolveSkipped;
@@ -587,7 +528,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for reresolveTriggers.<p>
-     * No description.
      */
     public EngineStatsResponseWorkloadReresolveTriggers getReresolveTriggers() {
         return reresolveTriggers;
@@ -595,7 +535,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for reresolveTriggers.<p>
-     * No description.
      */
     public void setReresolveTriggers(EngineStatsResponseWorkloadReresolveTriggers reresolveTriggers) {
         this.reresolveTriggers = reresolveTriggers;
@@ -603,7 +542,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for resFeatStatCacheHit.<p>
-     * No description.
      */
     public Integer getResFeatStatCacheHit() {
         return resFeatStatCacheHit;
@@ -611,7 +549,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for resFeatStatCacheHit.<p>
-     * No description.
      */
     public void setResFeatStatCacheHit(Integer resFeatStatCacheHit) {
         this.resFeatStatCacheHit = resFeatStatCacheHit;
@@ -619,7 +556,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for resFeatStatCacheMiss.<p>
-     * No description.
      */
     public Integer getResFeatStatCacheMiss() {
         return resFeatStatCacheMiss;
@@ -627,7 +563,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for resFeatStatCacheMiss.<p>
-     * No description.
      */
     public void setResFeatStatCacheMiss(Integer resFeatStatCacheMiss) {
         this.resFeatStatCacheMiss = resFeatStatCacheMiss;
@@ -635,7 +570,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for resFeatStatUpdate.<p>
-     * No description.
      */
     public Integer getResFeatStatUpdate() {
         return resFeatStatUpdate;
@@ -643,7 +577,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for resFeatStatUpdate.<p>
-     * No description.
      */
     public void setResFeatStatUpdate(Integer resFeatStatUpdate) {
         this.resFeatStatUpdate = resFeatStatUpdate;
@@ -651,7 +584,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for retries.<p>
-     * No description.
      */
     public Integer getRetries() {
         return retries;
@@ -659,7 +591,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for retries.<p>
-     * No description.
      */
     public void setRetries(Integer retries) {
         this.retries = retries;
@@ -667,7 +598,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for scoredPairs.<p>
-     * No description.
      */
     public AttributeCounters getScoredPairs() {
         return scoredPairs;
@@ -675,7 +605,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for scoredPairs.<p>
-     * No description.
      */
     public void setScoredPairs(AttributeCounters scoredPairs) {
         this.scoredPairs = scoredPairs;
@@ -683,7 +612,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for suppressedCandidateBuilders.<p>
-     * No description.
      */
     public AttributeCounters getSuppressedCandidateBuilders() {
         return suppressedCandidateBuilders;
@@ -691,7 +619,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for suppressedCandidateBuilders.<p>
-     * No description.
      */
     public void setSuppressedCandidateBuilders(AttributeCounters suppressedCandidateBuilders) {
         this.suppressedCandidateBuilders = suppressedCandidateBuilders;
@@ -699,7 +626,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for suppressedDisclosedRelationshipDomainCount.<p>
-     * No description.
      */
     public Integer getSuppressedDisclosedRelationshipDomainCount() {
         return suppressedDisclosedRelationshipDomainCount;
@@ -707,7 +633,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for suppressedDisclosedRelationshipDomainCount.<p>
-     * No description.
      */
     public void setSuppressedDisclosedRelationshipDomainCount(Integer suppressedDisclosedRelationshipDomainCount) {
         this.suppressedDisclosedRelationshipDomainCount = suppressedDisclosedRelationshipDomainCount;
@@ -715,7 +640,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for suppressedScoredFeatureType.<p>
-     * No description.
      */
     public AttributeCounters getSuppressedScoredFeatureType() {
         return suppressedScoredFeatureType;
@@ -723,7 +647,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for suppressedScoredFeatureType.<p>
-     * No description.
      */
     public void setSuppressedScoredFeatureType(AttributeCounters suppressedScoredFeatureType) {
         this.suppressedScoredFeatureType = suppressedScoredFeatureType;
@@ -731,7 +654,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for systemResources.<p>
-     * No description.
      */
     public EngineStatsResponseWorkloadSystemResources getSystemResources() {
         return systemResources;
@@ -739,7 +661,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for systemResources.<p>
-     * No description.
      */
     public void setSystemResources(EngineStatsResponseWorkloadSystemResources systemResources) {
         this.systemResources = systemResources;
@@ -747,7 +668,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for threadState.<p>
-     * No description.
      */
     public EngineStatsResponseWorkloadThreadState getThreadState() {
         return threadState;
@@ -755,7 +675,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for threadState.<p>
-     * No description.
      */
     public void setThreadState(EngineStatsResponseWorkloadThreadState threadState) {
         this.threadState = threadState;
@@ -763,7 +682,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for unresolveTest.<p>
-     * No description.
      */
     public Integer getUnresolveTest() {
         return unresolveTest;
@@ -771,7 +689,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for unresolveTest.<p>
-     * No description.
      */
     public void setUnresolveTest(Integer unresolveTest) {
         this.unresolveTest = unresolveTest;
@@ -779,7 +696,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Getter for unresolveTriggers.<p>
-     * No description.
      */
     public EngineStatsResponseWorkloadUnresolveTriggers getUnresolveTriggers() {
         return unresolveTriggers;
@@ -787,7 +703,6 @@ public class EngineStatsResponseWorkload {
 
     /**
      * Setter for unresolveTriggers.<p>
-     * No description.
      */
     public void setUnresolveTriggers(EngineStatsResponseWorkloadUnresolveTriggers unresolveTriggers) {
         this.unresolveTriggers = unresolveTriggers;

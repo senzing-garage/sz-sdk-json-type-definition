@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MatchInfoCandidateKeys {
     @JsonProperty("ACCOUNT_DOMAIN")
@@ -309,7 +306,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for accountDomain.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAccountDomain() {
         return accountDomain;
@@ -317,7 +313,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for accountDomain.<p>
-     * No description.
      */
     public void setAccountDomain(MatchInfosForAttribute accountDomain) {
         this.accountDomain = accountDomain;
@@ -325,7 +320,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for accountNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAccountNumber() {
         return accountNumber;
@@ -333,7 +327,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for accountNumber.<p>
-     * No description.
      */
     public void setAccountNumber(MatchInfosForAttribute accountNumber) {
         this.accountNumber = accountNumber;
@@ -341,7 +334,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for acctNum.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAcctNum() {
         return acctNum;
@@ -349,7 +341,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for acctNum.<p>
-     * No description.
      */
     public void setAcctNum(MatchInfosForAttribute acctNum) {
         this.acctNum = acctNum;
@@ -357,7 +348,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for address.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAddress() {
         return address;
@@ -365,7 +355,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for address.<p>
-     * No description.
      */
     public void setAddress(MatchInfosForAttribute address) {
         this.address = address;
@@ -373,7 +362,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for addressList.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAddressList() {
         return addressList;
@@ -381,7 +369,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for addressList.<p>
-     * No description.
      */
     public void setAddressList(MatchInfosForAttribute addressList) {
         this.addressList = addressList;
@@ -389,7 +376,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for addrFull.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAddrFull() {
         return addrFull;
@@ -397,7 +383,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for addrFull.<p>
-     * No description.
      */
     public void setAddrFull(MatchInfosForAttribute addrFull) {
         this.addrFull = addrFull;
@@ -405,7 +390,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for addrKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getAddrKey() {
         return addrKey;
@@ -413,7 +397,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for addrKey.<p>
-     * No description.
      */
     public void setAddrKey(MatchInfosForAttribute addrKey) {
         this.addrKey = addrKey;
@@ -421,7 +404,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for cellPhoneNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getCellPhoneNumber() {
         return cellPhoneNumber;
@@ -429,7 +411,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for cellPhoneNumber.<p>
-     * No description.
      */
     public void setCellPhoneNumber(MatchInfosForAttribute cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
@@ -437,7 +418,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for citizenship.<p>
-     * No description.
      */
     public MatchInfosForAttribute getCitizenship() {
         return citizenship;
@@ -445,7 +425,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for citizenship.<p>
-     * No description.
      */
     public void setCitizenship(MatchInfosForAttribute citizenship) {
         this.citizenship = citizenship;
@@ -453,7 +432,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for countryOfAssociation.<p>
-     * No description.
      */
     public MatchInfosForAttribute getCountryOfAssociation() {
         return countryOfAssociation;
@@ -461,7 +439,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for countryOfAssociation.<p>
-     * No description.
      */
     public void setCountryOfAssociation(MatchInfosForAttribute countryOfAssociation) {
         this.countryOfAssociation = countryOfAssociation;
@@ -469,7 +446,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDataSource() {
         return dataSource;
@@ -477,7 +453,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(MatchInfosForAttribute dataSource) {
         this.dataSource = dataSource;
@@ -485,7 +460,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for dateOfBirth.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDateOfBirth() {
         return dateOfBirth;
@@ -493,7 +467,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for dateOfBirth.<p>
-     * No description.
      */
     public void setDateOfBirth(MatchInfosForAttribute dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -501,7 +474,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for dateOfDeath.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDateOfDeath() {
         return dateOfDeath;
@@ -509,7 +481,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for dateOfDeath.<p>
-     * No description.
      */
     public void setDateOfDeath(MatchInfosForAttribute dateOfDeath) {
         this.dateOfDeath = dateOfDeath;
@@ -517,7 +488,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for dob.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDob() {
         return dob;
@@ -525,7 +495,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for dob.<p>
-     * No description.
      */
     public void setDob(MatchInfosForAttribute dob) {
         this.dob = dob;
@@ -533,7 +502,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for dod.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDod() {
         return dod;
@@ -541,7 +509,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for dod.<p>
-     * No description.
      */
     public void setDod(MatchInfosForAttribute dod) {
         this.dod = dod;
@@ -549,7 +516,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for driversLicenseNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDriversLicenseNumber() {
         return driversLicenseNumber;
@@ -557,7 +523,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for driversLicenseNumber.<p>
-     * No description.
      */
     public void setDriversLicenseNumber(MatchInfosForAttribute driversLicenseNumber) {
         this.driversLicenseNumber = driversLicenseNumber;
@@ -565,7 +530,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for driversLicenseState.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDriversLicenseState() {
         return driversLicenseState;
@@ -573,7 +537,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for driversLicenseState.<p>
-     * No description.
      */
     public void setDriversLicenseState(MatchInfosForAttribute driversLicenseState) {
         this.driversLicenseState = driversLicenseState;
@@ -581,7 +544,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for drlic.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDrlic() {
         return drlic;
@@ -589,7 +551,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for drlic.<p>
-     * No description.
      */
     public void setDrlic(MatchInfosForAttribute drlic) {
         this.drlic = drlic;
@@ -597,7 +558,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for dunsNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getDunsNumber() {
         return dunsNumber;
@@ -605,7 +565,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for dunsNumber.<p>
-     * No description.
      */
     public void setDunsNumber(MatchInfosForAttribute dunsNumber) {
         this.dunsNumber = dunsNumber;
@@ -613,7 +572,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for email.<p>
-     * No description.
      */
     public MatchInfosForAttribute getEmail() {
         return email;
@@ -621,7 +579,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for email.<p>
-     * No description.
      */
     public void setEmail(MatchInfosForAttribute email) {
         this.email = email;
@@ -629,7 +586,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for emailAddress.<p>
-     * No description.
      */
     public MatchInfosForAttribute getEmailAddress() {
         return emailAddress;
@@ -637,7 +593,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for emailAddress.<p>
-     * No description.
      */
     public void setEmailAddress(MatchInfosForAttribute emailAddress) {
         this.emailAddress = emailAddress;
@@ -645,7 +600,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for emailKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getEmailKey() {
         return emailKey;
@@ -653,7 +607,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for emailKey.<p>
-     * No description.
      */
     public void setEmailKey(MatchInfosForAttribute emailKey) {
         this.emailKey = emailKey;
@@ -661,7 +614,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for employerName.<p>
-     * No description.
      */
     public MatchInfosForAttribute getEmployerName() {
         return employerName;
@@ -669,7 +621,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for employerName.<p>
-     * No description.
      */
     public void setEmployerName(MatchInfosForAttribute employerName) {
         this.employerName = employerName;
@@ -677,7 +628,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for entityType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getEntityType() {
         return entityType;
@@ -685,7 +635,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for entityType.<p>
-     * No description.
      */
     public void setEntityType(MatchInfosForAttribute entityType) {
         this.entityType = entityType;
@@ -693,7 +642,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for facebook.<p>
-     * No description.
      */
     public MatchInfosForAttribute getFacebook() {
         return facebook;
@@ -701,7 +649,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for facebook.<p>
-     * No description.
      */
     public void setFacebook(MatchInfosForAttribute facebook) {
         this.facebook = facebook;
@@ -709,7 +656,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for gender.<p>
-     * No description.
      */
     public MatchInfosForAttribute getGender() {
         return gender;
@@ -717,7 +663,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for gender.<p>
-     * No description.
      */
     public void setGender(MatchInfosForAttribute gender) {
         this.gender = gender;
@@ -725,7 +670,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for groupAssnIdNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getGroupAssnIdNumber() {
         return groupAssnIdNumber;
@@ -733,7 +677,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for groupAssnIdNumber.<p>
-     * No description.
      */
     public void setGroupAssnIdNumber(MatchInfosForAttribute groupAssnIdNumber) {
         this.groupAssnIdNumber = groupAssnIdNumber;
@@ -741,7 +684,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for groupAssnIdType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getGroupAssnIdType() {
         return groupAssnIdType;
@@ -749,7 +691,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for groupAssnIdType.<p>
-     * No description.
      */
     public void setGroupAssnIdType(MatchInfosForAttribute groupAssnIdType) {
         this.groupAssnIdType = groupAssnIdType;
@@ -757,7 +698,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for groupAssociationOrgName.<p>
-     * No description.
      */
     public MatchInfosForAttribute getGroupAssociationOrgName() {
         return groupAssociationOrgName;
@@ -765,7 +705,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for groupAssociationOrgName.<p>
-     * No description.
      */
     public void setGroupAssociationOrgName(MatchInfosForAttribute groupAssociationOrgName) {
         this.groupAssociationOrgName = groupAssociationOrgName;
@@ -773,7 +712,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for groupAssociationType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getGroupAssociationType() {
         return groupAssociationType;
@@ -781,7 +719,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for groupAssociationType.<p>
-     * No description.
      */
     public void setGroupAssociationType(MatchInfosForAttribute groupAssociationType) {
         this.groupAssociationType = groupAssociationType;
@@ -789,7 +726,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for idKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getIdKey() {
         return idKey;
@@ -797,7 +733,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for idKey.<p>
-     * No description.
      */
     public void setIdKey(MatchInfosForAttribute idKey) {
         this.idKey = idKey;
@@ -805,7 +740,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for instagram.<p>
-     * No description.
      */
     public MatchInfosForAttribute getInstagram() {
         return instagram;
@@ -813,7 +747,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for instagram.<p>
-     * No description.
      */
     public void setInstagram(MatchInfosForAttribute instagram) {
         this.instagram = instagram;
@@ -821,7 +754,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for leiNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getLeiNumber() {
         return leiNumber;
@@ -829,7 +761,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for leiNumber.<p>
-     * No description.
      */
     public void setLeiNumber(MatchInfosForAttribute leiNumber) {
         this.leiNumber = leiNumber;
@@ -837,7 +768,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for linkedin.<p>
-     * No description.
      */
     public MatchInfosForAttribute getLinkedin() {
         return linkedin;
@@ -845,7 +775,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for linkedin.<p>
-     * No description.
      */
     public void setLinkedin(MatchInfosForAttribute linkedin) {
         this.linkedin = linkedin;
@@ -853,7 +782,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for loadId.<p>
-     * No description.
      */
     public MatchInfosForAttribute getLoadId() {
         return loadId;
@@ -861,7 +789,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for loadId.<p>
-     * No description.
      */
     public void setLoadId(MatchInfosForAttribute loadId) {
         this.loadId = loadId;
@@ -869,7 +796,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for loginId.<p>
-     * No description.
      */
     public MatchInfosForAttribute getLoginId() {
         return loginId;
@@ -877,7 +803,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for loginId.<p>
-     * No description.
      */
     public void setLoginId(MatchInfosForAttribute loginId) {
         this.loginId = loginId;
@@ -885,7 +810,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public MatchInfosForAttribute getName() {
         return name;
@@ -893,7 +817,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(MatchInfosForAttribute name) {
         this.name = name;
@@ -901,7 +824,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nameFull.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNameFull() {
         return nameFull;
@@ -909,7 +831,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nameFull.<p>
-     * No description.
      */
     public void setNameFull(MatchInfosForAttribute nameFull) {
         this.nameFull = nameFull;
@@ -917,7 +838,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nameKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNameKey() {
         return nameKey;
@@ -925,7 +845,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nameKey.<p>
-     * No description.
      */
     public void setNameKey(MatchInfosForAttribute nameKey) {
         this.nameKey = nameKey;
@@ -933,7 +852,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nameList.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNameList() {
         return nameList;
@@ -941,7 +859,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nameList.<p>
-     * No description.
      */
     public void setNameList(MatchInfosForAttribute nameList) {
         this.nameList = nameList;
@@ -949,7 +866,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nationality.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNationality() {
         return nationality;
@@ -957,7 +873,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nationality.<p>
-     * No description.
      */
     public void setNationality(MatchInfosForAttribute nationality) {
         this.nationality = nationality;
@@ -965,7 +880,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nationalId.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNationalId() {
         return nationalId;
@@ -973,7 +887,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nationalId.<p>
-     * No description.
      */
     public void setNationalId(MatchInfosForAttribute nationalId) {
         this.nationalId = nationalId;
@@ -981,7 +894,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nationalIdCountry.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNationalIdCountry() {
         return nationalIdCountry;
@@ -989,7 +901,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nationalIdCountry.<p>
-     * No description.
      */
     public void setNationalIdCountry(MatchInfosForAttribute nationalIdCountry) {
         this.nationalIdCountry = nationalIdCountry;
@@ -997,7 +908,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for nationalIdNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNationalIdNumber() {
         return nationalIdNumber;
@@ -1005,7 +915,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for nationalIdNumber.<p>
-     * No description.
      */
     public void setNationalIdNumber(MatchInfosForAttribute nationalIdNumber) {
         this.nationalIdNumber = nationalIdNumber;
@@ -1013,7 +922,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for ninCountry.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNinCountry() {
         return ninCountry;
@@ -1021,7 +929,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for ninCountry.<p>
-     * No description.
      */
     public void setNinCountry(MatchInfosForAttribute ninCountry) {
         this.ninCountry = ninCountry;
@@ -1029,7 +936,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for ninNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNinNumber() {
         return ninNumber;
@@ -1037,7 +943,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for ninNumber.<p>
-     * No description.
      */
     public void setNinNumber(MatchInfosForAttribute ninNumber) {
         this.ninNumber = ninNumber;
@@ -1045,7 +950,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for npiNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getNpiNumber() {
         return npiNumber;
@@ -1053,7 +957,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for npiNumber.<p>
-     * No description.
      */
     public void setNpiNumber(MatchInfosForAttribute npiNumber) {
         this.npiNumber = npiNumber;
@@ -1061,7 +964,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for otherIdCountry.<p>
-     * No description.
      */
     public MatchInfosForAttribute getOtherIdCountry() {
         return otherIdCountry;
@@ -1069,7 +971,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for otherIdCountry.<p>
-     * No description.
      */
     public void setOtherIdCountry(MatchInfosForAttribute otherIdCountry) {
         this.otherIdCountry = otherIdCountry;
@@ -1077,7 +978,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for otherIdNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getOtherIdNumber() {
         return otherIdNumber;
@@ -1085,7 +985,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for otherIdNumber.<p>
-     * No description.
      */
     public void setOtherIdNumber(MatchInfosForAttribute otherIdNumber) {
         this.otherIdNumber = otherIdNumber;
@@ -1093,7 +992,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for otherIdType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getOtherIdType() {
         return otherIdType;
@@ -1101,7 +999,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for otherIdType.<p>
-     * No description.
      */
     public void setOtherIdType(MatchInfosForAttribute otherIdType) {
         this.otherIdType = otherIdType;
@@ -1109,7 +1006,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for passport.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPassport() {
         return passport;
@@ -1117,7 +1013,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for passport.<p>
-     * No description.
      */
     public void setPassport(MatchInfosForAttribute passport) {
         this.passport = passport;
@@ -1125,7 +1020,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for passports.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPassports() {
         return passports;
@@ -1133,7 +1027,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for passports.<p>
-     * No description.
      */
     public void setPassports(MatchInfosForAttribute passports) {
         this.passports = passports;
@@ -1141,7 +1034,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for passportCountry.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPassportCountry() {
         return passportCountry;
@@ -1149,7 +1041,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for passportCountry.<p>
-     * No description.
      */
     public void setPassportCountry(MatchInfosForAttribute passportCountry) {
         this.passportCountry = passportCountry;
@@ -1157,7 +1048,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for passportNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPassportNumber() {
         return passportNumber;
@@ -1165,7 +1055,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for passportNumber.<p>
-     * No description.
      */
     public void setPassportNumber(MatchInfosForAttribute passportNumber) {
         this.passportNumber = passportNumber;
@@ -1173,7 +1062,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for phone.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPhone() {
         return phone;
@@ -1181,7 +1069,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for phone.<p>
-     * No description.
      */
     public void setPhone(MatchInfosForAttribute phone) {
         this.phone = phone;
@@ -1189,7 +1076,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for phones.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPhones() {
         return phones;
@@ -1197,7 +1083,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for phones.<p>
-     * No description.
      */
     public void setPhones(MatchInfosForAttribute phones) {
         this.phones = phones;
@@ -1205,7 +1090,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for phoneKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPhoneKey() {
         return phoneKey;
@@ -1213,7 +1097,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for phoneKey.<p>
-     * No description.
      */
     public void setPhoneKey(MatchInfosForAttribute phoneKey) {
         this.phoneKey = phoneKey;
@@ -1221,7 +1104,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for placeOfBirth.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPlaceOfBirth() {
         return placeOfBirth;
@@ -1229,7 +1111,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for placeOfBirth.<p>
-     * No description.
      */
     public void setPlaceOfBirth(MatchInfosForAttribute placeOfBirth) {
         this.placeOfBirth = placeOfBirth;
@@ -1237,7 +1118,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryNameFirst.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryNameFirst() {
         return primaryNameFirst;
@@ -1245,7 +1125,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryNameFirst.<p>
-     * No description.
      */
     public void setPrimaryNameFirst(MatchInfosForAttribute primaryNameFirst) {
         this.primaryNameFirst = primaryNameFirst;
@@ -1253,7 +1132,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryNameLast.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryNameLast() {
         return primaryNameLast;
@@ -1261,7 +1139,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryNameLast.<p>
-     * No description.
      */
     public void setPrimaryNameLast(MatchInfosForAttribute primaryNameLast) {
         this.primaryNameLast = primaryNameLast;
@@ -1269,7 +1146,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryNameMiddle.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryNameMiddle() {
         return primaryNameMiddle;
@@ -1277,7 +1153,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryNameMiddle.<p>
-     * No description.
      */
     public void setPrimaryNameMiddle(MatchInfosForAttribute primaryNameMiddle) {
         this.primaryNameMiddle = primaryNameMiddle;
@@ -1285,7 +1160,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryNameOrg.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryNameOrg() {
         return primaryNameOrg;
@@ -1293,7 +1167,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryNameOrg.<p>
-     * No description.
      */
     public void setPrimaryNameOrg(MatchInfosForAttribute primaryNameOrg) {
         this.primaryNameOrg = primaryNameOrg;
@@ -1301,7 +1174,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryNamePrefix.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryNamePrefix() {
         return primaryNamePrefix;
@@ -1309,7 +1181,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryNamePrefix.<p>
-     * No description.
      */
     public void setPrimaryNamePrefix(MatchInfosForAttribute primaryNamePrefix) {
         this.primaryNamePrefix = primaryNamePrefix;
@@ -1317,7 +1188,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryNameSuffix.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryNameSuffix() {
         return primaryNameSuffix;
@@ -1325,7 +1195,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryNameSuffix.<p>
-     * No description.
      */
     public void setPrimaryNameSuffix(MatchInfosForAttribute primaryNameSuffix) {
         this.primaryNameSuffix = primaryNameSuffix;
@@ -1333,7 +1202,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for primaryPhoneNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getPrimaryPhoneNumber() {
         return primaryPhoneNumber;
@@ -1341,7 +1209,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for primaryPhoneNumber.<p>
-     * No description.
      */
     public void setPrimaryPhoneNumber(MatchInfosForAttribute primaryPhoneNumber) {
         this.primaryPhoneNumber = primaryPhoneNumber;
@@ -1349,7 +1216,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for recordType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRecordType() {
         return recordType;
@@ -1357,7 +1223,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for recordType.<p>
-     * No description.
      */
     public void setRecordType(MatchInfosForAttribute recordType) {
         this.recordType = recordType;
@@ -1365,7 +1230,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for registrationCountry.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRegistrationCountry() {
         return registrationCountry;
@@ -1373,7 +1237,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for registrationCountry.<p>
-     * No description.
      */
     public void setRegistrationCountry(MatchInfosForAttribute registrationCountry) {
         this.registrationCountry = registrationCountry;
@@ -1381,7 +1244,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for registrationDate.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRegistrationDate() {
         return registrationDate;
@@ -1389,7 +1251,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for registrationDate.<p>
-     * No description.
      */
     public void setRegistrationDate(MatchInfosForAttribute registrationDate) {
         this.registrationDate = registrationDate;
@@ -1397,7 +1258,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relAnchor.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelAnchor() {
         return relAnchor;
@@ -1405,7 +1265,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relAnchor.<p>
-     * No description.
      */
     public void setRelAnchor(MatchInfosForAttribute relAnchor) {
         this.relAnchor = relAnchor;
@@ -1413,7 +1272,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relAnchorDomain.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelAnchorDomain() {
         return relAnchorDomain;
@@ -1421,7 +1279,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relAnchorDomain.<p>
-     * No description.
      */
     public void setRelAnchorDomain(MatchInfosForAttribute relAnchorDomain) {
         this.relAnchorDomain = relAnchorDomain;
@@ -1429,7 +1286,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relAnchorKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelAnchorKey() {
         return relAnchorKey;
@@ -1437,7 +1293,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relAnchorKey.<p>
-     * No description.
      */
     public void setRelAnchorKey(MatchInfosForAttribute relAnchorKey) {
         this.relAnchorKey = relAnchorKey;
@@ -1445,7 +1300,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relLink.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelLink() {
         return relLink;
@@ -1453,7 +1307,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relLink.<p>
-     * No description.
      */
     public void setRelLink(MatchInfosForAttribute relLink) {
         this.relLink = relLink;
@@ -1461,7 +1314,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relPointer.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelPointer() {
         return relPointer;
@@ -1469,7 +1321,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relPointer.<p>
-     * No description.
      */
     public void setRelPointer(MatchInfosForAttribute relPointer) {
         this.relPointer = relPointer;
@@ -1477,7 +1328,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relPointerDomain.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelPointerDomain() {
         return relPointerDomain;
@@ -1485,7 +1335,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relPointerDomain.<p>
-     * No description.
      */
     public void setRelPointerDomain(MatchInfosForAttribute relPointerDomain) {
         this.relPointerDomain = relPointerDomain;
@@ -1493,7 +1342,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relPointerKey.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelPointerKey() {
         return relPointerKey;
@@ -1501,7 +1349,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relPointerKey.<p>
-     * No description.
      */
     public void setRelPointerKey(MatchInfosForAttribute relPointerKey) {
         this.relPointerKey = relPointerKey;
@@ -1509,7 +1356,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for relPointerRole.<p>
-     * No description.
      */
     public MatchInfosForAttribute getRelPointerRole() {
         return relPointerRole;
@@ -1517,7 +1363,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for relPointerRole.<p>
-     * No description.
      */
     public void setRelPointerRole(MatchInfosForAttribute relPointerRole) {
         this.relPointerRole = relPointerRole;
@@ -1525,7 +1370,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for signal.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSignal() {
         return signal;
@@ -1533,7 +1377,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for signal.<p>
-     * No description.
      */
     public void setSignal(MatchInfosForAttribute signal) {
         this.signal = signal;
@@ -1541,7 +1384,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for skype.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSkype() {
         return skype;
@@ -1549,7 +1391,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for skype.<p>
-     * No description.
      */
     public void setSkype(MatchInfosForAttribute skype) {
         this.skype = skype;
@@ -1557,7 +1398,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for socialHandle.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSocialHandle() {
         return socialHandle;
@@ -1565,7 +1405,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for socialHandle.<p>
-     * No description.
      */
     public void setSocialHandle(MatchInfosForAttribute socialHandle) {
         this.socialHandle = socialHandle;
@@ -1573,7 +1412,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for socialNetwork.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSocialNetwork() {
         return socialNetwork;
@@ -1581,7 +1419,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for socialNetwork.<p>
-     * No description.
      */
     public void setSocialNetwork(MatchInfosForAttribute socialNetwork) {
         this.socialNetwork = socialNetwork;
@@ -1589,7 +1426,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for sourceId.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSourceId() {
         return sourceId;
@@ -1597,7 +1433,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for sourceId.<p>
-     * No description.
      */
     public void setSourceId(MatchInfosForAttribute sourceId) {
         this.sourceId = sourceId;
@@ -1605,7 +1440,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for ssn.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSsn() {
         return ssn;
@@ -1613,7 +1447,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for ssn.<p>
-     * No description.
      */
     public void setSsn(MatchInfosForAttribute ssn) {
         this.ssn = ssn;
@@ -1621,7 +1454,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for ssnLast4.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSsnLast4() {
         return ssnLast4;
@@ -1629,7 +1461,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for ssnLast4.<p>
-     * No description.
      */
     public void setSsnLast4(MatchInfosForAttribute ssnLast4) {
         this.ssnLast4 = ssnLast4;
@@ -1637,7 +1468,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for ssnNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getSsnNumber() {
         return ssnNumber;
@@ -1645,7 +1475,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for ssnNumber.<p>
-     * No description.
      */
     public void setSsnNumber(MatchInfosForAttribute ssnNumber) {
         this.ssnNumber = ssnNumber;
@@ -1653,7 +1482,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for tango.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTango() {
         return tango;
@@ -1661,7 +1489,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for tango.<p>
-     * No description.
      */
     public void setTango(MatchInfosForAttribute tango) {
         this.tango = tango;
@@ -1669,7 +1496,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for taxIdCountry.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTaxIdCountry() {
         return taxIdCountry;
@@ -1677,7 +1503,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for taxIdCountry.<p>
-     * No description.
      */
     public void setTaxIdCountry(MatchInfosForAttribute taxIdCountry) {
         this.taxIdCountry = taxIdCountry;
@@ -1685,7 +1510,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for taxIdNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTaxIdNumber() {
         return taxIdNumber;
@@ -1693,7 +1517,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for taxIdNumber.<p>
-     * No description.
      */
     public void setTaxIdNumber(MatchInfosForAttribute taxIdNumber) {
         this.taxIdNumber = taxIdNumber;
@@ -1701,7 +1524,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for taxIdType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTaxIdType() {
         return taxIdType;
@@ -1709,7 +1531,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for taxIdType.<p>
-     * No description.
      */
     public void setTaxIdType(MatchInfosForAttribute taxIdType) {
         this.taxIdType = taxIdType;
@@ -1717,7 +1538,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for telegram.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTelegram() {
         return telegram;
@@ -1725,7 +1545,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for telegram.<p>
-     * No description.
      */
     public void setTelegram(MatchInfosForAttribute telegram) {
         this.telegram = telegram;
@@ -1733,7 +1552,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for trustedIdNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTrustedIdNumber() {
         return trustedIdNumber;
@@ -1741,7 +1559,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for trustedIdNumber.<p>
-     * No description.
      */
     public void setTrustedIdNumber(MatchInfosForAttribute trustedIdNumber) {
         this.trustedIdNumber = trustedIdNumber;
@@ -1749,7 +1566,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for trustedIdType.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTrustedIdType() {
         return trustedIdType;
@@ -1757,7 +1573,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for trustedIdType.<p>
-     * No description.
      */
     public void setTrustedIdType(MatchInfosForAttribute trustedIdType) {
         this.trustedIdType = trustedIdType;
@@ -1765,7 +1580,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for twitter.<p>
-     * No description.
      */
     public MatchInfosForAttribute getTwitter() {
         return twitter;
@@ -1773,7 +1587,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for twitter.<p>
-     * No description.
      */
     public void setTwitter(MatchInfosForAttribute twitter) {
         this.twitter = twitter;
@@ -1781,7 +1594,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for viber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getViber() {
         return viber;
@@ -1789,7 +1601,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for viber.<p>
-     * No description.
      */
     public void setViber(MatchInfosForAttribute viber) {
         this.viber = viber;
@@ -1797,7 +1608,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for websiteAddress.<p>
-     * No description.
      */
     public MatchInfosForAttribute getWebsiteAddress() {
         return websiteAddress;
@@ -1805,7 +1615,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for websiteAddress.<p>
-     * No description.
      */
     public void setWebsiteAddress(MatchInfosForAttribute websiteAddress) {
         this.websiteAddress = websiteAddress;
@@ -1813,7 +1622,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for wechat.<p>
-     * No description.
      */
     public MatchInfosForAttribute getWechat() {
         return wechat;
@@ -1821,7 +1629,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for wechat.<p>
-     * No description.
      */
     public void setWechat(MatchInfosForAttribute wechat) {
         this.wechat = wechat;
@@ -1829,7 +1636,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for whatsapp.<p>
-     * No description.
      */
     public MatchInfosForAttribute getWhatsapp() {
         return whatsapp;
@@ -1837,7 +1643,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for whatsapp.<p>
-     * No description.
      */
     public void setWhatsapp(MatchInfosForAttribute whatsapp) {
         this.whatsapp = whatsapp;
@@ -1845,7 +1650,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for workPhoneNumber.<p>
-     * No description.
      */
     public MatchInfosForAttribute getWorkPhoneNumber() {
         return workPhoneNumber;
@@ -1853,7 +1657,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for workPhoneNumber.<p>
-     * No description.
      */
     public void setWorkPhoneNumber(MatchInfosForAttribute workPhoneNumber) {
         this.workPhoneNumber = workPhoneNumber;
@@ -1861,7 +1664,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Getter for zoomroom.<p>
-     * No description.
      */
     public MatchInfosForAttribute getZoomroom() {
         return zoomroom;
@@ -1869,7 +1671,6 @@ public class MatchInfoCandidateKeys {
 
     /**
      * Setter for zoomroom.<p>
-     * No description.
      */
     public void setZoomroom(MatchInfosForAttribute zoomroom) {
         this.zoomroom = zoomroom;

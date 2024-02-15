@@ -46,7 +46,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -54,7 +53,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -62,7 +60,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for erruleId.<p>
-     * No description.
      */
     public Integer getErruleId() {
         return erruleId;
@@ -70,7 +67,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for erruleId.<p>
-     * No description.
      */
     public void setErruleId(Integer erruleId) {
         this.erruleId = erruleId;
@@ -78,7 +74,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for isAmbiguous.<p>
-     * No description.
      */
     public String getIsAmbiguous() {
         return isAmbiguous;
@@ -86,7 +81,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for isAmbiguous.<p>
-     * No description.
      */
     public void setIsAmbiguous(String isAmbiguous) {
         this.isAmbiguous = isAmbiguous;
@@ -94,7 +88,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -102,7 +95,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -110,7 +102,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for matchLevel.<p>
-     * No description.
      */
     public Integer getMatchLevel() {
         return matchLevel;
@@ -118,7 +109,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for matchLevel.<p>
-     * No description.
      */
     public void setMatchLevel(Integer matchLevel) {
         this.matchLevel = matchLevel;
@@ -126,7 +116,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for maxResEntId.<p>
-     * No description.
      */
     public Integer getMaxResEntId() {
         return maxResEntId;
@@ -134,7 +123,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for maxResEntId.<p>
-     * No description.
      */
     public void setMaxResEntId(Integer maxResEntId) {
         this.maxResEntId = maxResEntId;
@@ -142,7 +130,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for maxResRelId.<p>
-     * No description.
      */
     public Integer getMaxResRelId() {
         return maxResRelId;
@@ -150,7 +137,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for maxResRelId.<p>
-     * No description.
      */
     public void setMaxResRelId(Integer maxResRelId) {
         this.maxResRelId = maxResRelId;
@@ -158,7 +144,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for minResEntId.<p>
-     * No description.
      */
     public Integer getMinResEntId() {
         return minResEntId;
@@ -166,7 +151,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for minResEntId.<p>
-     * No description.
      */
     public void setMinResEntId(Integer minResEntId) {
         this.minResEntId = minResEntId;
@@ -174,7 +158,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for minResRelId.<p>
-     * No description.
      */
     public Integer getMinResRelId() {
         return minResRelId;
@@ -182,7 +165,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for minResRelId.<p>
-     * No description.
      */
     public void setMinResRelId(Integer minResRelId) {
         this.minResRelId = minResRelId;
@@ -190,7 +172,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for rawMatchKeys.<p>
-     * No description.
      */
     public List<DiagnosticGetResolutionStatisticsResponseRawMatchKeys> getRawMatchKeys() {
         return rawMatchKeys;
@@ -198,7 +179,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for rawMatchKeys.<p>
-     * No description.
      */
     public void setRawMatchKeys(List<DiagnosticGetResolutionStatisticsResponseRawMatchKeys> rawMatchKeys) {
         this.rawMatchKeys = rawMatchKeys;
@@ -206,7 +186,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Getter for recordCount.<p>
-     * No description.
      */
     public Integer getRecordCount() {
         return recordCount;
@@ -214,7 +193,6 @@ public class DiagnosticGetResolutionStatisticsResponse0 {
 
     /**
      * Setter for recordCount.<p>
-     * No description.
      */
     public void setRecordCount(Integer recordCount) {
         this.recordCount = recordCount;

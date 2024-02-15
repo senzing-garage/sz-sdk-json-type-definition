@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponse {
     @JsonProperty("MISSING_RES_ENT")
@@ -96,7 +93,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for missingResEnt.<p>
-     * No description.
      */
     public Integer getMissingResEnt() {
         return missingResEnt;
@@ -104,7 +100,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for missingResEnt.<p>
-     * No description.
      */
     public void setMissingResEnt(Integer missingResEnt) {
         this.missingResEnt = missingResEnt;
@@ -112,7 +107,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for missingResEntAndOkey.<p>
-     * No description.
      */
     public Integer getMissingResEntAndOkey() {
         return missingResEntAndOkey;
@@ -120,7 +114,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for missingResEntAndOkey.<p>
-     * No description.
      */
     public void setMissingResEntAndOkey(Integer missingResEntAndOkey) {
         this.missingResEntAndOkey = missingResEntAndOkey;
@@ -128,7 +121,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for abortedUnresolve.<p>
-     * No description.
      */
     public Integer getAbortedUnresolve() {
         return abortedUnresolve;
@@ -136,7 +128,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for abortedUnresolve.<p>
-     * No description.
      */
     public void setAbortedUnresolve(Integer abortedUnresolve) {
         this.abortedUnresolve = abortedUnresolve;
@@ -144,7 +135,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for actualAmbiguousTest.<p>
-     * No description.
      */
     public Integer getActualAmbiguousTest() {
         return actualAmbiguousTest;
@@ -152,7 +142,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for actualAmbiguousTest.<p>
-     * No description.
      */
     public void setActualAmbiguousTest(Integer actualAmbiguousTest) {
         this.actualAmbiguousTest = actualAmbiguousTest;
@@ -160,7 +149,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for addedRecords.<p>
-     * No description.
      */
     public Integer getAddedRecords() {
         return addedRecords;
@@ -168,7 +156,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for addedRecords.<p>
-     * No description.
      */
     public void setAddedRecords(Integer addedRecords) {
         this.addedRecords = addedRecords;
@@ -176,7 +163,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for cacheHit.<p>
-     * No description.
      */
     public AttributeCounters getCacheHit() {
         return cacheHit;
@@ -184,7 +170,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for cacheHit.<p>
-     * No description.
      */
     public void setCacheHit(AttributeCounters cacheHit) {
         this.cacheHit = cacheHit;
@@ -192,7 +177,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for candidateBuilders.<p>
-     * No description.
      */
     public AttributeCounters getCandidateBuilders() {
         return candidateBuilders;
@@ -200,7 +184,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for candidateBuilders.<p>
-     * No description.
      */
     public void setCandidateBuilders(AttributeCounters candidateBuilders) {
         this.candidateBuilders = candidateBuilders;
@@ -208,7 +191,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for candidates.<p>
-     * No description.
      */
     public Integer getCandidates() {
         return candidates;
@@ -216,7 +198,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for candidates.<p>
-     * No description.
      */
     public void setCandidates(Integer candidates) {
         this.candidates = candidates;
@@ -224,7 +205,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for deletedRecords.<p>
-     * No description.
      */
     public Integer getDeletedRecords() {
         return deletedRecords;
@@ -232,7 +212,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for deletedRecords.<p>
-     * No description.
      */
     public void setDeletedRecords(Integer deletedRecords) {
         this.deletedRecords = deletedRecords;
@@ -240,7 +219,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for duration.<p>
-     * No description.
      */
     public EngineStatsResponseDuration getDuration() {
         return duration;
@@ -248,7 +226,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for duration.<p>
-     * No description.
      */
     public void setDuration(EngineStatsResponseDuration duration) {
         this.duration = duration;
@@ -256,7 +233,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for filteredObsFeat.<p>
-     * No description.
      */
     public Integer getFilteredObsFeat() {
         return filteredObsFeat;
@@ -264,7 +240,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for filteredObsFeat.<p>
-     * No description.
      */
     public void setFilteredObsFeat(Integer filteredObsFeat) {
         this.filteredObsFeat = filteredObsFeat;
@@ -272,7 +247,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for genericDetect.<p>
-     * No description.
      */
     public AttributeCounters getGenericDetect() {
         return genericDetect;
@@ -280,7 +254,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for genericDetect.<p>
-     * No description.
      */
     public void setGenericDetect(AttributeCounters genericDetect) {
         this.genericDetect = genericDetect;
@@ -288,7 +261,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for latchContention.<p>
-     * No description.
      */
     public AttributeCounters getLatchContention() {
         return latchContention;
@@ -296,7 +268,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for latchContention.<p>
-     * No description.
      */
     public void setLatchContention(AttributeCounters latchContention) {
         this.latchContention = latchContention;
@@ -304,7 +275,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for loadedRecords.<p>
-     * No description.
      */
     public Integer getLoadedRecords() {
         return loadedRecords;
@@ -312,7 +282,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for loadedRecords.<p>
-     * No description.
      */
     public void setLoadedRecords(Integer loadedRecords) {
         this.loadedRecords = loadedRecords;
@@ -320,7 +289,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for redoTriggers.<p>
-     * No description.
      */
     public AttributeCounters getRedoTriggers() {
         return redoTriggers;
@@ -328,7 +296,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for redoTriggers.<p>
-     * No description.
      */
     public void setRedoTriggers(AttributeCounters redoTriggers) {
         this.redoTriggers = redoTriggers;
@@ -336,7 +303,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for reducedScoredFeatureType.<p>
-     * No description.
      */
     public AttributeCounters getReducedScoredFeatureType() {
         return reducedScoredFeatureType;
@@ -344,7 +310,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for reducedScoredFeatureType.<p>
-     * No description.
      */
     public void setReducedScoredFeatureType(AttributeCounters reducedScoredFeatureType) {
         this.reducedScoredFeatureType = reducedScoredFeatureType;
@@ -352,7 +317,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for reevaluations.<p>
-     * No description.
      */
     public Integer getReevaluations() {
         return reevaluations;
@@ -360,7 +324,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for reevaluations.<p>
-     * No description.
      */
     public void setReevaluations(Integer reevaluations) {
         this.reevaluations = reevaluations;
@@ -368,7 +331,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for repairedEntities.<p>
-     * No description.
      */
     public Integer getRepairedEntities() {
         return repairedEntities;
@@ -376,7 +338,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for repairedEntities.<p>
-     * No description.
      */
     public void setRepairedEntities(Integer repairedEntities) {
         this.repairedEntities = repairedEntities;
@@ -384,7 +345,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for reresolveSkipped.<p>
-     * No description.
      */
     public Integer getReresolveSkipped() {
         return reresolveSkipped;
@@ -392,7 +352,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for reresolveSkipped.<p>
-     * No description.
      */
     public void setReresolveSkipped(Integer reresolveSkipped) {
         this.reresolveSkipped = reresolveSkipped;
@@ -400,7 +359,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for reresolveTriggers.<p>
-     * No description.
      */
     public EngineStatsResponseReresolveTriggers getReresolveTriggers() {
         return reresolveTriggers;
@@ -408,7 +366,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for reresolveTriggers.<p>
-     * No description.
      */
     public void setReresolveTriggers(EngineStatsResponseReresolveTriggers reresolveTriggers) {
         this.reresolveTriggers = reresolveTriggers;
@@ -416,7 +373,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for retries.<p>
-     * No description.
      */
     public Integer getRetries() {
         return retries;
@@ -424,7 +380,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for retries.<p>
-     * No description.
      */
     public void setRetries(Integer retries) {
         this.retries = retries;
@@ -432,7 +387,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for scoredPairs.<p>
-     * No description.
      */
     public AttributeCounters getScoredPairs() {
         return scoredPairs;
@@ -440,7 +394,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for scoredPairs.<p>
-     * No description.
      */
     public void setScoredPairs(AttributeCounters scoredPairs) {
         this.scoredPairs = scoredPairs;
@@ -448,7 +401,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for suppressedCandidateBuilders.<p>
-     * No description.
      */
     public AttributeCounters getSuppressedCandidateBuilders() {
         return suppressedCandidateBuilders;
@@ -456,7 +408,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for suppressedCandidateBuilders.<p>
-     * No description.
      */
     public void setSuppressedCandidateBuilders(AttributeCounters suppressedCandidateBuilders) {
         this.suppressedCandidateBuilders = suppressedCandidateBuilders;
@@ -464,7 +415,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for suppressedScoredFeatureType.<p>
-     * No description.
      */
     public AttributeCounters getSuppressedScoredFeatureType() {
         return suppressedScoredFeatureType;
@@ -472,7 +422,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for suppressedScoredFeatureType.<p>
-     * No description.
      */
     public void setSuppressedScoredFeatureType(AttributeCounters suppressedScoredFeatureType) {
         this.suppressedScoredFeatureType = suppressedScoredFeatureType;
@@ -480,7 +429,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for unresolveTest.<p>
-     * No description.
      */
     public Integer getUnresolveTest() {
         return unresolveTest;
@@ -488,7 +436,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for unresolveTest.<p>
-     * No description.
      */
     public void setUnresolveTest(Integer unresolveTest) {
         this.unresolveTest = unresolveTest;
@@ -496,7 +443,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for unresolveTriggers.<p>
-     * No description.
      */
     public EngineStatsResponseUnresolveTriggers getUnresolveTriggers() {
         return unresolveTriggers;
@@ -504,7 +450,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for unresolveTriggers.<p>
-     * No description.
      */
     public void setUnresolveTriggers(EngineStatsResponseUnresolveTriggers unresolveTriggers) {
         this.unresolveTriggers = unresolveTriggers;
@@ -512,7 +457,6 @@ public class EngineStatsResponse {
 
     /**
      * Getter for workload.<p>
-     * No description.
      */
     public EngineStatsResponseWorkload getWorkload() {
         return workload;
@@ -520,7 +464,6 @@ public class EngineStatsResponse {
 
     /**
      * Setter for workload.<p>
-     * No description.
      */
     public void setWorkload(EngineStatsResponseWorkload workload) {
         this.workload = workload;

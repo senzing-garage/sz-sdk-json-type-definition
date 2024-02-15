@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * No description.
- */
 public class EngineFindNetworkByRecordIdv2response {
     @JsonValue
     private Network value;

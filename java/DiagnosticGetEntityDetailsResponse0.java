@@ -45,7 +45,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for derived.<p>
-     * No description.
      */
     public String getDerived() {
         return derived;
@@ -53,7 +52,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for derived.<p>
-     * No description.
      */
     public void setDerived(String derived) {
         this.derived = derived;
@@ -61,7 +59,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -69,7 +66,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -77,7 +73,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -85,7 +80,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -93,7 +87,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -101,7 +94,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -109,7 +101,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -117,7 +108,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -125,7 +115,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -133,7 +122,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -141,7 +129,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -149,7 +136,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -157,7 +143,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for obsEntId.<p>
-     * No description.
      */
     public Integer getObsEntId() {
         return obsEntId;
@@ -165,7 +150,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for obsEntId.<p>
-     * No description.
      */
     public void setObsEntId(Integer obsEntId) {
         this.obsEntId = obsEntId;
@@ -173,7 +157,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public Integer getRecordId() {
         return recordId;
@@ -181,7 +164,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(Integer recordId) {
         this.recordId = recordId;
@@ -189,7 +171,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for resEntId.<p>
-     * No description.
      */
     public Integer getResEntId() {
         return resEntId;
@@ -197,7 +178,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for resEntId.<p>
-     * No description.
      */
     public void setResEntId(Integer resEntId) {
         this.resEntId = resEntId;
@@ -205,7 +185,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Getter for usageType.<p>
-     * No description.
      */
     public String getUsageType() {
         return usageType;
@@ -213,7 +192,6 @@ public class DiagnosticGetEntityDetailsResponse0 {
 
     /**
      * Setter for usageType.<p>
-     * No description.
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

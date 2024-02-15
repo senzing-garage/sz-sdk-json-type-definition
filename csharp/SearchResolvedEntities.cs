@@ -6,15 +6,9 @@ namespace Senzing
 {
     public class SearchResolvedEntities
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY")]
         public SearchResolvedEntitiesEntity Entity { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_INFO")]
         public MatchInfo MatchInfo { get; set; }
     }

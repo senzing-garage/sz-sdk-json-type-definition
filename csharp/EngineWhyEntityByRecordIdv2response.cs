@@ -6,9 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     [JsonConverter(typeof(EngineWhyEntityByRecordIdv2responseJsonConverter))]
     public class EngineWhyEntityByRecordIdv2response
     {

@@ -4,14 +4,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class ConfigListDataSourcesResponse
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DATA_SOURCES")]
         public DataSources DataSources { get; set; }
     }

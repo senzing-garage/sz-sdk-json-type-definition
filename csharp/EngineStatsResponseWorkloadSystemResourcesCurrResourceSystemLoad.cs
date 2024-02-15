@@ -6,33 +6,18 @@ namespace Senzing
 {
     public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("cpuIdle")]
         public double CpuIdle { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("cpuSoftIrq")]
         public double CpuSoftIrq { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("cpuSystem")]
         public double CpuSystem { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("cpuUser")]
         public double CpuUser { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("cpuWait")]
         public double CpuWait { get; set; }
     }

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Relationship {
     @JsonProperty("RELATIONSHIP_KEY")
@@ -36,7 +33,6 @@ public class Relationship {
 
     /**
      * Getter for relationshipKey.<p>
-     * No description.
      */
     public String getRelationshipKey() {
         return relationshipKey;
@@ -44,7 +40,6 @@ public class Relationship {
 
     /**
      * Setter for relationshipKey.<p>
-     * No description.
      */
     public void setRelationshipKey(String relationshipKey) {
         this.relationshipKey = relationshipKey;
@@ -52,7 +47,6 @@ public class Relationship {
 
     /**
      * Getter for relationshipType.<p>
-     * No description.
      */
     public String getRelationshipType() {
         return relationshipType;
@@ -60,7 +54,6 @@ public class Relationship {
 
     /**
      * Setter for relationshipType.<p>
-     * No description.
      */
     public void setRelationshipType(String relationshipType) {
         this.relationshipType = relationshipType;
@@ -68,7 +61,6 @@ public class Relationship {
 
     /**
      * Getter for relAnchorDomain.<p>
-     * No description.
      */
     public String getRelAnchorDomain() {
         return relAnchorDomain;
@@ -76,7 +68,6 @@ public class Relationship {
 
     /**
      * Setter for relAnchorDomain.<p>
-     * No description.
      */
     public void setRelAnchorDomain(String relAnchorDomain) {
         this.relAnchorDomain = relAnchorDomain;
@@ -84,7 +75,6 @@ public class Relationship {
 
     /**
      * Getter for relAnchorKey.<p>
-     * No description.
      */
     public String getRelAnchorKey() {
         return relAnchorKey;
@@ -92,7 +82,6 @@ public class Relationship {
 
     /**
      * Setter for relAnchorKey.<p>
-     * No description.
      */
     public void setRelAnchorKey(String relAnchorKey) {
         this.relAnchorKey = relAnchorKey;
@@ -100,7 +89,6 @@ public class Relationship {
 
     /**
      * Getter for relPointerDomain.<p>
-     * No description.
      */
     public String getRelPointerDomain() {
         return relPointerDomain;
@@ -108,7 +96,6 @@ public class Relationship {
 
     /**
      * Setter for relPointerDomain.<p>
-     * No description.
      */
     public void setRelPointerDomain(String relPointerDomain) {
         this.relPointerDomain = relPointerDomain;
@@ -116,7 +103,6 @@ public class Relationship {
 
     /**
      * Getter for relPointerKey.<p>
-     * No description.
      */
     public String getRelPointerKey() {
         return relPointerKey;
@@ -124,7 +110,6 @@ public class Relationship {
 
     /**
      * Setter for relPointerKey.<p>
-     * No description.
      */
     public void setRelPointerKey(String relPointerKey) {
         this.relPointerKey = relPointerKey;
@@ -132,7 +117,6 @@ public class Relationship {
 
     /**
      * Getter for relPointerRole.<p>
-     * No description.
      */
     public String getRelPointerRole() {
         return relPointerRole;
@@ -140,7 +124,6 @@ public class Relationship {
 
     /**
      * Setter for relPointerRole.<p>
-     * No description.
      */
     public void setRelPointerRole(String relPointerRole) {
         this.relPointerRole = relPointerRole;

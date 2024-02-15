@@ -6,21 +6,12 @@ namespace Senzing
 {
     public class DiagnosticFindEntitiesByFeatureIdsResponse0
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RES_ENT_ID")]
         public int ResEntId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
     }

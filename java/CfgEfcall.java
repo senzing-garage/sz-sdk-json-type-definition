@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgEfcall {
     @JsonProperty("EFCALL_ID")
@@ -36,7 +33,6 @@ public class CfgEfcall {
 
     /**
      * Getter for efcallId.<p>
-     * No description.
      */
     public Integer getEfcallId() {
         return efcallId;
@@ -44,7 +40,6 @@ public class CfgEfcall {
 
     /**
      * Setter for efcallId.<p>
-     * No description.
      */
     public void setEfcallId(Integer efcallId) {
         this.efcallId = efcallId;
@@ -52,7 +47,6 @@ public class CfgEfcall {
 
     /**
      * Getter for efeatFtypeId.<p>
-     * No description.
      */
     public Integer getEfeatFtypeId() {
         return efeatFtypeId;
@@ -60,7 +54,6 @@ public class CfgEfcall {
 
     /**
      * Setter for efeatFtypeId.<p>
-     * No description.
      */
     public void setEfeatFtypeId(Integer efeatFtypeId) {
         this.efeatFtypeId = efeatFtypeId;
@@ -68,7 +61,6 @@ public class CfgEfcall {
 
     /**
      * Getter for efuncId.<p>
-     * No description.
      */
     public Integer getEfuncId() {
         return efuncId;
@@ -76,7 +68,6 @@ public class CfgEfcall {
 
     /**
      * Setter for efuncId.<p>
-     * No description.
      */
     public void setEfuncId(Integer efuncId) {
         this.efuncId = efuncId;
@@ -84,7 +75,6 @@ public class CfgEfcall {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -92,7 +82,6 @@ public class CfgEfcall {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -100,7 +89,6 @@ public class CfgEfcall {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -108,7 +96,6 @@ public class CfgEfcall {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -116,7 +103,6 @@ public class CfgEfcall {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -124,7 +110,6 @@ public class CfgEfcall {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -132,7 +117,6 @@ public class CfgEfcall {
 
     /**
      * Getter for isVirtual.<p>
-     * No description.
      */
     public String getIsVirtual() {
         return isVirtual;
@@ -140,7 +124,6 @@ public class CfgEfcall {
 
     /**
      * Setter for isVirtual.<p>
-     * No description.
      */
     public void setIsVirtual(String isVirtual) {
         this.isVirtual = isVirtual;

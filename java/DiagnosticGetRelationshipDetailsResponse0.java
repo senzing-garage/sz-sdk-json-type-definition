@@ -27,7 +27,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -35,7 +34,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -43,7 +41,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -51,7 +48,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -59,7 +55,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -67,7 +62,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -75,7 +69,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -83,7 +76,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -91,7 +83,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Getter for resEntId.<p>
-     * No description.
      */
     public Integer getResEntId() {
         return resEntId;
@@ -99,7 +90,6 @@ public class DiagnosticGetRelationshipDetailsResponse0 {
 
     /**
      * Setter for resEntId.<p>
-     * No description.
      */
     public void setResEntId(Integer resEntId) {
         this.resEntId = resEntId;

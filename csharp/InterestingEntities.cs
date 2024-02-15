@@ -5,20 +5,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class InterestingEntities
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITIES")]
         public IList<InterestingEntity> Entities { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NOTICES")]
         public Notices Notices { get; set; }
     }

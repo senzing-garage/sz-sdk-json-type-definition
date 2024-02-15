@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgAttr {
     @JsonProperty("ADVANCED")
@@ -42,7 +39,6 @@ public class CfgAttr {
 
     /**
      * Getter for advanced.<p>
-     * No description.
      */
     public String getAdvanced() {
         return advanced;
@@ -50,7 +46,6 @@ public class CfgAttr {
 
     /**
      * Setter for advanced.<p>
-     * No description.
      */
     public void setAdvanced(String advanced) {
         this.advanced = advanced;
@@ -58,7 +53,6 @@ public class CfgAttr {
 
     /**
      * Getter for attrClass.<p>
-     * No description.
      */
     public String getAttrClass() {
         return attrClass;
@@ -66,7 +60,6 @@ public class CfgAttr {
 
     /**
      * Setter for attrClass.<p>
-     * No description.
      */
     public void setAttrClass(String attrClass) {
         this.attrClass = attrClass;
@@ -74,7 +67,6 @@ public class CfgAttr {
 
     /**
      * Getter for attrCode.<p>
-     * No description.
      */
     public String getAttrCode() {
         return attrCode;
@@ -82,7 +74,6 @@ public class CfgAttr {
 
     /**
      * Setter for attrCode.<p>
-     * No description.
      */
     public void setAttrCode(String attrCode) {
         this.attrCode = attrCode;
@@ -90,7 +81,6 @@ public class CfgAttr {
 
     /**
      * Getter for attrId.<p>
-     * No description.
      */
     public Integer getAttrId() {
         return attrId;
@@ -98,7 +88,6 @@ public class CfgAttr {
 
     /**
      * Setter for attrId.<p>
-     * No description.
      */
     public void setAttrId(Integer attrId) {
         this.attrId = attrId;
@@ -106,7 +95,6 @@ public class CfgAttr {
 
     /**
      * Getter for defaultValue.<p>
-     * No description.
      */
     public String getDefaultValue() {
         return defaultValue;
@@ -114,7 +102,6 @@ public class CfgAttr {
 
     /**
      * Setter for defaultValue.<p>
-     * No description.
      */
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
@@ -122,7 +109,6 @@ public class CfgAttr {
 
     /**
      * Getter for felemCode.<p>
-     * No description.
      */
     public String getFelemCode() {
         return felemCode;
@@ -130,7 +116,6 @@ public class CfgAttr {
 
     /**
      * Setter for felemCode.<p>
-     * No description.
      */
     public void setFelemCode(String felemCode) {
         this.felemCode = felemCode;
@@ -138,7 +123,6 @@ public class CfgAttr {
 
     /**
      * Getter for felemReq.<p>
-     * No description.
      */
     public String getFelemReq() {
         return felemReq;
@@ -146,7 +130,6 @@ public class CfgAttr {
 
     /**
      * Setter for felemReq.<p>
-     * No description.
      */
     public void setFelemReq(String felemReq) {
         this.felemReq = felemReq;
@@ -154,7 +137,6 @@ public class CfgAttr {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -162,7 +144,6 @@ public class CfgAttr {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -170,7 +151,6 @@ public class CfgAttr {
 
     /**
      * Getter for internal.<p>
-     * No description.
      */
     public String getInternal() {
         return internal;
@@ -178,7 +158,6 @@ public class CfgAttr {
 
     /**
      * Setter for internal.<p>
-     * No description.
      */
     public void setInternal(String internal) {
         this.internal = internal;

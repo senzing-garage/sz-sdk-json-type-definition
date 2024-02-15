@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MatchInfoForAttribute {
     @JsonProperty("FEAT_DESC")
@@ -21,7 +18,6 @@ public class MatchInfoForAttribute {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -29,7 +25,6 @@ public class MatchInfoForAttribute {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -37,7 +32,6 @@ public class MatchInfoForAttribute {
 
     /**
      * Getter for featId.<p>
-     * No description.
      */
     public Integer getFeatId() {
         return featId;
@@ -45,7 +39,6 @@ public class MatchInfoForAttribute {
 
     /**
      * Setter for featId.<p>
-     * No description.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class VirtualEntitySynopsis {
     @JsonProperty("MEMBER_RECORDS")
@@ -21,7 +18,6 @@ public class VirtualEntitySynopsis {
 
     /**
      * Getter for memberRecords.<p>
-     * No description.
      */
     public MemberRecords getMemberRecords() {
         return memberRecords;
@@ -29,7 +25,6 @@ public class VirtualEntitySynopsis {
 
     /**
      * Setter for memberRecords.<p>
-     * No description.
      */
     public void setMemberRecords(MemberRecords memberRecords) {
         this.memberRecords = memberRecords;
@@ -37,7 +32,6 @@ public class VirtualEntitySynopsis {
 
     /**
      * Getter for virtualEntityId.<p>
-     * No description.
      */
     public String getVirtualEntityId() {
         return virtualEntityId;
@@ -45,7 +39,6 @@ public class VirtualEntitySynopsis {
 
     /**
      * Setter for virtualEntityId.<p>
-     * No description.
      */
     public void setVirtualEntityId(String virtualEntityId) {
         this.virtualEntityId = virtualEntityId;

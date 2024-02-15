@@ -39,7 +39,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for candidateMatch.<p>
-     * No description.
      */
     public String getCandidateMatch() {
         return candidateMatch;
@@ -47,7 +46,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for candidateMatch.<p>
-     * No description.
      */
     public void setCandidateMatch(String candidateMatch) {
         this.candidateMatch = candidateMatch;
@@ -55,7 +53,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -63,7 +60,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -71,7 +67,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -79,7 +74,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -87,7 +81,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for erruleId.<p>
-     * No description.
      */
     public Integer getErruleId() {
         return erruleId;
@@ -95,7 +88,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for erruleId.<p>
-     * No description.
      */
     public void setErruleId(Integer erruleId) {
         this.erruleId = erruleId;
@@ -103,7 +95,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -111,7 +102,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -119,7 +109,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for matchLevel.<p>
-     * No description.
      */
     public Integer getMatchLevel() {
         return matchLevel;
@@ -127,7 +116,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for matchLevel.<p>
-     * No description.
      */
     public void setMatchLevel(Integer matchLevel) {
         this.matchLevel = matchLevel;
@@ -135,7 +123,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for matchLevelCode.<p>
-     * No description.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -143,7 +130,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for matchLevelCode.<p>
-     * No description.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -151,7 +137,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for nonGenericCandidateMatch.<p>
-     * No description.
      */
     public String getNonGenericCandidateMatch() {
         return nonGenericCandidateMatch;
@@ -159,7 +144,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for nonGenericCandidateMatch.<p>
-     * No description.
      */
     public void setNonGenericCandidateMatch(String nonGenericCandidateMatch) {
         this.nonGenericCandidateMatch = nonGenericCandidateMatch;
@@ -167,7 +151,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -175,7 +158,6 @@ public class EngineCheckRecordResponseCheckRecordResponse {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

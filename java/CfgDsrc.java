@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgDsrc {
     @JsonProperty("CONVERSATIONAL")
@@ -33,7 +30,6 @@ public class CfgDsrc {
 
     /**
      * Getter for conversational.<p>
-     * No description.
      */
     public String getConversational() {
         return conversational;
@@ -41,7 +37,6 @@ public class CfgDsrc {
 
     /**
      * Setter for conversational.<p>
-     * No description.
      */
     public void setConversational(String conversational) {
         this.conversational = conversational;
@@ -49,7 +44,6 @@ public class CfgDsrc {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -57,7 +51,6 @@ public class CfgDsrc {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -65,7 +58,6 @@ public class CfgDsrc {
 
     /**
      * Getter for dsrcDesc.<p>
-     * No description.
      */
     public String getDsrcDesc() {
         return dsrcDesc;
@@ -73,7 +65,6 @@ public class CfgDsrc {
 
     /**
      * Setter for dsrcDesc.<p>
-     * No description.
      */
     public void setDsrcDesc(String dsrcDesc) {
         this.dsrcDesc = dsrcDesc;
@@ -81,7 +72,6 @@ public class CfgDsrc {
 
     /**
      * Getter for dsrcId.<p>
-     * No description.
      */
     public Integer getDsrcId() {
         return dsrcId;
@@ -89,7 +79,6 @@ public class CfgDsrc {
 
     /**
      * Setter for dsrcId.<p>
-     * No description.
      */
     public void setDsrcId(Integer dsrcId) {
         this.dsrcId = dsrcId;
@@ -97,7 +86,6 @@ public class CfgDsrc {
 
     /**
      * Getter for dsrcRely.<p>
-     * No description.
      */
     public Integer getDsrcRely() {
         return dsrcRely;
@@ -105,7 +93,6 @@ public class CfgDsrc {
 
     /**
      * Setter for dsrcRely.<p>
-     * No description.
      */
     public void setDsrcRely(Integer dsrcRely) {
         this.dsrcRely = dsrcRely;
@@ -113,7 +100,6 @@ public class CfgDsrc {
 
     /**
      * Getter for retentionLevel.<p>
-     * No description.
      */
     public String getRetentionLevel() {
         return retentionLevel;
@@ -121,7 +107,6 @@ public class CfgDsrc {
 
     /**
      * Setter for retentionLevel.<p>
-     * No description.
      */
     public void setRetentionLevel(String retentionLevel) {
         this.retentionLevel = retentionLevel;

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseWorkloadReresolveTriggers {
     @JsonProperty("abortRetry")
@@ -30,7 +27,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Getter for abortRetry.<p>
-     * No description.
      */
     public Integer getAbortRetry() {
         return abortRetry;
@@ -38,7 +34,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Setter for abortRetry.<p>
-     * No description.
      */
     public void setAbortRetry(Integer abortRetry) {
         this.abortRetry = abortRetry;
@@ -46,7 +41,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Getter for multipleResolvableCandidates.<p>
-     * No description.
      */
     public Integer getMultipleResolvableCandidates() {
         return multipleResolvableCandidates;
@@ -54,7 +48,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Setter for multipleResolvableCandidates.<p>
-     * No description.
      */
     public void setMultipleResolvableCandidates(Integer multipleResolvableCandidates) {
         this.multipleResolvableCandidates = multipleResolvableCandidates;
@@ -62,7 +55,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Getter for newFeatureFtypes.<p>
-     * No description.
      */
     public AttributeCounters getNewFeatureFtypes() {
         return newFeatureFtypes;
@@ -70,7 +62,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Setter for newFeatureFtypes.<p>
-     * No description.
      */
     public void setNewFeatureFtypes(AttributeCounters newFeatureFtypes) {
         this.newFeatureFtypes = newFeatureFtypes;
@@ -78,7 +69,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Getter for resolveNewFeatures.<p>
-     * No description.
      */
     public Integer getResolveNewFeatures() {
         return resolveNewFeatures;
@@ -86,7 +76,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Setter for resolveNewFeatures.<p>
-     * No description.
      */
     public void setResolveNewFeatures(Integer resolveNewFeatures) {
         this.resolveNewFeatures = resolveNewFeatures;
@@ -94,7 +83,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Getter for unresolveMovement.<p>
-     * No description.
      */
     public Integer getUnresolveMovement() {
         return unresolveMovement;
@@ -102,7 +90,6 @@ public class EngineStatsResponseWorkloadReresolveTriggers {
 
     /**
      * Setter for unresolveMovement.<p>
-     * No description.
      */
     public void setUnresolveMovement(Integer unresolveMovement) {
         this.unresolveMovement = unresolveMovement;

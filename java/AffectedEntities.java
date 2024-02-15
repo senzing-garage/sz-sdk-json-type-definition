@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.List;
 
-/**
- * No description.
- */
 public class AffectedEntities {
     @JsonValue
     private List<AffectedEntity> value;

@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class MatchInfoForAttribute
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_ID")]
         public int FeatId { get; set; }
     }

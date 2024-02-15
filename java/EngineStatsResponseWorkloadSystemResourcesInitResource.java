@@ -24,7 +24,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Getter for availableMemory.<p>
-     * No description.
      */
     public String getAvailableMemory() {
         return availableMemory;
@@ -32,7 +31,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Setter for availableMemory.<p>
-     * No description.
      */
     public void setAvailableMemory(String availableMemory) {
         this.availableMemory = availableMemory;
@@ -40,7 +38,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Getter for logicalCores.<p>
-     * No description.
      */
     public Integer getLogicalCores() {
         return logicalCores;
@@ -48,7 +45,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Setter for logicalCores.<p>
-     * No description.
      */
     public void setLogicalCores(Integer logicalCores) {
         this.logicalCores = logicalCores;
@@ -56,7 +52,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Getter for physicalCores.<p>
-     * No description.
      */
     public Integer getPhysicalCores() {
         return physicalCores;
@@ -64,7 +59,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Setter for physicalCores.<p>
-     * No description.
      */
     public void setPhysicalCores(Integer physicalCores) {
         this.physicalCores = physicalCores;
@@ -72,7 +66,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Getter for totalMemory.<p>
-     * No description.
      */
     public String getTotalMemory() {
         return totalMemory;
@@ -80,7 +73,6 @@ public class EngineStatsResponseWorkloadSystemResourcesInitResource {
 
     /**
      * Setter for totalMemory.<p>
-     * No description.
      */
     public void setTotalMemory(String totalMemory) {
         this.totalMemory = totalMemory;

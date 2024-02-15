@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Features {
     @JsonProperty("ACCOUNT_DOMAIN")
@@ -309,7 +306,6 @@ public class Features {
 
     /**
      * Getter for accountDomain.<p>
-     * No description.
      */
     public FeaturesForAttribute getAccountDomain() {
         return accountDomain;
@@ -317,7 +313,6 @@ public class Features {
 
     /**
      * Setter for accountDomain.<p>
-     * No description.
      */
     public void setAccountDomain(FeaturesForAttribute accountDomain) {
         this.accountDomain = accountDomain;
@@ -325,7 +320,6 @@ public class Features {
 
     /**
      * Getter for accountNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getAccountNumber() {
         return accountNumber;
@@ -333,7 +327,6 @@ public class Features {
 
     /**
      * Setter for accountNumber.<p>
-     * No description.
      */
     public void setAccountNumber(FeaturesForAttribute accountNumber) {
         this.accountNumber = accountNumber;
@@ -341,7 +334,6 @@ public class Features {
 
     /**
      * Getter for acctNum.<p>
-     * No description.
      */
     public FeaturesForAttribute getAcctNum() {
         return acctNum;
@@ -349,7 +341,6 @@ public class Features {
 
     /**
      * Setter for acctNum.<p>
-     * No description.
      */
     public void setAcctNum(FeaturesForAttribute acctNum) {
         this.acctNum = acctNum;
@@ -357,7 +348,6 @@ public class Features {
 
     /**
      * Getter for address.<p>
-     * No description.
      */
     public FeaturesForAttribute getAddress() {
         return address;
@@ -365,7 +355,6 @@ public class Features {
 
     /**
      * Setter for address.<p>
-     * No description.
      */
     public void setAddress(FeaturesForAttribute address) {
         this.address = address;
@@ -373,7 +362,6 @@ public class Features {
 
     /**
      * Getter for addressList.<p>
-     * No description.
      */
     public FeaturesForAttribute getAddressList() {
         return addressList;
@@ -381,7 +369,6 @@ public class Features {
 
     /**
      * Setter for addressList.<p>
-     * No description.
      */
     public void setAddressList(FeaturesForAttribute addressList) {
         this.addressList = addressList;
@@ -389,7 +376,6 @@ public class Features {
 
     /**
      * Getter for addrFull.<p>
-     * No description.
      */
     public FeaturesForAttribute getAddrFull() {
         return addrFull;
@@ -397,7 +383,6 @@ public class Features {
 
     /**
      * Setter for addrFull.<p>
-     * No description.
      */
     public void setAddrFull(FeaturesForAttribute addrFull) {
         this.addrFull = addrFull;
@@ -405,7 +390,6 @@ public class Features {
 
     /**
      * Getter for addrKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getAddrKey() {
         return addrKey;
@@ -413,7 +397,6 @@ public class Features {
 
     /**
      * Setter for addrKey.<p>
-     * No description.
      */
     public void setAddrKey(FeaturesForAttribute addrKey) {
         this.addrKey = addrKey;
@@ -421,7 +404,6 @@ public class Features {
 
     /**
      * Getter for cellPhoneNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getCellPhoneNumber() {
         return cellPhoneNumber;
@@ -429,7 +411,6 @@ public class Features {
 
     /**
      * Setter for cellPhoneNumber.<p>
-     * No description.
      */
     public void setCellPhoneNumber(FeaturesForAttribute cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
@@ -437,7 +418,6 @@ public class Features {
 
     /**
      * Getter for citizenship.<p>
-     * No description.
      */
     public FeaturesForAttribute getCitizenship() {
         return citizenship;
@@ -445,7 +425,6 @@ public class Features {
 
     /**
      * Setter for citizenship.<p>
-     * No description.
      */
     public void setCitizenship(FeaturesForAttribute citizenship) {
         this.citizenship = citizenship;
@@ -453,7 +432,6 @@ public class Features {
 
     /**
      * Getter for countryOfAssociation.<p>
-     * No description.
      */
     public FeaturesForAttribute getCountryOfAssociation() {
         return countryOfAssociation;
@@ -461,7 +439,6 @@ public class Features {
 
     /**
      * Setter for countryOfAssociation.<p>
-     * No description.
      */
     public void setCountryOfAssociation(FeaturesForAttribute countryOfAssociation) {
         this.countryOfAssociation = countryOfAssociation;
@@ -469,7 +446,6 @@ public class Features {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public FeaturesForAttribute getDataSource() {
         return dataSource;
@@ -477,7 +453,6 @@ public class Features {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(FeaturesForAttribute dataSource) {
         this.dataSource = dataSource;
@@ -485,7 +460,6 @@ public class Features {
 
     /**
      * Getter for dateOfBirth.<p>
-     * No description.
      */
     public FeaturesForAttribute getDateOfBirth() {
         return dateOfBirth;
@@ -493,7 +467,6 @@ public class Features {
 
     /**
      * Setter for dateOfBirth.<p>
-     * No description.
      */
     public void setDateOfBirth(FeaturesForAttribute dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -501,7 +474,6 @@ public class Features {
 
     /**
      * Getter for dateOfDeath.<p>
-     * No description.
      */
     public FeaturesForAttribute getDateOfDeath() {
         return dateOfDeath;
@@ -509,7 +481,6 @@ public class Features {
 
     /**
      * Setter for dateOfDeath.<p>
-     * No description.
      */
     public void setDateOfDeath(FeaturesForAttribute dateOfDeath) {
         this.dateOfDeath = dateOfDeath;
@@ -517,7 +488,6 @@ public class Features {
 
     /**
      * Getter for dob.<p>
-     * No description.
      */
     public FeaturesForAttribute getDob() {
         return dob;
@@ -525,7 +495,6 @@ public class Features {
 
     /**
      * Setter for dob.<p>
-     * No description.
      */
     public void setDob(FeaturesForAttribute dob) {
         this.dob = dob;
@@ -533,7 +502,6 @@ public class Features {
 
     /**
      * Getter for dod.<p>
-     * No description.
      */
     public FeaturesForAttribute getDod() {
         return dod;
@@ -541,7 +509,6 @@ public class Features {
 
     /**
      * Setter for dod.<p>
-     * No description.
      */
     public void setDod(FeaturesForAttribute dod) {
         this.dod = dod;
@@ -549,7 +516,6 @@ public class Features {
 
     /**
      * Getter for driversLicenseNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getDriversLicenseNumber() {
         return driversLicenseNumber;
@@ -557,7 +523,6 @@ public class Features {
 
     /**
      * Setter for driversLicenseNumber.<p>
-     * No description.
      */
     public void setDriversLicenseNumber(FeaturesForAttribute driversLicenseNumber) {
         this.driversLicenseNumber = driversLicenseNumber;
@@ -565,7 +530,6 @@ public class Features {
 
     /**
      * Getter for driversLicenseState.<p>
-     * No description.
      */
     public FeaturesForAttribute getDriversLicenseState() {
         return driversLicenseState;
@@ -573,7 +537,6 @@ public class Features {
 
     /**
      * Setter for driversLicenseState.<p>
-     * No description.
      */
     public void setDriversLicenseState(FeaturesForAttribute driversLicenseState) {
         this.driversLicenseState = driversLicenseState;
@@ -581,7 +544,6 @@ public class Features {
 
     /**
      * Getter for drlic.<p>
-     * No description.
      */
     public FeaturesForAttribute getDrlic() {
         return drlic;
@@ -589,7 +551,6 @@ public class Features {
 
     /**
      * Setter for drlic.<p>
-     * No description.
      */
     public void setDrlic(FeaturesForAttribute drlic) {
         this.drlic = drlic;
@@ -597,7 +558,6 @@ public class Features {
 
     /**
      * Getter for dunsNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getDunsNumber() {
         return dunsNumber;
@@ -605,7 +565,6 @@ public class Features {
 
     /**
      * Setter for dunsNumber.<p>
-     * No description.
      */
     public void setDunsNumber(FeaturesForAttribute dunsNumber) {
         this.dunsNumber = dunsNumber;
@@ -613,7 +572,6 @@ public class Features {
 
     /**
      * Getter for email.<p>
-     * No description.
      */
     public FeaturesForAttribute getEmail() {
         return email;
@@ -621,7 +579,6 @@ public class Features {
 
     /**
      * Setter for email.<p>
-     * No description.
      */
     public void setEmail(FeaturesForAttribute email) {
         this.email = email;
@@ -629,7 +586,6 @@ public class Features {
 
     /**
      * Getter for emailAddress.<p>
-     * No description.
      */
     public FeaturesForAttribute getEmailAddress() {
         return emailAddress;
@@ -637,7 +593,6 @@ public class Features {
 
     /**
      * Setter for emailAddress.<p>
-     * No description.
      */
     public void setEmailAddress(FeaturesForAttribute emailAddress) {
         this.emailAddress = emailAddress;
@@ -645,7 +600,6 @@ public class Features {
 
     /**
      * Getter for emailKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getEmailKey() {
         return emailKey;
@@ -653,7 +607,6 @@ public class Features {
 
     /**
      * Setter for emailKey.<p>
-     * No description.
      */
     public void setEmailKey(FeaturesForAttribute emailKey) {
         this.emailKey = emailKey;
@@ -661,7 +614,6 @@ public class Features {
 
     /**
      * Getter for employerName.<p>
-     * No description.
      */
     public FeaturesForAttribute getEmployerName() {
         return employerName;
@@ -669,7 +621,6 @@ public class Features {
 
     /**
      * Setter for employerName.<p>
-     * No description.
      */
     public void setEmployerName(FeaturesForAttribute employerName) {
         this.employerName = employerName;
@@ -677,7 +628,6 @@ public class Features {
 
     /**
      * Getter for entityType.<p>
-     * No description.
      */
     public FeaturesForAttribute getEntityType() {
         return entityType;
@@ -685,7 +635,6 @@ public class Features {
 
     /**
      * Setter for entityType.<p>
-     * No description.
      */
     public void setEntityType(FeaturesForAttribute entityType) {
         this.entityType = entityType;
@@ -693,7 +642,6 @@ public class Features {
 
     /**
      * Getter for facebook.<p>
-     * No description.
      */
     public FeaturesForAttribute getFacebook() {
         return facebook;
@@ -701,7 +649,6 @@ public class Features {
 
     /**
      * Setter for facebook.<p>
-     * No description.
      */
     public void setFacebook(FeaturesForAttribute facebook) {
         this.facebook = facebook;
@@ -709,7 +656,6 @@ public class Features {
 
     /**
      * Getter for gender.<p>
-     * No description.
      */
     public FeaturesForAttribute getGender() {
         return gender;
@@ -717,7 +663,6 @@ public class Features {
 
     /**
      * Setter for gender.<p>
-     * No description.
      */
     public void setGender(FeaturesForAttribute gender) {
         this.gender = gender;
@@ -725,7 +670,6 @@ public class Features {
 
     /**
      * Getter for groupAssnIdNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getGroupAssnIdNumber() {
         return groupAssnIdNumber;
@@ -733,7 +677,6 @@ public class Features {
 
     /**
      * Setter for groupAssnIdNumber.<p>
-     * No description.
      */
     public void setGroupAssnIdNumber(FeaturesForAttribute groupAssnIdNumber) {
         this.groupAssnIdNumber = groupAssnIdNumber;
@@ -741,7 +684,6 @@ public class Features {
 
     /**
      * Getter for groupAssnIdType.<p>
-     * No description.
      */
     public FeaturesForAttribute getGroupAssnIdType() {
         return groupAssnIdType;
@@ -749,7 +691,6 @@ public class Features {
 
     /**
      * Setter for groupAssnIdType.<p>
-     * No description.
      */
     public void setGroupAssnIdType(FeaturesForAttribute groupAssnIdType) {
         this.groupAssnIdType = groupAssnIdType;
@@ -757,7 +698,6 @@ public class Features {
 
     /**
      * Getter for groupAssociationOrgName.<p>
-     * No description.
      */
     public FeaturesForAttribute getGroupAssociationOrgName() {
         return groupAssociationOrgName;
@@ -765,7 +705,6 @@ public class Features {
 
     /**
      * Setter for groupAssociationOrgName.<p>
-     * No description.
      */
     public void setGroupAssociationOrgName(FeaturesForAttribute groupAssociationOrgName) {
         this.groupAssociationOrgName = groupAssociationOrgName;
@@ -773,7 +712,6 @@ public class Features {
 
     /**
      * Getter for groupAssociationType.<p>
-     * No description.
      */
     public FeaturesForAttribute getGroupAssociationType() {
         return groupAssociationType;
@@ -781,7 +719,6 @@ public class Features {
 
     /**
      * Setter for groupAssociationType.<p>
-     * No description.
      */
     public void setGroupAssociationType(FeaturesForAttribute groupAssociationType) {
         this.groupAssociationType = groupAssociationType;
@@ -789,7 +726,6 @@ public class Features {
 
     /**
      * Getter for idKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getIdKey() {
         return idKey;
@@ -797,7 +733,6 @@ public class Features {
 
     /**
      * Setter for idKey.<p>
-     * No description.
      */
     public void setIdKey(FeaturesForAttribute idKey) {
         this.idKey = idKey;
@@ -805,7 +740,6 @@ public class Features {
 
     /**
      * Getter for instagram.<p>
-     * No description.
      */
     public FeaturesForAttribute getInstagram() {
         return instagram;
@@ -813,7 +747,6 @@ public class Features {
 
     /**
      * Setter for instagram.<p>
-     * No description.
      */
     public void setInstagram(FeaturesForAttribute instagram) {
         this.instagram = instagram;
@@ -821,7 +754,6 @@ public class Features {
 
     /**
      * Getter for leiNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getLeiNumber() {
         return leiNumber;
@@ -829,7 +761,6 @@ public class Features {
 
     /**
      * Setter for leiNumber.<p>
-     * No description.
      */
     public void setLeiNumber(FeaturesForAttribute leiNumber) {
         this.leiNumber = leiNumber;
@@ -837,7 +768,6 @@ public class Features {
 
     /**
      * Getter for linkedin.<p>
-     * No description.
      */
     public FeaturesForAttribute getLinkedin() {
         return linkedin;
@@ -845,7 +775,6 @@ public class Features {
 
     /**
      * Setter for linkedin.<p>
-     * No description.
      */
     public void setLinkedin(FeaturesForAttribute linkedin) {
         this.linkedin = linkedin;
@@ -853,7 +782,6 @@ public class Features {
 
     /**
      * Getter for loadId.<p>
-     * No description.
      */
     public FeaturesForAttribute getLoadId() {
         return loadId;
@@ -861,7 +789,6 @@ public class Features {
 
     /**
      * Setter for loadId.<p>
-     * No description.
      */
     public void setLoadId(FeaturesForAttribute loadId) {
         this.loadId = loadId;
@@ -869,7 +796,6 @@ public class Features {
 
     /**
      * Getter for loginId.<p>
-     * No description.
      */
     public FeaturesForAttribute getLoginId() {
         return loginId;
@@ -877,7 +803,6 @@ public class Features {
 
     /**
      * Setter for loginId.<p>
-     * No description.
      */
     public void setLoginId(FeaturesForAttribute loginId) {
         this.loginId = loginId;
@@ -885,7 +810,6 @@ public class Features {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public FeaturesForAttribute getName() {
         return name;
@@ -893,7 +817,6 @@ public class Features {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(FeaturesForAttribute name) {
         this.name = name;
@@ -901,7 +824,6 @@ public class Features {
 
     /**
      * Getter for nameFull.<p>
-     * No description.
      */
     public FeaturesForAttribute getNameFull() {
         return nameFull;
@@ -909,7 +831,6 @@ public class Features {
 
     /**
      * Setter for nameFull.<p>
-     * No description.
      */
     public void setNameFull(FeaturesForAttribute nameFull) {
         this.nameFull = nameFull;
@@ -917,7 +838,6 @@ public class Features {
 
     /**
      * Getter for nameKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getNameKey() {
         return nameKey;
@@ -925,7 +845,6 @@ public class Features {
 
     /**
      * Setter for nameKey.<p>
-     * No description.
      */
     public void setNameKey(FeaturesForAttribute nameKey) {
         this.nameKey = nameKey;
@@ -933,7 +852,6 @@ public class Features {
 
     /**
      * Getter for nameList.<p>
-     * No description.
      */
     public FeaturesForAttribute getNameList() {
         return nameList;
@@ -941,7 +859,6 @@ public class Features {
 
     /**
      * Setter for nameList.<p>
-     * No description.
      */
     public void setNameList(FeaturesForAttribute nameList) {
         this.nameList = nameList;
@@ -949,7 +866,6 @@ public class Features {
 
     /**
      * Getter for nationality.<p>
-     * No description.
      */
     public FeaturesForAttribute getNationality() {
         return nationality;
@@ -957,7 +873,6 @@ public class Features {
 
     /**
      * Setter for nationality.<p>
-     * No description.
      */
     public void setNationality(FeaturesForAttribute nationality) {
         this.nationality = nationality;
@@ -965,7 +880,6 @@ public class Features {
 
     /**
      * Getter for nationalId.<p>
-     * No description.
      */
     public FeaturesForAttribute getNationalId() {
         return nationalId;
@@ -973,7 +887,6 @@ public class Features {
 
     /**
      * Setter for nationalId.<p>
-     * No description.
      */
     public void setNationalId(FeaturesForAttribute nationalId) {
         this.nationalId = nationalId;
@@ -981,7 +894,6 @@ public class Features {
 
     /**
      * Getter for nationalIdCountry.<p>
-     * No description.
      */
     public FeaturesForAttribute getNationalIdCountry() {
         return nationalIdCountry;
@@ -989,7 +901,6 @@ public class Features {
 
     /**
      * Setter for nationalIdCountry.<p>
-     * No description.
      */
     public void setNationalIdCountry(FeaturesForAttribute nationalIdCountry) {
         this.nationalIdCountry = nationalIdCountry;
@@ -997,7 +908,6 @@ public class Features {
 
     /**
      * Getter for nationalIdNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getNationalIdNumber() {
         return nationalIdNumber;
@@ -1005,7 +915,6 @@ public class Features {
 
     /**
      * Setter for nationalIdNumber.<p>
-     * No description.
      */
     public void setNationalIdNumber(FeaturesForAttribute nationalIdNumber) {
         this.nationalIdNumber = nationalIdNumber;
@@ -1013,7 +922,6 @@ public class Features {
 
     /**
      * Getter for ninCountry.<p>
-     * No description.
      */
     public FeaturesForAttribute getNinCountry() {
         return ninCountry;
@@ -1021,7 +929,6 @@ public class Features {
 
     /**
      * Setter for ninCountry.<p>
-     * No description.
      */
     public void setNinCountry(FeaturesForAttribute ninCountry) {
         this.ninCountry = ninCountry;
@@ -1029,7 +936,6 @@ public class Features {
 
     /**
      * Getter for ninNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getNinNumber() {
         return ninNumber;
@@ -1037,7 +943,6 @@ public class Features {
 
     /**
      * Setter for ninNumber.<p>
-     * No description.
      */
     public void setNinNumber(FeaturesForAttribute ninNumber) {
         this.ninNumber = ninNumber;
@@ -1045,7 +950,6 @@ public class Features {
 
     /**
      * Getter for npiNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getNpiNumber() {
         return npiNumber;
@@ -1053,7 +957,6 @@ public class Features {
 
     /**
      * Setter for npiNumber.<p>
-     * No description.
      */
     public void setNpiNumber(FeaturesForAttribute npiNumber) {
         this.npiNumber = npiNumber;
@@ -1061,7 +964,6 @@ public class Features {
 
     /**
      * Getter for otherIdCountry.<p>
-     * No description.
      */
     public FeaturesForAttribute getOtherIdCountry() {
         return otherIdCountry;
@@ -1069,7 +971,6 @@ public class Features {
 
     /**
      * Setter for otherIdCountry.<p>
-     * No description.
      */
     public void setOtherIdCountry(FeaturesForAttribute otherIdCountry) {
         this.otherIdCountry = otherIdCountry;
@@ -1077,7 +978,6 @@ public class Features {
 
     /**
      * Getter for otherIdNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getOtherIdNumber() {
         return otherIdNumber;
@@ -1085,7 +985,6 @@ public class Features {
 
     /**
      * Setter for otherIdNumber.<p>
-     * No description.
      */
     public void setOtherIdNumber(FeaturesForAttribute otherIdNumber) {
         this.otherIdNumber = otherIdNumber;
@@ -1093,7 +992,6 @@ public class Features {
 
     /**
      * Getter for otherIdType.<p>
-     * No description.
      */
     public FeaturesForAttribute getOtherIdType() {
         return otherIdType;
@@ -1101,7 +999,6 @@ public class Features {
 
     /**
      * Setter for otherIdType.<p>
-     * No description.
      */
     public void setOtherIdType(FeaturesForAttribute otherIdType) {
         this.otherIdType = otherIdType;
@@ -1109,7 +1006,6 @@ public class Features {
 
     /**
      * Getter for passport.<p>
-     * No description.
      */
     public FeaturesForAttribute getPassport() {
         return passport;
@@ -1117,7 +1013,6 @@ public class Features {
 
     /**
      * Setter for passport.<p>
-     * No description.
      */
     public void setPassport(FeaturesForAttribute passport) {
         this.passport = passport;
@@ -1125,7 +1020,6 @@ public class Features {
 
     /**
      * Getter for passports.<p>
-     * No description.
      */
     public FeaturesForAttribute getPassports() {
         return passports;
@@ -1133,7 +1027,6 @@ public class Features {
 
     /**
      * Setter for passports.<p>
-     * No description.
      */
     public void setPassports(FeaturesForAttribute passports) {
         this.passports = passports;
@@ -1141,7 +1034,6 @@ public class Features {
 
     /**
      * Getter for passportCountry.<p>
-     * No description.
      */
     public FeaturesForAttribute getPassportCountry() {
         return passportCountry;
@@ -1149,7 +1041,6 @@ public class Features {
 
     /**
      * Setter for passportCountry.<p>
-     * No description.
      */
     public void setPassportCountry(FeaturesForAttribute passportCountry) {
         this.passportCountry = passportCountry;
@@ -1157,7 +1048,6 @@ public class Features {
 
     /**
      * Getter for passportNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getPassportNumber() {
         return passportNumber;
@@ -1165,7 +1055,6 @@ public class Features {
 
     /**
      * Setter for passportNumber.<p>
-     * No description.
      */
     public void setPassportNumber(FeaturesForAttribute passportNumber) {
         this.passportNumber = passportNumber;
@@ -1173,7 +1062,6 @@ public class Features {
 
     /**
      * Getter for phone.<p>
-     * No description.
      */
     public FeaturesForAttribute getPhone() {
         return phone;
@@ -1181,7 +1069,6 @@ public class Features {
 
     /**
      * Setter for phone.<p>
-     * No description.
      */
     public void setPhone(FeaturesForAttribute phone) {
         this.phone = phone;
@@ -1189,7 +1076,6 @@ public class Features {
 
     /**
      * Getter for phones.<p>
-     * No description.
      */
     public FeaturesForAttribute getPhones() {
         return phones;
@@ -1197,7 +1083,6 @@ public class Features {
 
     /**
      * Setter for phones.<p>
-     * No description.
      */
     public void setPhones(FeaturesForAttribute phones) {
         this.phones = phones;
@@ -1205,7 +1090,6 @@ public class Features {
 
     /**
      * Getter for phoneKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getPhoneKey() {
         return phoneKey;
@@ -1213,7 +1097,6 @@ public class Features {
 
     /**
      * Setter for phoneKey.<p>
-     * No description.
      */
     public void setPhoneKey(FeaturesForAttribute phoneKey) {
         this.phoneKey = phoneKey;
@@ -1221,7 +1104,6 @@ public class Features {
 
     /**
      * Getter for placeOfBirth.<p>
-     * No description.
      */
     public FeaturesForAttribute getPlaceOfBirth() {
         return placeOfBirth;
@@ -1229,7 +1111,6 @@ public class Features {
 
     /**
      * Setter for placeOfBirth.<p>
-     * No description.
      */
     public void setPlaceOfBirth(FeaturesForAttribute placeOfBirth) {
         this.placeOfBirth = placeOfBirth;
@@ -1237,7 +1118,6 @@ public class Features {
 
     /**
      * Getter for primaryNameFirst.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryNameFirst() {
         return primaryNameFirst;
@@ -1245,7 +1125,6 @@ public class Features {
 
     /**
      * Setter for primaryNameFirst.<p>
-     * No description.
      */
     public void setPrimaryNameFirst(FeaturesForAttribute primaryNameFirst) {
         this.primaryNameFirst = primaryNameFirst;
@@ -1253,7 +1132,6 @@ public class Features {
 
     /**
      * Getter for primaryNameLast.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryNameLast() {
         return primaryNameLast;
@@ -1261,7 +1139,6 @@ public class Features {
 
     /**
      * Setter for primaryNameLast.<p>
-     * No description.
      */
     public void setPrimaryNameLast(FeaturesForAttribute primaryNameLast) {
         this.primaryNameLast = primaryNameLast;
@@ -1269,7 +1146,6 @@ public class Features {
 
     /**
      * Getter for primaryNameMiddle.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryNameMiddle() {
         return primaryNameMiddle;
@@ -1277,7 +1153,6 @@ public class Features {
 
     /**
      * Setter for primaryNameMiddle.<p>
-     * No description.
      */
     public void setPrimaryNameMiddle(FeaturesForAttribute primaryNameMiddle) {
         this.primaryNameMiddle = primaryNameMiddle;
@@ -1285,7 +1160,6 @@ public class Features {
 
     /**
      * Getter for primaryNameOrg.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryNameOrg() {
         return primaryNameOrg;
@@ -1293,7 +1167,6 @@ public class Features {
 
     /**
      * Setter for primaryNameOrg.<p>
-     * No description.
      */
     public void setPrimaryNameOrg(FeaturesForAttribute primaryNameOrg) {
         this.primaryNameOrg = primaryNameOrg;
@@ -1301,7 +1174,6 @@ public class Features {
 
     /**
      * Getter for primaryNamePrefix.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryNamePrefix() {
         return primaryNamePrefix;
@@ -1309,7 +1181,6 @@ public class Features {
 
     /**
      * Setter for primaryNamePrefix.<p>
-     * No description.
      */
     public void setPrimaryNamePrefix(FeaturesForAttribute primaryNamePrefix) {
         this.primaryNamePrefix = primaryNamePrefix;
@@ -1317,7 +1188,6 @@ public class Features {
 
     /**
      * Getter for primaryNameSuffix.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryNameSuffix() {
         return primaryNameSuffix;
@@ -1325,7 +1195,6 @@ public class Features {
 
     /**
      * Setter for primaryNameSuffix.<p>
-     * No description.
      */
     public void setPrimaryNameSuffix(FeaturesForAttribute primaryNameSuffix) {
         this.primaryNameSuffix = primaryNameSuffix;
@@ -1333,7 +1202,6 @@ public class Features {
 
     /**
      * Getter for primaryPhoneNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getPrimaryPhoneNumber() {
         return primaryPhoneNumber;
@@ -1341,7 +1209,6 @@ public class Features {
 
     /**
      * Setter for primaryPhoneNumber.<p>
-     * No description.
      */
     public void setPrimaryPhoneNumber(FeaturesForAttribute primaryPhoneNumber) {
         this.primaryPhoneNumber = primaryPhoneNumber;
@@ -1349,7 +1216,6 @@ public class Features {
 
     /**
      * Getter for recordType.<p>
-     * No description.
      */
     public FeaturesForAttribute getRecordType() {
         return recordType;
@@ -1357,7 +1223,6 @@ public class Features {
 
     /**
      * Setter for recordType.<p>
-     * No description.
      */
     public void setRecordType(FeaturesForAttribute recordType) {
         this.recordType = recordType;
@@ -1365,7 +1230,6 @@ public class Features {
 
     /**
      * Getter for registrationCountry.<p>
-     * No description.
      */
     public FeaturesForAttribute getRegistrationCountry() {
         return registrationCountry;
@@ -1373,7 +1237,6 @@ public class Features {
 
     /**
      * Setter for registrationCountry.<p>
-     * No description.
      */
     public void setRegistrationCountry(FeaturesForAttribute registrationCountry) {
         this.registrationCountry = registrationCountry;
@@ -1381,7 +1244,6 @@ public class Features {
 
     /**
      * Getter for registrationDate.<p>
-     * No description.
      */
     public FeaturesForAttribute getRegistrationDate() {
         return registrationDate;
@@ -1389,7 +1251,6 @@ public class Features {
 
     /**
      * Setter for registrationDate.<p>
-     * No description.
      */
     public void setRegistrationDate(FeaturesForAttribute registrationDate) {
         this.registrationDate = registrationDate;
@@ -1397,7 +1258,6 @@ public class Features {
 
     /**
      * Getter for relAnchor.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelAnchor() {
         return relAnchor;
@@ -1405,7 +1265,6 @@ public class Features {
 
     /**
      * Setter for relAnchor.<p>
-     * No description.
      */
     public void setRelAnchor(FeaturesForAttribute relAnchor) {
         this.relAnchor = relAnchor;
@@ -1413,7 +1272,6 @@ public class Features {
 
     /**
      * Getter for relAnchorDomain.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelAnchorDomain() {
         return relAnchorDomain;
@@ -1421,7 +1279,6 @@ public class Features {
 
     /**
      * Setter for relAnchorDomain.<p>
-     * No description.
      */
     public void setRelAnchorDomain(FeaturesForAttribute relAnchorDomain) {
         this.relAnchorDomain = relAnchorDomain;
@@ -1429,7 +1286,6 @@ public class Features {
 
     /**
      * Getter for relAnchorKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelAnchorKey() {
         return relAnchorKey;
@@ -1437,7 +1293,6 @@ public class Features {
 
     /**
      * Setter for relAnchorKey.<p>
-     * No description.
      */
     public void setRelAnchorKey(FeaturesForAttribute relAnchorKey) {
         this.relAnchorKey = relAnchorKey;
@@ -1445,7 +1300,6 @@ public class Features {
 
     /**
      * Getter for relLink.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelLink() {
         return relLink;
@@ -1453,7 +1307,6 @@ public class Features {
 
     /**
      * Setter for relLink.<p>
-     * No description.
      */
     public void setRelLink(FeaturesForAttribute relLink) {
         this.relLink = relLink;
@@ -1461,7 +1314,6 @@ public class Features {
 
     /**
      * Getter for relPointer.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelPointer() {
         return relPointer;
@@ -1469,7 +1321,6 @@ public class Features {
 
     /**
      * Setter for relPointer.<p>
-     * No description.
      */
     public void setRelPointer(FeaturesForAttribute relPointer) {
         this.relPointer = relPointer;
@@ -1477,7 +1328,6 @@ public class Features {
 
     /**
      * Getter for relPointerDomain.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelPointerDomain() {
         return relPointerDomain;
@@ -1485,7 +1335,6 @@ public class Features {
 
     /**
      * Setter for relPointerDomain.<p>
-     * No description.
      */
     public void setRelPointerDomain(FeaturesForAttribute relPointerDomain) {
         this.relPointerDomain = relPointerDomain;
@@ -1493,7 +1342,6 @@ public class Features {
 
     /**
      * Getter for relPointerKey.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelPointerKey() {
         return relPointerKey;
@@ -1501,7 +1349,6 @@ public class Features {
 
     /**
      * Setter for relPointerKey.<p>
-     * No description.
      */
     public void setRelPointerKey(FeaturesForAttribute relPointerKey) {
         this.relPointerKey = relPointerKey;
@@ -1509,7 +1356,6 @@ public class Features {
 
     /**
      * Getter for relPointerRole.<p>
-     * No description.
      */
     public FeaturesForAttribute getRelPointerRole() {
         return relPointerRole;
@@ -1517,7 +1363,6 @@ public class Features {
 
     /**
      * Setter for relPointerRole.<p>
-     * No description.
      */
     public void setRelPointerRole(FeaturesForAttribute relPointerRole) {
         this.relPointerRole = relPointerRole;
@@ -1525,7 +1370,6 @@ public class Features {
 
     /**
      * Getter for signal.<p>
-     * No description.
      */
     public FeaturesForAttribute getSignal() {
         return signal;
@@ -1533,7 +1377,6 @@ public class Features {
 
     /**
      * Setter for signal.<p>
-     * No description.
      */
     public void setSignal(FeaturesForAttribute signal) {
         this.signal = signal;
@@ -1541,7 +1384,6 @@ public class Features {
 
     /**
      * Getter for skype.<p>
-     * No description.
      */
     public FeaturesForAttribute getSkype() {
         return skype;
@@ -1549,7 +1391,6 @@ public class Features {
 
     /**
      * Setter for skype.<p>
-     * No description.
      */
     public void setSkype(FeaturesForAttribute skype) {
         this.skype = skype;
@@ -1557,7 +1398,6 @@ public class Features {
 
     /**
      * Getter for socialHandle.<p>
-     * No description.
      */
     public FeaturesForAttribute getSocialHandle() {
         return socialHandle;
@@ -1565,7 +1405,6 @@ public class Features {
 
     /**
      * Setter for socialHandle.<p>
-     * No description.
      */
     public void setSocialHandle(FeaturesForAttribute socialHandle) {
         this.socialHandle = socialHandle;
@@ -1573,7 +1412,6 @@ public class Features {
 
     /**
      * Getter for socialNetwork.<p>
-     * No description.
      */
     public FeaturesForAttribute getSocialNetwork() {
         return socialNetwork;
@@ -1581,7 +1419,6 @@ public class Features {
 
     /**
      * Setter for socialNetwork.<p>
-     * No description.
      */
     public void setSocialNetwork(FeaturesForAttribute socialNetwork) {
         this.socialNetwork = socialNetwork;
@@ -1589,7 +1426,6 @@ public class Features {
 
     /**
      * Getter for sourceId.<p>
-     * No description.
      */
     public FeaturesForAttribute getSourceId() {
         return sourceId;
@@ -1597,7 +1433,6 @@ public class Features {
 
     /**
      * Setter for sourceId.<p>
-     * No description.
      */
     public void setSourceId(FeaturesForAttribute sourceId) {
         this.sourceId = sourceId;
@@ -1605,7 +1440,6 @@ public class Features {
 
     /**
      * Getter for ssn.<p>
-     * No description.
      */
     public FeaturesForAttribute getSsn() {
         return ssn;
@@ -1613,7 +1447,6 @@ public class Features {
 
     /**
      * Setter for ssn.<p>
-     * No description.
      */
     public void setSsn(FeaturesForAttribute ssn) {
         this.ssn = ssn;
@@ -1621,7 +1454,6 @@ public class Features {
 
     /**
      * Getter for ssnLast4.<p>
-     * No description.
      */
     public FeaturesForAttribute getSsnLast4() {
         return ssnLast4;
@@ -1629,7 +1461,6 @@ public class Features {
 
     /**
      * Setter for ssnLast4.<p>
-     * No description.
      */
     public void setSsnLast4(FeaturesForAttribute ssnLast4) {
         this.ssnLast4 = ssnLast4;
@@ -1637,7 +1468,6 @@ public class Features {
 
     /**
      * Getter for ssnNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getSsnNumber() {
         return ssnNumber;
@@ -1645,7 +1475,6 @@ public class Features {
 
     /**
      * Setter for ssnNumber.<p>
-     * No description.
      */
     public void setSsnNumber(FeaturesForAttribute ssnNumber) {
         this.ssnNumber = ssnNumber;
@@ -1653,7 +1482,6 @@ public class Features {
 
     /**
      * Getter for tango.<p>
-     * No description.
      */
     public FeaturesForAttribute getTango() {
         return tango;
@@ -1661,7 +1489,6 @@ public class Features {
 
     /**
      * Setter for tango.<p>
-     * No description.
      */
     public void setTango(FeaturesForAttribute tango) {
         this.tango = tango;
@@ -1669,7 +1496,6 @@ public class Features {
 
     /**
      * Getter for taxIdCountry.<p>
-     * No description.
      */
     public FeaturesForAttribute getTaxIdCountry() {
         return taxIdCountry;
@@ -1677,7 +1503,6 @@ public class Features {
 
     /**
      * Setter for taxIdCountry.<p>
-     * No description.
      */
     public void setTaxIdCountry(FeaturesForAttribute taxIdCountry) {
         this.taxIdCountry = taxIdCountry;
@@ -1685,7 +1510,6 @@ public class Features {
 
     /**
      * Getter for taxIdNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getTaxIdNumber() {
         return taxIdNumber;
@@ -1693,7 +1517,6 @@ public class Features {
 
     /**
      * Setter for taxIdNumber.<p>
-     * No description.
      */
     public void setTaxIdNumber(FeaturesForAttribute taxIdNumber) {
         this.taxIdNumber = taxIdNumber;
@@ -1701,7 +1524,6 @@ public class Features {
 
     /**
      * Getter for taxIdType.<p>
-     * No description.
      */
     public FeaturesForAttribute getTaxIdType() {
         return taxIdType;
@@ -1709,7 +1531,6 @@ public class Features {
 
     /**
      * Setter for taxIdType.<p>
-     * No description.
      */
     public void setTaxIdType(FeaturesForAttribute taxIdType) {
         this.taxIdType = taxIdType;
@@ -1717,7 +1538,6 @@ public class Features {
 
     /**
      * Getter for telegram.<p>
-     * No description.
      */
     public FeaturesForAttribute getTelegram() {
         return telegram;
@@ -1725,7 +1545,6 @@ public class Features {
 
     /**
      * Setter for telegram.<p>
-     * No description.
      */
     public void setTelegram(FeaturesForAttribute telegram) {
         this.telegram = telegram;
@@ -1733,7 +1552,6 @@ public class Features {
 
     /**
      * Getter for trustedIdNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getTrustedIdNumber() {
         return trustedIdNumber;
@@ -1741,7 +1559,6 @@ public class Features {
 
     /**
      * Setter for trustedIdNumber.<p>
-     * No description.
      */
     public void setTrustedIdNumber(FeaturesForAttribute trustedIdNumber) {
         this.trustedIdNumber = trustedIdNumber;
@@ -1749,7 +1566,6 @@ public class Features {
 
     /**
      * Getter for trustedIdType.<p>
-     * No description.
      */
     public FeaturesForAttribute getTrustedIdType() {
         return trustedIdType;
@@ -1757,7 +1573,6 @@ public class Features {
 
     /**
      * Setter for trustedIdType.<p>
-     * No description.
      */
     public void setTrustedIdType(FeaturesForAttribute trustedIdType) {
         this.trustedIdType = trustedIdType;
@@ -1765,7 +1580,6 @@ public class Features {
 
     /**
      * Getter for twitter.<p>
-     * No description.
      */
     public FeaturesForAttribute getTwitter() {
         return twitter;
@@ -1773,7 +1587,6 @@ public class Features {
 
     /**
      * Setter for twitter.<p>
-     * No description.
      */
     public void setTwitter(FeaturesForAttribute twitter) {
         this.twitter = twitter;
@@ -1781,7 +1594,6 @@ public class Features {
 
     /**
      * Getter for viber.<p>
-     * No description.
      */
     public FeaturesForAttribute getViber() {
         return viber;
@@ -1789,7 +1601,6 @@ public class Features {
 
     /**
      * Setter for viber.<p>
-     * No description.
      */
     public void setViber(FeaturesForAttribute viber) {
         this.viber = viber;
@@ -1797,7 +1608,6 @@ public class Features {
 
     /**
      * Getter for websiteAddress.<p>
-     * No description.
      */
     public FeaturesForAttribute getWebsiteAddress() {
         return websiteAddress;
@@ -1805,7 +1615,6 @@ public class Features {
 
     /**
      * Setter for websiteAddress.<p>
-     * No description.
      */
     public void setWebsiteAddress(FeaturesForAttribute websiteAddress) {
         this.websiteAddress = websiteAddress;
@@ -1813,7 +1622,6 @@ public class Features {
 
     /**
      * Getter for wechat.<p>
-     * No description.
      */
     public FeaturesForAttribute getWechat() {
         return wechat;
@@ -1821,7 +1629,6 @@ public class Features {
 
     /**
      * Setter for wechat.<p>
-     * No description.
      */
     public void setWechat(FeaturesForAttribute wechat) {
         this.wechat = wechat;
@@ -1829,7 +1636,6 @@ public class Features {
 
     /**
      * Getter for whatsapp.<p>
-     * No description.
      */
     public FeaturesForAttribute getWhatsapp() {
         return whatsapp;
@@ -1837,7 +1643,6 @@ public class Features {
 
     /**
      * Setter for whatsapp.<p>
-     * No description.
      */
     public void setWhatsapp(FeaturesForAttribute whatsapp) {
         this.whatsapp = whatsapp;
@@ -1845,7 +1650,6 @@ public class Features {
 
     /**
      * Getter for workPhoneNumber.<p>
-     * No description.
      */
     public FeaturesForAttribute getWorkPhoneNumber() {
         return workPhoneNumber;
@@ -1853,7 +1657,6 @@ public class Features {
 
     /**
      * Setter for workPhoneNumber.<p>
-     * No description.
      */
     public void setWorkPhoneNumber(FeaturesForAttribute workPhoneNumber) {
         this.workPhoneNumber = workPhoneNumber;
@@ -1861,7 +1664,6 @@ public class Features {
 
     /**
      * Getter for zoomroom.<p>
-     * No description.
      */
     public FeaturesForAttribute getZoomroom() {
         return zoomroom;
@@ -1869,7 +1671,6 @@ public class Features {
 
     /**
      * Setter for zoomroom.<p>
-     * No description.
      */
     public void setZoomroom(FeaturesForAttribute zoomroom) {
         this.zoomroom = zoomroom;

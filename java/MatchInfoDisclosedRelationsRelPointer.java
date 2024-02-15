@@ -33,7 +33,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for domain.<p>
-     * No description.
      */
     public String getDomain() {
         return domain;
@@ -41,7 +40,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for domain.<p>
-     * No description.
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -49,7 +47,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -57,7 +54,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -65,7 +61,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for featId.<p>
-     * No description.
      */
     public Integer getFeatId() {
         return featId;
@@ -73,7 +68,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for featId.<p>
-     * No description.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;
@@ -81,7 +75,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for featUsageType.<p>
-     * No description.
      */
     public String getFeatUsageType() {
         return featUsageType;
@@ -89,7 +82,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for featUsageType.<p>
-     * No description.
      */
     public void setFeatUsageType(String featUsageType) {
         this.featUsageType = featUsageType;
@@ -97,7 +89,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for linkedFeatDesc.<p>
-     * No description.
      */
     public String getLinkedFeatDesc() {
         return linkedFeatDesc;
@@ -105,7 +96,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for linkedFeatDesc.<p>
-     * No description.
      */
     public void setLinkedFeatDesc(String linkedFeatDesc) {
         this.linkedFeatDesc = linkedFeatDesc;
@@ -113,7 +103,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for linkedFeatId.<p>
-     * No description.
      */
     public Integer getLinkedFeatId() {
         return linkedFeatId;
@@ -121,7 +110,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for linkedFeatId.<p>
-     * No description.
      */
     public void setLinkedFeatId(Integer linkedFeatId) {
         this.linkedFeatId = linkedFeatId;
@@ -129,7 +117,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Getter for linkedFeatType.<p>
-     * No description.
      */
     public String getLinkedFeatType() {
         return linkedFeatType;
@@ -137,7 +124,6 @@ public class MatchInfoDisclosedRelationsRelPointer {
 
     /**
      * Setter for linkedFeatType.<p>
-     * No description.
      */
     public void setLinkedFeatType(String linkedFeatType) {
         this.linkedFeatType = linkedFeatType;

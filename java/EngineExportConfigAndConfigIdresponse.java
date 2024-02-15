@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineExportConfigAndConfigIdresponse {
     @JsonProperty("G2_CONFIG")
@@ -18,7 +15,6 @@ public class EngineExportConfigAndConfigIdresponse {
 
     /**
      * Getter for g2Config.<p>
-     * No description.
      */
     public G2config getG2Config() {
         return g2Config;
@@ -26,7 +22,6 @@ public class EngineExportConfigAndConfigIdresponse {
 
     /**
      * Setter for g2Config.<p>
-     * No description.
      */
     public void setG2Config(G2config g2Config) {
         this.g2Config = g2Config;

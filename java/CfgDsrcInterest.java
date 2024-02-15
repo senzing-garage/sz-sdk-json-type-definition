@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgDsrcInterest {
     @JsonProperty("DSRC_ID")
@@ -24,7 +21,6 @@ public class CfgDsrcInterest {
 
     /**
      * Getter for dsrcId.<p>
-     * No description.
      */
     public Integer getDsrcId() {
         return dsrcId;
@@ -32,7 +28,6 @@ public class CfgDsrcInterest {
 
     /**
      * Setter for dsrcId.<p>
-     * No description.
      */
     public void setDsrcId(Integer dsrcId) {
         this.dsrcId = dsrcId;
@@ -40,7 +35,6 @@ public class CfgDsrcInterest {
 
     /**
      * Getter for interestFlag.<p>
-     * No description.
      */
     public String getInterestFlag() {
         return interestFlag;
@@ -48,7 +42,6 @@ public class CfgDsrcInterest {
 
     /**
      * Setter for interestFlag.<p>
-     * No description.
      */
     public void setInterestFlag(String interestFlag) {
         this.interestFlag = interestFlag;
@@ -56,7 +49,6 @@ public class CfgDsrcInterest {
 
     /**
      * Getter for maxDegree.<p>
-     * No description.
      */
     public Integer getMaxDegree() {
         return maxDegree;
@@ -64,7 +56,6 @@ public class CfgDsrcInterest {
 
     /**
      * Setter for maxDegree.<p>
-     * No description.
      */
     public void setMaxDegree(Integer maxDegree) {
         this.maxDegree = maxDegree;

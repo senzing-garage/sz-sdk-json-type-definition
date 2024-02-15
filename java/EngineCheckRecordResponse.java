@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineCheckRecordResponse {
     @JsonProperty("CHECK_RECORD_RESPONSE")
@@ -19,7 +16,6 @@ public class EngineCheckRecordResponse {
 
     /**
      * Getter for checkRecordResponse.<p>
-     * No description.
      */
     public List<EngineCheckRecordResponseCheckRecordResponse> getCheckRecordResponse() {
         return checkRecordResponse;
@@ -27,7 +23,6 @@ public class EngineCheckRecordResponse {
 
     /**
      * Setter for checkRecordResponse.<p>
-     * No description.
      */
     public void setCheckRecordResponse(List<EngineCheckRecordResponseCheckRecordResponse> checkRecordResponse) {
         this.checkRecordResponse = checkRecordResponse;

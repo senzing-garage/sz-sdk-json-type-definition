@@ -6,9 +6,6 @@ namespace Senzing
 {
     public class JsonDataSsnLast4
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SSN_LAST4")]
         public int SsnLast4 { get; set; }
     }

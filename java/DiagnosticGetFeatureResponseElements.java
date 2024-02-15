@@ -18,7 +18,6 @@ public class DiagnosticGetFeatureResponseElements {
 
     /**
      * Getter for felemCode.<p>
-     * No description.
      */
     public String getFelemCode() {
         return felemCode;
@@ -26,7 +25,6 @@ public class DiagnosticGetFeatureResponseElements {
 
     /**
      * Setter for felemCode.<p>
-     * No description.
      */
     public void setFelemCode(String felemCode) {
         this.felemCode = felemCode;
@@ -34,7 +32,6 @@ public class DiagnosticGetFeatureResponseElements {
 
     /**
      * Getter for felemValue.<p>
-     * No description.
      */
     public String getFelemValue() {
         return felemValue;
@@ -42,7 +39,6 @@ public class DiagnosticGetFeatureResponseElements {
 
     /**
      * Setter for felemValue.<p>
-     * No description.
      */
     public void setFelemValue(String felemValue) {
         this.felemValue = felemValue;

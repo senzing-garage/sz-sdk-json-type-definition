@@ -45,7 +45,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for derived.<p>
-     * No description.
      */
     public String getDerived() {
         return derived;
@@ -53,7 +52,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for derived.<p>
-     * No description.
      */
     public void setDerived(String derived) {
         this.derived = derived;
@@ -61,7 +59,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -69,7 +66,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -77,7 +73,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -85,7 +80,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -93,7 +87,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -101,7 +94,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -109,7 +101,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for maxFeatDesc.<p>
-     * No description.
      */
     public String getMaxFeatDesc() {
         return maxFeatDesc;
@@ -117,7 +108,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for maxFeatDesc.<p>
-     * No description.
      */
     public void setMaxFeatDesc(String maxFeatDesc) {
         this.maxFeatDesc = maxFeatDesc;
@@ -125,7 +115,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for minFeatDesc.<p>
-     * No description.
      */
     public String getMinFeatDesc() {
         return minFeatDesc;
@@ -133,7 +122,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for minFeatDesc.<p>
-     * No description.
      */
     public void setMinFeatDesc(String minFeatDesc) {
         this.minFeatDesc = minFeatDesc;
@@ -141,7 +129,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for recCount.<p>
-     * No description.
      */
     public Integer getRecCount() {
         return recCount;
@@ -149,7 +136,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for recCount.<p>
-     * No description.
      */
     public void setRecCount(Integer recCount) {
         this.recCount = recCount;
@@ -157,7 +143,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for recPct.<p>
-     * No description.
      */
     public Double getRecPct() {
         return recPct;
@@ -165,7 +150,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for recPct.<p>
-     * No description.
      */
     public void setRecPct(Double recPct) {
         this.recPct = recPct;
@@ -173,7 +157,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for uniqCount.<p>
-     * No description.
      */
     public Integer getUniqCount() {
         return uniqCount;
@@ -181,7 +164,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for uniqCount.<p>
-     * No description.
      */
     public void setUniqCount(Integer uniqCount) {
         this.uniqCount = uniqCount;
@@ -189,7 +171,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for uniqPct.<p>
-     * No description.
      */
     public Double getUniqPct() {
         return uniqPct;
@@ -197,7 +178,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for uniqPct.<p>
-     * No description.
      */
     public void setUniqPct(Double uniqPct) {
         this.uniqPct = uniqPct;
@@ -205,7 +185,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Getter for usageType.<p>
-     * No description.
      */
     public String getUsageType() {
         return usageType;
@@ -213,7 +192,6 @@ public class DiagnosticGetMappingStatisticsResponse0 {
 
     /**
      * Setter for usageType.<p>
-     * No description.
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

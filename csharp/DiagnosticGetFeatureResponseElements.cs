@@ -6,15 +6,9 @@ namespace Senzing
 {
     public class DiagnosticGetFeatureResponseElements
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FELEM_CODE")]
         public string FelemCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FELEM_VALUE")]
         public string FelemValue { get; set; }
     }

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class SearchSearchStatisticsCandidateKeysSummary {
     @JsonProperty("FOUND")
@@ -24,7 +21,6 @@ public class SearchSearchStatisticsCandidateKeysSummary {
 
     /**
      * Getter for found.<p>
-     * No description.
      */
     public Integer getFound() {
         return found;
@@ -32,7 +28,6 @@ public class SearchSearchStatisticsCandidateKeysSummary {
 
     /**
      * Setter for found.<p>
-     * No description.
      */
     public void setFound(Integer found) {
         this.found = found;
@@ -40,7 +35,6 @@ public class SearchSearchStatisticsCandidateKeysSummary {
 
     /**
      * Getter for generic.<p>
-     * No description.
      */
     public Integer getGeneric() {
         return generic;
@@ -48,7 +42,6 @@ public class SearchSearchStatisticsCandidateKeysSummary {
 
     /**
      * Setter for generic.<p>
-     * No description.
      */
     public void setGeneric(Integer generic) {
         this.generic = generic;
@@ -56,7 +49,6 @@ public class SearchSearchStatisticsCandidateKeysSummary {
 
     /**
      * Getter for notFound.<p>
-     * No description.
      */
     public Integer getNotFound() {
         return notFound;
@@ -64,7 +56,6 @@ public class SearchSearchStatisticsCandidateKeysSummary {
 
     /**
      * Setter for notFound.<p>
-     * No description.
      */
     public void setNotFound(Integer notFound) {
         this.notFound = notFound;

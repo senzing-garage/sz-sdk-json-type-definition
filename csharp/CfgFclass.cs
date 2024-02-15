@@ -4,26 +4,14 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgFclass
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FCLASS_CODE")]
         public string FclassCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FCLASS_DESC")]
         public string FclassDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FCLASS_ID")]
         public int FclassId { get; set; }
     }

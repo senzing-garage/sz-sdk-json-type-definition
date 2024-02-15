@@ -7,69 +7,36 @@ namespace Senzing
 {
     public class DiagnosticGetResolutionStatisticsResponse0
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERRULE_ID")]
         public int ErruleId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("IS_AMBIGUOUS")]
         public string IsAmbiguous { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_LEVEL")]
         public int MatchLevel { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MAX_RES_ENT_ID")]
         public int MaxResEntId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MAX_RES_REL_ID")]
         public int MaxResRelId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MIN_RES_ENT_ID")]
         public int MinResEntId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MIN_RES_REL_ID")]
         public int MinResRelId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RAW_MATCH_KEYS")]
         public IList<DiagnosticGetResolutionStatisticsResponseRawMatchKeys> RawMatchKeys { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RECORD_COUNT")]
         public int RecordCount { get; set; }
     }

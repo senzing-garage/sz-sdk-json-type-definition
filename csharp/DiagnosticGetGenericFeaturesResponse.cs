@@ -7,9 +7,6 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     [JsonConverter(typeof(DiagnosticGetGenericFeaturesResponseJsonConverter))]
     public class DiagnosticGetGenericFeaturesResponse
     {

@@ -4,44 +4,23 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class EngineStatsResponseWorkloadUnresolveTriggers
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ambiguousMultiResolve")]
         public int AmbiguousMultiResolve { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ambiguousNoResolve")]
         public int AmbiguousNoResolve { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("extensiveResolve")]
         public int ExtensiveResolve { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("normalResolve")]
         public int NormalResolve { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("relLink")]
         public int RelLink { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("update")]
         public int Update { get; set; }
     }

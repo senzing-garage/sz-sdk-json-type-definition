@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class DiagnosticGetDbinfoResponse {
     @JsonProperty("Database Details")
@@ -22,7 +19,6 @@ public class DiagnosticGetDbinfoResponse {
 
     /**
      * Getter for databaseDetails.<p>
-     * No description.
      */
     public List<DiagnosticGetDbinfoResponseDetail> getDatabaseDetails() {
         return databaseDetails;
@@ -30,7 +26,6 @@ public class DiagnosticGetDbinfoResponse {
 
     /**
      * Setter for databaseDetails.<p>
-     * No description.
      */
     public void setDatabaseDetails(List<DiagnosticGetDbinfoResponseDetail> databaseDetails) {
         this.databaseDetails = databaseDetails;
@@ -38,7 +33,6 @@ public class DiagnosticGetDbinfoResponse {
 
     /**
      * Getter for hybridMode.<p>
-     * No description.
      */
     public Boolean getHybridMode() {
         return hybridMode;
@@ -46,7 +40,6 @@ public class DiagnosticGetDbinfoResponse {
 
     /**
      * Setter for hybridMode.<p>
-     * No description.
      */
     public void setHybridMode(Boolean hybridMode) {
         this.hybridMode = hybridMode;

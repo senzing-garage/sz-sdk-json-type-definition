@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgEfbom {
     @JsonProperty("EFCALL_ID")
@@ -30,7 +27,6 @@ public class CfgEfbom {
 
     /**
      * Getter for efcallId.<p>
-     * No description.
      */
     public Integer getEfcallId() {
         return efcallId;
@@ -38,7 +34,6 @@ public class CfgEfbom {
 
     /**
      * Setter for efcallId.<p>
-     * No description.
      */
     public void setEfcallId(Integer efcallId) {
         this.efcallId = efcallId;
@@ -46,7 +41,6 @@ public class CfgEfbom {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -54,7 +48,6 @@ public class CfgEfbom {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -62,7 +55,6 @@ public class CfgEfbom {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -70,7 +62,6 @@ public class CfgEfbom {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -78,7 +69,6 @@ public class CfgEfbom {
 
     /**
      * Getter for felemReq.<p>
-     * No description.
      */
     public String getFelemReq() {
         return felemReq;
@@ -86,7 +76,6 @@ public class CfgEfbom {
 
     /**
      * Setter for felemReq.<p>
-     * No description.
      */
     public void setFelemReq(String felemReq) {
         this.felemReq = felemReq;
@@ -94,7 +83,6 @@ public class CfgEfbom {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -102,7 +90,6 @@ public class CfgEfbom {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;

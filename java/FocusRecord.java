@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class FocusRecord {
     @JsonProperty("DATA_SOURCE")
@@ -21,7 +18,6 @@ public class FocusRecord {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public String getDataSource() {
         return dataSource;
@@ -29,7 +25,6 @@ public class FocusRecord {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -37,7 +32,6 @@ public class FocusRecord {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -45,7 +39,6 @@ public class FocusRecord {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

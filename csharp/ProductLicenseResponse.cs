@@ -4,56 +4,29 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class ProductLicenseResponse
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("billing")]
         public string Billing { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("contract")]
         public string Contract { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("customer")]
         public string Customer { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("expireDate")]
         public string ExpireDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("issueDate")]
         public string IssueDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("licenseLevel")]
         public string LicenseLevel { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("licenseType")]
         public string LicenseType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("recordLimit")]
         public int RecordLimit { get; set; }
     }

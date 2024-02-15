@@ -6,69 +6,36 @@ namespace Senzing
 {
     public class DiagnosticGetMappingStatisticsResponse0
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DERIVED")]
         public string Derived { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_CODE")]
         public string DsrcCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ETYPE_CODE")]
         public string EtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MAX_FEAT_DESC")]
         public string MaxFeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MIN_FEAT_DESC")]
         public string MinFeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REC_COUNT")]
         public int RecCount { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REC_PCT")]
         public double RecPct { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("UNIQ_COUNT")]
         public int UniqCount { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("UNIQ_PCT")]
         public double UniqPct { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
     }

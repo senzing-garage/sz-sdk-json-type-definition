@@ -15,7 +15,6 @@ public class DiagnosticGetResolutionStatisticsResponseRawMatchKeys {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -23,7 +22,6 @@ public class DiagnosticGetResolutionStatisticsResponseRawMatchKeys {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;

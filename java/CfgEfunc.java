@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgEfunc {
     @JsonProperty("CONNECT_STR")
@@ -39,7 +36,6 @@ public class CfgEfunc {
 
     /**
      * Getter for connectStr.<p>
-     * No description.
      */
     public String getConnectStr() {
         return connectStr;
@@ -47,7 +43,6 @@ public class CfgEfunc {
 
     /**
      * Setter for connectStr.<p>
-     * No description.
      */
     public void setConnectStr(String connectStr) {
         this.connectStr = connectStr;
@@ -55,7 +50,6 @@ public class CfgEfunc {
 
     /**
      * Getter for efuncCode.<p>
-     * No description.
      */
     public String getEfuncCode() {
         return efuncCode;
@@ -63,7 +57,6 @@ public class CfgEfunc {
 
     /**
      * Setter for efuncCode.<p>
-     * No description.
      */
     public void setEfuncCode(String efuncCode) {
         this.efuncCode = efuncCode;
@@ -71,7 +64,6 @@ public class CfgEfunc {
 
     /**
      * Getter for efuncDesc.<p>
-     * No description.
      */
     public String getEfuncDesc() {
         return efuncDesc;
@@ -79,7 +71,6 @@ public class CfgEfunc {
 
     /**
      * Setter for efuncDesc.<p>
-     * No description.
      */
     public void setEfuncDesc(String efuncDesc) {
         this.efuncDesc = efuncDesc;
@@ -87,7 +78,6 @@ public class CfgEfunc {
 
     /**
      * Getter for efuncId.<p>
-     * No description.
      */
     public Integer getEfuncId() {
         return efuncId;
@@ -95,7 +85,6 @@ public class CfgEfunc {
 
     /**
      * Setter for efuncId.<p>
-     * No description.
      */
     public void setEfuncId(Integer efuncId) {
         this.efuncId = efuncId;
@@ -103,7 +92,6 @@ public class CfgEfunc {
 
     /**
      * Getter for funcLib.<p>
-     * No description.
      */
     public String getFuncLib() {
         return funcLib;
@@ -111,7 +99,6 @@ public class CfgEfunc {
 
     /**
      * Setter for funcLib.<p>
-     * No description.
      */
     public void setFuncLib(String funcLib) {
         this.funcLib = funcLib;
@@ -119,7 +106,6 @@ public class CfgEfunc {
 
     /**
      * Getter for funcVer.<p>
-     * No description.
      */
     public String getFuncVer() {
         return funcVer;
@@ -127,7 +113,6 @@ public class CfgEfunc {
 
     /**
      * Setter for funcVer.<p>
-     * No description.
      */
     public void setFuncVer(String funcVer) {
         this.funcVer = funcVer;
@@ -135,7 +120,6 @@ public class CfgEfunc {
 
     /**
      * Getter for javaClassName.<p>
-     * No description.
      */
     public String getJavaClassName() {
         return javaClassName;
@@ -143,7 +127,6 @@ public class CfgEfunc {
 
     /**
      * Setter for javaClassName.<p>
-     * No description.
      */
     public void setJavaClassName(String javaClassName) {
         this.javaClassName = javaClassName;
@@ -151,7 +134,6 @@ public class CfgEfunc {
 
     /**
      * Getter for language.<p>
-     * No description.
      */
     public String getLanguage() {
         return language;
@@ -159,7 +141,6 @@ public class CfgEfunc {
 
     /**
      * Setter for language.<p>
-     * No description.
      */
     public void setLanguage(String language) {
         this.language = language;

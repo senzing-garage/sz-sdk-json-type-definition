@@ -39,7 +39,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -47,7 +46,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -55,7 +53,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for entSrcDesc.<p>
-     * No description.
      */
     public String getEntSrcDesc() {
         return entSrcDesc;
@@ -63,7 +60,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for entSrcDesc.<p>
-     * No description.
      */
     public void setEntSrcDesc(String entSrcDesc) {
         this.entSrcDesc = entSrcDesc;
@@ -71,7 +67,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -79,7 +74,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -87,7 +81,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -95,7 +88,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -103,7 +95,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for jsonData.<p>
-     * No description.
      */
     public JsonData getJsonData() {
         return jsonData;
@@ -111,7 +102,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for jsonData.<p>
-     * No description.
      */
     public void setJsonData(JsonData jsonData) {
         this.jsonData = jsonData;
@@ -119,7 +109,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -127,7 +116,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -135,7 +123,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -143,7 +130,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;
@@ -151,7 +137,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for relEntId.<p>
-     * No description.
      */
     public Integer getRelEntId() {
         return relEntId;
@@ -159,7 +144,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for relEntId.<p>
-     * No description.
      */
     public void setRelEntId(Integer relEntId) {
         this.relEntId = relEntId;
@@ -167,7 +151,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Getter for resEntId.<p>
-     * No description.
      */
     public Integer getResEntId() {
         return resEntId;
@@ -175,7 +158,6 @@ public class DiagnosticGetEntityResumeResponse0 {
 
     /**
      * Setter for resEntId.<p>
-     * No description.
      */
     public void setResEntId(Integer resEntId) {
         this.resEntId = resEntId;

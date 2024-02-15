@@ -4,14 +4,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class How
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("HOW_RESULTS")]
         public HowResults HowResults { get; set; }
     }

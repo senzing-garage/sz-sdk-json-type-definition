@@ -21,7 +21,6 @@ public class DiagnosticFindEntitiesByFeatureIdsResponse0 {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -29,7 +28,6 @@ public class DiagnosticFindEntitiesByFeatureIdsResponse0 {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -37,7 +35,6 @@ public class DiagnosticFindEntitiesByFeatureIdsResponse0 {
 
     /**
      * Getter for resEntId.<p>
-     * No description.
      */
     public Integer getResEntId() {
         return resEntId;
@@ -45,7 +42,6 @@ public class DiagnosticFindEntitiesByFeatureIdsResponse0 {
 
     /**
      * Setter for resEntId.<p>
-     * No description.
      */
     public void setResEntId(Integer resEntId) {
         this.resEntId = resEntId;
@@ -53,7 +49,6 @@ public class DiagnosticFindEntitiesByFeatureIdsResponse0 {
 
     /**
      * Getter for usageType.<p>
-     * No description.
      */
     public String getUsageType() {
         return usageType;
@@ -61,7 +56,6 @@ public class DiagnosticFindEntitiesByFeatureIdsResponse0 {
 
     /**
      * Setter for usageType.<p>
-     * No description.
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgFbom {
     @JsonProperty("DERIVED")
@@ -33,7 +30,6 @@ public class CfgFbom {
 
     /**
      * Getter for derived.<p>
-     * No description.
      */
     public String getDerived() {
         return derived;
@@ -41,7 +37,6 @@ public class CfgFbom {
 
     /**
      * Setter for derived.<p>
-     * No description.
      */
     public void setDerived(String derived) {
         this.derived = derived;
@@ -49,7 +44,6 @@ public class CfgFbom {
 
     /**
      * Getter for displayDelim.<p>
-     * No description.
      */
     public String getDisplayDelim() {
         return displayDelim;
@@ -57,7 +51,6 @@ public class CfgFbom {
 
     /**
      * Setter for displayDelim.<p>
-     * No description.
      */
     public void setDisplayDelim(String displayDelim) {
         this.displayDelim = displayDelim;
@@ -65,7 +58,6 @@ public class CfgFbom {
 
     /**
      * Getter for displayLevel.<p>
-     * No description.
      */
     public Integer getDisplayLevel() {
         return displayLevel;
@@ -73,7 +65,6 @@ public class CfgFbom {
 
     /**
      * Setter for displayLevel.<p>
-     * No description.
      */
     public void setDisplayLevel(Integer displayLevel) {
         this.displayLevel = displayLevel;
@@ -81,7 +72,6 @@ public class CfgFbom {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -89,7 +79,6 @@ public class CfgFbom {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -97,7 +86,6 @@ public class CfgFbom {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -105,7 +93,6 @@ public class CfgFbom {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -113,7 +100,6 @@ public class CfgFbom {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -121,7 +107,6 @@ public class CfgFbom {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;

@@ -6,27 +6,15 @@ namespace Senzing
 {
     public class EngineStatsResponseWorkloadSystemResourcesInitResource
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("availableMemory")]
         public string AvailableMemory { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("logicalCores")]
         public int LogicalCores { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("physicalCores")]
         public int PhysicalCores { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("totalMemory")]
         public string TotalMemory { get; set; }
     }

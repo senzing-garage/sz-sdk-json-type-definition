@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgEclass {
     @JsonProperty("ECLASS_CODE")
@@ -27,7 +24,6 @@ public class CfgEclass {
 
     /**
      * Getter for eclassCode.<p>
-     * No description.
      */
     public String getEclassCode() {
         return eclassCode;
@@ -35,7 +31,6 @@ public class CfgEclass {
 
     /**
      * Setter for eclassCode.<p>
-     * No description.
      */
     public void setEclassCode(String eclassCode) {
         this.eclassCode = eclassCode;
@@ -43,7 +38,6 @@ public class CfgEclass {
 
     /**
      * Getter for eclassDesc.<p>
-     * No description.
      */
     public String getEclassDesc() {
         return eclassDesc;
@@ -51,7 +45,6 @@ public class CfgEclass {
 
     /**
      * Setter for eclassDesc.<p>
-     * No description.
      */
     public void setEclassDesc(String eclassDesc) {
         this.eclassDesc = eclassDesc;
@@ -59,7 +52,6 @@ public class CfgEclass {
 
     /**
      * Getter for eclassId.<p>
-     * No description.
      */
     public Integer getEclassId() {
         return eclassId;
@@ -67,7 +59,6 @@ public class CfgEclass {
 
     /**
      * Setter for eclassId.<p>
-     * No description.
      */
     public void setEclassId(Integer eclassId) {
         this.eclassId = eclassId;
@@ -75,7 +66,6 @@ public class CfgEclass {
 
     /**
      * Getter for resolve.<p>
-     * No description.
      */
     public String getResolve() {
         return resolve;
@@ -83,7 +73,6 @@ public class CfgEclass {
 
     /**
      * Setter for resolve.<p>
-     * No description.
      */
     public void setResolve(String resolve) {
         this.resolve = resolve;

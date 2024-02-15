@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CompatibilityVersion {
     @JsonProperty("CONFIG_VERSION")
@@ -18,7 +15,6 @@ public class CompatibilityVersion {
 
     /**
      * Getter for configVersion.<p>
-     * No description.
      */
     public String getConfigVersion() {
         return configVersion;
@@ -26,7 +22,6 @@ public class CompatibilityVersion {
 
     /**
      * Setter for configVersion.<p>
-     * No description.
      */
     public void setConfigVersion(String configVersion) {
         this.configVersion = configVersion;

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ProductLicenseResponse {
     @JsonProperty("billing")
@@ -39,7 +36,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for billing.<p>
-     * No description.
      */
     public String getBilling() {
         return billing;
@@ -47,7 +43,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for billing.<p>
-     * No description.
      */
     public void setBilling(String billing) {
         this.billing = billing;
@@ -55,7 +50,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for contract.<p>
-     * No description.
      */
     public String getContract() {
         return contract;
@@ -63,7 +57,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for contract.<p>
-     * No description.
      */
     public void setContract(String contract) {
         this.contract = contract;
@@ -71,7 +64,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for customer.<p>
-     * No description.
      */
     public String getCustomer() {
         return customer;
@@ -79,7 +71,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for customer.<p>
-     * No description.
      */
     public void setCustomer(String customer) {
         this.customer = customer;
@@ -87,7 +78,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for expireDate.<p>
-     * No description.
      */
     public String getExpireDate() {
         return expireDate;
@@ -95,7 +85,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for expireDate.<p>
-     * No description.
      */
     public void setExpireDate(String expireDate) {
         this.expireDate = expireDate;
@@ -103,7 +92,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for issueDate.<p>
-     * No description.
      */
     public String getIssueDate() {
         return issueDate;
@@ -111,7 +99,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for issueDate.<p>
-     * No description.
      */
     public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
@@ -119,7 +106,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for licenseLevel.<p>
-     * No description.
      */
     public String getLicenseLevel() {
         return licenseLevel;
@@ -127,7 +113,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for licenseLevel.<p>
-     * No description.
      */
     public void setLicenseLevel(String licenseLevel) {
         this.licenseLevel = licenseLevel;
@@ -135,7 +120,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for licenseType.<p>
-     * No description.
      */
     public String getLicenseType() {
         return licenseType;
@@ -143,7 +127,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for licenseType.<p>
-     * No description.
      */
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
@@ -151,7 +134,6 @@ public class ProductLicenseResponse {
 
     /**
      * Getter for recordLimit.<p>
-     * No description.
      */
     public Integer getRecordLimit() {
         return recordLimit;
@@ -159,7 +141,6 @@ public class ProductLicenseResponse {
 
     /**
      * Setter for recordLimit.<p>
-     * No description.
      */
     public void setRecordLimit(Integer recordLimit) {
         this.recordLimit = recordLimit;

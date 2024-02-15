@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseDuration {
     @JsonProperty("PATTERN")
@@ -21,7 +18,6 @@ public class EngineStatsResponseDuration {
 
     /**
      * Getter for pattern.<p>
-     * No description.
      */
     public String getPattern() {
         return pattern;
@@ -29,7 +25,6 @@ public class EngineStatsResponseDuration {
 
     /**
      * Setter for pattern.<p>
-     * No description.
      */
     public void setPattern(String pattern) {
         this.pattern = pattern;
@@ -37,7 +32,6 @@ public class EngineStatsResponseDuration {
 
     /**
      * Getter for type.<p>
-     * No description.
      */
     public String getType() {
         return type;
@@ -45,7 +39,6 @@ public class EngineStatsResponseDuration {
 
     /**
      * Setter for type.<p>
-     * No description.
      */
     public void setType(String type) {
         this.type = type;

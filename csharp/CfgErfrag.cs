@@ -4,38 +4,20 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgErfrag
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERFRAG_CODE")]
         public string ErfragCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERFRAG_DEPENDS")]
         public string ErfragDepends { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERFRAG_DESC")]
         public string ErfragDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERFRAG_ID")]
         public int ErfragId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERFRAG_SOURCE")]
         public string ErfragSource { get; set; }
     }

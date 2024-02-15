@@ -6,15 +6,9 @@ namespace Senzing
 {
     public class JsonDataAcctNum
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ACCOUNT_DOMAIN")]
         public string AccountDomain { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ACCOUNT_NUMBER")]
         public string AccountNumber { get; set; }
     }

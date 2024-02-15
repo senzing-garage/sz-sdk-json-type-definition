@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ConfigAddDataSourceResponse {
     @JsonProperty("DSRC_ID")
@@ -18,7 +15,6 @@ public class ConfigAddDataSourceResponse {
 
     /**
      * Getter for dsrcId.<p>
-     * No description.
      */
     public Integer getDsrcId() {
         return dsrcId;
@@ -26,7 +22,6 @@ public class ConfigAddDataSourceResponse {
 
     /**
      * Setter for dsrcId.<p>
-     * No description.
      */
     public void setDsrcId(Integer dsrcId) {
         this.dsrcId = dsrcId;

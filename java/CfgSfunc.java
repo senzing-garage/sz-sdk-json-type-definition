@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgSfunc {
     @JsonProperty("CONNECT_STR")
@@ -39,7 +36,6 @@ public class CfgSfunc {
 
     /**
      * Getter for connectStr.<p>
-     * No description.
      */
     public String getConnectStr() {
         return connectStr;
@@ -47,7 +43,6 @@ public class CfgSfunc {
 
     /**
      * Setter for connectStr.<p>
-     * No description.
      */
     public void setConnectStr(String connectStr) {
         this.connectStr = connectStr;
@@ -55,7 +50,6 @@ public class CfgSfunc {
 
     /**
      * Getter for funcLib.<p>
-     * No description.
      */
     public String getFuncLib() {
         return funcLib;
@@ -63,7 +57,6 @@ public class CfgSfunc {
 
     /**
      * Setter for funcLib.<p>
-     * No description.
      */
     public void setFuncLib(String funcLib) {
         this.funcLib = funcLib;
@@ -71,7 +64,6 @@ public class CfgSfunc {
 
     /**
      * Getter for funcVer.<p>
-     * No description.
      */
     public String getFuncVer() {
         return funcVer;
@@ -79,7 +71,6 @@ public class CfgSfunc {
 
     /**
      * Setter for funcVer.<p>
-     * No description.
      */
     public void setFuncVer(String funcVer) {
         this.funcVer = funcVer;
@@ -87,7 +78,6 @@ public class CfgSfunc {
 
     /**
      * Getter for javaClassName.<p>
-     * No description.
      */
     public String getJavaClassName() {
         return javaClassName;
@@ -95,7 +85,6 @@ public class CfgSfunc {
 
     /**
      * Setter for javaClassName.<p>
-     * No description.
      */
     public void setJavaClassName(String javaClassName) {
         this.javaClassName = javaClassName;
@@ -103,7 +92,6 @@ public class CfgSfunc {
 
     /**
      * Getter for language.<p>
-     * No description.
      */
     public String getLanguage() {
         return language;
@@ -111,7 +99,6 @@ public class CfgSfunc {
 
     /**
      * Setter for language.<p>
-     * No description.
      */
     public void setLanguage(String language) {
         this.language = language;
@@ -119,7 +106,6 @@ public class CfgSfunc {
 
     /**
      * Getter for sfuncCode.<p>
-     * No description.
      */
     public String getSfuncCode() {
         return sfuncCode;
@@ -127,7 +113,6 @@ public class CfgSfunc {
 
     /**
      * Setter for sfuncCode.<p>
-     * No description.
      */
     public void setSfuncCode(String sfuncCode) {
         this.sfuncCode = sfuncCode;
@@ -135,7 +120,6 @@ public class CfgSfunc {
 
     /**
      * Getter for sfuncDesc.<p>
-     * No description.
      */
     public String getSfuncDesc() {
         return sfuncDesc;
@@ -143,7 +127,6 @@ public class CfgSfunc {
 
     /**
      * Setter for sfuncDesc.<p>
-     * No description.
      */
     public void setSfuncDesc(String sfuncDesc) {
         this.sfuncDesc = sfuncDesc;
@@ -151,7 +134,6 @@ public class CfgSfunc {
 
     /**
      * Getter for sfuncId.<p>
-     * No description.
      */
     public Integer getSfuncId() {
         return sfuncId;
@@ -159,7 +141,6 @@ public class CfgSfunc {
 
     /**
      * Setter for sfuncId.<p>
-     * No description.
      */
     public void setSfuncId(Integer sfuncId) {
         this.sfuncId = sfuncId;

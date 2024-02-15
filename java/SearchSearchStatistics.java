@@ -15,7 +15,6 @@ public class SearchSearchStatistics {
 
     /**
      * Getter for candidateKeys.<p>
-     * No description.
      */
     public SearchSearchStatisticsCandidateKeys getCandidateKeys() {
         return candidateKeys;
@@ -23,7 +22,6 @@ public class SearchSearchStatistics {
 
     /**
      * Setter for candidateKeys.<p>
-     * No description.
      */
     public void setCandidateKeys(SearchSearchStatisticsCandidateKeys candidateKeys) {
         this.candidateKeys = candidateKeys;

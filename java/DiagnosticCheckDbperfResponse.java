@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class DiagnosticCheckDbperfResponse {
     @JsonProperty("insertTime")
@@ -21,7 +18,6 @@ public class DiagnosticCheckDbperfResponse {
 
     /**
      * Getter for insertTime.<p>
-     * No description.
      */
     public Integer getInsertTime() {
         return insertTime;
@@ -29,7 +25,6 @@ public class DiagnosticCheckDbperfResponse {
 
     /**
      * Setter for insertTime.<p>
-     * No description.
      */
     public void setInsertTime(Integer insertTime) {
         this.insertTime = insertTime;
@@ -37,7 +32,6 @@ public class DiagnosticCheckDbperfResponse {
 
     /**
      * Getter for numRecordsInserted.<p>
-     * No description.
      */
     public Integer getNumRecordsInserted() {
         return numRecordsInserted;
@@ -45,7 +39,6 @@ public class DiagnosticCheckDbperfResponse {
 
     /**
      * Setter for numRecordsInserted.<p>
-     * No description.
      */
     public void setNumRecordsInserted(Integer numRecordsInserted) {
         this.numRecordsInserted = numRecordsInserted;

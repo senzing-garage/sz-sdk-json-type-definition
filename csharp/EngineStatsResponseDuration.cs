@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class EngineStatsResponseDuration
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PATTERN")]
         public string Pattern { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TYPE")]
         public string Type_ { get; set; }
     }

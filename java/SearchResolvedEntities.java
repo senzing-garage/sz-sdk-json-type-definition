@@ -18,7 +18,6 @@ public class SearchResolvedEntities {
 
     /**
      * Getter for entity.<p>
-     * No description.
      */
     public SearchResolvedEntitiesEntity getEntity() {
         return entity;
@@ -26,7 +25,6 @@ public class SearchResolvedEntities {
 
     /**
      * Setter for entity.<p>
-     * No description.
      */
     public void setEntity(SearchResolvedEntitiesEntity entity) {
         this.entity = entity;
@@ -34,7 +32,6 @@ public class SearchResolvedEntities {
 
     /**
      * Getter for matchInfo.<p>
-     * No description.
      */
     public MatchInfo getMatchInfo() {
         return matchInfo;
@@ -42,7 +39,6 @@ public class SearchResolvedEntities {
 
     /**
      * Setter for matchInfo.<p>
-     * No description.
      */
     public void setMatchInfo(MatchInfo matchInfo) {
         this.matchInfo = matchInfo;

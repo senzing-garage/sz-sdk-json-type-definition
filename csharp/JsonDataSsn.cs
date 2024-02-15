@@ -6,15 +6,9 @@ namespace Senzing
 {
     public class JsonDataSsn
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT_NUMBER")]
         public string PassportNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SSN_NUMBER")]
         public string SsnNumber { get; set; }
     }

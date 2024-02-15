@@ -6,39 +6,21 @@ namespace Senzing
 {
     public class DiagnosticGetDataSourceCountsResponse0
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_CODE")]
         public string DsrcCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_ID")]
         public int DsrcId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_RECORD_COUNT")]
         public int DsrcRecordCount { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ETYPE_CODE")]
         public string EtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ETYPE_ID")]
         public int EtypeId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("OBS_ENT_COUNT")]
         public int ObsEntCount { get; set; }
     }

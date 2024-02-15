@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class DiagnosticGetFeatureResponse {
     @JsonProperty("ELEMENTS")
@@ -25,7 +22,6 @@ public class DiagnosticGetFeatureResponse {
 
     /**
      * Getter for elements.<p>
-     * No description.
      */
     public List<DiagnosticGetFeatureResponseElements> getElements() {
         return elements;
@@ -33,7 +29,6 @@ public class DiagnosticGetFeatureResponse {
 
     /**
      * Setter for elements.<p>
-     * No description.
      */
     public void setElements(List<DiagnosticGetFeatureResponseElements> elements) {
         this.elements = elements;
@@ -41,7 +36,6 @@ public class DiagnosticGetFeatureResponse {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -49,7 +43,6 @@ public class DiagnosticGetFeatureResponse {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -57,7 +50,6 @@ public class DiagnosticGetFeatureResponse {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -65,7 +57,6 @@ public class DiagnosticGetFeatureResponse {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;

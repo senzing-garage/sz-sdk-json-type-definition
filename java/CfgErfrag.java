@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgErfrag {
     @JsonProperty("ERFRAG_CODE")
@@ -30,7 +27,6 @@ public class CfgErfrag {
 
     /**
      * Getter for erfragCode.<p>
-     * No description.
      */
     public String getErfragCode() {
         return erfragCode;
@@ -38,7 +34,6 @@ public class CfgErfrag {
 
     /**
      * Setter for erfragCode.<p>
-     * No description.
      */
     public void setErfragCode(String erfragCode) {
         this.erfragCode = erfragCode;
@@ -46,7 +41,6 @@ public class CfgErfrag {
 
     /**
      * Getter for erfragDepends.<p>
-     * No description.
      */
     public String getErfragDepends() {
         return erfragDepends;
@@ -54,7 +48,6 @@ public class CfgErfrag {
 
     /**
      * Setter for erfragDepends.<p>
-     * No description.
      */
     public void setErfragDepends(String erfragDepends) {
         this.erfragDepends = erfragDepends;
@@ -62,7 +55,6 @@ public class CfgErfrag {
 
     /**
      * Getter for erfragDesc.<p>
-     * No description.
      */
     public String getErfragDesc() {
         return erfragDesc;
@@ -70,7 +62,6 @@ public class CfgErfrag {
 
     /**
      * Setter for erfragDesc.<p>
-     * No description.
      */
     public void setErfragDesc(String erfragDesc) {
         this.erfragDesc = erfragDesc;
@@ -78,7 +69,6 @@ public class CfgErfrag {
 
     /**
      * Getter for erfragId.<p>
-     * No description.
      */
     public Integer getErfragId() {
         return erfragId;
@@ -86,7 +76,6 @@ public class CfgErfrag {
 
     /**
      * Setter for erfragId.<p>
-     * No description.
      */
     public void setErfragId(Integer erfragId) {
         this.erfragId = erfragId;
@@ -94,7 +83,6 @@ public class CfgErfrag {
 
     /**
      * Getter for erfragSource.<p>
-     * No description.
      */
     public String getErfragSource() {
         return erfragSource;
@@ -102,7 +90,6 @@ public class CfgErfrag {
 
     /**
      * Setter for erfragSource.<p>
-     * No description.
      */
     public void setErfragSource(String erfragSource) {
         this.erfragSource = erfragSource;

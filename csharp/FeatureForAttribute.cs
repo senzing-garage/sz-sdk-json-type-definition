@@ -4,32 +4,17 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class FeatureForAttribute
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_DESC_VALUES")]
         public FeatureDescriptionValues FeatDescValues { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
     }

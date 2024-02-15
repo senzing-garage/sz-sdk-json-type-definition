@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class FeatureForAttribute {
     @JsonProperty("FEAT_DESC")
@@ -27,7 +24,6 @@ public class FeatureForAttribute {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -35,7 +31,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -43,7 +38,6 @@ public class FeatureForAttribute {
 
     /**
      * Getter for featDescValues.<p>
-     * No description.
      */
     public FeatureDescriptionValues getFeatDescValues() {
         return featDescValues;
@@ -51,7 +45,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for featDescValues.<p>
-     * No description.
      */
     public void setFeatDescValues(FeatureDescriptionValues featDescValues) {
         this.featDescValues = featDescValues;
@@ -59,7 +52,6 @@ public class FeatureForAttribute {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -67,7 +59,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -75,7 +66,6 @@ public class FeatureForAttribute {
 
     /**
      * Getter for usageType.<p>
-     * No description.
      */
     public String getUsageType() {
         return usageType;
@@ -83,7 +73,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for usageType.<p>
-     * No description.
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

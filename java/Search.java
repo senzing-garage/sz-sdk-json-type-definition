@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Search {
     @JsonProperty("RESOLVED_ENTITIES")
@@ -22,7 +19,6 @@ public class Search {
 
     /**
      * Getter for resolvedEntities.<p>
-     * No description.
      */
     public List<SearchResolvedEntities> getResolvedEntities() {
         return resolvedEntities;
@@ -30,7 +26,6 @@ public class Search {
 
     /**
      * Setter for resolvedEntities.<p>
-     * No description.
      */
     public void setResolvedEntities(List<SearchResolvedEntities> resolvedEntities) {
         this.resolvedEntities = resolvedEntities;
@@ -38,7 +33,6 @@ public class Search {
 
     /**
      * Getter for searchStatistics.<p>
-     * No description.
      */
     public List<SearchSearchStatistics> getSearchStatistics() {
         return searchStatistics;
@@ -46,7 +40,6 @@ public class Search {
 
     /**
      * Setter for searchStatistics.<p>
-     * No description.
      */
     public void setSearchStatistics(List<SearchSearchStatistics> searchStatistics) {
         this.searchStatistics = searchStatistics;

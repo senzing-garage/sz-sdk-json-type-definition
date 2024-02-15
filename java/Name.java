@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Name {
     @JsonProperty("NAME_FIRST")
@@ -39,7 +36,6 @@ public class Name {
 
     /**
      * Getter for nameFirst.<p>
-     * No description.
      */
     public String getNameFirst() {
         return nameFirst;
@@ -47,7 +43,6 @@ public class Name {
 
     /**
      * Setter for nameFirst.<p>
-     * No description.
      */
     public void setNameFirst(String nameFirst) {
         this.nameFirst = nameFirst;
@@ -55,7 +50,6 @@ public class Name {
 
     /**
      * Getter for nameFull.<p>
-     * No description.
      */
     public String getNameFull() {
         return nameFull;
@@ -63,7 +57,6 @@ public class Name {
 
     /**
      * Setter for nameFull.<p>
-     * No description.
      */
     public void setNameFull(String nameFull) {
         this.nameFull = nameFull;
@@ -71,7 +64,6 @@ public class Name {
 
     /**
      * Getter for nameLast.<p>
-     * No description.
      */
     public String getNameLast() {
         return nameLast;
@@ -79,7 +71,6 @@ public class Name {
 
     /**
      * Setter for nameLast.<p>
-     * No description.
      */
     public void setNameLast(String nameLast) {
         this.nameLast = nameLast;
@@ -87,7 +78,6 @@ public class Name {
 
     /**
      * Getter for nameMiddle.<p>
-     * No description.
      */
     public String getNameMiddle() {
         return nameMiddle;
@@ -95,7 +85,6 @@ public class Name {
 
     /**
      * Setter for nameMiddle.<p>
-     * No description.
      */
     public void setNameMiddle(String nameMiddle) {
         this.nameMiddle = nameMiddle;
@@ -103,7 +92,6 @@ public class Name {
 
     /**
      * Getter for nameOrg.<p>
-     * No description.
      */
     public String getNameOrg() {
         return nameOrg;
@@ -111,7 +99,6 @@ public class Name {
 
     /**
      * Setter for nameOrg.<p>
-     * No description.
      */
     public void setNameOrg(String nameOrg) {
         this.nameOrg = nameOrg;
@@ -119,7 +106,6 @@ public class Name {
 
     /**
      * Getter for namePrefix.<p>
-     * No description.
      */
     public String getNamePrefix() {
         return namePrefix;
@@ -127,7 +113,6 @@ public class Name {
 
     /**
      * Setter for namePrefix.<p>
-     * No description.
      */
     public void setNamePrefix(String namePrefix) {
         this.namePrefix = namePrefix;
@@ -135,7 +120,6 @@ public class Name {
 
     /**
      * Getter for nameSuffix.<p>
-     * No description.
      */
     public String getNameSuffix() {
         return nameSuffix;
@@ -143,7 +127,6 @@ public class Name {
 
     /**
      * Setter for nameSuffix.<p>
-     * No description.
      */
     public void setNameSuffix(String nameSuffix) {
         this.nameSuffix = nameSuffix;
@@ -151,7 +134,6 @@ public class Name {
 
     /**
      * Getter for nameType.<p>
-     * No description.
      */
     public String getNameType() {
         return nameType;
@@ -159,7 +141,6 @@ public class Name {
 
     /**
      * Setter for nameType.<p>
-     * No description.
      */
     public void setNameType(String nameType) {
         this.nameType = nameType;

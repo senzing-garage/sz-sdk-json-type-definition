@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class WithInfo {
     @JsonProperty("AFFECTED_ENTITIES")
@@ -27,7 +24,6 @@ public class WithInfo {
 
     /**
      * Getter for affectedEntities.<p>
-     * No description.
      */
     public AffectedEntities getAffectedEntities() {
         return affectedEntities;
@@ -35,7 +31,6 @@ public class WithInfo {
 
     /**
      * Setter for affectedEntities.<p>
-     * No description.
      */
     public void setAffectedEntities(AffectedEntities affectedEntities) {
         this.affectedEntities = affectedEntities;
@@ -43,7 +38,6 @@ public class WithInfo {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public String getDataSource() {
         return dataSource;
@@ -51,7 +45,6 @@ public class WithInfo {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -59,7 +52,6 @@ public class WithInfo {
 
     /**
      * Getter for interestingEntities.<p>
-     * No description.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -67,7 +59,6 @@ public class WithInfo {
 
     /**
      * Setter for interestingEntities.<p>
-     * No description.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;
@@ -75,7 +66,6 @@ public class WithInfo {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -83,7 +73,6 @@ public class WithInfo {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

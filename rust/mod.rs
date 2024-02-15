@@ -5,1170 +5,877 @@ use serde_json::Value;
 
 pub type Senzingapi = Option<Value>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Address {
-    /// No description.
     #[serde(rename = "ADDR_CITY")]
     pub addrCity: String,
 
-    /// No description.
     #[serde(rename = "ADDR_COUNTRY")]
     pub addrCountry: String,
 
-    /// No description.
     #[serde(rename = "ADDR_FROM_DATE")]
     pub addrFromDate: String,
 
-    /// No description.
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: String,
 
-    /// No description.
     #[serde(rename = "ADDR_LINE1")]
     pub addrLine1: String,
 
-    /// No description.
     #[serde(rename = "ADDR_LINE2")]
     pub addrLine2: String,
 
-    /// No description.
     #[serde(rename = "ADDR_LINE3")]
     pub addrLine3: String,
 
-    /// No description.
     #[serde(rename = "ADDR_LINE4")]
     pub addrLine4: String,
 
-    /// No description.
     #[serde(rename = "ADDR_LINE5")]
     pub addrLine5: String,
 
-    /// No description.
     #[serde(rename = "ADDR_LINE6")]
     pub addrLine6: String,
 
-    /// No description.
     #[serde(rename = "ADDR_POSTAL_CODE")]
     pub addrPostalCode: String,
 
-    /// No description.
     #[serde(rename = "ADDR_STATE")]
     pub addrState: String,
 
-    /// No description.
     #[serde(rename = "ADDR_THRU_DATE")]
     pub addrThruDate: String,
 
-    /// No description.
     #[serde(rename = "ADDR_TYPE")]
     pub addrType: String,
 }
 
-/// No description.
 pub type Addresses = Vec<Address>;
 
-/// No description.
 pub type AffectedEntities = Vec<AffectedEntity>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct AffectedEntity {
-    /// No description.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct AttributeCounter {
-    /// No description.
     #[serde(rename = "ADDRESS")]
     pub address: f64,
 
-    /// No description.
     #[serde(rename = "ADDR_KEY")]
     pub addrKey: f64,
 
-    /// No description.
     #[serde(rename = "CALL_SIGN")]
     pub callSign: i32,
 
-    /// No description.
     #[serde(rename = "CITIZENSHIP")]
     pub citizenship: i32,
 
-    /// No description.
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: i32,
 
-    /// No description.
     #[serde(rename = "DOB")]
     pub dob: f64,
 
-    /// No description.
     #[serde(rename = "DRLIC")]
     pub drlic: f64,
 
-    /// No description.
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: i32,
 
-    /// No description.
     #[serde(rename = "EMAIL")]
     pub email: f64,
 
-    /// No description.
     #[serde(rename = "EMAIL_KEY")]
     pub emailKey: f64,
 
-    /// No description.
     #[serde(rename = "ENTITY_COUNT")]
     pub entityCount: i32,
 
-    /// No description.
     #[serde(rename = "ENTITY_SIZE")]
     pub entitySize: i32,
 
-    /// No description.
     #[serde(rename = "GENDER")]
     pub gender: f64,
 
-    /// No description.
     #[serde(rename = "ID_KEY")]
     pub idKey: f64,
 
-    /// No description.
     #[serde(rename = "IMO_NUMBER")]
     pub imoNumber: i32,
 
-    /// No description.
     #[serde(rename = "LEI_NUMBER")]
     pub leiNumber: i32,
 
-    /// No description.
     #[serde(rename = "LOGIN_ID")]
     pub loginId: f64,
 
-    /// No description.
     #[serde(rename = "MAX_RES_ENT_ID")]
     pub maxResEntId: i32,
 
-    /// No description.
     #[serde(rename = "MIN_RES_ENT_ID")]
     pub minResEntId: i32,
 
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: f64,
 
-    /// No description.
     #[serde(rename = "NAME_KEY")]
     pub nameKey: f64,
 
-    /// No description.
     #[serde(rename = "NATIONALITY")]
     pub nationality: i32,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID")]
     pub nationalId: i32,
 
-    /// No description.
     #[serde(rename = "OFAC_ID")]
     pub ofacId: i32,
 
-    /// No description.
     #[serde(rename = "OTHER_ID")]
     pub otherId: f64,
 
-    /// No description.
     #[serde(rename = "PASSPORT")]
     pub passport: f64,
 
-    /// No description.
     #[serde(rename = "PHONE")]
     pub phone: f64,
 
-    /// No description.
     #[serde(rename = "PHONE_KEY")]
     pub phoneKey: f64,
 
-    /// No description.
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: f64,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_COUNTRY")]
     pub registrationCountry: i32,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: i32,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: i32,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: i32,
 
-    /// No description.
     #[serde(rename = "SEARCH_KEY")]
     pub searchKey: f64,
 
-    /// No description.
     #[serde(rename = "SSN")]
     pub ssn: f64,
 
-    /// No description.
     #[serde(rename = "TAX_ID")]
     pub taxId: f64,
 
-    /// No description.
     #[serde(rename = "WEBSITE")]
     pub website: f64,
 }
 
-/// No description.
 pub type AttributeCounters = Vec<AttributeCounter>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgAttr {
-    /// No description.
     #[serde(rename = "ADVANCED")]
     pub advanced: String,
 
-    /// No description.
     #[serde(rename = "ATTR_CLASS")]
     pub attrClass: String,
 
-    /// No description.
     #[serde(rename = "ATTR_CODE")]
     pub attrCode: String,
 
-    /// No description.
     #[serde(rename = "ATTR_ID")]
     pub attrId: i32,
 
-    /// No description.
     #[serde(rename = "DEFAULT_VALUE")]
     pub defaultValue: String,
 
-    /// No description.
     #[serde(rename = "FELEM_CODE")]
     pub felemCode: String,
 
-    /// No description.
     #[serde(rename = "FELEM_REQ")]
     pub felemReq: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "INTERNAL")]
     pub internal: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgCfbom {
-    /// No description.
     #[serde(rename = "CFCALL_ID")]
     pub cfcallId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgCfcall {
-    /// No description.
     #[serde(rename = "CFCALL_ID")]
     pub cfcallId: i32,
 
-    /// No description.
     #[serde(rename = "CFUNC_ID")]
     pub cfuncId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgCfrtn {
-    /// No description.
     #[serde(rename = "CFRTN_ID")]
     pub cfrtnId: i32,
 
-    /// No description.
     #[serde(rename = "CFUNC_ID")]
     pub cfuncId: i32,
 
-    /// No description.
     #[serde(rename = "CFUNC_RTNVAL")]
     pub cfuncRtnval: String,
 
-    /// No description.
     #[serde(rename = "CLOSE_SCORE")]
     pub closeScore: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "LIKELY_SCORE")]
     pub likelyScore: i32,
 
-    /// No description.
     #[serde(rename = "PLAUSIBLE_SCORE")]
     pub plausibleScore: i32,
 
-    /// No description.
     #[serde(rename = "SAME_SCORE")]
     pub sameScore: i32,
 
-    /// No description.
     #[serde(rename = "UN_LIKELY_SCORE")]
     pub unLikelyScore: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgCfunc {
-    /// No description.
     #[serde(rename = "ANON_SUPPORT")]
     pub anonSupport: String,
 
-    /// No description.
     #[serde(rename = "CFUNC_CODE")]
     pub cfuncCode: String,
 
-    /// No description.
     #[serde(rename = "CFUNC_DESC")]
     pub cfuncDesc: String,
 
-    /// No description.
     #[serde(rename = "CFUNC_ID")]
     pub cfuncId: i32,
 
-    /// No description.
     #[serde(rename = "CONNECT_STR")]
     pub connectStr: String,
 
-    /// No description.
     #[serde(rename = "FUNC_LIB")]
     pub funcLib: String,
 
-    /// No description.
     #[serde(rename = "FUNC_VER")]
     pub funcVer: String,
 
-    /// No description.
     #[serde(rename = "JAVA_CLASS_NAME")]
     pub javaClassName: String,
 
-    /// No description.
     #[serde(rename = "LANGUAGE")]
     pub language: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgDfbom {
-    /// No description.
     #[serde(rename = "DFCALL_ID")]
     pub dfcallId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgDfcall {
-    /// No description.
     #[serde(rename = "DFCALL_ID")]
     pub dfcallId: i32,
 
-    /// No description.
     #[serde(rename = "DFUNC_ID")]
     pub dfuncId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgDfunc {
-    /// No description.
     #[serde(rename = "ANON_SUPPORT")]
     pub anonSupport: String,
 
-    /// No description.
     #[serde(rename = "CONNECT_STR")]
     pub connectStr: String,
 
-    /// No description.
     #[serde(rename = "DFUNC_CODE")]
     pub dfuncCode: String,
 
-    /// No description.
     #[serde(rename = "DFUNC_DESC")]
     pub dfuncDesc: String,
 
-    /// No description.
     #[serde(rename = "DFUNC_ID")]
     pub dfuncId: i32,
 
-    /// No description.
     #[serde(rename = "FUNC_LIB")]
     pub funcLib: String,
 
-    /// No description.
     #[serde(rename = "FUNC_VER")]
     pub funcVer: String,
 
-    /// No description.
     #[serde(rename = "JAVA_CLASS_NAME")]
     pub javaClassName: String,
 
-    /// No description.
     #[serde(rename = "LANGUAGE")]
     pub language: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgDsrc {
-    /// No description.
     #[serde(rename = "CONVERSATIONAL")]
     pub conversational: String,
 
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "DSRC_DESC")]
     pub dsrcDesc: String,
 
-    /// No description.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 
-    /// No description.
     #[serde(rename = "DSRC_RELY")]
     pub dsrcRely: i32,
 
-    /// No description.
     #[serde(rename = "RETENTION_LEVEL")]
     pub retentionLevel: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgDsrcInterest {
-    /// No description.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 
-    /// No description.
     #[serde(rename = "INTEREST_FLAG")]
     pub interestFlag: String,
 
-    /// No description.
     #[serde(rename = "MAX_DEGREE")]
     pub maxDegree: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgEbom {
-    /// No description.
     #[serde(rename = "ETYPE_ID")]
     pub etypeId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "UTYPE_CODE")]
     pub utypeCode: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgEclass {
-    /// No description.
     #[serde(rename = "ECLASS_CODE")]
     pub eclassCode: String,
 
-    /// No description.
     #[serde(rename = "ECLASS_DESC")]
     pub eclassDesc: String,
 
-    /// No description.
     #[serde(rename = "ECLASS_ID")]
     pub eclassId: i32,
 
-    /// No description.
     #[serde(rename = "RESOLVE")]
     pub resolve: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgEfbom {
-    /// No description.
     #[serde(rename = "EFCALL_ID")]
     pub efcallId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_REQ")]
     pub felemReq: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgEfcall {
-    /// No description.
     #[serde(rename = "EFCALL_ID")]
     pub efcallId: i32,
 
-    /// No description.
     #[serde(rename = "EFEAT_FTYPE_ID")]
     pub efeatFtypeId: i32,
 
-    /// No description.
     #[serde(rename = "EFUNC_ID")]
     pub efuncId: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "IS_VIRTUAL")]
     pub isVirtual: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgEfunc {
-    /// No description.
     #[serde(rename = "CONNECT_STR")]
     pub connectStr: String,
 
-    /// No description.
     #[serde(rename = "EFUNC_CODE")]
     pub efuncCode: String,
 
-    /// No description.
     #[serde(rename = "EFUNC_DESC")]
     pub efuncDesc: String,
 
-    /// No description.
     #[serde(rename = "EFUNC_ID")]
     pub efuncId: i32,
 
-    /// No description.
     #[serde(rename = "FUNC_LIB")]
     pub funcLib: String,
 
-    /// No description.
     #[serde(rename = "FUNC_VER")]
     pub funcVer: String,
 
-    /// No description.
     #[serde(rename = "JAVA_CLASS_NAME")]
     pub javaClassName: String,
 
-    /// No description.
     #[serde(rename = "LANGUAGE")]
     pub language: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgErfrag {
-    /// No description.
     #[serde(rename = "ERFRAG_CODE")]
     pub erfragCode: String,
 
-    /// No description.
     #[serde(rename = "ERFRAG_DEPENDS")]
     pub erfragDepends: String,
 
-    /// No description.
     #[serde(rename = "ERFRAG_DESC")]
     pub erfragDesc: String,
 
-    /// No description.
     #[serde(rename = "ERFRAG_ID")]
     pub erfragId: i32,
 
-    /// No description.
     #[serde(rename = "ERFRAG_SOURCE")]
     pub erfragSource: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgErrule {
-    /// No description.
     #[serde(rename = "DISQ_ERFRAG_CODE")]
     pub disqErfragCode: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_DESC")]
     pub erruleDesc: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_ID")]
     pub erruleId: i32,
 
-    /// No description.
     #[serde(rename = "ERRULE_TIER")]
     pub erruleTier: i32,
 
-    /// No description.
     #[serde(rename = "QUAL_ERFRAG_CODE")]
     pub qualErfragCode: String,
 
-    /// No description.
     #[serde(rename = "REF_SCORE")]
     pub refScore: i32,
 
-    /// No description.
     #[serde(rename = "RELATE")]
     pub relate: String,
 
-    /// No description.
     #[serde(rename = "RESOLVE")]
     pub resolve: String,
 
-    /// No description.
     #[serde(rename = "RTYPE_ID")]
     pub rtypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgEtype {
-    /// No description.
     #[serde(rename = "ECLASS_ID")]
     pub eclassId: i32,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_DESC")]
     pub etypeDesc: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_ID")]
     pub etypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgFbom {
-    /// No description.
     #[serde(rename = "DERIVED")]
     pub derived: String,
 
-    /// No description.
     #[serde(rename = "DISPLAY_DELIM")]
     pub displayDelim: String,
 
-    /// No description.
     #[serde(rename = "DISPLAY_LEVEL")]
     pub displayLevel: i32,
 
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgFbovr {
-    /// No description.
     #[serde(rename = "ECLASS_ID")]
     pub eclassId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_EXCL")]
     pub ftypeExcl: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_FREQ")]
     pub ftypeFreq: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_STAB")]
     pub ftypeStab: String,
 
-    /// No description.
     #[serde(rename = "UTYPE_CODE")]
     pub utypeCode: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgFclass {
-    /// No description.
     #[serde(rename = "FCLASS_CODE")]
     pub fclassCode: String,
 
-    /// No description.
     #[serde(rename = "FCLASS_DESC")]
     pub fclassDesc: String,
 
-    /// No description.
     #[serde(rename = "FCLASS_ID")]
     pub fclassId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgFelem {
-    /// No description.
     #[serde(rename = "DATA_TYPE")]
     pub dataType: String,
 
-    /// No description.
     #[serde(rename = "FELEM_CODE")]
     pub felemCode: String,
 
-    /// No description.
     #[serde(rename = "FELEM_DESC")]
     pub felemDesc: String,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "TOKENIZE")]
     pub tokenize: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgFtype {
-    /// No description.
     #[serde(rename = "ANONYMIZE")]
     pub anonymize: String,
 
-    /// No description.
     #[serde(rename = "DERIVATION")]
     pub derivation: String,
 
-    /// No description.
     #[serde(rename = "DERIVED")]
     pub derived: String,
 
-    /// No description.
     #[serde(rename = "FCLASS_ID")]
     pub fclassId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_DESC")]
     pub ftypeDesc: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_EXCL")]
     pub ftypeExcl: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_FREQ")]
     pub ftypeFreq: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_STAB")]
     pub ftypeStab: String,
 
-    /// No description.
     #[serde(rename = "PERSIST_HISTORY")]
     pub persistHistory: String,
 
-    /// No description.
     #[serde(rename = "RTYPE_ID")]
     pub rtypeId: i32,
 
-    /// No description.
     #[serde(rename = "SHOW_IN_MATCH_KEY")]
     pub showInMatchKey: String,
 
-    /// No description.
     #[serde(rename = "USED_FOR_CAND")]
     pub usedForCand: String,
 
-    /// No description.
     #[serde(rename = "VERSION")]
     pub version: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgGenericThreshold {
-    /// No description.
     #[serde(rename = "BEHAVIOR")]
     pub behavior: String,
 
-    /// No description.
     #[serde(rename = "CANDIDATE_CAP")]
     pub candidateCap: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "GPLAN_ID")]
     pub gplanId: i32,
 
-    /// No description.
     #[serde(rename = "SCORING_CAP")]
     pub scoringCap: i32,
 
-    /// No description.
     #[serde(rename = "SEND_TO_REDO")]
     pub sendToRedo: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgGplan {
-    /// No description.
     #[serde(rename = "GPLAN_CODE")]
     pub gplanCode: String,
 
-    /// No description.
     #[serde(rename = "GPLAN_DESC")]
     pub gplanDesc: String,
 
-    /// No description.
     #[serde(rename = "GPLAN_ID")]
     pub gplanId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgLens {
-    /// No description.
     #[serde(rename = "LENS_CODE")]
     pub lensCode: String,
 
-    /// No description.
     #[serde(rename = "LENS_DESC")]
     pub lensDesc: String,
 
-    /// No description.
     #[serde(rename = "LENS_ID")]
     pub lensId: i32,
 }
 
-/// No description.
 pub type CfgLensrl = Vec<Option<Value>>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgRclass {
-    /// No description.
     #[serde(rename = "IS_DISCLOSED")]
     pub isDisclosed: String,
 
-    /// No description.
     #[serde(rename = "RCLASS_CODE")]
     pub rclassCode: String,
 
-    /// No description.
     #[serde(rename = "RCLASS_DESC")]
     pub rclassDesc: String,
 
-    /// No description.
     #[serde(rename = "RCLASS_ID")]
     pub rclassId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgRtype {
-    /// No description.
     #[serde(rename = "BREAK_RES")]
     pub breakRes: String,
 
-    /// No description.
     #[serde(rename = "RCLASS_ID")]
     pub rclassId: i32,
 
-    /// No description.
     #[serde(rename = "REL_STRENGTH")]
     pub relStrength: i32,
 
-    /// No description.
     #[serde(rename = "RTYPE_CODE")]
     pub rtypeCode: String,
 
-    /// No description.
     #[serde(rename = "RTYPE_DESC")]
     pub rtypeDesc: String,
 
-    /// No description.
     #[serde(rename = "RTYPE_ID")]
     pub rtypeId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgSfcall {
-    /// No description.
     #[serde(rename = "EXEC_ORDER")]
     pub execOrder: i32,
 
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "SFCALL_ID")]
     pub sfcallId: i32,
 
-    /// No description.
     #[serde(rename = "SFUNC_ID")]
     pub sfuncId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CfgSfunc {
-    /// No description.
     #[serde(rename = "CONNECT_STR")]
     pub connectStr: String,
 
-    /// No description.
     #[serde(rename = "FUNC_LIB")]
     pub funcLib: String,
 
-    /// No description.
     #[serde(rename = "FUNC_VER")]
     pub funcVer: String,
 
-    /// No description.
     #[serde(rename = "JAVA_CLASS_NAME")]
     pub javaClassName: String,
 
-    /// No description.
     #[serde(rename = "LANGUAGE")]
     pub language: String,
 
-    /// No description.
     #[serde(rename = "SFUNC_CODE")]
     pub sfuncCode: String,
 
-    /// No description.
     #[serde(rename = "SFUNC_DESC")]
     pub sfuncDesc: String,
 
-    /// No description.
     #[serde(rename = "SFUNC_ID")]
     pub sfuncId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ConfigBaseVersion {
-    /// No description.
     #[serde(rename = "BUILD_DATE")]
     pub buildDate: String,
 
-    /// No description.
     #[serde(rename = "BUILD_NUMBER")]
     pub buildNumber: String,
 
-    /// No description.
     #[serde(rename = "BUILD_VERSION")]
     pub buildVersion: String,
 
-    /// No description.
     #[serde(rename = "COMPATIBILITY_VERSION")]
     pub compatibilityVersion: CompatibilityVersion,
 
-    /// No description.
     #[serde(rename = "PRODUCT_NAME")]
     pub productName: String,
 
-    /// No description.
     #[serde(rename = "VERSION")]
     pub version: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct CompatibilityVersion {
-    /// No description.
     #[serde(rename = "CONFIG_VERSION")]
     pub configVersion: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Config {
-    /// No description.
     #[serde(rename = "CONFIG_COMMENTS")]
     pub configComments: String,
 
-    /// No description.
     #[serde(rename = "CONFIG_ID")]
     pub configId: i32,
 
-    /// No description.
     #[serde(rename = "SYS_CREATE_DT")]
     pub sysCreateDt: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ConfigAddDataSourceResponse {
-    /// No description.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ConfigListDataSourcesResponse {
-    /// No description.
     #[serde(rename = "DATA_SOURCES")]
     pub dataSources: DataSources,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ConfigSaveResponse {
-    /// No description.
     #[serde(rename = "G2_CONFIG")]
     pub g2Config: G2config,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ConfigmgrGetConfigListResponse {
-    /// No description.
     #[serde(rename = "CONFIGS")]
     pub configs: Configs,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ConfigmgrGetConfigResponse {
-    /// No description.
     #[serde(rename = "G2_CONFIG")]
     pub g2Config: G2config,
 }
 
-/// No description.
 pub type Configs = Vec<Config>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct DataSource {
     /// The text representation of the datasource.
@@ -1183,4635 +890,3478 @@ pub struct DataSource {
 /// A list of datasources.
 pub type DataSources = Vec<DataSource>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticCheckDbperfResponse {
-    /// No description.
     #[serde(rename = "insertTime")]
     pub insertTime: i32,
 
-    /// No description.
     #[serde(rename = "numRecordsInserted")]
     pub numRecordsInserted: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticFetchNextEntityBySizeResponse0 {
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "ENT_SRC_DESC")]
     pub entSrcDesc: String,
 
-    /// No description.
     #[serde(rename = "ENT_SRC_KEY")]
     pub entSrcKey: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "ER_ID")]
     pub erId: i32,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "JSON_DATA")]
     pub jsonData: JsonData,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "OBS_ENT_ID")]
     pub obsEntId: i32,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// No description.
     #[serde(rename = "RES_ENT_ID")]
     pub resEntId: i32,
 }
 
-/// No description.
 pub type DiagnosticFetchNextEntityBySizeResponse = Vec<DiagnosticFetchNextEntityBySizeResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticFindEntitiesByFeatureIdsResponse0 {
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
-    /// No description.
     #[serde(rename = "RES_ENT_ID")]
     pub resEntId: i32,
 
-    /// No description.
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
 }
 
-/// No description.
 pub type DiagnosticFindEntitiesByFeatureIdsResponse = Vec<DiagnosticFindEntitiesByFeatureIdsResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetDbinfoResponseDetail {
-    /// No description.
     #[serde(rename = "Name")]
     pub name: String,
 
-    /// No description.
     #[serde(rename = "Type")]
     pub type_: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetDbinfoResponse {
-    /// No description.
     #[serde(rename = "Database Details")]
     pub databaseDetails: Vec<DiagnosticGetDbinfoResponseDetail>,
 
-    /// No description.
     #[serde(rename = "Hybrid Mode")]
     pub hybridMode: bool,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetDataSourceCountsResponse0 {
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 
-    /// No description.
     #[serde(rename = "DSRC_RECORD_COUNT")]
     pub dsrcRecordCount: i32,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_ID")]
     pub etypeId: i32,
 
-    /// No description.
     #[serde(rename = "OBS_ENT_COUNT")]
     pub obsEntCount: i32,
 }
 
-/// No description.
 pub type DiagnosticGetDataSourceCountsResponse = Vec<DiagnosticGetDataSourceCountsResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetEntityDetailsResponse0 {
-    /// No description.
     #[serde(rename = "DERIVED")]
     pub derived: String,
 
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "OBS_ENT_ID")]
     pub obsEntId: i32,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: i32,
 
-    /// No description.
     #[serde(rename = "RES_ENT_ID")]
     pub resEntId: i32,
 
-    /// No description.
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
 }
 
-/// No description.
 pub type DiagnosticGetEntityDetailsResponse = Vec<DiagnosticGetEntityDetailsResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetEntityResumeResponse0 {
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "ENT_SRC_DESC")]
     pub entSrcDesc: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "JSON_DATA")]
     pub jsonData: JsonData,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// No description.
     #[serde(rename = "REL_ENT_ID")]
     pub relEntId: i32,
 
-    /// No description.
     #[serde(rename = "RES_ENT_ID")]
     pub resEntId: i32,
 }
 
-/// No description.
 pub type DiagnosticGetEntityResumeResponse = Vec<DiagnosticGetEntityResumeResponse0>;
 
-/// No description.
 pub type DiagnosticGetEntitySizeBreakdownResponse = AttributeCounters;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetFeatureResponseElements {
-    /// No description.
     #[serde(rename = "FELEM_CODE")]
     pub felemCode: String,
 
-    /// No description.
     #[serde(rename = "FELEM_VALUE")]
     pub felemValue: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetFeatureResponse {
-    /// No description.
     #[serde(rename = "ELEMENTS")]
     pub elements: Vec<DiagnosticGetFeatureResponseElements>,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetGenericFeaturesResponse0 {
-    /// No description.
     #[serde(rename = "CANDIDATE_CAP_REACHED")]
     pub candidateCapReached: String,
 
-    /// No description.
     #[serde(rename = "ESTIMATED_COUNT")]
     pub estimatedCount: i32,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
-    /// No description.
     #[serde(rename = "SCORING_CAP_REACHED")]
     pub scoringCapReached: String,
 }
 
-/// No description.
 pub type DiagnosticGetGenericFeaturesResponse = Vec<DiagnosticGetGenericFeaturesResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetMappingStatisticsResponse0 {
-    /// No description.
     #[serde(rename = "DERIVED")]
     pub derived: String,
 
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "MAX_FEAT_DESC")]
     pub maxFeatDesc: String,
 
-    /// No description.
     #[serde(rename = "MIN_FEAT_DESC")]
     pub minFeatDesc: String,
 
-    /// No description.
     #[serde(rename = "REC_COUNT")]
     pub recCount: i32,
 
-    /// No description.
     #[serde(rename = "REC_PCT")]
     pub recPct: f64,
 
-    /// No description.
     #[serde(rename = "UNIQ_COUNT")]
     pub uniqCount: i32,
 
-    /// No description.
     #[serde(rename = "UNIQ_PCT")]
     pub uniqPct: f64,
 
-    /// No description.
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
 }
 
-/// No description.
 pub type DiagnosticGetMappingStatisticsResponse = Vec<DiagnosticGetMappingStatisticsResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetRelationshipDetailsResponse0 {
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "RES_ENT_ID")]
     pub resEntId: i32,
 }
 
-/// No description.
 pub type DiagnosticGetRelationshipDetailsResponse = Vec<DiagnosticGetRelationshipDetailsResponse0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetResolutionStatisticsResponseRawMatchKeys {
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticGetResolutionStatisticsResponse0 {
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_ID")]
     pub erruleId: i32,
 
-    /// No description.
     #[serde(rename = "IS_AMBIGUOUS")]
     pub isAmbiguous: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MAX_RES_ENT_ID")]
     pub maxResEntId: i32,
 
-    /// No description.
     #[serde(rename = "MAX_RES_REL_ID")]
     pub maxResRelId: i32,
 
-    /// No description.
     #[serde(rename = "MIN_RES_ENT_ID")]
     pub minResEntId: i32,
 
-    /// No description.
     #[serde(rename = "MIN_RES_REL_ID")]
     pub minResRelId: i32,
 
-    /// No description.
     #[serde(rename = "RAW_MATCH_KEYS")]
     pub rawMatchKeys: Vec<DiagnosticGetResolutionStatisticsResponseRawMatchKeys>,
 
-    /// No description.
     #[serde(rename = "RECORD_COUNT")]
     pub recordCount: i32,
 }
 
-/// No description.
 pub type DiagnosticGetResolutionStatisticsResponse = Vec<DiagnosticGetResolutionStatisticsResponse0>;
 
-/// No description.
 pub type DiagnosticStreamEntityListBySizeResponse = Option<Value>;
 
-/// No description.
 pub type EngineAddRecordWithInfoResponse = WithInfo;
 
-/// No description.
 pub type EngineAddRecordWithInfoWithReturnedRecordIdresponse = WithInfo;
 
 #[derive(Serialize, Deserialize)]
 pub struct EngineCheckRecordResponseCheckRecordResponse {
-    /// No description.
     #[serde(rename = "CANDIDATE_MATCH")]
     pub candidateMatch: String,
 
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_ID")]
     pub erruleId: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    /// No description.
     #[serde(rename = "NON_GENERIC_CANDIDATE_MATCH")]
     pub nonGenericCandidateMatch: String,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineCheckRecordResponse {
-    /// No description.
     #[serde(rename = "CHECK_RECORD_RESPONSE")]
     pub checkRecordResponse: Vec<EngineCheckRecordResponseCheckRecordResponse>,
 }
 
-/// No description.
 pub type EngineDeleteRecordWithInfoResponse = WithInfo;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineExportConfigAndConfigIdresponse {
-    /// No description.
     #[serde(rename = "G2_CONFIG")]
     pub g2Config: G2config,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineExportConfigResponse {
-    /// No description.
     #[serde(rename = "G2_CONFIG")]
     pub g2Config: G2config,
 }
 
-/// No description.
 pub type EngineFetchNextResponse = Option<Value>;
 
-/// No description.
 pub type EngineFindInterestingEntitiesByEntityIdresponse = Interesting;
 
-/// No description.
 pub type EngineFindInterestingEntitiesByRecordIdresponse = Interesting;
 
-/// No description.
 pub type EngineFindNetworkByEntityIdresponse = Network;
 
-/// No description.
 pub type EngineFindNetworkByEntityIdv2response = Network;
 
-/// No description.
 pub type EngineFindNetworkByRecordIdresponse = Network;
 
-/// No description.
 pub type EngineFindNetworkByRecordIdv2response = Network;
 
-/// No description.
 pub type EngineFindPathByEntityIdresponse = Path;
 
-/// No description.
 pub type EngineFindPathByEntityIdv2response = Path;
 
-/// No description.
 pub type EngineFindPathByRecordIdresponse = Path;
 
-/// No description.
 pub type EngineFindPathByRecordIdv2response = Path;
 
-/// No description.
 pub type EngineFindPathExcludingByEntityIdresponse = Path;
 
-/// No description.
 pub type EngineFindPathExcludingByEntityIdv2response = Path;
 
-/// No description.
 pub type EngineFindPathExcludingByRecordIdresponse = Path;
 
-/// No description.
 pub type EngineFindPathExcludingByRecordIdv2response = Path;
 
-/// No description.
 pub type EngineFindPathIncludingSourceByEntityIdresponse = Path;
 
-/// No description.
 pub type EngineFindPathIncludingSourceByEntityIdv2response = Path;
 
-/// No description.
 pub type EngineFindPathIncludingSourceByRecordIdresponse = Path;
 
-/// No description.
 pub type EngineFindPathIncludingSourceByRecordIdv2response = Path;
 
-/// No description.
 pub type EngineGetEntityByEntityIdresponse = Entity;
 
-/// No description.
 pub type EngineGetEntityByEntityIdv2response = Entity;
 
-/// No description.
 pub type EngineGetEntityByRecordIdresponse = Entity;
 
-/// No description.
 pub type EngineGetEntityByRecordIdv2response = Entity;
 
-/// No description.
 pub type EngineGetRecordResponse = Record;
 
-/// No description.
 pub type EngineGetRecordV2response = Record;
 
-/// No description.
 pub type EngineGetVirtualEntityByRecordIdresponse = VirtualEntity;
 
-/// No description.
 pub type EngineGetVirtualEntityByRecordIdv2response = VirtualEntity;
 
-/// No description.
 pub type EngineHowEntityByEntityIdresponse = How;
 
-/// No description.
 pub type EngineHowEntityByEntityIdv2response = How;
 
-/// No description.
 pub type EngineProcessRedoRecordResponse = Option<Value>;
 
-/// No description.
 pub type EngineProcessRedoRecordWithInfoResponse = WithInfo;
 
-/// No description.
 pub type EngineProcessWithInfoResponse = WithInfo;
 
-/// No description.
 pub type EngineProcessWithResponseResizeResponse = Process;
 
-/// No description.
 pub type EngineProcessWithResponseResponse = Process;
 
-/// No description.
 pub type EngineReevaluateEntityWithInfoResponse = WithInfo;
 
-/// No description.
 pub type EngineReevaluateRecordWithInfoResponse = WithInfo;
 
-/// No description.
 pub type EngineReplaceRecordWithInfoResponse = WithInfo;
 
-/// No description.
 pub type EngineSearchByAttributesResponse = Search;
 
-/// No description.
 pub type EngineSearchByAttributesV2response = Search;
 
-/// No description.
 pub type EngineSearchByAttributesV3response = Search;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseDuration {
-    /// No description.
     #[serde(rename = "PATTERN")]
     pub pattern: String,
 
-    /// No description.
     #[serde(rename = "TYPE")]
     pub type_: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseReresolveTriggers {
-    /// No description.
     #[serde(rename = "abortRetry")]
     pub abortRetry: i32,
 
-    /// No description.
     #[serde(rename = "multipleResolvableCandidates")]
     pub multipleResolvableCandidates: i32,
 
-    /// No description.
     #[serde(rename = "resolveNewFeatures")]
     pub resolveNewFeatures: i32,
 
-    /// No description.
     #[serde(rename = "unresolveMovement")]
     pub unresolveMovement: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseUnresolveTriggers {
-    /// No description.
     #[serde(rename = "extensiveResolve")]
     pub extensiveResolve: i32,
 
-    /// No description.
     #[serde(rename = "normalResolve")]
     pub normalResolve: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadExpressedFeatureCall {
-    /// No description.
     #[serde(rename = "EFCALL_ID")]
     pub efcallId: i32,
 
-    /// No description.
     #[serde(rename = "EFUNC_CODE")]
     pub efuncCode: String,
 
-    /// No description.
     #[serde(rename = "numCalls")]
     pub numCalls: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadReresolveTriggers {
-    /// No description.
     #[serde(rename = "abortRetry")]
     pub abortRetry: i32,
 
-    /// No description.
     #[serde(rename = "multipleResolvableCandidates")]
     pub multipleResolvableCandidates: i32,
 
-    /// No description.
     #[serde(rename = "newFeatureFTypes")]
     pub newFeatureFtypes: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "resolveNewFeatures")]
     pub resolveNewFeatures: i32,
 
-    /// No description.
     #[serde(rename = "unresolveMovement")]
     pub unresolveMovement: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
-    /// No description.
     #[serde(rename = "cpuIdle")]
     pub cpuIdle: f64,
 
-    /// No description.
     #[serde(rename = "cpuSoftIrq")]
     pub cpuSoftIrq: f64,
 
-    /// No description.
     #[serde(rename = "cpuSystem")]
     pub cpuSystem: f64,
 
-    /// No description.
     #[serde(rename = "cpuUser")]
     pub cpuUser: f64,
 
-    /// No description.
     #[serde(rename = "cpuWait")]
     pub cpuWait: f64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadSystemResourcesCurrResource {
-    /// No description.
     #[serde(rename = "activeThreads")]
     pub activeThreads: i32,
 
-    /// No description.
     #[serde(rename = "availableMemory")]
     pub availableMemory: String,
 
-    /// No description.
     #[serde(rename = "systemLoad")]
     pub systemLoad: Vec<EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad>,
 
-    /// No description.
     #[serde(rename = "workerThreads")]
     pub workerThreads: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadSystemResourcesInitResource {
-    /// No description.
     #[serde(rename = "availableMemory")]
     pub availableMemory: String,
 
-    /// No description.
     #[serde(rename = "logicalCores")]
     pub logicalCores: i32,
 
-    /// No description.
     #[serde(rename = "physicalCores")]
     pub physicalCores: i32,
 
-    /// No description.
     #[serde(rename = "totalMemory")]
     pub totalMemory: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadSystemResources {
-    /// No description.
     #[serde(rename = "currResources")]
     pub currResources: Vec<EngineStatsResponseWorkloadSystemResourcesCurrResource>,
 
-    /// No description.
     #[serde(rename = "initResources")]
     pub initResources: Vec<EngineStatsResponseWorkloadSystemResourcesInitResource>,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadThreadState {
-    /// No description.
     #[serde(rename = "active")]
     pub active: i32,
 
-    /// No description.
     #[serde(rename = "dataLatchContention")]
     pub dataLatchContention: i32,
 
-    /// No description.
     #[serde(rename = "idle")]
     pub idle: i32,
 
-    /// No description.
     #[serde(rename = "loader")]
     pub loader: i32,
 
-    /// No description.
     #[serde(rename = "obsEntContention")]
     pub obsEntContention: i32,
 
-    /// No description.
     #[serde(rename = "resEntContention")]
     pub resEntContention: i32,
 
-    /// No description.
     #[serde(rename = "resolver")]
     pub resolver: i32,
 
-    /// No description.
     #[serde(rename = "scoring")]
     pub scoring: i32,
 
-    /// No description.
     #[serde(rename = "sqlExecuting")]
     pub sqlExecuting: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkloadUnresolveTriggers {
-    /// No description.
     #[serde(rename = "ambiguousMultiResolve")]
     pub ambiguousMultiResolve: i32,
 
-    /// No description.
     #[serde(rename = "ambiguousNoResolve")]
     pub ambiguousNoResolve: i32,
 
-    /// No description.
     #[serde(rename = "extensiveResolve")]
     pub extensiveResolve: i32,
 
-    /// No description.
     #[serde(rename = "normalResolve")]
     pub normalResolve: i32,
 
-    /// No description.
     #[serde(rename = "relLink")]
     pub relLink: i32,
 
-    /// No description.
     #[serde(rename = "update")]
     pub update: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponseWorkload {
-    /// No description.
     #[serde(rename = "CorruptEntityTestDiagnosis")]
     pub corruptEntityTestDiagnosis: Option<Value>,
 
-    /// No description.
     #[serde(rename = "abortedUnresolve")]
     pub abortedUnresolve: i32,
 
-    /// No description.
     #[serde(rename = "actualAmbiguousTest")]
     pub actualAmbiguousTest: i32,
 
-    /// No description.
     #[serde(rename = "addedRecords")]
     pub addedRecords: i32,
 
-    /// No description.
     #[serde(rename = "apiVersion")]
     pub apiVersion: String,
 
-    /// No description.
     #[serde(rename = "cacheHit")]
     pub cacheHit: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "cacheMiss")]
     pub cacheMiss: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "cachedAmbiguousTest")]
     pub cachedAmbiguousTest: i32,
 
-    /// No description.
     #[serde(rename = "candidateBuilders")]
     pub candidateBuilders: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "candidates")]
     pub candidates: i32,
 
-    /// No description.
     #[serde(rename = "deletedRecords")]
     pub deletedRecords: i32,
 
-    /// No description.
     #[serde(rename = "duration")]
     pub duration: i32,
 
-    /// No description.
     #[serde(rename = "expressedFeatureCalls")]
     pub expressedFeatureCalls: Vec<EngineStatsResponseWorkloadExpressedFeatureCall>,
 
-    /// No description.
     #[serde(rename = "expressedFeaturesCreated")]
     pub expressedFeaturesCreated: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "filteredObsFeat")]
     pub filteredObsFeat: i32,
 
-    /// No description.
     #[serde(rename = "genericDetect")]
     pub genericDetect: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "gnrScorersUsed")]
     pub gnrScorersUsed: i32,
 
-    /// No description.
     #[serde(rename = "highContentionFeat")]
     pub highContentionFeat: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "highContentionResEnt")]
     pub highContentionResEnt: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "latchContention")]
     pub latchContention: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "libFeatCacheHit")]
     pub libFeatCacheHit: i32,
 
-    /// No description.
     #[serde(rename = "libFeatCacheMiss")]
     pub libFeatCacheMiss: i32,
 
-    /// No description.
     #[serde(rename = "loadedRecords")]
     pub loadedRecords: i32,
 
-    /// No description.
     #[serde(rename = "redoTriggers")]
     pub redoTriggers: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "reducedScoredFeatureType")]
     pub reducedScoredFeatureType: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "reevaluations")]
     pub reevaluations: i32,
 
-    /// No description.
     #[serde(rename = "repairedEntities")]
     pub repairedEntities: i32,
 
-    /// No description.
     #[serde(rename = "reresolveSkipped")]
     pub reresolveSkipped: i32,
 
-    /// No description.
     #[serde(rename = "reresolveTriggers")]
     pub reresolveTriggers: EngineStatsResponseWorkloadReresolveTriggers,
 
-    /// No description.
     #[serde(rename = "resFeatStatCacheHit")]
     pub resFeatStatCacheHit: i32,
 
-    /// No description.
     #[serde(rename = "resFeatStatCacheMiss")]
     pub resFeatStatCacheMiss: i32,
 
-    /// No description.
     #[serde(rename = "resFeatStatUpdate")]
     pub resFeatStatUpdate: i32,
 
-    /// No description.
     #[serde(rename = "retries")]
     pub retries: i32,
 
-    /// No description.
     #[serde(rename = "scoredPairs")]
     pub scoredPairs: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "suppressedCandidateBuilders")]
     pub suppressedCandidateBuilders: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
     pub suppressedDisclosedRelationshipDomainCount: i32,
 
-    /// No description.
     #[serde(rename = "suppressedScoredFeatureType")]
     pub suppressedScoredFeatureType: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "systemResources")]
     pub systemResources: EngineStatsResponseWorkloadSystemResources,
 
-    /// No description.
     #[serde(rename = "threadState")]
     pub threadState: EngineStatsResponseWorkloadThreadState,
 
-    /// No description.
     #[serde(rename = "unresolveTest")]
     pub unresolveTest: i32,
 
-    /// No description.
     #[serde(rename = "unresolveTriggers")]
     pub unresolveTriggers: EngineStatsResponseWorkloadUnresolveTriggers,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EngineStatsResponse {
-    /// No description.
     #[serde(rename = "MISSING_RES_ENT")]
     pub missingResEnt: i32,
 
-    /// No description.
     #[serde(rename = "MISSING_RES_ENT_AND_OKEY")]
     pub missingResEntAndOkey: i32,
 
-    /// No description.
     #[serde(rename = "abortedUnresolve")]
     pub abortedUnresolve: i32,
 
-    /// No description.
     #[serde(rename = "actualAmbiguousTest")]
     pub actualAmbiguousTest: i32,
 
-    /// No description.
     #[serde(rename = "addedRecords")]
     pub addedRecords: i32,
 
-    /// No description.
     #[serde(rename = "cacheHit")]
     pub cacheHit: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "candidateBuilders")]
     pub candidateBuilders: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "candidates")]
     pub candidates: i32,
 
-    /// No description.
     #[serde(rename = "deletedRecords")]
     pub deletedRecords: i32,
 
-    /// No description.
     #[serde(rename = "duration")]
     pub duration: EngineStatsResponseDuration,
 
-    /// No description.
     #[serde(rename = "filteredObsFeat")]
     pub filteredObsFeat: i32,
 
-    /// No description.
     #[serde(rename = "genericDetect")]
     pub genericDetect: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "latchContention")]
     pub latchContention: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "loadedRecords")]
     pub loadedRecords: i32,
 
-    /// No description.
     #[serde(rename = "redoTriggers")]
     pub redoTriggers: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "reducedScoredFeatureType")]
     pub reducedScoredFeatureType: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "reevaluations")]
     pub reevaluations: i32,
 
-    /// No description.
     #[serde(rename = "repairedEntities")]
     pub repairedEntities: i32,
 
-    /// No description.
     #[serde(rename = "reresolveSkipped")]
     pub reresolveSkipped: i32,
 
-    /// No description.
     #[serde(rename = "reresolveTriggers")]
     pub reresolveTriggers: EngineStatsResponseReresolveTriggers,
 
-    /// No description.
     #[serde(rename = "retries")]
     pub retries: i32,
 
-    /// No description.
     #[serde(rename = "scoredPairs")]
     pub scoredPairs: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "suppressedCandidateBuilders")]
     pub suppressedCandidateBuilders: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "suppressedScoredFeatureType")]
     pub suppressedScoredFeatureType: AttributeCounters,
 
-    /// No description.
     #[serde(rename = "unresolveTest")]
     pub unresolveTest: i32,
 
-    /// No description.
     #[serde(rename = "unresolveTriggers")]
     pub unresolveTriggers: EngineStatsResponseUnresolveTriggers,
 
-    /// No description.
     #[serde(rename = "workload")]
     pub workload: EngineStatsResponseWorkload,
 }
 
-/// No description.
 pub type EngineStreamExportJsonentityReportResponse = Option<Value>;
 
-/// No description.
 pub type EngineWhyEntitiesResponse = WhyEntities;
 
-/// No description.
 pub type EngineWhyEntitiesV2response = WhyEntities;
 
-/// No description.
 pub type EngineWhyEntityByEntityIdresponse = WhyEntity;
 
-/// No description.
 pub type EngineWhyEntityByEntityIdv2response = WhyEntity;
 
-/// No description.
 pub type EngineWhyEntityByRecordIdresponse = WhyEntity;
 
-/// No description.
 pub type EngineWhyEntityByRecordIdv2response = WhyEntity;
 
-/// No description.
 pub type EngineWhyRecordsResponse = WhyRecords;
 
-/// No description.
 pub type EngineWhyRecordsV2response = WhyRecords;
 
-/// No description.
 pub type Entities = Vec<Entity>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Entity {
-    /// No description.
     #[serde(rename = "RELATED_ENTITIES")]
     pub relatedEntities: RelatedEntities,
 
-    /// No description.
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct EntityPath {
-    /// No description.
     #[serde(rename = "END_ENTITY_ID")]
     pub endEntityId: i32,
 
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<i32>,
 
-    /// No description.
     #[serde(rename = "START_ENTITY_ID")]
     pub startEntityId: i32,
 }
 
-/// No description.
 pub type EntityPaths = Vec<EntityPath>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct FeatureDescriptionValue {
-    /// No description.
     #[serde(rename = "CANDIDATE_CAP_REACHED")]
     pub candidateCapReached: String,
 
-    /// No description.
     #[serde(rename = "ENTITY_COUNT")]
     pub entityCount: i32,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
-    /// No description.
     #[serde(rename = "SCORING_CAP_REACHED")]
     pub scoringCapReached: String,
 
-    /// No description.
     #[serde(rename = "SUPPRESSED")]
     pub suppressed: String,
 
-    /// No description.
     #[serde(rename = "USED_FOR_CAND")]
     pub usedForCand: String,
 
-    /// No description.
     #[serde(rename = "USED_FOR_SCORING")]
     pub usedForScoring: String,
 }
 
-/// No description.
 pub type FeatureDescriptionValues = Vec<FeatureDescriptionValue>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct FeatureForAttribute {
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC_VALUES")]
     pub featDescValues: FeatureDescriptionValues,
 
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
-    /// No description.
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct FeatureScoreForAttribute {
-    /// No description.
     #[serde(rename = "CANDIDATE_FEAT")]
     pub candidateFeat: String,
 
-    /// No description.
     #[serde(rename = "CANDIDATE_FEAT_ID")]
     pub candidateFeatId: i32,
 
-    /// No description.
     #[serde(rename = "CANDIDATE_FEAT_USAGE_TYPE")]
     pub candidateFeatUsageType: String,
 
-    /// No description.
     #[serde(rename = "FULL_SCORE")]
     pub fullScore: i32,
 
-    /// No description.
     #[serde(rename = "GENERATION_MATCH")]
     pub generationMatch: i32,
 
-    /// No description.
     #[serde(rename = "GNR_FN")]
     pub gnrFn: i32,
 
-    /// No description.
     #[serde(rename = "GNR_GN")]
     pub gnrGn: i32,
 
-    /// No description.
     #[serde(rename = "GNR_ON")]
     pub gnrOn: i32,
 
-    /// No description.
     #[serde(rename = "GNR_SN")]
     pub gnrSn: i32,
 
-    /// No description.
     #[serde(rename = "INBOUND_FEAT")]
     pub inboundFeat: String,
 
-    /// No description.
     #[serde(rename = "INBOUND_FEAT_ID")]
     pub inboundFeatId: i32,
 
-    /// No description.
     #[serde(rename = "INBOUND_FEAT_USAGE_TYPE")]
     pub inboundFeatUsageType: String,
 
-    /// No description.
     #[serde(rename = "SCORE_BEHAVIOR")]
     pub scoreBehavior: String,
 
-    /// No description.
     #[serde(rename = "SCORE_BUCKET")]
     pub scoreBucket: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct FeatureScores {
-    /// No description.
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCOUNT_NUMBER")]
     pub accountNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCT_NUM")]
     pub acctNum: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS")]
     pub address: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS_LIST")]
     pub addressList: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_KEY")]
     pub addrKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "CELL_PHONE_NUMBER")]
     pub cellPhoneNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "CITIZENSHIP")]
     pub citizenship: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_DEATH")]
     pub dateOfDeath: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DOB")]
     pub dob: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DOD")]
     pub dod: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DRLIC")]
     pub drlic: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL")]
     pub email: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_KEY")]
     pub emailKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMPLOYER_NAME")]
     pub employerName: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ENTITY_TYPE")]
     pub entityType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "FACEBOOK")]
     pub facebook: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GENDER")]
     pub gender: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
     pub groupAssnIdNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_TYPE")]
     pub groupAssnIdType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
     pub groupAssociationOrgName: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
     pub groupAssociationType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ID_KEY")]
     pub idKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "INSTAGRAM")]
     pub instagram: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LEI_NUMBER")]
     pub leiNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LINKEDIN")]
     pub linkedin: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LOAD_ID")]
     pub loadId: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LOGIN_ID")]
     pub loginId: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_FULL")]
     pub nameFull: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_KEY")]
     pub nameKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_LIST")]
     pub nameList: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONALITY")]
     pub nationality: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID")]
     pub nationalId: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_NUMBER")]
     pub nationalIdNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_COUNTRY")]
     pub ninCountry: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_NUMBER")]
     pub ninNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NPI_NUMBER")]
     pub npiNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_COUNTRY")]
     pub otherIdCountry: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_NUMBER")]
     pub otherIdNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_TYPE")]
     pub otherIdType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT")]
     pub passport: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORTS")]
     pub passports: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE")]
     pub phone: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONES")]
     pub phones: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE_KEY")]
     pub phoneKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PLACE_OF_BIRTH")]
     pub placeOfBirth: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_FIRST")]
     pub primaryNameFirst: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_LAST")]
     pub primaryNameLast: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_MIDDLE")]
     pub primaryNameMiddle: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_ORG")]
     pub primaryNameOrg: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_PREFIX")]
     pub primaryNamePrefix: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_SUFFIX")]
     pub primaryNameSuffix: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_PHONE_NUMBER")]
     pub primaryPhoneNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_COUNTRY")]
     pub registrationCountry: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_DOMAIN")]
     pub relAnchorDomain: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_LINK")]
     pub relLink: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_DOMAIN")]
     pub relPointerDomain: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SIGNAL")]
     pub signal: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SKYPE")]
     pub skype: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_HANDLE")]
     pub socialHandle: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_NETWORK")]
     pub socialNetwork: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SOURCE_ID")]
     pub sourceId: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN")]
     pub ssn: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TANGO")]
     pub tango: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_COUNTRY")]
     pub taxIdCountry: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_NUMBER")]
     pub taxIdNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_TYPE")]
     pub taxIdType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TELEGRAM")]
     pub telegram: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_NUMBER")]
     pub trustedIdNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_TYPE")]
     pub trustedIdType: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TWITTER")]
     pub twitter: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "VIBER")]
     pub viber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WEBSITE_ADDRESS")]
     pub websiteAddress: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WECHAT")]
     pub wechat: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WHATSAPP")]
     pub whatsapp: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WORK_PHONE_NUMBER")]
     pub workPhoneNumber: FeatureScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: FeatureScoresForAttribute,
 }
 
-/// No description.
 pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Features {
-    /// No description.
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCOUNT_NUMBER")]
     pub accountNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCT_NUM")]
     pub acctNum: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS")]
     pub address: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS_LIST")]
     pub addressList: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_KEY")]
     pub addrKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "CELL_PHONE_NUMBER")]
     pub cellPhoneNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "CITIZENSHIP")]
     pub citizenship: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_DEATH")]
     pub dateOfDeath: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DOB")]
     pub dob: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DOD")]
     pub dod: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DRLIC")]
     pub drlic: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL")]
     pub email: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_KEY")]
     pub emailKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "EMPLOYER_NAME")]
     pub employerName: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ENTITY_TYPE")]
     pub entityType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "FACEBOOK")]
     pub facebook: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "GENDER")]
     pub gender: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
     pub groupAssnIdNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_TYPE")]
     pub groupAssnIdType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
     pub groupAssociationOrgName: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
     pub groupAssociationType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ID_KEY")]
     pub idKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "INSTAGRAM")]
     pub instagram: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "LEI_NUMBER")]
     pub leiNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "LINKEDIN")]
     pub linkedin: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "LOAD_ID")]
     pub loadId: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "LOGIN_ID")]
     pub loginId: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_FULL")]
     pub nameFull: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_KEY")]
     pub nameKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_LIST")]
     pub nameList: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONALITY")]
     pub nationality: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID")]
     pub nationalId: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_NUMBER")]
     pub nationalIdNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_COUNTRY")]
     pub ninCountry: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_NUMBER")]
     pub ninNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "NPI_NUMBER")]
     pub npiNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_COUNTRY")]
     pub otherIdCountry: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_NUMBER")]
     pub otherIdNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_TYPE")]
     pub otherIdType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT")]
     pub passport: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORTS")]
     pub passports: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE")]
     pub phone: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONES")]
     pub phones: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE_KEY")]
     pub phoneKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PLACE_OF_BIRTH")]
     pub placeOfBirth: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_FIRST")]
     pub primaryNameFirst: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_LAST")]
     pub primaryNameLast: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_MIDDLE")]
     pub primaryNameMiddle: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_ORG")]
     pub primaryNameOrg: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_PREFIX")]
     pub primaryNamePrefix: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_SUFFIX")]
     pub primaryNameSuffix: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_PHONE_NUMBER")]
     pub primaryPhoneNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_COUNTRY")]
     pub registrationCountry: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_DOMAIN")]
     pub relAnchorDomain: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_LINK")]
     pub relLink: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_DOMAIN")]
     pub relPointerDomain: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SIGNAL")]
     pub signal: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SKYPE")]
     pub skype: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_HANDLE")]
     pub socialHandle: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_NETWORK")]
     pub socialNetwork: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SOURCE_ID")]
     pub sourceId: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN")]
     pub ssn: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TANGO")]
     pub tango: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_COUNTRY")]
     pub taxIdCountry: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_NUMBER")]
     pub taxIdNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_TYPE")]
     pub taxIdType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TELEGRAM")]
     pub telegram: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_NUMBER")]
     pub trustedIdNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_TYPE")]
     pub trustedIdType: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "TWITTER")]
     pub twitter: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "VIBER")]
     pub viber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "WEBSITE_ADDRESS")]
     pub websiteAddress: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "WECHAT")]
     pub wechat: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "WHATSAPP")]
     pub whatsapp: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "WORK_PHONE_NUMBER")]
     pub workPhoneNumber: FeaturesForAttribute,
 
-    /// No description.
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: FeaturesForAttribute,
 }
 
-/// No description.
 pub type FeaturesForAttribute = Vec<FeatureForAttribute>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct FinalState {
-    /// No description.
     #[serde(rename = "NEED_REEVALUATION")]
     pub needReevaluation: i32,
 
-    /// No description.
     #[serde(rename = "VIRTUAL_ENTITIES")]
     pub virtualEntities: Vec<VirtualEntitySynopsis>,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct FocusRecord {
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 }
 
-/// No description.
 pub type FocusRecords = Vec<FocusRecord>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct G2config {
-    /// No description.
     #[serde(rename = "CFG_ATTR")]
     pub cfgAttr: Vec<CfgAttr>,
 
-    /// No description.
     #[serde(rename = "CFG_CFBOM")]
     pub cfgCfbom: Vec<CfgCfbom>,
 
-    /// No description.
     #[serde(rename = "CFG_CFCALL")]
     pub cfgCfcall: Vec<CfgCfcall>,
 
-    /// No description.
     #[serde(rename = "CFG_CFRTN")]
     pub cfgCfrtn: Vec<CfgCfrtn>,
 
-    /// No description.
     #[serde(rename = "CFG_CFUNC")]
     pub cfgCfunc: Vec<CfgCfunc>,
 
-    /// No description.
     #[serde(rename = "CFG_DFBOM")]
     pub cfgDfbom: Vec<CfgDfbom>,
 
-    /// No description.
     #[serde(rename = "CFG_DFCALL")]
     pub cfgDfcall: Vec<CfgDfcall>,
 
-    /// No description.
     #[serde(rename = "CFG_DFUNC")]
     pub cfgDfunc: Vec<CfgDfunc>,
 
-    /// No description.
     #[serde(rename = "CFG_DSRC")]
     pub cfgDsrc: Vec<CfgDsrc>,
 
-    /// No description.
     #[serde(rename = "CFG_DSRC_INTEREST")]
     pub cfgDsrcInterest: Vec<CfgDsrcInterest>,
 
-    /// No description.
     #[serde(rename = "CFG_EBOM")]
     pub cfgEbom: Vec<CfgEbom>,
 
-    /// No description.
     #[serde(rename = "CFG_ECLASS")]
     pub cfgEclass: Vec<CfgEclass>,
 
-    /// No description.
     #[serde(rename = "CFG_EFBOM")]
     pub cfgEfbom: Vec<CfgEfbom>,
 
-    /// No description.
     #[serde(rename = "CFG_EFCALL")]
     pub cfgEfcall: Vec<CfgEfcall>,
 
-    /// No description.
     #[serde(rename = "CFG_EFUNC")]
     pub cfgEfunc: Vec<CfgEfunc>,
 
-    /// No description.
     #[serde(rename = "CFG_ERFRAG")]
     pub cfgErfrag: Vec<CfgErfrag>,
 
-    /// No description.
     #[serde(rename = "CFG_ERRULE")]
     pub cfgErrule: Vec<CfgErrule>,
 
-    /// No description.
     #[serde(rename = "CFG_ETYPE")]
     pub cfgEtype: Vec<CfgEtype>,
 
-    /// No description.
     #[serde(rename = "CFG_FBOM")]
     pub cfgFbom: Vec<CfgFbom>,
 
-    /// No description.
     #[serde(rename = "CFG_FBOVR")]
     pub cfgFbovr: Vec<CfgFbovr>,
 
-    /// No description.
     #[serde(rename = "CFG_FCLASS")]
     pub cfgFclass: Vec<CfgFclass>,
 
-    /// No description.
     #[serde(rename = "CFG_FELEM")]
     pub cfgFelem: Vec<CfgFelem>,
 
-    /// No description.
     #[serde(rename = "CFG_FTYPE")]
     pub cfgFtype: Vec<CfgFtype>,
 
-    /// No description.
     #[serde(rename = "CFG_GENERIC_THRESHOLD")]
     pub cfgGenericThreshold: Vec<CfgGenericThreshold>,
 
-    /// No description.
     #[serde(rename = "CFG_GPLAN")]
     pub cfgGplan: Vec<CfgGplan>,
 
-    /// No description.
     #[serde(rename = "CFG_LENS")]
     pub cfgLens: Vec<CfgLens>,
 
-    /// No description.
     #[serde(rename = "CFG_LENSRL")]
     pub cfgLensrl: Vec<CfgLensrl>,
 
-    /// No description.
     #[serde(rename = "CFG_RCLASS")]
     pub cfgRclass: Vec<CfgRclass>,
 
-    /// No description.
     #[serde(rename = "CFG_RTYPE")]
     pub cfgRtype: Vec<CfgRtype>,
 
-    /// No description.
     #[serde(rename = "CFG_SFCALL")]
     pub cfgSfcall: Vec<CfgSfcall>,
 
-    /// No description.
     #[serde(rename = "CFG_SFUNC")]
     pub cfgSfunc: Vec<CfgSfunc>,
 
-    /// No description.
     #[serde(rename = "CONFIG_BASE_VERSION")]
     pub configBaseVersion: ConfigBaseVersion,
 
-    /// No description.
     #[serde(rename = "SYS_OOM")]
     pub sysOom: Vec<SysOom>,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct How {
-    /// No description.
     #[serde(rename = "HOW_RESULTS")]
     pub howResults: HowResults,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct HowResults {
-    /// No description.
     #[serde(rename = "FINAL_STATE")]
     pub finalState: FinalState,
 
-    /// No description.
     #[serde(rename = "RESOLUTION_STEPS")]
     pub resolutionSteps: ResolutionSteps,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Interesting {
-    /// No description.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct InterestingEntities {
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<InterestingEntity>,
 
-    /// No description.
     #[serde(rename = "NOTICES")]
     pub notices: Notices,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct InterestingEntitySampleRecords {
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// No description.
     #[serde(rename = "FLAGS")]
     pub flags: Vec<String>,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct InterestingEntity {
-    /// No description.
     #[serde(rename = "DEGREES")]
     pub degrees: i32,
 
-    /// No description.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
-    /// No description.
     #[serde(rename = "FLAGS")]
     pub flags: Vec<String>,
 
-    /// No description.
     #[serde(rename = "SAMPLE_RECORDS")]
     pub sampleRecords: Vec<InterestingEntitySampleRecords>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JsonDataAcctNum {
-    /// No description.
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: String,
 
-    /// No description.
     #[serde(rename = "ACCOUNT_NUMBER")]
     pub accountNumber: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JsonDataSsn {
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: String,
 
-    /// No description.
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JsonDataSsnLast4 {
-    /// No description.
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct JsonData {
-    /// No description.
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: String,
 
-    /// No description.
     #[serde(rename = "ACCOUNT_NUMBER")]
     pub accountNumber: String,
 
-    /// No description.
     #[serde(rename = "ACCT_NUM")]
     pub acctNum: Vec<JsonDataAcctNum>,
 
-    /// No description.
     #[serde(rename = "ADDRESS")]
     pub address: String,
 
-    /// No description.
     #[serde(rename = "ADDRESS_LIST")]
     pub addressList: Addresses,
 
-    /// No description.
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: String,
 
-    /// No description.
     #[serde(rename = "ADDR_KEY")]
     pub addrKey: String,
 
-    /// No description.
     #[serde(rename = "CELL_PHONE_NUMBER")]
     pub cellPhoneNumber: String,
 
-    /// No description.
     #[serde(rename = "CITIZENSHIP")]
     pub citizenship: String,
 
-    /// No description.
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: String,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// No description.
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: String,
 
-    /// No description.
     #[serde(rename = "DATE_OF_DEATH")]
     pub dateOfDeath: String,
 
-    /// No description.
     #[serde(rename = "DOB")]
     pub dob: String,
 
-    /// No description.
     #[serde(rename = "DOD")]
     pub dod: String,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: String,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: String,
 
-    /// No description.
     #[serde(rename = "DRLIC")]
     pub drlic: String,
 
-    /// No description.
     #[serde(rename = "DSRC_ACTION")]
     pub dsrcAction: String,
 
-    /// No description.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// No description.
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: String,
 
-    /// No description.
     #[serde(rename = "EMAIL")]
     pub email: String,
 
-    /// No description.
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: String,
 
-    /// No description.
     #[serde(rename = "EMAIL_KEY")]
     pub emailKey: String,
 
-    /// No description.
     #[serde(rename = "EMPLOYER_NAME")]
     pub employerName: String,
 
-    /// No description.
     #[serde(rename = "ENTITY_TYPE")]
     pub entityType: String,
 
-    /// No description.
     #[serde(rename = "ENT_SRC_DESC")]
     pub entSrcDesc: String,
 
-    /// No description.
     #[serde(rename = "ENT_SRC_KEY")]
     pub entSrcKey: String,
 
-    /// No description.
     #[serde(rename = "ETYPE_CODE")]
     pub etypeCode: String,
 
-    /// No description.
     #[serde(rename = "FACEBOOK")]
     pub facebook: String,
 
-    /// No description.
     #[serde(rename = "GENDER")]
     pub gender: String,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
     pub groupAssnIdNumber: String,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_TYPE")]
     pub groupAssnIdType: String,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
     pub groupAssociationOrgName: String,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
     pub groupAssociationType: String,
 
-    /// No description.
     #[serde(rename = "ID_KEY")]
     pub idKey: String,
 
-    /// No description.
     #[serde(rename = "INSTAGRAM")]
     pub instagram: String,
 
-    /// No description.
     #[serde(rename = "LEI_NUMBER")]
     pub leiNumber: String,
 
-    /// No description.
     #[serde(rename = "LINKEDIN")]
     pub linkedin: String,
 
-    /// No description.
     #[serde(rename = "LOAD_ID")]
     pub loadId: String,
 
-    /// No description.
     #[serde(rename = "LOGIN_ID")]
     pub loginId: String,
 
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: Names,
 
-    /// No description.
     #[serde(rename = "NAME_FULL")]
     pub nameFull: String,
 
-    /// No description.
     #[serde(rename = "NAME_KEY")]
     pub nameKey: String,
 
-    /// No description.
     #[serde(rename = "NAME_LIST")]
     pub nameList: Names,
 
-    /// No description.
     #[serde(rename = "NATIONALITY")]
     pub nationality: String,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID")]
     pub nationalId: String,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: String,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_NUMBER")]
     pub nationalIdNumber: String,
 
-    /// No description.
     #[serde(rename = "NIN_COUNTRY")]
     pub ninCountry: String,
 
-    /// No description.
     #[serde(rename = "NIN_NUMBER")]
     pub ninNumber: String,
 
-    /// No description.
     #[serde(rename = "NPI_NUMBER")]
     pub npiNumber: String,
 
-    /// No description.
     #[serde(rename = "OBS_SRC_KEY")]
     pub obsSrcKey: String,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_COUNTRY")]
     pub otherIdCountry: String,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_NUMBER")]
     pub otherIdNumber: String,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_TYPE")]
     pub otherIdType: String,
 
-    /// No description.
     #[serde(rename = "PASSPORT")]
     pub passport: String,
 
-    /// No description.
     #[serde(rename = "PASSPORTS")]
     pub passports: Passports,
 
-    /// No description.
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: String,
 
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: String,
 
-    /// No description.
     #[serde(rename = "PHONE")]
     pub phone: String,
 
-    /// No description.
     #[serde(rename = "PHONES")]
     pub phones: Phones,
 
-    /// No description.
     #[serde(rename = "PHONE_KEY")]
     pub phoneKey: String,
 
-    /// No description.
     #[serde(rename = "PLACE_OF_BIRTH")]
     pub placeOfBirth: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_FIRST")]
     pub primaryNameFirst: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_LAST")]
     pub primaryNameLast: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_MIDDLE")]
     pub primaryNameMiddle: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_ORG")]
     pub primaryNameOrg: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_PREFIX")]
     pub primaryNamePrefix: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_SUFFIX")]
     pub primaryNameSuffix: String,
 
-    /// No description.
     #[serde(rename = "PRIMARY_PHONE_NUMBER")]
     pub primaryPhoneNumber: String,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// No description.
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: String,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_COUNTRY")]
     pub registrationCountry: String,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: String,
 
-    /// No description.
     #[serde(rename = "RELATIONSHIPS")]
     pub relationships: Relationships,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: String,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_DOMAIN")]
     pub relAnchorDomain: String,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: String,
 
-    /// No description.
     #[serde(rename = "REL_LINK")]
     pub relLink: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_DOMAIN")]
     pub relPointerDomain: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: String,
 
-    /// No description.
     #[serde(rename = "SIGNAL")]
     pub signal: String,
 
-    /// No description.
     #[serde(rename = "SKYPE")]
     pub skype: String,
 
-    /// No description.
     #[serde(rename = "SOCIAL_HANDLE")]
     pub socialHandle: String,
 
-    /// No description.
     #[serde(rename = "SOCIAL_NETWORK")]
     pub socialNetwork: String,
 
-    /// No description.
     #[serde(rename = "SOURCE_ID")]
     pub sourceId: String,
 
-    /// No description.
     #[serde(rename = "SSN")]
     pub ssn: Vec<JsonDataSsn>,
 
-    /// No description.
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: Vec<JsonDataSsnLast4>,
 
-    /// No description.
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: String,
 
-    /// No description.
     #[serde(rename = "TANGO")]
     pub tango: String,
 
-    /// No description.
     #[serde(rename = "TAX_ID_COUNTRY")]
     pub taxIdCountry: String,
 
-    /// No description.
     #[serde(rename = "TAX_ID_NUMBER")]
     pub taxIdNumber: String,
 
-    /// No description.
     #[serde(rename = "TAX_ID_TYPE")]
     pub taxIdType: String,
 
-    /// No description.
     #[serde(rename = "TELEGRAM")]
     pub telegram: String,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_NUMBER")]
     pub trustedIdNumber: String,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_TYPE")]
     pub trustedIdType: String,
 
-    /// No description.
     #[serde(rename = "TWITTER")]
     pub twitter: String,
 
-    /// No description.
     #[serde(rename = "VIBER")]
     pub viber: String,
 
-    /// No description.
     #[serde(rename = "WEBSITE_ADDRESS")]
     pub websiteAddress: String,
 
-    /// No description.
     #[serde(rename = "WECHAT")]
     pub wechat: String,
 
-    /// No description.
     #[serde(rename = "WHATSAPP")]
     pub whatsapp: String,
 
-    /// No description.
     #[serde(rename = "WORK_PHONE_NUMBER")]
     pub workPhoneNumber: String,
 
-    /// No description.
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: String,
 
-    /// No description.
     #[serde(rename = "name")]
     pub name0: Names,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoDisclosedRelationsRelAnchor {
-    /// No description.
     #[serde(rename = "DOMAIN")]
     pub domain: String,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FEAT_ID")]
     pub featId: i32,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_DESC")]
     pub linkedFeatDesc: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_ID")]
     pub linkedFeatId: i32,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_TYPE")]
     pub linkedFeatType: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_USAGE_TYPE")]
     pub linkedFeatUsageType: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoDisclosedRelationsRelLink {
-    /// No description.
     #[serde(rename = "DOMAIN")]
     pub domain: String,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FEAT_ID")]
     pub featId: i32,
 
-    /// No description.
     #[serde(rename = "FEAT_USAGE_TYPE")]
     pub featUsageType: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_DESC")]
     pub linkedFeatDesc: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_ID")]
     pub linkedFeatId: i32,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_TYPE")]
     pub linkedFeatType: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_USAGE_TYPE")]
     pub linkedFeatUsageType: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoDisclosedRelationsRelPointer {
-    /// No description.
     #[serde(rename = "DOMAIN")]
     pub domain: String,
 
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FEAT_ID")]
     pub featId: i32,
 
-    /// No description.
     #[serde(rename = "FEAT_USAGE_TYPE")]
     pub featUsageType: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_DESC")]
     pub linkedFeatDesc: String,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_ID")]
     pub linkedFeatId: i32,
 
-    /// No description.
     #[serde(rename = "LINKED_FEAT_TYPE")]
     pub linkedFeatType: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoDisclosedRelations {
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: Vec<MatchInfoDisclosedRelationsRelAnchor>,
 
-    /// No description.
     #[serde(rename = "REL_LINK")]
     pub relLink: Vec<MatchInfoDisclosedRelationsRelLink>,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: Vec<MatchInfoDisclosedRelationsRelPointer>,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfo {
-    /// No description.
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: MatchInfoCandidateKeys,
 
-    /// No description.
     #[serde(rename = "DISCLOSED_RELATIONS")]
     pub disclosedRelations: MatchInfoDisclosedRelations,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "FEATURE_SCORES")]
     pub featureScores: FeatureScores,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    /// No description.
     #[serde(rename = "WHY_ERRULE_CODE")]
     pub whyErruleCode: String,
 
-    /// No description.
     #[serde(rename = "WHY_KEY")]
     pub whyKey: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoCandidateKeys {
-    /// No description.
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCOUNT_NUMBER")]
     pub accountNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCT_NUM")]
     pub acctNum: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS")]
     pub address: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS_LIST")]
     pub addressList: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_KEY")]
     pub addrKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "CELL_PHONE_NUMBER")]
     pub cellPhoneNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "CITIZENSHIP")]
     pub citizenship: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_DEATH")]
     pub dateOfDeath: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DOB")]
     pub dob: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DOD")]
     pub dod: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DRLIC")]
     pub drlic: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL")]
     pub email: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_KEY")]
     pub emailKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "EMPLOYER_NAME")]
     pub employerName: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ENTITY_TYPE")]
     pub entityType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "FACEBOOK")]
     pub facebook: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "GENDER")]
     pub gender: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
     pub groupAssnIdNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_TYPE")]
     pub groupAssnIdType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
     pub groupAssociationOrgName: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
     pub groupAssociationType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ID_KEY")]
     pub idKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "INSTAGRAM")]
     pub instagram: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "LEI_NUMBER")]
     pub leiNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "LINKEDIN")]
     pub linkedin: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "LOAD_ID")]
     pub loadId: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "LOGIN_ID")]
     pub loginId: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_FULL")]
     pub nameFull: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_KEY")]
     pub nameKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_LIST")]
     pub nameList: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONALITY")]
     pub nationality: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID")]
     pub nationalId: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_NUMBER")]
     pub nationalIdNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_COUNTRY")]
     pub ninCountry: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_NUMBER")]
     pub ninNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "NPI_NUMBER")]
     pub npiNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_COUNTRY")]
     pub otherIdCountry: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_NUMBER")]
     pub otherIdNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_TYPE")]
     pub otherIdType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT")]
     pub passport: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORTS")]
     pub passports: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE")]
     pub phone: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONES")]
     pub phones: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE_KEY")]
     pub phoneKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PLACE_OF_BIRTH")]
     pub placeOfBirth: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_FIRST")]
     pub primaryNameFirst: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_LAST")]
     pub primaryNameLast: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_MIDDLE")]
     pub primaryNameMiddle: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_ORG")]
     pub primaryNameOrg: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_PREFIX")]
     pub primaryNamePrefix: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_SUFFIX")]
     pub primaryNameSuffix: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_PHONE_NUMBER")]
     pub primaryPhoneNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_COUNTRY")]
     pub registrationCountry: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_DOMAIN")]
     pub relAnchorDomain: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_LINK")]
     pub relLink: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_DOMAIN")]
     pub relPointerDomain: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SIGNAL")]
     pub signal: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SKYPE")]
     pub skype: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_HANDLE")]
     pub socialHandle: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_NETWORK")]
     pub socialNetwork: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SOURCE_ID")]
     pub sourceId: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN")]
     pub ssn: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TANGO")]
     pub tango: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_COUNTRY")]
     pub taxIdCountry: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_NUMBER")]
     pub taxIdNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_TYPE")]
     pub taxIdType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TELEGRAM")]
     pub telegram: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_NUMBER")]
     pub trustedIdNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_TYPE")]
     pub trustedIdType: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "TWITTER")]
     pub twitter: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "VIBER")]
     pub viber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "WEBSITE_ADDRESS")]
     pub websiteAddress: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "WECHAT")]
     pub wechat: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "WHATSAPP")]
     pub whatsapp: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "WORK_PHONE_NUMBER")]
     pub workPhoneNumber: MatchInfosForAttribute,
 
-    /// No description.
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: MatchInfosForAttribute,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoForAttribute {
-    /// No description.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
-    /// No description.
     #[serde(rename = "FEAT_ID")]
     pub featId: i32,
 }
 
-/// No description.
 pub type MatchInfosForAttribute = Vec<MatchInfoForAttribute>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MatchScoreForAttribute {
-    /// No description.
     #[serde(rename = "CANDIDATE_FEAT")]
     pub candidateFeat: String,
 
-    /// No description.
     #[serde(rename = "FULL_SCORE")]
     pub fullScore: i32,
 
-    /// No description.
     #[serde(rename = "GENERATION_MATCH")]
     pub generationMatch: i32,
 
-    /// No description.
     #[serde(rename = "GNR_FN")]
     pub gnrFn: i32,
 
-    /// No description.
     #[serde(rename = "GNR_GN")]
     pub gnrGn: i32,
 
-    /// No description.
     #[serde(rename = "GNR_ON")]
     pub gnrOn: i32,
 
-    /// No description.
     #[serde(rename = "GNR_SN")]
     pub gnrSn: i32,
 
-    /// No description.
     #[serde(rename = "INBOUND_FEAT")]
     pub inboundFeat: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MatchScores {
-    /// No description.
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCOUNT_NUMBER")]
     pub accountNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ACCT_NUM")]
     pub acctNum: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS")]
     pub address: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDRESS_LIST")]
     pub addressList: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ADDR_KEY")]
     pub addrKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "CELL_PHONE_NUMBER")]
     pub cellPhoneNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "CITIZENSHIP")]
     pub citizenship: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DATE_OF_DEATH")]
     pub dateOfDeath: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DOB")]
     pub dob: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DOD")]
     pub dod: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DRLIC")]
     pub drlic: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL")]
     pub email: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMAIL_KEY")]
     pub emailKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "EMPLOYER_NAME")]
     pub employerName: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ENTITY_TYPE")]
     pub entityType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "FACEBOOK")]
     pub facebook: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GENDER")]
     pub gender: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
     pub groupAssnIdNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSN_ID_TYPE")]
     pub groupAssnIdType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
     pub groupAssociationOrgName: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
     pub groupAssociationType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ID_KEY")]
     pub idKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "INSTAGRAM")]
     pub instagram: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LEI_NUMBER")]
     pub leiNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LINKEDIN")]
     pub linkedin: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LOAD_ID")]
     pub loadId: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "LOGIN_ID")]
     pub loginId: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_FULL")]
     pub nameFull: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_KEY")]
     pub nameKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NAME_LIST")]
     pub nameList: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONALITY")]
     pub nationality: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID")]
     pub nationalId: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NATIONAL_ID_NUMBER")]
     pub nationalIdNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_COUNTRY")]
     pub ninCountry: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NIN_NUMBER")]
     pub ninNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "NPI_NUMBER")]
     pub npiNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_COUNTRY")]
     pub otherIdCountry: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_NUMBER")]
     pub otherIdNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "OTHER_ID_TYPE")]
     pub otherIdType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT")]
     pub passport: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORTS")]
     pub passports: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE")]
     pub phone: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONES")]
     pub phones: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PHONE_KEY")]
     pub phoneKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PLACE_OF_BIRTH")]
     pub placeOfBirth: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_FIRST")]
     pub primaryNameFirst: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_LAST")]
     pub primaryNameLast: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_MIDDLE")]
     pub primaryNameMiddle: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_ORG")]
     pub primaryNameOrg: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_PREFIX")]
     pub primaryNamePrefix: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_NAME_SUFFIX")]
     pub primaryNameSuffix: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "PRIMARY_PHONE_NUMBER")]
     pub primaryPhoneNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_COUNTRY")]
     pub registrationCountry: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_DOMAIN")]
     pub relAnchorDomain: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_LINK")]
     pub relLink: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER")]
     pub relPointer: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_DOMAIN")]
     pub relPointerDomain: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SIGNAL")]
     pub signal: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SKYPE")]
     pub skype: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_HANDLE")]
     pub socialHandle: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SOCIAL_NETWORK")]
     pub socialNetwork: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SOURCE_ID")]
     pub sourceId: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN")]
     pub ssn: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TANGO")]
     pub tango: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_COUNTRY")]
     pub taxIdCountry: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_NUMBER")]
     pub taxIdNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TAX_ID_TYPE")]
     pub taxIdType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TELEGRAM")]
     pub telegram: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_NUMBER")]
     pub trustedIdNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TRUSTED_ID_TYPE")]
     pub trustedIdType: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "TWITTER")]
     pub twitter: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "VIBER")]
     pub viber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WEBSITE_ADDRESS")]
     pub websiteAddress: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WECHAT")]
     pub wechat: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WHATSAPP")]
     pub whatsapp: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "WORK_PHONE_NUMBER")]
     pub workPhoneNumber: MatchScoresForAttribute,
 
-    /// No description.
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: MatchScoresForAttribute,
 }
 
-/// No description.
 pub type MatchScoresForAttribute = Vec<MatchScoreForAttribute>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct MemberRecord {
-    /// No description.
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
 
-    /// No description.
     #[serde(rename = "RECORDS")]
     pub records: Records,
 }
 
-/// No description.
 pub type MemberRecords = Vec<MemberRecord>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Name {
-    /// No description.
     #[serde(rename = "NAME_FIRST")]
     pub nameFirst: String,
 
-    /// No description.
     #[serde(rename = "NAME_FULL")]
     pub nameFull: String,
 
-    /// No description.
     #[serde(rename = "NAME_LAST")]
     pub nameLast: String,
 
-    /// No description.
     #[serde(rename = "NAME_MIDDLE")]
     pub nameMiddle: String,
 
-    /// No description.
     #[serde(rename = "NAME_ORG")]
     pub nameOrg: String,
 
-    /// No description.
     #[serde(rename = "NAME_PREFIX")]
     pub namePrefix: String,
 
-    /// No description.
     #[serde(rename = "NAME_SUFFIX")]
     pub nameSuffix: String,
 
-    /// No description.
     #[serde(rename = "NAME_TYPE")]
     pub nameType: String,
 }
 
-/// No description.
 pub type Names = Vec<Name>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Network {
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Entities,
 
-    /// No description.
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: EntityPaths,
 
-    /// No description.
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Notice {
-    /// No description.
     #[serde(rename = "CODE")]
     pub code: String,
 
-    /// No description.
     #[serde(rename = "DESCRIPTION")]
     pub description: String,
 }
 
-/// No description.
 pub type Notices = Vec<Notice>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Passport {
-    /// No description.
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: String,
 
-    /// No description.
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: String,
 }
 
-/// No description.
 pub type Passports = Vec<Passport>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Path {
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Entities,
 
-    /// No description.
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: EntityPaths,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Phone {
-    /// No description.
     #[serde(rename = "PHONE_FROM_DATE")]
     pub phoneFromDate: String,
 
-    /// No description.
     #[serde(rename = "PHONE_NUMBER")]
     pub phoneNumber: String,
 
-    /// No description.
     #[serde(rename = "PHONE_THRU_DATE")]
     pub phoneThruDate: String,
 
-    /// No description.
     #[serde(rename = "PHONE_TYPE")]
     pub phoneType: String,
 }
 
-/// No description.
 pub type Phones = Vec<Phone>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ProcessUmfProc {
-    /// No description.
     #[serde(rename = "NAME")]
     pub name: String,
 
-    /// No description.
     #[serde(rename = "RESULT")]
     pub result: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Process {
-    /// No description.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: AffectedEntities,
 
-    /// No description.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 
-    /// No description.
     #[serde(rename = "PROCESS_RESULT")]
     pub processResult: ProcessResult,
 
-    /// No description.
     #[serde(rename = "UMF_PROC")]
     pub umfProc: ProcessUmfProc,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ProcessResultResolvedEntities {
-    /// No description.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
-    /// No description.
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "FEATURES")]
     pub features: Features,
 
-    /// No description.
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    /// No description.
     #[serde(rename = "MATCH_SCORES")]
     pub matchScores: MatchScores,
 
-    /// No description.
     #[serde(rename = "RECORDS")]
     pub records: Records,
 
-    /// No description.
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: RecordSummary,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ProcessResult {
-    /// No description.
     #[serde(rename = "RESOLVED_ENTITIES")]
     pub resolvedEntities: Vec<ProcessResultResolvedEntities>,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ProductLicenseResponse {
-    /// No description.
     #[serde(rename = "billing")]
     pub billing: String,
 
-    /// No description.
     #[serde(rename = "contract")]
     pub contract: String,
 
-    /// No description.
     #[serde(rename = "customer")]
     pub customer: String,
 
-    /// No description.
     #[serde(rename = "expireDate")]
     pub expireDate: String,
 
-    /// No description.
     #[serde(rename = "issueDate")]
     pub issueDate: String,
 
-    /// No description.
     #[serde(rename = "licenseLevel")]
     pub licenseLevel: String,
 
-    /// No description.
     #[serde(rename = "licenseType")]
     pub licenseType: String,
 
-    /// No description.
     #[serde(rename = "recordLimit")]
     pub recordLimit: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ProductVersionResponse {
-    /// No description.
     #[serde(rename = "BUILD_DATE")]
     pub buildDate: String,
 
-    /// No description.
     #[serde(rename = "BUILD_NUMBER")]
     pub buildNumber: String,
 
-    /// No description.
     #[serde(rename = "BUILD_VERSION")]
     pub buildVersion: String,
 
-    /// No description.
     #[serde(rename = "COMPATIBILITY_VERSION")]
     pub compatibilityVersion: CompatibilityVersion,
 
-    /// No description.
     #[serde(rename = "PRODUCT_NAME")]
     pub productName: String,
 
-    /// No description.
     #[serde(rename = "SCHEMA_VERSION")]
     pub schemaVersion: SchemaVersion,
 
-    /// No description.
     #[serde(rename = "VERSION")]
     pub version: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RecordFeatures {
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
-    /// No description.
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Record {
-    /// No description.
     #[serde(rename = "ADDRESS_DATA")]
     pub addressData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "ATTRIBUTE_DATA")]
     pub attributeData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// No description.
     #[serde(rename = "ENTITY_DATA")]
     pub entityData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "ENTITY_DESC")]
     pub entityDesc: String,
 
-    /// No description.
     #[serde(rename = "ENTITY_KEY")]
     pub entityKey: String,
 
-    /// No description.
     #[serde(rename = "ENTITY_TYPE")]
     pub entityType: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "FEATURES")]
     pub features: Vec<RecordFeatures>,
 
-    /// No description.
     #[serde(rename = "IDENTIFIER_DATA")]
     pub identifierData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
 
-    /// No description.
     #[serde(rename = "JSON_DATA")]
     pub jsonData: JsonData,
 
-    /// No description.
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    /// No description.
     #[serde(rename = "NAME_DATA")]
     pub nameData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "OTHER_DATA")]
     pub otherData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "PHONE_DATA")]
     pub phoneData: Vec<String>,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// No description.
     #[serde(rename = "RELATIONSHIP_DATA")]
     pub relationshipData: Vec<String>,
 }
 
-/// No description.
 pub type RecordSummary = Vec<RecordSummaryElement>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct RecordSummaryElement {
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// No description.
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: String,
 
-    /// No description.
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
 
-    /// No description.
     #[serde(rename = "RECORD_COUNT")]
     pub recordCount: i32,
 }
 
-/// No description.
 pub type Records = Vec<Record>;
 
-/// No description.
 pub type RelatedEntities = Vec<RelatedEntity>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct RelatedEntity {
-    /// No description.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
-    /// No description.
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "IS_AMBIGUOUS")]
     pub isAmbiguous: i32,
 
-    /// No description.
     #[serde(rename = "IS_DISCLOSED")]
     pub isDisclosed: i32,
 
-    /// No description.
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    /// No description.
     #[serde(rename = "RECORDS")]
     pub records: Records,
 
-    /// No description.
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: RecordSummary,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Relationship {
-    /// No description.
     #[serde(rename = "RELATIONSHIP_KEY")]
     pub relationshipKey: String,
 
-    /// No description.
     #[serde(rename = "RELATIONSHIP_TYPE")]
     pub relationshipType: String,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_DOMAIN")]
     pub relAnchorDomain: String,
 
-    /// No description.
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_DOMAIN")]
     pub relPointerDomain: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: String,
 
-    /// No description.
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: String,
 }
 
-/// No description.
 pub type Relationships = Vec<Relationship>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ResolutionStep {
-    /// No description.
     #[serde(rename = "INBOUND_VIRTUAL_ENTITY_ID")]
     pub inboundVirtualEntityId: String,
 
-    /// No description.
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfo,
 
-    /// No description.
     #[serde(rename = "RESULT_VIRTUAL_ENTITY_ID")]
     pub resultVirtualEntityId: String,
 
-    /// No description.
     #[serde(rename = "STEP")]
     pub step: i32,
 
-    /// No description.
     #[serde(rename = "VIRTUAL_ENTITY_1")]
     pub virtualEntity: VirtualEntitySynopsis,
 
-    /// No description.
     #[serde(rename = "VIRTUAL_ENTITY_2")]
     pub virtualEntity0: VirtualEntitySynopsis,
 }
 
-/// No description.
 pub type ResolutionSteps = Vec<ResolutionStep>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct ResolvedEntity {
-    /// No description.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
-    /// No description.
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// No description.
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// No description.
     #[serde(rename = "FEATURES")]
     pub features: Features,
 
-    /// No description.
     #[serde(rename = "IS_AMBIGUOUS")]
     pub isAmbiguous: i32,
 
-    /// No description.
     #[serde(rename = "IS_DISCLOSED")]
     pub isDisclosed: i32,
 
-    /// No description.
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
 
-    /// No description.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    /// No description.
     #[serde(rename = "RECORDS")]
     pub records: Records,
 
-    /// No description.
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: RecordSummary,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct SysOom {
-    /// No description.
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
 
-    /// No description.
     #[serde(rename = "LENS_ID")]
     pub lensId: i32,
 
-    /// No description.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
-    /// No description.
     #[serde(rename = "LIB_FELEM_ID")]
     pub libFelemId: i32,
 
-    /// No description.
     #[serde(rename = "NEXT_THRESH")]
     pub nextThresh: i32,
 
-    /// No description.
     #[serde(rename = "OOM_LEVEL")]
     pub oomLevel: String,
 
-    /// No description.
     #[serde(rename = "OOM_TYPE")]
     pub oomType: String,
 
-    /// No description.
     #[serde(rename = "THRESH1_CNT")]
     pub thresh1Cnt: i32,
 
-    /// No description.
     #[serde(rename = "THRESH1_OOM")]
     pub thresh1Oom: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct SchemaVersion {
-    /// No description.
     #[serde(rename = "ENGINE_SCHEMA_VERSION")]
     pub engineSchemaVersion: String,
 
-    /// No description.
     #[serde(rename = "MAXIMUM_REQUIRED_SCHEMA_VERSION")]
     pub maximumRequiredSchemaVersion: String,
 
-    /// No description.
     #[serde(rename = "MINIMUM_REQUIRED_SCHEMA_VERSION")]
     pub minimumRequiredSchemaVersion: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct SearchResolvedEntitiesEntity {
-    /// No description.
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SearchResolvedEntities {
-    /// No description.
     #[serde(rename = "ENTITY")]
     pub entity: SearchResolvedEntitiesEntity,
 
-    /// No description.
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfo,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SearchSearchStatisticsCandidateKeysFeatureTypes {
-    /// No description.
     #[serde(rename = "FOUND")]
     pub found: i32,
 
-    /// No description.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
-    /// No description.
     #[serde(rename = "GENERIC")]
     pub generic: i32,
 
-    /// No description.
     #[serde(rename = "NOT_FOUND")]
     pub notFound: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct SearchSearchStatisticsCandidateKeysSummary {
-    /// No description.
     #[serde(rename = "FOUND")]
     pub found: i32,
 
-    /// No description.
     #[serde(rename = "GENERIC")]
     pub generic: i32,
 
-    /// No description.
     #[serde(rename = "NOT_FOUND")]
     pub notFound: i32,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct SearchSearchStatisticsCandidateKeys {
-    /// No description.
     #[serde(rename = "FEATURE_TYPES")]
     pub featureTypes: Vec<SearchSearchStatisticsCandidateKeysFeatureTypes>,
 
-    /// No description.
     #[serde(rename = "SUMMARY")]
     pub summary: SearchSearchStatisticsCandidateKeysSummary,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SearchSearchStatistics {
-    /// No description.
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: SearchSearchStatisticsCandidateKeys,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct Search {
-    /// No description.
     #[serde(rename = "RESOLVED_ENTITIES")]
     pub resolvedEntities: Vec<SearchResolvedEntities>,
 
-    /// No description.
     #[serde(rename = "SEARCH_STATISTICS")]
     pub searchStatistics: Vec<SearchSearchStatistics>,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct VirtualEntity {
-    /// No description.
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct VirtualEntitySynopsis {
-    /// No description.
     #[serde(rename = "MEMBER_RECORDS")]
     pub memberRecords: MemberRecords,
 
-    /// No description.
     #[serde(rename = "VIRTUAL_ENTITY_ID")]
     pub virtualEntityId: String,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct WhyEntities {
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Entities,
 
-    /// No description.
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct WhyEntity {
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Entities,
 
-    /// No description.
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct WhyRecords {
-    /// No description.
     #[serde(rename = "ENTITIES")]
     pub entities: Entities,
 
-    /// No description.
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,
 }
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct WhyResult {
-    /// No description.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
-    /// No description.
     #[serde(rename = "ENTITY_ID_2")]
     pub entityId0: i32,
 
-    /// No description.
     #[serde(rename = "FOCUS_RECORDS")]
     pub focusRecords: FocusRecords,
 
-    /// No description.
     #[serde(rename = "FOCUS_RECORDS_2")]
     pub focusRecords0: FocusRecords,
 
-    /// No description.
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
 
-    /// No description.
     #[serde(rename = "INTERNAL_ID_2")]
     pub internalId0: i32,
 
-    /// No description.
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfo,
 }
 
-/// No description.
 pub type WhyResults = Vec<WhyResult>;
 
-/// No description.
 #[derive(Serialize, Deserialize)]
 pub struct WithInfo {
-    /// No description.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: AffectedEntities,
 
-    /// No description.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// No description.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 
-    /// No description.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 }

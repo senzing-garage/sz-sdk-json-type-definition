@@ -24,7 +24,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Getter for found.<p>
-     * No description.
      */
     public Integer getFound() {
         return found;
@@ -32,7 +31,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Setter for found.<p>
-     * No description.
      */
     public void setFound(Integer found) {
         this.found = found;
@@ -40,7 +38,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -48,7 +45,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -56,7 +52,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Getter for generic.<p>
-     * No description.
      */
     public Integer getGeneric() {
         return generic;
@@ -64,7 +59,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Setter for generic.<p>
-     * No description.
      */
     public void setGeneric(Integer generic) {
         this.generic = generic;
@@ -72,7 +66,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Getter for notFound.<p>
-     * No description.
      */
     public Integer getNotFound() {
         return notFound;
@@ -80,7 +73,6 @@ public class SearchSearchStatisticsCandidateKeysFeatureTypes {
 
     /**
      * Setter for notFound.<p>
-     * No description.
      */
     public void setNotFound(Integer notFound) {
         this.notFound = notFound;

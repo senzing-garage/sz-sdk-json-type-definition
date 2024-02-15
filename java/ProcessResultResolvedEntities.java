@@ -45,7 +45,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for entityId.<p>
-     * No description.
      */
     public Integer getEntityId() {
         return entityId;
@@ -53,7 +52,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for entityId.<p>
-     * No description.
      */
     public void setEntityId(Integer entityId) {
         this.entityId = entityId;
@@ -61,7 +59,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for entityName.<p>
-     * No description.
      */
     public String getEntityName() {
         return entityName;
@@ -69,7 +66,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for entityName.<p>
-     * No description.
      */
     public void setEntityName(String entityName) {
         this.entityName = entityName;
@@ -77,7 +73,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -85,7 +80,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -93,7 +87,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for features.<p>
-     * No description.
      */
     public Features getFeatures() {
         return features;
@@ -101,7 +94,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for features.<p>
-     * No description.
      */
     public void setFeatures(Features features) {
         this.features = features;
@@ -109,7 +101,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for lastSeenDt.<p>
-     * No description.
      */
     public String getLastSeenDt() {
         return lastSeenDt;
@@ -117,7 +108,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for lastSeenDt.<p>
-     * No description.
      */
     public void setLastSeenDt(String lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
@@ -125,7 +115,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -133,7 +122,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -141,7 +129,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for matchLevel.<p>
-     * No description.
      */
     public Integer getMatchLevel() {
         return matchLevel;
@@ -149,7 +136,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for matchLevel.<p>
-     * No description.
      */
     public void setMatchLevel(Integer matchLevel) {
         this.matchLevel = matchLevel;
@@ -157,7 +143,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for matchLevelCode.<p>
-     * No description.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -165,7 +150,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for matchLevelCode.<p>
-     * No description.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -173,7 +157,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for matchScores.<p>
-     * No description.
      */
     public MatchScores getMatchScores() {
         return matchScores;
@@ -181,7 +164,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for matchScores.<p>
-     * No description.
      */
     public void setMatchScores(MatchScores matchScores) {
         this.matchScores = matchScores;
@@ -189,7 +171,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for records.<p>
-     * No description.
      */
     public Records getRecords() {
         return records;
@@ -197,7 +178,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for records.<p>
-     * No description.
      */
     public void setRecords(Records records) {
         this.records = records;
@@ -205,7 +185,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Getter for recordSummary.<p>
-     * No description.
      */
     public RecordSummary getRecordSummary() {
         return recordSummary;
@@ -213,7 +192,6 @@ public class ProcessResultResolvedEntities {
 
     /**
      * Setter for recordSummary.<p>
-     * No description.
      */
     public void setRecordSummary(RecordSummary recordSummary) {
         this.recordSummary = recordSummary;

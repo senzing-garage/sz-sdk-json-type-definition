@@ -6,9 +6,6 @@ namespace Senzing
 {
     public class DiagnosticGetResolutionStatisticsResponseRawMatchKeys
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
     }

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class WhyEntities {
     @JsonProperty("ENTITIES")
@@ -21,7 +18,6 @@ public class WhyEntities {
 
     /**
      * Getter for entities.<p>
-     * No description.
      */
     public Entities getEntities() {
         return entities;
@@ -29,7 +25,6 @@ public class WhyEntities {
 
     /**
      * Setter for entities.<p>
-     * No description.
      */
     public void setEntities(Entities entities) {
         this.entities = entities;
@@ -37,7 +32,6 @@ public class WhyEntities {
 
     /**
      * Getter for whyResults.<p>
-     * No description.
      */
     public WhyResults getWhyResults() {
         return whyResults;
@@ -45,7 +39,6 @@ public class WhyEntities {
 
     /**
      * Setter for whyResults.<p>
-     * No description.
      */
     public void setWhyResults(WhyResults whyResults) {
         this.whyResults = whyResults;

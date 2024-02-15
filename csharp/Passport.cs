@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class Passport
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT_COUNTRY")]
         public string PassportCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT_NUMBER")]
         public string PassportNumber { get; set; }
     }

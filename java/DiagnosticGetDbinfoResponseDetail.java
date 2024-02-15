@@ -18,7 +18,6 @@ public class DiagnosticGetDbinfoResponseDetail {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public String getName() {
         return name;
@@ -26,7 +25,6 @@ public class DiagnosticGetDbinfoResponseDetail {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(String name) {
         this.name = name;
@@ -34,7 +32,6 @@ public class DiagnosticGetDbinfoResponseDetail {
 
     /**
      * Getter for type.<p>
-     * No description.
      */
     public String getType() {
         return type;
@@ -42,7 +39,6 @@ public class DiagnosticGetDbinfoResponseDetail {
 
     /**
      * Setter for type.<p>
-     * No description.
      */
     public void setType(String type) {
         this.type = type;

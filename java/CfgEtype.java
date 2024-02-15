@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgEtype {
     @JsonProperty("ECLASS_ID")
@@ -27,7 +24,6 @@ public class CfgEtype {
 
     /**
      * Getter for eclassId.<p>
-     * No description.
      */
     public Integer getEclassId() {
         return eclassId;
@@ -35,7 +31,6 @@ public class CfgEtype {
 
     /**
      * Setter for eclassId.<p>
-     * No description.
      */
     public void setEclassId(Integer eclassId) {
         this.eclassId = eclassId;
@@ -43,7 +38,6 @@ public class CfgEtype {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -51,7 +45,6 @@ public class CfgEtype {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -59,7 +52,6 @@ public class CfgEtype {
 
     /**
      * Getter for etypeDesc.<p>
-     * No description.
      */
     public String getEtypeDesc() {
         return etypeDesc;
@@ -67,7 +59,6 @@ public class CfgEtype {
 
     /**
      * Setter for etypeDesc.<p>
-     * No description.
      */
     public void setEtypeDesc(String etypeDesc) {
         this.etypeDesc = etypeDesc;
@@ -75,7 +66,6 @@ public class CfgEtype {
 
     /**
      * Getter for etypeId.<p>
-     * No description.
      */
     public Integer getEtypeId() {
         return etypeId;
@@ -83,7 +73,6 @@ public class CfgEtype {
 
     /**
      * Setter for etypeId.<p>
-     * No description.
      */
     public void setEtypeId(Integer etypeId) {
         this.etypeId = etypeId;

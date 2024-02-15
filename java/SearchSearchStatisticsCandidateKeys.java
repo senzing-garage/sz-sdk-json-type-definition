@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class SearchSearchStatisticsCandidateKeys {
     @JsonProperty("FEATURE_TYPES")
@@ -22,7 +19,6 @@ public class SearchSearchStatisticsCandidateKeys {
 
     /**
      * Getter for featureTypes.<p>
-     * No description.
      */
     public List<SearchSearchStatisticsCandidateKeysFeatureTypes> getFeatureTypes() {
         return featureTypes;
@@ -30,7 +26,6 @@ public class SearchSearchStatisticsCandidateKeys {
 
     /**
      * Setter for featureTypes.<p>
-     * No description.
      */
     public void setFeatureTypes(List<SearchSearchStatisticsCandidateKeysFeatureTypes> featureTypes) {
         this.featureTypes = featureTypes;
@@ -38,7 +33,6 @@ public class SearchSearchStatisticsCandidateKeys {
 
     /**
      * Getter for summary.<p>
-     * No description.
      */
     public SearchSearchStatisticsCandidateKeysSummary getSummary() {
         return summary;
@@ -46,7 +40,6 @@ public class SearchSearchStatisticsCandidateKeys {
 
     /**
      * Setter for summary.<p>
-     * No description.
      */
     public void setSummary(SearchSearchStatisticsCandidateKeysSummary summary) {
         this.summary = summary;

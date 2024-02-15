@@ -4,50 +4,26 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class ProductVersionResponse
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("BUILD_DATE")]
         public string BuildDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("BUILD_NUMBER")]
         public string BuildNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("BUILD_VERSION")]
         public string BuildVersion { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("COMPATIBILITY_VERSION")]
         public CompatibilityVersion CompatibilityVersion { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRODUCT_NAME")]
         public string ProductName { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SCHEMA_VERSION")]
         public SchemaVersion SchemaVersion { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("VERSION")]
         public string Version_ { get; set; }
     }

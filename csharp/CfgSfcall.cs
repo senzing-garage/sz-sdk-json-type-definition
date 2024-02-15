@@ -4,38 +4,20 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgSfcall
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EXEC_ORDER")]
         public int ExecOrder { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FELEM_ID")]
         public int FelemId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SFCALL_ID")]
         public int SfcallId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SFUNC_ID")]
         public int SfuncId { get; set; }
     }

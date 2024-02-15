@@ -6,33 +6,18 @@ namespace Senzing
 {
     public class DiagnosticGetRelationshipDetailsResponse0
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RES_ENT_ID")]
         public int ResEntId { get; set; }
     }

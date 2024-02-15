@@ -5,20 +5,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class DiagnosticGetDbinfoResponse
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("Database Details")]
         public IList<DiagnosticGetDbinfoResponseDetail> DatabaseDetails { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("Hybrid Mode")]
         public bool HybridMode { get; set; }
     }

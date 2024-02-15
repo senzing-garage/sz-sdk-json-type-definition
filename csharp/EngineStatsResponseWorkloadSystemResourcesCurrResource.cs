@@ -7,27 +7,15 @@ namespace Senzing
 {
     public class EngineStatsResponseWorkloadSystemResourcesCurrResource
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("activeThreads")]
         public int ActiveThreads { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("availableMemory")]
         public string AvailableMemory { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("systemLoad")]
         public IList<EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad> SystemLoad { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("workerThreads")]
         public int WorkerThreads { get; set; }
     }

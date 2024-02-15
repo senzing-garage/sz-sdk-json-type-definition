@@ -7,21 +7,12 @@ namespace Senzing
 {
     public class InterestingEntitySampleRecords
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }
     }

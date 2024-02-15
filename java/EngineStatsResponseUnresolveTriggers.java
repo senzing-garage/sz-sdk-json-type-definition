@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EngineStatsResponseUnresolveTriggers {
     @JsonProperty("extensiveResolve")
@@ -21,7 +18,6 @@ public class EngineStatsResponseUnresolveTriggers {
 
     /**
      * Getter for extensiveResolve.<p>
-     * No description.
      */
     public Integer getExtensiveResolve() {
         return extensiveResolve;
@@ -29,7 +25,6 @@ public class EngineStatsResponseUnresolveTriggers {
 
     /**
      * Setter for extensiveResolve.<p>
-     * No description.
      */
     public void setExtensiveResolve(Integer extensiveResolve) {
         this.extensiveResolve = extensiveResolve;
@@ -37,7 +32,6 @@ public class EngineStatsResponseUnresolveTriggers {
 
     /**
      * Getter for normalResolve.<p>
-     * No description.
      */
     public Integer getNormalResolve() {
         return normalResolve;
@@ -45,7 +39,6 @@ public class EngineStatsResponseUnresolveTriggers {
 
     /**
      * Setter for normalResolve.<p>
-     * No description.
      */
     public void setNormalResolve(Integer normalResolve) {
         this.normalResolve = normalResolve;

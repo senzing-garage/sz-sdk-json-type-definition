@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgRclass {
     @JsonProperty("IS_DISCLOSED")
@@ -27,7 +24,6 @@ public class CfgRclass {
 
     /**
      * Getter for isDisclosed.<p>
-     * No description.
      */
     public String getIsDisclosed() {
         return isDisclosed;
@@ -35,7 +31,6 @@ public class CfgRclass {
 
     /**
      * Setter for isDisclosed.<p>
-     * No description.
      */
     public void setIsDisclosed(String isDisclosed) {
         this.isDisclosed = isDisclosed;
@@ -43,7 +38,6 @@ public class CfgRclass {
 
     /**
      * Getter for rclassCode.<p>
-     * No description.
      */
     public String getRclassCode() {
         return rclassCode;
@@ -51,7 +45,6 @@ public class CfgRclass {
 
     /**
      * Setter for rclassCode.<p>
-     * No description.
      */
     public void setRclassCode(String rclassCode) {
         this.rclassCode = rclassCode;
@@ -59,7 +52,6 @@ public class CfgRclass {
 
     /**
      * Getter for rclassDesc.<p>
-     * No description.
      */
     public String getRclassDesc() {
         return rclassDesc;
@@ -67,7 +59,6 @@ public class CfgRclass {
 
     /**
      * Setter for rclassDesc.<p>
-     * No description.
      */
     public void setRclassDesc(String rclassDesc) {
         this.rclassDesc = rclassDesc;
@@ -75,7 +66,6 @@ public class CfgRclass {
 
     /**
      * Getter for rclassId.<p>
-     * No description.
      */
     public Integer getRclassId() {
         return rclassId;
@@ -83,7 +73,6 @@ public class CfgRclass {
 
     /**
      * Setter for rclassId.<p>
-     * No description.
      */
     public void setRclassId(Integer rclassId) {
         this.rclassId = rclassId;

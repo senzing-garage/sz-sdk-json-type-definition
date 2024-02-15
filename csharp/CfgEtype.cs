@@ -4,32 +4,17 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgEtype
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ECLASS_ID")]
         public int EclassId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ETYPE_CODE")]
         public string EtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ETYPE_DESC")]
         public string EtypeDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ETYPE_ID")]
         public int EtypeId { get; set; }
     }

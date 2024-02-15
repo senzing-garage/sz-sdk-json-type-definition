@@ -27,7 +27,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Getter for cpuIdle.<p>
-     * No description.
      */
     public Double getCpuIdle() {
         return cpuIdle;
@@ -35,7 +34,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Setter for cpuIdle.<p>
-     * No description.
      */
     public void setCpuIdle(Double cpuIdle) {
         this.cpuIdle = cpuIdle;
@@ -43,7 +41,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Getter for cpuSoftIrq.<p>
-     * No description.
      */
     public Double getCpuSoftIrq() {
         return cpuSoftIrq;
@@ -51,7 +48,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Setter for cpuSoftIrq.<p>
-     * No description.
      */
     public void setCpuSoftIrq(Double cpuSoftIrq) {
         this.cpuSoftIrq = cpuSoftIrq;
@@ -59,7 +55,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Getter for cpuSystem.<p>
-     * No description.
      */
     public Double getCpuSystem() {
         return cpuSystem;
@@ -67,7 +62,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Setter for cpuSystem.<p>
-     * No description.
      */
     public void setCpuSystem(Double cpuSystem) {
         this.cpuSystem = cpuSystem;
@@ -75,7 +69,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Getter for cpuUser.<p>
-     * No description.
      */
     public Double getCpuUser() {
         return cpuUser;
@@ -83,7 +76,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Setter for cpuUser.<p>
-     * No description.
      */
     public void setCpuUser(Double cpuUser) {
         this.cpuUser = cpuUser;
@@ -91,7 +83,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Getter for cpuWait.<p>
-     * No description.
      */
     public Double getCpuWait() {
         return cpuWait;
@@ -99,7 +90,6 @@ public class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
 
     /**
      * Setter for cpuWait.<p>
-     * No description.
      */
     public void setCpuWait(Double cpuWait) {
         this.cpuWait = cpuWait;

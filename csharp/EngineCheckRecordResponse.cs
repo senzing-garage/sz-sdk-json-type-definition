@@ -5,14 +5,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class EngineCheckRecordResponse
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CHECK_RECORD_RESPONSE")]
         public IList<EngineCheckRecordResponseCheckRecordResponse> CheckRecordResponse { get; set; }
     }

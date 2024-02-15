@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class InterestingEntity {
     @JsonProperty("DEGREES")
@@ -28,7 +25,6 @@ public class InterestingEntity {
 
     /**
      * Getter for degrees.<p>
-     * No description.
      */
     public Integer getDegrees() {
         return degrees;
@@ -36,7 +32,6 @@ public class InterestingEntity {
 
     /**
      * Setter for degrees.<p>
-     * No description.
      */
     public void setDegrees(Integer degrees) {
         this.degrees = degrees;
@@ -44,7 +39,6 @@ public class InterestingEntity {
 
     /**
      * Getter for entityId.<p>
-     * No description.
      */
     public Integer getEntityId() {
         return entityId;
@@ -52,7 +46,6 @@ public class InterestingEntity {
 
     /**
      * Setter for entityId.<p>
-     * No description.
      */
     public void setEntityId(Integer entityId) {
         this.entityId = entityId;
@@ -60,7 +53,6 @@ public class InterestingEntity {
 
     /**
      * Getter for flags.<p>
-     * No description.
      */
     public List<String> getFlags() {
         return flags;
@@ -68,7 +60,6 @@ public class InterestingEntity {
 
     /**
      * Setter for flags.<p>
-     * No description.
      */
     public void setFlags(List<String> flags) {
         this.flags = flags;
@@ -76,7 +67,6 @@ public class InterestingEntity {
 
     /**
      * Getter for sampleRecords.<p>
-     * No description.
      */
     public List<InterestingEntitySampleRecords> getSampleRecords() {
         return sampleRecords;
@@ -84,7 +74,6 @@ public class InterestingEntity {
 
     /**
      * Setter for sampleRecords.<p>
-     * No description.
      */
     public void setSampleRecords(List<InterestingEntitySampleRecords> sampleRecords) {
         this.sampleRecords = sampleRecords;

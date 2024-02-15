@@ -5,20 +5,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class SearchSearchStatisticsCandidateKeys
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEATURE_TYPES")]
         public IList<SearchSearchStatisticsCandidateKeysFeatureTypes> FeatureTypes { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SUMMARY")]
         public SearchSearchStatisticsCandidateKeysSummary Summary { get; set; }
     }

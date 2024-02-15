@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class G2config {
     @JsonProperty("CFG_ATTR")
@@ -115,7 +112,6 @@ public class G2config {
 
     /**
      * Getter for cfgAttr.<p>
-     * No description.
      */
     public List<CfgAttr> getCfgAttr() {
         return cfgAttr;
@@ -123,7 +119,6 @@ public class G2config {
 
     /**
      * Setter for cfgAttr.<p>
-     * No description.
      */
     public void setCfgAttr(List<CfgAttr> cfgAttr) {
         this.cfgAttr = cfgAttr;
@@ -131,7 +126,6 @@ public class G2config {
 
     /**
      * Getter for cfgCfbom.<p>
-     * No description.
      */
     public List<CfgCfbom> getCfgCfbom() {
         return cfgCfbom;
@@ -139,7 +133,6 @@ public class G2config {
 
     /**
      * Setter for cfgCfbom.<p>
-     * No description.
      */
     public void setCfgCfbom(List<CfgCfbom> cfgCfbom) {
         this.cfgCfbom = cfgCfbom;
@@ -147,7 +140,6 @@ public class G2config {
 
     /**
      * Getter for cfgCfcall.<p>
-     * No description.
      */
     public List<CfgCfcall> getCfgCfcall() {
         return cfgCfcall;
@@ -155,7 +147,6 @@ public class G2config {
 
     /**
      * Setter for cfgCfcall.<p>
-     * No description.
      */
     public void setCfgCfcall(List<CfgCfcall> cfgCfcall) {
         this.cfgCfcall = cfgCfcall;
@@ -163,7 +154,6 @@ public class G2config {
 
     /**
      * Getter for cfgCfrtn.<p>
-     * No description.
      */
     public List<CfgCfrtn> getCfgCfrtn() {
         return cfgCfrtn;
@@ -171,7 +161,6 @@ public class G2config {
 
     /**
      * Setter for cfgCfrtn.<p>
-     * No description.
      */
     public void setCfgCfrtn(List<CfgCfrtn> cfgCfrtn) {
         this.cfgCfrtn = cfgCfrtn;
@@ -179,7 +168,6 @@ public class G2config {
 
     /**
      * Getter for cfgCfunc.<p>
-     * No description.
      */
     public List<CfgCfunc> getCfgCfunc() {
         return cfgCfunc;
@@ -187,7 +175,6 @@ public class G2config {
 
     /**
      * Setter for cfgCfunc.<p>
-     * No description.
      */
     public void setCfgCfunc(List<CfgCfunc> cfgCfunc) {
         this.cfgCfunc = cfgCfunc;
@@ -195,7 +182,6 @@ public class G2config {
 
     /**
      * Getter for cfgDfbom.<p>
-     * No description.
      */
     public List<CfgDfbom> getCfgDfbom() {
         return cfgDfbom;
@@ -203,7 +189,6 @@ public class G2config {
 
     /**
      * Setter for cfgDfbom.<p>
-     * No description.
      */
     public void setCfgDfbom(List<CfgDfbom> cfgDfbom) {
         this.cfgDfbom = cfgDfbom;
@@ -211,7 +196,6 @@ public class G2config {
 
     /**
      * Getter for cfgDfcall.<p>
-     * No description.
      */
     public List<CfgDfcall> getCfgDfcall() {
         return cfgDfcall;
@@ -219,7 +203,6 @@ public class G2config {
 
     /**
      * Setter for cfgDfcall.<p>
-     * No description.
      */
     public void setCfgDfcall(List<CfgDfcall> cfgDfcall) {
         this.cfgDfcall = cfgDfcall;
@@ -227,7 +210,6 @@ public class G2config {
 
     /**
      * Getter for cfgDfunc.<p>
-     * No description.
      */
     public List<CfgDfunc> getCfgDfunc() {
         return cfgDfunc;
@@ -235,7 +217,6 @@ public class G2config {
 
     /**
      * Setter for cfgDfunc.<p>
-     * No description.
      */
     public void setCfgDfunc(List<CfgDfunc> cfgDfunc) {
         this.cfgDfunc = cfgDfunc;
@@ -243,7 +224,6 @@ public class G2config {
 
     /**
      * Getter for cfgDsrc.<p>
-     * No description.
      */
     public List<CfgDsrc> getCfgDsrc() {
         return cfgDsrc;
@@ -251,7 +231,6 @@ public class G2config {
 
     /**
      * Setter for cfgDsrc.<p>
-     * No description.
      */
     public void setCfgDsrc(List<CfgDsrc> cfgDsrc) {
         this.cfgDsrc = cfgDsrc;
@@ -259,7 +238,6 @@ public class G2config {
 
     /**
      * Getter for cfgDsrcInterest.<p>
-     * No description.
      */
     public List<CfgDsrcInterest> getCfgDsrcInterest() {
         return cfgDsrcInterest;
@@ -267,7 +245,6 @@ public class G2config {
 
     /**
      * Setter for cfgDsrcInterest.<p>
-     * No description.
      */
     public void setCfgDsrcInterest(List<CfgDsrcInterest> cfgDsrcInterest) {
         this.cfgDsrcInterest = cfgDsrcInterest;
@@ -275,7 +252,6 @@ public class G2config {
 
     /**
      * Getter for cfgEbom.<p>
-     * No description.
      */
     public List<CfgEbom> getCfgEbom() {
         return cfgEbom;
@@ -283,7 +259,6 @@ public class G2config {
 
     /**
      * Setter for cfgEbom.<p>
-     * No description.
      */
     public void setCfgEbom(List<CfgEbom> cfgEbom) {
         this.cfgEbom = cfgEbom;
@@ -291,7 +266,6 @@ public class G2config {
 
     /**
      * Getter for cfgEclass.<p>
-     * No description.
      */
     public List<CfgEclass> getCfgEclass() {
         return cfgEclass;
@@ -299,7 +273,6 @@ public class G2config {
 
     /**
      * Setter for cfgEclass.<p>
-     * No description.
      */
     public void setCfgEclass(List<CfgEclass> cfgEclass) {
         this.cfgEclass = cfgEclass;
@@ -307,7 +280,6 @@ public class G2config {
 
     /**
      * Getter for cfgEfbom.<p>
-     * No description.
      */
     public List<CfgEfbom> getCfgEfbom() {
         return cfgEfbom;
@@ -315,7 +287,6 @@ public class G2config {
 
     /**
      * Setter for cfgEfbom.<p>
-     * No description.
      */
     public void setCfgEfbom(List<CfgEfbom> cfgEfbom) {
         this.cfgEfbom = cfgEfbom;
@@ -323,7 +294,6 @@ public class G2config {
 
     /**
      * Getter for cfgEfcall.<p>
-     * No description.
      */
     public List<CfgEfcall> getCfgEfcall() {
         return cfgEfcall;
@@ -331,7 +301,6 @@ public class G2config {
 
     /**
      * Setter for cfgEfcall.<p>
-     * No description.
      */
     public void setCfgEfcall(List<CfgEfcall> cfgEfcall) {
         this.cfgEfcall = cfgEfcall;
@@ -339,7 +308,6 @@ public class G2config {
 
     /**
      * Getter for cfgEfunc.<p>
-     * No description.
      */
     public List<CfgEfunc> getCfgEfunc() {
         return cfgEfunc;
@@ -347,7 +315,6 @@ public class G2config {
 
     /**
      * Setter for cfgEfunc.<p>
-     * No description.
      */
     public void setCfgEfunc(List<CfgEfunc> cfgEfunc) {
         this.cfgEfunc = cfgEfunc;
@@ -355,7 +322,6 @@ public class G2config {
 
     /**
      * Getter for cfgErfrag.<p>
-     * No description.
      */
     public List<CfgErfrag> getCfgErfrag() {
         return cfgErfrag;
@@ -363,7 +329,6 @@ public class G2config {
 
     /**
      * Setter for cfgErfrag.<p>
-     * No description.
      */
     public void setCfgErfrag(List<CfgErfrag> cfgErfrag) {
         this.cfgErfrag = cfgErfrag;
@@ -371,7 +336,6 @@ public class G2config {
 
     /**
      * Getter for cfgErrule.<p>
-     * No description.
      */
     public List<CfgErrule> getCfgErrule() {
         return cfgErrule;
@@ -379,7 +343,6 @@ public class G2config {
 
     /**
      * Setter for cfgErrule.<p>
-     * No description.
      */
     public void setCfgErrule(List<CfgErrule> cfgErrule) {
         this.cfgErrule = cfgErrule;
@@ -387,7 +350,6 @@ public class G2config {
 
     /**
      * Getter for cfgEtype.<p>
-     * No description.
      */
     public List<CfgEtype> getCfgEtype() {
         return cfgEtype;
@@ -395,7 +357,6 @@ public class G2config {
 
     /**
      * Setter for cfgEtype.<p>
-     * No description.
      */
     public void setCfgEtype(List<CfgEtype> cfgEtype) {
         this.cfgEtype = cfgEtype;
@@ -403,7 +364,6 @@ public class G2config {
 
     /**
      * Getter for cfgFbom.<p>
-     * No description.
      */
     public List<CfgFbom> getCfgFbom() {
         return cfgFbom;
@@ -411,7 +371,6 @@ public class G2config {
 
     /**
      * Setter for cfgFbom.<p>
-     * No description.
      */
     public void setCfgFbom(List<CfgFbom> cfgFbom) {
         this.cfgFbom = cfgFbom;
@@ -419,7 +378,6 @@ public class G2config {
 
     /**
      * Getter for cfgFbovr.<p>
-     * No description.
      */
     public List<CfgFbovr> getCfgFbovr() {
         return cfgFbovr;
@@ -427,7 +385,6 @@ public class G2config {
 
     /**
      * Setter for cfgFbovr.<p>
-     * No description.
      */
     public void setCfgFbovr(List<CfgFbovr> cfgFbovr) {
         this.cfgFbovr = cfgFbovr;
@@ -435,7 +392,6 @@ public class G2config {
 
     /**
      * Getter for cfgFclass.<p>
-     * No description.
      */
     public List<CfgFclass> getCfgFclass() {
         return cfgFclass;
@@ -443,7 +399,6 @@ public class G2config {
 
     /**
      * Setter for cfgFclass.<p>
-     * No description.
      */
     public void setCfgFclass(List<CfgFclass> cfgFclass) {
         this.cfgFclass = cfgFclass;
@@ -451,7 +406,6 @@ public class G2config {
 
     /**
      * Getter for cfgFelem.<p>
-     * No description.
      */
     public List<CfgFelem> getCfgFelem() {
         return cfgFelem;
@@ -459,7 +413,6 @@ public class G2config {
 
     /**
      * Setter for cfgFelem.<p>
-     * No description.
      */
     public void setCfgFelem(List<CfgFelem> cfgFelem) {
         this.cfgFelem = cfgFelem;
@@ -467,7 +420,6 @@ public class G2config {
 
     /**
      * Getter for cfgFtype.<p>
-     * No description.
      */
     public List<CfgFtype> getCfgFtype() {
         return cfgFtype;
@@ -475,7 +427,6 @@ public class G2config {
 
     /**
      * Setter for cfgFtype.<p>
-     * No description.
      */
     public void setCfgFtype(List<CfgFtype> cfgFtype) {
         this.cfgFtype = cfgFtype;
@@ -483,7 +434,6 @@ public class G2config {
 
     /**
      * Getter for cfgGenericThreshold.<p>
-     * No description.
      */
     public List<CfgGenericThreshold> getCfgGenericThreshold() {
         return cfgGenericThreshold;
@@ -491,7 +441,6 @@ public class G2config {
 
     /**
      * Setter for cfgGenericThreshold.<p>
-     * No description.
      */
     public void setCfgGenericThreshold(List<CfgGenericThreshold> cfgGenericThreshold) {
         this.cfgGenericThreshold = cfgGenericThreshold;
@@ -499,7 +448,6 @@ public class G2config {
 
     /**
      * Getter for cfgGplan.<p>
-     * No description.
      */
     public List<CfgGplan> getCfgGplan() {
         return cfgGplan;
@@ -507,7 +455,6 @@ public class G2config {
 
     /**
      * Setter for cfgGplan.<p>
-     * No description.
      */
     public void setCfgGplan(List<CfgGplan> cfgGplan) {
         this.cfgGplan = cfgGplan;
@@ -515,7 +462,6 @@ public class G2config {
 
     /**
      * Getter for cfgLens.<p>
-     * No description.
      */
     public List<CfgLens> getCfgLens() {
         return cfgLens;
@@ -523,7 +469,6 @@ public class G2config {
 
     /**
      * Setter for cfgLens.<p>
-     * No description.
      */
     public void setCfgLens(List<CfgLens> cfgLens) {
         this.cfgLens = cfgLens;
@@ -531,7 +476,6 @@ public class G2config {
 
     /**
      * Getter for cfgLensrl.<p>
-     * No description.
      */
     public List<CfgLensrl> getCfgLensrl() {
         return cfgLensrl;
@@ -539,7 +483,6 @@ public class G2config {
 
     /**
      * Setter for cfgLensrl.<p>
-     * No description.
      */
     public void setCfgLensrl(List<CfgLensrl> cfgLensrl) {
         this.cfgLensrl = cfgLensrl;
@@ -547,7 +490,6 @@ public class G2config {
 
     /**
      * Getter for cfgRclass.<p>
-     * No description.
      */
     public List<CfgRclass> getCfgRclass() {
         return cfgRclass;
@@ -555,7 +497,6 @@ public class G2config {
 
     /**
      * Setter for cfgRclass.<p>
-     * No description.
      */
     public void setCfgRclass(List<CfgRclass> cfgRclass) {
         this.cfgRclass = cfgRclass;
@@ -563,7 +504,6 @@ public class G2config {
 
     /**
      * Getter for cfgRtype.<p>
-     * No description.
      */
     public List<CfgRtype> getCfgRtype() {
         return cfgRtype;
@@ -571,7 +511,6 @@ public class G2config {
 
     /**
      * Setter for cfgRtype.<p>
-     * No description.
      */
     public void setCfgRtype(List<CfgRtype> cfgRtype) {
         this.cfgRtype = cfgRtype;
@@ -579,7 +518,6 @@ public class G2config {
 
     /**
      * Getter for cfgSfcall.<p>
-     * No description.
      */
     public List<CfgSfcall> getCfgSfcall() {
         return cfgSfcall;
@@ -587,7 +525,6 @@ public class G2config {
 
     /**
      * Setter for cfgSfcall.<p>
-     * No description.
      */
     public void setCfgSfcall(List<CfgSfcall> cfgSfcall) {
         this.cfgSfcall = cfgSfcall;
@@ -595,7 +532,6 @@ public class G2config {
 
     /**
      * Getter for cfgSfunc.<p>
-     * No description.
      */
     public List<CfgSfunc> getCfgSfunc() {
         return cfgSfunc;
@@ -603,7 +539,6 @@ public class G2config {
 
     /**
      * Setter for cfgSfunc.<p>
-     * No description.
      */
     public void setCfgSfunc(List<CfgSfunc> cfgSfunc) {
         this.cfgSfunc = cfgSfunc;
@@ -611,7 +546,6 @@ public class G2config {
 
     /**
      * Getter for configBaseVersion.<p>
-     * No description.
      */
     public ConfigBaseVersion getConfigBaseVersion() {
         return configBaseVersion;
@@ -619,7 +553,6 @@ public class G2config {
 
     /**
      * Setter for configBaseVersion.<p>
-     * No description.
      */
     public void setConfigBaseVersion(ConfigBaseVersion configBaseVersion) {
         this.configBaseVersion = configBaseVersion;
@@ -627,7 +560,6 @@ public class G2config {
 
     /**
      * Getter for sysOom.<p>
-     * No description.
      */
     public List<SysOom> getSysOom() {
         return sysOom;
@@ -635,7 +567,6 @@ public class G2config {
 
     /**
      * Setter for sysOom.<p>
-     * No description.
      */
     public void setSysOom(List<SysOom> sysOom) {
         this.sysOom = sysOom;

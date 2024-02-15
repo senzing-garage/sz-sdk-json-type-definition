@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class FocusRecord
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }
     }

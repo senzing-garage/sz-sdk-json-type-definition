@@ -4,44 +4,23 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgRtype
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("BREAK_RES")]
         public string BreakRes { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RCLASS_ID")]
         public int RclassId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_STRENGTH")]
         public int RelStrength { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RTYPE_CODE")]
         public string RtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RTYPE_DESC")]
         public string RtypeDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RTYPE_ID")]
         public int RtypeId { get; set; }
     }

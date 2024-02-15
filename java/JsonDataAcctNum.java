@@ -18,7 +18,6 @@ public class JsonDataAcctNum {
 
     /**
      * Getter for accountDomain.<p>
-     * No description.
      */
     public String getAccountDomain() {
         return accountDomain;
@@ -26,7 +25,6 @@ public class JsonDataAcctNum {
 
     /**
      * Setter for accountDomain.<p>
-     * No description.
      */
     public void setAccountDomain(String accountDomain) {
         this.accountDomain = accountDomain;
@@ -34,7 +32,6 @@ public class JsonDataAcctNum {
 
     /**
      * Getter for accountNumber.<p>
-     * No description.
      */
     public String getAccountNumber() {
         return accountNumber;
@@ -42,7 +39,6 @@ public class JsonDataAcctNum {
 
     /**
      * Setter for accountNumber.<p>
-     * No description.
      */
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;

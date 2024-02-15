@@ -4,32 +4,17 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class Process
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public AffectedEntities AffectedEntities { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("INTERESTING_ENTITIES")]
         public InterestingEntities InterestingEntities { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PROCESS_RESULT")]
         public ProcessResult ProcessResult { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("UMF_PROC")]
         public ProcessUmfProc UmfProc { get; set; }
     }

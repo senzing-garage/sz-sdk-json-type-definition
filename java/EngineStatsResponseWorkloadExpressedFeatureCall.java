@@ -21,7 +21,6 @@ public class EngineStatsResponseWorkloadExpressedFeatureCall {
 
     /**
      * Getter for efcallId.<p>
-     * No description.
      */
     public Integer getEfcallId() {
         return efcallId;
@@ -29,7 +28,6 @@ public class EngineStatsResponseWorkloadExpressedFeatureCall {
 
     /**
      * Setter for efcallId.<p>
-     * No description.
      */
     public void setEfcallId(Integer efcallId) {
         this.efcallId = efcallId;
@@ -37,7 +35,6 @@ public class EngineStatsResponseWorkloadExpressedFeatureCall {
 
     /**
      * Getter for efuncCode.<p>
-     * No description.
      */
     public String getEfuncCode() {
         return efuncCode;
@@ -45,7 +42,6 @@ public class EngineStatsResponseWorkloadExpressedFeatureCall {
 
     /**
      * Setter for efuncCode.<p>
-     * No description.
      */
     public void setEfuncCode(String efuncCode) {
         this.efuncCode = efuncCode;
@@ -53,7 +49,6 @@ public class EngineStatsResponseWorkloadExpressedFeatureCall {
 
     /**
      * Getter for numCalls.<p>
-     * No description.
      */
     public Integer getNumCalls() {
         return numCalls;
@@ -61,7 +56,6 @@ public class EngineStatsResponseWorkloadExpressedFeatureCall {
 
     /**
      * Setter for numCalls.<p>
-     * No description.
      */
     public void setNumCalls(Integer numCalls) {
         this.numCalls = numCalls;

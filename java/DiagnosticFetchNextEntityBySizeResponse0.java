@@ -45,7 +45,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for dsrcCode.<p>
-     * No description.
      */
     public String getDsrcCode() {
         return dsrcCode;
@@ -53,7 +52,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for dsrcCode.<p>
-     * No description.
      */
     public void setDsrcCode(String dsrcCode) {
         this.dsrcCode = dsrcCode;
@@ -61,7 +59,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for entSrcDesc.<p>
-     * No description.
      */
     public String getEntSrcDesc() {
         return entSrcDesc;
@@ -69,7 +66,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for entSrcDesc.<p>
-     * No description.
      */
     public void setEntSrcDesc(String entSrcDesc) {
         this.entSrcDesc = entSrcDesc;
@@ -77,7 +73,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for entSrcKey.<p>
-     * No description.
      */
     public String getEntSrcKey() {
         return entSrcKey;
@@ -85,7 +80,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for entSrcKey.<p>
-     * No description.
      */
     public void setEntSrcKey(String entSrcKey) {
         this.entSrcKey = entSrcKey;
@@ -93,7 +87,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -101,7 +94,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -109,7 +101,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for erId.<p>
-     * No description.
      */
     public Integer getErId() {
         return erId;
@@ -117,7 +108,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for erId.<p>
-     * No description.
      */
     public void setErId(Integer erId) {
         this.erId = erId;
@@ -125,7 +115,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for etypeCode.<p>
-     * No description.
      */
     public String getEtypeCode() {
         return etypeCode;
@@ -133,7 +122,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for etypeCode.<p>
-     * No description.
      */
     public void setEtypeCode(String etypeCode) {
         this.etypeCode = etypeCode;
@@ -141,7 +129,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for jsonData.<p>
-     * No description.
      */
     public JsonData getJsonData() {
         return jsonData;
@@ -149,7 +136,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for jsonData.<p>
-     * No description.
      */
     public void setJsonData(JsonData jsonData) {
         this.jsonData = jsonData;
@@ -157,7 +143,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -165,7 +150,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -173,7 +157,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for obsEntId.<p>
-     * No description.
      */
     public Integer getObsEntId() {
         return obsEntId;
@@ -181,7 +164,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for obsEntId.<p>
-     * No description.
      */
     public void setObsEntId(Integer obsEntId) {
         this.obsEntId = obsEntId;
@@ -189,7 +171,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -197,7 +178,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;
@@ -205,7 +185,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Getter for resEntId.<p>
-     * No description.
      */
     public Integer getResEntId() {
         return resEntId;
@@ -213,7 +192,6 @@ public class DiagnosticFetchNextEntityBySizeResponse0 {
 
     /**
      * Setter for resEntId.<p>
-     * No description.
      */
     public void setResEntId(Integer resEntId) {
         this.resEntId = resEntId;

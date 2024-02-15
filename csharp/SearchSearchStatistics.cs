@@ -6,9 +6,6 @@ namespace Senzing
 {
     public class SearchSearchStatistics
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CANDIDATE_KEYS")]
         public SearchSearchStatisticsCandidateKeys CandidateKeys { get; set; }
     }

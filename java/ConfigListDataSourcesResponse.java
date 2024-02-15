@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ConfigListDataSourcesResponse {
     @JsonProperty("DATA_SOURCES")
@@ -18,7 +15,6 @@ public class ConfigListDataSourcesResponse {
 
     /**
      * Getter for dataSources.<p>
-     * No description.
      */
     public DataSources getDataSources() {
         return dataSources;
@@ -26,7 +22,6 @@ public class ConfigListDataSourcesResponse {
 
     /**
      * Setter for dataSources.<p>
-     * No description.
      */
     public void setDataSources(DataSources dataSources) {
         this.dataSources = dataSources;
