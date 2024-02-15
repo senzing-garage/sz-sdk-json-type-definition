@@ -1026,8 +1026,7 @@
             }
         },
         "CFG_LENSRL": {
-            "elements": {},
-            "metadata": {}
+            "elements": {}
         },
         "CFG_RCLASS": {
             "properties": {
@@ -1230,8 +1229,7 @@
         "Configs": {
             "elements": {
                 "ref": "Config"
-            },
-            "metadata": {}
+            }
         },
         "DataSource": {
             "properties": {
@@ -1320,8 +1318,7 @@
                         "type": "int32"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticFindEntitiesByFeatureIDsResponse": {
             "elements": {
@@ -1342,8 +1339,7 @@
                         "type": "string"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetDBInfoResponse": {
             "properties": {
@@ -1357,8 +1353,7 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "Hybrid Mode": {
                     "type": "boolean"
@@ -1399,8 +1394,7 @@
                         "type": "int32"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetEntityDetailsResponse": {
             "elements": {
@@ -1448,8 +1442,7 @@
                         "type": "string"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetEntityResumeResponse": {
             "elements": {
@@ -1488,8 +1481,7 @@
                         "type": "int32"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetEntitySizeBreakdownResponse": {
             "ref": "AttributeCounters"
@@ -1506,8 +1498,7 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "FTYPE_CODE": {
                     "type": "string"
@@ -1548,8 +1539,7 @@
                         "type": "string"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetMappingStatisticsResponse": {
             "elements": {
@@ -1594,8 +1584,7 @@
                         "type": "string"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetRelationshipDetailsResponse": {
             "elements": {
@@ -1619,8 +1608,7 @@
                         "type": "int32"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
         "DiagnosticGetResolutionStatisticsResponse": {
             "elements": {
@@ -1677,8 +1665,7 @@
                                     "type": "string"
                                 }
                             }
-                        },
-                        "metadata": {}
+                        }
                     },
                     "RECORD_COUNT": {
                         "metadata": {
@@ -1687,12 +1674,9 @@
                         "type": "int32"
                     }
                 }
-            },
-            "metadata": {}
+            }
         },
-        "DiagnosticStreamEntityListBySizeResponse": {
-            "metadata": {}
-        },
+        "DiagnosticStreamEntityListBySizeResponse": {},
         "EngineAddRecordWithInfoResponse": {
             "ref": "WithInfo"
         },
@@ -1738,8 +1722,7 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
@@ -1760,9 +1743,7 @@
                 }
             }
         },
-        "EngineFetchNextResponse": {
-            "metadata": {}
-        },
+        "EngineFetchNextResponse": {},
         "EngineFindInterestingEntitiesByEntityIDResponse": {
             "ref": "Interesting"
         },
@@ -1847,9 +1828,7 @@
         "EngineHowEntityByEntityIDV2Response": {
             "ref": "How"
         },
-        "EngineProcessRedoRecordResponse": {
-            "metadata": {}
-        },
+        "EngineProcessRedoRecordResponse": {},
         "EngineProcessRedoRecordWithInfoResponse": {
             "ref": "WithInfo"
         },
@@ -2049,9 +2028,7 @@
                 },
                 "workload": {
                     "properties": {
-                        "CorruptEntityTestDiagnosis": {
-                            "metadata": {}
-                        },
+                        "CorruptEntityTestDiagnosis": {},
                         "abortedUnresolve": {
                             "metadata": {
                                 "goType": "int64"
@@ -2125,8 +2102,7 @@
                                         "type": "int32"
                                     }
                                 }
-                            },
-                            "metadata": {}
+                            }
                         },
                         "expressedFeaturesCreated": {
                             "ref": "AttributeCounters"
@@ -2300,8 +2276,7 @@
                                                             "type": "float64"
                                                         }
                                                     }
-                                                },
-                                                "metadata": {}
+                                                }
                                             },
                                             "workerThreads": {
                                                 "metadata": {
@@ -2310,8 +2285,7 @@
                                                 "type": "int32"
                                             }
                                         }
-                                    },
-                                    "metadata": {}
+                                    }
                                 },
                                 "initResources": {
                                     "elements": {
@@ -2335,8 +2309,7 @@
                                                 "type": "string"
                                             }
                                         }
-                                    },
-                                    "metadata": {}
+                                    }
                                 }
                             }
                         },
@@ -2448,9 +2421,7 @@
                 }
             }
         },
-        "EngineStreamExportJSONEntityReportResponse": {
-            "metadata": {}
-        },
+        "EngineStreamExportJSONEntityReportResponse": {},
         "EngineWhyEntitiesResponse": {
             "ref": "WhyEntities"
         },
@@ -2478,8 +2449,7 @@
         "Entities": {
             "elements": {
                 "ref": "Entity"
-            },
-            "metadata": {}
+            }
         },
         "Entity": {
             "properties": {
@@ -2505,8 +2475,7 @@
                             "goType": "int64"
                         },
                         "type": "int32"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "START_ENTITY_ID": {
                     "metadata": {
@@ -2519,8 +2488,7 @@
         "EntityPaths": {
             "elements": {
                 "ref": "EntityPath"
-            },
-            "metadata": {}
+            }
         },
         "FeatureDescriptionValue": {
             "properties": {
@@ -2559,8 +2527,7 @@
         "FeatureDescriptionValues": {
             "elements": {
                 "ref": "FeatureDescriptionValue"
-            },
-            "metadata": {}
+            }
         },
         "FeatureForAttribute": {
             "properties": {
@@ -2952,8 +2919,7 @@
         "FeatureScoresForAttribute": {
             "elements": {
                 "ref": "FeatureScoreForAttribute"
-            },
-            "metadata": {}
+            }
         },
         "Features": {
             "properties": {
@@ -3256,8 +3222,7 @@
         "FeaturesForAttribute": {
             "elements": {
                 "ref": "FeatureForAttribute"
-            },
-            "metadata": {}
+            }
         },
         "FinalState": {
             "properties": {
@@ -3270,8 +3235,7 @@
                 "VIRTUAL_ENTITIES": {
                     "elements": {
                         "ref": "VirtualEntitySynopsis"
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
@@ -3288,196 +3252,164 @@
         "FocusRecords": {
             "elements": {
                 "ref": "FocusRecord"
-            },
-            "metadata": {}
+            }
         },
         "G2Config": {
             "properties": {
                 "CFG_ATTR": {
                     "elements": {
                         "ref": "CFG_ATTR"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_CFBOM": {
                     "elements": {
                         "ref": "CFG_CFBOM"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_CFCALL": {
                     "elements": {
                         "ref": "CFG_CFCALL"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_CFRTN": {
                     "elements": {
                         "ref": "CFG_CFRTN"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_CFUNC": {
                     "elements": {
                         "ref": "CFG_CFUNC"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_DFBOM": {
                     "elements": {
                         "ref": "CFG_DFBOM"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_DFCALL": {
                     "elements": {
                         "ref": "CFG_DFCALL"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_DFUNC": {
                     "elements": {
                         "ref": "CFG_DFUNC"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_DSRC": {
                     "elements": {
                         "ref": "CFG_DSRC"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_DSRC_INTEREST": {
                     "elements": {
                         "ref": "CFG_DSRC_INTEREST"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_EBOM": {
                     "elements": {
                         "ref": "CFG_EBOM"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_ECLASS": {
                     "elements": {
                         "ref": "CFG_ECLASS"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_EFBOM": {
                     "elements": {
                         "ref": "CFG_EFBOM"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_EFCALL": {
                     "elements": {
                         "ref": "CFG_EFCALL"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_EFUNC": {
                     "elements": {
                         "ref": "CFG_EFUNC"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_ERFRAG": {
                     "elements": {
                         "ref": "CFG_ERFRAG"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_ERRULE": {
                     "elements": {
                         "ref": "CFG_ERRULE"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_ETYPE": {
                     "elements": {
                         "ref": "CFG_ETYPE"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_FBOM": {
                     "elements": {
                         "ref": "CFG_FBOM"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_FBOVR": {
                     "elements": {
                         "ref": "CFG_FBOVR"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_FCLASS": {
                     "elements": {
                         "ref": "CFG_FCLASS"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_FELEM": {
                     "elements": {
                         "ref": "CFG_FELEM"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_FTYPE": {
                     "elements": {
                         "ref": "CFG_FTYPE"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_GENERIC_THRESHOLD": {
                     "elements": {
                         "ref": "CFG_GENERIC_THRESHOLD"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_GPLAN": {
                     "elements": {
                         "ref": "CFG_GPLAN"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_LENS": {
                     "elements": {
                         "ref": "CFG_LENS"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_LENSRL": {
                     "elements": {
                         "ref": "CFG_LENSRL"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_RCLASS": {
                     "elements": {
                         "ref": "CFG_RCLASS"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_RTYPE": {
                     "elements": {
                         "ref": "CFG_RTYPE"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_SFCALL": {
                     "elements": {
                         "ref": "CFG_SFCALL"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CFG_SFUNC": {
                     "elements": {
                         "ref": "CFG_SFUNC"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "CONFIG_BASE_VERSION": {
                     "ref": "CONFIG_BASE_VERSION"
@@ -3485,8 +3417,7 @@
                 "SYS_OOM": {
                     "elements": {
                         "ref": "SYS_OOM"
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
@@ -3519,8 +3450,7 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "InterestingEntity"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "NOTICES": {
                     "ref": "Notices"
@@ -3544,8 +3474,7 @@
                 "FLAGS": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "SAMPLE_RECORDS": {
                     "elements": {
@@ -3556,15 +3485,13 @@
                             "FLAGS": {
                                 "elements": {
                                     "type": "string"
-                                },
-                                "metadata": {}
+                                }
                             },
                             "RECORD_ID": {
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
@@ -3586,8 +3513,7 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "ADDRESS": {
                     "type": "string"
@@ -3857,8 +3783,7 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "SSN_LAST4": {
                     "elements": {
@@ -3870,8 +3795,7 @@
                                 "type": "int32"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "SSN_NUMBER": {
                     "type": "string"
@@ -3961,8 +3885,7 @@
                                         "type": "string"
                                     }
                                 }
-                            },
-                            "metadata": {}
+                            }
                         },
                         "REL_LINK": {
                             "elements": {
@@ -3998,8 +3921,7 @@
                                         "type": "string"
                                     }
                                 }
-                            },
-                            "metadata": {}
+                            }
                         },
                         "REL_POINTER": {
                             "elements": {
@@ -4032,8 +3954,7 @@
                                         "type": "string"
                                     }
                                 }
-                            },
-                            "metadata": {}
+                            }
                         }
                     }
                 },
@@ -4377,8 +4298,7 @@
         "MatchInfosForAttribute": {
             "elements": {
                 "ref": "MatchInfoForAttribute"
-            },
-            "metadata": {}
+            }
         },
         "MatchScoreForAttribute": {
             "properties": {
@@ -4727,8 +4647,7 @@
         "MatchScoresForAttribute": {
             "elements": {
                 "ref": "MatchScoreForAttribute"
-            },
-            "metadata": {}
+            }
         },
         "MemberRecord": {
             "properties": {
@@ -4746,8 +4665,7 @@
         "MemberRecords": {
             "elements": {
                 "ref": "MemberRecord"
-            },
-            "metadata": {}
+            }
         },
         "Name": {
             "properties": {
@@ -4780,8 +4698,7 @@
         "Names": {
             "elements": {
                 "ref": "Name"
-            },
-            "metadata": {}
+            }
         },
         "Network": {
             "properties": {
@@ -4809,8 +4726,7 @@
         "Notices": {
             "elements": {
                 "ref": "Notice"
-            },
-            "metadata": {}
+            }
         },
         "Passport": {
             "properties": {
@@ -4825,8 +4741,7 @@
         "Passports": {
             "elements": {
                 "ref": "Passport"
-            },
-            "metadata": {}
+            }
         },
         "Path": {
             "properties": {
@@ -4857,8 +4772,7 @@
         "Phones": {
             "elements": {
                 "ref": "Phone"
-            },
-            "metadata": {}
+            }
         },
         "Process": {
             "properties": {
@@ -4928,8 +4842,7 @@
                                 "ref": "RecordSummary"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
@@ -4994,14 +4907,12 @@
                 "ADDRESS_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "ATTRIBUTE_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "DATA_SOURCE": {
                     "type": "string"
@@ -5009,8 +4920,7 @@
                 "ENTITY_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "ENTITY_DESC": {
                     "type": "string"
@@ -5037,14 +4947,12 @@
                                 "type": "string"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "INTERNAL_ID": {
                     "metadata": {
@@ -5073,20 +4981,17 @@
                 "NAME_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "OTHER_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "PHONE_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 },
                 "RECORD_ID": {
                     "type": "string"
@@ -5094,16 +4999,14 @@
                 "RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
         "RecordSummary": {
             "elements": {
                 "ref": "RecordSummaryElement"
-            },
-            "metadata": {}
+            }
         },
         "RecordSummaryElement": {
             "properties": {
@@ -5127,14 +5030,12 @@
         "Records": {
             "elements": {
                 "ref": "Record"
-            },
-            "metadata": {}
+            }
         },
         "RelatedEntities": {
             "elements": {
                 "ref": "RelatedEntity"
-            },
-            "metadata": {}
+            }
         },
         "RelatedEntity": {
             "properties": {
@@ -5213,8 +5114,7 @@
         "Relationships": {
             "elements": {
                 "ref": "Relationship"
-            },
-            "metadata": {}
+            }
         },
         "ResolutionStep": {
             "properties": {
@@ -5244,8 +5144,7 @@
         "ResolutionSteps": {
             "elements": {
                 "ref": "ResolutionStep"
-            },
-            "metadata": {}
+            }
         },
         "ResolvedEntity": {
             "properties": {
@@ -5386,8 +5285,7 @@
                                 "ref": "MatchInfo"
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 },
                 "SEARCH_STATISTICS": {
                     "elements": {
@@ -5419,8 +5317,7 @@
                                                     "type": "int32"
                                                 }
                                             }
-                                        },
-                                        "metadata": {}
+                                        }
                                     },
                                     "SUMMARY": {
                                         "properties": {
@@ -5447,8 +5344,7 @@
                                 }
                             }
                         }
-                    },
-                    "metadata": {}
+                    }
                 }
             }
         },
@@ -5539,8 +5435,7 @@
         "WhyResults": {
             "elements": {
                 "ref": "WhyResult"
-            },
-            "metadata": {}
+            }
         },
         "WithInfo": {
             "properties": {
