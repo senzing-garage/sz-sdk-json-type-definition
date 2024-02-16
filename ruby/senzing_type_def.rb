@@ -6184,7 +6184,7 @@ module SenzingTypeDef
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.match_scores = SenzingTypeDef::from_json_data(MatchScores, data["MATCH_SCORES"])
       out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(RecordSummary, data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
       out
     end
 
@@ -6316,20 +6316,6 @@ module SenzingTypeDef
     end
   end
 
-  class RecordSummary
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = RecordSummary.new
-      out.value = SenzingTypeDef.from_json_data(Array[RecordSummaryElement], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class RecordSummaryElement
     attr_accessor :data_source
     attr_accessor :first_seen_dt
@@ -6408,7 +6394,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(RecordSummary, data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
       out
     end
 
@@ -6563,7 +6549,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(RecordSummary, data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
       out
     end
 

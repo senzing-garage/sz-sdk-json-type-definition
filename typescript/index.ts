@@ -1687,7 +1687,7 @@ export interface ProcessResultResolvedEntities {
   MATCH_LEVEL_CODE: string;
   MATCH_SCORES: MatchScores;
   RECORDS: Records;
-  RECORD_SUMMARY: RecordSummary;
+  RECORD_SUMMARY: RecordSummaryElement[];
 }
 
 export interface ProcessResult {
@@ -1723,8 +1723,6 @@ export interface Record {
   RELATIONSHIP_DATA: string[];
 }
 
-export type RecordSummary = RecordSummaryElement[];
-
 export interface RecordSummaryElement {
   DATA_SOURCE: string;
   FIRST_SEEN_DT: string;
@@ -1747,7 +1745,7 @@ export interface RelatedEntity {
   MATCH_LEVEL: number;
   MATCH_LEVEL_CODE: string;
   RECORDS: Records;
-  RECORD_SUMMARY: RecordSummary;
+  RECORD_SUMMARY: RecordSummaryElement[];
 }
 
 export interface Relationship {
@@ -1787,7 +1785,7 @@ export interface ResolvedEntity {
   MATCH_LEVEL: number;
   MATCH_LEVEL_CODE: string;
   RECORDS: Records;
-  RECORD_SUMMARY: RecordSummary;
+  RECORD_SUMMARY: RecordSummaryElement[];
 }
 
 export interface ResolvedEntityAndMatchInfoEntity {

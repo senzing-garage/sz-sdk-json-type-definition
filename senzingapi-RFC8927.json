@@ -4987,7 +4987,9 @@
                                 "ref": "Records"
                             },
                             "RECORD_SUMMARY": {
-                                "ref": "RecordSummary"
+                                "elements": {
+                                    "ref": "RecordSummaryElement"
+                                }
                             }
                         }
                     }
@@ -5095,11 +5097,6 @@
                 }
             }
         },
-        "RecordSummary": {
-            "elements": {
-                "ref": "RecordSummaryElement"
-            }
-        },
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
@@ -5174,7 +5171,9 @@
                     "ref": "Records"
                 },
                 "RECORD_SUMMARY": {
-                    "ref": "RecordSummary"
+                    "elements": {
+                        "ref": "RecordSummaryElement"
+                    }
                 }
             }
         },
@@ -5291,7 +5290,9 @@
                     "ref": "Records"
                 },
                 "RECORD_SUMMARY": {
-                    "ref": "RecordSummary"
+                    "elements": {
+                        "ref": "RecordSummaryElement"
+                    }
                 }
             }
         },

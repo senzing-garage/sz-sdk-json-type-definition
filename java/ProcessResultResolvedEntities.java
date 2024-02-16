@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class ProcessResultResolvedEntities {
@@ -38,7 +39,7 @@ public class ProcessResultResolvedEntities {
     private Records records;
 
     @JsonProperty("RECORD_SUMMARY")
-    private RecordSummary recordSummary;
+    private List<RecordSummaryElement> recordSummary;
 
     public ProcessResultResolvedEntities() {
     }
@@ -186,14 +187,14 @@ public class ProcessResultResolvedEntities {
     /**
      * Getter for recordSummary.<p>
      */
-    public RecordSummary getRecordSummary() {
+    public List<RecordSummaryElement> getRecordSummary() {
         return recordSummary;
     }
 
     /**
      * Setter for recordSummary.<p>
      */
-    public void setRecordSummary(RecordSummary recordSummary) {
+    public void setRecordSummary(List<RecordSummaryElement> recordSummary) {
         this.recordSummary = recordSummary;
     }
 }

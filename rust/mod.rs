@@ -3997,7 +3997,7 @@ pub struct ProcessResultResolvedEntities {
     pub records: Records,
 
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: RecordSummary,
+    pub recordSummary: Vec<RecordSummaryElement>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4081,8 +4081,6 @@ pub struct Record {
     pub relationshipData: Vec<String>,
 }
 
-pub type RecordSummary = Vec<RecordSummaryElement>;
-
 #[derive(Serialize, Deserialize)]
 pub struct RecordSummaryElement {
     #[serde(rename = "DATA_SOURCE")]
@@ -4135,7 +4133,7 @@ pub struct RelatedEntity {
     pub records: Records,
 
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: RecordSummary,
+    pub recordSummary: Vec<RecordSummaryElement>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4225,7 +4223,7 @@ pub struct ResolvedEntity {
     pub records: Records,
 
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: RecordSummary,
+    pub recordSummary: Vec<RecordSummaryElement>,
 }
 
 #[derive(Serialize, Deserialize)]

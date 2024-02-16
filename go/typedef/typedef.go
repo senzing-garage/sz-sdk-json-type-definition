@@ -2722,7 +2722,7 @@ type ProcessResultResolvedEntities struct {
 
 	Records Records `json:"RECORDS"`
 
-	RecordSummary RecordSummary `json:"RECORD_SUMMARY"`
+	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 }
 
 type ProcessResult struct {
@@ -2779,8 +2779,6 @@ type Record struct {
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 }
 
-type RecordSummary = []RecordSummaryElement
-
 type RecordSummaryElement struct {
 	DataSource string `json:"DATA_SOURCE"`
 
@@ -2816,7 +2814,7 @@ type RelatedEntity struct {
 
 	Records Records `json:"RECORDS"`
 
-	RecordSummary RecordSummary `json:"RECORD_SUMMARY"`
+	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 }
 
 type Relationship struct {
@@ -2878,7 +2876,7 @@ type ResolvedEntity struct {
 
 	Records Records `json:"RECORDS"`
 
-	RecordSummary RecordSummary `json:"RECORD_SUMMARY"`
+	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 }
 
 type ResolvedEntityAndMatchInfoEntity struct {

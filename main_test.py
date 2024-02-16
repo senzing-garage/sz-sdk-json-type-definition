@@ -976,7 +976,7 @@ response = G2engineGetEntityByEntityIDResponse.from_json_data(
     json.loads(mock_g2engine_get_entity_by_entity_id())
 )
 print(
-    f"G2engineGetEntityByEntityIDResponse: Data source: {response.value.resolved_entity.record_summary.value[0].data_source}"
+    f"G2engineGetEntityByEntityIDResponse: Data source: {response.value.resolved_entity.record_summary[0].data_source}"
 )
 
 # TODO:  response.value.resolved_entity.features needs to be fixed.
@@ -984,7 +984,7 @@ response = G2engineGetEntityByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_get_entity_by_record_id())
 )
 print(
-    f"G2engineGetEntityByRecordIDResponse: Record count: {response.value.resolved_entity.record_summary.value[0].record_count}"
+    f"G2engineGetEntityByRecordIDResponse: Record count: {response.value.resolved_entity.record_summary[0].record_count}"
 )
 
 # TODO:  response.value.json_data needs to be fixed.

@@ -5806,7 +5806,7 @@ class ProcessResultResolvedEntities:
     match_level_code: 'str'
     match_scores: 'MatchScores'
     records: 'Records'
-    record_summary: 'RecordSummary'
+    record_summary: 'List[RecordSummaryElement]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ProcessResultResolvedEntities':
@@ -5821,7 +5821,7 @@ class ProcessResultResolvedEntities:
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(MatchScores, data.get("MATCH_SCORES")),
             _from_json_data(Records, data.get("RECORDS")),
-            _from_json_data(RecordSummary, data.get("RECORD_SUMMARY")),
+            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
         )
 
     def to_json_data(self) -> Any:
@@ -5948,17 +5948,6 @@ class Record:
         return data
 
 @dataclass
-class RecordSummary:
-    value: 'List[RecordSummaryElement]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'RecordSummary':
-        return cls(_from_json_data(List[RecordSummaryElement], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class RecordSummaryElement:
     data_source: 'str'
     first_seen_dt: 'str'
@@ -6016,7 +6005,7 @@ class RelatedEntity:
     match_level: 'int'
     match_level_code: 'str'
     records: 'Records'
-    record_summary: 'RecordSummary'
+    record_summary: 'List[RecordSummaryElement]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelatedEntity':
@@ -6031,7 +6020,7 @@ class RelatedEntity:
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(Records, data.get("RECORDS")),
-            _from_json_data(RecordSummary, data.get("RECORD_SUMMARY")),
+            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
         )
 
     def to_json_data(self) -> Any:
@@ -6158,7 +6147,7 @@ class ResolvedEntity:
     match_level: 'int'
     match_level_code: 'str'
     records: 'Records'
-    record_summary: 'RecordSummary'
+    record_summary: 'List[RecordSummaryElement]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ResolvedEntity':
@@ -6174,7 +6163,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(Records, data.get("RECORDS")),
-            _from_json_data(RecordSummary, data.get("RECORD_SUMMARY")),
+            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
         )
 
     def to_json_data(self) -> Any:
