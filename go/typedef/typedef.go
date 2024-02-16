@@ -587,7 +587,7 @@ type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData string `json:"JSON_DATA"`
+	JSONData any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -629,7 +629,7 @@ type EntityBySize struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData string `json:"JSON_DATA"`
+	JSONData any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -1112,7 +1112,7 @@ type FinalState struct {
 	VirtualEntities []VirtualEntitySynopsis `json:"VIRTUAL_ENTITIES"`
 }
 
-type FixmeUnknown = string
+type FixmeUnknown = any
 
 type FocusRecord struct {
 	DataSource string `json:"DATA_SOURCE"`
@@ -1291,7 +1291,7 @@ type G2diagnosticGetEntityResumeResponse0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData string `json:"JSON_DATA"`
+	JSONData any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2701,7 +2701,7 @@ type ProcessResultResolvedEntities struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features string `json:"FEATURES"`
+	Features any `json:"FEATURES"`
 
 	LastSeenDt string `json:"LAST_SEEN_DT"`
 
@@ -2751,7 +2751,7 @@ type Record struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData string `json:"JSON_DATA"`
+	JSONData any `json:"JSON_DATA"`
 
 	LastSeenDt string `json:"LAST_SEEN_DT"`
 
@@ -2851,7 +2851,7 @@ type ResolvedEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features string `json:"FEATURES"`
+	Features any `json:"FEATURES"`
 
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
