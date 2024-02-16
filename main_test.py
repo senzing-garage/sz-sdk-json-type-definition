@@ -1014,7 +1014,7 @@ print(
 response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_get_virtual_entity_by_record_id())
 )
-feature_list = response.value.resolved_entity.features.value.get("NAME")
+feature_list = response.value.resolved_entity.features.value.get("NAME", [])
 for feature in feature_list:
     feat_desc_list = FeatureForAttribute.from_json_data(feature).feat_desc_values.value
     for feat_desc in feat_desc_list:
@@ -1027,7 +1027,9 @@ for feature in feature_list:
 # - No editor hints
 response = mock_g2engine_get_virtual_entity_by_record_id()
 response_dict = json.loads(response)
-feature_list = response_dict.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME")
+feature_list = (
+    response_dict.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
+)
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")
     for feat_desc in feat_desc_list:
