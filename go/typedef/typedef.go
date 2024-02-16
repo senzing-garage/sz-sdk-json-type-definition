@@ -671,12 +671,10 @@ type FeatureDescriptionValue struct {
 	UsedForScoring string `json:"USED_FOR_SCORING"`
 }
 
-type FeatureDescriptionValues = []FeatureDescriptionValue
-
 type FeatureForAttribute struct {
 	FeatDesc string `json:"FEAT_DESC"`
 
-	FeatDescValues FeatureDescriptionValues `json:"FEAT_DESC_VALUES"`
+	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 

@@ -1537,20 +1537,6 @@ module SenzingTypeDef
     end
   end
 
-  class FeatureDescriptionValues
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FeatureDescriptionValues.new
-      out.value = SenzingTypeDef.from_json_data(Array[FeatureDescriptionValue], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class FeatureForAttribute
     attr_accessor :feat_desc
     attr_accessor :feat_desc_values
@@ -1560,7 +1546,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = FeatureForAttribute.new
       out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.feat_desc_values = SenzingTypeDef::from_json_data(FeatureDescriptionValues, data["FEAT_DESC_VALUES"])
+      out.feat_desc_values = SenzingTypeDef::from_json_data(Array[FeatureDescriptionValue], data["FEAT_DESC_VALUES"])
       out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
       out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
       out

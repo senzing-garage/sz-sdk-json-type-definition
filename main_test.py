@@ -1007,7 +1007,7 @@ response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
 address_feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
 address_feature = FeatureForAttribute.from_json_data(address_feature_json)
 print(
-    f"G2engineGetVirtualEntityByRecordIDResponse: Address Feature Description: {address_feature.feat_desc_values.value[0].feat_desc}"
+    f"G2engineGetVirtualEntityByRecordIDResponse: Address Feature Description: {address_feature.feat_desc_values[0].feat_desc}"
 )
 
 
@@ -1016,7 +1016,7 @@ response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
 )
 feature_list = response.value.resolved_entity.features.get("NAME", [])
 for feature in feature_list:
-    feat_desc_list = FeatureForAttribute.from_json_data(feature).feat_desc_values.value
+    feat_desc_list = FeatureForAttribute.from_json_data(feature).feat_desc_values
     for feat_desc in feat_desc_list:
         print(
             f"G2engineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}"

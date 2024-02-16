@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class FeatureForAttribute {
@@ -11,7 +12,7 @@ public class FeatureForAttribute {
     private String featDesc;
 
     @JsonProperty("FEAT_DESC_VALUES")
-    private FeatureDescriptionValues featDescValues;
+    private List<FeatureDescriptionValue> featDescValues;
 
     @JsonProperty("LIB_FEAT_ID")
     private Integer libFeatId;
@@ -39,14 +40,14 @@ public class FeatureForAttribute {
     /**
      * Getter for featDescValues.<p>
      */
-    public FeatureDescriptionValues getFeatDescValues() {
+    public List<FeatureDescriptionValue> getFeatDescValues() {
         return featDescValues;
     }
 
     /**
      * Setter for featDescValues.<p>
      */
-    public void setFeatDescValues(FeatureDescriptionValues featDescValues) {
+    public void setFeatDescValues(List<FeatureDescriptionValue> featDescValues) {
         this.featDescValues = featDescValues;
     }
 

@@ -1477,20 +1477,9 @@ class FeatureDescriptionValue:
         return data
 
 @dataclass
-class FeatureDescriptionValues:
-    value: 'List[FeatureDescriptionValue]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'FeatureDescriptionValues':
-        return cls(_from_json_data(List[FeatureDescriptionValue], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class FeatureForAttribute:
     feat_desc: 'str'
-    feat_desc_values: 'FeatureDescriptionValues'
+    feat_desc_values: 'List[FeatureDescriptionValue]'
     lib_feat_id: 'int'
     usage_type: 'str'
 
@@ -1498,7 +1487,7 @@ class FeatureForAttribute:
     def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
         return cls(
             _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(FeatureDescriptionValues, data.get("FEAT_DESC_VALUES")),
+            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
             _from_json_data(int, data.get("LIB_FEAT_ID")),
             _from_json_data(str, data.get("USAGE_TYPE")),
         )

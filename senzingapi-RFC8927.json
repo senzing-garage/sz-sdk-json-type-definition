@@ -1406,18 +1406,15 @@
                 }
             }
         },
-        "FeatureDescriptionValues": {
-            "elements": {
-                "ref": "FeatureDescriptionValue"
-            }
-        },
         "FeatureForAttribute": {
             "properties": {
                 "FEAT_DESC": {
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
-                    "ref": "FeatureDescriptionValues"
+                    "elements": {
+                        "ref": "FeatureDescriptionValue"
+                    }
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {

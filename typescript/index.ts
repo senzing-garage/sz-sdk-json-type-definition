@@ -438,11 +438,9 @@ export interface FeatureDescriptionValue {
   USED_FOR_SCORING: string;
 }
 
-export type FeatureDescriptionValues = FeatureDescriptionValue[];
-
 export interface FeatureForAttribute {
   FEAT_DESC: string;
-  FEAT_DESC_VALUES: FeatureDescriptionValues;
+  FEAT_DESC_VALUES: FeatureDescriptionValue[];
   LIB_FEAT_ID: number;
   USAGE_TYPE: string;
 }

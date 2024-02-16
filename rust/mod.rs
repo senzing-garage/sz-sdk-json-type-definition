@@ -996,15 +996,13 @@ pub struct FeatureDescriptionValue {
     pub usedForScoring: String,
 }
 
-pub type FeatureDescriptionValues = Vec<FeatureDescriptionValue>;
-
 #[derive(Serialize, Deserialize)]
 pub struct FeatureForAttribute {
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
     #[serde(rename = "FEAT_DESC_VALUES")]
-    pub featDescValues: FeatureDescriptionValues,
+    pub featDescValues: Vec<FeatureDescriptionValue>,
 
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
