@@ -8,9 +8,9 @@ namespace Senzing
     public class Search
     {
         [JsonPropertyName("RESOLVED_ENTITIES")]
-        public IList<SearchResolvedEntities> ResolvedEntities { get; set; }
+        public IList<ResolvedEntityAndMatchInfo> ResolvedEntities { get; set; }
 
         [JsonPropertyName("SEARCH_STATISTICS")]
-        public IList<SearchSearchStatistics> SearchStatistics { get; set; }
+        public SearchStatistics SearchStatistics { get; set; }
     }
 }

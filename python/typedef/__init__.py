@@ -8088,47 +8088,32 @@ class SchemaVersion:
         return data
 
 @dataclass
-class SearchResolvedEntitiesEntity:
-    resolved_entity: 'ResolvedEntity'
+class Search:
+    resolved_entities: 'List[ResolvedEntityAndMatchInfo]'
+    search_statistics: 'SearchStatistics'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SearchResolvedEntitiesEntity':
+    def from_json_data(cls, data: Any) -> 'Search':
         return cls(
-            _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
+            _from_json_data(List[ResolvedEntityAndMatchInfo], data.get("RESOLVED_ENTITIES")),
+            _from_json_data(SearchStatistics, data.get("SEARCH_STATISTICS")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
+        data["RESOLVED_ENTITIES"] = _to_json_data(self.resolved_entities)
+        data["SEARCH_STATISTICS"] = _to_json_data(self.search_statistics)
         return data
 
 @dataclass
-class SearchResolvedEntities:
-    entity: 'SearchResolvedEntitiesEntity'
-    match_info: 'MatchInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SearchResolvedEntities':
-        return cls(
-            _from_json_data(SearchResolvedEntitiesEntity, data.get("ENTITY")),
-            _from_json_data(MatchInfo, data.get("MATCH_INFO")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ENTITY"] = _to_json_data(self.entity)
-        data["MATCH_INFO"] = _to_json_data(self.match_info)
-        return data
-
-@dataclass
-class SearchSearchStatisticsCandidateKeysFeatureTypes:
+class SearchStatisticCandidateKeysFeatureTypes:
     found: 'int'
     ftype_code: 'str'
     generic: 'int'
     not_found: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SearchSearchStatisticsCandidateKeysFeatureTypes':
+    def from_json_data(cls, data: Any) -> 'SearchStatisticCandidateKeysFeatureTypes':
         return cls(
             _from_json_data(int, data.get("FOUND")),
             _from_json_data(str, data.get("FTYPE_CODE")),
@@ -8145,13 +8130,13 @@ class SearchSearchStatisticsCandidateKeysFeatureTypes:
         return data
 
 @dataclass
-class SearchSearchStatisticsCandidateKeysSummary:
+class SearchStatisticCandidateKeysSummary:
     found: 'int'
     generic: 'int'
     not_found: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SearchSearchStatisticsCandidateKeysSummary':
+    def from_json_data(cls, data: Any) -> 'SearchStatisticCandidateKeysSummary':
         return cls(
             _from_json_data(int, data.get("FOUND")),
             _from_json_data(int, data.get("GENERIC")),
@@ -8166,15 +8151,15 @@ class SearchSearchStatisticsCandidateKeysSummary:
         return data
 
 @dataclass
-class SearchSearchStatisticsCandidateKeys:
-    feature_types: 'List[SearchSearchStatisticsCandidateKeysFeatureTypes]'
-    summary: 'SearchSearchStatisticsCandidateKeysSummary'
+class SearchStatisticCandidateKeys:
+    feature_types: 'List[SearchStatisticCandidateKeysFeatureTypes]'
+    summary: 'SearchStatisticCandidateKeysSummary'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SearchSearchStatisticsCandidateKeys':
+    def from_json_data(cls, data: Any) -> 'SearchStatisticCandidateKeys':
         return cls(
-            _from_json_data(List[SearchSearchStatisticsCandidateKeysFeatureTypes], data.get("FEATURE_TYPES")),
-            _from_json_data(SearchSearchStatisticsCandidateKeysSummary, data.get("SUMMARY")),
+            _from_json_data(List[SearchStatisticCandidateKeysFeatureTypes], data.get("FEATURE_TYPES")),
+            _from_json_data(SearchStatisticCandidateKeysSummary, data.get("SUMMARY")),
         )
 
     def to_json_data(self) -> Any:
@@ -8184,13 +8169,13 @@ class SearchSearchStatisticsCandidateKeys:
         return data
 
 @dataclass
-class SearchSearchStatistics:
-    candidate_keys: 'SearchSearchStatisticsCandidateKeys'
+class SearchStatistic:
+    candidate_keys: 'SearchStatisticCandidateKeys'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SearchSearchStatistics':
+    def from_json_data(cls, data: Any) -> 'SearchStatistic':
         return cls(
-            _from_json_data(SearchSearchStatisticsCandidateKeys, data.get("CANDIDATE_KEYS")),
+            _from_json_data(SearchStatisticCandidateKeys, data.get("CANDIDATE_KEYS")),
         )
 
     def to_json_data(self) -> Any:
@@ -8199,22 +8184,15 @@ class SearchSearchStatistics:
         return data
 
 @dataclass
-class Search:
-    resolved_entities: 'List[SearchResolvedEntities]'
-    search_statistics: 'List[SearchSearchStatistics]'
+class SearchStatistics:
+    value: 'List[SearchStatistic]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Search':
-        return cls(
-            _from_json_data(List[SearchResolvedEntities], data.get("RESOLVED_ENTITIES")),
-            _from_json_data(List[SearchSearchStatistics], data.get("SEARCH_STATISTICS")),
-        )
+    def from_json_data(cls, data: Any) -> 'SearchStatistics':
+        return cls(_from_json_data(List[SearchStatistic], data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["RESOLVED_ENTITIES"] = _to_json_data(self.resolved_entities)
-        data["SEARCH_STATISTICS"] = _to_json_data(self.search_statistics)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class VirtualEntity:

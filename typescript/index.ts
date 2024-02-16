@@ -2276,41 +2276,34 @@ export interface SchemaVersion {
   MINIMUM_REQUIRED_SCHEMA_VERSION: string;
 }
 
-export interface SearchResolvedEntitiesEntity {
-  RESOLVED_ENTITY: ResolvedEntity;
+export interface Search {
+  RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
+  SEARCH_STATISTICS: SearchStatistics;
 }
 
-export interface SearchResolvedEntities {
-  ENTITY: SearchResolvedEntitiesEntity;
-  MATCH_INFO: MatchInfo;
-}
-
-export interface SearchSearchStatisticsCandidateKeysFeatureTypes {
+export interface SearchStatisticCandidateKeysFeatureTypes {
   FOUND: number;
   FTYPE_CODE: string;
   GENERIC: number;
   NOT_FOUND: number;
 }
 
-export interface SearchSearchStatisticsCandidateKeysSummary {
+export interface SearchStatisticCandidateKeysSummary {
   FOUND: number;
   GENERIC: number;
   NOT_FOUND: number;
 }
 
-export interface SearchSearchStatisticsCandidateKeys {
-  FEATURE_TYPES: SearchSearchStatisticsCandidateKeysFeatureTypes[];
-  SUMMARY: SearchSearchStatisticsCandidateKeysSummary;
+export interface SearchStatisticCandidateKeys {
+  FEATURE_TYPES: SearchStatisticCandidateKeysFeatureTypes[];
+  SUMMARY: SearchStatisticCandidateKeysSummary;
 }
 
-export interface SearchSearchStatistics {
-  CANDIDATE_KEYS: SearchSearchStatisticsCandidateKeys;
+export interface SearchStatistic {
+  CANDIDATE_KEYS: SearchStatisticCandidateKeys;
 }
 
-export interface Search {
-  RESOLVED_ENTITIES: SearchResolvedEntities[];
-  SEARCH_STATISTICS: SearchSearchStatistics[];
-}
+export type SearchStatistics = SearchStatistic[];
 
 export interface VirtualEntity {
   RESOLVED_ENTITY: ResolvedEntity;

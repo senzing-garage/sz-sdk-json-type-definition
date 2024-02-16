@@ -5187,22 +5187,16 @@ pub struct SchemaVersion {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SearchResolvedEntitiesEntity {
-    #[serde(rename = "RESOLVED_ENTITY")]
-    pub resolvedEntity: ResolvedEntity,
+pub struct Search {
+    #[serde(rename = "RESOLVED_ENTITIES")]
+    pub resolvedEntities: Vec<ResolvedEntityAndMatchInfo>,
+
+    #[serde(rename = "SEARCH_STATISTICS")]
+    pub searchStatistics: SearchStatistics,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SearchResolvedEntities {
-    #[serde(rename = "ENTITY")]
-    pub entity: SearchResolvedEntitiesEntity,
-
-    #[serde(rename = "MATCH_INFO")]
-    pub matchInfo: MatchInfo,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct SearchSearchStatisticsCandidateKeysFeatureTypes {
+pub struct SearchStatisticCandidateKeysFeatureTypes {
     #[serde(rename = "FOUND")]
     pub found: i32,
 
@@ -5217,7 +5211,7 @@ pub struct SearchSearchStatisticsCandidateKeysFeatureTypes {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SearchSearchStatisticsCandidateKeysSummary {
+pub struct SearchStatisticCandidateKeysSummary {
     #[serde(rename = "FOUND")]
     pub found: i32,
 
@@ -5229,28 +5223,21 @@ pub struct SearchSearchStatisticsCandidateKeysSummary {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SearchSearchStatisticsCandidateKeys {
+pub struct SearchStatisticCandidateKeys {
     #[serde(rename = "FEATURE_TYPES")]
-    pub featureTypes: Vec<SearchSearchStatisticsCandidateKeysFeatureTypes>,
+    pub featureTypes: Vec<SearchStatisticCandidateKeysFeatureTypes>,
 
     #[serde(rename = "SUMMARY")]
-    pub summary: SearchSearchStatisticsCandidateKeysSummary,
+    pub summary: SearchStatisticCandidateKeysSummary,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SearchSearchStatistics {
+pub struct SearchStatistic {
     #[serde(rename = "CANDIDATE_KEYS")]
-    pub candidateKeys: SearchSearchStatisticsCandidateKeys,
+    pub candidateKeys: SearchStatisticCandidateKeys,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct Search {
-    #[serde(rename = "RESOLVED_ENTITIES")]
-    pub resolvedEntities: Vec<SearchResolvedEntities>,
-
-    #[serde(rename = "SEARCH_STATISTICS")]
-    pub searchStatistics: Vec<SearchSearchStatistics>,
-}
+pub type SearchStatistics = Vec<SearchStatistic>;
 
 #[derive(Serialize, Deserialize)]
 pub struct VirtualEntity {

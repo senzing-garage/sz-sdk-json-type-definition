@@ -9,10 +9,10 @@ import java.util.List;
 @JsonSerialize
 public class Search {
     @JsonProperty("RESOLVED_ENTITIES")
-    private List<SearchResolvedEntities> resolvedEntities;
+    private List<ResolvedEntityAndMatchInfo> resolvedEntities;
 
     @JsonProperty("SEARCH_STATISTICS")
-    private List<SearchSearchStatistics> searchStatistics;
+    private SearchStatistics searchStatistics;
 
     public Search() {
     }
@@ -20,28 +20,28 @@ public class Search {
     /**
      * Getter for resolvedEntities.<p>
      */
-    public List<SearchResolvedEntities> getResolvedEntities() {
+    public List<ResolvedEntityAndMatchInfo> getResolvedEntities() {
         return resolvedEntities;
     }
 
     /**
      * Setter for resolvedEntities.<p>
      */
-    public void setResolvedEntities(List<SearchResolvedEntities> resolvedEntities) {
+    public void setResolvedEntities(List<ResolvedEntityAndMatchInfo> resolvedEntities) {
         this.resolvedEntities = resolvedEntities;
     }
 
     /**
      * Getter for searchStatistics.<p>
      */
-    public List<SearchSearchStatistics> getSearchStatistics() {
+    public SearchStatistics getSearchStatistics() {
         return searchStatistics;
     }
 
     /**
      * Setter for searchStatistics.<p>
      */
-    public void setSearchStatistics(List<SearchSearchStatistics> searchStatistics) {
+    public void setSearchStatistics(SearchStatistics searchStatistics) {
         this.searchStatistics = searchStatistics;
     }
 }

@@ -6606,79 +6606,74 @@
             "properties": {
                 "RESOLVED_ENTITIES": {
                     "elements": {
-                        "properties": {
-                            "ENTITY": {
-                                "properties": {
-                                    "RESOLVED_ENTITY": {
-                                        "ref": "ResolvedEntity"
-                                    }
-                                }
-                            },
-                            "MATCH_INFO": {
-                                "ref": "MatchInfo"
-                            }
-                        }
+                        "ref": "ResolvedEntityAndMatchInfo"
                     }
                 },
                 "SEARCH_STATISTICS": {
-                    "elements": {
-                        "properties": {
-                            "CANDIDATE_KEYS": {
+                    "ref": "SearchStatistics"
+                }
+            }
+        },
+        "SearchStatistic": {
+            "properties": {
+                "CANDIDATE_KEYS": {
+                    "properties": {
+                        "FEATURE_TYPES": {
+                            "elements": {
                                 "properties": {
-                                    "FEATURE_TYPES": {
-                                        "elements": {
-                                            "properties": {
-                                                "FOUND": {
-                                                    "metadata": {
-                                                        "goType": "int64"
-                                                    },
-                                                    "type": "int32"
-                                                },
-                                                "FTYPE_CODE": {
-                                                    "type": "string"
-                                                },
-                                                "GENERIC": {
-                                                    "metadata": {
-                                                        "goType": "int64"
-                                                    },
-                                                    "type": "int32"
-                                                },
-                                                "NOT_FOUND": {
-                                                    "metadata": {
-                                                        "goType": "int64"
-                                                    },
-                                                    "type": "int32"
-                                                }
-                                            }
-                                        }
+                                    "FOUND": {
+                                        "metadata": {
+                                            "goType": "int64"
+                                        },
+                                        "type": "int32"
                                     },
-                                    "SUMMARY": {
-                                        "properties": {
-                                            "FOUND": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "GENERIC": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "NOT_FOUND": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            }
-                                        }
+                                    "FTYPE_CODE": {
+                                        "type": "string"
+                                    },
+                                    "GENERIC": {
+                                        "metadata": {
+                                            "goType": "int64"
+                                        },
+                                        "type": "int32"
+                                    },
+                                    "NOT_FOUND": {
+                                        "metadata": {
+                                            "goType": "int64"
+                                        },
+                                        "type": "int32"
                                     }
+                                }
+                            }
+                        },
+                        "SUMMARY": {
+                            "properties": {
+                                "FOUND": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "GENERIC": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "NOT_FOUND": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
                                 }
                             }
                         }
                     }
                 }
+            }
+        },
+        "SearchStatistics": {
+            "elements": {
+                "ref": "SearchStatistic"
             }
         },
         "VirtualEntity": {

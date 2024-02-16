@@ -8707,49 +8707,33 @@ module SenzingTypeDef
     end
   end
 
-  class SearchResolvedEntitiesEntity
-    attr_accessor :resolved_entity
+  class Search
+    attr_accessor :resolved_entities
+    attr_accessor :search_statistics
 
     def self.from_json_data(data)
-      out = SearchResolvedEntitiesEntity.new
-      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
+      out = Search.new
+      out.resolved_entities = SenzingTypeDef::from_json_data(Array[ResolvedEntityAndMatchInfo], data["RESOLVED_ENTITIES"])
+      out.search_statistics = SenzingTypeDef::from_json_data(SearchStatistics, data["SEARCH_STATISTICS"])
       out
     end
 
     def to_json_data
       data = {}
-      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
+      data["SEARCH_STATISTICS"] = SenzingTypeDef::to_json_data(search_statistics)
       data
     end
   end
 
-  class SearchResolvedEntities
-    attr_accessor :entity
-    attr_accessor :match_info
-
-    def self.from_json_data(data)
-      out = SearchResolvedEntities.new
-      out.entity = SenzingTypeDef::from_json_data(SearchResolvedEntitiesEntity, data["ENTITY"])
-      out.match_info = SenzingTypeDef::from_json_data(MatchInfo, data["MATCH_INFO"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITY"] = SenzingTypeDef::to_json_data(entity)
-      data["MATCH_INFO"] = SenzingTypeDef::to_json_data(match_info)
-      data
-    end
-  end
-
-  class SearchSearchStatisticsCandidateKeysFeatureTypes
+  class SearchStatisticCandidateKeysFeatureTypes
     attr_accessor :found
     attr_accessor :ftype_code
     attr_accessor :generic
     attr_accessor :not_found
 
     def self.from_json_data(data)
-      out = SearchSearchStatisticsCandidateKeysFeatureTypes.new
+      out = SearchStatisticCandidateKeysFeatureTypes.new
       out.found = SenzingTypeDef::from_json_data(Integer, data["FOUND"])
       out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
       out.generic = SenzingTypeDef::from_json_data(Integer, data["GENERIC"])
@@ -8767,13 +8751,13 @@ module SenzingTypeDef
     end
   end
 
-  class SearchSearchStatisticsCandidateKeysSummary
+  class SearchStatisticCandidateKeysSummary
     attr_accessor :found
     attr_accessor :generic
     attr_accessor :not_found
 
     def self.from_json_data(data)
-      out = SearchSearchStatisticsCandidateKeysSummary.new
+      out = SearchStatisticCandidateKeysSummary.new
       out.found = SenzingTypeDef::from_json_data(Integer, data["FOUND"])
       out.generic = SenzingTypeDef::from_json_data(Integer, data["GENERIC"])
       out.not_found = SenzingTypeDef::from_json_data(Integer, data["NOT_FOUND"])
@@ -8789,14 +8773,14 @@ module SenzingTypeDef
     end
   end
 
-  class SearchSearchStatisticsCandidateKeys
+  class SearchStatisticCandidateKeys
     attr_accessor :feature_types
     attr_accessor :summary
 
     def self.from_json_data(data)
-      out = SearchSearchStatisticsCandidateKeys.new
-      out.feature_types = SenzingTypeDef::from_json_data(Array[SearchSearchStatisticsCandidateKeysFeatureTypes], data["FEATURE_TYPES"])
-      out.summary = SenzingTypeDef::from_json_data(SearchSearchStatisticsCandidateKeysSummary, data["SUMMARY"])
+      out = SearchStatisticCandidateKeys.new
+      out.feature_types = SenzingTypeDef::from_json_data(Array[SearchStatisticCandidateKeysFeatureTypes], data["FEATURE_TYPES"])
+      out.summary = SenzingTypeDef::from_json_data(SearchStatisticCandidateKeysSummary, data["SUMMARY"])
       out
     end
 
@@ -8808,12 +8792,12 @@ module SenzingTypeDef
     end
   end
 
-  class SearchSearchStatistics
+  class SearchStatistic
     attr_accessor :candidate_keys
 
     def self.from_json_data(data)
-      out = SearchSearchStatistics.new
-      out.candidate_keys = SenzingTypeDef::from_json_data(SearchSearchStatisticsCandidateKeys, data["CANDIDATE_KEYS"])
+      out = SearchStatistic.new
+      out.candidate_keys = SenzingTypeDef::from_json_data(SearchStatisticCandidateKeys, data["CANDIDATE_KEYS"])
       out
     end
 
@@ -8824,22 +8808,17 @@ module SenzingTypeDef
     end
   end
 
-  class Search
-    attr_accessor :resolved_entities
-    attr_accessor :search_statistics
+  class SearchStatistics
+    attr_accessor :value
 
     def self.from_json_data(data)
-      out = Search.new
-      out.resolved_entities = SenzingTypeDef::from_json_data(Array[SearchResolvedEntities], data["RESOLVED_ENTITIES"])
-      out.search_statistics = SenzingTypeDef::from_json_data(Array[SearchSearchStatistics], data["SEARCH_STATISTICS"])
+      out = SearchStatistics.new
+      out.value = SenzingTypeDef.from_json_data(Array[SearchStatistic], data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
-      data["SEARCH_STATISTICS"] = SenzingTypeDef::to_json_data(search_statistics)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 

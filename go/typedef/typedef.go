@@ -3561,17 +3561,13 @@ type SchemaVersion struct {
 	MinimumRequiredSchemaVersion string `json:"MINIMUM_REQUIRED_SCHEMA_VERSION"`
 }
 
-type SearchResolvedEntitiesEntity struct {
-	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+type Search struct {
+	ResolvedEntities []ResolvedEntityAndMatchInfo `json:"RESOLVED_ENTITIES"`
+
+	SearchStatistics SearchStatistics `json:"SEARCH_STATISTICS"`
 }
 
-type SearchResolvedEntities struct {
-	Entity SearchResolvedEntitiesEntity `json:"ENTITY"`
-
-	MatchInfo MatchInfo `json:"MATCH_INFO"`
-}
-
-type SearchSearchStatisticsCandidateKeysFeatureTypes struct {
+type SearchStatisticCandidateKeysFeatureTypes struct {
 	Found int64 `json:"FOUND"`
 
 	FtypeCode string `json:"FTYPE_CODE"`
@@ -3581,7 +3577,7 @@ type SearchSearchStatisticsCandidateKeysFeatureTypes struct {
 	NotFound int64 `json:"NOT_FOUND"`
 }
 
-type SearchSearchStatisticsCandidateKeysSummary struct {
+type SearchStatisticCandidateKeysSummary struct {
 	Found int64 `json:"FOUND"`
 
 	Generic int64 `json:"GENERIC"`
@@ -3589,21 +3585,17 @@ type SearchSearchStatisticsCandidateKeysSummary struct {
 	NotFound int64 `json:"NOT_FOUND"`
 }
 
-type SearchSearchStatisticsCandidateKeys struct {
-	FeatureTypes []SearchSearchStatisticsCandidateKeysFeatureTypes `json:"FEATURE_TYPES"`
+type SearchStatisticCandidateKeys struct {
+	FeatureTypes []SearchStatisticCandidateKeysFeatureTypes `json:"FEATURE_TYPES"`
 
-	Summary SearchSearchStatisticsCandidateKeysSummary `json:"SUMMARY"`
+	Summary SearchStatisticCandidateKeysSummary `json:"SUMMARY"`
 }
 
-type SearchSearchStatistics struct {
-	CandidateKeys SearchSearchStatisticsCandidateKeys `json:"CANDIDATE_KEYS"`
+type SearchStatistic struct {
+	CandidateKeys SearchStatisticCandidateKeys `json:"CANDIDATE_KEYS"`
 }
 
-type Search struct {
-	ResolvedEntities []SearchResolvedEntities `json:"RESOLVED_ENTITIES"`
-
-	SearchStatistics []SearchSearchStatistics `json:"SEARCH_STATISTICS"`
-}
+type SearchStatistics = []SearchStatistic
 
 type VirtualEntity struct {
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
