@@ -1288,21 +1288,6 @@ module SenzingTypeDef
     end
   end
 
-  # A list of datasources.
-  class DataSources
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DataSources.new
-      out.value = SenzingTypeDef.from_json_data(Array[DataSource], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class DiagnosticFetchNextEntityBySizeResponseXxx0
     attr_accessor :dsrc_code
     attr_accessor :ent_src_desc
@@ -2444,7 +2429,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = G2configListDataSourcesResponse.new
-      out.data_sources = SenzingTypeDef::from_json_data(DataSources, data["DATA_SOURCES"])
+      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
       out
     end
 

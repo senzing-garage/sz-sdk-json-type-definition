@@ -1207,14 +1207,6 @@
                 }
             }
         },
-        "DataSources": {
-            "elements": {
-                "ref": "DataSource"
-            },
-            "metadata": {
-                "description": "A list of datasources."
-            }
-        },
         "DiagnosticFetchNextEntityBySizeResponseXXX": {
             "elements": {
                 "properties": {
@@ -2313,7 +2305,9 @@
         "G2ConfigListDataSourcesResponse": {
             "properties": {
                 "DATA_SOURCES": {
-                    "ref": "DataSources"
+                    "elements": {
+                        "ref": "DataSource"
+                    }
                 }
             }
         },

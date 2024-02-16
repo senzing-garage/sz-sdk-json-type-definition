@@ -855,9 +855,6 @@ pub struct DataSource {
     pub dsrcId: i32,
 }
 
-/// A list of datasources.
-pub type DataSources = Vec<DataSource>;
-
 #[derive(Serialize, Deserialize)]
 pub struct DiagnosticFetchNextEntityBySizeResponseXxx0 {
     #[serde(rename = "DSRC_CODE")]
@@ -1785,7 +1782,7 @@ pub struct G2configAddDataSourceResponse {
 #[derive(Serialize, Deserialize)]
 pub struct G2configListDataSourcesResponse {
     #[serde(rename = "DATA_SOURCES")]
-    pub dataSources: DataSources,
+    pub dataSources: Vec<DataSource>,
 }
 
 #[derive(Serialize, Deserialize)]

@@ -12,7 +12,7 @@ import (
 
 func main() {
 	jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
-	jsonStruct := typedef.ConfigListDataSourcesResponse{}
+	jsonStruct := typedef.G2configListDataSourcesResponse{}
 	err := json.Unmarshal([]byte(jsonString), &jsonStruct)
 	if err != nil {
 		panic(err)

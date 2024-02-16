@@ -135,7 +135,7 @@ generate-and-test: generate-code generate-tests
 .PHONY: test
 test:
 	@pytest test.py --verbose
-	# @go test -v -p 1 ./...
+	@go test -v -p 1 ./...
 
 # -----------------------------------------------------------------------------
 # Clean

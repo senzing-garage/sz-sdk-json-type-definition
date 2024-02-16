@@ -574,9 +574,6 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
-// A list of datasources.
-type DataSources = []DataSource
-
 type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
 	DsrcCode string `json:"DSRC_CODE"`
 
@@ -1198,7 +1195,7 @@ type G2configAddDataSourceResponse struct {
 }
 
 type G2configListDataSourcesResponse struct {
-	DataSources DataSources `json:"DATA_SOURCES"`
+	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
 type G2configSaveResponse struct {

@@ -1243,21 +1243,6 @@ class DataSource:
         return data
 
 @dataclass
-class DataSources:
-    """
-    A list of datasources.
-    """
-
-    value: 'List[DataSource]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DataSources':
-        return cls(_from_json_data(List[DataSource], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class DiagnosticFetchNextEntityBySizeResponseXxx0:
     dsrc_code: 'str'
     ent_src_desc: 'str'
@@ -2363,12 +2348,12 @@ class G2configAddDataSourceResponse:
 
 @dataclass
 class G2configListDataSourcesResponse:
-    data_sources: 'DataSources'
+    data_sources: 'List[DataSource]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2configListDataSourcesResponse':
         return cls(
-            _from_json_data(DataSources, data.get("DATA_SOURCES")),
+            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
         )
 
     def to_json_data(self) -> Any:

@@ -371,11 +371,6 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
-/**
- * A list of datasources.
- */
-export type DataSources = DataSource[];
-
 export interface DiagnosticFetchNextEntityBySizeResponseXxx0 {
   DSRC_CODE: string;
   ENT_SRC_DESC: string;
@@ -721,7 +716,7 @@ export interface G2configAddDataSourceResponse {
 }
 
 export interface G2configListDataSourcesResponse {
-  DATA_SOURCES: DataSources;
+  DATA_SOURCES: DataSource[];
 }
 
 export interface G2configSaveResponse {

@@ -30,7 +30,7 @@ from python.typedef import (
 # -----------------------------------------------------------------------------
 
 
-def absolute_path(filename: str) -> str:
+def path_to_testdata(filename: str) -> str:
     current_path = pathlib.Path(__file__).parent.resolve()
     result = os.path.abspath("{0}/testdata/{1}".format(current_path, filename))
     return result
@@ -42,7 +42,7 @@ def absolute_path(filename: str) -> str:
 
 
 def test_g2engine_add_record_with_info_01():
-    with open(absolute_path("g2engine_addRecordWithInfo-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_addRecordWithInfo-01.json")) as input_file:
         response = G2engineAddRecordWithInfoResponse.from_json_data(
             json.load(input_file)
         )
@@ -52,7 +52,7 @@ def test_g2engine_add_record_with_info_01():
 
 
 def test_g2engine_delete_record_with_info_01():
-    with open(absolute_path("g2engine_deleteRecordWithInfo-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_deleteRecordWithInfo-01.json")) as input_file:
         response = G2engineDeleteRecordWithInfoResponse.from_json_data(
             json.load(input_file)
         )
@@ -63,7 +63,7 @@ def test_g2engine_delete_record_with_info_01():
 
 def test_g2engine_find_interesting_entities_by_entity_id_01():
     with open(
-        absolute_path("g2engine_findInterestingEntitiesByEntityID-01.json")
+        path_to_testdata("g2engine_findInterestingEntitiesByEntityID-01.json")
     ) as input_file:
         response = G2engineFindInterestingEntitiesByEntityIDResponse.from_json_data(
             json.load(input_file)
@@ -73,7 +73,7 @@ def test_g2engine_find_interesting_entities_by_entity_id_01():
 
 def test_g2engine_find_interesting_entities_by_record_id_01():
     with open(
-        absolute_path("g2engine_findInterestingEntitiesByRecordID-01.json")
+        path_to_testdata("g2engine_findInterestingEntitiesByRecordID-01.json")
     ) as input_file:
         response = G2engineFindInterestingEntitiesByRecordIDResponse.from_json_data(
             json.load(input_file)
@@ -82,7 +82,7 @@ def test_g2engine_find_interesting_entities_by_record_id_01():
 
 
 def test_g2engine_find_network_by_entity_id_01():
-    with open(absolute_path("g2engine_findNetworkByEntityID-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_findNetworkByEntityID-01.json")) as input_file:
         response = G2engineFindNetworkByEntityIDResponse.from_json_data(
             json.load(input_file)
         )
@@ -96,7 +96,7 @@ def test_g2engine_find_network_by_entity_id_01():
 
 
 def test_g2engine_find_network_by_record_id_01():
-    with open(absolute_path("g2engine_findNetworkByRecordID-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_findNetworkByRecordID-01.json")) as input_file:
         response = G2engineFindNetworkByRecordIDResponse.from_json_data(
             json.load(input_file)
         )
@@ -110,7 +110,7 @@ def test_g2engine_find_network_by_record_id_01():
 
 
 def test_g2engine_find_path_by_entity_id_01():
-    with open(absolute_path("g2engine_findPathByEntityID-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_findPathByEntityID-01.json")) as input_file:
         response = G2engineFindPathByEntityIDResponse.from_json_data(
             json.load(input_file)
         )
@@ -124,7 +124,7 @@ def test_g2engine_find_path_by_entity_id_01():
 
 
 def test_g2engine_find_path_by_record_id_01():
-    with open(absolute_path("g2engine_findPathByRecordID-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_findPathByRecordID-01.json")) as input_file:
         response = G2engineFindPathByRecordIDResponse.from_json_data(
             json.load(input_file)
         )
@@ -138,7 +138,7 @@ def test_g2engine_find_path_by_record_id_01():
 
 
 def test_g2engine_get_entity_by_entity_id_01():
-    with open(absolute_path("g2engine_getEntityByEntityID-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_getEntityByEntityID-01.json")) as input_file:
         response = G2engineGetEntityByEntityIDResponse.from_json_data(
             json.load(input_file)
         )
@@ -151,8 +151,22 @@ def test_g2engine_get_entity_by_entity_id_01():
     assert feature.feat_desc_values[0].lib_feat_id == 20
 
 
+def test_g2engine_get_entity_by_entity_id_02():
+    with open(path_to_testdata("g2engine_getEntityByEntityID-02.json")) as input_file:
+        response = G2engineGetEntityByEntityIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.related_entities == []
+    assert response.value.resolved_entity.entity_id == 1
+    assert response.value.resolved_entity.entity_name == "blank"
+    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
+    feature = FeatureForAttribute.from_json_data(feature_json)
+    assert feature.feat_desc == "blank"
+    assert feature.feat_desc_values[0].lib_feat_id == 1
+
+
 def test_g2engine_get_entity_by_record_id_01():
-    with open(absolute_path("g2engine_getEntityByRecordID-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_getEntityByRecordID-01.json")) as input_file:
         response = G2engineGetEntityByRecordIDResponse.from_json_data(
             json.load(input_file)
         )
@@ -167,7 +181,7 @@ def test_g2engine_get_entity_by_record_id_01():
 
 
 def test_g2engine_get_record_01():
-    with open(absolute_path("g2engine_getRecord-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_getRecord-01.json")) as input_file:
         response = G2engineGetRecordResponse.from_json_data(json.load(input_file))
     assert response.value.data_source == "CUSTOMERS"
     assert response.value.record_id == "1001"
@@ -178,14 +192,14 @@ def test_g2engine_get_record_01():
 
 # TODO: Fix this
 def test_g2engine_get_redo_record_01():
-    with open(absolute_path("g2engine_getRedoRecord-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_getRedoRecord-01.json")) as input_file:
         response = G2engineGetRedoRecordResponse.from_json_data(json.load(input_file))
     assert response.value.value == {}
 
 
 def test_g2engine_get_virtual_entity_by_record_id_01():
     with open(
-        absolute_path("g2engine_getVirtualEntityByRecordID-01.json")
+        path_to_testdata("g2engine_getVirtualEntityByRecordID-01.json")
     ) as input_file:
         response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
             json.load(input_file)
