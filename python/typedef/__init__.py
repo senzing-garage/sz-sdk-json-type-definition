@@ -83,17 +83,6 @@ class Addresses:
         return _to_json_data(self.value)
 
 @dataclass
-class AffectedEntities:
-    value: 'List[AffectedEntity]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AffectedEntities':
-        return cls(_from_json_data(List[AffectedEntity], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class AffectedEntity:
     entity_id: 'int'
 
@@ -5794,7 +5783,7 @@ class ProcessUmfProc:
 
 @dataclass
 class Process:
-    affected_entities: 'AffectedEntities'
+    affected_entities: 'List[AffectedEntity]'
     interesting_entities: 'InterestingEntities'
     process_result: 'ProcessResult'
     umf_proc: 'ProcessUmfProc'
@@ -5802,7 +5791,7 @@ class Process:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Process':
         return cls(
-            _from_json_data(AffectedEntities, data.get("AFFECTED_ENTITIES")),
+            _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(InterestingEntities, data.get("INTERESTING_ENTITIES")),
             _from_json_data(ProcessResult, data.get("PROCESS_RESULT")),
             _from_json_data(ProcessUmfProc, data.get("UMF_PROC")),
@@ -6551,7 +6540,7 @@ class WhyResults:
 
 @dataclass
 class WithInfo:
-    affected_entities: 'AffectedEntities'
+    affected_entities: 'List[AffectedEntity]'
     data_source: 'str'
     interesting_entities: 'InterestingEntities'
     record_id: 'str'
@@ -6559,7 +6548,7 @@ class WithInfo:
     @classmethod
     def from_json_data(cls, data: Any) -> 'WithInfo':
         return cls(
-            _from_json_data(AffectedEntities, data.get("AFFECTED_ENTITIES")),
+            _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(InterestingEntities, data.get("INTERESTING_ENTITIES")),
             _from_json_data(str, data.get("RECORD_ID")),

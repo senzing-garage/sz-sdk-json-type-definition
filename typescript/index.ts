@@ -21,8 +21,6 @@ export interface Address {
 
 export type Addresses = Address[];
 
-export type AffectedEntities = AffectedEntity[];
-
 export interface AffectedEntity {
   ENTITY_ID: number;
 }
@@ -1674,7 +1672,7 @@ export interface ProcessUmfProc {
 }
 
 export interface Process {
-  AFFECTED_ENTITIES: AffectedEntities;
+  AFFECTED_ENTITIES: AffectedEntity[];
   INTERESTING_ENTITIES: InterestingEntities;
   PROCESS_RESULT: ProcessResult;
   UMF_PROC: ProcessUmfProc;
@@ -1888,7 +1886,7 @@ export interface WhyResult {
 export type WhyResults = WhyResult[];
 
 export interface WithInfo {
-  AFFECTED_ENTITIES: AffectedEntities;
+  AFFECTED_ENTITIES: AffectedEntity[];
   DATA_SOURCE: string;
   INTERESTING_ENTITIES: InterestingEntities;
   RECORD_ID: string;

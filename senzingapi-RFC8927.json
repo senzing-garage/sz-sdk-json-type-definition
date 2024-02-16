@@ -51,11 +51,6 @@
                 "ref": "Address"
             }
         },
-        "AffectedEntities": {
-            "elements": {
-                "ref": "AffectedEntity"
-            }
-        },
         "AffectedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -4929,7 +4924,9 @@
         "Process": {
             "properties": {
                 "AFFECTED_ENTITIES": {
-                    "ref": "AffectedEntities"
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
                 },
                 "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
@@ -5550,7 +5547,9 @@
         "WithInfo": {
             "properties": {
                 "AFFECTED_ENTITIES": {
-                    "ref": "AffectedEntities"
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
                 },
                 "DATA_SOURCE": {
                     "type": "string"

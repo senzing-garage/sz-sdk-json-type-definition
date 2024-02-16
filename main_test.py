@@ -918,14 +918,14 @@ response = G2engineAddRecordWithInfoResponse.from_json_data(
     json.loads(mock_g2engine_add_record_with_info())
 )
 print(
-    f"G2engineAddRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities.value[0].entity_id}"
+    f"G2engineAddRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
 )
 
 response = G2engineDeleteRecordWithInfoResponse.from_json_data(
     json.loads(mock_g2engine_delete_record_with_info())
 )
 print(
-    f"G2engineDeleteRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities.value[0].entity_id}"
+    f"G2engineDeleteRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
 )
 
 response = G2engineFindInterestingEntitiesByEntityIDResponse.from_json_data(

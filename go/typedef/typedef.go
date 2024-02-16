@@ -36,8 +36,6 @@ type Address struct {
 
 type Addresses = []Address
 
-type AffectedEntities = []AffectedEntity
-
 type AffectedEntity struct {
 	EntityID int64 `json:"ENTITY_ID"`
 }
@@ -2696,7 +2694,7 @@ type ProcessUmfProc struct {
 }
 
 type Process struct {
-	AffectedEntities AffectedEntities `json:"AFFECTED_ENTITIES"`
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
@@ -3008,7 +3006,7 @@ type WhyResult struct {
 type WhyResults = []WhyResult
 
 type WithInfo struct {
-	AffectedEntities AffectedEntities `json:"AFFECTED_ENTITIES"`
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	DataSource string `json:"DATA_SOURCE"`
 

@@ -4,11 +4,12 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class Process {
     @JsonProperty("AFFECTED_ENTITIES")
-    private AffectedEntities affectedEntities;
+    private List<AffectedEntity> affectedEntities;
 
     @JsonProperty("INTERESTING_ENTITIES")
     private InterestingEntities interestingEntities;
@@ -25,14 +26,14 @@ public class Process {
     /**
      * Getter for affectedEntities.<p>
      */
-    public AffectedEntities getAffectedEntities() {
+    public List<AffectedEntity> getAffectedEntities() {
         return affectedEntities;
     }
 
     /**
      * Setter for affectedEntities.<p>
      */
-    public void setAffectedEntities(AffectedEntities affectedEntities) {
+    public void setAffectedEntities(List<AffectedEntity> affectedEntities) {
         this.affectedEntities = affectedEntities;
     }
 

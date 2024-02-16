@@ -52,8 +52,6 @@ pub struct Address {
 
 pub type Addresses = Vec<Address>;
 
-pub type AffectedEntities = Vec<AffectedEntity>;
-
 #[derive(Serialize, Deserialize)]
 pub struct AffectedEntity {
     #[serde(rename = "ENTITY_ID")]
@@ -3956,7 +3954,7 @@ pub struct ProcessUmfProc {
 #[derive(Serialize, Deserialize)]
 pub struct Process {
     #[serde(rename = "AFFECTED_ENTITIES")]
-    pub affectedEntities: AffectedEntities,
+    pub affectedEntities: Vec<AffectedEntity>,
 
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
@@ -4416,7 +4414,7 @@ pub type WhyResults = Vec<WhyResult>;
 #[derive(Serialize, Deserialize)]
 pub struct WithInfo {
     #[serde(rename = "AFFECTED_ENTITIES")]
-    pub affectedEntities: AffectedEntities,
+    pub affectedEntities: Vec<AffectedEntity>,
 
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,

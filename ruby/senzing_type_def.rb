@@ -88,20 +88,6 @@ module SenzingTypeDef
     end
   end
 
-  class AffectedEntities
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = AffectedEntities.new
-      out.value = SenzingTypeDef.from_json_data(Array[AffectedEntity], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class AffectedEntity
     attr_accessor :entity_id
 
@@ -6170,7 +6156,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Process.new
-      out.affected_entities = SenzingTypeDef::from_json_data(AffectedEntities, data["AFFECTED_ENTITIES"])
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
       out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out.process_result = SenzingTypeDef::from_json_data(ProcessResult, data["PROCESS_RESULT"])
       out.umf_proc = SenzingTypeDef::from_json_data(ProcessUmfProc, data["UMF_PROC"])
@@ -6976,7 +6962,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = WithInfo.new
-      out.affected_entities = SenzingTypeDef::from_json_data(AffectedEntities, data["AFFECTED_ENTITIES"])
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
       out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
       out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
