@@ -1213,10 +1213,44 @@ type EngineWhyRecordsV2response = WhyRecords
 
 type Entities = []Entity
 
+type EntitiesByFeatureID = []EntityByFeatureID
+
 type Entity struct {
 	RelatedEntities RelatedEntities `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+}
+
+type EntityByFeatureID struct {
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
+
+	ResEntID int64 `json:"RES_ENT_ID"`
+
+	UsageType string `json:"USAGE_TYPE"`
+}
+
+type EntityBySize struct {
+	DsrcCode string `json:"DSRC_CODE"`
+
+	EntSrcDesc string `json:"ENT_SRC_DESC"`
+
+	EntSrcKey string `json:"ENT_SRC_KEY"`
+
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	ErID int64 `json:"ER_ID"`
+
+	EtypeCode string `json:"ETYPE_CODE"`
+
+	JSONData JSONData `json:"JSON_DATA"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	ObsEntID int64 `json:"OBS_ENT_ID"`
+
+	RecordID string `json:"RECORD_ID"`
+
+	ResEntID int64 `json:"RES_ENT_ID"`
 }
 
 type EntityPath struct {
@@ -1769,6 +1803,650 @@ type G2config struct {
 	ConfigBaseVersion ConfigBaseVersion `json:"CONFIG_BASE_VERSION"`
 
 	SysOom []SysOom `json:"SYS_OOM"`
+}
+
+type G2configAddDataSourceResponse struct {
+	DsrcID int64 `json:"DSRC_ID"`
+}
+
+type G2configListDataSourcesResponse struct {
+	DataSources DataSources `json:"DATA_SOURCES"`
+}
+
+type G2configSaveResponse struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type G2configmgrGetConfigListResponse struct {
+	Configs Configs `json:"CONFIGS"`
+}
+
+type G2configmgrGetConfigResponse struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type G2diagnosticCheckDbperfResponse struct {
+	InsertTime int64 `json:"insertTime"`
+
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
+}
+
+type G2diagnosticFetchNextEntityBySizeResponse = []EntityBySize
+
+type G2diagnosticFindEntitiesByFeatureIdsResponseXxx0 struct {
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
+
+	ResEntID int64 `json:"RES_ENT_ID"`
+
+	UsageType string `json:"USAGE_TYPE"`
+}
+
+type G2diagnosticFindEntitiesByFeatureIdsResponseXxx = []G2diagnosticFindEntitiesByFeatureIdsResponseXxx0
+
+type G2diagnosticGetDbinfoResponseDetail struct {
+	Name string `json:"Name"`
+
+	Type string `json:"Type"`
+}
+
+type G2diagnosticGetDbinfoResponse struct {
+	DatabaseDetails []G2diagnosticGetDbinfoResponseDetail `json:"Database Details"`
+
+	HybridMode bool `json:"Hybrid Mode"`
+}
+
+type G2diagnosticGetDataSourceCountsResponse0 struct {
+	DsrcCode string `json:"DSRC_CODE"`
+
+	DsrcID int64 `json:"DSRC_ID"`
+
+	DsrcRecordCount int64 `json:"DSRC_RECORD_COUNT"`
+
+	EtypeCode string `json:"ETYPE_CODE"`
+
+	EtypeID int64 `json:"ETYPE_ID"`
+
+	ObsEntCount int64 `json:"OBS_ENT_COUNT"`
+}
+
+type G2diagnosticGetDataSourceCountsResponse = []G2diagnosticGetDataSourceCountsResponse0
+
+type G2diagnosticGetEntityDetailsResponse0 struct {
+	Derived string `json:"DERIVED"`
+
+	DsrcCode string `json:"DSRC_CODE"`
+
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	EtypeCode string `json:"ETYPE_CODE"`
+
+	FeatDesc string `json:"FEAT_DESC"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	ObsEntID int64 `json:"OBS_ENT_ID"`
+
+	RecordID int64 `json:"RECORD_ID"`
+
+	ResEntID int64 `json:"RES_ENT_ID"`
+
+	UsageType string `json:"USAGE_TYPE"`
+}
+
+type G2diagnosticGetEntityDetailsResponse = []G2diagnosticGetEntityDetailsResponse0
+
+type G2diagnosticGetEntityResumeResponse0 struct {
+	DsrcCode string `json:"DSRC_CODE"`
+
+	EntSrcDesc string `json:"ENT_SRC_DESC"`
+
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	EtypeCode string `json:"ETYPE_CODE"`
+
+	JSONData JSONData `json:"JSON_DATA"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	RecordID string `json:"RECORD_ID"`
+
+	RelEntID int64 `json:"REL_ENT_ID"`
+
+	ResEntID int64 `json:"RES_ENT_ID"`
+}
+
+type G2diagnosticGetEntityResumeResponse = []G2diagnosticGetEntityResumeResponse0
+
+type G2diagnosticGetEntitySizeBreakdownResponse = AttributeCounters
+
+type G2diagnosticGetFeatureResponseElements struct {
+	FelemCode string `json:"FELEM_CODE"`
+
+	FelemValue string `json:"FELEM_VALUE"`
+}
+
+type G2diagnosticGetFeatureResponse struct {
+	Elements []G2diagnosticGetFeatureResponseElements `json:"ELEMENTS"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
+}
+
+type G2diagnosticGetGenericFeaturesResponse0 struct {
+	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
+
+	EstimatedCount int64 `json:"ESTIMATED_COUNT"`
+
+	FeatDesc string `json:"FEAT_DESC"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
+
+	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
+}
+
+type G2diagnosticGetGenericFeaturesResponse = []G2diagnosticGetGenericFeaturesResponse0
+
+type G2diagnosticGetMappingStatisticsResponse0 struct {
+	Derived string `json:"DERIVED"`
+
+	DsrcCode string `json:"DSRC_CODE"`
+
+	EtypeCode string `json:"ETYPE_CODE"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	MaxFeatDesc string `json:"MAX_FEAT_DESC"`
+
+	MinFeatDesc string `json:"MIN_FEAT_DESC"`
+
+	RecCount int64 `json:"REC_COUNT"`
+
+	RecPct float64 `json:"REC_PCT"`
+
+	UniqCount int64 `json:"UNIQ_COUNT"`
+
+	UniqPct float64 `json:"UNIQ_PCT"`
+
+	UsageType string `json:"USAGE_TYPE"`
+}
+
+type G2diagnosticGetMappingStatisticsResponse = []G2diagnosticGetMappingStatisticsResponse0
+
+type G2diagnosticGetRelationshipDetailsResponse0 struct {
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	FeatDesc string `json:"FEAT_DESC"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	ResEntID int64 `json:"RES_ENT_ID"`
+}
+
+type G2diagnosticGetRelationshipDetailsResponse = []G2diagnosticGetRelationshipDetailsResponse0
+
+type G2diagnosticGetResolutionStatisticsResponseRawMatchKeys struct {
+	MatchKey string `json:"MATCH_KEY"`
+}
+
+type G2diagnosticGetResolutionStatisticsResponse0 struct {
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	ErruleID int64 `json:"ERRULE_ID"`
+
+	IsAmbiguous string `json:"IS_AMBIGUOUS"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	MatchLevel int64 `json:"MATCH_LEVEL"`
+
+	MaxResEntID int64 `json:"MAX_RES_ENT_ID"`
+
+	MaxResRelID int64 `json:"MAX_RES_REL_ID"`
+
+	MinResEntID int64 `json:"MIN_RES_ENT_ID"`
+
+	MinResRelID int64 `json:"MIN_RES_REL_ID"`
+
+	RawMatchKeys []G2diagnosticGetResolutionStatisticsResponseRawMatchKeys `json:"RAW_MATCH_KEYS"`
+
+	RecordCount int64 `json:"RECORD_COUNT"`
+}
+
+type G2diagnosticGetResolutionStatisticsResponse = []G2diagnosticGetResolutionStatisticsResponse0
+
+type G2diagnosticStreamEntityListBySizeResponse = interface{}
+
+type G2engineAddRecordWithInfoResponse = WithInfo
+
+type G2engineAddRecordWithInfoWithReturnedRecordIDResponse = WithInfo
+
+type G2engineCheckRecordResponseCheckRecordResponse struct {
+	CandidateMatch string `json:"CANDIDATE_MATCH"`
+
+	DsrcCode string `json:"DSRC_CODE"`
+
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	ErruleID int64 `json:"ERRULE_ID"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	MatchLevel int64 `json:"MATCH_LEVEL"`
+
+	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
+
+	NonGenericCandidateMatch string `json:"NON_GENERIC_CANDIDATE_MATCH"`
+
+	RecordID string `json:"RECORD_ID"`
+}
+
+type G2engineCheckRecordResponse struct {
+	CheckRecordResponse []G2engineCheckRecordResponseCheckRecordResponse `json:"CHECK_RECORD_RESPONSE"`
+}
+
+type G2engineDeleteRecordWithInfoResponse = WithInfo
+
+type G2engineExportConfigAndConfigIDResponse struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type G2engineExportConfigResponse struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type G2engineFetchNextResponse = interface{}
+
+type G2engineFindInterestingEntitiesByEntityIDResponse = Interesting
+
+type G2engineFindInterestingEntitiesByRecordIDResponse = Interesting
+
+type G2engineFindNetworkByEntityIdv2response = Network
+
+type G2engineFindNetworkByEntityIDResponse = Network
+
+type G2engineFindNetworkByRecordIdv2response = Network
+
+type G2engineFindNetworkByRecordIDResponse = Network
+
+type G2engineFindPathByEntityIdv2response = Path
+
+type G2engineFindPathByEntityIDResponse = Path
+
+type G2engineFindPathByRecordIdv2response = Path
+
+type G2engineFindPathByRecordIDResponse = Path
+
+type G2engineFindPathExcludingByEntityIdv2response = Path
+
+type G2engineFindPathExcludingByEntityIDResponse = Path
+
+type G2engineFindPathExcludingByRecordIdv2response = Path
+
+type G2engineFindPathExcludingByRecordIDResponse = Path
+
+type G2engineFindPathIncludingSourceByEntityIdv2response = Path
+
+type G2engineFindPathIncludingSourceByEntityIDResponse = Path
+
+type G2engineFindPathIncludingSourceByRecordIdv2response = Path
+
+type G2engineFindPathIncludingSourceByRecordIDResponse = Path
+
+type G2engineGetEntityByEntityIdv2response = Entity
+
+type G2engineGetEntityByEntityIDResponse = Entity
+
+type G2engineGetEntityByRecordIdv2response = Entity
+
+type G2engineGetEntityByRecordIDResponse = Entity
+
+type G2engineGetRecordResponse = Record
+
+type G2engineGetRecordV2response = Record
+
+type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity
+
+type G2engineGetVirtualEntityByRecordIDResponse = VirtualEntity
+
+type G2engineHowEntityByEntityIdv2response = How
+
+type G2engineHowEntityByEntityIDResponse = How
+
+type G2engineProcessRedoRecordResponse = interface{}
+
+type G2engineProcessRedoRecordWithInfoResponse = WithInfo
+
+type G2engineProcessWithInfoResponse = WithInfo
+
+type G2engineProcessWithResponseResizeResponse = Process
+
+type G2engineProcessWithResponseResponse = Process
+
+type G2engineReevaluateEntityWithInfoResponse = WithInfo
+
+type G2engineReevaluateRecordWithInfoResponse = WithInfo
+
+type G2engineReplaceRecordWithInfoResponse = WithInfo
+
+type G2engineSearchByAttributesResponse = Search
+
+type G2engineSearchByAttributesResponseXxx = EntitiesByFeatureID
+
+type G2engineSearchByAttributesV2response = Search
+
+type G2engineSearchByAttributesV3response = Search
+
+type G2engineStatsResponseDuration struct {
+	Pattern string `json:"PATTERN"`
+
+	Type string `json:"TYPE"`
+}
+
+type G2engineStatsResponseReresolveTriggers struct {
+	AbortRetry int64 `json:"abortRetry"`
+
+	MultipleResolvableCandidates int64 `json:"multipleResolvableCandidates"`
+
+	ResolveNewFeatures int64 `json:"resolveNewFeatures"`
+
+	UnresolveMovement int64 `json:"unresolveMovement"`
+}
+
+type G2engineStatsResponseUnresolveTriggers struct {
+	ExtensiveResolve int64 `json:"extensiveResolve"`
+
+	NormalResolve int64 `json:"normalResolve"`
+}
+
+type G2engineStatsResponseWorkloadExpressedFeatureCall struct {
+	EfcallID int64 `json:"EFCALL_ID"`
+
+	EfuncCode string `json:"EFUNC_CODE"`
+
+	NumCalls int64 `json:"numCalls"`
+}
+
+type G2engineStatsResponseWorkloadReresolveTriggers struct {
+	AbortRetry int64 `json:"abortRetry"`
+
+	MultipleResolvableCandidates int64 `json:"multipleResolvableCandidates"`
+
+	NewFeatureFtypes AttributeCounters `json:"newFeatureFTypes"`
+
+	ResolveNewFeatures int64 `json:"resolveNewFeatures"`
+
+	UnresolveMovement int64 `json:"unresolveMovement"`
+}
+
+type G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad struct {
+	CPUIdle float64 `json:"cpuIdle"`
+
+	CPUSoftIrq float64 `json:"cpuSoftIrq"`
+
+	CPUSystem float64 `json:"cpuSystem"`
+
+	CPUUser float64 `json:"cpuUser"`
+
+	CPUWait float64 `json:"cpuWait"`
+}
+
+type G2engineStatsResponseWorkloadSystemResourcesCurrResource struct {
+	ActiveThreads int64 `json:"activeThreads"`
+
+	AvailableMemory string `json:"availableMemory"`
+
+	SystemLoad []G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad `json:"systemLoad"`
+
+	WorkerThreads int64 `json:"workerThreads"`
+}
+
+type G2engineStatsResponseWorkloadSystemResourcesInitResource struct {
+	AvailableMemory string `json:"availableMemory"`
+
+	LogicalCores int64 `json:"logicalCores"`
+
+	PhysicalCores int64 `json:"physicalCores"`
+
+	TotalMemory string `json:"totalMemory"`
+}
+
+type G2engineStatsResponseWorkloadSystemResources struct {
+	CurrResources []G2engineStatsResponseWorkloadSystemResourcesCurrResource `json:"currResources"`
+
+	InitResources []G2engineStatsResponseWorkloadSystemResourcesInitResource `json:"initResources"`
+}
+
+type G2engineStatsResponseWorkloadThreadState struct {
+	Active int64 `json:"active"`
+
+	DataLatchContention int64 `json:"dataLatchContention"`
+
+	Idle int64 `json:"idle"`
+
+	Loader int64 `json:"loader"`
+
+	ObsEntContention int64 `json:"obsEntContention"`
+
+	ResEntContention int64 `json:"resEntContention"`
+
+	Resolver int64 `json:"resolver"`
+
+	Scoring int64 `json:"scoring"`
+
+	SQLExecuting int64 `json:"sqlExecuting"`
+}
+
+type G2engineStatsResponseWorkloadUnresolveTriggers struct {
+	AmbiguousMultiResolve int64 `json:"ambiguousMultiResolve"`
+
+	AmbiguousNoResolve int64 `json:"ambiguousNoResolve"`
+
+	ExtensiveResolve int64 `json:"extensiveResolve"`
+
+	NormalResolve int64 `json:"normalResolve"`
+
+	RelLink int64 `json:"relLink"`
+
+	Update int64 `json:"update"`
+}
+
+type G2engineStatsResponseWorkload struct {
+	CorruptEntityTestDiagnosis interface{} `json:"CorruptEntityTestDiagnosis"`
+
+	AbortedUnresolve int64 `json:"abortedUnresolve"`
+
+	ActualAmbiguousTest int64 `json:"actualAmbiguousTest"`
+
+	AddedRecords int64 `json:"addedRecords"`
+
+	APIVersion string `json:"apiVersion"`
+
+	CacheHit AttributeCounters `json:"cacheHit"`
+
+	CacheMiss AttributeCounters `json:"cacheMiss"`
+
+	CachedAmbiguousTest int64 `json:"cachedAmbiguousTest"`
+
+	CandidateBuilders AttributeCounters `json:"candidateBuilders"`
+
+	Candidates int64 `json:"candidates"`
+
+	DeletedRecords int64 `json:"deletedRecords"`
+
+	Duration int64 `json:"duration"`
+
+	ExpressedFeatureCalls []G2engineStatsResponseWorkloadExpressedFeatureCall `json:"expressedFeatureCalls"`
+
+	ExpressedFeaturesCreated AttributeCounters `json:"expressedFeaturesCreated"`
+
+	FilteredObsFeat int64 `json:"filteredObsFeat"`
+
+	GenericDetect AttributeCounters `json:"genericDetect"`
+
+	GnrScorersUsed int64 `json:"gnrScorersUsed"`
+
+	HighContentionFeat AttributeCounters `json:"highContentionFeat"`
+
+	HighContentionResEnt AttributeCounters `json:"highContentionResEnt"`
+
+	LatchContention AttributeCounters `json:"latchContention"`
+
+	LibFeatCacheHit int64 `json:"libFeatCacheHit"`
+
+	LibFeatCacheMiss int64 `json:"libFeatCacheMiss"`
+
+	LoadedRecords int64 `json:"loadedRecords"`
+
+	RedoTriggers AttributeCounters `json:"redoTriggers"`
+
+	ReducedScoredFeatureType AttributeCounters `json:"reducedScoredFeatureType"`
+
+	Reevaluations int64 `json:"reevaluations"`
+
+	RepairedEntities int64 `json:"repairedEntities"`
+
+	ReresolveSkipped int64 `json:"reresolveSkipped"`
+
+	ReresolveTriggers G2engineStatsResponseWorkloadReresolveTriggers `json:"reresolveTriggers"`
+
+	ResFeatStatCacheHit int64 `json:"resFeatStatCacheHit"`
+
+	ResFeatStatCacheMiss int64 `json:"resFeatStatCacheMiss"`
+
+	ResFeatStatUpdate int64 `json:"resFeatStatUpdate"`
+
+	Retries int64 `json:"retries"`
+
+	ScoredPairs AttributeCounters `json:"scoredPairs"`
+
+	SuppressedCandidateBuilders AttributeCounters `json:"suppressedCandidateBuilders"`
+
+	SuppressedDisclosedRelationshipDomainCount int64 `json:"suppressedDisclosedRelationshipDomainCount"`
+
+	SuppressedScoredFeatureType AttributeCounters `json:"suppressedScoredFeatureType"`
+
+	SystemResources G2engineStatsResponseWorkloadSystemResources `json:"systemResources"`
+
+	ThreadState G2engineStatsResponseWorkloadThreadState `json:"threadState"`
+
+	UnresolveTest int64 `json:"unresolveTest"`
+
+	UnresolveTriggers G2engineStatsResponseWorkloadUnresolveTriggers `json:"unresolveTriggers"`
+}
+
+type G2engineStatsResponse struct {
+	MissingResEnt int64 `json:"MISSING_RES_ENT"`
+
+	MissingResEntAndOkey int64 `json:"MISSING_RES_ENT_AND_OKEY"`
+
+	AbortedUnresolve int64 `json:"abortedUnresolve"`
+
+	ActualAmbiguousTest int64 `json:"actualAmbiguousTest"`
+
+	AddedRecords int64 `json:"addedRecords"`
+
+	CacheHit AttributeCounters `json:"cacheHit"`
+
+	CandidateBuilders AttributeCounters `json:"candidateBuilders"`
+
+	Candidates int64 `json:"candidates"`
+
+	DeletedRecords int64 `json:"deletedRecords"`
+
+	Duration G2engineStatsResponseDuration `json:"duration"`
+
+	FilteredObsFeat int64 `json:"filteredObsFeat"`
+
+	GenericDetect AttributeCounters `json:"genericDetect"`
+
+	LatchContention AttributeCounters `json:"latchContention"`
+
+	LoadedRecords int64 `json:"loadedRecords"`
+
+	RedoTriggers AttributeCounters `json:"redoTriggers"`
+
+	ReducedScoredFeatureType AttributeCounters `json:"reducedScoredFeatureType"`
+
+	Reevaluations int64 `json:"reevaluations"`
+
+	RepairedEntities int64 `json:"repairedEntities"`
+
+	ReresolveSkipped int64 `json:"reresolveSkipped"`
+
+	ReresolveTriggers G2engineStatsResponseReresolveTriggers `json:"reresolveTriggers"`
+
+	Retries int64 `json:"retries"`
+
+	ScoredPairs AttributeCounters `json:"scoredPairs"`
+
+	SuppressedCandidateBuilders AttributeCounters `json:"suppressedCandidateBuilders"`
+
+	SuppressedScoredFeatureType AttributeCounters `json:"suppressedScoredFeatureType"`
+
+	UnresolveTest int64 `json:"unresolveTest"`
+
+	UnresolveTriggers G2engineStatsResponseUnresolveTriggers `json:"unresolveTriggers"`
+
+	Workload G2engineStatsResponseWorkload `json:"workload"`
+}
+
+type G2engineStreamExportJsonentityReportResponse = interface{}
+
+type G2engineWhyEntitiesResponse = WhyEntities
+
+type G2engineWhyEntitiesV2response = WhyEntities
+
+type G2engineWhyEntityByEntityIdv2response = WhyEntity
+
+type G2engineWhyEntityByEntityIDResponse = WhyEntity
+
+type G2engineWhyEntityByRecordIdv2response = WhyEntity
+
+type G2engineWhyEntityByRecordIDResponse = WhyEntity
+
+type G2engineWhyRecordsResponse = WhyRecords
+
+type G2engineWhyRecordsV2response = WhyRecords
+
+type G2productLicenseResponse struct {
+	Billing string `json:"billing"`
+
+	Contract string `json:"contract"`
+
+	Customer string `json:"customer"`
+
+	ExpireDate string `json:"expireDate"`
+
+	IssueDate string `json:"issueDate"`
+
+	LicenseLevel string `json:"licenseLevel"`
+
+	LicenseType string `json:"licenseType"`
+
+	RecordLimit int64 `json:"recordLimit"`
+}
+
+type G2productVersionResponse struct {
+	BuildDate string `json:"BUILD_DATE"`
+
+	BuildNumber string `json:"BUILD_NUMBER"`
+
+	BuildVersion string `json:"BUILD_VERSION"`
+
+	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
+
+	ProductName string `json:"PRODUCT_NAME"`
+
+	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
+
+	Version string `json:"VERSION"`
 }
 
 type How struct {
@@ -2815,6 +3493,8 @@ type ResolutionStep struct {
 
 type ResolutionSteps = []ResolutionStep
 
+type ResolvedEntities = []ResolvedEntityAndMatchInfo
+
 type ResolvedEntity struct {
 	EntityID int64 `json:"ENTITY_ID"`
 
@@ -2839,6 +3519,16 @@ type ResolvedEntity struct {
 	Records Records `json:"RECORDS"`
 
 	RecordSummary RecordSummary `json:"RECORD_SUMMARY"`
+}
+
+type ResolvedEntityAndMatchInfoEntity struct {
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+}
+
+type ResolvedEntityAndMatchInfo struct {
+	Entity ResolvedEntityAndMatchInfoEntity `json:"ENTITY"`
+
+	MatchInfo MatchInfo `json:"MATCH_INFO"`
 }
 
 type SysOom struct {

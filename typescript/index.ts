@@ -833,9 +833,31 @@ export type EngineWhyRecordsV2response = WhyRecords;
 
 export type Entities = Entity[];
 
+export type EntitiesByFeatureId = EntityByFeatureId[];
+
 export interface Entity {
   RELATED_ENTITIES: RelatedEntities;
   RESOLVED_ENTITY: ResolvedEntity;
+}
+
+export interface EntityByFeatureId {
+  LIB_FEAT_ID: number;
+  RES_ENT_ID: number;
+  USAGE_TYPE: string;
+}
+
+export interface EntityBySize {
+  DSRC_CODE: string;
+  ENT_SRC_DESC: string;
+  ENT_SRC_KEY: string;
+  ERRULE_CODE: string;
+  ER_ID: number;
+  ETYPE_CODE: string;
+  JSON_DATA: JsonData;
+  MATCH_KEY: string;
+  OBS_ENT_ID: number;
+  RECORD_ID: string;
+  RES_ENT_ID: number;
 }
 
 export interface EntityPath {
@@ -1135,6 +1157,468 @@ export interface G2config {
   CFG_SFUNC: CfgSfunc[];
   CONFIG_BASE_VERSION: ConfigBaseVersion;
   SYS_OOM: SysOom[];
+}
+
+export interface G2configAddDataSourceResponse {
+  DSRC_ID: number;
+}
+
+export interface G2configListDataSourcesResponse {
+  DATA_SOURCES: DataSources;
+}
+
+export interface G2configSaveResponse {
+  G2_CONFIG: G2config;
+}
+
+export interface G2configmgrGetConfigListResponse {
+  CONFIGS: Configs;
+}
+
+export interface G2configmgrGetConfigResponse {
+  G2_CONFIG: G2config;
+}
+
+export interface G2diagnosticCheckDbperfResponse {
+  insertTime: number;
+  numRecordsInserted: number;
+}
+
+export type G2diagnosticFetchNextEntityBySizeResponse = EntityBySize[];
+
+export interface G2diagnosticFindEntitiesByFeatureIdsResponseXxx0 {
+  LIB_FEAT_ID: number;
+  RES_ENT_ID: number;
+  USAGE_TYPE: string;
+}
+
+export type G2diagnosticFindEntitiesByFeatureIdsResponseXxx = G2diagnosticFindEntitiesByFeatureIdsResponseXxx0[];
+
+export interface G2diagnosticGetDbinfoResponseDetail {
+  Name: string;
+  Type: string;
+}
+
+export interface G2diagnosticGetDbinfoResponse {
+  "Database Details": G2diagnosticGetDbinfoResponseDetail[];
+  "Hybrid Mode": boolean;
+}
+
+export interface G2diagnosticGetDataSourceCountsResponse0 {
+  DSRC_CODE: string;
+  DSRC_ID: number;
+  DSRC_RECORD_COUNT: number;
+  ETYPE_CODE: string;
+  ETYPE_ID: number;
+  OBS_ENT_COUNT: number;
+}
+
+export type G2diagnosticGetDataSourceCountsResponse = G2diagnosticGetDataSourceCountsResponse0[];
+
+export interface G2diagnosticGetEntityDetailsResponse0 {
+  DERIVED: string;
+  DSRC_CODE: string;
+  ERRULE_CODE: string;
+  ETYPE_CODE: string;
+  FEAT_DESC: string;
+  FTYPE_CODE: string;
+  MATCH_KEY: string;
+  OBS_ENT_ID: number;
+  RECORD_ID: number;
+  RES_ENT_ID: number;
+  USAGE_TYPE: string;
+}
+
+export type G2diagnosticGetEntityDetailsResponse = G2diagnosticGetEntityDetailsResponse0[];
+
+export interface G2diagnosticGetEntityResumeResponse0 {
+  DSRC_CODE: string;
+  ENT_SRC_DESC: string;
+  ERRULE_CODE: string;
+  ETYPE_CODE: string;
+  JSON_DATA: JsonData;
+  MATCH_KEY: string;
+  RECORD_ID: string;
+  REL_ENT_ID: number;
+  RES_ENT_ID: number;
+}
+
+export type G2diagnosticGetEntityResumeResponse = G2diagnosticGetEntityResumeResponse0[];
+
+export type G2diagnosticGetEntitySizeBreakdownResponse = AttributeCounters;
+
+export interface G2diagnosticGetFeatureResponseElements {
+  FELEM_CODE: string;
+  FELEM_VALUE: string;
+}
+
+export interface G2diagnosticGetFeatureResponse {
+  ELEMENTS: G2diagnosticGetFeatureResponseElements[];
+  FTYPE_CODE: string;
+  LIB_FEAT_ID: number;
+}
+
+export interface G2diagnosticGetGenericFeaturesResponse0 {
+  CANDIDATE_CAP_REACHED: string;
+  ESTIMATED_COUNT: number;
+  FEAT_DESC: string;
+  FTYPE_CODE: string;
+  LIB_FEAT_ID: number;
+  SCORING_CAP_REACHED: string;
+}
+
+export type G2diagnosticGetGenericFeaturesResponse = G2diagnosticGetGenericFeaturesResponse0[];
+
+export interface G2diagnosticGetMappingStatisticsResponse0 {
+  DERIVED: string;
+  DSRC_CODE: string;
+  ETYPE_CODE: string;
+  FTYPE_CODE: string;
+  MAX_FEAT_DESC: string;
+  MIN_FEAT_DESC: string;
+  REC_COUNT: number;
+  REC_PCT: number;
+  UNIQ_COUNT: number;
+  UNIQ_PCT: number;
+  USAGE_TYPE: string;
+}
+
+export type G2diagnosticGetMappingStatisticsResponse = G2diagnosticGetMappingStatisticsResponse0[];
+
+export interface G2diagnosticGetRelationshipDetailsResponse0 {
+  ERRULE_CODE: string;
+  FEAT_DESC: string;
+  FTYPE_CODE: string;
+  MATCH_KEY: string;
+  RES_ENT_ID: number;
+}
+
+export type G2diagnosticGetRelationshipDetailsResponse = G2diagnosticGetRelationshipDetailsResponse0[];
+
+export interface G2diagnosticGetResolutionStatisticsResponseRawMatchKeys {
+  MATCH_KEY: string;
+}
+
+export interface G2diagnosticGetResolutionStatisticsResponse0 {
+  ERRULE_CODE: string;
+  ERRULE_ID: number;
+  IS_AMBIGUOUS: string;
+  MATCH_KEY: string;
+  MATCH_LEVEL: number;
+  MAX_RES_ENT_ID: number;
+  MAX_RES_REL_ID: number;
+  MIN_RES_ENT_ID: number;
+  MIN_RES_REL_ID: number;
+  RAW_MATCH_KEYS: G2diagnosticGetResolutionStatisticsResponseRawMatchKeys[];
+  RECORD_COUNT: number;
+}
+
+export type G2diagnosticGetResolutionStatisticsResponse = G2diagnosticGetResolutionStatisticsResponse0[];
+
+export type G2diagnosticStreamEntityListBySizeResponse = any;
+
+export type G2engineAddRecordWithInfoResponse = WithInfo;
+
+export type G2engineAddRecordWithInfoWithReturnedRecordIdResponse = WithInfo;
+
+export interface G2engineCheckRecordResponseCheckRecordResponse {
+  CANDIDATE_MATCH: string;
+  DSRC_CODE: string;
+  ERRULE_CODE: string;
+  ERRULE_ID: number;
+  MATCH_KEY: string;
+  MATCH_LEVEL: number;
+  MATCH_LEVEL_CODE: string;
+  NON_GENERIC_CANDIDATE_MATCH: string;
+  RECORD_ID: string;
+}
+
+export interface G2engineCheckRecordResponse {
+  CHECK_RECORD_RESPONSE: G2engineCheckRecordResponseCheckRecordResponse[];
+}
+
+export type G2engineDeleteRecordWithInfoResponse = WithInfo;
+
+export interface G2engineExportConfigAndConfigIdResponse {
+  G2_CONFIG: G2config;
+}
+
+export interface G2engineExportConfigResponse {
+  G2_CONFIG: G2config;
+}
+
+export type G2engineFetchNextResponse = any;
+
+export type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
+
+export type G2engineFindInterestingEntitiesByRecordIdResponse = Interesting;
+
+export type G2engineFindNetworkByEntityIdv2response = Network;
+
+export type G2engineFindNetworkByEntityIdResponse = Network;
+
+export type G2engineFindNetworkByRecordIdv2response = Network;
+
+export type G2engineFindNetworkByRecordIdResponse = Network;
+
+export type G2engineFindPathByEntityIdv2response = Path;
+
+export type G2engineFindPathByEntityIdResponse = Path;
+
+export type G2engineFindPathByRecordIdv2response = Path;
+
+export type G2engineFindPathByRecordIdResponse = Path;
+
+export type G2engineFindPathExcludingByEntityIdv2response = Path;
+
+export type G2engineFindPathExcludingByEntityIdResponse = Path;
+
+export type G2engineFindPathExcludingByRecordIdv2response = Path;
+
+export type G2engineFindPathExcludingByRecordIdResponse = Path;
+
+export type G2engineFindPathIncludingSourceByEntityIdv2response = Path;
+
+export type G2engineFindPathIncludingSourceByEntityIdResponse = Path;
+
+export type G2engineFindPathIncludingSourceByRecordIdv2response = Path;
+
+export type G2engineFindPathIncludingSourceByRecordIdResponse = Path;
+
+export type G2engineGetEntityByEntityIdv2response = Entity;
+
+export type G2engineGetEntityByEntityIdResponse = Entity;
+
+export type G2engineGetEntityByRecordIdv2response = Entity;
+
+export type G2engineGetEntityByRecordIdResponse = Entity;
+
+export type G2engineGetRecordResponse = Record;
+
+export type G2engineGetRecordV2response = Record;
+
+export type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
+
+export type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+
+export type G2engineHowEntityByEntityIdv2response = How;
+
+export type G2engineHowEntityByEntityIdResponse = How;
+
+export type G2engineProcessRedoRecordResponse = any;
+
+export type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
+
+export type G2engineProcessWithInfoResponse = WithInfo;
+
+export type G2engineProcessWithResponseResizeResponse = Process;
+
+export type G2engineProcessWithResponseResponse = Process;
+
+export type G2engineReevaluateEntityWithInfoResponse = WithInfo;
+
+export type G2engineReevaluateRecordWithInfoResponse = WithInfo;
+
+export type G2engineReplaceRecordWithInfoResponse = WithInfo;
+
+export type G2engineSearchByAttributesResponse = Search;
+
+export type G2engineSearchByAttributesResponseXxx = EntitiesByFeatureId;
+
+export type G2engineSearchByAttributesV2response = Search;
+
+export type G2engineSearchByAttributesV3response = Search;
+
+export interface G2engineStatsResponseDuration {
+  PATTERN: string;
+  TYPE: string;
+}
+
+export interface G2engineStatsResponseReresolveTriggers {
+  abortRetry: number;
+  multipleResolvableCandidates: number;
+  resolveNewFeatures: number;
+  unresolveMovement: number;
+}
+
+export interface G2engineStatsResponseUnresolveTriggers {
+  extensiveResolve: number;
+  normalResolve: number;
+}
+
+export interface G2engineStatsResponseWorkloadExpressedFeatureCall {
+  EFCALL_ID: number;
+  EFUNC_CODE: string;
+  numCalls: number;
+}
+
+export interface G2engineStatsResponseWorkloadReresolveTriggers {
+  abortRetry: number;
+  multipleResolvableCandidates: number;
+  newFeatureFTypes: AttributeCounters;
+  resolveNewFeatures: number;
+  unresolveMovement: number;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
+  cpuIdle: number;
+  cpuSoftIrq: number;
+  cpuSystem: number;
+  cpuUser: number;
+  cpuWait: number;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResourcesCurrResource {
+  activeThreads: number;
+  availableMemory: string;
+  systemLoad: G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad[];
+  workerThreads: number;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResourcesInitResource {
+  availableMemory: string;
+  logicalCores: number;
+  physicalCores: number;
+  totalMemory: string;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResources {
+  currResources: G2engineStatsResponseWorkloadSystemResourcesCurrResource[];
+  initResources: G2engineStatsResponseWorkloadSystemResourcesInitResource[];
+}
+
+export interface G2engineStatsResponseWorkloadThreadState {
+  active: number;
+  dataLatchContention: number;
+  idle: number;
+  loader: number;
+  obsEntContention: number;
+  resEntContention: number;
+  resolver: number;
+  scoring: number;
+  sqlExecuting: number;
+}
+
+export interface G2engineStatsResponseWorkloadUnresolveTriggers {
+  ambiguousMultiResolve: number;
+  ambiguousNoResolve: number;
+  extensiveResolve: number;
+  normalResolve: number;
+  relLink: number;
+  update: number;
+}
+
+export interface G2engineStatsResponseWorkload {
+  CorruptEntityTestDiagnosis: any;
+  abortedUnresolve: number;
+  actualAmbiguousTest: number;
+  addedRecords: number;
+  apiVersion: string;
+  cacheHit: AttributeCounters;
+  cacheMiss: AttributeCounters;
+  cachedAmbiguousTest: number;
+  candidateBuilders: AttributeCounters;
+  candidates: number;
+  deletedRecords: number;
+  duration: number;
+  expressedFeatureCalls: G2engineStatsResponseWorkloadExpressedFeatureCall[];
+  expressedFeaturesCreated: AttributeCounters;
+  filteredObsFeat: number;
+  genericDetect: AttributeCounters;
+  gnrScorersUsed: number;
+  highContentionFeat: AttributeCounters;
+  highContentionResEnt: AttributeCounters;
+  latchContention: AttributeCounters;
+  libFeatCacheHit: number;
+  libFeatCacheMiss: number;
+  loadedRecords: number;
+  redoTriggers: AttributeCounters;
+  reducedScoredFeatureType: AttributeCounters;
+  reevaluations: number;
+  repairedEntities: number;
+  reresolveSkipped: number;
+  reresolveTriggers: G2engineStatsResponseWorkloadReresolveTriggers;
+  resFeatStatCacheHit: number;
+  resFeatStatCacheMiss: number;
+  resFeatStatUpdate: number;
+  retries: number;
+  scoredPairs: AttributeCounters;
+  suppressedCandidateBuilders: AttributeCounters;
+  suppressedDisclosedRelationshipDomainCount: number;
+  suppressedScoredFeatureType: AttributeCounters;
+  systemResources: G2engineStatsResponseWorkloadSystemResources;
+  threadState: G2engineStatsResponseWorkloadThreadState;
+  unresolveTest: number;
+  unresolveTriggers: G2engineStatsResponseWorkloadUnresolveTriggers;
+}
+
+export interface G2engineStatsResponse {
+  MISSING_RES_ENT: number;
+  MISSING_RES_ENT_AND_OKEY: number;
+  abortedUnresolve: number;
+  actualAmbiguousTest: number;
+  addedRecords: number;
+  cacheHit: AttributeCounters;
+  candidateBuilders: AttributeCounters;
+  candidates: number;
+  deletedRecords: number;
+  duration: G2engineStatsResponseDuration;
+  filteredObsFeat: number;
+  genericDetect: AttributeCounters;
+  latchContention: AttributeCounters;
+  loadedRecords: number;
+  redoTriggers: AttributeCounters;
+  reducedScoredFeatureType: AttributeCounters;
+  reevaluations: number;
+  repairedEntities: number;
+  reresolveSkipped: number;
+  reresolveTriggers: G2engineStatsResponseReresolveTriggers;
+  retries: number;
+  scoredPairs: AttributeCounters;
+  suppressedCandidateBuilders: AttributeCounters;
+  suppressedScoredFeatureType: AttributeCounters;
+  unresolveTest: number;
+  unresolveTriggers: G2engineStatsResponseUnresolveTriggers;
+  workload: G2engineStatsResponseWorkload;
+}
+
+export type G2engineStreamExportJsonentityReportResponse = any;
+
+export type G2engineWhyEntitiesResponse = WhyEntities;
+
+export type G2engineWhyEntitiesV2response = WhyEntities;
+
+export type G2engineWhyEntityByEntityIdv2response = WhyEntity;
+
+export type G2engineWhyEntityByEntityIdResponse = WhyEntity;
+
+export type G2engineWhyEntityByRecordIdv2response = WhyEntity;
+
+export type G2engineWhyEntityByRecordIdResponse = WhyEntity;
+
+export type G2engineWhyRecordsResponse = WhyRecords;
+
+export type G2engineWhyRecordsV2response = WhyRecords;
+
+export interface G2productLicenseResponse {
+  billing: string;
+  contract: string;
+  customer: string;
+  expireDate: string;
+  issueDate: string;
+  licenseLevel: string;
+  licenseType: string;
+  recordLimit: number;
+}
+
+export interface G2productVersionResponse {
+  BUILD_DATE: string;
+  BUILD_NUMBER: string;
+  BUILD_VERSION: string;
+  COMPATIBILITY_VERSION: CompatibilityVersion;
+  PRODUCT_NAME: string;
+  SCHEMA_VERSION: SchemaVersion;
+  VERSION: string;
 }
 
 export interface How {
@@ -1747,6 +2231,8 @@ export interface ResolutionStep {
 
 export type ResolutionSteps = ResolutionStep[];
 
+export type ResolvedEntities = ResolvedEntityAndMatchInfo[];
+
 export interface ResolvedEntity {
   ENTITY_ID: number;
   ENTITY_NAME: string;
@@ -1760,6 +2246,15 @@ export interface ResolvedEntity {
   MATCH_LEVEL_CODE: string;
   RECORDS: Records;
   RECORD_SUMMARY: RecordSummary;
+}
+
+export interface ResolvedEntityAndMatchInfoEntity {
+  RESOLVED_ENTITY: ResolvedEntity;
+}
+
+export interface ResolvedEntityAndMatchInfo {
+  ENTITY: ResolvedEntityAndMatchInfoEntity;
+  MATCH_INFO: MatchInfo;
 }
 
 export interface SysOom {

@@ -83,6 +83,12 @@ generate-python:
 		--root-name senzingapi \
 		senzingapi-RFC8927.json
 
+.PHONY: generate-python-bad
+generate-python-bad:
+	jtd-codegen \
+		--python-out ./python/typedef \
+		--root-name senzingapi \
+		senzingapi-RFC8927-bad.json
 
 .PHONY: generate-ruby
 generate-ruby:

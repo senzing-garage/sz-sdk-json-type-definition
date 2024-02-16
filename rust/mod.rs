@@ -1747,6 +1747,8 @@ pub type EngineWhyRecordsV2response = WhyRecords;
 
 pub type Entities = Vec<Entity>;
 
+pub type EntitiesByFeatureId = Vec<EntityByFeatureId>;
+
 #[derive(Serialize, Deserialize)]
 pub struct Entity {
     #[serde(rename = "RELATED_ENTITIES")]
@@ -1754,6 +1756,54 @@ pub struct Entity {
 
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EntityByFeatureId {
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
+
+    #[serde(rename = "RES_ENT_ID")]
+    pub resEntId: i32,
+
+    #[serde(rename = "USAGE_TYPE")]
+    pub usageType: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EntityBySize {
+    #[serde(rename = "DSRC_CODE")]
+    pub dsrcCode: String,
+
+    #[serde(rename = "ENT_SRC_DESC")]
+    pub entSrcDesc: String,
+
+    #[serde(rename = "ENT_SRC_KEY")]
+    pub entSrcKey: String,
+
+    #[serde(rename = "ERRULE_CODE")]
+    pub erruleCode: String,
+
+    #[serde(rename = "ER_ID")]
+    pub erId: i32,
+
+    #[serde(rename = "ETYPE_CODE")]
+    pub etypeCode: String,
+
+    #[serde(rename = "JSON_DATA")]
+    pub jsonData: JsonData,
+
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+
+    #[serde(rename = "OBS_ENT_ID")]
+    pub obsEntId: i32,
+
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: String,
+
+    #[serde(rename = "RES_ENT_ID")]
+    pub resEntId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2577,6 +2627,908 @@ pub struct G2config {
 
     #[serde(rename = "SYS_OOM")]
     pub sysOom: Vec<SysOom>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2configAddDataSourceResponse {
+    #[serde(rename = "DSRC_ID")]
+    pub dsrcId: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2configListDataSourcesResponse {
+    #[serde(rename = "DATA_SOURCES")]
+    pub dataSources: DataSources,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2configSaveResponse {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2configmgrGetConfigListResponse {
+    #[serde(rename = "CONFIGS")]
+    pub configs: Configs,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2configmgrGetConfigResponse {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticCheckDbperfResponse {
+    #[serde(rename = "insertTime")]
+    pub insertTime: i32,
+
+    #[serde(rename = "numRecordsInserted")]
+    pub numRecordsInserted: i32,
+}
+
+pub type G2diagnosticFetchNextEntityBySizeResponse = Vec<EntityBySize>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticFindEntitiesByFeatureIdsResponseXxx0 {
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
+
+    #[serde(rename = "RES_ENT_ID")]
+    pub resEntId: i32,
+
+    #[serde(rename = "USAGE_TYPE")]
+    pub usageType: String,
+}
+
+pub type G2diagnosticFindEntitiesByFeatureIdsResponseXxx = Vec<G2diagnosticFindEntitiesByFeatureIdsResponseXxx0>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetDbinfoResponseDetail {
+    #[serde(rename = "Name")]
+    pub name: String,
+
+    #[serde(rename = "Type")]
+    pub type_: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetDbinfoResponse {
+    #[serde(rename = "Database Details")]
+    pub databaseDetails: Vec<G2diagnosticGetDbinfoResponseDetail>,
+
+    #[serde(rename = "Hybrid Mode")]
+    pub hybridMode: bool,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetDataSourceCountsResponse0 {
+    #[serde(rename = "DSRC_CODE")]
+    pub dsrcCode: String,
+
+    #[serde(rename = "DSRC_ID")]
+    pub dsrcId: i32,
+
+    #[serde(rename = "DSRC_RECORD_COUNT")]
+    pub dsrcRecordCount: i32,
+
+    #[serde(rename = "ETYPE_CODE")]
+    pub etypeCode: String,
+
+    #[serde(rename = "ETYPE_ID")]
+    pub etypeId: i32,
+
+    #[serde(rename = "OBS_ENT_COUNT")]
+    pub obsEntCount: i32,
+}
+
+pub type G2diagnosticGetDataSourceCountsResponse = Vec<G2diagnosticGetDataSourceCountsResponse0>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetEntityDetailsResponse0 {
+    #[serde(rename = "DERIVED")]
+    pub derived: String,
+
+    #[serde(rename = "DSRC_CODE")]
+    pub dsrcCode: String,
+
+    #[serde(rename = "ERRULE_CODE")]
+    pub erruleCode: String,
+
+    #[serde(rename = "ETYPE_CODE")]
+    pub etypeCode: String,
+
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+
+    #[serde(rename = "OBS_ENT_ID")]
+    pub obsEntId: i32,
+
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: i32,
+
+    #[serde(rename = "RES_ENT_ID")]
+    pub resEntId: i32,
+
+    #[serde(rename = "USAGE_TYPE")]
+    pub usageType: String,
+}
+
+pub type G2diagnosticGetEntityDetailsResponse = Vec<G2diagnosticGetEntityDetailsResponse0>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetEntityResumeResponse0 {
+    #[serde(rename = "DSRC_CODE")]
+    pub dsrcCode: String,
+
+    #[serde(rename = "ENT_SRC_DESC")]
+    pub entSrcDesc: String,
+
+    #[serde(rename = "ERRULE_CODE")]
+    pub erruleCode: String,
+
+    #[serde(rename = "ETYPE_CODE")]
+    pub etypeCode: String,
+
+    #[serde(rename = "JSON_DATA")]
+    pub jsonData: JsonData,
+
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: String,
+
+    #[serde(rename = "REL_ENT_ID")]
+    pub relEntId: i32,
+
+    #[serde(rename = "RES_ENT_ID")]
+    pub resEntId: i32,
+}
+
+pub type G2diagnosticGetEntityResumeResponse = Vec<G2diagnosticGetEntityResumeResponse0>;
+
+pub type G2diagnosticGetEntitySizeBreakdownResponse = AttributeCounters;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetFeatureResponseElements {
+    #[serde(rename = "FELEM_CODE")]
+    pub felemCode: String,
+
+    #[serde(rename = "FELEM_VALUE")]
+    pub felemValue: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetFeatureResponse {
+    #[serde(rename = "ELEMENTS")]
+    pub elements: Vec<G2diagnosticGetFeatureResponseElements>,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetGenericFeaturesResponse0 {
+    #[serde(rename = "CANDIDATE_CAP_REACHED")]
+    pub candidateCapReached: String,
+
+    #[serde(rename = "ESTIMATED_COUNT")]
+    pub estimatedCount: i32,
+
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
+
+    #[serde(rename = "SCORING_CAP_REACHED")]
+    pub scoringCapReached: String,
+}
+
+pub type G2diagnosticGetGenericFeaturesResponse = Vec<G2diagnosticGetGenericFeaturesResponse0>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetMappingStatisticsResponse0 {
+    #[serde(rename = "DERIVED")]
+    pub derived: String,
+
+    #[serde(rename = "DSRC_CODE")]
+    pub dsrcCode: String,
+
+    #[serde(rename = "ETYPE_CODE")]
+    pub etypeCode: String,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "MAX_FEAT_DESC")]
+    pub maxFeatDesc: String,
+
+    #[serde(rename = "MIN_FEAT_DESC")]
+    pub minFeatDesc: String,
+
+    #[serde(rename = "REC_COUNT")]
+    pub recCount: i32,
+
+    #[serde(rename = "REC_PCT")]
+    pub recPct: f64,
+
+    #[serde(rename = "UNIQ_COUNT")]
+    pub uniqCount: i32,
+
+    #[serde(rename = "UNIQ_PCT")]
+    pub uniqPct: f64,
+
+    #[serde(rename = "USAGE_TYPE")]
+    pub usageType: String,
+}
+
+pub type G2diagnosticGetMappingStatisticsResponse = Vec<G2diagnosticGetMappingStatisticsResponse0>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetRelationshipDetailsResponse0 {
+    #[serde(rename = "ERRULE_CODE")]
+    pub erruleCode: String,
+
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+
+    #[serde(rename = "RES_ENT_ID")]
+    pub resEntId: i32,
+}
+
+pub type G2diagnosticGetRelationshipDetailsResponse = Vec<G2diagnosticGetRelationshipDetailsResponse0>;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetResolutionStatisticsResponseRawMatchKeys {
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2diagnosticGetResolutionStatisticsResponse0 {
+    #[serde(rename = "ERRULE_CODE")]
+    pub erruleCode: String,
+
+    #[serde(rename = "ERRULE_ID")]
+    pub erruleId: i32,
+
+    #[serde(rename = "IS_AMBIGUOUS")]
+    pub isAmbiguous: String,
+
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+
+    #[serde(rename = "MATCH_LEVEL")]
+    pub matchLevel: i32,
+
+    #[serde(rename = "MAX_RES_ENT_ID")]
+    pub maxResEntId: i32,
+
+    #[serde(rename = "MAX_RES_REL_ID")]
+    pub maxResRelId: i32,
+
+    #[serde(rename = "MIN_RES_ENT_ID")]
+    pub minResEntId: i32,
+
+    #[serde(rename = "MIN_RES_REL_ID")]
+    pub minResRelId: i32,
+
+    #[serde(rename = "RAW_MATCH_KEYS")]
+    pub rawMatchKeys: Vec<G2diagnosticGetResolutionStatisticsResponseRawMatchKeys>,
+
+    #[serde(rename = "RECORD_COUNT")]
+    pub recordCount: i32,
+}
+
+pub type G2diagnosticGetResolutionStatisticsResponse = Vec<G2diagnosticGetResolutionStatisticsResponse0>;
+
+pub type G2diagnosticStreamEntityListBySizeResponse = Option<Value>;
+
+pub type G2engineAddRecordWithInfoResponse = WithInfo;
+
+pub type G2engineAddRecordWithInfoWithReturnedRecordIdResponse = WithInfo;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineCheckRecordResponseCheckRecordResponse {
+    #[serde(rename = "CANDIDATE_MATCH")]
+    pub candidateMatch: String,
+
+    #[serde(rename = "DSRC_CODE")]
+    pub dsrcCode: String,
+
+    #[serde(rename = "ERRULE_CODE")]
+    pub erruleCode: String,
+
+    #[serde(rename = "ERRULE_ID")]
+    pub erruleId: i32,
+
+    #[serde(rename = "MATCH_KEY")]
+    pub matchKey: String,
+
+    #[serde(rename = "MATCH_LEVEL")]
+    pub matchLevel: i32,
+
+    #[serde(rename = "MATCH_LEVEL_CODE")]
+    pub matchLevelCode: String,
+
+    #[serde(rename = "NON_GENERIC_CANDIDATE_MATCH")]
+    pub nonGenericCandidateMatch: String,
+
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineCheckRecordResponse {
+    #[serde(rename = "CHECK_RECORD_RESPONSE")]
+    pub checkRecordResponse: Vec<G2engineCheckRecordResponseCheckRecordResponse>,
+}
+
+pub type G2engineDeleteRecordWithInfoResponse = WithInfo;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineExportConfigAndConfigIdResponse {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineExportConfigResponse {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
+
+pub type G2engineFetchNextResponse = Option<Value>;
+
+pub type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
+
+pub type G2engineFindInterestingEntitiesByRecordIdResponse = Interesting;
+
+pub type G2engineFindNetworkByEntityIdv2response = Network;
+
+pub type G2engineFindNetworkByEntityIdResponse = Network;
+
+pub type G2engineFindNetworkByRecordIdv2response = Network;
+
+pub type G2engineFindNetworkByRecordIdResponse = Network;
+
+pub type G2engineFindPathByEntityIdv2response = Path;
+
+pub type G2engineFindPathByEntityIdResponse = Path;
+
+pub type G2engineFindPathByRecordIdv2response = Path;
+
+pub type G2engineFindPathByRecordIdResponse = Path;
+
+pub type G2engineFindPathExcludingByEntityIdv2response = Path;
+
+pub type G2engineFindPathExcludingByEntityIdResponse = Path;
+
+pub type G2engineFindPathExcludingByRecordIdv2response = Path;
+
+pub type G2engineFindPathExcludingByRecordIdResponse = Path;
+
+pub type G2engineFindPathIncludingSourceByEntityIdv2response = Path;
+
+pub type G2engineFindPathIncludingSourceByEntityIdResponse = Path;
+
+pub type G2engineFindPathIncludingSourceByRecordIdv2response = Path;
+
+pub type G2engineFindPathIncludingSourceByRecordIdResponse = Path;
+
+pub type G2engineGetEntityByEntityIdv2response = Entity;
+
+pub type G2engineGetEntityByEntityIdResponse = Entity;
+
+pub type G2engineGetEntityByRecordIdv2response = Entity;
+
+pub type G2engineGetEntityByRecordIdResponse = Entity;
+
+pub type G2engineGetRecordResponse = Record;
+
+pub type G2engineGetRecordV2response = Record;
+
+pub type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
+
+pub type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+
+pub type G2engineHowEntityByEntityIdv2response = How;
+
+pub type G2engineHowEntityByEntityIdResponse = How;
+
+pub type G2engineProcessRedoRecordResponse = Option<Value>;
+
+pub type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
+
+pub type G2engineProcessWithInfoResponse = WithInfo;
+
+pub type G2engineProcessWithResponseResizeResponse = Process;
+
+pub type G2engineProcessWithResponseResponse = Process;
+
+pub type G2engineReevaluateEntityWithInfoResponse = WithInfo;
+
+pub type G2engineReevaluateRecordWithInfoResponse = WithInfo;
+
+pub type G2engineReplaceRecordWithInfoResponse = WithInfo;
+
+pub type G2engineSearchByAttributesResponse = Search;
+
+pub type G2engineSearchByAttributesResponseXxx = EntitiesByFeatureId;
+
+pub type G2engineSearchByAttributesV2response = Search;
+
+pub type G2engineSearchByAttributesV3response = Search;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseDuration {
+    #[serde(rename = "PATTERN")]
+    pub pattern: String,
+
+    #[serde(rename = "TYPE")]
+    pub type_: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseReresolveTriggers {
+    #[serde(rename = "abortRetry")]
+    pub abortRetry: i32,
+
+    #[serde(rename = "multipleResolvableCandidates")]
+    pub multipleResolvableCandidates: i32,
+
+    #[serde(rename = "resolveNewFeatures")]
+    pub resolveNewFeatures: i32,
+
+    #[serde(rename = "unresolveMovement")]
+    pub unresolveMovement: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseUnresolveTriggers {
+    #[serde(rename = "extensiveResolve")]
+    pub extensiveResolve: i32,
+
+    #[serde(rename = "normalResolve")]
+    pub normalResolve: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadExpressedFeatureCall {
+    #[serde(rename = "EFCALL_ID")]
+    pub efcallId: i32,
+
+    #[serde(rename = "EFUNC_CODE")]
+    pub efuncCode: String,
+
+    #[serde(rename = "numCalls")]
+    pub numCalls: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadReresolveTriggers {
+    #[serde(rename = "abortRetry")]
+    pub abortRetry: i32,
+
+    #[serde(rename = "multipleResolvableCandidates")]
+    pub multipleResolvableCandidates: i32,
+
+    #[serde(rename = "newFeatureFTypes")]
+    pub newFeatureFtypes: AttributeCounters,
+
+    #[serde(rename = "resolveNewFeatures")]
+    pub resolveNewFeatures: i32,
+
+    #[serde(rename = "unresolveMovement")]
+    pub unresolveMovement: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
+    #[serde(rename = "cpuIdle")]
+    pub cpuIdle: f64,
+
+    #[serde(rename = "cpuSoftIrq")]
+    pub cpuSoftIrq: f64,
+
+    #[serde(rename = "cpuSystem")]
+    pub cpuSystem: f64,
+
+    #[serde(rename = "cpuUser")]
+    pub cpuUser: f64,
+
+    #[serde(rename = "cpuWait")]
+    pub cpuWait: f64,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadSystemResourcesCurrResource {
+    #[serde(rename = "activeThreads")]
+    pub activeThreads: i32,
+
+    #[serde(rename = "availableMemory")]
+    pub availableMemory: String,
+
+    #[serde(rename = "systemLoad")]
+    pub systemLoad: Vec<G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad>,
+
+    #[serde(rename = "workerThreads")]
+    pub workerThreads: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadSystemResourcesInitResource {
+    #[serde(rename = "availableMemory")]
+    pub availableMemory: String,
+
+    #[serde(rename = "logicalCores")]
+    pub logicalCores: i32,
+
+    #[serde(rename = "physicalCores")]
+    pub physicalCores: i32,
+
+    #[serde(rename = "totalMemory")]
+    pub totalMemory: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadSystemResources {
+    #[serde(rename = "currResources")]
+    pub currResources: Vec<G2engineStatsResponseWorkloadSystemResourcesCurrResource>,
+
+    #[serde(rename = "initResources")]
+    pub initResources: Vec<G2engineStatsResponseWorkloadSystemResourcesInitResource>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadThreadState {
+    #[serde(rename = "active")]
+    pub active: i32,
+
+    #[serde(rename = "dataLatchContention")]
+    pub dataLatchContention: i32,
+
+    #[serde(rename = "idle")]
+    pub idle: i32,
+
+    #[serde(rename = "loader")]
+    pub loader: i32,
+
+    #[serde(rename = "obsEntContention")]
+    pub obsEntContention: i32,
+
+    #[serde(rename = "resEntContention")]
+    pub resEntContention: i32,
+
+    #[serde(rename = "resolver")]
+    pub resolver: i32,
+
+    #[serde(rename = "scoring")]
+    pub scoring: i32,
+
+    #[serde(rename = "sqlExecuting")]
+    pub sqlExecuting: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkloadUnresolveTriggers {
+    #[serde(rename = "ambiguousMultiResolve")]
+    pub ambiguousMultiResolve: i32,
+
+    #[serde(rename = "ambiguousNoResolve")]
+    pub ambiguousNoResolve: i32,
+
+    #[serde(rename = "extensiveResolve")]
+    pub extensiveResolve: i32,
+
+    #[serde(rename = "normalResolve")]
+    pub normalResolve: i32,
+
+    #[serde(rename = "relLink")]
+    pub relLink: i32,
+
+    #[serde(rename = "update")]
+    pub update: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponseWorkload {
+    #[serde(rename = "CorruptEntityTestDiagnosis")]
+    pub corruptEntityTestDiagnosis: Option<Value>,
+
+    #[serde(rename = "abortedUnresolve")]
+    pub abortedUnresolve: i32,
+
+    #[serde(rename = "actualAmbiguousTest")]
+    pub actualAmbiguousTest: i32,
+
+    #[serde(rename = "addedRecords")]
+    pub addedRecords: i32,
+
+    #[serde(rename = "apiVersion")]
+    pub apiVersion: String,
+
+    #[serde(rename = "cacheHit")]
+    pub cacheHit: AttributeCounters,
+
+    #[serde(rename = "cacheMiss")]
+    pub cacheMiss: AttributeCounters,
+
+    #[serde(rename = "cachedAmbiguousTest")]
+    pub cachedAmbiguousTest: i32,
+
+    #[serde(rename = "candidateBuilders")]
+    pub candidateBuilders: AttributeCounters,
+
+    #[serde(rename = "candidates")]
+    pub candidates: i32,
+
+    #[serde(rename = "deletedRecords")]
+    pub deletedRecords: i32,
+
+    #[serde(rename = "duration")]
+    pub duration: i32,
+
+    #[serde(rename = "expressedFeatureCalls")]
+    pub expressedFeatureCalls: Vec<G2engineStatsResponseWorkloadExpressedFeatureCall>,
+
+    #[serde(rename = "expressedFeaturesCreated")]
+    pub expressedFeaturesCreated: AttributeCounters,
+
+    #[serde(rename = "filteredObsFeat")]
+    pub filteredObsFeat: i32,
+
+    #[serde(rename = "genericDetect")]
+    pub genericDetect: AttributeCounters,
+
+    #[serde(rename = "gnrScorersUsed")]
+    pub gnrScorersUsed: i32,
+
+    #[serde(rename = "highContentionFeat")]
+    pub highContentionFeat: AttributeCounters,
+
+    #[serde(rename = "highContentionResEnt")]
+    pub highContentionResEnt: AttributeCounters,
+
+    #[serde(rename = "latchContention")]
+    pub latchContention: AttributeCounters,
+
+    #[serde(rename = "libFeatCacheHit")]
+    pub libFeatCacheHit: i32,
+
+    #[serde(rename = "libFeatCacheMiss")]
+    pub libFeatCacheMiss: i32,
+
+    #[serde(rename = "loadedRecords")]
+    pub loadedRecords: i32,
+
+    #[serde(rename = "redoTriggers")]
+    pub redoTriggers: AttributeCounters,
+
+    #[serde(rename = "reducedScoredFeatureType")]
+    pub reducedScoredFeatureType: AttributeCounters,
+
+    #[serde(rename = "reevaluations")]
+    pub reevaluations: i32,
+
+    #[serde(rename = "repairedEntities")]
+    pub repairedEntities: i32,
+
+    #[serde(rename = "reresolveSkipped")]
+    pub reresolveSkipped: i32,
+
+    #[serde(rename = "reresolveTriggers")]
+    pub reresolveTriggers: G2engineStatsResponseWorkloadReresolveTriggers,
+
+    #[serde(rename = "resFeatStatCacheHit")]
+    pub resFeatStatCacheHit: i32,
+
+    #[serde(rename = "resFeatStatCacheMiss")]
+    pub resFeatStatCacheMiss: i32,
+
+    #[serde(rename = "resFeatStatUpdate")]
+    pub resFeatStatUpdate: i32,
+
+    #[serde(rename = "retries")]
+    pub retries: i32,
+
+    #[serde(rename = "scoredPairs")]
+    pub scoredPairs: AttributeCounters,
+
+    #[serde(rename = "suppressedCandidateBuilders")]
+    pub suppressedCandidateBuilders: AttributeCounters,
+
+    #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
+    pub suppressedDisclosedRelationshipDomainCount: i32,
+
+    #[serde(rename = "suppressedScoredFeatureType")]
+    pub suppressedScoredFeatureType: AttributeCounters,
+
+    #[serde(rename = "systemResources")]
+    pub systemResources: G2engineStatsResponseWorkloadSystemResources,
+
+    #[serde(rename = "threadState")]
+    pub threadState: G2engineStatsResponseWorkloadThreadState,
+
+    #[serde(rename = "unresolveTest")]
+    pub unresolveTest: i32,
+
+    #[serde(rename = "unresolveTriggers")]
+    pub unresolveTriggers: G2engineStatsResponseWorkloadUnresolveTriggers,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2engineStatsResponse {
+    #[serde(rename = "MISSING_RES_ENT")]
+    pub missingResEnt: i32,
+
+    #[serde(rename = "MISSING_RES_ENT_AND_OKEY")]
+    pub missingResEntAndOkey: i32,
+
+    #[serde(rename = "abortedUnresolve")]
+    pub abortedUnresolve: i32,
+
+    #[serde(rename = "actualAmbiguousTest")]
+    pub actualAmbiguousTest: i32,
+
+    #[serde(rename = "addedRecords")]
+    pub addedRecords: i32,
+
+    #[serde(rename = "cacheHit")]
+    pub cacheHit: AttributeCounters,
+
+    #[serde(rename = "candidateBuilders")]
+    pub candidateBuilders: AttributeCounters,
+
+    #[serde(rename = "candidates")]
+    pub candidates: i32,
+
+    #[serde(rename = "deletedRecords")]
+    pub deletedRecords: i32,
+
+    #[serde(rename = "duration")]
+    pub duration: G2engineStatsResponseDuration,
+
+    #[serde(rename = "filteredObsFeat")]
+    pub filteredObsFeat: i32,
+
+    #[serde(rename = "genericDetect")]
+    pub genericDetect: AttributeCounters,
+
+    #[serde(rename = "latchContention")]
+    pub latchContention: AttributeCounters,
+
+    #[serde(rename = "loadedRecords")]
+    pub loadedRecords: i32,
+
+    #[serde(rename = "redoTriggers")]
+    pub redoTriggers: AttributeCounters,
+
+    #[serde(rename = "reducedScoredFeatureType")]
+    pub reducedScoredFeatureType: AttributeCounters,
+
+    #[serde(rename = "reevaluations")]
+    pub reevaluations: i32,
+
+    #[serde(rename = "repairedEntities")]
+    pub repairedEntities: i32,
+
+    #[serde(rename = "reresolveSkipped")]
+    pub reresolveSkipped: i32,
+
+    #[serde(rename = "reresolveTriggers")]
+    pub reresolveTriggers: G2engineStatsResponseReresolveTriggers,
+
+    #[serde(rename = "retries")]
+    pub retries: i32,
+
+    #[serde(rename = "scoredPairs")]
+    pub scoredPairs: AttributeCounters,
+
+    #[serde(rename = "suppressedCandidateBuilders")]
+    pub suppressedCandidateBuilders: AttributeCounters,
+
+    #[serde(rename = "suppressedScoredFeatureType")]
+    pub suppressedScoredFeatureType: AttributeCounters,
+
+    #[serde(rename = "unresolveTest")]
+    pub unresolveTest: i32,
+
+    #[serde(rename = "unresolveTriggers")]
+    pub unresolveTriggers: G2engineStatsResponseUnresolveTriggers,
+
+    #[serde(rename = "workload")]
+    pub workload: G2engineStatsResponseWorkload,
+}
+
+pub type G2engineStreamExportJsonentityReportResponse = Option<Value>;
+
+pub type G2engineWhyEntitiesResponse = WhyEntities;
+
+pub type G2engineWhyEntitiesV2response = WhyEntities;
+
+pub type G2engineWhyEntityByEntityIdv2response = WhyEntity;
+
+pub type G2engineWhyEntityByEntityIdResponse = WhyEntity;
+
+pub type G2engineWhyEntityByRecordIdv2response = WhyEntity;
+
+pub type G2engineWhyEntityByRecordIdResponse = WhyEntity;
+
+pub type G2engineWhyRecordsResponse = WhyRecords;
+
+pub type G2engineWhyRecordsV2response = WhyRecords;
+
+#[derive(Serialize, Deserialize)]
+pub struct G2productLicenseResponse {
+    #[serde(rename = "billing")]
+    pub billing: String,
+
+    #[serde(rename = "contract")]
+    pub contract: String,
+
+    #[serde(rename = "customer")]
+    pub customer: String,
+
+    #[serde(rename = "expireDate")]
+    pub expireDate: String,
+
+    #[serde(rename = "issueDate")]
+    pub issueDate: String,
+
+    #[serde(rename = "licenseLevel")]
+    pub licenseLevel: String,
+
+    #[serde(rename = "licenseType")]
+    pub licenseType: String,
+
+    #[serde(rename = "recordLimit")]
+    pub recordLimit: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct G2productVersionResponse {
+    #[serde(rename = "BUILD_DATE")]
+    pub buildDate: String,
+
+    #[serde(rename = "BUILD_NUMBER")]
+    pub buildNumber: String,
+
+    #[serde(rename = "BUILD_VERSION")]
+    pub buildVersion: String,
+
+    #[serde(rename = "COMPATIBILITY_VERSION")]
+    pub compatibilityVersion: CompatibilityVersion,
+
+    #[serde(rename = "PRODUCT_NAME")]
+    pub productName: String,
+
+    #[serde(rename = "SCHEMA_VERSION")]
+    pub schemaVersion: SchemaVersion,
+
+    #[serde(rename = "VERSION")]
+    pub version: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4133,6 +5085,8 @@ pub struct ResolutionStep {
 
 pub type ResolutionSteps = Vec<ResolutionStep>;
 
+pub type ResolvedEntities = Vec<ResolvedEntityAndMatchInfo>;
+
 #[derive(Serialize, Deserialize)]
 pub struct ResolvedEntity {
     #[serde(rename = "ENTITY_ID")]
@@ -4170,6 +5124,21 @@ pub struct ResolvedEntity {
 
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: RecordSummary,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct ResolvedEntityAndMatchInfoEntity {
+    #[serde(rename = "RESOLVED_ENTITY")]
+    pub resolvedEntity: ResolvedEntity,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct ResolvedEntityAndMatchInfo {
+    #[serde(rename = "ENTITY")]
+    pub entity: ResolvedEntityAndMatchInfoEntity,
+
+    #[serde(rename = "MATCH_INFO")]
+    pub matchInfo: MatchInfo,
 }
 
 #[derive(Serialize, Deserialize)]

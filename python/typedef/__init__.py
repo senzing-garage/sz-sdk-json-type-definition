@@ -3065,6 +3065,17 @@ class Entities:
         return _to_json_data(self.value)
 
 @dataclass
+class EntitiesByFeatureID:
+    value: 'List[EntityByFeatureID]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'EntitiesByFeatureID':
+        return cls(_from_json_data(List[EntityByFeatureID], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class Entity:
     related_entities: 'RelatedEntities'
     resolved_entity: 'ResolvedEntity'
@@ -3080,6 +3091,72 @@ class Entity:
         data: Dict[str, Any] = {}
         data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
+        return data
+
+@dataclass
+class EntityByFeatureID:
+    lib_feat_id: 'int'
+    res_ent_id: 'int'
+    usage_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'EntityByFeatureID':
+        return cls(
+            _from_json_data(int, data.get("LIB_FEAT_ID")),
+            _from_json_data(int, data.get("RES_ENT_ID")),
+            _from_json_data(str, data.get("USAGE_TYPE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
+        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
+        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
+        return data
+
+@dataclass
+class EntityBySize:
+    dsrc_code: 'str'
+    ent_src_desc: 'str'
+    ent_src_key: 'str'
+    errule_code: 'str'
+    er_id: 'int'
+    etype_code: 'str'
+    json_data: 'JSONData'
+    match_key: 'str'
+    obs_ent_id: 'int'
+    record_id: 'str'
+    res_ent_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'EntityBySize':
+        return cls(
+            _from_json_data(str, data.get("DSRC_CODE")),
+            _from_json_data(str, data.get("ENT_SRC_DESC")),
+            _from_json_data(str, data.get("ENT_SRC_KEY")),
+            _from_json_data(str, data.get("ERRULE_CODE")),
+            _from_json_data(int, data.get("ER_ID")),
+            _from_json_data(str, data.get("ETYPE_CODE")),
+            _from_json_data(JSONData, data.get("JSON_DATA")),
+            _from_json_data(str, data.get("MATCH_KEY")),
+            _from_json_data(int, data.get("OBS_ENT_ID")),
+            _from_json_data(str, data.get("RECORD_ID")),
+            _from_json_data(int, data.get("RES_ENT_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
+        data["ENT_SRC_DESC"] = _to_json_data(self.ent_src_desc)
+        data["ENT_SRC_KEY"] = _to_json_data(self.ent_src_key)
+        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
+        data["ER_ID"] = _to_json_data(self.er_id)
+        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
+        data["JSON_DATA"] = _to_json_data(self.json_data)
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        data["OBS_ENT_ID"] = _to_json_data(self.obs_ent_id)
+        data["RECORD_ID"] = _to_json_data(self.record_id)
+        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
         return data
 
 @dataclass
@@ -4029,6 +4106,1826 @@ class G2config:
         data["CFG_SFUNC"] = _to_json_data(self.cfg_sfunc)
         data["CONFIG_BASE_VERSION"] = _to_json_data(self.config_base_version)
         data["SYS_OOM"] = _to_json_data(self.sys_oom)
+        return data
+
+@dataclass
+class G2configAddDataSourceResponse:
+    dsrc_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2configAddDataSourceResponse':
+        return cls(
+            _from_json_data(int, data.get("DSRC_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
+        return data
+
+@dataclass
+class G2configListDataSourcesResponse:
+    data_sources: 'DataSources'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2configListDataSourcesResponse':
+        return cls(
+            _from_json_data(DataSources, data.get("DATA_SOURCES")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
+        return data
+
+@dataclass
+class G2configSaveResponse:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2configSaveResponse':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class G2configmgrGetConfigListResponse:
+    configs: 'Configs'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigListResponse':
+        return cls(
+            _from_json_data(Configs, data.get("CONFIGS")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CONFIGS"] = _to_json_data(self.configs)
+        return data
+
+@dataclass
+class G2configmgrGetConfigResponse:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigResponse':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class G2diagnosticCheckDbperfResponse:
+    insert_time: 'int'
+    num_records_inserted: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticCheckDbperfResponse':
+        return cls(
+            _from_json_data(int, data.get("insertTime")),
+            _from_json_data(int, data.get("numRecordsInserted")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["insertTime"] = _to_json_data(self.insert_time)
+        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
+        return data
+
+@dataclass
+class G2diagnosticFetchNextEntityBySizeResponse:
+    value: 'List[EntityBySize]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticFetchNextEntityBySizeResponse':
+        return cls(_from_json_data(List[EntityBySize], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticFindEntitiesByFeatureIdsResponseXxx0:
+    lib_feat_id: 'int'
+    res_ent_id: 'int'
+    usage_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticFindEntitiesByFeatureIdsResponseXxx0':
+        return cls(
+            _from_json_data(int, data.get("LIB_FEAT_ID")),
+            _from_json_data(int, data.get("RES_ENT_ID")),
+            _from_json_data(str, data.get("USAGE_TYPE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
+        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
+        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
+        return data
+
+@dataclass
+class G2diagnosticFindEntitiesByFeatureIdsResponseXxx:
+    value: 'List[G2diagnosticFindEntitiesByFeatureIdsResponseXxx0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticFindEntitiesByFeatureIdsResponseXxx':
+        return cls(_from_json_data(List[G2diagnosticFindEntitiesByFeatureIdsResponseXxx0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetDbinfoResponseDetail:
+    name: 'str'
+    type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDbinfoResponseDetail':
+        return cls(
+            _from_json_data(str, data.get("Name")),
+            _from_json_data(str, data.get("Type")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["Name"] = _to_json_data(self.name)
+        data["Type"] = _to_json_data(self.type)
+        return data
+
+@dataclass
+class G2diagnosticGetDbinfoResponse:
+    database_details: 'List[G2diagnosticGetDbinfoResponseDetail]'
+    hybrid_mode: 'bool'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDbinfoResponse':
+        return cls(
+            _from_json_data(List[G2diagnosticGetDbinfoResponseDetail], data.get("Database Details")),
+            _from_json_data(bool, data.get("Hybrid Mode")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["Database Details"] = _to_json_data(self.database_details)
+        data["Hybrid Mode"] = _to_json_data(self.hybrid_mode)
+        return data
+
+@dataclass
+class G2diagnosticGetDataSourceCountsResponse0:
+    dsrc_code: 'str'
+    dsrc_id: 'int'
+    dsrc_record_count: 'int'
+    etype_code: 'str'
+    etype_id: 'int'
+    obs_ent_count: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDataSourceCountsResponse0':
+        return cls(
+            _from_json_data(str, data.get("DSRC_CODE")),
+            _from_json_data(int, data.get("DSRC_ID")),
+            _from_json_data(int, data.get("DSRC_RECORD_COUNT")),
+            _from_json_data(str, data.get("ETYPE_CODE")),
+            _from_json_data(int, data.get("ETYPE_ID")),
+            _from_json_data(int, data.get("OBS_ENT_COUNT")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
+        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
+        data["DSRC_RECORD_COUNT"] = _to_json_data(self.dsrc_record_count)
+        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
+        data["ETYPE_ID"] = _to_json_data(self.etype_id)
+        data["OBS_ENT_COUNT"] = _to_json_data(self.obs_ent_count)
+        return data
+
+@dataclass
+class G2diagnosticGetDataSourceCountsResponse:
+    value: 'List[G2diagnosticGetDataSourceCountsResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDataSourceCountsResponse':
+        return cls(_from_json_data(List[G2diagnosticGetDataSourceCountsResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetEntityDetailsResponse0:
+    derived: 'str'
+    dsrc_code: 'str'
+    errule_code: 'str'
+    etype_code: 'str'
+    feat_desc: 'str'
+    ftype_code: 'str'
+    match_key: 'str'
+    obs_ent_id: 'int'
+    record_id: 'int'
+    res_ent_id: 'int'
+    usage_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityDetailsResponse0':
+        return cls(
+            _from_json_data(str, data.get("DERIVED")),
+            _from_json_data(str, data.get("DSRC_CODE")),
+            _from_json_data(str, data.get("ERRULE_CODE")),
+            _from_json_data(str, data.get("ETYPE_CODE")),
+            _from_json_data(str, data.get("FEAT_DESC")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(str, data.get("MATCH_KEY")),
+            _from_json_data(int, data.get("OBS_ENT_ID")),
+            _from_json_data(int, data.get("RECORD_ID")),
+            _from_json_data(int, data.get("RES_ENT_ID")),
+            _from_json_data(str, data.get("USAGE_TYPE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DERIVED"] = _to_json_data(self.derived)
+        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
+        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
+        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
+        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        data["OBS_ENT_ID"] = _to_json_data(self.obs_ent_id)
+        data["RECORD_ID"] = _to_json_data(self.record_id)
+        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
+        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
+        return data
+
+@dataclass
+class G2diagnosticGetEntityDetailsResponse:
+    value: 'List[G2diagnosticGetEntityDetailsResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityDetailsResponse':
+        return cls(_from_json_data(List[G2diagnosticGetEntityDetailsResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetEntityResumeResponse0:
+    dsrc_code: 'str'
+    ent_src_desc: 'str'
+    errule_code: 'str'
+    etype_code: 'str'
+    json_data: 'JSONData'
+    match_key: 'str'
+    record_id: 'str'
+    rel_ent_id: 'int'
+    res_ent_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityResumeResponse0':
+        return cls(
+            _from_json_data(str, data.get("DSRC_CODE")),
+            _from_json_data(str, data.get("ENT_SRC_DESC")),
+            _from_json_data(str, data.get("ERRULE_CODE")),
+            _from_json_data(str, data.get("ETYPE_CODE")),
+            _from_json_data(JSONData, data.get("JSON_DATA")),
+            _from_json_data(str, data.get("MATCH_KEY")),
+            _from_json_data(str, data.get("RECORD_ID")),
+            _from_json_data(int, data.get("REL_ENT_ID")),
+            _from_json_data(int, data.get("RES_ENT_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
+        data["ENT_SRC_DESC"] = _to_json_data(self.ent_src_desc)
+        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
+        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
+        data["JSON_DATA"] = _to_json_data(self.json_data)
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        data["RECORD_ID"] = _to_json_data(self.record_id)
+        data["REL_ENT_ID"] = _to_json_data(self.rel_ent_id)
+        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
+        return data
+
+@dataclass
+class G2diagnosticGetEntityResumeResponse:
+    value: 'List[G2diagnosticGetEntityResumeResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityResumeResponse':
+        return cls(_from_json_data(List[G2diagnosticGetEntityResumeResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetEntitySizeBreakdownResponse:
+    value: 'AttributeCounters'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntitySizeBreakdownResponse':
+        return cls(_from_json_data(AttributeCounters, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetFeatureResponseElements:
+    felem_code: 'str'
+    felem_value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetFeatureResponseElements':
+        return cls(
+            _from_json_data(str, data.get("FELEM_CODE")),
+            _from_json_data(str, data.get("FELEM_VALUE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["FELEM_CODE"] = _to_json_data(self.felem_code)
+        data["FELEM_VALUE"] = _to_json_data(self.felem_value)
+        return data
+
+@dataclass
+class G2diagnosticGetFeatureResponse:
+    elements: 'List[G2diagnosticGetFeatureResponseElements]'
+    ftype_code: 'str'
+    lib_feat_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetFeatureResponse':
+        return cls(
+            _from_json_data(List[G2diagnosticGetFeatureResponseElements], data.get("ELEMENTS")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(int, data.get("LIB_FEAT_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["ELEMENTS"] = _to_json_data(self.elements)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
+        return data
+
+@dataclass
+class G2diagnosticGetGenericFeaturesResponse0:
+    candidate_cap_reached: 'str'
+    estimated_count: 'int'
+    feat_desc: 'str'
+    ftype_code: 'str'
+    lib_feat_id: 'int'
+    scoring_cap_reached: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetGenericFeaturesResponse0':
+        return cls(
+            _from_json_data(str, data.get("CANDIDATE_CAP_REACHED")),
+            _from_json_data(int, data.get("ESTIMATED_COUNT")),
+            _from_json_data(str, data.get("FEAT_DESC")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(int, data.get("LIB_FEAT_ID")),
+            _from_json_data(str, data.get("SCORING_CAP_REACHED")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CANDIDATE_CAP_REACHED"] = _to_json_data(self.candidate_cap_reached)
+        data["ESTIMATED_COUNT"] = _to_json_data(self.estimated_count)
+        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
+        data["SCORING_CAP_REACHED"] = _to_json_data(self.scoring_cap_reached)
+        return data
+
+@dataclass
+class G2diagnosticGetGenericFeaturesResponse:
+    value: 'List[G2diagnosticGetGenericFeaturesResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetGenericFeaturesResponse':
+        return cls(_from_json_data(List[G2diagnosticGetGenericFeaturesResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetMappingStatisticsResponse0:
+    derived: 'str'
+    dsrc_code: 'str'
+    etype_code: 'str'
+    ftype_code: 'str'
+    max_feat_desc: 'str'
+    min_feat_desc: 'str'
+    rec_count: 'int'
+    rec_pct: 'float'
+    uniq_count: 'int'
+    uniq_pct: 'float'
+    usage_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetMappingStatisticsResponse0':
+        return cls(
+            _from_json_data(str, data.get("DERIVED")),
+            _from_json_data(str, data.get("DSRC_CODE")),
+            _from_json_data(str, data.get("ETYPE_CODE")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(str, data.get("MAX_FEAT_DESC")),
+            _from_json_data(str, data.get("MIN_FEAT_DESC")),
+            _from_json_data(int, data.get("REC_COUNT")),
+            _from_json_data(float, data.get("REC_PCT")),
+            _from_json_data(int, data.get("UNIQ_COUNT")),
+            _from_json_data(float, data.get("UNIQ_PCT")),
+            _from_json_data(str, data.get("USAGE_TYPE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DERIVED"] = _to_json_data(self.derived)
+        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
+        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["MAX_FEAT_DESC"] = _to_json_data(self.max_feat_desc)
+        data["MIN_FEAT_DESC"] = _to_json_data(self.min_feat_desc)
+        data["REC_COUNT"] = _to_json_data(self.rec_count)
+        data["REC_PCT"] = _to_json_data(self.rec_pct)
+        data["UNIQ_COUNT"] = _to_json_data(self.uniq_count)
+        data["UNIQ_PCT"] = _to_json_data(self.uniq_pct)
+        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
+        return data
+
+@dataclass
+class G2diagnosticGetMappingStatisticsResponse:
+    value: 'List[G2diagnosticGetMappingStatisticsResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetMappingStatisticsResponse':
+        return cls(_from_json_data(List[G2diagnosticGetMappingStatisticsResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetRelationshipDetailsResponse0:
+    errule_code: 'str'
+    feat_desc: 'str'
+    ftype_code: 'str'
+    match_key: 'str'
+    res_ent_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetRelationshipDetailsResponse0':
+        return cls(
+            _from_json_data(str, data.get("ERRULE_CODE")),
+            _from_json_data(str, data.get("FEAT_DESC")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(str, data.get("MATCH_KEY")),
+            _from_json_data(int, data.get("RES_ENT_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
+        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
+        return data
+
+@dataclass
+class G2diagnosticGetRelationshipDetailsResponse:
+    value: 'List[G2diagnosticGetRelationshipDetailsResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetRelationshipDetailsResponse':
+        return cls(_from_json_data(List[G2diagnosticGetRelationshipDetailsResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticGetResolutionStatisticsResponseRawMatchKeys:
+    match_key: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetResolutionStatisticsResponseRawMatchKeys':
+        return cls(
+            _from_json_data(str, data.get("MATCH_KEY")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        return data
+
+@dataclass
+class G2diagnosticGetResolutionStatisticsResponse0:
+    errule_code: 'str'
+    errule_id: 'int'
+    is_ambiguous: 'str'
+    match_key: 'str'
+    match_level: 'int'
+    max_res_ent_id: 'int'
+    max_res_rel_id: 'int'
+    min_res_ent_id: 'int'
+    min_res_rel_id: 'int'
+    raw_match_keys: 'List[G2diagnosticGetResolutionStatisticsResponseRawMatchKeys]'
+    record_count: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetResolutionStatisticsResponse0':
+        return cls(
+            _from_json_data(str, data.get("ERRULE_CODE")),
+            _from_json_data(int, data.get("ERRULE_ID")),
+            _from_json_data(str, data.get("IS_AMBIGUOUS")),
+            _from_json_data(str, data.get("MATCH_KEY")),
+            _from_json_data(int, data.get("MATCH_LEVEL")),
+            _from_json_data(int, data.get("MAX_RES_ENT_ID")),
+            _from_json_data(int, data.get("MAX_RES_REL_ID")),
+            _from_json_data(int, data.get("MIN_RES_ENT_ID")),
+            _from_json_data(int, data.get("MIN_RES_REL_ID")),
+            _from_json_data(List[G2diagnosticGetResolutionStatisticsResponseRawMatchKeys], data.get("RAW_MATCH_KEYS")),
+            _from_json_data(int, data.get("RECORD_COUNT")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
+        data["ERRULE_ID"] = _to_json_data(self.errule_id)
+        data["IS_AMBIGUOUS"] = _to_json_data(self.is_ambiguous)
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        data["MATCH_LEVEL"] = _to_json_data(self.match_level)
+        data["MAX_RES_ENT_ID"] = _to_json_data(self.max_res_ent_id)
+        data["MAX_RES_REL_ID"] = _to_json_data(self.max_res_rel_id)
+        data["MIN_RES_ENT_ID"] = _to_json_data(self.min_res_ent_id)
+        data["MIN_RES_REL_ID"] = _to_json_data(self.min_res_rel_id)
+        data["RAW_MATCH_KEYS"] = _to_json_data(self.raw_match_keys)
+        data["RECORD_COUNT"] = _to_json_data(self.record_count)
+        return data
+
+@dataclass
+class G2diagnosticGetResolutionStatisticsResponse:
+    value: 'List[G2diagnosticGetResolutionStatisticsResponse0]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticGetResolutionStatisticsResponse':
+        return cls(_from_json_data(List[G2diagnosticGetResolutionStatisticsResponse0], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2diagnosticStreamEntityListBySizeResponse:
+    value: 'Any'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2diagnosticStreamEntityListBySizeResponse':
+        return cls(_from_json_data(Any, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineAddRecordWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineAddRecordWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineAddRecordWithInfoWithReturnedRecordIDResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineAddRecordWithInfoWithReturnedRecordIDResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineCheckRecordResponseCheckRecordResponse:
+    candidate_match: 'str'
+    dsrc_code: 'str'
+    errule_code: 'str'
+    errule_id: 'int'
+    match_key: 'str'
+    match_level: 'int'
+    match_level_code: 'str'
+    non_generic_candidate_match: 'str'
+    record_id: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineCheckRecordResponseCheckRecordResponse':
+        return cls(
+            _from_json_data(str, data.get("CANDIDATE_MATCH")),
+            _from_json_data(str, data.get("DSRC_CODE")),
+            _from_json_data(str, data.get("ERRULE_CODE")),
+            _from_json_data(int, data.get("ERRULE_ID")),
+            _from_json_data(str, data.get("MATCH_KEY")),
+            _from_json_data(int, data.get("MATCH_LEVEL")),
+            _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
+            _from_json_data(str, data.get("NON_GENERIC_CANDIDATE_MATCH")),
+            _from_json_data(str, data.get("RECORD_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CANDIDATE_MATCH"] = _to_json_data(self.candidate_match)
+        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
+        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
+        data["ERRULE_ID"] = _to_json_data(self.errule_id)
+        data["MATCH_KEY"] = _to_json_data(self.match_key)
+        data["MATCH_LEVEL"] = _to_json_data(self.match_level)
+        data["MATCH_LEVEL_CODE"] = _to_json_data(self.match_level_code)
+        data["NON_GENERIC_CANDIDATE_MATCH"] = _to_json_data(self.non_generic_candidate_match)
+        data["RECORD_ID"] = _to_json_data(self.record_id)
+        return data
+
+@dataclass
+class G2engineCheckRecordResponse:
+    check_record_response: 'List[G2engineCheckRecordResponseCheckRecordResponse]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineCheckRecordResponse':
+        return cls(
+            _from_json_data(List[G2engineCheckRecordResponseCheckRecordResponse], data.get("CHECK_RECORD_RESPONSE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CHECK_RECORD_RESPONSE"] = _to_json_data(self.check_record_response)
+        return data
+
+@dataclass
+class G2engineDeleteRecordWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineDeleteRecordWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineExportConfigAndConfigIDResponse:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineExportConfigAndConfigIDResponse':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class G2engineExportConfigResponse:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineExportConfigResponse':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class G2engineFetchNextResponse:
+    value: 'Any'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFetchNextResponse':
+        return cls(_from_json_data(Any, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindInterestingEntitiesByEntityIDResponse:
+    value: 'Interesting'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindInterestingEntitiesByEntityIDResponse':
+        return cls(_from_json_data(Interesting, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindInterestingEntitiesByRecordIDResponse:
+    value: 'Interesting'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindInterestingEntitiesByRecordIDResponse':
+        return cls(_from_json_data(Interesting, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindNetworkByEntityIdv2response:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByEntityIdv2response':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindNetworkByEntityIDResponse:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByEntityIDResponse':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindNetworkByRecordIdv2response:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByRecordIdv2response':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindNetworkByRecordIDResponse:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByRecordIDResponse':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathByEntityIdv2response:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathByEntityIdv2response':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathByEntityIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathByEntityIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathByRecordIdv2response:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathByRecordIdv2response':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathByRecordIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathByRecordIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathExcludingByEntityIdv2response:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByEntityIdv2response':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathExcludingByEntityIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByEntityIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathExcludingByRecordIdv2response:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByRecordIdv2response':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathExcludingByRecordIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByRecordIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathIncludingSourceByEntityIdv2response:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByEntityIdv2response':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathIncludingSourceByEntityIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByEntityIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathIncludingSourceByRecordIdv2response:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByRecordIdv2response':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineFindPathIncludingSourceByRecordIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByRecordIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetEntityByEntityIdv2response:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByEntityIdv2response':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetEntityByEntityIDResponse:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByEntityIDResponse':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetEntityByRecordIdv2response:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByRecordIdv2response':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetEntityByRecordIDResponse:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByRecordIDResponse':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetRecordResponse:
+    value: 'Record'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetRecordResponse':
+        return cls(_from_json_data(Record, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetRecordV2response:
+    value: 'Record'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetRecordV2response':
+        return cls(_from_json_data(Record, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetVirtualEntityByRecordIdv2response:
+    value: 'VirtualEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetVirtualEntityByRecordIdv2response':
+        return cls(_from_json_data(VirtualEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineGetVirtualEntityByRecordIDResponse:
+    value: 'VirtualEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetVirtualEntityByRecordIDResponse':
+        return cls(_from_json_data(VirtualEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineHowEntityByEntityIdv2response:
+    value: 'How'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineHowEntityByEntityIdv2response':
+        return cls(_from_json_data(How, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineHowEntityByEntityIDResponse:
+    value: 'How'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineHowEntityByEntityIDResponse':
+        return cls(_from_json_data(How, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineProcessRedoRecordResponse:
+    value: 'Any'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordResponse':
+        return cls(_from_json_data(Any, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineProcessRedoRecordWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineProcessWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineProcessWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineProcessWithResponseResizeResponse:
+    value: 'Process'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineProcessWithResponseResizeResponse':
+        return cls(_from_json_data(Process, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineProcessWithResponseResponse:
+    value: 'Process'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineProcessWithResponseResponse':
+        return cls(_from_json_data(Process, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineReevaluateEntityWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineReevaluateEntityWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineReevaluateRecordWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineReevaluateRecordWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineReplaceRecordWithInfoResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineReplaceRecordWithInfoResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineSearchByAttributesResponse:
+    value: 'Search'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesResponse':
+        return cls(_from_json_data(Search, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineSearchByAttributesResponseXxx:
+    value: 'EntitiesByFeatureID'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesResponseXxx':
+        return cls(_from_json_data(EntitiesByFeatureID, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineSearchByAttributesV2response:
+    value: 'Search'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesV2response':
+        return cls(_from_json_data(Search, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineSearchByAttributesV3response:
+    value: 'Search'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesV3response':
+        return cls(_from_json_data(Search, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineStatsResponseDuration:
+    pattern: 'str'
+    type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseDuration':
+        return cls(
+            _from_json_data(str, data.get("PATTERN")),
+            _from_json_data(str, data.get("TYPE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["PATTERN"] = _to_json_data(self.pattern)
+        data["TYPE"] = _to_json_data(self.type)
+        return data
+
+@dataclass
+class G2engineStatsResponseReresolveTriggers:
+    abort_retry: 'int'
+    multiple_resolvable_candidates: 'int'
+    resolve_new_features: 'int'
+    unresolve_movement: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseReresolveTriggers':
+        return cls(
+            _from_json_data(int, data.get("abortRetry")),
+            _from_json_data(int, data.get("multipleResolvableCandidates")),
+            _from_json_data(int, data.get("resolveNewFeatures")),
+            _from_json_data(int, data.get("unresolveMovement")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["abortRetry"] = _to_json_data(self.abort_retry)
+        data["multipleResolvableCandidates"] = _to_json_data(self.multiple_resolvable_candidates)
+        data["resolveNewFeatures"] = _to_json_data(self.resolve_new_features)
+        data["unresolveMovement"] = _to_json_data(self.unresolve_movement)
+        return data
+
+@dataclass
+class G2engineStatsResponseUnresolveTriggers:
+    extensive_resolve: 'int'
+    normal_resolve: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseUnresolveTriggers':
+        return cls(
+            _from_json_data(int, data.get("extensiveResolve")),
+            _from_json_data(int, data.get("normalResolve")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["extensiveResolve"] = _to_json_data(self.extensive_resolve)
+        data["normalResolve"] = _to_json_data(self.normal_resolve)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadExpressedFeatureCall:
+    efcall_id: 'int'
+    efunc_code: 'str'
+    num_calls: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadExpressedFeatureCall':
+        return cls(
+            _from_json_data(int, data.get("EFCALL_ID")),
+            _from_json_data(str, data.get("EFUNC_CODE")),
+            _from_json_data(int, data.get("numCalls")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["EFCALL_ID"] = _to_json_data(self.efcall_id)
+        data["EFUNC_CODE"] = _to_json_data(self.efunc_code)
+        data["numCalls"] = _to_json_data(self.num_calls)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadReresolveTriggers:
+    abort_retry: 'int'
+    multiple_resolvable_candidates: 'int'
+    new_feature_ftypes: 'AttributeCounters'
+    resolve_new_features: 'int'
+    unresolve_movement: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadReresolveTriggers':
+        return cls(
+            _from_json_data(int, data.get("abortRetry")),
+            _from_json_data(int, data.get("multipleResolvableCandidates")),
+            _from_json_data(AttributeCounters, data.get("newFeatureFTypes")),
+            _from_json_data(int, data.get("resolveNewFeatures")),
+            _from_json_data(int, data.get("unresolveMovement")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["abortRetry"] = _to_json_data(self.abort_retry)
+        data["multipleResolvableCandidates"] = _to_json_data(self.multiple_resolvable_candidates)
+        data["newFeatureFTypes"] = _to_json_data(self.new_feature_ftypes)
+        data["resolveNewFeatures"] = _to_json_data(self.resolve_new_features)
+        data["unresolveMovement"] = _to_json_data(self.unresolve_movement)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad:
+    cpu_idle: 'float'
+    cpu_soft_irq: 'float'
+    cpu_system: 'float'
+    cpu_user: 'float'
+    cpu_wait: 'float'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad':
+        return cls(
+            _from_json_data(float, data.get("cpuIdle")),
+            _from_json_data(float, data.get("cpuSoftIrq")),
+            _from_json_data(float, data.get("cpuSystem")),
+            _from_json_data(float, data.get("cpuUser")),
+            _from_json_data(float, data.get("cpuWait")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["cpuIdle"] = _to_json_data(self.cpu_idle)
+        data["cpuSoftIrq"] = _to_json_data(self.cpu_soft_irq)
+        data["cpuSystem"] = _to_json_data(self.cpu_system)
+        data["cpuUser"] = _to_json_data(self.cpu_user)
+        data["cpuWait"] = _to_json_data(self.cpu_wait)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadSystemResourcesCurrResource:
+    active_threads: 'int'
+    available_memory: 'str'
+    system_load: 'List[G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad]'
+    worker_threads: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResourcesCurrResource':
+        return cls(
+            _from_json_data(int, data.get("activeThreads")),
+            _from_json_data(str, data.get("availableMemory")),
+            _from_json_data(List[G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad], data.get("systemLoad")),
+            _from_json_data(int, data.get("workerThreads")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["activeThreads"] = _to_json_data(self.active_threads)
+        data["availableMemory"] = _to_json_data(self.available_memory)
+        data["systemLoad"] = _to_json_data(self.system_load)
+        data["workerThreads"] = _to_json_data(self.worker_threads)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadSystemResourcesInitResource:
+    available_memory: 'str'
+    logical_cores: 'int'
+    physical_cores: 'int'
+    total_memory: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResourcesInitResource':
+        return cls(
+            _from_json_data(str, data.get("availableMemory")),
+            _from_json_data(int, data.get("logicalCores")),
+            _from_json_data(int, data.get("physicalCores")),
+            _from_json_data(str, data.get("totalMemory")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["availableMemory"] = _to_json_data(self.available_memory)
+        data["logicalCores"] = _to_json_data(self.logical_cores)
+        data["physicalCores"] = _to_json_data(self.physical_cores)
+        data["totalMemory"] = _to_json_data(self.total_memory)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadSystemResources:
+    curr_resources: 'List[G2engineStatsResponseWorkloadSystemResourcesCurrResource]'
+    init_resources: 'List[G2engineStatsResponseWorkloadSystemResourcesInitResource]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResources':
+        return cls(
+            _from_json_data(List[G2engineStatsResponseWorkloadSystemResourcesCurrResource], data.get("currResources")),
+            _from_json_data(List[G2engineStatsResponseWorkloadSystemResourcesInitResource], data.get("initResources")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["currResources"] = _to_json_data(self.curr_resources)
+        data["initResources"] = _to_json_data(self.init_resources)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadThreadState:
+    active: 'int'
+    data_latch_contention: 'int'
+    idle: 'int'
+    loader: 'int'
+    obs_ent_contention: 'int'
+    res_ent_contention: 'int'
+    resolver: 'int'
+    scoring: 'int'
+    sql_executing: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadThreadState':
+        return cls(
+            _from_json_data(int, data.get("active")),
+            _from_json_data(int, data.get("dataLatchContention")),
+            _from_json_data(int, data.get("idle")),
+            _from_json_data(int, data.get("loader")),
+            _from_json_data(int, data.get("obsEntContention")),
+            _from_json_data(int, data.get("resEntContention")),
+            _from_json_data(int, data.get("resolver")),
+            _from_json_data(int, data.get("scoring")),
+            _from_json_data(int, data.get("sqlExecuting")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["active"] = _to_json_data(self.active)
+        data["dataLatchContention"] = _to_json_data(self.data_latch_contention)
+        data["idle"] = _to_json_data(self.idle)
+        data["loader"] = _to_json_data(self.loader)
+        data["obsEntContention"] = _to_json_data(self.obs_ent_contention)
+        data["resEntContention"] = _to_json_data(self.res_ent_contention)
+        data["resolver"] = _to_json_data(self.resolver)
+        data["scoring"] = _to_json_data(self.scoring)
+        data["sqlExecuting"] = _to_json_data(self.sql_executing)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkloadUnresolveTriggers:
+    ambiguous_multi_resolve: 'int'
+    ambiguous_no_resolve: 'int'
+    extensive_resolve: 'int'
+    normal_resolve: 'int'
+    rel_link: 'int'
+    update: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadUnresolveTriggers':
+        return cls(
+            _from_json_data(int, data.get("ambiguousMultiResolve")),
+            _from_json_data(int, data.get("ambiguousNoResolve")),
+            _from_json_data(int, data.get("extensiveResolve")),
+            _from_json_data(int, data.get("normalResolve")),
+            _from_json_data(int, data.get("relLink")),
+            _from_json_data(int, data.get("update")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["ambiguousMultiResolve"] = _to_json_data(self.ambiguous_multi_resolve)
+        data["ambiguousNoResolve"] = _to_json_data(self.ambiguous_no_resolve)
+        data["extensiveResolve"] = _to_json_data(self.extensive_resolve)
+        data["normalResolve"] = _to_json_data(self.normal_resolve)
+        data["relLink"] = _to_json_data(self.rel_link)
+        data["update"] = _to_json_data(self.update)
+        return data
+
+@dataclass
+class G2engineStatsResponseWorkload:
+    corrupt_entity_test_diagnosis: 'Any'
+    aborted_unresolve: 'int'
+    actual_ambiguous_test: 'int'
+    added_records: 'int'
+    api_version: 'str'
+    cache_hit: 'AttributeCounters'
+    cache_miss: 'AttributeCounters'
+    cached_ambiguous_test: 'int'
+    candidate_builders: 'AttributeCounters'
+    candidates: 'int'
+    deleted_records: 'int'
+    duration: 'int'
+    expressed_feature_calls: 'List[G2engineStatsResponseWorkloadExpressedFeatureCall]'
+    expressed_features_created: 'AttributeCounters'
+    filtered_obs_feat: 'int'
+    generic_detect: 'AttributeCounters'
+    gnr_scorers_used: 'int'
+    high_contention_feat: 'AttributeCounters'
+    high_contention_res_ent: 'AttributeCounters'
+    latch_contention: 'AttributeCounters'
+    lib_feat_cache_hit: 'int'
+    lib_feat_cache_miss: 'int'
+    loaded_records: 'int'
+    redo_triggers: 'AttributeCounters'
+    reduced_scored_feature_type: 'AttributeCounters'
+    reevaluations: 'int'
+    repaired_entities: 'int'
+    reresolve_skipped: 'int'
+    reresolve_triggers: 'G2engineStatsResponseWorkloadReresolveTriggers'
+    res_feat_stat_cache_hit: 'int'
+    res_feat_stat_cache_miss: 'int'
+    res_feat_stat_update: 'int'
+    retries: 'int'
+    scored_pairs: 'AttributeCounters'
+    suppressed_candidate_builders: 'AttributeCounters'
+    suppressed_disclosed_relationship_domain_count: 'int'
+    suppressed_scored_feature_type: 'AttributeCounters'
+    system_resources: 'G2engineStatsResponseWorkloadSystemResources'
+    thread_state: 'G2engineStatsResponseWorkloadThreadState'
+    unresolve_test: 'int'
+    unresolve_triggers: 'G2engineStatsResponseWorkloadUnresolveTriggers'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkload':
+        return cls(
+            _from_json_data(Any, data.get("CorruptEntityTestDiagnosis")),
+            _from_json_data(int, data.get("abortedUnresolve")),
+            _from_json_data(int, data.get("actualAmbiguousTest")),
+            _from_json_data(int, data.get("addedRecords")),
+            _from_json_data(str, data.get("apiVersion")),
+            _from_json_data(AttributeCounters, data.get("cacheHit")),
+            _from_json_data(AttributeCounters, data.get("cacheMiss")),
+            _from_json_data(int, data.get("cachedAmbiguousTest")),
+            _from_json_data(AttributeCounters, data.get("candidateBuilders")),
+            _from_json_data(int, data.get("candidates")),
+            _from_json_data(int, data.get("deletedRecords")),
+            _from_json_data(int, data.get("duration")),
+            _from_json_data(List[G2engineStatsResponseWorkloadExpressedFeatureCall], data.get("expressedFeatureCalls")),
+            _from_json_data(AttributeCounters, data.get("expressedFeaturesCreated")),
+            _from_json_data(int, data.get("filteredObsFeat")),
+            _from_json_data(AttributeCounters, data.get("genericDetect")),
+            _from_json_data(int, data.get("gnrScorersUsed")),
+            _from_json_data(AttributeCounters, data.get("highContentionFeat")),
+            _from_json_data(AttributeCounters, data.get("highContentionResEnt")),
+            _from_json_data(AttributeCounters, data.get("latchContention")),
+            _from_json_data(int, data.get("libFeatCacheHit")),
+            _from_json_data(int, data.get("libFeatCacheMiss")),
+            _from_json_data(int, data.get("loadedRecords")),
+            _from_json_data(AttributeCounters, data.get("redoTriggers")),
+            _from_json_data(AttributeCounters, data.get("reducedScoredFeatureType")),
+            _from_json_data(int, data.get("reevaluations")),
+            _from_json_data(int, data.get("repairedEntities")),
+            _from_json_data(int, data.get("reresolveSkipped")),
+            _from_json_data(G2engineStatsResponseWorkloadReresolveTriggers, data.get("reresolveTriggers")),
+            _from_json_data(int, data.get("resFeatStatCacheHit")),
+            _from_json_data(int, data.get("resFeatStatCacheMiss")),
+            _from_json_data(int, data.get("resFeatStatUpdate")),
+            _from_json_data(int, data.get("retries")),
+            _from_json_data(AttributeCounters, data.get("scoredPairs")),
+            _from_json_data(AttributeCounters, data.get("suppressedCandidateBuilders")),
+            _from_json_data(int, data.get("suppressedDisclosedRelationshipDomainCount")),
+            _from_json_data(AttributeCounters, data.get("suppressedScoredFeatureType")),
+            _from_json_data(G2engineStatsResponseWorkloadSystemResources, data.get("systemResources")),
+            _from_json_data(G2engineStatsResponseWorkloadThreadState, data.get("threadState")),
+            _from_json_data(int, data.get("unresolveTest")),
+            _from_json_data(G2engineStatsResponseWorkloadUnresolveTriggers, data.get("unresolveTriggers")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CorruptEntityTestDiagnosis"] = _to_json_data(self.corrupt_entity_test_diagnosis)
+        data["abortedUnresolve"] = _to_json_data(self.aborted_unresolve)
+        data["actualAmbiguousTest"] = _to_json_data(self.actual_ambiguous_test)
+        data["addedRecords"] = _to_json_data(self.added_records)
+        data["apiVersion"] = _to_json_data(self.api_version)
+        data["cacheHit"] = _to_json_data(self.cache_hit)
+        data["cacheMiss"] = _to_json_data(self.cache_miss)
+        data["cachedAmbiguousTest"] = _to_json_data(self.cached_ambiguous_test)
+        data["candidateBuilders"] = _to_json_data(self.candidate_builders)
+        data["candidates"] = _to_json_data(self.candidates)
+        data["deletedRecords"] = _to_json_data(self.deleted_records)
+        data["duration"] = _to_json_data(self.duration)
+        data["expressedFeatureCalls"] = _to_json_data(self.expressed_feature_calls)
+        data["expressedFeaturesCreated"] = _to_json_data(self.expressed_features_created)
+        data["filteredObsFeat"] = _to_json_data(self.filtered_obs_feat)
+        data["genericDetect"] = _to_json_data(self.generic_detect)
+        data["gnrScorersUsed"] = _to_json_data(self.gnr_scorers_used)
+        data["highContentionFeat"] = _to_json_data(self.high_contention_feat)
+        data["highContentionResEnt"] = _to_json_data(self.high_contention_res_ent)
+        data["latchContention"] = _to_json_data(self.latch_contention)
+        data["libFeatCacheHit"] = _to_json_data(self.lib_feat_cache_hit)
+        data["libFeatCacheMiss"] = _to_json_data(self.lib_feat_cache_miss)
+        data["loadedRecords"] = _to_json_data(self.loaded_records)
+        data["redoTriggers"] = _to_json_data(self.redo_triggers)
+        data["reducedScoredFeatureType"] = _to_json_data(self.reduced_scored_feature_type)
+        data["reevaluations"] = _to_json_data(self.reevaluations)
+        data["repairedEntities"] = _to_json_data(self.repaired_entities)
+        data["reresolveSkipped"] = _to_json_data(self.reresolve_skipped)
+        data["reresolveTriggers"] = _to_json_data(self.reresolve_triggers)
+        data["resFeatStatCacheHit"] = _to_json_data(self.res_feat_stat_cache_hit)
+        data["resFeatStatCacheMiss"] = _to_json_data(self.res_feat_stat_cache_miss)
+        data["resFeatStatUpdate"] = _to_json_data(self.res_feat_stat_update)
+        data["retries"] = _to_json_data(self.retries)
+        data["scoredPairs"] = _to_json_data(self.scored_pairs)
+        data["suppressedCandidateBuilders"] = _to_json_data(self.suppressed_candidate_builders)
+        data["suppressedDisclosedRelationshipDomainCount"] = _to_json_data(self.suppressed_disclosed_relationship_domain_count)
+        data["suppressedScoredFeatureType"] = _to_json_data(self.suppressed_scored_feature_type)
+        data["systemResources"] = _to_json_data(self.system_resources)
+        data["threadState"] = _to_json_data(self.thread_state)
+        data["unresolveTest"] = _to_json_data(self.unresolve_test)
+        data["unresolveTriggers"] = _to_json_data(self.unresolve_triggers)
+        return data
+
+@dataclass
+class G2engineStatsResponse:
+    missing_res_ent: 'int'
+    missing_res_ent_and_okey: 'int'
+    aborted_unresolve: 'int'
+    actual_ambiguous_test: 'int'
+    added_records: 'int'
+    cache_hit: 'AttributeCounters'
+    candidate_builders: 'AttributeCounters'
+    candidates: 'int'
+    deleted_records: 'int'
+    duration: 'G2engineStatsResponseDuration'
+    filtered_obs_feat: 'int'
+    generic_detect: 'AttributeCounters'
+    latch_contention: 'AttributeCounters'
+    loaded_records: 'int'
+    redo_triggers: 'AttributeCounters'
+    reduced_scored_feature_type: 'AttributeCounters'
+    reevaluations: 'int'
+    repaired_entities: 'int'
+    reresolve_skipped: 'int'
+    reresolve_triggers: 'G2engineStatsResponseReresolveTriggers'
+    retries: 'int'
+    scored_pairs: 'AttributeCounters'
+    suppressed_candidate_builders: 'AttributeCounters'
+    suppressed_scored_feature_type: 'AttributeCounters'
+    unresolve_test: 'int'
+    unresolve_triggers: 'G2engineStatsResponseUnresolveTriggers'
+    workload: 'G2engineStatsResponseWorkload'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStatsResponse':
+        return cls(
+            _from_json_data(int, data.get("MISSING_RES_ENT")),
+            _from_json_data(int, data.get("MISSING_RES_ENT_AND_OKEY")),
+            _from_json_data(int, data.get("abortedUnresolve")),
+            _from_json_data(int, data.get("actualAmbiguousTest")),
+            _from_json_data(int, data.get("addedRecords")),
+            _from_json_data(AttributeCounters, data.get("cacheHit")),
+            _from_json_data(AttributeCounters, data.get("candidateBuilders")),
+            _from_json_data(int, data.get("candidates")),
+            _from_json_data(int, data.get("deletedRecords")),
+            _from_json_data(G2engineStatsResponseDuration, data.get("duration")),
+            _from_json_data(int, data.get("filteredObsFeat")),
+            _from_json_data(AttributeCounters, data.get("genericDetect")),
+            _from_json_data(AttributeCounters, data.get("latchContention")),
+            _from_json_data(int, data.get("loadedRecords")),
+            _from_json_data(AttributeCounters, data.get("redoTriggers")),
+            _from_json_data(AttributeCounters, data.get("reducedScoredFeatureType")),
+            _from_json_data(int, data.get("reevaluations")),
+            _from_json_data(int, data.get("repairedEntities")),
+            _from_json_data(int, data.get("reresolveSkipped")),
+            _from_json_data(G2engineStatsResponseReresolveTriggers, data.get("reresolveTriggers")),
+            _from_json_data(int, data.get("retries")),
+            _from_json_data(AttributeCounters, data.get("scoredPairs")),
+            _from_json_data(AttributeCounters, data.get("suppressedCandidateBuilders")),
+            _from_json_data(AttributeCounters, data.get("suppressedScoredFeatureType")),
+            _from_json_data(int, data.get("unresolveTest")),
+            _from_json_data(G2engineStatsResponseUnresolveTriggers, data.get("unresolveTriggers")),
+            _from_json_data(G2engineStatsResponseWorkload, data.get("workload")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["MISSING_RES_ENT"] = _to_json_data(self.missing_res_ent)
+        data["MISSING_RES_ENT_AND_OKEY"] = _to_json_data(self.missing_res_ent_and_okey)
+        data["abortedUnresolve"] = _to_json_data(self.aborted_unresolve)
+        data["actualAmbiguousTest"] = _to_json_data(self.actual_ambiguous_test)
+        data["addedRecords"] = _to_json_data(self.added_records)
+        data["cacheHit"] = _to_json_data(self.cache_hit)
+        data["candidateBuilders"] = _to_json_data(self.candidate_builders)
+        data["candidates"] = _to_json_data(self.candidates)
+        data["deletedRecords"] = _to_json_data(self.deleted_records)
+        data["duration"] = _to_json_data(self.duration)
+        data["filteredObsFeat"] = _to_json_data(self.filtered_obs_feat)
+        data["genericDetect"] = _to_json_data(self.generic_detect)
+        data["latchContention"] = _to_json_data(self.latch_contention)
+        data["loadedRecords"] = _to_json_data(self.loaded_records)
+        data["redoTriggers"] = _to_json_data(self.redo_triggers)
+        data["reducedScoredFeatureType"] = _to_json_data(self.reduced_scored_feature_type)
+        data["reevaluations"] = _to_json_data(self.reevaluations)
+        data["repairedEntities"] = _to_json_data(self.repaired_entities)
+        data["reresolveSkipped"] = _to_json_data(self.reresolve_skipped)
+        data["reresolveTriggers"] = _to_json_data(self.reresolve_triggers)
+        data["retries"] = _to_json_data(self.retries)
+        data["scoredPairs"] = _to_json_data(self.scored_pairs)
+        data["suppressedCandidateBuilders"] = _to_json_data(self.suppressed_candidate_builders)
+        data["suppressedScoredFeatureType"] = _to_json_data(self.suppressed_scored_feature_type)
+        data["unresolveTest"] = _to_json_data(self.unresolve_test)
+        data["unresolveTriggers"] = _to_json_data(self.unresolve_triggers)
+        data["workload"] = _to_json_data(self.workload)
+        return data
+
+@dataclass
+class G2engineStreamExportJsonentityReportResponse:
+    value: 'Any'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineStreamExportJsonentityReportResponse':
+        return cls(_from_json_data(Any, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyEntitiesResponse:
+    value: 'WhyEntities'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyEntitiesResponse':
+        return cls(_from_json_data(WhyEntities, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyEntitiesV2response:
+    value: 'WhyEntities'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyEntitiesV2response':
+        return cls(_from_json_data(WhyEntities, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyEntityByEntityIdv2response:
+    value: 'WhyEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByEntityIdv2response':
+        return cls(_from_json_data(WhyEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyEntityByEntityIDResponse:
+    value: 'WhyEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByEntityIDResponse':
+        return cls(_from_json_data(WhyEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyEntityByRecordIdv2response:
+    value: 'WhyEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByRecordIdv2response':
+        return cls(_from_json_data(WhyEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyEntityByRecordIDResponse:
+    value: 'WhyEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByRecordIDResponse':
+        return cls(_from_json_data(WhyEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyRecordsResponse:
+    value: 'WhyRecords'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyRecordsResponse':
+        return cls(_from_json_data(WhyRecords, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2engineWhyRecordsV2response:
+    value: 'WhyRecords'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineWhyRecordsV2response':
+        return cls(_from_json_data(WhyRecords, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class G2productLicenseResponse:
+    billing: 'str'
+    contract: 'str'
+    customer: 'str'
+    expire_date: 'str'
+    issue_date: 'str'
+    license_level: 'str'
+    license_type: 'str'
+    record_limit: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2productLicenseResponse':
+        return cls(
+            _from_json_data(str, data.get("billing")),
+            _from_json_data(str, data.get("contract")),
+            _from_json_data(str, data.get("customer")),
+            _from_json_data(str, data.get("expireDate")),
+            _from_json_data(str, data.get("issueDate")),
+            _from_json_data(str, data.get("licenseLevel")),
+            _from_json_data(str, data.get("licenseType")),
+            _from_json_data(int, data.get("recordLimit")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["billing"] = _to_json_data(self.billing)
+        data["contract"] = _to_json_data(self.contract)
+        data["customer"] = _to_json_data(self.customer)
+        data["expireDate"] = _to_json_data(self.expire_date)
+        data["issueDate"] = _to_json_data(self.issue_date)
+        data["licenseLevel"] = _to_json_data(self.license_level)
+        data["licenseType"] = _to_json_data(self.license_type)
+        data["recordLimit"] = _to_json_data(self.record_limit)
+        return data
+
+@dataclass
+class G2productVersionResponse:
+    build_date: 'str'
+    build_number: 'str'
+    build_version: 'str'
+    compatibility_version: 'CompatibilityVersion'
+    product_name: 'str'
+    schema_version: 'SchemaVersion'
+    version: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2productVersionResponse':
+        return cls(
+            _from_json_data(str, data.get("BUILD_DATE")),
+            _from_json_data(str, data.get("BUILD_NUMBER")),
+            _from_json_data(str, data.get("BUILD_VERSION")),
+            _from_json_data(CompatibilityVersion, data.get("COMPATIBILITY_VERSION")),
+            _from_json_data(str, data.get("PRODUCT_NAME")),
+            _from_json_data(SchemaVersion, data.get("SCHEMA_VERSION")),
+            _from_json_data(str, data.get("VERSION")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["BUILD_DATE"] = _to_json_data(self.build_date)
+        data["BUILD_NUMBER"] = _to_json_data(self.build_number)
+        data["BUILD_VERSION"] = _to_json_data(self.build_version)
+        data["COMPATIBILITY_VERSION"] = _to_json_data(self.compatibility_version)
+        data["PRODUCT_NAME"] = _to_json_data(self.product_name)
+        data["SCHEMA_VERSION"] = _to_json_data(self.schema_version)
+        data["VERSION"] = _to_json_data(self.version)
         return data
 
 @dataclass
@@ -6036,6 +7933,17 @@ class ResolutionSteps:
         return _to_json_data(self.value)
 
 @dataclass
+class ResolvedEntities:
+    value: 'List[ResolvedEntityAndMatchInfo]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ResolvedEntities':
+        return cls(_from_json_data(List[ResolvedEntityAndMatchInfo], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class ResolvedEntity:
     entity_id: 'int'
     entity_name: 'str'
@@ -6081,6 +7989,39 @@ class ResolvedEntity:
         data["MATCH_LEVEL_CODE"] = _to_json_data(self.match_level_code)
         data["RECORDS"] = _to_json_data(self.records)
         data["RECORD_SUMMARY"] = _to_json_data(self.record_summary)
+        return data
+
+@dataclass
+class ResolvedEntityAndMatchInfoEntity:
+    resolved_entity: 'ResolvedEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ResolvedEntityAndMatchInfoEntity':
+        return cls(
+            _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
+        return data
+
+@dataclass
+class ResolvedEntityAndMatchInfo:
+    entity: 'ResolvedEntityAndMatchInfoEntity'
+    match_info: 'MatchInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ResolvedEntityAndMatchInfo':
+        return cls(
+            _from_json_data(ResolvedEntityAndMatchInfoEntity, data.get("ENTITY")),
+            _from_json_data(MatchInfo, data.get("MATCH_INFO")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["ENTITY"] = _to_json_data(self.entity)
+        data["MATCH_INFO"] = _to_json_data(self.match_info)
         return data
 
 @dataclass

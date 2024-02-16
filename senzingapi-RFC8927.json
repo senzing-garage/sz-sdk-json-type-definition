@@ -2451,6 +2451,11 @@
                 "ref": "Entity"
             }
         },
+        "EntitiesByFeatureID": {
+            "elements": {
+                "ref": "EntityByFeatureID"
+            }
+        },
         "Entity": {
             "properties": {
                 "RELATED_ENTITIES": {
@@ -2458,6 +2463,71 @@
                 },
                 "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
+                }
+            }
+        },
+        "EntityByFeatureID": {
+            "properties": {
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "RES_ENT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "USAGE_TYPE": {
+                    "type": "string"
+                }
+            }
+        },
+        "EntityBySize": {
+            "properties": {
+                "DSRC_CODE": {
+                    "type": "string"
+                },
+                "ENT_SRC_DESC": {
+                    "type": "string"
+                },
+                "ENT_SRC_KEY": {
+                    "type": "string"
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                },
+                "ER_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "ETYPE_CODE": {
+                    "type": "string"
+                },
+                "JSON_DATA": {
+                    "ref": "JsonData"
+                },
+                "MATCH_KEY": {
+                    "type": "string"
+                },
+                "OBS_ENT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                },
+                "RES_ENT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
@@ -3418,6 +3488,1250 @@
                     "elements": {
                         "ref": "SYS_OOM"
                     }
+                }
+            }
+        },
+        "G2ConfigAddDataSourceResponse": {
+            "properties": {
+                "DSRC_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "G2ConfigListDataSourcesResponse": {
+            "properties": {
+                "DATA_SOURCES": {
+                    "ref": "DataSources"
+                }
+            }
+        },
+        "G2ConfigSaveResponse": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
+            }
+        },
+        "G2ConfigmgrGetConfigListResponse": {
+            "properties": {
+                "CONFIGS": {
+                    "ref": "Configs"
+                }
+            }
+        },
+        "G2ConfigmgrGetConfigResponse": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
+            }
+        },
+        "G2DiagnosticCheckDBPerfResponse": {
+            "properties": {
+                "insertTime": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "numRecordsInserted": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "G2DiagnosticFetchNextEntityBySizeResponse": {
+            "elements": {
+                "ref": "EntityBySize"
+            }
+        },
+        "G2DiagnosticFindEntitiesByFeatureIDsResponseXXX": {
+            "elements": {
+                "properties": {
+                    "LIB_FEAT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "RES_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "USAGE_TYPE": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetDBInfoResponse": {
+            "properties": {
+                "Database Details": {
+                    "elements": {
+                        "properties": {
+                            "Name": {
+                                "type": "string"
+                            },
+                            "Type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "Hybrid Mode": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "G2DiagnosticGetDataSourceCountsResponse": {
+            "elements": {
+                "properties": {
+                    "DSRC_CODE": {
+                        "type": "string"
+                    },
+                    "DSRC_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "DSRC_RECORD_COUNT": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "ETYPE_CODE": {
+                        "type": "string"
+                    },
+                    "ETYPE_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "OBS_ENT_COUNT": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetEntityDetailsResponse": {
+            "elements": {
+                "properties": {
+                    "DERIVED": {
+                        "type": "string"
+                    },
+                    "DSRC_CODE": {
+                        "type": "string"
+                    },
+                    "ERRULE_CODE": {
+                        "type": "string"
+                    },
+                    "ETYPE_CODE": {
+                        "type": "string"
+                    },
+                    "FEAT_DESC": {
+                        "type": "string"
+                    },
+                    "FTYPE_CODE": {
+                        "type": "string"
+                    },
+                    "MATCH_KEY": {
+                        "type": "string"
+                    },
+                    "OBS_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "RECORD_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "RES_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "USAGE_TYPE": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetEntityResumeResponse": {
+            "elements": {
+                "properties": {
+                    "DSRC_CODE": {
+                        "type": "string"
+                    },
+                    "ENT_SRC_DESC": {
+                        "type": "string"
+                    },
+                    "ERRULE_CODE": {
+                        "type": "string"
+                    },
+                    "ETYPE_CODE": {
+                        "type": "string"
+                    },
+                    "JSON_DATA": {
+                        "ref": "JsonData"
+                    },
+                    "MATCH_KEY": {
+                        "type": "string"
+                    },
+                    "RECORD_ID": {
+                        "type": "string"
+                    },
+                    "REL_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "RES_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetEntitySizeBreakdownResponse": {
+            "ref": "AttributeCounters"
+        },
+        "G2DiagnosticGetFeatureResponse": {
+            "properties": {
+                "ELEMENTS": {
+                    "elements": {
+                        "properties": {
+                            "FELEM_CODE": {
+                                "type": "string"
+                            },
+                            "FELEM_VALUE": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "FTYPE_CODE": {
+                    "type": "string"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "G2DiagnosticGetGenericFeaturesResponse": {
+            "elements": {
+                "properties": {
+                    "CANDIDATE_CAP_REACHED": {
+                        "type": "string"
+                    },
+                    "ESTIMATED_COUNT": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "FEAT_DESC": {
+                        "type": "string"
+                    },
+                    "FTYPE_CODE": {
+                        "type": "string"
+                    },
+                    "LIB_FEAT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "SCORING_CAP_REACHED": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetMappingStatisticsResponse": {
+            "elements": {
+                "properties": {
+                    "DERIVED": {
+                        "type": "string"
+                    },
+                    "DSRC_CODE": {
+                        "type": "string"
+                    },
+                    "ETYPE_CODE": {
+                        "type": "string"
+                    },
+                    "FTYPE_CODE": {
+                        "type": "string"
+                    },
+                    "MAX_FEAT_DESC": {
+                        "type": "string"
+                    },
+                    "MIN_FEAT_DESC": {
+                        "type": "string"
+                    },
+                    "REC_COUNT": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "REC_PCT": {
+                        "type": "float64"
+                    },
+                    "UNIQ_COUNT": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "UNIQ_PCT": {
+                        "type": "float64"
+                    },
+                    "USAGE_TYPE": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetRelationshipDetailsResponse": {
+            "elements": {
+                "properties": {
+                    "ERRULE_CODE": {
+                        "type": "string"
+                    },
+                    "FEAT_DESC": {
+                        "type": "string"
+                    },
+                    "FTYPE_CODE": {
+                        "type": "string"
+                    },
+                    "MATCH_KEY": {
+                        "type": "string"
+                    },
+                    "RES_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticGetResolutionStatisticsResponse": {
+            "elements": {
+                "properties": {
+                    "ERRULE_CODE": {
+                        "type": "string"
+                    },
+                    "ERRULE_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "IS_AMBIGUOUS": {
+                        "type": "string"
+                    },
+                    "MATCH_KEY": {
+                        "type": "string"
+                    },
+                    "MATCH_LEVEL": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "MAX_RES_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "MAX_RES_REL_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "MIN_RES_ENT_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "MIN_RES_REL_ID": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    },
+                    "RAW_MATCH_KEYS": {
+                        "elements": {
+                            "properties": {
+                                "MATCH_KEY": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "RECORD_COUNT": {
+                        "metadata": {
+                            "goType": "int64"
+                        },
+                        "type": "int32"
+                    }
+                }
+            }
+        },
+        "G2DiagnosticStreamEntityListBySizeResponse": {},
+        "G2EngineAddRecordWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineAddRecordWithInfoWithReturnedRecordIdResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineCheckRecordResponse": {
+            "properties": {
+                "CHECK_RECORD_RESPONSE": {
+                    "elements": {
+                        "properties": {
+                            "CANDIDATE_MATCH": {
+                                "type": "string"
+                            },
+                            "DSRC_CODE": {
+                                "type": "string"
+                            },
+                            "ERRULE_CODE": {
+                                "type": "string"
+                            },
+                            "ERRULE_ID": {
+                                "metadata": {
+                                    "goType": "int64"
+                                },
+                                "type": "int32"
+                            },
+                            "MATCH_KEY": {
+                                "type": "string"
+                            },
+                            "MATCH_LEVEL": {
+                                "metadata": {
+                                    "goType": "int64"
+                                },
+                                "type": "int32"
+                            },
+                            "MATCH_LEVEL_CODE": {
+                                "type": "string"
+                            },
+                            "NON_GENERIC_CANDIDATE_MATCH": {
+                                "type": "string"
+                            },
+                            "RECORD_ID": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "G2EngineDeleteRecordWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineExportConfigAndConfigIdResponse": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
+            }
+        },
+        "G2EngineExportConfigResponse": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
+            }
+        },
+        "G2EngineFetchNextResponse": {},
+        "G2EngineFindInterestingEntitiesByEntityIdResponse": {
+            "ref": "Interesting"
+        },
+        "G2EngineFindInterestingEntitiesByRecordIdResponse": {
+            "ref": "Interesting"
+        },
+        "G2EngineFindNetworkByEntityIdResponse": {
+            "ref": "Network"
+        },
+        "G2EngineFindNetworkByEntityIDV2Response": {
+            "ref": "Network"
+        },
+        "G2EngineFindNetworkByRecordIdResponse": {
+            "ref": "Network"
+        },
+        "G2EngineFindNetworkByRecordIDV2Response": {
+            "ref": "Network"
+        },
+        "G2EngineFindPathByEntityIdResponse": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathByEntityIDV2Response": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathByRecordIdResponse": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathByRecordIDV2Response": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathExcludingByEntityIdResponse": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathExcludingByEntityIDV2Response": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathExcludingByRecordIdResponse": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathExcludingByRecordIDV2Response": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathIncludingSourceByEntityIdResponse": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathIncludingSourceByEntityIDV2Response": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathIncludingSourceByRecordIdResponse": {
+            "ref": "Path"
+        },
+        "G2EngineFindPathIncludingSourceByRecordIDV2Response": {
+            "ref": "Path"
+        },
+        "G2EngineGetEntityByEntityIdResponse": {
+            "ref": "Entity"
+        },
+        "G2EngineGetEntityByEntityIDV2Response": {
+            "ref": "Entity"
+        },
+        "G2EngineGetEntityByRecordIdResponse": {
+            "ref": "Entity"
+        },
+        "G2EngineGetEntityByRecordIDV2Response": {
+            "ref": "Entity"
+        },
+        "G2EngineGetRecordResponse": {
+            "ref": "Record"
+        },
+        "G2EngineGetRecordV2Response": {
+            "ref": "Record"
+        },
+        "G2EngineGetVirtualEntityByRecordIdResponse": {
+            "ref": "VirtualEntity"
+        },
+        "G2EngineGetVirtualEntityByRecordIDV2Response": {
+            "ref": "VirtualEntity"
+        },
+        "G2EngineHowEntityByEntityIdResponse": {
+            "ref": "How"
+        },
+        "G2EngineHowEntityByEntityIDV2Response": {
+            "ref": "How"
+        },
+        "G2EngineProcessRedoRecordResponse": {},
+        "G2EngineProcessRedoRecordWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineProcessWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineProcessWithResponseResizeResponse": {
+            "ref": "Process"
+        },
+        "G2EngineProcessWithResponseResponse": {
+            "ref": "Process"
+        },
+        "G2EngineReevaluateEntityWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineReevaluateRecordWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineReplaceRecordWithInfoResponse": {
+            "ref": "WithInfo"
+        },
+        "G2EngineSearchByAttributesResponse": {
+            "ref": "Search"
+        },
+        "G2EngineSearchByAttributesResponseXXX": {
+            "ref": "EntitiesByFeatureID"
+        },
+        "G2EngineSearchByAttributesV2Response": {
+            "ref": "Search"
+        },
+        "G2EngineSearchByAttributesV3Response": {
+            "ref": "Search"
+        },
+        "G2EngineStatsResponse": {
+            "properties": {
+                "MISSING_RES_ENT": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MISSING_RES_ENT_AND_OKEY": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "abortedUnresolve": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "actualAmbiguousTest": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "addedRecords": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "cacheHit": {
+                    "ref": "AttributeCounters"
+                },
+                "candidateBuilders": {
+                    "ref": "AttributeCounters"
+                },
+                "candidates": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "deletedRecords": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "duration": {
+                    "properties": {
+                        "PATTERN": {
+                            "type": "string"
+                        },
+                        "TYPE": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "filteredObsFeat": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "genericDetect": {
+                    "ref": "AttributeCounters"
+                },
+                "latchContention": {
+                    "ref": "AttributeCounters"
+                },
+                "loadedRecords": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "redoTriggers": {
+                    "ref": "AttributeCounters"
+                },
+                "reducedScoredFeatureType": {
+                    "ref": "AttributeCounters"
+                },
+                "reevaluations": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "repairedEntities": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "reresolveSkipped": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "reresolveTriggers": {
+                    "properties": {
+                        "abortRetry": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "multipleResolvableCandidates": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "resolveNewFeatures": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "unresolveMovement": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        }
+                    }
+                },
+                "retries": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "scoredPairs": {
+                    "ref": "AttributeCounters"
+                },
+                "suppressedCandidateBuilders": {
+                    "ref": "AttributeCounters"
+                },
+                "suppressedScoredFeatureType": {
+                    "ref": "AttributeCounters"
+                },
+                "unresolveTest": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "unresolveTriggers": {
+                    "properties": {
+                        "extensiveResolve": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "normalResolve": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        }
+                    }
+                },
+                "workload": {
+                    "properties": {
+                        "CorruptEntityTestDiagnosis": {},
+                        "abortedUnresolve": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "actualAmbiguousTest": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "addedRecords": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "apiVersion": {
+                            "type": "string"
+                        },
+                        "cacheHit": {
+                            "ref": "AttributeCounters"
+                        },
+                        "cacheMiss": {
+                            "ref": "AttributeCounters"
+                        },
+                        "cachedAmbiguousTest": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "candidateBuilders": {
+                            "ref": "AttributeCounters"
+                        },
+                        "candidates": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "deletedRecords": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "duration": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "expressedFeatureCalls": {
+                            "elements": {
+                                "properties": {
+                                    "EFCALL_ID": {
+                                        "metadata": {
+                                            "goType": "int64"
+                                        },
+                                        "type": "int32"
+                                    },
+                                    "EFUNC_CODE": {
+                                        "type": "string"
+                                    },
+                                    "numCalls": {
+                                        "metadata": {
+                                            "goType": "int64"
+                                        },
+                                        "type": "int32"
+                                    }
+                                }
+                            }
+                        },
+                        "expressedFeaturesCreated": {
+                            "ref": "AttributeCounters"
+                        },
+                        "filteredObsFeat": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "genericDetect": {
+                            "ref": "AttributeCounters"
+                        },
+                        "gnrScorersUsed": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "highContentionFeat": {
+                            "ref": "AttributeCounters"
+                        },
+                        "highContentionResEnt": {
+                            "ref": "AttributeCounters"
+                        },
+                        "latchContention": {
+                            "ref": "AttributeCounters"
+                        },
+                        "libFeatCacheHit": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "libFeatCacheMiss": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "loadedRecords": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "redoTriggers": {
+                            "ref": "AttributeCounters"
+                        },
+                        "reducedScoredFeatureType": {
+                            "ref": "AttributeCounters"
+                        },
+                        "reevaluations": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "repairedEntities": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "reresolveSkipped": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "reresolveTriggers": {
+                            "properties": {
+                                "abortRetry": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "multipleResolvableCandidates": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "newFeatureFTypes": {
+                                    "ref": "AttributeCounters"
+                                },
+                                "resolveNewFeatures": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "unresolveMovement": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                }
+                            }
+                        },
+                        "resFeatStatCacheHit": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "resFeatStatCacheMiss": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "resFeatStatUpdate": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "retries": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "scoredPairs": {
+                            "ref": "AttributeCounters"
+                        },
+                        "suppressedCandidateBuilders": {
+                            "ref": "AttributeCounters"
+                        },
+                        "suppressedDisclosedRelationshipDomainCount": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "suppressedScoredFeatureType": {
+                            "ref": "AttributeCounters"
+                        },
+                        "systemResources": {
+                            "properties": {
+                                "currResources": {
+                                    "elements": {
+                                        "properties": {
+                                            "activeThreads": {
+                                                "metadata": {
+                                                    "goType": "int64"
+                                                },
+                                                "type": "int32"
+                                            },
+                                            "availableMemory": {
+                                                "type": "string"
+                                            },
+                                            "systemLoad": {
+                                                "elements": {
+                                                    "properties": {
+                                                        "cpuIdle": {
+                                                            "type": "float64"
+                                                        },
+                                                        "cpuSoftIrq": {
+                                                            "type": "float64"
+                                                        },
+                                                        "cpuSystem": {
+                                                            "type": "float64"
+                                                        },
+                                                        "cpuUser": {
+                                                            "type": "float64"
+                                                        },
+                                                        "cpuWait": {
+                                                            "type": "float64"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "workerThreads": {
+                                                "metadata": {
+                                                    "goType": "int64"
+                                                },
+                                                "type": "int32"
+                                            }
+                                        }
+                                    }
+                                },
+                                "initResources": {
+                                    "elements": {
+                                        "properties": {
+                                            "availableMemory": {
+                                                "type": "string"
+                                            },
+                                            "logicalCores": {
+                                                "metadata": {
+                                                    "goType": "int64"
+                                                },
+                                                "type": "int32"
+                                            },
+                                            "physicalCores": {
+                                                "metadata": {
+                                                    "goType": "int64"
+                                                },
+                                                "type": "int32"
+                                            },
+                                            "totalMemory": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "threadState": {
+                            "properties": {
+                                "active": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "dataLatchContention": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "idle": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "loader": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "obsEntContention": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "resEntContention": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "resolver": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "scoring": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "sqlExecuting": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                }
+                            }
+                        },
+                        "unresolveTest": {
+                            "metadata": {
+                                "goType": "int64"
+                            },
+                            "type": "int32"
+                        },
+                        "unresolveTriggers": {
+                            "properties": {
+                                "ambiguousMultiResolve": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "ambiguousNoResolve": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "extensiveResolve": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "normalResolve": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "relLink": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                },
+                                "update": {
+                                    "metadata": {
+                                        "goType": "int64"
+                                    },
+                                    "type": "int32"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "G2EngineStreamExportJSONEntityReportResponse": {},
+        "G2EngineWhyEntitiesResponse": {
+            "ref": "WhyEntities"
+        },
+        "G2EngineWhyEntitiesV2Response": {
+            "ref": "WhyEntities"
+        },
+        "G2EngineWhyEntityByEntityIdResponse": {
+            "ref": "WhyEntity"
+        },
+        "G2EngineWhyEntityByEntityIDV2Response": {
+            "ref": "WhyEntity"
+        },
+        "G2EngineWhyEntityByRecordIdResponse": {
+            "ref": "WhyEntity"
+        },
+        "G2EngineWhyEntityByRecordIDV2Response": {
+            "ref": "WhyEntity"
+        },
+        "G2EngineWhyRecordsResponse": {
+            "ref": "WhyRecords"
+        },
+        "G2EngineWhyRecordsV2Response": {
+            "ref": "WhyRecords"
+        },
+        "G2ProductLicenseResponse": {
+            "properties": {
+                "billing": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "customer": {
+                    "type": "string"
+                },
+                "expireDate": {
+                    "type": "string"
+                },
+                "issueDate": {
+                    "type": "string"
+                },
+                "licenseLevel": {
+                    "type": "string"
+                },
+                "licenseType": {
+                    "type": "string"
+                },
+                "recordLimit": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "G2ProductVersionResponse": {
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "SCHEMA_VERSION": {
+                    "ref": "SchemaVersion"
+                },
+                "VERSION": {
+                    "type": "string"
                 }
             }
         },
@@ -5146,6 +6460,11 @@
                 "ref": "ResolutionStep"
             }
         },
+        "ResolvedEntities": {
+            "elements": {
+                "ref": "ResolvedEntityAndMatchInfo"
+            }
+        },
         "ResolvedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -5195,6 +6514,20 @@
                 },
                 "RECORD_SUMMARY": {
                     "ref": "RecordSummary"
+                }
+            }
+        },
+        "ResolvedEntityAndMatchInfo": {
+            "properties": {
+                "MATCH_INFO": {
+                    "ref": "MatchInfo"
+                },
+                "ENTITY": {
+                    "properties": {
+                        "RESOLVED_ENTITY": {
+                            "ref": "ResolvedEntity"
+                        }
+                    }
                 }
             }
         },
