@@ -571,7 +571,11 @@ export interface FeatureScores {
 
 export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
-export interface Features {
+export type Features = string;
+
+export type FeaturesForAttribute = FeatureForAttribute[];
+
+export interface FeaturesXxx {
   ACCOUNT_DOMAIN: FeaturesForAttribute;
   ACCOUNT_NUMBER: FeaturesForAttribute;
   ACCT_NUM: FeaturesForAttribute;
@@ -671,8 +675,6 @@ export interface Features {
   WORK_PHONE_NUMBER: FeaturesForAttribute;
   ZOOMROOM: FeaturesForAttribute;
 }
-
-export type FeaturesForAttribute = FeatureForAttribute[];
 
 export interface FinalState {
   NEED_REEVALUATION: number;

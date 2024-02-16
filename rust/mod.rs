@@ -1361,8 +1361,12 @@ pub struct FeatureScores {
 
 pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
 
+pub type Features = String;
+
+pub type FeaturesForAttribute = Vec<FeatureForAttribute>;
+
 #[derive(Serialize, Deserialize)]
-pub struct Features {
+pub struct FeaturesXxx {
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: FeaturesForAttribute,
 
@@ -1657,8 +1661,6 @@ pub struct Features {
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: FeaturesForAttribute,
 }
-
-pub type FeaturesForAttribute = Vec<FeatureForAttribute>;
 
 #[derive(Serialize, Deserialize)]
 pub struct FinalState {

@@ -1814,6 +1814,9 @@
             }
         },
         "Features": {
+            "type": "string"
+        },
+        "FeaturesXxx": {
             "properties": {
                 "ACCOUNT_DOMAIN": {
                     "ref": "FeaturesForAttribute"

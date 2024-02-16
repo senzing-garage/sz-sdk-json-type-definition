@@ -917,7 +917,11 @@ type FeatureScores struct {
 
 type FeatureScoresForAttribute = []FeatureScoreForAttribute
 
-type Features struct {
+type Features = string
+
+type FeaturesForAttribute = []FeatureForAttribute
+
+type FeaturesXxx struct {
 	AccountDomain FeaturesForAttribute `json:"ACCOUNT_DOMAIN"`
 
 	AccountNumber FeaturesForAttribute `json:"ACCOUNT_NUMBER"`
@@ -1114,8 +1118,6 @@ type Features struct {
 
 	Zoomroom FeaturesForAttribute `json:"ZOOMROOM"`
 }
-
-type FeaturesForAttribute = []FeatureForAttribute
 
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`

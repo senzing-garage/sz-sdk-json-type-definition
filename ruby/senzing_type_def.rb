@@ -1981,6 +1981,34 @@ module SenzingTypeDef
   end
 
   class Features
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = Features.new
+      out.value = SenzingTypeDef.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class FeaturesForAttribute
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = FeaturesForAttribute.new
+      out.value = SenzingTypeDef.from_json_data(Array[FeatureForAttribute], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class FeaturesXxx
     attr_accessor :account_domain
     attr_accessor :account_number
     attr_accessor :acct_num
@@ -2081,7 +2109,7 @@ module SenzingTypeDef
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
-      out = Features.new
+      out = FeaturesXxx.new
       out.account_domain = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCOUNT_DOMAIN"])
       out.account_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCOUNT_NUMBER"])
       out.acct_num = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCT_NUM"])
@@ -2284,20 +2312,6 @@ module SenzingTypeDef
       data["WORK_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(work_phone_number)
       data["ZOOMROOM"] = SenzingTypeDef::to_json_data(zoomroom)
       data
-    end
-  end
-
-  class FeaturesForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FeaturesForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(Array[FeatureForAttribute], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 

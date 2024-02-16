@@ -1906,6 +1906,28 @@ class FeatureScoresForAttribute:
 
 @dataclass
 class Features:
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Features':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class FeaturesForAttribute:
+    value: 'List[FeatureForAttribute]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'FeaturesForAttribute':
+        return cls(_from_json_data(List[FeatureForAttribute], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class FeaturesXxx:
     account_domain: 'FeaturesForAttribute'
     account_number: 'FeaturesForAttribute'
     acct_num: 'FeaturesForAttribute'
@@ -2006,7 +2028,7 @@ class Features:
     zoomroom: 'FeaturesForAttribute'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Features':
+    def from_json_data(cls, data: Any) -> 'FeaturesXxx':
         return cls(
             _from_json_data(FeaturesForAttribute, data.get("ACCOUNT_DOMAIN")),
             _from_json_data(FeaturesForAttribute, data.get("ACCOUNT_NUMBER")),
@@ -2209,17 +2231,6 @@ class Features:
         data["WORK_PHONE_NUMBER"] = _to_json_data(self.work_phone_number)
         data["ZOOMROOM"] = _to_json_data(self.zoomroom)
         return data
-
-@dataclass
-class FeaturesForAttribute:
-    value: 'List[FeatureForAttribute]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'FeaturesForAttribute':
-        return cls(_from_json_data(List[FeatureForAttribute], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class FinalState:
