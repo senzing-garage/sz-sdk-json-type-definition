@@ -1265,7 +1265,7 @@ class DiagnosticFetchNextEntityBySizeResponseXxx0:
     errule_code: 'str'
     er_id: 'int'
     etype_code: 'str'
-    json_data: 'JSONData'
+    json_data: 'str'
     match_key: 'str'
     obs_ent_id: 'int'
     record_id: 'str'
@@ -1280,7 +1280,7 @@ class DiagnosticFetchNextEntityBySizeResponseXxx0:
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("ER_ID")),
             _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(JSONData, data.get("JSON_DATA")),
+            _from_json_data(str, data.get("JSON_DATA")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("OBS_ENT_ID")),
             _from_json_data(str, data.get("RECORD_ID")),
@@ -1326,13 +1326,13 @@ class EntitiesByFeatureID:
 
 @dataclass
 class Entity:
-    related_entities: 'RelatedEntities'
+    related_entities: 'List[RelatedEntity]'
     resolved_entity: 'ResolvedEntity'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Entity':
         return cls(
-            _from_json_data(RelatedEntities, data.get("RELATED_ENTITIES")),
+            _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
         )
 
@@ -1371,7 +1371,7 @@ class EntityBySize:
     errule_code: 'str'
     er_id: 'int'
     etype_code: 'str'
-    json_data: 'JSONData'
+    json_data: 'str'
     match_key: 'str'
     obs_ent_id: 'int'
     record_id: 'str'
@@ -1386,7 +1386,7 @@ class EntityBySize:
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("ER_ID")),
             _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(JSONData, data.get("JSON_DATA")),
+            _from_json_data(str, data.get("JSON_DATA")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("OBS_ENT_ID")),
             _from_json_data(str, data.get("RECORD_ID")),
@@ -1428,17 +1428,6 @@ class EntityPath:
         data["ENTITIES"] = _to_json_data(self.entities)
         data["START_ENTITY_ID"] = _to_json_data(self.start_entity_id)
         return data
-
-@dataclass
-class EntityPaths:
-    value: 'List[EntityPath]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'EntityPaths':
-        return cls(_from_json_data(List[EntityPath], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class FeatureDescriptionValue:
@@ -2632,7 +2621,7 @@ class G2diagnosticGetEntityResumeResponse0:
     ent_src_desc: 'str'
     errule_code: 'str'
     etype_code: 'str'
-    json_data: 'JSONData'
+    json_data: 'str'
     match_key: 'str'
     record_id: 'str'
     rel_ent_id: 'int'
@@ -2645,7 +2634,7 @@ class G2diagnosticGetEntityResumeResponse0:
             _from_json_data(str, data.get("ENT_SRC_DESC")),
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(JSONData, data.get("JSON_DATA")),
+            _from_json_data(str, data.get("JSON_DATA")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(int, data.get("REL_ENT_ID")),
@@ -4300,12 +4289,12 @@ class InterestingEntity:
         return data
 
 @dataclass
-class JSONDataAcctNum:
+class JSONDataXxxAcctNum:
     account_domain: 'str'
     account_number: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataAcctNum':
+    def from_json_data(cls, data: Any) -> 'JSONDataXxxAcctNum':
         return cls(
             _from_json_data(str, data.get("ACCOUNT_DOMAIN")),
             _from_json_data(str, data.get("ACCOUNT_NUMBER")),
@@ -4318,12 +4307,12 @@ class JSONDataAcctNum:
         return data
 
 @dataclass
-class JSONDataSsn:
+class JSONDataXxxSsn:
     passport_number: 'str'
     ssn_number: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataSsn':
+    def from_json_data(cls, data: Any) -> 'JSONDataXxxSsn':
         return cls(
             _from_json_data(str, data.get("PASSPORT_NUMBER")),
             _from_json_data(str, data.get("SSN_NUMBER")),
@@ -4336,11 +4325,11 @@ class JSONDataSsn:
         return data
 
 @dataclass
-class JSONDataSsnLast4:
+class JSONDataXxxSsnLast4:
     ssn_last4: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataSsnLast4':
+    def from_json_data(cls, data: Any) -> 'JSONDataXxxSsnLast4':
         return cls(
             _from_json_data(int, data.get("SSN_LAST4")),
         )
@@ -4351,10 +4340,10 @@ class JSONDataSsnLast4:
         return data
 
 @dataclass
-class JSONData:
+class JSONDataXxx:
     account_domain: 'str'
     account_number: 'str'
-    acct_num: 'List[JSONDataAcctNum]'
+    acct_num: 'List[JSONDataXxxAcctNum]'
     address: 'str'
     address_list: 'Addresses'
     addr_full: 'str'
@@ -4441,8 +4430,8 @@ class JSONData:
     social_handle: 'str'
     social_network: 'str'
     source_id: 'str'
-    ssn: 'List[JSONDataSsn]'
-    ssn_last4: 'List[JSONDataSsnLast4]'
+    ssn: 'List[JSONDataXxxSsn]'
+    ssn_last4: 'List[JSONDataXxxSsnLast4]'
     ssn_number: 'str'
     tango: 'str'
     tax_id_country: 'str'
@@ -4461,11 +4450,11 @@ class JSONData:
     name0: 'Names'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONData':
+    def from_json_data(cls, data: Any) -> 'JSONDataXxx':
         return cls(
             _from_json_data(str, data.get("ACCOUNT_DOMAIN")),
             _from_json_data(str, data.get("ACCOUNT_NUMBER")),
-            _from_json_data(List[JSONDataAcctNum], data.get("ACCT_NUM")),
+            _from_json_data(List[JSONDataXxxAcctNum], data.get("ACCT_NUM")),
             _from_json_data(str, data.get("ADDRESS")),
             _from_json_data(Addresses, data.get("ADDRESS_LIST")),
             _from_json_data(str, data.get("ADDR_FULL")),
@@ -4552,8 +4541,8 @@ class JSONData:
             _from_json_data(str, data.get("SOCIAL_HANDLE")),
             _from_json_data(str, data.get("SOCIAL_NETWORK")),
             _from_json_data(str, data.get("SOURCE_ID")),
-            _from_json_data(List[JSONDataSsn], data.get("SSN")),
-            _from_json_data(List[JSONDataSsnLast4], data.get("SSN_LAST4")),
+            _from_json_data(List[JSONDataXxxSsn], data.get("SSN")),
+            _from_json_data(List[JSONDataXxxSsnLast4], data.get("SSN_LAST4")),
             _from_json_data(str, data.get("SSN_NUMBER")),
             _from_json_data(str, data.get("TANGO")),
             _from_json_data(str, data.get("TAX_ID_COUNTRY")),
@@ -5612,14 +5601,14 @@ class Names:
 @dataclass
 class Network:
     entities: 'List[Entity]'
-    entity_paths: 'EntityPaths'
+    entity_paths: 'List[EntityPath]'
     max_entity_limit_reached: 'str'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Network':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
-            _from_json_data(EntityPaths, data.get("ENTITY_PATHS")),
+            _from_json_data(List[EntityPath], data.get("ENTITY_PATHS")),
             _from_json_data(str, data.get("MAX_ENTITY_LIMIT_REACHED")),
         )
 
@@ -5691,13 +5680,13 @@ class Passports:
 @dataclass
 class Path:
     entities: 'List[Entity]'
-    entity_paths: 'EntityPaths'
+    entity_paths: 'List[EntityPath]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Path':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
-            _from_json_data(EntityPaths, data.get("ENTITY_PATHS")),
+            _from_json_data(List[EntityPath], data.get("ENTITY_PATHS")),
         )
 
     def to_json_data(self) -> Any:
@@ -5874,7 +5863,7 @@ class Record:
     features: 'List[RecordFeatures]'
     identifier_data: 'List[str]'
     internal_id: 'int'
-    json_data: 'JSONData'
+    json_data: 'str'
     last_seen_dt: 'str'
     match_key: 'str'
     match_level: 'int'
@@ -5899,7 +5888,7 @@ class Record:
             _from_json_data(List[RecordFeatures], data.get("FEATURES")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(JSONData, data.get("JSON_DATA")),
+            _from_json_data(str, data.get("JSON_DATA")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -5967,17 +5956,6 @@ class Records:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Records':
         return cls(_from_json_data(List[Record], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class RelatedEntities:
-    value: 'List[RelatedEntity]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'RelatedEntities':
-        return cls(_from_json_data(List[RelatedEntity], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)

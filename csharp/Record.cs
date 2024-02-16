@@ -41,7 +41,7 @@ namespace Senzing
         public int InternalId { get; set; }
 
         [JsonPropertyName("JSON_DATA")]
-        public JsonData JsonData { get; set; }
+        public string JsonData { get; set; }
 
         [JsonPropertyName("LAST_SEEN_DT")]
         public string LastSeenDt { get; set; }

@@ -12,7 +12,7 @@ public class Path {
     private List<Entity> entities;
 
     @JsonProperty("ENTITY_PATHS")
-    private EntityPaths entityPaths;
+    private List<EntityPath> entityPaths;
 
     public Path() {
     }
@@ -34,14 +34,14 @@ public class Path {
     /**
      * Getter for entityPaths.<p>
      */
-    public EntityPaths getEntityPaths() {
+    public List<EntityPath> getEntityPaths() {
         return entityPaths;
     }
 
     /**
      * Setter for entityPaths.<p>
      */
-    public void setEntityPaths(EntityPaths entityPaths) {
+    public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
     }
 }

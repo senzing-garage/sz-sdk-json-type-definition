@@ -11,7 +11,7 @@ namespace Senzing
         public IList<Entity> Entities { get; set; }
 
         [JsonPropertyName("ENTITY_PATHS")]
-        public EntityPaths EntityPaths { get; set; }
+        public IList<EntityPath> EntityPaths { get; set; }
 
         [JsonPropertyName("MAX_ENTITY_LIMIT_REACHED")]
         public string MaxEntityLimitReached { get; set; }

@@ -1324,7 +1324,7 @@ module SenzingTypeDef
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
       out.er_id = SenzingTypeDef::from_json_data(Integer, data["ER_ID"])
       out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
@@ -1383,7 +1383,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Entity.new
-      out.related_entities = SenzingTypeDef::from_json_data(RelatedEntities, data["RELATED_ENTITIES"])
+      out.related_entities = SenzingTypeDef::from_json_data(Array[RelatedEntity], data["RELATED_ENTITIES"])
       out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
       out
     end
@@ -1439,7 +1439,7 @@ module SenzingTypeDef
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
       out.er_id = SenzingTypeDef::from_json_data(Integer, data["ER_ID"])
       out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
@@ -1483,20 +1483,6 @@ module SenzingTypeDef
       data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
       data["START_ENTITY_ID"] = SenzingTypeDef::to_json_data(start_entity_id)
       data
-    end
-  end
-
-  class EntityPaths
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EntityPaths.new
-      out.value = SenzingTypeDef.from_json_data(Array[EntityPath], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -2746,7 +2732,7 @@ module SenzingTypeDef
       out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
       out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.rel_ent_id = SenzingTypeDef::from_json_data(Integer, data["REL_ENT_ID"])
@@ -4618,12 +4604,12 @@ module SenzingTypeDef
     end
   end
 
-  class JSONDataAcctNum
+  class JSONDataXxxAcctNum
     attr_accessor :account_domain
     attr_accessor :account_number
 
     def self.from_json_data(data)
-      out = JSONDataAcctNum.new
+      out = JSONDataXxxAcctNum.new
       out.account_domain = SenzingTypeDef::from_json_data(String, data["ACCOUNT_DOMAIN"])
       out.account_number = SenzingTypeDef::from_json_data(String, data["ACCOUNT_NUMBER"])
       out
@@ -4637,12 +4623,12 @@ module SenzingTypeDef
     end
   end
 
-  class JSONDataSsn
+  class JSONDataXxxSsn
     attr_accessor :passport_number
     attr_accessor :ssn_number
 
     def self.from_json_data(data)
-      out = JSONDataSsn.new
+      out = JSONDataXxxSsn.new
       out.passport_number = SenzingTypeDef::from_json_data(String, data["PASSPORT_NUMBER"])
       out.ssn_number = SenzingTypeDef::from_json_data(String, data["SSN_NUMBER"])
       out
@@ -4656,11 +4642,11 @@ module SenzingTypeDef
     end
   end
 
-  class JSONDataSsnLast4
+  class JSONDataXxxSsnLast4
     attr_accessor :ssn_last4
 
     def self.from_json_data(data)
-      out = JSONDataSsnLast4.new
+      out = JSONDataXxxSsnLast4.new
       out.ssn_last4 = SenzingTypeDef::from_json_data(Integer, data["SSN_LAST4"])
       out
     end
@@ -4672,7 +4658,7 @@ module SenzingTypeDef
     end
   end
 
-  class JSONData
+  class JSONDataXxx
     attr_accessor :account_domain
     attr_accessor :account_number
     attr_accessor :acct_num
@@ -4782,10 +4768,10 @@ module SenzingTypeDef
     attr_accessor :name0
 
     def self.from_json_data(data)
-      out = JSONData.new
+      out = JSONDataXxx.new
       out.account_domain = SenzingTypeDef::from_json_data(String, data["ACCOUNT_DOMAIN"])
       out.account_number = SenzingTypeDef::from_json_data(String, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(Array[JSONDataAcctNum], data["ACCT_NUM"])
+      out.acct_num = SenzingTypeDef::from_json_data(Array[JSONDataXxxAcctNum], data["ACCT_NUM"])
       out.address = SenzingTypeDef::from_json_data(String, data["ADDRESS"])
       out.address_list = SenzingTypeDef::from_json_data(Addresses, data["ADDRESS_LIST"])
       out.addr_full = SenzingTypeDef::from_json_data(String, data["ADDR_FULL"])
@@ -4872,8 +4858,8 @@ module SenzingTypeDef
       out.social_handle = SenzingTypeDef::from_json_data(String, data["SOCIAL_HANDLE"])
       out.social_network = SenzingTypeDef::from_json_data(String, data["SOCIAL_NETWORK"])
       out.source_id = SenzingTypeDef::from_json_data(String, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(Array[JSONDataSsn], data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(Array[JSONDataSsnLast4], data["SSN_LAST4"])
+      out.ssn = SenzingTypeDef::from_json_data(Array[JSONDataXxxSsn], data["SSN"])
+      out.ssn_last4 = SenzingTypeDef::from_json_data(Array[JSONDataXxxSsnLast4], data["SSN_LAST4"])
       out.ssn_number = SenzingTypeDef::from_json_data(String, data["SSN_NUMBER"])
       out.tango = SenzingTypeDef::from_json_data(String, data["TANGO"])
       out.tax_id_country = SenzingTypeDef::from_json_data(String, data["TAX_ID_COUNTRY"])
@@ -5963,7 +5949,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = Network.new
       out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.entity_paths = SenzingTypeDef::from_json_data(EntityPaths, data["ENTITY_PATHS"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out.max_entity_limit_reached = SenzingTypeDef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
       out
     end
@@ -6050,7 +6036,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = Path.new
       out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.entity_paths = SenzingTypeDef::from_json_data(EntityPaths, data["ENTITY_PATHS"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out
     end
 
@@ -6262,7 +6248,7 @@ module SenzingTypeDef
       out.features = SenzingTypeDef::from_json_data(Array[RecordFeatures], data["FEATURES"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(String, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -6333,20 +6319,6 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = Records.new
       out.value = SenzingTypeDef.from_json_data(Array[Record], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class RelatedEntities
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = RelatedEntities.new
-      out.value = SenzingTypeDef.from_json_data(Array[RelatedEntity], data)
       out
     end
 

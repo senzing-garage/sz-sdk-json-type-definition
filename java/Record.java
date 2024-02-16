@@ -42,7 +42,7 @@ public class Record {
     private Integer internalId;
 
     @JsonProperty("JSON_DATA")
-    private JsonData jsonData;
+    private String jsonData;
 
     @JsonProperty("LAST_SEEN_DT")
     private String lastSeenDt;
@@ -231,14 +231,14 @@ public class Record {
     /**
      * Getter for jsonData.<p>
      */
-    public JsonData getJsonData() {
+    public String getJsonData() {
         return jsonData;
     }
 
     /**
      * Setter for jsonData.<p>
      */
-    public void setJsonData(JsonData jsonData) {
+    public void setJsonData(String jsonData) {
         this.jsonData = jsonData;
     }
 

@@ -383,7 +383,7 @@ export interface DiagnosticFetchNextEntityBySizeResponseXxx0 {
   ERRULE_CODE: string;
   ER_ID: number;
   ETYPE_CODE: string;
-  JSON_DATA: JsonData;
+  JSON_DATA: string;
   MATCH_KEY: string;
   OBS_ENT_ID: number;
   RECORD_ID: string;
@@ -395,7 +395,7 @@ export type DiagnosticFetchNextEntityBySizeResponseXxx = DiagnosticFetchNextEnti
 export type EntitiesByFeatureId = EntityByFeatureId[];
 
 export interface Entity {
-  RELATED_ENTITIES: RelatedEntities;
+  RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
@@ -412,7 +412,7 @@ export interface EntityBySize {
   ERRULE_CODE: string;
   ER_ID: number;
   ETYPE_CODE: string;
-  JSON_DATA: JsonData;
+  JSON_DATA: string;
   MATCH_KEY: string;
   OBS_ENT_ID: number;
   RECORD_ID: string;
@@ -424,8 +424,6 @@ export interface EntityPath {
   ENTITIES: number[];
   START_ENTITY_ID: number;
 }
-
-export type EntityPaths = EntityPath[];
 
 export interface FeatureDescriptionValue {
   CANDIDATE_CAP_REACHED: string;
@@ -795,7 +793,7 @@ export interface G2diagnosticGetEntityResumeResponse0 {
   ENT_SRC_DESC: string;
   ERRULE_CODE: string;
   ETYPE_CODE: string;
-  JSON_DATA: JsonData;
+  JSON_DATA: string;
   MATCH_KEY: string;
   RECORD_ID: string;
   REL_ENT_ID: number;
@@ -1213,24 +1211,24 @@ export interface InterestingEntity {
   SAMPLE_RECORDS: InterestingEntitySampleRecords[];
 }
 
-export interface JsonDataAcctNum {
+export interface JsonDataXxxAcctNum {
   ACCOUNT_DOMAIN: string;
   ACCOUNT_NUMBER: string;
 }
 
-export interface JsonDataSsn {
+export interface JsonDataXxxSsn {
   PASSPORT_NUMBER: string;
   SSN_NUMBER: string;
 }
 
-export interface JsonDataSsnLast4 {
+export interface JsonDataXxxSsnLast4 {
   SSN_LAST4: number;
 }
 
-export interface JsonData {
+export interface JsonDataXxx {
   ACCOUNT_DOMAIN: string;
   ACCOUNT_NUMBER: string;
-  ACCT_NUM: JsonDataAcctNum[];
+  ACCT_NUM: JsonDataXxxAcctNum[];
   ADDRESS: string;
   ADDRESS_LIST: Addresses;
   ADDR_FULL: string;
@@ -1317,8 +1315,8 @@ export interface JsonData {
   SOCIAL_HANDLE: string;
   SOCIAL_NETWORK: string;
   SOURCE_ID: string;
-  SSN: JsonDataSsn[];
-  SSN_LAST4: JsonDataSsnLast4[];
+  SSN: JsonDataXxxSsn[];
+  SSN_LAST4: JsonDataXxxSsnLast4[];
   SSN_NUMBER: string;
   TANGO: string;
   TAX_ID_COUNTRY: string;
@@ -1630,7 +1628,7 @@ export type Names = Name[];
 
 export interface Network {
   ENTITIES: Entity[];
-  ENTITY_PATHS: EntityPaths;
+  ENTITY_PATHS: EntityPath[];
   MAX_ENTITY_LIMIT_REACHED: string;
 }
 
@@ -1650,7 +1648,7 @@ export type Passports = Passport[];
 
 export interface Path {
   ENTITIES: Entity[];
-  ENTITY_PATHS: EntityPaths;
+  ENTITY_PATHS: EntityPath[];
 }
 
 export interface Phone {
@@ -1709,7 +1707,7 @@ export interface Record {
   FEATURES: RecordFeatures[];
   IDENTIFIER_DATA: string[];
   INTERNAL_ID: number;
-  JSON_DATA: JsonData;
+  JSON_DATA: string;
   LAST_SEEN_DT: string;
   MATCH_KEY: string;
   MATCH_LEVEL: number;
@@ -1729,8 +1727,6 @@ export interface RecordSummaryElement {
 }
 
 export type Records = Record[];
-
-export type RelatedEntities = RelatedEntity[];
 
 export interface RelatedEntity {
   ENTITY_ID: number;

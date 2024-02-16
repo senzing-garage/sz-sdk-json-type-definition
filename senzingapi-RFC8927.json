@@ -1240,7 +1240,7 @@
                         "type": "string"
                     },
                     "JSON_DATA": {
-                        "ref": "JsonData"
+                        "type": "string"
                     },
                     "MATCH_KEY": {
                         "type": "string"
@@ -1271,7 +1271,9 @@
         "Entity": {
             "properties": {
                 "RELATED_ENTITIES": {
-                    "ref": "RelatedEntities"
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
                 },
                 "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
@@ -1321,7 +1323,7 @@
                     "type": "string"
                 },
                 "JSON_DATA": {
-                    "ref": "JsonData"
+                    "type": "string"
                 },
                 "MATCH_KEY": {
                     "type": "string"
@@ -1365,11 +1367,6 @@
                     },
                     "type": "int32"
                 }
-            }
-        },
-        "EntityPaths": {
-            "elements": {
-                "ref": "EntityPath"
             }
         },
         "FeatureDescriptionValue": {
@@ -2502,7 +2499,7 @@
                         "type": "string"
                     },
                     "JSON_DATA": {
-                        "ref": "JsonData"
+                        "type": "string"
                     },
                     "MATCH_KEY": {
                         "type": "string"
@@ -3634,7 +3631,7 @@
                 }
             }
         },
-        "JsonData": {
+        "JsonDataXXX": {
             "properties": {
                 "ACCOUNT_DOMAIN": {
                     "type": "string"
@@ -4847,7 +4844,9 @@
                     }
                 },
                 "ENTITY_PATHS": {
-                    "ref": "EntityPaths"
+                    "elements": {
+                        "ref": "EntityPath"
+                    }
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
                     "type": "string"
@@ -4892,7 +4891,9 @@
                     }
                 },
                 "ENTITY_PATHS": {
-                    "ref": "EntityPaths"
+                    "elements": {
+                        "ref": "EntityPath"
+                    }
                 }
             }
         },
@@ -5052,7 +5053,7 @@
                     "type": "int32"
                 },
                 "JSON_DATA": {
-                    "ref": "JsonData"
+                    "type": "string"
                 },
                 "LAST_SEEN_DT": {
                     "type": "string"
@@ -5116,11 +5117,6 @@
         "Records": {
             "elements": {
                 "ref": "Record"
-            }
-        },
-        "RelatedEntities": {
-            "elements": {
-                "ref": "RelatedEntity"
             }
         },
         "RelatedEntity": {

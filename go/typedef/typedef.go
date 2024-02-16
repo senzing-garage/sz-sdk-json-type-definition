@@ -590,7 +590,7 @@ type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData JSONData `json:"JSON_DATA"`
+	JSONData string `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -606,7 +606,7 @@ type DiagnosticFetchNextEntityBySizeResponseXxx = []DiagnosticFetchNextEntityByS
 type EntitiesByFeatureID = []EntityByFeatureID
 
 type Entity struct {
-	RelatedEntities RelatedEntities `json:"RELATED_ENTITIES"`
+	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
@@ -632,7 +632,7 @@ type EntityBySize struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData JSONData `json:"JSON_DATA"`
+	JSONData string `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -650,8 +650,6 @@ type EntityPath struct {
 
 	StartEntityID int64 `json:"START_ENTITY_ID"`
 }
-
-type EntityPaths = []EntityPath
 
 type FeatureDescriptionValue struct {
 	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
@@ -1296,7 +1294,7 @@ type G2diagnosticGetEntityResumeResponse0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData JSONData `json:"JSON_DATA"`
+	JSONData string `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -1879,28 +1877,28 @@ type InterestingEntity struct {
 	SampleRecords []InterestingEntitySampleRecords `json:"SAMPLE_RECORDS"`
 }
 
-type JSONDataAcctNum struct {
+type JSONDataXxxAcctNum struct {
 	AccountDomain string `json:"ACCOUNT_DOMAIN"`
 
 	AccountNumber string `json:"ACCOUNT_NUMBER"`
 }
 
-type JSONDataSsn struct {
+type JSONDataXxxSsn struct {
 	PassportNumber string `json:"PASSPORT_NUMBER"`
 
 	SsnNumber string `json:"SSN_NUMBER"`
 }
 
-type JSONDataSsnLast4 struct {
+type JSONDataXxxSsnLast4 struct {
 	SsnLast4 int64 `json:"SSN_LAST4"`
 }
 
-type JSONData struct {
+type JSONDataXxx struct {
 	AccountDomain string `json:"ACCOUNT_DOMAIN"`
 
 	AccountNumber string `json:"ACCOUNT_NUMBER"`
 
-	AcctNum []JSONDataAcctNum `json:"ACCT_NUM"`
+	AcctNum []JSONDataXxxAcctNum `json:"ACCT_NUM"`
 
 	Address string `json:"ADDRESS"`
 
@@ -2074,9 +2072,9 @@ type JSONData struct {
 
 	SourceID string `json:"SOURCE_ID"`
 
-	Ssn []JSONDataSsn `json:"SSN"`
+	Ssn []JSONDataXxxSsn `json:"SSN"`
 
-	SsnLast4 []JSONDataSsnLast4 `json:"SSN_LAST4"`
+	SsnLast4 []JSONDataXxxSsnLast4 `json:"SSN_LAST4"`
 
 	SsnNumber string `json:"SSN_NUMBER"`
 
@@ -2644,7 +2642,7 @@ type Names = []Name
 type Network struct {
 	Entities []Entity `json:"ENTITIES"`
 
-	EntityPaths EntityPaths `json:"ENTITY_PATHS"`
+	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
 	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
 }
@@ -2668,7 +2666,7 @@ type Passports = []Passport
 type Path struct {
 	Entities []Entity `json:"ENTITIES"`
 
-	EntityPaths EntityPaths `json:"ENTITY_PATHS"`
+	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 }
 
 type Phone struct {
@@ -2756,7 +2754,7 @@ type Record struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData JSONData `json:"JSON_DATA"`
+	JSONData string `json:"JSON_DATA"`
 
 	LastSeenDt string `json:"LAST_SEEN_DT"`
 
@@ -2788,8 +2786,6 @@ type RecordSummaryElement struct {
 }
 
 type Records = []Record
-
-type RelatedEntities = []RelatedEntity
 
 type RelatedEntity struct {
 	EntityID int64 `json:"ENTITY_ID"`

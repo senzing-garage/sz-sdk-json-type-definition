@@ -879,7 +879,7 @@ pub struct DiagnosticFetchNextEntityBySizeResponseXxx0 {
     pub etypeCode: String,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: JsonData,
+    pub jsonData: String,
 
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
@@ -901,7 +901,7 @@ pub type EntitiesByFeatureId = Vec<EntityByFeatureId>;
 #[derive(Serialize, Deserialize)]
 pub struct Entity {
     #[serde(rename = "RELATED_ENTITIES")]
-    pub relatedEntities: RelatedEntities,
+    pub relatedEntities: Vec<RelatedEntity>,
 
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
@@ -940,7 +940,7 @@ pub struct EntityBySize {
     pub etypeCode: String,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: JsonData,
+    pub jsonData: String,
 
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
@@ -966,8 +966,6 @@ pub struct EntityPath {
     #[serde(rename = "START_ENTITY_ID")]
     pub startEntityId: i32,
 }
-
-pub type EntityPaths = Vec<EntityPath>;
 
 #[derive(Serialize, Deserialize)]
 pub struct FeatureDescriptionValue {
@@ -1927,7 +1925,7 @@ pub struct G2diagnosticGetEntityResumeResponse0 {
     pub etypeCode: String,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: JsonData,
+    pub jsonData: String,
 
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
@@ -2740,7 +2738,7 @@ pub struct InterestingEntity {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct JsonDataAcctNum {
+pub struct JsonDataXxxAcctNum {
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: String,
 
@@ -2749,7 +2747,7 @@ pub struct JsonDataAcctNum {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct JsonDataSsn {
+pub struct JsonDataXxxSsn {
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: String,
 
@@ -2758,13 +2756,13 @@ pub struct JsonDataSsn {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct JsonDataSsnLast4 {
+pub struct JsonDataXxxSsnLast4 {
     #[serde(rename = "SSN_LAST4")]
     pub ssnLast4: i32,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct JsonData {
+pub struct JsonDataXxx {
     #[serde(rename = "ACCOUNT_DOMAIN")]
     pub accountDomain: String,
 
@@ -2772,7 +2770,7 @@ pub struct JsonData {
     pub accountNumber: String,
 
     #[serde(rename = "ACCT_NUM")]
-    pub acctNum: Vec<JsonDataAcctNum>,
+    pub acctNum: Vec<JsonDataXxxAcctNum>,
 
     #[serde(rename = "ADDRESS")]
     pub address: String,
@@ -3033,10 +3031,10 @@ pub struct JsonData {
     pub sourceId: String,
 
     #[serde(rename = "SSN")]
-    pub ssn: Vec<JsonDataSsn>,
+    pub ssn: Vec<JsonDataXxxSsn>,
 
     #[serde(rename = "SSN_LAST4")]
-    pub ssnLast4: Vec<JsonDataSsnLast4>,
+    pub ssnLast4: Vec<JsonDataXxxSsnLast4>,
 
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: String,
@@ -3884,7 +3882,7 @@ pub struct Network {
     pub entities: Vec<Entity>,
 
     #[serde(rename = "ENTITY_PATHS")]
-    pub entityPaths: EntityPaths,
+    pub entityPaths: Vec<EntityPath>,
 
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
@@ -3918,7 +3916,7 @@ pub struct Path {
     pub entities: Vec<Entity>,
 
     #[serde(rename = "ENTITY_PATHS")]
-    pub entityPaths: EntityPaths,
+    pub entityPaths: Vec<EntityPath>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -4049,7 +4047,7 @@ pub struct Record {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: JsonData,
+    pub jsonData: String,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
@@ -4095,8 +4093,6 @@ pub struct RecordSummaryElement {
 }
 
 pub type Records = Vec<Record>;
-
-pub type RelatedEntities = Vec<RelatedEntity>;
 
 #[derive(Serialize, Deserialize)]
 pub struct RelatedEntity {

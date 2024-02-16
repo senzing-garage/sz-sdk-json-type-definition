@@ -12,7 +12,7 @@ public class Network {
     private List<Entity> entities;
 
     @JsonProperty("ENTITY_PATHS")
-    private EntityPaths entityPaths;
+    private List<EntityPath> entityPaths;
 
     @JsonProperty("MAX_ENTITY_LIMIT_REACHED")
     private String maxEntityLimitReached;
@@ -37,14 +37,14 @@ public class Network {
     /**
      * Getter for entityPaths.<p>
      */
-    public EntityPaths getEntityPaths() {
+    public List<EntityPath> getEntityPaths() {
         return entityPaths;
     }
 
     /**
      * Setter for entityPaths.<p>
      */
-    public void setEntityPaths(EntityPaths entityPaths) {
+    public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
     }
 
