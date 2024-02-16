@@ -7,8 +7,8 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 import json
 
 from python.typedef import (
-    EngineAddRecordWithInfoResponse,
-    EngineDeleteRecordWithInfoResponse,
+    G2EngineAddRecordWithInfoResponse,
+    G2EngineDeleteRecordWithInfoResponse,
 )
 
 # -----------------------------------------------------------------------------
@@ -73,23 +73,23 @@ FindNetworkByEntityIDResult = {
 # TestCases
 # -----------------------------------------------------------------------------
 
-response = EngineAddRecordWithInfoResponse.from_json_data(
+response = G2EngineAddRecordWithInfoResponse.from_json_data(
     json.loads(add_record_with_info())
 )
 print(
     f"EngineAddRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities.value[0].entity_id}"
 )
 
-response = EngineDeleteRecordWithInfoResponse.from_json_data(
+response = G2EngineDeleteRecordWithInfoResponse.from_json_data(
     json.loads(delete_record_with_info())
 )
 print(
     f"EngineDeleteRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities.value[0].entity_id}"
 )
 
-# response = EngineFindInterestingEntitiesByEntityIdresponse.from_json_data(
-#     json.loads(delete_record_with_info(find_interesting_entities_by_entity_id))
-# )
-# print(
-#     f"EngineDeleteRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities.value[0].entity_id}"
-# )
+response = G2EngineFindInterestingEntitiesByEntityIDResponse.from_json_data(
+    json.loads(delete_record_with_info(find_interesting_entities_by_entity_id))
+)
+print(
+    f"EngineDeleteRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities.value[0].entity_id}"
+)
