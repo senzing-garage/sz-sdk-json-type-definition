@@ -1813,9 +1813,6 @@
                 "ref": "FeatureScoreForAttribute"
             }
         },
-        "Features": {
-            "type": "string"
-        },
         "FeaturesXxx": {
             "properties": {
                 "ACCOUNT_DOMAIN": {
@@ -4970,7 +4967,7 @@
                                 "type": "string"
                             },
                             "FEATURES": {
-                                "ref": "Features"
+                                "type": "string"
                             },
                             "LAST_SEEN_DT": {
                                 "type": "string"
@@ -5265,7 +5262,7 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "ref": "Features"
+                    "type": "string"
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {

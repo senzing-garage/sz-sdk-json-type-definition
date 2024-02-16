@@ -571,8 +571,6 @@ export interface FeatureScores {
 
 export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
-export type Features = string;
-
 export type FeaturesForAttribute = FeatureForAttribute[];
 
 export interface FeaturesXxx {
@@ -1686,7 +1684,7 @@ export interface ProcessResultResolvedEntities {
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
-  FEATURES: Features;
+  FEATURES: string;
   LAST_SEEN_DT: string;
   MATCH_KEY: string;
   MATCH_LEVEL: number;
@@ -1785,7 +1783,7 @@ export interface ResolvedEntity {
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
-  FEATURES: Features;
+  FEATURES: string;
   IS_AMBIGUOUS: number;
   IS_DISCLOSED: number;
   LAST_SEEN_DT: string;

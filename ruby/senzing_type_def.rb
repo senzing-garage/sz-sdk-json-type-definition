@@ -1980,20 +1980,6 @@ module SenzingTypeDef
     end
   end
 
-  class Features
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Features.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class FeaturesForAttribute
     attr_accessor :value
 
@@ -6219,7 +6205,7 @@ module SenzingTypeDef
       out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
       out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(Features, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(String, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -6597,7 +6583,7 @@ module SenzingTypeDef
       out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
       out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(Features, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.is_ambiguous = SenzingTypeDef::from_json_data(Integer, data["IS_AMBIGUOUS"])
       out.is_disclosed = SenzingTypeDef::from_json_data(Integer, data["IS_DISCLOSED"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(String, data["LAST_SEEN_DT"])

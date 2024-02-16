@@ -917,8 +917,6 @@ type FeatureScores struct {
 
 type FeatureScoresForAttribute = []FeatureScoreForAttribute
 
-type Features = string
-
 type FeaturesForAttribute = []FeatureForAttribute
 
 type FeaturesXxx struct {
@@ -2714,7 +2712,7 @@ type ProcessResultResolvedEntities struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features Features `json:"FEATURES"`
+	Features string `json:"FEATURES"`
 
 	LastSeenDt string `json:"LAST_SEEN_DT"`
 
@@ -2868,7 +2866,7 @@ type ResolvedEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features Features `json:"FEATURES"`
+	Features string `json:"FEATURES"`
 
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 

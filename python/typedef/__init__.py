@@ -1905,17 +1905,6 @@ class FeatureScoresForAttribute:
         return _to_json_data(self.value)
 
 @dataclass
-class Features:
-    value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Features':
-        return cls(_from_json_data(str, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class FeaturesForAttribute:
     value: 'List[FeatureForAttribute]'
 
@@ -5832,7 +5821,7 @@ class ProcessResultResolvedEntities:
     entity_id: 'int'
     entity_name: 'str'
     errule_code: 'str'
-    features: 'Features'
+    features: 'str'
     last_seen_dt: 'str'
     match_key: 'str'
     match_level: 'int'
@@ -5847,7 +5836,7 @@ class ProcessResultResolvedEntities:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Features, data.get("FEATURES")),
+            _from_json_data(str, data.get("FEATURES")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -6183,7 +6172,7 @@ class ResolvedEntity:
     entity_id: 'int'
     entity_name: 'str'
     errule_code: 'str'
-    features: 'Features'
+    features: 'str'
     is_ambiguous: 'int'
     is_disclosed: 'int'
     last_seen_dt: 'str'
@@ -6199,7 +6188,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Features, data.get("FEATURES")),
+            _from_json_data(str, data.get("FEATURES")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),

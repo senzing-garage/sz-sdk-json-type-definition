@@ -1004,7 +1004,7 @@ print(f"G2engineGetRedoRecordResponse: Value: {response.value}")
 response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_get_virtual_entity_by_record_id())
 )
-address_feature_json = response.value.resolved_entity.features.value.get("ADDRESS")[0]
+address_feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
 address_feature = FeatureForAttribute.from_json_data(address_feature_json)
 print(
     f"G2engineGetVirtualEntityByRecordIDResponse: Address Feature Description: {address_feature.feat_desc_values.value[0].feat_desc}"
@@ -1014,7 +1014,7 @@ print(
 response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_get_virtual_entity_by_record_id())
 )
-feature_list = response.value.resolved_entity.features.value.get("NAME", [])
+feature_list = response.value.resolved_entity.features.get("NAME", [])
 for feature in feature_list:
     feat_desc_list = FeatureForAttribute.from_json_data(feature).feat_desc_values.value
     for feat_desc in feat_desc_list:

@@ -1361,8 +1361,6 @@ pub struct FeatureScores {
 
 pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
 
-pub type Features = String;
-
 pub type FeaturesForAttribute = Vec<FeatureForAttribute>;
 
 #[derive(Serialize, Deserialize)]
@@ -3982,7 +3980,7 @@ pub struct ProcessResultResolvedEntities {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: Features,
+    pub features: String,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: String,
@@ -4207,7 +4205,7 @@ pub struct ResolvedEntity {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: Features,
+    pub features: String,
 
     #[serde(rename = "IS_AMBIGUOUS")]
     pub isAmbiguous: i32,

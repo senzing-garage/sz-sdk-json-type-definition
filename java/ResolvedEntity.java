@@ -17,7 +17,7 @@ public class ResolvedEntity {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private Features features;
+    private String features;
 
     @JsonProperty("IS_AMBIGUOUS")
     private Integer isAmbiguous;
@@ -91,14 +91,14 @@ public class ResolvedEntity {
     /**
      * Getter for features.<p>
      */
-    public Features getFeatures() {
+    public String getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(Features features) {
+    public void setFeatures(String features) {
         this.features = features;
     }
 

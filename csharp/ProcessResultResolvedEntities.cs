@@ -16,7 +16,7 @@ namespace Senzing
         public string ErruleCode { get; set; }
 
         [JsonPropertyName("FEATURES")]
-        public Features Features { get; set; }
+        public string Features { get; set; }
 
         [JsonPropertyName("LAST_SEEN_DT")]
         public string LastSeenDt { get; set; }
