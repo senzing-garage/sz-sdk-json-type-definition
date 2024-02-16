@@ -947,28 +947,28 @@ response = G2engineFindNetworkByEntityIDResponse.from_json_data(
     json.loads(mock_g2engine_find_network_by_entity_id())
 )
 print(
-    f"G2engineFindNetworkByEntityIDResponse: Entity name: {response.value.entities.value[0].resolved_entity.entity_name}"
+    f"G2engineFindNetworkByEntityIDResponse: Entity name: {response.value.entities[0].resolved_entity.entity_name}"
 )
 
 response = G2engineFindNetworkByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_find_network_by_record_id())
 )
 print(
-    f"G2engineFindNetworkByRecordIDResponse: Record summary: {response.value.entities.value[0].resolved_entity.record_summary}"
+    f"G2engineFindNetworkByRecordIDResponse: Record summary: {response.value.entities[0].resolved_entity.record_summary}"
 )
 
 response = G2engineFindPathByEntityIDResponse.from_json_data(
     json.loads(mock_g2engine_find_path_by_entity_id())
 )
 print(
-    f"G2engineFindPathByEntityIDResponse: Entity name: {response.value.entities.value[0].resolved_entity.entity_name}"
+    f"G2engineFindPathByEntityIDResponse: Entity name: {response.value.entities[0].resolved_entity.entity_name}"
 )
 
 response = G2engineFindPathByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_find_path_by_record_id())
 )
 print(
-    f"G2engineFindPathByRecordIDResponse: Is ambiguous: {response.value.entities.value[0].resolved_entity.is_ambiguous}"
+    f"G2engineFindPathByRecordIDResponse: Is ambiguous: {response.value.entities[0].resolved_entity.is_ambiguous}"
 )
 
 # TODO:  response.value.resolved_entity.features needs to be fixed.

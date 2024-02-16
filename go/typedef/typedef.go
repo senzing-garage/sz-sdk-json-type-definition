@@ -603,8 +603,6 @@ type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
 
 type DiagnosticFetchNextEntityBySizeResponseXxx = []DiagnosticFetchNextEntityBySizeResponseXxx0
 
-type Entities = []Entity
-
 type EntitiesByFeatureID = []EntityByFeatureID
 
 type Entity struct {
@@ -2646,7 +2644,7 @@ type Name struct {
 type Names = []Name
 
 type Network struct {
-	Entities Entities `json:"ENTITIES"`
+	Entities []Entity `json:"ENTITIES"`
 
 	EntityPaths EntityPaths `json:"ENTITY_PATHS"`
 
@@ -2670,7 +2668,7 @@ type Passport struct {
 type Passports = []Passport
 
 type Path struct {
-	Entities Entities `json:"ENTITIES"`
+	Entities []Entity `json:"ENTITIES"`
 
 	EntityPaths EntityPaths `json:"ENTITY_PATHS"`
 }
@@ -2970,19 +2968,19 @@ type VirtualEntitySynopsis struct {
 }
 
 type WhyEntities struct {
-	Entities Entities `json:"ENTITIES"`
+	Entities []Entity `json:"ENTITIES"`
 
 	WhyResults WhyResults `json:"WHY_RESULTS"`
 }
 
 type WhyEntity struct {
-	Entities Entities `json:"ENTITIES"`
+	Entities []Entity `json:"ENTITIES"`
 
 	WhyResults WhyResults `json:"WHY_RESULTS"`
 }
 
 type WhyRecords struct {
-	Entities Entities `json:"ENTITIES"`
+	Entities []Entity `json:"ENTITIES"`
 
 	WhyResults WhyResults `json:"WHY_RESULTS"`
 }

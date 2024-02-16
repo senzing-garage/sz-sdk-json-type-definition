@@ -1263,11 +1263,6 @@
                 }
             }
         },
-        "Entities": {
-            "elements": {
-                "ref": "Entity"
-            }
-        },
         "EntitiesByFeatureID": {
             "elements": {
                 "ref": "EntityByFeatureID"
@@ -4850,7 +4845,9 @@
         "Network": {
             "properties": {
                 "ENTITIES": {
-                    "ref": "Entities"
+                    "elements": {
+                        "ref": "Entity"
+                    }
                 },
                 "ENTITY_PATHS": {
                     "ref": "EntityPaths"
@@ -4893,7 +4890,9 @@
         "Path": {
             "properties": {
                 "ENTITIES": {
-                    "ref": "Entities"
+                    "elements": {
+                        "ref": "Entity"
+                    }
                 },
                 "ENTITY_PATHS": {
                     "ref": "EntityPaths"
@@ -5475,7 +5474,9 @@
         "WhyEntities": {
             "properties": {
                 "ENTITIES": {
-                    "ref": "Entities"
+                    "elements": {
+                        "ref": "Entity"
+                    }
                 },
                 "WHY_RESULTS": {
                     "ref": "WhyResults"
@@ -5485,7 +5486,9 @@
         "WhyEntity": {
             "properties": {
                 "ENTITIES": {
-                    "ref": "Entities"
+                    "elements": {
+                        "ref": "Entity"
+                    }
                 },
                 "WHY_RESULTS": {
                     "ref": "WhyResults"
@@ -5495,7 +5498,9 @@
         "WhyRecords": {
             "properties": {
                 "ENTITIES": {
-                    "ref": "Entities"
+                    "elements": {
+                        "ref": "Entity"
+                    }
                 },
                 "WHY_RESULTS": {
                     "ref": "WhyResults"

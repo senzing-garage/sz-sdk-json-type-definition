@@ -1363,20 +1363,6 @@ module SenzingTypeDef
     end
   end
 
-  class Entities
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Entities.new
-      out.value = SenzingTypeDef.from_json_data(Array[Entity], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class EntitiesByFeatureID
     attr_accessor :value
 
@@ -5990,7 +5976,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Network.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.entity_paths = SenzingTypeDef::from_json_data(EntityPaths, data["ENTITY_PATHS"])
       out.max_entity_limit_reached = SenzingTypeDef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
       out
@@ -6077,7 +6063,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Path.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.entity_paths = SenzingTypeDef::from_json_data(EntityPaths, data["ENTITY_PATHS"])
       out
     end
@@ -6855,7 +6841,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = WhyEntities.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
@@ -6874,7 +6860,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = WhyEntity.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
@@ -6893,7 +6879,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = WhyRecords.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end

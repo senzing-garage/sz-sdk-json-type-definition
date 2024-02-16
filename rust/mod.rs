@@ -896,8 +896,6 @@ pub struct DiagnosticFetchNextEntityBySizeResponseXxx0 {
 
 pub type DiagnosticFetchNextEntityBySizeResponseXxx = Vec<DiagnosticFetchNextEntityBySizeResponseXxx0>;
 
-pub type Entities = Vec<Entity>;
-
 pub type EntitiesByFeatureId = Vec<EntityByFeatureId>;
 
 #[derive(Serialize, Deserialize)]
@@ -3885,7 +3883,7 @@ pub type Names = Vec<Name>;
 #[derive(Serialize, Deserialize)]
 pub struct Network {
     #[serde(rename = "ENTITIES")]
-    pub entities: Entities,
+    pub entities: Vec<Entity>,
 
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: EntityPaths,
@@ -3919,7 +3917,7 @@ pub type Passports = Vec<Passport>;
 #[derive(Serialize, Deserialize)]
 pub struct Path {
     #[serde(rename = "ENTITIES")]
-    pub entities: Entities,
+    pub entities: Vec<Entity>,
 
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: EntityPaths,
@@ -4361,7 +4359,7 @@ pub struct VirtualEntitySynopsis {
 #[derive(Serialize, Deserialize)]
 pub struct WhyEntities {
     #[serde(rename = "ENTITIES")]
-    pub entities: Entities,
+    pub entities: Vec<Entity>,
 
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,
@@ -4370,7 +4368,7 @@ pub struct WhyEntities {
 #[derive(Serialize, Deserialize)]
 pub struct WhyEntity {
     #[serde(rename = "ENTITIES")]
-    pub entities: Entities,
+    pub entities: Vec<Entity>,
 
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,
@@ -4379,7 +4377,7 @@ pub struct WhyEntity {
 #[derive(Serialize, Deserialize)]
 pub struct WhyRecords {
     #[serde(rename = "ENTITIES")]
-    pub entities: Entities,
+    pub entities: Vec<Entity>,
 
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,

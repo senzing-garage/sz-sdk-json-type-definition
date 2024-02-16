@@ -392,8 +392,6 @@ export interface DiagnosticFetchNextEntityBySizeResponseXxx0 {
 
 export type DiagnosticFetchNextEntityBySizeResponseXxx = DiagnosticFetchNextEntityBySizeResponseXxx0[];
 
-export type Entities = Entity[];
-
 export type EntitiesByFeatureId = EntityByFeatureId[];
 
 export interface Entity {
@@ -1633,7 +1631,7 @@ export interface Name {
 export type Names = Name[];
 
 export interface Network {
-  ENTITIES: Entities;
+  ENTITIES: Entity[];
   ENTITY_PATHS: EntityPaths;
   MAX_ENTITY_LIMIT_REACHED: string;
 }
@@ -1653,7 +1651,7 @@ export interface Passport {
 export type Passports = Passport[];
 
 export interface Path {
-  ENTITIES: Entities;
+  ENTITIES: Entity[];
   ENTITY_PATHS: EntityPaths;
 }
 
@@ -1859,17 +1857,17 @@ export interface VirtualEntitySynopsis {
 }
 
 export interface WhyEntities {
-  ENTITIES: Entities;
+  ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
 export interface WhyEntity {
-  ENTITIES: Entities;
+  ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
 export interface WhyRecords {
-  ENTITIES: Entities;
+  ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 

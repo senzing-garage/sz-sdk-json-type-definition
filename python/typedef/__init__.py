@@ -1314,17 +1314,6 @@ class DiagnosticFetchNextEntityBySizeResponseXxx:
         return _to_json_data(self.value)
 
 @dataclass
-class Entities:
-    value: 'List[Entity]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Entities':
-        return cls(_from_json_data(List[Entity], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class EntitiesByFeatureID:
     value: 'List[EntityByFeatureID]'
 
@@ -5633,14 +5622,14 @@ class Names:
 
 @dataclass
 class Network:
-    entities: 'Entities'
+    entities: 'List[Entity]'
     entity_paths: 'EntityPaths'
     max_entity_limit_reached: 'str'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Network':
         return cls(
-            _from_json_data(Entities, data.get("ENTITIES")),
+            _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(EntityPaths, data.get("ENTITY_PATHS")),
             _from_json_data(str, data.get("MAX_ENTITY_LIMIT_REACHED")),
         )
@@ -5712,13 +5701,13 @@ class Passports:
 
 @dataclass
 class Path:
-    entities: 'Entities'
+    entities: 'List[Entity]'
     entity_paths: 'EntityPaths'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Path':
         return cls(
-            _from_json_data(Entities, data.get("ENTITIES")),
+            _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(EntityPaths, data.get("ENTITY_PATHS")),
         )
 
@@ -6442,13 +6431,13 @@ class VirtualEntitySynopsis:
 
 @dataclass
 class WhyEntities:
-    entities: 'Entities'
+    entities: 'List[Entity]'
     why_results: 'WhyResults'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyEntities':
         return cls(
-            _from_json_data(Entities, data.get("ENTITIES")),
+            _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(WhyResults, data.get("WHY_RESULTS")),
         )
 
@@ -6460,13 +6449,13 @@ class WhyEntities:
 
 @dataclass
 class WhyEntity:
-    entities: 'Entities'
+    entities: 'List[Entity]'
     why_results: 'WhyResults'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyEntity':
         return cls(
-            _from_json_data(Entities, data.get("ENTITIES")),
+            _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(WhyResults, data.get("WHY_RESULTS")),
         )
 
@@ -6478,13 +6467,13 @@ class WhyEntity:
 
 @dataclass
 class WhyRecords:
-    entities: 'Entities'
+    entities: 'List[Entity]'
     why_results: 'WhyResults'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyRecords':
         return cls(
-            _from_json_data(Entities, data.get("ENTITIES")),
+            _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(WhyResults, data.get("WHY_RESULTS")),
         )
 

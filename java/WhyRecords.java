@@ -4,11 +4,12 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class WhyRecords {
     @JsonProperty("ENTITIES")
-    private Entities entities;
+    private List<Entity> entities;
 
     @JsonProperty("WHY_RESULTS")
     private WhyResults whyResults;
@@ -19,14 +20,14 @@ public class WhyRecords {
     /**
      * Getter for entities.<p>
      */
-    public Entities getEntities() {
+    public List<Entity> getEntities() {
         return entities;
     }
 
     /**
      * Setter for entities.<p>
      */
-    public void setEntities(Entities entities) {
+    public void setEntities(List<Entity> entities) {
         this.entities = entities;
     }
 
