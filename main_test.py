@@ -1023,13 +1023,10 @@ for feature in feature_list:
         )
 
 # Using straight JSON parsing.
-# - No static checking can be done on JSON keys
-# - No editor hints
-response = mock_g2engine_get_virtual_entity_by_record_id()
-response_dict = json.loads(response)
-feature_list = (
-    response_dict.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
-)
+# - Issue: No static checking can be done on JSON keys
+# - Issue: No editor hints
+response = json.loads(mock_g2engine_get_virtual_entity_by_record_id())
+feature_list = response.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")
     for feat_desc in feat_desc_list:

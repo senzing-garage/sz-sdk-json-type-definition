@@ -6128,7 +6128,7 @@ class ResolvedEntity:
     entity_id: 'int'
     entity_name: 'str'
     errule_code: 'str'
-    features: 'str'
+    features: 'object'
     is_ambiguous: 'int'
     is_disclosed: 'int'
     last_seen_dt: 'str'
@@ -6144,7 +6144,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(str, data.get("FEATURES")),
+            _from_json_data(object, data.get("FEATURES")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),

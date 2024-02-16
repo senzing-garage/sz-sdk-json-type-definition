@@ -5254,6 +5254,9 @@
                     "type": "string"
                 },
                 "FEATURES": {
+                    "metadata": {
+                        "pythonType": "object"
+                    },
                     "type": "string"
                 },
                 "IS_AMBIGUOUS": {
