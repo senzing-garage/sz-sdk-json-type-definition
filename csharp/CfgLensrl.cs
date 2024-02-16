@@ -13,19 +13,19 @@ namespace Senzing
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public IList<object> Value { get; set; }
+        public IList<FixmeUnknown> Value { get; set; }
     }
 
     public class CfgLensrlJsonConverter : JsonConverter<CfgLensrl>
     {
         public override CfgLensrl Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new CfgLensrl { Value = JsonSerializer.Deserialize<IList<object>>(ref reader, options) };
+            return new CfgLensrl { Value = JsonSerializer.Deserialize<IList<FixmeUnknown>>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, CfgLensrl value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<IList<object>>(writer, value.Value, options);
+            JsonSerializer.Serialize<IList<FixmeUnknown>>(writer, value.Value, options);
         }
     }
 }

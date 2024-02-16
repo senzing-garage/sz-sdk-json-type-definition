@@ -1024,11 +1024,11 @@ class CfgLens:
 
 @dataclass
 class CfgLensrl:
-    value: 'List[Any]'
+    value: 'List[FixmeUnknown]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'CfgLensrl':
-        return cls(_from_json_data(List[Any], data))
+        return cls(_from_json_data(List[FixmeUnknown], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2240,6 +2240,17 @@ class FinalState:
         return data
 
 @dataclass
+class FixmeUnknown:
+    value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'FixmeUnknown':
+        return cls(_from_json_data(str, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class FocusRecord:
     data_source: 'str'
     record_id: 'str'
@@ -2956,11 +2967,11 @@ class G2diagnosticGetResolutionStatisticsResponse:
 
 @dataclass
 class G2diagnosticStreamEntityListBySizeResponse:
-    value: 'Any'
+    value: 'FixmeUnknown'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2diagnosticStreamEntityListBySizeResponse':
-        return cls(_from_json_data(Any, data))
+        return cls(_from_json_data(FixmeUnknown, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -3084,11 +3095,11 @@ class G2engineExportConfigResponse:
 
 @dataclass
 class G2engineFetchNextResponse:
-    value: 'Any'
+    value: 'FixmeUnknown'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2engineFetchNextResponse':
-        return cls(_from_json_data(Any, data))
+        return cls(_from_json_data(FixmeUnknown, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -3358,6 +3369,17 @@ class G2engineGetRecordV2response:
         return _to_json_data(self.value)
 
 @dataclass
+class G2engineGetRedoRecordResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'G2engineGetRedoRecordResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class G2engineGetVirtualEntityByRecordIdv2response:
     value: 'VirtualEntity'
 
@@ -3403,11 +3425,11 @@ class G2engineHowEntityByEntityIDResponse:
 
 @dataclass
 class G2engineProcessRedoRecordResponse:
-    value: 'Any'
+    value: 'FixmeUnknown'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordResponse':
-        return cls(_from_json_data(Any, data))
+        return cls(_from_json_data(FixmeUnknown, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -3805,7 +3827,7 @@ class G2engineStatsResponseWorkloadUnresolveTriggers:
 
 @dataclass
 class G2engineStatsResponseWorkload:
-    corrupt_entity_test_diagnosis: 'Any'
+    corrupt_entity_test_diagnosis: 'FixmeUnknown'
     aborted_unresolve: 'int'
     actual_ambiguous_test: 'int'
     added_records: 'int'
@@ -3850,7 +3872,7 @@ class G2engineStatsResponseWorkload:
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkload':
         return cls(
-            _from_json_data(Any, data.get("CorruptEntityTestDiagnosis")),
+            _from_json_data(FixmeUnknown, data.get("CorruptEntityTestDiagnosis")),
             _from_json_data(int, data.get("abortedUnresolve")),
             _from_json_data(int, data.get("actualAmbiguousTest")),
             _from_json_data(int, data.get("addedRecords")),
@@ -4033,11 +4055,11 @@ class G2engineStatsResponse:
 
 @dataclass
 class G2engineStreamExportJsonentityReportResponse:
-    value: 'Any'
+    value: 'FixmeUnknown'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2engineStreamExportJsonentityReportResponse':
-        return cls(_from_json_data(Any, data))
+        return cls(_from_json_data(FixmeUnknown, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)

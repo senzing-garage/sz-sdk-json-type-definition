@@ -1067,7 +1067,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = CfgLensrl.new
-      out.value = SenzingTypeDef.from_json_data(Array[Object], data)
+      out.value = SenzingTypeDef.from_json_data(Array[FixmeUnknown], data)
       out
     end
 
@@ -2320,6 +2320,20 @@ module SenzingTypeDef
     end
   end
 
+  class FixmeUnknown
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = FixmeUnknown.new
+      out.value = SenzingTypeDef.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class FocusRecord
     attr_accessor :data_source
     attr_accessor :record_id
@@ -3094,7 +3108,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = G2diagnosticStreamEntityListBySizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
       out
     end
 
@@ -3238,7 +3252,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = G2engineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
       out
     end
 
@@ -3583,6 +3597,20 @@ module SenzingTypeDef
     end
   end
 
+  class G2engineGetRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class G2engineGetVirtualEntityByRecordIdv2response
     attr_accessor :value
 
@@ -3644,7 +3672,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = G2engineProcessRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
       out
     end
 
@@ -4133,7 +4161,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = G2engineStatsResponseWorkload.new
-      out.corrupt_entity_test_diagnosis = SenzingTypeDef::from_json_data(Object, data["CorruptEntityTestDiagnosis"])
+      out.corrupt_entity_test_diagnosis = SenzingTypeDef::from_json_data(FixmeUnknown, data["CorruptEntityTestDiagnosis"])
       out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
       out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
       out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
@@ -4323,7 +4351,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = G2engineStreamExportJsonentityReportResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
       out
     end
 

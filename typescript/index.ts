@@ -303,7 +303,7 @@ export interface CfgLens {
   LENS_ID: number;
 }
 
-export type CfgLensrl = any[];
+export type CfgLensrl = FixmeUnknown[];
 
 export interface CfgRclass {
   IS_DISCLOSED: string;
@@ -679,6 +679,8 @@ export interface FinalState {
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
+export type FixmeUnknown = string;
+
 export interface FocusRecord {
   DATA_SOURCE: string;
   RECORD_ID: string;
@@ -878,7 +880,7 @@ export interface G2diagnosticGetResolutionStatisticsResponse0 {
 
 export type G2diagnosticGetResolutionStatisticsResponse = G2diagnosticGetResolutionStatisticsResponse0[];
 
-export type G2diagnosticStreamEntityListBySizeResponse = any;
+export type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
 
 export type G2engineAddRecordWithInfoResponse = WithInfo;
 
@@ -910,7 +912,7 @@ export interface G2engineExportConfigResponse {
   G2_CONFIG: G2config;
 }
 
-export type G2engineFetchNextResponse = any;
+export type G2engineFetchNextResponse = FixmeUnknown;
 
 export type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
 
@@ -960,6 +962,8 @@ export type G2engineGetRecordResponse = Record;
 
 export type G2engineGetRecordV2response = Record;
 
+export type G2engineGetRedoRecordResponse = FixmeUnknown;
+
 export type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
 
 export type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
@@ -968,7 +972,7 @@ export type G2engineHowEntityByEntityIdv2response = How;
 
 export type G2engineHowEntityByEntityIdResponse = How;
 
-export type G2engineProcessRedoRecordResponse = any;
+export type G2engineProcessRedoRecordResponse = FixmeUnknown;
 
 export type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
 
@@ -1072,7 +1076,7 @@ export interface G2engineStatsResponseWorkloadUnresolveTriggers {
 }
 
 export interface G2engineStatsResponseWorkload {
-  CorruptEntityTestDiagnosis: any;
+  CorruptEntityTestDiagnosis: FixmeUnknown;
   abortedUnresolve: number;
   actualAmbiguousTest: number;
   addedRecords: number;
@@ -1145,7 +1149,7 @@ export interface G2engineStatsResponse {
   workload: G2engineStatsResponseWorkload;
 }
 
-export type G2engineStreamExportJsonentityReportResponse = any;
+export type G2engineStreamExportJsonentityReportResponse = FixmeUnknown;
 
 export type G2engineWhyEntitiesResponse = WhyEntities;
 

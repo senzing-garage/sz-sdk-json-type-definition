@@ -1026,7 +1026,9 @@
             }
         },
         "CFG_LENSRL": {
-            "elements": {}
+            "elements": {
+                "ref": "FixmeUnknown"
+            }
         },
         "CFG_RCLASS": {
             "properties": {
@@ -2129,6 +2131,9 @@
                 }
             }
         },
+        "FixmeUnknown": {
+            "type": "string"
+        },
         "FocusRecord": {
             "properties": {
                 "DATA_SOURCE": {
@@ -2726,7 +2731,9 @@
                 }
             }
         },
-        "G2DiagnosticStreamEntityListBySizeResponse": {},
+        "G2DiagnosticStreamEntityListBySizeResponse": {
+            "ref": "FixmeUnknown"
+        },
         "G2EngineAddRecordWithInfoResponse": {
             "ref": "WithInfo"
         },
@@ -2793,7 +2800,9 @@
                 }
             }
         },
-        "G2EngineFetchNextResponse": {},
+        "G2EngineFetchNextResponse": {
+            "ref": "FixmeUnknown"
+        },
         "G2EngineFindInterestingEntitiesByEntityIdResponse": {
             "ref": "Interesting"
         },
@@ -2866,6 +2875,9 @@
         "G2EngineGetRecordV2Response": {
             "ref": "Record"
         },
+        "G2EngineGetRedoRecordResponse": {
+            "ref": "FixmeUnknown"
+        },
         "G2EngineGetVirtualEntityByRecordIdResponse": {
             "ref": "VirtualEntity"
         },
@@ -2878,7 +2890,9 @@
         "G2EngineHowEntityByEntityIDV2Response": {
             "ref": "How"
         },
-        "G2EngineProcessRedoRecordResponse": {},
+        "G2EngineProcessRedoRecordResponse": {
+            "ref": "FixmeUnknown"
+        },
         "G2EngineProcessRedoRecordWithInfoResponse": {
             "ref": "WithInfo"
         },
@@ -3081,7 +3095,9 @@
                 },
                 "workload": {
                     "properties": {
-                        "CorruptEntityTestDiagnosis": {},
+                        "CorruptEntityTestDiagnosis": {
+                            "ref": "FixmeUnknown"
+                        },
                         "abortedUnresolve": {
                             "metadata": {
                                 "goType": "int64"
@@ -3474,7 +3490,9 @@
                 }
             }
         },
-        "G2EngineStreamExportJSONEntityReportResponse": {},
+        "G2EngineStreamExportJSONEntityReportResponse": {
+            "ref": "FixmeUnknown"
+        },
         "G2EngineWhyEntitiesResponse": {
             "ref": "WhyEntities"
         },

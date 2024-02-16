@@ -722,7 +722,7 @@ pub struct CfgLens {
     pub lensId: i32,
 }
 
-pub type CfgLensrl = Vec<Option<Value>>;
+pub type CfgLensrl = Vec<FixmeUnknown>;
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgRclass {
@@ -1669,6 +1669,8 @@ pub struct FinalState {
     pub virtualEntities: Vec<VirtualEntitySynopsis>,
 }
 
+pub type FixmeUnknown = String;
+
 #[derive(Serialize, Deserialize)]
 pub struct FocusRecord {
     #[serde(rename = "DATA_SOURCE")]
@@ -2096,7 +2098,7 @@ pub struct G2diagnosticGetResolutionStatisticsResponse0 {
 
 pub type G2diagnosticGetResolutionStatisticsResponse = Vec<G2diagnosticGetResolutionStatisticsResponse0>;
 
-pub type G2diagnosticStreamEntityListBySizeResponse = Option<Value>;
+pub type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
 
 pub type G2engineAddRecordWithInfoResponse = WithInfo;
 
@@ -2152,7 +2154,7 @@ pub struct G2engineExportConfigResponse {
     pub g2Config: G2config,
 }
 
-pub type G2engineFetchNextResponse = Option<Value>;
+pub type G2engineFetchNextResponse = FixmeUnknown;
 
 pub type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
 
@@ -2202,6 +2204,8 @@ pub type G2engineGetRecordResponse = Record;
 
 pub type G2engineGetRecordV2response = Record;
 
+pub type G2engineGetRedoRecordResponse = FixmeUnknown;
+
 pub type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
 
 pub type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
@@ -2210,7 +2214,7 @@ pub type G2engineHowEntityByEntityIdv2response = How;
 
 pub type G2engineHowEntityByEntityIdResponse = How;
 
-pub type G2engineProcessRedoRecordResponse = Option<Value>;
+pub type G2engineProcessRedoRecordResponse = FixmeUnknown;
 
 pub type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
 
@@ -2408,7 +2412,7 @@ pub struct G2engineStatsResponseWorkloadUnresolveTriggers {
 #[derive(Serialize, Deserialize)]
 pub struct G2engineStatsResponseWorkload {
     #[serde(rename = "CorruptEntityTestDiagnosis")]
-    pub corruptEntityTestDiagnosis: Option<Value>,
+    pub corruptEntityTestDiagnosis: FixmeUnknown,
 
     #[serde(rename = "abortedUnresolve")]
     pub abortedUnresolve: i32,
@@ -2615,7 +2619,7 @@ pub struct G2engineStatsResponse {
     pub workload: G2engineStatsResponseWorkload,
 }
 
-pub type G2engineStreamExportJsonentityReportResponse = Option<Value>;
+pub type G2engineStreamExportJsonentityReportResponse = FixmeUnknown;
 
 pub type G2engineWhyEntitiesResponse = WhyEntities;
 

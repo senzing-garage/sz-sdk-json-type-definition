@@ -484,7 +484,7 @@ type CfgLens struct {
 	LensID int64 `json:"LENS_ID"`
 }
 
-type CfgLensrl = []interface{}
+type CfgLensrl = []FixmeUnknown
 
 type CfgRclass struct {
 	IsDisclosed string `json:"IS_DISCLOSED"`
@@ -1123,6 +1123,8 @@ type FinalState struct {
 	VirtualEntities []VirtualEntitySynopsis `json:"VIRTUAL_ENTITIES"`
 }
 
+type FixmeUnknown = string
+
 type FocusRecord struct {
 	DataSource string `json:"DATA_SOURCE"`
 
@@ -1415,7 +1417,7 @@ type G2diagnosticGetResolutionStatisticsResponse0 struct {
 
 type G2diagnosticGetResolutionStatisticsResponse = []G2diagnosticGetResolutionStatisticsResponse0
 
-type G2diagnosticStreamEntityListBySizeResponse = interface{}
+type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown
 
 type G2engineAddRecordWithInfoResponse = WithInfo
 
@@ -1455,7 +1457,7 @@ type G2engineExportConfigResponse struct {
 	G2Config G2config `json:"G2_CONFIG"`
 }
 
-type G2engineFetchNextResponse = interface{}
+type G2engineFetchNextResponse = FixmeUnknown
 
 type G2engineFindInterestingEntitiesByEntityIDResponse = Interesting
 
@@ -1505,6 +1507,8 @@ type G2engineGetRecordResponse = Record
 
 type G2engineGetRecordV2response = Record
 
+type G2engineGetRedoRecordResponse = FixmeUnknown
+
 type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity
 
 type G2engineGetVirtualEntityByRecordIDResponse = VirtualEntity
@@ -1513,7 +1517,7 @@ type G2engineHowEntityByEntityIdv2response = How
 
 type G2engineHowEntityByEntityIDResponse = How
 
-type G2engineProcessRedoRecordResponse = interface{}
+type G2engineProcessRedoRecordResponse = FixmeUnknown
 
 type G2engineProcessRedoRecordWithInfoResponse = WithInfo
 
@@ -1652,7 +1656,7 @@ type G2engineStatsResponseWorkloadUnresolveTriggers struct {
 }
 
 type G2engineStatsResponseWorkload struct {
-	CorruptEntityTestDiagnosis interface{} `json:"CorruptEntityTestDiagnosis"`
+	CorruptEntityTestDiagnosis FixmeUnknown `json:"CorruptEntityTestDiagnosis"`
 
 	AbortedUnresolve int64 `json:"abortedUnresolve"`
 
@@ -1791,7 +1795,7 @@ type G2engineStatsResponse struct {
 	Workload G2engineStatsResponseWorkload `json:"workload"`
 }
 
-type G2engineStreamExportJsonentityReportResponse = interface{}
+type G2engineStreamExportJsonentityReportResponse = FixmeUnknown
 
 type G2engineWhyEntitiesResponse = WhyEntities
 
