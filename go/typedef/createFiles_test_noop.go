@@ -21,7 +21,6 @@ func fileIt(test *testing.T, json string, fileName string) {
 	defer aFile.Close()
 
 	aFile.WriteString(json)
-
 }
 
 // ----------------------------------------------------------------------------
