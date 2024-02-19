@@ -165,7 +165,7 @@ def add_to_key_type(key_to_add, value_to_add):
 
 def is_sorted(prefix, list_to_check):
     """Determine if list is sorted.  Return boolean"""
-    global GLOBAL_OUT_OF_ORDER
+    global GLOBAL_OUT_OF_ORDER # pylint: disable=global-statement
     last_key = ""
     for key_to_check in list_to_check:
         if not key_to_check > last_key:
