@@ -33,18 +33,18 @@ def path_to_testdata(filename: str) -> str:
 
 
 def mock_g2engine_add_record_with_info() -> str:
-    with open(path_to_testdata("g2engine_addRecordWithInfo-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_addRecordWithInfo-01.json"), encoding="utf-8") as input_file:
         return input_file.read()
 
 
 def mock_g2engine_delete_record_with_info() -> str:
-    with open(path_to_testdata("g2engine_deleteRecordWithInfo-01.json")) as input_file:
+    with open(path_to_testdata("g2engine_deleteRecordWithInfo-01.json"), encoding="utf-8") as input_file:
         return input_file.read()
 
 
 def mock_g2engine_get_virtual_entity_by_record_id() -> str:
     with open(
-        path_to_testdata("g2engine_getVirtualEntityByRecordID-01.json")
+        path_to_testdata("g2engine_getVirtualEntityByRecordID-01.json"), encoding="utf-8"
     ) as input_file:
         return input_file.read()
 
