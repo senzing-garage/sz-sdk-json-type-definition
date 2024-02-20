@@ -32,4 +32,4 @@ jobs:
           mkdir /tmp/typedef
           ./jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
           ls /tmp/typedef
-          diff ./python/typedef/__init__py  /tmp/typedef/__init__.py
+          diff ./python/typedef/__init__.py  /tmp/typedef/__init__.py
