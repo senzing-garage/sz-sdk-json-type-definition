@@ -29,6 +29,6 @@ jobs:
           unzip jtd-codegen.zip
           chmod +x jtd-codegen
           ls ./python/typedef
-          jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
+          ./jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
           ls /tmp/typedef
           diff ./python/typedef  /tmp/typedef
