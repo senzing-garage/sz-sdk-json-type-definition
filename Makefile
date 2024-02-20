@@ -28,7 +28,6 @@ GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|g
 .PHONY: default
 default: help
 
-
 # -----------------------------------------------------------------------------
 # Analyze
 # -----------------------------------------------------------------------------
@@ -126,12 +125,6 @@ generate_go_typedef_test:
 # Test
 # -----------------------------------------------------------------------------
 
-.PHONY: generate-and-test
-generate-and-test: generate-code generate-tests
-	@./test.py
-	@go test -v -p 1 ./...
-
-
 .PHONY: test
 test:
 	@go test -v -p 1 ./...
@@ -140,7 +133,6 @@ test:
 # -----------------------------------------------------------------------------
 # Clean
 # -----------------------------------------------------------------------------
-
 
 .PHONY: clean
 clean: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
@@ -194,7 +186,6 @@ dependencies:
 	@go get -t -u ./...
 	@go mod tidy
 
-
 # -----------------------------------------------------------------------------
 # Utility targets
 # -----------------------------------------------------------------------------
@@ -211,6 +202,9 @@ print-make-variables:
 		$(if $(filter-out environment% default automatic, \
 		$(origin $V)),$(warning $V=$($V) ($(value $V)))))
 
+
+.PHONY: setup
+setup: generate-code generate-tests
 
 .PHONY: help
 help:
