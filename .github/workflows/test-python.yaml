@@ -25,7 +25,7 @@ jobs:
 
       - name: verify generated files are up-to-date
         run: |
-          curl -X GET --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
+          curl -X GET --location --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
           unzip jtd-codegen.zip
           chmod +x jtg-codegen
           ls ./python/typedef
