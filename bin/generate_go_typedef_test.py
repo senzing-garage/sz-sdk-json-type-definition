@@ -84,19 +84,24 @@ OUTPUT_FOOTER = """
 with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
     file.write(OUTPUT_HEADER)
     for senzing_api_class, method_test_cases in TEST_CASES.items():
-        for test_case_name, test_case_json in method_test_cases.items():
+        metadata = method_test_cases.get("metadata", {})
+        if metadata.get("goSkip", False):
+            continue
+        tests = method_test_cases.get("tests", {})
+        go_api_class = metadata.get("goClass", senzing_api_class)
+        for test_case_name, test_case_json in tests.items():
             better_test_case_name = re.sub(
                 "[^0-9a-zA-Z]+", "", test_case_name
             ).capitalize()
             canonical_test_case_json = canonical_json(test_case_json)
             file.write(
                 "func Test{0}{1}(test *testing.T) {{".format(
-                    senzing_api_class, better_test_case_name
+                    go_api_class, better_test_case_name
                 )
             )
             file.write(
                 TEST_FUNCTION_TEMPLATE.format(
-                    json=canonical_test_case_json, struct=senzing_api_class, parens="{}"
+                    json=canonical_test_case_json, struct=go_api_class, parens="{}"
                 )
             )
             file.write("}\n\n")
