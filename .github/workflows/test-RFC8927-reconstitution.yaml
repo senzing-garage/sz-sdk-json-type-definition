@@ -17,5 +17,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - pwd
+      - ls
+
       - name: analysing the code with test_RFC8927_reconstitution.py
         run: ./bin/test_RFC8927_reconstitution.py
