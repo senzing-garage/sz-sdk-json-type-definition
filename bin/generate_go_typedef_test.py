@@ -14,7 +14,7 @@ from test_cases import TEST_CASES
 IS_DEBUG = False
 FINAL_RESULT = {}
 
-OUTPUT_FILE = "./go/typedef/typedef_test.go"
+OUTPUT_FILE = "./go/typedef/generated_typedef_test.go"
 
 
 # -----------------------------------------------------------------------------
@@ -50,15 +50,15 @@ package typedef
 import (
     "context"
     "testing"
-	"encoding/json"
-	"github.com/stretchr/testify/assert"
+    "encoding/json"
+    "github.com/stretchr/testify/assert"
 )
 
 func testError(test *testing.T, ctx context.Context, err error) {
-	if err != nil {
-		test.Log("Error:", err.Error())
-		assert.FailNow(test, err.Error())
-	}
+    if err != nil {
+        test.Log("Error:", err.Error())
+        assert.FailNow(test, err.Error())
+    }
 }
 
 // ----------------------------------------------------------------------------
@@ -69,12 +69,12 @@ func testError(test *testing.T, ctx context.Context, err error) {
 
 TEST_FUNCTION_TEMPLATE = f"""
     ctx := context.TODO()
-	jsonString := `{{json}}`
-	jsonStruct := {{struct}}{{parens}}
-	err := json.Unmarshal([]byte(jsonString), &jsonStruct)
-	testError(test, ctx, err)
-	_, err = json.Marshal(jsonStruct)
-	testError(test, ctx, err)
+    jsonString := `{{json}}`
+    jsonStruct := {{struct}}{{parens}}
+    err := json.Unmarshal([]byte(jsonString), &jsonStruct)
+    testError(test, ctx, err)
+    _, err = json.Marshal(jsonStruct)
+    testError(test, ctx, err)
     // assert.Equal(test, jsonString, string(reconstructedString))
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 """
