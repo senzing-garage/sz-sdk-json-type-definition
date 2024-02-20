@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class AttributeCounter {
+    @JsonProperty("ACCT_NUM")
+    private Double acctNum;
+
     @JsonProperty("ADDRESS")
     private Double address;
 
@@ -21,6 +24,9 @@ public class AttributeCounter {
 
     @JsonProperty("COUNTRY_OF_ASSOCIATION")
     private Integer countryOfAssociation;
+
+    @JsonProperty("DEFERRED_DELETE")
+    private Double deferredDelete;
 
     @JsonProperty("DOB")
     private Double dob;
@@ -122,6 +128,20 @@ public class AttributeCounter {
     }
 
     /**
+     * Getter for acctNum.<p>
+     */
+    public Double getAcctNum() {
+        return acctNum;
+    }
+
+    /**
+     * Setter for acctNum.<p>
+     */
+    public void setAcctNum(Double acctNum) {
+        this.acctNum = acctNum;
+    }
+
+    /**
      * Getter for address.<p>
      */
     public Double getAddress() {
@@ -189,6 +209,20 @@ public class AttributeCounter {
      */
     public void setCountryOfAssociation(Integer countryOfAssociation) {
         this.countryOfAssociation = countryOfAssociation;
+    }
+
+    /**
+     * Getter for deferredDelete.<p>
+     */
+    public Double getDeferredDelete() {
+        return deferredDelete;
+    }
+
+    /**
+     * Setter for deferredDelete.<p>
+     */
+    public void setDeferredDelete(Double deferredDelete) {
+        this.deferredDelete = deferredDelete;
     }
 
     /**

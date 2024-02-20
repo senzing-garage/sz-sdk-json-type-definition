@@ -60,6 +60,9 @@ pub struct AffectedEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct AttributeCounter {
+    #[serde(rename = "ACCT_NUM")]
+    pub acctNum: f64,
+
     #[serde(rename = "ADDRESS")]
     pub address: f64,
 
@@ -74,6 +77,9 @@ pub struct AttributeCounter {
 
     #[serde(rename = "COUNTRY_OF_ASSOCIATION")]
     pub countryOfAssociation: i32,
+
+    #[serde(rename = "DEFERRED_DELETE")]
+    pub deferredDelete: f64,
 
     #[serde(rename = "DOB")]
     pub dob: f64,

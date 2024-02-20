@@ -99,11 +99,13 @@ class AffectedEntity:
 
 @dataclass
 class AttributeCounter:
+    acct_num: 'float'
     address: 'float'
     addr_key: 'float'
     call_sign: 'int'
     citizenship: 'int'
     country_of_association: 'int'
+    deferred_delete: 'float'
     dob: 'float'
     drlic: 'float'
     duns_number: 'int'
@@ -140,11 +142,13 @@ class AttributeCounter:
     @classmethod
     def from_json_data(cls, data: Any) -> 'AttributeCounter':
         return cls(
+            _from_json_data(float, data.get("ACCT_NUM")),
             _from_json_data(float, data.get("ADDRESS")),
             _from_json_data(float, data.get("ADDR_KEY")),
             _from_json_data(int, data.get("CALL_SIGN")),
             _from_json_data(int, data.get("CITIZENSHIP")),
             _from_json_data(int, data.get("COUNTRY_OF_ASSOCIATION")),
+            _from_json_data(float, data.get("DEFERRED_DELETE")),
             _from_json_data(float, data.get("DOB")),
             _from_json_data(float, data.get("DRLIC")),
             _from_json_data(int, data.get("DUNS_NUMBER")),
@@ -181,11 +185,13 @@ class AttributeCounter:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["ACCT_NUM"] = _to_json_data(self.acct_num)
         data["ADDRESS"] = _to_json_data(self.address)
         data["ADDR_KEY"] = _to_json_data(self.addr_key)
         data["CALL_SIGN"] = _to_json_data(self.call_sign)
         data["CITIZENSHIP"] = _to_json_data(self.citizenship)
         data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
+        data["DEFERRED_DELETE"] = _to_json_data(self.deferred_delete)
         data["DOB"] = _to_json_data(self.dob)
         data["DRLIC"] = _to_json_data(self.drlic)
         data["DUNS_NUMBER"] = _to_json_data(self.duns_number)

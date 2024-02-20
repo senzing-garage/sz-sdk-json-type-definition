@@ -6,6 +6,9 @@ namespace Senzing
 {
     public class AttributeCounter
     {
+        [JsonPropertyName("ACCT_NUM")]
+        public double AcctNum { get; set; }
+
         [JsonPropertyName("ADDRESS")]
         public double Address { get; set; }
 
@@ -20,6 +23,9 @@ namespace Senzing
 
         [JsonPropertyName("COUNTRY_OF_ASSOCIATION")]
         public int CountryOfAssociation { get; set; }
+
+        [JsonPropertyName("DEFERRED_DELETE")]
+        public double DeferredDelete { get; set; }
 
         [JsonPropertyName("DOB")]
         public double Dob { get; set; }

@@ -105,11 +105,13 @@ module SenzingTypeDef
   end
 
   class AttributeCounter
+    attr_accessor :acct_num
     attr_accessor :address
     attr_accessor :addr_key
     attr_accessor :call_sign
     attr_accessor :citizenship
     attr_accessor :country_of_association
+    attr_accessor :deferred_delete
     attr_accessor :dob
     attr_accessor :drlic
     attr_accessor :duns_number
@@ -145,11 +147,13 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = AttributeCounter.new
+      out.acct_num = SenzingTypeDef::from_json_data(Float, data["ACCT_NUM"])
       out.address = SenzingTypeDef::from_json_data(Float, data["ADDRESS"])
       out.addr_key = SenzingTypeDef::from_json_data(Float, data["ADDR_KEY"])
       out.call_sign = SenzingTypeDef::from_json_data(Integer, data["CALL_SIGN"])
       out.citizenship = SenzingTypeDef::from_json_data(Integer, data["CITIZENSHIP"])
       out.country_of_association = SenzingTypeDef::from_json_data(Integer, data["COUNTRY_OF_ASSOCIATION"])
+      out.deferred_delete = SenzingTypeDef::from_json_data(Float, data["DEFERRED_DELETE"])
       out.dob = SenzingTypeDef::from_json_data(Float, data["DOB"])
       out.drlic = SenzingTypeDef::from_json_data(Float, data["DRLIC"])
       out.duns_number = SenzingTypeDef::from_json_data(Integer, data["DUNS_NUMBER"])
@@ -187,11 +191,13 @@ module SenzingTypeDef
 
     def to_json_data
       data = {}
+      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
       data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
       data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
       data["CALL_SIGN"] = SenzingTypeDef::to_json_data(call_sign)
       data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
       data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
+      data["DEFERRED_DELETE"] = SenzingTypeDef::to_json_data(deferred_delete)
       data["DOB"] = SenzingTypeDef::to_json_data(dob)
       data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
       data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)

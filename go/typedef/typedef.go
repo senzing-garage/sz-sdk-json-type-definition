@@ -41,6 +41,8 @@ type AffectedEntity struct {
 }
 
 type AttributeCounter struct {
+	AcctNum float64 `json:"ACCT_NUM"`
+
 	Address float64 `json:"ADDRESS"`
 
 	AddrKey float64 `json:"ADDR_KEY"`
@@ -50,6 +52,8 @@ type AttributeCounter struct {
 	Citizenship int64 `json:"CITIZENSHIP"`
 
 	CountryOfAssociation int64 `json:"COUNTRY_OF_ASSOCIATION"`
+
+	DeferredDelete float64 `json:"DEFERRED_DELETE"`
 
 	Dob float64 `json:"DOB"`
 

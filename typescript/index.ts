@@ -26,11 +26,13 @@ export interface AffectedEntity {
 }
 
 export interface AttributeCounter {
+  ACCT_NUM: number;
   ADDRESS: number;
   ADDR_KEY: number;
   CALL_SIGN: number;
   CITIZENSHIP: number;
   COUNTRY_OF_ASSOCIATION: number;
+  DEFERRED_DELETE: number;
   DOB: number;
   DRLIC: number;
   DUNS_NUMBER: number;

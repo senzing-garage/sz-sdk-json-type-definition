@@ -63,6 +63,9 @@
         },
         "AttributeCounter": {
             "properties": {
+                "ACCT_NUM": {
+                    "type": "float64"
+                },
                 "ADDRESS": {
                     "type": "float64"
                 },
@@ -86,6 +89,9 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                },
+                "DEFERRED_DELETE": {
+                    "type": "float64"
                 },
                 "DOB": {
                     "type": "float64"
