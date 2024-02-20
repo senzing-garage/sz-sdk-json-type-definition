@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# pylint: disable=duplicate-code
+
 """
 Used to generate go/typedef_test.go
 """
