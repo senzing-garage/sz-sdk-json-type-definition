@@ -2383,25 +2383,6 @@
                 }
             }
         },
-        "G2DiagnosticGetDBInfoResponse": {
-            "properties": {
-                "Database Details": {
-                    "elements": {
-                        "properties": {
-                            "Name": {
-                                "type": "string"
-                            },
-                            "Type": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                },
-                "Hybrid Mode": {
-                    "type": "boolean"
-                }
-            }
-        },
         "G2DiagnosticGetDataSourceCountsResponse": {
             "elements": {
                 "properties": {
@@ -2435,6 +2416,25 @@
                         },
                         "type": "int32"
                     }
+                }
+            }
+        },
+        "G2DiagnosticGetDBInfoResponse": {
+            "properties": {
+                "Database Details": {
+                    "elements": {
+                        "properties": {
+                            "Name": {
+                                "type": "string"
+                            },
+                            "Type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "Hybrid Mode": {
+                    "type": "boolean"
                 }
             }
         },
@@ -5107,6 +5107,11 @@
                 }
             }
         },
+        "Records": {
+            "elements": {
+                "ref": "Record"
+            }
+        },
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
@@ -5124,11 +5129,6 @@
                     },
                     "type": "int32"
                 }
-            }
-        },
-        "Records": {
-            "elements": {
-                "ref": "Record"
             }
         },
         "RelatedEntity": {
