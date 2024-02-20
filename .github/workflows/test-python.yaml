@@ -1,0 +1,34 @@
+name: test python
+
+on: [push]
+
+jobs:
+  python-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: test test.py
+        run: ./test.py
+
+      - name: test main.py
+        run: ./main.py
+
+      - name: verify generated files are up-to-date
+        run: |
+          curl https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip --output jtd-codegen.zip
+          unzip jtd-codegen.zip
+          chmod +x jtg-codegen
+          ls ./python/typedef
+          jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
+          ls /tmp/typedef
+          diff ./python/typedef  /tmp/typedef

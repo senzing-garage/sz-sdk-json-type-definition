@@ -44,6 +44,10 @@ pretty-print:
 # Generate code
 # -----------------------------------------------------------------------------
 
+.PHONY: generate
+generate: generate-code generate-tests
+
+
 .PHONY: generate-code
 generate-code: generate-csharp generate-go generate-java generate-python generate-ruby generate-rust generate-typescript
 
@@ -121,6 +125,7 @@ generate_go_typedef_test:
 	@rm ./go/typedef/typedef_test.go || true
 	@./bin/generate_go_typedef_test.py
 
+
 .PHONY: generate_testdata
 generate_testdata:
 	@./bin/generate_testdata.py
@@ -131,6 +136,7 @@ generate_testdata:
 
 .PHONY: test
 test:
+	@./bin/test_RFC8927_reconstitution.py
 	@go test -v -p 1 ./...
 	@pytest test.py --verbose
 
@@ -208,7 +214,8 @@ print-make-variables:
 
 
 .PHONY: setup
-setup: generate-code generate-tests
+setup: generate
+
 
 .PHONY: help
 help:
