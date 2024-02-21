@@ -25,11 +25,8 @@ jobs:
       - name: test test.py
         run: ./test.py
 
-      - name: pytest test.py
-        run: pytest test.py --verbose
-
       - name: 'pytest *.py'
-        run: pytest $(git ls-files '*.py') --verbose
+        run: pytest $(git ls-files '*.py' ':!:bin/*') --verbose
 
       - name: test main.py
         run: ./main.py
