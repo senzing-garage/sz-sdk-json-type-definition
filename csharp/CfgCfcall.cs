@@ -4,32 +4,17 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgCfcall
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CFCALL_ID")]
         public int CfcallId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CFUNC_ID")]
         public int CfuncId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EXEC_ORDER")]
         public int ExecOrder { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
     }

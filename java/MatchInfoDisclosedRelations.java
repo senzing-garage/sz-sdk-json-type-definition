@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MatchInfoDisclosedRelations {
     @JsonProperty("REL_ANCHOR")
@@ -25,7 +22,6 @@ public class MatchInfoDisclosedRelations {
 
     /**
      * Getter for relAnchor.<p>
-     * No description.
      */
     public List<MatchInfoDisclosedRelationsRelAnchor> getRelAnchor() {
         return relAnchor;
@@ -33,7 +29,6 @@ public class MatchInfoDisclosedRelations {
 
     /**
      * Setter for relAnchor.<p>
-     * No description.
      */
     public void setRelAnchor(List<MatchInfoDisclosedRelationsRelAnchor> relAnchor) {
         this.relAnchor = relAnchor;
@@ -41,7 +36,6 @@ public class MatchInfoDisclosedRelations {
 
     /**
      * Getter for relLink.<p>
-     * No description.
      */
     public List<MatchInfoDisclosedRelationsRelLink> getRelLink() {
         return relLink;
@@ -49,7 +43,6 @@ public class MatchInfoDisclosedRelations {
 
     /**
      * Setter for relLink.<p>
-     * No description.
      */
     public void setRelLink(List<MatchInfoDisclosedRelationsRelLink> relLink) {
         this.relLink = relLink;
@@ -57,7 +50,6 @@ public class MatchInfoDisclosedRelations {
 
     /**
      * Getter for relPointer.<p>
-     * No description.
      */
     public List<MatchInfoDisclosedRelationsRelPointer> getRelPointer() {
         return relPointer;
@@ -65,7 +57,6 @@ public class MatchInfoDisclosedRelations {
 
     /**
      * Setter for relPointer.<p>
-     * No description.
      */
     public void setRelPointer(List<MatchInfoDisclosedRelationsRelPointer> relPointer) {
         this.relPointer = relPointer;

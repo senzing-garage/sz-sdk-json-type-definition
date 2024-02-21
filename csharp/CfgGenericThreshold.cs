@@ -4,44 +4,23 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgGenericThreshold
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("BEHAVIOR")]
         public string Behavior { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CANDIDATE_CAP")]
         public int CandidateCap { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GPLAN_ID")]
         public int GplanId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SCORING_CAP")]
         public int ScoringCap { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SEND_TO_REDO")]
         public string SendToRedo { get; set; }
     }

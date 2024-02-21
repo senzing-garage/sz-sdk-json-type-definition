@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgFelem {
     @JsonProperty("DATA_TYPE")
@@ -30,7 +27,6 @@ public class CfgFelem {
 
     /**
      * Getter for dataType.<p>
-     * No description.
      */
     public String getDataType() {
         return dataType;
@@ -38,7 +34,6 @@ public class CfgFelem {
 
     /**
      * Setter for dataType.<p>
-     * No description.
      */
     public void setDataType(String dataType) {
         this.dataType = dataType;
@@ -46,7 +41,6 @@ public class CfgFelem {
 
     /**
      * Getter for felemCode.<p>
-     * No description.
      */
     public String getFelemCode() {
         return felemCode;
@@ -54,7 +48,6 @@ public class CfgFelem {
 
     /**
      * Setter for felemCode.<p>
-     * No description.
      */
     public void setFelemCode(String felemCode) {
         this.felemCode = felemCode;
@@ -62,7 +55,6 @@ public class CfgFelem {
 
     /**
      * Getter for felemDesc.<p>
-     * No description.
      */
     public String getFelemDesc() {
         return felemDesc;
@@ -70,7 +62,6 @@ public class CfgFelem {
 
     /**
      * Setter for felemDesc.<p>
-     * No description.
      */
     public void setFelemDesc(String felemDesc) {
         this.felemDesc = felemDesc;
@@ -78,7 +69,6 @@ public class CfgFelem {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -86,7 +76,6 @@ public class CfgFelem {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -94,7 +83,6 @@ public class CfgFelem {
 
     /**
      * Getter for tokenize.<p>
-     * No description.
      */
     public String getTokenize() {
         return tokenize;
@@ -102,7 +90,6 @@ public class CfgFelem {
 
     /**
      * Setter for tokenize.<p>
-     * No description.
      */
     public void setTokenize(String tokenize) {
         this.tokenize = tokenize;

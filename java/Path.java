@@ -4,50 +4,44 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Path {
     @JsonProperty("ENTITIES")
-    private Entities entities;
+    private List<Entity> entities;
 
     @JsonProperty("ENTITY_PATHS")
-    private EntityPaths entityPaths;
+    private List<EntityPath> entityPaths;
 
     public Path() {
     }
 
     /**
      * Getter for entities.<p>
-     * No description.
      */
-    public Entities getEntities() {
+    public List<Entity> getEntities() {
         return entities;
     }
 
     /**
      * Setter for entities.<p>
-     * No description.
      */
-    public void setEntities(Entities entities) {
+    public void setEntities(List<Entity> entities) {
         this.entities = entities;
     }
 
     /**
      * Getter for entityPaths.<p>
-     * No description.
      */
-    public EntityPaths getEntityPaths() {
+    public List<EntityPath> getEntityPaths() {
         return entityPaths;
     }
 
     /**
      * Setter for entityPaths.<p>
-     * No description.
      */
-    public void setEntityPaths(EntityPaths entityPaths) {
+    public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
     }
 }

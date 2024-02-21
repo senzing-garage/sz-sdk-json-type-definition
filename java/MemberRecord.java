@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MemberRecord {
     @JsonProperty("INTERNAL_ID")
@@ -21,7 +18,6 @@ public class MemberRecord {
 
     /**
      * Getter for internalId.<p>
-     * No description.
      */
     public Integer getInternalId() {
         return internalId;
@@ -29,7 +25,6 @@ public class MemberRecord {
 
     /**
      * Setter for internalId.<p>
-     * No description.
      */
     public void setInternalId(Integer internalId) {
         this.internalId = internalId;
@@ -37,7 +32,6 @@ public class MemberRecord {
 
     /**
      * Getter for records.<p>
-     * No description.
      */
     public Records getRecords() {
         return records;
@@ -45,7 +39,6 @@ public class MemberRecord {
 
     /**
      * Setter for records.<p>
-     * No description.
      */
     public void setRecords(Records records) {
         this.records = records;

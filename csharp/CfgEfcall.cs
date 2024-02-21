@@ -4,50 +4,26 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgEfcall
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EFCALL_ID")]
         public int EfcallId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EFEAT_FTYPE_ID")]
         public int EfeatFtypeId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EFUNC_ID")]
         public int EfuncId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EXEC_ORDER")]
         public int ExecOrder { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FELEM_ID")]
         public int FelemId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("IS_VIRTUAL")]
         public string IsVirtual { get; set; }
     }

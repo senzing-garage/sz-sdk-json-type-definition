@@ -4,14 +4,12 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Entity {
     @JsonProperty("RELATED_ENTITIES")
-    private RelatedEntities relatedEntities;
+    private List<RelatedEntity> relatedEntities;
 
     @JsonProperty("RESOLVED_ENTITY")
     private ResolvedEntity resolvedEntity;
@@ -21,23 +19,20 @@ public class Entity {
 
     /**
      * Getter for relatedEntities.<p>
-     * No description.
      */
-    public RelatedEntities getRelatedEntities() {
+    public List<RelatedEntity> getRelatedEntities() {
         return relatedEntities;
     }
 
     /**
      * Setter for relatedEntities.<p>
-     * No description.
      */
-    public void setRelatedEntities(RelatedEntities relatedEntities) {
+    public void setRelatedEntities(List<RelatedEntity> relatedEntities) {
         this.relatedEntities = relatedEntities;
     }
 
     /**
      * Getter for resolvedEntity.<p>
-     * No description.
      */
     public ResolvedEntity getResolvedEntity() {
         return resolvedEntity;
@@ -45,7 +40,6 @@ public class Entity {
 
     /**
      * Setter for resolvedEntity.<p>
-     * No description.
      */
     public void setResolvedEntity(ResolvedEntity resolvedEntity) {
         this.resolvedEntity = resolvedEntity;

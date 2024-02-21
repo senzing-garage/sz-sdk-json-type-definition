@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class VirtualEntitySynopsis
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MEMBER_RECORDS")]
         public MemberRecords MemberRecords { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("VIRTUAL_ENTITY_ID")]
         public string VirtualEntityId { get; set; }
     }

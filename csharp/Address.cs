@@ -4,92 +4,47 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class Address
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_CITY")]
         public string AddrCity { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_COUNTRY")]
         public string AddrCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_FROM_DATE")]
         public string AddrFromDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_FULL")]
         public string AddrFull { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_LINE1")]
         public string AddrLine1 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_LINE2")]
         public string AddrLine2 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_LINE3")]
         public string AddrLine3 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_LINE4")]
         public string AddrLine4 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_LINE5")]
         public string AddrLine5 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_LINE6")]
         public string AddrLine6 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_POSTAL_CODE")]
         public string AddrPostalCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_STATE")]
         public string AddrState { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_THRU_DATE")]
         public string AddrThruDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_TYPE")]
         public string AddrType { get; set; }
     }

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgRtype {
     @JsonProperty("BREAK_RES")
@@ -33,7 +30,6 @@ public class CfgRtype {
 
     /**
      * Getter for breakRes.<p>
-     * No description.
      */
     public String getBreakRes() {
         return breakRes;
@@ -41,7 +37,6 @@ public class CfgRtype {
 
     /**
      * Setter for breakRes.<p>
-     * No description.
      */
     public void setBreakRes(String breakRes) {
         this.breakRes = breakRes;
@@ -49,7 +44,6 @@ public class CfgRtype {
 
     /**
      * Getter for rclassId.<p>
-     * No description.
      */
     public Integer getRclassId() {
         return rclassId;
@@ -57,7 +51,6 @@ public class CfgRtype {
 
     /**
      * Setter for rclassId.<p>
-     * No description.
      */
     public void setRclassId(Integer rclassId) {
         this.rclassId = rclassId;
@@ -65,7 +58,6 @@ public class CfgRtype {
 
     /**
      * Getter for relStrength.<p>
-     * No description.
      */
     public Integer getRelStrength() {
         return relStrength;
@@ -73,7 +65,6 @@ public class CfgRtype {
 
     /**
      * Setter for relStrength.<p>
-     * No description.
      */
     public void setRelStrength(Integer relStrength) {
         this.relStrength = relStrength;
@@ -81,7 +72,6 @@ public class CfgRtype {
 
     /**
      * Getter for rtypeCode.<p>
-     * No description.
      */
     public String getRtypeCode() {
         return rtypeCode;
@@ -89,7 +79,6 @@ public class CfgRtype {
 
     /**
      * Setter for rtypeCode.<p>
-     * No description.
      */
     public void setRtypeCode(String rtypeCode) {
         this.rtypeCode = rtypeCode;
@@ -97,7 +86,6 @@ public class CfgRtype {
 
     /**
      * Getter for rtypeDesc.<p>
-     * No description.
      */
     public String getRtypeDesc() {
         return rtypeDesc;
@@ -105,7 +93,6 @@ public class CfgRtype {
 
     /**
      * Setter for rtypeDesc.<p>
-     * No description.
      */
     public void setRtypeDesc(String rtypeDesc) {
         this.rtypeDesc = rtypeDesc;
@@ -113,7 +100,6 @@ public class CfgRtype {
 
     /**
      * Getter for rtypeId.<p>
-     * No description.
      */
     public Integer getRtypeId() {
         return rtypeId;
@@ -121,7 +107,6 @@ public class CfgRtype {
 
     /**
      * Setter for rtypeId.<p>
-     * No description.
      */
     public void setRtypeId(Integer rtypeId) {
         this.rtypeId = rtypeId;

@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class FinalState {
     @JsonProperty("NEED_REEVALUATION")
@@ -22,7 +19,6 @@ public class FinalState {
 
     /**
      * Getter for needReevaluation.<p>
-     * No description.
      */
     public Integer getNeedReevaluation() {
         return needReevaluation;
@@ -30,7 +26,6 @@ public class FinalState {
 
     /**
      * Setter for needReevaluation.<p>
-     * No description.
      */
     public void setNeedReevaluation(Integer needReevaluation) {
         this.needReevaluation = needReevaluation;
@@ -38,7 +33,6 @@ public class FinalState {
 
     /**
      * Getter for virtualEntities.<p>
-     * No description.
      */
     public List<VirtualEntitySynopsis> getVirtualEntities() {
         return virtualEntities;
@@ -46,7 +40,6 @@ public class FinalState {
 
     /**
      * Setter for virtualEntities.<p>
-     * No description.
      */
     public void setVirtualEntities(List<VirtualEntitySynopsis> virtualEntities) {
         this.virtualEntities = virtualEntities;

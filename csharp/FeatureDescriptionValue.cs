@@ -4,56 +4,29 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class FeatureDescriptionValue
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CANDIDATE_CAP_REACHED")]
         public string CandidateCapReached { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY_COUNT")]
         public int EntityCount { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SCORING_CAP_REACHED")]
         public string ScoringCapReached { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SUPPRESSED")]
         public string Suppressed { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("USED_FOR_CAND")]
         public string UsedForCand { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("USED_FOR_SCORING")]
         public string UsedForScoring { get; set; }
     }

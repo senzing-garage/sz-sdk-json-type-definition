@@ -18,7 +18,6 @@ public class RecordFeatures {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -26,7 +25,6 @@ public class RecordFeatures {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -34,7 +32,6 @@ public class RecordFeatures {
 
     /**
      * Getter for usageType.<p>
-     * No description.
      */
     public String getUsageType() {
         return usageType;
@@ -42,7 +39,6 @@ public class RecordFeatures {
 
     /**
      * Setter for usageType.<p>
-     * No description.
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

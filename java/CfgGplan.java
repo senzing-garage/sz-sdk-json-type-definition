@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgGplan {
     @JsonProperty("GPLAN_CODE")
@@ -24,7 +21,6 @@ public class CfgGplan {
 
     /**
      * Getter for gplanCode.<p>
-     * No description.
      */
     public String getGplanCode() {
         return gplanCode;
@@ -32,7 +28,6 @@ public class CfgGplan {
 
     /**
      * Setter for gplanCode.<p>
-     * No description.
      */
     public void setGplanCode(String gplanCode) {
         this.gplanCode = gplanCode;
@@ -40,7 +35,6 @@ public class CfgGplan {
 
     /**
      * Getter for gplanDesc.<p>
-     * No description.
      */
     public String getGplanDesc() {
         return gplanDesc;
@@ -48,7 +42,6 @@ public class CfgGplan {
 
     /**
      * Setter for gplanDesc.<p>
-     * No description.
      */
     public void setGplanDesc(String gplanDesc) {
         this.gplanDesc = gplanDesc;
@@ -56,7 +49,6 @@ public class CfgGplan {
 
     /**
      * Getter for gplanId.<p>
-     * No description.
      */
     public Integer getGplanId() {
         return gplanId;
@@ -64,7 +56,6 @@ public class CfgGplan {
 
     /**
      * Setter for gplanId.<p>
-     * No description.
      */
     public void setGplanId(Integer gplanId) {
         this.gplanId = gplanId;

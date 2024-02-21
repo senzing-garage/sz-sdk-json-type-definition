@@ -5,32 +5,17 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class InterestingEntity
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DEGREES")]
         public int Degrees { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY_ID")]
         public int EntityId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SAMPLE_RECORDS")]
         public IList<InterestingEntitySampleRecords> SampleRecords { get; set; }
     }

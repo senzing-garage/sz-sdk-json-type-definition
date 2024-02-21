@@ -19,48 +19,20 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Address
-    # No description.
     attr_accessor :addr_city
-
-    # No description.
     attr_accessor :addr_country
-
-    # No description.
     attr_accessor :addr_from_date
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_line1
-
-    # No description.
     attr_accessor :addr_line2
-
-    # No description.
     attr_accessor :addr_line3
-
-    # No description.
     attr_accessor :addr_line4
-
-    # No description.
     attr_accessor :addr_line5
-
-    # No description.
     attr_accessor :addr_line6
-
-    # No description.
     attr_accessor :addr_postal_code
-
-    # No description.
     attr_accessor :addr_state
-
-    # No description.
     attr_accessor :addr_thru_date
-
-    # No description.
     attr_accessor :addr_type
 
     def self.from_json_data(data)
@@ -102,7 +74,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Addresses
     attr_accessor :value
 
@@ -117,24 +88,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class AffectedEntities
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = AffectedEntities.new
-      out.value = SenzingTypeDef.from_json_data(Array[AffectedEntity], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
   class AffectedEntity
-    # No description.
     attr_accessor :entity_id
 
     def self.from_json_data(data)
@@ -150,126 +104,56 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class AttributeCounter
-    # No description.
+    attr_accessor :acct_num
     attr_accessor :address
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :call_sign
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
+    attr_accessor :deferred_delete
     attr_accessor :dob
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :entity_count
-
-    # No description.
     attr_accessor :entity_size
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :imo_number
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :max_res_ent_id
-
-    # No description.
     attr_accessor :min_res_ent_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :ofac_id
-
-    # No description.
     attr_accessor :other_id
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :search_key
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :tax_id
-
-    # No description.
     attr_accessor :website
 
     def self.from_json_data(data)
       out = AttributeCounter.new
+      out.acct_num = SenzingTypeDef::from_json_data(Float, data["ACCT_NUM"])
       out.address = SenzingTypeDef::from_json_data(Float, data["ADDRESS"])
       out.addr_key = SenzingTypeDef::from_json_data(Float, data["ADDR_KEY"])
       out.call_sign = SenzingTypeDef::from_json_data(Integer, data["CALL_SIGN"])
       out.citizenship = SenzingTypeDef::from_json_data(Integer, data["CITIZENSHIP"])
       out.country_of_association = SenzingTypeDef::from_json_data(Integer, data["COUNTRY_OF_ASSOCIATION"])
+      out.deferred_delete = SenzingTypeDef::from_json_data(Float, data["DEFERRED_DELETE"])
       out.dob = SenzingTypeDef::from_json_data(Float, data["DOB"])
       out.drlic = SenzingTypeDef::from_json_data(Float, data["DRLIC"])
       out.duns_number = SenzingTypeDef::from_json_data(Integer, data["DUNS_NUMBER"])
@@ -307,11 +191,13 @@ module SenzingTypeDef
 
     def to_json_data
       data = {}
+      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
       data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
       data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
       data["CALL_SIGN"] = SenzingTypeDef::to_json_data(call_sign)
       data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
       data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
+      data["DEFERRED_DELETE"] = SenzingTypeDef::to_json_data(deferred_delete)
       data["DOB"] = SenzingTypeDef::to_json_data(dob)
       data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
       data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
@@ -348,7 +234,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class AttributeCounters
     attr_accessor :value
 
@@ -363,33 +248,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgAttr
-    # No description.
     attr_accessor :advanced
-
-    # No description.
     attr_accessor :attr_class
-
-    # No description.
     attr_accessor :attr_code
-
-    # No description.
     attr_accessor :attr_id
-
-    # No description.
     attr_accessor :default_value
-
-    # No description.
     attr_accessor :felem_code
-
-    # No description.
     attr_accessor :felem_req
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :internal
 
     def self.from_json_data(data)
@@ -421,18 +288,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfbom
-    # No description.
     attr_accessor :cfcall_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -454,18 +313,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfcall
-    # No description.
     attr_accessor :cfcall_id
-
-    # No description.
     attr_accessor :cfunc_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -487,36 +338,16 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfrtn
-    # No description.
     attr_accessor :cfrtn_id
-
-    # No description.
     attr_accessor :cfunc_id
-
-    # No description.
     attr_accessor :cfunc_rtnval
-
-    # No description.
     attr_accessor :close_score
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :likely_score
-
-    # No description.
     attr_accessor :plausible_score
-
-    # No description.
     attr_accessor :same_score
-
-    # No description.
     attr_accessor :un_likely_score
 
     def self.from_json_data(data)
@@ -550,33 +381,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgCfunc
-    # No description.
     attr_accessor :anon_support
-
-    # No description.
     attr_accessor :cfunc_code
-
-    # No description.
     attr_accessor :cfunc_desc
-
-    # No description.
     attr_accessor :cfunc_id
-
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
 
     def self.from_json_data(data)
@@ -608,18 +421,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDfbom
-    # No description.
     attr_accessor :dfcall_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -641,18 +446,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDfcall
-    # No description.
     attr_accessor :dfcall_id
-
-    # No description.
     attr_accessor :dfunc_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -674,33 +471,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDfunc
-    # No description.
     attr_accessor :anon_support
-
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :dfunc_code
-
-    # No description.
     attr_accessor :dfunc_desc
-
-    # No description.
     attr_accessor :dfunc_id
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
 
     def self.from_json_data(data)
@@ -732,24 +511,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDsrc
-    # No description.
     attr_accessor :conversational
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :dsrc_desc
-
-    # No description.
     attr_accessor :dsrc_id
-
-    # No description.
     attr_accessor :dsrc_rely
-
-    # No description.
     attr_accessor :retention_level
 
     def self.from_json_data(data)
@@ -775,15 +542,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgDsrcInterest
-    # No description.
     attr_accessor :dsrc_id
-
-    # No description.
     attr_accessor :interest_flag
-
-    # No description.
     attr_accessor :max_degree
 
     def self.from_json_data(data)
@@ -803,18 +564,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEbom
-    # No description.
     attr_accessor :etype_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :utype_code
 
     def self.from_json_data(data)
@@ -836,18 +589,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEclass
-    # No description.
     attr_accessor :eclass_code
-
-    # No description.
     attr_accessor :eclass_desc
-
-    # No description.
     attr_accessor :eclass_id
-
-    # No description.
     attr_accessor :resolve
 
     def self.from_json_data(data)
@@ -869,21 +614,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEfbom
-    # No description.
     attr_accessor :efcall_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :felem_req
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -907,27 +642,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEfcall
-    # No description.
     attr_accessor :efcall_id
-
-    # No description.
     attr_accessor :efeat_ftype_id
-
-    # No description.
     attr_accessor :efunc_id
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :is_virtual
 
     def self.from_json_data(data)
@@ -955,30 +676,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEfunc
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :efunc_code
-
-    # No description.
     attr_accessor :efunc_desc
-
-    # No description.
     attr_accessor :efunc_id
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
 
     def self.from_json_data(data)
@@ -1008,21 +713,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgErfrag
-    # No description.
     attr_accessor :erfrag_code
-
-    # No description.
     attr_accessor :erfrag_depends
-
-    # No description.
     attr_accessor :erfrag_desc
-
-    # No description.
     attr_accessor :erfrag_id
-
-    # No description.
     attr_accessor :erfrag_source
 
     def self.from_json_data(data)
@@ -1046,36 +741,16 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgErrule
-    # No description.
     attr_accessor :disq_erfrag_code
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :errule_desc
-
-    # No description.
     attr_accessor :errule_id
-
-    # No description.
     attr_accessor :errule_tier
-
-    # No description.
     attr_accessor :qual_erfrag_code
-
-    # No description.
     attr_accessor :ref_score
-
-    # No description.
     attr_accessor :relate
-
-    # No description.
     attr_accessor :resolve
-
-    # No description.
     attr_accessor :rtype_id
 
     def self.from_json_data(data)
@@ -1109,18 +784,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgEtype
-    # No description.
     attr_accessor :eclass_id
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :etype_desc
-
-    # No description.
     attr_accessor :etype_id
 
     def self.from_json_data(data)
@@ -1142,24 +809,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFbom
-    # No description.
     attr_accessor :derived
-
-    # No description.
     attr_accessor :display_delim
-
-    # No description.
     attr_accessor :display_level
-
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
 
     def self.from_json_data(data)
@@ -1185,24 +840,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFbovr
-    # No description.
     attr_accessor :eclass_id
-
-    # No description.
     attr_accessor :ftype_excl
-
-    # No description.
     attr_accessor :ftype_freq
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :ftype_stab
-
-    # No description.
     attr_accessor :utype_code
 
     def self.from_json_data(data)
@@ -1228,15 +871,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFclass
-    # No description.
     attr_accessor :fclass_code
-
-    # No description.
     attr_accessor :fclass_desc
-
-    # No description.
     attr_accessor :fclass_id
 
     def self.from_json_data(data)
@@ -1256,21 +893,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFelem
-    # No description.
     attr_accessor :data_type
-
-    # No description.
     attr_accessor :felem_code
-
-    # No description.
     attr_accessor :felem_desc
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :tokenize
 
     def self.from_json_data(data)
@@ -1294,51 +921,21 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgFtype
-    # No description.
     attr_accessor :anonymize
-
-    # No description.
     attr_accessor :derivation
-
-    # No description.
     attr_accessor :derived
-
-    # No description.
     attr_accessor :fclass_id
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :ftype_desc
-
-    # No description.
     attr_accessor :ftype_excl
-
-    # No description.
     attr_accessor :ftype_freq
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :ftype_stab
-
-    # No description.
     attr_accessor :persist_history
-
-    # No description.
     attr_accessor :rtype_id
-
-    # No description.
     attr_accessor :show_in_match_key
-
-    # No description.
     attr_accessor :used_for_cand
-
-    # No description.
     attr_accessor :version
 
     def self.from_json_data(data)
@@ -1382,24 +979,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgGenericThreshold
-    # No description.
     attr_accessor :behavior
-
-    # No description.
     attr_accessor :candidate_cap
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :gplan_id
-
-    # No description.
     attr_accessor :scoring_cap
-
-    # No description.
     attr_accessor :send_to_redo
 
     def self.from_json_data(data)
@@ -1425,15 +1010,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgGplan
-    # No description.
     attr_accessor :gplan_code
-
-    # No description.
     attr_accessor :gplan_desc
-
-    # No description.
     attr_accessor :gplan_id
 
     def self.from_json_data(data)
@@ -1453,15 +1032,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgLens
-    # No description.
     attr_accessor :lens_code
-
-    # No description.
     attr_accessor :lens_desc
-
-    # No description.
     attr_accessor :lens_id
 
     def self.from_json_data(data)
@@ -1481,13 +1054,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgLensrl
     attr_accessor :value
 
     def self.from_json_data(data)
       out = CfgLensrl.new
-      out.value = SenzingTypeDef.from_json_data(Array[Object], data)
+      out.value = SenzingTypeDef.from_json_data(Array[FixmeUnknown], data)
       out
     end
 
@@ -1496,18 +1068,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgRclass
-    # No description.
     attr_accessor :is_disclosed
-
-    # No description.
     attr_accessor :rclass_code
-
-    # No description.
     attr_accessor :rclass_desc
-
-    # No description.
     attr_accessor :rclass_id
 
     def self.from_json_data(data)
@@ -1529,24 +1093,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgRtype
-    # No description.
     attr_accessor :break_res
-
-    # No description.
     attr_accessor :rclass_id
-
-    # No description.
     attr_accessor :rel_strength
-
-    # No description.
     attr_accessor :rtype_code
-
-    # No description.
     attr_accessor :rtype_desc
-
-    # No description.
     attr_accessor :rtype_id
 
     def self.from_json_data(data)
@@ -1572,21 +1124,11 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgSfcall
-    # No description.
     attr_accessor :exec_order
-
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :sfcall_id
-
-    # No description.
     attr_accessor :sfunc_id
 
     def self.from_json_data(data)
@@ -1610,30 +1152,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CfgSfunc
-    # No description.
     attr_accessor :connect_str
-
-    # No description.
     attr_accessor :func_lib
-
-    # No description.
     attr_accessor :func_ver
-
-    # No description.
     attr_accessor :java_class_name
-
-    # No description.
     attr_accessor :language
-
-    # No description.
     attr_accessor :sfunc_code
-
-    # No description.
     attr_accessor :sfunc_desc
-
-    # No description.
     attr_accessor :sfunc_id
 
     def self.from_json_data(data)
@@ -1663,24 +1189,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ConfigBaseVersion
-    # No description.
     attr_accessor :build_date
-
-    # No description.
     attr_accessor :build_number
-
-    # No description.
     attr_accessor :build_version
-
-    # No description.
     attr_accessor :compatibility_version
-
-    # No description.
     attr_accessor :product_name
-
-    # No description.
     attr_accessor :version
 
     def self.from_json_data(data)
@@ -1706,9 +1220,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class CompatibilityVersion
-    # No description.
     attr_accessor :config_version
 
     def self.from_json_data(data)
@@ -1724,15 +1236,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Config
-    # No description.
     attr_accessor :config_comments
-
-    # No description.
     attr_accessor :config_id
-
-    # No description.
     attr_accessor :sys_create_dt
 
     def self.from_json_data(data)
@@ -1752,97 +1258,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class ConfigAddDataSourceResponse
-    # No description.
-    attr_accessor :dsrc_id
-
-    def self.from_json_data(data)
-      out = ConfigAddDataSourceResponse.new
-      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
-      data
-    end
-  end
-
-  # No description.
-  class ConfigListDataSourcesResponse
-    # No description.
-    attr_accessor :data_sources
-
-    def self.from_json_data(data)
-      out = ConfigListDataSourcesResponse.new
-      out.data_sources = SenzingTypeDef::from_json_data(DataSources, data["DATA_SOURCES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
-      data
-    end
-  end
-
-  # No description.
-  class ConfigSaveResponse
-    # No description.
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = ConfigSaveResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  # No description.
-  class ConfigmgrGetConfigListResponse
-    # No description.
-    attr_accessor :configs
-
-    def self.from_json_data(data)
-      out = ConfigmgrGetConfigListResponse.new
-      out.configs = SenzingTypeDef::from_json_data(Configs, data["CONFIGS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
-      data
-    end
-  end
-
-  # No description.
-  class ConfigmgrGetConfigResponse
-    # No description.
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = ConfigmgrGetConfigResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  # No description.
   class Configs
     attr_accessor :value
 
@@ -1857,7 +1272,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class DataSource
     # The text representation of the datasource.
     attr_accessor :dsrc_code
@@ -1880,87 +1294,28 @@ module SenzingTypeDef
     end
   end
 
-  # A list of datasources.
-  class DataSources
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DataSources.new
-      out.value = SenzingTypeDef.from_json_data(Array[DataSource], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class DiagnosticCheckDbperfResponse
-    # No description.
-    attr_accessor :insert_time
-
-    # No description.
-    attr_accessor :num_records_inserted
-
-    def self.from_json_data(data)
-      out = DiagnosticCheckDbperfResponse.new
-      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
-      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
-      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
-      data
-    end
-  end
-
-  class DiagnosticFetchNextEntityBySizeResponse0
-    # No description.
+  class DiagnosticFetchNextEntityBySizeResponseXxx0
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :ent_src_desc
-
-    # No description.
     attr_accessor :ent_src_key
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :er_id
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :json_data
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :obs_ent_id
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :res_ent_id
 
     def self.from_json_data(data)
-      out = DiagnosticFetchNextEntityBySizeResponse0.new
+      out = DiagnosticFetchNextEntityBySizeResponseXxx0.new
       out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
       out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
       out.ent_src_key = SenzingTypeDef::from_json_data(String, data["ENT_SRC_KEY"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
       out.er_id = SenzingTypeDef::from_json_data(Integer, data["ER_ID"])
       out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
@@ -1985,13 +1340,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class DiagnosticFetchNextEntityBySizeResponse
+  class DiagnosticFetchNextEntityBySizeResponseXxx
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = DiagnosticFetchNextEntityBySizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticFetchNextEntityBySizeResponse0], data)
+      out = DiagnosticFetchNextEntityBySizeResponseXxx.new
+      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticFetchNextEntityBySizeResponseXxx0], data)
       out
     end
 
@@ -2000,2307 +1354,12 @@ module SenzingTypeDef
     end
   end
 
-  class DiagnosticFindEntitiesByFeatureIdsResponse0
-    # No description.
-    attr_accessor :lib_feat_id
-
-    # No description.
-    attr_accessor :res_ent_id
-
-    # No description.
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = DiagnosticFindEntitiesByFeatureIdsResponse0.new
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticFindEntitiesByFeatureIdsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticFindEntitiesByFeatureIdsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticFindEntitiesByFeatureIdsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetDbinfoResponseDetail
-    # No description.
-    attr_accessor :name
-
-    # No description.
-    attr_accessor :type
-
-    def self.from_json_data(data)
-      out = DiagnosticGetDbinfoResponseDetail.new
-      out.name = SenzingTypeDef::from_json_data(String, data["Name"])
-      out.type = SenzingTypeDef::from_json_data(String, data["Type"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["Name"] = SenzingTypeDef::to_json_data(name)
-      data["Type"] = SenzingTypeDef::to_json_data(type)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetDbinfoResponse
-    # No description.
-    attr_accessor :database_details
-
-    # No description.
-    attr_accessor :hybrid_mode
-
-    def self.from_json_data(data)
-      out = DiagnosticGetDbinfoResponse.new
-      out.database_details = SenzingTypeDef::from_json_data(Array[DiagnosticGetDbinfoResponseDetail], data["Database Details"])
-      out.hybrid_mode = SenzingTypeDef::from_json_data(TrueClass, data["Hybrid Mode"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["Database Details"] = SenzingTypeDef::to_json_data(database_details)
-      data["Hybrid Mode"] = SenzingTypeDef::to_json_data(hybrid_mode)
-      data
-    end
-  end
-
-  class DiagnosticGetDataSourceCountsResponse0
-    # No description.
-    attr_accessor :dsrc_code
-
-    # No description.
-    attr_accessor :dsrc_id
-
-    # No description.
-    attr_accessor :dsrc_record_count
-
-    # No description.
-    attr_accessor :etype_code
-
-    # No description.
-    attr_accessor :etype_id
-
-    # No description.
-    attr_accessor :obs_ent_count
-
-    def self.from_json_data(data)
-      out = DiagnosticGetDataSourceCountsResponse0.new
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
-      out.dsrc_record_count = SenzingTypeDef::from_json_data(Integer, data["DSRC_RECORD_COUNT"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.etype_id = SenzingTypeDef::from_json_data(Integer, data["ETYPE_ID"])
-      out.obs_ent_count = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_COUNT"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
-      data["DSRC_RECORD_COUNT"] = SenzingTypeDef::to_json_data(dsrc_record_count)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["ETYPE_ID"] = SenzingTypeDef::to_json_data(etype_id)
-      data["OBS_ENT_COUNT"] = SenzingTypeDef::to_json_data(obs_ent_count)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetDataSourceCountsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetDataSourceCountsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetDataSourceCountsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetEntityDetailsResponse0
-    # No description.
-    attr_accessor :derived
-
-    # No description.
-    attr_accessor :dsrc_code
-
-    # No description.
-    attr_accessor :errule_code
-
-    # No description.
-    attr_accessor :etype_code
-
-    # No description.
-    attr_accessor :feat_desc
-
-    # No description.
-    attr_accessor :ftype_code
-
-    # No description.
-    attr_accessor :match_key
-
-    # No description.
-    attr_accessor :obs_ent_id
-
-    # No description.
-    attr_accessor :record_id
-
-    # No description.
-    attr_accessor :res_ent_id
-
-    # No description.
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = DiagnosticGetEntityDetailsResponse0.new
-      out.derived = SenzingTypeDef::from_json_data(String, data["DERIVED"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
-      out.record_id = SenzingTypeDef::from_json_data(Integer, data["RECORD_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DERIVED"] = SenzingTypeDef::to_json_data(derived)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["OBS_ENT_ID"] = SenzingTypeDef::to_json_data(obs_ent_id)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetEntityDetailsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetEntityDetailsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetEntityDetailsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetEntityResumeResponse0
-    # No description.
-    attr_accessor :dsrc_code
-
-    # No description.
-    attr_accessor :ent_src_desc
-
-    # No description.
-    attr_accessor :errule_code
-
-    # No description.
-    attr_accessor :etype_code
-
-    # No description.
-    attr_accessor :json_data
-
-    # No description.
-    attr_accessor :match_key
-
-    # No description.
-    attr_accessor :record_id
-
-    # No description.
-    attr_accessor :rel_ent_id
-
-    # No description.
-    attr_accessor :res_ent_id
-
-    def self.from_json_data(data)
-      out = DiagnosticGetEntityResumeResponse0.new
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out.rel_ent_id = SenzingTypeDef::from_json_data(Integer, data["REL_ENT_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["REL_ENT_ID"] = SenzingTypeDef::to_json_data(rel_ent_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetEntityResumeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetEntityResumeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetEntityResumeResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class DiagnosticGetEntitySizeBreakdownResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetEntitySizeBreakdownResponse.new
-      out.value = SenzingTypeDef.from_json_data(AttributeCounters, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetFeatureResponseElements
-    # No description.
-    attr_accessor :felem_code
-
-    # No description.
-    attr_accessor :felem_value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetFeatureResponseElements.new
-      out.felem_code = SenzingTypeDef::from_json_data(String, data["FELEM_CODE"])
-      out.felem_value = SenzingTypeDef::from_json_data(String, data["FELEM_VALUE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FELEM_CODE"] = SenzingTypeDef::to_json_data(felem_code)
-      data["FELEM_VALUE"] = SenzingTypeDef::to_json_data(felem_value)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetFeatureResponse
-    # No description.
-    attr_accessor :elements
-
-    # No description.
-    attr_accessor :ftype_code
-
-    # No description.
-    attr_accessor :lib_feat_id
-
-    def self.from_json_data(data)
-      out = DiagnosticGetFeatureResponse.new
-      out.elements = SenzingTypeDef::from_json_data(Array[DiagnosticGetFeatureResponseElements], data["ELEMENTS"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ELEMENTS"] = SenzingTypeDef::to_json_data(elements)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data
-    end
-  end
-
-  class DiagnosticGetGenericFeaturesResponse0
-    # No description.
-    attr_accessor :candidate_cap_reached
-
-    # No description.
-    attr_accessor :estimated_count
-
-    # No description.
-    attr_accessor :feat_desc
-
-    # No description.
-    attr_accessor :ftype_code
-
-    # No description.
-    attr_accessor :lib_feat_id
-
-    # No description.
-    attr_accessor :scoring_cap_reached
-
-    def self.from_json_data(data)
-      out = DiagnosticGetGenericFeaturesResponse0.new
-      out.candidate_cap_reached = SenzingTypeDef::from_json_data(String, data["CANDIDATE_CAP_REACHED"])
-      out.estimated_count = SenzingTypeDef::from_json_data(Integer, data["ESTIMATED_COUNT"])
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out.scoring_cap_reached = SenzingTypeDef::from_json_data(String, data["SCORING_CAP_REACHED"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CANDIDATE_CAP_REACHED"] = SenzingTypeDef::to_json_data(candidate_cap_reached)
-      data["ESTIMATED_COUNT"] = SenzingTypeDef::to_json_data(estimated_count)
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data["SCORING_CAP_REACHED"] = SenzingTypeDef::to_json_data(scoring_cap_reached)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetGenericFeaturesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetGenericFeaturesResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetGenericFeaturesResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetMappingStatisticsResponse0
-    # No description.
-    attr_accessor :derived
-
-    # No description.
-    attr_accessor :dsrc_code
-
-    # No description.
-    attr_accessor :etype_code
-
-    # No description.
-    attr_accessor :ftype_code
-
-    # No description.
-    attr_accessor :max_feat_desc
-
-    # No description.
-    attr_accessor :min_feat_desc
-
-    # No description.
-    attr_accessor :rec_count
-
-    # No description.
-    attr_accessor :rec_pct
-
-    # No description.
-    attr_accessor :uniq_count
-
-    # No description.
-    attr_accessor :uniq_pct
-
-    # No description.
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = DiagnosticGetMappingStatisticsResponse0.new
-      out.derived = SenzingTypeDef::from_json_data(String, data["DERIVED"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.max_feat_desc = SenzingTypeDef::from_json_data(String, data["MAX_FEAT_DESC"])
-      out.min_feat_desc = SenzingTypeDef::from_json_data(String, data["MIN_FEAT_DESC"])
-      out.rec_count = SenzingTypeDef::from_json_data(Integer, data["REC_COUNT"])
-      out.rec_pct = SenzingTypeDef::from_json_data(Float, data["REC_PCT"])
-      out.uniq_count = SenzingTypeDef::from_json_data(Integer, data["UNIQ_COUNT"])
-      out.uniq_pct = SenzingTypeDef::from_json_data(Float, data["UNIQ_PCT"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DERIVED"] = SenzingTypeDef::to_json_data(derived)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["MAX_FEAT_DESC"] = SenzingTypeDef::to_json_data(max_feat_desc)
-      data["MIN_FEAT_DESC"] = SenzingTypeDef::to_json_data(min_feat_desc)
-      data["REC_COUNT"] = SenzingTypeDef::to_json_data(rec_count)
-      data["REC_PCT"] = SenzingTypeDef::to_json_data(rec_pct)
-      data["UNIQ_COUNT"] = SenzingTypeDef::to_json_data(uniq_count)
-      data["UNIQ_PCT"] = SenzingTypeDef::to_json_data(uniq_pct)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetMappingStatisticsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetMappingStatisticsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetMappingStatisticsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetRelationshipDetailsResponse0
-    # No description.
-    attr_accessor :errule_code
-
-    # No description.
-    attr_accessor :feat_desc
-
-    # No description.
-    attr_accessor :ftype_code
-
-    # No description.
-    attr_accessor :match_key
-
-    # No description.
-    attr_accessor :res_ent_id
-
-    def self.from_json_data(data)
-      out = DiagnosticGetRelationshipDetailsResponse0.new
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetRelationshipDetailsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetRelationshipDetailsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetRelationshipDetailsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class DiagnosticGetResolutionStatisticsResponseRawMatchKeys
-    # No description.
-    attr_accessor :match_key
-
-    def self.from_json_data(data)
-      out = DiagnosticGetResolutionStatisticsResponseRawMatchKeys.new
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data
-    end
-  end
-
-  class DiagnosticGetResolutionStatisticsResponse0
-    # No description.
-    attr_accessor :errule_code
-
-    # No description.
-    attr_accessor :errule_id
-
-    # No description.
-    attr_accessor :is_ambiguous
-
-    # No description.
-    attr_accessor :match_key
-
-    # No description.
-    attr_accessor :match_level
-
-    # No description.
-    attr_accessor :max_res_ent_id
-
-    # No description.
-    attr_accessor :max_res_rel_id
-
-    # No description.
-    attr_accessor :min_res_ent_id
-
-    # No description.
-    attr_accessor :min_res_rel_id
-
-    # No description.
-    attr_accessor :raw_match_keys
-
-    # No description.
-    attr_accessor :record_count
-
-    def self.from_json_data(data)
-      out = DiagnosticGetResolutionStatisticsResponse0.new
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.errule_id = SenzingTypeDef::from_json_data(Integer, data["ERRULE_ID"])
-      out.is_ambiguous = SenzingTypeDef::from_json_data(String, data["IS_AMBIGUOUS"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
-      out.max_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_ENT_ID"])
-      out.max_res_rel_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_REL_ID"])
-      out.min_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_ENT_ID"])
-      out.min_res_rel_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_REL_ID"])
-      out.raw_match_keys = SenzingTypeDef::from_json_data(Array[DiagnosticGetResolutionStatisticsResponseRawMatchKeys], data["RAW_MATCH_KEYS"])
-      out.record_count = SenzingTypeDef::from_json_data(Integer, data["RECORD_COUNT"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ERRULE_ID"] = SenzingTypeDef::to_json_data(errule_id)
-      data["IS_AMBIGUOUS"] = SenzingTypeDef::to_json_data(is_ambiguous)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
-      data["MAX_RES_ENT_ID"] = SenzingTypeDef::to_json_data(max_res_ent_id)
-      data["MAX_RES_REL_ID"] = SenzingTypeDef::to_json_data(max_res_rel_id)
-      data["MIN_RES_ENT_ID"] = SenzingTypeDef::to_json_data(min_res_ent_id)
-      data["MIN_RES_REL_ID"] = SenzingTypeDef::to_json_data(min_res_rel_id)
-      data["RAW_MATCH_KEYS"] = SenzingTypeDef::to_json_data(raw_match_keys)
-      data["RECORD_COUNT"] = SenzingTypeDef::to_json_data(record_count)
-      data
-    end
-  end
-
-  # No description.
-  class DiagnosticGetResolutionStatisticsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticGetResolutionStatisticsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticGetResolutionStatisticsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class DiagnosticStreamEntityListBySizeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticStreamEntityListBySizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineAddRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineAddRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineAddRecordWithInfoWithReturnedRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineAddRecordWithInfoWithReturnedRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class EngineCheckRecordResponseCheckRecordResponse
-    # No description.
-    attr_accessor :candidate_match
-
-    # No description.
-    attr_accessor :dsrc_code
-
-    # No description.
-    attr_accessor :errule_code
-
-    # No description.
-    attr_accessor :errule_id
-
-    # No description.
-    attr_accessor :match_key
-
-    # No description.
-    attr_accessor :match_level
-
-    # No description.
-    attr_accessor :match_level_code
-
-    # No description.
-    attr_accessor :non_generic_candidate_match
-
-    # No description.
-    attr_accessor :record_id
-
-    def self.from_json_data(data)
-      out = EngineCheckRecordResponseCheckRecordResponse.new
-      out.candidate_match = SenzingTypeDef::from_json_data(String, data["CANDIDATE_MATCH"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.errule_id = SenzingTypeDef::from_json_data(Integer, data["ERRULE_ID"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
-      out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
-      out.non_generic_candidate_match = SenzingTypeDef::from_json_data(String, data["NON_GENERIC_CANDIDATE_MATCH"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CANDIDATE_MATCH"] = SenzingTypeDef::to_json_data(candidate_match)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ERRULE_ID"] = SenzingTypeDef::to_json_data(errule_id)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
-      data["MATCH_LEVEL_CODE"] = SenzingTypeDef::to_json_data(match_level_code)
-      data["NON_GENERIC_CANDIDATE_MATCH"] = SenzingTypeDef::to_json_data(non_generic_candidate_match)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data
-    end
-  end
-
-  # No description.
-  class EngineCheckRecordResponse
-    # No description.
-    attr_accessor :check_record_response
-
-    def self.from_json_data(data)
-      out = EngineCheckRecordResponse.new
-      out.check_record_response = SenzingTypeDef::from_json_data(Array[EngineCheckRecordResponseCheckRecordResponse], data["CHECK_RECORD_RESPONSE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CHECK_RECORD_RESPONSE"] = SenzingTypeDef::to_json_data(check_record_response)
-      data
-    end
-  end
-
-  # No description.
-  class EngineDeleteRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineDeleteRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineExportConfigAndConfigIdresponse
-    # No description.
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = EngineExportConfigAndConfigIdresponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  # No description.
-  class EngineExportConfigResponse
-    # No description.
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = EngineExportConfigResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  # No description.
-  class EngineFetchNextResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindInterestingEntitiesByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindInterestingEntitiesByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindInterestingEntitiesByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindInterestingEntitiesByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindNetworkByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindNetworkByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindNetworkByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindNetworkByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindNetworkByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindNetworkByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindNetworkByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindNetworkByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathExcludingByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathExcludingByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathExcludingByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathExcludingByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathExcludingByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathExcludingByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathExcludingByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathExcludingByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathIncludingSourceByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathIncludingSourceByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathIncludingSourceByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathIncludingSourceByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathIncludingSourceByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathIncludingSourceByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineFindPathIncludingSourceByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineFindPathIncludingSourceByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetEntityByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetEntityByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetEntityByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetEntityByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetRecordV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetRecordV2response.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetVirtualEntityByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetVirtualEntityByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineGetVirtualEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineGetVirtualEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineHowEntityByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineHowEntityByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineHowEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineHowEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineProcessRedoRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineProcessRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineProcessRedoRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineProcessRedoRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineProcessWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineProcessWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineProcessWithResponseResizeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineProcessWithResponseResizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Process, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineProcessWithResponseResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineProcessWithResponseResponse.new
-      out.value = SenzingTypeDef.from_json_data(Process, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineReevaluateEntityWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineReevaluateEntityWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineReevaluateRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineReevaluateRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineReplaceRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineReplaceRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineSearchByAttributesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineSearchByAttributesResponse.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineSearchByAttributesV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineSearchByAttributesV2response.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineSearchByAttributesV3response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineSearchByAttributesV3response.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseDuration
-    # No description.
-    attr_accessor :pattern
-
-    # No description.
-    attr_accessor :type
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseDuration.new
-      out.pattern = SenzingTypeDef::from_json_data(String, data["PATTERN"])
-      out.type = SenzingTypeDef::from_json_data(String, data["TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["PATTERN"] = SenzingTypeDef::to_json_data(pattern)
-      data["TYPE"] = SenzingTypeDef::to_json_data(type)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseReresolveTriggers
-    # No description.
-    attr_accessor :abort_retry
-
-    # No description.
-    attr_accessor :multiple_resolvable_candidates
-
-    # No description.
-    attr_accessor :resolve_new_features
-
-    # No description.
-    attr_accessor :unresolve_movement
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseReresolveTriggers.new
-      out.abort_retry = SenzingTypeDef::from_json_data(Integer, data["abortRetry"])
-      out.multiple_resolvable_candidates = SenzingTypeDef::from_json_data(Integer, data["multipleResolvableCandidates"])
-      out.resolve_new_features = SenzingTypeDef::from_json_data(Integer, data["resolveNewFeatures"])
-      out.unresolve_movement = SenzingTypeDef::from_json_data(Integer, data["unresolveMovement"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["abortRetry"] = SenzingTypeDef::to_json_data(abort_retry)
-      data["multipleResolvableCandidates"] = SenzingTypeDef::to_json_data(multiple_resolvable_candidates)
-      data["resolveNewFeatures"] = SenzingTypeDef::to_json_data(resolve_new_features)
-      data["unresolveMovement"] = SenzingTypeDef::to_json_data(unresolve_movement)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseUnresolveTriggers
-    # No description.
-    attr_accessor :extensive_resolve
-
-    # No description.
-    attr_accessor :normal_resolve
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseUnresolveTriggers.new
-      out.extensive_resolve = SenzingTypeDef::from_json_data(Integer, data["extensiveResolve"])
-      out.normal_resolve = SenzingTypeDef::from_json_data(Integer, data["normalResolve"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["extensiveResolve"] = SenzingTypeDef::to_json_data(extensive_resolve)
-      data["normalResolve"] = SenzingTypeDef::to_json_data(normal_resolve)
-      data
-    end
-  end
-
-  class EngineStatsResponseWorkloadExpressedFeatureCall
-    # No description.
-    attr_accessor :efcall_id
-
-    # No description.
-    attr_accessor :efunc_code
-
-    # No description.
-    attr_accessor :num_calls
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadExpressedFeatureCall.new
-      out.efcall_id = SenzingTypeDef::from_json_data(Integer, data["EFCALL_ID"])
-      out.efunc_code = SenzingTypeDef::from_json_data(String, data["EFUNC_CODE"])
-      out.num_calls = SenzingTypeDef::from_json_data(Integer, data["numCalls"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["EFCALL_ID"] = SenzingTypeDef::to_json_data(efcall_id)
-      data["EFUNC_CODE"] = SenzingTypeDef::to_json_data(efunc_code)
-      data["numCalls"] = SenzingTypeDef::to_json_data(num_calls)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseWorkloadReresolveTriggers
-    # No description.
-    attr_accessor :abort_retry
-
-    # No description.
-    attr_accessor :multiple_resolvable_candidates
-
-    # No description.
-    attr_accessor :new_feature_ftypes
-
-    # No description.
-    attr_accessor :resolve_new_features
-
-    # No description.
-    attr_accessor :unresolve_movement
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadReresolveTriggers.new
-      out.abort_retry = SenzingTypeDef::from_json_data(Integer, data["abortRetry"])
-      out.multiple_resolvable_candidates = SenzingTypeDef::from_json_data(Integer, data["multipleResolvableCandidates"])
-      out.new_feature_ftypes = SenzingTypeDef::from_json_data(AttributeCounters, data["newFeatureFTypes"])
-      out.resolve_new_features = SenzingTypeDef::from_json_data(Integer, data["resolveNewFeatures"])
-      out.unresolve_movement = SenzingTypeDef::from_json_data(Integer, data["unresolveMovement"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["abortRetry"] = SenzingTypeDef::to_json_data(abort_retry)
-      data["multipleResolvableCandidates"] = SenzingTypeDef::to_json_data(multiple_resolvable_candidates)
-      data["newFeatureFTypes"] = SenzingTypeDef::to_json_data(new_feature_ftypes)
-      data["resolveNewFeatures"] = SenzingTypeDef::to_json_data(resolve_new_features)
-      data["unresolveMovement"] = SenzingTypeDef::to_json_data(unresolve_movement)
-      data
-    end
-  end
-
-  class EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad
-    # No description.
-    attr_accessor :cpu_idle
-
-    # No description.
-    attr_accessor :cpu_soft_irq
-
-    # No description.
-    attr_accessor :cpu_system
-
-    # No description.
-    attr_accessor :cpu_user
-
-    # No description.
-    attr_accessor :cpu_wait
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad.new
-      out.cpu_idle = SenzingTypeDef::from_json_data(Float, data["cpuIdle"])
-      out.cpu_soft_irq = SenzingTypeDef::from_json_data(Float, data["cpuSoftIrq"])
-      out.cpu_system = SenzingTypeDef::from_json_data(Float, data["cpuSystem"])
-      out.cpu_user = SenzingTypeDef::from_json_data(Float, data["cpuUser"])
-      out.cpu_wait = SenzingTypeDef::from_json_data(Float, data["cpuWait"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["cpuIdle"] = SenzingTypeDef::to_json_data(cpu_idle)
-      data["cpuSoftIrq"] = SenzingTypeDef::to_json_data(cpu_soft_irq)
-      data["cpuSystem"] = SenzingTypeDef::to_json_data(cpu_system)
-      data["cpuUser"] = SenzingTypeDef::to_json_data(cpu_user)
-      data["cpuWait"] = SenzingTypeDef::to_json_data(cpu_wait)
-      data
-    end
-  end
-
-  class EngineStatsResponseWorkloadSystemResourcesCurrResource
-    # No description.
-    attr_accessor :active_threads
-
-    # No description.
-    attr_accessor :available_memory
-
-    # No description.
-    attr_accessor :system_load
-
-    # No description.
-    attr_accessor :worker_threads
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadSystemResourcesCurrResource.new
-      out.active_threads = SenzingTypeDef::from_json_data(Integer, data["activeThreads"])
-      out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
-      out.system_load = SenzingTypeDef::from_json_data(Array[EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad], data["systemLoad"])
-      out.worker_threads = SenzingTypeDef::from_json_data(Integer, data["workerThreads"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["activeThreads"] = SenzingTypeDef::to_json_data(active_threads)
-      data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
-      data["systemLoad"] = SenzingTypeDef::to_json_data(system_load)
-      data["workerThreads"] = SenzingTypeDef::to_json_data(worker_threads)
-      data
-    end
-  end
-
-  class EngineStatsResponseWorkloadSystemResourcesInitResource
-    # No description.
-    attr_accessor :available_memory
-
-    # No description.
-    attr_accessor :logical_cores
-
-    # No description.
-    attr_accessor :physical_cores
-
-    # No description.
-    attr_accessor :total_memory
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadSystemResourcesInitResource.new
-      out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
-      out.logical_cores = SenzingTypeDef::from_json_data(Integer, data["logicalCores"])
-      out.physical_cores = SenzingTypeDef::from_json_data(Integer, data["physicalCores"])
-      out.total_memory = SenzingTypeDef::from_json_data(String, data["totalMemory"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
-      data["logicalCores"] = SenzingTypeDef::to_json_data(logical_cores)
-      data["physicalCores"] = SenzingTypeDef::to_json_data(physical_cores)
-      data["totalMemory"] = SenzingTypeDef::to_json_data(total_memory)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseWorkloadSystemResources
-    # No description.
-    attr_accessor :curr_resources
-
-    # No description.
-    attr_accessor :init_resources
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadSystemResources.new
-      out.curr_resources = SenzingTypeDef::from_json_data(Array[EngineStatsResponseWorkloadSystemResourcesCurrResource], data["currResources"])
-      out.init_resources = SenzingTypeDef::from_json_data(Array[EngineStatsResponseWorkloadSystemResourcesInitResource], data["initResources"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["currResources"] = SenzingTypeDef::to_json_data(curr_resources)
-      data["initResources"] = SenzingTypeDef::to_json_data(init_resources)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseWorkloadThreadState
-    # No description.
-    attr_accessor :active
-
-    # No description.
-    attr_accessor :data_latch_contention
-
-    # No description.
-    attr_accessor :idle
-
-    # No description.
-    attr_accessor :loader
-
-    # No description.
-    attr_accessor :obs_ent_contention
-
-    # No description.
-    attr_accessor :res_ent_contention
-
-    # No description.
-    attr_accessor :resolver
-
-    # No description.
-    attr_accessor :scoring
-
-    # No description.
-    attr_accessor :sql_executing
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadThreadState.new
-      out.active = SenzingTypeDef::from_json_data(Integer, data["active"])
-      out.data_latch_contention = SenzingTypeDef::from_json_data(Integer, data["dataLatchContention"])
-      out.idle = SenzingTypeDef::from_json_data(Integer, data["idle"])
-      out.loader = SenzingTypeDef::from_json_data(Integer, data["loader"])
-      out.obs_ent_contention = SenzingTypeDef::from_json_data(Integer, data["obsEntContention"])
-      out.res_ent_contention = SenzingTypeDef::from_json_data(Integer, data["resEntContention"])
-      out.resolver = SenzingTypeDef::from_json_data(Integer, data["resolver"])
-      out.scoring = SenzingTypeDef::from_json_data(Integer, data["scoring"])
-      out.sql_executing = SenzingTypeDef::from_json_data(Integer, data["sqlExecuting"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["active"] = SenzingTypeDef::to_json_data(active)
-      data["dataLatchContention"] = SenzingTypeDef::to_json_data(data_latch_contention)
-      data["idle"] = SenzingTypeDef::to_json_data(idle)
-      data["loader"] = SenzingTypeDef::to_json_data(loader)
-      data["obsEntContention"] = SenzingTypeDef::to_json_data(obs_ent_contention)
-      data["resEntContention"] = SenzingTypeDef::to_json_data(res_ent_contention)
-      data["resolver"] = SenzingTypeDef::to_json_data(resolver)
-      data["scoring"] = SenzingTypeDef::to_json_data(scoring)
-      data["sqlExecuting"] = SenzingTypeDef::to_json_data(sql_executing)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseWorkloadUnresolveTriggers
-    # No description.
-    attr_accessor :ambiguous_multi_resolve
-
-    # No description.
-    attr_accessor :ambiguous_no_resolve
-
-    # No description.
-    attr_accessor :extensive_resolve
-
-    # No description.
-    attr_accessor :normal_resolve
-
-    # No description.
-    attr_accessor :rel_link
-
-    # No description.
-    attr_accessor :update
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkloadUnresolveTriggers.new
-      out.ambiguous_multi_resolve = SenzingTypeDef::from_json_data(Integer, data["ambiguousMultiResolve"])
-      out.ambiguous_no_resolve = SenzingTypeDef::from_json_data(Integer, data["ambiguousNoResolve"])
-      out.extensive_resolve = SenzingTypeDef::from_json_data(Integer, data["extensiveResolve"])
-      out.normal_resolve = SenzingTypeDef::from_json_data(Integer, data["normalResolve"])
-      out.rel_link = SenzingTypeDef::from_json_data(Integer, data["relLink"])
-      out.update = SenzingTypeDef::from_json_data(Integer, data["update"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ambiguousMultiResolve"] = SenzingTypeDef::to_json_data(ambiguous_multi_resolve)
-      data["ambiguousNoResolve"] = SenzingTypeDef::to_json_data(ambiguous_no_resolve)
-      data["extensiveResolve"] = SenzingTypeDef::to_json_data(extensive_resolve)
-      data["normalResolve"] = SenzingTypeDef::to_json_data(normal_resolve)
-      data["relLink"] = SenzingTypeDef::to_json_data(rel_link)
-      data["update"] = SenzingTypeDef::to_json_data(update)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponseWorkload
-    # No description.
-    attr_accessor :corrupt_entity_test_diagnosis
-
-    # No description.
-    attr_accessor :aborted_unresolve
-
-    # No description.
-    attr_accessor :actual_ambiguous_test
-
-    # No description.
-    attr_accessor :added_records
-
-    # No description.
-    attr_accessor :api_version
-
-    # No description.
-    attr_accessor :cache_hit
-
-    # No description.
-    attr_accessor :cache_miss
-
-    # No description.
-    attr_accessor :cached_ambiguous_test
-
-    # No description.
-    attr_accessor :candidate_builders
-
-    # No description.
-    attr_accessor :candidates
-
-    # No description.
-    attr_accessor :deleted_records
-
-    # No description.
-    attr_accessor :duration
-
-    # No description.
-    attr_accessor :expressed_feature_calls
-
-    # No description.
-    attr_accessor :expressed_features_created
-
-    # No description.
-    attr_accessor :filtered_obs_feat
-
-    # No description.
-    attr_accessor :generic_detect
-
-    # No description.
-    attr_accessor :gnr_scorers_used
-
-    # No description.
-    attr_accessor :high_contention_feat
-
-    # No description.
-    attr_accessor :high_contention_res_ent
-
-    # No description.
-    attr_accessor :latch_contention
-
-    # No description.
-    attr_accessor :lib_feat_cache_hit
-
-    # No description.
-    attr_accessor :lib_feat_cache_miss
-
-    # No description.
-    attr_accessor :loaded_records
-
-    # No description.
-    attr_accessor :redo_triggers
-
-    # No description.
-    attr_accessor :reduced_scored_feature_type
-
-    # No description.
-    attr_accessor :reevaluations
-
-    # No description.
-    attr_accessor :repaired_entities
-
-    # No description.
-    attr_accessor :reresolve_skipped
-
-    # No description.
-    attr_accessor :reresolve_triggers
-
-    # No description.
-    attr_accessor :res_feat_stat_cache_hit
-
-    # No description.
-    attr_accessor :res_feat_stat_cache_miss
-
-    # No description.
-    attr_accessor :res_feat_stat_update
-
-    # No description.
-    attr_accessor :retries
-
-    # No description.
-    attr_accessor :scored_pairs
-
-    # No description.
-    attr_accessor :suppressed_candidate_builders
-
-    # No description.
-    attr_accessor :suppressed_disclosed_relationship_domain_count
-
-    # No description.
-    attr_accessor :suppressed_scored_feature_type
-
-    # No description.
-    attr_accessor :system_resources
-
-    # No description.
-    attr_accessor :thread_state
-
-    # No description.
-    attr_accessor :unresolve_test
-
-    # No description.
-    attr_accessor :unresolve_triggers
-
-    def self.from_json_data(data)
-      out = EngineStatsResponseWorkload.new
-      out.corrupt_entity_test_diagnosis = SenzingTypeDef::from_json_data(Object, data["CorruptEntityTestDiagnosis"])
-      out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
-      out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
-      out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
-      out.api_version = SenzingTypeDef::from_json_data(String, data["apiVersion"])
-      out.cache_hit = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheHit"])
-      out.cache_miss = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheMiss"])
-      out.cached_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["cachedAmbiguousTest"])
-      out.candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["candidateBuilders"])
-      out.candidates = SenzingTypeDef::from_json_data(Integer, data["candidates"])
-      out.deleted_records = SenzingTypeDef::from_json_data(Integer, data["deletedRecords"])
-      out.duration = SenzingTypeDef::from_json_data(Integer, data["duration"])
-      out.expressed_feature_calls = SenzingTypeDef::from_json_data(Array[EngineStatsResponseWorkloadExpressedFeatureCall], data["expressedFeatureCalls"])
-      out.expressed_features_created = SenzingTypeDef::from_json_data(AttributeCounters, data["expressedFeaturesCreated"])
-      out.filtered_obs_feat = SenzingTypeDef::from_json_data(Integer, data["filteredObsFeat"])
-      out.generic_detect = SenzingTypeDef::from_json_data(AttributeCounters, data["genericDetect"])
-      out.gnr_scorers_used = SenzingTypeDef::from_json_data(Integer, data["gnrScorersUsed"])
-      out.high_contention_feat = SenzingTypeDef::from_json_data(AttributeCounters, data["highContentionFeat"])
-      out.high_contention_res_ent = SenzingTypeDef::from_json_data(AttributeCounters, data["highContentionResEnt"])
-      out.latch_contention = SenzingTypeDef::from_json_data(AttributeCounters, data["latchContention"])
-      out.lib_feat_cache_hit = SenzingTypeDef::from_json_data(Integer, data["libFeatCacheHit"])
-      out.lib_feat_cache_miss = SenzingTypeDef::from_json_data(Integer, data["libFeatCacheMiss"])
-      out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
-      out.redo_triggers = SenzingTypeDef::from_json_data(AttributeCounters, data["redoTriggers"])
-      out.reduced_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["reducedScoredFeatureType"])
-      out.reevaluations = SenzingTypeDef::from_json_data(Integer, data["reevaluations"])
-      out.repaired_entities = SenzingTypeDef::from_json_data(Integer, data["repairedEntities"])
-      out.reresolve_skipped = SenzingTypeDef::from_json_data(Integer, data["reresolveSkipped"])
-      out.reresolve_triggers = SenzingTypeDef::from_json_data(EngineStatsResponseWorkloadReresolveTriggers, data["reresolveTriggers"])
-      out.res_feat_stat_cache_hit = SenzingTypeDef::from_json_data(Integer, data["resFeatStatCacheHit"])
-      out.res_feat_stat_cache_miss = SenzingTypeDef::from_json_data(Integer, data["resFeatStatCacheMiss"])
-      out.res_feat_stat_update = SenzingTypeDef::from_json_data(Integer, data["resFeatStatUpdate"])
-      out.retries = SenzingTypeDef::from_json_data(Integer, data["retries"])
-      out.scored_pairs = SenzingTypeDef::from_json_data(AttributeCounters, data["scoredPairs"])
-      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedCandidateBuilders"])
-      out.suppressed_disclosed_relationship_domain_count = SenzingTypeDef::from_json_data(Integer, data["suppressedDisclosedRelationshipDomainCount"])
-      out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedScoredFeatureType"])
-      out.system_resources = SenzingTypeDef::from_json_data(EngineStatsResponseWorkloadSystemResources, data["systemResources"])
-      out.thread_state = SenzingTypeDef::from_json_data(EngineStatsResponseWorkloadThreadState, data["threadState"])
-      out.unresolve_test = SenzingTypeDef::from_json_data(Integer, data["unresolveTest"])
-      out.unresolve_triggers = SenzingTypeDef::from_json_data(EngineStatsResponseWorkloadUnresolveTriggers, data["unresolveTriggers"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CorruptEntityTestDiagnosis"] = SenzingTypeDef::to_json_data(corrupt_entity_test_diagnosis)
-      data["abortedUnresolve"] = SenzingTypeDef::to_json_data(aborted_unresolve)
-      data["actualAmbiguousTest"] = SenzingTypeDef::to_json_data(actual_ambiguous_test)
-      data["addedRecords"] = SenzingTypeDef::to_json_data(added_records)
-      data["apiVersion"] = SenzingTypeDef::to_json_data(api_version)
-      data["cacheHit"] = SenzingTypeDef::to_json_data(cache_hit)
-      data["cacheMiss"] = SenzingTypeDef::to_json_data(cache_miss)
-      data["cachedAmbiguousTest"] = SenzingTypeDef::to_json_data(cached_ambiguous_test)
-      data["candidateBuilders"] = SenzingTypeDef::to_json_data(candidate_builders)
-      data["candidates"] = SenzingTypeDef::to_json_data(candidates)
-      data["deletedRecords"] = SenzingTypeDef::to_json_data(deleted_records)
-      data["duration"] = SenzingTypeDef::to_json_data(duration)
-      data["expressedFeatureCalls"] = SenzingTypeDef::to_json_data(expressed_feature_calls)
-      data["expressedFeaturesCreated"] = SenzingTypeDef::to_json_data(expressed_features_created)
-      data["filteredObsFeat"] = SenzingTypeDef::to_json_data(filtered_obs_feat)
-      data["genericDetect"] = SenzingTypeDef::to_json_data(generic_detect)
-      data["gnrScorersUsed"] = SenzingTypeDef::to_json_data(gnr_scorers_used)
-      data["highContentionFeat"] = SenzingTypeDef::to_json_data(high_contention_feat)
-      data["highContentionResEnt"] = SenzingTypeDef::to_json_data(high_contention_res_ent)
-      data["latchContention"] = SenzingTypeDef::to_json_data(latch_contention)
-      data["libFeatCacheHit"] = SenzingTypeDef::to_json_data(lib_feat_cache_hit)
-      data["libFeatCacheMiss"] = SenzingTypeDef::to_json_data(lib_feat_cache_miss)
-      data["loadedRecords"] = SenzingTypeDef::to_json_data(loaded_records)
-      data["redoTriggers"] = SenzingTypeDef::to_json_data(redo_triggers)
-      data["reducedScoredFeatureType"] = SenzingTypeDef::to_json_data(reduced_scored_feature_type)
-      data["reevaluations"] = SenzingTypeDef::to_json_data(reevaluations)
-      data["repairedEntities"] = SenzingTypeDef::to_json_data(repaired_entities)
-      data["reresolveSkipped"] = SenzingTypeDef::to_json_data(reresolve_skipped)
-      data["reresolveTriggers"] = SenzingTypeDef::to_json_data(reresolve_triggers)
-      data["resFeatStatCacheHit"] = SenzingTypeDef::to_json_data(res_feat_stat_cache_hit)
-      data["resFeatStatCacheMiss"] = SenzingTypeDef::to_json_data(res_feat_stat_cache_miss)
-      data["resFeatStatUpdate"] = SenzingTypeDef::to_json_data(res_feat_stat_update)
-      data["retries"] = SenzingTypeDef::to_json_data(retries)
-      data["scoredPairs"] = SenzingTypeDef::to_json_data(scored_pairs)
-      data["suppressedCandidateBuilders"] = SenzingTypeDef::to_json_data(suppressed_candidate_builders)
-      data["suppressedDisclosedRelationshipDomainCount"] = SenzingTypeDef::to_json_data(suppressed_disclosed_relationship_domain_count)
-      data["suppressedScoredFeatureType"] = SenzingTypeDef::to_json_data(suppressed_scored_feature_type)
-      data["systemResources"] = SenzingTypeDef::to_json_data(system_resources)
-      data["threadState"] = SenzingTypeDef::to_json_data(thread_state)
-      data["unresolveTest"] = SenzingTypeDef::to_json_data(unresolve_test)
-      data["unresolveTriggers"] = SenzingTypeDef::to_json_data(unresolve_triggers)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStatsResponse
-    # No description.
-    attr_accessor :missing_res_ent
-
-    # No description.
-    attr_accessor :missing_res_ent_and_okey
-
-    # No description.
-    attr_accessor :aborted_unresolve
-
-    # No description.
-    attr_accessor :actual_ambiguous_test
-
-    # No description.
-    attr_accessor :added_records
-
-    # No description.
-    attr_accessor :cache_hit
-
-    # No description.
-    attr_accessor :candidate_builders
-
-    # No description.
-    attr_accessor :candidates
-
-    # No description.
-    attr_accessor :deleted_records
-
-    # No description.
-    attr_accessor :duration
-
-    # No description.
-    attr_accessor :filtered_obs_feat
-
-    # No description.
-    attr_accessor :generic_detect
-
-    # No description.
-    attr_accessor :latch_contention
-
-    # No description.
-    attr_accessor :loaded_records
-
-    # No description.
-    attr_accessor :redo_triggers
-
-    # No description.
-    attr_accessor :reduced_scored_feature_type
-
-    # No description.
-    attr_accessor :reevaluations
-
-    # No description.
-    attr_accessor :repaired_entities
-
-    # No description.
-    attr_accessor :reresolve_skipped
-
-    # No description.
-    attr_accessor :reresolve_triggers
-
-    # No description.
-    attr_accessor :retries
-
-    # No description.
-    attr_accessor :scored_pairs
-
-    # No description.
-    attr_accessor :suppressed_candidate_builders
-
-    # No description.
-    attr_accessor :suppressed_scored_feature_type
-
-    # No description.
-    attr_accessor :unresolve_test
-
-    # No description.
-    attr_accessor :unresolve_triggers
-
-    # No description.
-    attr_accessor :workload
-
-    def self.from_json_data(data)
-      out = EngineStatsResponse.new
-      out.missing_res_ent = SenzingTypeDef::from_json_data(Integer, data["MISSING_RES_ENT"])
-      out.missing_res_ent_and_okey = SenzingTypeDef::from_json_data(Integer, data["MISSING_RES_ENT_AND_OKEY"])
-      out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
-      out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
-      out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
-      out.cache_hit = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheHit"])
-      out.candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["candidateBuilders"])
-      out.candidates = SenzingTypeDef::from_json_data(Integer, data["candidates"])
-      out.deleted_records = SenzingTypeDef::from_json_data(Integer, data["deletedRecords"])
-      out.duration = SenzingTypeDef::from_json_data(EngineStatsResponseDuration, data["duration"])
-      out.filtered_obs_feat = SenzingTypeDef::from_json_data(Integer, data["filteredObsFeat"])
-      out.generic_detect = SenzingTypeDef::from_json_data(AttributeCounters, data["genericDetect"])
-      out.latch_contention = SenzingTypeDef::from_json_data(AttributeCounters, data["latchContention"])
-      out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
-      out.redo_triggers = SenzingTypeDef::from_json_data(AttributeCounters, data["redoTriggers"])
-      out.reduced_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["reducedScoredFeatureType"])
-      out.reevaluations = SenzingTypeDef::from_json_data(Integer, data["reevaluations"])
-      out.repaired_entities = SenzingTypeDef::from_json_data(Integer, data["repairedEntities"])
-      out.reresolve_skipped = SenzingTypeDef::from_json_data(Integer, data["reresolveSkipped"])
-      out.reresolve_triggers = SenzingTypeDef::from_json_data(EngineStatsResponseReresolveTriggers, data["reresolveTriggers"])
-      out.retries = SenzingTypeDef::from_json_data(Integer, data["retries"])
-      out.scored_pairs = SenzingTypeDef::from_json_data(AttributeCounters, data["scoredPairs"])
-      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedCandidateBuilders"])
-      out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedScoredFeatureType"])
-      out.unresolve_test = SenzingTypeDef::from_json_data(Integer, data["unresolveTest"])
-      out.unresolve_triggers = SenzingTypeDef::from_json_data(EngineStatsResponseUnresolveTriggers, data["unresolveTriggers"])
-      out.workload = SenzingTypeDef::from_json_data(EngineStatsResponseWorkload, data["workload"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["MISSING_RES_ENT"] = SenzingTypeDef::to_json_data(missing_res_ent)
-      data["MISSING_RES_ENT_AND_OKEY"] = SenzingTypeDef::to_json_data(missing_res_ent_and_okey)
-      data["abortedUnresolve"] = SenzingTypeDef::to_json_data(aborted_unresolve)
-      data["actualAmbiguousTest"] = SenzingTypeDef::to_json_data(actual_ambiguous_test)
-      data["addedRecords"] = SenzingTypeDef::to_json_data(added_records)
-      data["cacheHit"] = SenzingTypeDef::to_json_data(cache_hit)
-      data["candidateBuilders"] = SenzingTypeDef::to_json_data(candidate_builders)
-      data["candidates"] = SenzingTypeDef::to_json_data(candidates)
-      data["deletedRecords"] = SenzingTypeDef::to_json_data(deleted_records)
-      data["duration"] = SenzingTypeDef::to_json_data(duration)
-      data["filteredObsFeat"] = SenzingTypeDef::to_json_data(filtered_obs_feat)
-      data["genericDetect"] = SenzingTypeDef::to_json_data(generic_detect)
-      data["latchContention"] = SenzingTypeDef::to_json_data(latch_contention)
-      data["loadedRecords"] = SenzingTypeDef::to_json_data(loaded_records)
-      data["redoTriggers"] = SenzingTypeDef::to_json_data(redo_triggers)
-      data["reducedScoredFeatureType"] = SenzingTypeDef::to_json_data(reduced_scored_feature_type)
-      data["reevaluations"] = SenzingTypeDef::to_json_data(reevaluations)
-      data["repairedEntities"] = SenzingTypeDef::to_json_data(repaired_entities)
-      data["reresolveSkipped"] = SenzingTypeDef::to_json_data(reresolve_skipped)
-      data["reresolveTriggers"] = SenzingTypeDef::to_json_data(reresolve_triggers)
-      data["retries"] = SenzingTypeDef::to_json_data(retries)
-      data["scoredPairs"] = SenzingTypeDef::to_json_data(scored_pairs)
-      data["suppressedCandidateBuilders"] = SenzingTypeDef::to_json_data(suppressed_candidate_builders)
-      data["suppressedScoredFeatureType"] = SenzingTypeDef::to_json_data(suppressed_scored_feature_type)
-      data["unresolveTest"] = SenzingTypeDef::to_json_data(unresolve_test)
-      data["unresolveTriggers"] = SenzingTypeDef::to_json_data(unresolve_triggers)
-      data["workload"] = SenzingTypeDef::to_json_data(workload)
-      data
-    end
-  end
-
-  # No description.
-  class EngineStreamExportJsonentityReportResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineStreamExportJsonentityReportResponse.new
-      out.value = SenzingTypeDef.from_json_data(Object, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyEntitiesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyEntitiesResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyEntitiesV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyEntitiesV2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyEntityByEntityIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyEntityByEntityIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyEntityByRecordIdresponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyEntityByRecordIdresponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyRecordsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyRecordsResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class EngineWhyRecordsV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EngineWhyRecordsV2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
-  class Entities
+  class EntitiesByFeatureID
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = Entities.new
-      out.value = SenzingTypeDef.from_json_data(Array[Entity], data)
+      out = EntitiesByFeatureID.new
+      out.value = SenzingTypeDef.from_json_data(Array[EntityByFeatureID], data)
       out
     end
 
@@ -4309,17 +1368,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Entity
-    # No description.
     attr_accessor :related_entities
-
-    # No description.
     attr_accessor :resolved_entity
 
     def self.from_json_data(data)
       out = Entity.new
-      out.related_entities = SenzingTypeDef::from_json_data(RelatedEntities, data["RELATED_ENTITIES"])
+      out.related_entities = SenzingTypeDef::from_json_data(Array[RelatedEntity], data["RELATED_ENTITIES"])
       out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
       out
     end
@@ -4332,15 +1387,77 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
+  class EntityByFeatureID
+    attr_accessor :lib_feat_id
+    attr_accessor :res_ent_id
+    attr_accessor :usage_type
+
+    def self.from_json_data(data)
+      out = EntityByFeatureID.new
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
+      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
+      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
+      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
+      data
+    end
+  end
+
+  class EntityBySize
+    attr_accessor :dsrc_code
+    attr_accessor :ent_src_desc
+    attr_accessor :ent_src_key
+    attr_accessor :errule_code
+    attr_accessor :er_id
+    attr_accessor :etype_code
+    attr_accessor :json_data
+    attr_accessor :match_key
+    attr_accessor :obs_ent_id
+    attr_accessor :record_id
+    attr_accessor :res_ent_id
+
+    def self.from_json_data(data)
+      out = EntityBySize.new
+      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
+      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
+      out.ent_src_key = SenzingTypeDef::from_json_data(String, data["ENT_SRC_KEY"])
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.er_id = SenzingTypeDef::from_json_data(Integer, data["ER_ID"])
+      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
+      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
+      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
+      data["ENT_SRC_KEY"] = SenzingTypeDef::to_json_data(ent_src_key)
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["ER_ID"] = SenzingTypeDef::to_json_data(er_id)
+      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
+      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["OBS_ENT_ID"] = SenzingTypeDef::to_json_data(obs_ent_id)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
+      data
+    end
+  end
+
   class EntityPath
-    # No description.
     attr_accessor :end_entity_id
-
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :start_entity_id
 
     def self.from_json_data(data)
@@ -4360,45 +1477,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class EntityPaths
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EntityPaths.new
-      out.value = SenzingTypeDef.from_json_data(Array[EntityPath], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
   class FeatureDescriptionValue
-    # No description.
     attr_accessor :candidate_cap_reached
-
-    # No description.
     attr_accessor :entity_count
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :scoring_cap_reached
-
-    # No description.
     attr_accessor :suppressed
-
-    # No description.
     attr_accessor :used_for_cand
-
-    # No description.
     attr_accessor :used_for_scoring
 
     def self.from_json_data(data)
@@ -4428,39 +1514,16 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class FeatureDescriptionValues
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FeatureDescriptionValues.new
-      out.value = SenzingTypeDef.from_json_data(Array[FeatureDescriptionValue], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
   class FeatureForAttribute
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_desc_values
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
       out = FeatureForAttribute.new
       out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.feat_desc_values = SenzingTypeDef::from_json_data(FeatureDescriptionValues, data["FEAT_DESC_VALUES"])
+      out.feat_desc_values = SenzingTypeDef::from_json_data(Array[FeatureDescriptionValue], data["FEAT_DESC_VALUES"])
       out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
       out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
       out
@@ -4476,48 +1539,20 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureScoreForAttribute
-    # No description.
     attr_accessor :candidate_feat
-
-    # No description.
     attr_accessor :candidate_feat_id
-
-    # No description.
     attr_accessor :candidate_feat_usage_type
-
-    # No description.
     attr_accessor :full_score
-
-    # No description.
     attr_accessor :generation_match
-
-    # No description.
     attr_accessor :gnr_fn
-
-    # No description.
     attr_accessor :gnr_gn
-
-    # No description.
     attr_accessor :gnr_on
-
-    # No description.
     attr_accessor :gnr_sn
-
-    # No description.
     attr_accessor :inbound_feat
-
-    # No description.
     attr_accessor :inbound_feat_id
-
-    # No description.
     attr_accessor :inbound_feat_usage_type
-
-    # No description.
     attr_accessor :score_behavior
-
-    # No description.
     attr_accessor :score_bucket
 
     def self.from_json_data(data)
@@ -4559,300 +1594,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureScores
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -5062,7 +1901,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FeatureScoresForAttribute
     attr_accessor :value
 
@@ -5077,304 +1915,122 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class Features
-    # No description.
+  class FeaturesForAttribute
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = FeaturesForAttribute.new
+      out.value = SenzingTypeDef.from_json_data(Array[FeatureForAttribute], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class FeaturesXxx
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
-      out = Features.new
+      out = FeaturesXxx.new
       out.account_domain = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCOUNT_DOMAIN"])
       out.account_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCOUNT_NUMBER"])
       out.acct_num = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCT_NUM"])
@@ -5580,27 +2236,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class FeaturesForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FeaturesForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(Array[FeatureForAttribute], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
   class FinalState
-    # No description.
     attr_accessor :need_reevaluation
-
-    # No description.
     attr_accessor :virtual_entities
 
     def self.from_json_data(data)
@@ -5618,12 +2255,22 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class FocusRecord
-    # No description.
-    attr_accessor :data_source
+  class FixmeUnknown
+    attr_accessor :value
 
-    # No description.
+    def self.from_json_data(data)
+      out = FixmeUnknown.new
+      out.value = SenzingTypeDef.from_json_data(String, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class FocusRecord
+    attr_accessor :data_source
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -5641,7 +2288,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class FocusRecords
     attr_accessor :value
 
@@ -5656,105 +2302,39 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class G2config
-    # No description.
     attr_accessor :cfg_attr
-
-    # No description.
     attr_accessor :cfg_cfbom
-
-    # No description.
     attr_accessor :cfg_cfcall
-
-    # No description.
     attr_accessor :cfg_cfrtn
-
-    # No description.
     attr_accessor :cfg_cfunc
-
-    # No description.
     attr_accessor :cfg_dfbom
-
-    # No description.
     attr_accessor :cfg_dfcall
-
-    # No description.
     attr_accessor :cfg_dfunc
-
-    # No description.
     attr_accessor :cfg_dsrc
-
-    # No description.
     attr_accessor :cfg_dsrc_interest
-
-    # No description.
     attr_accessor :cfg_ebom
-
-    # No description.
     attr_accessor :cfg_eclass
-
-    # No description.
     attr_accessor :cfg_efbom
-
-    # No description.
     attr_accessor :cfg_efcall
-
-    # No description.
     attr_accessor :cfg_efunc
-
-    # No description.
     attr_accessor :cfg_erfrag
-
-    # No description.
     attr_accessor :cfg_errule
-
-    # No description.
     attr_accessor :cfg_etype
-
-    # No description.
     attr_accessor :cfg_fbom
-
-    # No description.
     attr_accessor :cfg_fbovr
-
-    # No description.
     attr_accessor :cfg_fclass
-
-    # No description.
     attr_accessor :cfg_felem
-
-    # No description.
     attr_accessor :cfg_ftype
-
-    # No description.
     attr_accessor :cfg_generic_threshold
-
-    # No description.
     attr_accessor :cfg_gplan
-
-    # No description.
     attr_accessor :cfg_lens
-
-    # No description.
     attr_accessor :cfg_lensrl
-
-    # No description.
     attr_accessor :cfg_rclass
-
-    # No description.
     attr_accessor :cfg_rtype
-
-    # No description.
     attr_accessor :cfg_sfcall
-
-    # No description.
     attr_accessor :cfg_sfunc
-
-    # No description.
     attr_accessor :config_base_version
-
-    # No description.
     attr_accessor :sys_oom
 
     def self.from_json_data(data)
@@ -5834,9 +2414,2071 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
+  class G2configAddDataSourceResponse
+    attr_accessor :dsrc_id
+
+    def self.from_json_data(data)
+      out = G2configAddDataSourceResponse.new
+      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
+      data
+    end
+  end
+
+  class G2configListDataSourcesResponse
+    attr_accessor :data_sources
+
+    def self.from_json_data(data)
+      out = G2configListDataSourcesResponse.new
+      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
+      data
+    end
+  end
+
+  class G2configSaveResponse
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = G2configSaveResponse.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
+    end
+  end
+
+  class G2configmgrGetConfigListResponse
+    attr_accessor :configs
+
+    def self.from_json_data(data)
+      out = G2configmgrGetConfigListResponse.new
+      out.configs = SenzingTypeDef::from_json_data(Configs, data["CONFIGS"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
+      data
+    end
+  end
+
+  class G2configmgrGetConfigResponse
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = G2configmgrGetConfigResponse.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
+    end
+  end
+
+  class G2diagnosticCheckDbperfResponse
+    attr_accessor :insert_time
+    attr_accessor :num_records_inserted
+
+    def self.from_json_data(data)
+      out = G2diagnosticCheckDbperfResponse.new
+      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
+      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
+      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
+      data
+    end
+  end
+
+  class G2diagnosticFetchNextEntityBySizeResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticFetchNextEntityBySizeResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[EntityBySize], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticFindEntitiesByFeatureIdsResponseXxx0
+    attr_accessor :lib_feat_id
+    attr_accessor :res_ent_id
+    attr_accessor :usage_type
+
+    def self.from_json_data(data)
+      out = G2diagnosticFindEntitiesByFeatureIdsResponseXxx0.new
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
+      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
+      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
+      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
+      data
+    end
+  end
+
+  class G2diagnosticFindEntitiesByFeatureIdsResponseXxx
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticFindEntitiesByFeatureIdsResponseXxx.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticFindEntitiesByFeatureIdsResponseXxx0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetDbinfoResponseDetail
+    attr_accessor :name
+    attr_accessor :type
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetDbinfoResponseDetail.new
+      out.name = SenzingTypeDef::from_json_data(String, data["Name"])
+      out.type = SenzingTypeDef::from_json_data(String, data["Type"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["Name"] = SenzingTypeDef::to_json_data(name)
+      data["Type"] = SenzingTypeDef::to_json_data(type)
+      data
+    end
+  end
+
+  class G2diagnosticGetDbinfoResponse
+    attr_accessor :database_details
+    attr_accessor :hybrid_mode
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetDbinfoResponse.new
+      out.database_details = SenzingTypeDef::from_json_data(Array[G2diagnosticGetDbinfoResponseDetail], data["Database Details"])
+      out.hybrid_mode = SenzingTypeDef::from_json_data(TrueClass, data["Hybrid Mode"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["Database Details"] = SenzingTypeDef::to_json_data(database_details)
+      data["Hybrid Mode"] = SenzingTypeDef::to_json_data(hybrid_mode)
+      data
+    end
+  end
+
+  class G2diagnosticGetDataSourceCountsResponse0
+    attr_accessor :dsrc_code
+    attr_accessor :dsrc_id
+    attr_accessor :dsrc_record_count
+    attr_accessor :etype_code
+    attr_accessor :etype_id
+    attr_accessor :obs_ent_count
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetDataSourceCountsResponse0.new
+      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
+      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
+      out.dsrc_record_count = SenzingTypeDef::from_json_data(Integer, data["DSRC_RECORD_COUNT"])
+      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
+      out.etype_id = SenzingTypeDef::from_json_data(Integer, data["ETYPE_ID"])
+      out.obs_ent_count = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_COUNT"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
+      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
+      data["DSRC_RECORD_COUNT"] = SenzingTypeDef::to_json_data(dsrc_record_count)
+      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
+      data["ETYPE_ID"] = SenzingTypeDef::to_json_data(etype_id)
+      data["OBS_ENT_COUNT"] = SenzingTypeDef::to_json_data(obs_ent_count)
+      data
+    end
+  end
+
+  class G2diagnosticGetDataSourceCountsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetDataSourceCountsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetDataSourceCountsResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetEntityDetailsResponse0
+    attr_accessor :derived
+    attr_accessor :dsrc_code
+    attr_accessor :errule_code
+    attr_accessor :etype_code
+    attr_accessor :feat_desc
+    attr_accessor :ftype_code
+    attr_accessor :match_key
+    attr_accessor :obs_ent_id
+    attr_accessor :record_id
+    attr_accessor :res_ent_id
+    attr_accessor :usage_type
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetEntityDetailsResponse0.new
+      out.derived = SenzingTypeDef::from_json_data(String, data["DERIVED"])
+      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
+      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
+      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
+      out.record_id = SenzingTypeDef::from_json_data(Integer, data["RECORD_ID"])
+      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
+      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DERIVED"] = SenzingTypeDef::to_json_data(derived)
+      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
+      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
+      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["OBS_ENT_ID"] = SenzingTypeDef::to_json_data(obs_ent_id)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
+      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
+      data
+    end
+  end
+
+  class G2diagnosticGetEntityDetailsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetEntityDetailsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetEntityDetailsResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetEntityResumeResponse0
+    attr_accessor :dsrc_code
+    attr_accessor :ent_src_desc
+    attr_accessor :errule_code
+    attr_accessor :etype_code
+    attr_accessor :json_data
+    attr_accessor :match_key
+    attr_accessor :record_id
+    attr_accessor :rel_ent_id
+    attr_accessor :res_ent_id
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetEntityResumeResponse0.new
+      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
+      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
+      out.rel_ent_id = SenzingTypeDef::from_json_data(Integer, data["REL_ENT_ID"])
+      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
+      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
+      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data["REL_ENT_ID"] = SenzingTypeDef::to_json_data(rel_ent_id)
+      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
+      data
+    end
+  end
+
+  class G2diagnosticGetEntityResumeResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetEntityResumeResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetEntityResumeResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetEntitySizeBreakdownResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetEntitySizeBreakdownResponse.new
+      out.value = SenzingTypeDef.from_json_data(AttributeCounters, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetFeatureResponseElements
+    attr_accessor :felem_code
+    attr_accessor :felem_value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetFeatureResponseElements.new
+      out.felem_code = SenzingTypeDef::from_json_data(String, data["FELEM_CODE"])
+      out.felem_value = SenzingTypeDef::from_json_data(String, data["FELEM_VALUE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["FELEM_CODE"] = SenzingTypeDef::to_json_data(felem_code)
+      data["FELEM_VALUE"] = SenzingTypeDef::to_json_data(felem_value)
+      data
+    end
+  end
+
+  class G2diagnosticGetFeatureResponse
+    attr_accessor :elements
+    attr_accessor :ftype_code
+    attr_accessor :lib_feat_id
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetFeatureResponse.new
+      out.elements = SenzingTypeDef::from_json_data(Array[G2diagnosticGetFeatureResponseElements], data["ELEMENTS"])
+      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ELEMENTS"] = SenzingTypeDef::to_json_data(elements)
+      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data
+    end
+  end
+
+  class G2diagnosticGetGenericFeaturesResponse0
+    attr_accessor :candidate_cap_reached
+    attr_accessor :estimated_count
+    attr_accessor :feat_desc
+    attr_accessor :ftype_code
+    attr_accessor :lib_feat_id
+    attr_accessor :scoring_cap_reached
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetGenericFeaturesResponse0.new
+      out.candidate_cap_reached = SenzingTypeDef::from_json_data(String, data["CANDIDATE_CAP_REACHED"])
+      out.estimated_count = SenzingTypeDef::from_json_data(Integer, data["ESTIMATED_COUNT"])
+      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
+      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
+      out.scoring_cap_reached = SenzingTypeDef::from_json_data(String, data["SCORING_CAP_REACHED"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CANDIDATE_CAP_REACHED"] = SenzingTypeDef::to_json_data(candidate_cap_reached)
+      data["ESTIMATED_COUNT"] = SenzingTypeDef::to_json_data(estimated_count)
+      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
+      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data["SCORING_CAP_REACHED"] = SenzingTypeDef::to_json_data(scoring_cap_reached)
+      data
+    end
+  end
+
+  class G2diagnosticGetGenericFeaturesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetGenericFeaturesResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetGenericFeaturesResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetMappingStatisticsResponse0
+    attr_accessor :derived
+    attr_accessor :dsrc_code
+    attr_accessor :etype_code
+    attr_accessor :ftype_code
+    attr_accessor :max_feat_desc
+    attr_accessor :min_feat_desc
+    attr_accessor :rec_count
+    attr_accessor :rec_pct
+    attr_accessor :uniq_count
+    attr_accessor :uniq_pct
+    attr_accessor :usage_type
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetMappingStatisticsResponse0.new
+      out.derived = SenzingTypeDef::from_json_data(String, data["DERIVED"])
+      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
+      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
+      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
+      out.max_feat_desc = SenzingTypeDef::from_json_data(String, data["MAX_FEAT_DESC"])
+      out.min_feat_desc = SenzingTypeDef::from_json_data(String, data["MIN_FEAT_DESC"])
+      out.rec_count = SenzingTypeDef::from_json_data(Integer, data["REC_COUNT"])
+      out.rec_pct = SenzingTypeDef::from_json_data(Float, data["REC_PCT"])
+      out.uniq_count = SenzingTypeDef::from_json_data(Integer, data["UNIQ_COUNT"])
+      out.uniq_pct = SenzingTypeDef::from_json_data(Float, data["UNIQ_PCT"])
+      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DERIVED"] = SenzingTypeDef::to_json_data(derived)
+      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
+      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
+      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
+      data["MAX_FEAT_DESC"] = SenzingTypeDef::to_json_data(max_feat_desc)
+      data["MIN_FEAT_DESC"] = SenzingTypeDef::to_json_data(min_feat_desc)
+      data["REC_COUNT"] = SenzingTypeDef::to_json_data(rec_count)
+      data["REC_PCT"] = SenzingTypeDef::to_json_data(rec_pct)
+      data["UNIQ_COUNT"] = SenzingTypeDef::to_json_data(uniq_count)
+      data["UNIQ_PCT"] = SenzingTypeDef::to_json_data(uniq_pct)
+      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
+      data
+    end
+  end
+
+  class G2diagnosticGetMappingStatisticsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetMappingStatisticsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetMappingStatisticsResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetRelationshipDetailsResponse0
+    attr_accessor :errule_code
+    attr_accessor :feat_desc
+    attr_accessor :ftype_code
+    attr_accessor :match_key
+    attr_accessor :res_ent_id
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetRelationshipDetailsResponse0.new
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
+      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
+      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
+      data
+    end
+  end
+
+  class G2diagnosticGetRelationshipDetailsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetRelationshipDetailsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetRelationshipDetailsResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticGetResolutionStatisticsResponseRawMatchKeys
+    attr_accessor :match_key
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetResolutionStatisticsResponseRawMatchKeys.new
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data
+    end
+  end
+
+  class G2diagnosticGetResolutionStatisticsResponse0
+    attr_accessor :errule_code
+    attr_accessor :errule_id
+    attr_accessor :is_ambiguous
+    attr_accessor :match_key
+    attr_accessor :match_level
+    attr_accessor :max_res_ent_id
+    attr_accessor :max_res_rel_id
+    attr_accessor :min_res_ent_id
+    attr_accessor :min_res_rel_id
+    attr_accessor :raw_match_keys
+    attr_accessor :record_count
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetResolutionStatisticsResponse0.new
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.errule_id = SenzingTypeDef::from_json_data(Integer, data["ERRULE_ID"])
+      out.is_ambiguous = SenzingTypeDef::from_json_data(String, data["IS_AMBIGUOUS"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
+      out.max_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_ENT_ID"])
+      out.max_res_rel_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_REL_ID"])
+      out.min_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_ENT_ID"])
+      out.min_res_rel_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_REL_ID"])
+      out.raw_match_keys = SenzingTypeDef::from_json_data(Array[G2diagnosticGetResolutionStatisticsResponseRawMatchKeys], data["RAW_MATCH_KEYS"])
+      out.record_count = SenzingTypeDef::from_json_data(Integer, data["RECORD_COUNT"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["ERRULE_ID"] = SenzingTypeDef::to_json_data(errule_id)
+      data["IS_AMBIGUOUS"] = SenzingTypeDef::to_json_data(is_ambiguous)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
+      data["MAX_RES_ENT_ID"] = SenzingTypeDef::to_json_data(max_res_ent_id)
+      data["MAX_RES_REL_ID"] = SenzingTypeDef::to_json_data(max_res_rel_id)
+      data["MIN_RES_ENT_ID"] = SenzingTypeDef::to_json_data(min_res_ent_id)
+      data["MIN_RES_REL_ID"] = SenzingTypeDef::to_json_data(min_res_rel_id)
+      data["RAW_MATCH_KEYS"] = SenzingTypeDef::to_json_data(raw_match_keys)
+      data["RECORD_COUNT"] = SenzingTypeDef::to_json_data(record_count)
+      data
+    end
+  end
+
+  class G2diagnosticGetResolutionStatisticsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticGetResolutionStatisticsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetResolutionStatisticsResponse0], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2diagnosticStreamEntityListBySizeResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2diagnosticStreamEntityListBySizeResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineAddRecordWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineAddRecordWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineAddRecordWithInfoWithReturnedRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineAddRecordWithInfoWithReturnedRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineCheckRecordResponseCheckRecordResponse
+    attr_accessor :candidate_match
+    attr_accessor :dsrc_code
+    attr_accessor :errule_code
+    attr_accessor :errule_id
+    attr_accessor :match_key
+    attr_accessor :match_level
+    attr_accessor :match_level_code
+    attr_accessor :non_generic_candidate_match
+    attr_accessor :record_id
+
+    def self.from_json_data(data)
+      out = G2engineCheckRecordResponseCheckRecordResponse.new
+      out.candidate_match = SenzingTypeDef::from_json_data(String, data["CANDIDATE_MATCH"])
+      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.errule_id = SenzingTypeDef::from_json_data(Integer, data["ERRULE_ID"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
+      out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
+      out.non_generic_candidate_match = SenzingTypeDef::from_json_data(String, data["NON_GENERIC_CANDIDATE_MATCH"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CANDIDATE_MATCH"] = SenzingTypeDef::to_json_data(candidate_match)
+      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["ERRULE_ID"] = SenzingTypeDef::to_json_data(errule_id)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
+      data["MATCH_LEVEL_CODE"] = SenzingTypeDef::to_json_data(match_level_code)
+      data["NON_GENERIC_CANDIDATE_MATCH"] = SenzingTypeDef::to_json_data(non_generic_candidate_match)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
+    end
+  end
+
+  class G2engineCheckRecordResponse
+    attr_accessor :check_record_response
+
+    def self.from_json_data(data)
+      out = G2engineCheckRecordResponse.new
+      out.check_record_response = SenzingTypeDef::from_json_data(Array[G2engineCheckRecordResponseCheckRecordResponse], data["CHECK_RECORD_RESPONSE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CHECK_RECORD_RESPONSE"] = SenzingTypeDef::to_json_data(check_record_response)
+      data
+    end
+  end
+
+  class G2engineDeleteRecordWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineDeleteRecordWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineExportConfigAndConfigIDResponse
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = G2engineExportConfigAndConfigIDResponse.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
+    end
+  end
+
+  class G2engineExportConfigResponse
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = G2engineExportConfigResponse.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
+    end
+  end
+
+  class G2engineFetchNextResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFetchNextResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindInterestingEntitiesByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindInterestingEntitiesByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Interesting, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindInterestingEntitiesByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindInterestingEntitiesByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Interesting, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindNetworkByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindNetworkByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindNetworkByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindNetworkByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindNetworkByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindNetworkByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindNetworkByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindNetworkByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathExcludingByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathExcludingByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathExcludingByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathExcludingByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathExcludingByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathExcludingByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathExcludingByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathExcludingByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathIncludingSourceByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathIncludingSourceByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathIncludingSourceByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathIncludingSourceByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathIncludingSourceByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathIncludingSourceByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineFindPathIncludingSourceByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineFindPathIncludingSourceByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetEntityByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetEntityByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetEntityByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetEntityByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(Record, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetRecordV2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetRecordV2response.new
+      out.value = SenzingTypeDef.from_json_data(Record, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetVirtualEntityByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetVirtualEntityByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineGetVirtualEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineGetVirtualEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineHowEntityByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineHowEntityByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(How, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineHowEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineHowEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(How, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineProcessRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineProcessRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineProcessRedoRecordWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineProcessRedoRecordWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineProcessWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineProcessWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineProcessWithResponseResizeResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineProcessWithResponseResizeResponse.new
+      out.value = SenzingTypeDef.from_json_data(Process, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineProcessWithResponseResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineProcessWithResponseResponse.new
+      out.value = SenzingTypeDef.from_json_data(Process, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineReevaluateEntityWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineReevaluateEntityWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineReevaluateRecordWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineReevaluateRecordWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineReplaceRecordWithInfoResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineReplaceRecordWithInfoResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineSearchByAttributesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineSearchByAttributesResponse.new
+      out.value = SenzingTypeDef.from_json_data(Search, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineSearchByAttributesResponseXxx
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineSearchByAttributesResponseXxx.new
+      out.value = SenzingTypeDef.from_json_data(EntitiesByFeatureID, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineSearchByAttributesV2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineSearchByAttributesV2response.new
+      out.value = SenzingTypeDef.from_json_data(Search, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineSearchByAttributesV3response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineSearchByAttributesV3response.new
+      out.value = SenzingTypeDef.from_json_data(Search, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineStatsResponseDuration
+    attr_accessor :pattern
+    attr_accessor :type
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseDuration.new
+      out.pattern = SenzingTypeDef::from_json_data(String, data["PATTERN"])
+      out.type = SenzingTypeDef::from_json_data(String, data["TYPE"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["PATTERN"] = SenzingTypeDef::to_json_data(pattern)
+      data["TYPE"] = SenzingTypeDef::to_json_data(type)
+      data
+    end
+  end
+
+  class G2engineStatsResponseReresolveTriggers
+    attr_accessor :abort_retry
+    attr_accessor :multiple_resolvable_candidates
+    attr_accessor :resolve_new_features
+    attr_accessor :unresolve_movement
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseReresolveTriggers.new
+      out.abort_retry = SenzingTypeDef::from_json_data(Integer, data["abortRetry"])
+      out.multiple_resolvable_candidates = SenzingTypeDef::from_json_data(Integer, data["multipleResolvableCandidates"])
+      out.resolve_new_features = SenzingTypeDef::from_json_data(Integer, data["resolveNewFeatures"])
+      out.unresolve_movement = SenzingTypeDef::from_json_data(Integer, data["unresolveMovement"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["abortRetry"] = SenzingTypeDef::to_json_data(abort_retry)
+      data["multipleResolvableCandidates"] = SenzingTypeDef::to_json_data(multiple_resolvable_candidates)
+      data["resolveNewFeatures"] = SenzingTypeDef::to_json_data(resolve_new_features)
+      data["unresolveMovement"] = SenzingTypeDef::to_json_data(unresolve_movement)
+      data
+    end
+  end
+
+  class G2engineStatsResponseUnresolveTriggers
+    attr_accessor :extensive_resolve
+    attr_accessor :normal_resolve
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseUnresolveTriggers.new
+      out.extensive_resolve = SenzingTypeDef::from_json_data(Integer, data["extensiveResolve"])
+      out.normal_resolve = SenzingTypeDef::from_json_data(Integer, data["normalResolve"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["extensiveResolve"] = SenzingTypeDef::to_json_data(extensive_resolve)
+      data["normalResolve"] = SenzingTypeDef::to_json_data(normal_resolve)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadExpressedFeatureCall
+    attr_accessor :efcall_id
+    attr_accessor :efunc_code
+    attr_accessor :num_calls
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadExpressedFeatureCall.new
+      out.efcall_id = SenzingTypeDef::from_json_data(Integer, data["EFCALL_ID"])
+      out.efunc_code = SenzingTypeDef::from_json_data(String, data["EFUNC_CODE"])
+      out.num_calls = SenzingTypeDef::from_json_data(Integer, data["numCalls"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["EFCALL_ID"] = SenzingTypeDef::to_json_data(efcall_id)
+      data["EFUNC_CODE"] = SenzingTypeDef::to_json_data(efunc_code)
+      data["numCalls"] = SenzingTypeDef::to_json_data(num_calls)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadReresolveTriggers
+    attr_accessor :abort_retry
+    attr_accessor :multiple_resolvable_candidates
+    attr_accessor :new_feature_ftypes
+    attr_accessor :resolve_new_features
+    attr_accessor :unresolve_movement
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadReresolveTriggers.new
+      out.abort_retry = SenzingTypeDef::from_json_data(Integer, data["abortRetry"])
+      out.multiple_resolvable_candidates = SenzingTypeDef::from_json_data(Integer, data["multipleResolvableCandidates"])
+      out.new_feature_ftypes = SenzingTypeDef::from_json_data(AttributeCounters, data["newFeatureFTypes"])
+      out.resolve_new_features = SenzingTypeDef::from_json_data(Integer, data["resolveNewFeatures"])
+      out.unresolve_movement = SenzingTypeDef::from_json_data(Integer, data["unresolveMovement"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["abortRetry"] = SenzingTypeDef::to_json_data(abort_retry)
+      data["multipleResolvableCandidates"] = SenzingTypeDef::to_json_data(multiple_resolvable_candidates)
+      data["newFeatureFTypes"] = SenzingTypeDef::to_json_data(new_feature_ftypes)
+      data["resolveNewFeatures"] = SenzingTypeDef::to_json_data(resolve_new_features)
+      data["unresolveMovement"] = SenzingTypeDef::to_json_data(unresolve_movement)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad
+    attr_accessor :cpu_idle
+    attr_accessor :cpu_soft_irq
+    attr_accessor :cpu_system
+    attr_accessor :cpu_user
+    attr_accessor :cpu_wait
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad.new
+      out.cpu_idle = SenzingTypeDef::from_json_data(Float, data["cpuIdle"])
+      out.cpu_soft_irq = SenzingTypeDef::from_json_data(Float, data["cpuSoftIrq"])
+      out.cpu_system = SenzingTypeDef::from_json_data(Float, data["cpuSystem"])
+      out.cpu_user = SenzingTypeDef::from_json_data(Float, data["cpuUser"])
+      out.cpu_wait = SenzingTypeDef::from_json_data(Float, data["cpuWait"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["cpuIdle"] = SenzingTypeDef::to_json_data(cpu_idle)
+      data["cpuSoftIrq"] = SenzingTypeDef::to_json_data(cpu_soft_irq)
+      data["cpuSystem"] = SenzingTypeDef::to_json_data(cpu_system)
+      data["cpuUser"] = SenzingTypeDef::to_json_data(cpu_user)
+      data["cpuWait"] = SenzingTypeDef::to_json_data(cpu_wait)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadSystemResourcesCurrResource
+    attr_accessor :active_threads
+    attr_accessor :available_memory
+    attr_accessor :system_load
+    attr_accessor :worker_threads
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadSystemResourcesCurrResource.new
+      out.active_threads = SenzingTypeDef::from_json_data(Integer, data["activeThreads"])
+      out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
+      out.system_load = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad], data["systemLoad"])
+      out.worker_threads = SenzingTypeDef::from_json_data(Integer, data["workerThreads"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["activeThreads"] = SenzingTypeDef::to_json_data(active_threads)
+      data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
+      data["systemLoad"] = SenzingTypeDef::to_json_data(system_load)
+      data["workerThreads"] = SenzingTypeDef::to_json_data(worker_threads)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadSystemResourcesInitResource
+    attr_accessor :available_memory
+    attr_accessor :logical_cores
+    attr_accessor :physical_cores
+    attr_accessor :total_memory
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadSystemResourcesInitResource.new
+      out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
+      out.logical_cores = SenzingTypeDef::from_json_data(Integer, data["logicalCores"])
+      out.physical_cores = SenzingTypeDef::from_json_data(Integer, data["physicalCores"])
+      out.total_memory = SenzingTypeDef::from_json_data(String, data["totalMemory"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
+      data["logicalCores"] = SenzingTypeDef::to_json_data(logical_cores)
+      data["physicalCores"] = SenzingTypeDef::to_json_data(physical_cores)
+      data["totalMemory"] = SenzingTypeDef::to_json_data(total_memory)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadSystemResources
+    attr_accessor :curr_resources
+    attr_accessor :init_resources
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadSystemResources.new
+      out.curr_resources = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadSystemResourcesCurrResource], data["currResources"])
+      out.init_resources = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadSystemResourcesInitResource], data["initResources"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["currResources"] = SenzingTypeDef::to_json_data(curr_resources)
+      data["initResources"] = SenzingTypeDef::to_json_data(init_resources)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadThreadState
+    attr_accessor :active
+    attr_accessor :data_latch_contention
+    attr_accessor :idle
+    attr_accessor :loader
+    attr_accessor :obs_ent_contention
+    attr_accessor :res_ent_contention
+    attr_accessor :resolver
+    attr_accessor :scoring
+    attr_accessor :sql_executing
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadThreadState.new
+      out.active = SenzingTypeDef::from_json_data(Integer, data["active"])
+      out.data_latch_contention = SenzingTypeDef::from_json_data(Integer, data["dataLatchContention"])
+      out.idle = SenzingTypeDef::from_json_data(Integer, data["idle"])
+      out.loader = SenzingTypeDef::from_json_data(Integer, data["loader"])
+      out.obs_ent_contention = SenzingTypeDef::from_json_data(Integer, data["obsEntContention"])
+      out.res_ent_contention = SenzingTypeDef::from_json_data(Integer, data["resEntContention"])
+      out.resolver = SenzingTypeDef::from_json_data(Integer, data["resolver"])
+      out.scoring = SenzingTypeDef::from_json_data(Integer, data["scoring"])
+      out.sql_executing = SenzingTypeDef::from_json_data(Integer, data["sqlExecuting"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["active"] = SenzingTypeDef::to_json_data(active)
+      data["dataLatchContention"] = SenzingTypeDef::to_json_data(data_latch_contention)
+      data["idle"] = SenzingTypeDef::to_json_data(idle)
+      data["loader"] = SenzingTypeDef::to_json_data(loader)
+      data["obsEntContention"] = SenzingTypeDef::to_json_data(obs_ent_contention)
+      data["resEntContention"] = SenzingTypeDef::to_json_data(res_ent_contention)
+      data["resolver"] = SenzingTypeDef::to_json_data(resolver)
+      data["scoring"] = SenzingTypeDef::to_json_data(scoring)
+      data["sqlExecuting"] = SenzingTypeDef::to_json_data(sql_executing)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkloadUnresolveTriggers
+    attr_accessor :ambiguous_multi_resolve
+    attr_accessor :ambiguous_no_resolve
+    attr_accessor :extensive_resolve
+    attr_accessor :normal_resolve
+    attr_accessor :rel_link
+    attr_accessor :update
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkloadUnresolveTriggers.new
+      out.ambiguous_multi_resolve = SenzingTypeDef::from_json_data(Integer, data["ambiguousMultiResolve"])
+      out.ambiguous_no_resolve = SenzingTypeDef::from_json_data(Integer, data["ambiguousNoResolve"])
+      out.extensive_resolve = SenzingTypeDef::from_json_data(Integer, data["extensiveResolve"])
+      out.normal_resolve = SenzingTypeDef::from_json_data(Integer, data["normalResolve"])
+      out.rel_link = SenzingTypeDef::from_json_data(Integer, data["relLink"])
+      out.update = SenzingTypeDef::from_json_data(Integer, data["update"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ambiguousMultiResolve"] = SenzingTypeDef::to_json_data(ambiguous_multi_resolve)
+      data["ambiguousNoResolve"] = SenzingTypeDef::to_json_data(ambiguous_no_resolve)
+      data["extensiveResolve"] = SenzingTypeDef::to_json_data(extensive_resolve)
+      data["normalResolve"] = SenzingTypeDef::to_json_data(normal_resolve)
+      data["relLink"] = SenzingTypeDef::to_json_data(rel_link)
+      data["update"] = SenzingTypeDef::to_json_data(update)
+      data
+    end
+  end
+
+  class G2engineStatsResponseWorkload
+    attr_accessor :corrupt_entity_test_diagnosis
+    attr_accessor :aborted_unresolve
+    attr_accessor :actual_ambiguous_test
+    attr_accessor :added_records
+    attr_accessor :api_version
+    attr_accessor :cache_hit
+    attr_accessor :cache_miss
+    attr_accessor :cached_ambiguous_test
+    attr_accessor :candidate_builders
+    attr_accessor :candidates
+    attr_accessor :deleted_records
+    attr_accessor :duration
+    attr_accessor :expressed_feature_calls
+    attr_accessor :expressed_features_created
+    attr_accessor :filtered_obs_feat
+    attr_accessor :generic_detect
+    attr_accessor :gnr_scorers_used
+    attr_accessor :high_contention_feat
+    attr_accessor :high_contention_res_ent
+    attr_accessor :latch_contention
+    attr_accessor :lib_feat_cache_hit
+    attr_accessor :lib_feat_cache_miss
+    attr_accessor :loaded_records
+    attr_accessor :redo_triggers
+    attr_accessor :reduced_scored_feature_type
+    attr_accessor :reevaluations
+    attr_accessor :repaired_entities
+    attr_accessor :reresolve_skipped
+    attr_accessor :reresolve_triggers
+    attr_accessor :res_feat_stat_cache_hit
+    attr_accessor :res_feat_stat_cache_miss
+    attr_accessor :res_feat_stat_update
+    attr_accessor :retries
+    attr_accessor :scored_pairs
+    attr_accessor :suppressed_candidate_builders
+    attr_accessor :suppressed_disclosed_relationship_domain_count
+    attr_accessor :suppressed_scored_feature_type
+    attr_accessor :system_resources
+    attr_accessor :thread_state
+    attr_accessor :unresolve_test
+    attr_accessor :unresolve_triggers
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponseWorkload.new
+      out.corrupt_entity_test_diagnosis = SenzingTypeDef::from_json_data(FixmeUnknown, data["CorruptEntityTestDiagnosis"])
+      out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
+      out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
+      out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
+      out.api_version = SenzingTypeDef::from_json_data(String, data["apiVersion"])
+      out.cache_hit = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheHit"])
+      out.cache_miss = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheMiss"])
+      out.cached_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["cachedAmbiguousTest"])
+      out.candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["candidateBuilders"])
+      out.candidates = SenzingTypeDef::from_json_data(Integer, data["candidates"])
+      out.deleted_records = SenzingTypeDef::from_json_data(Integer, data["deletedRecords"])
+      out.duration = SenzingTypeDef::from_json_data(Integer, data["duration"])
+      out.expressed_feature_calls = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadExpressedFeatureCall], data["expressedFeatureCalls"])
+      out.expressed_features_created = SenzingTypeDef::from_json_data(AttributeCounters, data["expressedFeaturesCreated"])
+      out.filtered_obs_feat = SenzingTypeDef::from_json_data(Integer, data["filteredObsFeat"])
+      out.generic_detect = SenzingTypeDef::from_json_data(AttributeCounters, data["genericDetect"])
+      out.gnr_scorers_used = SenzingTypeDef::from_json_data(Integer, data["gnrScorersUsed"])
+      out.high_contention_feat = SenzingTypeDef::from_json_data(AttributeCounters, data["highContentionFeat"])
+      out.high_contention_res_ent = SenzingTypeDef::from_json_data(AttributeCounters, data["highContentionResEnt"])
+      out.latch_contention = SenzingTypeDef::from_json_data(AttributeCounters, data["latchContention"])
+      out.lib_feat_cache_hit = SenzingTypeDef::from_json_data(Integer, data["libFeatCacheHit"])
+      out.lib_feat_cache_miss = SenzingTypeDef::from_json_data(Integer, data["libFeatCacheMiss"])
+      out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
+      out.redo_triggers = SenzingTypeDef::from_json_data(AttributeCounters, data["redoTriggers"])
+      out.reduced_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["reducedScoredFeatureType"])
+      out.reevaluations = SenzingTypeDef::from_json_data(Integer, data["reevaluations"])
+      out.repaired_entities = SenzingTypeDef::from_json_data(Integer, data["repairedEntities"])
+      out.reresolve_skipped = SenzingTypeDef::from_json_data(Integer, data["reresolveSkipped"])
+      out.reresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadReresolveTriggers, data["reresolveTriggers"])
+      out.res_feat_stat_cache_hit = SenzingTypeDef::from_json_data(Integer, data["resFeatStatCacheHit"])
+      out.res_feat_stat_cache_miss = SenzingTypeDef::from_json_data(Integer, data["resFeatStatCacheMiss"])
+      out.res_feat_stat_update = SenzingTypeDef::from_json_data(Integer, data["resFeatStatUpdate"])
+      out.retries = SenzingTypeDef::from_json_data(Integer, data["retries"])
+      out.scored_pairs = SenzingTypeDef::from_json_data(AttributeCounters, data["scoredPairs"])
+      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedCandidateBuilders"])
+      out.suppressed_disclosed_relationship_domain_count = SenzingTypeDef::from_json_data(Integer, data["suppressedDisclosedRelationshipDomainCount"])
+      out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedScoredFeatureType"])
+      out.system_resources = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadSystemResources, data["systemResources"])
+      out.thread_state = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadThreadState, data["threadState"])
+      out.unresolve_test = SenzingTypeDef::from_json_data(Integer, data["unresolveTest"])
+      out.unresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadUnresolveTriggers, data["unresolveTriggers"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CorruptEntityTestDiagnosis"] = SenzingTypeDef::to_json_data(corrupt_entity_test_diagnosis)
+      data["abortedUnresolve"] = SenzingTypeDef::to_json_data(aborted_unresolve)
+      data["actualAmbiguousTest"] = SenzingTypeDef::to_json_data(actual_ambiguous_test)
+      data["addedRecords"] = SenzingTypeDef::to_json_data(added_records)
+      data["apiVersion"] = SenzingTypeDef::to_json_data(api_version)
+      data["cacheHit"] = SenzingTypeDef::to_json_data(cache_hit)
+      data["cacheMiss"] = SenzingTypeDef::to_json_data(cache_miss)
+      data["cachedAmbiguousTest"] = SenzingTypeDef::to_json_data(cached_ambiguous_test)
+      data["candidateBuilders"] = SenzingTypeDef::to_json_data(candidate_builders)
+      data["candidates"] = SenzingTypeDef::to_json_data(candidates)
+      data["deletedRecords"] = SenzingTypeDef::to_json_data(deleted_records)
+      data["duration"] = SenzingTypeDef::to_json_data(duration)
+      data["expressedFeatureCalls"] = SenzingTypeDef::to_json_data(expressed_feature_calls)
+      data["expressedFeaturesCreated"] = SenzingTypeDef::to_json_data(expressed_features_created)
+      data["filteredObsFeat"] = SenzingTypeDef::to_json_data(filtered_obs_feat)
+      data["genericDetect"] = SenzingTypeDef::to_json_data(generic_detect)
+      data["gnrScorersUsed"] = SenzingTypeDef::to_json_data(gnr_scorers_used)
+      data["highContentionFeat"] = SenzingTypeDef::to_json_data(high_contention_feat)
+      data["highContentionResEnt"] = SenzingTypeDef::to_json_data(high_contention_res_ent)
+      data["latchContention"] = SenzingTypeDef::to_json_data(latch_contention)
+      data["libFeatCacheHit"] = SenzingTypeDef::to_json_data(lib_feat_cache_hit)
+      data["libFeatCacheMiss"] = SenzingTypeDef::to_json_data(lib_feat_cache_miss)
+      data["loadedRecords"] = SenzingTypeDef::to_json_data(loaded_records)
+      data["redoTriggers"] = SenzingTypeDef::to_json_data(redo_triggers)
+      data["reducedScoredFeatureType"] = SenzingTypeDef::to_json_data(reduced_scored_feature_type)
+      data["reevaluations"] = SenzingTypeDef::to_json_data(reevaluations)
+      data["repairedEntities"] = SenzingTypeDef::to_json_data(repaired_entities)
+      data["reresolveSkipped"] = SenzingTypeDef::to_json_data(reresolve_skipped)
+      data["reresolveTriggers"] = SenzingTypeDef::to_json_data(reresolve_triggers)
+      data["resFeatStatCacheHit"] = SenzingTypeDef::to_json_data(res_feat_stat_cache_hit)
+      data["resFeatStatCacheMiss"] = SenzingTypeDef::to_json_data(res_feat_stat_cache_miss)
+      data["resFeatStatUpdate"] = SenzingTypeDef::to_json_data(res_feat_stat_update)
+      data["retries"] = SenzingTypeDef::to_json_data(retries)
+      data["scoredPairs"] = SenzingTypeDef::to_json_data(scored_pairs)
+      data["suppressedCandidateBuilders"] = SenzingTypeDef::to_json_data(suppressed_candidate_builders)
+      data["suppressedDisclosedRelationshipDomainCount"] = SenzingTypeDef::to_json_data(suppressed_disclosed_relationship_domain_count)
+      data["suppressedScoredFeatureType"] = SenzingTypeDef::to_json_data(suppressed_scored_feature_type)
+      data["systemResources"] = SenzingTypeDef::to_json_data(system_resources)
+      data["threadState"] = SenzingTypeDef::to_json_data(thread_state)
+      data["unresolveTest"] = SenzingTypeDef::to_json_data(unresolve_test)
+      data["unresolveTriggers"] = SenzingTypeDef::to_json_data(unresolve_triggers)
+      data
+    end
+  end
+
+  class G2engineStatsResponse
+    attr_accessor :missing_res_ent
+    attr_accessor :missing_res_ent_and_okey
+    attr_accessor :aborted_unresolve
+    attr_accessor :actual_ambiguous_test
+    attr_accessor :added_records
+    attr_accessor :cache_hit
+    attr_accessor :candidate_builders
+    attr_accessor :candidates
+    attr_accessor :deleted_records
+    attr_accessor :duration
+    attr_accessor :filtered_obs_feat
+    attr_accessor :generic_detect
+    attr_accessor :latch_contention
+    attr_accessor :loaded_records
+    attr_accessor :redo_triggers
+    attr_accessor :reduced_scored_feature_type
+    attr_accessor :reevaluations
+    attr_accessor :repaired_entities
+    attr_accessor :reresolve_skipped
+    attr_accessor :reresolve_triggers
+    attr_accessor :retries
+    attr_accessor :scored_pairs
+    attr_accessor :suppressed_candidate_builders
+    attr_accessor :suppressed_scored_feature_type
+    attr_accessor :unresolve_test
+    attr_accessor :unresolve_triggers
+    attr_accessor :workload
+
+    def self.from_json_data(data)
+      out = G2engineStatsResponse.new
+      out.missing_res_ent = SenzingTypeDef::from_json_data(Integer, data["MISSING_RES_ENT"])
+      out.missing_res_ent_and_okey = SenzingTypeDef::from_json_data(Integer, data["MISSING_RES_ENT_AND_OKEY"])
+      out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
+      out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
+      out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
+      out.cache_hit = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheHit"])
+      out.candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["candidateBuilders"])
+      out.candidates = SenzingTypeDef::from_json_data(Integer, data["candidates"])
+      out.deleted_records = SenzingTypeDef::from_json_data(Integer, data["deletedRecords"])
+      out.duration = SenzingTypeDef::from_json_data(G2engineStatsResponseDuration, data["duration"])
+      out.filtered_obs_feat = SenzingTypeDef::from_json_data(Integer, data["filteredObsFeat"])
+      out.generic_detect = SenzingTypeDef::from_json_data(AttributeCounters, data["genericDetect"])
+      out.latch_contention = SenzingTypeDef::from_json_data(AttributeCounters, data["latchContention"])
+      out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
+      out.redo_triggers = SenzingTypeDef::from_json_data(AttributeCounters, data["redoTriggers"])
+      out.reduced_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["reducedScoredFeatureType"])
+      out.reevaluations = SenzingTypeDef::from_json_data(Integer, data["reevaluations"])
+      out.repaired_entities = SenzingTypeDef::from_json_data(Integer, data["repairedEntities"])
+      out.reresolve_skipped = SenzingTypeDef::from_json_data(Integer, data["reresolveSkipped"])
+      out.reresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseReresolveTriggers, data["reresolveTriggers"])
+      out.retries = SenzingTypeDef::from_json_data(Integer, data["retries"])
+      out.scored_pairs = SenzingTypeDef::from_json_data(AttributeCounters, data["scoredPairs"])
+      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedCandidateBuilders"])
+      out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedScoredFeatureType"])
+      out.unresolve_test = SenzingTypeDef::from_json_data(Integer, data["unresolveTest"])
+      out.unresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseUnresolveTriggers, data["unresolveTriggers"])
+      out.workload = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkload, data["workload"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["MISSING_RES_ENT"] = SenzingTypeDef::to_json_data(missing_res_ent)
+      data["MISSING_RES_ENT_AND_OKEY"] = SenzingTypeDef::to_json_data(missing_res_ent_and_okey)
+      data["abortedUnresolve"] = SenzingTypeDef::to_json_data(aborted_unresolve)
+      data["actualAmbiguousTest"] = SenzingTypeDef::to_json_data(actual_ambiguous_test)
+      data["addedRecords"] = SenzingTypeDef::to_json_data(added_records)
+      data["cacheHit"] = SenzingTypeDef::to_json_data(cache_hit)
+      data["candidateBuilders"] = SenzingTypeDef::to_json_data(candidate_builders)
+      data["candidates"] = SenzingTypeDef::to_json_data(candidates)
+      data["deletedRecords"] = SenzingTypeDef::to_json_data(deleted_records)
+      data["duration"] = SenzingTypeDef::to_json_data(duration)
+      data["filteredObsFeat"] = SenzingTypeDef::to_json_data(filtered_obs_feat)
+      data["genericDetect"] = SenzingTypeDef::to_json_data(generic_detect)
+      data["latchContention"] = SenzingTypeDef::to_json_data(latch_contention)
+      data["loadedRecords"] = SenzingTypeDef::to_json_data(loaded_records)
+      data["redoTriggers"] = SenzingTypeDef::to_json_data(redo_triggers)
+      data["reducedScoredFeatureType"] = SenzingTypeDef::to_json_data(reduced_scored_feature_type)
+      data["reevaluations"] = SenzingTypeDef::to_json_data(reevaluations)
+      data["repairedEntities"] = SenzingTypeDef::to_json_data(repaired_entities)
+      data["reresolveSkipped"] = SenzingTypeDef::to_json_data(reresolve_skipped)
+      data["reresolveTriggers"] = SenzingTypeDef::to_json_data(reresolve_triggers)
+      data["retries"] = SenzingTypeDef::to_json_data(retries)
+      data["scoredPairs"] = SenzingTypeDef::to_json_data(scored_pairs)
+      data["suppressedCandidateBuilders"] = SenzingTypeDef::to_json_data(suppressed_candidate_builders)
+      data["suppressedScoredFeatureType"] = SenzingTypeDef::to_json_data(suppressed_scored_feature_type)
+      data["unresolveTest"] = SenzingTypeDef::to_json_data(unresolve_test)
+      data["unresolveTriggers"] = SenzingTypeDef::to_json_data(unresolve_triggers)
+      data["workload"] = SenzingTypeDef::to_json_data(workload)
+      data
+    end
+  end
+
+  class G2engineStreamExportJsonentityReportResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineStreamExportJsonentityReportResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyEntitiesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyEntitiesResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyEntitiesV2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyEntitiesV2response.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyEntityByEntityIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyEntityByEntityIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyEntityByRecordIdv2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyEntityByRecordIdv2response.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyRecordsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyRecordsResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2engineWhyRecordsV2response
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = G2engineWhyRecordsV2response.new
+      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class G2productLicenseResponse
+    attr_accessor :billing
+    attr_accessor :contract
+    attr_accessor :customer
+    attr_accessor :expire_date
+    attr_accessor :issue_date
+    attr_accessor :license_level
+    attr_accessor :license_type
+    attr_accessor :record_limit
+
+    def self.from_json_data(data)
+      out = G2productLicenseResponse.new
+      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
+      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
+      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
+      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
+      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
+      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
+      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
+      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["billing"] = SenzingTypeDef::to_json_data(billing)
+      data["contract"] = SenzingTypeDef::to_json_data(contract)
+      data["customer"] = SenzingTypeDef::to_json_data(customer)
+      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
+      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
+      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
+      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
+      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
+      data
+    end
+  end
+
+  class G2productVersionResponse
+    attr_accessor :build_date
+    attr_accessor :build_number
+    attr_accessor :build_version
+    attr_accessor :compatibility_version
+    attr_accessor :product_name
+    attr_accessor :schema_version
+    attr_accessor :version
+
+    def self.from_json_data(data)
+      out = G2productVersionResponse.new
+      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
+      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
+      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
+      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
+      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
+      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
+      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
+      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
+      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
+      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
+      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
+      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
+      data["VERSION"] = SenzingTypeDef::to_json_data(version)
+      data
+    end
+  end
+
   class How
-    # No description.
     attr_accessor :how_results
 
     def self.from_json_data(data)
@@ -5852,12 +4494,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class HowResults
-    # No description.
     attr_accessor :final_state
-
-    # No description.
     attr_accessor :resolution_steps
 
     def self.from_json_data(data)
@@ -5875,9 +4513,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Interesting
-    # No description.
     attr_accessor :interesting_entities
 
     def self.from_json_data(data)
@@ -5893,12 +4529,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class InterestingEntities
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :notices
 
     def self.from_json_data(data)
@@ -5917,13 +4549,8 @@ module SenzingTypeDef
   end
 
   class InterestingEntitySampleRecords
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :flags
-
-    # No description.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -5943,18 +4570,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class InterestingEntity
-    # No description.
     attr_accessor :degrees
-
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :flags
-
-    # No description.
     attr_accessor :sample_records
 
     def self.from_json_data(data)
@@ -5976,15 +4595,12 @@ module SenzingTypeDef
     end
   end
 
-  class JSONDataAcctNum
-    # No description.
+  class JSONDataXxxAcctNum
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
 
     def self.from_json_data(data)
-      out = JSONDataAcctNum.new
+      out = JSONDataXxxAcctNum.new
       out.account_domain = SenzingTypeDef::from_json_data(String, data["ACCOUNT_DOMAIN"])
       out.account_number = SenzingTypeDef::from_json_data(String, data["ACCOUNT_NUMBER"])
       out
@@ -5998,15 +4614,12 @@ module SenzingTypeDef
     end
   end
 
-  class JSONDataSsn
-    # No description.
+  class JSONDataXxxSsn
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :ssn_number
 
     def self.from_json_data(data)
-      out = JSONDataSsn.new
+      out = JSONDataXxxSsn.new
       out.passport_number = SenzingTypeDef::from_json_data(String, data["PASSPORT_NUMBER"])
       out.ssn_number = SenzingTypeDef::from_json_data(String, data["SSN_NUMBER"])
       out
@@ -6020,12 +4633,11 @@ module SenzingTypeDef
     end
   end
 
-  class JSONDataSsnLast4
-    # No description.
+  class JSONDataXxxSsnLast4
     attr_accessor :ssn_last4
 
     def self.from_json_data(data)
-      out = JSONDataSsnLast4.new
+      out = JSONDataXxxSsnLast4.new
       out.ssn_last4 = SenzingTypeDef::from_json_data(Integer, data["SSN_LAST4"])
       out
     end
@@ -6037,334 +4649,120 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class JSONData
-    # No description.
+  class JSONDataXxx
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :dsrc_action
-
-    # No description.
     attr_accessor :dsrc_code
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :ent_src_desc
-
-    # No description.
     attr_accessor :ent_src_key
-
-    # No description.
     attr_accessor :etype_code
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :obs_src_key
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :relationships
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
-
-    # No description.
     attr_accessor :name0
 
     def self.from_json_data(data)
-      out = JSONData.new
+      out = JSONDataXxx.new
       out.account_domain = SenzingTypeDef::from_json_data(String, data["ACCOUNT_DOMAIN"])
       out.account_number = SenzingTypeDef::from_json_data(String, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(Array[JSONDataAcctNum], data["ACCT_NUM"])
+      out.acct_num = SenzingTypeDef::from_json_data(Array[JSONDataXxxAcctNum], data["ACCT_NUM"])
       out.address = SenzingTypeDef::from_json_data(String, data["ADDRESS"])
       out.address_list = SenzingTypeDef::from_json_data(Addresses, data["ADDRESS_LIST"])
       out.addr_full = SenzingTypeDef::from_json_data(String, data["ADDR_FULL"])
@@ -6451,8 +4849,8 @@ module SenzingTypeDef
       out.social_handle = SenzingTypeDef::from_json_data(String, data["SOCIAL_HANDLE"])
       out.social_network = SenzingTypeDef::from_json_data(String, data["SOCIAL_NETWORK"])
       out.source_id = SenzingTypeDef::from_json_data(String, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(Array[JSONDataSsn], data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(Array[JSONDataSsnLast4], data["SSN_LAST4"])
+      out.ssn = SenzingTypeDef::from_json_data(Array[JSONDataXxxSsn], data["SSN"])
+      out.ssn_last4 = SenzingTypeDef::from_json_data(Array[JSONDataXxxSsnLast4], data["SSN_LAST4"])
       out.ssn_number = SenzingTypeDef::from_json_data(String, data["SSN_NUMBER"])
       out.tango = SenzingTypeDef::from_json_data(String, data["TANGO"])
       out.tax_id_country = SenzingTypeDef::from_json_data(String, data["TAX_ID_COUNTRY"])
@@ -6586,25 +4984,12 @@ module SenzingTypeDef
   end
 
   class MatchInfoDisclosedRelationsRelAnchor
-    # No description.
     attr_accessor :domain
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
-
-    # No description.
     attr_accessor :linked_feat_desc
-
-    # No description.
     attr_accessor :linked_feat_id
-
-    # No description.
     attr_accessor :linked_feat_type
-
-    # No description.
     attr_accessor :linked_feat_usage_type
 
     def self.from_json_data(data)
@@ -6633,28 +5018,13 @@ module SenzingTypeDef
   end
 
   class MatchInfoDisclosedRelationsRelLink
-    # No description.
     attr_accessor :domain
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
-
-    # No description.
     attr_accessor :feat_usage_type
-
-    # No description.
     attr_accessor :linked_feat_desc
-
-    # No description.
     attr_accessor :linked_feat_id
-
-    # No description.
     attr_accessor :linked_feat_type
-
-    # No description.
     attr_accessor :linked_feat_usage_type
 
     def self.from_json_data(data)
@@ -6685,25 +5055,12 @@ module SenzingTypeDef
   end
 
   class MatchInfoDisclosedRelationsRelPointer
-    # No description.
     attr_accessor :domain
-
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
-
-    # No description.
     attr_accessor :feat_usage_type
-
-    # No description.
     attr_accessor :linked_feat_desc
-
-    # No description.
     attr_accessor :linked_feat_id
-
-    # No description.
     attr_accessor :linked_feat_type
 
     def self.from_json_data(data)
@@ -6731,15 +5088,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfoDisclosedRelations
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
 
     def self.from_json_data(data)
@@ -6759,33 +5110,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfo
-    # No description.
     attr_accessor :candidate_keys
-
-    # No description.
     attr_accessor :disclosed_relations
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :feature_scores
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :why_errule_code
-
-    # No description.
     attr_accessor :why_key
 
     def self.from_json_data(data)
@@ -6817,300 +5150,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfoCandidateKeys
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -7320,12 +5457,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfoForAttribute
-    # No description.
     attr_accessor :feat_desc
-
-    # No description.
     attr_accessor :feat_id
 
     def self.from_json_data(data)
@@ -7343,7 +5476,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchInfosForAttribute
     attr_accessor :value
 
@@ -7358,30 +5490,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchScoreForAttribute
-    # No description.
     attr_accessor :candidate_feat
-
-    # No description.
     attr_accessor :full_score
-
-    # No description.
     attr_accessor :generation_match
-
-    # No description.
     attr_accessor :gnr_fn
-
-    # No description.
     attr_accessor :gnr_gn
-
-    # No description.
     attr_accessor :gnr_on
-
-    # No description.
     attr_accessor :gnr_sn
-
-    # No description.
     attr_accessor :inbound_feat
 
     def self.from_json_data(data)
@@ -7411,300 +5527,104 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchScores
-    # No description.
     attr_accessor :account_domain
-
-    # No description.
     attr_accessor :account_number
-
-    # No description.
     attr_accessor :acct_num
-
-    # No description.
     attr_accessor :address
-
-    # No description.
     attr_accessor :address_list
-
-    # No description.
     attr_accessor :addr_full
-
-    # No description.
     attr_accessor :addr_key
-
-    # No description.
     attr_accessor :cell_phone_number
-
-    # No description.
     attr_accessor :citizenship
-
-    # No description.
     attr_accessor :country_of_association
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :date_of_birth
-
-    # No description.
     attr_accessor :date_of_death
-
-    # No description.
     attr_accessor :dob
-
-    # No description.
     attr_accessor :dod
-
-    # No description.
     attr_accessor :drivers_license_number
-
-    # No description.
     attr_accessor :drivers_license_state
-
-    # No description.
     attr_accessor :drlic
-
-    # No description.
     attr_accessor :duns_number
-
-    # No description.
     attr_accessor :email
-
-    # No description.
     attr_accessor :email_address
-
-    # No description.
     attr_accessor :email_key
-
-    # No description.
     attr_accessor :employer_name
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :facebook
-
-    # No description.
     attr_accessor :gender
-
-    # No description.
     attr_accessor :group_assn_id_number
-
-    # No description.
     attr_accessor :group_assn_id_type
-
-    # No description.
     attr_accessor :group_association_org_name
-
-    # No description.
     attr_accessor :group_association_type
-
-    # No description.
     attr_accessor :id_key
-
-    # No description.
     attr_accessor :instagram
-
-    # No description.
     attr_accessor :lei_number
-
-    # No description.
     attr_accessor :linkedin
-
-    # No description.
     attr_accessor :load_id
-
-    # No description.
     attr_accessor :login_id
-
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_key
-
-    # No description.
     attr_accessor :name_list
-
-    # No description.
     attr_accessor :nationality
-
-    # No description.
     attr_accessor :national_id
-
-    # No description.
     attr_accessor :national_id_country
-
-    # No description.
     attr_accessor :national_id_number
-
-    # No description.
     attr_accessor :nin_country
-
-    # No description.
     attr_accessor :nin_number
-
-    # No description.
     attr_accessor :npi_number
-
-    # No description.
     attr_accessor :other_id_country
-
-    # No description.
     attr_accessor :other_id_number
-
-    # No description.
     attr_accessor :other_id_type
-
-    # No description.
     attr_accessor :passport
-
-    # No description.
     attr_accessor :passports
-
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
-
-    # No description.
     attr_accessor :phone
-
-    # No description.
     attr_accessor :phones
-
-    # No description.
     attr_accessor :phone_key
-
-    # No description.
     attr_accessor :place_of_birth
-
-    # No description.
     attr_accessor :primary_name_first
-
-    # No description.
     attr_accessor :primary_name_last
-
-    # No description.
     attr_accessor :primary_name_middle
-
-    # No description.
     attr_accessor :primary_name_org
-
-    # No description.
     attr_accessor :primary_name_prefix
-
-    # No description.
     attr_accessor :primary_name_suffix
-
-    # No description.
     attr_accessor :primary_phone_number
-
-    # No description.
     attr_accessor :record_type
-
-    # No description.
     attr_accessor :registration_country
-
-    # No description.
     attr_accessor :registration_date
-
-    # No description.
     attr_accessor :rel_anchor
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_link
-
-    # No description.
     attr_accessor :rel_pointer
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
-
-    # No description.
     attr_accessor :signal
-
-    # No description.
     attr_accessor :skype
-
-    # No description.
     attr_accessor :social_handle
-
-    # No description.
     attr_accessor :social_network
-
-    # No description.
     attr_accessor :source_id
-
-    # No description.
     attr_accessor :ssn
-
-    # No description.
     attr_accessor :ssn_last4
-
-    # No description.
     attr_accessor :ssn_number
-
-    # No description.
     attr_accessor :tango
-
-    # No description.
     attr_accessor :tax_id_country
-
-    # No description.
     attr_accessor :tax_id_number
-
-    # No description.
     attr_accessor :tax_id_type
-
-    # No description.
     attr_accessor :telegram
-
-    # No description.
     attr_accessor :trusted_id_number
-
-    # No description.
     attr_accessor :trusted_id_type
-
-    # No description.
     attr_accessor :twitter
-
-    # No description.
     attr_accessor :viber
-
-    # No description.
     attr_accessor :website_address
-
-    # No description.
     attr_accessor :wechat
-
-    # No description.
     attr_accessor :whatsapp
-
-    # No description.
     attr_accessor :work_phone_number
-
-    # No description.
     attr_accessor :zoomroom
 
     def self.from_json_data(data)
@@ -7914,7 +5834,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MatchScoresForAttribute
     attr_accessor :value
 
@@ -7929,12 +5848,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MemberRecord
-    # No description.
     attr_accessor :internal_id
-
-    # No description.
     attr_accessor :records
 
     def self.from_json_data(data)
@@ -7952,7 +5867,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class MemberRecords
     attr_accessor :value
 
@@ -7967,30 +5881,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Name
-    # No description.
     attr_accessor :name_first
-
-    # No description.
     attr_accessor :name_full
-
-    # No description.
     attr_accessor :name_last
-
-    # No description.
     attr_accessor :name_middle
-
-    # No description.
     attr_accessor :name_org
-
-    # No description.
     attr_accessor :name_prefix
-
-    # No description.
     attr_accessor :name_suffix
-
-    # No description.
     attr_accessor :name_type
 
     def self.from_json_data(data)
@@ -8020,7 +5918,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Names
     attr_accessor :value
 
@@ -8035,21 +5932,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Network
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :entity_paths
-
-    # No description.
     attr_accessor :max_entity_limit_reached
 
     def self.from_json_data(data)
       out = Network.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
-      out.entity_paths = SenzingTypeDef::from_json_data(EntityPaths, data["ENTITY_PATHS"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out.max_entity_limit_reached = SenzingTypeDef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
       out
     end
@@ -8063,12 +5954,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Notice
-    # No description.
     attr_accessor :code
-
-    # No description.
     attr_accessor :description
 
     def self.from_json_data(data)
@@ -8086,7 +5973,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Notices
     attr_accessor :value
 
@@ -8101,12 +5987,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Passport
-    # No description.
     attr_accessor :passport_country
-
-    # No description.
     attr_accessor :passport_number
 
     def self.from_json_data(data)
@@ -8124,7 +6006,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Passports
     attr_accessor :value
 
@@ -8139,18 +6020,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Path
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :entity_paths
 
     def self.from_json_data(data)
       out = Path.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
-      out.entity_paths = SenzingTypeDef::from_json_data(EntityPaths, data["ENTITY_PATHS"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out
     end
 
@@ -8162,18 +6039,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Phone
-    # No description.
     attr_accessor :phone_from_date
-
-    # No description.
     attr_accessor :phone_number
-
-    # No description.
     attr_accessor :phone_thru_date
-
-    # No description.
     attr_accessor :phone_type
 
     def self.from_json_data(data)
@@ -8195,7 +6064,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Phones
     attr_accessor :value
 
@@ -8210,12 +6078,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ProcessUmfProc
-    # No description.
     attr_accessor :name
-
-    # No description.
     attr_accessor :result
 
     def self.from_json_data(data)
@@ -8233,23 +6097,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Process
-    # No description.
     attr_accessor :affected_entities
-
-    # No description.
     attr_accessor :interesting_entities
-
-    # No description.
     attr_accessor :process_result
-
-    # No description.
     attr_accessor :umf_proc
 
     def self.from_json_data(data)
       out = Process.new
-      out.affected_entities = SenzingTypeDef::from_json_data(AffectedEntities, data["AFFECTED_ENTITIES"])
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
       out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out.process_result = SenzingTypeDef::from_json_data(ProcessResult, data["PROCESS_RESULT"])
       out.umf_proc = SenzingTypeDef::from_json_data(ProcessUmfProc, data["UMF_PROC"])
@@ -8267,37 +6123,16 @@ module SenzingTypeDef
   end
 
   class ProcessResultResolvedEntities
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_name
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :features
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :match_scores
-
-    # No description.
     attr_accessor :records
-
-    # No description.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -8305,14 +6140,14 @@ module SenzingTypeDef
       out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
       out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(Features, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(String, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.match_scores = SenzingTypeDef::from_json_data(MatchScores, data["MATCH_SCORES"])
       out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(RecordSummary, data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
       out
     end
 
@@ -8333,9 +6168,7 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ProcessResult
-    # No description.
     attr_accessor :resolved_entities
 
     def self.from_json_data(data)
@@ -8351,112 +6184,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class ProductLicenseResponse
-    # No description.
-    attr_accessor :billing
-
-    # No description.
-    attr_accessor :contract
-
-    # No description.
-    attr_accessor :customer
-
-    # No description.
-    attr_accessor :expire_date
-
-    # No description.
-    attr_accessor :issue_date
-
-    # No description.
-    attr_accessor :license_level
-
-    # No description.
-    attr_accessor :license_type
-
-    # No description.
-    attr_accessor :record_limit
-
-    def self.from_json_data(data)
-      out = ProductLicenseResponse.new
-      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
-      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
-      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
-      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
-      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
-      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
-      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
-      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["billing"] = SenzingTypeDef::to_json_data(billing)
-      data["contract"] = SenzingTypeDef::to_json_data(contract)
-      data["customer"] = SenzingTypeDef::to_json_data(customer)
-      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
-      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
-      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
-      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
-      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
-      data
-    end
-  end
-
-  # No description.
-  class ProductVersionResponse
-    # No description.
-    attr_accessor :build_date
-
-    # No description.
-    attr_accessor :build_number
-
-    # No description.
-    attr_accessor :build_version
-
-    # No description.
-    attr_accessor :compatibility_version
-
-    # No description.
-    attr_accessor :product_name
-
-    # No description.
-    attr_accessor :schema_version
-
-    # No description.
-    attr_accessor :version
-
-    def self.from_json_data(data)
-      out = ProductVersionResponse.new
-      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
-      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
-      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
-      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
-      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
-      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
-      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
-      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
-      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
-      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
-      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
-      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
-      data["VERSION"] = SenzingTypeDef::to_json_data(version)
-      data
-    end
-  end
-
   class RecordFeatures
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -8474,69 +6203,27 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Record
-    # No description.
     attr_accessor :address_data
-
-    # No description.
     attr_accessor :attribute_data
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :entity_data
-
-    # No description.
     attr_accessor :entity_desc
-
-    # No description.
     attr_accessor :entity_key
-
-    # No description.
     attr_accessor :entity_type
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :features
-
-    # No description.
     attr_accessor :identifier_data
-
-    # No description.
     attr_accessor :internal_id
-
-    # No description.
     attr_accessor :json_data
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :name_data
-
-    # No description.
     attr_accessor :other_data
-
-    # No description.
     attr_accessor :phone_data
-
-    # No description.
     attr_accessor :record_id
-
-    # No description.
     attr_accessor :relationship_data
 
     def self.from_json_data(data)
@@ -8552,7 +6239,7 @@ module SenzingTypeDef
       out.features = SenzingTypeDef::from_json_data(Array[RecordFeatures], data["FEATURES"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(JSONData, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(String, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -8592,33 +6279,10 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class RecordSummary
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = RecordSummary.new
-      out.value = SenzingTypeDef.from_json_data(Array[RecordSummaryElement], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
   class RecordSummaryElement
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :first_seen_dt
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :record_count
 
     def self.from_json_data(data)
@@ -8640,7 +6304,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Records
     attr_accessor :value
 
@@ -8655,54 +6318,17 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class RelatedEntities
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = RelatedEntities.new
-      out.value = SenzingTypeDef.from_json_data(Array[RelatedEntity], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  # No description.
   class RelatedEntity
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_name
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :is_ambiguous
-
-    # No description.
     attr_accessor :is_disclosed
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :records
-
-    # No description.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -8717,7 +6343,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(RecordSummary, data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
       out
     end
 
@@ -8738,27 +6364,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Relationship
-    # No description.
     attr_accessor :relationship_key
-
-    # No description.
     attr_accessor :relationship_type
-
-    # No description.
     attr_accessor :rel_anchor_domain
-
-    # No description.
     attr_accessor :rel_anchor_key
-
-    # No description.
     attr_accessor :rel_pointer_domain
-
-    # No description.
     attr_accessor :rel_pointer_key
-
-    # No description.
     attr_accessor :rel_pointer_role
 
     def self.from_json_data(data)
@@ -8786,7 +6398,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class Relationships
     attr_accessor :value
 
@@ -8801,24 +6412,12 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ResolutionStep
-    # No description.
     attr_accessor :inbound_virtual_entity_id
-
-    # No description.
     attr_accessor :match_info
-
-    # No description.
     attr_accessor :result_virtual_entity_id
-
-    # No description.
     attr_accessor :step
-
-    # No description.
     attr_accessor :virtual_entity
-
-    # No description.
     attr_accessor :virtual_entity0
 
     def self.from_json_data(data)
@@ -8844,7 +6443,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class ResolutionSteps
     attr_accessor :value
 
@@ -8859,42 +6457,32 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
+  class ResolvedEntities
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = ResolvedEntities.new
+      out.value = SenzingTypeDef.from_json_data(Array[ResolvedEntityAndMatchInfo], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class ResolvedEntity
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_name
-
-    # No description.
     attr_accessor :errule_code
-
-    # No description.
     attr_accessor :features
-
-    # No description.
     attr_accessor :is_ambiguous
-
-    # No description.
     attr_accessor :is_disclosed
-
-    # No description.
     attr_accessor :last_seen_dt
-
-    # No description.
     attr_accessor :match_key
-
-    # No description.
     attr_accessor :match_level
-
-    # No description.
     attr_accessor :match_level_code
-
-    # No description.
     attr_accessor :records
-
-    # No description.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -8902,7 +6490,7 @@ module SenzingTypeDef
       out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
       out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(Features, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.is_ambiguous = SenzingTypeDef::from_json_data(Integer, data["IS_AMBIGUOUS"])
       out.is_disclosed = SenzingTypeDef::from_json_data(Integer, data["IS_DISCLOSED"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(String, data["LAST_SEEN_DT"])
@@ -8910,7 +6498,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(RecordSummary, data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
       out
     end
 
@@ -8932,36 +6520,51 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
+  class ResolvedEntityAndMatchInfoEntity
+    attr_accessor :resolved_entity
+
+    def self.from_json_data(data)
+      out = ResolvedEntityAndMatchInfoEntity.new
+      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data
+    end
+  end
+
+  class ResolvedEntityAndMatchInfo
+    attr_accessor :entity
+    attr_accessor :match_info
+
+    def self.from_json_data(data)
+      out = ResolvedEntityAndMatchInfo.new
+      out.entity = SenzingTypeDef::from_json_data(ResolvedEntityAndMatchInfoEntity, data["ENTITY"])
+      out.match_info = SenzingTypeDef::from_json_data(MatchInfo, data["MATCH_INFO"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ENTITY"] = SenzingTypeDef::to_json_data(entity)
+      data["MATCH_INFO"] = SenzingTypeDef::to_json_data(match_info)
+      data
+    end
+  end
+
   class SysOom
-    # No description.
     attr_accessor :felem_id
-
-    # No description.
     attr_accessor :ftype_id
-
-    # No description.
     attr_accessor :lens_id
-
-    # No description.
     attr_accessor :lib_feat_id
-
-    # No description.
     attr_accessor :lib_felem_id
-
-    # No description.
     attr_accessor :next_thresh
-
-    # No description.
     attr_accessor :oom_level
-
-    # No description.
     attr_accessor :oom_type
-
-    # No description.
     attr_accessor :thresh1_cnt
-
-    # No description.
     attr_accessor :thresh1_oom
 
     def self.from_json_data(data)
@@ -8995,15 +6598,9 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class SchemaVersion
-    # No description.
     attr_accessor :engine_schema_version
-
-    # No description.
     attr_accessor :maximum_required_schema_version
-
-    # No description.
     attr_accessor :minimum_required_schema_version
 
     def self.from_json_data(data)
@@ -9023,61 +6620,33 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class SearchResolvedEntitiesEntity
-    # No description.
-    attr_accessor :resolved_entity
+  class Search
+    attr_accessor :resolved_entities
+    attr_accessor :search_statistics
 
     def self.from_json_data(data)
-      out = SearchResolvedEntitiesEntity.new
-      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
+      out = Search.new
+      out.resolved_entities = SenzingTypeDef::from_json_data(Array[ResolvedEntityAndMatchInfo], data["RESOLVED_ENTITIES"])
+      out.search_statistics = SenzingTypeDef::from_json_data(SearchStatistics, data["SEARCH_STATISTICS"])
       out
     end
 
     def to_json_data
       data = {}
-      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
+      data["SEARCH_STATISTICS"] = SenzingTypeDef::to_json_data(search_statistics)
       data
     end
   end
 
-  class SearchResolvedEntities
-    # No description.
-    attr_accessor :entity
-
-    # No description.
-    attr_accessor :match_info
-
-    def self.from_json_data(data)
-      out = SearchResolvedEntities.new
-      out.entity = SenzingTypeDef::from_json_data(SearchResolvedEntitiesEntity, data["ENTITY"])
-      out.match_info = SenzingTypeDef::from_json_data(MatchInfo, data["MATCH_INFO"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITY"] = SenzingTypeDef::to_json_data(entity)
-      data["MATCH_INFO"] = SenzingTypeDef::to_json_data(match_info)
-      data
-    end
-  end
-
-  class SearchSearchStatisticsCandidateKeysFeatureTypes
-    # No description.
+  class SearchStatisticCandidateKeysFeatureTypes
     attr_accessor :found
-
-    # No description.
     attr_accessor :ftype_code
-
-    # No description.
     attr_accessor :generic
-
-    # No description.
     attr_accessor :not_found
 
     def self.from_json_data(data)
-      out = SearchSearchStatisticsCandidateKeysFeatureTypes.new
+      out = SearchStatisticCandidateKeysFeatureTypes.new
       out.found = SenzingTypeDef::from_json_data(Integer, data["FOUND"])
       out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
       out.generic = SenzingTypeDef::from_json_data(Integer, data["GENERIC"])
@@ -9095,19 +6664,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class SearchSearchStatisticsCandidateKeysSummary
-    # No description.
+  class SearchStatisticCandidateKeysSummary
     attr_accessor :found
-
-    # No description.
     attr_accessor :generic
-
-    # No description.
     attr_accessor :not_found
 
     def self.from_json_data(data)
-      out = SearchSearchStatisticsCandidateKeysSummary.new
+      out = SearchStatisticCandidateKeysSummary.new
       out.found = SenzingTypeDef::from_json_data(Integer, data["FOUND"])
       out.generic = SenzingTypeDef::from_json_data(Integer, data["GENERIC"])
       out.not_found = SenzingTypeDef::from_json_data(Integer, data["NOT_FOUND"])
@@ -9123,18 +6686,14 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class SearchSearchStatisticsCandidateKeys
-    # No description.
+  class SearchStatisticCandidateKeys
     attr_accessor :feature_types
-
-    # No description.
     attr_accessor :summary
 
     def self.from_json_data(data)
-      out = SearchSearchStatisticsCandidateKeys.new
-      out.feature_types = SenzingTypeDef::from_json_data(Array[SearchSearchStatisticsCandidateKeysFeatureTypes], data["FEATURE_TYPES"])
-      out.summary = SenzingTypeDef::from_json_data(SearchSearchStatisticsCandidateKeysSummary, data["SUMMARY"])
+      out = SearchStatisticCandidateKeys.new
+      out.feature_types = SenzingTypeDef::from_json_data(Array[SearchStatisticCandidateKeysFeatureTypes], data["FEATURE_TYPES"])
+      out.summary = SenzingTypeDef::from_json_data(SearchStatisticCandidateKeysSummary, data["SUMMARY"])
       out
     end
 
@@ -9146,13 +6705,12 @@ module SenzingTypeDef
     end
   end
 
-  class SearchSearchStatistics
-    # No description.
+  class SearchStatistic
     attr_accessor :candidate_keys
 
     def self.from_json_data(data)
-      out = SearchSearchStatistics.new
-      out.candidate_keys = SenzingTypeDef::from_json_data(SearchSearchStatisticsCandidateKeys, data["CANDIDATE_KEYS"])
+      out = SearchStatistic.new
+      out.candidate_keys = SenzingTypeDef::from_json_data(SearchStatisticCandidateKeys, data["CANDIDATE_KEYS"])
       out
     end
 
@@ -9163,32 +6721,21 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
-  class Search
-    # No description.
-    attr_accessor :resolved_entities
-
-    # No description.
-    attr_accessor :search_statistics
+  class SearchStatistics
+    attr_accessor :value
 
     def self.from_json_data(data)
-      out = Search.new
-      out.resolved_entities = SenzingTypeDef::from_json_data(Array[SearchResolvedEntities], data["RESOLVED_ENTITIES"])
-      out.search_statistics = SenzingTypeDef::from_json_data(Array[SearchSearchStatistics], data["SEARCH_STATISTICS"])
+      out = SearchStatistics.new
+      out.value = SenzingTypeDef.from_json_data(Array[SearchStatistic], data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
-      data["SEARCH_STATISTICS"] = SenzingTypeDef::to_json_data(search_statistics)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
-  # No description.
   class VirtualEntity
-    # No description.
     attr_accessor :resolved_entity
 
     def self.from_json_data(data)
@@ -9204,12 +6751,8 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class VirtualEntitySynopsis
-    # No description.
     attr_accessor :member_records
-
-    # No description.
     attr_accessor :virtual_entity_id
 
     def self.from_json_data(data)
@@ -9227,17 +6770,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyEntities
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :why_results
 
     def self.from_json_data(data)
       out = WhyEntities.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
@@ -9250,17 +6789,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyEntity
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :why_results
 
     def self.from_json_data(data)
       out = WhyEntity.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
@@ -9273,17 +6808,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyRecords
-    # No description.
     attr_accessor :entities
-
-    # No description.
     attr_accessor :why_results
 
     def self.from_json_data(data)
       out = WhyRecords.new
-      out.entities = SenzingTypeDef::from_json_data(Entities, data["ENTITIES"])
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
       out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
@@ -9296,27 +6827,13 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyResult
-    # No description.
     attr_accessor :entity_id
-
-    # No description.
     attr_accessor :entity_id0
-
-    # No description.
     attr_accessor :focus_records
-
-    # No description.
     attr_accessor :focus_records0
-
-    # No description.
     attr_accessor :internal_id
-
-    # No description.
     attr_accessor :internal_id0
-
-    # No description.
     attr_accessor :match_info
 
     def self.from_json_data(data)
@@ -9344,7 +6861,6 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WhyResults
     attr_accessor :value
 
@@ -9359,23 +6875,15 @@ module SenzingTypeDef
     end
   end
 
-  # No description.
   class WithInfo
-    # No description.
     attr_accessor :affected_entities
-
-    # No description.
     attr_accessor :data_source
-
-    # No description.
     attr_accessor :interesting_entities
-
-    # No description.
     attr_accessor :record_id
 
     def self.from_json_data(data)
       out = WithInfo.new
-      out.affected_entities = SenzingTypeDef::from_json_data(AffectedEntities, data["AFFECTED_ENTITIES"])
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
       out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
       out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])

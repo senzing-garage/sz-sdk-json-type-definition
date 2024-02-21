@@ -4,44 +4,23 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgDsrc
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CONVERSATIONAL")]
         public string Conversational { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_CODE")]
         public string DsrcCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_DESC")]
         public string DsrcDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_ID")]
         public int DsrcId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DSRC_RELY")]
         public int DsrcRely { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RETENTION_LEVEL")]
         public string RetentionLevel { get; set; }
     }

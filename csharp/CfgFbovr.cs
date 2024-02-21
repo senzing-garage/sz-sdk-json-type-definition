@@ -4,44 +4,23 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgFbovr
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ECLASS_ID")]
         public int EclassId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_EXCL")]
         public string FtypeExcl { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_FREQ")]
         public string FtypeFreq { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_STAB")]
         public string FtypeStab { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("UTYPE_CODE")]
         public string UtypeCode { get; set; }
     }

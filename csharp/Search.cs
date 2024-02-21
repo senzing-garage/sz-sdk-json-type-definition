@@ -5,21 +5,12 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class Search
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RESOLVED_ENTITIES")]
-        public IList<SearchResolvedEntities> ResolvedEntities { get; set; }
+        public IList<ResolvedEntityAndMatchInfo> ResolvedEntities { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SEARCH_STATISTICS")]
-        public IList<SearchSearchStatistics> SearchStatistics { get; set; }
+        public SearchStatistics SearchStatistics { get; set; }
     }
 }

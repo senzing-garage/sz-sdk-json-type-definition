@@ -4,62 +4,32 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgCfunc
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ANON_SUPPORT")]
         public string AnonSupport { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CFUNC_CODE")]
         public string CfuncCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CFUNC_DESC")]
         public string CfuncDesc { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CFUNC_ID")]
         public int CfuncId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CONNECT_STR")]
         public string ConnectStr { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FUNC_LIB")]
         public string FuncLib { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FUNC_VER")]
         public string FuncVer { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("JAVA_CLASS_NAME")]
         public string JavaClassName { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LANGUAGE")]
         public string Language { get; set; }
     }

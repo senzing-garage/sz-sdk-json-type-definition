@@ -4,596 +4,299 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class FeatureScores
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ACCOUNT_DOMAIN")]
         public FeatureScoresForAttribute AccountDomain { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ACCOUNT_NUMBER")]
         public FeatureScoresForAttribute AccountNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ACCT_NUM")]
         public FeatureScoresForAttribute AcctNum { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDRESS")]
         public FeatureScoresForAttribute Address { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDRESS_LIST")]
         public FeatureScoresForAttribute AddressList { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_FULL")]
         public FeatureScoresForAttribute AddrFull { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_KEY")]
         public FeatureScoresForAttribute AddrKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CELL_PHONE_NUMBER")]
         public FeatureScoresForAttribute CellPhoneNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CITIZENSHIP")]
         public FeatureScoresForAttribute Citizenship { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("COUNTRY_OF_ASSOCIATION")]
         public FeatureScoresForAttribute CountryOfAssociation { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public FeatureScoresForAttribute DataSource { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DATE_OF_BIRTH")]
         public FeatureScoresForAttribute DateOfBirth { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DATE_OF_DEATH")]
         public FeatureScoresForAttribute DateOfDeath { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DOB")]
         public FeatureScoresForAttribute Dob { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DOD")]
         public FeatureScoresForAttribute Dod { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DRIVERS_LICENSE_NUMBER")]
         public FeatureScoresForAttribute DriversLicenseNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DRIVERS_LICENSE_STATE")]
         public FeatureScoresForAttribute DriversLicenseState { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DRLIC")]
         public FeatureScoresForAttribute Drlic { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DUNS_NUMBER")]
         public FeatureScoresForAttribute DunsNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EMAIL")]
         public FeatureScoresForAttribute Email { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EMAIL_ADDRESS")]
         public FeatureScoresForAttribute EmailAddress { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EMAIL_KEY")]
         public FeatureScoresForAttribute EmailKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EMPLOYER_NAME")]
         public FeatureScoresForAttribute EmployerName { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY_TYPE")]
         public FeatureScoresForAttribute EntityType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FACEBOOK")]
         public FeatureScoresForAttribute Facebook { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GENDER")]
         public FeatureScoresForAttribute Gender { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GROUP_ASSN_ID_NUMBER")]
         public FeatureScoresForAttribute GroupAssnIdNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GROUP_ASSN_ID_TYPE")]
         public FeatureScoresForAttribute GroupAssnIdType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GROUP_ASSOCIATION_ORG_NAME")]
         public FeatureScoresForAttribute GroupAssociationOrgName { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GROUP_ASSOCIATION_TYPE")]
         public FeatureScoresForAttribute GroupAssociationType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ID_KEY")]
         public FeatureScoresForAttribute IdKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("INSTAGRAM")]
         public FeatureScoresForAttribute Instagram { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LEI_NUMBER")]
         public FeatureScoresForAttribute LeiNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LINKEDIN")]
         public FeatureScoresForAttribute Linkedin { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LOAD_ID")]
         public FeatureScoresForAttribute LoadId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LOGIN_ID")]
         public FeatureScoresForAttribute LoginId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME")]
         public FeatureScoresForAttribute Name { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_FULL")]
         public FeatureScoresForAttribute NameFull { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_KEY")]
         public FeatureScoresForAttribute NameKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_LIST")]
         public FeatureScoresForAttribute NameList { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NATIONALITY")]
         public FeatureScoresForAttribute Nationality { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NATIONAL_ID")]
         public FeatureScoresForAttribute NationalId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NATIONAL_ID_COUNTRY")]
         public FeatureScoresForAttribute NationalIdCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NATIONAL_ID_NUMBER")]
         public FeatureScoresForAttribute NationalIdNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NIN_COUNTRY")]
         public FeatureScoresForAttribute NinCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NIN_NUMBER")]
         public FeatureScoresForAttribute NinNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NPI_NUMBER")]
         public FeatureScoresForAttribute NpiNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("OTHER_ID_COUNTRY")]
         public FeatureScoresForAttribute OtherIdCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("OTHER_ID_NUMBER")]
         public FeatureScoresForAttribute OtherIdNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("OTHER_ID_TYPE")]
         public FeatureScoresForAttribute OtherIdType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT")]
         public FeatureScoresForAttribute Passport { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORTS")]
         public FeatureScoresForAttribute Passports { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT_COUNTRY")]
         public FeatureScoresForAttribute PassportCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT_NUMBER")]
         public FeatureScoresForAttribute PassportNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PHONE")]
         public FeatureScoresForAttribute Phone { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PHONES")]
         public FeatureScoresForAttribute Phones { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PHONE_KEY")]
         public FeatureScoresForAttribute PhoneKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PLACE_OF_BIRTH")]
         public FeatureScoresForAttribute PlaceOfBirth { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_NAME_FIRST")]
         public FeatureScoresForAttribute PrimaryNameFirst { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_NAME_LAST")]
         public FeatureScoresForAttribute PrimaryNameLast { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_NAME_MIDDLE")]
         public FeatureScoresForAttribute PrimaryNameMiddle { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_NAME_ORG")]
         public FeatureScoresForAttribute PrimaryNameOrg { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_NAME_PREFIX")]
         public FeatureScoresForAttribute PrimaryNamePrefix { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_NAME_SUFFIX")]
         public FeatureScoresForAttribute PrimaryNameSuffix { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PRIMARY_PHONE_NUMBER")]
         public FeatureScoresForAttribute PrimaryPhoneNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RECORD_TYPE")]
         public FeatureScoresForAttribute RecordType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REGISTRATION_COUNTRY")]
         public FeatureScoresForAttribute RegistrationCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REGISTRATION_DATE")]
         public FeatureScoresForAttribute RegistrationDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_ANCHOR")]
         public FeatureScoresForAttribute RelAnchor { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_ANCHOR_DOMAIN")]
         public FeatureScoresForAttribute RelAnchorDomain { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_ANCHOR_KEY")]
         public FeatureScoresForAttribute RelAnchorKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_LINK")]
         public FeatureScoresForAttribute RelLink { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_POINTER")]
         public FeatureScoresForAttribute RelPointer { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_POINTER_DOMAIN")]
         public FeatureScoresForAttribute RelPointerDomain { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_POINTER_KEY")]
         public FeatureScoresForAttribute RelPointerKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_POINTER_ROLE")]
         public FeatureScoresForAttribute RelPointerRole { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SIGNAL")]
         public FeatureScoresForAttribute Signal { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SKYPE")]
         public FeatureScoresForAttribute Skype { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SOCIAL_HANDLE")]
         public FeatureScoresForAttribute SocialHandle { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SOCIAL_NETWORK")]
         public FeatureScoresForAttribute SocialNetwork { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SOURCE_ID")]
         public FeatureScoresForAttribute SourceId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SSN")]
         public FeatureScoresForAttribute Ssn { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SSN_LAST4")]
         public FeatureScoresForAttribute SsnLast4 { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SSN_NUMBER")]
         public FeatureScoresForAttribute SsnNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TANGO")]
         public FeatureScoresForAttribute Tango { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TAX_ID_COUNTRY")]
         public FeatureScoresForAttribute TaxIdCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TAX_ID_NUMBER")]
         public FeatureScoresForAttribute TaxIdNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TAX_ID_TYPE")]
         public FeatureScoresForAttribute TaxIdType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TELEGRAM")]
         public FeatureScoresForAttribute Telegram { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TRUSTED_ID_NUMBER")]
         public FeatureScoresForAttribute TrustedIdNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TRUSTED_ID_TYPE")]
         public FeatureScoresForAttribute TrustedIdType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TWITTER")]
         public FeatureScoresForAttribute Twitter { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("VIBER")]
         public FeatureScoresForAttribute Viber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WEBSITE_ADDRESS")]
         public FeatureScoresForAttribute WebsiteAddress { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WECHAT")]
         public FeatureScoresForAttribute Wechat { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WHATSAPP")]
         public FeatureScoresForAttribute Whatsapp { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WORK_PHONE_NUMBER")]
         public FeatureScoresForAttribute WorkPhoneNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ZOOMROOM")]
         public FeatureScoresForAttribute Zoomroom { get; set; }
     }

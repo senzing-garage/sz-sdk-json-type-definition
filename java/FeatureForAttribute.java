@@ -4,17 +4,15 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class FeatureForAttribute {
     @JsonProperty("FEAT_DESC")
     private String featDesc;
 
     @JsonProperty("FEAT_DESC_VALUES")
-    private FeatureDescriptionValues featDescValues;
+    private List<FeatureDescriptionValue> featDescValues;
 
     @JsonProperty("LIB_FEAT_ID")
     private Integer libFeatId;
@@ -27,7 +25,6 @@ public class FeatureForAttribute {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -35,7 +32,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -43,23 +39,20 @@ public class FeatureForAttribute {
 
     /**
      * Getter for featDescValues.<p>
-     * No description.
      */
-    public FeatureDescriptionValues getFeatDescValues() {
+    public List<FeatureDescriptionValue> getFeatDescValues() {
         return featDescValues;
     }
 
     /**
      * Setter for featDescValues.<p>
-     * No description.
      */
-    public void setFeatDescValues(FeatureDescriptionValues featDescValues) {
+    public void setFeatDescValues(List<FeatureDescriptionValue> featDescValues) {
         this.featDescValues = featDescValues;
     }
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -67,7 +60,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -75,7 +67,6 @@ public class FeatureForAttribute {
 
     /**
      * Getter for usageType.<p>
-     * No description.
      */
     public String getUsageType() {
         return usageType;
@@ -83,7 +74,6 @@ public class FeatureForAttribute {
 
     /**
      * Setter for usageType.<p>
-     * No description.
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

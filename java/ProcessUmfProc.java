@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ProcessUmfProc {
     @JsonProperty("NAME")
@@ -21,7 +18,6 @@ public class ProcessUmfProc {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public String getName() {
         return name;
@@ -29,7 +25,6 @@ public class ProcessUmfProc {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(String name) {
         this.name = name;
@@ -37,7 +32,6 @@ public class ProcessUmfProc {
 
     /**
      * Getter for result.<p>
-     * No description.
      */
     public String getResult() {
         return result;
@@ -45,7 +39,6 @@ public class ProcessUmfProc {
 
     /**
      * Setter for result.<p>
-     * No description.
      */
     public void setResult(String result) {
         this.result = result;

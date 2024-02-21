@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class ProcessUmfProc
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME")]
         public string Name { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RESULT")]
         public string Result { get; set; }
     }

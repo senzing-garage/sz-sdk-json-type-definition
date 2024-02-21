@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgFclass {
     @JsonProperty("FCLASS_CODE")
@@ -24,7 +21,6 @@ public class CfgFclass {
 
     /**
      * Getter for fclassCode.<p>
-     * No description.
      */
     public String getFclassCode() {
         return fclassCode;
@@ -32,7 +28,6 @@ public class CfgFclass {
 
     /**
      * Setter for fclassCode.<p>
-     * No description.
      */
     public void setFclassCode(String fclassCode) {
         this.fclassCode = fclassCode;
@@ -40,7 +35,6 @@ public class CfgFclass {
 
     /**
      * Getter for fclassDesc.<p>
-     * No description.
      */
     public String getFclassDesc() {
         return fclassDesc;
@@ -48,7 +42,6 @@ public class CfgFclass {
 
     /**
      * Setter for fclassDesc.<p>
-     * No description.
      */
     public void setFclassDesc(String fclassDesc) {
         this.fclassDesc = fclassDesc;
@@ -56,7 +49,6 @@ public class CfgFclass {
 
     /**
      * Getter for fclassId.<p>
-     * No description.
      */
     public Integer getFclassId() {
         return fclassId;
@@ -64,7 +56,6 @@ public class CfgFclass {
 
     /**
      * Setter for fclassId.<p>
-     * No description.
      */
     public void setFclassId(Integer fclassId) {
         this.fclassId = fclassId;

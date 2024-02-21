@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Interesting {
     @JsonProperty("INTERESTING_ENTITIES")
@@ -18,7 +15,6 @@ public class Interesting {
 
     /**
      * Getter for interestingEntities.<p>
-     * No description.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -26,7 +22,6 @@ public class Interesting {
 
     /**
      * Setter for interestingEntities.<p>
-     * No description.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;

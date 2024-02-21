@@ -1,0 +1,41 @@
+name: test generated files
+
+on: [push]
+
+jobs:
+  python-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: verify testdata
+        run: |
+          mkdir /tmp/testdata
+          ./bin/generate_testdata.py --output /tmp/testdata
+          diff --recursive ./testdata /tmp/testdata
+
+      - name: verify go/typedef/generated_typedef_test.go
+        run: |
+          mkdir /tmp/go-typedef
+          ./bin/generate_go_typedef_test.py --output /tmp/go-typedef/generated_typedef_test.go
+          diff ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test.go
+
+      - name: verify generated files are up-to-date
+        run: |
+          curl -X GET --location --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
+          unzip jtd-codegen.zip
+          chmod +x jtd-codegen
+          ls ./python/typedef
+          mkdir /tmp/typedef
+          ./jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
+          ls /tmp/typedef
+          diff ./python/typedef/__init__.py  /tmp/typedef/__init__.py

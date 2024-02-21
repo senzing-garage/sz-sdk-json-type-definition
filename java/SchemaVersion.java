@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class SchemaVersion {
     @JsonProperty("ENGINE_SCHEMA_VERSION")
@@ -24,7 +21,6 @@ public class SchemaVersion {
 
     /**
      * Getter for engineSchemaVersion.<p>
-     * No description.
      */
     public String getEngineSchemaVersion() {
         return engineSchemaVersion;
@@ -32,7 +28,6 @@ public class SchemaVersion {
 
     /**
      * Setter for engineSchemaVersion.<p>
-     * No description.
      */
     public void setEngineSchemaVersion(String engineSchemaVersion) {
         this.engineSchemaVersion = engineSchemaVersion;
@@ -40,7 +35,6 @@ public class SchemaVersion {
 
     /**
      * Getter for maximumRequiredSchemaVersion.<p>
-     * No description.
      */
     public String getMaximumRequiredSchemaVersion() {
         return maximumRequiredSchemaVersion;
@@ -48,7 +42,6 @@ public class SchemaVersion {
 
     /**
      * Setter for maximumRequiredSchemaVersion.<p>
-     * No description.
      */
     public void setMaximumRequiredSchemaVersion(String maximumRequiredSchemaVersion) {
         this.maximumRequiredSchemaVersion = maximumRequiredSchemaVersion;
@@ -56,7 +49,6 @@ public class SchemaVersion {
 
     /**
      * Getter for minimumRequiredSchemaVersion.<p>
-     * No description.
      */
     public String getMinimumRequiredSchemaVersion() {
         return minimumRequiredSchemaVersion;
@@ -64,7 +56,6 @@ public class SchemaVersion {
 
     /**
      * Setter for minimumRequiredSchemaVersion.<p>
-     * No description.
      */
     public void setMinimumRequiredSchemaVersion(String minimumRequiredSchemaVersion) {
         this.minimumRequiredSchemaVersion = minimumRequiredSchemaVersion;

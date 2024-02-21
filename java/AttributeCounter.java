@@ -5,11 +5,11 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class AttributeCounter {
+    @JsonProperty("ACCT_NUM")
+    private Double acctNum;
+
     @JsonProperty("ADDRESS")
     private Double address;
 
@@ -24,6 +24,9 @@ public class AttributeCounter {
 
     @JsonProperty("COUNTRY_OF_ASSOCIATION")
     private Integer countryOfAssociation;
+
+    @JsonProperty("DEFERRED_DELETE")
+    private Double deferredDelete;
 
     @JsonProperty("DOB")
     private Double dob;
@@ -125,8 +128,21 @@ public class AttributeCounter {
     }
 
     /**
+     * Getter for acctNum.<p>
+     */
+    public Double getAcctNum() {
+        return acctNum;
+    }
+
+    /**
+     * Setter for acctNum.<p>
+     */
+    public void setAcctNum(Double acctNum) {
+        this.acctNum = acctNum;
+    }
+
+    /**
      * Getter for address.<p>
-     * No description.
      */
     public Double getAddress() {
         return address;
@@ -134,7 +150,6 @@ public class AttributeCounter {
 
     /**
      * Setter for address.<p>
-     * No description.
      */
     public void setAddress(Double address) {
         this.address = address;
@@ -142,7 +157,6 @@ public class AttributeCounter {
 
     /**
      * Getter for addrKey.<p>
-     * No description.
      */
     public Double getAddrKey() {
         return addrKey;
@@ -150,7 +164,6 @@ public class AttributeCounter {
 
     /**
      * Setter for addrKey.<p>
-     * No description.
      */
     public void setAddrKey(Double addrKey) {
         this.addrKey = addrKey;
@@ -158,7 +171,6 @@ public class AttributeCounter {
 
     /**
      * Getter for callSign.<p>
-     * No description.
      */
     public Integer getCallSign() {
         return callSign;
@@ -166,7 +178,6 @@ public class AttributeCounter {
 
     /**
      * Setter for callSign.<p>
-     * No description.
      */
     public void setCallSign(Integer callSign) {
         this.callSign = callSign;
@@ -174,7 +185,6 @@ public class AttributeCounter {
 
     /**
      * Getter for citizenship.<p>
-     * No description.
      */
     public Integer getCitizenship() {
         return citizenship;
@@ -182,7 +192,6 @@ public class AttributeCounter {
 
     /**
      * Setter for citizenship.<p>
-     * No description.
      */
     public void setCitizenship(Integer citizenship) {
         this.citizenship = citizenship;
@@ -190,7 +199,6 @@ public class AttributeCounter {
 
     /**
      * Getter for countryOfAssociation.<p>
-     * No description.
      */
     public Integer getCountryOfAssociation() {
         return countryOfAssociation;
@@ -198,15 +206,27 @@ public class AttributeCounter {
 
     /**
      * Setter for countryOfAssociation.<p>
-     * No description.
      */
     public void setCountryOfAssociation(Integer countryOfAssociation) {
         this.countryOfAssociation = countryOfAssociation;
     }
 
     /**
+     * Getter for deferredDelete.<p>
+     */
+    public Double getDeferredDelete() {
+        return deferredDelete;
+    }
+
+    /**
+     * Setter for deferredDelete.<p>
+     */
+    public void setDeferredDelete(Double deferredDelete) {
+        this.deferredDelete = deferredDelete;
+    }
+
+    /**
      * Getter for dob.<p>
-     * No description.
      */
     public Double getDob() {
         return dob;
@@ -214,7 +234,6 @@ public class AttributeCounter {
 
     /**
      * Setter for dob.<p>
-     * No description.
      */
     public void setDob(Double dob) {
         this.dob = dob;
@@ -222,7 +241,6 @@ public class AttributeCounter {
 
     /**
      * Getter for drlic.<p>
-     * No description.
      */
     public Double getDrlic() {
         return drlic;
@@ -230,7 +248,6 @@ public class AttributeCounter {
 
     /**
      * Setter for drlic.<p>
-     * No description.
      */
     public void setDrlic(Double drlic) {
         this.drlic = drlic;
@@ -238,7 +255,6 @@ public class AttributeCounter {
 
     /**
      * Getter for dunsNumber.<p>
-     * No description.
      */
     public Integer getDunsNumber() {
         return dunsNumber;
@@ -246,7 +262,6 @@ public class AttributeCounter {
 
     /**
      * Setter for dunsNumber.<p>
-     * No description.
      */
     public void setDunsNumber(Integer dunsNumber) {
         this.dunsNumber = dunsNumber;
@@ -254,7 +269,6 @@ public class AttributeCounter {
 
     /**
      * Getter for email.<p>
-     * No description.
      */
     public Double getEmail() {
         return email;
@@ -262,7 +276,6 @@ public class AttributeCounter {
 
     /**
      * Setter for email.<p>
-     * No description.
      */
     public void setEmail(Double email) {
         this.email = email;
@@ -270,7 +283,6 @@ public class AttributeCounter {
 
     /**
      * Getter for emailKey.<p>
-     * No description.
      */
     public Double getEmailKey() {
         return emailKey;
@@ -278,7 +290,6 @@ public class AttributeCounter {
 
     /**
      * Setter for emailKey.<p>
-     * No description.
      */
     public void setEmailKey(Double emailKey) {
         this.emailKey = emailKey;
@@ -286,7 +297,6 @@ public class AttributeCounter {
 
     /**
      * Getter for entityCount.<p>
-     * No description.
      */
     public Integer getEntityCount() {
         return entityCount;
@@ -294,7 +304,6 @@ public class AttributeCounter {
 
     /**
      * Setter for entityCount.<p>
-     * No description.
      */
     public void setEntityCount(Integer entityCount) {
         this.entityCount = entityCount;
@@ -302,7 +311,6 @@ public class AttributeCounter {
 
     /**
      * Getter for entitySize.<p>
-     * No description.
      */
     public Integer getEntitySize() {
         return entitySize;
@@ -310,7 +318,6 @@ public class AttributeCounter {
 
     /**
      * Setter for entitySize.<p>
-     * No description.
      */
     public void setEntitySize(Integer entitySize) {
         this.entitySize = entitySize;
@@ -318,7 +325,6 @@ public class AttributeCounter {
 
     /**
      * Getter for gender.<p>
-     * No description.
      */
     public Double getGender() {
         return gender;
@@ -326,7 +332,6 @@ public class AttributeCounter {
 
     /**
      * Setter for gender.<p>
-     * No description.
      */
     public void setGender(Double gender) {
         this.gender = gender;
@@ -334,7 +339,6 @@ public class AttributeCounter {
 
     /**
      * Getter for idKey.<p>
-     * No description.
      */
     public Double getIdKey() {
         return idKey;
@@ -342,7 +346,6 @@ public class AttributeCounter {
 
     /**
      * Setter for idKey.<p>
-     * No description.
      */
     public void setIdKey(Double idKey) {
         this.idKey = idKey;
@@ -350,7 +353,6 @@ public class AttributeCounter {
 
     /**
      * Getter for imoNumber.<p>
-     * No description.
      */
     public Integer getImoNumber() {
         return imoNumber;
@@ -358,7 +360,6 @@ public class AttributeCounter {
 
     /**
      * Setter for imoNumber.<p>
-     * No description.
      */
     public void setImoNumber(Integer imoNumber) {
         this.imoNumber = imoNumber;
@@ -366,7 +367,6 @@ public class AttributeCounter {
 
     /**
      * Getter for leiNumber.<p>
-     * No description.
      */
     public Integer getLeiNumber() {
         return leiNumber;
@@ -374,7 +374,6 @@ public class AttributeCounter {
 
     /**
      * Setter for leiNumber.<p>
-     * No description.
      */
     public void setLeiNumber(Integer leiNumber) {
         this.leiNumber = leiNumber;
@@ -382,7 +381,6 @@ public class AttributeCounter {
 
     /**
      * Getter for loginId.<p>
-     * No description.
      */
     public Double getLoginId() {
         return loginId;
@@ -390,7 +388,6 @@ public class AttributeCounter {
 
     /**
      * Setter for loginId.<p>
-     * No description.
      */
     public void setLoginId(Double loginId) {
         this.loginId = loginId;
@@ -398,7 +395,6 @@ public class AttributeCounter {
 
     /**
      * Getter for maxResEntId.<p>
-     * No description.
      */
     public Integer getMaxResEntId() {
         return maxResEntId;
@@ -406,7 +402,6 @@ public class AttributeCounter {
 
     /**
      * Setter for maxResEntId.<p>
-     * No description.
      */
     public void setMaxResEntId(Integer maxResEntId) {
         this.maxResEntId = maxResEntId;
@@ -414,7 +409,6 @@ public class AttributeCounter {
 
     /**
      * Getter for minResEntId.<p>
-     * No description.
      */
     public Integer getMinResEntId() {
         return minResEntId;
@@ -422,7 +416,6 @@ public class AttributeCounter {
 
     /**
      * Setter for minResEntId.<p>
-     * No description.
      */
     public void setMinResEntId(Integer minResEntId) {
         this.minResEntId = minResEntId;
@@ -430,7 +423,6 @@ public class AttributeCounter {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public Double getName() {
         return name;
@@ -438,7 +430,6 @@ public class AttributeCounter {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(Double name) {
         this.name = name;
@@ -446,7 +437,6 @@ public class AttributeCounter {
 
     /**
      * Getter for nameKey.<p>
-     * No description.
      */
     public Double getNameKey() {
         return nameKey;
@@ -454,7 +444,6 @@ public class AttributeCounter {
 
     /**
      * Setter for nameKey.<p>
-     * No description.
      */
     public void setNameKey(Double nameKey) {
         this.nameKey = nameKey;
@@ -462,7 +451,6 @@ public class AttributeCounter {
 
     /**
      * Getter for nationality.<p>
-     * No description.
      */
     public Integer getNationality() {
         return nationality;
@@ -470,7 +458,6 @@ public class AttributeCounter {
 
     /**
      * Setter for nationality.<p>
-     * No description.
      */
     public void setNationality(Integer nationality) {
         this.nationality = nationality;
@@ -478,7 +465,6 @@ public class AttributeCounter {
 
     /**
      * Getter for nationalId.<p>
-     * No description.
      */
     public Integer getNationalId() {
         return nationalId;
@@ -486,7 +472,6 @@ public class AttributeCounter {
 
     /**
      * Setter for nationalId.<p>
-     * No description.
      */
     public void setNationalId(Integer nationalId) {
         this.nationalId = nationalId;
@@ -494,7 +479,6 @@ public class AttributeCounter {
 
     /**
      * Getter for ofacId.<p>
-     * No description.
      */
     public Integer getOfacId() {
         return ofacId;
@@ -502,7 +486,6 @@ public class AttributeCounter {
 
     /**
      * Setter for ofacId.<p>
-     * No description.
      */
     public void setOfacId(Integer ofacId) {
         this.ofacId = ofacId;
@@ -510,7 +493,6 @@ public class AttributeCounter {
 
     /**
      * Getter for otherId.<p>
-     * No description.
      */
     public Double getOtherId() {
         return otherId;
@@ -518,7 +500,6 @@ public class AttributeCounter {
 
     /**
      * Setter for otherId.<p>
-     * No description.
      */
     public void setOtherId(Double otherId) {
         this.otherId = otherId;
@@ -526,7 +507,6 @@ public class AttributeCounter {
 
     /**
      * Getter for passport.<p>
-     * No description.
      */
     public Double getPassport() {
         return passport;
@@ -534,7 +514,6 @@ public class AttributeCounter {
 
     /**
      * Setter for passport.<p>
-     * No description.
      */
     public void setPassport(Double passport) {
         this.passport = passport;
@@ -542,7 +521,6 @@ public class AttributeCounter {
 
     /**
      * Getter for phone.<p>
-     * No description.
      */
     public Double getPhone() {
         return phone;
@@ -550,7 +528,6 @@ public class AttributeCounter {
 
     /**
      * Setter for phone.<p>
-     * No description.
      */
     public void setPhone(Double phone) {
         this.phone = phone;
@@ -558,7 +535,6 @@ public class AttributeCounter {
 
     /**
      * Getter for phoneKey.<p>
-     * No description.
      */
     public Double getPhoneKey() {
         return phoneKey;
@@ -566,7 +542,6 @@ public class AttributeCounter {
 
     /**
      * Setter for phoneKey.<p>
-     * No description.
      */
     public void setPhoneKey(Double phoneKey) {
         this.phoneKey = phoneKey;
@@ -574,7 +549,6 @@ public class AttributeCounter {
 
     /**
      * Getter for recordType.<p>
-     * No description.
      */
     public Double getRecordType() {
         return recordType;
@@ -582,7 +556,6 @@ public class AttributeCounter {
 
     /**
      * Setter for recordType.<p>
-     * No description.
      */
     public void setRecordType(Double recordType) {
         this.recordType = recordType;
@@ -590,7 +563,6 @@ public class AttributeCounter {
 
     /**
      * Getter for registrationCountry.<p>
-     * No description.
      */
     public Integer getRegistrationCountry() {
         return registrationCountry;
@@ -598,7 +570,6 @@ public class AttributeCounter {
 
     /**
      * Setter for registrationCountry.<p>
-     * No description.
      */
     public void setRegistrationCountry(Integer registrationCountry) {
         this.registrationCountry = registrationCountry;
@@ -606,7 +577,6 @@ public class AttributeCounter {
 
     /**
      * Getter for registrationDate.<p>
-     * No description.
      */
     public Integer getRegistrationDate() {
         return registrationDate;
@@ -614,7 +584,6 @@ public class AttributeCounter {
 
     /**
      * Setter for registrationDate.<p>
-     * No description.
      */
     public void setRegistrationDate(Integer registrationDate) {
         this.registrationDate = registrationDate;
@@ -622,7 +591,6 @@ public class AttributeCounter {
 
     /**
      * Getter for relAnchor.<p>
-     * No description.
      */
     public Integer getRelAnchor() {
         return relAnchor;
@@ -630,7 +598,6 @@ public class AttributeCounter {
 
     /**
      * Setter for relAnchor.<p>
-     * No description.
      */
     public void setRelAnchor(Integer relAnchor) {
         this.relAnchor = relAnchor;
@@ -638,7 +605,6 @@ public class AttributeCounter {
 
     /**
      * Getter for relPointer.<p>
-     * No description.
      */
     public Integer getRelPointer() {
         return relPointer;
@@ -646,7 +612,6 @@ public class AttributeCounter {
 
     /**
      * Setter for relPointer.<p>
-     * No description.
      */
     public void setRelPointer(Integer relPointer) {
         this.relPointer = relPointer;
@@ -654,7 +619,6 @@ public class AttributeCounter {
 
     /**
      * Getter for searchKey.<p>
-     * No description.
      */
     public Double getSearchKey() {
         return searchKey;
@@ -662,7 +626,6 @@ public class AttributeCounter {
 
     /**
      * Setter for searchKey.<p>
-     * No description.
      */
     public void setSearchKey(Double searchKey) {
         this.searchKey = searchKey;
@@ -670,7 +633,6 @@ public class AttributeCounter {
 
     /**
      * Getter for ssn.<p>
-     * No description.
      */
     public Double getSsn() {
         return ssn;
@@ -678,7 +640,6 @@ public class AttributeCounter {
 
     /**
      * Setter for ssn.<p>
-     * No description.
      */
     public void setSsn(Double ssn) {
         this.ssn = ssn;
@@ -686,7 +647,6 @@ public class AttributeCounter {
 
     /**
      * Getter for taxId.<p>
-     * No description.
      */
     public Double getTaxId() {
         return taxId;
@@ -694,7 +654,6 @@ public class AttributeCounter {
 
     /**
      * Setter for taxId.<p>
-     * No description.
      */
     public void setTaxId(Double taxId) {
         this.taxId = taxId;
@@ -702,7 +661,6 @@ public class AttributeCounter {
 
     /**
      * Getter for website.<p>
-     * No description.
      */
     public Double getWebsite() {
         return website;
@@ -710,7 +668,6 @@ public class AttributeCounter {
 
     /**
      * Setter for website.<p>
-     * No description.
      */
     public void setWebsite(Double website) {
         this.website = website;

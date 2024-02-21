@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgSfcall {
     @JsonProperty("EXEC_ORDER")
@@ -30,7 +27,6 @@ public class CfgSfcall {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -38,7 +34,6 @@ public class CfgSfcall {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -46,7 +41,6 @@ public class CfgSfcall {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -54,7 +48,6 @@ public class CfgSfcall {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -62,7 +55,6 @@ public class CfgSfcall {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -70,7 +62,6 @@ public class CfgSfcall {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -78,7 +69,6 @@ public class CfgSfcall {
 
     /**
      * Getter for sfcallId.<p>
-     * No description.
      */
     public Integer getSfcallId() {
         return sfcallId;
@@ -86,7 +76,6 @@ public class CfgSfcall {
 
     /**
      * Setter for sfcallId.<p>
-     * No description.
      */
     public void setSfcallId(Integer sfcallId) {
         this.sfcallId = sfcallId;
@@ -94,7 +83,6 @@ public class CfgSfcall {
 
     /**
      * Getter for sfuncId.<p>
-     * No description.
      */
     public Integer getSfuncId() {
         return sfuncId;
@@ -102,7 +90,6 @@ public class CfgSfcall {
 
     /**
      * Setter for sfuncId.<p>
-     * No description.
      */
     public void setSfuncId(Integer sfuncId) {
         this.sfuncId = sfuncId;

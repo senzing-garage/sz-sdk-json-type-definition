@@ -4,62 +4,32 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CfgAttr
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADVANCED")]
         public string Advanced { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ATTR_CLASS")]
         public string AttrClass { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ATTR_CODE")]
         public string AttrCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ATTR_ID")]
         public int AttrId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DEFAULT_VALUE")]
         public string DefaultValue { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FELEM_CODE")]
         public string FelemCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FELEM_REQ")]
         public string FelemReq { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("INTERNAL")]
         public string Internal { get; set; }
     }

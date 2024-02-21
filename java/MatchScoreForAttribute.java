@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MatchScoreForAttribute {
     @JsonProperty("CANDIDATE_FEAT")
@@ -39,7 +36,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for candidateFeat.<p>
-     * No description.
      */
     public String getCandidateFeat() {
         return candidateFeat;
@@ -47,7 +43,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for candidateFeat.<p>
-     * No description.
      */
     public void setCandidateFeat(String candidateFeat) {
         this.candidateFeat = candidateFeat;
@@ -55,7 +50,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for fullScore.<p>
-     * No description.
      */
     public Integer getFullScore() {
         return fullScore;
@@ -63,7 +57,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for fullScore.<p>
-     * No description.
      */
     public void setFullScore(Integer fullScore) {
         this.fullScore = fullScore;
@@ -71,7 +64,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for generationMatch.<p>
-     * No description.
      */
     public Integer getGenerationMatch() {
         return generationMatch;
@@ -79,7 +71,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for generationMatch.<p>
-     * No description.
      */
     public void setGenerationMatch(Integer generationMatch) {
         this.generationMatch = generationMatch;
@@ -87,7 +78,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for gnrFn.<p>
-     * No description.
      */
     public Integer getGnrFn() {
         return gnrFn;
@@ -95,7 +85,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for gnrFn.<p>
-     * No description.
      */
     public void setGnrFn(Integer gnrFn) {
         this.gnrFn = gnrFn;
@@ -103,7 +92,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for gnrGn.<p>
-     * No description.
      */
     public Integer getGnrGn() {
         return gnrGn;
@@ -111,7 +99,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for gnrGn.<p>
-     * No description.
      */
     public void setGnrGn(Integer gnrGn) {
         this.gnrGn = gnrGn;
@@ -119,7 +106,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for gnrOn.<p>
-     * No description.
      */
     public Integer getGnrOn() {
         return gnrOn;
@@ -127,7 +113,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for gnrOn.<p>
-     * No description.
      */
     public void setGnrOn(Integer gnrOn) {
         this.gnrOn = gnrOn;
@@ -135,7 +120,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for gnrSn.<p>
-     * No description.
      */
     public Integer getGnrSn() {
         return gnrSn;
@@ -143,7 +127,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for gnrSn.<p>
-     * No description.
      */
     public void setGnrSn(Integer gnrSn) {
         this.gnrSn = gnrSn;
@@ -151,7 +134,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Getter for inboundFeat.<p>
-     * No description.
      */
     public String getInboundFeat() {
         return inboundFeat;
@@ -159,7 +141,6 @@ public class MatchScoreForAttribute {
 
     /**
      * Setter for inboundFeat.<p>
-     * No description.
      */
     public void setInboundFeat(String inboundFeat) {
         this.inboundFeat = inboundFeat;

@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class EntityPath {
     @JsonProperty("END_ENTITY_ID")
@@ -25,7 +22,6 @@ public class EntityPath {
 
     /**
      * Getter for endEntityId.<p>
-     * No description.
      */
     public Integer getEndEntityId() {
         return endEntityId;
@@ -33,7 +29,6 @@ public class EntityPath {
 
     /**
      * Setter for endEntityId.<p>
-     * No description.
      */
     public void setEndEntityId(Integer endEntityId) {
         this.endEntityId = endEntityId;
@@ -41,7 +36,6 @@ public class EntityPath {
 
     /**
      * Getter for entities.<p>
-     * No description.
      */
     public List<Integer> getEntities() {
         return entities;
@@ -49,7 +43,6 @@ public class EntityPath {
 
     /**
      * Setter for entities.<p>
-     * No description.
      */
     public void setEntities(List<Integer> entities) {
         this.entities = entities;
@@ -57,7 +50,6 @@ public class EntityPath {
 
     /**
      * Getter for startEntityId.<p>
-     * No description.
      */
     public Integer getStartEntityId() {
         return startEntityId;
@@ -65,7 +57,6 @@ public class EntityPath {
 
     /**
      * Setter for startEntityId.<p>
-     * No description.
      */
     public void setStartEntityId(Integer startEntityId) {
         this.startEntityId = startEntityId;

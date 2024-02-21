@@ -28,7 +28,6 @@ GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|g
 .PHONY: default
 default: help
 
-
 # -----------------------------------------------------------------------------
 # Analyze
 # -----------------------------------------------------------------------------
@@ -44,6 +43,10 @@ pretty-print:
 # -----------------------------------------------------------------------------
 # Generate code
 # -----------------------------------------------------------------------------
+
+.PHONY: generate
+generate: generate-code generate-tests
+
 
 .PHONY: generate-code
 generate-code: generate-csharp generate-go generate-java generate-python generate-ruby generate-rust generate-typescript
@@ -114,7 +117,7 @@ generate-typescript:
 # -----------------------------------------------------------------------------
 
 .PHONY: generate-tests
-generate-tests: generate_go_typedef_test
+generate-tests: generate_go_typedef_test generate_testdata
 
 
 .PHONY: generate_go_typedef_test
@@ -122,25 +125,24 @@ generate_go_typedef_test:
 	@rm ./go/typedef/typedef_test.go || true
 	@./bin/generate_go_typedef_test.py
 
+
+.PHONY: generate_testdata
+generate_testdata:
+	@./bin/generate_testdata.py
+
 # -----------------------------------------------------------------------------
 # Test
 # -----------------------------------------------------------------------------
 
-.PHONY: generate-and-test
-generate-and-test: generate-code generate-tests
-	@./test.py
-	@go test -v -p 1 ./...
-
-
 .PHONY: test
 test:
-	@./test.py
+	@./bin/test_rfc8927_reconstitution.py
 	@go test -v -p 1 ./...
+	@pytest test.py --verbose
 
 # -----------------------------------------------------------------------------
 # Clean
 # -----------------------------------------------------------------------------
-
 
 .PHONY: clean
 clean: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
@@ -194,7 +196,6 @@ dependencies:
 	@go get -t -u ./...
 	@go mod tidy
 
-
 # -----------------------------------------------------------------------------
 # Utility targets
 # -----------------------------------------------------------------------------
@@ -210,6 +211,10 @@ print-make-variables:
 	@$(foreach V,$(sort $(.VARIABLES)), \
 		$(if $(filter-out environment% default automatic, \
 		$(origin $V)),$(warning $V=$($V) ($(value $V)))))
+
+
+.PHONY: setup
+setup: generate
 
 
 .PHONY: help

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgErrule {
     @JsonProperty("DISQ_ERFRAG_CODE")
@@ -45,7 +42,6 @@ public class CfgErrule {
 
     /**
      * Getter for disqErfragCode.<p>
-     * No description.
      */
     public String getDisqErfragCode() {
         return disqErfragCode;
@@ -53,7 +49,6 @@ public class CfgErrule {
 
     /**
      * Setter for disqErfragCode.<p>
-     * No description.
      */
     public void setDisqErfragCode(String disqErfragCode) {
         this.disqErfragCode = disqErfragCode;
@@ -61,7 +56,6 @@ public class CfgErrule {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -69,7 +63,6 @@ public class CfgErrule {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -77,7 +70,6 @@ public class CfgErrule {
 
     /**
      * Getter for erruleDesc.<p>
-     * No description.
      */
     public String getErruleDesc() {
         return erruleDesc;
@@ -85,7 +77,6 @@ public class CfgErrule {
 
     /**
      * Setter for erruleDesc.<p>
-     * No description.
      */
     public void setErruleDesc(String erruleDesc) {
         this.erruleDesc = erruleDesc;
@@ -93,7 +84,6 @@ public class CfgErrule {
 
     /**
      * Getter for erruleId.<p>
-     * No description.
      */
     public Integer getErruleId() {
         return erruleId;
@@ -101,7 +91,6 @@ public class CfgErrule {
 
     /**
      * Setter for erruleId.<p>
-     * No description.
      */
     public void setErruleId(Integer erruleId) {
         this.erruleId = erruleId;
@@ -109,7 +98,6 @@ public class CfgErrule {
 
     /**
      * Getter for erruleTier.<p>
-     * No description.
      */
     public Integer getErruleTier() {
         return erruleTier;
@@ -117,7 +105,6 @@ public class CfgErrule {
 
     /**
      * Setter for erruleTier.<p>
-     * No description.
      */
     public void setErruleTier(Integer erruleTier) {
         this.erruleTier = erruleTier;
@@ -125,7 +112,6 @@ public class CfgErrule {
 
     /**
      * Getter for qualErfragCode.<p>
-     * No description.
      */
     public String getQualErfragCode() {
         return qualErfragCode;
@@ -133,7 +119,6 @@ public class CfgErrule {
 
     /**
      * Setter for qualErfragCode.<p>
-     * No description.
      */
     public void setQualErfragCode(String qualErfragCode) {
         this.qualErfragCode = qualErfragCode;
@@ -141,7 +126,6 @@ public class CfgErrule {
 
     /**
      * Getter for refScore.<p>
-     * No description.
      */
     public Integer getRefScore() {
         return refScore;
@@ -149,7 +133,6 @@ public class CfgErrule {
 
     /**
      * Setter for refScore.<p>
-     * No description.
      */
     public void setRefScore(Integer refScore) {
         this.refScore = refScore;
@@ -157,7 +140,6 @@ public class CfgErrule {
 
     /**
      * Getter for relate.<p>
-     * No description.
      */
     public String getRelate() {
         return relate;
@@ -165,7 +147,6 @@ public class CfgErrule {
 
     /**
      * Setter for relate.<p>
-     * No description.
      */
     public void setRelate(String relate) {
         this.relate = relate;
@@ -173,7 +154,6 @@ public class CfgErrule {
 
     /**
      * Getter for resolve.<p>
-     * No description.
      */
     public String getResolve() {
         return resolve;
@@ -181,7 +161,6 @@ public class CfgErrule {
 
     /**
      * Setter for resolve.<p>
-     * No description.
      */
     public void setResolve(String resolve) {
         this.resolve = resolve;
@@ -189,7 +168,6 @@ public class CfgErrule {
 
     /**
      * Getter for rtypeId.<p>
-     * No description.
      */
     public Integer getRtypeId() {
         return rtypeId;
@@ -197,7 +175,6 @@ public class CfgErrule {
 
     /**
      * Setter for rtypeId.<p>
-     * No description.
      */
     public void setRtypeId(Integer rtypeId) {
         this.rtypeId = rtypeId;

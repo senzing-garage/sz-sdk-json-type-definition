@@ -4,14 +4,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class AffectedEntity
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY_ID")]
         public int EntityId { get; set; }
     }

@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class How {
     @JsonProperty("HOW_RESULTS")
@@ -18,7 +15,6 @@ public class How {
 
     /**
      * Getter for howResults.<p>
-     * No description.
      */
     public HowResults getHowResults() {
         return howResults;
@@ -26,7 +22,6 @@ public class How {
 
     /**
      * Setter for howResults.<p>
-     * No description.
      */
     public void setHowResults(HowResults howResults) {
         this.howResults = howResults;

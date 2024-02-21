@@ -4,10 +4,8 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class RelatedEntity {
     @JsonProperty("ENTITY_ID")
@@ -41,14 +39,13 @@ public class RelatedEntity {
     private Records records;
 
     @JsonProperty("RECORD_SUMMARY")
-    private RecordSummary recordSummary;
+    private List<RecordSummaryElement> recordSummary;
 
     public RelatedEntity() {
     }
 
     /**
      * Getter for entityId.<p>
-     * No description.
      */
     public Integer getEntityId() {
         return entityId;
@@ -56,7 +53,6 @@ public class RelatedEntity {
 
     /**
      * Setter for entityId.<p>
-     * No description.
      */
     public void setEntityId(Integer entityId) {
         this.entityId = entityId;
@@ -64,7 +60,6 @@ public class RelatedEntity {
 
     /**
      * Getter for entityName.<p>
-     * No description.
      */
     public String getEntityName() {
         return entityName;
@@ -72,7 +67,6 @@ public class RelatedEntity {
 
     /**
      * Setter for entityName.<p>
-     * No description.
      */
     public void setEntityName(String entityName) {
         this.entityName = entityName;
@@ -80,7 +74,6 @@ public class RelatedEntity {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -88,7 +81,6 @@ public class RelatedEntity {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -96,7 +88,6 @@ public class RelatedEntity {
 
     /**
      * Getter for isAmbiguous.<p>
-     * No description.
      */
     public Integer getIsAmbiguous() {
         return isAmbiguous;
@@ -104,7 +95,6 @@ public class RelatedEntity {
 
     /**
      * Setter for isAmbiguous.<p>
-     * No description.
      */
     public void setIsAmbiguous(Integer isAmbiguous) {
         this.isAmbiguous = isAmbiguous;
@@ -112,7 +102,6 @@ public class RelatedEntity {
 
     /**
      * Getter for isDisclosed.<p>
-     * No description.
      */
     public Integer getIsDisclosed() {
         return isDisclosed;
@@ -120,7 +109,6 @@ public class RelatedEntity {
 
     /**
      * Setter for isDisclosed.<p>
-     * No description.
      */
     public void setIsDisclosed(Integer isDisclosed) {
         this.isDisclosed = isDisclosed;
@@ -128,7 +116,6 @@ public class RelatedEntity {
 
     /**
      * Getter for lastSeenDt.<p>
-     * No description.
      */
     public String getLastSeenDt() {
         return lastSeenDt;
@@ -136,7 +123,6 @@ public class RelatedEntity {
 
     /**
      * Setter for lastSeenDt.<p>
-     * No description.
      */
     public void setLastSeenDt(String lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
@@ -144,7 +130,6 @@ public class RelatedEntity {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -152,7 +137,6 @@ public class RelatedEntity {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -160,7 +144,6 @@ public class RelatedEntity {
 
     /**
      * Getter for matchLevel.<p>
-     * No description.
      */
     public Integer getMatchLevel() {
         return matchLevel;
@@ -168,7 +151,6 @@ public class RelatedEntity {
 
     /**
      * Setter for matchLevel.<p>
-     * No description.
      */
     public void setMatchLevel(Integer matchLevel) {
         this.matchLevel = matchLevel;
@@ -176,7 +158,6 @@ public class RelatedEntity {
 
     /**
      * Getter for matchLevelCode.<p>
-     * No description.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -184,7 +165,6 @@ public class RelatedEntity {
 
     /**
      * Setter for matchLevelCode.<p>
-     * No description.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -192,7 +172,6 @@ public class RelatedEntity {
 
     /**
      * Getter for records.<p>
-     * No description.
      */
     public Records getRecords() {
         return records;
@@ -200,7 +179,6 @@ public class RelatedEntity {
 
     /**
      * Setter for records.<p>
-     * No description.
      */
     public void setRecords(Records records) {
         this.records = records;
@@ -208,17 +186,15 @@ public class RelatedEntity {
 
     /**
      * Getter for recordSummary.<p>
-     * No description.
      */
-    public RecordSummary getRecordSummary() {
+    public List<RecordSummaryElement> getRecordSummary() {
         return recordSummary;
     }
 
     /**
      * Setter for recordSummary.<p>
-     * No description.
      */
-    public void setRecordSummary(RecordSummary recordSummary) {
+    public void setRecordSummary(List<RecordSummaryElement> recordSummary) {
         this.recordSummary = recordSummary;
     }
 }

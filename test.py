@@ -1,138 +1,262 @@
 #! /usr/bin/env python3
 
+# pylint: disable=duplicate-code
+
 """
-Requires minimum Python 3.10
+For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
-import logging
-import builtins
 import os
-import sys
-from python.typedef import *
-from bin.test_cases import TEST_CASES
+import pathlib
 
-DEBUG = False
-ERROR_COUNT = 0
-TEST_COUNT = 0
-
+from python.typedef import (
+    FeatureForAttribute,
+    G2engineAddRecordWithInfoResponse,
+    G2engineDeleteRecordWithInfoResponse,
+    G2engineFindInterestingEntitiesByEntityIDResponse,
+    G2engineFindInterestingEntitiesByRecordIDResponse,
+    G2engineFindNetworkByEntityIDResponse,
+    G2engineFindNetworkByRecordIDResponse,
+    G2engineFindPathByEntityIDResponse,
+    G2engineFindPathByRecordIDResponse,
+    G2engineGetEntityByEntityIDResponse,
+    G2engineGetEntityByRecordIDResponse,
+    G2engineGetRecordResponse,
+    G2engineGetRedoRecordResponse,
+    G2engineGetVirtualEntityByRecordIDResponse,
+)
 
 # -----------------------------------------------------------------------------
-# --- Functions
+# Utility functions
 # -----------------------------------------------------------------------------
 
-def is_equal(test_name, source, target):
-    """Determin if source and target are equal. Return boolean"""
 
-    result = True
-
-    if DEBUG:
-        print(test_name)
-
-    if target is None:
-        if source is None:
-            return True
-        return False
-
-    source_type = type(source)
-    if source_type == builtins.dict:
-        for key, value in source.items():
-            if not is_equal("{0}.{1}".format(test_name, key), value, target.get(key)):
-                return False
-    elif source_type == builtins.list:
-        source_length = len(source)
-        target_length = len(target)
-        if source_length != target_length:
-            return False
-        for item_number in range(source_length):
-            if not is_equal("{0}[{1}]".format(test_name, item_number), source[item_number], target[item_number]):
-                return False
-    else:
-        if source != target:
-            logging.error("JSON key conflict: {0}".format(test_name))
-            result = False
+def path_to_testdata(filename: str) -> str:
+    current_path = pathlib.Path(__file__).parent.resolve()
+    result = os.path.abspath("{0}/testdata/{1}".format(current_path, filename))
     return result
 
 
-def remove_empty_elements(an_object):
-    """Remove empty object from dictionary."""
+# -----------------------------------------------------------------------------
+# Tests
+# -----------------------------------------------------------------------------
 
-    def empty(test_object):
-        return test_object is None
 
-    source_type = type(an_object)
-    if source_type == builtins.dict:
-        return {k: v for k, v in ((k, remove_empty_elements(v)) for k, v in an_object.items()) if not empty(v)}
-    if source_type == builtins.list:
-        return [v for v in (remove_empty_elements(v) for v in an_object) if not empty(v)]
-    return an_object
+def test_g2engine_add_record_with_info_01():
+    with open(
+        path_to_testdata("G2EngineAddRecordWithInfoResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineAddRecordWithInfoResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.data_source == "TEST"
+    assert response.value.record_id == "WITH_INFO_1"
+    assert response.value.affected_entities[0].entity_id == 7
+
+
+def test_g2engine_delete_record_with_info_01():
+    with open(
+        path_to_testdata("G2EngineDeleteRecordWithInfoResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineDeleteRecordWithInfoResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.data_source == "TEST"
+    assert response.value.record_id == "DELETE_TEST"
+    assert response.value.affected_entities[0].entity_id == 100002
+
+
+def test_g2engine_find_interesting_entities_by_entity_id_01():
+    with open(
+        path_to_testdata(
+            "G2EngineFindInterestingEntitiesByEntityIdResponse-test-101.json"
+        ),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineFindInterestingEntitiesByEntityIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.interesting_entities.entities == []
+
+
+def test_g2engine_find_interesting_entities_by_record_id_01():
+    with open(
+        path_to_testdata(
+            "G2EngineFindInterestingEntitiesByRecordIdResponse-test-101.json"
+        ),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineFindInterestingEntitiesByRecordIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.interesting_entities.entities == []
+
+
+def test_g2engine_find_network_by_entity_id_01():
+    with open(
+        path_to_testdata("G2EngineFindNetworkByEntityIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineFindNetworkByEntityIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.entity_paths == []
+    assert response.value.entities[0].resolved_entity.entity_id == 1
+    assert response.value.entities[0].resolved_entity.entity_name == "Robert Smith"
+    assert (
+        response.value.entities[0].resolved_entity.record_summary[0].data_source
+        == "CUSTOMERS"
+    )
+
+
+def test_g2engine_find_network_by_record_id_01():
+    with open(
+        path_to_testdata("G2EngineFindNetworkByRecordIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineFindNetworkByRecordIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.entity_paths == []
+    assert response.value.entities[0].resolved_entity.entity_id == 1
+    assert response.value.entities[0].resolved_entity.entity_name == "Robert Smith"
+    assert (
+        response.value.entities[0].resolved_entity.record_summary[0].data_source
+        == "CUSTOMERS"
+    )
+
+
+def test_g2engine_find_path_by_entity_id_01():
+    with open(
+        path_to_testdata("G2EngineFindPathByEntityIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineFindPathByEntityIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.entity_paths[0].start_entity_id == 1
+    assert response.value.entities[0].related_entities == []
+    assert response.value.entities[0].resolved_entity.entity_id == 1
+    assert response.value.entities[0].resolved_entity.entity_name == "Robert Smith"
+    assert (
+        response.value.entities[0].resolved_entity.record_summary[0].record_count == 3
+    )
+
+
+def test_g2engine_find_path_by_record_id_01():
+    with open(
+        path_to_testdata("G2EngineFindPathByRecordIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineFindPathByRecordIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.entity_paths[0].start_entity_id == 1
+    assert response.value.entities[0].related_entities == []
+    assert response.value.entities[0].resolved_entity.entity_id == 1
+    assert response.value.entities[0].resolved_entity.entity_name == "Robert Smith"
+    assert (
+        response.value.entities[0].resolved_entity.record_summary[0].record_count == 3
+    )
+
+
+def test_g2engine_get_entity_by_entity_id_01():
+    with open(
+        path_to_testdata("G2EngineGetEntityByEntityIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineGetEntityByEntityIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.related_entities == []
+    assert response.value.resolved_entity.entity_id == 1
+    assert response.value.resolved_entity.entity_name == "Robert Smith"
+    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
+    feature = FeatureForAttribute.from_json_data(feature_json)
+    assert feature.feat_desc == "1515 Adela Lane Las Vegas NV 89111"
+    assert feature.feat_desc_values[0].lib_feat_id == 20
+
+
+def test_g2engine_get_entity_by_entity_id_02():
+    with open(
+        path_to_testdata("G2EngineGetEntityByEntityIdResponse-test-002.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineGetEntityByEntityIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.related_entities == []
+    assert response.value.resolved_entity.entity_id == 1
+    assert response.value.resolved_entity.entity_name == "blank"
+    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
+    feature = FeatureForAttribute.from_json_data(feature_json)
+    assert feature.feat_desc == "blank"
+    assert feature.feat_desc_values[0].lib_feat_id == 1
+
+
+def test_g2engine_get_entity_by_record_id_01():
+    with open(
+        path_to_testdata("G2EngineGetEntityByRecordIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineGetEntityByRecordIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.related_entities == []
+    assert response.value.resolved_entity.entity_id == 1
+    assert response.value.resolved_entity.entity_name == "Robert Smith"
+
+    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
+    feature = FeatureForAttribute.from_json_data(feature_json)
+    assert feature.feat_desc == "1515 Adela Lane Las Vegas NV 89111"
+    assert feature.feat_desc_values[0].lib_feat_id == 20
+
+
+def test_g2engine_get_record_01():
+    with open(
+        path_to_testdata("G2EngineGetRecordResponse-test-001.json"), encoding="utf-8"
+    ) as input_file:
+        response = G2engineGetRecordResponse.from_json_data(json.load(input_file))
+    assert response.value.data_source == "CUSTOMERS"
+    assert response.value.record_id == "1001"
+    assert isinstance(response.value.json_data, dict)
+    assert response.value.json_data.get("DATA_SOURCE") == "CUSTOMERS"
+    assert response.value.json_data.get("RECORD_ID") == "1001"
+
+
+# TODO: Fix this
+def test_g2engine_get_redo_record_01():
+    with open(
+        path_to_testdata("G2EngineGetRedoRecordResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineGetRedoRecordResponse.from_json_data(json.load(input_file))
+    assert response.value.value == {}
+
+
+def test_g2engine_get_virtual_entity_by_record_id_01():
+    with open(
+        path_to_testdata("G2EngineGetVirtualEntityByRecordIdResponse-test-001.json"),
+        encoding="utf-8",
+    ) as input_file:
+        response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
+            json.load(input_file)
+        )
+    assert response.value.resolved_entity.entity_id == 1
+    assert response.value.resolved_entity.entity_name == "Robert Smith"
+    feature_json = response.value.resolved_entity.features.get("NAME")[0]
+    feature = FeatureForAttribute.from_json_data(feature_json)
+    assert feature.feat_desc == "Robert Smith"
+    assert feature.lib_feat_id == 1
+    assert feature.feat_desc_values[1].lib_feat_id == 18
 
 
 # -----------------------------------------------------------------------------
-# --- Main
+# Main
 # -----------------------------------------------------------------------------
 
-# Set up logging.
-
-logging.basicConfig(format='%(asctime)s %(message)s', level=logging.INFO)
-
-logging.info("{0}".format("-" * 80))
-logging.info("--- {0} - Begin".format(os.path.basename(__file__)))
-logging.info("{0}".format("-" * 80))
-
-# Process TEST_CASES.
-
-for senzing_api_class, method_test_cases in TEST_CASES.items():
-
-    # Test that class exists.
-
-    if senzing_api_class not in globals():
-        ERROR_COUNT += 1
-        logging.error("Incorrect SenzingApi class: {0}".format(senzing_api_class))
-        continue
-
-    # Run though test cases.
-
-    senzing_class = globals()[senzing_api_class]
-    for method_test_case, original_json_string in method_test_cases.items():
-        TEST_COUNT += 1
-        test_case_name = "{0}.{1}".format(senzing_api_class, method_test_case)
-
-        # Test for similarity in key/values.
-
-        logging.info("Testcase: {0}".format(test_case_name))
-        json_struct = senzing_class.from_json_data(json.loads(original_json_string))
-        reconstructed_json_string = json.dumps(json_struct.to_json_data())
-        original_json_dict = json.loads(original_json_string)
-        reconstructed_json_dict = json.loads(reconstructed_json_string)
-        if not is_equal(test_case_name, original_json_dict, reconstructed_json_dict):
-            ERROR_COUNT += 1
-
-        # Test for similarity in JSON string lengths.
-
-        original_json_string_sorted = json.dumps(remove_empty_elements(original_json_dict), sort_keys=True)
-        reconstructed_json_string_sorted = json.dumps(remove_empty_elements(json_struct.to_json_data()), sort_keys=True)
-        len_original = len(original_json_string_sorted)
-        len_reconstructed = len(reconstructed_json_string_sorted)
-        if len_original != len_reconstructed:
-            ERROR_COUNT += 1
-            logging.error("Lengths differ: Test: {0}; Original: {1}; Reconstructed: {2}".format(test_case_name, len_original, len_reconstructed))
-
-        # Test for similarity in JSON strings.
-
-        if original_json_string_sorted != reconstructed_json_string_sorted:
-            for index in range(len_original):
-                if original_json_string_sorted[index] != reconstructed_json_string_sorted[index]:
-                    ERROR_COUNT += 1
-                    logging.error("Strings differ: Test: {0}; First difference position: {1}".format(test_case_name, index))
-                    logging.error(">>>>>>      Original: {0}".format(original_json_string_sorted))
-                    logging.error(">>>>>> Reconstructed: {0}".format(reconstructed_json_string_sorted))
-                    break
-
-# Epilog.
-
-logging.info("Tests: {0}; Errors: {1}".format(TEST_COUNT, ERROR_COUNT))
-logging.info("{0}".format("-" * 80))
-logging.info("--- {0} - End".format(os.path.basename(__file__)))
-logging.info("{0}".format("-" * 80))
-sys.exit(0 if (ERROR_COUNT == 0) else 1)
+if __name__ == "__main__":
+    test_g2engine_add_record_with_info_01()

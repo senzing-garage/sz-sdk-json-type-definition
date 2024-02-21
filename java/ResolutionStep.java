@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ResolutionStep {
     @JsonProperty("INBOUND_VIRTUAL_ENTITY_ID")
@@ -33,7 +30,6 @@ public class ResolutionStep {
 
     /**
      * Getter for inboundVirtualEntityId.<p>
-     * No description.
      */
     public String getInboundVirtualEntityId() {
         return inboundVirtualEntityId;
@@ -41,7 +37,6 @@ public class ResolutionStep {
 
     /**
      * Setter for inboundVirtualEntityId.<p>
-     * No description.
      */
     public void setInboundVirtualEntityId(String inboundVirtualEntityId) {
         this.inboundVirtualEntityId = inboundVirtualEntityId;
@@ -49,7 +44,6 @@ public class ResolutionStep {
 
     /**
      * Getter for matchInfo.<p>
-     * No description.
      */
     public MatchInfo getMatchInfo() {
         return matchInfo;
@@ -57,7 +51,6 @@ public class ResolutionStep {
 
     /**
      * Setter for matchInfo.<p>
-     * No description.
      */
     public void setMatchInfo(MatchInfo matchInfo) {
         this.matchInfo = matchInfo;
@@ -65,7 +58,6 @@ public class ResolutionStep {
 
     /**
      * Getter for resultVirtualEntityId.<p>
-     * No description.
      */
     public String getResultVirtualEntityId() {
         return resultVirtualEntityId;
@@ -73,7 +65,6 @@ public class ResolutionStep {
 
     /**
      * Setter for resultVirtualEntityId.<p>
-     * No description.
      */
     public void setResultVirtualEntityId(String resultVirtualEntityId) {
         this.resultVirtualEntityId = resultVirtualEntityId;
@@ -81,7 +72,6 @@ public class ResolutionStep {
 
     /**
      * Getter for step.<p>
-     * No description.
      */
     public Integer getStep() {
         return step;
@@ -89,7 +79,6 @@ public class ResolutionStep {
 
     /**
      * Setter for step.<p>
-     * No description.
      */
     public void setStep(Integer step) {
         this.step = step;
@@ -97,7 +86,6 @@ public class ResolutionStep {
 
     /**
      * Getter for virtualEntity.<p>
-     * No description.
      */
     public VirtualEntitySynopsis getVirtualEntity() {
         return virtualEntity;
@@ -105,7 +93,6 @@ public class ResolutionStep {
 
     /**
      * Setter for virtualEntity.<p>
-     * No description.
      */
     public void setVirtualEntity(VirtualEntitySynopsis virtualEntity) {
         this.virtualEntity = virtualEntity;
@@ -113,7 +100,6 @@ public class ResolutionStep {
 
     /**
      * Getter for virtualEntity0.<p>
-     * No description.
      */
     public VirtualEntitySynopsis getVirtualEntity0() {
         return virtualEntity0;
@@ -121,7 +107,6 @@ public class ResolutionStep {
 
     /**
      * Setter for virtualEntity0.<p>
-     * No description.
      */
     public void setVirtualEntity0(VirtualEntitySynopsis virtualEntity0) {
         this.virtualEntity0 = virtualEntity0;

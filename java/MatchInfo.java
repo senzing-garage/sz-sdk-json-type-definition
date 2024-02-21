@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MatchInfo {
     @JsonProperty("CANDIDATE_KEYS")
@@ -42,7 +39,6 @@ public class MatchInfo {
 
     /**
      * Getter for candidateKeys.<p>
-     * No description.
      */
     public MatchInfoCandidateKeys getCandidateKeys() {
         return candidateKeys;
@@ -50,7 +46,6 @@ public class MatchInfo {
 
     /**
      * Setter for candidateKeys.<p>
-     * No description.
      */
     public void setCandidateKeys(MatchInfoCandidateKeys candidateKeys) {
         this.candidateKeys = candidateKeys;
@@ -58,7 +53,6 @@ public class MatchInfo {
 
     /**
      * Getter for disclosedRelations.<p>
-     * No description.
      */
     public MatchInfoDisclosedRelations getDisclosedRelations() {
         return disclosedRelations;
@@ -66,7 +60,6 @@ public class MatchInfo {
 
     /**
      * Setter for disclosedRelations.<p>
-     * No description.
      */
     public void setDisclosedRelations(MatchInfoDisclosedRelations disclosedRelations) {
         this.disclosedRelations = disclosedRelations;
@@ -74,7 +67,6 @@ public class MatchInfo {
 
     /**
      * Getter for erruleCode.<p>
-     * No description.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -82,7 +74,6 @@ public class MatchInfo {
 
     /**
      * Setter for erruleCode.<p>
-     * No description.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -90,7 +81,6 @@ public class MatchInfo {
 
     /**
      * Getter for featureScores.<p>
-     * No description.
      */
     public FeatureScores getFeatureScores() {
         return featureScores;
@@ -98,7 +88,6 @@ public class MatchInfo {
 
     /**
      * Setter for featureScores.<p>
-     * No description.
      */
     public void setFeatureScores(FeatureScores featureScores) {
         this.featureScores = featureScores;
@@ -106,7 +95,6 @@ public class MatchInfo {
 
     /**
      * Getter for matchKey.<p>
-     * No description.
      */
     public String getMatchKey() {
         return matchKey;
@@ -114,7 +102,6 @@ public class MatchInfo {
 
     /**
      * Setter for matchKey.<p>
-     * No description.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -122,7 +109,6 @@ public class MatchInfo {
 
     /**
      * Getter for matchLevel.<p>
-     * No description.
      */
     public Integer getMatchLevel() {
         return matchLevel;
@@ -130,7 +116,6 @@ public class MatchInfo {
 
     /**
      * Setter for matchLevel.<p>
-     * No description.
      */
     public void setMatchLevel(Integer matchLevel) {
         this.matchLevel = matchLevel;
@@ -138,7 +123,6 @@ public class MatchInfo {
 
     /**
      * Getter for matchLevelCode.<p>
-     * No description.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -146,7 +130,6 @@ public class MatchInfo {
 
     /**
      * Setter for matchLevelCode.<p>
-     * No description.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -154,7 +137,6 @@ public class MatchInfo {
 
     /**
      * Getter for whyErruleCode.<p>
-     * No description.
      */
     public String getWhyErruleCode() {
         return whyErruleCode;
@@ -162,7 +144,6 @@ public class MatchInfo {
 
     /**
      * Setter for whyErruleCode.<p>
-     * No description.
      */
     public void setWhyErruleCode(String whyErruleCode) {
         this.whyErruleCode = whyErruleCode;
@@ -170,7 +151,6 @@ public class MatchInfo {
 
     /**
      * Getter for whyKey.<p>
-     * No description.
      */
     public String getWhyKey() {
         return whyKey;
@@ -178,7 +158,6 @@ public class MatchInfo {
 
     /**
      * Setter for whyKey.<p>
-     * No description.
      */
     public void setWhyKey(String whyKey) {
         this.whyKey = whyKey;

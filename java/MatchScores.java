@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class MatchScores {
     @JsonProperty("ACCOUNT_DOMAIN")
@@ -309,7 +306,6 @@ public class MatchScores {
 
     /**
      * Getter for accountDomain.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAccountDomain() {
         return accountDomain;
@@ -317,7 +313,6 @@ public class MatchScores {
 
     /**
      * Setter for accountDomain.<p>
-     * No description.
      */
     public void setAccountDomain(MatchScoresForAttribute accountDomain) {
         this.accountDomain = accountDomain;
@@ -325,7 +320,6 @@ public class MatchScores {
 
     /**
      * Getter for accountNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAccountNumber() {
         return accountNumber;
@@ -333,7 +327,6 @@ public class MatchScores {
 
     /**
      * Setter for accountNumber.<p>
-     * No description.
      */
     public void setAccountNumber(MatchScoresForAttribute accountNumber) {
         this.accountNumber = accountNumber;
@@ -341,7 +334,6 @@ public class MatchScores {
 
     /**
      * Getter for acctNum.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAcctNum() {
         return acctNum;
@@ -349,7 +341,6 @@ public class MatchScores {
 
     /**
      * Setter for acctNum.<p>
-     * No description.
      */
     public void setAcctNum(MatchScoresForAttribute acctNum) {
         this.acctNum = acctNum;
@@ -357,7 +348,6 @@ public class MatchScores {
 
     /**
      * Getter for address.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAddress() {
         return address;
@@ -365,7 +355,6 @@ public class MatchScores {
 
     /**
      * Setter for address.<p>
-     * No description.
      */
     public void setAddress(MatchScoresForAttribute address) {
         this.address = address;
@@ -373,7 +362,6 @@ public class MatchScores {
 
     /**
      * Getter for addressList.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAddressList() {
         return addressList;
@@ -381,7 +369,6 @@ public class MatchScores {
 
     /**
      * Setter for addressList.<p>
-     * No description.
      */
     public void setAddressList(MatchScoresForAttribute addressList) {
         this.addressList = addressList;
@@ -389,7 +376,6 @@ public class MatchScores {
 
     /**
      * Getter for addrFull.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAddrFull() {
         return addrFull;
@@ -397,7 +383,6 @@ public class MatchScores {
 
     /**
      * Setter for addrFull.<p>
-     * No description.
      */
     public void setAddrFull(MatchScoresForAttribute addrFull) {
         this.addrFull = addrFull;
@@ -405,7 +390,6 @@ public class MatchScores {
 
     /**
      * Getter for addrKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getAddrKey() {
         return addrKey;
@@ -413,7 +397,6 @@ public class MatchScores {
 
     /**
      * Setter for addrKey.<p>
-     * No description.
      */
     public void setAddrKey(MatchScoresForAttribute addrKey) {
         this.addrKey = addrKey;
@@ -421,7 +404,6 @@ public class MatchScores {
 
     /**
      * Getter for cellPhoneNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getCellPhoneNumber() {
         return cellPhoneNumber;
@@ -429,7 +411,6 @@ public class MatchScores {
 
     /**
      * Setter for cellPhoneNumber.<p>
-     * No description.
      */
     public void setCellPhoneNumber(MatchScoresForAttribute cellPhoneNumber) {
         this.cellPhoneNumber = cellPhoneNumber;
@@ -437,7 +418,6 @@ public class MatchScores {
 
     /**
      * Getter for citizenship.<p>
-     * No description.
      */
     public MatchScoresForAttribute getCitizenship() {
         return citizenship;
@@ -445,7 +425,6 @@ public class MatchScores {
 
     /**
      * Setter for citizenship.<p>
-     * No description.
      */
     public void setCitizenship(MatchScoresForAttribute citizenship) {
         this.citizenship = citizenship;
@@ -453,7 +432,6 @@ public class MatchScores {
 
     /**
      * Getter for countryOfAssociation.<p>
-     * No description.
      */
     public MatchScoresForAttribute getCountryOfAssociation() {
         return countryOfAssociation;
@@ -461,7 +439,6 @@ public class MatchScores {
 
     /**
      * Setter for countryOfAssociation.<p>
-     * No description.
      */
     public void setCountryOfAssociation(MatchScoresForAttribute countryOfAssociation) {
         this.countryOfAssociation = countryOfAssociation;
@@ -469,7 +446,6 @@ public class MatchScores {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDataSource() {
         return dataSource;
@@ -477,7 +453,6 @@ public class MatchScores {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(MatchScoresForAttribute dataSource) {
         this.dataSource = dataSource;
@@ -485,7 +460,6 @@ public class MatchScores {
 
     /**
      * Getter for dateOfBirth.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDateOfBirth() {
         return dateOfBirth;
@@ -493,7 +467,6 @@ public class MatchScores {
 
     /**
      * Setter for dateOfBirth.<p>
-     * No description.
      */
     public void setDateOfBirth(MatchScoresForAttribute dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
@@ -501,7 +474,6 @@ public class MatchScores {
 
     /**
      * Getter for dateOfDeath.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDateOfDeath() {
         return dateOfDeath;
@@ -509,7 +481,6 @@ public class MatchScores {
 
     /**
      * Setter for dateOfDeath.<p>
-     * No description.
      */
     public void setDateOfDeath(MatchScoresForAttribute dateOfDeath) {
         this.dateOfDeath = dateOfDeath;
@@ -517,7 +488,6 @@ public class MatchScores {
 
     /**
      * Getter for dob.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDob() {
         return dob;
@@ -525,7 +495,6 @@ public class MatchScores {
 
     /**
      * Setter for dob.<p>
-     * No description.
      */
     public void setDob(MatchScoresForAttribute dob) {
         this.dob = dob;
@@ -533,7 +502,6 @@ public class MatchScores {
 
     /**
      * Getter for dod.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDod() {
         return dod;
@@ -541,7 +509,6 @@ public class MatchScores {
 
     /**
      * Setter for dod.<p>
-     * No description.
      */
     public void setDod(MatchScoresForAttribute dod) {
         this.dod = dod;
@@ -549,7 +516,6 @@ public class MatchScores {
 
     /**
      * Getter for driversLicenseNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDriversLicenseNumber() {
         return driversLicenseNumber;
@@ -557,7 +523,6 @@ public class MatchScores {
 
     /**
      * Setter for driversLicenseNumber.<p>
-     * No description.
      */
     public void setDriversLicenseNumber(MatchScoresForAttribute driversLicenseNumber) {
         this.driversLicenseNumber = driversLicenseNumber;
@@ -565,7 +530,6 @@ public class MatchScores {
 
     /**
      * Getter for driversLicenseState.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDriversLicenseState() {
         return driversLicenseState;
@@ -573,7 +537,6 @@ public class MatchScores {
 
     /**
      * Setter for driversLicenseState.<p>
-     * No description.
      */
     public void setDriversLicenseState(MatchScoresForAttribute driversLicenseState) {
         this.driversLicenseState = driversLicenseState;
@@ -581,7 +544,6 @@ public class MatchScores {
 
     /**
      * Getter for drlic.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDrlic() {
         return drlic;
@@ -589,7 +551,6 @@ public class MatchScores {
 
     /**
      * Setter for drlic.<p>
-     * No description.
      */
     public void setDrlic(MatchScoresForAttribute drlic) {
         this.drlic = drlic;
@@ -597,7 +558,6 @@ public class MatchScores {
 
     /**
      * Getter for dunsNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getDunsNumber() {
         return dunsNumber;
@@ -605,7 +565,6 @@ public class MatchScores {
 
     /**
      * Setter for dunsNumber.<p>
-     * No description.
      */
     public void setDunsNumber(MatchScoresForAttribute dunsNumber) {
         this.dunsNumber = dunsNumber;
@@ -613,7 +572,6 @@ public class MatchScores {
 
     /**
      * Getter for email.<p>
-     * No description.
      */
     public MatchScoresForAttribute getEmail() {
         return email;
@@ -621,7 +579,6 @@ public class MatchScores {
 
     /**
      * Setter for email.<p>
-     * No description.
      */
     public void setEmail(MatchScoresForAttribute email) {
         this.email = email;
@@ -629,7 +586,6 @@ public class MatchScores {
 
     /**
      * Getter for emailAddress.<p>
-     * No description.
      */
     public MatchScoresForAttribute getEmailAddress() {
         return emailAddress;
@@ -637,7 +593,6 @@ public class MatchScores {
 
     /**
      * Setter for emailAddress.<p>
-     * No description.
      */
     public void setEmailAddress(MatchScoresForAttribute emailAddress) {
         this.emailAddress = emailAddress;
@@ -645,7 +600,6 @@ public class MatchScores {
 
     /**
      * Getter for emailKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getEmailKey() {
         return emailKey;
@@ -653,7 +607,6 @@ public class MatchScores {
 
     /**
      * Setter for emailKey.<p>
-     * No description.
      */
     public void setEmailKey(MatchScoresForAttribute emailKey) {
         this.emailKey = emailKey;
@@ -661,7 +614,6 @@ public class MatchScores {
 
     /**
      * Getter for employerName.<p>
-     * No description.
      */
     public MatchScoresForAttribute getEmployerName() {
         return employerName;
@@ -669,7 +621,6 @@ public class MatchScores {
 
     /**
      * Setter for employerName.<p>
-     * No description.
      */
     public void setEmployerName(MatchScoresForAttribute employerName) {
         this.employerName = employerName;
@@ -677,7 +628,6 @@ public class MatchScores {
 
     /**
      * Getter for entityType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getEntityType() {
         return entityType;
@@ -685,7 +635,6 @@ public class MatchScores {
 
     /**
      * Setter for entityType.<p>
-     * No description.
      */
     public void setEntityType(MatchScoresForAttribute entityType) {
         this.entityType = entityType;
@@ -693,7 +642,6 @@ public class MatchScores {
 
     /**
      * Getter for facebook.<p>
-     * No description.
      */
     public MatchScoresForAttribute getFacebook() {
         return facebook;
@@ -701,7 +649,6 @@ public class MatchScores {
 
     /**
      * Setter for facebook.<p>
-     * No description.
      */
     public void setFacebook(MatchScoresForAttribute facebook) {
         this.facebook = facebook;
@@ -709,7 +656,6 @@ public class MatchScores {
 
     /**
      * Getter for gender.<p>
-     * No description.
      */
     public MatchScoresForAttribute getGender() {
         return gender;
@@ -717,7 +663,6 @@ public class MatchScores {
 
     /**
      * Setter for gender.<p>
-     * No description.
      */
     public void setGender(MatchScoresForAttribute gender) {
         this.gender = gender;
@@ -725,7 +670,6 @@ public class MatchScores {
 
     /**
      * Getter for groupAssnIdNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getGroupAssnIdNumber() {
         return groupAssnIdNumber;
@@ -733,7 +677,6 @@ public class MatchScores {
 
     /**
      * Setter for groupAssnIdNumber.<p>
-     * No description.
      */
     public void setGroupAssnIdNumber(MatchScoresForAttribute groupAssnIdNumber) {
         this.groupAssnIdNumber = groupAssnIdNumber;
@@ -741,7 +684,6 @@ public class MatchScores {
 
     /**
      * Getter for groupAssnIdType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getGroupAssnIdType() {
         return groupAssnIdType;
@@ -749,7 +691,6 @@ public class MatchScores {
 
     /**
      * Setter for groupAssnIdType.<p>
-     * No description.
      */
     public void setGroupAssnIdType(MatchScoresForAttribute groupAssnIdType) {
         this.groupAssnIdType = groupAssnIdType;
@@ -757,7 +698,6 @@ public class MatchScores {
 
     /**
      * Getter for groupAssociationOrgName.<p>
-     * No description.
      */
     public MatchScoresForAttribute getGroupAssociationOrgName() {
         return groupAssociationOrgName;
@@ -765,7 +705,6 @@ public class MatchScores {
 
     /**
      * Setter for groupAssociationOrgName.<p>
-     * No description.
      */
     public void setGroupAssociationOrgName(MatchScoresForAttribute groupAssociationOrgName) {
         this.groupAssociationOrgName = groupAssociationOrgName;
@@ -773,7 +712,6 @@ public class MatchScores {
 
     /**
      * Getter for groupAssociationType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getGroupAssociationType() {
         return groupAssociationType;
@@ -781,7 +719,6 @@ public class MatchScores {
 
     /**
      * Setter for groupAssociationType.<p>
-     * No description.
      */
     public void setGroupAssociationType(MatchScoresForAttribute groupAssociationType) {
         this.groupAssociationType = groupAssociationType;
@@ -789,7 +726,6 @@ public class MatchScores {
 
     /**
      * Getter for idKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getIdKey() {
         return idKey;
@@ -797,7 +733,6 @@ public class MatchScores {
 
     /**
      * Setter for idKey.<p>
-     * No description.
      */
     public void setIdKey(MatchScoresForAttribute idKey) {
         this.idKey = idKey;
@@ -805,7 +740,6 @@ public class MatchScores {
 
     /**
      * Getter for instagram.<p>
-     * No description.
      */
     public MatchScoresForAttribute getInstagram() {
         return instagram;
@@ -813,7 +747,6 @@ public class MatchScores {
 
     /**
      * Setter for instagram.<p>
-     * No description.
      */
     public void setInstagram(MatchScoresForAttribute instagram) {
         this.instagram = instagram;
@@ -821,7 +754,6 @@ public class MatchScores {
 
     /**
      * Getter for leiNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getLeiNumber() {
         return leiNumber;
@@ -829,7 +761,6 @@ public class MatchScores {
 
     /**
      * Setter for leiNumber.<p>
-     * No description.
      */
     public void setLeiNumber(MatchScoresForAttribute leiNumber) {
         this.leiNumber = leiNumber;
@@ -837,7 +768,6 @@ public class MatchScores {
 
     /**
      * Getter for linkedin.<p>
-     * No description.
      */
     public MatchScoresForAttribute getLinkedin() {
         return linkedin;
@@ -845,7 +775,6 @@ public class MatchScores {
 
     /**
      * Setter for linkedin.<p>
-     * No description.
      */
     public void setLinkedin(MatchScoresForAttribute linkedin) {
         this.linkedin = linkedin;
@@ -853,7 +782,6 @@ public class MatchScores {
 
     /**
      * Getter for loadId.<p>
-     * No description.
      */
     public MatchScoresForAttribute getLoadId() {
         return loadId;
@@ -861,7 +789,6 @@ public class MatchScores {
 
     /**
      * Setter for loadId.<p>
-     * No description.
      */
     public void setLoadId(MatchScoresForAttribute loadId) {
         this.loadId = loadId;
@@ -869,7 +796,6 @@ public class MatchScores {
 
     /**
      * Getter for loginId.<p>
-     * No description.
      */
     public MatchScoresForAttribute getLoginId() {
         return loginId;
@@ -877,7 +803,6 @@ public class MatchScores {
 
     /**
      * Setter for loginId.<p>
-     * No description.
      */
     public void setLoginId(MatchScoresForAttribute loginId) {
         this.loginId = loginId;
@@ -885,7 +810,6 @@ public class MatchScores {
 
     /**
      * Getter for name.<p>
-     * No description.
      */
     public MatchScoresForAttribute getName() {
         return name;
@@ -893,7 +817,6 @@ public class MatchScores {
 
     /**
      * Setter for name.<p>
-     * No description.
      */
     public void setName(MatchScoresForAttribute name) {
         this.name = name;
@@ -901,7 +824,6 @@ public class MatchScores {
 
     /**
      * Getter for nameFull.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNameFull() {
         return nameFull;
@@ -909,7 +831,6 @@ public class MatchScores {
 
     /**
      * Setter for nameFull.<p>
-     * No description.
      */
     public void setNameFull(MatchScoresForAttribute nameFull) {
         this.nameFull = nameFull;
@@ -917,7 +838,6 @@ public class MatchScores {
 
     /**
      * Getter for nameKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNameKey() {
         return nameKey;
@@ -925,7 +845,6 @@ public class MatchScores {
 
     /**
      * Setter for nameKey.<p>
-     * No description.
      */
     public void setNameKey(MatchScoresForAttribute nameKey) {
         this.nameKey = nameKey;
@@ -933,7 +852,6 @@ public class MatchScores {
 
     /**
      * Getter for nameList.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNameList() {
         return nameList;
@@ -941,7 +859,6 @@ public class MatchScores {
 
     /**
      * Setter for nameList.<p>
-     * No description.
      */
     public void setNameList(MatchScoresForAttribute nameList) {
         this.nameList = nameList;
@@ -949,7 +866,6 @@ public class MatchScores {
 
     /**
      * Getter for nationality.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNationality() {
         return nationality;
@@ -957,7 +873,6 @@ public class MatchScores {
 
     /**
      * Setter for nationality.<p>
-     * No description.
      */
     public void setNationality(MatchScoresForAttribute nationality) {
         this.nationality = nationality;
@@ -965,7 +880,6 @@ public class MatchScores {
 
     /**
      * Getter for nationalId.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNationalId() {
         return nationalId;
@@ -973,7 +887,6 @@ public class MatchScores {
 
     /**
      * Setter for nationalId.<p>
-     * No description.
      */
     public void setNationalId(MatchScoresForAttribute nationalId) {
         this.nationalId = nationalId;
@@ -981,7 +894,6 @@ public class MatchScores {
 
     /**
      * Getter for nationalIdCountry.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNationalIdCountry() {
         return nationalIdCountry;
@@ -989,7 +901,6 @@ public class MatchScores {
 
     /**
      * Setter for nationalIdCountry.<p>
-     * No description.
      */
     public void setNationalIdCountry(MatchScoresForAttribute nationalIdCountry) {
         this.nationalIdCountry = nationalIdCountry;
@@ -997,7 +908,6 @@ public class MatchScores {
 
     /**
      * Getter for nationalIdNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNationalIdNumber() {
         return nationalIdNumber;
@@ -1005,7 +915,6 @@ public class MatchScores {
 
     /**
      * Setter for nationalIdNumber.<p>
-     * No description.
      */
     public void setNationalIdNumber(MatchScoresForAttribute nationalIdNumber) {
         this.nationalIdNumber = nationalIdNumber;
@@ -1013,7 +922,6 @@ public class MatchScores {
 
     /**
      * Getter for ninCountry.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNinCountry() {
         return ninCountry;
@@ -1021,7 +929,6 @@ public class MatchScores {
 
     /**
      * Setter for ninCountry.<p>
-     * No description.
      */
     public void setNinCountry(MatchScoresForAttribute ninCountry) {
         this.ninCountry = ninCountry;
@@ -1029,7 +936,6 @@ public class MatchScores {
 
     /**
      * Getter for ninNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNinNumber() {
         return ninNumber;
@@ -1037,7 +943,6 @@ public class MatchScores {
 
     /**
      * Setter for ninNumber.<p>
-     * No description.
      */
     public void setNinNumber(MatchScoresForAttribute ninNumber) {
         this.ninNumber = ninNumber;
@@ -1045,7 +950,6 @@ public class MatchScores {
 
     /**
      * Getter for npiNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getNpiNumber() {
         return npiNumber;
@@ -1053,7 +957,6 @@ public class MatchScores {
 
     /**
      * Setter for npiNumber.<p>
-     * No description.
      */
     public void setNpiNumber(MatchScoresForAttribute npiNumber) {
         this.npiNumber = npiNumber;
@@ -1061,7 +964,6 @@ public class MatchScores {
 
     /**
      * Getter for otherIdCountry.<p>
-     * No description.
      */
     public MatchScoresForAttribute getOtherIdCountry() {
         return otherIdCountry;
@@ -1069,7 +971,6 @@ public class MatchScores {
 
     /**
      * Setter for otherIdCountry.<p>
-     * No description.
      */
     public void setOtherIdCountry(MatchScoresForAttribute otherIdCountry) {
         this.otherIdCountry = otherIdCountry;
@@ -1077,7 +978,6 @@ public class MatchScores {
 
     /**
      * Getter for otherIdNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getOtherIdNumber() {
         return otherIdNumber;
@@ -1085,7 +985,6 @@ public class MatchScores {
 
     /**
      * Setter for otherIdNumber.<p>
-     * No description.
      */
     public void setOtherIdNumber(MatchScoresForAttribute otherIdNumber) {
         this.otherIdNumber = otherIdNumber;
@@ -1093,7 +992,6 @@ public class MatchScores {
 
     /**
      * Getter for otherIdType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getOtherIdType() {
         return otherIdType;
@@ -1101,7 +999,6 @@ public class MatchScores {
 
     /**
      * Setter for otherIdType.<p>
-     * No description.
      */
     public void setOtherIdType(MatchScoresForAttribute otherIdType) {
         this.otherIdType = otherIdType;
@@ -1109,7 +1006,6 @@ public class MatchScores {
 
     /**
      * Getter for passport.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPassport() {
         return passport;
@@ -1117,7 +1013,6 @@ public class MatchScores {
 
     /**
      * Setter for passport.<p>
-     * No description.
      */
     public void setPassport(MatchScoresForAttribute passport) {
         this.passport = passport;
@@ -1125,7 +1020,6 @@ public class MatchScores {
 
     /**
      * Getter for passports.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPassports() {
         return passports;
@@ -1133,7 +1027,6 @@ public class MatchScores {
 
     /**
      * Setter for passports.<p>
-     * No description.
      */
     public void setPassports(MatchScoresForAttribute passports) {
         this.passports = passports;
@@ -1141,7 +1034,6 @@ public class MatchScores {
 
     /**
      * Getter for passportCountry.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPassportCountry() {
         return passportCountry;
@@ -1149,7 +1041,6 @@ public class MatchScores {
 
     /**
      * Setter for passportCountry.<p>
-     * No description.
      */
     public void setPassportCountry(MatchScoresForAttribute passportCountry) {
         this.passportCountry = passportCountry;
@@ -1157,7 +1048,6 @@ public class MatchScores {
 
     /**
      * Getter for passportNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPassportNumber() {
         return passportNumber;
@@ -1165,7 +1055,6 @@ public class MatchScores {
 
     /**
      * Setter for passportNumber.<p>
-     * No description.
      */
     public void setPassportNumber(MatchScoresForAttribute passportNumber) {
         this.passportNumber = passportNumber;
@@ -1173,7 +1062,6 @@ public class MatchScores {
 
     /**
      * Getter for phone.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPhone() {
         return phone;
@@ -1181,7 +1069,6 @@ public class MatchScores {
 
     /**
      * Setter for phone.<p>
-     * No description.
      */
     public void setPhone(MatchScoresForAttribute phone) {
         this.phone = phone;
@@ -1189,7 +1076,6 @@ public class MatchScores {
 
     /**
      * Getter for phones.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPhones() {
         return phones;
@@ -1197,7 +1083,6 @@ public class MatchScores {
 
     /**
      * Setter for phones.<p>
-     * No description.
      */
     public void setPhones(MatchScoresForAttribute phones) {
         this.phones = phones;
@@ -1205,7 +1090,6 @@ public class MatchScores {
 
     /**
      * Getter for phoneKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPhoneKey() {
         return phoneKey;
@@ -1213,7 +1097,6 @@ public class MatchScores {
 
     /**
      * Setter for phoneKey.<p>
-     * No description.
      */
     public void setPhoneKey(MatchScoresForAttribute phoneKey) {
         this.phoneKey = phoneKey;
@@ -1221,7 +1104,6 @@ public class MatchScores {
 
     /**
      * Getter for placeOfBirth.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPlaceOfBirth() {
         return placeOfBirth;
@@ -1229,7 +1111,6 @@ public class MatchScores {
 
     /**
      * Setter for placeOfBirth.<p>
-     * No description.
      */
     public void setPlaceOfBirth(MatchScoresForAttribute placeOfBirth) {
         this.placeOfBirth = placeOfBirth;
@@ -1237,7 +1118,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryNameFirst.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryNameFirst() {
         return primaryNameFirst;
@@ -1245,7 +1125,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryNameFirst.<p>
-     * No description.
      */
     public void setPrimaryNameFirst(MatchScoresForAttribute primaryNameFirst) {
         this.primaryNameFirst = primaryNameFirst;
@@ -1253,7 +1132,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryNameLast.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryNameLast() {
         return primaryNameLast;
@@ -1261,7 +1139,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryNameLast.<p>
-     * No description.
      */
     public void setPrimaryNameLast(MatchScoresForAttribute primaryNameLast) {
         this.primaryNameLast = primaryNameLast;
@@ -1269,7 +1146,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryNameMiddle.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryNameMiddle() {
         return primaryNameMiddle;
@@ -1277,7 +1153,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryNameMiddle.<p>
-     * No description.
      */
     public void setPrimaryNameMiddle(MatchScoresForAttribute primaryNameMiddle) {
         this.primaryNameMiddle = primaryNameMiddle;
@@ -1285,7 +1160,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryNameOrg.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryNameOrg() {
         return primaryNameOrg;
@@ -1293,7 +1167,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryNameOrg.<p>
-     * No description.
      */
     public void setPrimaryNameOrg(MatchScoresForAttribute primaryNameOrg) {
         this.primaryNameOrg = primaryNameOrg;
@@ -1301,7 +1174,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryNamePrefix.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryNamePrefix() {
         return primaryNamePrefix;
@@ -1309,7 +1181,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryNamePrefix.<p>
-     * No description.
      */
     public void setPrimaryNamePrefix(MatchScoresForAttribute primaryNamePrefix) {
         this.primaryNamePrefix = primaryNamePrefix;
@@ -1317,7 +1188,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryNameSuffix.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryNameSuffix() {
         return primaryNameSuffix;
@@ -1325,7 +1195,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryNameSuffix.<p>
-     * No description.
      */
     public void setPrimaryNameSuffix(MatchScoresForAttribute primaryNameSuffix) {
         this.primaryNameSuffix = primaryNameSuffix;
@@ -1333,7 +1202,6 @@ public class MatchScores {
 
     /**
      * Getter for primaryPhoneNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getPrimaryPhoneNumber() {
         return primaryPhoneNumber;
@@ -1341,7 +1209,6 @@ public class MatchScores {
 
     /**
      * Setter for primaryPhoneNumber.<p>
-     * No description.
      */
     public void setPrimaryPhoneNumber(MatchScoresForAttribute primaryPhoneNumber) {
         this.primaryPhoneNumber = primaryPhoneNumber;
@@ -1349,7 +1216,6 @@ public class MatchScores {
 
     /**
      * Getter for recordType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRecordType() {
         return recordType;
@@ -1357,7 +1223,6 @@ public class MatchScores {
 
     /**
      * Setter for recordType.<p>
-     * No description.
      */
     public void setRecordType(MatchScoresForAttribute recordType) {
         this.recordType = recordType;
@@ -1365,7 +1230,6 @@ public class MatchScores {
 
     /**
      * Getter for registrationCountry.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRegistrationCountry() {
         return registrationCountry;
@@ -1373,7 +1237,6 @@ public class MatchScores {
 
     /**
      * Setter for registrationCountry.<p>
-     * No description.
      */
     public void setRegistrationCountry(MatchScoresForAttribute registrationCountry) {
         this.registrationCountry = registrationCountry;
@@ -1381,7 +1244,6 @@ public class MatchScores {
 
     /**
      * Getter for registrationDate.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRegistrationDate() {
         return registrationDate;
@@ -1389,7 +1251,6 @@ public class MatchScores {
 
     /**
      * Setter for registrationDate.<p>
-     * No description.
      */
     public void setRegistrationDate(MatchScoresForAttribute registrationDate) {
         this.registrationDate = registrationDate;
@@ -1397,7 +1258,6 @@ public class MatchScores {
 
     /**
      * Getter for relAnchor.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelAnchor() {
         return relAnchor;
@@ -1405,7 +1265,6 @@ public class MatchScores {
 
     /**
      * Setter for relAnchor.<p>
-     * No description.
      */
     public void setRelAnchor(MatchScoresForAttribute relAnchor) {
         this.relAnchor = relAnchor;
@@ -1413,7 +1272,6 @@ public class MatchScores {
 
     /**
      * Getter for relAnchorDomain.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelAnchorDomain() {
         return relAnchorDomain;
@@ -1421,7 +1279,6 @@ public class MatchScores {
 
     /**
      * Setter for relAnchorDomain.<p>
-     * No description.
      */
     public void setRelAnchorDomain(MatchScoresForAttribute relAnchorDomain) {
         this.relAnchorDomain = relAnchorDomain;
@@ -1429,7 +1286,6 @@ public class MatchScores {
 
     /**
      * Getter for relAnchorKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelAnchorKey() {
         return relAnchorKey;
@@ -1437,7 +1293,6 @@ public class MatchScores {
 
     /**
      * Setter for relAnchorKey.<p>
-     * No description.
      */
     public void setRelAnchorKey(MatchScoresForAttribute relAnchorKey) {
         this.relAnchorKey = relAnchorKey;
@@ -1445,7 +1300,6 @@ public class MatchScores {
 
     /**
      * Getter for relLink.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelLink() {
         return relLink;
@@ -1453,7 +1307,6 @@ public class MatchScores {
 
     /**
      * Setter for relLink.<p>
-     * No description.
      */
     public void setRelLink(MatchScoresForAttribute relLink) {
         this.relLink = relLink;
@@ -1461,7 +1314,6 @@ public class MatchScores {
 
     /**
      * Getter for relPointer.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelPointer() {
         return relPointer;
@@ -1469,7 +1321,6 @@ public class MatchScores {
 
     /**
      * Setter for relPointer.<p>
-     * No description.
      */
     public void setRelPointer(MatchScoresForAttribute relPointer) {
         this.relPointer = relPointer;
@@ -1477,7 +1328,6 @@ public class MatchScores {
 
     /**
      * Getter for relPointerDomain.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelPointerDomain() {
         return relPointerDomain;
@@ -1485,7 +1335,6 @@ public class MatchScores {
 
     /**
      * Setter for relPointerDomain.<p>
-     * No description.
      */
     public void setRelPointerDomain(MatchScoresForAttribute relPointerDomain) {
         this.relPointerDomain = relPointerDomain;
@@ -1493,7 +1342,6 @@ public class MatchScores {
 
     /**
      * Getter for relPointerKey.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelPointerKey() {
         return relPointerKey;
@@ -1501,7 +1349,6 @@ public class MatchScores {
 
     /**
      * Setter for relPointerKey.<p>
-     * No description.
      */
     public void setRelPointerKey(MatchScoresForAttribute relPointerKey) {
         this.relPointerKey = relPointerKey;
@@ -1509,7 +1356,6 @@ public class MatchScores {
 
     /**
      * Getter for relPointerRole.<p>
-     * No description.
      */
     public MatchScoresForAttribute getRelPointerRole() {
         return relPointerRole;
@@ -1517,7 +1363,6 @@ public class MatchScores {
 
     /**
      * Setter for relPointerRole.<p>
-     * No description.
      */
     public void setRelPointerRole(MatchScoresForAttribute relPointerRole) {
         this.relPointerRole = relPointerRole;
@@ -1525,7 +1370,6 @@ public class MatchScores {
 
     /**
      * Getter for signal.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSignal() {
         return signal;
@@ -1533,7 +1377,6 @@ public class MatchScores {
 
     /**
      * Setter for signal.<p>
-     * No description.
      */
     public void setSignal(MatchScoresForAttribute signal) {
         this.signal = signal;
@@ -1541,7 +1384,6 @@ public class MatchScores {
 
     /**
      * Getter for skype.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSkype() {
         return skype;
@@ -1549,7 +1391,6 @@ public class MatchScores {
 
     /**
      * Setter for skype.<p>
-     * No description.
      */
     public void setSkype(MatchScoresForAttribute skype) {
         this.skype = skype;
@@ -1557,7 +1398,6 @@ public class MatchScores {
 
     /**
      * Getter for socialHandle.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSocialHandle() {
         return socialHandle;
@@ -1565,7 +1405,6 @@ public class MatchScores {
 
     /**
      * Setter for socialHandle.<p>
-     * No description.
      */
     public void setSocialHandle(MatchScoresForAttribute socialHandle) {
         this.socialHandle = socialHandle;
@@ -1573,7 +1412,6 @@ public class MatchScores {
 
     /**
      * Getter for socialNetwork.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSocialNetwork() {
         return socialNetwork;
@@ -1581,7 +1419,6 @@ public class MatchScores {
 
     /**
      * Setter for socialNetwork.<p>
-     * No description.
      */
     public void setSocialNetwork(MatchScoresForAttribute socialNetwork) {
         this.socialNetwork = socialNetwork;
@@ -1589,7 +1426,6 @@ public class MatchScores {
 
     /**
      * Getter for sourceId.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSourceId() {
         return sourceId;
@@ -1597,7 +1433,6 @@ public class MatchScores {
 
     /**
      * Setter for sourceId.<p>
-     * No description.
      */
     public void setSourceId(MatchScoresForAttribute sourceId) {
         this.sourceId = sourceId;
@@ -1605,7 +1440,6 @@ public class MatchScores {
 
     /**
      * Getter for ssn.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSsn() {
         return ssn;
@@ -1613,7 +1447,6 @@ public class MatchScores {
 
     /**
      * Setter for ssn.<p>
-     * No description.
      */
     public void setSsn(MatchScoresForAttribute ssn) {
         this.ssn = ssn;
@@ -1621,7 +1454,6 @@ public class MatchScores {
 
     /**
      * Getter for ssnLast4.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSsnLast4() {
         return ssnLast4;
@@ -1629,7 +1461,6 @@ public class MatchScores {
 
     /**
      * Setter for ssnLast4.<p>
-     * No description.
      */
     public void setSsnLast4(MatchScoresForAttribute ssnLast4) {
         this.ssnLast4 = ssnLast4;
@@ -1637,7 +1468,6 @@ public class MatchScores {
 
     /**
      * Getter for ssnNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getSsnNumber() {
         return ssnNumber;
@@ -1645,7 +1475,6 @@ public class MatchScores {
 
     /**
      * Setter for ssnNumber.<p>
-     * No description.
      */
     public void setSsnNumber(MatchScoresForAttribute ssnNumber) {
         this.ssnNumber = ssnNumber;
@@ -1653,7 +1482,6 @@ public class MatchScores {
 
     /**
      * Getter for tango.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTango() {
         return tango;
@@ -1661,7 +1489,6 @@ public class MatchScores {
 
     /**
      * Setter for tango.<p>
-     * No description.
      */
     public void setTango(MatchScoresForAttribute tango) {
         this.tango = tango;
@@ -1669,7 +1496,6 @@ public class MatchScores {
 
     /**
      * Getter for taxIdCountry.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTaxIdCountry() {
         return taxIdCountry;
@@ -1677,7 +1503,6 @@ public class MatchScores {
 
     /**
      * Setter for taxIdCountry.<p>
-     * No description.
      */
     public void setTaxIdCountry(MatchScoresForAttribute taxIdCountry) {
         this.taxIdCountry = taxIdCountry;
@@ -1685,7 +1510,6 @@ public class MatchScores {
 
     /**
      * Getter for taxIdNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTaxIdNumber() {
         return taxIdNumber;
@@ -1693,7 +1517,6 @@ public class MatchScores {
 
     /**
      * Setter for taxIdNumber.<p>
-     * No description.
      */
     public void setTaxIdNumber(MatchScoresForAttribute taxIdNumber) {
         this.taxIdNumber = taxIdNumber;
@@ -1701,7 +1524,6 @@ public class MatchScores {
 
     /**
      * Getter for taxIdType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTaxIdType() {
         return taxIdType;
@@ -1709,7 +1531,6 @@ public class MatchScores {
 
     /**
      * Setter for taxIdType.<p>
-     * No description.
      */
     public void setTaxIdType(MatchScoresForAttribute taxIdType) {
         this.taxIdType = taxIdType;
@@ -1717,7 +1538,6 @@ public class MatchScores {
 
     /**
      * Getter for telegram.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTelegram() {
         return telegram;
@@ -1725,7 +1545,6 @@ public class MatchScores {
 
     /**
      * Setter for telegram.<p>
-     * No description.
      */
     public void setTelegram(MatchScoresForAttribute telegram) {
         this.telegram = telegram;
@@ -1733,7 +1552,6 @@ public class MatchScores {
 
     /**
      * Getter for trustedIdNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTrustedIdNumber() {
         return trustedIdNumber;
@@ -1741,7 +1559,6 @@ public class MatchScores {
 
     /**
      * Setter for trustedIdNumber.<p>
-     * No description.
      */
     public void setTrustedIdNumber(MatchScoresForAttribute trustedIdNumber) {
         this.trustedIdNumber = trustedIdNumber;
@@ -1749,7 +1566,6 @@ public class MatchScores {
 
     /**
      * Getter for trustedIdType.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTrustedIdType() {
         return trustedIdType;
@@ -1757,7 +1573,6 @@ public class MatchScores {
 
     /**
      * Setter for trustedIdType.<p>
-     * No description.
      */
     public void setTrustedIdType(MatchScoresForAttribute trustedIdType) {
         this.trustedIdType = trustedIdType;
@@ -1765,7 +1580,6 @@ public class MatchScores {
 
     /**
      * Getter for twitter.<p>
-     * No description.
      */
     public MatchScoresForAttribute getTwitter() {
         return twitter;
@@ -1773,7 +1587,6 @@ public class MatchScores {
 
     /**
      * Setter for twitter.<p>
-     * No description.
      */
     public void setTwitter(MatchScoresForAttribute twitter) {
         this.twitter = twitter;
@@ -1781,7 +1594,6 @@ public class MatchScores {
 
     /**
      * Getter for viber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getViber() {
         return viber;
@@ -1789,7 +1601,6 @@ public class MatchScores {
 
     /**
      * Setter for viber.<p>
-     * No description.
      */
     public void setViber(MatchScoresForAttribute viber) {
         this.viber = viber;
@@ -1797,7 +1608,6 @@ public class MatchScores {
 
     /**
      * Getter for websiteAddress.<p>
-     * No description.
      */
     public MatchScoresForAttribute getWebsiteAddress() {
         return websiteAddress;
@@ -1805,7 +1615,6 @@ public class MatchScores {
 
     /**
      * Setter for websiteAddress.<p>
-     * No description.
      */
     public void setWebsiteAddress(MatchScoresForAttribute websiteAddress) {
         this.websiteAddress = websiteAddress;
@@ -1813,7 +1622,6 @@ public class MatchScores {
 
     /**
      * Getter for wechat.<p>
-     * No description.
      */
     public MatchScoresForAttribute getWechat() {
         return wechat;
@@ -1821,7 +1629,6 @@ public class MatchScores {
 
     /**
      * Setter for wechat.<p>
-     * No description.
      */
     public void setWechat(MatchScoresForAttribute wechat) {
         this.wechat = wechat;
@@ -1829,7 +1636,6 @@ public class MatchScores {
 
     /**
      * Getter for whatsapp.<p>
-     * No description.
      */
     public MatchScoresForAttribute getWhatsapp() {
         return whatsapp;
@@ -1837,7 +1643,6 @@ public class MatchScores {
 
     /**
      * Setter for whatsapp.<p>
-     * No description.
      */
     public void setWhatsapp(MatchScoresForAttribute whatsapp) {
         this.whatsapp = whatsapp;
@@ -1845,7 +1650,6 @@ public class MatchScores {
 
     /**
      * Getter for workPhoneNumber.<p>
-     * No description.
      */
     public MatchScoresForAttribute getWorkPhoneNumber() {
         return workPhoneNumber;
@@ -1853,7 +1657,6 @@ public class MatchScores {
 
     /**
      * Setter for workPhoneNumber.<p>
-     * No description.
      */
     public void setWorkPhoneNumber(MatchScoresForAttribute workPhoneNumber) {
         this.workPhoneNumber = workPhoneNumber;
@@ -1861,7 +1664,6 @@ public class MatchScores {
 
     /**
      * Getter for zoomroom.<p>
-     * No description.
      */
     public MatchScoresForAttribute getZoomroom() {
         return zoomroom;
@@ -1869,7 +1671,6 @@ public class MatchScores {
 
     /**
      * Setter for zoomroom.<p>
-     * No description.
      */
     public void setZoomroom(MatchScoresForAttribute zoomroom) {
         this.zoomroom = zoomroom;

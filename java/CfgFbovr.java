@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgFbovr {
     @JsonProperty("ECLASS_ID")
@@ -33,7 +30,6 @@ public class CfgFbovr {
 
     /**
      * Getter for eclassId.<p>
-     * No description.
      */
     public Integer getEclassId() {
         return eclassId;
@@ -41,7 +37,6 @@ public class CfgFbovr {
 
     /**
      * Setter for eclassId.<p>
-     * No description.
      */
     public void setEclassId(Integer eclassId) {
         this.eclassId = eclassId;
@@ -49,7 +44,6 @@ public class CfgFbovr {
 
     /**
      * Getter for ftypeExcl.<p>
-     * No description.
      */
     public String getFtypeExcl() {
         return ftypeExcl;
@@ -57,7 +51,6 @@ public class CfgFbovr {
 
     /**
      * Setter for ftypeExcl.<p>
-     * No description.
      */
     public void setFtypeExcl(String ftypeExcl) {
         this.ftypeExcl = ftypeExcl;
@@ -65,7 +58,6 @@ public class CfgFbovr {
 
     /**
      * Getter for ftypeFreq.<p>
-     * No description.
      */
     public String getFtypeFreq() {
         return ftypeFreq;
@@ -73,7 +65,6 @@ public class CfgFbovr {
 
     /**
      * Setter for ftypeFreq.<p>
-     * No description.
      */
     public void setFtypeFreq(String ftypeFreq) {
         this.ftypeFreq = ftypeFreq;
@@ -81,7 +72,6 @@ public class CfgFbovr {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -89,7 +79,6 @@ public class CfgFbovr {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -97,7 +86,6 @@ public class CfgFbovr {
 
     /**
      * Getter for ftypeStab.<p>
-     * No description.
      */
     public String getFtypeStab() {
         return ftypeStab;
@@ -105,7 +93,6 @@ public class CfgFbovr {
 
     /**
      * Setter for ftypeStab.<p>
-     * No description.
      */
     public void setFtypeStab(String ftypeStab) {
         this.ftypeStab = ftypeStab;
@@ -113,7 +100,6 @@ public class CfgFbovr {
 
     /**
      * Getter for utypeCode.<p>
-     * No description.
      */
     public String getUtypeCode() {
         return utypeCode;
@@ -121,7 +107,6 @@ public class CfgFbovr {
 
     /**
      * Setter for utypeCode.<p>
-     * No description.
      */
     public void setUtypeCode(String utypeCode) {
         this.utypeCode = utypeCode;

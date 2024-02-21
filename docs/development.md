@@ -103,3 +103,8 @@
     make test
 
     ```
+
+### References
+
+1. <https://jsontypedef.com/>
+1. <https://github.com/jsontypedef/>

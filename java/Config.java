@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Config {
     @JsonProperty("CONFIG_COMMENTS")
@@ -24,7 +21,6 @@ public class Config {
 
     /**
      * Getter for configComments.<p>
-     * No description.
      */
     public String getConfigComments() {
         return configComments;
@@ -32,7 +28,6 @@ public class Config {
 
     /**
      * Setter for configComments.<p>
-     * No description.
      */
     public void setConfigComments(String configComments) {
         this.configComments = configComments;
@@ -40,7 +35,6 @@ public class Config {
 
     /**
      * Getter for configId.<p>
-     * No description.
      */
     public Integer getConfigId() {
         return configId;
@@ -48,7 +42,6 @@ public class Config {
 
     /**
      * Setter for configId.<p>
-     * No description.
      */
     public void setConfigId(Integer configId) {
         this.configId = configId;
@@ -56,7 +49,6 @@ public class Config {
 
     /**
      * Getter for sysCreateDt.<p>
-     * No description.
      */
     public String getSysCreateDt() {
         return sysCreateDt;
@@ -64,7 +56,6 @@ public class Config {
 
     /**
      * Setter for sysCreateDt.<p>
-     * No description.
      */
     public void setSysCreateDt(String sysCreateDt) {
         this.sysCreateDt = sysCreateDt;

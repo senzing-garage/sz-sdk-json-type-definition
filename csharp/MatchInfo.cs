@@ -4,62 +4,32 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class MatchInfo
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CANDIDATE_KEYS")]
         public MatchInfoCandidateKeys CandidateKeys { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DISCLOSED_RELATIONS")]
         public MatchInfoDisclosedRelations DisclosedRelations { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("FEATURE_SCORES")]
         public FeatureScores FeatureScores { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_LEVEL")]
         public int MatchLevel { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WHY_ERRULE_CODE")]
         public string WhyErruleCode { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WHY_KEY")]
         public string WhyKey { get; set; }
     }

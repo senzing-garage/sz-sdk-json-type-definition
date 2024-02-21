@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Notice {
     @JsonProperty("CODE")
@@ -21,7 +18,6 @@ public class Notice {
 
     /**
      * Getter for code.<p>
-     * No description.
      */
     public String getCode() {
         return code;
@@ -29,7 +25,6 @@ public class Notice {
 
     /**
      * Setter for code.<p>
-     * No description.
      */
     public void setCode(String code) {
         this.code = code;
@@ -37,7 +32,6 @@ public class Notice {
 
     /**
      * Getter for description.<p>
-     * No description.
      */
     public String getDescription() {
         return description;
@@ -45,7 +39,6 @@ public class Notice {
 
     /**
      * Setter for description.<p>
-     * No description.
      */
     public void setDescription(String description) {
         this.description = description;

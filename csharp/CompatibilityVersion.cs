@@ -4,14 +4,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class CompatibilityVersion
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CONFIG_VERSION")]
         public string ConfigVersion { get; set; }
     }

@@ -22,7 +22,6 @@ public class InterestingEntitySampleRecords {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public String getDataSource() {
         return dataSource;
@@ -30,7 +29,6 @@ public class InterestingEntitySampleRecords {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -38,7 +36,6 @@ public class InterestingEntitySampleRecords {
 
     /**
      * Getter for flags.<p>
-     * No description.
      */
     public List<String> getFlags() {
         return flags;
@@ -46,7 +43,6 @@ public class InterestingEntitySampleRecords {
 
     /**
      * Setter for flags.<p>
-     * No description.
      */
     public void setFlags(List<String> flags) {
         this.flags = flags;
@@ -54,7 +50,6 @@ public class InterestingEntitySampleRecords {
 
     /**
      * Getter for recordId.<p>
-     * No description.
      */
     public String getRecordId() {
         return recordId;
@@ -62,7 +57,6 @@ public class InterestingEntitySampleRecords {
 
     /**
      * Setter for recordId.<p>
-     * No description.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

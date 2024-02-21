@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgFtype {
     @JsonProperty("ANONYMIZE")
@@ -60,7 +57,6 @@ public class CfgFtype {
 
     /**
      * Getter for anonymize.<p>
-     * No description.
      */
     public String getAnonymize() {
         return anonymize;
@@ -68,7 +64,6 @@ public class CfgFtype {
 
     /**
      * Setter for anonymize.<p>
-     * No description.
      */
     public void setAnonymize(String anonymize) {
         this.anonymize = anonymize;
@@ -76,7 +71,6 @@ public class CfgFtype {
 
     /**
      * Getter for derivation.<p>
-     * No description.
      */
     public String getDerivation() {
         return derivation;
@@ -84,7 +78,6 @@ public class CfgFtype {
 
     /**
      * Setter for derivation.<p>
-     * No description.
      */
     public void setDerivation(String derivation) {
         this.derivation = derivation;
@@ -92,7 +85,6 @@ public class CfgFtype {
 
     /**
      * Getter for derived.<p>
-     * No description.
      */
     public String getDerived() {
         return derived;
@@ -100,7 +92,6 @@ public class CfgFtype {
 
     /**
      * Setter for derived.<p>
-     * No description.
      */
     public void setDerived(String derived) {
         this.derived = derived;
@@ -108,7 +99,6 @@ public class CfgFtype {
 
     /**
      * Getter for fclassId.<p>
-     * No description.
      */
     public Integer getFclassId() {
         return fclassId;
@@ -116,7 +106,6 @@ public class CfgFtype {
 
     /**
      * Setter for fclassId.<p>
-     * No description.
      */
     public void setFclassId(Integer fclassId) {
         this.fclassId = fclassId;
@@ -124,7 +113,6 @@ public class CfgFtype {
 
     /**
      * Getter for ftypeCode.<p>
-     * No description.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -132,7 +120,6 @@ public class CfgFtype {
 
     /**
      * Setter for ftypeCode.<p>
-     * No description.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -140,7 +127,6 @@ public class CfgFtype {
 
     /**
      * Getter for ftypeDesc.<p>
-     * No description.
      */
     public String getFtypeDesc() {
         return ftypeDesc;
@@ -148,7 +134,6 @@ public class CfgFtype {
 
     /**
      * Setter for ftypeDesc.<p>
-     * No description.
      */
     public void setFtypeDesc(String ftypeDesc) {
         this.ftypeDesc = ftypeDesc;
@@ -156,7 +141,6 @@ public class CfgFtype {
 
     /**
      * Getter for ftypeExcl.<p>
-     * No description.
      */
     public String getFtypeExcl() {
         return ftypeExcl;
@@ -164,7 +148,6 @@ public class CfgFtype {
 
     /**
      * Setter for ftypeExcl.<p>
-     * No description.
      */
     public void setFtypeExcl(String ftypeExcl) {
         this.ftypeExcl = ftypeExcl;
@@ -172,7 +155,6 @@ public class CfgFtype {
 
     /**
      * Getter for ftypeFreq.<p>
-     * No description.
      */
     public String getFtypeFreq() {
         return ftypeFreq;
@@ -180,7 +162,6 @@ public class CfgFtype {
 
     /**
      * Setter for ftypeFreq.<p>
-     * No description.
      */
     public void setFtypeFreq(String ftypeFreq) {
         this.ftypeFreq = ftypeFreq;
@@ -188,7 +169,6 @@ public class CfgFtype {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -196,7 +176,6 @@ public class CfgFtype {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -204,7 +183,6 @@ public class CfgFtype {
 
     /**
      * Getter for ftypeStab.<p>
-     * No description.
      */
     public String getFtypeStab() {
         return ftypeStab;
@@ -212,7 +190,6 @@ public class CfgFtype {
 
     /**
      * Setter for ftypeStab.<p>
-     * No description.
      */
     public void setFtypeStab(String ftypeStab) {
         this.ftypeStab = ftypeStab;
@@ -220,7 +197,6 @@ public class CfgFtype {
 
     /**
      * Getter for persistHistory.<p>
-     * No description.
      */
     public String getPersistHistory() {
         return persistHistory;
@@ -228,7 +204,6 @@ public class CfgFtype {
 
     /**
      * Setter for persistHistory.<p>
-     * No description.
      */
     public void setPersistHistory(String persistHistory) {
         this.persistHistory = persistHistory;
@@ -236,7 +211,6 @@ public class CfgFtype {
 
     /**
      * Getter for rtypeId.<p>
-     * No description.
      */
     public Integer getRtypeId() {
         return rtypeId;
@@ -244,7 +218,6 @@ public class CfgFtype {
 
     /**
      * Setter for rtypeId.<p>
-     * No description.
      */
     public void setRtypeId(Integer rtypeId) {
         this.rtypeId = rtypeId;
@@ -252,7 +225,6 @@ public class CfgFtype {
 
     /**
      * Getter for showInMatchKey.<p>
-     * No description.
      */
     public String getShowInMatchKey() {
         return showInMatchKey;
@@ -260,7 +232,6 @@ public class CfgFtype {
 
     /**
      * Setter for showInMatchKey.<p>
-     * No description.
      */
     public void setShowInMatchKey(String showInMatchKey) {
         this.showInMatchKey = showInMatchKey;
@@ -268,7 +239,6 @@ public class CfgFtype {
 
     /**
      * Getter for usedForCand.<p>
-     * No description.
      */
     public String getUsedForCand() {
         return usedForCand;
@@ -276,7 +246,6 @@ public class CfgFtype {
 
     /**
      * Setter for usedForCand.<p>
-     * No description.
      */
     public void setUsedForCand(String usedForCand) {
         this.usedForCand = usedForCand;
@@ -284,7 +253,6 @@ public class CfgFtype {
 
     /**
      * Getter for version.<p>
-     * No description.
      */
     public Integer getVersion() {
         return version;
@@ -292,7 +260,6 @@ public class CfgFtype {
 
     /**
      * Setter for version.<p>
-     * No description.
      */
     public void setVersion(Integer version) {
         this.version = version;

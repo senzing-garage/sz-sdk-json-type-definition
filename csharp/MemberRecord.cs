@@ -4,20 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class MemberRecord
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("INTERNAL_ID")]
         public int InternalId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RECORDS")]
         public Records Records { get; set; }
     }

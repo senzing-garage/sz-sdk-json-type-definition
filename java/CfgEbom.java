@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgEbom {
     @JsonProperty("ETYPE_ID")
@@ -27,7 +24,6 @@ public class CfgEbom {
 
     /**
      * Getter for etypeId.<p>
-     * No description.
      */
     public Integer getEtypeId() {
         return etypeId;
@@ -35,7 +31,6 @@ public class CfgEbom {
 
     /**
      * Setter for etypeId.<p>
-     * No description.
      */
     public void setEtypeId(Integer etypeId) {
         this.etypeId = etypeId;
@@ -43,7 +38,6 @@ public class CfgEbom {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -51,7 +45,6 @@ public class CfgEbom {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -59,7 +52,6 @@ public class CfgEbom {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -67,7 +59,6 @@ public class CfgEbom {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -75,7 +66,6 @@ public class CfgEbom {
 
     /**
      * Getter for utypeCode.<p>
-     * No description.
      */
     public String getUtypeCode() {
         return utypeCode;
@@ -83,7 +73,6 @@ public class CfgEbom {
 
     /**
      * Setter for utypeCode.<p>
-     * No description.
      */
     public void setUtypeCode(String utypeCode) {
         this.utypeCode = utypeCode;

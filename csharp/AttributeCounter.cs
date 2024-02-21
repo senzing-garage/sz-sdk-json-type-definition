@@ -4,230 +4,122 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class AttributeCounter
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
+        [JsonPropertyName("ACCT_NUM")]
+        public double AcctNum { get; set; }
+
         [JsonPropertyName("ADDRESS")]
         public double Address { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ADDR_KEY")]
         public double AddrKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CALL_SIGN")]
         public int CallSign { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("CITIZENSHIP")]
         public int Citizenship { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("COUNTRY_OF_ASSOCIATION")]
         public int CountryOfAssociation { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
+        [JsonPropertyName("DEFERRED_DELETE")]
+        public double DeferredDelete { get; set; }
+
         [JsonPropertyName("DOB")]
         public double Dob { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DRLIC")]
         public double Drlic { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("DUNS_NUMBER")]
         public int DunsNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EMAIL")]
         public double Email { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("EMAIL_KEY")]
         public double EmailKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY_COUNT")]
         public int EntityCount { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENTITY_SIZE")]
         public int EntitySize { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("GENDER")]
         public double Gender { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ID_KEY")]
         public double IdKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("IMO_NUMBER")]
         public int ImoNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LEI_NUMBER")]
         public int LeiNumber { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("LOGIN_ID")]
         public double LoginId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MAX_RES_ENT_ID")]
         public int MaxResEntId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MIN_RES_ENT_ID")]
         public int MinResEntId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME")]
         public double Name { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_KEY")]
         public double NameKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NATIONALITY")]
         public int Nationality { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NATIONAL_ID")]
         public int NationalId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("OFAC_ID")]
         public int OfacId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("OTHER_ID")]
         public double OtherId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PASSPORT")]
         public double Passport { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PHONE")]
         public double Phone { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("PHONE_KEY")]
         public double PhoneKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("RECORD_TYPE")]
         public double RecordType { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REGISTRATION_COUNTRY")]
         public int RegistrationCountry { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REGISTRATION_DATE")]
         public int RegistrationDate { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_ANCHOR")]
         public int RelAnchor { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("REL_POINTER")]
         public int RelPointer { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SEARCH_KEY")]
         public double SearchKey { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("SSN")]
         public double Ssn { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("TAX_ID")]
         public double TaxId { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("WEBSITE")]
         public double Website { get; set; }
     }

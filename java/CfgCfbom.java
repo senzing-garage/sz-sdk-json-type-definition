@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgCfbom {
     @JsonProperty("CFCALL_ID")
@@ -27,7 +24,6 @@ public class CfgCfbom {
 
     /**
      * Getter for cfcallId.<p>
-     * No description.
      */
     public Integer getCfcallId() {
         return cfcallId;
@@ -35,7 +31,6 @@ public class CfgCfbom {
 
     /**
      * Setter for cfcallId.<p>
-     * No description.
      */
     public void setCfcallId(Integer cfcallId) {
         this.cfcallId = cfcallId;
@@ -43,7 +38,6 @@ public class CfgCfbom {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -51,7 +45,6 @@ public class CfgCfbom {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -59,7 +52,6 @@ public class CfgCfbom {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -67,7 +59,6 @@ public class CfgCfbom {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -75,7 +66,6 @@ public class CfgCfbom {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -83,7 +73,6 @@ public class CfgCfbom {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;

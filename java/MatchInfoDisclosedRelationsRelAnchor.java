@@ -33,7 +33,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for domain.<p>
-     * No description.
      */
     public String getDomain() {
         return domain;
@@ -41,7 +40,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for domain.<p>
-     * No description.
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -49,7 +47,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for featDesc.<p>
-     * No description.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -57,7 +54,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for featDesc.<p>
-     * No description.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -65,7 +61,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for featId.<p>
-     * No description.
      */
     public Integer getFeatId() {
         return featId;
@@ -73,7 +68,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for featId.<p>
-     * No description.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;
@@ -81,7 +75,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for linkedFeatDesc.<p>
-     * No description.
      */
     public String getLinkedFeatDesc() {
         return linkedFeatDesc;
@@ -89,7 +82,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for linkedFeatDesc.<p>
-     * No description.
      */
     public void setLinkedFeatDesc(String linkedFeatDesc) {
         this.linkedFeatDesc = linkedFeatDesc;
@@ -97,7 +89,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for linkedFeatId.<p>
-     * No description.
      */
     public Integer getLinkedFeatId() {
         return linkedFeatId;
@@ -105,7 +96,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for linkedFeatId.<p>
-     * No description.
      */
     public void setLinkedFeatId(Integer linkedFeatId) {
         this.linkedFeatId = linkedFeatId;
@@ -113,7 +103,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for linkedFeatType.<p>
-     * No description.
      */
     public String getLinkedFeatType() {
         return linkedFeatType;
@@ -121,7 +110,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for linkedFeatType.<p>
-     * No description.
      */
     public void setLinkedFeatType(String linkedFeatType) {
         this.linkedFeatType = linkedFeatType;
@@ -129,7 +117,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Getter for linkedFeatUsageType.<p>
-     * No description.
      */
     public String getLinkedFeatUsageType() {
         return linkedFeatUsageType;
@@ -137,7 +124,6 @@ public class MatchInfoDisclosedRelationsRelAnchor {
 
     /**
      * Setter for linkedFeatUsageType.<p>
-     * No description.
      */
     public void setLinkedFeatUsageType(String linkedFeatUsageType) {
         this.linkedFeatUsageType = linkedFeatUsageType;

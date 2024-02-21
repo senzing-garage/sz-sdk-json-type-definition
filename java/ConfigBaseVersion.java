@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ConfigBaseVersion {
     @JsonProperty("BUILD_DATE")
@@ -33,7 +30,6 @@ public class ConfigBaseVersion {
 
     /**
      * Getter for buildDate.<p>
-     * No description.
      */
     public String getBuildDate() {
         return buildDate;
@@ -41,7 +37,6 @@ public class ConfigBaseVersion {
 
     /**
      * Setter for buildDate.<p>
-     * No description.
      */
     public void setBuildDate(String buildDate) {
         this.buildDate = buildDate;
@@ -49,7 +44,6 @@ public class ConfigBaseVersion {
 
     /**
      * Getter for buildNumber.<p>
-     * No description.
      */
     public String getBuildNumber() {
         return buildNumber;
@@ -57,7 +51,6 @@ public class ConfigBaseVersion {
 
     /**
      * Setter for buildNumber.<p>
-     * No description.
      */
     public void setBuildNumber(String buildNumber) {
         this.buildNumber = buildNumber;
@@ -65,7 +58,6 @@ public class ConfigBaseVersion {
 
     /**
      * Getter for buildVersion.<p>
-     * No description.
      */
     public String getBuildVersion() {
         return buildVersion;
@@ -73,7 +65,6 @@ public class ConfigBaseVersion {
 
     /**
      * Setter for buildVersion.<p>
-     * No description.
      */
     public void setBuildVersion(String buildVersion) {
         this.buildVersion = buildVersion;
@@ -81,7 +72,6 @@ public class ConfigBaseVersion {
 
     /**
      * Getter for compatibilityVersion.<p>
-     * No description.
      */
     public CompatibilityVersion getCompatibilityVersion() {
         return compatibilityVersion;
@@ -89,7 +79,6 @@ public class ConfigBaseVersion {
 
     /**
      * Setter for compatibilityVersion.<p>
-     * No description.
      */
     public void setCompatibilityVersion(CompatibilityVersion compatibilityVersion) {
         this.compatibilityVersion = compatibilityVersion;
@@ -97,7 +86,6 @@ public class ConfigBaseVersion {
 
     /**
      * Getter for productName.<p>
-     * No description.
      */
     public String getProductName() {
         return productName;
@@ -105,7 +93,6 @@ public class ConfigBaseVersion {
 
     /**
      * Setter for productName.<p>
-     * No description.
      */
     public void setProductName(String productName) {
         this.productName = productName;
@@ -113,7 +100,6 @@ public class ConfigBaseVersion {
 
     /**
      * Getter for version.<p>
-     * No description.
      */
     public String getVersion() {
         return version;
@@ -121,7 +107,6 @@ public class ConfigBaseVersion {
 
     /**
      * Setter for version.<p>
-     * No description.
      */
     public void setVersion(String version) {
         this.version = version;

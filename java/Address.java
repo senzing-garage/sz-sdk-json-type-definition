@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class Address {
     @JsonProperty("ADDR_CITY")
@@ -57,7 +54,6 @@ public class Address {
 
     /**
      * Getter for addrCity.<p>
-     * No description.
      */
     public String getAddrCity() {
         return addrCity;
@@ -65,7 +61,6 @@ public class Address {
 
     /**
      * Setter for addrCity.<p>
-     * No description.
      */
     public void setAddrCity(String addrCity) {
         this.addrCity = addrCity;
@@ -73,7 +68,6 @@ public class Address {
 
     /**
      * Getter for addrCountry.<p>
-     * No description.
      */
     public String getAddrCountry() {
         return addrCountry;
@@ -81,7 +75,6 @@ public class Address {
 
     /**
      * Setter for addrCountry.<p>
-     * No description.
      */
     public void setAddrCountry(String addrCountry) {
         this.addrCountry = addrCountry;
@@ -89,7 +82,6 @@ public class Address {
 
     /**
      * Getter for addrFromDate.<p>
-     * No description.
      */
     public String getAddrFromDate() {
         return addrFromDate;
@@ -97,7 +89,6 @@ public class Address {
 
     /**
      * Setter for addrFromDate.<p>
-     * No description.
      */
     public void setAddrFromDate(String addrFromDate) {
         this.addrFromDate = addrFromDate;
@@ -105,7 +96,6 @@ public class Address {
 
     /**
      * Getter for addrFull.<p>
-     * No description.
      */
     public String getAddrFull() {
         return addrFull;
@@ -113,7 +103,6 @@ public class Address {
 
     /**
      * Setter for addrFull.<p>
-     * No description.
      */
     public void setAddrFull(String addrFull) {
         this.addrFull = addrFull;
@@ -121,7 +110,6 @@ public class Address {
 
     /**
      * Getter for addrLine1.<p>
-     * No description.
      */
     public String getAddrLine1() {
         return addrLine1;
@@ -129,7 +117,6 @@ public class Address {
 
     /**
      * Setter for addrLine1.<p>
-     * No description.
      */
     public void setAddrLine1(String addrLine1) {
         this.addrLine1 = addrLine1;
@@ -137,7 +124,6 @@ public class Address {
 
     /**
      * Getter for addrLine2.<p>
-     * No description.
      */
     public String getAddrLine2() {
         return addrLine2;
@@ -145,7 +131,6 @@ public class Address {
 
     /**
      * Setter for addrLine2.<p>
-     * No description.
      */
     public void setAddrLine2(String addrLine2) {
         this.addrLine2 = addrLine2;
@@ -153,7 +138,6 @@ public class Address {
 
     /**
      * Getter for addrLine3.<p>
-     * No description.
      */
     public String getAddrLine3() {
         return addrLine3;
@@ -161,7 +145,6 @@ public class Address {
 
     /**
      * Setter for addrLine3.<p>
-     * No description.
      */
     public void setAddrLine3(String addrLine3) {
         this.addrLine3 = addrLine3;
@@ -169,7 +152,6 @@ public class Address {
 
     /**
      * Getter for addrLine4.<p>
-     * No description.
      */
     public String getAddrLine4() {
         return addrLine4;
@@ -177,7 +159,6 @@ public class Address {
 
     /**
      * Setter for addrLine4.<p>
-     * No description.
      */
     public void setAddrLine4(String addrLine4) {
         this.addrLine4 = addrLine4;
@@ -185,7 +166,6 @@ public class Address {
 
     /**
      * Getter for addrLine5.<p>
-     * No description.
      */
     public String getAddrLine5() {
         return addrLine5;
@@ -193,7 +173,6 @@ public class Address {
 
     /**
      * Setter for addrLine5.<p>
-     * No description.
      */
     public void setAddrLine5(String addrLine5) {
         this.addrLine5 = addrLine5;
@@ -201,7 +180,6 @@ public class Address {
 
     /**
      * Getter for addrLine6.<p>
-     * No description.
      */
     public String getAddrLine6() {
         return addrLine6;
@@ -209,7 +187,6 @@ public class Address {
 
     /**
      * Setter for addrLine6.<p>
-     * No description.
      */
     public void setAddrLine6(String addrLine6) {
         this.addrLine6 = addrLine6;
@@ -217,7 +194,6 @@ public class Address {
 
     /**
      * Getter for addrPostalCode.<p>
-     * No description.
      */
     public String getAddrPostalCode() {
         return addrPostalCode;
@@ -225,7 +201,6 @@ public class Address {
 
     /**
      * Setter for addrPostalCode.<p>
-     * No description.
      */
     public void setAddrPostalCode(String addrPostalCode) {
         this.addrPostalCode = addrPostalCode;
@@ -233,7 +208,6 @@ public class Address {
 
     /**
      * Getter for addrState.<p>
-     * No description.
      */
     public String getAddrState() {
         return addrState;
@@ -241,7 +215,6 @@ public class Address {
 
     /**
      * Setter for addrState.<p>
-     * No description.
      */
     public void setAddrState(String addrState) {
         this.addrState = addrState;
@@ -249,7 +222,6 @@ public class Address {
 
     /**
      * Getter for addrThruDate.<p>
-     * No description.
      */
     public String getAddrThruDate() {
         return addrThruDate;
@@ -257,7 +229,6 @@ public class Address {
 
     /**
      * Setter for addrThruDate.<p>
-     * No description.
      */
     public void setAddrThruDate(String addrThruDate) {
         this.addrThruDate = addrThruDate;
@@ -265,7 +236,6 @@ public class Address {
 
     /**
      * Getter for addrType.<p>
-     * No description.
      */
     public String getAddrType() {
         return addrType;
@@ -273,7 +243,6 @@ public class Address {
 
     /**
      * Setter for addrType.<p>
-     * No description.
      */
     public void setAddrType(String addrType) {
         this.addrType = addrType;

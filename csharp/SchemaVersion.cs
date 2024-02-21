@@ -4,26 +4,14 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class SchemaVersion
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("ENGINE_SCHEMA_VERSION")]
         public string EngineSchemaVersion { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MAXIMUM_REQUIRED_SCHEMA_VERSION")]
         public string MaximumRequiredSchemaVersion { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("MINIMUM_REQUIRED_SCHEMA_VERSION")]
         public string MinimumRequiredSchemaVersion { get; set; }
     }

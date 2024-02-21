@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class RecordSummaryElement {
     @JsonProperty("DATA_SOURCE")
@@ -27,7 +24,6 @@ public class RecordSummaryElement {
 
     /**
      * Getter for dataSource.<p>
-     * No description.
      */
     public String getDataSource() {
         return dataSource;
@@ -35,7 +31,6 @@ public class RecordSummaryElement {
 
     /**
      * Setter for dataSource.<p>
-     * No description.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -43,7 +38,6 @@ public class RecordSummaryElement {
 
     /**
      * Getter for firstSeenDt.<p>
-     * No description.
      */
     public String getFirstSeenDt() {
         return firstSeenDt;
@@ -51,7 +45,6 @@ public class RecordSummaryElement {
 
     /**
      * Setter for firstSeenDt.<p>
-     * No description.
      */
     public void setFirstSeenDt(String firstSeenDt) {
         this.firstSeenDt = firstSeenDt;
@@ -59,7 +52,6 @@ public class RecordSummaryElement {
 
     /**
      * Getter for lastSeenDt.<p>
-     * No description.
      */
     public String getLastSeenDt() {
         return lastSeenDt;
@@ -67,7 +59,6 @@ public class RecordSummaryElement {
 
     /**
      * Setter for lastSeenDt.<p>
-     * No description.
      */
     public void setLastSeenDt(String lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
@@ -75,7 +66,6 @@ public class RecordSummaryElement {
 
     /**
      * Getter for recordCount.<p>
-     * No description.
      */
     public Integer getRecordCount() {
         return recordCount;
@@ -83,7 +73,6 @@ public class RecordSummaryElement {
 
     /**
      * Setter for recordCount.<p>
-     * No description.
      */
     public void setRecordCount(Integer recordCount) {
         this.recordCount = recordCount;

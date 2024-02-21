@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class ProcessResult {
     @JsonProperty("RESOLVED_ENTITIES")
@@ -19,7 +16,6 @@ public class ProcessResult {
 
     /**
      * Getter for resolvedEntities.<p>
-     * No description.
      */
     public List<ProcessResultResolvedEntities> getResolvedEntities() {
         return resolvedEntities;
@@ -27,7 +23,6 @@ public class ProcessResult {
 
     /**
      * Setter for resolvedEntities.<p>
-     * No description.
      */
     public void setResolvedEntities(List<ProcessResultResolvedEntities> resolvedEntities) {
         this.resolvedEntities = resolvedEntities;

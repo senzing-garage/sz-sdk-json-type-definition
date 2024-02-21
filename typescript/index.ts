@@ -2,1469 +2,365 @@
 
 export type Senzingapi = any;
 
-/**
- * No description.
- */
 export interface Address {
-  /**
-   * No description.
-   */
   ADDR_CITY: string;
-
-  /**
-   * No description.
-   */
   ADDR_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   ADDR_FROM_DATE: string;
-
-  /**
-   * No description.
-   */
   ADDR_FULL: string;
-
-  /**
-   * No description.
-   */
   ADDR_LINE1: string;
-
-  /**
-   * No description.
-   */
   ADDR_LINE2: string;
-
-  /**
-   * No description.
-   */
   ADDR_LINE3: string;
-
-  /**
-   * No description.
-   */
   ADDR_LINE4: string;
-
-  /**
-   * No description.
-   */
   ADDR_LINE5: string;
-
-  /**
-   * No description.
-   */
   ADDR_LINE6: string;
-
-  /**
-   * No description.
-   */
   ADDR_POSTAL_CODE: string;
-
-  /**
-   * No description.
-   */
   ADDR_STATE: string;
-
-  /**
-   * No description.
-   */
   ADDR_THRU_DATE: string;
-
-  /**
-   * No description.
-   */
   ADDR_TYPE: string;
 }
 
-/**
- * No description.
- */
 export type Addresses = Address[];
 
-/**
- * No description.
- */
-export type AffectedEntities = AffectedEntity[];
-
-/**
- * No description.
- */
 export interface AffectedEntity {
-  /**
-   * No description.
-   */
   ENTITY_ID: number;
 }
 
-/**
- * No description.
- */
 export interface AttributeCounter {
-  /**
-   * No description.
-   */
+  ACCT_NUM: number;
   ADDRESS: number;
-
-  /**
-   * No description.
-   */
   ADDR_KEY: number;
-
-  /**
-   * No description.
-   */
   CALL_SIGN: number;
-
-  /**
-   * No description.
-   */
   CITIZENSHIP: number;
-
-  /**
-   * No description.
-   */
   COUNTRY_OF_ASSOCIATION: number;
-
-  /**
-   * No description.
-   */
+  DEFERRED_DELETE: number;
   DOB: number;
-
-  /**
-   * No description.
-   */
   DRLIC: number;
-
-  /**
-   * No description.
-   */
   DUNS_NUMBER: number;
-
-  /**
-   * No description.
-   */
   EMAIL: number;
-
-  /**
-   * No description.
-   */
   EMAIL_KEY: number;
-
-  /**
-   * No description.
-   */
   ENTITY_COUNT: number;
-
-  /**
-   * No description.
-   */
   ENTITY_SIZE: number;
-
-  /**
-   * No description.
-   */
   GENDER: number;
-
-  /**
-   * No description.
-   */
   ID_KEY: number;
-
-  /**
-   * No description.
-   */
   IMO_NUMBER: number;
-
-  /**
-   * No description.
-   */
   LEI_NUMBER: number;
-
-  /**
-   * No description.
-   */
   LOGIN_ID: number;
-
-  /**
-   * No description.
-   */
   MAX_RES_ENT_ID: number;
-
-  /**
-   * No description.
-   */
   MIN_RES_ENT_ID: number;
-
-  /**
-   * No description.
-   */
   NAME: number;
-
-  /**
-   * No description.
-   */
   NAME_KEY: number;
-
-  /**
-   * No description.
-   */
   NATIONALITY: number;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID: number;
-
-  /**
-   * No description.
-   */
   OFAC_ID: number;
-
-  /**
-   * No description.
-   */
   OTHER_ID: number;
-
-  /**
-   * No description.
-   */
   PASSPORT: number;
-
-  /**
-   * No description.
-   */
   PHONE: number;
-
-  /**
-   * No description.
-   */
   PHONE_KEY: number;
-
-  /**
-   * No description.
-   */
   RECORD_TYPE: number;
-
-  /**
-   * No description.
-   */
   REGISTRATION_COUNTRY: number;
-
-  /**
-   * No description.
-   */
   REGISTRATION_DATE: number;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR: number;
-
-  /**
-   * No description.
-   */
   REL_POINTER: number;
-
-  /**
-   * No description.
-   */
   SEARCH_KEY: number;
-
-  /**
-   * No description.
-   */
   SSN: number;
-
-  /**
-   * No description.
-   */
   TAX_ID: number;
-
-  /**
-   * No description.
-   */
   WEBSITE: number;
 }
 
-/**
- * No description.
- */
 export type AttributeCounters = AttributeCounter[];
 
-/**
- * No description.
- */
 export interface CfgAttr {
-  /**
-   * No description.
-   */
   ADVANCED: string;
-
-  /**
-   * No description.
-   */
   ATTR_CLASS: string;
-
-  /**
-   * No description.
-   */
   ATTR_CODE: string;
-
-  /**
-   * No description.
-   */
   ATTR_ID: number;
-
-  /**
-   * No description.
-   */
   DEFAULT_VALUE: string;
-
-  /**
-   * No description.
-   */
   FELEM_CODE: string;
-
-  /**
-   * No description.
-   */
   FELEM_REQ: string;
-
-  /**
-   * No description.
-   */
   FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
   INTERNAL: string;
 }
 
-/**
- * No description.
- */
 export interface CfgCfbom {
-  /**
-   * No description.
-   */
   CFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgCfcall {
-  /**
-   * No description.
-   */
   CFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   CFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgCfrtn {
-  /**
-   * No description.
-   */
   CFRTN_ID: number;
-
-  /**
-   * No description.
-   */
   CFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   CFUNC_RTNVAL: string;
-
-  /**
-   * No description.
-   */
   CLOSE_SCORE: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   LIKELY_SCORE: number;
-
-  /**
-   * No description.
-   */
   PLAUSIBLE_SCORE: number;
-
-  /**
-   * No description.
-   */
   SAME_SCORE: number;
-
-  /**
-   * No description.
-   */
   UN_LIKELY_SCORE: number;
 }
 
-/**
- * No description.
- */
 export interface CfgCfunc {
-  /**
-   * No description.
-   */
   ANON_SUPPORT: string;
-
-  /**
-   * No description.
-   */
   CFUNC_CODE: string;
-
-  /**
-   * No description.
-   */
   CFUNC_DESC: string;
-
-  /**
-   * No description.
-   */
   CFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   CONNECT_STR: string;
-
-  /**
-   * No description.
-   */
   FUNC_LIB: string;
-
-  /**
-   * No description.
-   */
   FUNC_VER: string;
-
-  /**
-   * No description.
-   */
   JAVA_CLASS_NAME: string;
-
-  /**
-   * No description.
-   */
   LANGUAGE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgDfbom {
-  /**
-   * No description.
-   */
   DFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgDfcall {
-  /**
-   * No description.
-   */
   DFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   DFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgDfunc {
-  /**
-   * No description.
-   */
   ANON_SUPPORT: string;
-
-  /**
-   * No description.
-   */
   CONNECT_STR: string;
-
-  /**
-   * No description.
-   */
   DFUNC_CODE: string;
-
-  /**
-   * No description.
-   */
   DFUNC_DESC: string;
-
-  /**
-   * No description.
-   */
   DFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   FUNC_LIB: string;
-
-  /**
-   * No description.
-   */
   FUNC_VER: string;
-
-  /**
-   * No description.
-   */
   JAVA_CLASS_NAME: string;
-
-  /**
-   * No description.
-   */
   LANGUAGE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgDsrc {
-  /**
-   * No description.
-   */
   CONVERSATIONAL: string;
-
-  /**
-   * No description.
-   */
   DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
   DSRC_DESC: string;
-
-  /**
-   * No description.
-   */
   DSRC_ID: number;
-
-  /**
-   * No description.
-   */
   DSRC_RELY: number;
-
-  /**
-   * No description.
-   */
   RETENTION_LEVEL: string;
 }
 
-/**
- * No description.
- */
 export interface CfgDsrcInterest {
-  /**
-   * No description.
-   */
   DSRC_ID: number;
-
-  /**
-   * No description.
-   */
   INTEREST_FLAG: string;
-
-  /**
-   * No description.
-   */
   MAX_DEGREE: number;
 }
 
-/**
- * No description.
- */
 export interface CfgEbom {
-  /**
-   * No description.
-   */
   ETYPE_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   UTYPE_CODE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgEclass {
-  /**
-   * No description.
-   */
   ECLASS_CODE: string;
-
-  /**
-   * No description.
-   */
   ECLASS_DESC: string;
-
-  /**
-   * No description.
-   */
   ECLASS_ID: number;
-
-  /**
-   * No description.
-   */
   RESOLVE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgEfbom {
-  /**
-   * No description.
-   */
   EFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FELEM_REQ: string;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgEfcall {
-  /**
-   * No description.
-   */
   EFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   EFEAT_FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   EFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   IS_VIRTUAL: string;
 }
 
-/**
- * No description.
- */
 export interface CfgEfunc {
-  /**
-   * No description.
-   */
   CONNECT_STR: string;
-
-  /**
-   * No description.
-   */
   EFUNC_CODE: string;
-
-  /**
-   * No description.
-   */
   EFUNC_DESC: string;
-
-  /**
-   * No description.
-   */
   EFUNC_ID: number;
-
-  /**
-   * No description.
-   */
   FUNC_LIB: string;
-
-  /**
-   * No description.
-   */
   FUNC_VER: string;
-
-  /**
-   * No description.
-   */
   JAVA_CLASS_NAME: string;
-
-  /**
-   * No description.
-   */
   LANGUAGE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgErfrag {
-  /**
-   * No description.
-   */
   ERFRAG_CODE: string;
-
-  /**
-   * No description.
-   */
   ERFRAG_DEPENDS: string;
-
-  /**
-   * No description.
-   */
   ERFRAG_DESC: string;
-
-  /**
-   * No description.
-   */
   ERFRAG_ID: number;
-
-  /**
-   * No description.
-   */
   ERFRAG_SOURCE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgErrule {
-  /**
-   * No description.
-   */
   DISQ_ERFRAG_CODE: string;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
   ERRULE_DESC: string;
-
-  /**
-   * No description.
-   */
   ERRULE_ID: number;
-
-  /**
-   * No description.
-   */
   ERRULE_TIER: number;
-
-  /**
-   * No description.
-   */
   QUAL_ERFRAG_CODE: string;
-
-  /**
-   * No description.
-   */
   REF_SCORE: number;
-
-  /**
-   * No description.
-   */
   RELATE: string;
-
-  /**
-   * No description.
-   */
   RESOLVE: string;
-
-  /**
-   * No description.
-   */
   RTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgEtype {
-  /**
-   * No description.
-   */
   ECLASS_ID: number;
-
-  /**
-   * No description.
-   */
   ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
   ETYPE_DESC: string;
-
-  /**
-   * No description.
-   */
   ETYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgFbom {
-  /**
-   * No description.
-   */
   DERIVED: string;
-
-  /**
-   * No description.
-   */
   DISPLAY_DELIM: string;
-
-  /**
-   * No description.
-   */
   DISPLAY_LEVEL: number;
-
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgFbovr {
-  /**
-   * No description.
-   */
   ECLASS_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_EXCL: string;
-
-  /**
-   * No description.
-   */
   FTYPE_FREQ: string;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_STAB: string;
-
-  /**
-   * No description.
-   */
   UTYPE_CODE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgFclass {
-  /**
-   * No description.
-   */
   FCLASS_CODE: string;
-
-  /**
-   * No description.
-   */
   FCLASS_DESC: string;
-
-  /**
-   * No description.
-   */
   FCLASS_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgFelem {
-  /**
-   * No description.
-   */
   DATA_TYPE: string;
-
-  /**
-   * No description.
-   */
   FELEM_CODE: string;
-
-  /**
-   * No description.
-   */
   FELEM_DESC: string;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   TOKENIZE: string;
 }
 
-/**
- * No description.
- */
 export interface CfgFtype {
-  /**
-   * No description.
-   */
   ANONYMIZE: string;
-
-  /**
-   * No description.
-   */
   DERIVATION: string;
-
-  /**
-   * No description.
-   */
   DERIVED: string;
-
-  /**
-   * No description.
-   */
   FCLASS_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
   FTYPE_DESC: string;
-
-  /**
-   * No description.
-   */
   FTYPE_EXCL: string;
-
-  /**
-   * No description.
-   */
   FTYPE_FREQ: string;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_STAB: string;
-
-  /**
-   * No description.
-   */
   PERSIST_HISTORY: string;
-
-  /**
-   * No description.
-   */
   RTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   SHOW_IN_MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   USED_FOR_CAND: string;
-
-  /**
-   * No description.
-   */
   VERSION: number;
 }
 
-/**
- * No description.
- */
 export interface CfgGenericThreshold {
-  /**
-   * No description.
-   */
   BEHAVIOR: string;
-
-  /**
-   * No description.
-   */
   CANDIDATE_CAP: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   GPLAN_ID: number;
-
-  /**
-   * No description.
-   */
   SCORING_CAP: number;
-
-  /**
-   * No description.
-   */
   SEND_TO_REDO: string;
 }
 
-/**
- * No description.
- */
 export interface CfgGplan {
-  /**
-   * No description.
-   */
   GPLAN_CODE: string;
-
-  /**
-   * No description.
-   */
   GPLAN_DESC: string;
-
-  /**
-   * No description.
-   */
   GPLAN_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgLens {
-  /**
-   * No description.
-   */
   LENS_CODE: string;
-
-  /**
-   * No description.
-   */
   LENS_DESC: string;
-
-  /**
-   * No description.
-   */
   LENS_ID: number;
 }
 
-/**
- * No description.
- */
-export type CfgLensrl = any[];
+export type CfgLensrl = FixmeUnknown[];
 
-/**
- * No description.
- */
 export interface CfgRclass {
-  /**
-   * No description.
-   */
   IS_DISCLOSED: string;
-
-  /**
-   * No description.
-   */
   RCLASS_CODE: string;
-
-  /**
-   * No description.
-   */
   RCLASS_DESC: string;
-
-  /**
-   * No description.
-   */
   RCLASS_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgRtype {
-  /**
-   * No description.
-   */
   BREAK_RES: string;
-
-  /**
-   * No description.
-   */
   RCLASS_ID: number;
-
-  /**
-   * No description.
-   */
   REL_STRENGTH: number;
-
-  /**
-   * No description.
-   */
   RTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
   RTYPE_DESC: string;
-
-  /**
-   * No description.
-   */
   RTYPE_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgSfcall {
-  /**
-   * No description.
-   */
   EXEC_ORDER: number;
-
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   SFCALL_ID: number;
-
-  /**
-   * No description.
-   */
   SFUNC_ID: number;
 }
 
-/**
- * No description.
- */
 export interface CfgSfunc {
-  /**
-   * No description.
-   */
   CONNECT_STR: string;
-
-  /**
-   * No description.
-   */
   FUNC_LIB: string;
-
-  /**
-   * No description.
-   */
   FUNC_VER: string;
-
-  /**
-   * No description.
-   */
   JAVA_CLASS_NAME: string;
-
-  /**
-   * No description.
-   */
   LANGUAGE: string;
-
-  /**
-   * No description.
-   */
   SFUNC_CODE: string;
-
-  /**
-   * No description.
-   */
   SFUNC_DESC: string;
-
-  /**
-   * No description.
-   */
   SFUNC_ID: number;
 }
 
-/**
- * No description.
- */
 export interface ConfigBaseVersion {
-  /**
-   * No description.
-   */
   BUILD_DATE: string;
-
-  /**
-   * No description.
-   */
   BUILD_NUMBER: string;
-
-  /**
-   * No description.
-   */
   BUILD_VERSION: string;
-
-  /**
-   * No description.
-   */
   COMPATIBILITY_VERSION: CompatibilityVersion;
-
-  /**
-   * No description.
-   */
   PRODUCT_NAME: string;
-
-  /**
-   * No description.
-   */
   VERSION: string;
 }
 
-/**
- * No description.
- */
 export interface CompatibilityVersion {
-  /**
-   * No description.
-   */
   CONFIG_VERSION: string;
 }
 
-/**
- * No description.
- */
 export interface Config {
-  /**
-   * No description.
-   */
   CONFIG_COMMENTS: string;
-
-  /**
-   * No description.
-   */
   CONFIG_ID: number;
-
-  /**
-   * No description.
-   */
   SYS_CREATE_DT: string;
 }
 
-/**
- * No description.
- */
-export interface ConfigAddDataSourceResponse {
-  /**
-   * No description.
-   */
-  DSRC_ID: number;
-}
-
-/**
- * No description.
- */
-export interface ConfigListDataSourcesResponse {
-  /**
-   * No description.
-   */
-  DATA_SOURCES: DataSources;
-}
-
-/**
- * No description.
- */
-export interface ConfigSaveResponse {
-  /**
-   * No description.
-   */
-  G2_CONFIG: G2config;
-}
-
-/**
- * No description.
- */
-export interface ConfigmgrGetConfigListResponse {
-  /**
-   * No description.
-   */
-  CONFIGS: Configs;
-}
-
-/**
- * No description.
- */
-export interface ConfigmgrGetConfigResponse {
-  /**
-   * No description.
-   */
-  G2_CONFIG: G2config;
-}
-
-/**
- * No description.
- */
 export type Configs = Config[];
 
-/**
- * No description.
- */
 export interface DataSource {
   /**
    * The text representation of the datasource.
@@ -1477,5850 +373,1508 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
-/**
- * A list of datasources.
- */
-export type DataSources = DataSource[];
-
-/**
- * No description.
- */
-export interface DiagnosticCheckDbperfResponse {
-  /**
-   * No description.
-   */
-  insertTime: number;
-
-  /**
-   * No description.
-   */
-  numRecordsInserted: number;
-}
-
-export interface DiagnosticFetchNextEntityBySizeResponse0 {
-  /**
-   * No description.
-   */
+export interface DiagnosticFetchNextEntityBySizeResponseXxx0 {
   DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
   ENT_SRC_DESC: string;
-
-  /**
-   * No description.
-   */
   ENT_SRC_KEY: string;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
   ER_ID: number;
-
-  /**
-   * No description.
-   */
   ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  JSON_DATA: JsonData;
-
-  /**
-   * No description.
-   */
+  JSON_DATA: string;
   MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   OBS_ENT_ID: number;
-
-  /**
-   * No description.
-   */
   RECORD_ID: string;
-
-  /**
-   * No description.
-   */
   RES_ENT_ID: number;
 }
 
-/**
- * No description.
- */
-export type DiagnosticFetchNextEntityBySizeResponse = DiagnosticFetchNextEntityBySizeResponse0[];
+export type DiagnosticFetchNextEntityBySizeResponseXxx = DiagnosticFetchNextEntityBySizeResponseXxx0[];
 
-export interface DiagnosticFindEntitiesByFeatureIdsResponse0 {
-  /**
-   * No description.
-   */
-  LIB_FEAT_ID: number;
+export type EntitiesByFeatureId = EntityByFeatureId[];
 
-  /**
-   * No description.
-   */
-  RES_ENT_ID: number;
-
-  /**
-   * No description.
-   */
-  USAGE_TYPE: string;
-}
-
-/**
- * No description.
- */
-export type DiagnosticFindEntitiesByFeatureIdsResponse = DiagnosticFindEntitiesByFeatureIdsResponse0[];
-
-export interface DiagnosticGetDbinfoResponseDetail {
-  /**
-   * No description.
-   */
-  Name: string;
-
-  /**
-   * No description.
-   */
-  Type: string;
-}
-
-/**
- * No description.
- */
-export interface DiagnosticGetDbinfoResponse {
-  /**
-   * No description.
-   */
-  "Database Details": DiagnosticGetDbinfoResponseDetail[];
-
-  /**
-   * No description.
-   */
-  "Hybrid Mode": boolean;
-}
-
-export interface DiagnosticGetDataSourceCountsResponse0 {
-  /**
-   * No description.
-   */
-  DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
-  DSRC_ID: number;
-
-  /**
-   * No description.
-   */
-  DSRC_RECORD_COUNT: number;
-
-  /**
-   * No description.
-   */
-  ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  ETYPE_ID: number;
-
-  /**
-   * No description.
-   */
-  OBS_ENT_COUNT: number;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetDataSourceCountsResponse = DiagnosticGetDataSourceCountsResponse0[];
-
-export interface DiagnosticGetEntityDetailsResponse0 {
-  /**
-   * No description.
-   */
-  DERIVED: string;
-
-  /**
-   * No description.
-   */
-  DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
-  ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
-  FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
-  OBS_ENT_ID: number;
-
-  /**
-   * No description.
-   */
-  RECORD_ID: number;
-
-  /**
-   * No description.
-   */
-  RES_ENT_ID: number;
-
-  /**
-   * No description.
-   */
-  USAGE_TYPE: string;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetEntityDetailsResponse = DiagnosticGetEntityDetailsResponse0[];
-
-export interface DiagnosticGetEntityResumeResponse0 {
-  /**
-   * No description.
-   */
-  DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
-  ENT_SRC_DESC: string;
-
-  /**
-   * No description.
-   */
-  ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  JSON_DATA: JsonData;
-
-  /**
-   * No description.
-   */
-  MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
-  RECORD_ID: string;
-
-  /**
-   * No description.
-   */
-  REL_ENT_ID: number;
-
-  /**
-   * No description.
-   */
-  RES_ENT_ID: number;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetEntityResumeResponse = DiagnosticGetEntityResumeResponse0[];
-
-/**
- * No description.
- */
-export type DiagnosticGetEntitySizeBreakdownResponse = AttributeCounters;
-
-export interface DiagnosticGetFeatureResponseElements {
-  /**
-   * No description.
-   */
-  FELEM_CODE: string;
-
-  /**
-   * No description.
-   */
-  FELEM_VALUE: string;
-}
-
-/**
- * No description.
- */
-export interface DiagnosticGetFeatureResponse {
-  /**
-   * No description.
-   */
-  ELEMENTS: DiagnosticGetFeatureResponseElements[];
-
-  /**
-   * No description.
-   */
-  FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  LIB_FEAT_ID: number;
-}
-
-export interface DiagnosticGetGenericFeaturesResponse0 {
-  /**
-   * No description.
-   */
-  CANDIDATE_CAP_REACHED: string;
-
-  /**
-   * No description.
-   */
-  ESTIMATED_COUNT: number;
-
-  /**
-   * No description.
-   */
-  FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
-  FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  LIB_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
-  SCORING_CAP_REACHED: string;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetGenericFeaturesResponse = DiagnosticGetGenericFeaturesResponse0[];
-
-export interface DiagnosticGetMappingStatisticsResponse0 {
-  /**
-   * No description.
-   */
-  DERIVED: string;
-
-  /**
-   * No description.
-   */
-  DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
-  ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  MAX_FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
-  MIN_FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
-  REC_COUNT: number;
-
-  /**
-   * No description.
-   */
-  REC_PCT: number;
-
-  /**
-   * No description.
-   */
-  UNIQ_COUNT: number;
-
-  /**
-   * No description.
-   */
-  UNIQ_PCT: number;
-
-  /**
-   * No description.
-   */
-  USAGE_TYPE: string;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetMappingStatisticsResponse = DiagnosticGetMappingStatisticsResponse0[];
-
-export interface DiagnosticGetRelationshipDetailsResponse0 {
-  /**
-   * No description.
-   */
-  ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
-  FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
-  RES_ENT_ID: number;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetRelationshipDetailsResponse = DiagnosticGetRelationshipDetailsResponse0[];
-
-export interface DiagnosticGetResolutionStatisticsResponseRawMatchKeys {
-  /**
-   * No description.
-   */
-  MATCH_KEY: string;
-}
-
-export interface DiagnosticGetResolutionStatisticsResponse0 {
-  /**
-   * No description.
-   */
-  ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  ERRULE_ID: number;
-
-  /**
-   * No description.
-   */
-  IS_AMBIGUOUS: string;
-
-  /**
-   * No description.
-   */
-  MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
-  MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
-  MAX_RES_ENT_ID: number;
-
-  /**
-   * No description.
-   */
-  MAX_RES_REL_ID: number;
-
-  /**
-   * No description.
-   */
-  MIN_RES_ENT_ID: number;
-
-  /**
-   * No description.
-   */
-  MIN_RES_REL_ID: number;
-
-  /**
-   * No description.
-   */
-  RAW_MATCH_KEYS: DiagnosticGetResolutionStatisticsResponseRawMatchKeys[];
-
-  /**
-   * No description.
-   */
-  RECORD_COUNT: number;
-}
-
-/**
- * No description.
- */
-export type DiagnosticGetResolutionStatisticsResponse = DiagnosticGetResolutionStatisticsResponse0[];
-
-/**
- * No description.
- */
-export type DiagnosticStreamEntityListBySizeResponse = any;
-
-/**
- * No description.
- */
-export type EngineAddRecordWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export type EngineAddRecordWithInfoWithReturnedRecordIdresponse = WithInfo;
-
-export interface EngineCheckRecordResponseCheckRecordResponse {
-  /**
-   * No description.
-   */
-  CANDIDATE_MATCH: string;
-
-  /**
-   * No description.
-   */
-  DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
-  ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  ERRULE_ID: number;
-
-  /**
-   * No description.
-   */
-  MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
-  MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
-  MATCH_LEVEL_CODE: string;
-
-  /**
-   * No description.
-   */
-  NON_GENERIC_CANDIDATE_MATCH: string;
-
-  /**
-   * No description.
-   */
-  RECORD_ID: string;
-}
-
-/**
- * No description.
- */
-export interface EngineCheckRecordResponse {
-  /**
-   * No description.
-   */
-  CHECK_RECORD_RESPONSE: EngineCheckRecordResponseCheckRecordResponse[];
-}
-
-/**
- * No description.
- */
-export type EngineDeleteRecordWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export interface EngineExportConfigAndConfigIdresponse {
-  /**
-   * No description.
-   */
-  G2_CONFIG: G2config;
-}
-
-/**
- * No description.
- */
-export interface EngineExportConfigResponse {
-  /**
-   * No description.
-   */
-  G2_CONFIG: G2config;
-}
-
-/**
- * No description.
- */
-export type EngineFetchNextResponse = any;
-
-/**
- * No description.
- */
-export type EngineFindInterestingEntitiesByEntityIdresponse = Interesting;
-
-/**
- * No description.
- */
-export type EngineFindInterestingEntitiesByRecordIdresponse = Interesting;
-
-/**
- * No description.
- */
-export type EngineFindNetworkByEntityIdresponse = Network;
-
-/**
- * No description.
- */
-export type EngineFindNetworkByEntityIdv2response = Network;
-
-/**
- * No description.
- */
-export type EngineFindNetworkByRecordIdresponse = Network;
-
-/**
- * No description.
- */
-export type EngineFindNetworkByRecordIdv2response = Network;
-
-/**
- * No description.
- */
-export type EngineFindPathByEntityIdresponse = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathByEntityIdv2response = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathByRecordIdresponse = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathByRecordIdv2response = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathExcludingByEntityIdresponse = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathExcludingByEntityIdv2response = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathExcludingByRecordIdresponse = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathExcludingByRecordIdv2response = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathIncludingSourceByEntityIdresponse = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathIncludingSourceByEntityIdv2response = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathIncludingSourceByRecordIdresponse = Path;
-
-/**
- * No description.
- */
-export type EngineFindPathIncludingSourceByRecordIdv2response = Path;
-
-/**
- * No description.
- */
-export type EngineGetEntityByEntityIdresponse = Entity;
-
-/**
- * No description.
- */
-export type EngineGetEntityByEntityIdv2response = Entity;
-
-/**
- * No description.
- */
-export type EngineGetEntityByRecordIdresponse = Entity;
-
-/**
- * No description.
- */
-export type EngineGetEntityByRecordIdv2response = Entity;
-
-/**
- * No description.
- */
-export type EngineGetRecordResponse = Record;
-
-/**
- * No description.
- */
-export type EngineGetRecordV2response = Record;
-
-/**
- * No description.
- */
-export type EngineGetVirtualEntityByRecordIdresponse = VirtualEntity;
-
-/**
- * No description.
- */
-export type EngineGetVirtualEntityByRecordIdv2response = VirtualEntity;
-
-/**
- * No description.
- */
-export type EngineHowEntityByEntityIdresponse = How;
-
-/**
- * No description.
- */
-export type EngineHowEntityByEntityIdv2response = How;
-
-/**
- * No description.
- */
-export type EngineProcessRedoRecordResponse = any;
-
-/**
- * No description.
- */
-export type EngineProcessRedoRecordWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export type EngineProcessWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export type EngineProcessWithResponseResizeResponse = Process;
-
-/**
- * No description.
- */
-export type EngineProcessWithResponseResponse = Process;
-
-/**
- * No description.
- */
-export type EngineReevaluateEntityWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export type EngineReevaluateRecordWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export type EngineReplaceRecordWithInfoResponse = WithInfo;
-
-/**
- * No description.
- */
-export type EngineSearchByAttributesResponse = Search;
-
-/**
- * No description.
- */
-export type EngineSearchByAttributesV2response = Search;
-
-/**
- * No description.
- */
-export type EngineSearchByAttributesV3response = Search;
-
-/**
- * No description.
- */
-export interface EngineStatsResponseDuration {
-  /**
-   * No description.
-   */
-  PATTERN: string;
-
-  /**
-   * No description.
-   */
-  TYPE: string;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseReresolveTriggers {
-  /**
-   * No description.
-   */
-  abortRetry: number;
-
-  /**
-   * No description.
-   */
-  multipleResolvableCandidates: number;
-
-  /**
-   * No description.
-   */
-  resolveNewFeatures: number;
-
-  /**
-   * No description.
-   */
-  unresolveMovement: number;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseUnresolveTriggers {
-  /**
-   * No description.
-   */
-  extensiveResolve: number;
-
-  /**
-   * No description.
-   */
-  normalResolve: number;
-}
-
-export interface EngineStatsResponseWorkloadExpressedFeatureCall {
-  /**
-   * No description.
-   */
-  EFCALL_ID: number;
-
-  /**
-   * No description.
-   */
-  EFUNC_CODE: string;
-
-  /**
-   * No description.
-   */
-  numCalls: number;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseWorkloadReresolveTriggers {
-  /**
-   * No description.
-   */
-  abortRetry: number;
-
-  /**
-   * No description.
-   */
-  multipleResolvableCandidates: number;
-
-  /**
-   * No description.
-   */
-  newFeatureFTypes: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  resolveNewFeatures: number;
-
-  /**
-   * No description.
-   */
-  unresolveMovement: number;
-}
-
-export interface EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
-  /**
-   * No description.
-   */
-  cpuIdle: number;
-
-  /**
-   * No description.
-   */
-  cpuSoftIrq: number;
-
-  /**
-   * No description.
-   */
-  cpuSystem: number;
-
-  /**
-   * No description.
-   */
-  cpuUser: number;
-
-  /**
-   * No description.
-   */
-  cpuWait: number;
-}
-
-export interface EngineStatsResponseWorkloadSystemResourcesCurrResource {
-  /**
-   * No description.
-   */
-  activeThreads: number;
-
-  /**
-   * No description.
-   */
-  availableMemory: string;
-
-  /**
-   * No description.
-   */
-  systemLoad: EngineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad[];
-
-  /**
-   * No description.
-   */
-  workerThreads: number;
-}
-
-export interface EngineStatsResponseWorkloadSystemResourcesInitResource {
-  /**
-   * No description.
-   */
-  availableMemory: string;
-
-  /**
-   * No description.
-   */
-  logicalCores: number;
-
-  /**
-   * No description.
-   */
-  physicalCores: number;
-
-  /**
-   * No description.
-   */
-  totalMemory: string;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseWorkloadSystemResources {
-  /**
-   * No description.
-   */
-  currResources: EngineStatsResponseWorkloadSystemResourcesCurrResource[];
-
-  /**
-   * No description.
-   */
-  initResources: EngineStatsResponseWorkloadSystemResourcesInitResource[];
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseWorkloadThreadState {
-  /**
-   * No description.
-   */
-  active: number;
-
-  /**
-   * No description.
-   */
-  dataLatchContention: number;
-
-  /**
-   * No description.
-   */
-  idle: number;
-
-  /**
-   * No description.
-   */
-  loader: number;
-
-  /**
-   * No description.
-   */
-  obsEntContention: number;
-
-  /**
-   * No description.
-   */
-  resEntContention: number;
-
-  /**
-   * No description.
-   */
-  resolver: number;
-
-  /**
-   * No description.
-   */
-  scoring: number;
-
-  /**
-   * No description.
-   */
-  sqlExecuting: number;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseWorkloadUnresolveTriggers {
-  /**
-   * No description.
-   */
-  ambiguousMultiResolve: number;
-
-  /**
-   * No description.
-   */
-  ambiguousNoResolve: number;
-
-  /**
-   * No description.
-   */
-  extensiveResolve: number;
-
-  /**
-   * No description.
-   */
-  normalResolve: number;
-
-  /**
-   * No description.
-   */
-  relLink: number;
-
-  /**
-   * No description.
-   */
-  update: number;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponseWorkload {
-  /**
-   * No description.
-   */
-  CorruptEntityTestDiagnosis: any;
-
-  /**
-   * No description.
-   */
-  abortedUnresolve: number;
-
-  /**
-   * No description.
-   */
-  actualAmbiguousTest: number;
-
-  /**
-   * No description.
-   */
-  addedRecords: number;
-
-  /**
-   * No description.
-   */
-  apiVersion: string;
-
-  /**
-   * No description.
-   */
-  cacheHit: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  cacheMiss: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  cachedAmbiguousTest: number;
-
-  /**
-   * No description.
-   */
-  candidateBuilders: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  candidates: number;
-
-  /**
-   * No description.
-   */
-  deletedRecords: number;
-
-  /**
-   * No description.
-   */
-  duration: number;
-
-  /**
-   * No description.
-   */
-  expressedFeatureCalls: EngineStatsResponseWorkloadExpressedFeatureCall[];
-
-  /**
-   * No description.
-   */
-  expressedFeaturesCreated: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  filteredObsFeat: number;
-
-  /**
-   * No description.
-   */
-  genericDetect: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  gnrScorersUsed: number;
-
-  /**
-   * No description.
-   */
-  highContentionFeat: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  highContentionResEnt: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  latchContention: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  libFeatCacheHit: number;
-
-  /**
-   * No description.
-   */
-  libFeatCacheMiss: number;
-
-  /**
-   * No description.
-   */
-  loadedRecords: number;
-
-  /**
-   * No description.
-   */
-  redoTriggers: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  reducedScoredFeatureType: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  reevaluations: number;
-
-  /**
-   * No description.
-   */
-  repairedEntities: number;
-
-  /**
-   * No description.
-   */
-  reresolveSkipped: number;
-
-  /**
-   * No description.
-   */
-  reresolveTriggers: EngineStatsResponseWorkloadReresolveTriggers;
-
-  /**
-   * No description.
-   */
-  resFeatStatCacheHit: number;
-
-  /**
-   * No description.
-   */
-  resFeatStatCacheMiss: number;
-
-  /**
-   * No description.
-   */
-  resFeatStatUpdate: number;
-
-  /**
-   * No description.
-   */
-  retries: number;
-
-  /**
-   * No description.
-   */
-  scoredPairs: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  suppressedCandidateBuilders: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  suppressedDisclosedRelationshipDomainCount: number;
-
-  /**
-   * No description.
-   */
-  suppressedScoredFeatureType: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  systemResources: EngineStatsResponseWorkloadSystemResources;
-
-  /**
-   * No description.
-   */
-  threadState: EngineStatsResponseWorkloadThreadState;
-
-  /**
-   * No description.
-   */
-  unresolveTest: number;
-
-  /**
-   * No description.
-   */
-  unresolveTriggers: EngineStatsResponseWorkloadUnresolveTriggers;
-}
-
-/**
- * No description.
- */
-export interface EngineStatsResponse {
-  /**
-   * No description.
-   */
-  MISSING_RES_ENT: number;
-
-  /**
-   * No description.
-   */
-  MISSING_RES_ENT_AND_OKEY: number;
-
-  /**
-   * No description.
-   */
-  abortedUnresolve: number;
-
-  /**
-   * No description.
-   */
-  actualAmbiguousTest: number;
-
-  /**
-   * No description.
-   */
-  addedRecords: number;
-
-  /**
-   * No description.
-   */
-  cacheHit: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  candidateBuilders: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  candidates: number;
-
-  /**
-   * No description.
-   */
-  deletedRecords: number;
-
-  /**
-   * No description.
-   */
-  duration: EngineStatsResponseDuration;
-
-  /**
-   * No description.
-   */
-  filteredObsFeat: number;
-
-  /**
-   * No description.
-   */
-  genericDetect: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  latchContention: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  loadedRecords: number;
-
-  /**
-   * No description.
-   */
-  redoTriggers: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  reducedScoredFeatureType: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  reevaluations: number;
-
-  /**
-   * No description.
-   */
-  repairedEntities: number;
-
-  /**
-   * No description.
-   */
-  reresolveSkipped: number;
-
-  /**
-   * No description.
-   */
-  reresolveTriggers: EngineStatsResponseReresolveTriggers;
-
-  /**
-   * No description.
-   */
-  retries: number;
-
-  /**
-   * No description.
-   */
-  scoredPairs: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  suppressedCandidateBuilders: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  suppressedScoredFeatureType: AttributeCounters;
-
-  /**
-   * No description.
-   */
-  unresolveTest: number;
-
-  /**
-   * No description.
-   */
-  unresolveTriggers: EngineStatsResponseUnresolveTriggers;
-
-  /**
-   * No description.
-   */
-  workload: EngineStatsResponseWorkload;
-}
-
-/**
- * No description.
- */
-export type EngineStreamExportJsonentityReportResponse = any;
-
-/**
- * No description.
- */
-export type EngineWhyEntitiesResponse = WhyEntities;
-
-/**
- * No description.
- */
-export type EngineWhyEntitiesV2response = WhyEntities;
-
-/**
- * No description.
- */
-export type EngineWhyEntityByEntityIdresponse = WhyEntity;
-
-/**
- * No description.
- */
-export type EngineWhyEntityByEntityIdv2response = WhyEntity;
-
-/**
- * No description.
- */
-export type EngineWhyEntityByRecordIdresponse = WhyEntity;
-
-/**
- * No description.
- */
-export type EngineWhyEntityByRecordIdv2response = WhyEntity;
-
-/**
- * No description.
- */
-export type EngineWhyRecordsResponse = WhyRecords;
-
-/**
- * No description.
- */
-export type EngineWhyRecordsV2response = WhyRecords;
-
-/**
- * No description.
- */
-export type Entities = Entity[];
-
-/**
- * No description.
- */
 export interface Entity {
-  /**
-   * No description.
-   */
-  RELATED_ENTITIES: RelatedEntities;
-
-  /**
-   * No description.
-   */
+  RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
-/**
- * No description.
- */
-export interface EntityPath {
-  /**
-   * No description.
-   */
-  END_ENTITY_ID: number;
-
-  /**
-   * No description.
-   */
-  ENTITIES: number[];
-
-  /**
-   * No description.
-   */
-  START_ENTITY_ID: number;
-}
-
-/**
- * No description.
- */
-export type EntityPaths = EntityPath[];
-
-/**
- * No description.
- */
-export interface FeatureDescriptionValue {
-  /**
-   * No description.
-   */
-  CANDIDATE_CAP_REACHED: string;
-
-  /**
-   * No description.
-   */
-  ENTITY_COUNT: number;
-
-  /**
-   * No description.
-   */
-  FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
+export interface EntityByFeatureId {
   LIB_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
-  SCORING_CAP_REACHED: string;
-
-  /**
-   * No description.
-   */
-  SUPPRESSED: string;
-
-  /**
-   * No description.
-   */
-  USED_FOR_CAND: string;
-
-  /**
-   * No description.
-   */
-  USED_FOR_SCORING: string;
-}
-
-/**
- * No description.
- */
-export type FeatureDescriptionValues = FeatureDescriptionValue[];
-
-/**
- * No description.
- */
-export interface FeatureForAttribute {
-  /**
-   * No description.
-   */
-  FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
-  FEAT_DESC_VALUES: FeatureDescriptionValues;
-
-  /**
-   * No description.
-   */
-  LIB_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
+  RES_ENT_ID: number;
   USAGE_TYPE: string;
 }
 
-/**
- * No description.
- */
+export interface EntityBySize {
+  DSRC_CODE: string;
+  ENT_SRC_DESC: string;
+  ENT_SRC_KEY: string;
+  ERRULE_CODE: string;
+  ER_ID: number;
+  ETYPE_CODE: string;
+  JSON_DATA: string;
+  MATCH_KEY: string;
+  OBS_ENT_ID: number;
+  RECORD_ID: string;
+  RES_ENT_ID: number;
+}
+
+export interface EntityPath {
+  END_ENTITY_ID: number;
+  ENTITIES: number[];
+  START_ENTITY_ID: number;
+}
+
+export interface FeatureDescriptionValue {
+  CANDIDATE_CAP_REACHED: string;
+  ENTITY_COUNT: number;
+  FEAT_DESC: string;
+  LIB_FEAT_ID: number;
+  SCORING_CAP_REACHED: string;
+  SUPPRESSED: string;
+  USED_FOR_CAND: string;
+  USED_FOR_SCORING: string;
+}
+
+export interface FeatureForAttribute {
+  FEAT_DESC: string;
+  FEAT_DESC_VALUES: FeatureDescriptionValue[];
+  LIB_FEAT_ID: number;
+  USAGE_TYPE: string;
+}
+
 export interface FeatureScoreForAttribute {
-  /**
-   * No description.
-   */
   CANDIDATE_FEAT: string;
-
-  /**
-   * No description.
-   */
   CANDIDATE_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   CANDIDATE_FEAT_USAGE_TYPE: string;
-
-  /**
-   * No description.
-   */
   FULL_SCORE: number;
-
-  /**
-   * No description.
-   */
   GENERATION_MATCH: number;
-
-  /**
-   * No description.
-   */
   GNR_FN: number;
-
-  /**
-   * No description.
-   */
   GNR_GN: number;
-
-  /**
-   * No description.
-   */
   GNR_ON: number;
-
-  /**
-   * No description.
-   */
   GNR_SN: number;
-
-  /**
-   * No description.
-   */
   INBOUND_FEAT: string;
-
-  /**
-   * No description.
-   */
   INBOUND_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   INBOUND_FEAT_USAGE_TYPE: string;
-
-  /**
-   * No description.
-   */
   SCORE_BEHAVIOR: string;
-
-  /**
-   * No description.
-   */
   SCORE_BUCKET: string;
 }
 
-/**
- * No description.
- */
 export interface FeatureScores {
-  /**
-   * No description.
-   */
   ACCOUNT_DOMAIN: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ACCOUNT_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ACCT_NUM: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS_LIST: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_FULL: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   CELL_PHONE_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   CITIZENSHIP: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   COUNTRY_OF_ASSOCIATION: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DATA_SOURCE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_BIRTH: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_DEATH: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DOB: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DOD: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_STATE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DRLIC: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DUNS_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_ADDRESS: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMPLOYER_NAME: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ENTITY_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   FACEBOOK: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GENDER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_ORG_NAME: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ID_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   INSTAGRAM: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LEI_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LINKEDIN: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LOAD_ID: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LOGIN_ID: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_FULL: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_LIST: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONALITY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_COUNTRY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_COUNTRY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NPI_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_COUNTRY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORTS: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_COUNTRY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PHONES: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PLACE_OF_BIRTH: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_FIRST: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_LAST: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_MIDDLE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_ORG: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_PREFIX: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_SUFFIX: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_PHONE_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   RECORD_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_COUNTRY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_DATE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_DOMAIN: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_LINK: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_DOMAIN: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_KEY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_ROLE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SIGNAL: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SKYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_HANDLE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_NETWORK: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SOURCE_ID: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SSN: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_LAST4: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TANGO: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_COUNTRY: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TELEGRAM: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_TYPE: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TWITTER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   VIBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WEBSITE_ADDRESS: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WECHAT: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WHATSAPP: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WORK_PHONE_NUMBER: FeatureScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ZOOMROOM: FeatureScoresForAttribute;
 }
 
-/**
- * No description.
- */
 export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
-/**
- * No description.
- */
-export interface Features {
-  /**
-   * No description.
-   */
+export type FeaturesForAttribute = FeatureForAttribute[];
+
+export interface FeaturesXxx {
   ACCOUNT_DOMAIN: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ACCOUNT_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ACCT_NUM: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS_LIST: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_FULL: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   CELL_PHONE_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   CITIZENSHIP: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   COUNTRY_OF_ASSOCIATION: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DATA_SOURCE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_BIRTH: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_DEATH: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DOB: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DOD: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_STATE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DRLIC: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   DUNS_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_ADDRESS: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   EMPLOYER_NAME: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ENTITY_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   FACEBOOK: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   GENDER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_ORG_NAME: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ID_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   INSTAGRAM: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   LEI_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   LINKEDIN: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   LOAD_ID: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   LOGIN_ID: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NAME: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_FULL: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_LIST: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONALITY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_COUNTRY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_COUNTRY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   NPI_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_COUNTRY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORTS: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_COUNTRY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PHONES: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PLACE_OF_BIRTH: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_FIRST: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_LAST: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_MIDDLE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_ORG: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_PREFIX: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_SUFFIX: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_PHONE_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   RECORD_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_COUNTRY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_DATE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_DOMAIN: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_LINK: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_DOMAIN: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_KEY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_ROLE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SIGNAL: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SKYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_HANDLE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_NETWORK: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SOURCE_ID: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SSN: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_LAST4: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TANGO: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_COUNTRY: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TELEGRAM: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_TYPE: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   TWITTER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   VIBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   WEBSITE_ADDRESS: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   WECHAT: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   WHATSAPP: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   WORK_PHONE_NUMBER: FeaturesForAttribute;
-
-  /**
-   * No description.
-   */
   ZOOMROOM: FeaturesForAttribute;
 }
 
-/**
- * No description.
- */
-export type FeaturesForAttribute = FeatureForAttribute[];
-
-/**
- * No description.
- */
 export interface FinalState {
-  /**
-   * No description.
-   */
   NEED_REEVALUATION: number;
-
-  /**
-   * No description.
-   */
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
-/**
- * No description.
- */
-export interface FocusRecord {
-  /**
-   * No description.
-   */
-  DATA_SOURCE: string;
+export type FixmeUnknown = string;
 
-  /**
-   * No description.
-   */
+export interface FocusRecord {
+  DATA_SOURCE: string;
   RECORD_ID: string;
 }
 
-/**
- * No description.
- */
 export type FocusRecords = FocusRecord[];
 
-/**
- * No description.
- */
 export interface G2config {
-  /**
-   * No description.
-   */
   CFG_ATTR: CfgAttr[];
-
-  /**
-   * No description.
-   */
   CFG_CFBOM: CfgCfbom[];
-
-  /**
-   * No description.
-   */
   CFG_CFCALL: CfgCfcall[];
-
-  /**
-   * No description.
-   */
   CFG_CFRTN: CfgCfrtn[];
-
-  /**
-   * No description.
-   */
   CFG_CFUNC: CfgCfunc[];
-
-  /**
-   * No description.
-   */
   CFG_DFBOM: CfgDfbom[];
-
-  /**
-   * No description.
-   */
   CFG_DFCALL: CfgDfcall[];
-
-  /**
-   * No description.
-   */
   CFG_DFUNC: CfgDfunc[];
-
-  /**
-   * No description.
-   */
   CFG_DSRC: CfgDsrc[];
-
-  /**
-   * No description.
-   */
   CFG_DSRC_INTEREST: CfgDsrcInterest[];
-
-  /**
-   * No description.
-   */
   CFG_EBOM: CfgEbom[];
-
-  /**
-   * No description.
-   */
   CFG_ECLASS: CfgEclass[];
-
-  /**
-   * No description.
-   */
   CFG_EFBOM: CfgEfbom[];
-
-  /**
-   * No description.
-   */
   CFG_EFCALL: CfgEfcall[];
-
-  /**
-   * No description.
-   */
   CFG_EFUNC: CfgEfunc[];
-
-  /**
-   * No description.
-   */
   CFG_ERFRAG: CfgErfrag[];
-
-  /**
-   * No description.
-   */
   CFG_ERRULE: CfgErrule[];
-
-  /**
-   * No description.
-   */
   CFG_ETYPE: CfgEtype[];
-
-  /**
-   * No description.
-   */
   CFG_FBOM: CfgFbom[];
-
-  /**
-   * No description.
-   */
   CFG_FBOVR: CfgFbovr[];
-
-  /**
-   * No description.
-   */
   CFG_FCLASS: CfgFclass[];
-
-  /**
-   * No description.
-   */
   CFG_FELEM: CfgFelem[];
-
-  /**
-   * No description.
-   */
   CFG_FTYPE: CfgFtype[];
-
-  /**
-   * No description.
-   */
   CFG_GENERIC_THRESHOLD: CfgGenericThreshold[];
-
-  /**
-   * No description.
-   */
   CFG_GPLAN: CfgGplan[];
-
-  /**
-   * No description.
-   */
   CFG_LENS: CfgLens[];
-
-  /**
-   * No description.
-   */
   CFG_LENSRL: CfgLensrl[];
-
-  /**
-   * No description.
-   */
   CFG_RCLASS: CfgRclass[];
-
-  /**
-   * No description.
-   */
   CFG_RTYPE: CfgRtype[];
-
-  /**
-   * No description.
-   */
   CFG_SFCALL: CfgSfcall[];
-
-  /**
-   * No description.
-   */
   CFG_SFUNC: CfgSfunc[];
-
-  /**
-   * No description.
-   */
   CONFIG_BASE_VERSION: ConfigBaseVersion;
-
-  /**
-   * No description.
-   */
   SYS_OOM: SysOom[];
 }
 
-/**
- * No description.
- */
+export interface G2configAddDataSourceResponse {
+  DSRC_ID: number;
+}
+
+export interface G2configListDataSourcesResponse {
+  DATA_SOURCES: DataSource[];
+}
+
+export interface G2configSaveResponse {
+  G2_CONFIG: G2config;
+}
+
+export interface G2configmgrGetConfigListResponse {
+  CONFIGS: Configs;
+}
+
+export interface G2configmgrGetConfigResponse {
+  G2_CONFIG: G2config;
+}
+
+export interface G2diagnosticCheckDbperfResponse {
+  insertTime: number;
+  numRecordsInserted: number;
+}
+
+export type G2diagnosticFetchNextEntityBySizeResponse = EntityBySize[];
+
+export interface G2diagnosticFindEntitiesByFeatureIdsResponseXxx0 {
+  LIB_FEAT_ID: number;
+  RES_ENT_ID: number;
+  USAGE_TYPE: string;
+}
+
+export type G2diagnosticFindEntitiesByFeatureIdsResponseXxx = G2diagnosticFindEntitiesByFeatureIdsResponseXxx0[];
+
+export interface G2diagnosticGetDbinfoResponseDetail {
+  Name: string;
+  Type: string;
+}
+
+export interface G2diagnosticGetDbinfoResponse {
+  "Database Details": G2diagnosticGetDbinfoResponseDetail[];
+  "Hybrid Mode": boolean;
+}
+
+export interface G2diagnosticGetDataSourceCountsResponse0 {
+  DSRC_CODE: string;
+  DSRC_ID: number;
+  DSRC_RECORD_COUNT: number;
+  ETYPE_CODE: string;
+  ETYPE_ID: number;
+  OBS_ENT_COUNT: number;
+}
+
+export type G2diagnosticGetDataSourceCountsResponse = G2diagnosticGetDataSourceCountsResponse0[];
+
+export interface G2diagnosticGetEntityDetailsResponse0 {
+  DERIVED: string;
+  DSRC_CODE: string;
+  ERRULE_CODE: string;
+  ETYPE_CODE: string;
+  FEAT_DESC: string;
+  FTYPE_CODE: string;
+  MATCH_KEY: string;
+  OBS_ENT_ID: number;
+  RECORD_ID: number;
+  RES_ENT_ID: number;
+  USAGE_TYPE: string;
+}
+
+export type G2diagnosticGetEntityDetailsResponse = G2diagnosticGetEntityDetailsResponse0[];
+
+export interface G2diagnosticGetEntityResumeResponse0 {
+  DSRC_CODE: string;
+  ENT_SRC_DESC: string;
+  ERRULE_CODE: string;
+  ETYPE_CODE: string;
+  JSON_DATA: string;
+  MATCH_KEY: string;
+  RECORD_ID: string;
+  REL_ENT_ID: number;
+  RES_ENT_ID: number;
+}
+
+export type G2diagnosticGetEntityResumeResponse = G2diagnosticGetEntityResumeResponse0[];
+
+export type G2diagnosticGetEntitySizeBreakdownResponse = AttributeCounters;
+
+export interface G2diagnosticGetFeatureResponseElements {
+  FELEM_CODE: string;
+  FELEM_VALUE: string;
+}
+
+export interface G2diagnosticGetFeatureResponse {
+  ELEMENTS: G2diagnosticGetFeatureResponseElements[];
+  FTYPE_CODE: string;
+  LIB_FEAT_ID: number;
+}
+
+export interface G2diagnosticGetGenericFeaturesResponse0 {
+  CANDIDATE_CAP_REACHED: string;
+  ESTIMATED_COUNT: number;
+  FEAT_DESC: string;
+  FTYPE_CODE: string;
+  LIB_FEAT_ID: number;
+  SCORING_CAP_REACHED: string;
+}
+
+export type G2diagnosticGetGenericFeaturesResponse = G2diagnosticGetGenericFeaturesResponse0[];
+
+export interface G2diagnosticGetMappingStatisticsResponse0 {
+  DERIVED: string;
+  DSRC_CODE: string;
+  ETYPE_CODE: string;
+  FTYPE_CODE: string;
+  MAX_FEAT_DESC: string;
+  MIN_FEAT_DESC: string;
+  REC_COUNT: number;
+  REC_PCT: number;
+  UNIQ_COUNT: number;
+  UNIQ_PCT: number;
+  USAGE_TYPE: string;
+}
+
+export type G2diagnosticGetMappingStatisticsResponse = G2diagnosticGetMappingStatisticsResponse0[];
+
+export interface G2diagnosticGetRelationshipDetailsResponse0 {
+  ERRULE_CODE: string;
+  FEAT_DESC: string;
+  FTYPE_CODE: string;
+  MATCH_KEY: string;
+  RES_ENT_ID: number;
+}
+
+export type G2diagnosticGetRelationshipDetailsResponse = G2diagnosticGetRelationshipDetailsResponse0[];
+
+export interface G2diagnosticGetResolutionStatisticsResponseRawMatchKeys {
+  MATCH_KEY: string;
+}
+
+export interface G2diagnosticGetResolutionStatisticsResponse0 {
+  ERRULE_CODE: string;
+  ERRULE_ID: number;
+  IS_AMBIGUOUS: string;
+  MATCH_KEY: string;
+  MATCH_LEVEL: number;
+  MAX_RES_ENT_ID: number;
+  MAX_RES_REL_ID: number;
+  MIN_RES_ENT_ID: number;
+  MIN_RES_REL_ID: number;
+  RAW_MATCH_KEYS: G2diagnosticGetResolutionStatisticsResponseRawMatchKeys[];
+  RECORD_COUNT: number;
+}
+
+export type G2diagnosticGetResolutionStatisticsResponse = G2diagnosticGetResolutionStatisticsResponse0[];
+
+export type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
+
+export type G2engineAddRecordWithInfoResponse = WithInfo;
+
+export type G2engineAddRecordWithInfoWithReturnedRecordIdResponse = WithInfo;
+
+export interface G2engineCheckRecordResponseCheckRecordResponse {
+  CANDIDATE_MATCH: string;
+  DSRC_CODE: string;
+  ERRULE_CODE: string;
+  ERRULE_ID: number;
+  MATCH_KEY: string;
+  MATCH_LEVEL: number;
+  MATCH_LEVEL_CODE: string;
+  NON_GENERIC_CANDIDATE_MATCH: string;
+  RECORD_ID: string;
+}
+
+export interface G2engineCheckRecordResponse {
+  CHECK_RECORD_RESPONSE: G2engineCheckRecordResponseCheckRecordResponse[];
+}
+
+export type G2engineDeleteRecordWithInfoResponse = WithInfo;
+
+export interface G2engineExportConfigAndConfigIdResponse {
+  G2_CONFIG: G2config;
+}
+
+export interface G2engineExportConfigResponse {
+  G2_CONFIG: G2config;
+}
+
+export type G2engineFetchNextResponse = FixmeUnknown;
+
+export type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
+
+export type G2engineFindInterestingEntitiesByRecordIdResponse = Interesting;
+
+export type G2engineFindNetworkByEntityIdv2response = Network;
+
+export type G2engineFindNetworkByEntityIdResponse = Network;
+
+export type G2engineFindNetworkByRecordIdv2response = Network;
+
+export type G2engineFindNetworkByRecordIdResponse = Network;
+
+export type G2engineFindPathByEntityIdv2response = Path;
+
+export type G2engineFindPathByEntityIdResponse = Path;
+
+export type G2engineFindPathByRecordIdv2response = Path;
+
+export type G2engineFindPathByRecordIdResponse = Path;
+
+export type G2engineFindPathExcludingByEntityIdv2response = Path;
+
+export type G2engineFindPathExcludingByEntityIdResponse = Path;
+
+export type G2engineFindPathExcludingByRecordIdv2response = Path;
+
+export type G2engineFindPathExcludingByRecordIdResponse = Path;
+
+export type G2engineFindPathIncludingSourceByEntityIdv2response = Path;
+
+export type G2engineFindPathIncludingSourceByEntityIdResponse = Path;
+
+export type G2engineFindPathIncludingSourceByRecordIdv2response = Path;
+
+export type G2engineFindPathIncludingSourceByRecordIdResponse = Path;
+
+export type G2engineGetEntityByEntityIdv2response = Entity;
+
+export type G2engineGetEntityByEntityIdResponse = Entity;
+
+export type G2engineGetEntityByRecordIdv2response = Entity;
+
+export type G2engineGetEntityByRecordIdResponse = Entity;
+
+export type G2engineGetRecordResponse = Record;
+
+export type G2engineGetRecordV2response = Record;
+
+export type G2engineGetRedoRecordResponse = FixmeUnknown;
+
+export type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
+
+export type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+
+export type G2engineHowEntityByEntityIdv2response = How;
+
+export type G2engineHowEntityByEntityIdResponse = How;
+
+export type G2engineProcessRedoRecordResponse = FixmeUnknown;
+
+export type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
+
+export type G2engineProcessWithInfoResponse = WithInfo;
+
+export type G2engineProcessWithResponseResizeResponse = Process;
+
+export type G2engineProcessWithResponseResponse = Process;
+
+export type G2engineReevaluateEntityWithInfoResponse = WithInfo;
+
+export type G2engineReevaluateRecordWithInfoResponse = WithInfo;
+
+export type G2engineReplaceRecordWithInfoResponse = WithInfo;
+
+export type G2engineSearchByAttributesResponse = Search;
+
+export type G2engineSearchByAttributesResponseXxx = EntitiesByFeatureId;
+
+export type G2engineSearchByAttributesV2response = Search;
+
+export type G2engineSearchByAttributesV3response = Search;
+
+export interface G2engineStatsResponseDuration {
+  PATTERN: string;
+  TYPE: string;
+}
+
+export interface G2engineStatsResponseReresolveTriggers {
+  abortRetry: number;
+  multipleResolvableCandidates: number;
+  resolveNewFeatures: number;
+  unresolveMovement: number;
+}
+
+export interface G2engineStatsResponseUnresolveTriggers {
+  extensiveResolve: number;
+  normalResolve: number;
+}
+
+export interface G2engineStatsResponseWorkloadExpressedFeatureCall {
+  EFCALL_ID: number;
+  EFUNC_CODE: string;
+  numCalls: number;
+}
+
+export interface G2engineStatsResponseWorkloadReresolveTriggers {
+  abortRetry: number;
+  multipleResolvableCandidates: number;
+  newFeatureFTypes: AttributeCounters;
+  resolveNewFeatures: number;
+  unresolveMovement: number;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
+  cpuIdle: number;
+  cpuSoftIrq: number;
+  cpuSystem: number;
+  cpuUser: number;
+  cpuWait: number;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResourcesCurrResource {
+  activeThreads: number;
+  availableMemory: string;
+  systemLoad: G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad[];
+  workerThreads: number;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResourcesInitResource {
+  availableMemory: string;
+  logicalCores: number;
+  physicalCores: number;
+  totalMemory: string;
+}
+
+export interface G2engineStatsResponseWorkloadSystemResources {
+  currResources: G2engineStatsResponseWorkloadSystemResourcesCurrResource[];
+  initResources: G2engineStatsResponseWorkloadSystemResourcesInitResource[];
+}
+
+export interface G2engineStatsResponseWorkloadThreadState {
+  active: number;
+  dataLatchContention: number;
+  idle: number;
+  loader: number;
+  obsEntContention: number;
+  resEntContention: number;
+  resolver: number;
+  scoring: number;
+  sqlExecuting: number;
+}
+
+export interface G2engineStatsResponseWorkloadUnresolveTriggers {
+  ambiguousMultiResolve: number;
+  ambiguousNoResolve: number;
+  extensiveResolve: number;
+  normalResolve: number;
+  relLink: number;
+  update: number;
+}
+
+export interface G2engineStatsResponseWorkload {
+  CorruptEntityTestDiagnosis: FixmeUnknown;
+  abortedUnresolve: number;
+  actualAmbiguousTest: number;
+  addedRecords: number;
+  apiVersion: string;
+  cacheHit: AttributeCounters;
+  cacheMiss: AttributeCounters;
+  cachedAmbiguousTest: number;
+  candidateBuilders: AttributeCounters;
+  candidates: number;
+  deletedRecords: number;
+  duration: number;
+  expressedFeatureCalls: G2engineStatsResponseWorkloadExpressedFeatureCall[];
+  expressedFeaturesCreated: AttributeCounters;
+  filteredObsFeat: number;
+  genericDetect: AttributeCounters;
+  gnrScorersUsed: number;
+  highContentionFeat: AttributeCounters;
+  highContentionResEnt: AttributeCounters;
+  latchContention: AttributeCounters;
+  libFeatCacheHit: number;
+  libFeatCacheMiss: number;
+  loadedRecords: number;
+  redoTriggers: AttributeCounters;
+  reducedScoredFeatureType: AttributeCounters;
+  reevaluations: number;
+  repairedEntities: number;
+  reresolveSkipped: number;
+  reresolveTriggers: G2engineStatsResponseWorkloadReresolveTriggers;
+  resFeatStatCacheHit: number;
+  resFeatStatCacheMiss: number;
+  resFeatStatUpdate: number;
+  retries: number;
+  scoredPairs: AttributeCounters;
+  suppressedCandidateBuilders: AttributeCounters;
+  suppressedDisclosedRelationshipDomainCount: number;
+  suppressedScoredFeatureType: AttributeCounters;
+  systemResources: G2engineStatsResponseWorkloadSystemResources;
+  threadState: G2engineStatsResponseWorkloadThreadState;
+  unresolveTest: number;
+  unresolveTriggers: G2engineStatsResponseWorkloadUnresolveTriggers;
+}
+
+export interface G2engineStatsResponse {
+  MISSING_RES_ENT: number;
+  MISSING_RES_ENT_AND_OKEY: number;
+  abortedUnresolve: number;
+  actualAmbiguousTest: number;
+  addedRecords: number;
+  cacheHit: AttributeCounters;
+  candidateBuilders: AttributeCounters;
+  candidates: number;
+  deletedRecords: number;
+  duration: G2engineStatsResponseDuration;
+  filteredObsFeat: number;
+  genericDetect: AttributeCounters;
+  latchContention: AttributeCounters;
+  loadedRecords: number;
+  redoTriggers: AttributeCounters;
+  reducedScoredFeatureType: AttributeCounters;
+  reevaluations: number;
+  repairedEntities: number;
+  reresolveSkipped: number;
+  reresolveTriggers: G2engineStatsResponseReresolveTriggers;
+  retries: number;
+  scoredPairs: AttributeCounters;
+  suppressedCandidateBuilders: AttributeCounters;
+  suppressedScoredFeatureType: AttributeCounters;
+  unresolveTest: number;
+  unresolveTriggers: G2engineStatsResponseUnresolveTriggers;
+  workload: G2engineStatsResponseWorkload;
+}
+
+export type G2engineStreamExportJsonentityReportResponse = FixmeUnknown;
+
+export type G2engineWhyEntitiesResponse = WhyEntities;
+
+export type G2engineWhyEntitiesV2response = WhyEntities;
+
+export type G2engineWhyEntityByEntityIdv2response = WhyEntity;
+
+export type G2engineWhyEntityByEntityIdResponse = WhyEntity;
+
+export type G2engineWhyEntityByRecordIdv2response = WhyEntity;
+
+export type G2engineWhyEntityByRecordIdResponse = WhyEntity;
+
+export type G2engineWhyRecordsResponse = WhyRecords;
+
+export type G2engineWhyRecordsV2response = WhyRecords;
+
+export interface G2productLicenseResponse {
+  billing: string;
+  contract: string;
+  customer: string;
+  expireDate: string;
+  issueDate: string;
+  licenseLevel: string;
+  licenseType: string;
+  recordLimit: number;
+}
+
+export interface G2productVersionResponse {
+  BUILD_DATE: string;
+  BUILD_NUMBER: string;
+  BUILD_VERSION: string;
+  COMPATIBILITY_VERSION: CompatibilityVersion;
+  PRODUCT_NAME: string;
+  SCHEMA_VERSION: SchemaVersion;
+  VERSION: string;
+}
+
 export interface How {
-  /**
-   * No description.
-   */
   HOW_RESULTS: HowResults;
 }
 
-/**
- * No description.
- */
 export interface HowResults {
-  /**
-   * No description.
-   */
   FINAL_STATE: FinalState;
-
-  /**
-   * No description.
-   */
   RESOLUTION_STEPS: ResolutionSteps;
 }
 
-/**
- * No description.
- */
 export interface Interesting {
-  /**
-   * No description.
-   */
   INTERESTING_ENTITIES: InterestingEntities;
 }
 
-/**
- * No description.
- */
 export interface InterestingEntities {
-  /**
-   * No description.
-   */
   ENTITIES: InterestingEntity[];
-
-  /**
-   * No description.
-   */
   NOTICES: Notices;
 }
 
 export interface InterestingEntitySampleRecords {
-  /**
-   * No description.
-   */
   DATA_SOURCE: string;
-
-  /**
-   * No description.
-   */
   FLAGS: string[];
-
-  /**
-   * No description.
-   */
   RECORD_ID: string;
 }
 
-/**
- * No description.
- */
 export interface InterestingEntity {
-  /**
-   * No description.
-   */
   DEGREES: number;
-
-  /**
-   * No description.
-   */
   ENTITY_ID: number;
-
-  /**
-   * No description.
-   */
   FLAGS: string[];
-
-  /**
-   * No description.
-   */
   SAMPLE_RECORDS: InterestingEntitySampleRecords[];
 }
 
-export interface JsonDataAcctNum {
-  /**
-   * No description.
-   */
+export interface JsonDataXxxAcctNum {
   ACCOUNT_DOMAIN: string;
-
-  /**
-   * No description.
-   */
   ACCOUNT_NUMBER: string;
 }
 
-export interface JsonDataSsn {
-  /**
-   * No description.
-   */
+export interface JsonDataXxxSsn {
   PASSPORT_NUMBER: string;
-
-  /**
-   * No description.
-   */
   SSN_NUMBER: string;
 }
 
-export interface JsonDataSsnLast4 {
-  /**
-   * No description.
-   */
+export interface JsonDataXxxSsnLast4 {
   SSN_LAST4: number;
 }
 
-/**
- * No description.
- */
-export interface JsonData {
-  /**
-   * No description.
-   */
+export interface JsonDataXxx {
   ACCOUNT_DOMAIN: string;
-
-  /**
-   * No description.
-   */
   ACCOUNT_NUMBER: string;
-
-  /**
-   * No description.
-   */
-  ACCT_NUM: JsonDataAcctNum[];
-
-  /**
-   * No description.
-   */
+  ACCT_NUM: JsonDataXxxAcctNum[];
   ADDRESS: string;
-
-  /**
-   * No description.
-   */
   ADDRESS_LIST: Addresses;
-
-  /**
-   * No description.
-   */
   ADDR_FULL: string;
-
-  /**
-   * No description.
-   */
   ADDR_KEY: string;
-
-  /**
-   * No description.
-   */
   CELL_PHONE_NUMBER: string;
-
-  /**
-   * No description.
-   */
   CITIZENSHIP: string;
-
-  /**
-   * No description.
-   */
   COUNTRY_OF_ASSOCIATION: string;
-
-  /**
-   * No description.
-   */
   DATA_SOURCE: string;
-
-  /**
-   * No description.
-   */
   DATE_OF_BIRTH: string;
-
-  /**
-   * No description.
-   */
   DATE_OF_DEATH: string;
-
-  /**
-   * No description.
-   */
   DOB: string;
-
-  /**
-   * No description.
-   */
   DOD: string;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_NUMBER: string;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_STATE: string;
-
-  /**
-   * No description.
-   */
   DRLIC: string;
-
-  /**
-   * No description.
-   */
   DSRC_ACTION: string;
-
-  /**
-   * No description.
-   */
   DSRC_CODE: string;
-
-  /**
-   * No description.
-   */
   DUNS_NUMBER: string;
-
-  /**
-   * No description.
-   */
   EMAIL: string;
-
-  /**
-   * No description.
-   */
   EMAIL_ADDRESS: string;
-
-  /**
-   * No description.
-   */
   EMAIL_KEY: string;
-
-  /**
-   * No description.
-   */
   EMPLOYER_NAME: string;
-
-  /**
-   * No description.
-   */
   ENTITY_TYPE: string;
-
-  /**
-   * No description.
-   */
   ENT_SRC_DESC: string;
-
-  /**
-   * No description.
-   */
   ENT_SRC_KEY: string;
-
-  /**
-   * No description.
-   */
   ETYPE_CODE: string;
-
-  /**
-   * No description.
-   */
   FACEBOOK: string;
-
-  /**
-   * No description.
-   */
   GENDER: string;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_NUMBER: string;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_TYPE: string;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_ORG_NAME: string;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_TYPE: string;
-
-  /**
-   * No description.
-   */
   ID_KEY: string;
-
-  /**
-   * No description.
-   */
   INSTAGRAM: string;
-
-  /**
-   * No description.
-   */
   LEI_NUMBER: string;
-
-  /**
-   * No description.
-   */
   LINKEDIN: string;
-
-  /**
-   * No description.
-   */
   LOAD_ID: string;
-
-  /**
-   * No description.
-   */
   LOGIN_ID: string;
-
-  /**
-   * No description.
-   */
   NAME: Names;
-
-  /**
-   * No description.
-   */
   NAME_FULL: string;
-
-  /**
-   * No description.
-   */
   NAME_KEY: string;
-
-  /**
-   * No description.
-   */
   NAME_LIST: Names;
-
-  /**
-   * No description.
-   */
   NATIONALITY: string;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID: string;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_NUMBER: string;
-
-  /**
-   * No description.
-   */
   NIN_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   NIN_NUMBER: string;
-
-  /**
-   * No description.
-   */
   NPI_NUMBER: string;
-
-  /**
-   * No description.
-   */
   OBS_SRC_KEY: string;
-
-  /**
-   * No description.
-   */
   OTHER_ID_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   OTHER_ID_NUMBER: string;
-
-  /**
-   * No description.
-   */
   OTHER_ID_TYPE: string;
-
-  /**
-   * No description.
-   */
   PASSPORT: string;
-
-  /**
-   * No description.
-   */
   PASSPORTS: Passports;
-
-  /**
-   * No description.
-   */
   PASSPORT_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   PASSPORT_NUMBER: string;
-
-  /**
-   * No description.
-   */
   PHONE: string;
-
-  /**
-   * No description.
-   */
   PHONES: Phones;
-
-  /**
-   * No description.
-   */
   PHONE_KEY: string;
-
-  /**
-   * No description.
-   */
   PLACE_OF_BIRTH: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_FIRST: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_LAST: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_MIDDLE: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_ORG: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_PREFIX: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_SUFFIX: string;
-
-  /**
-   * No description.
-   */
   PRIMARY_PHONE_NUMBER: string;
-
-  /**
-   * No description.
-   */
   RECORD_ID: string;
-
-  /**
-   * No description.
-   */
   RECORD_TYPE: string;
-
-  /**
-   * No description.
-   */
   REGISTRATION_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   REGISTRATION_DATE: string;
-
-  /**
-   * No description.
-   */
   RELATIONSHIPS: Relationships;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR: string;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_DOMAIN: string;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_KEY: string;
-
-  /**
-   * No description.
-   */
   REL_LINK: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER_DOMAIN: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER_KEY: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER_ROLE: string;
-
-  /**
-   * No description.
-   */
   SIGNAL: string;
-
-  /**
-   * No description.
-   */
   SKYPE: string;
-
-  /**
-   * No description.
-   */
   SOCIAL_HANDLE: string;
-
-  /**
-   * No description.
-   */
   SOCIAL_NETWORK: string;
-
-  /**
-   * No description.
-   */
   SOURCE_ID: string;
-
-  /**
-   * No description.
-   */
-  SSN: JsonDataSsn[];
-
-  /**
-   * No description.
-   */
-  SSN_LAST4: JsonDataSsnLast4[];
-
-  /**
-   * No description.
-   */
+  SSN: JsonDataXxxSsn[];
+  SSN_LAST4: JsonDataXxxSsnLast4[];
   SSN_NUMBER: string;
-
-  /**
-   * No description.
-   */
   TANGO: string;
-
-  /**
-   * No description.
-   */
   TAX_ID_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   TAX_ID_NUMBER: string;
-
-  /**
-   * No description.
-   */
   TAX_ID_TYPE: string;
-
-  /**
-   * No description.
-   */
   TELEGRAM: string;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_NUMBER: string;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_TYPE: string;
-
-  /**
-   * No description.
-   */
   TWITTER: string;
-
-  /**
-   * No description.
-   */
   VIBER: string;
-
-  /**
-   * No description.
-   */
   WEBSITE_ADDRESS: string;
-
-  /**
-   * No description.
-   */
   WECHAT: string;
-
-  /**
-   * No description.
-   */
   WHATSAPP: string;
-
-  /**
-   * No description.
-   */
   WORK_PHONE_NUMBER: string;
-
-  /**
-   * No description.
-   */
   ZOOMROOM: string;
-
-  /**
-   * No description.
-   */
   name: Names;
 }
 
 export interface MatchInfoDisclosedRelationsRelAnchor {
-  /**
-   * No description.
-   */
   DOMAIN: string;
-
-  /**
-   * No description.
-   */
   FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_TYPE: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_USAGE_TYPE: string;
 }
 
 export interface MatchInfoDisclosedRelationsRelLink {
-  /**
-   * No description.
-   */
   DOMAIN: string;
-
-  /**
-   * No description.
-   */
   FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   FEAT_USAGE_TYPE: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_TYPE: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_USAGE_TYPE: string;
 }
 
 export interface MatchInfoDisclosedRelationsRelPointer {
-  /**
-   * No description.
-   */
   DOMAIN: string;
-
-  /**
-   * No description.
-   */
   FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   FEAT_USAGE_TYPE: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   LINKED_FEAT_TYPE: string;
 }
 
-/**
- * No description.
- */
 export interface MatchInfoDisclosedRelations {
-  /**
-   * No description.
-   */
   REL_ANCHOR: MatchInfoDisclosedRelationsRelAnchor[];
-
-  /**
-   * No description.
-   */
   REL_LINK: MatchInfoDisclosedRelationsRelLink[];
-
-  /**
-   * No description.
-   */
   REL_POINTER: MatchInfoDisclosedRelationsRelPointer[];
 }
 
-/**
- * No description.
- */
 export interface MatchInfo {
-  /**
-   * No description.
-   */
   CANDIDATE_KEYS: MatchInfoCandidateKeys;
-
-  /**
-   * No description.
-   */
   DISCLOSED_RELATIONS: MatchInfoDisclosedRelations;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
   FEATURE_SCORES: FeatureScores;
-
-  /**
-   * No description.
-   */
   MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL_CODE: string;
-
-  /**
-   * No description.
-   */
   WHY_ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
   WHY_KEY: string;
 }
 
-/**
- * No description.
- */
 export interface MatchInfoCandidateKeys {
-  /**
-   * No description.
-   */
   ACCOUNT_DOMAIN: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ACCOUNT_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ACCT_NUM: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS_LIST: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_FULL: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   CELL_PHONE_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   CITIZENSHIP: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   COUNTRY_OF_ASSOCIATION: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DATA_SOURCE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_BIRTH: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_DEATH: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DOB: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DOD: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_STATE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DRLIC: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   DUNS_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_ADDRESS: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   EMPLOYER_NAME: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ENTITY_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   FACEBOOK: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   GENDER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_ORG_NAME: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ID_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   INSTAGRAM: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   LEI_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   LINKEDIN: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   LOAD_ID: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   LOGIN_ID: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NAME: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_FULL: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_LIST: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONALITY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_COUNTRY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_COUNTRY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   NPI_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_COUNTRY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORTS: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_COUNTRY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PHONES: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PLACE_OF_BIRTH: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_FIRST: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_LAST: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_MIDDLE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_ORG: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_PREFIX: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_SUFFIX: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_PHONE_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   RECORD_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_COUNTRY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_DATE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_DOMAIN: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_LINK: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_DOMAIN: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_KEY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_ROLE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SIGNAL: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SKYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_HANDLE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_NETWORK: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SOURCE_ID: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SSN: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_LAST4: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TANGO: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_COUNTRY: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TELEGRAM: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_TYPE: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   TWITTER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   VIBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   WEBSITE_ADDRESS: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   WECHAT: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   WHATSAPP: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   WORK_PHONE_NUMBER: MatchInfosForAttribute;
-
-  /**
-   * No description.
-   */
   ZOOMROOM: MatchInfosForAttribute;
 }
 
-/**
- * No description.
- */
 export interface MatchInfoForAttribute {
-  /**
-   * No description.
-   */
   FEAT_DESC: string;
-
-  /**
-   * No description.
-   */
   FEAT_ID: number;
 }
 
-/**
- * No description.
- */
 export type MatchInfosForAttribute = MatchInfoForAttribute[];
 
-/**
- * No description.
- */
 export interface MatchScoreForAttribute {
-  /**
-   * No description.
-   */
   CANDIDATE_FEAT: string;
-
-  /**
-   * No description.
-   */
   FULL_SCORE: number;
-
-  /**
-   * No description.
-   */
   GENERATION_MATCH: number;
-
-  /**
-   * No description.
-   */
   GNR_FN: number;
-
-  /**
-   * No description.
-   */
   GNR_GN: number;
-
-  /**
-   * No description.
-   */
   GNR_ON: number;
-
-  /**
-   * No description.
-   */
   GNR_SN: number;
-
-  /**
-   * No description.
-   */
   INBOUND_FEAT: string;
 }
 
-/**
- * No description.
- */
 export interface MatchScores {
-  /**
-   * No description.
-   */
   ACCOUNT_DOMAIN: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ACCOUNT_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ACCT_NUM: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDRESS_LIST: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_FULL: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ADDR_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   CELL_PHONE_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   CITIZENSHIP: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   COUNTRY_OF_ASSOCIATION: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DATA_SOURCE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_BIRTH: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DATE_OF_DEATH: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DOB: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DOD: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DRIVERS_LICENSE_STATE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DRLIC: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   DUNS_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_ADDRESS: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMAIL_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   EMPLOYER_NAME: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ENTITY_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   FACEBOOK: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GENDER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSN_ID_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_ORG_NAME: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   GROUP_ASSOCIATION_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ID_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   INSTAGRAM: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LEI_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LINKEDIN: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LOAD_ID: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   LOGIN_ID: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_FULL: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NAME_LIST: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONALITY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_COUNTRY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NATIONAL_ID_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_COUNTRY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NIN_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   NPI_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_COUNTRY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   OTHER_ID_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORTS: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_COUNTRY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PASSPORT_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PHONES: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PHONE_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PLACE_OF_BIRTH: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_FIRST: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_LAST: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_MIDDLE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_ORG: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_PREFIX: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_NAME_SUFFIX: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   PRIMARY_PHONE_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   RECORD_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_COUNTRY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REGISTRATION_DATE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_DOMAIN: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_LINK: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_DOMAIN: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_KEY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   REL_POINTER_ROLE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SIGNAL: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SKYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_HANDLE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SOCIAL_NETWORK: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SOURCE_ID: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SSN: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_LAST4: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   SSN_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TANGO: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_COUNTRY: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TAX_ID_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TELEGRAM: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TRUSTED_ID_TYPE: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   TWITTER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   VIBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WEBSITE_ADDRESS: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WECHAT: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WHATSAPP: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   WORK_PHONE_NUMBER: MatchScoresForAttribute;
-
-  /**
-   * No description.
-   */
   ZOOMROOM: MatchScoresForAttribute;
 }
 
-/**
- * No description.
- */
 export type MatchScoresForAttribute = MatchScoreForAttribute[];
 
-/**
- * No description.
- */
 export interface MemberRecord {
-  /**
-   * No description.
-   */
   INTERNAL_ID: number;
-
-  /**
-   * No description.
-   */
   RECORDS: Records;
 }
 
-/**
- * No description.
- */
 export type MemberRecords = MemberRecord[];
 
-/**
- * No description.
- */
 export interface Name {
-  /**
-   * No description.
-   */
   NAME_FIRST: string;
-
-  /**
-   * No description.
-   */
   NAME_FULL: string;
-
-  /**
-   * No description.
-   */
   NAME_LAST: string;
-
-  /**
-   * No description.
-   */
   NAME_MIDDLE: string;
-
-  /**
-   * No description.
-   */
   NAME_ORG: string;
-
-  /**
-   * No description.
-   */
   NAME_PREFIX: string;
-
-  /**
-   * No description.
-   */
   NAME_SUFFIX: string;
-
-  /**
-   * No description.
-   */
   NAME_TYPE: string;
 }
 
-/**
- * No description.
- */
 export type Names = Name[];
 
-/**
- * No description.
- */
 export interface Network {
-  /**
-   * No description.
-   */
-  ENTITIES: Entities;
-
-  /**
-   * No description.
-   */
-  ENTITY_PATHS: EntityPaths;
-
-  /**
-   * No description.
-   */
+  ENTITIES: Entity[];
+  ENTITY_PATHS: EntityPath[];
   MAX_ENTITY_LIMIT_REACHED: string;
 }
 
-/**
- * No description.
- */
 export interface Notice {
-  /**
-   * No description.
-   */
   CODE: string;
-
-  /**
-   * No description.
-   */
   DESCRIPTION: string;
 }
 
-/**
- * No description.
- */
 export type Notices = Notice[];
 
-/**
- * No description.
- */
 export interface Passport {
-  /**
-   * No description.
-   */
   PASSPORT_COUNTRY: string;
-
-  /**
-   * No description.
-   */
   PASSPORT_NUMBER: string;
 }
 
-/**
- * No description.
- */
 export type Passports = Passport[];
 
-/**
- * No description.
- */
 export interface Path {
-  /**
-   * No description.
-   */
-  ENTITIES: Entities;
-
-  /**
-   * No description.
-   */
-  ENTITY_PATHS: EntityPaths;
+  ENTITIES: Entity[];
+  ENTITY_PATHS: EntityPath[];
 }
 
-/**
- * No description.
- */
 export interface Phone {
-  /**
-   * No description.
-   */
   PHONE_FROM_DATE: string;
-
-  /**
-   * No description.
-   */
   PHONE_NUMBER: string;
-
-  /**
-   * No description.
-   */
   PHONE_THRU_DATE: string;
-
-  /**
-   * No description.
-   */
   PHONE_TYPE: string;
 }
 
-/**
- * No description.
- */
 export type Phones = Phone[];
 
-/**
- * No description.
- */
 export interface ProcessUmfProc {
-  /**
-   * No description.
-   */
   NAME: string;
-
-  /**
-   * No description.
-   */
   RESULT: string;
 }
 
-/**
- * No description.
- */
 export interface Process {
-  /**
-   * No description.
-   */
-  AFFECTED_ENTITIES: AffectedEntities;
-
-  /**
-   * No description.
-   */
+  AFFECTED_ENTITIES: AffectedEntity[];
   INTERESTING_ENTITIES: InterestingEntities;
-
-  /**
-   * No description.
-   */
   PROCESS_RESULT: ProcessResult;
-
-  /**
-   * No description.
-   */
   UMF_PROC: ProcessUmfProc;
 }
 
 export interface ProcessResultResolvedEntities {
-  /**
-   * No description.
-   */
   ENTITY_ID: number;
-
-  /**
-   * No description.
-   */
   ENTITY_NAME: string;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  FEATURES: Features;
-
-  /**
-   * No description.
-   */
+  FEATURES: string;
   LAST_SEEN_DT: string;
-
-  /**
-   * No description.
-   */
   MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL_CODE: string;
-
-  /**
-   * No description.
-   */
   MATCH_SCORES: MatchScores;
-
-  /**
-   * No description.
-   */
   RECORDS: Records;
-
-  /**
-   * No description.
-   */
-  RECORD_SUMMARY: RecordSummary;
+  RECORD_SUMMARY: RecordSummaryElement[];
 }
 
-/**
- * No description.
- */
 export interface ProcessResult {
-  /**
-   * No description.
-   */
   RESOLVED_ENTITIES: ProcessResultResolvedEntities[];
 }
 
-/**
- * No description.
- */
-export interface ProductLicenseResponse {
-  /**
-   * No description.
-   */
-  billing: string;
-
-  /**
-   * No description.
-   */
-  contract: string;
-
-  /**
-   * No description.
-   */
-  customer: string;
-
-  /**
-   * No description.
-   */
-  expireDate: string;
-
-  /**
-   * No description.
-   */
-  issueDate: string;
-
-  /**
-   * No description.
-   */
-  licenseLevel: string;
-
-  /**
-   * No description.
-   */
-  licenseType: string;
-
-  /**
-   * No description.
-   */
-  recordLimit: number;
-}
-
-/**
- * No description.
- */
-export interface ProductVersionResponse {
-  /**
-   * No description.
-   */
-  BUILD_DATE: string;
-
-  /**
-   * No description.
-   */
-  BUILD_NUMBER: string;
-
-  /**
-   * No description.
-   */
-  BUILD_VERSION: string;
-
-  /**
-   * No description.
-   */
-  COMPATIBILITY_VERSION: CompatibilityVersion;
-
-  /**
-   * No description.
-   */
-  PRODUCT_NAME: string;
-
-  /**
-   * No description.
-   */
-  SCHEMA_VERSION: SchemaVersion;
-
-  /**
-   * No description.
-   */
-  VERSION: string;
-}
-
 export interface RecordFeatures {
-  /**
-   * No description.
-   */
   LIB_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   USAGE_TYPE: string;
 }
 
-/**
- * No description.
- */
 export interface Record {
-  /**
-   * No description.
-   */
   ADDRESS_DATA: string[];
-
-  /**
-   * No description.
-   */
   ATTRIBUTE_DATA: string[];
-
-  /**
-   * No description.
-   */
   DATA_SOURCE: string;
-
-  /**
-   * No description.
-   */
   ENTITY_DATA: string[];
-
-  /**
-   * No description.
-   */
   ENTITY_DESC: string;
-
-  /**
-   * No description.
-   */
   ENTITY_KEY: string;
-
-  /**
-   * No description.
-   */
   ENTITY_TYPE: string;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
   FEATURES: RecordFeatures[];
-
-  /**
-   * No description.
-   */
   IDENTIFIER_DATA: string[];
-
-  /**
-   * No description.
-   */
   INTERNAL_ID: number;
-
-  /**
-   * No description.
-   */
-  JSON_DATA: JsonData;
-
-  /**
-   * No description.
-   */
+  JSON_DATA: string;
   LAST_SEEN_DT: string;
-
-  /**
-   * No description.
-   */
   MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL_CODE: string;
-
-  /**
-   * No description.
-   */
   NAME_DATA: string[];
-
-  /**
-   * No description.
-   */
   OTHER_DATA: string[];
-
-  /**
-   * No description.
-   */
   PHONE_DATA: string[];
-
-  /**
-   * No description.
-   */
   RECORD_ID: string;
-
-  /**
-   * No description.
-   */
   RELATIONSHIP_DATA: string[];
 }
 
-/**
- * No description.
- */
-export type RecordSummary = RecordSummaryElement[];
-
-/**
- * No description.
- */
 export interface RecordSummaryElement {
-  /**
-   * No description.
-   */
   DATA_SOURCE: string;
-
-  /**
-   * No description.
-   */
   FIRST_SEEN_DT: string;
-
-  /**
-   * No description.
-   */
   LAST_SEEN_DT: string;
-
-  /**
-   * No description.
-   */
   RECORD_COUNT: number;
 }
 
-/**
- * No description.
- */
 export type Records = Record[];
 
-/**
- * No description.
- */
-export type RelatedEntities = RelatedEntity[];
-
-/**
- * No description.
- */
 export interface RelatedEntity {
-  /**
-   * No description.
-   */
   ENTITY_ID: number;
-
-  /**
-   * No description.
-   */
   ENTITY_NAME: string;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
   IS_AMBIGUOUS: number;
-
-  /**
-   * No description.
-   */
   IS_DISCLOSED: number;
-
-  /**
-   * No description.
-   */
   LAST_SEEN_DT: string;
-
-  /**
-   * No description.
-   */
   MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL_CODE: string;
-
-  /**
-   * No description.
-   */
   RECORDS: Records;
-
-  /**
-   * No description.
-   */
-  RECORD_SUMMARY: RecordSummary;
+  RECORD_SUMMARY: RecordSummaryElement[];
 }
 
-/**
- * No description.
- */
 export interface Relationship {
-  /**
-   * No description.
-   */
   RELATIONSHIP_KEY: string;
-
-  /**
-   * No description.
-   */
   RELATIONSHIP_TYPE: string;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_DOMAIN: string;
-
-  /**
-   * No description.
-   */
   REL_ANCHOR_KEY: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER_DOMAIN: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER_KEY: string;
-
-  /**
-   * No description.
-   */
   REL_POINTER_ROLE: string;
 }
 
-/**
- * No description.
- */
 export type Relationships = Relationship[];
 
-/**
- * No description.
- */
 export interface ResolutionStep {
-  /**
-   * No description.
-   */
   INBOUND_VIRTUAL_ENTITY_ID: string;
-
-  /**
-   * No description.
-   */
   MATCH_INFO: MatchInfo;
-
-  /**
-   * No description.
-   */
   RESULT_VIRTUAL_ENTITY_ID: string;
-
-  /**
-   * No description.
-   */
   STEP: number;
-
-  /**
-   * No description.
-   */
   VIRTUAL_ENTITY_1: VirtualEntitySynopsis;
-
-  /**
-   * No description.
-   */
   VIRTUAL_ENTITY_2: VirtualEntitySynopsis;
 }
 
-/**
- * No description.
- */
 export type ResolutionSteps = ResolutionStep[];
 
-/**
- * No description.
- */
+export type ResolvedEntities = ResolvedEntityAndMatchInfo[];
+
 export interface ResolvedEntity {
-  /**
-   * No description.
-   */
   ENTITY_ID: number;
-
-  /**
-   * No description.
-   */
   ENTITY_NAME: string;
-
-  /**
-   * No description.
-   */
   ERRULE_CODE: string;
-
-  /**
-   * No description.
-   */
-  FEATURES: Features;
-
-  /**
-   * No description.
-   */
+  FEATURES: string;
   IS_AMBIGUOUS: number;
-
-  /**
-   * No description.
-   */
   IS_DISCLOSED: number;
-
-  /**
-   * No description.
-   */
   LAST_SEEN_DT: string;
-
-  /**
-   * No description.
-   */
   MATCH_KEY: string;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL: number;
-
-  /**
-   * No description.
-   */
   MATCH_LEVEL_CODE: string;
-
-  /**
-   * No description.
-   */
   RECORDS: Records;
-
-  /**
-   * No description.
-   */
-  RECORD_SUMMARY: RecordSummary;
+  RECORD_SUMMARY: RecordSummaryElement[];
 }
 
-/**
- * No description.
- */
+export interface ResolvedEntityAndMatchInfoEntity {
+  RESOLVED_ENTITY: ResolvedEntity;
+}
+
+export interface ResolvedEntityAndMatchInfo {
+  ENTITY: ResolvedEntityAndMatchInfoEntity;
+  MATCH_INFO: MatchInfo;
+}
+
 export interface SysOom {
-  /**
-   * No description.
-   */
   FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   FTYPE_ID: number;
-
-  /**
-   * No description.
-   */
   LENS_ID: number;
-
-  /**
-   * No description.
-   */
   LIB_FEAT_ID: number;
-
-  /**
-   * No description.
-   */
   LIB_FELEM_ID: number;
-
-  /**
-   * No description.
-   */
   NEXT_THRESH: number;
-
-  /**
-   * No description.
-   */
   OOM_LEVEL: string;
-
-  /**
-   * No description.
-   */
   OOM_TYPE: string;
-
-  /**
-   * No description.
-   */
   THRESH1_CNT: number;
-
-  /**
-   * No description.
-   */
   THRESH1_OOM: number;
 }
 
-/**
- * No description.
- */
 export interface SchemaVersion {
-  /**
-   * No description.
-   */
   ENGINE_SCHEMA_VERSION: string;
-
-  /**
-   * No description.
-   */
   MAXIMUM_REQUIRED_SCHEMA_VERSION: string;
-
-  /**
-   * No description.
-   */
   MINIMUM_REQUIRED_SCHEMA_VERSION: string;
 }
 
-/**
- * No description.
- */
-export interface SearchResolvedEntitiesEntity {
-  /**
-   * No description.
-   */
-  RESOLVED_ENTITY: ResolvedEntity;
-}
-
-export interface SearchResolvedEntities {
-  /**
-   * No description.
-   */
-  ENTITY: SearchResolvedEntitiesEntity;
-
-  /**
-   * No description.
-   */
-  MATCH_INFO: MatchInfo;
-}
-
-export interface SearchSearchStatisticsCandidateKeysFeatureTypes {
-  /**
-   * No description.
-   */
-  FOUND: number;
-
-  /**
-   * No description.
-   */
-  FTYPE_CODE: string;
-
-  /**
-   * No description.
-   */
-  GENERIC: number;
-
-  /**
-   * No description.
-   */
-  NOT_FOUND: number;
-}
-
-/**
- * No description.
- */
-export interface SearchSearchStatisticsCandidateKeysSummary {
-  /**
-   * No description.
-   */
-  FOUND: number;
-
-  /**
-   * No description.
-   */
-  GENERIC: number;
-
-  /**
-   * No description.
-   */
-  NOT_FOUND: number;
-}
-
-/**
- * No description.
- */
-export interface SearchSearchStatisticsCandidateKeys {
-  /**
-   * No description.
-   */
-  FEATURE_TYPES: SearchSearchStatisticsCandidateKeysFeatureTypes[];
-
-  /**
-   * No description.
-   */
-  SUMMARY: SearchSearchStatisticsCandidateKeysSummary;
-}
-
-export interface SearchSearchStatistics {
-  /**
-   * No description.
-   */
-  CANDIDATE_KEYS: SearchSearchStatisticsCandidateKeys;
-}
-
-/**
- * No description.
- */
 export interface Search {
-  /**
-   * No description.
-   */
-  RESOLVED_ENTITIES: SearchResolvedEntities[];
-
-  /**
-   * No description.
-   */
-  SEARCH_STATISTICS: SearchSearchStatistics[];
+  RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
+  SEARCH_STATISTICS: SearchStatistics;
 }
 
-/**
- * No description.
- */
+export interface SearchStatisticCandidateKeysFeatureTypes {
+  FOUND: number;
+  FTYPE_CODE: string;
+  GENERIC: number;
+  NOT_FOUND: number;
+}
+
+export interface SearchStatisticCandidateKeysSummary {
+  FOUND: number;
+  GENERIC: number;
+  NOT_FOUND: number;
+}
+
+export interface SearchStatisticCandidateKeys {
+  FEATURE_TYPES: SearchStatisticCandidateKeysFeatureTypes[];
+  SUMMARY: SearchStatisticCandidateKeysSummary;
+}
+
+export interface SearchStatistic {
+  CANDIDATE_KEYS: SearchStatisticCandidateKeys;
+}
+
+export type SearchStatistics = SearchStatistic[];
+
 export interface VirtualEntity {
-  /**
-   * No description.
-   */
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
-/**
- * No description.
- */
 export interface VirtualEntitySynopsis {
-  /**
-   * No description.
-   */
   MEMBER_RECORDS: MemberRecords;
-
-  /**
-   * No description.
-   */
   VIRTUAL_ENTITY_ID: string;
 }
 
-/**
- * No description.
- */
 export interface WhyEntities {
-  /**
-   * No description.
-   */
-  ENTITIES: Entities;
-
-  /**
-   * No description.
-   */
+  ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
-/**
- * No description.
- */
 export interface WhyEntity {
-  /**
-   * No description.
-   */
-  ENTITIES: Entities;
-
-  /**
-   * No description.
-   */
+  ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
-/**
- * No description.
- */
 export interface WhyRecords {
-  /**
-   * No description.
-   */
-  ENTITIES: Entities;
-
-  /**
-   * No description.
-   */
+  ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
-/**
- * No description.
- */
 export interface WhyResult {
-  /**
-   * No description.
-   */
   ENTITY_ID: number;
-
-  /**
-   * No description.
-   */
   ENTITY_ID_2: number;
-
-  /**
-   * No description.
-   */
   FOCUS_RECORDS: FocusRecords;
-
-  /**
-   * No description.
-   */
   FOCUS_RECORDS_2: FocusRecords;
-
-  /**
-   * No description.
-   */
   INTERNAL_ID: number;
-
-  /**
-   * No description.
-   */
   INTERNAL_ID_2: number;
-
-  /**
-   * No description.
-   */
   MATCH_INFO: MatchInfo;
 }
 
-/**
- * No description.
- */
 export type WhyResults = WhyResult[];
 
-/**
- * No description.
- */
 export interface WithInfo {
-  /**
-   * No description.
-   */
-  AFFECTED_ENTITIES: AffectedEntities;
-
-  /**
-   * No description.
-   */
+  AFFECTED_ENTITIES: AffectedEntity[];
   DATA_SOURCE: string;
-
-  /**
-   * No description.
-   */
   INTERESTING_ENTITIES: InterestingEntities;
-
-  /**
-   * No description.
-   */
   RECORD_ID: string;
 }

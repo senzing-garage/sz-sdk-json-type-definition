@@ -4,56 +4,29 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    /// <summary>
-    /// No description.
-    /// </summary>
     public class Name
     {
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_FIRST")]
         public string NameFirst { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_FULL")]
         public string NameFull { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_LAST")]
         public string NameLast { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_MIDDLE")]
         public string NameMiddle { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_ORG")]
         public string NameOrg { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_PREFIX")]
         public string NamePrefix { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_SUFFIX")]
         public string NameSuffix { get; set; }
 
-        /// <summary>
-        /// No description.
-        /// </summary>
         [JsonPropertyName("NAME_TYPE")]
         public string NameType { get; set; }
     }

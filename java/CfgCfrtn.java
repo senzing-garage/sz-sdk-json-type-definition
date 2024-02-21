@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgCfrtn {
     @JsonProperty("CFRTN_ID")
@@ -45,7 +42,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for cfrtnId.<p>
-     * No description.
      */
     public Integer getCfrtnId() {
         return cfrtnId;
@@ -53,7 +49,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for cfrtnId.<p>
-     * No description.
      */
     public void setCfrtnId(Integer cfrtnId) {
         this.cfrtnId = cfrtnId;
@@ -61,7 +56,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for cfuncId.<p>
-     * No description.
      */
     public Integer getCfuncId() {
         return cfuncId;
@@ -69,7 +63,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for cfuncId.<p>
-     * No description.
      */
     public void setCfuncId(Integer cfuncId) {
         this.cfuncId = cfuncId;
@@ -77,7 +70,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for cfuncRtnval.<p>
-     * No description.
      */
     public String getCfuncRtnval() {
         return cfuncRtnval;
@@ -85,7 +77,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for cfuncRtnval.<p>
-     * No description.
      */
     public void setCfuncRtnval(String cfuncRtnval) {
         this.cfuncRtnval = cfuncRtnval;
@@ -93,7 +84,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for closeScore.<p>
-     * No description.
      */
     public Integer getCloseScore() {
         return closeScore;
@@ -101,7 +91,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for closeScore.<p>
-     * No description.
      */
     public void setCloseScore(Integer closeScore) {
         this.closeScore = closeScore;
@@ -109,7 +98,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for execOrder.<p>
-     * No description.
      */
     public Integer getExecOrder() {
         return execOrder;
@@ -117,7 +105,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for execOrder.<p>
-     * No description.
      */
     public void setExecOrder(Integer execOrder) {
         this.execOrder = execOrder;
@@ -125,7 +112,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -133,7 +119,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -141,7 +126,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for likelyScore.<p>
-     * No description.
      */
     public Integer getLikelyScore() {
         return likelyScore;
@@ -149,7 +133,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for likelyScore.<p>
-     * No description.
      */
     public void setLikelyScore(Integer likelyScore) {
         this.likelyScore = likelyScore;
@@ -157,7 +140,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for plausibleScore.<p>
-     * No description.
      */
     public Integer getPlausibleScore() {
         return plausibleScore;
@@ -165,7 +147,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for plausibleScore.<p>
-     * No description.
      */
     public void setPlausibleScore(Integer plausibleScore) {
         this.plausibleScore = plausibleScore;
@@ -173,7 +154,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for sameScore.<p>
-     * No description.
      */
     public Integer getSameScore() {
         return sameScore;
@@ -181,7 +161,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for sameScore.<p>
-     * No description.
      */
     public void setSameScore(Integer sameScore) {
         this.sameScore = sameScore;
@@ -189,7 +168,6 @@ public class CfgCfrtn {
 
     /**
      * Getter for unLikelyScore.<p>
-     * No description.
      */
     public Integer getUnLikelyScore() {
         return unLikelyScore;
@@ -197,7 +175,6 @@ public class CfgCfrtn {
 
     /**
      * Setter for unLikelyScore.<p>
-     * No description.
      */
     public void setUnLikelyScore(Integer unLikelyScore) {
         this.unLikelyScore = unLikelyScore;

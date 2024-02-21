@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class CfgLens {
     @JsonProperty("LENS_CODE")
@@ -24,7 +21,6 @@ public class CfgLens {
 
     /**
      * Getter for lensCode.<p>
-     * No description.
      */
     public String getLensCode() {
         return lensCode;
@@ -32,7 +28,6 @@ public class CfgLens {
 
     /**
      * Setter for lensCode.<p>
-     * No description.
      */
     public void setLensCode(String lensCode) {
         this.lensCode = lensCode;
@@ -40,7 +35,6 @@ public class CfgLens {
 
     /**
      * Getter for lensDesc.<p>
-     * No description.
      */
     public String getLensDesc() {
         return lensDesc;
@@ -48,7 +42,6 @@ public class CfgLens {
 
     /**
      * Setter for lensDesc.<p>
-     * No description.
      */
     public void setLensDesc(String lensDesc) {
         this.lensDesc = lensDesc;
@@ -56,7 +49,6 @@ public class CfgLens {
 
     /**
      * Getter for lensId.<p>
-     * No description.
      */
     public Integer getLensId() {
         return lensId;
@@ -64,7 +56,6 @@ public class CfgLens {
 
     /**
      * Setter for lensId.<p>
-     * No description.
      */
     public void setLensId(Integer lensId) {
         this.lensId = lensId;

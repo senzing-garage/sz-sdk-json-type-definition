@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class AffectedEntity {
     @JsonProperty("ENTITY_ID")
@@ -18,7 +15,6 @@ public class AffectedEntity {
 
     /**
      * Getter for entityId.<p>
-     * No description.
      */
     public Integer getEntityId() {
         return entityId;
@@ -26,7 +22,6 @@ public class AffectedEntity {
 
     /**
      * Setter for entityId.<p>
-     * No description.
      */
     public void setEntityId(Integer entityId) {
         this.entityId = entityId;

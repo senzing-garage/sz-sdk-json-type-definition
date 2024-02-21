@@ -5,9 +5,6 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-/**
- * No description.
- */
 @JsonSerialize
 public class SysOom {
     @JsonProperty("FELEM_ID")
@@ -45,7 +42,6 @@ public class SysOom {
 
     /**
      * Getter for felemId.<p>
-     * No description.
      */
     public Integer getFelemId() {
         return felemId;
@@ -53,7 +49,6 @@ public class SysOom {
 
     /**
      * Setter for felemId.<p>
-     * No description.
      */
     public void setFelemId(Integer felemId) {
         this.felemId = felemId;
@@ -61,7 +56,6 @@ public class SysOom {
 
     /**
      * Getter for ftypeId.<p>
-     * No description.
      */
     public Integer getFtypeId() {
         return ftypeId;
@@ -69,7 +63,6 @@ public class SysOom {
 
     /**
      * Setter for ftypeId.<p>
-     * No description.
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
@@ -77,7 +70,6 @@ public class SysOom {
 
     /**
      * Getter for lensId.<p>
-     * No description.
      */
     public Integer getLensId() {
         return lensId;
@@ -85,7 +77,6 @@ public class SysOom {
 
     /**
      * Setter for lensId.<p>
-     * No description.
      */
     public void setLensId(Integer lensId) {
         this.lensId = lensId;
@@ -93,7 +84,6 @@ public class SysOom {
 
     /**
      * Getter for libFeatId.<p>
-     * No description.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -101,7 +91,6 @@ public class SysOom {
 
     /**
      * Setter for libFeatId.<p>
-     * No description.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -109,7 +98,6 @@ public class SysOom {
 
     /**
      * Getter for libFelemId.<p>
-     * No description.
      */
     public Integer getLibFelemId() {
         return libFelemId;
@@ -117,7 +105,6 @@ public class SysOom {
 
     /**
      * Setter for libFelemId.<p>
-     * No description.
      */
     public void setLibFelemId(Integer libFelemId) {
         this.libFelemId = libFelemId;
@@ -125,7 +112,6 @@ public class SysOom {
 
     /**
      * Getter for nextThresh.<p>
-     * No description.
      */
     public Integer getNextThresh() {
         return nextThresh;
@@ -133,7 +119,6 @@ public class SysOom {
 
     /**
      * Setter for nextThresh.<p>
-     * No description.
      */
     public void setNextThresh(Integer nextThresh) {
         this.nextThresh = nextThresh;
@@ -141,7 +126,6 @@ public class SysOom {
 
     /**
      * Getter for oomLevel.<p>
-     * No description.
      */
     public String getOomLevel() {
         return oomLevel;
@@ -149,7 +133,6 @@ public class SysOom {
 
     /**
      * Setter for oomLevel.<p>
-     * No description.
      */
     public void setOomLevel(String oomLevel) {
         this.oomLevel = oomLevel;
@@ -157,7 +140,6 @@ public class SysOom {
 
     /**
      * Getter for oomType.<p>
-     * No description.
      */
     public String getOomType() {
         return oomType;
@@ -165,7 +147,6 @@ public class SysOom {
 
     /**
      * Setter for oomType.<p>
-     * No description.
      */
     public void setOomType(String oomType) {
         this.oomType = oomType;
@@ -173,7 +154,6 @@ public class SysOom {
 
     /**
      * Getter for thresh1Cnt.<p>
-     * No description.
      */
     public Integer getThresh1Cnt() {
         return thresh1Cnt;
@@ -181,7 +161,6 @@ public class SysOom {
 
     /**
      * Setter for thresh1Cnt.<p>
-     * No description.
      */
     public void setThresh1Cnt(Integer thresh1Cnt) {
         this.thresh1Cnt = thresh1Cnt;
@@ -189,7 +168,6 @@ public class SysOom {
 
     /**
      * Getter for thresh1Oom.<p>
-     * No description.
      */
     public Integer getThresh1Oom() {
         return thresh1Oom;
@@ -197,7 +175,6 @@ public class SysOom {
 
     /**
      * Setter for thresh1Oom.<p>
-     * No description.
      */
     public void setThresh1Oom(Integer thresh1Oom) {
         this.thresh1Oom = thresh1Oom;
