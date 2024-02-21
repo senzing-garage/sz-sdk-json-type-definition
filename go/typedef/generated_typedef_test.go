@@ -22,7 +22,7 @@ func testError(test *testing.T, ctx context.Context, err error) {
 
 func TestG2configAddDataSourceResponseTest101(test *testing.T) {
     ctx := context.TODO()
-    jsonString := `{"DSRC_ID":1}`
+    jsonString := `{"DSRC_ID":2}`
     jsonStruct := G2configAddDataSourceResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
