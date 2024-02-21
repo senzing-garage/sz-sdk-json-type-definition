@@ -179,4 +179,5 @@ logging.info("Tests: {0}; Errors: {1}".format(TEST_COUNT, ERROR_COUNT))
 logging.info("{0}".format("-" * 80))
 logging.info("--- {0} - End".format(os.path.basename(__file__)))
 logging.info("{0}".format("-" * 80))
-sys.exit(0 if (ERROR_COUNT == 0) else 1)
+if ERROR_COUNT > 0:
+    sys.exit(1)
