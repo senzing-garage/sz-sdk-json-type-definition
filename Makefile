@@ -136,7 +136,7 @@ generate_testdata:
 
 .PHONY: test
 test:
-	@./bin/test_RFC8927_reconstitution.py
+	@./bin/test_rfc8927_reconstitution.py
 	@go test -v -p 1 ./...
 	@pytest test.py --verbose
 

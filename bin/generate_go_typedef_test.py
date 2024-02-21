@@ -6,6 +6,7 @@
 Used to generate go/typedef_test.go
 """
 
+import argparse
 import json
 import logging
 import os
@@ -15,8 +16,6 @@ from test_cases import TEST_CASES
 
 IS_DEBUG = False
 FINAL_RESULT = {}
-
-OUTPUT_FILE = "./go/typedef/generated_typedef_test.go"
 
 # -----------------------------------------------------------------------------
 # --- Helpers
@@ -41,6 +40,17 @@ logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
 logging.info("{0}".format("-" * 80))
 logging.info("--- {0} - Begin".format(os.path.basename(__file__)))
 logging.info("{0}".format("-" * 80))
+
+# Command line options.
+
+parser = argparse.ArgumentParser(prog="generate_go_typef_test.py")
+parser.add_argument(
+    "--output",
+    help="Output file. Default: ./go/typedef/generated_typedef_test.go",
+    default="./go/typedef/generated_typedef_test.go",
+)
+args = parser.parse_args()
+OUTPUT_FILE = args.output
 
 # Create multi-line strings for output.
 
