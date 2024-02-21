@@ -21,13 +21,13 @@ jobs:
         run: |
           mkdir /tmp/testdata
           ./bin/generate_testdata.py --output /tmp/testdata
-          diff -R ./testdata /tmp/testdata
+          diff --recursive ./testdata /tmp/testdata
 
       - name: verify go/typedef/generated_typedef_test.go
         run: |
           mkdir /tmp/go-typedef
           ./bin/generate_go_typedef_test.py --output /tmp/go-typedef/generated_typedef_test.go
-          diff -R ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test.go
+          diff ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test.go
 
       - name: verify generated files are up-to-date
         run: |

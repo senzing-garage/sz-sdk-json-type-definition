@@ -26,7 +26,9 @@ jobs:
         run: ./test.py
 
       - name: 'pytest *.py'
-        run: pytest $(git ls-files '*.py' ':!:bin/*') --verbose
+        run: |
+          # shellcheck disable=SC2046
+          pytest $(git ls-files '*.py' ':!:bin/*') --verbose
 
       - name: test main.py
         run: ./main.py
