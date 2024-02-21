@@ -591,7 +591,7 @@ type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -633,7 +633,7 @@ type EntityBySize struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -1295,7 +1295,7 @@ type G2diagnosticGetEntityResumeResponse0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2755,7 +2755,7 @@ type Record struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt string `json:"LAST_SEEN_DT"`
 

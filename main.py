@@ -9,7 +9,6 @@ import os
 import pathlib
 
 from python.typedef import (
-    FeatureForAttribute,
     G2configListDataSourcesResponse,
     G2engineAddRecordWithInfoResponse,
     G2engineDeleteRecordWithInfoResponse,
@@ -87,15 +86,17 @@ print(
 response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
     json.loads(mock_g2engine_get_virtual_entity_by_record_id())
 )
-feature_list = response.value.resolved_entity.features.get("NAME", [])
+print(
+    f"G2engineGetVirtualEntityByRecordIDResponse: Simple  description: {response.value.resolved_entity.features['NAME'][0].feat_desc}"
+)
+
+feature_list = response.value.resolved_entity.features["NAME"]
 for feature in feature_list:
-    feat_desc_list = FeatureForAttribute.from_json_data(feature).feat_desc_values
+    feat_desc_list = feature.feat_desc_values
     for feat_desc in feat_desc_list:
         print(
             f"G2engineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}"
         )
-
-feature_desc = response.value.resolved_entity.features["ADDRESS"][0]
 
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys

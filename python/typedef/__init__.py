@@ -5768,7 +5768,7 @@ class ProcessResultResolvedEntities:
     entity_id: 'int'
     entity_name: 'str'
     errule_code: 'str'
-    features: 'str'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     last_seen_dt: 'str'
     match_key: 'str'
     match_level: 'int'
@@ -5783,7 +5783,7 @@ class ProcessResultResolvedEntities:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(str, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -5854,7 +5854,7 @@ class Record:
     features: 'List[RecordFeatures]'
     identifier_data: 'List[str]'
     internal_id: 'int'
-    json_data: 'str'
+    json_data: 'Dict[str, object]'
     last_seen_dt: 'str'
     match_key: 'str'
     match_level: 'int'
@@ -5879,7 +5879,7 @@ class Record:
             _from_json_data(List[RecordFeatures], data.get("FEATURES")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(str, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -6097,7 +6097,7 @@ class ResolvedEntity:
     entity_id: 'int'
     entity_name: 'str'
     errule_code: 'str'
-    features: 'object'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     is_ambiguous: 'int'
     is_disclosed: 'int'
     last_seen_dt: 'str'
@@ -6113,7 +6113,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(object, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
             _from_json_data(str, data.get("LAST_SEEN_DT")),

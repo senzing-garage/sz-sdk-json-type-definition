@@ -1239,7 +1239,7 @@
                     },
                     "JSON_DATA": {
                         "metadata": {
-                            "goType": "any"
+                            "goType": "map[string]any"
                         },
                         "type": "string"
                     },
@@ -1325,7 +1325,7 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "goType": "any"
+                        "goType": "map[string]any"
                     },
                     "type": "string"
                 },
@@ -2509,7 +2509,7 @@
                     },
                     "JSON_DATA": {
                         "metadata": {
-                            "goType": "any"
+                            "goType": "map[string]any"
                         },
                         "type": "string"
                     },
@@ -4974,7 +4974,8 @@
                             },
                             "FEATURES": {
                                 "metadata": {
-                                    "goType": "map[string][]FeatureForAttribute"
+                                    "goType": "map[string][]FeatureForAttribute",
+                                    "pythonType": "Dict[str, List[FeatureForAttribute]]"
                                 },
                                 "type": "string"
                             },
@@ -5069,7 +5070,8 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "goType": "any"
+                        "goType": "map[string]any",
+                        "pythonType": "Dict[str, object]"
                     },
                     "type": "string"
                 },
@@ -5269,8 +5271,8 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "pythonType": "object",
-                        "goType": "map[string][]FeatureForAttribute"
+                        "goType": "map[string][]FeatureForAttribute",
+                        "pythonType": "Dict[str, List[FeatureForAttribute]]"
                     },
                     "type": "string"
                 },
