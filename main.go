@@ -28,14 +28,16 @@ func main() {
 	// Simulate response from Senzing SDK API.
 
 	response := mockG2engineGetVirtualEntityByRecordId()
-	responseStruct := typedef.G2engineGetVirtualEntityByRecordIDResponse{}
-	err := json.Unmarshal([]byte(response), &responseStruct)
+	virtualEntity := typedef.G2engineGetVirtualEntityByRecordIDResponse{}
+	err := json.Unmarshal([]byte(response), &virtualEntity)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n", virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc)
 
-	featureList := responseStruct.ResolvedEntity.Features.(map[string]any)
-	addresses := featureList["ADDRESS"].([]any)
+	// Looping through list.
+
+	addresses := virtualEntity.ResolvedEntity.Features["ADDRESS"]
 	for _, address := range addresses {
 
 		addressBytes, err := json.Marshal(address)

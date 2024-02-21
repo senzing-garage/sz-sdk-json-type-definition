@@ -95,6 +95,8 @@ for feature in feature_list:
             f"G2engineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}"
         )
 
+feature_desc = response.value.resolved_entity.features["ADDRESS"][0]
+
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys
 # - Issue: No editor hints

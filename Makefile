@@ -138,6 +138,7 @@ generate_testdata:
 test:
 	@./bin/test_rfc8927_reconstitution.py
 	@go test -v -p 1 ./...
+	@go run main.go
 	@pytest test.py --verbose
 
 # -----------------------------------------------------------------------------

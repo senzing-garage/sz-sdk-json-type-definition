@@ -2705,7 +2705,7 @@ type ProcessResultResolvedEntities struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features any `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	LastSeenDt string `json:"LAST_SEEN_DT"`
 
@@ -2855,7 +2855,7 @@ type ResolvedEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features any `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 

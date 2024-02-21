@@ -4974,7 +4974,7 @@
                             },
                             "FEATURES": {
                                 "metadata": {
-                                    "goType": "any"
+                                    "goType": "map[string][]FeatureForAttribute"
                                 },
                                 "type": "string"
                             },
@@ -5270,7 +5270,7 @@
                 "FEATURES": {
                     "metadata": {
                         "pythonType": "object",
-                        "goType": "any"
+                        "goType": "map[string][]FeatureForAttribute"
                     },
                     "type": "string"
                 },
