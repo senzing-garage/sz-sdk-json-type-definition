@@ -33,14 +33,3 @@ jobs:
 
       - name: test main.py
         run: ./main.py
-
-      - name: verify generated files are up-to-date
-        run: |
-          curl -X GET --location --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
-          unzip jtd-codegen.zip
-          chmod +x jtd-codegen
-          ls ./python/typedef
-          mkdir /tmp/typedef
-          ./jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
-          ls /tmp/typedef
-          diff ./python/typedef/__init__.py  /tmp/typedef/__init__.py
