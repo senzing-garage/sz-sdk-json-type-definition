@@ -9,133 +9,17 @@ GLOBAL_KEYS = {}
 GLOBAL_KEY_COUNT = {}
 GLOBAL_KEY_TYPE = {}
 GLOBAL_OUT_OF_ORDER = []
-BLACK_LIST = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
-EXCLUDE_LIST = []
-SENZING_JSON_KEYS = [
-    "ACCT_NUM",
-    "ACCOUNT_DOMAIN",
-    "ACCOUNT_NUMBER",
-    "ADDRESS",
-    "ADDRESS_LIST",
-    # "ADDR_CITY",
-    # "ADDR_COUNTRY",
-    # "ADDR_FROM_DATE",
-    "ADDR_FULL",
-    "ADDR_KEY",
-    # "ADDR_LINE1",
-    # "ADDR_LINE2",
-    # "ADDR_LINE3",
-    # "ADDR_LINE4",
-    # "ADDR_LINE5",
-    # "ADDR_LINE6",
-    # "ADDR_POSTAL_CODE",
-    # "ADDR_STATE",
-    # "ADDR_THRU_DATE",
-    # "ADDR_TYPE",
-    "CELL_PHONE_NUMBER",
-    "CITIZENSHIP",
-    "COUNTRY_OF_ASSOCIATION",
-    "DATA_SOURCE",
-    "DATE_OF_BIRTH",
-    "DATE_OF_DEATH",
-    "DOB",
-    "DOD",
-    "DRLIC",
-    "DRIVERS_LICENSE_NUMBER",
-    "DRIVERS_LICENSE_STATE",
-    "DUNS_NUMBER",
-    "EMAIL",
-    "EMAIL_ADDRESS",
-    "EMAIL_KEY",
-    "EMPLOYER_NAME",
-    "ENTITY_TYPE",
-    "FACEBOOK",
-    "GENDER",
-    "GROUP_ASSN_ID_NUMBER",
-    "GROUP_ASSN_ID_TYPE",
-    "GROUP_ASSOCIATION_ORG_NAME",
-    "GROUP_ASSOCIATION_TYPE",
-    "ID_KEY",
-    "INSTAGRAM",
-    "LEI_NUMBER",
-    "LINKEDIN",
-    "LOAD_ID",
-    "LOGIN_ID",
-    "NAME",
-    # "NAME_FIRST",
-    "NAME_FULL",
-    "NAME_KEY",
-    # "NAME_LAST",
-    "NAME_LIST",
-    # "NAME_MIDDLE",
-    # "NAME_ORG",
-    # "NAME_PREFIX",
-    # "NAME_SUFFIX",
-    # "NAME_TYPE",
-    "NATIONALITY",
-    "NATIONAL_ID",
-    "NATIONAL_ID_COUNTRY",
-    "NATIONAL_ID_NUMBER",
-    "NIN_COUNTRY",
-    "NIN_NUMBER",
-    "NPI_NUMBER",
-    "OTHER_ID_COUNTRY",
-    "OTHER_ID_NUMBER",
-    "OTHER_ID_TYPE",
-    "PASSPORT",
-    "PASSPORT_COUNTRY",
-    "PASSPORT_NUMBER",
-    "PASSPORTS",
-    "PHONE",
-    # "PHONE_FROM_DATE",
-    "PHONE_KEY",
-    # "PHONE_NUMBER",
-    # "PHONE_THRU_DATE",
-    # "PHONE_TYPE",
-    "PHONES",
-    "PLACE_OF_BIRTH",
-    "PRIMARY_NAME_FIRST",
-    "PRIMARY_NAME_LAST",
-    "PRIMARY_NAME_MIDDLE",
-    "PRIMARY_NAME_ORG",
-    "PRIMARY_NAME_PREFIX",
-    "PRIMARY_NAME_SUFFIX",
-    "PRIMARY_PHONE_NUMBER",
-    # "RECORD_ID",
-    "RECORD_TYPE",
-    "REGISTRATION_COUNTRY",
-    "REGISTRATION_DATE",
-    "REL_ANCHOR",
-    "REL_ANCHOR_DOMAIN",
-    "REL_ANCHOR_KEY",
-    "REL_LINK",
-    "REL_POINTER",
-    "REL_POINTER_DOMAIN",
-    "REL_POINTER_KEY",
-    "REL_POINTER_ROLE",
-    "SIGNAL",
-    "SKYPE",
-    "SOCIAL_HANDLE",
-    "SOCIAL_NETWORK",
-    "SOURCE_ID",
-    "SSN",
-    "SSN_LAST4",
-    "SSN_NUMBER",
-    "TANGO",
-    "TAX_ID_COUNTRY",
-    "TAX_ID_NUMBER",
-    "TAX_ID_TYPE",
-    "TELEGRAM",
-    "TRUSTED_ID_NUMBER",
-    "TRUSTED_ID_TYPE",
-    "TWITTER",
-    "VIBER",
-    "WEBSITE_ADDRESS",
-    "WECHAT",
-    "WHATSAPP",
-    "WORK_PHONE_NUMBER",
-    "ZOOMROOM",
+GLOBAL_REFS = []
+BLACK_LIST = [
+    "description",
+    "elements",
+    "goType",
+    "metadata",
+    "properties",
+    "optionalproperties",
+    "type",
 ]
+EXCLUDE_LIST = []
 
 
 def add_to_key_count(key_to_add):
@@ -165,11 +49,13 @@ def add_to_key_type(key_to_add, value_to_add):
 
 def is_sorted(prefix, list_to_check):
     """Determine if list is sorted.  Return boolean"""
-    global GLOBAL_OUT_OF_ORDER # pylint: disable=global-statement
+    global GLOBAL_OUT_OF_ORDER  # pylint: disable=global-statement
     last_key = ""
     for key_to_check in list_to_check:
-        if not key_to_check > last_key:
-            GLOBAL_OUT_OF_ORDER += ["Key out of order: {0}.{1} > {2}".format(prefix, last_key, key_to_check)]
+        if not key_to_check.lower() > last_key.lower():
+            GLOBAL_OUT_OF_ORDER += [
+                "Key out of order: {0}.{1} > {2}".format(prefix, last_key, key_to_check)
+            ]
         last_key = key_to_check
 
 
@@ -186,6 +72,10 @@ def recurse(prefix, list_to_check):
     is_sorted(prefix, list_to_check)
     add_to_list(prefix, list_to_check)
     for key_to_check, value_to_check in list_to_check.items():
+        if "ref" in value_to_check:
+            ref_value = value_to_check.get("ref")
+            if ref_value not in GLOBAL_REFS:
+                GLOBAL_REFS.append(ref_value)
         add_to_key_count(key_to_check)
         add_to_key_type(key_to_check, value_to_check)
         if isinstance(value_to_check, dict):
@@ -220,7 +110,7 @@ recurse("definitions", DATA.get("definitions"))
 
 # Print "out of order" messages.
 
-print("-"*80)
+print("-" * 80)
 print("\nTEST 1: Verify that the JSON keys are in sorted order.\n")
 if len(GLOBAL_OUT_OF_ORDER) > 0:
     for message in GLOBAL_OUT_OF_ORDER:
@@ -230,34 +120,11 @@ else:
 
 # Print missing JSON keys.
 
-LISTS = {
-    "definitions.Features": DATA.get("definitions", {}).get("Features", {}).get("properties", {}),
-    "definitions.FeatureScores": DATA.get("definitions", {}).get("FeatureScores", {}).get("properties", {}),
-    "definitions.JsonData": DATA.get("definitions", {}).get("JsonData", {}).get("properties", {}),
-    "definitions.MatchInfoCandidateKeys": DATA.get("definitions", {}).get("MatchInfoCandidateKeys", {}).get("properties", {}),
-    "definitions.MatchScores": DATA.get("definitions", {}).get("MatchScores", {}).get("properties", {}),
-}
-
-print("")
-print("-"*80)
-print("\nTEST 2: Detect lists not containing mandatory JSON keys.\n")
-for key, value in LISTS.items():
-    for senzing_json_key in SENZING_JSON_KEYS:
-        if senzing_json_key not in value:
-            print("Missing {0}.{1}".format(key, senzing_json_key))
-
-print("")
-print("-"*80)
-print("\nTEST 3: Detect JSON keys not in mandatory list.\n")
-for key, value in LISTS.items():
-    for key2, value2 in value.items():
-        if key2 not in SENZING_JSON_KEYS:
-            print("Key not in master list: {0}.{1}".format(key, key2))
 
 # Print result of test for similar lists.
 
 print("")
-print("-"*80)
+print("-" * 80)
 print("\nTEST 4: Detect lists containing same properties.\n")
 
 for key, value in GLOBAL_KEYS.items():
@@ -271,7 +138,7 @@ for key, value in GLOBAL_KEYS.items():
 # Print JSON key count results.
 
 print("")
-print("-"*80)
+print("-" * 80)
 print("\nTEST 5: Count occurance of JSON keys")
 print("\nCOUNT  KEY")
 print("-----  -----------------------------")
@@ -283,7 +150,7 @@ for key, value in SORTED_KEY_COUNTS:
 # Print type/ref variances.
 
 print("")
-print("-"*80)
+print("-" * 80)
 print("\nTEST 6: Check for JSON keys having different types\n")
 SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
 for key, value in SORTED_GLOBAL_KEY_TYPE.items():
@@ -291,7 +158,28 @@ for key, value in SORTED_GLOBAL_KEY_TYPE.items():
         print("{0:30s}  {1}".format(key, sorted(value)))
 
 
+# Print result of test for similar lists.
+
+print("")
+print("-" * 80)
+print("\nTEST N: Detect lists containing same properties.\n")
+
+print(json.dumps(GLOBAL_KEYS))
+
+definitions = GLOBAL_KEYS.pop("definitions")
+for key, values in GLOBAL_KEYS.items():
+    for value in values:
+        if value in definitions:
+            definitions.remove(value)
+for value in GLOBAL_REFS:
+    print(value)
+    if value in definitions:
+        definitions.remove(value)
+
+print(definitions)
+
+
 # Epilog.
 
 print("")
-print("-"*80)
+print("-" * 80)

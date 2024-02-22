@@ -10,19 +10,6 @@
                 }
             }
         },
-        "AttributeCounter": {
-            "metadata": {
-                "goType": "map[string]int64",
-                "javaJacksonType": "Map<String, long>",
-                "pythonType": "Dict[str, int]"
-            },
-            "type": "string"
-        },
-        "AttributeCounters": {
-            "elements": {
-                "ref": "AttributeCounter"
-            }
-        },
         "CFG_ATTR": {
             "properties": {
                 "ADVANCED": {
@@ -931,28 +918,6 @@
                 }
             }
         },
-        "CONFIG_BASE_VERSION": {
-            "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
-                },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "VERSION": {
-                    "type": "string"
-                }
-            }
-        },
         "CompatibilityVersion": {
             "properties": {
                 "CONFIG_VERSION": {
@@ -972,6 +937,28 @@
                     "type": "int32"
                 },
                 "SYS_CREATE_DT": {
+                    "type": "string"
+                }
+            }
+        },
+        "CONFIG_BASE_VERSION": {
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "VERSION": {
                     "type": "string"
                 }
             }
@@ -1394,13 +1381,6 @@
                 }
             }
         },
-        "G2ConfigSaveResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
         "G2ConfigmgrGetConfigListResponse": {
             "properties": {
                 "CONFIGS": {
@@ -1409,6 +1389,13 @@
             }
         },
         "G2ConfigmgrGetConfigResponse": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
+            }
+        },
+        "G2ConfigSaveResponse": {
             "properties": {
                 "G2_CONFIG": {
                     "ref": "G2Config"
@@ -1567,570 +1554,6 @@
         },
         "G2EngineSearchByAttributesV3Response": {
             "ref": "Search"
-        },
-        "G2EngineStatsResponse": {
-            "properties": {
-                "MISSING_RES_ENT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MISSING_RES_ENT_AND_OKEY": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "abortedUnresolve": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "actualAmbiguousTest": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "addedRecords": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "cacheHit": {
-                    "ref": "AttributeCounters"
-                },
-                "candidateBuilders": {
-                    "ref": "AttributeCounters"
-                },
-                "candidates": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "deletedRecords": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "duration": {
-                    "properties": {
-                        "PATTERN": {
-                            "type": "string"
-                        },
-                        "TYPE": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "filteredObsFeat": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "genericDetect": {
-                    "ref": "AttributeCounters"
-                },
-                "latchContention": {
-                    "ref": "AttributeCounters"
-                },
-                "loadedRecords": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "redoTriggers": {
-                    "ref": "AttributeCounters"
-                },
-                "reducedScoredFeatureType": {
-                    "ref": "AttributeCounters"
-                },
-                "reevaluations": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "repairedEntities": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "reresolveSkipped": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "reresolveTriggers": {
-                    "properties": {
-                        "abortRetry": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "multipleResolvableCandidates": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "resolveNewFeatures": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "unresolveMovement": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        }
-                    }
-                },
-                "retries": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "scoredPairs": {
-                    "ref": "AttributeCounters"
-                },
-                "suppressedCandidateBuilders": {
-                    "ref": "AttributeCounters"
-                },
-                "suppressedScoredFeatureType": {
-                    "ref": "AttributeCounters"
-                },
-                "unresolveTest": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "unresolveTriggers": {
-                    "properties": {
-                        "extensiveResolve": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "normalResolve": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        }
-                    }
-                },
-                "workload": {
-                    "properties": {
-                        "CorruptEntityTestDiagnosis": {
-                            "ref": "FixmeUnknown"
-                        },
-                        "abortedUnresolve": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "actualAmbiguousTest": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "addedRecords": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "apiVersion": {
-                            "type": "string"
-                        },
-                        "cacheHit": {
-                            "ref": "AttributeCounters"
-                        },
-                        "cacheMiss": {
-                            "ref": "AttributeCounters"
-                        },
-                        "cachedAmbiguousTest": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "candidateBuilders": {
-                            "ref": "AttributeCounters"
-                        },
-                        "candidates": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "deletedRecords": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "duration": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "expressedFeatureCalls": {
-                            "elements": {
-                                "properties": {
-                                    "EFCALL_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "EFUNC_CODE": {
-                                        "type": "string"
-                                    },
-                                    "numCalls": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    }
-                                }
-                            }
-                        },
-                        "expressedFeaturesCreated": {
-                            "ref": "AttributeCounters"
-                        },
-                        "filteredObsFeat": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "genericDetect": {
-                            "ref": "AttributeCounters"
-                        },
-                        "gnrScorersUsed": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "highContentionFeat": {
-                            "ref": "AttributeCounters"
-                        },
-                        "highContentionResEnt": {
-                            "ref": "AttributeCounters"
-                        },
-                        "latchContention": {
-                            "ref": "AttributeCounters"
-                        },
-                        "libFeatCacheHit": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "libFeatCacheMiss": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "loadedRecords": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "redoTriggers": {
-                            "ref": "AttributeCounters"
-                        },
-                        "reducedScoredFeatureType": {
-                            "ref": "AttributeCounters"
-                        },
-                        "reevaluations": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "repairedEntities": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "reresolveSkipped": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "reresolveTriggers": {
-                            "properties": {
-                                "abortRetry": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "multipleResolvableCandidates": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "newFeatureFTypes": {
-                                    "ref": "AttributeCounters"
-                                },
-                                "resolveNewFeatures": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "unresolveMovement": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        },
-                        "resFeatStatCacheHit": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "resFeatStatCacheMiss": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "resFeatStatUpdate": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "retries": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "scoredPairs": {
-                            "ref": "AttributeCounters"
-                        },
-                        "suppressedCandidateBuilders": {
-                            "ref": "AttributeCounters"
-                        },
-                        "suppressedDisclosedRelationshipDomainCount": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "suppressedScoredFeatureType": {
-                            "ref": "AttributeCounters"
-                        },
-                        "systemResources": {
-                            "properties": {
-                                "currResources": {
-                                    "elements": {
-                                        "properties": {
-                                            "activeThreads": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "availableMemory": {
-                                                "type": "string"
-                                            },
-                                            "systemLoad": {
-                                                "elements": {
-                                                    "properties": {
-                                                        "cpuIdle": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuSoftIrq": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuSystem": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuUser": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuWait": {
-                                                            "type": "float64"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "workerThreads": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            }
-                                        }
-                                    }
-                                },
-                                "initResources": {
-                                    "elements": {
-                                        "properties": {
-                                            "availableMemory": {
-                                                "type": "string"
-                                            },
-                                            "logicalCores": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "physicalCores": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "totalMemory": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "threadState": {
-                            "properties": {
-                                "active": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "dataLatchContention": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "idle": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "loader": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "obsEntContention": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "resEntContention": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "resolver": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "scoring": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "sqlExecuting": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        },
-                        "unresolveTest": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "unresolveTriggers": {
-                            "properties": {
-                                "ambiguousMultiResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "ambiguousNoResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "extensiveResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "normalResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "relLink": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "update": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         },
         "G2EngineStreamExportJSONEntityReportResponse": {
             "ref": "FixmeUnknown"
@@ -2670,13 +2093,13 @@
                 "MATCH_LEVEL_CODE": {
                     "type": "string"
                 },
-                "RECORDS": {
-                    "ref": "Records"
-                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
+                },
+                "RECORDS": {
+                    "ref": "Records"
                 }
             }
         },
@@ -2759,85 +2182,27 @@
                 "MATCH_LEVEL_CODE": {
                     "type": "string"
                 },
-                "RECORDS": {
-                    "ref": "Records"
-                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
+                },
+                "RECORDS": {
+                    "ref": "Records"
                 }
             }
         },
         "ResolvedEntityAndMatchInfo": {
             "properties": {
-                "MATCH_INFO": {
-                    "ref": "MatchInfo"
-                },
                 "ENTITY": {
                     "properties": {
                         "RESOLVED_ENTITY": {
                             "ref": "ResolvedEntity"
                         }
                     }
-                }
-            }
-        },
-        "SYS_OOM": {
-            "properties": {
-                "FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
                 },
-                "FTYPE_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LENS_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NEXT_THRESH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "OOM_LEVEL": {
-                    "type": "string"
-                },
-                "OOM_TYPE": {
-                    "type": "string"
-                },
-                "THRESH1_CNT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "THRESH1_OOM": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
+                "MATCH_INFO": {
+                    "ref": "MatchInfo"
                 }
             }
         },
@@ -2926,6 +2291,64 @@
         "SearchStatistics": {
             "elements": {
                 "ref": "SearchStatistic"
+            }
+        },
+        "SYS_OOM": {
+            "properties": {
+                "FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FTYPE_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LENS_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LIB_FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "NEXT_THRESH": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "OOM_LEVEL": {
+                    "type": "string"
+                },
+                "OOM_TYPE": {
+                    "type": "string"
+                },
+                "THRESH1_CNT": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "THRESH1_OOM": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
             }
         },
         "VirtualEntity": {
