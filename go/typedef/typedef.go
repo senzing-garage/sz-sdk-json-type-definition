@@ -2,6 +2,8 @@
 
 package typedef
 
+import "time"
+
 type Senzingapi = interface{}
 
 type Address struct {
@@ -2707,7 +2709,7 @@ type ProcessResultResolvedEntities struct {
 
 	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2757,7 +2759,7 @@ type Record struct {
 
 	JSONData map[string]any `json:"JSON_DATA"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2779,9 +2781,9 @@ type Record struct {
 type RecordSummaryElement struct {
 	DataSource string `json:"DATA_SOURCE"`
 
-	FirstSeenDt string `json:"FIRST_SEEN_DT"`
+	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	RecordCount int64 `json:"RECORD_COUNT"`
 }
@@ -2799,7 +2801,7 @@ type RelatedEntity struct {
 
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2861,7 +2863,7 @@ type ResolvedEntity struct {
 
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 

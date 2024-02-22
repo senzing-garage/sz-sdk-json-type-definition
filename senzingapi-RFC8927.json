@@ -1239,7 +1239,9 @@
                     },
                     "JSON_DATA": {
                         "metadata": {
-                            "goType": "map[string]any"
+                            "goType": "map[string]any",
+                            "javaJacksonType": "Map<String, Map<String, Object>>",
+                            "pythonType": "Dict[str, object]"
                         },
                         "type": "string"
                     },
@@ -1325,7 +1327,9 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "goType": "map[string]any"
+                        "goType": "map[string]any",
+                        "javaJacksonType": "Map<String, Map<String, Object>>",
+                        "pythonType": "Dict[str, object]"
                     },
                     "type": "string"
                 },
@@ -2509,7 +2513,9 @@
                     },
                     "JSON_DATA": {
                         "metadata": {
-                            "goType": "map[string]any"
+                            "goType": "map[string]any",
+                            "javaJacksonType": "Map<String, Map<String, Object>>",
+                            "pythonType": "Dict[str, object]"
                         },
                         "type": "string"
                     },
@@ -4975,12 +4981,13 @@
                             "FEATURES": {
                                 "metadata": {
                                     "goType": "map[string][]FeatureForAttribute",
+                                    "javaJacksonType": "Map<String, List<FeatureForAttribute>>",
                                     "pythonType": "Dict[str, List[FeatureForAttribute]]"
                                 },
                                 "type": "string"
                             },
                             "LAST_SEEN_DT": {
-                                "type": "string"
+                                "type": "timestamp"
                             },
                             "MATCH_KEY": {
                                 "type": "string"
@@ -5071,12 +5078,13 @@
                 "JSON_DATA": {
                     "metadata": {
                         "goType": "map[string]any",
+                        "javaJacksonType": "Map<String, Map<String, Object>>",
                         "pythonType": "Dict[str, object]"
                     },
                     "type": "string"
                 },
                 "LAST_SEEN_DT": {
-                    "type": "string"
+                    "type": "timestamp"
                 },
                 "MATCH_KEY": {
                     "type": "string"
@@ -5126,10 +5134,10 @@
                     "type": "string"
                 },
                 "FIRST_SEEN_DT": {
-                    "type": "string"
+                    "type": "timestamp"
                 },
                 "LAST_SEEN_DT": {
-                    "type": "string"
+                    "type": "timestamp"
                 },
                 "RECORD_COUNT": {
                     "metadata": {
@@ -5166,7 +5174,7 @@
                     "type": "int32"
                 },
                 "LAST_SEEN_DT": {
-                    "type": "string"
+                    "type": "timestamp"
                 },
                 "MATCH_KEY": {
                     "type": "string"
@@ -5272,6 +5280,7 @@
                 "FEATURES": {
                     "metadata": {
                         "goType": "map[string][]FeatureForAttribute",
+                        "javaJacksonType": "Map<String, List<FeatureForAttribute>>",
                         "pythonType": "Dict[str, List[FeatureForAttribute]]"
                     },
                     "type": "string"
@@ -5289,7 +5298,7 @@
                     "type": "int32"
                 },
                 "LAST_SEEN_DT": {
-                    "type": "string"
+                    "type": "timestamp"
                 },
                 "MATCH_KEY": {
                     "type": "string"

@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.OffsetDateTime;
 
 @JsonSerialize
 public class RecordSummaryElement {
@@ -11,10 +12,10 @@ public class RecordSummaryElement {
     private String dataSource;
 
     @JsonProperty("FIRST_SEEN_DT")
-    private String firstSeenDt;
+    private OffsetDateTime firstSeenDt;
 
     @JsonProperty("LAST_SEEN_DT")
-    private String lastSeenDt;
+    private OffsetDateTime lastSeenDt;
 
     @JsonProperty("RECORD_COUNT")
     private Integer recordCount;
@@ -39,28 +40,28 @@ public class RecordSummaryElement {
     /**
      * Getter for firstSeenDt.<p>
      */
-    public String getFirstSeenDt() {
+    public OffsetDateTime getFirstSeenDt() {
         return firstSeenDt;
     }
 
     /**
      * Setter for firstSeenDt.<p>
      */
-    public void setFirstSeenDt(String firstSeenDt) {
+    public void setFirstSeenDt(OffsetDateTime firstSeenDt) {
         this.firstSeenDt = firstSeenDt;
     }
 
     /**
      * Getter for lastSeenDt.<p>
      */
-    public String getLastSeenDt() {
+    public OffsetDateTime getLastSeenDt() {
         return lastSeenDt;
     }
 
     /**
      * Setter for lastSeenDt.<p>
      */
-    public void setLastSeenDt(String lastSeenDt) {
+    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
     }
 

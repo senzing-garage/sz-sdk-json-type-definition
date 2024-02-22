@@ -20,7 +20,7 @@ public class G2diagnosticGetEntityResumeResponse0 {
     private String etypeCode;
 
     @JsonProperty("JSON_DATA")
-    private String jsonData;
+    private Map<String, Map<String, Object>> jsonData;
 
     @JsonProperty("MATCH_KEY")
     private String matchKey;
@@ -96,14 +96,14 @@ public class G2diagnosticGetEntityResumeResponse0 {
     /**
      * Getter for jsonData.<p>
      */
-    public String getJsonData() {
+    public Map<String, Map<String, Object>> getJsonData() {
         return jsonData;
     }
 
     /**
      * Setter for jsonData.<p>
      */
-    public void setJsonData(String jsonData) {
+    public void setJsonData(Map<String, Map<String, Object>> jsonData) {
         this.jsonData = jsonData;
     }
 

@@ -1256,7 +1256,7 @@ class DiagnosticFetchNextEntityBySizeResponseXxx0:
     errule_code: 'str'
     er_id: 'int'
     etype_code: 'str'
-    json_data: 'str'
+    json_data: 'Dict[str, object]'
     match_key: 'str'
     obs_ent_id: 'int'
     record_id: 'str'
@@ -1271,7 +1271,7 @@ class DiagnosticFetchNextEntityBySizeResponseXxx0:
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("ER_ID")),
             _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(str, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("OBS_ENT_ID")),
             _from_json_data(str, data.get("RECORD_ID")),
@@ -1362,7 +1362,7 @@ class EntityBySize:
     errule_code: 'str'
     er_id: 'int'
     etype_code: 'str'
-    json_data: 'str'
+    json_data: 'Dict[str, object]'
     match_key: 'str'
     obs_ent_id: 'int'
     record_id: 'str'
@@ -1377,7 +1377,7 @@ class EntityBySize:
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("ER_ID")),
             _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(str, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("OBS_ENT_ID")),
             _from_json_data(str, data.get("RECORD_ID")),
@@ -2612,7 +2612,7 @@ class G2diagnosticGetEntityResumeResponse0:
     ent_src_desc: 'str'
     errule_code: 'str'
     etype_code: 'str'
-    json_data: 'str'
+    json_data: 'Dict[str, object]'
     match_key: 'str'
     record_id: 'str'
     rel_ent_id: 'int'
@@ -2625,7 +2625,7 @@ class G2diagnosticGetEntityResumeResponse0:
             _from_json_data(str, data.get("ENT_SRC_DESC")),
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(str, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(int, data.get("REL_ENT_ID")),
@@ -5769,7 +5769,7 @@ class ProcessResultResolvedEntities:
     entity_name: 'str'
     errule_code: 'str'
     features: 'Dict[str, List[FeatureForAttribute]]'
-    last_seen_dt: 'str'
+    last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
     match_level_code: 'str'
@@ -5784,7 +5784,7 @@ class ProcessResultResolvedEntities:
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
-            _from_json_data(str, data.get("LAST_SEEN_DT")),
+            _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
@@ -5855,7 +5855,7 @@ class Record:
     identifier_data: 'List[str]'
     internal_id: 'int'
     json_data: 'Dict[str, object]'
-    last_seen_dt: 'str'
+    last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
     match_level_code: 'str'
@@ -5880,7 +5880,7 @@ class Record:
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
             _from_json_data(Dict[str, object], data.get("JSON_DATA")),
-            _from_json_data(str, data.get("LAST_SEEN_DT")),
+            _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
@@ -5919,16 +5919,16 @@ class Record:
 @dataclass
 class RecordSummaryElement:
     data_source: 'str'
-    first_seen_dt: 'str'
-    last_seen_dt: 'str'
+    first_seen_dt: 'datetime'
+    last_seen_dt: 'datetime'
     record_count: 'int'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordSummaryElement':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
-            _from_json_data(str, data.get("FIRST_SEEN_DT")),
-            _from_json_data(str, data.get("LAST_SEEN_DT")),
+            _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
+            _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(int, data.get("RECORD_COUNT")),
         )
 
@@ -5958,7 +5958,7 @@ class RelatedEntity:
     errule_code: 'str'
     is_ambiguous: 'int'
     is_disclosed: 'int'
-    last_seen_dt: 'str'
+    last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
     match_level_code: 'str'
@@ -5973,7 +5973,7 @@ class RelatedEntity:
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
-            _from_json_data(str, data.get("LAST_SEEN_DT")),
+            _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
@@ -6100,7 +6100,7 @@ class ResolvedEntity:
     features: 'Dict[str, List[FeatureForAttribute]]'
     is_ambiguous: 'int'
     is_disclosed: 'int'
-    last_seen_dt: 'str'
+    last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
     match_level_code: 'str'
@@ -6116,7 +6116,7 @@ class ResolvedEntity:
             _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
-            _from_json_data(str, data.get("LAST_SEEN_DT")),
+            _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
