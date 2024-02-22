@@ -11,7 +11,6 @@ import os
 import pathlib
 
 from python.typedef import (
-    FeatureForAttribute,
     G2engineAddRecordWithInfoResponse,
     G2engineDeleteRecordWithInfoResponse,
     G2engineFindInterestingEntitiesByEntityIDResponse,
@@ -163,6 +162,23 @@ def test_g2engine_find_path_by_record_id_01():
     )
 
 
+# def test_g2engine_get_entity_by_entity_id_01():
+#     with open(
+#         path_to_testdata("G2EngineGetEntityByEntityIdResponse-test-001.json"),
+#         encoding="utf-8",
+#     ) as input_file:
+#         response = G2engineGetEntityByEntityIDResponse.from_json_data(
+#             json.load(input_file)
+#         )
+#     assert response.value.related_entities == []
+#     assert response.value.resolved_entity.entity_id == 1
+#     assert response.value.resolved_entity.entity_name == "Robert Smith"
+#     feature_json = response.value.resolved_entity.features["ADDRESS"][0].feat_desc
+#     feature = FeatureForAttribute.from_json_data(feature_json)
+#     assert feature.feat_desc == "1515 Adela Lane Las Vegas NV 89111"
+#     assert feature.feat_desc_values[0].lib_feat_id == 20
+
+
 def test_g2engine_get_entity_by_entity_id_01():
     with open(
         path_to_testdata("G2EngineGetEntityByEntityIdResponse-test-001.json"),
@@ -174,10 +190,11 @@ def test_g2engine_get_entity_by_entity_id_01():
     assert response.value.related_entities == []
     assert response.value.resolved_entity.entity_id == 1
     assert response.value.resolved_entity.entity_name == "Robert Smith"
-    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
-    feature = FeatureForAttribute.from_json_data(feature_json)
-    assert feature.feat_desc == "1515 Adela Lane Las Vegas NV 89111"
-    assert feature.feat_desc_values[0].lib_feat_id == 20
+    assert (
+        response.value.resolved_entity.features["ADDRESS"][0].feat_desc
+        == "1515 Adela Lane Las Vegas NV 89111"
+    )
+    assert response.value.resolved_entity.features["ADDRESS"][0].lib_feat_id == 20
 
 
 def test_g2engine_get_entity_by_entity_id_02():
@@ -191,10 +208,13 @@ def test_g2engine_get_entity_by_entity_id_02():
     assert response.value.related_entities == []
     assert response.value.resolved_entity.entity_id == 1
     assert response.value.resolved_entity.entity_name == "blank"
-    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
-    feature = FeatureForAttribute.from_json_data(feature_json)
-    assert feature.feat_desc == "blank"
-    assert feature.feat_desc_values[0].lib_feat_id == 1
+    assert response.value.resolved_entity.features["ADDRESS"][0].feat_desc == "blank"
+    assert (
+        response.value.resolved_entity.features["ADDRESS"][0]
+        .feat_desc_values[0]
+        .lib_feat_id
+        == 1
+    )
 
 
 def test_g2engine_get_entity_by_record_id_01():
@@ -208,11 +228,16 @@ def test_g2engine_get_entity_by_record_id_01():
     assert response.value.related_entities == []
     assert response.value.resolved_entity.entity_id == 1
     assert response.value.resolved_entity.entity_name == "Robert Smith"
-
-    feature_json = response.value.resolved_entity.features.get("ADDRESS")[0]
-    feature = FeatureForAttribute.from_json_data(feature_json)
-    assert feature.feat_desc == "1515 Adela Lane Las Vegas NV 89111"
-    assert feature.feat_desc_values[0].lib_feat_id == 20
+    assert (
+        response.value.resolved_entity.features["ADDRESS"][0].feat_desc
+        == "1515 Adela Lane Las Vegas NV 89111"
+    )
+    assert (
+        response.value.resolved_entity.features["ADDRESS"][0]
+        .feat_desc_values[0]
+        .lib_feat_id
+        == 20
+    )
 
 
 def test_g2engine_get_record_01():
@@ -223,8 +248,8 @@ def test_g2engine_get_record_01():
     assert response.value.data_source == "CUSTOMERS"
     assert response.value.record_id == "1001"
     assert isinstance(response.value.json_data, dict)
-    assert response.value.json_data.get("DATA_SOURCE") == "CUSTOMERS"
-    assert response.value.json_data.get("RECORD_ID") == "1001"
+    assert response.value.json_data["DATA_SOURCE"] == "CUSTOMERS"
+    assert response.value.json_data["RECORD_ID"] == "1001"
 
 
 # TODO: Fix this
@@ -247,11 +272,16 @@ def test_g2engine_get_virtual_entity_by_record_id_01():
         )
     assert response.value.resolved_entity.entity_id == 1
     assert response.value.resolved_entity.entity_name == "Robert Smith"
-    feature_json = response.value.resolved_entity.features.get("NAME")[0]
-    feature = FeatureForAttribute.from_json_data(feature_json)
-    assert feature.feat_desc == "Robert Smith"
-    assert feature.lib_feat_id == 1
-    assert feature.feat_desc_values[1].lib_feat_id == 18
+    assert (
+        response.value.resolved_entity.features["NAME"][0].feat_desc == "Robert Smith"
+    )
+    assert response.value.resolved_entity.features["NAME"][0].lib_feat_id == 1
+    assert (
+        response.value.resolved_entity.features["NAME"][0]
+        .feat_desc_values[1]
+        .lib_feat_id
+        == 18
+    )
 
 
 # -----------------------------------------------------------------------------

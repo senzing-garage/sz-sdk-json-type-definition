@@ -2,6 +2,8 @@
 
 package typedef
 
+import "time"
+
 type Senzingapi = interface{}
 
 type Address struct {
@@ -591,7 +593,7 @@ type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -633,7 +635,7 @@ type EntityBySize struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -1295,7 +1297,7 @@ type G2diagnosticGetEntityResumeResponse0 struct {
 
 	EtypeCode string `json:"ETYPE_CODE"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2705,9 +2707,9 @@ type ProcessResultResolvedEntities struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features any `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2755,9 +2757,9 @@ type Record struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData any `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2779,9 +2781,9 @@ type Record struct {
 type RecordSummaryElement struct {
 	DataSource string `json:"DATA_SOURCE"`
 
-	FirstSeenDt string `json:"FIRST_SEEN_DT"`
+	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	RecordCount int64 `json:"RECORD_COUNT"`
 }
@@ -2799,7 +2801,7 @@ type RelatedEntity struct {
 
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -2855,13 +2857,13 @@ type ResolvedEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features any `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
-	LastSeenDt string `json:"LAST_SEEN_DT"`
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
 	MatchKey string `json:"MATCH_KEY"`
 

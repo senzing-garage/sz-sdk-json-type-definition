@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @JsonSerialize
@@ -42,10 +43,10 @@ public class Record {
     private Integer internalId;
 
     @JsonProperty("JSON_DATA")
-    private String jsonData;
+    private Map<String, Map<String, Object>> jsonData;
 
     @JsonProperty("LAST_SEEN_DT")
-    private String lastSeenDt;
+    private OffsetDateTime lastSeenDt;
 
     @JsonProperty("MATCH_KEY")
     private String matchKey;
@@ -231,28 +232,28 @@ public class Record {
     /**
      * Getter for jsonData.<p>
      */
-    public String getJsonData() {
+    public Map<String, Map<String, Object>> getJsonData() {
         return jsonData;
     }
 
     /**
      * Setter for jsonData.<p>
      */
-    public void setJsonData(String jsonData) {
+    public void setJsonData(Map<String, Map<String, Object>> jsonData) {
         this.jsonData = jsonData;
     }
 
     /**
      * Getter for lastSeenDt.<p>
      */
-    public String getLastSeenDt() {
+    public OffsetDateTime getLastSeenDt() {
         return lastSeenDt;
     }
 
     /**
      * Setter for lastSeenDt.<p>
      */
-    public void setLastSeenDt(String lastSeenDt) {
+    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
     }
 

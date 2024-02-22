@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @JsonSerialize
@@ -24,7 +25,7 @@ public class RelatedEntity {
     private Integer isDisclosed;
 
     @JsonProperty("LAST_SEEN_DT")
-    private String lastSeenDt;
+    private OffsetDateTime lastSeenDt;
 
     @JsonProperty("MATCH_KEY")
     private String matchKey;
@@ -117,14 +118,14 @@ public class RelatedEntity {
     /**
      * Getter for lastSeenDt.<p>
      */
-    public String getLastSeenDt() {
+    public OffsetDateTime getLastSeenDt() {
         return lastSeenDt;
     }
 
     /**
      * Setter for lastSeenDt.<p>
      */
-    public void setLastSeenDt(String lastSeenDt) {
+    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
     }
 

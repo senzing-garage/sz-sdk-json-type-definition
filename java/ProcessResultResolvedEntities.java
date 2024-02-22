@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @JsonSerialize
@@ -18,10 +19,10 @@ public class ProcessResultResolvedEntities {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private String features;
+    private Map<String, List<FeatureForAttribute>> features;
 
     @JsonProperty("LAST_SEEN_DT")
-    private String lastSeenDt;
+    private OffsetDateTime lastSeenDt;
 
     @JsonProperty("MATCH_KEY")
     private String matchKey;
@@ -89,28 +90,28 @@ public class ProcessResultResolvedEntities {
     /**
      * Getter for features.<p>
      */
-    public String getFeatures() {
+    public Map<String, List<FeatureForAttribute>> getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(String features) {
+    public void setFeatures(Map<String, List<FeatureForAttribute>> features) {
         this.features = features;
     }
 
     /**
      * Getter for lastSeenDt.<p>
      */
-    public String getLastSeenDt() {
+    public OffsetDateTime getLastSeenDt() {
         return lastSeenDt;
     }
 
     /**
      * Setter for lastSeenDt.<p>
      */
-    public void setLastSeenDt(String lastSeenDt) {
+    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
         this.lastSeenDt = lastSeenDt;
     }
 
