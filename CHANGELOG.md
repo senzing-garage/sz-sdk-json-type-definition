@@ -10,6 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [0.2.1] - 2024-02-22
+
+### Changed in 0.2.1
+
+- Added unit testing
+- 0.2.x is for Senzing version 3.x.  The 0.3.x is for 4.x
+
 ## [0.2.0] - 2023-12-29
 
 ### Changed in 0.2.0
