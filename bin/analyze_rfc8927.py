@@ -19,6 +19,11 @@ BLACK_LIST = [
     "optionalproperties",
     "type",
 ]
+USED_KEYS = [
+    "FeatureForAttribute",
+    "FeatureScoresForAttribute",
+    "MatchInfoForAttribute",
+]
 EXCLUDE_LIST = []
 
 
@@ -125,7 +130,7 @@ else:
 
 print("")
 print("-" * 80)
-print("\nTEST 4: Detect lists containing same properties.\n")
+print("\nTEST 2: Detect lists containing same properties.\n")
 
 for key, value in GLOBAL_KEYS.items():
     EXCLUDE_LIST.append(key)
@@ -139,7 +144,7 @@ for key, value in GLOBAL_KEYS.items():
 
 print("")
 print("-" * 80)
-print("\nTEST 5: Count occurance of JSON keys")
+print("\nTEST 3: Count occurance of JSON keys")
 print("\nCOUNT  KEY")
 print("-----  -----------------------------")
 SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)
@@ -151,7 +156,7 @@ for key, value in SORTED_KEY_COUNTS:
 
 print("")
 print("-" * 80)
-print("\nTEST 6: Check for JSON keys having different types\n")
+print("\nTEST 4: Check for JSON keys having different types\n")
 SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
 for key, value in SORTED_GLOBAL_KEY_TYPE.items():
     if len(value) > 1:
@@ -159,12 +164,11 @@ for key, value in SORTED_GLOBAL_KEY_TYPE.items():
 
 
 # Print result of test for similar lists.
+# Must be done last as it mutates GLOBAL_KEYS
 
 print("")
 print("-" * 80)
-print("\nTEST N: Detect lists containing same properties.\n")
-
-print(json.dumps(GLOBAL_KEYS))
+print("\nTEST 5: Detect JSON keys not used.\n")
 
 definitions = GLOBAL_KEYS.pop("definitions")
 for key, values in GLOBAL_KEYS.items():
@@ -172,12 +176,16 @@ for key, values in GLOBAL_KEYS.items():
         if value in definitions:
             definitions.remove(value)
 for value in GLOBAL_REFS:
-    print(value)
     if value in definitions:
         definitions.remove(value)
-
-print(definitions)
-
+used_key_count = 0
+for definition in definitions:
+    if definition[0:8] not in ["G2Config", "G2Engine", "G2Diagno", "G2Produc"]:
+        if definition not in USED_KEYS:
+            used_key_count += 1
+            print(definition)
+if used_key_count == 0:
+    print("All keys used")
 
 # Epilog.
 
