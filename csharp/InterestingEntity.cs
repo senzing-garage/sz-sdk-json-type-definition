@@ -10,6 +10,10 @@ namespace Senzing
         [JsonPropertyName("DEGREES")]
         public int Degrees { get; set; }
 
+        /// <summary>
+        /// The ENTITY_ID is the Senzing-generated identifier for the discovered
+        /// entity. It may change when new information is added.
+        /// </summary>
         [JsonPropertyName("ENTITY_ID")]
         public int EntityId { get; set; }
 

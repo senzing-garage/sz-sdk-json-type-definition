@@ -19,7 +19,25 @@ module SenzingTypeDef
     end
   end
 
+  class AddDataSource
+    attr_accessor :dsrc_id
+
+    def self.from_json_data(data)
+      out = AddDataSource.new
+      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
+      data
+    end
+  end
+
   class AffectedEntity
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
 
     def self.from_json_data(data)
@@ -1007,6 +1025,25 @@ module SenzingTypeDef
     end
   end
 
+  class CheckDbperf
+    attr_accessor :insert_time
+    attr_accessor :num_records_inserted
+
+    def self.from_json_data(data)
+      out = CheckDbperf.new
+      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
+      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
+      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
+      data
+    end
+  end
+
   class CompatibilityVersion
     attr_accessor :config_version
 
@@ -1045,17 +1082,35 @@ module SenzingTypeDef
     end
   end
 
-  class Configs
-    attr_accessor :value
+  class ConfigList
+    attr_accessor :configs
 
     def self.from_json_data(data)
-      out = Configs.new
-      out.value = SenzingTypeDef.from_json_data(Array[Config], data)
+      out = ConfigList.new
+      out.configs = SenzingTypeDef::from_json_data(Array[Config], data["CONFIGS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
+      data
+    end
+  end
+
+  class ConfigSave
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = ConfigSave.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
     end
   end
 
@@ -1118,6 +1173,22 @@ module SenzingTypeDef
       data["END_ENTITY_ID"] = SenzingTypeDef::to_json_data(end_entity_id)
       data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
       data["START_ENTITY_ID"] = SenzingTypeDef::to_json_data(start_entity_id)
+      data
+    end
+  end
+
+  class ExportConfig
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = ExportConfig.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
       data
     end
   end
@@ -1446,101 +1517,86 @@ module SenzingTypeDef
   end
 
   class G2configAddDataSourceResponse
-    attr_accessor :dsrc_id
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2configAddDataSourceResponse.new
-      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
+      out.value = SenzingTypeDef.from_json_data(AddDataSource, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2configListDataSourcesResponse
-    attr_accessor :data_sources
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2configListDataSourcesResponse.new
-      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
+      out.value = SenzingTypeDef.from_json_data(ListDataSources, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2configSaveResponse
-    attr_accessor :g2_config
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2configSaveResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out.value = SenzingTypeDef.from_json_data(ConfigSave, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2configmgrGetConfigListResponse
-    attr_accessor :configs
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2configmgrGetConfigListResponse.new
-      out.configs = SenzingTypeDef::from_json_data(Configs, data["CONFIGS"])
+      out.value = SenzingTypeDef.from_json_data(ConfigList, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2configmgrGetConfigResponse
-    attr_accessor :g2_config
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2configmgrGetConfigResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2diagnosticCheckDbperfResponse
-    attr_accessor :insert_time
-    attr_accessor :num_records_inserted
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2diagnosticCheckDbperfResponse.new
-      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
-      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
+      out.value = SenzingTypeDef.from_json_data(CheckDbperf, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
-      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -1587,34 +1643,30 @@ module SenzingTypeDef
   end
 
   class G2engineExportConfigAndConfigIDResponse
-    attr_accessor :g2_config
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2engineExportConfigAndConfigIDResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out.value = SenzingTypeDef.from_json_data(ExportConfig, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2engineExportConfigResponse
-    attr_accessor :g2_config
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2engineExportConfigResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out.value = SenzingTypeDef.from_json_data(ExportConfig, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -2221,72 +2273,45 @@ module SenzingTypeDef
   end
 
   class G2productLicenseResponse
-    attr_accessor :billing
-    attr_accessor :contract
-    attr_accessor :customer
-    attr_accessor :expire_date
-    attr_accessor :issue_date
-    attr_accessor :license_level
-    attr_accessor :license_type
-    attr_accessor :record_limit
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2productLicenseResponse.new
-      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
-      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
-      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
-      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
-      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
-      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
-      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
-      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
+      out.value = SenzingTypeDef.from_json_data(ProductLicense, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["billing"] = SenzingTypeDef::to_json_data(billing)
-      data["contract"] = SenzingTypeDef::to_json_data(contract)
-      data["customer"] = SenzingTypeDef::to_json_data(customer)
-      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
-      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
-      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
-      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
-      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
   class G2productVersionResponse
-    attr_accessor :build_date
-    attr_accessor :build_number
-    attr_accessor :build_version
-    attr_accessor :compatibility_version
-    attr_accessor :product_name
-    attr_accessor :schema_version
-    attr_accessor :version
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = G2productVersionResponse.new
-      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
-      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
-      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
-      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
-      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
-      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
-      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
+      out.value = SenzingTypeDef.from_json_data(ProductVersion, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class GetConfig
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = GetConfig.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
       out
     end
 
     def to_json_data
       data = {}
-      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
-      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
-      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
-      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
-      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
-      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
-      data["VERSION"] = SenzingTypeDef::to_json_data(version)
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
       data
     end
   end
@@ -2385,6 +2410,9 @@ module SenzingTypeDef
 
   class InterestingEntity
     attr_accessor :degrees
+
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :flags
     attr_accessor :sample_records
@@ -2404,6 +2432,22 @@ module SenzingTypeDef
       data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
       data["FLAGS"] = SenzingTypeDef::to_json_data(flags)
       data["SAMPLE_RECORDS"] = SenzingTypeDef::to_json_data(sample_records)
+      data
+    end
+  end
+
+  class ListDataSources
+    attr_accessor :data_sources
+
+    def self.from_json_data(data)
+      out = ListDataSources.new
+      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
       data
     end
   end
@@ -2715,6 +2759,77 @@ module SenzingTypeDef
     end
   end
 
+  class ProductLicense
+    attr_accessor :billing
+    attr_accessor :contract
+    attr_accessor :customer
+    attr_accessor :expire_date
+    attr_accessor :issue_date
+    attr_accessor :license_level
+    attr_accessor :license_type
+    attr_accessor :record_limit
+
+    def self.from_json_data(data)
+      out = ProductLicense.new
+      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
+      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
+      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
+      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
+      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
+      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
+      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
+      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["billing"] = SenzingTypeDef::to_json_data(billing)
+      data["contract"] = SenzingTypeDef::to_json_data(contract)
+      data["customer"] = SenzingTypeDef::to_json_data(customer)
+      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
+      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
+      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
+      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
+      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
+      data
+    end
+  end
+
+  class ProductVersion
+    attr_accessor :build_date
+    attr_accessor :build_number
+    attr_accessor :build_version
+    attr_accessor :compatibility_version
+    attr_accessor :product_name
+    attr_accessor :schema_version
+    attr_accessor :version
+
+    def self.from_json_data(data)
+      out = ProductVersion.new
+      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
+      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
+      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
+      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
+      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
+      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
+      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
+      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
+      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
+      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
+      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
+      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
+      data["VERSION"] = SenzingTypeDef::to_json_data(version)
+      data
+    end
+  end
+
   class RecordFeatures
     attr_accessor :lib_feat_id
     attr_accessor :usage_type
@@ -2850,6 +2965,8 @@ module SenzingTypeDef
   end
 
   class RelatedEntity
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_name
     attr_accessor :errule_code
@@ -2941,6 +3058,8 @@ module SenzingTypeDef
   end
 
   class ResolvedEntity
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_name
     attr_accessor :errule_code
@@ -3278,6 +3397,8 @@ module SenzingTypeDef
   end
 
   class WhyResult
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_id0
     attr_accessor :focus_records

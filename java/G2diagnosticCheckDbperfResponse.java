@@ -2,45 +2,26 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonSerialize
 public class G2diagnosticCheckDbperfResponse {
-    @JsonProperty("insertTime")
-    private Integer insertTime;
-
-    @JsonProperty("numRecordsInserted")
-    private Integer numRecordsInserted;
+    @JsonValue
+    private CheckDbperf value;
 
     public G2diagnosticCheckDbperfResponse() {
     }
 
-    /**
-     * Getter for insertTime.<p>
-     */
-    public Integer getInsertTime() {
-        return insertTime;
+    @JsonCreator
+    public G2diagnosticCheckDbperfResponse(CheckDbperf value) {
+        this.value = value;
     }
 
-    /**
-     * Setter for insertTime.<p>
-     */
-    public void setInsertTime(Integer insertTime) {
-        this.insertTime = insertTime;
+    public CheckDbperf getValue() {
+        return value;
     }
 
-    /**
-     * Getter for numRecordsInserted.<p>
-     */
-    public Integer getNumRecordsInserted() {
-        return numRecordsInserted;
-    }
-
-    /**
-     * Setter for numRecordsInserted.<p>
-     */
-    public void setNumRecordsInserted(Integer numRecordsInserted) {
-        this.numRecordsInserted = numRecordsInserted;
+    public void setValue(CheckDbperf value) {
+        this.value = value;
     }
 }

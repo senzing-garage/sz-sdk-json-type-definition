@@ -2,130 +2,26 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonSerialize
 public class G2productVersionResponse {
-    @JsonProperty("BUILD_DATE")
-    private String buildDate;
-
-    @JsonProperty("BUILD_NUMBER")
-    private String buildNumber;
-
-    @JsonProperty("BUILD_VERSION")
-    private String buildVersion;
-
-    @JsonProperty("COMPATIBILITY_VERSION")
-    private CompatibilityVersion compatibilityVersion;
-
-    @JsonProperty("PRODUCT_NAME")
-    private String productName;
-
-    @JsonProperty("SCHEMA_VERSION")
-    private SchemaVersion schemaVersion;
-
-    @JsonProperty("VERSION")
-    private String version;
+    @JsonValue
+    private ProductVersion value;
 
     public G2productVersionResponse() {
     }
 
-    /**
-     * Getter for buildDate.<p>
-     */
-    public String getBuildDate() {
-        return buildDate;
+    @JsonCreator
+    public G2productVersionResponse(ProductVersion value) {
+        this.value = value;
     }
 
-    /**
-     * Setter for buildDate.<p>
-     */
-    public void setBuildDate(String buildDate) {
-        this.buildDate = buildDate;
+    public ProductVersion getValue() {
+        return value;
     }
 
-    /**
-     * Getter for buildNumber.<p>
-     */
-    public String getBuildNumber() {
-        return buildNumber;
-    }
-
-    /**
-     * Setter for buildNumber.<p>
-     */
-    public void setBuildNumber(String buildNumber) {
-        this.buildNumber = buildNumber;
-    }
-
-    /**
-     * Getter for buildVersion.<p>
-     */
-    public String getBuildVersion() {
-        return buildVersion;
-    }
-
-    /**
-     * Setter for buildVersion.<p>
-     */
-    public void setBuildVersion(String buildVersion) {
-        this.buildVersion = buildVersion;
-    }
-
-    /**
-     * Getter for compatibilityVersion.<p>
-     */
-    public CompatibilityVersion getCompatibilityVersion() {
-        return compatibilityVersion;
-    }
-
-    /**
-     * Setter for compatibilityVersion.<p>
-     */
-    public void setCompatibilityVersion(CompatibilityVersion compatibilityVersion) {
-        this.compatibilityVersion = compatibilityVersion;
-    }
-
-    /**
-     * Getter for productName.<p>
-     */
-    public String getProductName() {
-        return productName;
-    }
-
-    /**
-     * Setter for productName.<p>
-     */
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    /**
-     * Getter for schemaVersion.<p>
-     */
-    public SchemaVersion getSchemaVersion() {
-        return schemaVersion;
-    }
-
-    /**
-     * Setter for schemaVersion.<p>
-     */
-    public void setSchemaVersion(SchemaVersion schemaVersion) {
-        this.schemaVersion = schemaVersion;
-    }
-
-    /**
-     * Getter for version.<p>
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    /**
-     * Setter for version.<p>
-     */
-    public void setVersion(String version) {
-        this.version = version;
+    public void setValue(ProductVersion value) {
+        this.value = value;
     }
 }

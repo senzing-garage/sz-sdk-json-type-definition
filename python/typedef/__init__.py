@@ -18,8 +18,28 @@ class Senzingapi:
         return _to_json_data(self.value)
 
 @dataclass
+class AddDataSource:
+    dsrc_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'AddDataSource':
+        return cls(
+            _from_json_data(int, data.get("DSRC_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
+        return data
+
+@dataclass
 class AffectedEntity:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AffectedEntity':
@@ -971,6 +991,24 @@ class ConfigBaseVersion:
         return data
 
 @dataclass
+class CheckDbperf:
+    insert_time: 'int'
+    num_records_inserted: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'CheckDbperf':
+        return cls(
+            _from_json_data(int, data.get("insertTime")),
+            _from_json_data(int, data.get("numRecordsInserted")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["insertTime"] = _to_json_data(self.insert_time)
+        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
+        return data
+
+@dataclass
 class CompatibilityVersion:
     config_version: 'str'
 
@@ -1007,15 +1045,34 @@ class Config:
         return data
 
 @dataclass
-class Configs:
-    value: 'List[Config]'
+class ConfigList:
+    configs: 'List[Config]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Configs':
-        return cls(_from_json_data(List[Config], data))
+    def from_json_data(cls, data: Any) -> 'ConfigList':
+        return cls(
+            _from_json_data(List[Config], data.get("CONFIGS")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["CONFIGS"] = _to_json_data(self.configs)
+        return data
+
+@dataclass
+class ConfigSave:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ConfigSave':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
 
 @dataclass
 class DataSource:
@@ -1080,6 +1137,21 @@ class EntityPath:
         data["END_ENTITY_ID"] = _to_json_data(self.end_entity_id)
         data["ENTITIES"] = _to_json_data(self.entities)
         data["START_ENTITY_ID"] = _to_json_data(self.start_entity_id)
+        return data
+
+@dataclass
+class ExportConfig:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ExportConfig':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
         return data
 
 @dataclass
@@ -1389,96 +1461,69 @@ class G2config:
 
 @dataclass
 class G2configAddDataSourceResponse:
-    dsrc_id: 'int'
+    value: 'AddDataSource'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2configAddDataSourceResponse':
-        return cls(
-            _from_json_data(int, data.get("DSRC_ID")),
-        )
+        return cls(_from_json_data(AddDataSource, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2configListDataSourcesResponse:
-    data_sources: 'List[DataSource]'
+    value: 'ListDataSources'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2configListDataSourcesResponse':
-        return cls(
-            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
-        )
+        return cls(_from_json_data(ListDataSources, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2configSaveResponse:
-    g2_config: 'G2config'
+    value: 'ConfigSave'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2configSaveResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
+        return cls(_from_json_data(ConfigSave, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2configmgrGetConfigListResponse:
-    configs: 'Configs'
+    value: 'ConfigList'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigListResponse':
-        return cls(
-            _from_json_data(Configs, data.get("CONFIGS")),
-        )
+        return cls(_from_json_data(ConfigList, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CONFIGS"] = _to_json_data(self.configs)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2configmgrGetConfigResponse:
-    g2_config: 'G2config'
+    value: 'GetConfig'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
+        return cls(_from_json_data(GetConfig, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2diagnosticCheckDbperfResponse:
-    insert_time: 'int'
-    num_records_inserted: 'int'
+    value: 'CheckDbperf'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2diagnosticCheckDbperfResponse':
-        return cls(
-            _from_json_data(int, data.get("insertTime")),
-            _from_json_data(int, data.get("numRecordsInserted")),
-        )
+        return cls(_from_json_data(CheckDbperf, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["insertTime"] = _to_json_data(self.insert_time)
-        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2diagnosticStreamEntityListBySizeResponse:
@@ -1515,33 +1560,25 @@ class G2engineDeleteRecordWithInfoResponse:
 
 @dataclass
 class G2engineExportConfigAndConfigIDResponse:
-    g2_config: 'G2config'
+    value: 'ExportConfig'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2engineExportConfigAndConfigIDResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
+        return cls(_from_json_data(ExportConfig, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2engineExportConfigResponse:
-    g2_config: 'G2config'
+    value: 'ExportConfig'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2engineExportConfigResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
+        return cls(_from_json_data(ExportConfig, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2engineFetchNextResponse:
@@ -2018,71 +2055,39 @@ class G2engineWhyRecordsV2response:
 
 @dataclass
 class G2productLicenseResponse:
-    billing: 'str'
-    contract: 'str'
-    customer: 'str'
-    expire_date: 'str'
-    issue_date: 'str'
-    license_level: 'str'
-    license_type: 'str'
-    record_limit: 'int'
+    value: 'ProductLicense'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2productLicenseResponse':
-        return cls(
-            _from_json_data(str, data.get("billing")),
-            _from_json_data(str, data.get("contract")),
-            _from_json_data(str, data.get("customer")),
-            _from_json_data(str, data.get("expireDate")),
-            _from_json_data(str, data.get("issueDate")),
-            _from_json_data(str, data.get("licenseLevel")),
-            _from_json_data(str, data.get("licenseType")),
-            _from_json_data(int, data.get("recordLimit")),
-        )
+        return cls(_from_json_data(ProductLicense, data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["billing"] = _to_json_data(self.billing)
-        data["contract"] = _to_json_data(self.contract)
-        data["customer"] = _to_json_data(self.customer)
-        data["expireDate"] = _to_json_data(self.expire_date)
-        data["issueDate"] = _to_json_data(self.issue_date)
-        data["licenseLevel"] = _to_json_data(self.license_level)
-        data["licenseType"] = _to_json_data(self.license_type)
-        data["recordLimit"] = _to_json_data(self.record_limit)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class G2productVersionResponse:
-    build_date: 'str'
-    build_number: 'str'
-    build_version: 'str'
-    compatibility_version: 'CompatibilityVersion'
-    product_name: 'str'
-    schema_version: 'SchemaVersion'
-    version: 'str'
+    value: 'ProductVersion'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2productVersionResponse':
+        return cls(_from_json_data(ProductVersion, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class GetConfig:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'GetConfig':
         return cls(
-            _from_json_data(str, data.get("BUILD_DATE")),
-            _from_json_data(str, data.get("BUILD_NUMBER")),
-            _from_json_data(str, data.get("BUILD_VERSION")),
-            _from_json_data(CompatibilityVersion, data.get("COMPATIBILITY_VERSION")),
-            _from_json_data(str, data.get("PRODUCT_NAME")),
-            _from_json_data(SchemaVersion, data.get("SCHEMA_VERSION")),
-            _from_json_data(str, data.get("VERSION")),
+            _from_json_data(G2config, data.get("G2_CONFIG")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["BUILD_DATE"] = _to_json_data(self.build_date)
-        data["BUILD_NUMBER"] = _to_json_data(self.build_number)
-        data["BUILD_VERSION"] = _to_json_data(self.build_version)
-        data["COMPATIBILITY_VERSION"] = _to_json_data(self.compatibility_version)
-        data["PRODUCT_NAME"] = _to_json_data(self.product_name)
-        data["SCHEMA_VERSION"] = _to_json_data(self.schema_version)
-        data["VERSION"] = _to_json_data(self.version)
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
         return data
 
 @dataclass
@@ -2176,6 +2181,11 @@ class InterestingEntitySampleRecords:
 class InterestingEntity:
     degrees: 'int'
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     flags: 'List[str]'
     sample_records: 'List[InterestingEntitySampleRecords]'
 
@@ -2194,6 +2204,21 @@ class InterestingEntity:
         data["ENTITY_ID"] = _to_json_data(self.entity_id)
         data["FLAGS"] = _to_json_data(self.flags)
         data["SAMPLE_RECORDS"] = _to_json_data(self.sample_records)
+        return data
+
+@dataclass
+class ListDataSources:
+    data_sources: 'List[DataSource]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ListDataSources':
+        return cls(
+            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
         return data
 
 @dataclass
@@ -2485,6 +2510,75 @@ class Path:
         return data
 
 @dataclass
+class ProductLicense:
+    billing: 'str'
+    contract: 'str'
+    customer: 'str'
+    expire_date: 'str'
+    issue_date: 'str'
+    license_level: 'str'
+    license_type: 'str'
+    record_limit: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ProductLicense':
+        return cls(
+            _from_json_data(str, data.get("billing")),
+            _from_json_data(str, data.get("contract")),
+            _from_json_data(str, data.get("customer")),
+            _from_json_data(str, data.get("expireDate")),
+            _from_json_data(str, data.get("issueDate")),
+            _from_json_data(str, data.get("licenseLevel")),
+            _from_json_data(str, data.get("licenseType")),
+            _from_json_data(int, data.get("recordLimit")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["billing"] = _to_json_data(self.billing)
+        data["contract"] = _to_json_data(self.contract)
+        data["customer"] = _to_json_data(self.customer)
+        data["expireDate"] = _to_json_data(self.expire_date)
+        data["issueDate"] = _to_json_data(self.issue_date)
+        data["licenseLevel"] = _to_json_data(self.license_level)
+        data["licenseType"] = _to_json_data(self.license_type)
+        data["recordLimit"] = _to_json_data(self.record_limit)
+        return data
+
+@dataclass
+class ProductVersion:
+    build_date: 'str'
+    build_number: 'str'
+    build_version: 'str'
+    compatibility_version: 'CompatibilityVersion'
+    product_name: 'str'
+    schema_version: 'SchemaVersion'
+    version: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ProductVersion':
+        return cls(
+            _from_json_data(str, data.get("BUILD_DATE")),
+            _from_json_data(str, data.get("BUILD_NUMBER")),
+            _from_json_data(str, data.get("BUILD_VERSION")),
+            _from_json_data(CompatibilityVersion, data.get("COMPATIBILITY_VERSION")),
+            _from_json_data(str, data.get("PRODUCT_NAME")),
+            _from_json_data(SchemaVersion, data.get("SCHEMA_VERSION")),
+            _from_json_data(str, data.get("VERSION")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["BUILD_DATE"] = _to_json_data(self.build_date)
+        data["BUILD_NUMBER"] = _to_json_data(self.build_number)
+        data["BUILD_VERSION"] = _to_json_data(self.build_version)
+        data["COMPATIBILITY_VERSION"] = _to_json_data(self.compatibility_version)
+        data["PRODUCT_NAME"] = _to_json_data(self.product_name)
+        data["SCHEMA_VERSION"] = _to_json_data(self.schema_version)
+        data["VERSION"] = _to_json_data(self.version)
+        return data
+
+@dataclass
 class RecordFeatures:
     lib_feat_id: 'int'
     usage_type: 'str'
@@ -2615,6 +2709,11 @@ class Records:
 @dataclass
 class RelatedEntity:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     entity_name: 'str'
     errule_code: 'str'
     is_ambiguous: 'int'
@@ -2701,6 +2800,11 @@ class ResolutionSteps:
 @dataclass
 class ResolvedEntity:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     entity_name: 'str'
     errule_code: 'str'
     features: 'Dict[str, List[FeatureForAttribute]]'
@@ -3021,6 +3125,11 @@ class WhyRecords:
 @dataclass
 class WhyResult:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     entity_id0: 'int'
     focus_records: 'FocusRecords'
     focus_records0: 'FocusRecords'

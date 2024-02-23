@@ -2,28 +2,26 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonSerialize
 public class G2configmgrGetConfigResponse {
-    @JsonProperty("G2_CONFIG")
-    private G2config g2Config;
+    @JsonValue
+    private GetConfig value;
 
     public G2configmgrGetConfigResponse() {
     }
 
-    /**
-     * Getter for g2Config.<p>
-     */
-    public G2config getG2Config() {
-        return g2Config;
+    @JsonCreator
+    public G2configmgrGetConfigResponse(GetConfig value) {
+        this.value = value;
     }
 
-    /**
-     * Setter for g2Config.<p>
-     */
-    public void setG2Config(G2config g2Config) {
-        this.g2Config = g2Config;
+    public GetConfig getValue() {
+        return value;
+    }
+
+    public void setValue(GetConfig value) {
+        this.value = value;
     }
 }

@@ -1,9 +1,20 @@
 {
     "definitions": {
+        "AddDataSource": {
+            "properties": {
+                "DSRC_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
         "AffectedEntity": {
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -918,6 +929,22 @@
                 }
             }
         },
+        "CheckDBPerf": {
+            "properties": {
+                "insertTime": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "numRecordsInserted": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
         "CompatibilityVersion": {
             "properties": {
                 "CONFIG_VERSION": {
@@ -963,9 +990,20 @@
                 }
             }
         },
-        "Configs": {
-            "elements": {
-                "ref": "Config"
+        "ConfigList": {
+            "properties": {
+                "CONFIGS": {
+                    "elements": {
+                        "ref": "Config"
+                    }
+                }
+            }
+        },
+        "ConfigSave": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
             }
         },
         "DataSource": {
@@ -1018,6 +1056,13 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                }
+            }
+        },
+        "ExportConfig": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
                 }
             }
         },
@@ -1363,60 +1408,22 @@
             }
         },
         "G2ConfigAddDataSourceResponse": {
-            "properties": {
-                "DSRC_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
+            "ref": "AddDataSource"
         },
         "G2ConfigListDataSourcesResponse": {
-            "properties": {
-                "DATA_SOURCES": {
-                    "elements": {
-                        "ref": "DataSource"
-                    }
-                }
-            }
+            "ref": "ListDataSources"
         },
         "G2ConfigmgrGetConfigListResponse": {
-            "properties": {
-                "CONFIGS": {
-                    "ref": "Configs"
-                }
-            }
+            "ref": "ConfigList"
         },
         "G2ConfigmgrGetConfigResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
+            "ref": "GetConfig"
         },
         "G2ConfigSaveResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
+            "ref": "ConfigSave"
         },
         "G2DiagnosticCheckDBPerfResponse": {
-            "properties": {
-                "insertTime": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "numRecordsInserted": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
+            "ref": "CheckDBPerf"
         },
         "G2DiagnosticStreamEntityListBySizeResponse": {
             "ref": "FixmeUnknown"
@@ -1428,18 +1435,10 @@
             "ref": "WithInfo"
         },
         "G2EngineExportConfigAndConfigIdResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
+            "ref": "ExportConfig"
         },
         "G2EngineExportConfigResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
+            "ref": "ExportConfig"
         },
         "G2EngineFetchNextResponse": {
             "ref": "FixmeUnknown"
@@ -1571,58 +1570,15 @@
             "ref": "WhyRecords"
         },
         "G2ProductLicenseResponse": {
-            "properties": {
-                "billing": {
-                    "type": "string"
-                },
-                "contract": {
-                    "type": "string"
-                },
-                "customer": {
-                    "type": "string"
-                },
-                "expireDate": {
-                    "type": "string"
-                },
-                "issueDate": {
-                    "type": "string"
-                },
-                "licenseLevel": {
-                    "type": "string"
-                },
-                "licenseType": {
-                    "type": "string"
-                },
-                "recordLimit": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
+            "ref": "ProductLicense"
         },
         "G2ProductVersionResponse": {
+            "ref": "ProductVersion"
+        },
+        "GetConfig": {
             "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
-                },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "SCHEMA_VERSION": {
-                    "ref": "SchemaVersion"
-                },
-                "VERSION": {
-                    "type": "string"
+                "G2_CONFIG": {
+                    "ref": "G2Config"
                 }
             }
         },
@@ -1672,6 +1628,7 @@
                 },
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1696,6 +1653,15 @@
                                 "type": "string"
                             }
                         }
+                    }
+                }
+            }
+        },
+        "ListDataSources": {
+            "properties": {
+                "DATA_SOURCES": {
+                    "elements": {
+                        "ref": "DataSource"
                     }
                 }
             }
@@ -1922,6 +1888,62 @@
                 }
             }
         },
+        "ProductLicense": {
+            "properties": {
+                "billing": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "customer": {
+                    "type": "string"
+                },
+                "expireDate": {
+                    "type": "string"
+                },
+                "issueDate": {
+                    "type": "string"
+                },
+                "licenseLevel": {
+                    "type": "string"
+                },
+                "licenseType": {
+                    "type": "string"
+                },
+                "recordLimit": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "ProductVersion": {
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "SCHEMA_VERSION": {
+                    "ref": "SchemaVersion"
+                },
+                "VERSION": {
+                    "type": "string"
+                }
+            }
+        },
         "Record": {
             "properties": {
                 "ADDRESS_DATA": {
@@ -2056,6 +2078,7 @@
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2137,6 +2160,7 @@
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2396,6 +2420,7 @@
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"

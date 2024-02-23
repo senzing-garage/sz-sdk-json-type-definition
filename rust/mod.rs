@@ -7,7 +7,15 @@ use serde_json::Value;
 pub type Senzingapi = Option<Value>;
 
 #[derive(Serialize, Deserialize)]
+pub struct AddDataSource {
+    #[serde(rename = "DSRC_ID")]
+    pub dsrcId: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct AffectedEntity {
+    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
+    /// entity. It may change when new information is added.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 }
@@ -663,6 +671,15 @@ pub struct ConfigBaseVersion {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct CheckDbperf {
+    #[serde(rename = "insertTime")]
+    pub insertTime: i32,
+
+    #[serde(rename = "numRecordsInserted")]
+    pub numRecordsInserted: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct CompatibilityVersion {
     #[serde(rename = "CONFIG_VERSION")]
     pub configVersion: String,
@@ -680,7 +697,17 @@ pub struct Config {
     pub sysCreateDt: String,
 }
 
-pub type Configs = Vec<Config>;
+#[derive(Serialize, Deserialize)]
+pub struct ConfigList {
+    #[serde(rename = "CONFIGS")]
+    pub configs: Vec<Config>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct ConfigSave {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct DataSource {
@@ -712,6 +739,12 @@ pub struct EntityPath {
 
     #[serde(rename = "START_ENTITY_ID")]
     pub startEntityId: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct ExportConfig {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -929,44 +962,17 @@ pub struct G2config {
     pub sysOom: Vec<SysOom>,
 }
 
-#[derive(Serialize, Deserialize)]
-pub struct G2configAddDataSourceResponse {
-    #[serde(rename = "DSRC_ID")]
-    pub dsrcId: i32,
-}
+pub type G2configAddDataSourceResponse = AddDataSource;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2configListDataSourcesResponse {
-    #[serde(rename = "DATA_SOURCES")]
-    pub dataSources: Vec<DataSource>,
-}
+pub type G2configListDataSourcesResponse = ListDataSources;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2configSaveResponse {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
-}
+pub type G2configSaveResponse = ConfigSave;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2configmgrGetConfigListResponse {
-    #[serde(rename = "CONFIGS")]
-    pub configs: Configs,
-}
+pub type G2configmgrGetConfigListResponse = ConfigList;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2configmgrGetConfigResponse {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
-}
+pub type G2configmgrGetConfigResponse = GetConfig;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2diagnosticCheckDbperfResponse {
-    #[serde(rename = "insertTime")]
-    pub insertTime: i32,
-
-    #[serde(rename = "numRecordsInserted")]
-    pub numRecordsInserted: i32,
-}
+pub type G2diagnosticCheckDbperfResponse = CheckDbperf;
 
 pub type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
 
@@ -974,17 +980,9 @@ pub type G2engineAddRecordWithInfoResponse = WithInfo;
 
 pub type G2engineDeleteRecordWithInfoResponse = WithInfo;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2engineExportConfigAndConfigIdResponse {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
-}
+pub type G2engineExportConfigAndConfigIdResponse = ExportConfig;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2engineExportConfigResponse {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
-}
+pub type G2engineExportConfigResponse = ExportConfig;
 
 pub type G2engineFetchNextResponse = FixmeUnknown;
 
@@ -1072,55 +1070,14 @@ pub type G2engineWhyRecordsResponse = WhyRecords;
 
 pub type G2engineWhyRecordsV2response = WhyRecords;
 
-#[derive(Serialize, Deserialize)]
-pub struct G2productLicenseResponse {
-    #[serde(rename = "billing")]
-    pub billing: String,
+pub type G2productLicenseResponse = ProductLicense;
 
-    #[serde(rename = "contract")]
-    pub contract: String,
-
-    #[serde(rename = "customer")]
-    pub customer: String,
-
-    #[serde(rename = "expireDate")]
-    pub expireDate: String,
-
-    #[serde(rename = "issueDate")]
-    pub issueDate: String,
-
-    #[serde(rename = "licenseLevel")]
-    pub licenseLevel: String,
-
-    #[serde(rename = "licenseType")]
-    pub licenseType: String,
-
-    #[serde(rename = "recordLimit")]
-    pub recordLimit: i32,
-}
+pub type G2productVersionResponse = ProductVersion;
 
 #[derive(Serialize, Deserialize)]
-pub struct G2productVersionResponse {
-    #[serde(rename = "BUILD_DATE")]
-    pub buildDate: String,
-
-    #[serde(rename = "BUILD_NUMBER")]
-    pub buildNumber: String,
-
-    #[serde(rename = "BUILD_VERSION")]
-    pub buildVersion: String,
-
-    #[serde(rename = "COMPATIBILITY_VERSION")]
-    pub compatibilityVersion: CompatibilityVersion,
-
-    #[serde(rename = "PRODUCT_NAME")]
-    pub productName: String,
-
-    #[serde(rename = "SCHEMA_VERSION")]
-    pub schemaVersion: SchemaVersion,
-
-    #[serde(rename = "VERSION")]
-    pub version: String,
+pub struct GetConfig {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1170,6 +1127,8 @@ pub struct InterestingEntity {
     #[serde(rename = "DEGREES")]
     pub degrees: i32,
 
+    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
+    /// entity. It may change when new information is added.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
@@ -1178,6 +1137,12 @@ pub struct InterestingEntity {
 
     #[serde(rename = "SAMPLE_RECORDS")]
     pub sampleRecords: Vec<InterestingEntitySampleRecords>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct ListDataSources {
+    #[serde(rename = "DATA_SOURCES")]
+    pub dataSources: Vec<DataSource>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1352,6 +1317,57 @@ pub struct Path {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct ProductLicense {
+    #[serde(rename = "billing")]
+    pub billing: String,
+
+    #[serde(rename = "contract")]
+    pub contract: String,
+
+    #[serde(rename = "customer")]
+    pub customer: String,
+
+    #[serde(rename = "expireDate")]
+    pub expireDate: String,
+
+    #[serde(rename = "issueDate")]
+    pub issueDate: String,
+
+    #[serde(rename = "licenseLevel")]
+    pub licenseLevel: String,
+
+    #[serde(rename = "licenseType")]
+    pub licenseType: String,
+
+    #[serde(rename = "recordLimit")]
+    pub recordLimit: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct ProductVersion {
+    #[serde(rename = "BUILD_DATE")]
+    pub buildDate: String,
+
+    #[serde(rename = "BUILD_NUMBER")]
+    pub buildNumber: String,
+
+    #[serde(rename = "BUILD_VERSION")]
+    pub buildVersion: String,
+
+    #[serde(rename = "COMPATIBILITY_VERSION")]
+    pub compatibilityVersion: CompatibilityVersion,
+
+    #[serde(rename = "PRODUCT_NAME")]
+    pub productName: String,
+
+    #[serde(rename = "SCHEMA_VERSION")]
+    pub schemaVersion: SchemaVersion,
+
+    #[serde(rename = "VERSION")]
+    pub version: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct RecordFeatures {
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
@@ -1445,6 +1461,8 @@ pub type Records = Vec<Record>;
 
 #[derive(Serialize, Deserialize)]
 pub struct RelatedEntity {
+    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
+    /// entity. It may change when new information is added.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
@@ -1504,6 +1522,8 @@ pub type ResolutionSteps = Vec<ResolutionStep>;
 
 #[derive(Serialize, Deserialize)]
 pub struct ResolvedEntity {
+    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
+    /// entity. It may change when new information is added.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 
@@ -1689,6 +1709,8 @@ pub struct WhyRecords {
 
 #[derive(Serialize, Deserialize)]
 pub struct WhyResult {
+    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
+    /// entity. It may change when new information is added.
     #[serde(rename = "ENTITY_ID")]
     pub entityId: i32,
 

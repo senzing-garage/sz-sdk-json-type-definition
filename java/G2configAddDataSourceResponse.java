@@ -2,28 +2,26 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonSerialize
 public class G2configAddDataSourceResponse {
-    @JsonProperty("DSRC_ID")
-    private Integer dsrcId;
+    @JsonValue
+    private AddDataSource value;
 
     public G2configAddDataSourceResponse() {
     }
 
-    /**
-     * Getter for dsrcId.<p>
-     */
-    public Integer getDsrcId() {
-        return dsrcId;
+    @JsonCreator
+    public G2configAddDataSourceResponse(AddDataSource value) {
+        this.value = value;
     }
 
-    /**
-     * Setter for dsrcId.<p>
-     */
-    public void setDsrcId(Integer dsrcId) {
-        this.dsrcId = dsrcId;
+    public AddDataSource getValue() {
+        return value;
+    }
+
+    public void setValue(AddDataSource value) {
+        this.value = value;
     }
 }

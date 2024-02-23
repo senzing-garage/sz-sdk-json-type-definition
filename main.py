@@ -12,7 +12,70 @@ from python.typedef import (
     G2configListDataSourcesResponse,
     G2engineAddRecordWithInfoResponse,
     G2engineDeleteRecordWithInfoResponse,
+    G2engineGetEntityByEntityIDResponse,
     G2engineGetVirtualEntityByRecordIDResponse,
+    G2engineFindNetworkByEntityIDResponse,
+    G2configmgrGetConfigListResponse,
+    G2productLicenseResponse,
+
+ G2configAddDataSourceResponse,
+         G2configListDataSourcesResponse,
+         G2configmgrGetConfigListResponse,
+         G2configmgrGetConfigResponse,
+         G2configSaveResponse,
+         G2diagnosticCheckDBPerfResponse,
+         G2diagnosticStreamEntityListBySizeResponse,
+         G2engineAddRecordWithInfoResponse,
+         G2engineDeleteRecordWithInfoResponse,
+         G2engineExportConfigAndConfigIdResponse,
+         G2engineExportConfigResponse,
+         G2engineFetchNextResponse,
+         G2engineFindInterestingEntitiesByEntityIdResponse,
+         G2engineFindInterestingEntitiesByRecordIdResponse,
+         G2engineFindNetworkByEntityIdResponse,
+         G2engineFindNetworkByEntityIDV2Response,
+         G2engineFindNetworkByRecordIdResponse,
+         G2engineFindNetworkByRecordIDV2Response,
+         G2engineFindPathByEntityIdResponse,
+         G2engineFindPathByEntityIDV2Response,
+         G2engineFindPathByRecordIdResponse,
+         G2engineFindPathByRecordIDV2Response,
+         G2engineFindPathExcludingByEntityIdResponse,
+         G2engineFindPathExcludingByEntityIDV2Response,
+         G2engineFindPathExcludingByRecordIdResponse,
+         G2engineFindPathExcludingByRecordIDV2Response,
+         G2engineFindPathIncludingSourceByEntityIdResponse,
+         G2engineFindPathIncludingSourceByEntityIDV2Response,
+         G2engineFindPathIncludingSourceByRecordIdResponse,
+         G2engineFindPathIncludingSourceByRecordIDV2Response,
+         G2engineGetEntityByEntityIdResponse,
+         G2engineGetEntityByEntityIDV2Response,
+         G2engineGetEntityByRecordIdResponse,
+         G2engineGetEntityByRecordIDV2Response,
+         G2engineGetRecordResponse,
+         G2engineGetRecordV2Response,
+         G2engineGetRedoRecordResponse,
+         G2engineGetVirtualEntityByRecordIdResponse,
+         G2engineGetVirtualEntityByRecordIDV2Response,
+         G2engineHowEntityByEntityIdResponse,
+         G2engineHowEntityByEntityIDV2Response,
+         G2engineProcessRedoRecordResponse,
+         G2engineProcessRedoRecordWithInfoResponse,
+         G2engineReevaluateEntityWithInfoResponse,
+         G2engineReevaluateRecordWithInfoResponse,
+         G2engineReplaceRecordWithInfoResponse,
+         G2engineSearchByAttributesResponse,
+         G2engineSearchByAttributesV2Response,
+         G2engineSearchByAttributesV3Response,
+         G2engineStreamExportJSONEntityReportResponse,
+         G2engineWhyEntitiesResponse,
+ G2engineWhyEntitiesV2Response,
+         G2engineWhyRecordsResponse,
+         G2engineWhyRecordsV2Response,
+         G2productLicenseResponse,
+         G2productVersionResponse,
+
+
 )
 
 # -----------------------------------------------------------------------------
@@ -121,7 +184,7 @@ print(
 JSON_STRING = '{"DATA_SOURCES": [{"DSRC_ID": 1, "DSRC_CODE": "TEST"}, {"DSRC_ID": 2, "DSRC_CODE": "SEARCH"}]}'
 JSON_STRUCT = G2configListDataSourcesResponse.from_json_data(json.loads(JSON_STRING))
 
-for data_source in JSON_STRUCT.data_sources:
+for data_source in JSON_STRUCT.value.data_sources:
     print("ID: {0}  Code: {1}".format(data_source.dsrc_id, data_source.dsrc_code))
 
 RECONSTRUCTED_STRING = json.dumps(JSON_STRUCT.to_json_data())
@@ -131,3 +194,82 @@ print(
         RECONSTRUCTED_STRING
     )
 )
+
+# -----------------------------------------------------------------------------
+# test area
+# -----------------------------------------------------------------------------
+
+
+
+response = G2configAddDataSourceResponse.from_json_data({})
+response =         G2configListDataSourcesResponse.from_json_data({})
+response =         G2configmgrGetConfigListResponse.from_json_data({})
+response =         G2configmgrGetConfigResponse.from_json_data({})
+response =         G2configSaveResponse.from_json_data({})
+response =         G2diagnosticCheckDBPerfResponse.from_json_data({})
+response =         G2diagnosticStreamEntityListBySizeResponse.from_json_data({})
+response =         G2engineAddRecordWithInfoResponse.from_json_data({})
+response =         G2engineDeleteRecordWithInfoResponse.from_json_data({})
+response =         G2engineExportConfigAndConfigIdResponse.from_json_data({})
+response =         G2engineExportConfigResponse.from_json_data({})
+response =         G2engineFetchNextResponse.from_json_data({})
+response =         G2engineFindInterestingEntitiesByEntityIdResponse.from_json_data({})
+response =         G2engineFindInterestingEntitiesByRecordIdResponse.from_json_data({})
+response =         G2engineFindNetworkByEntityIdResponse.from_json_data({})
+response =         G2engineFindNetworkByEntityIDV2Response.from_json_data({})
+response =         G2engineFindNetworkByRecordIdResponse.from_json_data({})
+response =         G2engineFindNetworkByRecordIDV2Response.from_json_data({})
+response =         G2engineFindPathByEntityIdResponse.from_json_data({})
+response =         G2engineFindPathByEntityIDV2Response.from_json_data({})
+response =         G2engineFindPathByRecordIdResponse.from_json_data({})
+response =         G2engineFindPathByRecordIDV2Response.from_json_data({})
+response =         G2engineFindPathExcludingByEntityIdResponse.from_json_data({})
+response =         G2engineFindPathExcludingByEntityIDV2Response.from_json_data({})
+response =         G2engineFindPathExcludingByRecordIdResponse.from_json_data({})
+response =         G2engineFindPathExcludingByRecordIDV2Response.from_json_data({})
+response =         G2engineFindPathIncludingSourceByEntityIdResponse.from_json_data({})
+response =         G2engineFindPathIncludingSourceByEntityIDV2Response.from_json_data({})
+response =         G2engineFindPathIncludingSourceByRecordIdResponse.from_json_data({})
+response =         G2engineFindPathIncludingSourceByRecordIDV2Response.from_json_data({})
+response =         G2engineGetEntityByEntityIdResponse.from_json_data({})
+response =         G2engineGetEntityByEntityIDV2Response.from_json_data({})
+response =         G2engineGetEntityByRecordIdResponse.from_json_data({})
+response =         G2engineGetEntityByRecordIDV2Response.from_json_data({})
+response =         G2engineGetRecordResponse.from_json_data({})
+response =         G2engineGetRecordV2Response.from_json_data({})
+response =         G2engineGetRedoRecordResponse.from_json_data({})
+response =         G2engineGetVirtualEntityByRecordIdResponse.from_json_data({})
+response =         G2engineGetVirtualEntityByRecordIDV2Response.from_json_data({})
+response =         G2engineHowEntityByEntityIdResponse.from_json_data({})
+response =         G2engineHowEntityByEntityIDV2Response.from_json_data({})
+response =         G2engineProcessRedoRecordResponse.from_json_data({})
+response =         G2engineProcessRedoRecordWithInfoResponse.from_json_data({})
+response =         G2engineReevaluateEntityWithInfoResponse.from_json_data({})
+response =         G2engineReevaluateRecordWithInfoResponse.from_json_data({})
+response =         G2engineReplaceRecordWithInfoResponse.from_json_data({})
+response =         G2engineSearchByAttributesResponse.from_json_data({})
+response =         G2engineSearchByAttributesV2Response.from_json_data({})
+response =         G2engineSearchByAttributesV3Response.from_json_data({})
+response =         G2engineStreamExportJSONEntityReportResponse.from_json_data({})
+response =         G2engineWhyEntitiesResponse.from_json_data({})
+response = G2engineWhyEntitiesV2Response.from_json_data({})
+response =         G2engineWhyRecordsResponse.from_json_data({})
+response =         G2engineWhyRecordsV2Response.from_json_data({})
+response =         G2productLicenseResponse.from_json_data({})
+response =         G2productVersionResponse.from_json_data({})
+
+
+
+response = G2engineGetEntityByEntityIDResponse.from_json_data({})
+x = response.value.resolved_entity
+
+response = G2engineFindNetworkByEntityIDResponse.from_json_data({})
+x = response.value.entities[0].related_entities[0].record_summary[0]
+
+response = G2configmgrGetConfigListResponse.from_json_data({})
+x = response.value.configs[0].
+
+
+response = G2productLicenseResponse.from_json_data({})
+response.billing
+

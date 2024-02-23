@@ -6,7 +6,13 @@ import "time"
 
 type Senzingapi = interface{}
 
+type AddDataSource struct {
+	DsrcID int64 `json:"DSRC_ID"`
+}
+
 type AffectedEntity struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 }
 
@@ -444,6 +450,12 @@ type ConfigBaseVersion struct {
 	Version string `json:"VERSION"`
 }
 
+type CheckDbperf struct {
+	InsertTime int64 `json:"insertTime"`
+
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
+}
+
 type CompatibilityVersion struct {
 	ConfigVersion string `json:"CONFIG_VERSION"`
 }
@@ -456,7 +468,13 @@ type Config struct {
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
-type Configs = []Config
+type ConfigList struct {
+	Configs []Config `json:"CONFIGS"`
+}
+
+type ConfigSave struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
 
 type DataSource struct {
 	// The text representation of the datasource.
@@ -478,6 +496,10 @@ type EntityPath struct {
 	Entities []int64 `json:"ENTITIES"`
 
 	StartEntityID int64 `json:"START_ENTITY_ID"`
+}
+
+type ExportConfig struct {
+	G2Config G2config `json:"G2_CONFIG"`
 }
 
 type FeatureDescriptionValue struct {
@@ -626,31 +648,17 @@ type G2config struct {
 	SysOom []SysOom `json:"SYS_OOM"`
 }
 
-type G2configAddDataSourceResponse struct {
-	DsrcID int64 `json:"DSRC_ID"`
-}
+type G2configAddDataSourceResponse = AddDataSource
 
-type G2configListDataSourcesResponse struct {
-	DataSources []DataSource `json:"DATA_SOURCES"`
-}
+type G2configListDataSourcesResponse = ListDataSources
 
-type G2configSaveResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
+type G2configSaveResponse = ConfigSave
 
-type G2configmgrGetConfigListResponse struct {
-	Configs Configs `json:"CONFIGS"`
-}
+type G2configmgrGetConfigListResponse = ConfigList
 
-type G2configmgrGetConfigResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
+type G2configmgrGetConfigResponse = GetConfig
 
-type G2diagnosticCheckDbperfResponse struct {
-	InsertTime int64 `json:"insertTime"`
-
-	NumRecordsInserted int64 `json:"numRecordsInserted"`
-}
+type G2diagnosticCheckDbperfResponse = CheckDbperf
 
 type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown
 
@@ -658,13 +666,9 @@ type G2engineAddRecordWithInfoResponse = WithInfo
 
 type G2engineDeleteRecordWithInfoResponse = WithInfo
 
-type G2engineExportConfigAndConfigIDResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
+type G2engineExportConfigAndConfigIDResponse = ExportConfig
 
-type G2engineExportConfigResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
+type G2engineExportConfigResponse = ExportConfig
 
 type G2engineFetchNextResponse = FixmeUnknown
 
@@ -752,38 +756,12 @@ type G2engineWhyRecordsResponse = WhyRecords
 
 type G2engineWhyRecordsV2response = WhyRecords
 
-type G2productLicenseResponse struct {
-	Billing string `json:"billing"`
+type G2productLicenseResponse = ProductLicense
 
-	Contract string `json:"contract"`
+type G2productVersionResponse = ProductVersion
 
-	Customer string `json:"customer"`
-
-	ExpireDate string `json:"expireDate"`
-
-	IssueDate string `json:"issueDate"`
-
-	LicenseLevel string `json:"licenseLevel"`
-
-	LicenseType string `json:"licenseType"`
-
-	RecordLimit int64 `json:"recordLimit"`
-}
-
-type G2productVersionResponse struct {
-	BuildDate string `json:"BUILD_DATE"`
-
-	BuildNumber string `json:"BUILD_NUMBER"`
-
-	BuildVersion string `json:"BUILD_VERSION"`
-
-	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
-
-	ProductName string `json:"PRODUCT_NAME"`
-
-	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
-
-	Version string `json:"VERSION"`
+type GetConfig struct {
+	G2Config G2config `json:"G2_CONFIG"`
 }
 
 type How struct {
@@ -817,11 +795,17 @@ type InterestingEntitySampleRecords struct {
 type InterestingEntity struct {
 	Degrees int64 `json:"DEGREES"`
 
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	Flags []string `json:"FLAGS"`
 
 	SampleRecords []InterestingEntitySampleRecords `json:"SAMPLE_RECORDS"`
+}
+
+type ListDataSources struct {
+	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
 type MatchInfoDisclosedRelationsRelAnchor struct {
@@ -940,6 +924,40 @@ type Path struct {
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 }
 
+type ProductLicense struct {
+	Billing string `json:"billing"`
+
+	Contract string `json:"contract"`
+
+	Customer string `json:"customer"`
+
+	ExpireDate string `json:"expireDate"`
+
+	IssueDate string `json:"issueDate"`
+
+	LicenseLevel string `json:"licenseLevel"`
+
+	LicenseType string `json:"licenseType"`
+
+	RecordLimit int64 `json:"recordLimit"`
+}
+
+type ProductVersion struct {
+	BuildDate string `json:"BUILD_DATE"`
+
+	BuildNumber string `json:"BUILD_NUMBER"`
+
+	BuildVersion string `json:"BUILD_VERSION"`
+
+	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
+
+	ProductName string `json:"PRODUCT_NAME"`
+
+	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
+
+	Version string `json:"VERSION"`
+}
+
 type RecordFeatures struct {
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
@@ -1003,6 +1021,8 @@ type RecordSummaryElement struct {
 type Records = []Record
 
 type RelatedEntity struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	EntityName string `json:"ENTITY_NAME"`
@@ -1043,6 +1063,8 @@ type ResolutionStep struct {
 type ResolutionSteps = []ResolutionStep
 
 type ResolvedEntity struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	EntityName string `json:"ENTITY_NAME"`
@@ -1167,6 +1189,8 @@ type WhyRecords struct {
 }
 
 type WhyResult struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	EntityID0 int64 `json:"ENTITY_ID_2"`

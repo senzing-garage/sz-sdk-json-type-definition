@@ -2,7 +2,15 @@
 
 export type Senzingapi = any;
 
+export interface AddDataSource {
+  DSRC_ID: number;
+}
+
 export interface AffectedEntity {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
 }
 
@@ -286,6 +294,11 @@ export interface ConfigBaseVersion {
   VERSION: string;
 }
 
+export interface CheckDbperf {
+  insertTime: number;
+  numRecordsInserted: number;
+}
+
 export interface CompatibilityVersion {
   CONFIG_VERSION: string;
 }
@@ -296,7 +309,13 @@ export interface Config {
   SYS_CREATE_DT: string;
 }
 
-export type Configs = Config[];
+export interface ConfigList {
+  CONFIGS: Config[];
+}
+
+export interface ConfigSave {
+  G2_CONFIG: G2config;
+}
 
 export interface DataSource {
   /**
@@ -319,6 +338,10 @@ export interface EntityPath {
   END_ENTITY_ID: number;
   ENTITIES: number[];
   START_ENTITY_ID: number;
+}
+
+export interface ExportConfig {
+  G2_CONFIG: G2config;
 }
 
 export interface FeatureDescriptionValue {
@@ -410,30 +433,17 @@ export interface G2config {
   SYS_OOM: SysOom[];
 }
 
-export interface G2configAddDataSourceResponse {
-  DSRC_ID: number;
-}
+export type G2configAddDataSourceResponse = AddDataSource;
 
-export interface G2configListDataSourcesResponse {
-  DATA_SOURCES: DataSource[];
-}
+export type G2configListDataSourcesResponse = ListDataSources;
 
-export interface G2configSaveResponse {
-  G2_CONFIG: G2config;
-}
+export type G2configSaveResponse = ConfigSave;
 
-export interface G2configmgrGetConfigListResponse {
-  CONFIGS: Configs;
-}
+export type G2configmgrGetConfigListResponse = ConfigList;
 
-export interface G2configmgrGetConfigResponse {
-  G2_CONFIG: G2config;
-}
+export type G2configmgrGetConfigResponse = GetConfig;
 
-export interface G2diagnosticCheckDbperfResponse {
-  insertTime: number;
-  numRecordsInserted: number;
-}
+export type G2diagnosticCheckDbperfResponse = CheckDbperf;
 
 export type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
 
@@ -441,13 +451,9 @@ export type G2engineAddRecordWithInfoResponse = WithInfo;
 
 export type G2engineDeleteRecordWithInfoResponse = WithInfo;
 
-export interface G2engineExportConfigAndConfigIdResponse {
-  G2_CONFIG: G2config;
-}
+export type G2engineExportConfigAndConfigIdResponse = ExportConfig;
 
-export interface G2engineExportConfigResponse {
-  G2_CONFIG: G2config;
-}
+export type G2engineExportConfigResponse = ExportConfig;
 
 export type G2engineFetchNextResponse = FixmeUnknown;
 
@@ -535,25 +541,12 @@ export type G2engineWhyRecordsResponse = WhyRecords;
 
 export type G2engineWhyRecordsV2response = WhyRecords;
 
-export interface G2productLicenseResponse {
-  billing: string;
-  contract: string;
-  customer: string;
-  expireDate: string;
-  issueDate: string;
-  licenseLevel: string;
-  licenseType: string;
-  recordLimit: number;
-}
+export type G2productLicenseResponse = ProductLicense;
 
-export interface G2productVersionResponse {
-  BUILD_DATE: string;
-  BUILD_NUMBER: string;
-  BUILD_VERSION: string;
-  COMPATIBILITY_VERSION: CompatibilityVersion;
-  PRODUCT_NAME: string;
-  SCHEMA_VERSION: SchemaVersion;
-  VERSION: string;
+export type G2productVersionResponse = ProductVersion;
+
+export interface GetConfig {
+  G2_CONFIG: G2config;
 }
 
 export interface How {
@@ -582,9 +575,18 @@ export interface InterestingEntitySampleRecords {
 
 export interface InterestingEntity {
   DEGREES: number;
+
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   FLAGS: string[];
   SAMPLE_RECORDS: InterestingEntitySampleRecords[];
+}
+
+export interface ListDataSources {
+  DATA_SOURCES: DataSource[];
 }
 
 export interface MatchInfoDisclosedRelationsRelAnchor {
@@ -668,6 +670,27 @@ export interface Path {
   ENTITY_PATHS: EntityPath[];
 }
 
+export interface ProductLicense {
+  billing: string;
+  contract: string;
+  customer: string;
+  expireDate: string;
+  issueDate: string;
+  licenseLevel: string;
+  licenseType: string;
+  recordLimit: number;
+}
+
+export interface ProductVersion {
+  BUILD_DATE: string;
+  BUILD_NUMBER: string;
+  BUILD_VERSION: string;
+  COMPATIBILITY_VERSION: CompatibilityVersion;
+  PRODUCT_NAME: string;
+  SCHEMA_VERSION: SchemaVersion;
+  VERSION: string;
+}
+
 export interface RecordFeatures {
   LIB_FEAT_ID: number;
   USAGE_TYPE: string;
@@ -707,6 +730,10 @@ export interface RecordSummaryElement {
 export type Records = Record[];
 
 export interface RelatedEntity {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
@@ -732,6 +759,10 @@ export interface ResolutionStep {
 export type ResolutionSteps = ResolutionStep[];
 
 export interface ResolvedEntity {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
@@ -823,6 +854,10 @@ export interface WhyRecords {
 }
 
 export interface WhyResult {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   ENTITY_ID_2: number;
   FOCUS_RECORDS: FocusRecords;

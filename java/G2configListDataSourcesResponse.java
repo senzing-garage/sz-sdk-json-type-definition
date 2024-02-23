@@ -2,29 +2,26 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonSerialize
 public class G2configListDataSourcesResponse {
-    @JsonProperty("DATA_SOURCES")
-    private List<DataSource> dataSources;
+    @JsonValue
+    private ListDataSources value;
 
     public G2configListDataSourcesResponse() {
     }
 
-    /**
-     * Getter for dataSources.<p>
-     */
-    public List<DataSource> getDataSources() {
-        return dataSources;
+    @JsonCreator
+    public G2configListDataSourcesResponse(ListDataSources value) {
+        this.value = value;
     }
 
-    /**
-     * Setter for dataSources.<p>
-     */
-    public void setDataSources(List<DataSource> dataSources) {
-        this.dataSources = dataSources;
+    public ListDataSources getValue() {
+        return value;
+    }
+
+    public void setValue(ListDataSources value) {
+        this.value = value;
     }
 }
