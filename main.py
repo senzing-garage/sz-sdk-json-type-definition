@@ -78,6 +78,20 @@ def path_to_testdata(filename: str) -> str:
     return result
 
 
+def file(filename: str) -> dict:
+    print(filename)
+    absolute_file = path_to_testdata(filename)
+    with open(
+        absolute_file,
+        encoding="utf-8",
+    ) as input_file:
+        return json.loads(input_file.read())
+
+
+def print_fmt(response, value):
+    print(f"    {value} = {eval(value)}")
+
+
 # -----------------------------------------------------------------------------
 # Mock functions - Simulate calls to Senzing SDK API.
 # -----------------------------------------------------------------------------
@@ -189,47 +203,173 @@ print(
 # -----------------------------------------------------------------------------
 
 
-response = G2configAddDataSourceResponse.from_json_data({})
-x = response.value.dsrc_id
+response = G2configAddDataSourceResponse.from_json_data(
+    file("G2ConfigAddDataSourceResponse-test-101.json")
+)
+print_fmt(response, "response.value.dsrc_id")
 
-response = G2configListDataSourcesResponse.from_json_data({})
-# x = response.value.data_sources[0].dsrc_id
 
-response = G2configmgrGetConfigListResponse.from_json_data({})
-# x = response.value.configs[0].config_id
+response = G2configListDataSourcesResponse.from_json_data(
+    file("G2ConfigListDataSourcesResponse-test-105.json")
+)
+print_fmt(response, "response.value.data_sources[0].dsrc_id")
 
-response = G2configmgrGetConfigResponse.from_json_data({})
-# x = response.value.g2_config.cfg_attr[0].attr_id
 
-response = G2configSaveResponse.from_json_data({})
-# x = response.value.g2_config.cfg_dfbom[0].dfcall_id
+response = G2configmgrGetConfigListResponse.from_json_data(
+    file("G2ConfigmgrGetConfigListResponse-test-101.json")
+)
+print_fmt(response, "response.value.configs[0].config_id")
 
-response = G2diagnosticCheckDbperfResponse.from_json_data({})
-x = response.value.num_records_inserted
+
+response = G2configmgrGetConfigResponse.from_json_data(
+    file("G2ConfigmgrGetConfigResponse-test-101.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
+
+
+response = G2configSaveResponse.from_json_data(
+    file("G2ConfigSaveResponse-test-101.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
+
+
+response = G2diagnosticCheckDbperfResponse.from_json_data(
+    file("G2DiagnosticCheckDBPerfResponse-test-101.json")
+)
+print_fmt(response, "response.value.num_records_inserted")
+
 
 response = G2diagnosticStreamEntityListBySizeResponse.from_json_data({})
-x = response.value  # FIXME:
+x = response.value  # TODO:
 
-response = G2engineAddRecordWithInfoResponse.from_json_data({})
-# x = response.value.interesting_entities.entities[0].entity_id
 
-response = G2engineDeleteRecordWithInfoResponse.from_json_data({})
-# x = response.value.affected_entities[0].entity_id
+response = G2engineAddRecordWithInfoResponse.from_json_data(
+    file("G2EngineAddRecordWithInfoResponse-test-102.json")
+)
+print_fmt(response, "response.value.affected_entities[0].entity_id")
 
-response = G2engineExportConfigAndConfigIDResponse.from_json_data({})
-response = G2engineExportConfigResponse.from_json_data({})
+
+response = G2engineDeleteRecordWithInfoResponse.from_json_data(
+    file("G2EngineDeleteRecordWithInfoResponse-test-001.json")
+)
+print_fmt(response, "response.value.affected_entities[0].entity_id")
+
+
+response = G2engineExportConfigAndConfigIDResponse.from_json_data(
+    file("G2EngineExportConfigAndConfigIdResponse-test-101.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
+
+
+response = G2engineExportConfigResponse.from_json_data(
+    file("G2EngineExportConfigResponse-test-101.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_cfbom[0].felem_id")
+
+
 response = G2engineFetchNextResponse.from_json_data({})
-response = G2engineFindInterestingEntitiesByEntityIDResponse.from_json_data({})
-response = G2engineFindInterestingEntitiesByRecordIDResponse.from_json_data({})
-response = G2engineFindNetworkByEntityIDResponse.from_json_data({})
-response = G2engineFindNetworkByEntityIdv2response.from_json_data({})
-response = G2engineFindNetworkByRecordIDResponse.from_json_data({})
-response = G2engineFindNetworkByRecordIdv2response.from_json_data({})
-response = G2engineFindPathByEntityIDResponse.from_json_data({})
-response = G2engineFindPathByEntityIdv2response.from_json_data({})
-response = G2engineFindPathByRecordIDResponse.from_json_data({})
-response = G2engineFindPathByRecordIdv2response.from_json_data({})
-response = G2engineFindPathExcludingByEntityIDResponse.from_json_data({})
+x = response.value.value  # TODO:
+
+
+response = G2engineFindInterestingEntitiesByEntityIDResponse.from_json_data(
+    file("G2EngineFindInterestingEntitiesByEntityIdResponse-test-108.json")
+)
+print_fmt(
+    response,
+    "response.value.interesting_entities.entities[0].entity_id",
+)
+
+
+response = G2engineFindInterestingEntitiesByRecordIDResponse.from_json_data(
+    file("G2EngineFindInterestingEntitiesByRecordIdResponse-test-108.json")
+)
+print_fmt(
+    response,
+    "response.value.interesting_entities.entities[0].entity_id",
+)
+
+
+response = G2engineFindNetworkByEntityIDResponse.from_json_data(
+    file("G2EngineFindNetworkByEntityIdResponse-test-106.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = G2engineFindNetworkByEntityIdv2response.from_json_data(
+    file("G2EngineFindNetworkByEntityIDV2Response-test-106.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = G2engineFindNetworkByRecordIDResponse.from_json_data(
+    file("G2EngineFindNetworkByRecordIdResponse-test-102.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = G2engineFindNetworkByRecordIdv2response.from_json_data(
+    file("G2EngineFindNetworkByRecordIDV2Response-test-102.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = G2engineFindPathByEntityIDResponse.from_json_data(
+    file("G2EngineFindPathByEntityIdResponse-test-105.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].resolved_entity.entity_id",
+)
+
+
+response = G2engineFindPathByEntityIdv2response.from_json_data(
+    file("G2EngineFindPathByEntityIDV2Response-test-104.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].resolved_entity.entity_id",
+)
+
+
+response = G2engineFindPathByRecordIDResponse.from_json_data(
+    file("G2EngineFindPathByRecordIdResponse-test-102.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].resolved_entity.entity_id",
+)
+
+
+response = G2engineFindPathByRecordIdv2response.from_json_data(
+    file("G2EngineFindPathByRecordIDV2Response-test-102.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = G2engineFindPathExcludingByEntityIDResponse.from_json_data(
+    file("G2EngineFindPathExcludingByEntityIdResponse-test-102.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].resolved_entity.record_summary[0].record_count",
+)
+
+
 response = G2engineFindPathExcludingByEntityIdv2response.from_json_data({})
 response = G2engineFindPathExcludingByRecordIDResponse.from_json_data({})
 response = G2engineFindPathExcludingByRecordIdv2response.from_json_data({})
