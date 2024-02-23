@@ -178,13 +178,13 @@ for key, values in GLOBAL_KEYS.items():
 for value in GLOBAL_REFS:
     if value in definitions:
         definitions.remove(value)
-used_key_count = 0
+USED_KEY_COUNT = 0
 for definition in definitions:
     if definition[0:8] not in ["G2Config", "G2Engine", "G2Diagno", "G2Produc"]:
         if definition not in USED_KEYS:
-            used_key_count += 1
+            USED_KEY_COUNT += 1
             print(definition)
-if used_key_count == 0:
+if USED_KEY_COUNT == 0:
     print("All keys used")
 
 # Epilog.
