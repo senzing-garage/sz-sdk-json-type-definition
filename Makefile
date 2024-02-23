@@ -149,7 +149,7 @@ test:
 .PHONY: clean
 clean: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
 	@rm -rf $(TARGET_DIRECTORY) || true
-
+	@rm $(MAKEFILE_DIRECTORY)testdata/* || true
 
 .PHONY: clean-csharp
 clean-csharp:
