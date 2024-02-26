@@ -88,8 +88,14 @@ def file(filename: str) -> dict:
         return json.loads(input_file.read())
 
 
-def print_fmt(response, value):
-    print(f"    {value} = {eval(value)}")
+def print_fmt(
+    response, value
+):  # pylint: disable=redefined-outer-name eval-used, unused-argument
+    """
+    Tricky code:
+    The "response" passed in needs to be part of the "value" string to be evaluated.
+    """
+    print(f"    {value} = {eval(value)}")  # pylint: disable=eval-used
 
 
 # -----------------------------------------------------------------------------
