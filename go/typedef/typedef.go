@@ -450,7 +450,7 @@ type ConfigBaseVersion struct {
 	Version string `json:"VERSION"`
 }
 
-type CheckDbperf struct {
+type CheckDatabasePerformance struct {
 	InsertTime int64 `json:"insertTime"`
 
 	NumRecordsInserted int64 `json:"numRecordsInserted"`
@@ -470,10 +470,6 @@ type Config struct {
 
 type ConfigList struct {
 	Configs []Config `json:"CONFIGS"`
-}
-
-type ConfigSave struct {
-	G2Config G2config `json:"G2_CONFIG"`
 }
 
 type DataSource struct {
@@ -648,119 +644,15 @@ type G2config struct {
 	SysOom []SysOom `json:"SYS_OOM"`
 }
 
-type G2configAddDataSourceResponse = AddDataSource
-
-type G2configListDataSourcesResponse = ListDataSources
-
-type G2configSaveResponse = ConfigSave
-
-type G2configmgrGetConfigListResponse = ConfigList
-
-type G2configmgrGetConfigResponse = GetConfig
-
-type G2diagnosticCheckDbperfResponse = CheckDbperf
-
-type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown
-
-type G2engineAddRecordWithInfoResponse = WithInfo
-
-type G2engineDeleteRecordWithInfoResponse = WithInfo
-
-type G2engineExportConfigAndConfigIDResponse = ExportConfig
-
-type G2engineExportConfigResponse = ExportConfig
-
-type G2engineFetchNextResponse = FixmeUnknown
-
-type G2engineFindInterestingEntitiesByEntityIDResponse = Interesting
-
-type G2engineFindInterestingEntitiesByRecordIDResponse = Interesting
-
-type G2engineFindNetworkByEntityIdv2response = Network
-
-type G2engineFindNetworkByEntityIDResponse = Network
-
-type G2engineFindNetworkByRecordIdv2response = Network
-
-type G2engineFindNetworkByRecordIDResponse = Network
-
-type G2engineFindPathByEntityIdv2response = Path
-
-type G2engineFindPathByEntityIDResponse = Path
-
-type G2engineFindPathByRecordIdv2response = Path
-
-type G2engineFindPathByRecordIDResponse = Path
-
-type G2engineFindPathExcludingByEntityIdv2response = Path
-
-type G2engineFindPathExcludingByEntityIDResponse = Path
-
-type G2engineFindPathExcludingByRecordIdv2response = Path
-
-type G2engineFindPathExcludingByRecordIDResponse = Path
-
-type G2engineFindPathIncludingSourceByEntityIdv2response = Path
-
-type G2engineFindPathIncludingSourceByEntityIDResponse = Path
-
-type G2engineFindPathIncludingSourceByRecordIdv2response = Path
-
-type G2engineFindPathIncludingSourceByRecordIDResponse = Path
-
-type G2engineGetEntityByEntityIdv2response = Entity
-
-type G2engineGetEntityByEntityIDResponse = Entity
-
-type G2engineGetEntityByRecordIdv2response = Entity
-
-type G2engineGetEntityByRecordIDResponse = Entity
-
-type G2engineGetRecordResponse = Record
-
-type G2engineGetRecordV2response = Record
-
-type G2engineGetRedoRecordResponse = FixmeUnknown
-
-type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity
-
-type G2engineGetVirtualEntityByRecordIDResponse = VirtualEntity
-
-type G2engineHowEntityByEntityIdv2response = How
-
-type G2engineHowEntityByEntityIDResponse = How
-
-type G2engineProcessRedoRecordResponse = FixmeUnknown
-
-type G2engineProcessRedoRecordWithInfoResponse = WithInfo
-
-type G2engineReevaluateEntityWithInfoResponse = WithInfo
-
-type G2engineReevaluateRecordWithInfoResponse = WithInfo
-
-type G2engineReplaceRecordWithInfoResponse = WithInfo
-
-type G2engineSearchByAttributesResponse = Search
-
-type G2engineSearchByAttributesV2response = Search
-
-type G2engineSearchByAttributesV3response = Search
-
-type G2engineStreamExportJsonentityReportResponse = FixmeUnknown
-
-type G2engineWhyEntitiesResponse = WhyEntities
-
-type G2engineWhyEntitiesV2response = WhyEntities
-
-type G2engineWhyRecordsResponse = WhyRecords
-
-type G2engineWhyRecordsV2response = WhyRecords
-
-type G2productLicenseResponse = ProductLicense
-
-type G2productVersionResponse = ProductVersion
-
 type GetConfig struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type GetDataSources struct {
+	DataSources []DataSource `json:"DATA_SOURCES"`
+}
+
+type GetJSONString struct {
 	G2Config G2config `json:"G2_CONFIG"`
 }
 
@@ -802,10 +694,6 @@ type InterestingEntity struct {
 	Flags []string `json:"FLAGS"`
 
 	SampleRecords []InterestingEntitySampleRecords `json:"SAMPLE_RECORDS"`
-}
-
-type ListDataSources struct {
-	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
 type MatchInfoDisclosedRelationsRelAnchor struct {
@@ -1165,6 +1053,66 @@ type SearchStatistic struct {
 }
 
 type SearchStatistics = []SearchStatistic
+
+type SzConfigAddDataSourceResponse = AddDataSource
+
+type SzConfigGetDataSourcesResponse = GetDataSources
+
+type SzConfigGetJSONStringResponse = GetJSONString
+
+type SzConfigmgrGetConfigListResponse = ConfigList
+
+type SzConfigmgrGetConfigResponse = GetConfig
+
+type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance
+
+type SzEngineAddRecordResponse = WithInfo
+
+type SzEngineDeleteRecordResponse = WithInfo
+
+type SzEngineFetchNextResponse = FixmeUnknown
+
+type SzEngineFindNetworkByEntityIDResponse = Network
+
+type SzEngineFindNetworkByRecordIDResponse = Network
+
+type SzEngineFindPathByEntityIDResponse = Path
+
+type SzEngineFindPathByRecordIDResponse = Path
+
+type SzEngineGetEntityByEntityIDResponse = Entity
+
+type SzEngineGetEntityByRecordIDResponse = Entity
+
+type SzEngineGetRecordResponse = Record
+
+type SzEngineGetRedoRecordResponse = FixmeUnknown
+
+type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
+
+type SzEngineHowEntityByEntityIDResponse = How
+
+type SzEngineProcessRedoRecordResponse = WithInfo
+
+type SzEngineReevaluateEntityResponse = WithInfo
+
+type SzEngineReevaluateRecordResponse = WithInfo
+
+type SzEngineReplaceRecordResponse = WithInfo
+
+type SzEngineSearchByAttributesResponse = Search
+
+type SzEngineStreamExportJSONEntityReportResponse = FixmeUnknown
+
+type SzEngineWhyEntitiesResponse = WhyEntities
+
+type SzEngineWhyRecordInEntityResponse = FixmeUnknown
+
+type SzEngineWhyRecordsResponse = WhyRecords
+
+type SzProductGetLicenseResponse = ProductLicense
+
+type SzProductGetVersionResponse = ProductVersion
 
 type VirtualEntity struct {
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`

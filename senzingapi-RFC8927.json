@@ -929,7 +929,7 @@
                 }
             }
         },
-        "CheckDBPerf": {
+        "CheckDatabasePerformance": {
             "properties": {
                 "insertTime": {
                     "metadata": {
@@ -999,7 +999,7 @@
                 }
             }
         },
-        "ConfigSave": {
+        "GetJsonString": {
             "properties": {
                 "G2_CONFIG": {
                     "ref": "G2Config"
@@ -1407,174 +1407,6 @@
                 }
             }
         },
-        "G2ConfigAddDataSourceResponse": {
-            "ref": "AddDataSource"
-        },
-        "G2ConfigListDataSourcesResponse": {
-            "ref": "ListDataSources"
-        },
-        "G2ConfigmgrGetConfigListResponse": {
-            "ref": "ConfigList"
-        },
-        "G2ConfigmgrGetConfigResponse": {
-            "ref": "GetConfig"
-        },
-        "G2ConfigSaveResponse": {
-            "ref": "ConfigSave"
-        },
-        "G2DiagnosticCheckDBPerfResponse": {
-            "ref": "CheckDBPerf"
-        },
-        "G2DiagnosticStreamEntityListBySizeResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineAddRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineDeleteRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineExportConfigAndConfigIdResponse": {
-            "ref": "ExportConfig"
-        },
-        "G2EngineExportConfigResponse": {
-            "ref": "ExportConfig"
-        },
-        "G2EngineFetchNextResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineFindInterestingEntitiesByEntityIdResponse": {
-            "ref": "Interesting"
-        },
-        "G2EngineFindInterestingEntitiesByRecordIdResponse": {
-            "ref": "Interesting"
-        },
-        "G2EngineFindNetworkByEntityIdResponse": {
-            "ref": "Network"
-        },
-        "G2EngineFindNetworkByEntityIDV2Response": {
-            "ref": "Network"
-        },
-        "G2EngineFindNetworkByRecordIdResponse": {
-            "ref": "Network"
-        },
-        "G2EngineFindNetworkByRecordIDV2Response": {
-            "ref": "Network"
-        },
-        "G2EngineFindPathByEntityIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathByEntityIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathByRecordIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathByRecordIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByEntityIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByEntityIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByRecordIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByRecordIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByEntityIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByEntityIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByRecordIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByRecordIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineGetEntityByEntityIdResponse": {
-            "ref": "Entity"
-        },
-        "G2EngineGetEntityByEntityIDV2Response": {
-            "ref": "Entity"
-        },
-        "G2EngineGetEntityByRecordIdResponse": {
-            "ref": "Entity"
-        },
-        "G2EngineGetEntityByRecordIDV2Response": {
-            "ref": "Entity"
-        },
-        "G2EngineGetRecordResponse": {
-            "ref": "Record"
-        },
-        "G2EngineGetRecordV2Response": {
-            "ref": "Record"
-        },
-        "G2EngineGetRedoRecordResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineGetVirtualEntityByRecordIdResponse": {
-            "ref": "VirtualEntity"
-        },
-        "G2EngineGetVirtualEntityByRecordIDV2Response": {
-            "ref": "VirtualEntity"
-        },
-        "G2EngineHowEntityByEntityIdResponse": {
-            "ref": "How"
-        },
-        "G2EngineHowEntityByEntityIDV2Response": {
-            "ref": "How"
-        },
-        "G2EngineProcessRedoRecordResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineProcessRedoRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineReevaluateEntityWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineReevaluateRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineReplaceRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineSearchByAttributesResponse": {
-            "ref": "Search"
-        },
-        "G2EngineSearchByAttributesV2Response": {
-            "ref": "Search"
-        },
-        "G2EngineSearchByAttributesV3Response": {
-            "ref": "Search"
-        },
-        "G2EngineStreamExportJSONEntityReportResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineWhyEntitiesResponse": {
-            "ref": "WhyEntities"
-        },
-        "G2EngineWhyEntitiesV2Response": {
-            "ref": "WhyEntities"
-        },
-        "G2EngineWhyRecordsResponse": {
-            "ref": "WhyRecords"
-        },
-        "G2EngineWhyRecordsV2Response": {
-            "ref": "WhyRecords"
-        },
-        "G2ProductLicenseResponse": {
-            "ref": "ProductLicense"
-        },
-        "G2ProductVersionResponse": {
-            "ref": "ProductVersion"
-        },
         "GetConfig": {
             "properties": {
                 "G2_CONFIG": {
@@ -1657,7 +1489,7 @@
                 }
             }
         },
-        "ListDataSources": {
+        "GetDataSources": {
             "properties": {
                 "DATA_SOURCES": {
                     "elements": {
@@ -2374,6 +2206,96 @@
                     "type": "int32"
                 }
             }
+        },
+        "SzConfigAddDataSourceResponse": {
+            "ref": "AddDataSource"
+        },
+        "SzConfigGetDataSourcesResponse": {
+            "ref": "GetDataSources"
+        },
+        "SzConfigGetJsonStringResponse": {
+            "ref": "GetJsonString"
+        },
+        "SzConfigmgrGetConfigListResponse": {
+            "ref": "ConfigList"
+        },
+        "SzConfigmgrGetConfigResponse": {
+            "ref": "GetConfig"
+        },
+        "SzDiagnosticCheckDatabasePerformanceResponse": {
+            "ref": "CheckDatabasePerformance"
+        },
+        "SzEngineAddRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineDeleteRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineFetchNextResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineFindNetworkByEntityIdResponse": {
+            "ref": "Network"
+        },
+        "SzEngineFindNetworkByRecordIdResponse": {
+            "ref": "Network"
+        },
+        "SzEngineFindPathByEntityIdResponse": {
+            "ref": "Path"
+        },
+        "SzEngineFindPathByRecordIdResponse": {
+            "ref": "Path"
+        },
+        "SzEngineGetEntityByEntityIdResponse": {
+            "ref": "Entity"
+        },
+        "SzEngineGetEntityByRecordIdResponse": {
+            "ref": "Entity"
+        },
+        "SzEngineGetRecordResponse": {
+            "ref": "Record"
+        },
+        "SzEngineGetRedoRecordResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineGetVirtualEntityByRecordIdResponse": {
+            "ref": "VirtualEntity"
+        },
+        "SzEngineHowEntityByEntityIdResponse": {
+            "ref": "How"
+        },
+        "SzEngineProcessRedoRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineReevaluateEntityResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineReevaluateRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineReplaceRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineSearchByAttributesResponse": {
+            "ref": "Search"
+        },
+        "SzEngineStreamExportJsonEntityReportResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineWhyEntitiesResponse": {
+            "ref": "WhyEntities"
+        },
+        "SzEngineWhyRecordInEntityResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineWhyRecordsResponse": {
+            "ref": "WhyRecords"
+        },
+        "SzProductGetLicenseResponse": {
+            "ref": "ProductLicense"
+        },
+        "SzProductGetVersionResponse": {
+            "ref": "ProductVersion"
         },
         "VirtualEntity": {
             "properties": {

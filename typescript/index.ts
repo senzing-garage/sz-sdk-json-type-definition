@@ -294,7 +294,7 @@ export interface ConfigBaseVersion {
   VERSION: string;
 }
 
-export interface CheckDbperf {
+export interface CheckDatabasePerformance {
   insertTime: number;
   numRecordsInserted: number;
 }
@@ -311,10 +311,6 @@ export interface Config {
 
 export interface ConfigList {
   CONFIGS: Config[];
-}
-
-export interface ConfigSave {
-  G2_CONFIG: G2config;
 }
 
 export interface DataSource {
@@ -433,119 +429,15 @@ export interface G2config {
   SYS_OOM: SysOom[];
 }
 
-export type G2configAddDataSourceResponse = AddDataSource;
-
-export type G2configListDataSourcesResponse = ListDataSources;
-
-export type G2configSaveResponse = ConfigSave;
-
-export type G2configmgrGetConfigListResponse = ConfigList;
-
-export type G2configmgrGetConfigResponse = GetConfig;
-
-export type G2diagnosticCheckDbperfResponse = CheckDbperf;
-
-export type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
-
-export type G2engineAddRecordWithInfoResponse = WithInfo;
-
-export type G2engineDeleteRecordWithInfoResponse = WithInfo;
-
-export type G2engineExportConfigAndConfigIdResponse = ExportConfig;
-
-export type G2engineExportConfigResponse = ExportConfig;
-
-export type G2engineFetchNextResponse = FixmeUnknown;
-
-export type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
-
-export type G2engineFindInterestingEntitiesByRecordIdResponse = Interesting;
-
-export type G2engineFindNetworkByEntityIdv2response = Network;
-
-export type G2engineFindNetworkByEntityIdResponse = Network;
-
-export type G2engineFindNetworkByRecordIdv2response = Network;
-
-export type G2engineFindNetworkByRecordIdResponse = Network;
-
-export type G2engineFindPathByEntityIdv2response = Path;
-
-export type G2engineFindPathByEntityIdResponse = Path;
-
-export type G2engineFindPathByRecordIdv2response = Path;
-
-export type G2engineFindPathByRecordIdResponse = Path;
-
-export type G2engineFindPathExcludingByEntityIdv2response = Path;
-
-export type G2engineFindPathExcludingByEntityIdResponse = Path;
-
-export type G2engineFindPathExcludingByRecordIdv2response = Path;
-
-export type G2engineFindPathExcludingByRecordIdResponse = Path;
-
-export type G2engineFindPathIncludingSourceByEntityIdv2response = Path;
-
-export type G2engineFindPathIncludingSourceByEntityIdResponse = Path;
-
-export type G2engineFindPathIncludingSourceByRecordIdv2response = Path;
-
-export type G2engineFindPathIncludingSourceByRecordIdResponse = Path;
-
-export type G2engineGetEntityByEntityIdv2response = Entity;
-
-export type G2engineGetEntityByEntityIdResponse = Entity;
-
-export type G2engineGetEntityByRecordIdv2response = Entity;
-
-export type G2engineGetEntityByRecordIdResponse = Entity;
-
-export type G2engineGetRecordResponse = Record;
-
-export type G2engineGetRecordV2response = Record;
-
-export type G2engineGetRedoRecordResponse = FixmeUnknown;
-
-export type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
-
-export type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
-
-export type G2engineHowEntityByEntityIdv2response = How;
-
-export type G2engineHowEntityByEntityIdResponse = How;
-
-export type G2engineProcessRedoRecordResponse = FixmeUnknown;
-
-export type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
-
-export type G2engineReevaluateEntityWithInfoResponse = WithInfo;
-
-export type G2engineReevaluateRecordWithInfoResponse = WithInfo;
-
-export type G2engineReplaceRecordWithInfoResponse = WithInfo;
-
-export type G2engineSearchByAttributesResponse = Search;
-
-export type G2engineSearchByAttributesV2response = Search;
-
-export type G2engineSearchByAttributesV3response = Search;
-
-export type G2engineStreamExportJsonentityReportResponse = FixmeUnknown;
-
-export type G2engineWhyEntitiesResponse = WhyEntities;
-
-export type G2engineWhyEntitiesV2response = WhyEntities;
-
-export type G2engineWhyRecordsResponse = WhyRecords;
-
-export type G2engineWhyRecordsV2response = WhyRecords;
-
-export type G2productLicenseResponse = ProductLicense;
-
-export type G2productVersionResponse = ProductVersion;
-
 export interface GetConfig {
+  G2_CONFIG: G2config;
+}
+
+export interface GetDataSources {
+  DATA_SOURCES: DataSource[];
+}
+
+export interface GetJsonString {
   G2_CONFIG: G2config;
 }
 
@@ -583,10 +475,6 @@ export interface InterestingEntity {
   ENTITY_ID: number;
   FLAGS: string[];
   SAMPLE_RECORDS: InterestingEntitySampleRecords[];
-}
-
-export interface ListDataSources {
-  DATA_SOURCES: DataSource[];
 }
 
 export interface MatchInfoDisclosedRelationsRelAnchor {
@@ -833,6 +721,66 @@ export interface SearchStatistic {
 }
 
 export type SearchStatistics = SearchStatistic[];
+
+export type SzConfigAddDataSourceResponse = AddDataSource;
+
+export type SzConfigGetDataSourcesResponse = GetDataSources;
+
+export type SzConfigGetJsonStringResponse = GetJsonString;
+
+export type SzConfigmgrGetConfigListResponse = ConfigList;
+
+export type SzConfigmgrGetConfigResponse = GetConfig;
+
+export type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
+
+export type SzEngineAddRecordResponse = WithInfo;
+
+export type SzEngineDeleteRecordResponse = WithInfo;
+
+export type SzEngineFetchNextResponse = FixmeUnknown;
+
+export type SzEngineFindNetworkByEntityIdResponse = Network;
+
+export type SzEngineFindNetworkByRecordIdResponse = Network;
+
+export type SzEngineFindPathByEntityIdResponse = Path;
+
+export type SzEngineFindPathByRecordIdResponse = Path;
+
+export type SzEngineGetEntityByEntityIdResponse = Entity;
+
+export type SzEngineGetEntityByRecordIdResponse = Entity;
+
+export type SzEngineGetRecordResponse = Record;
+
+export type SzEngineGetRedoRecordResponse = FixmeUnknown;
+
+export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+
+export type SzEngineHowEntityByEntityIdResponse = How;
+
+export type SzEngineProcessRedoRecordResponse = WithInfo;
+
+export type SzEngineReevaluateEntityResponse = WithInfo;
+
+export type SzEngineReevaluateRecordResponse = WithInfo;
+
+export type SzEngineReplaceRecordResponse = WithInfo;
+
+export type SzEngineSearchByAttributesResponse = Search;
+
+export type SzEngineStreamExportJsonEntityReportResponse = FixmeUnknown;
+
+export type SzEngineWhyEntitiesResponse = WhyEntities;
+
+export type SzEngineWhyRecordInEntityResponse = FixmeUnknown;
+
+export type SzEngineWhyRecordsResponse = WhyRecords;
+
+export type SzProductGetLicenseResponse = ProductLicense;
+
+export type SzProductGetVersionResponse = ProductVersion;
 
 export interface VirtualEntity {
   RESOLVED_ENTITY: ResolvedEntity;

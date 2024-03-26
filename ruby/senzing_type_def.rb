@@ -1025,12 +1025,12 @@ module SenzingTypeDef
     end
   end
 
-  class CheckDbperf
+  class CheckDatabasePerformance
     attr_accessor :insert_time
     attr_accessor :num_records_inserted
 
     def self.from_json_data(data)
-      out = CheckDbperf.new
+      out = CheckDatabasePerformance.new
       out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
       out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
       out
@@ -1094,22 +1094,6 @@ module SenzingTypeDef
     def to_json_data
       data = {}
       data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
-      data
-    end
-  end
-
-  class ConfigSave
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = ConfigSave.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
       data
     end
   end
@@ -1516,795 +1500,43 @@ module SenzingTypeDef
     end
   end
 
-  class G2configAddDataSourceResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2configAddDataSourceResponse.new
-      out.value = SenzingTypeDef.from_json_data(AddDataSource, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2configListDataSourcesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2configListDataSourcesResponse.new
-      out.value = SenzingTypeDef.from_json_data(ListDataSources, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2configSaveResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2configSaveResponse.new
-      out.value = SenzingTypeDef.from_json_data(ConfigSave, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2configmgrGetConfigListResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2configmgrGetConfigListResponse.new
-      out.value = SenzingTypeDef.from_json_data(ConfigList, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2configmgrGetConfigResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2configmgrGetConfigResponse.new
-      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticCheckDbperfResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticCheckDbperfResponse.new
-      out.value = SenzingTypeDef.from_json_data(CheckDbperf, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticStreamEntityListBySizeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticStreamEntityListBySizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineAddRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineAddRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineDeleteRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineDeleteRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineExportConfigAndConfigIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineExportConfigAndConfigIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(ExportConfig, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineExportConfigResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineExportConfigResponse.new
-      out.value = SenzingTypeDef.from_json_data(ExportConfig, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFetchNextResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindInterestingEntitiesByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindInterestingEntitiesByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindInterestingEntitiesByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindInterestingEntitiesByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetRecordV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetRecordV2response.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetRedoRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetVirtualEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetVirtualEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetVirtualEntityByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetVirtualEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineHowEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineHowEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineHowEntityByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineHowEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessRedoRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessRedoRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessRedoRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineReevaluateEntityWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineReevaluateEntityWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineReevaluateRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineReevaluateRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineReplaceRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineReplaceRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesResponse.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesV2response.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesV3response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesV3response.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineStreamExportJsonentityReportResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineStreamExportJsonentityReportResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntitiesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntitiesResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntitiesV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntitiesV2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyRecordsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyRecordsResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyRecordsV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyRecordsV2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2productLicenseResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2productLicenseResponse.new
-      out.value = SenzingTypeDef.from_json_data(ProductLicense, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2productVersionResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2productVersionResponse.new
-      out.value = SenzingTypeDef.from_json_data(ProductVersion, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class GetConfig
     attr_accessor :g2_config
 
     def self.from_json_data(data)
       out = GetConfig.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
+    end
+  end
+
+  class GetDataSources
+    attr_accessor :data_sources
+
+    def self.from_json_data(data)
+      out = GetDataSources.new
+      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
+      data
+    end
+  end
+
+  class GetJSONString
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = GetJSONString.new
       out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
       out
     end
@@ -2432,22 +1664,6 @@ module SenzingTypeDef
       data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
       data["FLAGS"] = SenzingTypeDef::to_json_data(flags)
       data["SAMPLE_RECORDS"] = SenzingTypeDef::to_json_data(sample_records)
-      data
-    end
-  end
-
-  class ListDataSources
-    attr_accessor :data_sources
-
-    def self.from_json_data(data)
-      out = ListDataSources.new
-      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
       data
     end
   end
@@ -3315,6 +2531,426 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = SearchStatistics.new
       out.value = SenzingTypeDef.from_json_data(Array[SearchStatistic], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigAddDataSourceResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigAddDataSourceResponse.new
+      out.value = SenzingTypeDef.from_json_data(AddDataSource, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigGetDataSourcesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigGetDataSourcesResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetDataSources, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigGetJSONStringResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigGetJSONStringResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetJSONString, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigmgrGetConfigListResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigmgrGetConfigListResponse.new
+      out.value = SenzingTypeDef.from_json_data(ConfigList, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigmgrGetConfigResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigmgrGetConfigResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzDiagnosticCheckDatabasePerformanceResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzDiagnosticCheckDatabasePerformanceResponse.new
+      out.value = SenzingTypeDef.from_json_data(CheckDatabasePerformance, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineAddRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineAddRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineDeleteRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineDeleteRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFetchNextResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFetchNextResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindNetworkByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindNetworkByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindNetworkByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindNetworkByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(Record, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetVirtualEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetVirtualEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineHowEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineHowEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(How, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineProcessRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineProcessRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineReevaluateEntityResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineReevaluateEntityResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineReevaluateRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineReevaluateRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineReplaceRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineReplaceRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineSearchByAttributesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineSearchByAttributesResponse.new
+      out.value = SenzingTypeDef.from_json_data(Search, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineStreamExportJSONEntityReportResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineStreamExportJSONEntityReportResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhyEntitiesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhyEntitiesResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhyRecordInEntityResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhyRecordInEntityResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhyRecordsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhyRecordsResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzProductGetLicenseResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzProductGetLicenseResponse.new
+      out.value = SenzingTypeDef.from_json_data(ProductLicense, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzProductGetVersionResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzProductGetVersionResponse.new
+      out.value = SenzingTypeDef.from_json_data(ProductVersion, data)
       out
     end
 

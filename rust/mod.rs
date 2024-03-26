@@ -671,7 +671,7 @@ pub struct ConfigBaseVersion {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct CheckDbperf {
+pub struct CheckDatabasePerformance {
     #[serde(rename = "insertTime")]
     pub insertTime: i32,
 
@@ -701,12 +701,6 @@ pub struct Config {
 pub struct ConfigList {
     #[serde(rename = "CONFIGS")]
     pub configs: Vec<Config>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ConfigSave {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -962,120 +956,20 @@ pub struct G2config {
     pub sysOom: Vec<SysOom>,
 }
 
-pub type G2configAddDataSourceResponse = AddDataSource;
-
-pub type G2configListDataSourcesResponse = ListDataSources;
-
-pub type G2configSaveResponse = ConfigSave;
-
-pub type G2configmgrGetConfigListResponse = ConfigList;
-
-pub type G2configmgrGetConfigResponse = GetConfig;
-
-pub type G2diagnosticCheckDbperfResponse = CheckDbperf;
-
-pub type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
-
-pub type G2engineAddRecordWithInfoResponse = WithInfo;
-
-pub type G2engineDeleteRecordWithInfoResponse = WithInfo;
-
-pub type G2engineExportConfigAndConfigIdResponse = ExportConfig;
-
-pub type G2engineExportConfigResponse = ExportConfig;
-
-pub type G2engineFetchNextResponse = FixmeUnknown;
-
-pub type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
-
-pub type G2engineFindInterestingEntitiesByRecordIdResponse = Interesting;
-
-pub type G2engineFindNetworkByEntityIdv2response = Network;
-
-pub type G2engineFindNetworkByEntityIdResponse = Network;
-
-pub type G2engineFindNetworkByRecordIdv2response = Network;
-
-pub type G2engineFindNetworkByRecordIdResponse = Network;
-
-pub type G2engineFindPathByEntityIdv2response = Path;
-
-pub type G2engineFindPathByEntityIdResponse = Path;
-
-pub type G2engineFindPathByRecordIdv2response = Path;
-
-pub type G2engineFindPathByRecordIdResponse = Path;
-
-pub type G2engineFindPathExcludingByEntityIdv2response = Path;
-
-pub type G2engineFindPathExcludingByEntityIdResponse = Path;
-
-pub type G2engineFindPathExcludingByRecordIdv2response = Path;
-
-pub type G2engineFindPathExcludingByRecordIdResponse = Path;
-
-pub type G2engineFindPathIncludingSourceByEntityIdv2response = Path;
-
-pub type G2engineFindPathIncludingSourceByEntityIdResponse = Path;
-
-pub type G2engineFindPathIncludingSourceByRecordIdv2response = Path;
-
-pub type G2engineFindPathIncludingSourceByRecordIdResponse = Path;
-
-pub type G2engineGetEntityByEntityIdv2response = Entity;
-
-pub type G2engineGetEntityByEntityIdResponse = Entity;
-
-pub type G2engineGetEntityByRecordIdv2response = Entity;
-
-pub type G2engineGetEntityByRecordIdResponse = Entity;
-
-pub type G2engineGetRecordResponse = Record;
-
-pub type G2engineGetRecordV2response = Record;
-
-pub type G2engineGetRedoRecordResponse = FixmeUnknown;
-
-pub type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
-
-pub type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
-
-pub type G2engineHowEntityByEntityIdv2response = How;
-
-pub type G2engineHowEntityByEntityIdResponse = How;
-
-pub type G2engineProcessRedoRecordResponse = FixmeUnknown;
-
-pub type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
-
-pub type G2engineReevaluateEntityWithInfoResponse = WithInfo;
-
-pub type G2engineReevaluateRecordWithInfoResponse = WithInfo;
-
-pub type G2engineReplaceRecordWithInfoResponse = WithInfo;
-
-pub type G2engineSearchByAttributesResponse = Search;
-
-pub type G2engineSearchByAttributesV2response = Search;
-
-pub type G2engineSearchByAttributesV3response = Search;
-
-pub type G2engineStreamExportJsonentityReportResponse = FixmeUnknown;
-
-pub type G2engineWhyEntitiesResponse = WhyEntities;
-
-pub type G2engineWhyEntitiesV2response = WhyEntities;
-
-pub type G2engineWhyRecordsResponse = WhyRecords;
-
-pub type G2engineWhyRecordsV2response = WhyRecords;
-
-pub type G2productLicenseResponse = ProductLicense;
-
-pub type G2productVersionResponse = ProductVersion;
-
 #[derive(Serialize, Deserialize)]
 pub struct GetConfig {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct GetDataSources {
+    #[serde(rename = "DATA_SOURCES")]
+    pub dataSources: Vec<DataSource>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct GetJsonString {
     #[serde(rename = "G2_CONFIG")]
     pub g2Config: G2config,
 }
@@ -1137,12 +1031,6 @@ pub struct InterestingEntity {
 
     #[serde(rename = "SAMPLE_RECORDS")]
     pub sampleRecords: Vec<InterestingEntitySampleRecords>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ListDataSources {
-    #[serde(rename = "DATA_SOURCES")]
-    pub dataSources: Vec<DataSource>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1673,6 +1561,66 @@ pub struct SearchStatistic {
 }
 
 pub type SearchStatistics = Vec<SearchStatistic>;
+
+pub type SzConfigAddDataSourceResponse = AddDataSource;
+
+pub type SzConfigGetDataSourcesResponse = GetDataSources;
+
+pub type SzConfigGetJsonStringResponse = GetJsonString;
+
+pub type SzConfigmgrGetConfigListResponse = ConfigList;
+
+pub type SzConfigmgrGetConfigResponse = GetConfig;
+
+pub type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
+
+pub type SzEngineAddRecordResponse = WithInfo;
+
+pub type SzEngineDeleteRecordResponse = WithInfo;
+
+pub type SzEngineFetchNextResponse = FixmeUnknown;
+
+pub type SzEngineFindNetworkByEntityIdResponse = Network;
+
+pub type SzEngineFindNetworkByRecordIdResponse = Network;
+
+pub type SzEngineFindPathByEntityIdResponse = Path;
+
+pub type SzEngineFindPathByRecordIdResponse = Path;
+
+pub type SzEngineGetEntityByEntityIdResponse = Entity;
+
+pub type SzEngineGetEntityByRecordIdResponse = Entity;
+
+pub type SzEngineGetRecordResponse = Record;
+
+pub type SzEngineGetRedoRecordResponse = FixmeUnknown;
+
+pub type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+
+pub type SzEngineHowEntityByEntityIdResponse = How;
+
+pub type SzEngineProcessRedoRecordResponse = WithInfo;
+
+pub type SzEngineReevaluateEntityResponse = WithInfo;
+
+pub type SzEngineReevaluateRecordResponse = WithInfo;
+
+pub type SzEngineReplaceRecordResponse = WithInfo;
+
+pub type SzEngineSearchByAttributesResponse = Search;
+
+pub type SzEngineStreamExportJsonEntityReportResponse = FixmeUnknown;
+
+pub type SzEngineWhyEntitiesResponse = WhyEntities;
+
+pub type SzEngineWhyRecordInEntityResponse = FixmeUnknown;
+
+pub type SzEngineWhyRecordsResponse = WhyRecords;
+
+pub type SzProductGetLicenseResponse = ProductLicense;
+
+pub type SzProductGetVersionResponse = ProductVersion;
 
 #[derive(Serialize, Deserialize)]
 pub struct VirtualEntity {

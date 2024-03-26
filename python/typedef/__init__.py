@@ -991,12 +991,12 @@ class ConfigBaseVersion:
         return data
 
 @dataclass
-class CheckDbperf:
+class CheckDatabasePerformance:
     insert_time: 'int'
     num_records_inserted: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'CheckDbperf':
+    def from_json_data(cls, data: Any) -> 'CheckDatabasePerformance':
         return cls(
             _from_json_data(int, data.get("insertTime")),
             _from_json_data(int, data.get("numRecordsInserted")),
@@ -1057,21 +1057,6 @@ class ConfigList:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["CONFIGS"] = _to_json_data(self.configs)
-        return data
-
-@dataclass
-class ConfigSave:
-    g2_config: 'G2config'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ConfigSave':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
         return data
 
 @dataclass
@@ -1460,627 +1445,41 @@ class G2config:
         return data
 
 @dataclass
-class G2configAddDataSourceResponse:
-    value: 'AddDataSource'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configAddDataSourceResponse':
-        return cls(_from_json_data(AddDataSource, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2configListDataSourcesResponse:
-    value: 'ListDataSources'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configListDataSourcesResponse':
-        return cls(_from_json_data(ListDataSources, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2configSaveResponse:
-    value: 'ConfigSave'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configSaveResponse':
-        return cls(_from_json_data(ConfigSave, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2configmgrGetConfigListResponse:
-    value: 'ConfigList'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigListResponse':
-        return cls(_from_json_data(ConfigList, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2configmgrGetConfigResponse:
-    value: 'GetConfig'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigResponse':
-        return cls(_from_json_data(GetConfig, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticCheckDbperfResponse:
-    value: 'CheckDbperf'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticCheckDbperfResponse':
-        return cls(_from_json_data(CheckDbperf, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticStreamEntityListBySizeResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticStreamEntityListBySizeResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineAddRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineAddRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineDeleteRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineDeleteRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineExportConfigAndConfigIDResponse:
-    value: 'ExportConfig'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineExportConfigAndConfigIDResponse':
-        return cls(_from_json_data(ExportConfig, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineExportConfigResponse:
-    value: 'ExportConfig'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineExportConfigResponse':
-        return cls(_from_json_data(ExportConfig, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFetchNextResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFetchNextResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindInterestingEntitiesByEntityIDResponse:
-    value: 'Interesting'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindInterestingEntitiesByEntityIDResponse':
-        return cls(_from_json_data(Interesting, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindInterestingEntitiesByRecordIDResponse:
-    value: 'Interesting'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindInterestingEntitiesByRecordIDResponse':
-        return cls(_from_json_data(Interesting, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByEntityIdv2response:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByEntityIdv2response':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByEntityIDResponse:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByEntityIDResponse':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByRecordIdv2response:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByRecordIdv2response':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByRecordIDResponse:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByRecordIDResponse':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByEntityIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByEntityIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByEntityIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByEntityIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByRecordIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByRecordIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByRecordIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByRecordIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByEntityIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByEntityIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByEntityIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByEntityIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByRecordIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByRecordIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByRecordIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByRecordIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByEntityIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByEntityIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByEntityIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByEntityIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByRecordIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByRecordIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByRecordIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByRecordIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByEntityIdv2response:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByEntityIdv2response':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByEntityIDResponse:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByEntityIDResponse':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByRecordIdv2response:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByRecordIdv2response':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByRecordIDResponse:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByRecordIDResponse':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetRecordResponse:
-    value: 'Record'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetRecordResponse':
-        return cls(_from_json_data(Record, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetRecordV2response:
-    value: 'Record'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetRecordV2response':
-        return cls(_from_json_data(Record, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetRedoRecordResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetRedoRecordResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetVirtualEntityByRecordIdv2response:
-    value: 'VirtualEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetVirtualEntityByRecordIdv2response':
-        return cls(_from_json_data(VirtualEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetVirtualEntityByRecordIDResponse:
-    value: 'VirtualEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetVirtualEntityByRecordIDResponse':
-        return cls(_from_json_data(VirtualEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineHowEntityByEntityIdv2response:
-    value: 'How'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineHowEntityByEntityIdv2response':
-        return cls(_from_json_data(How, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineHowEntityByEntityIDResponse:
-    value: 'How'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineHowEntityByEntityIDResponse':
-        return cls(_from_json_data(How, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessRedoRecordResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessRedoRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineReevaluateEntityWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineReevaluateEntityWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineReevaluateRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineReevaluateRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineReplaceRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineReplaceRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesResponse:
-    value: 'Search'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesResponse':
-        return cls(_from_json_data(Search, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesV2response:
-    value: 'Search'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesV2response':
-        return cls(_from_json_data(Search, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesV3response:
-    value: 'Search'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesV3response':
-        return cls(_from_json_data(Search, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineStreamExportJsonentityReportResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStreamExportJsonentityReportResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntitiesResponse:
-    value: 'WhyEntities'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntitiesResponse':
-        return cls(_from_json_data(WhyEntities, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntitiesV2response:
-    value: 'WhyEntities'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntitiesV2response':
-        return cls(_from_json_data(WhyEntities, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyRecordsResponse:
-    value: 'WhyRecords'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyRecordsResponse':
-        return cls(_from_json_data(WhyRecords, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyRecordsV2response:
-    value: 'WhyRecords'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyRecordsV2response':
-        return cls(_from_json_data(WhyRecords, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2productLicenseResponse:
-    value: 'ProductLicense'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2productLicenseResponse':
-        return cls(_from_json_data(ProductLicense, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2productVersionResponse:
-    value: 'ProductVersion'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2productVersionResponse':
-        return cls(_from_json_data(ProductVersion, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class GetConfig:
     g2_config: 'G2config'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'GetConfig':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class GetDataSources:
+    data_sources: 'List[DataSource]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'GetDataSources':
+        return cls(
+            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
+        return data
+
+@dataclass
+class GetJSONString:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'GetJSONString':
         return cls(
             _from_json_data(G2config, data.get("G2_CONFIG")),
         )
@@ -2204,21 +1603,6 @@ class InterestingEntity:
         data["ENTITY_ID"] = _to_json_data(self.entity_id)
         data["FLAGS"] = _to_json_data(self.flags)
         data["SAMPLE_RECORDS"] = _to_json_data(self.sample_records)
-        return data
-
-@dataclass
-class ListDataSources:
-    data_sources: 'List[DataSource]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ListDataSources':
-        return cls(
-            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
         return data
 
 @dataclass
@@ -3049,6 +2433,336 @@ class SearchStatistics:
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchStatistics':
         return cls(_from_json_data(List[SearchStatistic], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigAddDataSourceResponse:
+    value: 'AddDataSource'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigAddDataSourceResponse':
+        return cls(_from_json_data(AddDataSource, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigGetDataSourcesResponse:
+    value: 'GetDataSources'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourcesResponse':
+        return cls(_from_json_data(GetDataSources, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigGetJSONStringResponse:
+    value: 'GetJSONString'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigGetJSONStringResponse':
+        return cls(_from_json_data(GetJSONString, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigmgrGetConfigListResponse:
+    value: 'ConfigList'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigmgrGetConfigListResponse':
+        return cls(_from_json_data(ConfigList, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigmgrGetConfigResponse:
+    value: 'GetConfig'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigmgrGetConfigResponse':
+        return cls(_from_json_data(GetConfig, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzDiagnosticCheckDatabasePerformanceResponse:
+    value: 'CheckDatabasePerformance'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckDatabasePerformanceResponse':
+        return cls(_from_json_data(CheckDatabasePerformance, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineAddRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineAddRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineDeleteRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineDeleteRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFetchNextResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFetchNextResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindNetworkByEntityIDResponse:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByEntityIDResponse':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindNetworkByRecordIDResponse:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByRecordIDResponse':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindPathByEntityIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindPathByRecordIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetEntityByEntityIDResponse:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetEntityByEntityIDResponse':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetEntityByRecordIDResponse:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetEntityByRecordIDResponse':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetRecordResponse:
+    value: 'Record'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRecordResponse':
+        return cls(_from_json_data(Record, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetRedoRecordResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRedoRecordResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetVirtualEntityByRecordIDResponse:
+    value: 'VirtualEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetVirtualEntityByRecordIDResponse':
+        return cls(_from_json_data(VirtualEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineHowEntityByEntityIDResponse:
+    value: 'How'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineHowEntityByEntityIDResponse':
+        return cls(_from_json_data(How, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineProcessRedoRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineProcessRedoRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineReevaluateEntityResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineReevaluateEntityResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineReevaluateRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineReevaluateRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineReplaceRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineReplaceRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineSearchByAttributesResponse:
+    value: 'Search'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesResponse':
+        return cls(_from_json_data(Search, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineStreamExportJSONEntityReportResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineStreamExportJSONEntityReportResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineWhyEntitiesResponse:
+    value: 'WhyEntities'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyEntitiesResponse':
+        return cls(_from_json_data(WhyEntities, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineWhyRecordInEntityResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordInEntityResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineWhyRecordsResponse:
+    value: 'WhyRecords'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordsResponse':
+        return cls(_from_json_data(WhyRecords, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzProductGetLicenseResponse:
+    value: 'ProductLicense'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzProductGetLicenseResponse':
+        return cls(_from_json_data(ProductLicense, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzProductGetVersionResponse:
+    value: 'ProductVersion'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzProductGetVersionResponse':
+        return cls(_from_json_data(ProductVersion, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
