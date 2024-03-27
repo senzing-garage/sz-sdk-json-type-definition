@@ -77,7 +77,7 @@ def print_fmt(
 # -----------------------------------------------------------------------------
 
 
-def mock_g2engine_add_record_with_info() -> str:
+def mock_szengine_add_record_with_info() -> str:
     with open(
         path_to_testdata("SzEngineAddRecordResponse-test-001.json"),
         encoding="utf-8",
@@ -85,7 +85,7 @@ def mock_g2engine_add_record_with_info() -> str:
         return input_file.read()
 
 
-def mock_g2engine_delete_record_with_info() -> str:
+def mock_szengine_delete_record_with_info() -> str:
     with open(
         path_to_testdata("SzEngineDeleteRecordResponse-test-001.json"),
         encoding="utf-8",
@@ -93,7 +93,7 @@ def mock_g2engine_delete_record_with_info() -> str:
         return input_file.read()
 
 
-def mock_g2engine_get_virtual_entity_by_record_id() -> str:
+def mock_szengine_get_virtual_entity_by_record_id() -> str:
     with open(
         path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-023.json"),
         encoding="utf-8",
@@ -112,7 +112,7 @@ print(
 # SzEngine add_record_with_info -----------------------------------------------
 
 response = SzEngineAddRecordResponse.from_json_data(
-    json.loads(mock_g2engine_add_record_with_info())
+    json.loads(mock_szengine_add_record_with_info())
 )
 print(
     f"SzEngineAddRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
@@ -121,7 +121,7 @@ print(
 # SzEngine delete_record_with_info --------------------------------------------
 
 response = SzEngineDeleteRecordResponse.from_json_data(
-    json.loads(mock_g2engine_delete_record_with_info())
+    json.loads(mock_szengine_delete_record_with_info())
 )
 print(
     f"SzEngineDeleteRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
@@ -130,7 +130,7 @@ print(
 # SzEngine g2engine_get_virtual_entity_by_record_id ------------------------------------
 
 response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
-    json.loads(mock_g2engine_get_virtual_entity_by_record_id())
+    json.loads(mock_szengine_get_virtual_entity_by_record_id())
 )
 print(
     f"SzEngineGetVirtualEntityByRecordIDResponse: Simple  description: {response.value.resolved_entity.features['NAME'][0].feat_desc}"
@@ -147,7 +147,7 @@ for feature in feature_list:
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys
 # - Issue: No editor hints
-response = json.loads(mock_g2engine_get_virtual_entity_by_record_id())
+response = json.loads(mock_szengine_get_virtual_entity_by_record_id())
 feature_list = response.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")

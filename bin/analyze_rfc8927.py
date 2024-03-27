@@ -180,7 +180,7 @@ for value in GLOBAL_REFS:
         definitions.remove(value)
 USED_KEY_COUNT = 0
 for definition in definitions:
-    if definition[0:8] not in ["G2Config", "G2Engine", "G2Diagno", "G2Produc"]:
+    if definition[0:8] not in ["SzConfig", "SzEngine", "SzDiagno", "SzProduc"]:
         if definition not in USED_KEYS:
             USED_KEY_COUNT += 1
             print(definition)

@@ -39,7 +39,7 @@ def path_to_testdata(filename: str) -> str:
 # -----------------------------------------------------------------------------
 
 
-def test_g2engine_add_record_with_info_001():
+def test_szengine_add_record_with_info_001():
     with open(
         path_to_testdata("SzEngineAddRecordResponse-test-001.json"),
         encoding="utf-8",
@@ -50,7 +50,7 @@ def test_g2engine_add_record_with_info_001():
     assert response.value.affected_entities[0].entity_id == 7
 
 
-def test_g2engine_delete_record_with_info_001():
+def test_szengine_delete_record_with_info_001():
     with open(
         path_to_testdata("SzEngineDeleteRecordResponse-test-001.json"),
         encoding="utf-8",
@@ -61,7 +61,7 @@ def test_g2engine_delete_record_with_info_001():
     assert response.value.affected_entities[0].entity_id == 100002
 
 
-def test_g2engine_find_network_by_entity_id_001():
+def test_szengine_find_network_by_entity_id_001():
     with open(
         path_to_testdata("SzEngineFindNetworkByEntityIdResponse-test-001.json"),
         encoding="utf-8",
@@ -78,7 +78,7 @@ def test_g2engine_find_network_by_entity_id_001():
     )
 
 
-def test_g2engine_find_network_by_record_id_001():
+def test_szengine_find_network_by_record_id_001():
     with open(
         path_to_testdata("SzEngineFindNetworkByRecordIdResponse-test-001.json"),
         encoding="utf-8",
@@ -95,7 +95,7 @@ def test_g2engine_find_network_by_record_id_001():
     )
 
 
-def test_g2engine_find_path_by_entity_id_001():
+def test_szengine_find_path_by_entity_id_001():
     with open(
         path_to_testdata("SzEngineFindPathByEntityIdResponse-test-001.json"),
         encoding="utf-8",
@@ -112,7 +112,7 @@ def test_g2engine_find_path_by_entity_id_001():
     )
 
 
-def test_g2engine_find_path_by_record_id_001():
+def test_szengine_find_path_by_record_id_001():
     with open(
         path_to_testdata("SzEngineFindPathByRecordIdResponse-test-001.json"),
         encoding="utf-8",
@@ -129,7 +129,7 @@ def test_g2engine_find_path_by_record_id_001():
     )
 
 
-# def test_g2engine_get_entity_by_entity_id_01():
+# def test_szengine_get_entity_by_entity_id_01():
 #     with open(
 #         path_to_testdata("SzEngineGetEntityByEntityIdResponse-test-001.json"),
 #         encoding="utf-8",
@@ -146,7 +146,7 @@ def test_g2engine_find_path_by_record_id_001():
 #     assert feature.feat_desc_values[0].lib_feat_id == 20
 
 
-def test_g2engine_get_entity_by_entity_id_001():
+def test_szengine_get_entity_by_entity_id_001():
     with open(
         path_to_testdata("SzEngineGetEntityByEntityIdResponse-test-001.json"),
         encoding="utf-8",
@@ -164,7 +164,7 @@ def test_g2engine_get_entity_by_entity_id_001():
     assert response.value.resolved_entity.features["ADDRESS"][0].lib_feat_id == 20
 
 
-def test_g2engine_get_entity_by_entity_id_023():
+def test_szengine_get_entity_by_entity_id_023():
     with open(
         path_to_testdata("SzEngineGetEntityByEntityIdResponse-test-023.json"),
         encoding="utf-8",
@@ -184,7 +184,7 @@ def test_g2engine_get_entity_by_entity_id_023():
     )
 
 
-def test_g2engine_get_entity_by_record_id_001():
+def test_szengine_get_entity_by_record_id_001():
     with open(
         path_to_testdata("SzEngineGetEntityByRecordIdResponse-test-001.json"),
         encoding="utf-8",
@@ -207,7 +207,7 @@ def test_g2engine_get_entity_by_record_id_001():
     )
 
 
-def test_g2engine_get_record_003():
+def test_szengine_get_record_003():
     with open(
         path_to_testdata("SzEngineGetRecordResponse-test-003.json"), encoding="utf-8"
     ) as input_file:
@@ -220,7 +220,7 @@ def test_g2engine_get_record_003():
 
 
 # TODO: Fix this
-# def test_g2engine_get_redo_record_014():
+# def test_szengine_get_redo_record_014():
 #     with open(
 #         path_to_testdata("SzEngineGetRedoRecordResponse-test-001.json"),
 #         encoding="utf-8",
@@ -229,7 +229,7 @@ def test_g2engine_get_record_003():
 #     assert response.value.value == {}
 
 
-def test_g2engine_get_virtual_entity_by_record_id_025():
+def test_szengine_get_virtual_entity_by_record_id_025():
     with open(
         path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-025.json"),
         encoding="utf-8",
@@ -256,4 +256,4 @@ def test_g2engine_get_virtual_entity_by_record_id_025():
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    test_g2engine_add_record_with_info_001()
+    test_szengine_add_record_with_info_001()
