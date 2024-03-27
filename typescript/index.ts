@@ -2,72 +2,17 @@
 
 export type Senzingapi = any;
 
-export interface Address {
-  ADDR_CITY: string;
-  ADDR_COUNTRY: string;
-  ADDR_FROM_DATE: string;
-  ADDR_FULL: string;
-  ADDR_LINE1: string;
-  ADDR_LINE2: string;
-  ADDR_LINE3: string;
-  ADDR_LINE4: string;
-  ADDR_LINE5: string;
-  ADDR_LINE6: string;
-  ADDR_POSTAL_CODE: string;
-  ADDR_STATE: string;
-  ADDR_THRU_DATE: string;
-  ADDR_TYPE: string;
+export interface AddDataSource {
+  DSRC_ID: number;
 }
-
-export type Addresses = Address[];
 
 export interface AffectedEntity {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
 }
-
-export interface AttributeCounter {
-  ACCT_NUM: number;
-  ADDRESS: number;
-  ADDR_KEY: number;
-  CALL_SIGN: number;
-  CITIZENSHIP: number;
-  COUNTRY_OF_ASSOCIATION: number;
-  DEFERRED_DELETE: number;
-  DOB: number;
-  DRLIC: number;
-  DUNS_NUMBER: number;
-  EMAIL: number;
-  EMAIL_KEY: number;
-  ENTITY_COUNT: number;
-  ENTITY_SIZE: number;
-  GENDER: number;
-  ID_KEY: number;
-  IMO_NUMBER: number;
-  LEI_NUMBER: number;
-  LOGIN_ID: number;
-  MAX_RES_ENT_ID: number;
-  MIN_RES_ENT_ID: number;
-  NAME: number;
-  NAME_KEY: number;
-  NATIONALITY: number;
-  NATIONAL_ID: number;
-  OFAC_ID: number;
-  OTHER_ID: number;
-  PASSPORT: number;
-  PHONE: number;
-  PHONE_KEY: number;
-  RECORD_TYPE: number;
-  REGISTRATION_COUNTRY: number;
-  REGISTRATION_DATE: number;
-  REL_ANCHOR: number;
-  REL_POINTER: number;
-  SEARCH_KEY: number;
-  SSN: number;
-  TAX_ID: number;
-  WEBSITE: number;
-}
-
-export type AttributeCounters = AttributeCounter[];
 
 export interface CfgAttr {
   ADVANCED: string;
@@ -349,6 +294,11 @@ export interface ConfigBaseVersion {
   VERSION: string;
 }
 
+export interface CheckDatabasePerformance {
+  insertTime: number;
+  numRecordsInserted: number;
+}
+
 export interface CompatibilityVersion {
   CONFIG_VERSION: string;
 }
@@ -359,7 +309,9 @@ export interface Config {
   SYS_CREATE_DT: string;
 }
 
-export type Configs = Config[];
+export interface ConfigList {
+  CONFIGS: Config[];
+}
 
 export interface DataSource {
   /**
@@ -373,53 +325,19 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
-export interface DiagnosticFetchNextEntityBySizeResponseXxx0 {
-  DSRC_CODE: string;
-  ENT_SRC_DESC: string;
-  ENT_SRC_KEY: string;
-  ERRULE_CODE: string;
-  ER_ID: number;
-  ETYPE_CODE: string;
-  JSON_DATA: string;
-  MATCH_KEY: string;
-  OBS_ENT_ID: number;
-  RECORD_ID: string;
-  RES_ENT_ID: number;
-}
-
-export type DiagnosticFetchNextEntityBySizeResponseXxx = DiagnosticFetchNextEntityBySizeResponseXxx0[];
-
-export type EntitiesByFeatureId = EntityByFeatureId[];
-
 export interface Entity {
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
-}
-
-export interface EntityByFeatureId {
-  LIB_FEAT_ID: number;
-  RES_ENT_ID: number;
-  USAGE_TYPE: string;
-}
-
-export interface EntityBySize {
-  DSRC_CODE: string;
-  ENT_SRC_DESC: string;
-  ENT_SRC_KEY: string;
-  ERRULE_CODE: string;
-  ER_ID: number;
-  ETYPE_CODE: string;
-  JSON_DATA: string;
-  MATCH_KEY: string;
-  OBS_ENT_ID: number;
-  RECORD_ID: string;
-  RES_ENT_ID: number;
 }
 
 export interface EntityPath {
   END_ENTITY_ID: number;
   ENTITIES: number[];
   START_ENTITY_ID: number;
+}
+
+export interface ExportConfig {
+  G2_CONFIG: G2config;
 }
 
 export interface FeatureDescriptionValue {
@@ -457,211 +375,9 @@ export interface FeatureScoreForAttribute {
   SCORE_BUCKET: string;
 }
 
-export interface FeatureScores {
-  ACCOUNT_DOMAIN: FeatureScoresForAttribute;
-  ACCOUNT_NUMBER: FeatureScoresForAttribute;
-  ACCT_NUM: FeatureScoresForAttribute;
-  ADDRESS: FeatureScoresForAttribute;
-  ADDRESS_LIST: FeatureScoresForAttribute;
-  ADDR_FULL: FeatureScoresForAttribute;
-  ADDR_KEY: FeatureScoresForAttribute;
-  CELL_PHONE_NUMBER: FeatureScoresForAttribute;
-  CITIZENSHIP: FeatureScoresForAttribute;
-  COUNTRY_OF_ASSOCIATION: FeatureScoresForAttribute;
-  DATA_SOURCE: FeatureScoresForAttribute;
-  DATE_OF_BIRTH: FeatureScoresForAttribute;
-  DATE_OF_DEATH: FeatureScoresForAttribute;
-  DOB: FeatureScoresForAttribute;
-  DOD: FeatureScoresForAttribute;
-  DRIVERS_LICENSE_NUMBER: FeatureScoresForAttribute;
-  DRIVERS_LICENSE_STATE: FeatureScoresForAttribute;
-  DRLIC: FeatureScoresForAttribute;
-  DUNS_NUMBER: FeatureScoresForAttribute;
-  EMAIL: FeatureScoresForAttribute;
-  EMAIL_ADDRESS: FeatureScoresForAttribute;
-  EMAIL_KEY: FeatureScoresForAttribute;
-  EMPLOYER_NAME: FeatureScoresForAttribute;
-  ENTITY_TYPE: FeatureScoresForAttribute;
-  FACEBOOK: FeatureScoresForAttribute;
-  GENDER: FeatureScoresForAttribute;
-  GROUP_ASSN_ID_NUMBER: FeatureScoresForAttribute;
-  GROUP_ASSN_ID_TYPE: FeatureScoresForAttribute;
-  GROUP_ASSOCIATION_ORG_NAME: FeatureScoresForAttribute;
-  GROUP_ASSOCIATION_TYPE: FeatureScoresForAttribute;
-  ID_KEY: FeatureScoresForAttribute;
-  INSTAGRAM: FeatureScoresForAttribute;
-  LEI_NUMBER: FeatureScoresForAttribute;
-  LINKEDIN: FeatureScoresForAttribute;
-  LOAD_ID: FeatureScoresForAttribute;
-  LOGIN_ID: FeatureScoresForAttribute;
-  NAME: FeatureScoresForAttribute;
-  NAME_FULL: FeatureScoresForAttribute;
-  NAME_KEY: FeatureScoresForAttribute;
-  NAME_LIST: FeatureScoresForAttribute;
-  NATIONALITY: FeatureScoresForAttribute;
-  NATIONAL_ID: FeatureScoresForAttribute;
-  NATIONAL_ID_COUNTRY: FeatureScoresForAttribute;
-  NATIONAL_ID_NUMBER: FeatureScoresForAttribute;
-  NIN_COUNTRY: FeatureScoresForAttribute;
-  NIN_NUMBER: FeatureScoresForAttribute;
-  NPI_NUMBER: FeatureScoresForAttribute;
-  OTHER_ID_COUNTRY: FeatureScoresForAttribute;
-  OTHER_ID_NUMBER: FeatureScoresForAttribute;
-  OTHER_ID_TYPE: FeatureScoresForAttribute;
-  PASSPORT: FeatureScoresForAttribute;
-  PASSPORTS: FeatureScoresForAttribute;
-  PASSPORT_COUNTRY: FeatureScoresForAttribute;
-  PASSPORT_NUMBER: FeatureScoresForAttribute;
-  PHONE: FeatureScoresForAttribute;
-  PHONES: FeatureScoresForAttribute;
-  PHONE_KEY: FeatureScoresForAttribute;
-  PLACE_OF_BIRTH: FeatureScoresForAttribute;
-  PRIMARY_NAME_FIRST: FeatureScoresForAttribute;
-  PRIMARY_NAME_LAST: FeatureScoresForAttribute;
-  PRIMARY_NAME_MIDDLE: FeatureScoresForAttribute;
-  PRIMARY_NAME_ORG: FeatureScoresForAttribute;
-  PRIMARY_NAME_PREFIX: FeatureScoresForAttribute;
-  PRIMARY_NAME_SUFFIX: FeatureScoresForAttribute;
-  PRIMARY_PHONE_NUMBER: FeatureScoresForAttribute;
-  RECORD_TYPE: FeatureScoresForAttribute;
-  REGISTRATION_COUNTRY: FeatureScoresForAttribute;
-  REGISTRATION_DATE: FeatureScoresForAttribute;
-  REL_ANCHOR: FeatureScoresForAttribute;
-  REL_ANCHOR_DOMAIN: FeatureScoresForAttribute;
-  REL_ANCHOR_KEY: FeatureScoresForAttribute;
-  REL_LINK: FeatureScoresForAttribute;
-  REL_POINTER: FeatureScoresForAttribute;
-  REL_POINTER_DOMAIN: FeatureScoresForAttribute;
-  REL_POINTER_KEY: FeatureScoresForAttribute;
-  REL_POINTER_ROLE: FeatureScoresForAttribute;
-  SIGNAL: FeatureScoresForAttribute;
-  SKYPE: FeatureScoresForAttribute;
-  SOCIAL_HANDLE: FeatureScoresForAttribute;
-  SOCIAL_NETWORK: FeatureScoresForAttribute;
-  SOURCE_ID: FeatureScoresForAttribute;
-  SSN: FeatureScoresForAttribute;
-  SSN_LAST4: FeatureScoresForAttribute;
-  SSN_NUMBER: FeatureScoresForAttribute;
-  TANGO: FeatureScoresForAttribute;
-  TAX_ID_COUNTRY: FeatureScoresForAttribute;
-  TAX_ID_NUMBER: FeatureScoresForAttribute;
-  TAX_ID_TYPE: FeatureScoresForAttribute;
-  TELEGRAM: FeatureScoresForAttribute;
-  TRUSTED_ID_NUMBER: FeatureScoresForAttribute;
-  TRUSTED_ID_TYPE: FeatureScoresForAttribute;
-  TWITTER: FeatureScoresForAttribute;
-  VIBER: FeatureScoresForAttribute;
-  WEBSITE_ADDRESS: FeatureScoresForAttribute;
-  WECHAT: FeatureScoresForAttribute;
-  WHATSAPP: FeatureScoresForAttribute;
-  WORK_PHONE_NUMBER: FeatureScoresForAttribute;
-  ZOOMROOM: FeatureScoresForAttribute;
-}
+export type FeatureScores = string;
 
 export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
-
-export type FeaturesForAttribute = FeatureForAttribute[];
-
-export interface FeaturesXxx {
-  ACCOUNT_DOMAIN: FeaturesForAttribute;
-  ACCOUNT_NUMBER: FeaturesForAttribute;
-  ACCT_NUM: FeaturesForAttribute;
-  ADDRESS: FeaturesForAttribute;
-  ADDRESS_LIST: FeaturesForAttribute;
-  ADDR_FULL: FeaturesForAttribute;
-  ADDR_KEY: FeaturesForAttribute;
-  CELL_PHONE_NUMBER: FeaturesForAttribute;
-  CITIZENSHIP: FeaturesForAttribute;
-  COUNTRY_OF_ASSOCIATION: FeaturesForAttribute;
-  DATA_SOURCE: FeaturesForAttribute;
-  DATE_OF_BIRTH: FeaturesForAttribute;
-  DATE_OF_DEATH: FeaturesForAttribute;
-  DOB: FeaturesForAttribute;
-  DOD: FeaturesForAttribute;
-  DRIVERS_LICENSE_NUMBER: FeaturesForAttribute;
-  DRIVERS_LICENSE_STATE: FeaturesForAttribute;
-  DRLIC: FeaturesForAttribute;
-  DUNS_NUMBER: FeaturesForAttribute;
-  EMAIL: FeaturesForAttribute;
-  EMAIL_ADDRESS: FeaturesForAttribute;
-  EMAIL_KEY: FeaturesForAttribute;
-  EMPLOYER_NAME: FeaturesForAttribute;
-  ENTITY_TYPE: FeaturesForAttribute;
-  FACEBOOK: FeaturesForAttribute;
-  GENDER: FeaturesForAttribute;
-  GROUP_ASSN_ID_NUMBER: FeaturesForAttribute;
-  GROUP_ASSN_ID_TYPE: FeaturesForAttribute;
-  GROUP_ASSOCIATION_ORG_NAME: FeaturesForAttribute;
-  GROUP_ASSOCIATION_TYPE: FeaturesForAttribute;
-  ID_KEY: FeaturesForAttribute;
-  INSTAGRAM: FeaturesForAttribute;
-  LEI_NUMBER: FeaturesForAttribute;
-  LINKEDIN: FeaturesForAttribute;
-  LOAD_ID: FeaturesForAttribute;
-  LOGIN_ID: FeaturesForAttribute;
-  NAME: FeaturesForAttribute;
-  NAME_FULL: FeaturesForAttribute;
-  NAME_KEY: FeaturesForAttribute;
-  NAME_LIST: FeaturesForAttribute;
-  NATIONALITY: FeaturesForAttribute;
-  NATIONAL_ID: FeaturesForAttribute;
-  NATIONAL_ID_COUNTRY: FeaturesForAttribute;
-  NATIONAL_ID_NUMBER: FeaturesForAttribute;
-  NIN_COUNTRY: FeaturesForAttribute;
-  NIN_NUMBER: FeaturesForAttribute;
-  NPI_NUMBER: FeaturesForAttribute;
-  OTHER_ID_COUNTRY: FeaturesForAttribute;
-  OTHER_ID_NUMBER: FeaturesForAttribute;
-  OTHER_ID_TYPE: FeaturesForAttribute;
-  PASSPORT: FeaturesForAttribute;
-  PASSPORTS: FeaturesForAttribute;
-  PASSPORT_COUNTRY: FeaturesForAttribute;
-  PASSPORT_NUMBER: FeaturesForAttribute;
-  PHONE: FeaturesForAttribute;
-  PHONES: FeaturesForAttribute;
-  PHONE_KEY: FeaturesForAttribute;
-  PLACE_OF_BIRTH: FeaturesForAttribute;
-  PRIMARY_NAME_FIRST: FeaturesForAttribute;
-  PRIMARY_NAME_LAST: FeaturesForAttribute;
-  PRIMARY_NAME_MIDDLE: FeaturesForAttribute;
-  PRIMARY_NAME_ORG: FeaturesForAttribute;
-  PRIMARY_NAME_PREFIX: FeaturesForAttribute;
-  PRIMARY_NAME_SUFFIX: FeaturesForAttribute;
-  PRIMARY_PHONE_NUMBER: FeaturesForAttribute;
-  RECORD_TYPE: FeaturesForAttribute;
-  REGISTRATION_COUNTRY: FeaturesForAttribute;
-  REGISTRATION_DATE: FeaturesForAttribute;
-  REL_ANCHOR: FeaturesForAttribute;
-  REL_ANCHOR_DOMAIN: FeaturesForAttribute;
-  REL_ANCHOR_KEY: FeaturesForAttribute;
-  REL_LINK: FeaturesForAttribute;
-  REL_POINTER: FeaturesForAttribute;
-  REL_POINTER_DOMAIN: FeaturesForAttribute;
-  REL_POINTER_KEY: FeaturesForAttribute;
-  REL_POINTER_ROLE: FeaturesForAttribute;
-  SIGNAL: FeaturesForAttribute;
-  SKYPE: FeaturesForAttribute;
-  SOCIAL_HANDLE: FeaturesForAttribute;
-  SOCIAL_NETWORK: FeaturesForAttribute;
-  SOURCE_ID: FeaturesForAttribute;
-  SSN: FeaturesForAttribute;
-  SSN_LAST4: FeaturesForAttribute;
-  SSN_NUMBER: FeaturesForAttribute;
-  TANGO: FeaturesForAttribute;
-  TAX_ID_COUNTRY: FeaturesForAttribute;
-  TAX_ID_NUMBER: FeaturesForAttribute;
-  TAX_ID_TYPE: FeaturesForAttribute;
-  TELEGRAM: FeaturesForAttribute;
-  TRUSTED_ID_NUMBER: FeaturesForAttribute;
-  TRUSTED_ID_TYPE: FeaturesForAttribute;
-  TWITTER: FeaturesForAttribute;
-  VIBER: FeaturesForAttribute;
-  WEBSITE_ADDRESS: FeaturesForAttribute;
-  WECHAT: FeaturesForAttribute;
-  WHATSAPP: FeaturesForAttribute;
-  WORK_PHONE_NUMBER: FeaturesForAttribute;
-  ZOOMROOM: FeaturesForAttribute;
-}
 
 export interface FinalState {
   NEED_REEVALUATION: number;
@@ -713,468 +429,16 @@ export interface G2config {
   SYS_OOM: SysOom[];
 }
 
-export interface G2configAddDataSourceResponse {
-  DSRC_ID: number;
+export interface GetConfig {
+  G2_CONFIG: G2config;
 }
 
-export interface G2configListDataSourcesResponse {
+export interface GetDataSources {
   DATA_SOURCES: DataSource[];
 }
 
-export interface G2configSaveResponse {
+export interface GetJsonString {
   G2_CONFIG: G2config;
-}
-
-export interface G2configmgrGetConfigListResponse {
-  CONFIGS: Configs;
-}
-
-export interface G2configmgrGetConfigResponse {
-  G2_CONFIG: G2config;
-}
-
-export interface G2diagnosticCheckDbperfResponse {
-  insertTime: number;
-  numRecordsInserted: number;
-}
-
-export type G2diagnosticFetchNextEntityBySizeResponse = EntityBySize[];
-
-export interface G2diagnosticFindEntitiesByFeatureIdsResponseXxx0 {
-  LIB_FEAT_ID: number;
-  RES_ENT_ID: number;
-  USAGE_TYPE: string;
-}
-
-export type G2diagnosticFindEntitiesByFeatureIdsResponseXxx = G2diagnosticFindEntitiesByFeatureIdsResponseXxx0[];
-
-export interface G2diagnosticGetDbinfoResponseDetail {
-  Name: string;
-  Type: string;
-}
-
-export interface G2diagnosticGetDbinfoResponse {
-  "Database Details": G2diagnosticGetDbinfoResponseDetail[];
-  "Hybrid Mode": boolean;
-}
-
-export interface G2diagnosticGetDataSourceCountsResponse0 {
-  DSRC_CODE: string;
-  DSRC_ID: number;
-  DSRC_RECORD_COUNT: number;
-  ETYPE_CODE: string;
-  ETYPE_ID: number;
-  OBS_ENT_COUNT: number;
-}
-
-export type G2diagnosticGetDataSourceCountsResponse = G2diagnosticGetDataSourceCountsResponse0[];
-
-export interface G2diagnosticGetEntityDetailsResponse0 {
-  DERIVED: string;
-  DSRC_CODE: string;
-  ERRULE_CODE: string;
-  ETYPE_CODE: string;
-  FEAT_DESC: string;
-  FTYPE_CODE: string;
-  MATCH_KEY: string;
-  OBS_ENT_ID: number;
-  RECORD_ID: number;
-  RES_ENT_ID: number;
-  USAGE_TYPE: string;
-}
-
-export type G2diagnosticGetEntityDetailsResponse = G2diagnosticGetEntityDetailsResponse0[];
-
-export interface G2diagnosticGetEntityResumeResponse0 {
-  DSRC_CODE: string;
-  ENT_SRC_DESC: string;
-  ERRULE_CODE: string;
-  ETYPE_CODE: string;
-  JSON_DATA: string;
-  MATCH_KEY: string;
-  RECORD_ID: string;
-  REL_ENT_ID: number;
-  RES_ENT_ID: number;
-}
-
-export type G2diagnosticGetEntityResumeResponse = G2diagnosticGetEntityResumeResponse0[];
-
-export type G2diagnosticGetEntitySizeBreakdownResponse = AttributeCounters;
-
-export interface G2diagnosticGetFeatureResponseElements {
-  FELEM_CODE: string;
-  FELEM_VALUE: string;
-}
-
-export interface G2diagnosticGetFeatureResponse {
-  ELEMENTS: G2diagnosticGetFeatureResponseElements[];
-  FTYPE_CODE: string;
-  LIB_FEAT_ID: number;
-}
-
-export interface G2diagnosticGetGenericFeaturesResponse0 {
-  CANDIDATE_CAP_REACHED: string;
-  ESTIMATED_COUNT: number;
-  FEAT_DESC: string;
-  FTYPE_CODE: string;
-  LIB_FEAT_ID: number;
-  SCORING_CAP_REACHED: string;
-}
-
-export type G2diagnosticGetGenericFeaturesResponse = G2diagnosticGetGenericFeaturesResponse0[];
-
-export interface G2diagnosticGetMappingStatisticsResponse0 {
-  DERIVED: string;
-  DSRC_CODE: string;
-  ETYPE_CODE: string;
-  FTYPE_CODE: string;
-  MAX_FEAT_DESC: string;
-  MIN_FEAT_DESC: string;
-  REC_COUNT: number;
-  REC_PCT: number;
-  UNIQ_COUNT: number;
-  UNIQ_PCT: number;
-  USAGE_TYPE: string;
-}
-
-export type G2diagnosticGetMappingStatisticsResponse = G2diagnosticGetMappingStatisticsResponse0[];
-
-export interface G2diagnosticGetRelationshipDetailsResponse0 {
-  ERRULE_CODE: string;
-  FEAT_DESC: string;
-  FTYPE_CODE: string;
-  MATCH_KEY: string;
-  RES_ENT_ID: number;
-}
-
-export type G2diagnosticGetRelationshipDetailsResponse = G2diagnosticGetRelationshipDetailsResponse0[];
-
-export interface G2diagnosticGetResolutionStatisticsResponseRawMatchKeys {
-  MATCH_KEY: string;
-}
-
-export interface G2diagnosticGetResolutionStatisticsResponse0 {
-  ERRULE_CODE: string;
-  ERRULE_ID: number;
-  IS_AMBIGUOUS: string;
-  MATCH_KEY: string;
-  MATCH_LEVEL: number;
-  MAX_RES_ENT_ID: number;
-  MAX_RES_REL_ID: number;
-  MIN_RES_ENT_ID: number;
-  MIN_RES_REL_ID: number;
-  RAW_MATCH_KEYS: G2diagnosticGetResolutionStatisticsResponseRawMatchKeys[];
-  RECORD_COUNT: number;
-}
-
-export type G2diagnosticGetResolutionStatisticsResponse = G2diagnosticGetResolutionStatisticsResponse0[];
-
-export type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown;
-
-export type G2engineAddRecordWithInfoResponse = WithInfo;
-
-export type G2engineAddRecordWithInfoWithReturnedRecordIdResponse = WithInfo;
-
-export interface G2engineCheckRecordResponseCheckRecordResponse {
-  CANDIDATE_MATCH: string;
-  DSRC_CODE: string;
-  ERRULE_CODE: string;
-  ERRULE_ID: number;
-  MATCH_KEY: string;
-  MATCH_LEVEL: number;
-  MATCH_LEVEL_CODE: string;
-  NON_GENERIC_CANDIDATE_MATCH: string;
-  RECORD_ID: string;
-}
-
-export interface G2engineCheckRecordResponse {
-  CHECK_RECORD_RESPONSE: G2engineCheckRecordResponseCheckRecordResponse[];
-}
-
-export type G2engineDeleteRecordWithInfoResponse = WithInfo;
-
-export interface G2engineExportConfigAndConfigIdResponse {
-  G2_CONFIG: G2config;
-}
-
-export interface G2engineExportConfigResponse {
-  G2_CONFIG: G2config;
-}
-
-export type G2engineFetchNextResponse = FixmeUnknown;
-
-export type G2engineFindInterestingEntitiesByEntityIdResponse = Interesting;
-
-export type G2engineFindInterestingEntitiesByRecordIdResponse = Interesting;
-
-export type G2engineFindNetworkByEntityIdv2response = Network;
-
-export type G2engineFindNetworkByEntityIdResponse = Network;
-
-export type G2engineFindNetworkByRecordIdv2response = Network;
-
-export type G2engineFindNetworkByRecordIdResponse = Network;
-
-export type G2engineFindPathByEntityIdv2response = Path;
-
-export type G2engineFindPathByEntityIdResponse = Path;
-
-export type G2engineFindPathByRecordIdv2response = Path;
-
-export type G2engineFindPathByRecordIdResponse = Path;
-
-export type G2engineFindPathExcludingByEntityIdv2response = Path;
-
-export type G2engineFindPathExcludingByEntityIdResponse = Path;
-
-export type G2engineFindPathExcludingByRecordIdv2response = Path;
-
-export type G2engineFindPathExcludingByRecordIdResponse = Path;
-
-export type G2engineFindPathIncludingSourceByEntityIdv2response = Path;
-
-export type G2engineFindPathIncludingSourceByEntityIdResponse = Path;
-
-export type G2engineFindPathIncludingSourceByRecordIdv2response = Path;
-
-export type G2engineFindPathIncludingSourceByRecordIdResponse = Path;
-
-export type G2engineGetEntityByEntityIdv2response = Entity;
-
-export type G2engineGetEntityByEntityIdResponse = Entity;
-
-export type G2engineGetEntityByRecordIdv2response = Entity;
-
-export type G2engineGetEntityByRecordIdResponse = Entity;
-
-export type G2engineGetRecordResponse = Record;
-
-export type G2engineGetRecordV2response = Record;
-
-export type G2engineGetRedoRecordResponse = FixmeUnknown;
-
-export type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity;
-
-export type G2engineGetVirtualEntityByRecordIdResponse = VirtualEntity;
-
-export type G2engineHowEntityByEntityIdv2response = How;
-
-export type G2engineHowEntityByEntityIdResponse = How;
-
-export type G2engineProcessRedoRecordResponse = FixmeUnknown;
-
-export type G2engineProcessRedoRecordWithInfoResponse = WithInfo;
-
-export type G2engineProcessWithInfoResponse = WithInfo;
-
-export type G2engineProcessWithResponseResizeResponse = Process;
-
-export type G2engineProcessWithResponseResponse = Process;
-
-export type G2engineReevaluateEntityWithInfoResponse = WithInfo;
-
-export type G2engineReevaluateRecordWithInfoResponse = WithInfo;
-
-export type G2engineReplaceRecordWithInfoResponse = WithInfo;
-
-export type G2engineSearchByAttributesResponse = Search;
-
-export type G2engineSearchByAttributesResponseXxx = EntitiesByFeatureId;
-
-export type G2engineSearchByAttributesV2response = Search;
-
-export type G2engineSearchByAttributesV3response = Search;
-
-export interface G2engineStatsResponseDuration {
-  PATTERN: string;
-  TYPE: string;
-}
-
-export interface G2engineStatsResponseReresolveTriggers {
-  abortRetry: number;
-  multipleResolvableCandidates: number;
-  resolveNewFeatures: number;
-  unresolveMovement: number;
-}
-
-export interface G2engineStatsResponseUnresolveTriggers {
-  extensiveResolve: number;
-  normalResolve: number;
-}
-
-export interface G2engineStatsResponseWorkloadExpressedFeatureCall {
-  EFCALL_ID: number;
-  EFUNC_CODE: string;
-  numCalls: number;
-}
-
-export interface G2engineStatsResponseWorkloadReresolveTriggers {
-  abortRetry: number;
-  multipleResolvableCandidates: number;
-  newFeatureFTypes: AttributeCounters;
-  resolveNewFeatures: number;
-  unresolveMovement: number;
-}
-
-export interface G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad {
-  cpuIdle: number;
-  cpuSoftIrq: number;
-  cpuSystem: number;
-  cpuUser: number;
-  cpuWait: number;
-}
-
-export interface G2engineStatsResponseWorkloadSystemResourcesCurrResource {
-  activeThreads: number;
-  availableMemory: string;
-  systemLoad: G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad[];
-  workerThreads: number;
-}
-
-export interface G2engineStatsResponseWorkloadSystemResourcesInitResource {
-  availableMemory: string;
-  logicalCores: number;
-  physicalCores: number;
-  totalMemory: string;
-}
-
-export interface G2engineStatsResponseWorkloadSystemResources {
-  currResources: G2engineStatsResponseWorkloadSystemResourcesCurrResource[];
-  initResources: G2engineStatsResponseWorkloadSystemResourcesInitResource[];
-}
-
-export interface G2engineStatsResponseWorkloadThreadState {
-  active: number;
-  dataLatchContention: number;
-  idle: number;
-  loader: number;
-  obsEntContention: number;
-  resEntContention: number;
-  resolver: number;
-  scoring: number;
-  sqlExecuting: number;
-}
-
-export interface G2engineStatsResponseWorkloadUnresolveTriggers {
-  ambiguousMultiResolve: number;
-  ambiguousNoResolve: number;
-  extensiveResolve: number;
-  normalResolve: number;
-  relLink: number;
-  update: number;
-}
-
-export interface G2engineStatsResponseWorkload {
-  CorruptEntityTestDiagnosis: FixmeUnknown;
-  abortedUnresolve: number;
-  actualAmbiguousTest: number;
-  addedRecords: number;
-  apiVersion: string;
-  cacheHit: AttributeCounters;
-  cacheMiss: AttributeCounters;
-  cachedAmbiguousTest: number;
-  candidateBuilders: AttributeCounters;
-  candidates: number;
-  deletedRecords: number;
-  duration: number;
-  expressedFeatureCalls: G2engineStatsResponseWorkloadExpressedFeatureCall[];
-  expressedFeaturesCreated: AttributeCounters;
-  filteredObsFeat: number;
-  genericDetect: AttributeCounters;
-  gnrScorersUsed: number;
-  highContentionFeat: AttributeCounters;
-  highContentionResEnt: AttributeCounters;
-  latchContention: AttributeCounters;
-  libFeatCacheHit: number;
-  libFeatCacheMiss: number;
-  loadedRecords: number;
-  redoTriggers: AttributeCounters;
-  reducedScoredFeatureType: AttributeCounters;
-  reevaluations: number;
-  repairedEntities: number;
-  reresolveSkipped: number;
-  reresolveTriggers: G2engineStatsResponseWorkloadReresolveTriggers;
-  resFeatStatCacheHit: number;
-  resFeatStatCacheMiss: number;
-  resFeatStatUpdate: number;
-  retries: number;
-  scoredPairs: AttributeCounters;
-  suppressedCandidateBuilders: AttributeCounters;
-  suppressedDisclosedRelationshipDomainCount: number;
-  suppressedScoredFeatureType: AttributeCounters;
-  systemResources: G2engineStatsResponseWorkloadSystemResources;
-  threadState: G2engineStatsResponseWorkloadThreadState;
-  unresolveTest: number;
-  unresolveTriggers: G2engineStatsResponseWorkloadUnresolveTriggers;
-}
-
-export interface G2engineStatsResponse {
-  MISSING_RES_ENT: number;
-  MISSING_RES_ENT_AND_OKEY: number;
-  abortedUnresolve: number;
-  actualAmbiguousTest: number;
-  addedRecords: number;
-  cacheHit: AttributeCounters;
-  candidateBuilders: AttributeCounters;
-  candidates: number;
-  deletedRecords: number;
-  duration: G2engineStatsResponseDuration;
-  filteredObsFeat: number;
-  genericDetect: AttributeCounters;
-  latchContention: AttributeCounters;
-  loadedRecords: number;
-  redoTriggers: AttributeCounters;
-  reducedScoredFeatureType: AttributeCounters;
-  reevaluations: number;
-  repairedEntities: number;
-  reresolveSkipped: number;
-  reresolveTriggers: G2engineStatsResponseReresolveTriggers;
-  retries: number;
-  scoredPairs: AttributeCounters;
-  suppressedCandidateBuilders: AttributeCounters;
-  suppressedScoredFeatureType: AttributeCounters;
-  unresolveTest: number;
-  unresolveTriggers: G2engineStatsResponseUnresolveTriggers;
-  workload: G2engineStatsResponseWorkload;
-}
-
-export type G2engineStreamExportJsonentityReportResponse = FixmeUnknown;
-
-export type G2engineWhyEntitiesResponse = WhyEntities;
-
-export type G2engineWhyEntitiesV2response = WhyEntities;
-
-export type G2engineWhyEntityByEntityIdv2response = WhyEntity;
-
-export type G2engineWhyEntityByEntityIdResponse = WhyEntity;
-
-export type G2engineWhyEntityByRecordIdv2response = WhyEntity;
-
-export type G2engineWhyEntityByRecordIdResponse = WhyEntity;
-
-export type G2engineWhyRecordsResponse = WhyRecords;
-
-export type G2engineWhyRecordsV2response = WhyRecords;
-
-export interface G2productLicenseResponse {
-  billing: string;
-  contract: string;
-  customer: string;
-  expireDate: string;
-  issueDate: string;
-  licenseLevel: string;
-  licenseType: string;
-  recordLimit: number;
-}
-
-export interface G2productVersionResponse {
-  BUILD_DATE: string;
-  BUILD_NUMBER: string;
-  BUILD_VERSION: string;
-  COMPATIBILITY_VERSION: CompatibilityVersion;
-  PRODUCT_NAME: string;
-  SCHEMA_VERSION: SchemaVersion;
-  VERSION: string;
 }
 
 export interface How {
@@ -1203,133 +467,14 @@ export interface InterestingEntitySampleRecords {
 
 export interface InterestingEntity {
   DEGREES: number;
+
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   FLAGS: string[];
   SAMPLE_RECORDS: InterestingEntitySampleRecords[];
-}
-
-export interface JsonDataXxxAcctNum {
-  ACCOUNT_DOMAIN: string;
-  ACCOUNT_NUMBER: string;
-}
-
-export interface JsonDataXxxSsn {
-  PASSPORT_NUMBER: string;
-  SSN_NUMBER: string;
-}
-
-export interface JsonDataXxxSsnLast4 {
-  SSN_LAST4: number;
-}
-
-export interface JsonDataXxx {
-  ACCOUNT_DOMAIN: string;
-  ACCOUNT_NUMBER: string;
-  ACCT_NUM: JsonDataXxxAcctNum[];
-  ADDRESS: string;
-  ADDRESS_LIST: Addresses;
-  ADDR_FULL: string;
-  ADDR_KEY: string;
-  CELL_PHONE_NUMBER: string;
-  CITIZENSHIP: string;
-  COUNTRY_OF_ASSOCIATION: string;
-  DATA_SOURCE: string;
-  DATE_OF_BIRTH: string;
-  DATE_OF_DEATH: string;
-  DOB: string;
-  DOD: string;
-  DRIVERS_LICENSE_NUMBER: string;
-  DRIVERS_LICENSE_STATE: string;
-  DRLIC: string;
-  DSRC_ACTION: string;
-  DSRC_CODE: string;
-  DUNS_NUMBER: string;
-  EMAIL: string;
-  EMAIL_ADDRESS: string;
-  EMAIL_KEY: string;
-  EMPLOYER_NAME: string;
-  ENTITY_TYPE: string;
-  ENT_SRC_DESC: string;
-  ENT_SRC_KEY: string;
-  ETYPE_CODE: string;
-  FACEBOOK: string;
-  GENDER: string;
-  GROUP_ASSN_ID_NUMBER: string;
-  GROUP_ASSN_ID_TYPE: string;
-  GROUP_ASSOCIATION_ORG_NAME: string;
-  GROUP_ASSOCIATION_TYPE: string;
-  ID_KEY: string;
-  INSTAGRAM: string;
-  LEI_NUMBER: string;
-  LINKEDIN: string;
-  LOAD_ID: string;
-  LOGIN_ID: string;
-  NAME: Names;
-  NAME_FULL: string;
-  NAME_KEY: string;
-  NAME_LIST: Names;
-  NATIONALITY: string;
-  NATIONAL_ID: string;
-  NATIONAL_ID_COUNTRY: string;
-  NATIONAL_ID_NUMBER: string;
-  NIN_COUNTRY: string;
-  NIN_NUMBER: string;
-  NPI_NUMBER: string;
-  OBS_SRC_KEY: string;
-  OTHER_ID_COUNTRY: string;
-  OTHER_ID_NUMBER: string;
-  OTHER_ID_TYPE: string;
-  PASSPORT: string;
-  PASSPORTS: Passports;
-  PASSPORT_COUNTRY: string;
-  PASSPORT_NUMBER: string;
-  PHONE: string;
-  PHONES: Phones;
-  PHONE_KEY: string;
-  PLACE_OF_BIRTH: string;
-  PRIMARY_NAME_FIRST: string;
-  PRIMARY_NAME_LAST: string;
-  PRIMARY_NAME_MIDDLE: string;
-  PRIMARY_NAME_ORG: string;
-  PRIMARY_NAME_PREFIX: string;
-  PRIMARY_NAME_SUFFIX: string;
-  PRIMARY_PHONE_NUMBER: string;
-  RECORD_ID: string;
-  RECORD_TYPE: string;
-  REGISTRATION_COUNTRY: string;
-  REGISTRATION_DATE: string;
-  RELATIONSHIPS: Relationships;
-  REL_ANCHOR: string;
-  REL_ANCHOR_DOMAIN: string;
-  REL_ANCHOR_KEY: string;
-  REL_LINK: string;
-  REL_POINTER: string;
-  REL_POINTER_DOMAIN: string;
-  REL_POINTER_KEY: string;
-  REL_POINTER_ROLE: string;
-  SIGNAL: string;
-  SKYPE: string;
-  SOCIAL_HANDLE: string;
-  SOCIAL_NETWORK: string;
-  SOURCE_ID: string;
-  SSN: JsonDataXxxSsn[];
-  SSN_LAST4: JsonDataXxxSsnLast4[];
-  SSN_NUMBER: string;
-  TANGO: string;
-  TAX_ID_COUNTRY: string;
-  TAX_ID_NUMBER: string;
-  TAX_ID_TYPE: string;
-  TELEGRAM: string;
-  TRUSTED_ID_NUMBER: string;
-  TRUSTED_ID_TYPE: string;
-  TWITTER: string;
-  VIBER: string;
-  WEBSITE_ADDRESS: string;
-  WECHAT: string;
-  WHATSAPP: string;
-  WORK_PHONE_NUMBER: string;
-  ZOOMROOM: string;
-  name: Names;
 }
 
 export interface MatchInfoDisclosedRelationsRelAnchor {
@@ -1381,227 +526,12 @@ export interface MatchInfo {
   WHY_KEY: string;
 }
 
-export interface MatchInfoCandidateKeys {
-  ACCOUNT_DOMAIN: MatchInfosForAttribute;
-  ACCOUNT_NUMBER: MatchInfosForAttribute;
-  ACCT_NUM: MatchInfosForAttribute;
-  ADDRESS: MatchInfosForAttribute;
-  ADDRESS_LIST: MatchInfosForAttribute;
-  ADDR_FULL: MatchInfosForAttribute;
-  ADDR_KEY: MatchInfosForAttribute;
-  CELL_PHONE_NUMBER: MatchInfosForAttribute;
-  CITIZENSHIP: MatchInfosForAttribute;
-  COUNTRY_OF_ASSOCIATION: MatchInfosForAttribute;
-  DATA_SOURCE: MatchInfosForAttribute;
-  DATE_OF_BIRTH: MatchInfosForAttribute;
-  DATE_OF_DEATH: MatchInfosForAttribute;
-  DOB: MatchInfosForAttribute;
-  DOD: MatchInfosForAttribute;
-  DRIVERS_LICENSE_NUMBER: MatchInfosForAttribute;
-  DRIVERS_LICENSE_STATE: MatchInfosForAttribute;
-  DRLIC: MatchInfosForAttribute;
-  DUNS_NUMBER: MatchInfosForAttribute;
-  EMAIL: MatchInfosForAttribute;
-  EMAIL_ADDRESS: MatchInfosForAttribute;
-  EMAIL_KEY: MatchInfosForAttribute;
-  EMPLOYER_NAME: MatchInfosForAttribute;
-  ENTITY_TYPE: MatchInfosForAttribute;
-  FACEBOOK: MatchInfosForAttribute;
-  GENDER: MatchInfosForAttribute;
-  GROUP_ASSN_ID_NUMBER: MatchInfosForAttribute;
-  GROUP_ASSN_ID_TYPE: MatchInfosForAttribute;
-  GROUP_ASSOCIATION_ORG_NAME: MatchInfosForAttribute;
-  GROUP_ASSOCIATION_TYPE: MatchInfosForAttribute;
-  ID_KEY: MatchInfosForAttribute;
-  INSTAGRAM: MatchInfosForAttribute;
-  LEI_NUMBER: MatchInfosForAttribute;
-  LINKEDIN: MatchInfosForAttribute;
-  LOAD_ID: MatchInfosForAttribute;
-  LOGIN_ID: MatchInfosForAttribute;
-  NAME: MatchInfosForAttribute;
-  NAME_FULL: MatchInfosForAttribute;
-  NAME_KEY: MatchInfosForAttribute;
-  NAME_LIST: MatchInfosForAttribute;
-  NATIONALITY: MatchInfosForAttribute;
-  NATIONAL_ID: MatchInfosForAttribute;
-  NATIONAL_ID_COUNTRY: MatchInfosForAttribute;
-  NATIONAL_ID_NUMBER: MatchInfosForAttribute;
-  NIN_COUNTRY: MatchInfosForAttribute;
-  NIN_NUMBER: MatchInfosForAttribute;
-  NPI_NUMBER: MatchInfosForAttribute;
-  OTHER_ID_COUNTRY: MatchInfosForAttribute;
-  OTHER_ID_NUMBER: MatchInfosForAttribute;
-  OTHER_ID_TYPE: MatchInfosForAttribute;
-  PASSPORT: MatchInfosForAttribute;
-  PASSPORTS: MatchInfosForAttribute;
-  PASSPORT_COUNTRY: MatchInfosForAttribute;
-  PASSPORT_NUMBER: MatchInfosForAttribute;
-  PHONE: MatchInfosForAttribute;
-  PHONES: MatchInfosForAttribute;
-  PHONE_KEY: MatchInfosForAttribute;
-  PLACE_OF_BIRTH: MatchInfosForAttribute;
-  PRIMARY_NAME_FIRST: MatchInfosForAttribute;
-  PRIMARY_NAME_LAST: MatchInfosForAttribute;
-  PRIMARY_NAME_MIDDLE: MatchInfosForAttribute;
-  PRIMARY_NAME_ORG: MatchInfosForAttribute;
-  PRIMARY_NAME_PREFIX: MatchInfosForAttribute;
-  PRIMARY_NAME_SUFFIX: MatchInfosForAttribute;
-  PRIMARY_PHONE_NUMBER: MatchInfosForAttribute;
-  RECORD_TYPE: MatchInfosForAttribute;
-  REGISTRATION_COUNTRY: MatchInfosForAttribute;
-  REGISTRATION_DATE: MatchInfosForAttribute;
-  REL_ANCHOR: MatchInfosForAttribute;
-  REL_ANCHOR_DOMAIN: MatchInfosForAttribute;
-  REL_ANCHOR_KEY: MatchInfosForAttribute;
-  REL_LINK: MatchInfosForAttribute;
-  REL_POINTER: MatchInfosForAttribute;
-  REL_POINTER_DOMAIN: MatchInfosForAttribute;
-  REL_POINTER_KEY: MatchInfosForAttribute;
-  REL_POINTER_ROLE: MatchInfosForAttribute;
-  SIGNAL: MatchInfosForAttribute;
-  SKYPE: MatchInfosForAttribute;
-  SOCIAL_HANDLE: MatchInfosForAttribute;
-  SOCIAL_NETWORK: MatchInfosForAttribute;
-  SOURCE_ID: MatchInfosForAttribute;
-  SSN: MatchInfosForAttribute;
-  SSN_LAST4: MatchInfosForAttribute;
-  SSN_NUMBER: MatchInfosForAttribute;
-  TANGO: MatchInfosForAttribute;
-  TAX_ID_COUNTRY: MatchInfosForAttribute;
-  TAX_ID_NUMBER: MatchInfosForAttribute;
-  TAX_ID_TYPE: MatchInfosForAttribute;
-  TELEGRAM: MatchInfosForAttribute;
-  TRUSTED_ID_NUMBER: MatchInfosForAttribute;
-  TRUSTED_ID_TYPE: MatchInfosForAttribute;
-  TWITTER: MatchInfosForAttribute;
-  VIBER: MatchInfosForAttribute;
-  WEBSITE_ADDRESS: MatchInfosForAttribute;
-  WECHAT: MatchInfosForAttribute;
-  WHATSAPP: MatchInfosForAttribute;
-  WORK_PHONE_NUMBER: MatchInfosForAttribute;
-  ZOOMROOM: MatchInfosForAttribute;
-}
+export type MatchInfoCandidateKeys = string;
 
 export interface MatchInfoForAttribute {
   FEAT_DESC: string;
   FEAT_ID: number;
 }
-
-export type MatchInfosForAttribute = MatchInfoForAttribute[];
-
-export interface MatchScoreForAttribute {
-  CANDIDATE_FEAT: string;
-  FULL_SCORE: number;
-  GENERATION_MATCH: number;
-  GNR_FN: number;
-  GNR_GN: number;
-  GNR_ON: number;
-  GNR_SN: number;
-  INBOUND_FEAT: string;
-}
-
-export interface MatchScores {
-  ACCOUNT_DOMAIN: MatchScoresForAttribute;
-  ACCOUNT_NUMBER: MatchScoresForAttribute;
-  ACCT_NUM: MatchScoresForAttribute;
-  ADDRESS: MatchScoresForAttribute;
-  ADDRESS_LIST: MatchScoresForAttribute;
-  ADDR_FULL: MatchScoresForAttribute;
-  ADDR_KEY: MatchScoresForAttribute;
-  CELL_PHONE_NUMBER: MatchScoresForAttribute;
-  CITIZENSHIP: MatchScoresForAttribute;
-  COUNTRY_OF_ASSOCIATION: MatchScoresForAttribute;
-  DATA_SOURCE: MatchScoresForAttribute;
-  DATE_OF_BIRTH: MatchScoresForAttribute;
-  DATE_OF_DEATH: MatchScoresForAttribute;
-  DOB: MatchScoresForAttribute;
-  DOD: MatchScoresForAttribute;
-  DRIVERS_LICENSE_NUMBER: MatchScoresForAttribute;
-  DRIVERS_LICENSE_STATE: MatchScoresForAttribute;
-  DRLIC: MatchScoresForAttribute;
-  DUNS_NUMBER: MatchScoresForAttribute;
-  EMAIL: MatchScoresForAttribute;
-  EMAIL_ADDRESS: MatchScoresForAttribute;
-  EMAIL_KEY: MatchScoresForAttribute;
-  EMPLOYER_NAME: MatchScoresForAttribute;
-  ENTITY_TYPE: MatchScoresForAttribute;
-  FACEBOOK: MatchScoresForAttribute;
-  GENDER: MatchScoresForAttribute;
-  GROUP_ASSN_ID_NUMBER: MatchScoresForAttribute;
-  GROUP_ASSN_ID_TYPE: MatchScoresForAttribute;
-  GROUP_ASSOCIATION_ORG_NAME: MatchScoresForAttribute;
-  GROUP_ASSOCIATION_TYPE: MatchScoresForAttribute;
-  ID_KEY: MatchScoresForAttribute;
-  INSTAGRAM: MatchScoresForAttribute;
-  LEI_NUMBER: MatchScoresForAttribute;
-  LINKEDIN: MatchScoresForAttribute;
-  LOAD_ID: MatchScoresForAttribute;
-  LOGIN_ID: MatchScoresForAttribute;
-  NAME: MatchScoresForAttribute;
-  NAME_FULL: MatchScoresForAttribute;
-  NAME_KEY: MatchScoresForAttribute;
-  NAME_LIST: MatchScoresForAttribute;
-  NATIONALITY: MatchScoresForAttribute;
-  NATIONAL_ID: MatchScoresForAttribute;
-  NATIONAL_ID_COUNTRY: MatchScoresForAttribute;
-  NATIONAL_ID_NUMBER: MatchScoresForAttribute;
-  NIN_COUNTRY: MatchScoresForAttribute;
-  NIN_NUMBER: MatchScoresForAttribute;
-  NPI_NUMBER: MatchScoresForAttribute;
-  OTHER_ID_COUNTRY: MatchScoresForAttribute;
-  OTHER_ID_NUMBER: MatchScoresForAttribute;
-  OTHER_ID_TYPE: MatchScoresForAttribute;
-  PASSPORT: MatchScoresForAttribute;
-  PASSPORTS: MatchScoresForAttribute;
-  PASSPORT_COUNTRY: MatchScoresForAttribute;
-  PASSPORT_NUMBER: MatchScoresForAttribute;
-  PHONE: MatchScoresForAttribute;
-  PHONES: MatchScoresForAttribute;
-  PHONE_KEY: MatchScoresForAttribute;
-  PLACE_OF_BIRTH: MatchScoresForAttribute;
-  PRIMARY_NAME_FIRST: MatchScoresForAttribute;
-  PRIMARY_NAME_LAST: MatchScoresForAttribute;
-  PRIMARY_NAME_MIDDLE: MatchScoresForAttribute;
-  PRIMARY_NAME_ORG: MatchScoresForAttribute;
-  PRIMARY_NAME_PREFIX: MatchScoresForAttribute;
-  PRIMARY_NAME_SUFFIX: MatchScoresForAttribute;
-  PRIMARY_PHONE_NUMBER: MatchScoresForAttribute;
-  RECORD_TYPE: MatchScoresForAttribute;
-  REGISTRATION_COUNTRY: MatchScoresForAttribute;
-  REGISTRATION_DATE: MatchScoresForAttribute;
-  REL_ANCHOR: MatchScoresForAttribute;
-  REL_ANCHOR_DOMAIN: MatchScoresForAttribute;
-  REL_ANCHOR_KEY: MatchScoresForAttribute;
-  REL_LINK: MatchScoresForAttribute;
-  REL_POINTER: MatchScoresForAttribute;
-  REL_POINTER_DOMAIN: MatchScoresForAttribute;
-  REL_POINTER_KEY: MatchScoresForAttribute;
-  REL_POINTER_ROLE: MatchScoresForAttribute;
-  SIGNAL: MatchScoresForAttribute;
-  SKYPE: MatchScoresForAttribute;
-  SOCIAL_HANDLE: MatchScoresForAttribute;
-  SOCIAL_NETWORK: MatchScoresForAttribute;
-  SOURCE_ID: MatchScoresForAttribute;
-  SSN: MatchScoresForAttribute;
-  SSN_LAST4: MatchScoresForAttribute;
-  SSN_NUMBER: MatchScoresForAttribute;
-  TANGO: MatchScoresForAttribute;
-  TAX_ID_COUNTRY: MatchScoresForAttribute;
-  TAX_ID_NUMBER: MatchScoresForAttribute;
-  TAX_ID_TYPE: MatchScoresForAttribute;
-  TELEGRAM: MatchScoresForAttribute;
-  TRUSTED_ID_NUMBER: MatchScoresForAttribute;
-  TRUSTED_ID_TYPE: MatchScoresForAttribute;
-  TWITTER: MatchScoresForAttribute;
-  VIBER: MatchScoresForAttribute;
-  WEBSITE_ADDRESS: MatchScoresForAttribute;
-  WECHAT: MatchScoresForAttribute;
-  WHATSAPP: MatchScoresForAttribute;
-  WORK_PHONE_NUMBER: MatchScoresForAttribute;
-  ZOOMROOM: MatchScoresForAttribute;
-}
-
-export type MatchScoresForAttribute = MatchScoreForAttribute[];
 
 export interface MemberRecord {
   INTERNAL_ID: number;
@@ -1609,19 +539,6 @@ export interface MemberRecord {
 }
 
 export type MemberRecords = MemberRecord[];
-
-export interface Name {
-  NAME_FIRST: string;
-  NAME_FULL: string;
-  NAME_LAST: string;
-  NAME_MIDDLE: string;
-  NAME_ORG: string;
-  NAME_PREFIX: string;
-  NAME_SUFFIX: string;
-  NAME_TYPE: string;
-}
-
-export type Names = Name[];
 
 export interface Network {
   ENTITIES: Entity[];
@@ -1636,55 +553,30 @@ export interface Notice {
 
 export type Notices = Notice[];
 
-export interface Passport {
-  PASSPORT_COUNTRY: string;
-  PASSPORT_NUMBER: string;
-}
-
-export type Passports = Passport[];
-
 export interface Path {
   ENTITIES: Entity[];
   ENTITY_PATHS: EntityPath[];
 }
 
-export interface Phone {
-  PHONE_FROM_DATE: string;
-  PHONE_NUMBER: string;
-  PHONE_THRU_DATE: string;
-  PHONE_TYPE: string;
+export interface ProductLicense {
+  billing: string;
+  contract: string;
+  customer: string;
+  expireDate: string;
+  issueDate: string;
+  licenseLevel: string;
+  licenseType: string;
+  recordLimit: number;
 }
 
-export type Phones = Phone[];
-
-export interface ProcessUmfProc {
-  NAME: string;
-  RESULT: string;
-}
-
-export interface Process {
-  AFFECTED_ENTITIES: AffectedEntity[];
-  INTERESTING_ENTITIES: InterestingEntities;
-  PROCESS_RESULT: ProcessResult;
-  UMF_PROC: ProcessUmfProc;
-}
-
-export interface ProcessResultResolvedEntities {
-  ENTITY_ID: number;
-  ENTITY_NAME: string;
-  ERRULE_CODE: string;
-  FEATURES: string;
-  LAST_SEEN_DT: string;
-  MATCH_KEY: string;
-  MATCH_LEVEL: number;
-  MATCH_LEVEL_CODE: string;
-  MATCH_SCORES: MatchScores;
-  RECORDS: Records;
-  RECORD_SUMMARY: RecordSummaryElement[];
-}
-
-export interface ProcessResult {
-  RESOLVED_ENTITIES: ProcessResultResolvedEntities[];
+export interface ProductVersion {
+  BUILD_DATE: string;
+  BUILD_NUMBER: string;
+  BUILD_VERSION: string;
+  COMPATIBILITY_VERSION: CompatibilityVersion;
+  PRODUCT_NAME: string;
+  SCHEMA_VERSION: SchemaVersion;
+  VERSION: string;
 }
 
 export interface RecordFeatures {
@@ -1726,6 +618,10 @@ export interface RecordSummaryElement {
 export type Records = Record[];
 
 export interface RelatedEntity {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
@@ -1739,18 +635,6 @@ export interface RelatedEntity {
   RECORD_SUMMARY: RecordSummaryElement[];
 }
 
-export interface Relationship {
-  RELATIONSHIP_KEY: string;
-  RELATIONSHIP_TYPE: string;
-  REL_ANCHOR_DOMAIN: string;
-  REL_ANCHOR_KEY: string;
-  REL_POINTER_DOMAIN: string;
-  REL_POINTER_KEY: string;
-  REL_POINTER_ROLE: string;
-}
-
-export type Relationships = Relationship[];
-
 export interface ResolutionStep {
   INBOUND_VIRTUAL_ENTITY_ID: string;
   MATCH_INFO: MatchInfo;
@@ -1762,9 +646,11 @@ export interface ResolutionStep {
 
 export type ResolutionSteps = ResolutionStep[];
 
-export type ResolvedEntities = ResolvedEntityAndMatchInfo[];
-
 export interface ResolvedEntity {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
@@ -1836,6 +722,66 @@ export interface SearchStatistic {
 
 export type SearchStatistics = SearchStatistic[];
 
+export type SzConfigAddDataSourceResponse = AddDataSource;
+
+export type SzConfigGetDataSourcesResponse = GetDataSources;
+
+export type SzConfigGetJsonStringResponse = GetJsonString;
+
+export type SzConfigmgrGetConfigListResponse = ConfigList;
+
+export type SzConfigmgrGetConfigResponse = GetConfig;
+
+export type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
+
+export type SzEngineAddRecordResponse = WithInfo;
+
+export type SzEngineDeleteRecordResponse = WithInfo;
+
+export type SzEngineFetchNextResponse = FixmeUnknown;
+
+export type SzEngineFindNetworkByEntityIdResponse = Network;
+
+export type SzEngineFindNetworkByRecordIdResponse = Network;
+
+export type SzEngineFindPathByEntityIdResponse = Path;
+
+export type SzEngineFindPathByRecordIdResponse = Path;
+
+export type SzEngineGetEntityByEntityIdResponse = Entity;
+
+export type SzEngineGetEntityByRecordIdResponse = Entity;
+
+export type SzEngineGetRecordResponse = Record;
+
+export type SzEngineGetRedoRecordResponse = FixmeUnknown;
+
+export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+
+export type SzEngineHowEntityByEntityIdResponse = How;
+
+export type SzEngineProcessRedoRecordResponse = WithInfo;
+
+export type SzEngineReevaluateEntityResponse = WithInfo;
+
+export type SzEngineReevaluateRecordResponse = WithInfo;
+
+export type SzEngineReplaceRecordResponse = WithInfo;
+
+export type SzEngineSearchByAttributesResponse = Search;
+
+export type SzEngineStreamExportJsonEntityReportResponse = FixmeUnknown;
+
+export type SzEngineWhyEntitiesResponse = WhyEntities;
+
+export type SzEngineWhyRecordInEntityResponse = FixmeUnknown;
+
+export type SzEngineWhyRecordsResponse = WhyRecords;
+
+export type SzProductGetLicenseResponse = ProductLicense;
+
+export type SzProductGetVersionResponse = ProductVersion;
+
 export interface VirtualEntity {
   RESOLVED_ENTITY: ResolvedEntity;
 }
@@ -1850,17 +796,16 @@ export interface WhyEntities {
   WHY_RESULTS: WhyResults;
 }
 
-export interface WhyEntity {
-  ENTITIES: Entity[];
-  WHY_RESULTS: WhyResults;
-}
-
 export interface WhyRecords {
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
 export interface WhyResult {
+  /**
+   * The ENTITY_ID is the Senzing-generated identifier for the discovered
+   * entity. It may change when new information is added.
+   */
   ENTITY_ID: number;
   ENTITY_ID_2: number;
   FOCUS_RECORDS: FocusRecords;

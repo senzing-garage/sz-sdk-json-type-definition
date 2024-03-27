@@ -15,8 +15,8 @@ func pathToTestdata(filename string) string {
 	return fmt.Sprintf("./testdata/%s", filename)
 }
 
-func mockG2engineGetVirtualEntityByRecordId() string {
-	result, err := os.ReadFile(pathToTestdata("G2EngineGetVirtualEntityByRecordIdResponse-test-001.json"))
+func mockSzEngineGetVirtualEntityByRecordId() string {
+	result, err := os.ReadFile(pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-023.json"))
 	if err != nil {
 		panic(err)
 	}
@@ -27,8 +27,8 @@ func main() {
 
 	// Simulate response from Senzing SDK API.
 
-	response := mockG2engineGetVirtualEntityByRecordId()
-	virtualEntity := typedef.G2engineGetVirtualEntityByRecordIDResponse{}
+	response := mockSzEngineGetVirtualEntityByRecordId()
+	virtualEntity := typedef.SzEngineGetVirtualEntityByRecordIDResponse{}
 	err := json.Unmarshal([]byte(response), &virtualEntity)
 	if err != nil {
 		panic(err)
@@ -57,7 +57,7 @@ func main() {
 	// Show reconstructed (Unmarshall/Marshall) JSON.
 
 	jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
-	jsonStruct := typedef.G2configListDataSourcesResponse{}
+	jsonStruct := typedef.SzConfigGetDataSourcesResponse{}
 	err = json.Unmarshal([]byte(jsonString), &jsonStruct)
 	if err != nil {
 		panic(err)

@@ -18,73 +18,28 @@ class Senzingapi:
         return _to_json_data(self.value)
 
 @dataclass
-class Address:
-    addr_city: 'str'
-    addr_country: 'str'
-    addr_from_date: 'str'
-    addr_full: 'str'
-    addr_line1: 'str'
-    addr_line2: 'str'
-    addr_line3: 'str'
-    addr_line4: 'str'
-    addr_line5: 'str'
-    addr_line6: 'str'
-    addr_postal_code: 'str'
-    addr_state: 'str'
-    addr_thru_date: 'str'
-    addr_type: 'str'
+class AddDataSource:
+    dsrc_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Address':
+    def from_json_data(cls, data: Any) -> 'AddDataSource':
         return cls(
-            _from_json_data(str, data.get("ADDR_CITY")),
-            _from_json_data(str, data.get("ADDR_COUNTRY")),
-            _from_json_data(str, data.get("ADDR_FROM_DATE")),
-            _from_json_data(str, data.get("ADDR_FULL")),
-            _from_json_data(str, data.get("ADDR_LINE1")),
-            _from_json_data(str, data.get("ADDR_LINE2")),
-            _from_json_data(str, data.get("ADDR_LINE3")),
-            _from_json_data(str, data.get("ADDR_LINE4")),
-            _from_json_data(str, data.get("ADDR_LINE5")),
-            _from_json_data(str, data.get("ADDR_LINE6")),
-            _from_json_data(str, data.get("ADDR_POSTAL_CODE")),
-            _from_json_data(str, data.get("ADDR_STATE")),
-            _from_json_data(str, data.get("ADDR_THRU_DATE")),
-            _from_json_data(str, data.get("ADDR_TYPE")),
+            _from_json_data(int, data.get("DSRC_ID")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["ADDR_CITY"] = _to_json_data(self.addr_city)
-        data["ADDR_COUNTRY"] = _to_json_data(self.addr_country)
-        data["ADDR_FROM_DATE"] = _to_json_data(self.addr_from_date)
-        data["ADDR_FULL"] = _to_json_data(self.addr_full)
-        data["ADDR_LINE1"] = _to_json_data(self.addr_line1)
-        data["ADDR_LINE2"] = _to_json_data(self.addr_line2)
-        data["ADDR_LINE3"] = _to_json_data(self.addr_line3)
-        data["ADDR_LINE4"] = _to_json_data(self.addr_line4)
-        data["ADDR_LINE5"] = _to_json_data(self.addr_line5)
-        data["ADDR_LINE6"] = _to_json_data(self.addr_line6)
-        data["ADDR_POSTAL_CODE"] = _to_json_data(self.addr_postal_code)
-        data["ADDR_STATE"] = _to_json_data(self.addr_state)
-        data["ADDR_THRU_DATE"] = _to_json_data(self.addr_thru_date)
-        data["ADDR_TYPE"] = _to_json_data(self.addr_type)
+        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
         return data
-
-@dataclass
-class Addresses:
-    value: 'List[Address]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Addresses':
-        return cls(_from_json_data(List[Address], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class AffectedEntity:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'AffectedEntity':
@@ -96,146 +51,6 @@ class AffectedEntity:
         data: Dict[str, Any] = {}
         data["ENTITY_ID"] = _to_json_data(self.entity_id)
         return data
-
-@dataclass
-class AttributeCounter:
-    acct_num: 'float'
-    address: 'float'
-    addr_key: 'float'
-    call_sign: 'int'
-    citizenship: 'int'
-    country_of_association: 'int'
-    deferred_delete: 'float'
-    dob: 'float'
-    drlic: 'float'
-    duns_number: 'int'
-    email: 'float'
-    email_key: 'float'
-    entity_count: 'int'
-    entity_size: 'int'
-    gender: 'float'
-    id_key: 'float'
-    imo_number: 'int'
-    lei_number: 'int'
-    login_id: 'float'
-    max_res_ent_id: 'int'
-    min_res_ent_id: 'int'
-    name: 'float'
-    name_key: 'float'
-    nationality: 'int'
-    national_id: 'int'
-    ofac_id: 'int'
-    other_id: 'float'
-    passport: 'float'
-    phone: 'float'
-    phone_key: 'float'
-    record_type: 'float'
-    registration_country: 'int'
-    registration_date: 'int'
-    rel_anchor: 'int'
-    rel_pointer: 'int'
-    search_key: 'float'
-    ssn: 'float'
-    tax_id: 'float'
-    website: 'float'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AttributeCounter':
-        return cls(
-            _from_json_data(float, data.get("ACCT_NUM")),
-            _from_json_data(float, data.get("ADDRESS")),
-            _from_json_data(float, data.get("ADDR_KEY")),
-            _from_json_data(int, data.get("CALL_SIGN")),
-            _from_json_data(int, data.get("CITIZENSHIP")),
-            _from_json_data(int, data.get("COUNTRY_OF_ASSOCIATION")),
-            _from_json_data(float, data.get("DEFERRED_DELETE")),
-            _from_json_data(float, data.get("DOB")),
-            _from_json_data(float, data.get("DRLIC")),
-            _from_json_data(int, data.get("DUNS_NUMBER")),
-            _from_json_data(float, data.get("EMAIL")),
-            _from_json_data(float, data.get("EMAIL_KEY")),
-            _from_json_data(int, data.get("ENTITY_COUNT")),
-            _from_json_data(int, data.get("ENTITY_SIZE")),
-            _from_json_data(float, data.get("GENDER")),
-            _from_json_data(float, data.get("ID_KEY")),
-            _from_json_data(int, data.get("IMO_NUMBER")),
-            _from_json_data(int, data.get("LEI_NUMBER")),
-            _from_json_data(float, data.get("LOGIN_ID")),
-            _from_json_data(int, data.get("MAX_RES_ENT_ID")),
-            _from_json_data(int, data.get("MIN_RES_ENT_ID")),
-            _from_json_data(float, data.get("NAME")),
-            _from_json_data(float, data.get("NAME_KEY")),
-            _from_json_data(int, data.get("NATIONALITY")),
-            _from_json_data(int, data.get("NATIONAL_ID")),
-            _from_json_data(int, data.get("OFAC_ID")),
-            _from_json_data(float, data.get("OTHER_ID")),
-            _from_json_data(float, data.get("PASSPORT")),
-            _from_json_data(float, data.get("PHONE")),
-            _from_json_data(float, data.get("PHONE_KEY")),
-            _from_json_data(float, data.get("RECORD_TYPE")),
-            _from_json_data(int, data.get("REGISTRATION_COUNTRY")),
-            _from_json_data(int, data.get("REGISTRATION_DATE")),
-            _from_json_data(int, data.get("REL_ANCHOR")),
-            _from_json_data(int, data.get("REL_POINTER")),
-            _from_json_data(float, data.get("SEARCH_KEY")),
-            _from_json_data(float, data.get("SSN")),
-            _from_json_data(float, data.get("TAX_ID")),
-            _from_json_data(float, data.get("WEBSITE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCT_NUM"] = _to_json_data(self.acct_num)
-        data["ADDRESS"] = _to_json_data(self.address)
-        data["ADDR_KEY"] = _to_json_data(self.addr_key)
-        data["CALL_SIGN"] = _to_json_data(self.call_sign)
-        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
-        data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
-        data["DEFERRED_DELETE"] = _to_json_data(self.deferred_delete)
-        data["DOB"] = _to_json_data(self.dob)
-        data["DRLIC"] = _to_json_data(self.drlic)
-        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
-        data["EMAIL"] = _to_json_data(self.email)
-        data["EMAIL_KEY"] = _to_json_data(self.email_key)
-        data["ENTITY_COUNT"] = _to_json_data(self.entity_count)
-        data["ENTITY_SIZE"] = _to_json_data(self.entity_size)
-        data["GENDER"] = _to_json_data(self.gender)
-        data["ID_KEY"] = _to_json_data(self.id_key)
-        data["IMO_NUMBER"] = _to_json_data(self.imo_number)
-        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
-        data["LOGIN_ID"] = _to_json_data(self.login_id)
-        data["MAX_RES_ENT_ID"] = _to_json_data(self.max_res_ent_id)
-        data["MIN_RES_ENT_ID"] = _to_json_data(self.min_res_ent_id)
-        data["NAME"] = _to_json_data(self.name)
-        data["NAME_KEY"] = _to_json_data(self.name_key)
-        data["NATIONALITY"] = _to_json_data(self.nationality)
-        data["NATIONAL_ID"] = _to_json_data(self.national_id)
-        data["OFAC_ID"] = _to_json_data(self.ofac_id)
-        data["OTHER_ID"] = _to_json_data(self.other_id)
-        data["PASSPORT"] = _to_json_data(self.passport)
-        data["PHONE"] = _to_json_data(self.phone)
-        data["PHONE_KEY"] = _to_json_data(self.phone_key)
-        data["RECORD_TYPE"] = _to_json_data(self.record_type)
-        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
-        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
-        data["SEARCH_KEY"] = _to_json_data(self.search_key)
-        data["SSN"] = _to_json_data(self.ssn)
-        data["TAX_ID"] = _to_json_data(self.tax_id)
-        data["WEBSITE"] = _to_json_data(self.website)
-        return data
-
-@dataclass
-class AttributeCounters:
-    value: 'List[AttributeCounter]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AttributeCounters':
-        return cls(_from_json_data(List[AttributeCounter], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class CfgAttr:
@@ -1176,6 +991,24 @@ class ConfigBaseVersion:
         return data
 
 @dataclass
+class CheckDatabasePerformance:
+    insert_time: 'int'
+    num_records_inserted: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'CheckDatabasePerformance':
+        return cls(
+            _from_json_data(int, data.get("insertTime")),
+            _from_json_data(int, data.get("numRecordsInserted")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["insertTime"] = _to_json_data(self.insert_time)
+        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
+        return data
+
+@dataclass
 class CompatibilityVersion:
     config_version: 'str'
 
@@ -1212,15 +1045,19 @@ class Config:
         return data
 
 @dataclass
-class Configs:
-    value: 'List[Config]'
+class ConfigList:
+    configs: 'List[Config]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Configs':
-        return cls(_from_json_data(List[Config], data))
+    def from_json_data(cls, data: Any) -> 'ConfigList':
+        return cls(
+            _from_json_data(List[Config], data.get("CONFIGS")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["CONFIGS"] = _to_json_data(self.configs)
+        return data
 
 @dataclass
 class DataSource:
@@ -1249,73 +1086,6 @@ class DataSource:
         return data
 
 @dataclass
-class DiagnosticFetchNextEntityBySizeResponseXxx0:
-    dsrc_code: 'str'
-    ent_src_desc: 'str'
-    ent_src_key: 'str'
-    errule_code: 'str'
-    er_id: 'int'
-    etype_code: 'str'
-    json_data: 'Dict[str, object]'
-    match_key: 'str'
-    obs_ent_id: 'int'
-    record_id: 'str'
-    res_ent_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DiagnosticFetchNextEntityBySizeResponseXxx0':
-        return cls(
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("ENT_SRC_DESC")),
-            _from_json_data(str, data.get("ENT_SRC_KEY")),
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(int, data.get("ER_ID")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("OBS_ENT_ID")),
-            _from_json_data(str, data.get("RECORD_ID")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["ENT_SRC_DESC"] = _to_json_data(self.ent_src_desc)
-        data["ENT_SRC_KEY"] = _to_json_data(self.ent_src_key)
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["ER_ID"] = _to_json_data(self.er_id)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["JSON_DATA"] = _to_json_data(self.json_data)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["OBS_ENT_ID"] = _to_json_data(self.obs_ent_id)
-        data["RECORD_ID"] = _to_json_data(self.record_id)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
-        return data
-
-@dataclass
-class DiagnosticFetchNextEntityBySizeResponseXxx:
-    value: 'List[DiagnosticFetchNextEntityBySizeResponseXxx0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DiagnosticFetchNextEntityBySizeResponseXxx':
-        return cls(_from_json_data(List[DiagnosticFetchNextEntityBySizeResponseXxx0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class EntitiesByFeatureID:
-    value: 'List[EntityByFeatureID]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'EntitiesByFeatureID':
-        return cls(_from_json_data(List[EntityByFeatureID], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class Entity:
     related_entities: 'List[RelatedEntity]'
     resolved_entity: 'ResolvedEntity'
@@ -1331,72 +1101,6 @@ class Entity:
         data: Dict[str, Any] = {}
         data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
-        return data
-
-@dataclass
-class EntityByFeatureID:
-    lib_feat_id: 'int'
-    res_ent_id: 'int'
-    usage_type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'EntityByFeatureID':
-        return cls(
-            _from_json_data(int, data.get("LIB_FEAT_ID")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-            _from_json_data(str, data.get("USAGE_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
-        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
-        return data
-
-@dataclass
-class EntityBySize:
-    dsrc_code: 'str'
-    ent_src_desc: 'str'
-    ent_src_key: 'str'
-    errule_code: 'str'
-    er_id: 'int'
-    etype_code: 'str'
-    json_data: 'Dict[str, object]'
-    match_key: 'str'
-    obs_ent_id: 'int'
-    record_id: 'str'
-    res_ent_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'EntityBySize':
-        return cls(
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("ENT_SRC_DESC")),
-            _from_json_data(str, data.get("ENT_SRC_KEY")),
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(int, data.get("ER_ID")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("OBS_ENT_ID")),
-            _from_json_data(str, data.get("RECORD_ID")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["ENT_SRC_DESC"] = _to_json_data(self.ent_src_desc)
-        data["ENT_SRC_KEY"] = _to_json_data(self.ent_src_key)
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["ER_ID"] = _to_json_data(self.er_id)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["JSON_DATA"] = _to_json_data(self.json_data)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["OBS_ENT_ID"] = _to_json_data(self.obs_ent_id)
-        data["RECORD_ID"] = _to_json_data(self.record_id)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
         return data
 
 @dataclass
@@ -1418,6 +1122,21 @@ class EntityPath:
         data["END_ENTITY_ID"] = _to_json_data(self.end_entity_id)
         data["ENTITIES"] = _to_json_data(self.entities)
         data["START_ENTITY_ID"] = _to_json_data(self.start_entity_id)
+        return data
+
+@dataclass
+class ExportConfig:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'ExportConfig':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
         return data
 
 @dataclass
@@ -1536,309 +1255,14 @@ class FeatureScoreForAttribute:
 
 @dataclass
 class FeatureScores:
-    account_domain: 'FeatureScoresForAttribute'
-    account_number: 'FeatureScoresForAttribute'
-    acct_num: 'FeatureScoresForAttribute'
-    address: 'FeatureScoresForAttribute'
-    address_list: 'FeatureScoresForAttribute'
-    addr_full: 'FeatureScoresForAttribute'
-    addr_key: 'FeatureScoresForAttribute'
-    cell_phone_number: 'FeatureScoresForAttribute'
-    citizenship: 'FeatureScoresForAttribute'
-    country_of_association: 'FeatureScoresForAttribute'
-    data_source: 'FeatureScoresForAttribute'
-    date_of_birth: 'FeatureScoresForAttribute'
-    date_of_death: 'FeatureScoresForAttribute'
-    dob: 'FeatureScoresForAttribute'
-    dod: 'FeatureScoresForAttribute'
-    drivers_license_number: 'FeatureScoresForAttribute'
-    drivers_license_state: 'FeatureScoresForAttribute'
-    drlic: 'FeatureScoresForAttribute'
-    duns_number: 'FeatureScoresForAttribute'
-    email: 'FeatureScoresForAttribute'
-    email_address: 'FeatureScoresForAttribute'
-    email_key: 'FeatureScoresForAttribute'
-    employer_name: 'FeatureScoresForAttribute'
-    entity_type: 'FeatureScoresForAttribute'
-    facebook: 'FeatureScoresForAttribute'
-    gender: 'FeatureScoresForAttribute'
-    group_assn_id_number: 'FeatureScoresForAttribute'
-    group_assn_id_type: 'FeatureScoresForAttribute'
-    group_association_org_name: 'FeatureScoresForAttribute'
-    group_association_type: 'FeatureScoresForAttribute'
-    id_key: 'FeatureScoresForAttribute'
-    instagram: 'FeatureScoresForAttribute'
-    lei_number: 'FeatureScoresForAttribute'
-    linkedin: 'FeatureScoresForAttribute'
-    load_id: 'FeatureScoresForAttribute'
-    login_id: 'FeatureScoresForAttribute'
-    name: 'FeatureScoresForAttribute'
-    name_full: 'FeatureScoresForAttribute'
-    name_key: 'FeatureScoresForAttribute'
-    name_list: 'FeatureScoresForAttribute'
-    nationality: 'FeatureScoresForAttribute'
-    national_id: 'FeatureScoresForAttribute'
-    national_id_country: 'FeatureScoresForAttribute'
-    national_id_number: 'FeatureScoresForAttribute'
-    nin_country: 'FeatureScoresForAttribute'
-    nin_number: 'FeatureScoresForAttribute'
-    npi_number: 'FeatureScoresForAttribute'
-    other_id_country: 'FeatureScoresForAttribute'
-    other_id_number: 'FeatureScoresForAttribute'
-    other_id_type: 'FeatureScoresForAttribute'
-    passport: 'FeatureScoresForAttribute'
-    passports: 'FeatureScoresForAttribute'
-    passport_country: 'FeatureScoresForAttribute'
-    passport_number: 'FeatureScoresForAttribute'
-    phone: 'FeatureScoresForAttribute'
-    phones: 'FeatureScoresForAttribute'
-    phone_key: 'FeatureScoresForAttribute'
-    place_of_birth: 'FeatureScoresForAttribute'
-    primary_name_first: 'FeatureScoresForAttribute'
-    primary_name_last: 'FeatureScoresForAttribute'
-    primary_name_middle: 'FeatureScoresForAttribute'
-    primary_name_org: 'FeatureScoresForAttribute'
-    primary_name_prefix: 'FeatureScoresForAttribute'
-    primary_name_suffix: 'FeatureScoresForAttribute'
-    primary_phone_number: 'FeatureScoresForAttribute'
-    record_type: 'FeatureScoresForAttribute'
-    registration_country: 'FeatureScoresForAttribute'
-    registration_date: 'FeatureScoresForAttribute'
-    rel_anchor: 'FeatureScoresForAttribute'
-    rel_anchor_domain: 'FeatureScoresForAttribute'
-    rel_anchor_key: 'FeatureScoresForAttribute'
-    rel_link: 'FeatureScoresForAttribute'
-    rel_pointer: 'FeatureScoresForAttribute'
-    rel_pointer_domain: 'FeatureScoresForAttribute'
-    rel_pointer_key: 'FeatureScoresForAttribute'
-    rel_pointer_role: 'FeatureScoresForAttribute'
-    signal: 'FeatureScoresForAttribute'
-    skype: 'FeatureScoresForAttribute'
-    social_handle: 'FeatureScoresForAttribute'
-    social_network: 'FeatureScoresForAttribute'
-    source_id: 'FeatureScoresForAttribute'
-    ssn: 'FeatureScoresForAttribute'
-    ssn_last4: 'FeatureScoresForAttribute'
-    ssn_number: 'FeatureScoresForAttribute'
-    tango: 'FeatureScoresForAttribute'
-    tax_id_country: 'FeatureScoresForAttribute'
-    tax_id_number: 'FeatureScoresForAttribute'
-    tax_id_type: 'FeatureScoresForAttribute'
-    telegram: 'FeatureScoresForAttribute'
-    trusted_id_number: 'FeatureScoresForAttribute'
-    trusted_id_type: 'FeatureScoresForAttribute'
-    twitter: 'FeatureScoresForAttribute'
-    viber: 'FeatureScoresForAttribute'
-    website_address: 'FeatureScoresForAttribute'
-    wechat: 'FeatureScoresForAttribute'
-    whatsapp: 'FeatureScoresForAttribute'
-    work_phone_number: 'FeatureScoresForAttribute'
-    zoomroom: 'FeatureScoresForAttribute'
+    value: 'Dict[str, FeatureScoresForAttribute]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScores':
-        return cls(
-            _from_json_data(FeatureScoresForAttribute, data.get("ACCOUNT_DOMAIN")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ACCOUNT_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ACCT_NUM")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ADDRESS")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ADDRESS_LIST")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ADDR_FULL")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ADDR_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("CELL_PHONE_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("CITIZENSHIP")),
-            _from_json_data(FeatureScoresForAttribute, data.get("COUNTRY_OF_ASSOCIATION")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DATA_SOURCE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DATE_OF_BIRTH")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DATE_OF_DEATH")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DOB")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DOD")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DRIVERS_LICENSE_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DRIVERS_LICENSE_STATE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DRLIC")),
-            _from_json_data(FeatureScoresForAttribute, data.get("DUNS_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("EMAIL")),
-            _from_json_data(FeatureScoresForAttribute, data.get("EMAIL_ADDRESS")),
-            _from_json_data(FeatureScoresForAttribute, data.get("EMAIL_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("EMPLOYER_NAME")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ENTITY_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("FACEBOOK")),
-            _from_json_data(FeatureScoresForAttribute, data.get("GENDER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("GROUP_ASSN_ID_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("GROUP_ASSN_ID_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("GROUP_ASSOCIATION_ORG_NAME")),
-            _from_json_data(FeatureScoresForAttribute, data.get("GROUP_ASSOCIATION_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ID_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("INSTAGRAM")),
-            _from_json_data(FeatureScoresForAttribute, data.get("LEI_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("LINKEDIN")),
-            _from_json_data(FeatureScoresForAttribute, data.get("LOAD_ID")),
-            _from_json_data(FeatureScoresForAttribute, data.get("LOGIN_ID")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NAME")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NAME_FULL")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NAME_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NAME_LIST")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NATIONALITY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NATIONAL_ID")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NATIONAL_ID_COUNTRY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NATIONAL_ID_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NIN_COUNTRY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NIN_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("NPI_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("OTHER_ID_COUNTRY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("OTHER_ID_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("OTHER_ID_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PASSPORT")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PASSPORTS")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PASSPORT_COUNTRY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PASSPORT_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PHONE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PHONES")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PHONE_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PLACE_OF_BIRTH")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_NAME_FIRST")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_NAME_LAST")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_NAME_MIDDLE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_NAME_ORG")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_NAME_PREFIX")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_NAME_SUFFIX")),
-            _from_json_data(FeatureScoresForAttribute, data.get("PRIMARY_PHONE_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("RECORD_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REGISTRATION_COUNTRY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REGISTRATION_DATE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_ANCHOR")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_ANCHOR_DOMAIN")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_ANCHOR_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_LINK")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_POINTER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_POINTER_DOMAIN")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_POINTER_KEY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("REL_POINTER_ROLE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SIGNAL")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SKYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SOCIAL_HANDLE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SOCIAL_NETWORK")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SOURCE_ID")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SSN")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SSN_LAST4")),
-            _from_json_data(FeatureScoresForAttribute, data.get("SSN_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TANGO")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TAX_ID_COUNTRY")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TAX_ID_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TAX_ID_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TELEGRAM")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TRUSTED_ID_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TRUSTED_ID_TYPE")),
-            _from_json_data(FeatureScoresForAttribute, data.get("TWITTER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("VIBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("WEBSITE_ADDRESS")),
-            _from_json_data(FeatureScoresForAttribute, data.get("WECHAT")),
-            _from_json_data(FeatureScoresForAttribute, data.get("WHATSAPP")),
-            _from_json_data(FeatureScoresForAttribute, data.get("WORK_PHONE_NUMBER")),
-            _from_json_data(FeatureScoresForAttribute, data.get("ZOOMROOM")),
-        )
+        return cls(_from_json_data(Dict[str, FeatureScoresForAttribute], data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
-        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
-        data["ACCT_NUM"] = _to_json_data(self.acct_num)
-        data["ADDRESS"] = _to_json_data(self.address)
-        data["ADDRESS_LIST"] = _to_json_data(self.address_list)
-        data["ADDR_FULL"] = _to_json_data(self.addr_full)
-        data["ADDR_KEY"] = _to_json_data(self.addr_key)
-        data["CELL_PHONE_NUMBER"] = _to_json_data(self.cell_phone_number)
-        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
-        data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
-        data["DATA_SOURCE"] = _to_json_data(self.data_source)
-        data["DATE_OF_BIRTH"] = _to_json_data(self.date_of_birth)
-        data["DATE_OF_DEATH"] = _to_json_data(self.date_of_death)
-        data["DOB"] = _to_json_data(self.dob)
-        data["DOD"] = _to_json_data(self.dod)
-        data["DRIVERS_LICENSE_NUMBER"] = _to_json_data(self.drivers_license_number)
-        data["DRIVERS_LICENSE_STATE"] = _to_json_data(self.drivers_license_state)
-        data["DRLIC"] = _to_json_data(self.drlic)
-        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
-        data["EMAIL"] = _to_json_data(self.email)
-        data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
-        data["EMAIL_KEY"] = _to_json_data(self.email_key)
-        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
-        data["ENTITY_TYPE"] = _to_json_data(self.entity_type)
-        data["FACEBOOK"] = _to_json_data(self.facebook)
-        data["GENDER"] = _to_json_data(self.gender)
-        data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
-        data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
-        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
-        data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
-        data["ID_KEY"] = _to_json_data(self.id_key)
-        data["INSTAGRAM"] = _to_json_data(self.instagram)
-        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
-        data["LINKEDIN"] = _to_json_data(self.linkedin)
-        data["LOAD_ID"] = _to_json_data(self.load_id)
-        data["LOGIN_ID"] = _to_json_data(self.login_id)
-        data["NAME"] = _to_json_data(self.name)
-        data["NAME_FULL"] = _to_json_data(self.name_full)
-        data["NAME_KEY"] = _to_json_data(self.name_key)
-        data["NAME_LIST"] = _to_json_data(self.name_list)
-        data["NATIONALITY"] = _to_json_data(self.nationality)
-        data["NATIONAL_ID"] = _to_json_data(self.national_id)
-        data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
-        data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
-        data["NIN_COUNTRY"] = _to_json_data(self.nin_country)
-        data["NIN_NUMBER"] = _to_json_data(self.nin_number)
-        data["NPI_NUMBER"] = _to_json_data(self.npi_number)
-        data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
-        data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
-        data["OTHER_ID_TYPE"] = _to_json_data(self.other_id_type)
-        data["PASSPORT"] = _to_json_data(self.passport)
-        data["PASSPORTS"] = _to_json_data(self.passports)
-        data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        data["PHONE"] = _to_json_data(self.phone)
-        data["PHONES"] = _to_json_data(self.phones)
-        data["PHONE_KEY"] = _to_json_data(self.phone_key)
-        data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
-        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
-        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
-        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
-        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
-        data["PRIMARY_NAME_PREFIX"] = _to_json_data(self.primary_name_prefix)
-        data["PRIMARY_NAME_SUFFIX"] = _to_json_data(self.primary_name_suffix)
-        data["PRIMARY_PHONE_NUMBER"] = _to_json_data(self.primary_phone_number)
-        data["RECORD_TYPE"] = _to_json_data(self.record_type)
-        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
-        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
-        data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
-        data["REL_LINK"] = _to_json_data(self.rel_link)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
-        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
-        data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
-        data["SIGNAL"] = _to_json_data(self.signal)
-        data["SKYPE"] = _to_json_data(self.skype)
-        data["SOCIAL_HANDLE"] = _to_json_data(self.social_handle)
-        data["SOCIAL_NETWORK"] = _to_json_data(self.social_network)
-        data["SOURCE_ID"] = _to_json_data(self.source_id)
-        data["SSN"] = _to_json_data(self.ssn)
-        data["SSN_LAST4"] = _to_json_data(self.ssn_last4)
-        data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        data["TANGO"] = _to_json_data(self.tango)
-        data["TAX_ID_COUNTRY"] = _to_json_data(self.tax_id_country)
-        data["TAX_ID_NUMBER"] = _to_json_data(self.tax_id_number)
-        data["TAX_ID_TYPE"] = _to_json_data(self.tax_id_type)
-        data["TELEGRAM"] = _to_json_data(self.telegram)
-        data["TRUSTED_ID_NUMBER"] = _to_json_data(self.trusted_id_number)
-        data["TRUSTED_ID_TYPE"] = _to_json_data(self.trusted_id_type)
-        data["TWITTER"] = _to_json_data(self.twitter)
-        data["VIBER"] = _to_json_data(self.viber)
-        data["WEBSITE_ADDRESS"] = _to_json_data(self.website_address)
-        data["WECHAT"] = _to_json_data(self.wechat)
-        data["WHATSAPP"] = _to_json_data(self.whatsapp)
-        data["WORK_PHONE_NUMBER"] = _to_json_data(self.work_phone_number)
-        data["ZOOMROOM"] = _to_json_data(self.zoomroom)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class FeatureScoresForAttribute:
@@ -1850,323 +1274,6 @@ class FeatureScoresForAttribute:
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
-
-@dataclass
-class FeaturesForAttribute:
-    value: 'List[FeatureForAttribute]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'FeaturesForAttribute':
-        return cls(_from_json_data(List[FeatureForAttribute], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class FeaturesXxx:
-    account_domain: 'FeaturesForAttribute'
-    account_number: 'FeaturesForAttribute'
-    acct_num: 'FeaturesForAttribute'
-    address: 'FeaturesForAttribute'
-    address_list: 'FeaturesForAttribute'
-    addr_full: 'FeaturesForAttribute'
-    addr_key: 'FeaturesForAttribute'
-    cell_phone_number: 'FeaturesForAttribute'
-    citizenship: 'FeaturesForAttribute'
-    country_of_association: 'FeaturesForAttribute'
-    data_source: 'FeaturesForAttribute'
-    date_of_birth: 'FeaturesForAttribute'
-    date_of_death: 'FeaturesForAttribute'
-    dob: 'FeaturesForAttribute'
-    dod: 'FeaturesForAttribute'
-    drivers_license_number: 'FeaturesForAttribute'
-    drivers_license_state: 'FeaturesForAttribute'
-    drlic: 'FeaturesForAttribute'
-    duns_number: 'FeaturesForAttribute'
-    email: 'FeaturesForAttribute'
-    email_address: 'FeaturesForAttribute'
-    email_key: 'FeaturesForAttribute'
-    employer_name: 'FeaturesForAttribute'
-    entity_type: 'FeaturesForAttribute'
-    facebook: 'FeaturesForAttribute'
-    gender: 'FeaturesForAttribute'
-    group_assn_id_number: 'FeaturesForAttribute'
-    group_assn_id_type: 'FeaturesForAttribute'
-    group_association_org_name: 'FeaturesForAttribute'
-    group_association_type: 'FeaturesForAttribute'
-    id_key: 'FeaturesForAttribute'
-    instagram: 'FeaturesForAttribute'
-    lei_number: 'FeaturesForAttribute'
-    linkedin: 'FeaturesForAttribute'
-    load_id: 'FeaturesForAttribute'
-    login_id: 'FeaturesForAttribute'
-    name: 'FeaturesForAttribute'
-    name_full: 'FeaturesForAttribute'
-    name_key: 'FeaturesForAttribute'
-    name_list: 'FeaturesForAttribute'
-    nationality: 'FeaturesForAttribute'
-    national_id: 'FeaturesForAttribute'
-    national_id_country: 'FeaturesForAttribute'
-    national_id_number: 'FeaturesForAttribute'
-    nin_country: 'FeaturesForAttribute'
-    nin_number: 'FeaturesForAttribute'
-    npi_number: 'FeaturesForAttribute'
-    other_id_country: 'FeaturesForAttribute'
-    other_id_number: 'FeaturesForAttribute'
-    other_id_type: 'FeaturesForAttribute'
-    passport: 'FeaturesForAttribute'
-    passports: 'FeaturesForAttribute'
-    passport_country: 'FeaturesForAttribute'
-    passport_number: 'FeaturesForAttribute'
-    phone: 'FeaturesForAttribute'
-    phones: 'FeaturesForAttribute'
-    phone_key: 'FeaturesForAttribute'
-    place_of_birth: 'FeaturesForAttribute'
-    primary_name_first: 'FeaturesForAttribute'
-    primary_name_last: 'FeaturesForAttribute'
-    primary_name_middle: 'FeaturesForAttribute'
-    primary_name_org: 'FeaturesForAttribute'
-    primary_name_prefix: 'FeaturesForAttribute'
-    primary_name_suffix: 'FeaturesForAttribute'
-    primary_phone_number: 'FeaturesForAttribute'
-    record_type: 'FeaturesForAttribute'
-    registration_country: 'FeaturesForAttribute'
-    registration_date: 'FeaturesForAttribute'
-    rel_anchor: 'FeaturesForAttribute'
-    rel_anchor_domain: 'FeaturesForAttribute'
-    rel_anchor_key: 'FeaturesForAttribute'
-    rel_link: 'FeaturesForAttribute'
-    rel_pointer: 'FeaturesForAttribute'
-    rel_pointer_domain: 'FeaturesForAttribute'
-    rel_pointer_key: 'FeaturesForAttribute'
-    rel_pointer_role: 'FeaturesForAttribute'
-    signal: 'FeaturesForAttribute'
-    skype: 'FeaturesForAttribute'
-    social_handle: 'FeaturesForAttribute'
-    social_network: 'FeaturesForAttribute'
-    source_id: 'FeaturesForAttribute'
-    ssn: 'FeaturesForAttribute'
-    ssn_last4: 'FeaturesForAttribute'
-    ssn_number: 'FeaturesForAttribute'
-    tango: 'FeaturesForAttribute'
-    tax_id_country: 'FeaturesForAttribute'
-    tax_id_number: 'FeaturesForAttribute'
-    tax_id_type: 'FeaturesForAttribute'
-    telegram: 'FeaturesForAttribute'
-    trusted_id_number: 'FeaturesForAttribute'
-    trusted_id_type: 'FeaturesForAttribute'
-    twitter: 'FeaturesForAttribute'
-    viber: 'FeaturesForAttribute'
-    website_address: 'FeaturesForAttribute'
-    wechat: 'FeaturesForAttribute'
-    whatsapp: 'FeaturesForAttribute'
-    work_phone_number: 'FeaturesForAttribute'
-    zoomroom: 'FeaturesForAttribute'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'FeaturesXxx':
-        return cls(
-            _from_json_data(FeaturesForAttribute, data.get("ACCOUNT_DOMAIN")),
-            _from_json_data(FeaturesForAttribute, data.get("ACCOUNT_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("ACCT_NUM")),
-            _from_json_data(FeaturesForAttribute, data.get("ADDRESS")),
-            _from_json_data(FeaturesForAttribute, data.get("ADDRESS_LIST")),
-            _from_json_data(FeaturesForAttribute, data.get("ADDR_FULL")),
-            _from_json_data(FeaturesForAttribute, data.get("ADDR_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("CELL_PHONE_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("CITIZENSHIP")),
-            _from_json_data(FeaturesForAttribute, data.get("COUNTRY_OF_ASSOCIATION")),
-            _from_json_data(FeaturesForAttribute, data.get("DATA_SOURCE")),
-            _from_json_data(FeaturesForAttribute, data.get("DATE_OF_BIRTH")),
-            _from_json_data(FeaturesForAttribute, data.get("DATE_OF_DEATH")),
-            _from_json_data(FeaturesForAttribute, data.get("DOB")),
-            _from_json_data(FeaturesForAttribute, data.get("DOD")),
-            _from_json_data(FeaturesForAttribute, data.get("DRIVERS_LICENSE_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("DRIVERS_LICENSE_STATE")),
-            _from_json_data(FeaturesForAttribute, data.get("DRLIC")),
-            _from_json_data(FeaturesForAttribute, data.get("DUNS_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("EMAIL")),
-            _from_json_data(FeaturesForAttribute, data.get("EMAIL_ADDRESS")),
-            _from_json_data(FeaturesForAttribute, data.get("EMAIL_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("EMPLOYER_NAME")),
-            _from_json_data(FeaturesForAttribute, data.get("ENTITY_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("FACEBOOK")),
-            _from_json_data(FeaturesForAttribute, data.get("GENDER")),
-            _from_json_data(FeaturesForAttribute, data.get("GROUP_ASSN_ID_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("GROUP_ASSN_ID_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("GROUP_ASSOCIATION_ORG_NAME")),
-            _from_json_data(FeaturesForAttribute, data.get("GROUP_ASSOCIATION_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("ID_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("INSTAGRAM")),
-            _from_json_data(FeaturesForAttribute, data.get("LEI_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("LINKEDIN")),
-            _from_json_data(FeaturesForAttribute, data.get("LOAD_ID")),
-            _from_json_data(FeaturesForAttribute, data.get("LOGIN_ID")),
-            _from_json_data(FeaturesForAttribute, data.get("NAME")),
-            _from_json_data(FeaturesForAttribute, data.get("NAME_FULL")),
-            _from_json_data(FeaturesForAttribute, data.get("NAME_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("NAME_LIST")),
-            _from_json_data(FeaturesForAttribute, data.get("NATIONALITY")),
-            _from_json_data(FeaturesForAttribute, data.get("NATIONAL_ID")),
-            _from_json_data(FeaturesForAttribute, data.get("NATIONAL_ID_COUNTRY")),
-            _from_json_data(FeaturesForAttribute, data.get("NATIONAL_ID_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("NIN_COUNTRY")),
-            _from_json_data(FeaturesForAttribute, data.get("NIN_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("NPI_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("OTHER_ID_COUNTRY")),
-            _from_json_data(FeaturesForAttribute, data.get("OTHER_ID_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("OTHER_ID_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("PASSPORT")),
-            _from_json_data(FeaturesForAttribute, data.get("PASSPORTS")),
-            _from_json_data(FeaturesForAttribute, data.get("PASSPORT_COUNTRY")),
-            _from_json_data(FeaturesForAttribute, data.get("PASSPORT_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("PHONE")),
-            _from_json_data(FeaturesForAttribute, data.get("PHONES")),
-            _from_json_data(FeaturesForAttribute, data.get("PHONE_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("PLACE_OF_BIRTH")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_NAME_FIRST")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_NAME_LAST")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_NAME_MIDDLE")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_NAME_ORG")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_NAME_PREFIX")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_NAME_SUFFIX")),
-            _from_json_data(FeaturesForAttribute, data.get("PRIMARY_PHONE_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("RECORD_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("REGISTRATION_COUNTRY")),
-            _from_json_data(FeaturesForAttribute, data.get("REGISTRATION_DATE")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_ANCHOR")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_ANCHOR_DOMAIN")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_ANCHOR_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_LINK")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_POINTER")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_POINTER_DOMAIN")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_POINTER_KEY")),
-            _from_json_data(FeaturesForAttribute, data.get("REL_POINTER_ROLE")),
-            _from_json_data(FeaturesForAttribute, data.get("SIGNAL")),
-            _from_json_data(FeaturesForAttribute, data.get("SKYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("SOCIAL_HANDLE")),
-            _from_json_data(FeaturesForAttribute, data.get("SOCIAL_NETWORK")),
-            _from_json_data(FeaturesForAttribute, data.get("SOURCE_ID")),
-            _from_json_data(FeaturesForAttribute, data.get("SSN")),
-            _from_json_data(FeaturesForAttribute, data.get("SSN_LAST4")),
-            _from_json_data(FeaturesForAttribute, data.get("SSN_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("TANGO")),
-            _from_json_data(FeaturesForAttribute, data.get("TAX_ID_COUNTRY")),
-            _from_json_data(FeaturesForAttribute, data.get("TAX_ID_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("TAX_ID_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("TELEGRAM")),
-            _from_json_data(FeaturesForAttribute, data.get("TRUSTED_ID_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("TRUSTED_ID_TYPE")),
-            _from_json_data(FeaturesForAttribute, data.get("TWITTER")),
-            _from_json_data(FeaturesForAttribute, data.get("VIBER")),
-            _from_json_data(FeaturesForAttribute, data.get("WEBSITE_ADDRESS")),
-            _from_json_data(FeaturesForAttribute, data.get("WECHAT")),
-            _from_json_data(FeaturesForAttribute, data.get("WHATSAPP")),
-            _from_json_data(FeaturesForAttribute, data.get("WORK_PHONE_NUMBER")),
-            _from_json_data(FeaturesForAttribute, data.get("ZOOMROOM")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
-        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
-        data["ACCT_NUM"] = _to_json_data(self.acct_num)
-        data["ADDRESS"] = _to_json_data(self.address)
-        data["ADDRESS_LIST"] = _to_json_data(self.address_list)
-        data["ADDR_FULL"] = _to_json_data(self.addr_full)
-        data["ADDR_KEY"] = _to_json_data(self.addr_key)
-        data["CELL_PHONE_NUMBER"] = _to_json_data(self.cell_phone_number)
-        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
-        data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
-        data["DATA_SOURCE"] = _to_json_data(self.data_source)
-        data["DATE_OF_BIRTH"] = _to_json_data(self.date_of_birth)
-        data["DATE_OF_DEATH"] = _to_json_data(self.date_of_death)
-        data["DOB"] = _to_json_data(self.dob)
-        data["DOD"] = _to_json_data(self.dod)
-        data["DRIVERS_LICENSE_NUMBER"] = _to_json_data(self.drivers_license_number)
-        data["DRIVERS_LICENSE_STATE"] = _to_json_data(self.drivers_license_state)
-        data["DRLIC"] = _to_json_data(self.drlic)
-        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
-        data["EMAIL"] = _to_json_data(self.email)
-        data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
-        data["EMAIL_KEY"] = _to_json_data(self.email_key)
-        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
-        data["ENTITY_TYPE"] = _to_json_data(self.entity_type)
-        data["FACEBOOK"] = _to_json_data(self.facebook)
-        data["GENDER"] = _to_json_data(self.gender)
-        data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
-        data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
-        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
-        data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
-        data["ID_KEY"] = _to_json_data(self.id_key)
-        data["INSTAGRAM"] = _to_json_data(self.instagram)
-        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
-        data["LINKEDIN"] = _to_json_data(self.linkedin)
-        data["LOAD_ID"] = _to_json_data(self.load_id)
-        data["LOGIN_ID"] = _to_json_data(self.login_id)
-        data["NAME"] = _to_json_data(self.name)
-        data["NAME_FULL"] = _to_json_data(self.name_full)
-        data["NAME_KEY"] = _to_json_data(self.name_key)
-        data["NAME_LIST"] = _to_json_data(self.name_list)
-        data["NATIONALITY"] = _to_json_data(self.nationality)
-        data["NATIONAL_ID"] = _to_json_data(self.national_id)
-        data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
-        data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
-        data["NIN_COUNTRY"] = _to_json_data(self.nin_country)
-        data["NIN_NUMBER"] = _to_json_data(self.nin_number)
-        data["NPI_NUMBER"] = _to_json_data(self.npi_number)
-        data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
-        data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
-        data["OTHER_ID_TYPE"] = _to_json_data(self.other_id_type)
-        data["PASSPORT"] = _to_json_data(self.passport)
-        data["PASSPORTS"] = _to_json_data(self.passports)
-        data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        data["PHONE"] = _to_json_data(self.phone)
-        data["PHONES"] = _to_json_data(self.phones)
-        data["PHONE_KEY"] = _to_json_data(self.phone_key)
-        data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
-        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
-        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
-        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
-        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
-        data["PRIMARY_NAME_PREFIX"] = _to_json_data(self.primary_name_prefix)
-        data["PRIMARY_NAME_SUFFIX"] = _to_json_data(self.primary_name_suffix)
-        data["PRIMARY_PHONE_NUMBER"] = _to_json_data(self.primary_phone_number)
-        data["RECORD_TYPE"] = _to_json_data(self.record_type)
-        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
-        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
-        data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
-        data["REL_LINK"] = _to_json_data(self.rel_link)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
-        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
-        data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
-        data["SIGNAL"] = _to_json_data(self.signal)
-        data["SKYPE"] = _to_json_data(self.skype)
-        data["SOCIAL_HANDLE"] = _to_json_data(self.social_handle)
-        data["SOCIAL_NETWORK"] = _to_json_data(self.social_network)
-        data["SOURCE_ID"] = _to_json_data(self.source_id)
-        data["SSN"] = _to_json_data(self.ssn)
-        data["SSN_LAST4"] = _to_json_data(self.ssn_last4)
-        data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        data["TANGO"] = _to_json_data(self.tango)
-        data["TAX_ID_COUNTRY"] = _to_json_data(self.tax_id_country)
-        data["TAX_ID_NUMBER"] = _to_json_data(self.tax_id_number)
-        data["TAX_ID_TYPE"] = _to_json_data(self.tax_id_type)
-        data["TELEGRAM"] = _to_json_data(self.telegram)
-        data["TRUSTED_ID_NUMBER"] = _to_json_data(self.trusted_id_number)
-        data["TRUSTED_ID_TYPE"] = _to_json_data(self.trusted_id_type)
-        data["TWITTER"] = _to_json_data(self.twitter)
-        data["VIBER"] = _to_json_data(self.viber)
-        data["WEBSITE_ADDRESS"] = _to_json_data(self.website_address)
-        data["WECHAT"] = _to_json_data(self.wechat)
-        data["WHATSAPP"] = _to_json_data(self.whatsapp)
-        data["WORK_PHONE_NUMBER"] = _to_json_data(self.work_phone_number)
-        data["ZOOMROOM"] = _to_json_data(self.zoomroom)
-        return data
 
 @dataclass
 class FinalState:
@@ -2338,26 +1445,26 @@ class G2config:
         return data
 
 @dataclass
-class G2configAddDataSourceResponse:
-    dsrc_id: 'int'
+class GetConfig:
+    g2_config: 'G2config'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configAddDataSourceResponse':
+    def from_json_data(cls, data: Any) -> 'GetConfig':
         return cls(
-            _from_json_data(int, data.get("DSRC_ID")),
+            _from_json_data(G2config, data.get("G2_CONFIG")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
         return data
 
 @dataclass
-class G2configListDataSourcesResponse:
+class GetDataSources:
     data_sources: 'List[DataSource]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configListDataSourcesResponse':
+    def from_json_data(cls, data: Any) -> 'GetDataSources':
         return cls(
             _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
         )
@@ -2368,11 +1475,11 @@ class G2configListDataSourcesResponse:
         return data
 
 @dataclass
-class G2configSaveResponse:
+class GetJSONString:
     g2_config: 'G2config'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configSaveResponse':
+    def from_json_data(cls, data: Any) -> 'GetJSONString':
         return cls(
             _from_json_data(G2config, data.get("G2_CONFIG")),
         )
@@ -2380,1792 +1487,6 @@ class G2configSaveResponse:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
-
-@dataclass
-class G2configmgrGetConfigListResponse:
-    configs: 'Configs'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigListResponse':
-        return cls(
-            _from_json_data(Configs, data.get("CONFIGS")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CONFIGS"] = _to_json_data(self.configs)
-        return data
-
-@dataclass
-class G2configmgrGetConfigResponse:
-    g2_config: 'G2config'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2configmgrGetConfigResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
-
-@dataclass
-class G2diagnosticCheckDbperfResponse:
-    insert_time: 'int'
-    num_records_inserted: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticCheckDbperfResponse':
-        return cls(
-            _from_json_data(int, data.get("insertTime")),
-            _from_json_data(int, data.get("numRecordsInserted")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["insertTime"] = _to_json_data(self.insert_time)
-        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
-        return data
-
-@dataclass
-class G2diagnosticFetchNextEntityBySizeResponse:
-    value: 'List[EntityBySize]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticFetchNextEntityBySizeResponse':
-        return cls(_from_json_data(List[EntityBySize], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticFindEntitiesByFeatureIdsResponseXxx0:
-    lib_feat_id: 'int'
-    res_ent_id: 'int'
-    usage_type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticFindEntitiesByFeatureIdsResponseXxx0':
-        return cls(
-            _from_json_data(int, data.get("LIB_FEAT_ID")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-            _from_json_data(str, data.get("USAGE_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
-        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
-        return data
-
-@dataclass
-class G2diagnosticFindEntitiesByFeatureIdsResponseXxx:
-    value: 'List[G2diagnosticFindEntitiesByFeatureIdsResponseXxx0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticFindEntitiesByFeatureIdsResponseXxx':
-        return cls(_from_json_data(List[G2diagnosticFindEntitiesByFeatureIdsResponseXxx0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetDbinfoResponseDetail:
-    name: 'str'
-    type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDbinfoResponseDetail':
-        return cls(
-            _from_json_data(str, data.get("Name")),
-            _from_json_data(str, data.get("Type")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["Name"] = _to_json_data(self.name)
-        data["Type"] = _to_json_data(self.type)
-        return data
-
-@dataclass
-class G2diagnosticGetDbinfoResponse:
-    database_details: 'List[G2diagnosticGetDbinfoResponseDetail]'
-    hybrid_mode: 'bool'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDbinfoResponse':
-        return cls(
-            _from_json_data(List[G2diagnosticGetDbinfoResponseDetail], data.get("Database Details")),
-            _from_json_data(bool, data.get("Hybrid Mode")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["Database Details"] = _to_json_data(self.database_details)
-        data["Hybrid Mode"] = _to_json_data(self.hybrid_mode)
-        return data
-
-@dataclass
-class G2diagnosticGetDataSourceCountsResponse0:
-    dsrc_code: 'str'
-    dsrc_id: 'int'
-    dsrc_record_count: 'int'
-    etype_code: 'str'
-    etype_id: 'int'
-    obs_ent_count: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDataSourceCountsResponse0':
-        return cls(
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(int, data.get("DSRC_ID")),
-            _from_json_data(int, data.get("DSRC_RECORD_COUNT")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(int, data.get("ETYPE_ID")),
-            _from_json_data(int, data.get("OBS_ENT_COUNT")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
-        data["DSRC_RECORD_COUNT"] = _to_json_data(self.dsrc_record_count)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["ETYPE_ID"] = _to_json_data(self.etype_id)
-        data["OBS_ENT_COUNT"] = _to_json_data(self.obs_ent_count)
-        return data
-
-@dataclass
-class G2diagnosticGetDataSourceCountsResponse:
-    value: 'List[G2diagnosticGetDataSourceCountsResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetDataSourceCountsResponse':
-        return cls(_from_json_data(List[G2diagnosticGetDataSourceCountsResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetEntityDetailsResponse0:
-    derived: 'str'
-    dsrc_code: 'str'
-    errule_code: 'str'
-    etype_code: 'str'
-    feat_desc: 'str'
-    ftype_code: 'str'
-    match_key: 'str'
-    obs_ent_id: 'int'
-    record_id: 'int'
-    res_ent_id: 'int'
-    usage_type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityDetailsResponse0':
-        return cls(
-            _from_json_data(str, data.get("DERIVED")),
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(str, data.get("FTYPE_CODE")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("OBS_ENT_ID")),
-            _from_json_data(int, data.get("RECORD_ID")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-            _from_json_data(str, data.get("USAGE_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DERIVED"] = _to_json_data(self.derived)
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
-        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["OBS_ENT_ID"] = _to_json_data(self.obs_ent_id)
-        data["RECORD_ID"] = _to_json_data(self.record_id)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
-        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
-        return data
-
-@dataclass
-class G2diagnosticGetEntityDetailsResponse:
-    value: 'List[G2diagnosticGetEntityDetailsResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityDetailsResponse':
-        return cls(_from_json_data(List[G2diagnosticGetEntityDetailsResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetEntityResumeResponse0:
-    dsrc_code: 'str'
-    ent_src_desc: 'str'
-    errule_code: 'str'
-    etype_code: 'str'
-    json_data: 'Dict[str, object]'
-    match_key: 'str'
-    record_id: 'str'
-    rel_ent_id: 'int'
-    res_ent_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityResumeResponse0':
-        return cls(
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("ENT_SRC_DESC")),
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(str, data.get("RECORD_ID")),
-            _from_json_data(int, data.get("REL_ENT_ID")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["ENT_SRC_DESC"] = _to_json_data(self.ent_src_desc)
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["JSON_DATA"] = _to_json_data(self.json_data)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["RECORD_ID"] = _to_json_data(self.record_id)
-        data["REL_ENT_ID"] = _to_json_data(self.rel_ent_id)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
-        return data
-
-@dataclass
-class G2diagnosticGetEntityResumeResponse:
-    value: 'List[G2diagnosticGetEntityResumeResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntityResumeResponse':
-        return cls(_from_json_data(List[G2diagnosticGetEntityResumeResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetEntitySizeBreakdownResponse:
-    value: 'AttributeCounters'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetEntitySizeBreakdownResponse':
-        return cls(_from_json_data(AttributeCounters, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetFeatureResponseElements:
-    felem_code: 'str'
-    felem_value: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetFeatureResponseElements':
-        return cls(
-            _from_json_data(str, data.get("FELEM_CODE")),
-            _from_json_data(str, data.get("FELEM_VALUE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FELEM_CODE"] = _to_json_data(self.felem_code)
-        data["FELEM_VALUE"] = _to_json_data(self.felem_value)
-        return data
-
-@dataclass
-class G2diagnosticGetFeatureResponse:
-    elements: 'List[G2diagnosticGetFeatureResponseElements]'
-    ftype_code: 'str'
-    lib_feat_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetFeatureResponse':
-        return cls(
-            _from_json_data(List[G2diagnosticGetFeatureResponseElements], data.get("ELEMENTS")),
-            _from_json_data(str, data.get("FTYPE_CODE")),
-            _from_json_data(int, data.get("LIB_FEAT_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ELEMENTS"] = _to_json_data(self.elements)
-        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
-        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
-        return data
-
-@dataclass
-class G2diagnosticGetGenericFeaturesResponse0:
-    candidate_cap_reached: 'str'
-    estimated_count: 'int'
-    feat_desc: 'str'
-    ftype_code: 'str'
-    lib_feat_id: 'int'
-    scoring_cap_reached: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetGenericFeaturesResponse0':
-        return cls(
-            _from_json_data(str, data.get("CANDIDATE_CAP_REACHED")),
-            _from_json_data(int, data.get("ESTIMATED_COUNT")),
-            _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(str, data.get("FTYPE_CODE")),
-            _from_json_data(int, data.get("LIB_FEAT_ID")),
-            _from_json_data(str, data.get("SCORING_CAP_REACHED")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CANDIDATE_CAP_REACHED"] = _to_json_data(self.candidate_cap_reached)
-        data["ESTIMATED_COUNT"] = _to_json_data(self.estimated_count)
-        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
-        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
-        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
-        data["SCORING_CAP_REACHED"] = _to_json_data(self.scoring_cap_reached)
-        return data
-
-@dataclass
-class G2diagnosticGetGenericFeaturesResponse:
-    value: 'List[G2diagnosticGetGenericFeaturesResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetGenericFeaturesResponse':
-        return cls(_from_json_data(List[G2diagnosticGetGenericFeaturesResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetMappingStatisticsResponse0:
-    derived: 'str'
-    dsrc_code: 'str'
-    etype_code: 'str'
-    ftype_code: 'str'
-    max_feat_desc: 'str'
-    min_feat_desc: 'str'
-    rec_count: 'int'
-    rec_pct: 'float'
-    uniq_count: 'int'
-    uniq_pct: 'float'
-    usage_type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetMappingStatisticsResponse0':
-        return cls(
-            _from_json_data(str, data.get("DERIVED")),
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(str, data.get("FTYPE_CODE")),
-            _from_json_data(str, data.get("MAX_FEAT_DESC")),
-            _from_json_data(str, data.get("MIN_FEAT_DESC")),
-            _from_json_data(int, data.get("REC_COUNT")),
-            _from_json_data(float, data.get("REC_PCT")),
-            _from_json_data(int, data.get("UNIQ_COUNT")),
-            _from_json_data(float, data.get("UNIQ_PCT")),
-            _from_json_data(str, data.get("USAGE_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DERIVED"] = _to_json_data(self.derived)
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
-        data["MAX_FEAT_DESC"] = _to_json_data(self.max_feat_desc)
-        data["MIN_FEAT_DESC"] = _to_json_data(self.min_feat_desc)
-        data["REC_COUNT"] = _to_json_data(self.rec_count)
-        data["REC_PCT"] = _to_json_data(self.rec_pct)
-        data["UNIQ_COUNT"] = _to_json_data(self.uniq_count)
-        data["UNIQ_PCT"] = _to_json_data(self.uniq_pct)
-        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
-        return data
-
-@dataclass
-class G2diagnosticGetMappingStatisticsResponse:
-    value: 'List[G2diagnosticGetMappingStatisticsResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetMappingStatisticsResponse':
-        return cls(_from_json_data(List[G2diagnosticGetMappingStatisticsResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetRelationshipDetailsResponse0:
-    errule_code: 'str'
-    feat_desc: 'str'
-    ftype_code: 'str'
-    match_key: 'str'
-    res_ent_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetRelationshipDetailsResponse0':
-        return cls(
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(str, data.get("FTYPE_CODE")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("RES_ENT_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
-        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["RES_ENT_ID"] = _to_json_data(self.res_ent_id)
-        return data
-
-@dataclass
-class G2diagnosticGetRelationshipDetailsResponse:
-    value: 'List[G2diagnosticGetRelationshipDetailsResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetRelationshipDetailsResponse':
-        return cls(_from_json_data(List[G2diagnosticGetRelationshipDetailsResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticGetResolutionStatisticsResponseRawMatchKeys:
-    match_key: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetResolutionStatisticsResponseRawMatchKeys':
-        return cls(
-            _from_json_data(str, data.get("MATCH_KEY")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        return data
-
-@dataclass
-class G2diagnosticGetResolutionStatisticsResponse0:
-    errule_code: 'str'
-    errule_id: 'int'
-    is_ambiguous: 'str'
-    match_key: 'str'
-    match_level: 'int'
-    max_res_ent_id: 'int'
-    max_res_rel_id: 'int'
-    min_res_ent_id: 'int'
-    min_res_rel_id: 'int'
-    raw_match_keys: 'List[G2diagnosticGetResolutionStatisticsResponseRawMatchKeys]'
-    record_count: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetResolutionStatisticsResponse0':
-        return cls(
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(int, data.get("ERRULE_ID")),
-            _from_json_data(str, data.get("IS_AMBIGUOUS")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("MATCH_LEVEL")),
-            _from_json_data(int, data.get("MAX_RES_ENT_ID")),
-            _from_json_data(int, data.get("MAX_RES_REL_ID")),
-            _from_json_data(int, data.get("MIN_RES_ENT_ID")),
-            _from_json_data(int, data.get("MIN_RES_REL_ID")),
-            _from_json_data(List[G2diagnosticGetResolutionStatisticsResponseRawMatchKeys], data.get("RAW_MATCH_KEYS")),
-            _from_json_data(int, data.get("RECORD_COUNT")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["ERRULE_ID"] = _to_json_data(self.errule_id)
-        data["IS_AMBIGUOUS"] = _to_json_data(self.is_ambiguous)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["MATCH_LEVEL"] = _to_json_data(self.match_level)
-        data["MAX_RES_ENT_ID"] = _to_json_data(self.max_res_ent_id)
-        data["MAX_RES_REL_ID"] = _to_json_data(self.max_res_rel_id)
-        data["MIN_RES_ENT_ID"] = _to_json_data(self.min_res_ent_id)
-        data["MIN_RES_REL_ID"] = _to_json_data(self.min_res_rel_id)
-        data["RAW_MATCH_KEYS"] = _to_json_data(self.raw_match_keys)
-        data["RECORD_COUNT"] = _to_json_data(self.record_count)
-        return data
-
-@dataclass
-class G2diagnosticGetResolutionStatisticsResponse:
-    value: 'List[G2diagnosticGetResolutionStatisticsResponse0]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticGetResolutionStatisticsResponse':
-        return cls(_from_json_data(List[G2diagnosticGetResolutionStatisticsResponse0], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2diagnosticStreamEntityListBySizeResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2diagnosticStreamEntityListBySizeResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineAddRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineAddRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineAddRecordWithInfoWithReturnedRecordIDResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineAddRecordWithInfoWithReturnedRecordIDResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineCheckRecordResponseCheckRecordResponse:
-    candidate_match: 'str'
-    dsrc_code: 'str'
-    errule_code: 'str'
-    errule_id: 'int'
-    match_key: 'str'
-    match_level: 'int'
-    match_level_code: 'str'
-    non_generic_candidate_match: 'str'
-    record_id: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineCheckRecordResponseCheckRecordResponse':
-        return cls(
-            _from_json_data(str, data.get("CANDIDATE_MATCH")),
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(int, data.get("ERRULE_ID")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("MATCH_LEVEL")),
-            _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
-            _from_json_data(str, data.get("NON_GENERIC_CANDIDATE_MATCH")),
-            _from_json_data(str, data.get("RECORD_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CANDIDATE_MATCH"] = _to_json_data(self.candidate_match)
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["ERRULE_ID"] = _to_json_data(self.errule_id)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["MATCH_LEVEL"] = _to_json_data(self.match_level)
-        data["MATCH_LEVEL_CODE"] = _to_json_data(self.match_level_code)
-        data["NON_GENERIC_CANDIDATE_MATCH"] = _to_json_data(self.non_generic_candidate_match)
-        data["RECORD_ID"] = _to_json_data(self.record_id)
-        return data
-
-@dataclass
-class G2engineCheckRecordResponse:
-    check_record_response: 'List[G2engineCheckRecordResponseCheckRecordResponse]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineCheckRecordResponse':
-        return cls(
-            _from_json_data(List[G2engineCheckRecordResponseCheckRecordResponse], data.get("CHECK_RECORD_RESPONSE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CHECK_RECORD_RESPONSE"] = _to_json_data(self.check_record_response)
-        return data
-
-@dataclass
-class G2engineDeleteRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineDeleteRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineExportConfigAndConfigIDResponse:
-    g2_config: 'G2config'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineExportConfigAndConfigIDResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
-
-@dataclass
-class G2engineExportConfigResponse:
-    g2_config: 'G2config'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineExportConfigResponse':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
-
-@dataclass
-class G2engineFetchNextResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFetchNextResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindInterestingEntitiesByEntityIDResponse:
-    value: 'Interesting'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindInterestingEntitiesByEntityIDResponse':
-        return cls(_from_json_data(Interesting, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindInterestingEntitiesByRecordIDResponse:
-    value: 'Interesting'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindInterestingEntitiesByRecordIDResponse':
-        return cls(_from_json_data(Interesting, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByEntityIdv2response:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByEntityIdv2response':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByEntityIDResponse:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByEntityIDResponse':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByRecordIdv2response:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByRecordIdv2response':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindNetworkByRecordIDResponse:
-    value: 'Network'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindNetworkByRecordIDResponse':
-        return cls(_from_json_data(Network, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByEntityIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByEntityIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByEntityIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByEntityIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByRecordIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByRecordIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathByRecordIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathByRecordIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByEntityIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByEntityIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByEntityIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByEntityIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByRecordIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByRecordIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathExcludingByRecordIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathExcludingByRecordIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByEntityIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByEntityIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByEntityIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByEntityIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByRecordIdv2response:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByRecordIdv2response':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineFindPathIncludingSourceByRecordIDResponse:
-    value: 'Path'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineFindPathIncludingSourceByRecordIDResponse':
-        return cls(_from_json_data(Path, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByEntityIdv2response:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByEntityIdv2response':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByEntityIDResponse:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByEntityIDResponse':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByRecordIdv2response:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByRecordIdv2response':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetEntityByRecordIDResponse:
-    value: 'Entity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetEntityByRecordIDResponse':
-        return cls(_from_json_data(Entity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetRecordResponse:
-    value: 'Record'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetRecordResponse':
-        return cls(_from_json_data(Record, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetRecordV2response:
-    value: 'Record'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetRecordV2response':
-        return cls(_from_json_data(Record, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetRedoRecordResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetRedoRecordResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetVirtualEntityByRecordIdv2response:
-    value: 'VirtualEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetVirtualEntityByRecordIdv2response':
-        return cls(_from_json_data(VirtualEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineGetVirtualEntityByRecordIDResponse:
-    value: 'VirtualEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineGetVirtualEntityByRecordIDResponse':
-        return cls(_from_json_data(VirtualEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineHowEntityByEntityIdv2response:
-    value: 'How'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineHowEntityByEntityIdv2response':
-        return cls(_from_json_data(How, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineHowEntityByEntityIDResponse:
-    value: 'How'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineHowEntityByEntityIDResponse':
-        return cls(_from_json_data(How, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessRedoRecordResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessRedoRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessRedoRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessWithResponseResizeResponse:
-    value: 'Process'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessWithResponseResizeResponse':
-        return cls(_from_json_data(Process, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineProcessWithResponseResponse:
-    value: 'Process'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineProcessWithResponseResponse':
-        return cls(_from_json_data(Process, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineReevaluateEntityWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineReevaluateEntityWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineReevaluateRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineReevaluateRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineReplaceRecordWithInfoResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineReplaceRecordWithInfoResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesResponse:
-    value: 'Search'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesResponse':
-        return cls(_from_json_data(Search, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesResponseXxx:
-    value: 'EntitiesByFeatureID'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesResponseXxx':
-        return cls(_from_json_data(EntitiesByFeatureID, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesV2response:
-    value: 'Search'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesV2response':
-        return cls(_from_json_data(Search, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineSearchByAttributesV3response:
-    value: 'Search'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineSearchByAttributesV3response':
-        return cls(_from_json_data(Search, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineStatsResponseDuration:
-    pattern: 'str'
-    type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseDuration':
-        return cls(
-            _from_json_data(str, data.get("PATTERN")),
-            _from_json_data(str, data.get("TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["PATTERN"] = _to_json_data(self.pattern)
-        data["TYPE"] = _to_json_data(self.type)
-        return data
-
-@dataclass
-class G2engineStatsResponseReresolveTriggers:
-    abort_retry: 'int'
-    multiple_resolvable_candidates: 'int'
-    resolve_new_features: 'int'
-    unresolve_movement: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseReresolveTriggers':
-        return cls(
-            _from_json_data(int, data.get("abortRetry")),
-            _from_json_data(int, data.get("multipleResolvableCandidates")),
-            _from_json_data(int, data.get("resolveNewFeatures")),
-            _from_json_data(int, data.get("unresolveMovement")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["abortRetry"] = _to_json_data(self.abort_retry)
-        data["multipleResolvableCandidates"] = _to_json_data(self.multiple_resolvable_candidates)
-        data["resolveNewFeatures"] = _to_json_data(self.resolve_new_features)
-        data["unresolveMovement"] = _to_json_data(self.unresolve_movement)
-        return data
-
-@dataclass
-class G2engineStatsResponseUnresolveTriggers:
-    extensive_resolve: 'int'
-    normal_resolve: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseUnresolveTriggers':
-        return cls(
-            _from_json_data(int, data.get("extensiveResolve")),
-            _from_json_data(int, data.get("normalResolve")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["extensiveResolve"] = _to_json_data(self.extensive_resolve)
-        data["normalResolve"] = _to_json_data(self.normal_resolve)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadExpressedFeatureCall:
-    efcall_id: 'int'
-    efunc_code: 'str'
-    num_calls: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadExpressedFeatureCall':
-        return cls(
-            _from_json_data(int, data.get("EFCALL_ID")),
-            _from_json_data(str, data.get("EFUNC_CODE")),
-            _from_json_data(int, data.get("numCalls")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["EFCALL_ID"] = _to_json_data(self.efcall_id)
-        data["EFUNC_CODE"] = _to_json_data(self.efunc_code)
-        data["numCalls"] = _to_json_data(self.num_calls)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadReresolveTriggers:
-    abort_retry: 'int'
-    multiple_resolvable_candidates: 'int'
-    new_feature_ftypes: 'AttributeCounters'
-    resolve_new_features: 'int'
-    unresolve_movement: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadReresolveTriggers':
-        return cls(
-            _from_json_data(int, data.get("abortRetry")),
-            _from_json_data(int, data.get("multipleResolvableCandidates")),
-            _from_json_data(AttributeCounters, data.get("newFeatureFTypes")),
-            _from_json_data(int, data.get("resolveNewFeatures")),
-            _from_json_data(int, data.get("unresolveMovement")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["abortRetry"] = _to_json_data(self.abort_retry)
-        data["multipleResolvableCandidates"] = _to_json_data(self.multiple_resolvable_candidates)
-        data["newFeatureFTypes"] = _to_json_data(self.new_feature_ftypes)
-        data["resolveNewFeatures"] = _to_json_data(self.resolve_new_features)
-        data["unresolveMovement"] = _to_json_data(self.unresolve_movement)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad:
-    cpu_idle: 'float'
-    cpu_soft_irq: 'float'
-    cpu_system: 'float'
-    cpu_user: 'float'
-    cpu_wait: 'float'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad':
-        return cls(
-            _from_json_data(float, data.get("cpuIdle")),
-            _from_json_data(float, data.get("cpuSoftIrq")),
-            _from_json_data(float, data.get("cpuSystem")),
-            _from_json_data(float, data.get("cpuUser")),
-            _from_json_data(float, data.get("cpuWait")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["cpuIdle"] = _to_json_data(self.cpu_idle)
-        data["cpuSoftIrq"] = _to_json_data(self.cpu_soft_irq)
-        data["cpuSystem"] = _to_json_data(self.cpu_system)
-        data["cpuUser"] = _to_json_data(self.cpu_user)
-        data["cpuWait"] = _to_json_data(self.cpu_wait)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadSystemResourcesCurrResource:
-    active_threads: 'int'
-    available_memory: 'str'
-    system_load: 'List[G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad]'
-    worker_threads: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResourcesCurrResource':
-        return cls(
-            _from_json_data(int, data.get("activeThreads")),
-            _from_json_data(str, data.get("availableMemory")),
-            _from_json_data(List[G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad], data.get("systemLoad")),
-            _from_json_data(int, data.get("workerThreads")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["activeThreads"] = _to_json_data(self.active_threads)
-        data["availableMemory"] = _to_json_data(self.available_memory)
-        data["systemLoad"] = _to_json_data(self.system_load)
-        data["workerThreads"] = _to_json_data(self.worker_threads)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadSystemResourcesInitResource:
-    available_memory: 'str'
-    logical_cores: 'int'
-    physical_cores: 'int'
-    total_memory: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResourcesInitResource':
-        return cls(
-            _from_json_data(str, data.get("availableMemory")),
-            _from_json_data(int, data.get("logicalCores")),
-            _from_json_data(int, data.get("physicalCores")),
-            _from_json_data(str, data.get("totalMemory")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["availableMemory"] = _to_json_data(self.available_memory)
-        data["logicalCores"] = _to_json_data(self.logical_cores)
-        data["physicalCores"] = _to_json_data(self.physical_cores)
-        data["totalMemory"] = _to_json_data(self.total_memory)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadSystemResources:
-    curr_resources: 'List[G2engineStatsResponseWorkloadSystemResourcesCurrResource]'
-    init_resources: 'List[G2engineStatsResponseWorkloadSystemResourcesInitResource]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadSystemResources':
-        return cls(
-            _from_json_data(List[G2engineStatsResponseWorkloadSystemResourcesCurrResource], data.get("currResources")),
-            _from_json_data(List[G2engineStatsResponseWorkloadSystemResourcesInitResource], data.get("initResources")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["currResources"] = _to_json_data(self.curr_resources)
-        data["initResources"] = _to_json_data(self.init_resources)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadThreadState:
-    active: 'int'
-    data_latch_contention: 'int'
-    idle: 'int'
-    loader: 'int'
-    obs_ent_contention: 'int'
-    res_ent_contention: 'int'
-    resolver: 'int'
-    scoring: 'int'
-    sql_executing: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadThreadState':
-        return cls(
-            _from_json_data(int, data.get("active")),
-            _from_json_data(int, data.get("dataLatchContention")),
-            _from_json_data(int, data.get("idle")),
-            _from_json_data(int, data.get("loader")),
-            _from_json_data(int, data.get("obsEntContention")),
-            _from_json_data(int, data.get("resEntContention")),
-            _from_json_data(int, data.get("resolver")),
-            _from_json_data(int, data.get("scoring")),
-            _from_json_data(int, data.get("sqlExecuting")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["active"] = _to_json_data(self.active)
-        data["dataLatchContention"] = _to_json_data(self.data_latch_contention)
-        data["idle"] = _to_json_data(self.idle)
-        data["loader"] = _to_json_data(self.loader)
-        data["obsEntContention"] = _to_json_data(self.obs_ent_contention)
-        data["resEntContention"] = _to_json_data(self.res_ent_contention)
-        data["resolver"] = _to_json_data(self.resolver)
-        data["scoring"] = _to_json_data(self.scoring)
-        data["sqlExecuting"] = _to_json_data(self.sql_executing)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkloadUnresolveTriggers:
-    ambiguous_multi_resolve: 'int'
-    ambiguous_no_resolve: 'int'
-    extensive_resolve: 'int'
-    normal_resolve: 'int'
-    rel_link: 'int'
-    update: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkloadUnresolveTriggers':
-        return cls(
-            _from_json_data(int, data.get("ambiguousMultiResolve")),
-            _from_json_data(int, data.get("ambiguousNoResolve")),
-            _from_json_data(int, data.get("extensiveResolve")),
-            _from_json_data(int, data.get("normalResolve")),
-            _from_json_data(int, data.get("relLink")),
-            _from_json_data(int, data.get("update")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ambiguousMultiResolve"] = _to_json_data(self.ambiguous_multi_resolve)
-        data["ambiguousNoResolve"] = _to_json_data(self.ambiguous_no_resolve)
-        data["extensiveResolve"] = _to_json_data(self.extensive_resolve)
-        data["normalResolve"] = _to_json_data(self.normal_resolve)
-        data["relLink"] = _to_json_data(self.rel_link)
-        data["update"] = _to_json_data(self.update)
-        return data
-
-@dataclass
-class G2engineStatsResponseWorkload:
-    corrupt_entity_test_diagnosis: 'FixmeUnknown'
-    aborted_unresolve: 'int'
-    actual_ambiguous_test: 'int'
-    added_records: 'int'
-    api_version: 'str'
-    cache_hit: 'AttributeCounters'
-    cache_miss: 'AttributeCounters'
-    cached_ambiguous_test: 'int'
-    candidate_builders: 'AttributeCounters'
-    candidates: 'int'
-    deleted_records: 'int'
-    duration: 'int'
-    expressed_feature_calls: 'List[G2engineStatsResponseWorkloadExpressedFeatureCall]'
-    expressed_features_created: 'AttributeCounters'
-    filtered_obs_feat: 'int'
-    generic_detect: 'AttributeCounters'
-    gnr_scorers_used: 'int'
-    high_contention_feat: 'AttributeCounters'
-    high_contention_res_ent: 'AttributeCounters'
-    latch_contention: 'AttributeCounters'
-    lib_feat_cache_hit: 'int'
-    lib_feat_cache_miss: 'int'
-    loaded_records: 'int'
-    redo_triggers: 'AttributeCounters'
-    reduced_scored_feature_type: 'AttributeCounters'
-    reevaluations: 'int'
-    repaired_entities: 'int'
-    reresolve_skipped: 'int'
-    reresolve_triggers: 'G2engineStatsResponseWorkloadReresolveTriggers'
-    res_feat_stat_cache_hit: 'int'
-    res_feat_stat_cache_miss: 'int'
-    res_feat_stat_update: 'int'
-    retries: 'int'
-    scored_pairs: 'AttributeCounters'
-    suppressed_candidate_builders: 'AttributeCounters'
-    suppressed_disclosed_relationship_domain_count: 'int'
-    suppressed_scored_feature_type: 'AttributeCounters'
-    system_resources: 'G2engineStatsResponseWorkloadSystemResources'
-    thread_state: 'G2engineStatsResponseWorkloadThreadState'
-    unresolve_test: 'int'
-    unresolve_triggers: 'G2engineStatsResponseWorkloadUnresolveTriggers'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponseWorkload':
-        return cls(
-            _from_json_data(FixmeUnknown, data.get("CorruptEntityTestDiagnosis")),
-            _from_json_data(int, data.get("abortedUnresolve")),
-            _from_json_data(int, data.get("actualAmbiguousTest")),
-            _from_json_data(int, data.get("addedRecords")),
-            _from_json_data(str, data.get("apiVersion")),
-            _from_json_data(AttributeCounters, data.get("cacheHit")),
-            _from_json_data(AttributeCounters, data.get("cacheMiss")),
-            _from_json_data(int, data.get("cachedAmbiguousTest")),
-            _from_json_data(AttributeCounters, data.get("candidateBuilders")),
-            _from_json_data(int, data.get("candidates")),
-            _from_json_data(int, data.get("deletedRecords")),
-            _from_json_data(int, data.get("duration")),
-            _from_json_data(List[G2engineStatsResponseWorkloadExpressedFeatureCall], data.get("expressedFeatureCalls")),
-            _from_json_data(AttributeCounters, data.get("expressedFeaturesCreated")),
-            _from_json_data(int, data.get("filteredObsFeat")),
-            _from_json_data(AttributeCounters, data.get("genericDetect")),
-            _from_json_data(int, data.get("gnrScorersUsed")),
-            _from_json_data(AttributeCounters, data.get("highContentionFeat")),
-            _from_json_data(AttributeCounters, data.get("highContentionResEnt")),
-            _from_json_data(AttributeCounters, data.get("latchContention")),
-            _from_json_data(int, data.get("libFeatCacheHit")),
-            _from_json_data(int, data.get("libFeatCacheMiss")),
-            _from_json_data(int, data.get("loadedRecords")),
-            _from_json_data(AttributeCounters, data.get("redoTriggers")),
-            _from_json_data(AttributeCounters, data.get("reducedScoredFeatureType")),
-            _from_json_data(int, data.get("reevaluations")),
-            _from_json_data(int, data.get("repairedEntities")),
-            _from_json_data(int, data.get("reresolveSkipped")),
-            _from_json_data(G2engineStatsResponseWorkloadReresolveTriggers, data.get("reresolveTriggers")),
-            _from_json_data(int, data.get("resFeatStatCacheHit")),
-            _from_json_data(int, data.get("resFeatStatCacheMiss")),
-            _from_json_data(int, data.get("resFeatStatUpdate")),
-            _from_json_data(int, data.get("retries")),
-            _from_json_data(AttributeCounters, data.get("scoredPairs")),
-            _from_json_data(AttributeCounters, data.get("suppressedCandidateBuilders")),
-            _from_json_data(int, data.get("suppressedDisclosedRelationshipDomainCount")),
-            _from_json_data(AttributeCounters, data.get("suppressedScoredFeatureType")),
-            _from_json_data(G2engineStatsResponseWorkloadSystemResources, data.get("systemResources")),
-            _from_json_data(G2engineStatsResponseWorkloadThreadState, data.get("threadState")),
-            _from_json_data(int, data.get("unresolveTest")),
-            _from_json_data(G2engineStatsResponseWorkloadUnresolveTriggers, data.get("unresolveTriggers")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CorruptEntityTestDiagnosis"] = _to_json_data(self.corrupt_entity_test_diagnosis)
-        data["abortedUnresolve"] = _to_json_data(self.aborted_unresolve)
-        data["actualAmbiguousTest"] = _to_json_data(self.actual_ambiguous_test)
-        data["addedRecords"] = _to_json_data(self.added_records)
-        data["apiVersion"] = _to_json_data(self.api_version)
-        data["cacheHit"] = _to_json_data(self.cache_hit)
-        data["cacheMiss"] = _to_json_data(self.cache_miss)
-        data["cachedAmbiguousTest"] = _to_json_data(self.cached_ambiguous_test)
-        data["candidateBuilders"] = _to_json_data(self.candidate_builders)
-        data["candidates"] = _to_json_data(self.candidates)
-        data["deletedRecords"] = _to_json_data(self.deleted_records)
-        data["duration"] = _to_json_data(self.duration)
-        data["expressedFeatureCalls"] = _to_json_data(self.expressed_feature_calls)
-        data["expressedFeaturesCreated"] = _to_json_data(self.expressed_features_created)
-        data["filteredObsFeat"] = _to_json_data(self.filtered_obs_feat)
-        data["genericDetect"] = _to_json_data(self.generic_detect)
-        data["gnrScorersUsed"] = _to_json_data(self.gnr_scorers_used)
-        data["highContentionFeat"] = _to_json_data(self.high_contention_feat)
-        data["highContentionResEnt"] = _to_json_data(self.high_contention_res_ent)
-        data["latchContention"] = _to_json_data(self.latch_contention)
-        data["libFeatCacheHit"] = _to_json_data(self.lib_feat_cache_hit)
-        data["libFeatCacheMiss"] = _to_json_data(self.lib_feat_cache_miss)
-        data["loadedRecords"] = _to_json_data(self.loaded_records)
-        data["redoTriggers"] = _to_json_data(self.redo_triggers)
-        data["reducedScoredFeatureType"] = _to_json_data(self.reduced_scored_feature_type)
-        data["reevaluations"] = _to_json_data(self.reevaluations)
-        data["repairedEntities"] = _to_json_data(self.repaired_entities)
-        data["reresolveSkipped"] = _to_json_data(self.reresolve_skipped)
-        data["reresolveTriggers"] = _to_json_data(self.reresolve_triggers)
-        data["resFeatStatCacheHit"] = _to_json_data(self.res_feat_stat_cache_hit)
-        data["resFeatStatCacheMiss"] = _to_json_data(self.res_feat_stat_cache_miss)
-        data["resFeatStatUpdate"] = _to_json_data(self.res_feat_stat_update)
-        data["retries"] = _to_json_data(self.retries)
-        data["scoredPairs"] = _to_json_data(self.scored_pairs)
-        data["suppressedCandidateBuilders"] = _to_json_data(self.suppressed_candidate_builders)
-        data["suppressedDisclosedRelationshipDomainCount"] = _to_json_data(self.suppressed_disclosed_relationship_domain_count)
-        data["suppressedScoredFeatureType"] = _to_json_data(self.suppressed_scored_feature_type)
-        data["systemResources"] = _to_json_data(self.system_resources)
-        data["threadState"] = _to_json_data(self.thread_state)
-        data["unresolveTest"] = _to_json_data(self.unresolve_test)
-        data["unresolveTriggers"] = _to_json_data(self.unresolve_triggers)
-        return data
-
-@dataclass
-class G2engineStatsResponse:
-    missing_res_ent: 'int'
-    missing_res_ent_and_okey: 'int'
-    aborted_unresolve: 'int'
-    actual_ambiguous_test: 'int'
-    added_records: 'int'
-    cache_hit: 'AttributeCounters'
-    candidate_builders: 'AttributeCounters'
-    candidates: 'int'
-    deleted_records: 'int'
-    duration: 'G2engineStatsResponseDuration'
-    filtered_obs_feat: 'int'
-    generic_detect: 'AttributeCounters'
-    latch_contention: 'AttributeCounters'
-    loaded_records: 'int'
-    redo_triggers: 'AttributeCounters'
-    reduced_scored_feature_type: 'AttributeCounters'
-    reevaluations: 'int'
-    repaired_entities: 'int'
-    reresolve_skipped: 'int'
-    reresolve_triggers: 'G2engineStatsResponseReresolveTriggers'
-    retries: 'int'
-    scored_pairs: 'AttributeCounters'
-    suppressed_candidate_builders: 'AttributeCounters'
-    suppressed_scored_feature_type: 'AttributeCounters'
-    unresolve_test: 'int'
-    unresolve_triggers: 'G2engineStatsResponseUnresolveTriggers'
-    workload: 'G2engineStatsResponseWorkload'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStatsResponse':
-        return cls(
-            _from_json_data(int, data.get("MISSING_RES_ENT")),
-            _from_json_data(int, data.get("MISSING_RES_ENT_AND_OKEY")),
-            _from_json_data(int, data.get("abortedUnresolve")),
-            _from_json_data(int, data.get("actualAmbiguousTest")),
-            _from_json_data(int, data.get("addedRecords")),
-            _from_json_data(AttributeCounters, data.get("cacheHit")),
-            _from_json_data(AttributeCounters, data.get("candidateBuilders")),
-            _from_json_data(int, data.get("candidates")),
-            _from_json_data(int, data.get("deletedRecords")),
-            _from_json_data(G2engineStatsResponseDuration, data.get("duration")),
-            _from_json_data(int, data.get("filteredObsFeat")),
-            _from_json_data(AttributeCounters, data.get("genericDetect")),
-            _from_json_data(AttributeCounters, data.get("latchContention")),
-            _from_json_data(int, data.get("loadedRecords")),
-            _from_json_data(AttributeCounters, data.get("redoTriggers")),
-            _from_json_data(AttributeCounters, data.get("reducedScoredFeatureType")),
-            _from_json_data(int, data.get("reevaluations")),
-            _from_json_data(int, data.get("repairedEntities")),
-            _from_json_data(int, data.get("reresolveSkipped")),
-            _from_json_data(G2engineStatsResponseReresolveTriggers, data.get("reresolveTriggers")),
-            _from_json_data(int, data.get("retries")),
-            _from_json_data(AttributeCounters, data.get("scoredPairs")),
-            _from_json_data(AttributeCounters, data.get("suppressedCandidateBuilders")),
-            _from_json_data(AttributeCounters, data.get("suppressedScoredFeatureType")),
-            _from_json_data(int, data.get("unresolveTest")),
-            _from_json_data(G2engineStatsResponseUnresolveTriggers, data.get("unresolveTriggers")),
-            _from_json_data(G2engineStatsResponseWorkload, data.get("workload")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["MISSING_RES_ENT"] = _to_json_data(self.missing_res_ent)
-        data["MISSING_RES_ENT_AND_OKEY"] = _to_json_data(self.missing_res_ent_and_okey)
-        data["abortedUnresolve"] = _to_json_data(self.aborted_unresolve)
-        data["actualAmbiguousTest"] = _to_json_data(self.actual_ambiguous_test)
-        data["addedRecords"] = _to_json_data(self.added_records)
-        data["cacheHit"] = _to_json_data(self.cache_hit)
-        data["candidateBuilders"] = _to_json_data(self.candidate_builders)
-        data["candidates"] = _to_json_data(self.candidates)
-        data["deletedRecords"] = _to_json_data(self.deleted_records)
-        data["duration"] = _to_json_data(self.duration)
-        data["filteredObsFeat"] = _to_json_data(self.filtered_obs_feat)
-        data["genericDetect"] = _to_json_data(self.generic_detect)
-        data["latchContention"] = _to_json_data(self.latch_contention)
-        data["loadedRecords"] = _to_json_data(self.loaded_records)
-        data["redoTriggers"] = _to_json_data(self.redo_triggers)
-        data["reducedScoredFeatureType"] = _to_json_data(self.reduced_scored_feature_type)
-        data["reevaluations"] = _to_json_data(self.reevaluations)
-        data["repairedEntities"] = _to_json_data(self.repaired_entities)
-        data["reresolveSkipped"] = _to_json_data(self.reresolve_skipped)
-        data["reresolveTriggers"] = _to_json_data(self.reresolve_triggers)
-        data["retries"] = _to_json_data(self.retries)
-        data["scoredPairs"] = _to_json_data(self.scored_pairs)
-        data["suppressedCandidateBuilders"] = _to_json_data(self.suppressed_candidate_builders)
-        data["suppressedScoredFeatureType"] = _to_json_data(self.suppressed_scored_feature_type)
-        data["unresolveTest"] = _to_json_data(self.unresolve_test)
-        data["unresolveTriggers"] = _to_json_data(self.unresolve_triggers)
-        data["workload"] = _to_json_data(self.workload)
-        return data
-
-@dataclass
-class G2engineStreamExportJsonentityReportResponse:
-    value: 'FixmeUnknown'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineStreamExportJsonentityReportResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntitiesResponse:
-    value: 'WhyEntities'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntitiesResponse':
-        return cls(_from_json_data(WhyEntities, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntitiesV2response:
-    value: 'WhyEntities'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntitiesV2response':
-        return cls(_from_json_data(WhyEntities, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntityByEntityIdv2response:
-    value: 'WhyEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByEntityIdv2response':
-        return cls(_from_json_data(WhyEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntityByEntityIDResponse:
-    value: 'WhyEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByEntityIDResponse':
-        return cls(_from_json_data(WhyEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntityByRecordIdv2response:
-    value: 'WhyEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByRecordIdv2response':
-        return cls(_from_json_data(WhyEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyEntityByRecordIDResponse:
-    value: 'WhyEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyEntityByRecordIDResponse':
-        return cls(_from_json_data(WhyEntity, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyRecordsResponse:
-    value: 'WhyRecords'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyRecordsResponse':
-        return cls(_from_json_data(WhyRecords, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2engineWhyRecordsV2response:
-    value: 'WhyRecords'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2engineWhyRecordsV2response':
-        return cls(_from_json_data(WhyRecords, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class G2productLicenseResponse:
-    billing: 'str'
-    contract: 'str'
-    customer: 'str'
-    expire_date: 'str'
-    issue_date: 'str'
-    license_level: 'str'
-    license_type: 'str'
-    record_limit: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2productLicenseResponse':
-        return cls(
-            _from_json_data(str, data.get("billing")),
-            _from_json_data(str, data.get("contract")),
-            _from_json_data(str, data.get("customer")),
-            _from_json_data(str, data.get("expireDate")),
-            _from_json_data(str, data.get("issueDate")),
-            _from_json_data(str, data.get("licenseLevel")),
-            _from_json_data(str, data.get("licenseType")),
-            _from_json_data(int, data.get("recordLimit")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["billing"] = _to_json_data(self.billing)
-        data["contract"] = _to_json_data(self.contract)
-        data["customer"] = _to_json_data(self.customer)
-        data["expireDate"] = _to_json_data(self.expire_date)
-        data["issueDate"] = _to_json_data(self.issue_date)
-        data["licenseLevel"] = _to_json_data(self.license_level)
-        data["licenseType"] = _to_json_data(self.license_type)
-        data["recordLimit"] = _to_json_data(self.record_limit)
-        return data
-
-@dataclass
-class G2productVersionResponse:
-    build_date: 'str'
-    build_number: 'str'
-    build_version: 'str'
-    compatibility_version: 'CompatibilityVersion'
-    product_name: 'str'
-    schema_version: 'SchemaVersion'
-    version: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'G2productVersionResponse':
-        return cls(
-            _from_json_data(str, data.get("BUILD_DATE")),
-            _from_json_data(str, data.get("BUILD_NUMBER")),
-            _from_json_data(str, data.get("BUILD_VERSION")),
-            _from_json_data(CompatibilityVersion, data.get("COMPATIBILITY_VERSION")),
-            _from_json_data(str, data.get("PRODUCT_NAME")),
-            _from_json_data(SchemaVersion, data.get("SCHEMA_VERSION")),
-            _from_json_data(str, data.get("VERSION")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["BUILD_DATE"] = _to_json_data(self.build_date)
-        data["BUILD_NUMBER"] = _to_json_data(self.build_number)
-        data["BUILD_VERSION"] = _to_json_data(self.build_version)
-        data["COMPATIBILITY_VERSION"] = _to_json_data(self.compatibility_version)
-        data["PRODUCT_NAME"] = _to_json_data(self.product_name)
-        data["SCHEMA_VERSION"] = _to_json_data(self.schema_version)
-        data["VERSION"] = _to_json_data(self.version)
         return data
 
 @dataclass
@@ -4259,6 +1580,11 @@ class InterestingEntitySampleRecords:
 class InterestingEntity:
     degrees: 'int'
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     flags: 'List[str]'
     sample_records: 'List[InterestingEntitySampleRecords]'
 
@@ -4277,390 +1603,6 @@ class InterestingEntity:
         data["ENTITY_ID"] = _to_json_data(self.entity_id)
         data["FLAGS"] = _to_json_data(self.flags)
         data["SAMPLE_RECORDS"] = _to_json_data(self.sample_records)
-        return data
-
-@dataclass
-class JSONDataXxxAcctNum:
-    account_domain: 'str'
-    account_number: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataXxxAcctNum':
-        return cls(
-            _from_json_data(str, data.get("ACCOUNT_DOMAIN")),
-            _from_json_data(str, data.get("ACCOUNT_NUMBER")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
-        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
-        return data
-
-@dataclass
-class JSONDataXxxSsn:
-    passport_number: 'str'
-    ssn_number: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataXxxSsn':
-        return cls(
-            _from_json_data(str, data.get("PASSPORT_NUMBER")),
-            _from_json_data(str, data.get("SSN_NUMBER")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        return data
-
-@dataclass
-class JSONDataXxxSsnLast4:
-    ssn_last4: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataXxxSsnLast4':
-        return cls(
-            _from_json_data(int, data.get("SSN_LAST4")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["SSN_LAST4"] = _to_json_data(self.ssn_last4)
-        return data
-
-@dataclass
-class JSONDataXxx:
-    account_domain: 'str'
-    account_number: 'str'
-    acct_num: 'List[JSONDataXxxAcctNum]'
-    address: 'str'
-    address_list: 'Addresses'
-    addr_full: 'str'
-    addr_key: 'str'
-    cell_phone_number: 'str'
-    citizenship: 'str'
-    country_of_association: 'str'
-    data_source: 'str'
-    date_of_birth: 'str'
-    date_of_death: 'str'
-    dob: 'str'
-    dod: 'str'
-    drivers_license_number: 'str'
-    drivers_license_state: 'str'
-    drlic: 'str'
-    dsrc_action: 'str'
-    dsrc_code: 'str'
-    duns_number: 'str'
-    email: 'str'
-    email_address: 'str'
-    email_key: 'str'
-    employer_name: 'str'
-    entity_type: 'str'
-    ent_src_desc: 'str'
-    ent_src_key: 'str'
-    etype_code: 'str'
-    facebook: 'str'
-    gender: 'str'
-    group_assn_id_number: 'str'
-    group_assn_id_type: 'str'
-    group_association_org_name: 'str'
-    group_association_type: 'str'
-    id_key: 'str'
-    instagram: 'str'
-    lei_number: 'str'
-    linkedin: 'str'
-    load_id: 'str'
-    login_id: 'str'
-    name: 'Names'
-    name_full: 'str'
-    name_key: 'str'
-    name_list: 'Names'
-    nationality: 'str'
-    national_id: 'str'
-    national_id_country: 'str'
-    national_id_number: 'str'
-    nin_country: 'str'
-    nin_number: 'str'
-    npi_number: 'str'
-    obs_src_key: 'str'
-    other_id_country: 'str'
-    other_id_number: 'str'
-    other_id_type: 'str'
-    passport: 'str'
-    passports: 'Passports'
-    passport_country: 'str'
-    passport_number: 'str'
-    phone: 'str'
-    phones: 'Phones'
-    phone_key: 'str'
-    place_of_birth: 'str'
-    primary_name_first: 'str'
-    primary_name_last: 'str'
-    primary_name_middle: 'str'
-    primary_name_org: 'str'
-    primary_name_prefix: 'str'
-    primary_name_suffix: 'str'
-    primary_phone_number: 'str'
-    record_id: 'str'
-    record_type: 'str'
-    registration_country: 'str'
-    registration_date: 'str'
-    relationships: 'Relationships'
-    rel_anchor: 'str'
-    rel_anchor_domain: 'str'
-    rel_anchor_key: 'str'
-    rel_link: 'str'
-    rel_pointer: 'str'
-    rel_pointer_domain: 'str'
-    rel_pointer_key: 'str'
-    rel_pointer_role: 'str'
-    signal: 'str'
-    skype: 'str'
-    social_handle: 'str'
-    social_network: 'str'
-    source_id: 'str'
-    ssn: 'List[JSONDataXxxSsn]'
-    ssn_last4: 'List[JSONDataXxxSsnLast4]'
-    ssn_number: 'str'
-    tango: 'str'
-    tax_id_country: 'str'
-    tax_id_number: 'str'
-    tax_id_type: 'str'
-    telegram: 'str'
-    trusted_id_number: 'str'
-    trusted_id_type: 'str'
-    twitter: 'str'
-    viber: 'str'
-    website_address: 'str'
-    wechat: 'str'
-    whatsapp: 'str'
-    work_phone_number: 'str'
-    zoomroom: 'str'
-    name0: 'Names'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'JSONDataXxx':
-        return cls(
-            _from_json_data(str, data.get("ACCOUNT_DOMAIN")),
-            _from_json_data(str, data.get("ACCOUNT_NUMBER")),
-            _from_json_data(List[JSONDataXxxAcctNum], data.get("ACCT_NUM")),
-            _from_json_data(str, data.get("ADDRESS")),
-            _from_json_data(Addresses, data.get("ADDRESS_LIST")),
-            _from_json_data(str, data.get("ADDR_FULL")),
-            _from_json_data(str, data.get("ADDR_KEY")),
-            _from_json_data(str, data.get("CELL_PHONE_NUMBER")),
-            _from_json_data(str, data.get("CITIZENSHIP")),
-            _from_json_data(str, data.get("COUNTRY_OF_ASSOCIATION")),
-            _from_json_data(str, data.get("DATA_SOURCE")),
-            _from_json_data(str, data.get("DATE_OF_BIRTH")),
-            _from_json_data(str, data.get("DATE_OF_DEATH")),
-            _from_json_data(str, data.get("DOB")),
-            _from_json_data(str, data.get("DOD")),
-            _from_json_data(str, data.get("DRIVERS_LICENSE_NUMBER")),
-            _from_json_data(str, data.get("DRIVERS_LICENSE_STATE")),
-            _from_json_data(str, data.get("DRLIC")),
-            _from_json_data(str, data.get("DSRC_ACTION")),
-            _from_json_data(str, data.get("DSRC_CODE")),
-            _from_json_data(str, data.get("DUNS_NUMBER")),
-            _from_json_data(str, data.get("EMAIL")),
-            _from_json_data(str, data.get("EMAIL_ADDRESS")),
-            _from_json_data(str, data.get("EMAIL_KEY")),
-            _from_json_data(str, data.get("EMPLOYER_NAME")),
-            _from_json_data(str, data.get("ENTITY_TYPE")),
-            _from_json_data(str, data.get("ENT_SRC_DESC")),
-            _from_json_data(str, data.get("ENT_SRC_KEY")),
-            _from_json_data(str, data.get("ETYPE_CODE")),
-            _from_json_data(str, data.get("FACEBOOK")),
-            _from_json_data(str, data.get("GENDER")),
-            _from_json_data(str, data.get("GROUP_ASSN_ID_NUMBER")),
-            _from_json_data(str, data.get("GROUP_ASSN_ID_TYPE")),
-            _from_json_data(str, data.get("GROUP_ASSOCIATION_ORG_NAME")),
-            _from_json_data(str, data.get("GROUP_ASSOCIATION_TYPE")),
-            _from_json_data(str, data.get("ID_KEY")),
-            _from_json_data(str, data.get("INSTAGRAM")),
-            _from_json_data(str, data.get("LEI_NUMBER")),
-            _from_json_data(str, data.get("LINKEDIN")),
-            _from_json_data(str, data.get("LOAD_ID")),
-            _from_json_data(str, data.get("LOGIN_ID")),
-            _from_json_data(Names, data.get("NAME")),
-            _from_json_data(str, data.get("NAME_FULL")),
-            _from_json_data(str, data.get("NAME_KEY")),
-            _from_json_data(Names, data.get("NAME_LIST")),
-            _from_json_data(str, data.get("NATIONALITY")),
-            _from_json_data(str, data.get("NATIONAL_ID")),
-            _from_json_data(str, data.get("NATIONAL_ID_COUNTRY")),
-            _from_json_data(str, data.get("NATIONAL_ID_NUMBER")),
-            _from_json_data(str, data.get("NIN_COUNTRY")),
-            _from_json_data(str, data.get("NIN_NUMBER")),
-            _from_json_data(str, data.get("NPI_NUMBER")),
-            _from_json_data(str, data.get("OBS_SRC_KEY")),
-            _from_json_data(str, data.get("OTHER_ID_COUNTRY")),
-            _from_json_data(str, data.get("OTHER_ID_NUMBER")),
-            _from_json_data(str, data.get("OTHER_ID_TYPE")),
-            _from_json_data(str, data.get("PASSPORT")),
-            _from_json_data(Passports, data.get("PASSPORTS")),
-            _from_json_data(str, data.get("PASSPORT_COUNTRY")),
-            _from_json_data(str, data.get("PASSPORT_NUMBER")),
-            _from_json_data(str, data.get("PHONE")),
-            _from_json_data(Phones, data.get("PHONES")),
-            _from_json_data(str, data.get("PHONE_KEY")),
-            _from_json_data(str, data.get("PLACE_OF_BIRTH")),
-            _from_json_data(str, data.get("PRIMARY_NAME_FIRST")),
-            _from_json_data(str, data.get("PRIMARY_NAME_LAST")),
-            _from_json_data(str, data.get("PRIMARY_NAME_MIDDLE")),
-            _from_json_data(str, data.get("PRIMARY_NAME_ORG")),
-            _from_json_data(str, data.get("PRIMARY_NAME_PREFIX")),
-            _from_json_data(str, data.get("PRIMARY_NAME_SUFFIX")),
-            _from_json_data(str, data.get("PRIMARY_PHONE_NUMBER")),
-            _from_json_data(str, data.get("RECORD_ID")),
-            _from_json_data(str, data.get("RECORD_TYPE")),
-            _from_json_data(str, data.get("REGISTRATION_COUNTRY")),
-            _from_json_data(str, data.get("REGISTRATION_DATE")),
-            _from_json_data(Relationships, data.get("RELATIONSHIPS")),
-            _from_json_data(str, data.get("REL_ANCHOR")),
-            _from_json_data(str, data.get("REL_ANCHOR_DOMAIN")),
-            _from_json_data(str, data.get("REL_ANCHOR_KEY")),
-            _from_json_data(str, data.get("REL_LINK")),
-            _from_json_data(str, data.get("REL_POINTER")),
-            _from_json_data(str, data.get("REL_POINTER_DOMAIN")),
-            _from_json_data(str, data.get("REL_POINTER_KEY")),
-            _from_json_data(str, data.get("REL_POINTER_ROLE")),
-            _from_json_data(str, data.get("SIGNAL")),
-            _from_json_data(str, data.get("SKYPE")),
-            _from_json_data(str, data.get("SOCIAL_HANDLE")),
-            _from_json_data(str, data.get("SOCIAL_NETWORK")),
-            _from_json_data(str, data.get("SOURCE_ID")),
-            _from_json_data(List[JSONDataXxxSsn], data.get("SSN")),
-            _from_json_data(List[JSONDataXxxSsnLast4], data.get("SSN_LAST4")),
-            _from_json_data(str, data.get("SSN_NUMBER")),
-            _from_json_data(str, data.get("TANGO")),
-            _from_json_data(str, data.get("TAX_ID_COUNTRY")),
-            _from_json_data(str, data.get("TAX_ID_NUMBER")),
-            _from_json_data(str, data.get("TAX_ID_TYPE")),
-            _from_json_data(str, data.get("TELEGRAM")),
-            _from_json_data(str, data.get("TRUSTED_ID_NUMBER")),
-            _from_json_data(str, data.get("TRUSTED_ID_TYPE")),
-            _from_json_data(str, data.get("TWITTER")),
-            _from_json_data(str, data.get("VIBER")),
-            _from_json_data(str, data.get("WEBSITE_ADDRESS")),
-            _from_json_data(str, data.get("WECHAT")),
-            _from_json_data(str, data.get("WHATSAPP")),
-            _from_json_data(str, data.get("WORK_PHONE_NUMBER")),
-            _from_json_data(str, data.get("ZOOMROOM")),
-            _from_json_data(Names, data.get("name")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
-        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
-        data["ACCT_NUM"] = _to_json_data(self.acct_num)
-        data["ADDRESS"] = _to_json_data(self.address)
-        data["ADDRESS_LIST"] = _to_json_data(self.address_list)
-        data["ADDR_FULL"] = _to_json_data(self.addr_full)
-        data["ADDR_KEY"] = _to_json_data(self.addr_key)
-        data["CELL_PHONE_NUMBER"] = _to_json_data(self.cell_phone_number)
-        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
-        data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
-        data["DATA_SOURCE"] = _to_json_data(self.data_source)
-        data["DATE_OF_BIRTH"] = _to_json_data(self.date_of_birth)
-        data["DATE_OF_DEATH"] = _to_json_data(self.date_of_death)
-        data["DOB"] = _to_json_data(self.dob)
-        data["DOD"] = _to_json_data(self.dod)
-        data["DRIVERS_LICENSE_NUMBER"] = _to_json_data(self.drivers_license_number)
-        data["DRIVERS_LICENSE_STATE"] = _to_json_data(self.drivers_license_state)
-        data["DRLIC"] = _to_json_data(self.drlic)
-        data["DSRC_ACTION"] = _to_json_data(self.dsrc_action)
-        data["DSRC_CODE"] = _to_json_data(self.dsrc_code)
-        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
-        data["EMAIL"] = _to_json_data(self.email)
-        data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
-        data["EMAIL_KEY"] = _to_json_data(self.email_key)
-        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
-        data["ENTITY_TYPE"] = _to_json_data(self.entity_type)
-        data["ENT_SRC_DESC"] = _to_json_data(self.ent_src_desc)
-        data["ENT_SRC_KEY"] = _to_json_data(self.ent_src_key)
-        data["ETYPE_CODE"] = _to_json_data(self.etype_code)
-        data["FACEBOOK"] = _to_json_data(self.facebook)
-        data["GENDER"] = _to_json_data(self.gender)
-        data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
-        data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
-        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
-        data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
-        data["ID_KEY"] = _to_json_data(self.id_key)
-        data["INSTAGRAM"] = _to_json_data(self.instagram)
-        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
-        data["LINKEDIN"] = _to_json_data(self.linkedin)
-        data["LOAD_ID"] = _to_json_data(self.load_id)
-        data["LOGIN_ID"] = _to_json_data(self.login_id)
-        data["NAME"] = _to_json_data(self.name)
-        data["NAME_FULL"] = _to_json_data(self.name_full)
-        data["NAME_KEY"] = _to_json_data(self.name_key)
-        data["NAME_LIST"] = _to_json_data(self.name_list)
-        data["NATIONALITY"] = _to_json_data(self.nationality)
-        data["NATIONAL_ID"] = _to_json_data(self.national_id)
-        data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
-        data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
-        data["NIN_COUNTRY"] = _to_json_data(self.nin_country)
-        data["NIN_NUMBER"] = _to_json_data(self.nin_number)
-        data["NPI_NUMBER"] = _to_json_data(self.npi_number)
-        data["OBS_SRC_KEY"] = _to_json_data(self.obs_src_key)
-        data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
-        data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
-        data["OTHER_ID_TYPE"] = _to_json_data(self.other_id_type)
-        data["PASSPORT"] = _to_json_data(self.passport)
-        data["PASSPORTS"] = _to_json_data(self.passports)
-        data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        data["PHONE"] = _to_json_data(self.phone)
-        data["PHONES"] = _to_json_data(self.phones)
-        data["PHONE_KEY"] = _to_json_data(self.phone_key)
-        data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
-        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
-        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
-        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
-        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
-        data["PRIMARY_NAME_PREFIX"] = _to_json_data(self.primary_name_prefix)
-        data["PRIMARY_NAME_SUFFIX"] = _to_json_data(self.primary_name_suffix)
-        data["PRIMARY_PHONE_NUMBER"] = _to_json_data(self.primary_phone_number)
-        data["RECORD_ID"] = _to_json_data(self.record_id)
-        data["RECORD_TYPE"] = _to_json_data(self.record_type)
-        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
-        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
-        data["RELATIONSHIPS"] = _to_json_data(self.relationships)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
-        data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
-        data["REL_LINK"] = _to_json_data(self.rel_link)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
-        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
-        data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
-        data["SIGNAL"] = _to_json_data(self.signal)
-        data["SKYPE"] = _to_json_data(self.skype)
-        data["SOCIAL_HANDLE"] = _to_json_data(self.social_handle)
-        data["SOCIAL_NETWORK"] = _to_json_data(self.social_network)
-        data["SOURCE_ID"] = _to_json_data(self.source_id)
-        data["SSN"] = _to_json_data(self.ssn)
-        data["SSN_LAST4"] = _to_json_data(self.ssn_last4)
-        data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        data["TANGO"] = _to_json_data(self.tango)
-        data["TAX_ID_COUNTRY"] = _to_json_data(self.tax_id_country)
-        data["TAX_ID_NUMBER"] = _to_json_data(self.tax_id_number)
-        data["TAX_ID_TYPE"] = _to_json_data(self.tax_id_type)
-        data["TELEGRAM"] = _to_json_data(self.telegram)
-        data["TRUSTED_ID_NUMBER"] = _to_json_data(self.trusted_id_number)
-        data["TRUSTED_ID_TYPE"] = _to_json_data(self.trusted_id_type)
-        data["TWITTER"] = _to_json_data(self.twitter)
-        data["VIBER"] = _to_json_data(self.viber)
-        data["WEBSITE_ADDRESS"] = _to_json_data(self.website_address)
-        data["WECHAT"] = _to_json_data(self.wechat)
-        data["WHATSAPP"] = _to_json_data(self.whatsapp)
-        data["WORK_PHONE_NUMBER"] = _to_json_data(self.work_phone_number)
-        data["ZOOMROOM"] = _to_json_data(self.zoomroom)
-        data["name"] = _to_json_data(self.name0)
         return data
 
 @dataclass
@@ -4827,309 +1769,14 @@ class MatchInfo:
 
 @dataclass
 class MatchInfoCandidateKeys:
-    account_domain: 'MatchInfosForAttribute'
-    account_number: 'MatchInfosForAttribute'
-    acct_num: 'MatchInfosForAttribute'
-    address: 'MatchInfosForAttribute'
-    address_list: 'MatchInfosForAttribute'
-    addr_full: 'MatchInfosForAttribute'
-    addr_key: 'MatchInfosForAttribute'
-    cell_phone_number: 'MatchInfosForAttribute'
-    citizenship: 'MatchInfosForAttribute'
-    country_of_association: 'MatchInfosForAttribute'
-    data_source: 'MatchInfosForAttribute'
-    date_of_birth: 'MatchInfosForAttribute'
-    date_of_death: 'MatchInfosForAttribute'
-    dob: 'MatchInfosForAttribute'
-    dod: 'MatchInfosForAttribute'
-    drivers_license_number: 'MatchInfosForAttribute'
-    drivers_license_state: 'MatchInfosForAttribute'
-    drlic: 'MatchInfosForAttribute'
-    duns_number: 'MatchInfosForAttribute'
-    email: 'MatchInfosForAttribute'
-    email_address: 'MatchInfosForAttribute'
-    email_key: 'MatchInfosForAttribute'
-    employer_name: 'MatchInfosForAttribute'
-    entity_type: 'MatchInfosForAttribute'
-    facebook: 'MatchInfosForAttribute'
-    gender: 'MatchInfosForAttribute'
-    group_assn_id_number: 'MatchInfosForAttribute'
-    group_assn_id_type: 'MatchInfosForAttribute'
-    group_association_org_name: 'MatchInfosForAttribute'
-    group_association_type: 'MatchInfosForAttribute'
-    id_key: 'MatchInfosForAttribute'
-    instagram: 'MatchInfosForAttribute'
-    lei_number: 'MatchInfosForAttribute'
-    linkedin: 'MatchInfosForAttribute'
-    load_id: 'MatchInfosForAttribute'
-    login_id: 'MatchInfosForAttribute'
-    name: 'MatchInfosForAttribute'
-    name_full: 'MatchInfosForAttribute'
-    name_key: 'MatchInfosForAttribute'
-    name_list: 'MatchInfosForAttribute'
-    nationality: 'MatchInfosForAttribute'
-    national_id: 'MatchInfosForAttribute'
-    national_id_country: 'MatchInfosForAttribute'
-    national_id_number: 'MatchInfosForAttribute'
-    nin_country: 'MatchInfosForAttribute'
-    nin_number: 'MatchInfosForAttribute'
-    npi_number: 'MatchInfosForAttribute'
-    other_id_country: 'MatchInfosForAttribute'
-    other_id_number: 'MatchInfosForAttribute'
-    other_id_type: 'MatchInfosForAttribute'
-    passport: 'MatchInfosForAttribute'
-    passports: 'MatchInfosForAttribute'
-    passport_country: 'MatchInfosForAttribute'
-    passport_number: 'MatchInfosForAttribute'
-    phone: 'MatchInfosForAttribute'
-    phones: 'MatchInfosForAttribute'
-    phone_key: 'MatchInfosForAttribute'
-    place_of_birth: 'MatchInfosForAttribute'
-    primary_name_first: 'MatchInfosForAttribute'
-    primary_name_last: 'MatchInfosForAttribute'
-    primary_name_middle: 'MatchInfosForAttribute'
-    primary_name_org: 'MatchInfosForAttribute'
-    primary_name_prefix: 'MatchInfosForAttribute'
-    primary_name_suffix: 'MatchInfosForAttribute'
-    primary_phone_number: 'MatchInfosForAttribute'
-    record_type: 'MatchInfosForAttribute'
-    registration_country: 'MatchInfosForAttribute'
-    registration_date: 'MatchInfosForAttribute'
-    rel_anchor: 'MatchInfosForAttribute'
-    rel_anchor_domain: 'MatchInfosForAttribute'
-    rel_anchor_key: 'MatchInfosForAttribute'
-    rel_link: 'MatchInfosForAttribute'
-    rel_pointer: 'MatchInfosForAttribute'
-    rel_pointer_domain: 'MatchInfosForAttribute'
-    rel_pointer_key: 'MatchInfosForAttribute'
-    rel_pointer_role: 'MatchInfosForAttribute'
-    signal: 'MatchInfosForAttribute'
-    skype: 'MatchInfosForAttribute'
-    social_handle: 'MatchInfosForAttribute'
-    social_network: 'MatchInfosForAttribute'
-    source_id: 'MatchInfosForAttribute'
-    ssn: 'MatchInfosForAttribute'
-    ssn_last4: 'MatchInfosForAttribute'
-    ssn_number: 'MatchInfosForAttribute'
-    tango: 'MatchInfosForAttribute'
-    tax_id_country: 'MatchInfosForAttribute'
-    tax_id_number: 'MatchInfosForAttribute'
-    tax_id_type: 'MatchInfosForAttribute'
-    telegram: 'MatchInfosForAttribute'
-    trusted_id_number: 'MatchInfosForAttribute'
-    trusted_id_type: 'MatchInfosForAttribute'
-    twitter: 'MatchInfosForAttribute'
-    viber: 'MatchInfosForAttribute'
-    website_address: 'MatchInfosForAttribute'
-    wechat: 'MatchInfosForAttribute'
-    whatsapp: 'MatchInfosForAttribute'
-    work_phone_number: 'MatchInfosForAttribute'
-    zoomroom: 'MatchInfosForAttribute'
+    value: 'Dict[str, List[MatchInfoForAttribute]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoCandidateKeys':
-        return cls(
-            _from_json_data(MatchInfosForAttribute, data.get("ACCOUNT_DOMAIN")),
-            _from_json_data(MatchInfosForAttribute, data.get("ACCOUNT_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("ACCT_NUM")),
-            _from_json_data(MatchInfosForAttribute, data.get("ADDRESS")),
-            _from_json_data(MatchInfosForAttribute, data.get("ADDRESS_LIST")),
-            _from_json_data(MatchInfosForAttribute, data.get("ADDR_FULL")),
-            _from_json_data(MatchInfosForAttribute, data.get("ADDR_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("CELL_PHONE_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("CITIZENSHIP")),
-            _from_json_data(MatchInfosForAttribute, data.get("COUNTRY_OF_ASSOCIATION")),
-            _from_json_data(MatchInfosForAttribute, data.get("DATA_SOURCE")),
-            _from_json_data(MatchInfosForAttribute, data.get("DATE_OF_BIRTH")),
-            _from_json_data(MatchInfosForAttribute, data.get("DATE_OF_DEATH")),
-            _from_json_data(MatchInfosForAttribute, data.get("DOB")),
-            _from_json_data(MatchInfosForAttribute, data.get("DOD")),
-            _from_json_data(MatchInfosForAttribute, data.get("DRIVERS_LICENSE_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("DRIVERS_LICENSE_STATE")),
-            _from_json_data(MatchInfosForAttribute, data.get("DRLIC")),
-            _from_json_data(MatchInfosForAttribute, data.get("DUNS_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("EMAIL")),
-            _from_json_data(MatchInfosForAttribute, data.get("EMAIL_ADDRESS")),
-            _from_json_data(MatchInfosForAttribute, data.get("EMAIL_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("EMPLOYER_NAME")),
-            _from_json_data(MatchInfosForAttribute, data.get("ENTITY_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("FACEBOOK")),
-            _from_json_data(MatchInfosForAttribute, data.get("GENDER")),
-            _from_json_data(MatchInfosForAttribute, data.get("GROUP_ASSN_ID_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("GROUP_ASSN_ID_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("GROUP_ASSOCIATION_ORG_NAME")),
-            _from_json_data(MatchInfosForAttribute, data.get("GROUP_ASSOCIATION_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("ID_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("INSTAGRAM")),
-            _from_json_data(MatchInfosForAttribute, data.get("LEI_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("LINKEDIN")),
-            _from_json_data(MatchInfosForAttribute, data.get("LOAD_ID")),
-            _from_json_data(MatchInfosForAttribute, data.get("LOGIN_ID")),
-            _from_json_data(MatchInfosForAttribute, data.get("NAME")),
-            _from_json_data(MatchInfosForAttribute, data.get("NAME_FULL")),
-            _from_json_data(MatchInfosForAttribute, data.get("NAME_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("NAME_LIST")),
-            _from_json_data(MatchInfosForAttribute, data.get("NATIONALITY")),
-            _from_json_data(MatchInfosForAttribute, data.get("NATIONAL_ID")),
-            _from_json_data(MatchInfosForAttribute, data.get("NATIONAL_ID_COUNTRY")),
-            _from_json_data(MatchInfosForAttribute, data.get("NATIONAL_ID_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("NIN_COUNTRY")),
-            _from_json_data(MatchInfosForAttribute, data.get("NIN_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("NPI_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("OTHER_ID_COUNTRY")),
-            _from_json_data(MatchInfosForAttribute, data.get("OTHER_ID_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("OTHER_ID_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("PASSPORT")),
-            _from_json_data(MatchInfosForAttribute, data.get("PASSPORTS")),
-            _from_json_data(MatchInfosForAttribute, data.get("PASSPORT_COUNTRY")),
-            _from_json_data(MatchInfosForAttribute, data.get("PASSPORT_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("PHONE")),
-            _from_json_data(MatchInfosForAttribute, data.get("PHONES")),
-            _from_json_data(MatchInfosForAttribute, data.get("PHONE_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("PLACE_OF_BIRTH")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_NAME_FIRST")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_NAME_LAST")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_NAME_MIDDLE")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_NAME_ORG")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_NAME_PREFIX")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_NAME_SUFFIX")),
-            _from_json_data(MatchInfosForAttribute, data.get("PRIMARY_PHONE_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("RECORD_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("REGISTRATION_COUNTRY")),
-            _from_json_data(MatchInfosForAttribute, data.get("REGISTRATION_DATE")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_ANCHOR")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_ANCHOR_DOMAIN")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_ANCHOR_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_LINK")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_POINTER")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_POINTER_DOMAIN")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_POINTER_KEY")),
-            _from_json_data(MatchInfosForAttribute, data.get("REL_POINTER_ROLE")),
-            _from_json_data(MatchInfosForAttribute, data.get("SIGNAL")),
-            _from_json_data(MatchInfosForAttribute, data.get("SKYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("SOCIAL_HANDLE")),
-            _from_json_data(MatchInfosForAttribute, data.get("SOCIAL_NETWORK")),
-            _from_json_data(MatchInfosForAttribute, data.get("SOURCE_ID")),
-            _from_json_data(MatchInfosForAttribute, data.get("SSN")),
-            _from_json_data(MatchInfosForAttribute, data.get("SSN_LAST4")),
-            _from_json_data(MatchInfosForAttribute, data.get("SSN_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("TANGO")),
-            _from_json_data(MatchInfosForAttribute, data.get("TAX_ID_COUNTRY")),
-            _from_json_data(MatchInfosForAttribute, data.get("TAX_ID_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("TAX_ID_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("TELEGRAM")),
-            _from_json_data(MatchInfosForAttribute, data.get("TRUSTED_ID_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("TRUSTED_ID_TYPE")),
-            _from_json_data(MatchInfosForAttribute, data.get("TWITTER")),
-            _from_json_data(MatchInfosForAttribute, data.get("VIBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("WEBSITE_ADDRESS")),
-            _from_json_data(MatchInfosForAttribute, data.get("WECHAT")),
-            _from_json_data(MatchInfosForAttribute, data.get("WHATSAPP")),
-            _from_json_data(MatchInfosForAttribute, data.get("WORK_PHONE_NUMBER")),
-            _from_json_data(MatchInfosForAttribute, data.get("ZOOMROOM")),
-        )
+        return cls(_from_json_data(Dict[str, List[MatchInfoForAttribute]], data))
 
     def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
-        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
-        data["ACCT_NUM"] = _to_json_data(self.acct_num)
-        data["ADDRESS"] = _to_json_data(self.address)
-        data["ADDRESS_LIST"] = _to_json_data(self.address_list)
-        data["ADDR_FULL"] = _to_json_data(self.addr_full)
-        data["ADDR_KEY"] = _to_json_data(self.addr_key)
-        data["CELL_PHONE_NUMBER"] = _to_json_data(self.cell_phone_number)
-        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
-        data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
-        data["DATA_SOURCE"] = _to_json_data(self.data_source)
-        data["DATE_OF_BIRTH"] = _to_json_data(self.date_of_birth)
-        data["DATE_OF_DEATH"] = _to_json_data(self.date_of_death)
-        data["DOB"] = _to_json_data(self.dob)
-        data["DOD"] = _to_json_data(self.dod)
-        data["DRIVERS_LICENSE_NUMBER"] = _to_json_data(self.drivers_license_number)
-        data["DRIVERS_LICENSE_STATE"] = _to_json_data(self.drivers_license_state)
-        data["DRLIC"] = _to_json_data(self.drlic)
-        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
-        data["EMAIL"] = _to_json_data(self.email)
-        data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
-        data["EMAIL_KEY"] = _to_json_data(self.email_key)
-        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
-        data["ENTITY_TYPE"] = _to_json_data(self.entity_type)
-        data["FACEBOOK"] = _to_json_data(self.facebook)
-        data["GENDER"] = _to_json_data(self.gender)
-        data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
-        data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
-        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
-        data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
-        data["ID_KEY"] = _to_json_data(self.id_key)
-        data["INSTAGRAM"] = _to_json_data(self.instagram)
-        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
-        data["LINKEDIN"] = _to_json_data(self.linkedin)
-        data["LOAD_ID"] = _to_json_data(self.load_id)
-        data["LOGIN_ID"] = _to_json_data(self.login_id)
-        data["NAME"] = _to_json_data(self.name)
-        data["NAME_FULL"] = _to_json_data(self.name_full)
-        data["NAME_KEY"] = _to_json_data(self.name_key)
-        data["NAME_LIST"] = _to_json_data(self.name_list)
-        data["NATIONALITY"] = _to_json_data(self.nationality)
-        data["NATIONAL_ID"] = _to_json_data(self.national_id)
-        data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
-        data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
-        data["NIN_COUNTRY"] = _to_json_data(self.nin_country)
-        data["NIN_NUMBER"] = _to_json_data(self.nin_number)
-        data["NPI_NUMBER"] = _to_json_data(self.npi_number)
-        data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
-        data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
-        data["OTHER_ID_TYPE"] = _to_json_data(self.other_id_type)
-        data["PASSPORT"] = _to_json_data(self.passport)
-        data["PASSPORTS"] = _to_json_data(self.passports)
-        data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        data["PHONE"] = _to_json_data(self.phone)
-        data["PHONES"] = _to_json_data(self.phones)
-        data["PHONE_KEY"] = _to_json_data(self.phone_key)
-        data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
-        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
-        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
-        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
-        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
-        data["PRIMARY_NAME_PREFIX"] = _to_json_data(self.primary_name_prefix)
-        data["PRIMARY_NAME_SUFFIX"] = _to_json_data(self.primary_name_suffix)
-        data["PRIMARY_PHONE_NUMBER"] = _to_json_data(self.primary_phone_number)
-        data["RECORD_TYPE"] = _to_json_data(self.record_type)
-        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
-        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
-        data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
-        data["REL_LINK"] = _to_json_data(self.rel_link)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
-        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
-        data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
-        data["SIGNAL"] = _to_json_data(self.signal)
-        data["SKYPE"] = _to_json_data(self.skype)
-        data["SOCIAL_HANDLE"] = _to_json_data(self.social_handle)
-        data["SOCIAL_NETWORK"] = _to_json_data(self.social_network)
-        data["SOURCE_ID"] = _to_json_data(self.source_id)
-        data["SSN"] = _to_json_data(self.ssn)
-        data["SSN_LAST4"] = _to_json_data(self.ssn_last4)
-        data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        data["TANGO"] = _to_json_data(self.tango)
-        data["TAX_ID_COUNTRY"] = _to_json_data(self.tax_id_country)
-        data["TAX_ID_NUMBER"] = _to_json_data(self.tax_id_number)
-        data["TAX_ID_TYPE"] = _to_json_data(self.tax_id_type)
-        data["TELEGRAM"] = _to_json_data(self.telegram)
-        data["TRUSTED_ID_NUMBER"] = _to_json_data(self.trusted_id_number)
-        data["TRUSTED_ID_TYPE"] = _to_json_data(self.trusted_id_type)
-        data["TWITTER"] = _to_json_data(self.twitter)
-        data["VIBER"] = _to_json_data(self.viber)
-        data["WEBSITE_ADDRESS"] = _to_json_data(self.website_address)
-        data["WECHAT"] = _to_json_data(self.wechat)
-        data["WHATSAPP"] = _to_json_data(self.whatsapp)
-        data["WORK_PHONE_NUMBER"] = _to_json_data(self.work_phone_number)
-        data["ZOOMROOM"] = _to_json_data(self.zoomroom)
-        return data
+        return _to_json_data(self.value)
 
 @dataclass
 class MatchInfoForAttribute:
@@ -5148,370 +1795,6 @@ class MatchInfoForAttribute:
         data["FEAT_DESC"] = _to_json_data(self.feat_desc)
         data["FEAT_ID"] = _to_json_data(self.feat_id)
         return data
-
-@dataclass
-class MatchInfosForAttribute:
-    value: 'List[MatchInfoForAttribute]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MatchInfosForAttribute':
-        return cls(_from_json_data(List[MatchInfoForAttribute], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class MatchScoreForAttribute:
-    candidate_feat: 'str'
-    full_score: 'int'
-    generation_match: 'int'
-    gnr_fn: 'int'
-    gnr_gn: 'int'
-    gnr_on: 'int'
-    gnr_sn: 'int'
-    inbound_feat: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MatchScoreForAttribute':
-        return cls(
-            _from_json_data(str, data.get("CANDIDATE_FEAT")),
-            _from_json_data(int, data.get("FULL_SCORE")),
-            _from_json_data(int, data.get("GENERATION_MATCH")),
-            _from_json_data(int, data.get("GNR_FN")),
-            _from_json_data(int, data.get("GNR_GN")),
-            _from_json_data(int, data.get("GNR_ON")),
-            _from_json_data(int, data.get("GNR_SN")),
-            _from_json_data(str, data.get("INBOUND_FEAT")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["CANDIDATE_FEAT"] = _to_json_data(self.candidate_feat)
-        data["FULL_SCORE"] = _to_json_data(self.full_score)
-        data["GENERATION_MATCH"] = _to_json_data(self.generation_match)
-        data["GNR_FN"] = _to_json_data(self.gnr_fn)
-        data["GNR_GN"] = _to_json_data(self.gnr_gn)
-        data["GNR_ON"] = _to_json_data(self.gnr_on)
-        data["GNR_SN"] = _to_json_data(self.gnr_sn)
-        data["INBOUND_FEAT"] = _to_json_data(self.inbound_feat)
-        return data
-
-@dataclass
-class MatchScores:
-    account_domain: 'MatchScoresForAttribute'
-    account_number: 'MatchScoresForAttribute'
-    acct_num: 'MatchScoresForAttribute'
-    address: 'MatchScoresForAttribute'
-    address_list: 'MatchScoresForAttribute'
-    addr_full: 'MatchScoresForAttribute'
-    addr_key: 'MatchScoresForAttribute'
-    cell_phone_number: 'MatchScoresForAttribute'
-    citizenship: 'MatchScoresForAttribute'
-    country_of_association: 'MatchScoresForAttribute'
-    data_source: 'MatchScoresForAttribute'
-    date_of_birth: 'MatchScoresForAttribute'
-    date_of_death: 'MatchScoresForAttribute'
-    dob: 'MatchScoresForAttribute'
-    dod: 'MatchScoresForAttribute'
-    drivers_license_number: 'MatchScoresForAttribute'
-    drivers_license_state: 'MatchScoresForAttribute'
-    drlic: 'MatchScoresForAttribute'
-    duns_number: 'MatchScoresForAttribute'
-    email: 'MatchScoresForAttribute'
-    email_address: 'MatchScoresForAttribute'
-    email_key: 'MatchScoresForAttribute'
-    employer_name: 'MatchScoresForAttribute'
-    entity_type: 'MatchScoresForAttribute'
-    facebook: 'MatchScoresForAttribute'
-    gender: 'MatchScoresForAttribute'
-    group_assn_id_number: 'MatchScoresForAttribute'
-    group_assn_id_type: 'MatchScoresForAttribute'
-    group_association_org_name: 'MatchScoresForAttribute'
-    group_association_type: 'MatchScoresForAttribute'
-    id_key: 'MatchScoresForAttribute'
-    instagram: 'MatchScoresForAttribute'
-    lei_number: 'MatchScoresForAttribute'
-    linkedin: 'MatchScoresForAttribute'
-    load_id: 'MatchScoresForAttribute'
-    login_id: 'MatchScoresForAttribute'
-    name: 'MatchScoresForAttribute'
-    name_full: 'MatchScoresForAttribute'
-    name_key: 'MatchScoresForAttribute'
-    name_list: 'MatchScoresForAttribute'
-    nationality: 'MatchScoresForAttribute'
-    national_id: 'MatchScoresForAttribute'
-    national_id_country: 'MatchScoresForAttribute'
-    national_id_number: 'MatchScoresForAttribute'
-    nin_country: 'MatchScoresForAttribute'
-    nin_number: 'MatchScoresForAttribute'
-    npi_number: 'MatchScoresForAttribute'
-    other_id_country: 'MatchScoresForAttribute'
-    other_id_number: 'MatchScoresForAttribute'
-    other_id_type: 'MatchScoresForAttribute'
-    passport: 'MatchScoresForAttribute'
-    passports: 'MatchScoresForAttribute'
-    passport_country: 'MatchScoresForAttribute'
-    passport_number: 'MatchScoresForAttribute'
-    phone: 'MatchScoresForAttribute'
-    phones: 'MatchScoresForAttribute'
-    phone_key: 'MatchScoresForAttribute'
-    place_of_birth: 'MatchScoresForAttribute'
-    primary_name_first: 'MatchScoresForAttribute'
-    primary_name_last: 'MatchScoresForAttribute'
-    primary_name_middle: 'MatchScoresForAttribute'
-    primary_name_org: 'MatchScoresForAttribute'
-    primary_name_prefix: 'MatchScoresForAttribute'
-    primary_name_suffix: 'MatchScoresForAttribute'
-    primary_phone_number: 'MatchScoresForAttribute'
-    record_type: 'MatchScoresForAttribute'
-    registration_country: 'MatchScoresForAttribute'
-    registration_date: 'MatchScoresForAttribute'
-    rel_anchor: 'MatchScoresForAttribute'
-    rel_anchor_domain: 'MatchScoresForAttribute'
-    rel_anchor_key: 'MatchScoresForAttribute'
-    rel_link: 'MatchScoresForAttribute'
-    rel_pointer: 'MatchScoresForAttribute'
-    rel_pointer_domain: 'MatchScoresForAttribute'
-    rel_pointer_key: 'MatchScoresForAttribute'
-    rel_pointer_role: 'MatchScoresForAttribute'
-    signal: 'MatchScoresForAttribute'
-    skype: 'MatchScoresForAttribute'
-    social_handle: 'MatchScoresForAttribute'
-    social_network: 'MatchScoresForAttribute'
-    source_id: 'MatchScoresForAttribute'
-    ssn: 'MatchScoresForAttribute'
-    ssn_last4: 'MatchScoresForAttribute'
-    ssn_number: 'MatchScoresForAttribute'
-    tango: 'MatchScoresForAttribute'
-    tax_id_country: 'MatchScoresForAttribute'
-    tax_id_number: 'MatchScoresForAttribute'
-    tax_id_type: 'MatchScoresForAttribute'
-    telegram: 'MatchScoresForAttribute'
-    trusted_id_number: 'MatchScoresForAttribute'
-    trusted_id_type: 'MatchScoresForAttribute'
-    twitter: 'MatchScoresForAttribute'
-    viber: 'MatchScoresForAttribute'
-    website_address: 'MatchScoresForAttribute'
-    wechat: 'MatchScoresForAttribute'
-    whatsapp: 'MatchScoresForAttribute'
-    work_phone_number: 'MatchScoresForAttribute'
-    zoomroom: 'MatchScoresForAttribute'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MatchScores':
-        return cls(
-            _from_json_data(MatchScoresForAttribute, data.get("ACCOUNT_DOMAIN")),
-            _from_json_data(MatchScoresForAttribute, data.get("ACCOUNT_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("ACCT_NUM")),
-            _from_json_data(MatchScoresForAttribute, data.get("ADDRESS")),
-            _from_json_data(MatchScoresForAttribute, data.get("ADDRESS_LIST")),
-            _from_json_data(MatchScoresForAttribute, data.get("ADDR_FULL")),
-            _from_json_data(MatchScoresForAttribute, data.get("ADDR_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("CELL_PHONE_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("CITIZENSHIP")),
-            _from_json_data(MatchScoresForAttribute, data.get("COUNTRY_OF_ASSOCIATION")),
-            _from_json_data(MatchScoresForAttribute, data.get("DATA_SOURCE")),
-            _from_json_data(MatchScoresForAttribute, data.get("DATE_OF_BIRTH")),
-            _from_json_data(MatchScoresForAttribute, data.get("DATE_OF_DEATH")),
-            _from_json_data(MatchScoresForAttribute, data.get("DOB")),
-            _from_json_data(MatchScoresForAttribute, data.get("DOD")),
-            _from_json_data(MatchScoresForAttribute, data.get("DRIVERS_LICENSE_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("DRIVERS_LICENSE_STATE")),
-            _from_json_data(MatchScoresForAttribute, data.get("DRLIC")),
-            _from_json_data(MatchScoresForAttribute, data.get("DUNS_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("EMAIL")),
-            _from_json_data(MatchScoresForAttribute, data.get("EMAIL_ADDRESS")),
-            _from_json_data(MatchScoresForAttribute, data.get("EMAIL_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("EMPLOYER_NAME")),
-            _from_json_data(MatchScoresForAttribute, data.get("ENTITY_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("FACEBOOK")),
-            _from_json_data(MatchScoresForAttribute, data.get("GENDER")),
-            _from_json_data(MatchScoresForAttribute, data.get("GROUP_ASSN_ID_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("GROUP_ASSN_ID_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("GROUP_ASSOCIATION_ORG_NAME")),
-            _from_json_data(MatchScoresForAttribute, data.get("GROUP_ASSOCIATION_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("ID_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("INSTAGRAM")),
-            _from_json_data(MatchScoresForAttribute, data.get("LEI_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("LINKEDIN")),
-            _from_json_data(MatchScoresForAttribute, data.get("LOAD_ID")),
-            _from_json_data(MatchScoresForAttribute, data.get("LOGIN_ID")),
-            _from_json_data(MatchScoresForAttribute, data.get("NAME")),
-            _from_json_data(MatchScoresForAttribute, data.get("NAME_FULL")),
-            _from_json_data(MatchScoresForAttribute, data.get("NAME_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("NAME_LIST")),
-            _from_json_data(MatchScoresForAttribute, data.get("NATIONALITY")),
-            _from_json_data(MatchScoresForAttribute, data.get("NATIONAL_ID")),
-            _from_json_data(MatchScoresForAttribute, data.get("NATIONAL_ID_COUNTRY")),
-            _from_json_data(MatchScoresForAttribute, data.get("NATIONAL_ID_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("NIN_COUNTRY")),
-            _from_json_data(MatchScoresForAttribute, data.get("NIN_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("NPI_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("OTHER_ID_COUNTRY")),
-            _from_json_data(MatchScoresForAttribute, data.get("OTHER_ID_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("OTHER_ID_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("PASSPORT")),
-            _from_json_data(MatchScoresForAttribute, data.get("PASSPORTS")),
-            _from_json_data(MatchScoresForAttribute, data.get("PASSPORT_COUNTRY")),
-            _from_json_data(MatchScoresForAttribute, data.get("PASSPORT_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("PHONE")),
-            _from_json_data(MatchScoresForAttribute, data.get("PHONES")),
-            _from_json_data(MatchScoresForAttribute, data.get("PHONE_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("PLACE_OF_BIRTH")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_NAME_FIRST")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_NAME_LAST")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_NAME_MIDDLE")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_NAME_ORG")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_NAME_PREFIX")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_NAME_SUFFIX")),
-            _from_json_data(MatchScoresForAttribute, data.get("PRIMARY_PHONE_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("RECORD_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("REGISTRATION_COUNTRY")),
-            _from_json_data(MatchScoresForAttribute, data.get("REGISTRATION_DATE")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_ANCHOR")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_ANCHOR_DOMAIN")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_ANCHOR_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_LINK")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_POINTER")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_POINTER_DOMAIN")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_POINTER_KEY")),
-            _from_json_data(MatchScoresForAttribute, data.get("REL_POINTER_ROLE")),
-            _from_json_data(MatchScoresForAttribute, data.get("SIGNAL")),
-            _from_json_data(MatchScoresForAttribute, data.get("SKYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("SOCIAL_HANDLE")),
-            _from_json_data(MatchScoresForAttribute, data.get("SOCIAL_NETWORK")),
-            _from_json_data(MatchScoresForAttribute, data.get("SOURCE_ID")),
-            _from_json_data(MatchScoresForAttribute, data.get("SSN")),
-            _from_json_data(MatchScoresForAttribute, data.get("SSN_LAST4")),
-            _from_json_data(MatchScoresForAttribute, data.get("SSN_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("TANGO")),
-            _from_json_data(MatchScoresForAttribute, data.get("TAX_ID_COUNTRY")),
-            _from_json_data(MatchScoresForAttribute, data.get("TAX_ID_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("TAX_ID_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("TELEGRAM")),
-            _from_json_data(MatchScoresForAttribute, data.get("TRUSTED_ID_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("TRUSTED_ID_TYPE")),
-            _from_json_data(MatchScoresForAttribute, data.get("TWITTER")),
-            _from_json_data(MatchScoresForAttribute, data.get("VIBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("WEBSITE_ADDRESS")),
-            _from_json_data(MatchScoresForAttribute, data.get("WECHAT")),
-            _from_json_data(MatchScoresForAttribute, data.get("WHATSAPP")),
-            _from_json_data(MatchScoresForAttribute, data.get("WORK_PHONE_NUMBER")),
-            _from_json_data(MatchScoresForAttribute, data.get("ZOOMROOM")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
-        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
-        data["ACCT_NUM"] = _to_json_data(self.acct_num)
-        data["ADDRESS"] = _to_json_data(self.address)
-        data["ADDRESS_LIST"] = _to_json_data(self.address_list)
-        data["ADDR_FULL"] = _to_json_data(self.addr_full)
-        data["ADDR_KEY"] = _to_json_data(self.addr_key)
-        data["CELL_PHONE_NUMBER"] = _to_json_data(self.cell_phone_number)
-        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
-        data["COUNTRY_OF_ASSOCIATION"] = _to_json_data(self.country_of_association)
-        data["DATA_SOURCE"] = _to_json_data(self.data_source)
-        data["DATE_OF_BIRTH"] = _to_json_data(self.date_of_birth)
-        data["DATE_OF_DEATH"] = _to_json_data(self.date_of_death)
-        data["DOB"] = _to_json_data(self.dob)
-        data["DOD"] = _to_json_data(self.dod)
-        data["DRIVERS_LICENSE_NUMBER"] = _to_json_data(self.drivers_license_number)
-        data["DRIVERS_LICENSE_STATE"] = _to_json_data(self.drivers_license_state)
-        data["DRLIC"] = _to_json_data(self.drlic)
-        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
-        data["EMAIL"] = _to_json_data(self.email)
-        data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
-        data["EMAIL_KEY"] = _to_json_data(self.email_key)
-        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
-        data["ENTITY_TYPE"] = _to_json_data(self.entity_type)
-        data["FACEBOOK"] = _to_json_data(self.facebook)
-        data["GENDER"] = _to_json_data(self.gender)
-        data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
-        data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
-        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
-        data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
-        data["ID_KEY"] = _to_json_data(self.id_key)
-        data["INSTAGRAM"] = _to_json_data(self.instagram)
-        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
-        data["LINKEDIN"] = _to_json_data(self.linkedin)
-        data["LOAD_ID"] = _to_json_data(self.load_id)
-        data["LOGIN_ID"] = _to_json_data(self.login_id)
-        data["NAME"] = _to_json_data(self.name)
-        data["NAME_FULL"] = _to_json_data(self.name_full)
-        data["NAME_KEY"] = _to_json_data(self.name_key)
-        data["NAME_LIST"] = _to_json_data(self.name_list)
-        data["NATIONALITY"] = _to_json_data(self.nationality)
-        data["NATIONAL_ID"] = _to_json_data(self.national_id)
-        data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
-        data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
-        data["NIN_COUNTRY"] = _to_json_data(self.nin_country)
-        data["NIN_NUMBER"] = _to_json_data(self.nin_number)
-        data["NPI_NUMBER"] = _to_json_data(self.npi_number)
-        data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
-        data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
-        data["OTHER_ID_TYPE"] = _to_json_data(self.other_id_type)
-        data["PASSPORT"] = _to_json_data(self.passport)
-        data["PASSPORTS"] = _to_json_data(self.passports)
-        data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        data["PHONE"] = _to_json_data(self.phone)
-        data["PHONES"] = _to_json_data(self.phones)
-        data["PHONE_KEY"] = _to_json_data(self.phone_key)
-        data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
-        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
-        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
-        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
-        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
-        data["PRIMARY_NAME_PREFIX"] = _to_json_data(self.primary_name_prefix)
-        data["PRIMARY_NAME_SUFFIX"] = _to_json_data(self.primary_name_suffix)
-        data["PRIMARY_PHONE_NUMBER"] = _to_json_data(self.primary_phone_number)
-        data["RECORD_TYPE"] = _to_json_data(self.record_type)
-        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
-        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
-        data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
-        data["REL_LINK"] = _to_json_data(self.rel_link)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
-        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
-        data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
-        data["SIGNAL"] = _to_json_data(self.signal)
-        data["SKYPE"] = _to_json_data(self.skype)
-        data["SOCIAL_HANDLE"] = _to_json_data(self.social_handle)
-        data["SOCIAL_NETWORK"] = _to_json_data(self.social_network)
-        data["SOURCE_ID"] = _to_json_data(self.source_id)
-        data["SSN"] = _to_json_data(self.ssn)
-        data["SSN_LAST4"] = _to_json_data(self.ssn_last4)
-        data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        data["TANGO"] = _to_json_data(self.tango)
-        data["TAX_ID_COUNTRY"] = _to_json_data(self.tax_id_country)
-        data["TAX_ID_NUMBER"] = _to_json_data(self.tax_id_number)
-        data["TAX_ID_TYPE"] = _to_json_data(self.tax_id_type)
-        data["TELEGRAM"] = _to_json_data(self.telegram)
-        data["TRUSTED_ID_NUMBER"] = _to_json_data(self.trusted_id_number)
-        data["TRUSTED_ID_TYPE"] = _to_json_data(self.trusted_id_type)
-        data["TWITTER"] = _to_json_data(self.twitter)
-        data["VIBER"] = _to_json_data(self.viber)
-        data["WEBSITE_ADDRESS"] = _to_json_data(self.website_address)
-        data["WECHAT"] = _to_json_data(self.wechat)
-        data["WHATSAPP"] = _to_json_data(self.whatsapp)
-        data["WORK_PHONE_NUMBER"] = _to_json_data(self.work_phone_number)
-        data["ZOOMROOM"] = _to_json_data(self.zoomroom)
-        return data
-
-@dataclass
-class MatchScoresForAttribute:
-    value: 'List[MatchScoreForAttribute]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MatchScoresForAttribute':
-        return cls(_from_json_data(List[MatchScoreForAttribute], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class MemberRecord:
@@ -5538,53 +1821,6 @@ class MemberRecords:
     @classmethod
     def from_json_data(cls, data: Any) -> 'MemberRecords':
         return cls(_from_json_data(List[MemberRecord], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class Name:
-    name_first: 'str'
-    name_full: 'str'
-    name_last: 'str'
-    name_middle: 'str'
-    name_org: 'str'
-    name_prefix: 'str'
-    name_suffix: 'str'
-    name_type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Name':
-        return cls(
-            _from_json_data(str, data.get("NAME_FIRST")),
-            _from_json_data(str, data.get("NAME_FULL")),
-            _from_json_data(str, data.get("NAME_LAST")),
-            _from_json_data(str, data.get("NAME_MIDDLE")),
-            _from_json_data(str, data.get("NAME_ORG")),
-            _from_json_data(str, data.get("NAME_PREFIX")),
-            _from_json_data(str, data.get("NAME_SUFFIX")),
-            _from_json_data(str, data.get("NAME_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["NAME_FIRST"] = _to_json_data(self.name_first)
-        data["NAME_FULL"] = _to_json_data(self.name_full)
-        data["NAME_LAST"] = _to_json_data(self.name_last)
-        data["NAME_MIDDLE"] = _to_json_data(self.name_middle)
-        data["NAME_ORG"] = _to_json_data(self.name_org)
-        data["NAME_PREFIX"] = _to_json_data(self.name_prefix)
-        data["NAME_SUFFIX"] = _to_json_data(self.name_suffix)
-        data["NAME_TYPE"] = _to_json_data(self.name_type)
-        return data
-
-@dataclass
-class Names:
-    value: 'List[Name]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Names':
-        return cls(_from_json_data(List[Name], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -5640,35 +1876,6 @@ class Notices:
         return _to_json_data(self.value)
 
 @dataclass
-class Passport:
-    passport_country: 'str'
-    passport_number: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Passport':
-        return cls(
-            _from_json_data(str, data.get("PASSPORT_COUNTRY")),
-            _from_json_data(str, data.get("PASSPORT_NUMBER")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
-        data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
-        return data
-
-@dataclass
-class Passports:
-    value: 'List[Passport]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Passports':
-        return cls(_from_json_data(List[Passport], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class Path:
     entities: 'List[Entity]'
     entity_paths: 'List[EntityPath]'
@@ -5687,140 +1894,72 @@ class Path:
         return data
 
 @dataclass
-class Phone:
-    phone_from_date: 'str'
-    phone_number: 'str'
-    phone_thru_date: 'str'
-    phone_type: 'str'
+class ProductLicense:
+    billing: 'str'
+    contract: 'str'
+    customer: 'str'
+    expire_date: 'str'
+    issue_date: 'str'
+    license_level: 'str'
+    license_type: 'str'
+    record_limit: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Phone':
+    def from_json_data(cls, data: Any) -> 'ProductLicense':
         return cls(
-            _from_json_data(str, data.get("PHONE_FROM_DATE")),
-            _from_json_data(str, data.get("PHONE_NUMBER")),
-            _from_json_data(str, data.get("PHONE_THRU_DATE")),
-            _from_json_data(str, data.get("PHONE_TYPE")),
+            _from_json_data(str, data.get("billing")),
+            _from_json_data(str, data.get("contract")),
+            _from_json_data(str, data.get("customer")),
+            _from_json_data(str, data.get("expireDate")),
+            _from_json_data(str, data.get("issueDate")),
+            _from_json_data(str, data.get("licenseLevel")),
+            _from_json_data(str, data.get("licenseType")),
+            _from_json_data(int, data.get("recordLimit")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["PHONE_FROM_DATE"] = _to_json_data(self.phone_from_date)
-        data["PHONE_NUMBER"] = _to_json_data(self.phone_number)
-        data["PHONE_THRU_DATE"] = _to_json_data(self.phone_thru_date)
-        data["PHONE_TYPE"] = _to_json_data(self.phone_type)
+        data["billing"] = _to_json_data(self.billing)
+        data["contract"] = _to_json_data(self.contract)
+        data["customer"] = _to_json_data(self.customer)
+        data["expireDate"] = _to_json_data(self.expire_date)
+        data["issueDate"] = _to_json_data(self.issue_date)
+        data["licenseLevel"] = _to_json_data(self.license_level)
+        data["licenseType"] = _to_json_data(self.license_type)
+        data["recordLimit"] = _to_json_data(self.record_limit)
         return data
 
 @dataclass
-class Phones:
-    value: 'List[Phone]'
+class ProductVersion:
+    build_date: 'str'
+    build_number: 'str'
+    build_version: 'str'
+    compatibility_version: 'CompatibilityVersion'
+    product_name: 'str'
+    schema_version: 'SchemaVersion'
+    version: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Phones':
-        return cls(_from_json_data(List[Phone], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class ProcessUmfProc:
-    name: 'str'
-    result: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ProcessUmfProc':
+    def from_json_data(cls, data: Any) -> 'ProductVersion':
         return cls(
-            _from_json_data(str, data.get("NAME")),
-            _from_json_data(str, data.get("RESULT")),
+            _from_json_data(str, data.get("BUILD_DATE")),
+            _from_json_data(str, data.get("BUILD_NUMBER")),
+            _from_json_data(str, data.get("BUILD_VERSION")),
+            _from_json_data(CompatibilityVersion, data.get("COMPATIBILITY_VERSION")),
+            _from_json_data(str, data.get("PRODUCT_NAME")),
+            _from_json_data(SchemaVersion, data.get("SCHEMA_VERSION")),
+            _from_json_data(str, data.get("VERSION")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["NAME"] = _to_json_data(self.name)
-        data["RESULT"] = _to_json_data(self.result)
-        return data
-
-@dataclass
-class Process:
-    affected_entities: 'List[AffectedEntity]'
-    interesting_entities: 'InterestingEntities'
-    process_result: 'ProcessResult'
-    umf_proc: 'ProcessUmfProc'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Process':
-        return cls(
-            _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
-            _from_json_data(InterestingEntities, data.get("INTERESTING_ENTITIES")),
-            _from_json_data(ProcessResult, data.get("PROCESS_RESULT")),
-            _from_json_data(ProcessUmfProc, data.get("UMF_PROC")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["AFFECTED_ENTITIES"] = _to_json_data(self.affected_entities)
-        data["INTERESTING_ENTITIES"] = _to_json_data(self.interesting_entities)
-        data["PROCESS_RESULT"] = _to_json_data(self.process_result)
-        data["UMF_PROC"] = _to_json_data(self.umf_proc)
-        return data
-
-@dataclass
-class ProcessResultResolvedEntities:
-    entity_id: 'int'
-    entity_name: 'str'
-    errule_code: 'str'
-    features: 'Dict[str, List[FeatureForAttribute]]'
-    last_seen_dt: 'datetime'
-    match_key: 'str'
-    match_level: 'int'
-    match_level_code: 'str'
-    match_scores: 'MatchScores'
-    records: 'Records'
-    record_summary: 'List[RecordSummaryElement]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ProcessResultResolvedEntities':
-        return cls(
-            _from_json_data(int, data.get("ENTITY_ID")),
-            _from_json_data(str, data.get("ENTITY_NAME")),
-            _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
-            _from_json_data(datetime, data.get("LAST_SEEN_DT")),
-            _from_json_data(str, data.get("MATCH_KEY")),
-            _from_json_data(int, data.get("MATCH_LEVEL")),
-            _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
-            _from_json_data(MatchScores, data.get("MATCH_SCORES")),
-            _from_json_data(Records, data.get("RECORDS")),
-            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ENTITY_ID"] = _to_json_data(self.entity_id)
-        data["ENTITY_NAME"] = _to_json_data(self.entity_name)
-        data["ERRULE_CODE"] = _to_json_data(self.errule_code)
-        data["FEATURES"] = _to_json_data(self.features)
-        data["LAST_SEEN_DT"] = _to_json_data(self.last_seen_dt)
-        data["MATCH_KEY"] = _to_json_data(self.match_key)
-        data["MATCH_LEVEL"] = _to_json_data(self.match_level)
-        data["MATCH_LEVEL_CODE"] = _to_json_data(self.match_level_code)
-        data["MATCH_SCORES"] = _to_json_data(self.match_scores)
-        data["RECORDS"] = _to_json_data(self.records)
-        data["RECORD_SUMMARY"] = _to_json_data(self.record_summary)
-        return data
-
-@dataclass
-class ProcessResult:
-    resolved_entities: 'List[ProcessResultResolvedEntities]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ProcessResult':
-        return cls(
-            _from_json_data(List[ProcessResultResolvedEntities], data.get("RESOLVED_ENTITIES")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["RESOLVED_ENTITIES"] = _to_json_data(self.resolved_entities)
+        data["BUILD_DATE"] = _to_json_data(self.build_date)
+        data["BUILD_NUMBER"] = _to_json_data(self.build_number)
+        data["BUILD_VERSION"] = _to_json_data(self.build_version)
+        data["COMPATIBILITY_VERSION"] = _to_json_data(self.compatibility_version)
+        data["PRODUCT_NAME"] = _to_json_data(self.product_name)
+        data["SCHEMA_VERSION"] = _to_json_data(self.schema_version)
+        data["VERSION"] = _to_json_data(self.version)
         return data
 
 @dataclass
@@ -5954,6 +2093,11 @@ class Records:
 @dataclass
 class RelatedEntity:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     entity_name: 'str'
     errule_code: 'str'
     is_ambiguous: 'int'
@@ -5997,50 +2141,6 @@ class RelatedEntity:
         return data
 
 @dataclass
-class Relationship:
-    relationship_key: 'str'
-    relationship_type: 'str'
-    rel_anchor_domain: 'str'
-    rel_anchor_key: 'str'
-    rel_pointer_domain: 'str'
-    rel_pointer_key: 'str'
-    rel_pointer_role: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Relationship':
-        return cls(
-            _from_json_data(str, data.get("RELATIONSHIP_KEY")),
-            _from_json_data(str, data.get("RELATIONSHIP_TYPE")),
-            _from_json_data(str, data.get("REL_ANCHOR_DOMAIN")),
-            _from_json_data(str, data.get("REL_ANCHOR_KEY")),
-            _from_json_data(str, data.get("REL_POINTER_DOMAIN")),
-            _from_json_data(str, data.get("REL_POINTER_KEY")),
-            _from_json_data(str, data.get("REL_POINTER_ROLE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["RELATIONSHIP_KEY"] = _to_json_data(self.relationship_key)
-        data["RELATIONSHIP_TYPE"] = _to_json_data(self.relationship_type)
-        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
-        data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
-        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
-        data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
-        return data
-
-@dataclass
-class Relationships:
-    value: 'List[Relationship]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Relationships':
-        return cls(_from_json_data(List[Relationship], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class ResolutionStep:
     inbound_virtual_entity_id: 'str'
     match_info: 'MatchInfo'
@@ -6082,19 +2182,13 @@ class ResolutionSteps:
         return _to_json_data(self.value)
 
 @dataclass
-class ResolvedEntities:
-    value: 'List[ResolvedEntityAndMatchInfo]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ResolvedEntities':
-        return cls(_from_json_data(List[ResolvedEntityAndMatchInfo], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class ResolvedEntity:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     entity_name: 'str'
     errule_code: 'str'
     features: 'Dict[str, List[FeatureForAttribute]]'
@@ -6344,6 +2438,336 @@ class SearchStatistics:
         return _to_json_data(self.value)
 
 @dataclass
+class SzConfigAddDataSourceResponse:
+    value: 'AddDataSource'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigAddDataSourceResponse':
+        return cls(_from_json_data(AddDataSource, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigGetDataSourcesResponse:
+    value: 'GetDataSources'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourcesResponse':
+        return cls(_from_json_data(GetDataSources, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigGetJSONStringResponse:
+    value: 'GetJSONString'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigGetJSONStringResponse':
+        return cls(_from_json_data(GetJSONString, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigmgrGetConfigListResponse:
+    value: 'ConfigList'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigmgrGetConfigListResponse':
+        return cls(_from_json_data(ConfigList, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzConfigmgrGetConfigResponse:
+    value: 'GetConfig'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigmgrGetConfigResponse':
+        return cls(_from_json_data(GetConfig, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzDiagnosticCheckDatabasePerformanceResponse:
+    value: 'CheckDatabasePerformance'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckDatabasePerformanceResponse':
+        return cls(_from_json_data(CheckDatabasePerformance, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineAddRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineAddRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineDeleteRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineDeleteRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFetchNextResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFetchNextResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindNetworkByEntityIDResponse:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByEntityIDResponse':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindNetworkByRecordIDResponse:
+    value: 'Network'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByRecordIDResponse':
+        return cls(_from_json_data(Network, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindPathByEntityIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindPathByRecordIDResponse:
+    value: 'Path'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDResponse':
+        return cls(_from_json_data(Path, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetEntityByEntityIDResponse:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetEntityByEntityIDResponse':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetEntityByRecordIDResponse:
+    value: 'Entity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetEntityByRecordIDResponse':
+        return cls(_from_json_data(Entity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetRecordResponse:
+    value: 'Record'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRecordResponse':
+        return cls(_from_json_data(Record, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetRedoRecordResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRedoRecordResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetVirtualEntityByRecordIDResponse:
+    value: 'VirtualEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetVirtualEntityByRecordIDResponse':
+        return cls(_from_json_data(VirtualEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineHowEntityByEntityIDResponse:
+    value: 'How'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineHowEntityByEntityIDResponse':
+        return cls(_from_json_data(How, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineProcessRedoRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineProcessRedoRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineReevaluateEntityResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineReevaluateEntityResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineReevaluateRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineReevaluateRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineReplaceRecordResponse:
+    value: 'WithInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineReplaceRecordResponse':
+        return cls(_from_json_data(WithInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineSearchByAttributesResponse:
+    value: 'Search'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesResponse':
+        return cls(_from_json_data(Search, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineStreamExportJSONEntityReportResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineStreamExportJSONEntityReportResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineWhyEntitiesResponse:
+    value: 'WhyEntities'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyEntitiesResponse':
+        return cls(_from_json_data(WhyEntities, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineWhyRecordInEntityResponse:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordInEntityResponse':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineWhyRecordsResponse:
+    value: 'WhyRecords'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordsResponse':
+        return cls(_from_json_data(WhyRecords, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzProductGetLicenseResponse:
+    value: 'ProductLicense'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzProductGetLicenseResponse':
+        return cls(_from_json_data(ProductLicense, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzProductGetVersionResponse:
+    value: 'ProductVersion'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzProductGetVersionResponse':
+        return cls(_from_json_data(ProductVersion, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class VirtualEntity:
     resolved_entity: 'ResolvedEntity'
 
@@ -6395,24 +2819,6 @@ class WhyEntities:
         return data
 
 @dataclass
-class WhyEntity:
-    entities: 'List[Entity]'
-    why_results: 'WhyResults'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'WhyEntity':
-        return cls(
-            _from_json_data(List[Entity], data.get("ENTITIES")),
-            _from_json_data(WhyResults, data.get("WHY_RESULTS")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ENTITIES"] = _to_json_data(self.entities)
-        data["WHY_RESULTS"] = _to_json_data(self.why_results)
-        return data
-
-@dataclass
 class WhyRecords:
     entities: 'List[Entity]'
     why_results: 'WhyResults'
@@ -6433,6 +2839,11 @@ class WhyRecords:
 @dataclass
 class WhyResult:
     entity_id: 'int'
+    """
+    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+    It may change when new information is added.
+    """
+
     entity_id0: 'int'
     focus_records: 'FocusRecords'
     focus_records0: 'FocusRecords'
