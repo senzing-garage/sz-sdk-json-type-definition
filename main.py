@@ -127,7 +127,7 @@ print(
     f"SzEngineDeleteRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
 )
 
-# SzEngine g2engine_get_virtual_entity_by_record_id ------------------------------------
+# SzEngine szengine_get_virtual_entity_by_record_id ------------------------------------
 
 response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
     json.loads(mock_szengine_get_virtual_entity_by_record_id())
