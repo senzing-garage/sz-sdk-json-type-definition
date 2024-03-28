@@ -1,241 +1,24 @@
 {
     "definitions": {
-        "Address": {
+        "AddDataSource": {
             "properties": {
-                "ADDR_CITY": {
-                    "type": "string"
-                },
-                "ADDR_COUNTRY": {
-                    "type": "string"
-                },
-                "ADDR_FROM_DATE": {
-                    "type": "string"
-                },
-                "ADDR_FULL": {
-                    "type": "string"
-                },
-                "ADDR_LINE1": {
-                    "type": "string"
-                },
-                "ADDR_LINE2": {
-                    "type": "string"
-                },
-                "ADDR_LINE3": {
-                    "type": "string"
-                },
-                "ADDR_LINE4": {
-                    "type": "string"
-                },
-                "ADDR_LINE5": {
-                    "type": "string"
-                },
-                "ADDR_LINE6": {
-                    "type": "string"
-                },
-                "ADDR_POSTAL_CODE": {
-                    "type": "string"
-                },
-                "ADDR_STATE": {
-                    "type": "string"
-                },
-                "ADDR_THRU_DATE": {
-                    "type": "string"
-                },
-                "ADDR_TYPE": {
-                    "type": "string"
+                "DSRC_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
-            }
-        },
-        "Addresses": {
-            "elements": {
-                "ref": "Address"
             }
         },
         "AffectedEntity": {
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 }
-            }
-        },
-        "AttributeCounter": {
-            "properties": {
-                "ACCT_NUM": {
-                    "type": "float64"
-                },
-                "ADDRESS": {
-                    "type": "float64"
-                },
-                "ADDR_KEY": {
-                    "type": "float64"
-                },
-                "CALL_SIGN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "CITIZENSHIP": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "COUNTRY_OF_ASSOCIATION": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "DEFERRED_DELETE": {
-                    "type": "float64"
-                },
-                "DOB": {
-                    "type": "float64"
-                },
-                "DRLIC": {
-                    "type": "float64"
-                },
-                "DUNS_NUMBER": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "EMAIL": {
-                    "type": "float64"
-                },
-                "EMAIL_KEY": {
-                    "type": "float64"
-                },
-                "ENTITY_COUNT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "ENTITY_SIZE": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GENDER": {
-                    "type": "float64"
-                },
-                "ID_KEY": {
-                    "type": "float64"
-                },
-                "IMO_NUMBER": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LEI_NUMBER": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LOGIN_ID": {
-                    "type": "float64"
-                },
-                "MAX_RES_ENT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MIN_RES_ENT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NAME": {
-                    "type": "float64"
-                },
-                "NAME_KEY": {
-                    "type": "float64"
-                },
-                "NATIONALITY": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NATIONAL_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "OFAC_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "OTHER_ID": {
-                    "type": "float64"
-                },
-                "PASSPORT": {
-                    "type": "float64"
-                },
-                "PHONE": {
-                    "type": "float64"
-                },
-                "PHONE_KEY": {
-                    "type": "float64"
-                },
-                "RECORD_TYPE": {
-                    "type": "float64"
-                },
-                "REGISTRATION_COUNTRY": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "REGISTRATION_DATE": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "REL_ANCHOR": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "REL_POINTER": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "SEARCH_KEY": {
-                    "type": "float64"
-                },
-                "SSN": {
-                    "type": "float64"
-                },
-                "TAX_ID": {
-                    "type": "float64"
-                },
-                "WEBSITE": {
-                    "type": "float64"
-                }
-            }
-        },
-        "AttributeCounters": {
-            "elements": {
-                "ref": "AttributeCounter"
             }
         },
         "CFG_ATTR": {
@@ -1146,25 +929,19 @@
                 }
             }
         },
-        "CONFIG_BASE_VERSION": {
+        "CheckDatabasePerformance": {
             "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
+                "insertTime": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "VERSION": {
-                    "type": "string"
+                "numRecordsInserted": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
@@ -1191,9 +968,42 @@
                 }
             }
         },
-        "Configs": {
-            "elements": {
-                "ref": "Config"
+        "CONFIG_BASE_VERSION": {
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "VERSION": {
+                    "type": "string"
+                }
+            }
+        },
+        "ConfigList": {
+            "properties": {
+                "CONFIGS": {
+                    "elements": {
+                        "ref": "Config"
+                    }
+                }
+            }
+        },
+        "GetJsonString": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
             }
         },
         "DataSource": {
@@ -1213,64 +1023,6 @@
                 }
             }
         },
-        "DiagnosticFetchNextEntityBySizeResponseXXX": {
-            "elements": {
-                "properties": {
-                    "DSRC_CODE": {
-                        "type": "string"
-                    },
-                    "ENT_SRC_DESC": {
-                        "type": "string"
-                    },
-                    "ENT_SRC_KEY": {
-                        "type": "string"
-                    },
-                    "ERRULE_CODE": {
-                        "type": "string"
-                    },
-                    "ER_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "ETYPE_CODE": {
-                        "type": "string"
-                    },
-                    "JSON_DATA": {
-                        "metadata": {
-                            "goType": "map[string]any",
-                            "javaJacksonType": "Map<String, Map<String, Object>>",
-                            "pythonType": "Dict[str, object]"
-                        },
-                        "type": "string"
-                    },
-                    "MATCH_KEY": {
-                        "type": "string"
-                    },
-                    "OBS_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "RECORD_ID": {
-                        "type": "string"
-                    },
-                    "RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    }
-                }
-            }
-        },
-        "EntitiesByFeatureID": {
-            "elements": {
-                "ref": "EntityByFeatureID"
-            }
-        },
         "Entity": {
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1280,76 +1032,6 @@
                 },
                 "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
-                }
-            }
-        },
-        "EntityByFeatureID": {
-            "properties": {
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "RES_ENT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "USAGE_TYPE": {
-                    "type": "string"
-                }
-            }
-        },
-        "EntityBySize": {
-            "properties": {
-                "DSRC_CODE": {
-                    "type": "string"
-                },
-                "ENT_SRC_DESC": {
-                    "type": "string"
-                },
-                "ENT_SRC_KEY": {
-                    "type": "string"
-                },
-                "ERRULE_CODE": {
-                    "type": "string"
-                },
-                "ER_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "ETYPE_CODE": {
-                    "type": "string"
-                },
-                "JSON_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]"
-                    },
-                    "type": "string"
-                },
-                "MATCH_KEY": {
-                    "type": "string"
-                },
-                "OBS_ENT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "RECORD_ID": {
-                    "type": "string"
-                },
-                "RES_ENT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
                 }
             }
         },
@@ -1374,6 +1056,13 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                }
+            }
+        },
+        "ExportConfig": {
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
                 }
             }
         },
@@ -1503,609 +1192,16 @@
             }
         },
         "FeatureScores": {
-            "properties": {
-                "ACCOUNT_DOMAIN": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ACCOUNT_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ACCT_NUM": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ADDRESS": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ADDRESS_LIST": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ADDR_FULL": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ADDR_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "CELL_PHONE_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "CITIZENSHIP": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "COUNTRY_OF_ASSOCIATION": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DATA_SOURCE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DATE_OF_BIRTH": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DATE_OF_DEATH": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DOB": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DOD": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DRIVERS_LICENSE_STATE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DRLIC": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "DUNS_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "EMAIL": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "EMAIL_ADDRESS": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "EMAIL_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "EMPLOYER_NAME": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ENTITY_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "FACEBOOK": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "GENDER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "GROUP_ASSN_ID_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "GROUP_ASSN_ID_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ID_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "INSTAGRAM": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "LEI_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "LINKEDIN": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "LOAD_ID": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "LOGIN_ID": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NAME": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NAME_FULL": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NAME_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NAME_LIST": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NATIONALITY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NATIONAL_ID": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NATIONAL_ID_COUNTRY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NIN_COUNTRY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NIN_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "NPI_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "OTHER_ID_COUNTRY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "OTHER_ID_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "OTHER_ID_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PASSPORT": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PASSPORTS": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PASSPORT_COUNTRY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PASSPORT_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PHONE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PHONES": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PHONE_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PLACE_OF_BIRTH": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_NAME_FIRST": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_NAME_ORG": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_NAME_PREFIX": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_NAME_SUFFIX": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "PRIMARY_PHONE_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "RECORD_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REGISTRATION_COUNTRY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REGISTRATION_DATE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_ANCHOR": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_ANCHOR_DOMAIN": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_ANCHOR_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_LINK": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_POINTER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_POINTER_DOMAIN": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_POINTER_KEY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "REL_POINTER_ROLE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SIGNAL": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SKYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SOCIAL_HANDLE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SOCIAL_NETWORK": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SOURCE_ID": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SSN": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SSN_LAST4": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "SSN_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TANGO": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TAX_ID_COUNTRY": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TAX_ID_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TAX_ID_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TELEGRAM": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TRUSTED_ID_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TRUSTED_ID_TYPE": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "TWITTER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "VIBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "WEBSITE_ADDRESS": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "WECHAT": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "WHATSAPP": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "WORK_PHONE_NUMBER": {
-                    "ref": "FeatureScoresForAttribute"
-                },
-                "ZOOMROOM": {
-                    "ref": "FeatureScoresForAttribute"
-                }
-            }
+            "metadata": {
+                "goType": "map[string]FeatureScoresForAttribute",
+                "javaJacksonType": "Map<String, FeatureScoresForAttribute>",
+                "pythonType": "Dict[str, FeatureScoresForAttribute]"
+            },
+            "type": "string"
         },
         "FeatureScoresForAttribute": {
             "elements": {
                 "ref": "FeatureScoreForAttribute"
-            }
-        },
-        "FeaturesXxx": {
-            "properties": {
-                "ACCOUNT_DOMAIN": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ACCOUNT_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ACCT_NUM": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ADDRESS": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ADDRESS_LIST": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ADDR_FULL": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ADDR_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "CELL_PHONE_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "CITIZENSHIP": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "COUNTRY_OF_ASSOCIATION": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DATA_SOURCE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DATE_OF_BIRTH": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DATE_OF_DEATH": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DOB": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DOD": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DRIVERS_LICENSE_STATE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DRLIC": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "DUNS_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "EMAIL": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "EMAIL_ADDRESS": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "EMAIL_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "EMPLOYER_NAME": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ENTITY_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "FACEBOOK": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "GENDER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "GROUP_ASSN_ID_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "GROUP_ASSN_ID_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ID_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "INSTAGRAM": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "LEI_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "LINKEDIN": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "LOAD_ID": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "LOGIN_ID": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NAME": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NAME_FULL": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NAME_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NAME_LIST": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NATIONALITY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NATIONAL_ID": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NATIONAL_ID_COUNTRY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NIN_COUNTRY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NIN_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "NPI_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "OTHER_ID_COUNTRY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "OTHER_ID_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "OTHER_ID_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PASSPORT": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PASSPORTS": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PASSPORT_COUNTRY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PASSPORT_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PHONE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PHONES": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PHONE_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PLACE_OF_BIRTH": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_NAME_FIRST": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_NAME_ORG": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_NAME_PREFIX": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_NAME_SUFFIX": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "PRIMARY_PHONE_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "RECORD_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REGISTRATION_COUNTRY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REGISTRATION_DATE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_ANCHOR": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_ANCHOR_DOMAIN": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_ANCHOR_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_LINK": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_POINTER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_POINTER_DOMAIN": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_POINTER_KEY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "REL_POINTER_ROLE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SIGNAL": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SKYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SOCIAL_HANDLE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SOCIAL_NETWORK": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SOURCE_ID": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SSN": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SSN_LAST4": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "SSN_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TANGO": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TAX_ID_COUNTRY": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TAX_ID_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TAX_ID_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TELEGRAM": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TRUSTED_ID_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TRUSTED_ID_TYPE": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "TWITTER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "VIBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "WEBSITE_ADDRESS": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "WECHAT": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "WHATSAPP": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "WORK_PHONE_NUMBER": {
-                    "ref": "FeaturesForAttribute"
-                },
-                "ZOOMROOM": {
-                    "ref": "FeaturesForAttribute"
-                }
-            }
-        },
-        "FeaturesForAttribute": {
-            "elements": {
-                "ref": "FeatureForAttribute"
             }
         },
         "FinalState": {
@@ -2311,1267 +1407,10 @@
                 }
             }
         },
-        "G2ConfigAddDataSourceResponse": {
-            "properties": {
-                "DSRC_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "G2ConfigListDataSourcesResponse": {
-            "properties": {
-                "DATA_SOURCES": {
-                    "elements": {
-                        "ref": "DataSource"
-                    }
-                }
-            }
-        },
-        "G2ConfigSaveResponse": {
+        "GetConfig": {
             "properties": {
                 "G2_CONFIG": {
                     "ref": "G2Config"
-                }
-            }
-        },
-        "G2ConfigmgrGetConfigListResponse": {
-            "properties": {
-                "CONFIGS": {
-                    "ref": "Configs"
-                }
-            }
-        },
-        "G2ConfigmgrGetConfigResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
-        "G2DiagnosticCheckDBPerfResponse": {
-            "properties": {
-                "insertTime": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "numRecordsInserted": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "G2DiagnosticFetchNextEntityBySizeResponse": {
-            "elements": {
-                "ref": "EntityBySize"
-            }
-        },
-        "G2DiagnosticFindEntitiesByFeatureIDsResponseXXX": {
-            "elements": {
-                "properties": {
-                    "LIB_FEAT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "USAGE_TYPE": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetDataSourceCountsResponse": {
-            "elements": {
-                "properties": {
-                    "DSRC_CODE": {
-                        "type": "string"
-                    },
-                    "DSRC_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "DSRC_RECORD_COUNT": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "ETYPE_CODE": {
-                        "type": "string"
-                    },
-                    "ETYPE_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "OBS_ENT_COUNT": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetDBInfoResponse": {
-            "properties": {
-                "Database Details": {
-                    "elements": {
-                        "properties": {
-                            "Name": {
-                                "type": "string"
-                            },
-                            "Type": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                },
-                "Hybrid Mode": {
-                    "type": "boolean"
-                }
-            }
-        },
-        "G2DiagnosticGetEntityDetailsResponse": {
-            "elements": {
-                "properties": {
-                    "DERIVED": {
-                        "type": "string"
-                    },
-                    "DSRC_CODE": {
-                        "type": "string"
-                    },
-                    "ERRULE_CODE": {
-                        "type": "string"
-                    },
-                    "ETYPE_CODE": {
-                        "type": "string"
-                    },
-                    "FEAT_DESC": {
-                        "type": "string"
-                    },
-                    "FTYPE_CODE": {
-                        "type": "string"
-                    },
-                    "MATCH_KEY": {
-                        "type": "string"
-                    },
-                    "OBS_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "RECORD_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "USAGE_TYPE": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetEntityResumeResponse": {
-            "elements": {
-                "properties": {
-                    "DSRC_CODE": {
-                        "type": "string"
-                    },
-                    "ENT_SRC_DESC": {
-                        "type": "string"
-                    },
-                    "ERRULE_CODE": {
-                        "type": "string"
-                    },
-                    "ETYPE_CODE": {
-                        "type": "string"
-                    },
-                    "JSON_DATA": {
-                        "metadata": {
-                            "goType": "map[string]any",
-                            "javaJacksonType": "Map<String, Map<String, Object>>",
-                            "pythonType": "Dict[str, object]"
-                        },
-                        "type": "string"
-                    },
-                    "MATCH_KEY": {
-                        "type": "string"
-                    },
-                    "RECORD_ID": {
-                        "type": "string"
-                    },
-                    "REL_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetEntitySizeBreakdownResponse": {
-            "ref": "AttributeCounters"
-        },
-        "G2DiagnosticGetFeatureResponse": {
-            "properties": {
-                "ELEMENTS": {
-                    "elements": {
-                        "properties": {
-                            "FELEM_CODE": {
-                                "type": "string"
-                            },
-                            "FELEM_VALUE": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                },
-                "FTYPE_CODE": {
-                    "type": "string"
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "G2DiagnosticGetGenericFeaturesResponse": {
-            "elements": {
-                "properties": {
-                    "CANDIDATE_CAP_REACHED": {
-                        "type": "string"
-                    },
-                    "ESTIMATED_COUNT": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "FEAT_DESC": {
-                        "type": "string"
-                    },
-                    "FTYPE_CODE": {
-                        "type": "string"
-                    },
-                    "LIB_FEAT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "SCORING_CAP_REACHED": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetMappingStatisticsResponse": {
-            "elements": {
-                "properties": {
-                    "DERIVED": {
-                        "type": "string"
-                    },
-                    "DSRC_CODE": {
-                        "type": "string"
-                    },
-                    "ETYPE_CODE": {
-                        "type": "string"
-                    },
-                    "FTYPE_CODE": {
-                        "type": "string"
-                    },
-                    "MAX_FEAT_DESC": {
-                        "type": "string"
-                    },
-                    "MIN_FEAT_DESC": {
-                        "type": "string"
-                    },
-                    "REC_COUNT": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "REC_PCT": {
-                        "type": "float64"
-                    },
-                    "UNIQ_COUNT": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "UNIQ_PCT": {
-                        "type": "float64"
-                    },
-                    "USAGE_TYPE": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetRelationshipDetailsResponse": {
-            "elements": {
-                "properties": {
-                    "ERRULE_CODE": {
-                        "type": "string"
-                    },
-                    "FEAT_DESC": {
-                        "type": "string"
-                    },
-                    "FTYPE_CODE": {
-                        "type": "string"
-                    },
-                    "MATCH_KEY": {
-                        "type": "string"
-                    },
-                    "RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticGetResolutionStatisticsResponse": {
-            "elements": {
-                "properties": {
-                    "ERRULE_CODE": {
-                        "type": "string"
-                    },
-                    "ERRULE_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "IS_AMBIGUOUS": {
-                        "type": "string"
-                    },
-                    "MATCH_KEY": {
-                        "type": "string"
-                    },
-                    "MATCH_LEVEL": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "MAX_RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "MAX_RES_REL_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "MIN_RES_ENT_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "MIN_RES_REL_ID": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    },
-                    "RAW_MATCH_KEYS": {
-                        "elements": {
-                            "properties": {
-                                "MATCH_KEY": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    },
-                    "RECORD_COUNT": {
-                        "metadata": {
-                            "goType": "int64"
-                        },
-                        "type": "int32"
-                    }
-                }
-            }
-        },
-        "G2DiagnosticStreamEntityListBySizeResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineAddRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineAddRecordWithInfoWithReturnedRecordIdResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineCheckRecordResponse": {
-            "properties": {
-                "CHECK_RECORD_RESPONSE": {
-                    "elements": {
-                        "properties": {
-                            "CANDIDATE_MATCH": {
-                                "type": "string"
-                            },
-                            "DSRC_CODE": {
-                                "type": "string"
-                            },
-                            "ERRULE_CODE": {
-                                "type": "string"
-                            },
-                            "ERRULE_ID": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            },
-                            "MATCH_KEY": {
-                                "type": "string"
-                            },
-                            "MATCH_LEVEL": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            },
-                            "MATCH_LEVEL_CODE": {
-                                "type": "string"
-                            },
-                            "NON_GENERIC_CANDIDATE_MATCH": {
-                                "type": "string"
-                            },
-                            "RECORD_ID": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "G2EngineDeleteRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineExportConfigAndConfigIdResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
-        "G2EngineExportConfigResponse": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
-        "G2EngineFetchNextResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineFindInterestingEntitiesByEntityIdResponse": {
-            "ref": "Interesting"
-        },
-        "G2EngineFindInterestingEntitiesByRecordIdResponse": {
-            "ref": "Interesting"
-        },
-        "G2EngineFindNetworkByEntityIdResponse": {
-            "ref": "Network"
-        },
-        "G2EngineFindNetworkByEntityIDV2Response": {
-            "ref": "Network"
-        },
-        "G2EngineFindNetworkByRecordIdResponse": {
-            "ref": "Network"
-        },
-        "G2EngineFindNetworkByRecordIDV2Response": {
-            "ref": "Network"
-        },
-        "G2EngineFindPathByEntityIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathByEntityIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathByRecordIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathByRecordIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByEntityIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByEntityIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByRecordIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathExcludingByRecordIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByEntityIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByEntityIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByRecordIdResponse": {
-            "ref": "Path"
-        },
-        "G2EngineFindPathIncludingSourceByRecordIDV2Response": {
-            "ref": "Path"
-        },
-        "G2EngineGetEntityByEntityIdResponse": {
-            "ref": "Entity"
-        },
-        "G2EngineGetEntityByEntityIDV2Response": {
-            "ref": "Entity"
-        },
-        "G2EngineGetEntityByRecordIdResponse": {
-            "ref": "Entity"
-        },
-        "G2EngineGetEntityByRecordIDV2Response": {
-            "ref": "Entity"
-        },
-        "G2EngineGetRecordResponse": {
-            "ref": "Record"
-        },
-        "G2EngineGetRecordV2Response": {
-            "ref": "Record"
-        },
-        "G2EngineGetRedoRecordResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineGetVirtualEntityByRecordIdResponse": {
-            "ref": "VirtualEntity"
-        },
-        "G2EngineGetVirtualEntityByRecordIDV2Response": {
-            "ref": "VirtualEntity"
-        },
-        "G2EngineHowEntityByEntityIdResponse": {
-            "ref": "How"
-        },
-        "G2EngineHowEntityByEntityIDV2Response": {
-            "ref": "How"
-        },
-        "G2EngineProcessRedoRecordResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineProcessRedoRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineProcessWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineProcessWithResponseResizeResponse": {
-            "ref": "Process"
-        },
-        "G2EngineProcessWithResponseResponse": {
-            "ref": "Process"
-        },
-        "G2EngineReevaluateEntityWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineReevaluateRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineReplaceRecordWithInfoResponse": {
-            "ref": "WithInfo"
-        },
-        "G2EngineSearchByAttributesResponse": {
-            "ref": "Search"
-        },
-        "G2EngineSearchByAttributesResponseXXX": {
-            "ref": "EntitiesByFeatureID"
-        },
-        "G2EngineSearchByAttributesV2Response": {
-            "ref": "Search"
-        },
-        "G2EngineSearchByAttributesV3Response": {
-            "ref": "Search"
-        },
-        "G2EngineStatsResponse": {
-            "properties": {
-                "MISSING_RES_ENT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MISSING_RES_ENT_AND_OKEY": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "abortedUnresolve": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "actualAmbiguousTest": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "addedRecords": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "cacheHit": {
-                    "ref": "AttributeCounters"
-                },
-                "candidateBuilders": {
-                    "ref": "AttributeCounters"
-                },
-                "candidates": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "deletedRecords": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "duration": {
-                    "properties": {
-                        "PATTERN": {
-                            "type": "string"
-                        },
-                        "TYPE": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "filteredObsFeat": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "genericDetect": {
-                    "ref": "AttributeCounters"
-                },
-                "latchContention": {
-                    "ref": "AttributeCounters"
-                },
-                "loadedRecords": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "redoTriggers": {
-                    "ref": "AttributeCounters"
-                },
-                "reducedScoredFeatureType": {
-                    "ref": "AttributeCounters"
-                },
-                "reevaluations": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "repairedEntities": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "reresolveSkipped": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "reresolveTriggers": {
-                    "properties": {
-                        "abortRetry": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "multipleResolvableCandidates": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "resolveNewFeatures": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "unresolveMovement": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        }
-                    }
-                },
-                "retries": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "scoredPairs": {
-                    "ref": "AttributeCounters"
-                },
-                "suppressedCandidateBuilders": {
-                    "ref": "AttributeCounters"
-                },
-                "suppressedScoredFeatureType": {
-                    "ref": "AttributeCounters"
-                },
-                "unresolveTest": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "unresolveTriggers": {
-                    "properties": {
-                        "extensiveResolve": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "normalResolve": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        }
-                    }
-                },
-                "workload": {
-                    "properties": {
-                        "CorruptEntityTestDiagnosis": {
-                            "ref": "FixmeUnknown"
-                        },
-                        "abortedUnresolve": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "actualAmbiguousTest": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "addedRecords": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "apiVersion": {
-                            "type": "string"
-                        },
-                        "cacheHit": {
-                            "ref": "AttributeCounters"
-                        },
-                        "cacheMiss": {
-                            "ref": "AttributeCounters"
-                        },
-                        "cachedAmbiguousTest": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "candidateBuilders": {
-                            "ref": "AttributeCounters"
-                        },
-                        "candidates": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "deletedRecords": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "duration": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "expressedFeatureCalls": {
-                            "elements": {
-                                "properties": {
-                                    "EFCALL_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "EFUNC_CODE": {
-                                        "type": "string"
-                                    },
-                                    "numCalls": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    }
-                                }
-                            }
-                        },
-                        "expressedFeaturesCreated": {
-                            "ref": "AttributeCounters"
-                        },
-                        "filteredObsFeat": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "genericDetect": {
-                            "ref": "AttributeCounters"
-                        },
-                        "gnrScorersUsed": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "highContentionFeat": {
-                            "ref": "AttributeCounters"
-                        },
-                        "highContentionResEnt": {
-                            "ref": "AttributeCounters"
-                        },
-                        "latchContention": {
-                            "ref": "AttributeCounters"
-                        },
-                        "libFeatCacheHit": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "libFeatCacheMiss": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "loadedRecords": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "redoTriggers": {
-                            "ref": "AttributeCounters"
-                        },
-                        "reducedScoredFeatureType": {
-                            "ref": "AttributeCounters"
-                        },
-                        "reevaluations": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "repairedEntities": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "reresolveSkipped": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "reresolveTriggers": {
-                            "properties": {
-                                "abortRetry": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "multipleResolvableCandidates": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "newFeatureFTypes": {
-                                    "ref": "AttributeCounters"
-                                },
-                                "resolveNewFeatures": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "unresolveMovement": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        },
-                        "resFeatStatCacheHit": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "resFeatStatCacheMiss": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "resFeatStatUpdate": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "retries": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "scoredPairs": {
-                            "ref": "AttributeCounters"
-                        },
-                        "suppressedCandidateBuilders": {
-                            "ref": "AttributeCounters"
-                        },
-                        "suppressedDisclosedRelationshipDomainCount": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "suppressedScoredFeatureType": {
-                            "ref": "AttributeCounters"
-                        },
-                        "systemResources": {
-                            "properties": {
-                                "currResources": {
-                                    "elements": {
-                                        "properties": {
-                                            "activeThreads": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "availableMemory": {
-                                                "type": "string"
-                                            },
-                                            "systemLoad": {
-                                                "elements": {
-                                                    "properties": {
-                                                        "cpuIdle": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuSoftIrq": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuSystem": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuUser": {
-                                                            "type": "float64"
-                                                        },
-                                                        "cpuWait": {
-                                                            "type": "float64"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "workerThreads": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            }
-                                        }
-                                    }
-                                },
-                                "initResources": {
-                                    "elements": {
-                                        "properties": {
-                                            "availableMemory": {
-                                                "type": "string"
-                                            },
-                                            "logicalCores": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "physicalCores": {
-                                                "metadata": {
-                                                    "goType": "int64"
-                                                },
-                                                "type": "int32"
-                                            },
-                                            "totalMemory": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "threadState": {
-                            "properties": {
-                                "active": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "dataLatchContention": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "idle": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "loader": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "obsEntContention": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "resEntContention": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "resolver": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "scoring": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "sqlExecuting": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        },
-                        "unresolveTest": {
-                            "metadata": {
-                                "goType": "int64"
-                            },
-                            "type": "int32"
-                        },
-                        "unresolveTriggers": {
-                            "properties": {
-                                "ambiguousMultiResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "ambiguousNoResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "extensiveResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "normalResolve": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "relLink": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "update": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "G2EngineStreamExportJSONEntityReportResponse": {
-            "ref": "FixmeUnknown"
-        },
-        "G2EngineWhyEntitiesResponse": {
-            "ref": "WhyEntities"
-        },
-        "G2EngineWhyEntitiesV2Response": {
-            "ref": "WhyEntities"
-        },
-        "G2EngineWhyEntityByEntityIdResponse": {
-            "ref": "WhyEntity"
-        },
-        "G2EngineWhyEntityByEntityIDV2Response": {
-            "ref": "WhyEntity"
-        },
-        "G2EngineWhyEntityByRecordIdResponse": {
-            "ref": "WhyEntity"
-        },
-        "G2EngineWhyEntityByRecordIDV2Response": {
-            "ref": "WhyEntity"
-        },
-        "G2EngineWhyRecordsResponse": {
-            "ref": "WhyRecords"
-        },
-        "G2EngineWhyRecordsV2Response": {
-            "ref": "WhyRecords"
-        },
-        "G2ProductLicenseResponse": {
-            "properties": {
-                "billing": {
-                    "type": "string"
-                },
-                "contract": {
-                    "type": "string"
-                },
-                "customer": {
-                    "type": "string"
-                },
-                "expireDate": {
-                    "type": "string"
-                },
-                "issueDate": {
-                    "type": "string"
-                },
-                "licenseLevel": {
-                    "type": "string"
-                },
-                "licenseType": {
-                    "type": "string"
-                },
-                "recordLimit": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "G2ProductVersionResponse": {
-            "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
-                },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "SCHEMA_VERSION": {
-                    "ref": "SchemaVersion"
-                },
-                "VERSION": {
-                    "type": "string"
                 }
             }
         },
@@ -3621,6 +1460,7 @@
                 },
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -3649,355 +1489,12 @@
                 }
             }
         },
-        "JsonDataXXX": {
+        "GetDataSources": {
             "properties": {
-                "ACCOUNT_DOMAIN": {
-                    "type": "string"
-                },
-                "ACCOUNT_NUMBER": {
-                    "type": "string"
-                },
-                "ACCT_NUM": {
+                "DATA_SOURCES": {
                     "elements": {
-                        "properties": {
-                            "ACCOUNT_DOMAIN": {
-                                "type": "string"
-                            },
-                            "ACCOUNT_NUMBER": {
-                                "type": "string"
-                            }
-                        }
+                        "ref": "DataSource"
                     }
-                },
-                "ADDRESS": {
-                    "type": "string"
-                },
-                "ADDRESS_LIST": {
-                    "ref": "Addresses"
-                },
-                "ADDR_FULL": {
-                    "type": "string"
-                },
-                "ADDR_KEY": {
-                    "type": "string"
-                },
-                "CELL_PHONE_NUMBER": {
-                    "type": "string"
-                },
-                "CITIZENSHIP": {
-                    "type": "string"
-                },
-                "COUNTRY_OF_ASSOCIATION": {
-                    "type": "string"
-                },
-                "DATA_SOURCE": {
-                    "type": "string"
-                },
-                "DATE_OF_BIRTH": {
-                    "type": "string"
-                },
-                "DATE_OF_DEATH": {
-                    "type": "string"
-                },
-                "DOB": {
-                    "type": "string"
-                },
-                "DOD": {
-                    "type": "string"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "type": "string"
-                },
-                "DRIVERS_LICENSE_STATE": {
-                    "type": "string"
-                },
-                "DRLIC": {
-                    "type": "string"
-                },
-                "DSRC_ACTION": {
-                    "type": "string"
-                },
-                "DSRC_CODE": {
-                    "type": "string"
-                },
-                "DUNS_NUMBER": {
-                    "type": "string"
-                },
-                "EMAIL": {
-                    "type": "string"
-                },
-                "EMAIL_ADDRESS": {
-                    "type": "string"
-                },
-                "EMAIL_KEY": {
-                    "type": "string"
-                },
-                "EMPLOYER_NAME": {
-                    "type": "string"
-                },
-                "ENTITY_TYPE": {
-                    "type": "string"
-                },
-                "ENT_SRC_DESC": {
-                    "type": "string"
-                },
-                "ENT_SRC_KEY": {
-                    "type": "string"
-                },
-                "ETYPE_CODE": {
-                    "type": "string"
-                },
-                "FACEBOOK": {
-                    "type": "string"
-                },
-                "GENDER": {
-                    "type": "string"
-                },
-                "GROUP_ASSN_ID_NUMBER": {
-                    "type": "string"
-                },
-                "GROUP_ASSN_ID_TYPE": {
-                    "type": "string"
-                },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "type": "string"
-                },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "type": "string"
-                },
-                "ID_KEY": {
-                    "type": "string"
-                },
-                "INSTAGRAM": {
-                    "type": "string"
-                },
-                "LEI_NUMBER": {
-                    "type": "string"
-                },
-                "LINKEDIN": {
-                    "type": "string"
-                },
-                "LOAD_ID": {
-                    "type": "string"
-                },
-                "LOGIN_ID": {
-                    "type": "string"
-                },
-                "NAME": {
-                    "ref": "Names"
-                },
-                "NAME_FULL": {
-                    "type": "string"
-                },
-                "NAME_KEY": {
-                    "type": "string"
-                },
-                "NAME_LIST": {
-                    "ref": "Names"
-                },
-                "NATIONALITY": {
-                    "type": "string"
-                },
-                "NATIONAL_ID": {
-                    "type": "string"
-                },
-                "NATIONAL_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "type": "string"
-                },
-                "NIN_COUNTRY": {
-                    "type": "string"
-                },
-                "NIN_NUMBER": {
-                    "type": "string"
-                },
-                "NPI_NUMBER": {
-                    "type": "string"
-                },
-                "OBS_SRC_KEY": {
-                    "type": "string"
-                },
-                "OTHER_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "OTHER_ID_NUMBER": {
-                    "type": "string"
-                },
-                "OTHER_ID_TYPE": {
-                    "type": "string"
-                },
-                "PASSPORT": {
-                    "type": "string"
-                },
-                "PASSPORTS": {
-                    "ref": "Passports"
-                },
-                "PASSPORT_COUNTRY": {
-                    "type": "string"
-                },
-                "PASSPORT_NUMBER": {
-                    "type": "string"
-                },
-                "PHONE": {
-                    "type": "string"
-                },
-                "PHONES": {
-                    "ref": "Phones"
-                },
-                "PHONE_KEY": {
-                    "type": "string"
-                },
-                "PLACE_OF_BIRTH": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_FIRST": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_ORG": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_PREFIX": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_SUFFIX": {
-                    "type": "string"
-                },
-                "PRIMARY_PHONE_NUMBER": {
-                    "type": "string"
-                },
-                "RECORD_ID": {
-                    "type": "string"
-                },
-                "RECORD_TYPE": {
-                    "type": "string"
-                },
-                "REGISTRATION_COUNTRY": {
-                    "type": "string"
-                },
-                "REGISTRATION_DATE": {
-                    "type": "string"
-                },
-                "RELATIONSHIPS": {
-                    "ref": "Relationships"
-                },
-                "REL_ANCHOR": {
-                    "type": "string"
-                },
-                "REL_ANCHOR_DOMAIN": {
-                    "type": "string"
-                },
-                "REL_ANCHOR_KEY": {
-                    "type": "string"
-                },
-                "REL_LINK": {
-                    "type": "string"
-                },
-                "REL_POINTER": {
-                    "type": "string"
-                },
-                "REL_POINTER_DOMAIN": {
-                    "type": "string"
-                },
-                "REL_POINTER_KEY": {
-                    "type": "string"
-                },
-                "REL_POINTER_ROLE": {
-                    "type": "string"
-                },
-                "SIGNAL": {
-                    "type": "string"
-                },
-                "SKYPE": {
-                    "type": "string"
-                },
-                "SOCIAL_HANDLE": {
-                    "type": "string"
-                },
-                "SOCIAL_NETWORK": {
-                    "type": "string"
-                },
-                "SOURCE_ID": {
-                    "type": "string"
-                },
-                "SSN": {
-                    "elements": {
-                        "properties": {
-                            "PASSPORT_NUMBER": {
-                                "type": "string"
-                            },
-                            "SSN_NUMBER": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                },
-                "SSN_LAST4": {
-                    "elements": {
-                        "properties": {
-                            "SSN_LAST4": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            }
-                        }
-                    }
-                },
-                "SSN_NUMBER": {
-                    "type": "string"
-                },
-                "TANGO": {
-                    "type": "string"
-                },
-                "TAX_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "TAX_ID_NUMBER": {
-                    "type": "string"
-                },
-                "TAX_ID_TYPE": {
-                    "type": "string"
-                },
-                "TELEGRAM": {
-                    "type": "string"
-                },
-                "TRUSTED_ID_NUMBER": {
-                    "type": "string"
-                },
-                "TRUSTED_ID_TYPE": {
-                    "type": "string"
-                },
-                "TWITTER": {
-                    "type": "string"
-                },
-                "VIBER": {
-                    "type": "string"
-                },
-                "WEBSITE_ADDRESS": {
-                    "type": "string"
-                },
-                "WECHAT": {
-                    "type": "string"
-                },
-                "WHATSAPP": {
-                    "type": "string"
-                },
-                "WORK_PHONE_NUMBER": {
-                    "type": "string"
-                },
-                "ZOOMROOM": {
-                    "type": "string"
-                },
-                "name": {
-                    "ref": "Names"
                 }
             }
         },
@@ -4139,302 +1636,12 @@
             }
         },
         "MatchInfoCandidateKeys": {
-            "properties": {
-                "ACCOUNT_DOMAIN": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ACCOUNT_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ACCT_NUM": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ADDRESS": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ADDRESS_LIST": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ADDR_FULL": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ADDR_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "CELL_PHONE_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "CITIZENSHIP": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "COUNTRY_OF_ASSOCIATION": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DATA_SOURCE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DATE_OF_BIRTH": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DATE_OF_DEATH": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DOB": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DOD": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DRIVERS_LICENSE_STATE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DRLIC": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "DUNS_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "EMAIL": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "EMAIL_ADDRESS": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "EMAIL_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "EMPLOYER_NAME": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ENTITY_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "FACEBOOK": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "GENDER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "GROUP_ASSN_ID_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "GROUP_ASSN_ID_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ID_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "INSTAGRAM": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "LEI_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "LINKEDIN": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "LOAD_ID": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "LOGIN_ID": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NAME": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NAME_FULL": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NAME_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NAME_LIST": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NATIONALITY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NATIONAL_ID": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NATIONAL_ID_COUNTRY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NIN_COUNTRY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NIN_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "NPI_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "OTHER_ID_COUNTRY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "OTHER_ID_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "OTHER_ID_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PASSPORT": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PASSPORTS": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PASSPORT_COUNTRY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PASSPORT_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PHONE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PHONES": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PHONE_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PLACE_OF_BIRTH": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_NAME_FIRST": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_NAME_ORG": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_NAME_PREFIX": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_NAME_SUFFIX": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "PRIMARY_PHONE_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "RECORD_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REGISTRATION_COUNTRY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REGISTRATION_DATE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_ANCHOR": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_ANCHOR_DOMAIN": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_ANCHOR_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_LINK": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_POINTER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_POINTER_DOMAIN": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_POINTER_KEY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "REL_POINTER_ROLE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SIGNAL": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SKYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SOCIAL_HANDLE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SOCIAL_NETWORK": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SOURCE_ID": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SSN": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SSN_LAST4": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "SSN_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TANGO": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TAX_ID_COUNTRY": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TAX_ID_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TAX_ID_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TELEGRAM": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TRUSTED_ID_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TRUSTED_ID_TYPE": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "TWITTER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "VIBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "WEBSITE_ADDRESS": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "WECHAT": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "WHATSAPP": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "WORK_PHONE_NUMBER": {
-                    "ref": "MatchInfosForAttribute"
-                },
-                "ZOOMROOM": {
-                    "ref": "MatchInfosForAttribute"
-                }
-            }
+            "metadata": {
+                "goType": "map[string][]MatchInfoForAttribute",
+                "javaJacksonType": "Map<String, List<MatchInfoForAttribute>>",
+                "pythonType": "Dict[str, List[MatchInfoForAttribute]]"
+            },
+            "type": "string"
         },
         "MatchInfoForAttribute": {
             "properties": {
@@ -4447,360 +1654,6 @@
                     },
                     "type": "int32"
                 }
-            }
-        },
-        "MatchInfosForAttribute": {
-            "elements": {
-                "ref": "MatchInfoForAttribute"
-            }
-        },
-        "MatchScoreForAttribute": {
-            "properties": {
-                "CANDIDATE_FEAT": {
-                    "type": "string"
-                },
-                "FULL_SCORE": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GENERATION_MATCH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_FN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_GN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_ON": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_SN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "INBOUND_FEAT": {
-                    "type": "string"
-                }
-            }
-        },
-        "MatchScores": {
-            "properties": {
-                "ACCOUNT_DOMAIN": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ACCOUNT_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ACCT_NUM": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ADDRESS": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ADDRESS_LIST": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ADDR_FULL": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ADDR_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "CELL_PHONE_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "CITIZENSHIP": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "COUNTRY_OF_ASSOCIATION": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DATA_SOURCE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DATE_OF_BIRTH": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DATE_OF_DEATH": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DOB": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DOD": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DRIVERS_LICENSE_STATE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DRLIC": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "DUNS_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "EMAIL": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "EMAIL_ADDRESS": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "EMAIL_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "EMPLOYER_NAME": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ENTITY_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "FACEBOOK": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "GENDER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "GROUP_ASSN_ID_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "GROUP_ASSN_ID_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ID_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "INSTAGRAM": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "LEI_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "LINKEDIN": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "LOAD_ID": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "LOGIN_ID": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NAME": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NAME_FULL": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NAME_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NAME_LIST": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NATIONALITY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NATIONAL_ID": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NATIONAL_ID_COUNTRY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NIN_COUNTRY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NIN_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "NPI_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "OTHER_ID_COUNTRY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "OTHER_ID_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "OTHER_ID_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PASSPORT": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PASSPORTS": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PASSPORT_COUNTRY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PASSPORT_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PHONE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PHONES": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PHONE_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PLACE_OF_BIRTH": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_NAME_FIRST": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_NAME_ORG": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_NAME_PREFIX": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_NAME_SUFFIX": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "PRIMARY_PHONE_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "RECORD_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REGISTRATION_COUNTRY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REGISTRATION_DATE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_ANCHOR": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_ANCHOR_DOMAIN": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_ANCHOR_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_LINK": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_POINTER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_POINTER_DOMAIN": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_POINTER_KEY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "REL_POINTER_ROLE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SIGNAL": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SKYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SOCIAL_HANDLE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SOCIAL_NETWORK": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SOURCE_ID": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SSN": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SSN_LAST4": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "SSN_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TANGO": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TAX_ID_COUNTRY": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TAX_ID_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TAX_ID_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TELEGRAM": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TRUSTED_ID_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TRUSTED_ID_TYPE": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "TWITTER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "VIBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "WEBSITE_ADDRESS": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "WECHAT": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "WHATSAPP": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "WORK_PHONE_NUMBER": {
-                    "ref": "MatchScoresForAttribute"
-                },
-                "ZOOMROOM": {
-                    "ref": "MatchScoresForAttribute"
-                }
-            }
-        },
-        "MatchScoresForAttribute": {
-            "elements": {
-                "ref": "MatchScoreForAttribute"
             }
         },
         "MemberRecord": {
@@ -4819,39 +1672,6 @@
         "MemberRecords": {
             "elements": {
                 "ref": "MemberRecord"
-            }
-        },
-        "Name": {
-            "properties": {
-                "NAME_FIRST": {
-                    "type": "string"
-                },
-                "NAME_FULL": {
-                    "type": "string"
-                },
-                "NAME_LAST": {
-                    "type": "string"
-                },
-                "NAME_MIDDLE": {
-                    "type": "string"
-                },
-                "NAME_ORG": {
-                    "type": "string"
-                },
-                "NAME_PREFIX": {
-                    "type": "string"
-                },
-                "NAME_SUFFIX": {
-                    "type": "string"
-                },
-                "NAME_TYPE": {
-                    "type": "string"
-                }
-            }
-        },
-        "Names": {
-            "elements": {
-                "ref": "Name"
             }
         },
         "Network": {
@@ -4886,21 +1706,6 @@
                 "ref": "Notice"
             }
         },
-        "Passport": {
-            "properties": {
-                "PASSPORT_COUNTRY": {
-                    "type": "string"
-                },
-                "PASSPORT_NUMBER": {
-                    "type": "string"
-                }
-            }
-        },
-        "Passports": {
-            "elements": {
-                "ref": "Passport"
-            }
-        },
         "Path": {
             "properties": {
                 "ENTITIES": {
@@ -4915,105 +1720,59 @@
                 }
             }
         },
-        "Phone": {
+        "ProductLicense": {
             "properties": {
-                "PHONE_FROM_DATE": {
+                "billing": {
                     "type": "string"
                 },
-                "PHONE_NUMBER": {
+                "contract": {
                     "type": "string"
                 },
-                "PHONE_THRU_DATE": {
+                "customer": {
                     "type": "string"
                 },
-                "PHONE_TYPE": {
+                "expireDate": {
                     "type": "string"
+                },
+                "issueDate": {
+                    "type": "string"
+                },
+                "licenseLevel": {
+                    "type": "string"
+                },
+                "licenseType": {
+                    "type": "string"
+                },
+                "recordLimit": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
-        "Phones": {
-            "elements": {
-                "ref": "Phone"
-            }
-        },
-        "Process": {
+        "ProductVersion": {
             "properties": {
-                "AFFECTED_ENTITIES": {
-                    "elements": {
-                        "ref": "AffectedEntity"
-                    }
+                "BUILD_DATE": {
+                    "type": "string"
                 },
-                "INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
+                "BUILD_NUMBER": {
+                    "type": "string"
                 },
-                "PROCESS_RESULT": {
-                    "ref": "ProcessResult"
+                "BUILD_VERSION": {
+                    "type": "string"
                 },
-                "UMF_PROC": {
-                    "properties": {
-                        "NAME": {
-                            "type": "string"
-                        },
-                        "RESULT": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "ProcessResult": {
-            "properties": {
-                "RESOLVED_ENTITIES": {
-                    "elements": {
-                        "properties": {
-                            "ENTITY_ID": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            },
-                            "ENTITY_NAME": {
-                                "type": "string"
-                            },
-                            "ERRULE_CODE": {
-                                "type": "string"
-                            },
-                            "FEATURES": {
-                                "metadata": {
-                                    "goType": "map[string][]FeatureForAttribute",
-                                    "javaJacksonType": "Map<String, List<FeatureForAttribute>>",
-                                    "pythonType": "Dict[str, List[FeatureForAttribute]]"
-                                },
-                                "type": "string"
-                            },
-                            "LAST_SEEN_DT": {
-                                "type": "timestamp"
-                            },
-                            "MATCH_KEY": {
-                                "type": "string"
-                            },
-                            "MATCH_LEVEL": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            },
-                            "MATCH_LEVEL_CODE": {
-                                "type": "string"
-                            },
-                            "MATCH_SCORES": {
-                                "ref": "MatchScores"
-                            },
-                            "RECORDS": {
-                                "ref": "Records"
-                            },
-                            "RECORD_SUMMARY": {
-                                "elements": {
-                                    "ref": "RecordSummaryElement"
-                                }
-                            }
-                        }
-                    }
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "SCHEMA_VERSION": {
+                    "ref": "SchemaVersion"
+                },
+                "VERSION": {
+                    "type": "string"
                 }
             }
         },
@@ -5151,6 +1910,7 @@
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -5188,44 +1948,14 @@
                 "MATCH_LEVEL_CODE": {
                     "type": "string"
                 },
-                "RECORDS": {
-                    "ref": "Records"
-                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
+                },
+                "RECORDS": {
+                    "ref": "Records"
                 }
-            }
-        },
-        "Relationship": {
-            "properties": {
-                "RELATIONSHIP_KEY": {
-                    "type": "string"
-                },
-                "RELATIONSHIP_TYPE": {
-                    "type": "string"
-                },
-                "REL_ANCHOR_DOMAIN": {
-                    "type": "string"
-                },
-                "REL_ANCHOR_KEY": {
-                    "type": "string"
-                },
-                "REL_POINTER_DOMAIN": {
-                    "type": "string"
-                },
-                "REL_POINTER_KEY": {
-                    "type": "string"
-                },
-                "REL_POINTER_ROLE": {
-                    "type": "string"
-                }
-            }
-        },
-        "Relationships": {
-            "elements": {
-                "ref": "Relationship"
             }
         },
         "ResolutionStep": {
@@ -5258,15 +1988,11 @@
                 "ref": "ResolutionStep"
             }
         },
-        "ResolvedEntities": {
-            "elements": {
-                "ref": "ResolvedEntityAndMatchInfo"
-            }
-        },
         "ResolvedEntity": {
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -5312,85 +2038,27 @@
                 "MATCH_LEVEL_CODE": {
                     "type": "string"
                 },
-                "RECORDS": {
-                    "ref": "Records"
-                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
+                },
+                "RECORDS": {
+                    "ref": "Records"
                 }
             }
         },
         "ResolvedEntityAndMatchInfo": {
             "properties": {
-                "MATCH_INFO": {
-                    "ref": "MatchInfo"
-                },
                 "ENTITY": {
                     "properties": {
                         "RESOLVED_ENTITY": {
                             "ref": "ResolvedEntity"
                         }
                     }
-                }
-            }
-        },
-        "SYS_OOM": {
-            "properties": {
-                "FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
                 },
-                "FTYPE_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LENS_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NEXT_THRESH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "OOM_LEVEL": {
-                    "type": "string"
-                },
-                "OOM_TYPE": {
-                    "type": "string"
-                },
-                "THRESH1_CNT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "THRESH1_OOM": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
+                "MATCH_INFO": {
+                    "ref": "MatchInfo"
                 }
             }
         },
@@ -5481,6 +2149,154 @@
                 "ref": "SearchStatistic"
             }
         },
+        "SYS_OOM": {
+            "properties": {
+                "FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FTYPE_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LENS_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LIB_FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "NEXT_THRESH": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "OOM_LEVEL": {
+                    "type": "string"
+                },
+                "OOM_TYPE": {
+                    "type": "string"
+                },
+                "THRESH1_CNT": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "THRESH1_OOM": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "SzConfigAddDataSourceResponse": {
+            "ref": "AddDataSource"
+        },
+        "SzConfigGetDataSourcesResponse": {
+            "ref": "GetDataSources"
+        },
+        "SzConfigGetJsonStringResponse": {
+            "ref": "GetJsonString"
+        },
+        "SzConfigmgrGetConfigListResponse": {
+            "ref": "ConfigList"
+        },
+        "SzConfigmgrGetConfigResponse": {
+            "ref": "GetConfig"
+        },
+        "SzDiagnosticCheckDatabasePerformanceResponse": {
+            "ref": "CheckDatabasePerformance"
+        },
+        "SzEngineAddRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineDeleteRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineFetchNextResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineFindNetworkByEntityIdResponse": {
+            "ref": "Network"
+        },
+        "SzEngineFindNetworkByRecordIdResponse": {
+            "ref": "Network"
+        },
+        "SzEngineFindPathByEntityIdResponse": {
+            "ref": "Path"
+        },
+        "SzEngineFindPathByRecordIdResponse": {
+            "ref": "Path"
+        },
+        "SzEngineGetEntityByEntityIdResponse": {
+            "ref": "Entity"
+        },
+        "SzEngineGetEntityByRecordIdResponse": {
+            "ref": "Entity"
+        },
+        "SzEngineGetRecordResponse": {
+            "ref": "Record"
+        },
+        "SzEngineGetRedoRecordResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineGetVirtualEntityByRecordIdResponse": {
+            "ref": "VirtualEntity"
+        },
+        "SzEngineHowEntityByEntityIdResponse": {
+            "ref": "How"
+        },
+        "SzEngineProcessRedoRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineReevaluateEntityResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineReevaluateRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineReplaceRecordResponse": {
+            "ref": "WithInfo"
+        },
+        "SzEngineSearchByAttributesResponse": {
+            "ref": "Search"
+        },
+        "SzEngineStreamExportJsonEntityReportResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineWhyEntitiesResponse": {
+            "ref": "WhyEntities"
+        },
+        "SzEngineWhyRecordInEntityResponse": {
+            "ref": "FixmeUnknown"
+        },
+        "SzEngineWhyRecordsResponse": {
+            "ref": "WhyRecords"
+        },
+        "SzProductGetLicenseResponse": {
+            "ref": "ProductLicense"
+        },
+        "SzProductGetVersionResponse": {
+            "ref": "ProductVersion"
+        },
         "VirtualEntity": {
             "properties": {
                 "RESOLVED_ENTITY": {
@@ -5510,18 +2326,6 @@
                 }
             }
         },
-        "WhyEntity": {
-            "properties": {
-                "ENTITIES": {
-                    "elements": {
-                        "ref": "Entity"
-                    }
-                },
-                "WHY_RESULTS": {
-                    "ref": "WhyResults"
-                }
-            }
-        },
         "WhyRecords": {
             "properties": {
                 "ENTITIES": {
@@ -5538,6 +2342,7 @@
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"

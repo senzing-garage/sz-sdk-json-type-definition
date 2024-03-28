@@ -122,7 +122,7 @@ generate-tests: generate_go_typedef_test generate_testdata
 
 .PHONY: generate_go_typedef_test
 generate_go_typedef_test:
-	@rm ./go/typedef/typedef_test.go || true
+	@rm ./go/typedef/generated_typedef_test.go || true
 	@./bin/generate_go_typedef_test.py
 
 
@@ -149,7 +149,7 @@ test:
 .PHONY: clean
 clean: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
 	@rm -rf $(TARGET_DIRECTORY) || true
-
+	@rm $(MAKEFILE_DIRECTORY)testdata/* || true
 
 .PHONY: clean-csharp
 clean-csharp:
@@ -171,7 +171,7 @@ clean-java:
 
 .PHONY: clean-python
 clean-python:
-	@rm $(MAKEFILE_DIRECTORY)python/typedef/* || true
+	@rm -rf $(MAKEFILE_DIRECTORY)python/typedef/* || true
 
 
 .PHONY: clean-ruby

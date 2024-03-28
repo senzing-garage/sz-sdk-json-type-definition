@@ -19,76 +19,25 @@ module SenzingTypeDef
     end
   end
 
-  class Address
-    attr_accessor :addr_city
-    attr_accessor :addr_country
-    attr_accessor :addr_from_date
-    attr_accessor :addr_full
-    attr_accessor :addr_line1
-    attr_accessor :addr_line2
-    attr_accessor :addr_line3
-    attr_accessor :addr_line4
-    attr_accessor :addr_line5
-    attr_accessor :addr_line6
-    attr_accessor :addr_postal_code
-    attr_accessor :addr_state
-    attr_accessor :addr_thru_date
-    attr_accessor :addr_type
+  class AddDataSource
+    attr_accessor :dsrc_id
 
     def self.from_json_data(data)
-      out = Address.new
-      out.addr_city = SenzingTypeDef::from_json_data(String, data["ADDR_CITY"])
-      out.addr_country = SenzingTypeDef::from_json_data(String, data["ADDR_COUNTRY"])
-      out.addr_from_date = SenzingTypeDef::from_json_data(String, data["ADDR_FROM_DATE"])
-      out.addr_full = SenzingTypeDef::from_json_data(String, data["ADDR_FULL"])
-      out.addr_line1 = SenzingTypeDef::from_json_data(String, data["ADDR_LINE1"])
-      out.addr_line2 = SenzingTypeDef::from_json_data(String, data["ADDR_LINE2"])
-      out.addr_line3 = SenzingTypeDef::from_json_data(String, data["ADDR_LINE3"])
-      out.addr_line4 = SenzingTypeDef::from_json_data(String, data["ADDR_LINE4"])
-      out.addr_line5 = SenzingTypeDef::from_json_data(String, data["ADDR_LINE5"])
-      out.addr_line6 = SenzingTypeDef::from_json_data(String, data["ADDR_LINE6"])
-      out.addr_postal_code = SenzingTypeDef::from_json_data(String, data["ADDR_POSTAL_CODE"])
-      out.addr_state = SenzingTypeDef::from_json_data(String, data["ADDR_STATE"])
-      out.addr_thru_date = SenzingTypeDef::from_json_data(String, data["ADDR_THRU_DATE"])
-      out.addr_type = SenzingTypeDef::from_json_data(String, data["ADDR_TYPE"])
+      out = AddDataSource.new
+      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
       out
     end
 
     def to_json_data
       data = {}
-      data["ADDR_CITY"] = SenzingTypeDef::to_json_data(addr_city)
-      data["ADDR_COUNTRY"] = SenzingTypeDef::to_json_data(addr_country)
-      data["ADDR_FROM_DATE"] = SenzingTypeDef::to_json_data(addr_from_date)
-      data["ADDR_FULL"] = SenzingTypeDef::to_json_data(addr_full)
-      data["ADDR_LINE1"] = SenzingTypeDef::to_json_data(addr_line1)
-      data["ADDR_LINE2"] = SenzingTypeDef::to_json_data(addr_line2)
-      data["ADDR_LINE3"] = SenzingTypeDef::to_json_data(addr_line3)
-      data["ADDR_LINE4"] = SenzingTypeDef::to_json_data(addr_line4)
-      data["ADDR_LINE5"] = SenzingTypeDef::to_json_data(addr_line5)
-      data["ADDR_LINE6"] = SenzingTypeDef::to_json_data(addr_line6)
-      data["ADDR_POSTAL_CODE"] = SenzingTypeDef::to_json_data(addr_postal_code)
-      data["ADDR_STATE"] = SenzingTypeDef::to_json_data(addr_state)
-      data["ADDR_THRU_DATE"] = SenzingTypeDef::to_json_data(addr_thru_date)
-      data["ADDR_TYPE"] = SenzingTypeDef::to_json_data(addr_type)
+      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
       data
     end
   end
 
-  class Addresses
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Addresses.new
-      out.value = SenzingTypeDef.from_json_data(Array[Address], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class AffectedEntity
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
 
     def self.from_json_data(data)
@@ -101,150 +50,6 @@ module SenzingTypeDef
       data = {}
       data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
       data
-    end
-  end
-
-  class AttributeCounter
-    attr_accessor :acct_num
-    attr_accessor :address
-    attr_accessor :addr_key
-    attr_accessor :call_sign
-    attr_accessor :citizenship
-    attr_accessor :country_of_association
-    attr_accessor :deferred_delete
-    attr_accessor :dob
-    attr_accessor :drlic
-    attr_accessor :duns_number
-    attr_accessor :email
-    attr_accessor :email_key
-    attr_accessor :entity_count
-    attr_accessor :entity_size
-    attr_accessor :gender
-    attr_accessor :id_key
-    attr_accessor :imo_number
-    attr_accessor :lei_number
-    attr_accessor :login_id
-    attr_accessor :max_res_ent_id
-    attr_accessor :min_res_ent_id
-    attr_accessor :name
-    attr_accessor :name_key
-    attr_accessor :nationality
-    attr_accessor :national_id
-    attr_accessor :ofac_id
-    attr_accessor :other_id
-    attr_accessor :passport
-    attr_accessor :phone
-    attr_accessor :phone_key
-    attr_accessor :record_type
-    attr_accessor :registration_country
-    attr_accessor :registration_date
-    attr_accessor :rel_anchor
-    attr_accessor :rel_pointer
-    attr_accessor :search_key
-    attr_accessor :ssn
-    attr_accessor :tax_id
-    attr_accessor :website
-
-    def self.from_json_data(data)
-      out = AttributeCounter.new
-      out.acct_num = SenzingTypeDef::from_json_data(Float, data["ACCT_NUM"])
-      out.address = SenzingTypeDef::from_json_data(Float, data["ADDRESS"])
-      out.addr_key = SenzingTypeDef::from_json_data(Float, data["ADDR_KEY"])
-      out.call_sign = SenzingTypeDef::from_json_data(Integer, data["CALL_SIGN"])
-      out.citizenship = SenzingTypeDef::from_json_data(Integer, data["CITIZENSHIP"])
-      out.country_of_association = SenzingTypeDef::from_json_data(Integer, data["COUNTRY_OF_ASSOCIATION"])
-      out.deferred_delete = SenzingTypeDef::from_json_data(Float, data["DEFERRED_DELETE"])
-      out.dob = SenzingTypeDef::from_json_data(Float, data["DOB"])
-      out.drlic = SenzingTypeDef::from_json_data(Float, data["DRLIC"])
-      out.duns_number = SenzingTypeDef::from_json_data(Integer, data["DUNS_NUMBER"])
-      out.email = SenzingTypeDef::from_json_data(Float, data["EMAIL"])
-      out.email_key = SenzingTypeDef::from_json_data(Float, data["EMAIL_KEY"])
-      out.entity_count = SenzingTypeDef::from_json_data(Integer, data["ENTITY_COUNT"])
-      out.entity_size = SenzingTypeDef::from_json_data(Integer, data["ENTITY_SIZE"])
-      out.gender = SenzingTypeDef::from_json_data(Float, data["GENDER"])
-      out.id_key = SenzingTypeDef::from_json_data(Float, data["ID_KEY"])
-      out.imo_number = SenzingTypeDef::from_json_data(Integer, data["IMO_NUMBER"])
-      out.lei_number = SenzingTypeDef::from_json_data(Integer, data["LEI_NUMBER"])
-      out.login_id = SenzingTypeDef::from_json_data(Float, data["LOGIN_ID"])
-      out.max_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_ENT_ID"])
-      out.min_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_ENT_ID"])
-      out.name = SenzingTypeDef::from_json_data(Float, data["NAME"])
-      out.name_key = SenzingTypeDef::from_json_data(Float, data["NAME_KEY"])
-      out.nationality = SenzingTypeDef::from_json_data(Integer, data["NATIONALITY"])
-      out.national_id = SenzingTypeDef::from_json_data(Integer, data["NATIONAL_ID"])
-      out.ofac_id = SenzingTypeDef::from_json_data(Integer, data["OFAC_ID"])
-      out.other_id = SenzingTypeDef::from_json_data(Float, data["OTHER_ID"])
-      out.passport = SenzingTypeDef::from_json_data(Float, data["PASSPORT"])
-      out.phone = SenzingTypeDef::from_json_data(Float, data["PHONE"])
-      out.phone_key = SenzingTypeDef::from_json_data(Float, data["PHONE_KEY"])
-      out.record_type = SenzingTypeDef::from_json_data(Float, data["RECORD_TYPE"])
-      out.registration_country = SenzingTypeDef::from_json_data(Integer, data["REGISTRATION_COUNTRY"])
-      out.registration_date = SenzingTypeDef::from_json_data(Integer, data["REGISTRATION_DATE"])
-      out.rel_anchor = SenzingTypeDef::from_json_data(Integer, data["REL_ANCHOR"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(Integer, data["REL_POINTER"])
-      out.search_key = SenzingTypeDef::from_json_data(Float, data["SEARCH_KEY"])
-      out.ssn = SenzingTypeDef::from_json_data(Float, data["SSN"])
-      out.tax_id = SenzingTypeDef::from_json_data(Float, data["TAX_ID"])
-      out.website = SenzingTypeDef::from_json_data(Float, data["WEBSITE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
-      data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
-      data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
-      data["CALL_SIGN"] = SenzingTypeDef::to_json_data(call_sign)
-      data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
-      data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
-      data["DEFERRED_DELETE"] = SenzingTypeDef::to_json_data(deferred_delete)
-      data["DOB"] = SenzingTypeDef::to_json_data(dob)
-      data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
-      data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
-      data["EMAIL"] = SenzingTypeDef::to_json_data(email)
-      data["EMAIL_KEY"] = SenzingTypeDef::to_json_data(email_key)
-      data["ENTITY_COUNT"] = SenzingTypeDef::to_json_data(entity_count)
-      data["ENTITY_SIZE"] = SenzingTypeDef::to_json_data(entity_size)
-      data["GENDER"] = SenzingTypeDef::to_json_data(gender)
-      data["ID_KEY"] = SenzingTypeDef::to_json_data(id_key)
-      data["IMO_NUMBER"] = SenzingTypeDef::to_json_data(imo_number)
-      data["LEI_NUMBER"] = SenzingTypeDef::to_json_data(lei_number)
-      data["LOGIN_ID"] = SenzingTypeDef::to_json_data(login_id)
-      data["MAX_RES_ENT_ID"] = SenzingTypeDef::to_json_data(max_res_ent_id)
-      data["MIN_RES_ENT_ID"] = SenzingTypeDef::to_json_data(min_res_ent_id)
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["NAME_KEY"] = SenzingTypeDef::to_json_data(name_key)
-      data["NATIONALITY"] = SenzingTypeDef::to_json_data(nationality)
-      data["NATIONAL_ID"] = SenzingTypeDef::to_json_data(national_id)
-      data["OFAC_ID"] = SenzingTypeDef::to_json_data(ofac_id)
-      data["OTHER_ID"] = SenzingTypeDef::to_json_data(other_id)
-      data["PASSPORT"] = SenzingTypeDef::to_json_data(passport)
-      data["PHONE"] = SenzingTypeDef::to_json_data(phone)
-      data["PHONE_KEY"] = SenzingTypeDef::to_json_data(phone_key)
-      data["RECORD_TYPE"] = SenzingTypeDef::to_json_data(record_type)
-      data["REGISTRATION_COUNTRY"] = SenzingTypeDef::to_json_data(registration_country)
-      data["REGISTRATION_DATE"] = SenzingTypeDef::to_json_data(registration_date)
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
-      data["SEARCH_KEY"] = SenzingTypeDef::to_json_data(search_key)
-      data["SSN"] = SenzingTypeDef::to_json_data(ssn)
-      data["TAX_ID"] = SenzingTypeDef::to_json_data(tax_id)
-      data["WEBSITE"] = SenzingTypeDef::to_json_data(website)
-      data
-    end
-  end
-
-  class AttributeCounters
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = AttributeCounters.new
-      out.value = SenzingTypeDef.from_json_data(Array[AttributeCounter], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -1220,6 +1025,25 @@ module SenzingTypeDef
     end
   end
 
+  class CheckDatabasePerformance
+    attr_accessor :insert_time
+    attr_accessor :num_records_inserted
+
+    def self.from_json_data(data)
+      out = CheckDatabasePerformance.new
+      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
+      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
+      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
+      data
+    end
+  end
+
   class CompatibilityVersion
     attr_accessor :config_version
 
@@ -1258,17 +1082,19 @@ module SenzingTypeDef
     end
   end
 
-  class Configs
-    attr_accessor :value
+  class ConfigList
+    attr_accessor :configs
 
     def self.from_json_data(data)
-      out = Configs.new
-      out.value = SenzingTypeDef.from_json_data(Array[Config], data)
+      out = ConfigList.new
+      out.configs = SenzingTypeDef::from_json_data(Array[Config], data["CONFIGS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
+      data
     end
   end
 
@@ -1294,80 +1120,6 @@ module SenzingTypeDef
     end
   end
 
-  class DiagnosticFetchNextEntityBySizeResponseXxx0
-    attr_accessor :dsrc_code
-    attr_accessor :ent_src_desc
-    attr_accessor :ent_src_key
-    attr_accessor :errule_code
-    attr_accessor :er_id
-    attr_accessor :etype_code
-    attr_accessor :json_data
-    attr_accessor :match_key
-    attr_accessor :obs_ent_id
-    attr_accessor :record_id
-    attr_accessor :res_ent_id
-
-    def self.from_json_data(data)
-      out = DiagnosticFetchNextEntityBySizeResponseXxx0.new
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
-      out.ent_src_key = SenzingTypeDef::from_json_data(String, data["ENT_SRC_KEY"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.er_id = SenzingTypeDef::from_json_data(Integer, data["ER_ID"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
-      data["ENT_SRC_KEY"] = SenzingTypeDef::to_json_data(ent_src_key)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ER_ID"] = SenzingTypeDef::to_json_data(er_id)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["OBS_ENT_ID"] = SenzingTypeDef::to_json_data(obs_ent_id)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data
-    end
-  end
-
-  class DiagnosticFetchNextEntityBySizeResponseXxx
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = DiagnosticFetchNextEntityBySizeResponseXxx.new
-      out.value = SenzingTypeDef.from_json_data(Array[DiagnosticFetchNextEntityBySizeResponseXxx0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class EntitiesByFeatureID
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = EntitiesByFeatureID.new
-      out.value = SenzingTypeDef.from_json_data(Array[EntityByFeatureID], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class Entity
     attr_accessor :related_entities
     attr_accessor :resolved_entity
@@ -1383,74 +1135,6 @@ module SenzingTypeDef
       data = {}
       data["RELATED_ENTITIES"] = SenzingTypeDef::to_json_data(related_entities)
       data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
-      data
-    end
-  end
-
-  class EntityByFeatureID
-    attr_accessor :lib_feat_id
-    attr_accessor :res_ent_id
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = EntityByFeatureID.new
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  class EntityBySize
-    attr_accessor :dsrc_code
-    attr_accessor :ent_src_desc
-    attr_accessor :ent_src_key
-    attr_accessor :errule_code
-    attr_accessor :er_id
-    attr_accessor :etype_code
-    attr_accessor :json_data
-    attr_accessor :match_key
-    attr_accessor :obs_ent_id
-    attr_accessor :record_id
-    attr_accessor :res_ent_id
-
-    def self.from_json_data(data)
-      out = EntityBySize.new
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
-      out.ent_src_key = SenzingTypeDef::from_json_data(String, data["ENT_SRC_KEY"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.er_id = SenzingTypeDef::from_json_data(Integer, data["ER_ID"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
-      data["ENT_SRC_KEY"] = SenzingTypeDef::to_json_data(ent_src_key)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ER_ID"] = SenzingTypeDef::to_json_data(er_id)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["OBS_ENT_ID"] = SenzingTypeDef::to_json_data(obs_ent_id)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
       data
     end
   end
@@ -1473,6 +1157,22 @@ module SenzingTypeDef
       data["END_ENTITY_ID"] = SenzingTypeDef::to_json_data(end_entity_id)
       data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
       data["START_ENTITY_ID"] = SenzingTypeDef::to_json_data(start_entity_id)
+      data
+    end
+  end
+
+  class ExportConfig
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = ExportConfig.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
       data
     end
   end
@@ -1595,309 +1295,16 @@ module SenzingTypeDef
   end
 
   class FeatureScores
-    attr_accessor :account_domain
-    attr_accessor :account_number
-    attr_accessor :acct_num
-    attr_accessor :address
-    attr_accessor :address_list
-    attr_accessor :addr_full
-    attr_accessor :addr_key
-    attr_accessor :cell_phone_number
-    attr_accessor :citizenship
-    attr_accessor :country_of_association
-    attr_accessor :data_source
-    attr_accessor :date_of_birth
-    attr_accessor :date_of_death
-    attr_accessor :dob
-    attr_accessor :dod
-    attr_accessor :drivers_license_number
-    attr_accessor :drivers_license_state
-    attr_accessor :drlic
-    attr_accessor :duns_number
-    attr_accessor :email
-    attr_accessor :email_address
-    attr_accessor :email_key
-    attr_accessor :employer_name
-    attr_accessor :entity_type
-    attr_accessor :facebook
-    attr_accessor :gender
-    attr_accessor :group_assn_id_number
-    attr_accessor :group_assn_id_type
-    attr_accessor :group_association_org_name
-    attr_accessor :group_association_type
-    attr_accessor :id_key
-    attr_accessor :instagram
-    attr_accessor :lei_number
-    attr_accessor :linkedin
-    attr_accessor :load_id
-    attr_accessor :login_id
-    attr_accessor :name
-    attr_accessor :name_full
-    attr_accessor :name_key
-    attr_accessor :name_list
-    attr_accessor :nationality
-    attr_accessor :national_id
-    attr_accessor :national_id_country
-    attr_accessor :national_id_number
-    attr_accessor :nin_country
-    attr_accessor :nin_number
-    attr_accessor :npi_number
-    attr_accessor :other_id_country
-    attr_accessor :other_id_number
-    attr_accessor :other_id_type
-    attr_accessor :passport
-    attr_accessor :passports
-    attr_accessor :passport_country
-    attr_accessor :passport_number
-    attr_accessor :phone
-    attr_accessor :phones
-    attr_accessor :phone_key
-    attr_accessor :place_of_birth
-    attr_accessor :primary_name_first
-    attr_accessor :primary_name_last
-    attr_accessor :primary_name_middle
-    attr_accessor :primary_name_org
-    attr_accessor :primary_name_prefix
-    attr_accessor :primary_name_suffix
-    attr_accessor :primary_phone_number
-    attr_accessor :record_type
-    attr_accessor :registration_country
-    attr_accessor :registration_date
-    attr_accessor :rel_anchor
-    attr_accessor :rel_anchor_domain
-    attr_accessor :rel_anchor_key
-    attr_accessor :rel_link
-    attr_accessor :rel_pointer
-    attr_accessor :rel_pointer_domain
-    attr_accessor :rel_pointer_key
-    attr_accessor :rel_pointer_role
-    attr_accessor :signal
-    attr_accessor :skype
-    attr_accessor :social_handle
-    attr_accessor :social_network
-    attr_accessor :source_id
-    attr_accessor :ssn
-    attr_accessor :ssn_last4
-    attr_accessor :ssn_number
-    attr_accessor :tango
-    attr_accessor :tax_id_country
-    attr_accessor :tax_id_number
-    attr_accessor :tax_id_type
-    attr_accessor :telegram
-    attr_accessor :trusted_id_number
-    attr_accessor :trusted_id_type
-    attr_accessor :twitter
-    attr_accessor :viber
-    attr_accessor :website_address
-    attr_accessor :wechat
-    attr_accessor :whatsapp
-    attr_accessor :work_phone_number
-    attr_accessor :zoomroom
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = FeatureScores.new
-      out.account_domain = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ACCOUNT_DOMAIN"])
-      out.account_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ACCT_NUM"])
-      out.address = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ADDRESS"])
-      out.address_list = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ADDRESS_LIST"])
-      out.addr_full = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ADDR_FULL"])
-      out.addr_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ADDR_KEY"])
-      out.cell_phone_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["CELL_PHONE_NUMBER"])
-      out.citizenship = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["CITIZENSHIP"])
-      out.country_of_association = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["COUNTRY_OF_ASSOCIATION"])
-      out.data_source = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DATA_SOURCE"])
-      out.date_of_birth = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DATE_OF_BIRTH"])
-      out.date_of_death = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DATE_OF_DEATH"])
-      out.dob = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DOB"])
-      out.dod = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DOD"])
-      out.drivers_license_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DRIVERS_LICENSE_NUMBER"])
-      out.drivers_license_state = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DRIVERS_LICENSE_STATE"])
-      out.drlic = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DRLIC"])
-      out.duns_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["DUNS_NUMBER"])
-      out.email = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["EMAIL"])
-      out.email_address = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["EMAIL_ADDRESS"])
-      out.email_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["EMAIL_KEY"])
-      out.employer_name = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["EMPLOYER_NAME"])
-      out.entity_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ENTITY_TYPE"])
-      out.facebook = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["FACEBOOK"])
-      out.gender = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["GENDER"])
-      out.group_assn_id_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["GROUP_ASSN_ID_NUMBER"])
-      out.group_assn_id_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["GROUP_ASSN_ID_TYPE"])
-      out.group_association_org_name = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["GROUP_ASSOCIATION_ORG_NAME"])
-      out.group_association_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["GROUP_ASSOCIATION_TYPE"])
-      out.id_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ID_KEY"])
-      out.instagram = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["INSTAGRAM"])
-      out.lei_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["LEI_NUMBER"])
-      out.linkedin = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["LINKEDIN"])
-      out.load_id = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["LOAD_ID"])
-      out.login_id = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["LOGIN_ID"])
-      out.name = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NAME"])
-      out.name_full = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NAME_FULL"])
-      out.name_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NAME_KEY"])
-      out.name_list = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NAME_LIST"])
-      out.nationality = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NATIONALITY"])
-      out.national_id = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NATIONAL_ID"])
-      out.national_id_country = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NATIONAL_ID_COUNTRY"])
-      out.national_id_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NATIONAL_ID_NUMBER"])
-      out.nin_country = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NIN_COUNTRY"])
-      out.nin_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NIN_NUMBER"])
-      out.npi_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["NPI_NUMBER"])
-      out.other_id_country = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["OTHER_ID_COUNTRY"])
-      out.other_id_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["OTHER_ID_NUMBER"])
-      out.other_id_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["OTHER_ID_TYPE"])
-      out.passport = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PASSPORT"])
-      out.passports = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PASSPORTS"])
-      out.passport_country = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PASSPORT_COUNTRY"])
-      out.passport_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PASSPORT_NUMBER"])
-      out.phone = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PHONE"])
-      out.phones = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PHONES"])
-      out.phone_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PHONE_KEY"])
-      out.place_of_birth = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PLACE_OF_BIRTH"])
-      out.primary_name_first = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_NAME_FIRST"])
-      out.primary_name_last = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_NAME_LAST"])
-      out.primary_name_middle = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_NAME_MIDDLE"])
-      out.primary_name_org = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_NAME_ORG"])
-      out.primary_name_prefix = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_NAME_PREFIX"])
-      out.primary_name_suffix = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_NAME_SUFFIX"])
-      out.primary_phone_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["PRIMARY_PHONE_NUMBER"])
-      out.record_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["RECORD_TYPE"])
-      out.registration_country = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REGISTRATION_COUNTRY"])
-      out.registration_date = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REGISTRATION_DATE"])
-      out.rel_anchor = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_ANCHOR"])
-      out.rel_anchor_domain = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_ANCHOR_DOMAIN"])
-      out.rel_anchor_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_ANCHOR_KEY"])
-      out.rel_link = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_LINK"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_POINTER"])
-      out.rel_pointer_domain = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_POINTER_DOMAIN"])
-      out.rel_pointer_key = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_POINTER_KEY"])
-      out.rel_pointer_role = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["REL_POINTER_ROLE"])
-      out.signal = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SIGNAL"])
-      out.skype = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SKYPE"])
-      out.social_handle = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SOCIAL_HANDLE"])
-      out.social_network = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SOCIAL_NETWORK"])
-      out.source_id = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SSN_LAST4"])
-      out.ssn_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["SSN_NUMBER"])
-      out.tango = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TANGO"])
-      out.tax_id_country = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TAX_ID_COUNTRY"])
-      out.tax_id_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TAX_ID_NUMBER"])
-      out.tax_id_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TAX_ID_TYPE"])
-      out.telegram = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TELEGRAM"])
-      out.trusted_id_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TRUSTED_ID_NUMBER"])
-      out.trusted_id_type = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TRUSTED_ID_TYPE"])
-      out.twitter = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["TWITTER"])
-      out.viber = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["VIBER"])
-      out.website_address = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["WEBSITE_ADDRESS"])
-      out.wechat = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["WECHAT"])
-      out.whatsapp = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["WHATSAPP"])
-      out.work_phone_number = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["WORK_PHONE_NUMBER"])
-      out.zoomroom = SenzingTypeDef::from_json_data(FeatureScoresForAttribute, data["ZOOMROOM"])
+      out.value = SenzingTypeDef.from_json_data(String, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["ACCOUNT_DOMAIN"] = SenzingTypeDef::to_json_data(account_domain)
-      data["ACCOUNT_NUMBER"] = SenzingTypeDef::to_json_data(account_number)
-      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
-      data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
-      data["ADDRESS_LIST"] = SenzingTypeDef::to_json_data(address_list)
-      data["ADDR_FULL"] = SenzingTypeDef::to_json_data(addr_full)
-      data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
-      data["CELL_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(cell_phone_number)
-      data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
-      data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
-      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
-      data["DATE_OF_BIRTH"] = SenzingTypeDef::to_json_data(date_of_birth)
-      data["DATE_OF_DEATH"] = SenzingTypeDef::to_json_data(date_of_death)
-      data["DOB"] = SenzingTypeDef::to_json_data(dob)
-      data["DOD"] = SenzingTypeDef::to_json_data(dod)
-      data["DRIVERS_LICENSE_NUMBER"] = SenzingTypeDef::to_json_data(drivers_license_number)
-      data["DRIVERS_LICENSE_STATE"] = SenzingTypeDef::to_json_data(drivers_license_state)
-      data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
-      data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
-      data["EMAIL"] = SenzingTypeDef::to_json_data(email)
-      data["EMAIL_ADDRESS"] = SenzingTypeDef::to_json_data(email_address)
-      data["EMAIL_KEY"] = SenzingTypeDef::to_json_data(email_key)
-      data["EMPLOYER_NAME"] = SenzingTypeDef::to_json_data(employer_name)
-      data["ENTITY_TYPE"] = SenzingTypeDef::to_json_data(entity_type)
-      data["FACEBOOK"] = SenzingTypeDef::to_json_data(facebook)
-      data["GENDER"] = SenzingTypeDef::to_json_data(gender)
-      data["GROUP_ASSN_ID_NUMBER"] = SenzingTypeDef::to_json_data(group_assn_id_number)
-      data["GROUP_ASSN_ID_TYPE"] = SenzingTypeDef::to_json_data(group_assn_id_type)
-      data["GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypeDef::to_json_data(group_association_org_name)
-      data["GROUP_ASSOCIATION_TYPE"] = SenzingTypeDef::to_json_data(group_association_type)
-      data["ID_KEY"] = SenzingTypeDef::to_json_data(id_key)
-      data["INSTAGRAM"] = SenzingTypeDef::to_json_data(instagram)
-      data["LEI_NUMBER"] = SenzingTypeDef::to_json_data(lei_number)
-      data["LINKEDIN"] = SenzingTypeDef::to_json_data(linkedin)
-      data["LOAD_ID"] = SenzingTypeDef::to_json_data(load_id)
-      data["LOGIN_ID"] = SenzingTypeDef::to_json_data(login_id)
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["NAME_FULL"] = SenzingTypeDef::to_json_data(name_full)
-      data["NAME_KEY"] = SenzingTypeDef::to_json_data(name_key)
-      data["NAME_LIST"] = SenzingTypeDef::to_json_data(name_list)
-      data["NATIONALITY"] = SenzingTypeDef::to_json_data(nationality)
-      data["NATIONAL_ID"] = SenzingTypeDef::to_json_data(national_id)
-      data["NATIONAL_ID_COUNTRY"] = SenzingTypeDef::to_json_data(national_id_country)
-      data["NATIONAL_ID_NUMBER"] = SenzingTypeDef::to_json_data(national_id_number)
-      data["NIN_COUNTRY"] = SenzingTypeDef::to_json_data(nin_country)
-      data["NIN_NUMBER"] = SenzingTypeDef::to_json_data(nin_number)
-      data["NPI_NUMBER"] = SenzingTypeDef::to_json_data(npi_number)
-      data["OTHER_ID_COUNTRY"] = SenzingTypeDef::to_json_data(other_id_country)
-      data["OTHER_ID_NUMBER"] = SenzingTypeDef::to_json_data(other_id_number)
-      data["OTHER_ID_TYPE"] = SenzingTypeDef::to_json_data(other_id_type)
-      data["PASSPORT"] = SenzingTypeDef::to_json_data(passport)
-      data["PASSPORTS"] = SenzingTypeDef::to_json_data(passports)
-      data["PASSPORT_COUNTRY"] = SenzingTypeDef::to_json_data(passport_country)
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data["PHONE"] = SenzingTypeDef::to_json_data(phone)
-      data["PHONES"] = SenzingTypeDef::to_json_data(phones)
-      data["PHONE_KEY"] = SenzingTypeDef::to_json_data(phone_key)
-      data["PLACE_OF_BIRTH"] = SenzingTypeDef::to_json_data(place_of_birth)
-      data["PRIMARY_NAME_FIRST"] = SenzingTypeDef::to_json_data(primary_name_first)
-      data["PRIMARY_NAME_LAST"] = SenzingTypeDef::to_json_data(primary_name_last)
-      data["PRIMARY_NAME_MIDDLE"] = SenzingTypeDef::to_json_data(primary_name_middle)
-      data["PRIMARY_NAME_ORG"] = SenzingTypeDef::to_json_data(primary_name_org)
-      data["PRIMARY_NAME_PREFIX"] = SenzingTypeDef::to_json_data(primary_name_prefix)
-      data["PRIMARY_NAME_SUFFIX"] = SenzingTypeDef::to_json_data(primary_name_suffix)
-      data["PRIMARY_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(primary_phone_number)
-      data["RECORD_TYPE"] = SenzingTypeDef::to_json_data(record_type)
-      data["REGISTRATION_COUNTRY"] = SenzingTypeDef::to_json_data(registration_country)
-      data["REGISTRATION_DATE"] = SenzingTypeDef::to_json_data(registration_date)
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_ANCHOR_DOMAIN"] = SenzingTypeDef::to_json_data(rel_anchor_domain)
-      data["REL_ANCHOR_KEY"] = SenzingTypeDef::to_json_data(rel_anchor_key)
-      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
-      data["REL_POINTER_DOMAIN"] = SenzingTypeDef::to_json_data(rel_pointer_domain)
-      data["REL_POINTER_KEY"] = SenzingTypeDef::to_json_data(rel_pointer_key)
-      data["REL_POINTER_ROLE"] = SenzingTypeDef::to_json_data(rel_pointer_role)
-      data["SIGNAL"] = SenzingTypeDef::to_json_data(signal)
-      data["SKYPE"] = SenzingTypeDef::to_json_data(skype)
-      data["SOCIAL_HANDLE"] = SenzingTypeDef::to_json_data(social_handle)
-      data["SOCIAL_NETWORK"] = SenzingTypeDef::to_json_data(social_network)
-      data["SOURCE_ID"] = SenzingTypeDef::to_json_data(source_id)
-      data["SSN"] = SenzingTypeDef::to_json_data(ssn)
-      data["SSN_LAST4"] = SenzingTypeDef::to_json_data(ssn_last4)
-      data["SSN_NUMBER"] = SenzingTypeDef::to_json_data(ssn_number)
-      data["TANGO"] = SenzingTypeDef::to_json_data(tango)
-      data["TAX_ID_COUNTRY"] = SenzingTypeDef::to_json_data(tax_id_country)
-      data["TAX_ID_NUMBER"] = SenzingTypeDef::to_json_data(tax_id_number)
-      data["TAX_ID_TYPE"] = SenzingTypeDef::to_json_data(tax_id_type)
-      data["TELEGRAM"] = SenzingTypeDef::to_json_data(telegram)
-      data["TRUSTED_ID_NUMBER"] = SenzingTypeDef::to_json_data(trusted_id_number)
-      data["TRUSTED_ID_TYPE"] = SenzingTypeDef::to_json_data(trusted_id_type)
-      data["TWITTER"] = SenzingTypeDef::to_json_data(twitter)
-      data["VIBER"] = SenzingTypeDef::to_json_data(viber)
-      data["WEBSITE_ADDRESS"] = SenzingTypeDef::to_json_data(website_address)
-      data["WECHAT"] = SenzingTypeDef::to_json_data(wechat)
-      data["WHATSAPP"] = SenzingTypeDef::to_json_data(whatsapp)
-      data["WORK_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(work_phone_number)
-      data["ZOOMROOM"] = SenzingTypeDef::to_json_data(zoomroom)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -1912,327 +1319,6 @@ module SenzingTypeDef
 
     def to_json_data
       SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class FeaturesForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FeaturesForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(Array[FeatureForAttribute], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class FeaturesXxx
-    attr_accessor :account_domain
-    attr_accessor :account_number
-    attr_accessor :acct_num
-    attr_accessor :address
-    attr_accessor :address_list
-    attr_accessor :addr_full
-    attr_accessor :addr_key
-    attr_accessor :cell_phone_number
-    attr_accessor :citizenship
-    attr_accessor :country_of_association
-    attr_accessor :data_source
-    attr_accessor :date_of_birth
-    attr_accessor :date_of_death
-    attr_accessor :dob
-    attr_accessor :dod
-    attr_accessor :drivers_license_number
-    attr_accessor :drivers_license_state
-    attr_accessor :drlic
-    attr_accessor :duns_number
-    attr_accessor :email
-    attr_accessor :email_address
-    attr_accessor :email_key
-    attr_accessor :employer_name
-    attr_accessor :entity_type
-    attr_accessor :facebook
-    attr_accessor :gender
-    attr_accessor :group_assn_id_number
-    attr_accessor :group_assn_id_type
-    attr_accessor :group_association_org_name
-    attr_accessor :group_association_type
-    attr_accessor :id_key
-    attr_accessor :instagram
-    attr_accessor :lei_number
-    attr_accessor :linkedin
-    attr_accessor :load_id
-    attr_accessor :login_id
-    attr_accessor :name
-    attr_accessor :name_full
-    attr_accessor :name_key
-    attr_accessor :name_list
-    attr_accessor :nationality
-    attr_accessor :national_id
-    attr_accessor :national_id_country
-    attr_accessor :national_id_number
-    attr_accessor :nin_country
-    attr_accessor :nin_number
-    attr_accessor :npi_number
-    attr_accessor :other_id_country
-    attr_accessor :other_id_number
-    attr_accessor :other_id_type
-    attr_accessor :passport
-    attr_accessor :passports
-    attr_accessor :passport_country
-    attr_accessor :passport_number
-    attr_accessor :phone
-    attr_accessor :phones
-    attr_accessor :phone_key
-    attr_accessor :place_of_birth
-    attr_accessor :primary_name_first
-    attr_accessor :primary_name_last
-    attr_accessor :primary_name_middle
-    attr_accessor :primary_name_org
-    attr_accessor :primary_name_prefix
-    attr_accessor :primary_name_suffix
-    attr_accessor :primary_phone_number
-    attr_accessor :record_type
-    attr_accessor :registration_country
-    attr_accessor :registration_date
-    attr_accessor :rel_anchor
-    attr_accessor :rel_anchor_domain
-    attr_accessor :rel_anchor_key
-    attr_accessor :rel_link
-    attr_accessor :rel_pointer
-    attr_accessor :rel_pointer_domain
-    attr_accessor :rel_pointer_key
-    attr_accessor :rel_pointer_role
-    attr_accessor :signal
-    attr_accessor :skype
-    attr_accessor :social_handle
-    attr_accessor :social_network
-    attr_accessor :source_id
-    attr_accessor :ssn
-    attr_accessor :ssn_last4
-    attr_accessor :ssn_number
-    attr_accessor :tango
-    attr_accessor :tax_id_country
-    attr_accessor :tax_id_number
-    attr_accessor :tax_id_type
-    attr_accessor :telegram
-    attr_accessor :trusted_id_number
-    attr_accessor :trusted_id_type
-    attr_accessor :twitter
-    attr_accessor :viber
-    attr_accessor :website_address
-    attr_accessor :wechat
-    attr_accessor :whatsapp
-    attr_accessor :work_phone_number
-    attr_accessor :zoomroom
-
-    def self.from_json_data(data)
-      out = FeaturesXxx.new
-      out.account_domain = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCOUNT_DOMAIN"])
-      out.account_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ACCT_NUM"])
-      out.address = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ADDRESS"])
-      out.address_list = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ADDRESS_LIST"])
-      out.addr_full = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ADDR_FULL"])
-      out.addr_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ADDR_KEY"])
-      out.cell_phone_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["CELL_PHONE_NUMBER"])
-      out.citizenship = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["CITIZENSHIP"])
-      out.country_of_association = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["COUNTRY_OF_ASSOCIATION"])
-      out.data_source = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DATA_SOURCE"])
-      out.date_of_birth = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DATE_OF_BIRTH"])
-      out.date_of_death = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DATE_OF_DEATH"])
-      out.dob = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DOB"])
-      out.dod = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DOD"])
-      out.drivers_license_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DRIVERS_LICENSE_NUMBER"])
-      out.drivers_license_state = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DRIVERS_LICENSE_STATE"])
-      out.drlic = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DRLIC"])
-      out.duns_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["DUNS_NUMBER"])
-      out.email = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["EMAIL"])
-      out.email_address = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["EMAIL_ADDRESS"])
-      out.email_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["EMAIL_KEY"])
-      out.employer_name = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["EMPLOYER_NAME"])
-      out.entity_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ENTITY_TYPE"])
-      out.facebook = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["FACEBOOK"])
-      out.gender = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["GENDER"])
-      out.group_assn_id_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["GROUP_ASSN_ID_NUMBER"])
-      out.group_assn_id_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["GROUP_ASSN_ID_TYPE"])
-      out.group_association_org_name = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["GROUP_ASSOCIATION_ORG_NAME"])
-      out.group_association_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["GROUP_ASSOCIATION_TYPE"])
-      out.id_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ID_KEY"])
-      out.instagram = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["INSTAGRAM"])
-      out.lei_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["LEI_NUMBER"])
-      out.linkedin = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["LINKEDIN"])
-      out.load_id = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["LOAD_ID"])
-      out.login_id = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["LOGIN_ID"])
-      out.name = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NAME"])
-      out.name_full = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NAME_FULL"])
-      out.name_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NAME_KEY"])
-      out.name_list = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NAME_LIST"])
-      out.nationality = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NATIONALITY"])
-      out.national_id = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NATIONAL_ID"])
-      out.national_id_country = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NATIONAL_ID_COUNTRY"])
-      out.national_id_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NATIONAL_ID_NUMBER"])
-      out.nin_country = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NIN_COUNTRY"])
-      out.nin_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NIN_NUMBER"])
-      out.npi_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["NPI_NUMBER"])
-      out.other_id_country = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["OTHER_ID_COUNTRY"])
-      out.other_id_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["OTHER_ID_NUMBER"])
-      out.other_id_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["OTHER_ID_TYPE"])
-      out.passport = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PASSPORT"])
-      out.passports = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PASSPORTS"])
-      out.passport_country = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PASSPORT_COUNTRY"])
-      out.passport_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PASSPORT_NUMBER"])
-      out.phone = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PHONE"])
-      out.phones = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PHONES"])
-      out.phone_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PHONE_KEY"])
-      out.place_of_birth = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PLACE_OF_BIRTH"])
-      out.primary_name_first = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_NAME_FIRST"])
-      out.primary_name_last = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_NAME_LAST"])
-      out.primary_name_middle = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_NAME_MIDDLE"])
-      out.primary_name_org = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_NAME_ORG"])
-      out.primary_name_prefix = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_NAME_PREFIX"])
-      out.primary_name_suffix = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_NAME_SUFFIX"])
-      out.primary_phone_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["PRIMARY_PHONE_NUMBER"])
-      out.record_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["RECORD_TYPE"])
-      out.registration_country = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REGISTRATION_COUNTRY"])
-      out.registration_date = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REGISTRATION_DATE"])
-      out.rel_anchor = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_ANCHOR"])
-      out.rel_anchor_domain = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_ANCHOR_DOMAIN"])
-      out.rel_anchor_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_ANCHOR_KEY"])
-      out.rel_link = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_LINK"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_POINTER"])
-      out.rel_pointer_domain = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_POINTER_DOMAIN"])
-      out.rel_pointer_key = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_POINTER_KEY"])
-      out.rel_pointer_role = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["REL_POINTER_ROLE"])
-      out.signal = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SIGNAL"])
-      out.skype = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SKYPE"])
-      out.social_handle = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SOCIAL_HANDLE"])
-      out.social_network = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SOCIAL_NETWORK"])
-      out.source_id = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SSN_LAST4"])
-      out.ssn_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["SSN_NUMBER"])
-      out.tango = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TANGO"])
-      out.tax_id_country = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TAX_ID_COUNTRY"])
-      out.tax_id_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TAX_ID_NUMBER"])
-      out.tax_id_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TAX_ID_TYPE"])
-      out.telegram = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TELEGRAM"])
-      out.trusted_id_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TRUSTED_ID_NUMBER"])
-      out.trusted_id_type = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TRUSTED_ID_TYPE"])
-      out.twitter = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["TWITTER"])
-      out.viber = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["VIBER"])
-      out.website_address = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["WEBSITE_ADDRESS"])
-      out.wechat = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["WECHAT"])
-      out.whatsapp = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["WHATSAPP"])
-      out.work_phone_number = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["WORK_PHONE_NUMBER"])
-      out.zoomroom = SenzingTypeDef::from_json_data(FeaturesForAttribute, data["ZOOMROOM"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ACCOUNT_DOMAIN"] = SenzingTypeDef::to_json_data(account_domain)
-      data["ACCOUNT_NUMBER"] = SenzingTypeDef::to_json_data(account_number)
-      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
-      data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
-      data["ADDRESS_LIST"] = SenzingTypeDef::to_json_data(address_list)
-      data["ADDR_FULL"] = SenzingTypeDef::to_json_data(addr_full)
-      data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
-      data["CELL_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(cell_phone_number)
-      data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
-      data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
-      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
-      data["DATE_OF_BIRTH"] = SenzingTypeDef::to_json_data(date_of_birth)
-      data["DATE_OF_DEATH"] = SenzingTypeDef::to_json_data(date_of_death)
-      data["DOB"] = SenzingTypeDef::to_json_data(dob)
-      data["DOD"] = SenzingTypeDef::to_json_data(dod)
-      data["DRIVERS_LICENSE_NUMBER"] = SenzingTypeDef::to_json_data(drivers_license_number)
-      data["DRIVERS_LICENSE_STATE"] = SenzingTypeDef::to_json_data(drivers_license_state)
-      data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
-      data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
-      data["EMAIL"] = SenzingTypeDef::to_json_data(email)
-      data["EMAIL_ADDRESS"] = SenzingTypeDef::to_json_data(email_address)
-      data["EMAIL_KEY"] = SenzingTypeDef::to_json_data(email_key)
-      data["EMPLOYER_NAME"] = SenzingTypeDef::to_json_data(employer_name)
-      data["ENTITY_TYPE"] = SenzingTypeDef::to_json_data(entity_type)
-      data["FACEBOOK"] = SenzingTypeDef::to_json_data(facebook)
-      data["GENDER"] = SenzingTypeDef::to_json_data(gender)
-      data["GROUP_ASSN_ID_NUMBER"] = SenzingTypeDef::to_json_data(group_assn_id_number)
-      data["GROUP_ASSN_ID_TYPE"] = SenzingTypeDef::to_json_data(group_assn_id_type)
-      data["GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypeDef::to_json_data(group_association_org_name)
-      data["GROUP_ASSOCIATION_TYPE"] = SenzingTypeDef::to_json_data(group_association_type)
-      data["ID_KEY"] = SenzingTypeDef::to_json_data(id_key)
-      data["INSTAGRAM"] = SenzingTypeDef::to_json_data(instagram)
-      data["LEI_NUMBER"] = SenzingTypeDef::to_json_data(lei_number)
-      data["LINKEDIN"] = SenzingTypeDef::to_json_data(linkedin)
-      data["LOAD_ID"] = SenzingTypeDef::to_json_data(load_id)
-      data["LOGIN_ID"] = SenzingTypeDef::to_json_data(login_id)
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["NAME_FULL"] = SenzingTypeDef::to_json_data(name_full)
-      data["NAME_KEY"] = SenzingTypeDef::to_json_data(name_key)
-      data["NAME_LIST"] = SenzingTypeDef::to_json_data(name_list)
-      data["NATIONALITY"] = SenzingTypeDef::to_json_data(nationality)
-      data["NATIONAL_ID"] = SenzingTypeDef::to_json_data(national_id)
-      data["NATIONAL_ID_COUNTRY"] = SenzingTypeDef::to_json_data(national_id_country)
-      data["NATIONAL_ID_NUMBER"] = SenzingTypeDef::to_json_data(national_id_number)
-      data["NIN_COUNTRY"] = SenzingTypeDef::to_json_data(nin_country)
-      data["NIN_NUMBER"] = SenzingTypeDef::to_json_data(nin_number)
-      data["NPI_NUMBER"] = SenzingTypeDef::to_json_data(npi_number)
-      data["OTHER_ID_COUNTRY"] = SenzingTypeDef::to_json_data(other_id_country)
-      data["OTHER_ID_NUMBER"] = SenzingTypeDef::to_json_data(other_id_number)
-      data["OTHER_ID_TYPE"] = SenzingTypeDef::to_json_data(other_id_type)
-      data["PASSPORT"] = SenzingTypeDef::to_json_data(passport)
-      data["PASSPORTS"] = SenzingTypeDef::to_json_data(passports)
-      data["PASSPORT_COUNTRY"] = SenzingTypeDef::to_json_data(passport_country)
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data["PHONE"] = SenzingTypeDef::to_json_data(phone)
-      data["PHONES"] = SenzingTypeDef::to_json_data(phones)
-      data["PHONE_KEY"] = SenzingTypeDef::to_json_data(phone_key)
-      data["PLACE_OF_BIRTH"] = SenzingTypeDef::to_json_data(place_of_birth)
-      data["PRIMARY_NAME_FIRST"] = SenzingTypeDef::to_json_data(primary_name_first)
-      data["PRIMARY_NAME_LAST"] = SenzingTypeDef::to_json_data(primary_name_last)
-      data["PRIMARY_NAME_MIDDLE"] = SenzingTypeDef::to_json_data(primary_name_middle)
-      data["PRIMARY_NAME_ORG"] = SenzingTypeDef::to_json_data(primary_name_org)
-      data["PRIMARY_NAME_PREFIX"] = SenzingTypeDef::to_json_data(primary_name_prefix)
-      data["PRIMARY_NAME_SUFFIX"] = SenzingTypeDef::to_json_data(primary_name_suffix)
-      data["PRIMARY_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(primary_phone_number)
-      data["RECORD_TYPE"] = SenzingTypeDef::to_json_data(record_type)
-      data["REGISTRATION_COUNTRY"] = SenzingTypeDef::to_json_data(registration_country)
-      data["REGISTRATION_DATE"] = SenzingTypeDef::to_json_data(registration_date)
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_ANCHOR_DOMAIN"] = SenzingTypeDef::to_json_data(rel_anchor_domain)
-      data["REL_ANCHOR_KEY"] = SenzingTypeDef::to_json_data(rel_anchor_key)
-      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
-      data["REL_POINTER_DOMAIN"] = SenzingTypeDef::to_json_data(rel_pointer_domain)
-      data["REL_POINTER_KEY"] = SenzingTypeDef::to_json_data(rel_pointer_key)
-      data["REL_POINTER_ROLE"] = SenzingTypeDef::to_json_data(rel_pointer_role)
-      data["SIGNAL"] = SenzingTypeDef::to_json_data(signal)
-      data["SKYPE"] = SenzingTypeDef::to_json_data(skype)
-      data["SOCIAL_HANDLE"] = SenzingTypeDef::to_json_data(social_handle)
-      data["SOCIAL_NETWORK"] = SenzingTypeDef::to_json_data(social_network)
-      data["SOURCE_ID"] = SenzingTypeDef::to_json_data(source_id)
-      data["SSN"] = SenzingTypeDef::to_json_data(ssn)
-      data["SSN_LAST4"] = SenzingTypeDef::to_json_data(ssn_last4)
-      data["SSN_NUMBER"] = SenzingTypeDef::to_json_data(ssn_number)
-      data["TANGO"] = SenzingTypeDef::to_json_data(tango)
-      data["TAX_ID_COUNTRY"] = SenzingTypeDef::to_json_data(tax_id_country)
-      data["TAX_ID_NUMBER"] = SenzingTypeDef::to_json_data(tax_id_number)
-      data["TAX_ID_TYPE"] = SenzingTypeDef::to_json_data(tax_id_type)
-      data["TELEGRAM"] = SenzingTypeDef::to_json_data(telegram)
-      data["TRUSTED_ID_NUMBER"] = SenzingTypeDef::to_json_data(trusted_id_number)
-      data["TRUSTED_ID_TYPE"] = SenzingTypeDef::to_json_data(trusted_id_type)
-      data["TWITTER"] = SenzingTypeDef::to_json_data(twitter)
-      data["VIBER"] = SenzingTypeDef::to_json_data(viber)
-      data["WEBSITE_ADDRESS"] = SenzingTypeDef::to_json_data(website_address)
-      data["WECHAT"] = SenzingTypeDef::to_json_data(wechat)
-      data["WHATSAPP"] = SenzingTypeDef::to_json_data(whatsapp)
-      data["WORK_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(work_phone_number)
-      data["ZOOMROOM"] = SenzingTypeDef::to_json_data(zoomroom)
-      data
     end
   end
 
@@ -2414,27 +1500,27 @@ module SenzingTypeDef
     end
   end
 
-  class G2configAddDataSourceResponse
-    attr_accessor :dsrc_id
+  class GetConfig
+    attr_accessor :g2_config
 
     def self.from_json_data(data)
-      out = G2configAddDataSourceResponse.new
-      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
+      out = GetConfig.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
       out
     end
 
     def to_json_data
       data = {}
-      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
       data
     end
   end
 
-  class G2configListDataSourcesResponse
+  class GetDataSources
     attr_accessor :data_sources
 
     def self.from_json_data(data)
-      out = G2configListDataSourcesResponse.new
+      out = GetDataSources.new
       out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
       out
     end
@@ -2446,11 +1532,11 @@ module SenzingTypeDef
     end
   end
 
-  class G2configSaveResponse
+  class GetJSONString
     attr_accessor :g2_config
 
     def self.from_json_data(data)
-      out = G2configSaveResponse.new
+      out = GetJSONString.new
       out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
       out
     end
@@ -2458,2022 +1544,6 @@ module SenzingTypeDef
     def to_json_data
       data = {}
       data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  class G2configmgrGetConfigListResponse
-    attr_accessor :configs
-
-    def self.from_json_data(data)
-      out = G2configmgrGetConfigListResponse.new
-      out.configs = SenzingTypeDef::from_json_data(Configs, data["CONFIGS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
-      data
-    end
-  end
-
-  class G2configmgrGetConfigResponse
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = G2configmgrGetConfigResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  class G2diagnosticCheckDbperfResponse
-    attr_accessor :insert_time
-    attr_accessor :num_records_inserted
-
-    def self.from_json_data(data)
-      out = G2diagnosticCheckDbperfResponse.new
-      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
-      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
-      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
-      data
-    end
-  end
-
-  class G2diagnosticFetchNextEntityBySizeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticFetchNextEntityBySizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[EntityBySize], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticFindEntitiesByFeatureIdsResponseXxx0
-    attr_accessor :lib_feat_id
-    attr_accessor :res_ent_id
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = G2diagnosticFindEntitiesByFeatureIdsResponseXxx0.new
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  class G2diagnosticFindEntitiesByFeatureIdsResponseXxx
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticFindEntitiesByFeatureIdsResponseXxx.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticFindEntitiesByFeatureIdsResponseXxx0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetDbinfoResponseDetail
-    attr_accessor :name
-    attr_accessor :type
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetDbinfoResponseDetail.new
-      out.name = SenzingTypeDef::from_json_data(String, data["Name"])
-      out.type = SenzingTypeDef::from_json_data(String, data["Type"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["Name"] = SenzingTypeDef::to_json_data(name)
-      data["Type"] = SenzingTypeDef::to_json_data(type)
-      data
-    end
-  end
-
-  class G2diagnosticGetDbinfoResponse
-    attr_accessor :database_details
-    attr_accessor :hybrid_mode
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetDbinfoResponse.new
-      out.database_details = SenzingTypeDef::from_json_data(Array[G2diagnosticGetDbinfoResponseDetail], data["Database Details"])
-      out.hybrid_mode = SenzingTypeDef::from_json_data(TrueClass, data["Hybrid Mode"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["Database Details"] = SenzingTypeDef::to_json_data(database_details)
-      data["Hybrid Mode"] = SenzingTypeDef::to_json_data(hybrid_mode)
-      data
-    end
-  end
-
-  class G2diagnosticGetDataSourceCountsResponse0
-    attr_accessor :dsrc_code
-    attr_accessor :dsrc_id
-    attr_accessor :dsrc_record_count
-    attr_accessor :etype_code
-    attr_accessor :etype_id
-    attr_accessor :obs_ent_count
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetDataSourceCountsResponse0.new
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
-      out.dsrc_record_count = SenzingTypeDef::from_json_data(Integer, data["DSRC_RECORD_COUNT"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.etype_id = SenzingTypeDef::from_json_data(Integer, data["ETYPE_ID"])
-      out.obs_ent_count = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_COUNT"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
-      data["DSRC_RECORD_COUNT"] = SenzingTypeDef::to_json_data(dsrc_record_count)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["ETYPE_ID"] = SenzingTypeDef::to_json_data(etype_id)
-      data["OBS_ENT_COUNT"] = SenzingTypeDef::to_json_data(obs_ent_count)
-      data
-    end
-  end
-
-  class G2diagnosticGetDataSourceCountsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetDataSourceCountsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetDataSourceCountsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetEntityDetailsResponse0
-    attr_accessor :derived
-    attr_accessor :dsrc_code
-    attr_accessor :errule_code
-    attr_accessor :etype_code
-    attr_accessor :feat_desc
-    attr_accessor :ftype_code
-    attr_accessor :match_key
-    attr_accessor :obs_ent_id
-    attr_accessor :record_id
-    attr_accessor :res_ent_id
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetEntityDetailsResponse0.new
-      out.derived = SenzingTypeDef::from_json_data(String, data["DERIVED"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.obs_ent_id = SenzingTypeDef::from_json_data(Integer, data["OBS_ENT_ID"])
-      out.record_id = SenzingTypeDef::from_json_data(Integer, data["RECORD_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DERIVED"] = SenzingTypeDef::to_json_data(derived)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["OBS_ENT_ID"] = SenzingTypeDef::to_json_data(obs_ent_id)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  class G2diagnosticGetEntityDetailsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetEntityDetailsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetEntityDetailsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetEntityResumeResponse0
-    attr_accessor :dsrc_code
-    attr_accessor :ent_src_desc
-    attr_accessor :errule_code
-    attr_accessor :etype_code
-    attr_accessor :json_data
-    attr_accessor :match_key
-    attr_accessor :record_id
-    attr_accessor :rel_ent_id
-    attr_accessor :res_ent_id
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetEntityResumeResponse0.new
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out.rel_ent_id = SenzingTypeDef::from_json_data(Integer, data["REL_ENT_ID"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["REL_ENT_ID"] = SenzingTypeDef::to_json_data(rel_ent_id)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data
-    end
-  end
-
-  class G2diagnosticGetEntityResumeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetEntityResumeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetEntityResumeResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetEntitySizeBreakdownResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetEntitySizeBreakdownResponse.new
-      out.value = SenzingTypeDef.from_json_data(AttributeCounters, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetFeatureResponseElements
-    attr_accessor :felem_code
-    attr_accessor :felem_value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetFeatureResponseElements.new
-      out.felem_code = SenzingTypeDef::from_json_data(String, data["FELEM_CODE"])
-      out.felem_value = SenzingTypeDef::from_json_data(String, data["FELEM_VALUE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FELEM_CODE"] = SenzingTypeDef::to_json_data(felem_code)
-      data["FELEM_VALUE"] = SenzingTypeDef::to_json_data(felem_value)
-      data
-    end
-  end
-
-  class G2diagnosticGetFeatureResponse
-    attr_accessor :elements
-    attr_accessor :ftype_code
-    attr_accessor :lib_feat_id
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetFeatureResponse.new
-      out.elements = SenzingTypeDef::from_json_data(Array[G2diagnosticGetFeatureResponseElements], data["ELEMENTS"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ELEMENTS"] = SenzingTypeDef::to_json_data(elements)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data
-    end
-  end
-
-  class G2diagnosticGetGenericFeaturesResponse0
-    attr_accessor :candidate_cap_reached
-    attr_accessor :estimated_count
-    attr_accessor :feat_desc
-    attr_accessor :ftype_code
-    attr_accessor :lib_feat_id
-    attr_accessor :scoring_cap_reached
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetGenericFeaturesResponse0.new
-      out.candidate_cap_reached = SenzingTypeDef::from_json_data(String, data["CANDIDATE_CAP_REACHED"])
-      out.estimated_count = SenzingTypeDef::from_json_data(Integer, data["ESTIMATED_COUNT"])
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out.scoring_cap_reached = SenzingTypeDef::from_json_data(String, data["SCORING_CAP_REACHED"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CANDIDATE_CAP_REACHED"] = SenzingTypeDef::to_json_data(candidate_cap_reached)
-      data["ESTIMATED_COUNT"] = SenzingTypeDef::to_json_data(estimated_count)
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data["SCORING_CAP_REACHED"] = SenzingTypeDef::to_json_data(scoring_cap_reached)
-      data
-    end
-  end
-
-  class G2diagnosticGetGenericFeaturesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetGenericFeaturesResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetGenericFeaturesResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetMappingStatisticsResponse0
-    attr_accessor :derived
-    attr_accessor :dsrc_code
-    attr_accessor :etype_code
-    attr_accessor :ftype_code
-    attr_accessor :max_feat_desc
-    attr_accessor :min_feat_desc
-    attr_accessor :rec_count
-    attr_accessor :rec_pct
-    attr_accessor :uniq_count
-    attr_accessor :uniq_pct
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetMappingStatisticsResponse0.new
-      out.derived = SenzingTypeDef::from_json_data(String, data["DERIVED"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.max_feat_desc = SenzingTypeDef::from_json_data(String, data["MAX_FEAT_DESC"])
-      out.min_feat_desc = SenzingTypeDef::from_json_data(String, data["MIN_FEAT_DESC"])
-      out.rec_count = SenzingTypeDef::from_json_data(Integer, data["REC_COUNT"])
-      out.rec_pct = SenzingTypeDef::from_json_data(Float, data["REC_PCT"])
-      out.uniq_count = SenzingTypeDef::from_json_data(Integer, data["UNIQ_COUNT"])
-      out.uniq_pct = SenzingTypeDef::from_json_data(Float, data["UNIQ_PCT"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DERIVED"] = SenzingTypeDef::to_json_data(derived)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["MAX_FEAT_DESC"] = SenzingTypeDef::to_json_data(max_feat_desc)
-      data["MIN_FEAT_DESC"] = SenzingTypeDef::to_json_data(min_feat_desc)
-      data["REC_COUNT"] = SenzingTypeDef::to_json_data(rec_count)
-      data["REC_PCT"] = SenzingTypeDef::to_json_data(rec_pct)
-      data["UNIQ_COUNT"] = SenzingTypeDef::to_json_data(uniq_count)
-      data["UNIQ_PCT"] = SenzingTypeDef::to_json_data(uniq_pct)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
-      data
-    end
-  end
-
-  class G2diagnosticGetMappingStatisticsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetMappingStatisticsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetMappingStatisticsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetRelationshipDetailsResponse0
-    attr_accessor :errule_code
-    attr_accessor :feat_desc
-    attr_accessor :ftype_code
-    attr_accessor :match_key
-    attr_accessor :res_ent_id
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetRelationshipDetailsResponse0.new
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.res_ent_id = SenzingTypeDef::from_json_data(Integer, data["RES_ENT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["RES_ENT_ID"] = SenzingTypeDef::to_json_data(res_ent_id)
-      data
-    end
-  end
-
-  class G2diagnosticGetRelationshipDetailsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetRelationshipDetailsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetRelationshipDetailsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticGetResolutionStatisticsResponseRawMatchKeys
-    attr_accessor :match_key
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetResolutionStatisticsResponseRawMatchKeys.new
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data
-    end
-  end
-
-  class G2diagnosticGetResolutionStatisticsResponse0
-    attr_accessor :errule_code
-    attr_accessor :errule_id
-    attr_accessor :is_ambiguous
-    attr_accessor :match_key
-    attr_accessor :match_level
-    attr_accessor :max_res_ent_id
-    attr_accessor :max_res_rel_id
-    attr_accessor :min_res_ent_id
-    attr_accessor :min_res_rel_id
-    attr_accessor :raw_match_keys
-    attr_accessor :record_count
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetResolutionStatisticsResponse0.new
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.errule_id = SenzingTypeDef::from_json_data(Integer, data["ERRULE_ID"])
-      out.is_ambiguous = SenzingTypeDef::from_json_data(String, data["IS_AMBIGUOUS"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
-      out.max_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_ENT_ID"])
-      out.max_res_rel_id = SenzingTypeDef::from_json_data(Integer, data["MAX_RES_REL_ID"])
-      out.min_res_ent_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_ENT_ID"])
-      out.min_res_rel_id = SenzingTypeDef::from_json_data(Integer, data["MIN_RES_REL_ID"])
-      out.raw_match_keys = SenzingTypeDef::from_json_data(Array[G2diagnosticGetResolutionStatisticsResponseRawMatchKeys], data["RAW_MATCH_KEYS"])
-      out.record_count = SenzingTypeDef::from_json_data(Integer, data["RECORD_COUNT"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ERRULE_ID"] = SenzingTypeDef::to_json_data(errule_id)
-      data["IS_AMBIGUOUS"] = SenzingTypeDef::to_json_data(is_ambiguous)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
-      data["MAX_RES_ENT_ID"] = SenzingTypeDef::to_json_data(max_res_ent_id)
-      data["MAX_RES_REL_ID"] = SenzingTypeDef::to_json_data(max_res_rel_id)
-      data["MIN_RES_ENT_ID"] = SenzingTypeDef::to_json_data(min_res_ent_id)
-      data["MIN_RES_REL_ID"] = SenzingTypeDef::to_json_data(min_res_rel_id)
-      data["RAW_MATCH_KEYS"] = SenzingTypeDef::to_json_data(raw_match_keys)
-      data["RECORD_COUNT"] = SenzingTypeDef::to_json_data(record_count)
-      data
-    end
-  end
-
-  class G2diagnosticGetResolutionStatisticsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticGetResolutionStatisticsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Array[G2diagnosticGetResolutionStatisticsResponse0], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2diagnosticStreamEntityListBySizeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2diagnosticStreamEntityListBySizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineAddRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineAddRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineAddRecordWithInfoWithReturnedRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineAddRecordWithInfoWithReturnedRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineCheckRecordResponseCheckRecordResponse
-    attr_accessor :candidate_match
-    attr_accessor :dsrc_code
-    attr_accessor :errule_code
-    attr_accessor :errule_id
-    attr_accessor :match_key
-    attr_accessor :match_level
-    attr_accessor :match_level_code
-    attr_accessor :non_generic_candidate_match
-    attr_accessor :record_id
-
-    def self.from_json_data(data)
-      out = G2engineCheckRecordResponseCheckRecordResponse.new
-      out.candidate_match = SenzingTypeDef::from_json_data(String, data["CANDIDATE_MATCH"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.errule_id = SenzingTypeDef::from_json_data(Integer, data["ERRULE_ID"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
-      out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
-      out.non_generic_candidate_match = SenzingTypeDef::from_json_data(String, data["NON_GENERIC_CANDIDATE_MATCH"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CANDIDATE_MATCH"] = SenzingTypeDef::to_json_data(candidate_match)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["ERRULE_ID"] = SenzingTypeDef::to_json_data(errule_id)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
-      data["MATCH_LEVEL_CODE"] = SenzingTypeDef::to_json_data(match_level_code)
-      data["NON_GENERIC_CANDIDATE_MATCH"] = SenzingTypeDef::to_json_data(non_generic_candidate_match)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data
-    end
-  end
-
-  class G2engineCheckRecordResponse
-    attr_accessor :check_record_response
-
-    def self.from_json_data(data)
-      out = G2engineCheckRecordResponse.new
-      out.check_record_response = SenzingTypeDef::from_json_data(Array[G2engineCheckRecordResponseCheckRecordResponse], data["CHECK_RECORD_RESPONSE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CHECK_RECORD_RESPONSE"] = SenzingTypeDef::to_json_data(check_record_response)
-      data
-    end
-  end
-
-  class G2engineDeleteRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineDeleteRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineExportConfigAndConfigIDResponse
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = G2engineExportConfigAndConfigIDResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  class G2engineExportConfigResponse
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = G2engineExportConfigResponse.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  class G2engineFetchNextResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindInterestingEntitiesByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindInterestingEntitiesByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindInterestingEntitiesByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindInterestingEntitiesByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindNetworkByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindNetworkByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathExcludingByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathExcludingByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineFindPathIncludingSourceByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineFindPathIncludingSourceByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetEntityByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetRecordV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetRecordV2response.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetRedoRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetVirtualEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetVirtualEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineGetVirtualEntityByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineGetVirtualEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineHowEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineHowEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineHowEntityByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineHowEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessRedoRecordResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessRedoRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessRedoRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessWithResponseResizeResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessWithResponseResizeResponse.new
-      out.value = SenzingTypeDef.from_json_data(Process, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineProcessWithResponseResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineProcessWithResponseResponse.new
-      out.value = SenzingTypeDef.from_json_data(Process, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineReevaluateEntityWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineReevaluateEntityWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineReevaluateRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineReevaluateRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineReplaceRecordWithInfoResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineReplaceRecordWithInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesResponse.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesResponseXxx
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesResponseXxx.new
-      out.value = SenzingTypeDef.from_json_data(EntitiesByFeatureID, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesV2response.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineSearchByAttributesV3response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineSearchByAttributesV3response.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineStatsResponseDuration
-    attr_accessor :pattern
-    attr_accessor :type
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseDuration.new
-      out.pattern = SenzingTypeDef::from_json_data(String, data["PATTERN"])
-      out.type = SenzingTypeDef::from_json_data(String, data["TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["PATTERN"] = SenzingTypeDef::to_json_data(pattern)
-      data["TYPE"] = SenzingTypeDef::to_json_data(type)
-      data
-    end
-  end
-
-  class G2engineStatsResponseReresolveTriggers
-    attr_accessor :abort_retry
-    attr_accessor :multiple_resolvable_candidates
-    attr_accessor :resolve_new_features
-    attr_accessor :unresolve_movement
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseReresolveTriggers.new
-      out.abort_retry = SenzingTypeDef::from_json_data(Integer, data["abortRetry"])
-      out.multiple_resolvable_candidates = SenzingTypeDef::from_json_data(Integer, data["multipleResolvableCandidates"])
-      out.resolve_new_features = SenzingTypeDef::from_json_data(Integer, data["resolveNewFeatures"])
-      out.unresolve_movement = SenzingTypeDef::from_json_data(Integer, data["unresolveMovement"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["abortRetry"] = SenzingTypeDef::to_json_data(abort_retry)
-      data["multipleResolvableCandidates"] = SenzingTypeDef::to_json_data(multiple_resolvable_candidates)
-      data["resolveNewFeatures"] = SenzingTypeDef::to_json_data(resolve_new_features)
-      data["unresolveMovement"] = SenzingTypeDef::to_json_data(unresolve_movement)
-      data
-    end
-  end
-
-  class G2engineStatsResponseUnresolveTriggers
-    attr_accessor :extensive_resolve
-    attr_accessor :normal_resolve
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseUnresolveTriggers.new
-      out.extensive_resolve = SenzingTypeDef::from_json_data(Integer, data["extensiveResolve"])
-      out.normal_resolve = SenzingTypeDef::from_json_data(Integer, data["normalResolve"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["extensiveResolve"] = SenzingTypeDef::to_json_data(extensive_resolve)
-      data["normalResolve"] = SenzingTypeDef::to_json_data(normal_resolve)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadExpressedFeatureCall
-    attr_accessor :efcall_id
-    attr_accessor :efunc_code
-    attr_accessor :num_calls
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadExpressedFeatureCall.new
-      out.efcall_id = SenzingTypeDef::from_json_data(Integer, data["EFCALL_ID"])
-      out.efunc_code = SenzingTypeDef::from_json_data(String, data["EFUNC_CODE"])
-      out.num_calls = SenzingTypeDef::from_json_data(Integer, data["numCalls"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["EFCALL_ID"] = SenzingTypeDef::to_json_data(efcall_id)
-      data["EFUNC_CODE"] = SenzingTypeDef::to_json_data(efunc_code)
-      data["numCalls"] = SenzingTypeDef::to_json_data(num_calls)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadReresolveTriggers
-    attr_accessor :abort_retry
-    attr_accessor :multiple_resolvable_candidates
-    attr_accessor :new_feature_ftypes
-    attr_accessor :resolve_new_features
-    attr_accessor :unresolve_movement
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadReresolveTriggers.new
-      out.abort_retry = SenzingTypeDef::from_json_data(Integer, data["abortRetry"])
-      out.multiple_resolvable_candidates = SenzingTypeDef::from_json_data(Integer, data["multipleResolvableCandidates"])
-      out.new_feature_ftypes = SenzingTypeDef::from_json_data(AttributeCounters, data["newFeatureFTypes"])
-      out.resolve_new_features = SenzingTypeDef::from_json_data(Integer, data["resolveNewFeatures"])
-      out.unresolve_movement = SenzingTypeDef::from_json_data(Integer, data["unresolveMovement"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["abortRetry"] = SenzingTypeDef::to_json_data(abort_retry)
-      data["multipleResolvableCandidates"] = SenzingTypeDef::to_json_data(multiple_resolvable_candidates)
-      data["newFeatureFTypes"] = SenzingTypeDef::to_json_data(new_feature_ftypes)
-      data["resolveNewFeatures"] = SenzingTypeDef::to_json_data(resolve_new_features)
-      data["unresolveMovement"] = SenzingTypeDef::to_json_data(unresolve_movement)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad
-    attr_accessor :cpu_idle
-    attr_accessor :cpu_soft_irq
-    attr_accessor :cpu_system
-    attr_accessor :cpu_user
-    attr_accessor :cpu_wait
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad.new
-      out.cpu_idle = SenzingTypeDef::from_json_data(Float, data["cpuIdle"])
-      out.cpu_soft_irq = SenzingTypeDef::from_json_data(Float, data["cpuSoftIrq"])
-      out.cpu_system = SenzingTypeDef::from_json_data(Float, data["cpuSystem"])
-      out.cpu_user = SenzingTypeDef::from_json_data(Float, data["cpuUser"])
-      out.cpu_wait = SenzingTypeDef::from_json_data(Float, data["cpuWait"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["cpuIdle"] = SenzingTypeDef::to_json_data(cpu_idle)
-      data["cpuSoftIrq"] = SenzingTypeDef::to_json_data(cpu_soft_irq)
-      data["cpuSystem"] = SenzingTypeDef::to_json_data(cpu_system)
-      data["cpuUser"] = SenzingTypeDef::to_json_data(cpu_user)
-      data["cpuWait"] = SenzingTypeDef::to_json_data(cpu_wait)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadSystemResourcesCurrResource
-    attr_accessor :active_threads
-    attr_accessor :available_memory
-    attr_accessor :system_load
-    attr_accessor :worker_threads
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadSystemResourcesCurrResource.new
-      out.active_threads = SenzingTypeDef::from_json_data(Integer, data["activeThreads"])
-      out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
-      out.system_load = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad], data["systemLoad"])
-      out.worker_threads = SenzingTypeDef::from_json_data(Integer, data["workerThreads"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["activeThreads"] = SenzingTypeDef::to_json_data(active_threads)
-      data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
-      data["systemLoad"] = SenzingTypeDef::to_json_data(system_load)
-      data["workerThreads"] = SenzingTypeDef::to_json_data(worker_threads)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadSystemResourcesInitResource
-    attr_accessor :available_memory
-    attr_accessor :logical_cores
-    attr_accessor :physical_cores
-    attr_accessor :total_memory
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadSystemResourcesInitResource.new
-      out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
-      out.logical_cores = SenzingTypeDef::from_json_data(Integer, data["logicalCores"])
-      out.physical_cores = SenzingTypeDef::from_json_data(Integer, data["physicalCores"])
-      out.total_memory = SenzingTypeDef::from_json_data(String, data["totalMemory"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
-      data["logicalCores"] = SenzingTypeDef::to_json_data(logical_cores)
-      data["physicalCores"] = SenzingTypeDef::to_json_data(physical_cores)
-      data["totalMemory"] = SenzingTypeDef::to_json_data(total_memory)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadSystemResources
-    attr_accessor :curr_resources
-    attr_accessor :init_resources
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadSystemResources.new
-      out.curr_resources = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadSystemResourcesCurrResource], data["currResources"])
-      out.init_resources = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadSystemResourcesInitResource], data["initResources"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["currResources"] = SenzingTypeDef::to_json_data(curr_resources)
-      data["initResources"] = SenzingTypeDef::to_json_data(init_resources)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadThreadState
-    attr_accessor :active
-    attr_accessor :data_latch_contention
-    attr_accessor :idle
-    attr_accessor :loader
-    attr_accessor :obs_ent_contention
-    attr_accessor :res_ent_contention
-    attr_accessor :resolver
-    attr_accessor :scoring
-    attr_accessor :sql_executing
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadThreadState.new
-      out.active = SenzingTypeDef::from_json_data(Integer, data["active"])
-      out.data_latch_contention = SenzingTypeDef::from_json_data(Integer, data["dataLatchContention"])
-      out.idle = SenzingTypeDef::from_json_data(Integer, data["idle"])
-      out.loader = SenzingTypeDef::from_json_data(Integer, data["loader"])
-      out.obs_ent_contention = SenzingTypeDef::from_json_data(Integer, data["obsEntContention"])
-      out.res_ent_contention = SenzingTypeDef::from_json_data(Integer, data["resEntContention"])
-      out.resolver = SenzingTypeDef::from_json_data(Integer, data["resolver"])
-      out.scoring = SenzingTypeDef::from_json_data(Integer, data["scoring"])
-      out.sql_executing = SenzingTypeDef::from_json_data(Integer, data["sqlExecuting"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["active"] = SenzingTypeDef::to_json_data(active)
-      data["dataLatchContention"] = SenzingTypeDef::to_json_data(data_latch_contention)
-      data["idle"] = SenzingTypeDef::to_json_data(idle)
-      data["loader"] = SenzingTypeDef::to_json_data(loader)
-      data["obsEntContention"] = SenzingTypeDef::to_json_data(obs_ent_contention)
-      data["resEntContention"] = SenzingTypeDef::to_json_data(res_ent_contention)
-      data["resolver"] = SenzingTypeDef::to_json_data(resolver)
-      data["scoring"] = SenzingTypeDef::to_json_data(scoring)
-      data["sqlExecuting"] = SenzingTypeDef::to_json_data(sql_executing)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkloadUnresolveTriggers
-    attr_accessor :ambiguous_multi_resolve
-    attr_accessor :ambiguous_no_resolve
-    attr_accessor :extensive_resolve
-    attr_accessor :normal_resolve
-    attr_accessor :rel_link
-    attr_accessor :update
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkloadUnresolveTriggers.new
-      out.ambiguous_multi_resolve = SenzingTypeDef::from_json_data(Integer, data["ambiguousMultiResolve"])
-      out.ambiguous_no_resolve = SenzingTypeDef::from_json_data(Integer, data["ambiguousNoResolve"])
-      out.extensive_resolve = SenzingTypeDef::from_json_data(Integer, data["extensiveResolve"])
-      out.normal_resolve = SenzingTypeDef::from_json_data(Integer, data["normalResolve"])
-      out.rel_link = SenzingTypeDef::from_json_data(Integer, data["relLink"])
-      out.update = SenzingTypeDef::from_json_data(Integer, data["update"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ambiguousMultiResolve"] = SenzingTypeDef::to_json_data(ambiguous_multi_resolve)
-      data["ambiguousNoResolve"] = SenzingTypeDef::to_json_data(ambiguous_no_resolve)
-      data["extensiveResolve"] = SenzingTypeDef::to_json_data(extensive_resolve)
-      data["normalResolve"] = SenzingTypeDef::to_json_data(normal_resolve)
-      data["relLink"] = SenzingTypeDef::to_json_data(rel_link)
-      data["update"] = SenzingTypeDef::to_json_data(update)
-      data
-    end
-  end
-
-  class G2engineStatsResponseWorkload
-    attr_accessor :corrupt_entity_test_diagnosis
-    attr_accessor :aborted_unresolve
-    attr_accessor :actual_ambiguous_test
-    attr_accessor :added_records
-    attr_accessor :api_version
-    attr_accessor :cache_hit
-    attr_accessor :cache_miss
-    attr_accessor :cached_ambiguous_test
-    attr_accessor :candidate_builders
-    attr_accessor :candidates
-    attr_accessor :deleted_records
-    attr_accessor :duration
-    attr_accessor :expressed_feature_calls
-    attr_accessor :expressed_features_created
-    attr_accessor :filtered_obs_feat
-    attr_accessor :generic_detect
-    attr_accessor :gnr_scorers_used
-    attr_accessor :high_contention_feat
-    attr_accessor :high_contention_res_ent
-    attr_accessor :latch_contention
-    attr_accessor :lib_feat_cache_hit
-    attr_accessor :lib_feat_cache_miss
-    attr_accessor :loaded_records
-    attr_accessor :redo_triggers
-    attr_accessor :reduced_scored_feature_type
-    attr_accessor :reevaluations
-    attr_accessor :repaired_entities
-    attr_accessor :reresolve_skipped
-    attr_accessor :reresolve_triggers
-    attr_accessor :res_feat_stat_cache_hit
-    attr_accessor :res_feat_stat_cache_miss
-    attr_accessor :res_feat_stat_update
-    attr_accessor :retries
-    attr_accessor :scored_pairs
-    attr_accessor :suppressed_candidate_builders
-    attr_accessor :suppressed_disclosed_relationship_domain_count
-    attr_accessor :suppressed_scored_feature_type
-    attr_accessor :system_resources
-    attr_accessor :thread_state
-    attr_accessor :unresolve_test
-    attr_accessor :unresolve_triggers
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponseWorkload.new
-      out.corrupt_entity_test_diagnosis = SenzingTypeDef::from_json_data(FixmeUnknown, data["CorruptEntityTestDiagnosis"])
-      out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
-      out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
-      out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
-      out.api_version = SenzingTypeDef::from_json_data(String, data["apiVersion"])
-      out.cache_hit = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheHit"])
-      out.cache_miss = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheMiss"])
-      out.cached_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["cachedAmbiguousTest"])
-      out.candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["candidateBuilders"])
-      out.candidates = SenzingTypeDef::from_json_data(Integer, data["candidates"])
-      out.deleted_records = SenzingTypeDef::from_json_data(Integer, data["deletedRecords"])
-      out.duration = SenzingTypeDef::from_json_data(Integer, data["duration"])
-      out.expressed_feature_calls = SenzingTypeDef::from_json_data(Array[G2engineStatsResponseWorkloadExpressedFeatureCall], data["expressedFeatureCalls"])
-      out.expressed_features_created = SenzingTypeDef::from_json_data(AttributeCounters, data["expressedFeaturesCreated"])
-      out.filtered_obs_feat = SenzingTypeDef::from_json_data(Integer, data["filteredObsFeat"])
-      out.generic_detect = SenzingTypeDef::from_json_data(AttributeCounters, data["genericDetect"])
-      out.gnr_scorers_used = SenzingTypeDef::from_json_data(Integer, data["gnrScorersUsed"])
-      out.high_contention_feat = SenzingTypeDef::from_json_data(AttributeCounters, data["highContentionFeat"])
-      out.high_contention_res_ent = SenzingTypeDef::from_json_data(AttributeCounters, data["highContentionResEnt"])
-      out.latch_contention = SenzingTypeDef::from_json_data(AttributeCounters, data["latchContention"])
-      out.lib_feat_cache_hit = SenzingTypeDef::from_json_data(Integer, data["libFeatCacheHit"])
-      out.lib_feat_cache_miss = SenzingTypeDef::from_json_data(Integer, data["libFeatCacheMiss"])
-      out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
-      out.redo_triggers = SenzingTypeDef::from_json_data(AttributeCounters, data["redoTriggers"])
-      out.reduced_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["reducedScoredFeatureType"])
-      out.reevaluations = SenzingTypeDef::from_json_data(Integer, data["reevaluations"])
-      out.repaired_entities = SenzingTypeDef::from_json_data(Integer, data["repairedEntities"])
-      out.reresolve_skipped = SenzingTypeDef::from_json_data(Integer, data["reresolveSkipped"])
-      out.reresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadReresolveTriggers, data["reresolveTriggers"])
-      out.res_feat_stat_cache_hit = SenzingTypeDef::from_json_data(Integer, data["resFeatStatCacheHit"])
-      out.res_feat_stat_cache_miss = SenzingTypeDef::from_json_data(Integer, data["resFeatStatCacheMiss"])
-      out.res_feat_stat_update = SenzingTypeDef::from_json_data(Integer, data["resFeatStatUpdate"])
-      out.retries = SenzingTypeDef::from_json_data(Integer, data["retries"])
-      out.scored_pairs = SenzingTypeDef::from_json_data(AttributeCounters, data["scoredPairs"])
-      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedCandidateBuilders"])
-      out.suppressed_disclosed_relationship_domain_count = SenzingTypeDef::from_json_data(Integer, data["suppressedDisclosedRelationshipDomainCount"])
-      out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedScoredFeatureType"])
-      out.system_resources = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadSystemResources, data["systemResources"])
-      out.thread_state = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadThreadState, data["threadState"])
-      out.unresolve_test = SenzingTypeDef::from_json_data(Integer, data["unresolveTest"])
-      out.unresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkloadUnresolveTriggers, data["unresolveTriggers"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CorruptEntityTestDiagnosis"] = SenzingTypeDef::to_json_data(corrupt_entity_test_diagnosis)
-      data["abortedUnresolve"] = SenzingTypeDef::to_json_data(aborted_unresolve)
-      data["actualAmbiguousTest"] = SenzingTypeDef::to_json_data(actual_ambiguous_test)
-      data["addedRecords"] = SenzingTypeDef::to_json_data(added_records)
-      data["apiVersion"] = SenzingTypeDef::to_json_data(api_version)
-      data["cacheHit"] = SenzingTypeDef::to_json_data(cache_hit)
-      data["cacheMiss"] = SenzingTypeDef::to_json_data(cache_miss)
-      data["cachedAmbiguousTest"] = SenzingTypeDef::to_json_data(cached_ambiguous_test)
-      data["candidateBuilders"] = SenzingTypeDef::to_json_data(candidate_builders)
-      data["candidates"] = SenzingTypeDef::to_json_data(candidates)
-      data["deletedRecords"] = SenzingTypeDef::to_json_data(deleted_records)
-      data["duration"] = SenzingTypeDef::to_json_data(duration)
-      data["expressedFeatureCalls"] = SenzingTypeDef::to_json_data(expressed_feature_calls)
-      data["expressedFeaturesCreated"] = SenzingTypeDef::to_json_data(expressed_features_created)
-      data["filteredObsFeat"] = SenzingTypeDef::to_json_data(filtered_obs_feat)
-      data["genericDetect"] = SenzingTypeDef::to_json_data(generic_detect)
-      data["gnrScorersUsed"] = SenzingTypeDef::to_json_data(gnr_scorers_used)
-      data["highContentionFeat"] = SenzingTypeDef::to_json_data(high_contention_feat)
-      data["highContentionResEnt"] = SenzingTypeDef::to_json_data(high_contention_res_ent)
-      data["latchContention"] = SenzingTypeDef::to_json_data(latch_contention)
-      data["libFeatCacheHit"] = SenzingTypeDef::to_json_data(lib_feat_cache_hit)
-      data["libFeatCacheMiss"] = SenzingTypeDef::to_json_data(lib_feat_cache_miss)
-      data["loadedRecords"] = SenzingTypeDef::to_json_data(loaded_records)
-      data["redoTriggers"] = SenzingTypeDef::to_json_data(redo_triggers)
-      data["reducedScoredFeatureType"] = SenzingTypeDef::to_json_data(reduced_scored_feature_type)
-      data["reevaluations"] = SenzingTypeDef::to_json_data(reevaluations)
-      data["repairedEntities"] = SenzingTypeDef::to_json_data(repaired_entities)
-      data["reresolveSkipped"] = SenzingTypeDef::to_json_data(reresolve_skipped)
-      data["reresolveTriggers"] = SenzingTypeDef::to_json_data(reresolve_triggers)
-      data["resFeatStatCacheHit"] = SenzingTypeDef::to_json_data(res_feat_stat_cache_hit)
-      data["resFeatStatCacheMiss"] = SenzingTypeDef::to_json_data(res_feat_stat_cache_miss)
-      data["resFeatStatUpdate"] = SenzingTypeDef::to_json_data(res_feat_stat_update)
-      data["retries"] = SenzingTypeDef::to_json_data(retries)
-      data["scoredPairs"] = SenzingTypeDef::to_json_data(scored_pairs)
-      data["suppressedCandidateBuilders"] = SenzingTypeDef::to_json_data(suppressed_candidate_builders)
-      data["suppressedDisclosedRelationshipDomainCount"] = SenzingTypeDef::to_json_data(suppressed_disclosed_relationship_domain_count)
-      data["suppressedScoredFeatureType"] = SenzingTypeDef::to_json_data(suppressed_scored_feature_type)
-      data["systemResources"] = SenzingTypeDef::to_json_data(system_resources)
-      data["threadState"] = SenzingTypeDef::to_json_data(thread_state)
-      data["unresolveTest"] = SenzingTypeDef::to_json_data(unresolve_test)
-      data["unresolveTriggers"] = SenzingTypeDef::to_json_data(unresolve_triggers)
-      data
-    end
-  end
-
-  class G2engineStatsResponse
-    attr_accessor :missing_res_ent
-    attr_accessor :missing_res_ent_and_okey
-    attr_accessor :aborted_unresolve
-    attr_accessor :actual_ambiguous_test
-    attr_accessor :added_records
-    attr_accessor :cache_hit
-    attr_accessor :candidate_builders
-    attr_accessor :candidates
-    attr_accessor :deleted_records
-    attr_accessor :duration
-    attr_accessor :filtered_obs_feat
-    attr_accessor :generic_detect
-    attr_accessor :latch_contention
-    attr_accessor :loaded_records
-    attr_accessor :redo_triggers
-    attr_accessor :reduced_scored_feature_type
-    attr_accessor :reevaluations
-    attr_accessor :repaired_entities
-    attr_accessor :reresolve_skipped
-    attr_accessor :reresolve_triggers
-    attr_accessor :retries
-    attr_accessor :scored_pairs
-    attr_accessor :suppressed_candidate_builders
-    attr_accessor :suppressed_scored_feature_type
-    attr_accessor :unresolve_test
-    attr_accessor :unresolve_triggers
-    attr_accessor :workload
-
-    def self.from_json_data(data)
-      out = G2engineStatsResponse.new
-      out.missing_res_ent = SenzingTypeDef::from_json_data(Integer, data["MISSING_RES_ENT"])
-      out.missing_res_ent_and_okey = SenzingTypeDef::from_json_data(Integer, data["MISSING_RES_ENT_AND_OKEY"])
-      out.aborted_unresolve = SenzingTypeDef::from_json_data(Integer, data["abortedUnresolve"])
-      out.actual_ambiguous_test = SenzingTypeDef::from_json_data(Integer, data["actualAmbiguousTest"])
-      out.added_records = SenzingTypeDef::from_json_data(Integer, data["addedRecords"])
-      out.cache_hit = SenzingTypeDef::from_json_data(AttributeCounters, data["cacheHit"])
-      out.candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["candidateBuilders"])
-      out.candidates = SenzingTypeDef::from_json_data(Integer, data["candidates"])
-      out.deleted_records = SenzingTypeDef::from_json_data(Integer, data["deletedRecords"])
-      out.duration = SenzingTypeDef::from_json_data(G2engineStatsResponseDuration, data["duration"])
-      out.filtered_obs_feat = SenzingTypeDef::from_json_data(Integer, data["filteredObsFeat"])
-      out.generic_detect = SenzingTypeDef::from_json_data(AttributeCounters, data["genericDetect"])
-      out.latch_contention = SenzingTypeDef::from_json_data(AttributeCounters, data["latchContention"])
-      out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
-      out.redo_triggers = SenzingTypeDef::from_json_data(AttributeCounters, data["redoTriggers"])
-      out.reduced_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["reducedScoredFeatureType"])
-      out.reevaluations = SenzingTypeDef::from_json_data(Integer, data["reevaluations"])
-      out.repaired_entities = SenzingTypeDef::from_json_data(Integer, data["repairedEntities"])
-      out.reresolve_skipped = SenzingTypeDef::from_json_data(Integer, data["reresolveSkipped"])
-      out.reresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseReresolveTriggers, data["reresolveTriggers"])
-      out.retries = SenzingTypeDef::from_json_data(Integer, data["retries"])
-      out.scored_pairs = SenzingTypeDef::from_json_data(AttributeCounters, data["scoredPairs"])
-      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedCandidateBuilders"])
-      out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(AttributeCounters, data["suppressedScoredFeatureType"])
-      out.unresolve_test = SenzingTypeDef::from_json_data(Integer, data["unresolveTest"])
-      out.unresolve_triggers = SenzingTypeDef::from_json_data(G2engineStatsResponseUnresolveTriggers, data["unresolveTriggers"])
-      out.workload = SenzingTypeDef::from_json_data(G2engineStatsResponseWorkload, data["workload"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["MISSING_RES_ENT"] = SenzingTypeDef::to_json_data(missing_res_ent)
-      data["MISSING_RES_ENT_AND_OKEY"] = SenzingTypeDef::to_json_data(missing_res_ent_and_okey)
-      data["abortedUnresolve"] = SenzingTypeDef::to_json_data(aborted_unresolve)
-      data["actualAmbiguousTest"] = SenzingTypeDef::to_json_data(actual_ambiguous_test)
-      data["addedRecords"] = SenzingTypeDef::to_json_data(added_records)
-      data["cacheHit"] = SenzingTypeDef::to_json_data(cache_hit)
-      data["candidateBuilders"] = SenzingTypeDef::to_json_data(candidate_builders)
-      data["candidates"] = SenzingTypeDef::to_json_data(candidates)
-      data["deletedRecords"] = SenzingTypeDef::to_json_data(deleted_records)
-      data["duration"] = SenzingTypeDef::to_json_data(duration)
-      data["filteredObsFeat"] = SenzingTypeDef::to_json_data(filtered_obs_feat)
-      data["genericDetect"] = SenzingTypeDef::to_json_data(generic_detect)
-      data["latchContention"] = SenzingTypeDef::to_json_data(latch_contention)
-      data["loadedRecords"] = SenzingTypeDef::to_json_data(loaded_records)
-      data["redoTriggers"] = SenzingTypeDef::to_json_data(redo_triggers)
-      data["reducedScoredFeatureType"] = SenzingTypeDef::to_json_data(reduced_scored_feature_type)
-      data["reevaluations"] = SenzingTypeDef::to_json_data(reevaluations)
-      data["repairedEntities"] = SenzingTypeDef::to_json_data(repaired_entities)
-      data["reresolveSkipped"] = SenzingTypeDef::to_json_data(reresolve_skipped)
-      data["reresolveTriggers"] = SenzingTypeDef::to_json_data(reresolve_triggers)
-      data["retries"] = SenzingTypeDef::to_json_data(retries)
-      data["scoredPairs"] = SenzingTypeDef::to_json_data(scored_pairs)
-      data["suppressedCandidateBuilders"] = SenzingTypeDef::to_json_data(suppressed_candidate_builders)
-      data["suppressedScoredFeatureType"] = SenzingTypeDef::to_json_data(suppressed_scored_feature_type)
-      data["unresolveTest"] = SenzingTypeDef::to_json_data(unresolve_test)
-      data["unresolveTriggers"] = SenzingTypeDef::to_json_data(unresolve_triggers)
-      data["workload"] = SenzingTypeDef::to_json_data(workload)
-      data
-    end
-  end
-
-  class G2engineStreamExportJsonentityReportResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineStreamExportJsonentityReportResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntitiesResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntitiesResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntitiesV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntitiesV2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntityByEntityIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntityByEntityIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntityByEntityIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntityByRecordIdv2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntityByRecordIdv2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyEntityByRecordIDResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntity, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyRecordsResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyRecordsResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2engineWhyRecordsV2response
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = G2engineWhyRecordsV2response.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class G2productLicenseResponse
-    attr_accessor :billing
-    attr_accessor :contract
-    attr_accessor :customer
-    attr_accessor :expire_date
-    attr_accessor :issue_date
-    attr_accessor :license_level
-    attr_accessor :license_type
-    attr_accessor :record_limit
-
-    def self.from_json_data(data)
-      out = G2productLicenseResponse.new
-      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
-      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
-      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
-      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
-      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
-      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
-      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
-      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["billing"] = SenzingTypeDef::to_json_data(billing)
-      data["contract"] = SenzingTypeDef::to_json_data(contract)
-      data["customer"] = SenzingTypeDef::to_json_data(customer)
-      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
-      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
-      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
-      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
-      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
-      data
-    end
-  end
-
-  class G2productVersionResponse
-    attr_accessor :build_date
-    attr_accessor :build_number
-    attr_accessor :build_version
-    attr_accessor :compatibility_version
-    attr_accessor :product_name
-    attr_accessor :schema_version
-    attr_accessor :version
-
-    def self.from_json_data(data)
-      out = G2productVersionResponse.new
-      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
-      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
-      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
-      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
-      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
-      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
-      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
-      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
-      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
-      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
-      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
-      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
-      data["VERSION"] = SenzingTypeDef::to_json_data(version)
       data
     end
   end
@@ -4572,6 +1642,9 @@ module SenzingTypeDef
 
   class InterestingEntity
     attr_accessor :degrees
+
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :flags
     attr_accessor :sample_records
@@ -4591,394 +1664,6 @@ module SenzingTypeDef
       data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
       data["FLAGS"] = SenzingTypeDef::to_json_data(flags)
       data["SAMPLE_RECORDS"] = SenzingTypeDef::to_json_data(sample_records)
-      data
-    end
-  end
-
-  class JSONDataXxxAcctNum
-    attr_accessor :account_domain
-    attr_accessor :account_number
-
-    def self.from_json_data(data)
-      out = JSONDataXxxAcctNum.new
-      out.account_domain = SenzingTypeDef::from_json_data(String, data["ACCOUNT_DOMAIN"])
-      out.account_number = SenzingTypeDef::from_json_data(String, data["ACCOUNT_NUMBER"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ACCOUNT_DOMAIN"] = SenzingTypeDef::to_json_data(account_domain)
-      data["ACCOUNT_NUMBER"] = SenzingTypeDef::to_json_data(account_number)
-      data
-    end
-  end
-
-  class JSONDataXxxSsn
-    attr_accessor :passport_number
-    attr_accessor :ssn_number
-
-    def self.from_json_data(data)
-      out = JSONDataXxxSsn.new
-      out.passport_number = SenzingTypeDef::from_json_data(String, data["PASSPORT_NUMBER"])
-      out.ssn_number = SenzingTypeDef::from_json_data(String, data["SSN_NUMBER"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data["SSN_NUMBER"] = SenzingTypeDef::to_json_data(ssn_number)
-      data
-    end
-  end
-
-  class JSONDataXxxSsnLast4
-    attr_accessor :ssn_last4
-
-    def self.from_json_data(data)
-      out = JSONDataXxxSsnLast4.new
-      out.ssn_last4 = SenzingTypeDef::from_json_data(Integer, data["SSN_LAST4"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["SSN_LAST4"] = SenzingTypeDef::to_json_data(ssn_last4)
-      data
-    end
-  end
-
-  class JSONDataXxx
-    attr_accessor :account_domain
-    attr_accessor :account_number
-    attr_accessor :acct_num
-    attr_accessor :address
-    attr_accessor :address_list
-    attr_accessor :addr_full
-    attr_accessor :addr_key
-    attr_accessor :cell_phone_number
-    attr_accessor :citizenship
-    attr_accessor :country_of_association
-    attr_accessor :data_source
-    attr_accessor :date_of_birth
-    attr_accessor :date_of_death
-    attr_accessor :dob
-    attr_accessor :dod
-    attr_accessor :drivers_license_number
-    attr_accessor :drivers_license_state
-    attr_accessor :drlic
-    attr_accessor :dsrc_action
-    attr_accessor :dsrc_code
-    attr_accessor :duns_number
-    attr_accessor :email
-    attr_accessor :email_address
-    attr_accessor :email_key
-    attr_accessor :employer_name
-    attr_accessor :entity_type
-    attr_accessor :ent_src_desc
-    attr_accessor :ent_src_key
-    attr_accessor :etype_code
-    attr_accessor :facebook
-    attr_accessor :gender
-    attr_accessor :group_assn_id_number
-    attr_accessor :group_assn_id_type
-    attr_accessor :group_association_org_name
-    attr_accessor :group_association_type
-    attr_accessor :id_key
-    attr_accessor :instagram
-    attr_accessor :lei_number
-    attr_accessor :linkedin
-    attr_accessor :load_id
-    attr_accessor :login_id
-    attr_accessor :name
-    attr_accessor :name_full
-    attr_accessor :name_key
-    attr_accessor :name_list
-    attr_accessor :nationality
-    attr_accessor :national_id
-    attr_accessor :national_id_country
-    attr_accessor :national_id_number
-    attr_accessor :nin_country
-    attr_accessor :nin_number
-    attr_accessor :npi_number
-    attr_accessor :obs_src_key
-    attr_accessor :other_id_country
-    attr_accessor :other_id_number
-    attr_accessor :other_id_type
-    attr_accessor :passport
-    attr_accessor :passports
-    attr_accessor :passport_country
-    attr_accessor :passport_number
-    attr_accessor :phone
-    attr_accessor :phones
-    attr_accessor :phone_key
-    attr_accessor :place_of_birth
-    attr_accessor :primary_name_first
-    attr_accessor :primary_name_last
-    attr_accessor :primary_name_middle
-    attr_accessor :primary_name_org
-    attr_accessor :primary_name_prefix
-    attr_accessor :primary_name_suffix
-    attr_accessor :primary_phone_number
-    attr_accessor :record_id
-    attr_accessor :record_type
-    attr_accessor :registration_country
-    attr_accessor :registration_date
-    attr_accessor :relationships
-    attr_accessor :rel_anchor
-    attr_accessor :rel_anchor_domain
-    attr_accessor :rel_anchor_key
-    attr_accessor :rel_link
-    attr_accessor :rel_pointer
-    attr_accessor :rel_pointer_domain
-    attr_accessor :rel_pointer_key
-    attr_accessor :rel_pointer_role
-    attr_accessor :signal
-    attr_accessor :skype
-    attr_accessor :social_handle
-    attr_accessor :social_network
-    attr_accessor :source_id
-    attr_accessor :ssn
-    attr_accessor :ssn_last4
-    attr_accessor :ssn_number
-    attr_accessor :tango
-    attr_accessor :tax_id_country
-    attr_accessor :tax_id_number
-    attr_accessor :tax_id_type
-    attr_accessor :telegram
-    attr_accessor :trusted_id_number
-    attr_accessor :trusted_id_type
-    attr_accessor :twitter
-    attr_accessor :viber
-    attr_accessor :website_address
-    attr_accessor :wechat
-    attr_accessor :whatsapp
-    attr_accessor :work_phone_number
-    attr_accessor :zoomroom
-    attr_accessor :name0
-
-    def self.from_json_data(data)
-      out = JSONDataXxx.new
-      out.account_domain = SenzingTypeDef::from_json_data(String, data["ACCOUNT_DOMAIN"])
-      out.account_number = SenzingTypeDef::from_json_data(String, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(Array[JSONDataXxxAcctNum], data["ACCT_NUM"])
-      out.address = SenzingTypeDef::from_json_data(String, data["ADDRESS"])
-      out.address_list = SenzingTypeDef::from_json_data(Addresses, data["ADDRESS_LIST"])
-      out.addr_full = SenzingTypeDef::from_json_data(String, data["ADDR_FULL"])
-      out.addr_key = SenzingTypeDef::from_json_data(String, data["ADDR_KEY"])
-      out.cell_phone_number = SenzingTypeDef::from_json_data(String, data["CELL_PHONE_NUMBER"])
-      out.citizenship = SenzingTypeDef::from_json_data(String, data["CITIZENSHIP"])
-      out.country_of_association = SenzingTypeDef::from_json_data(String, data["COUNTRY_OF_ASSOCIATION"])
-      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
-      out.date_of_birth = SenzingTypeDef::from_json_data(String, data["DATE_OF_BIRTH"])
-      out.date_of_death = SenzingTypeDef::from_json_data(String, data["DATE_OF_DEATH"])
-      out.dob = SenzingTypeDef::from_json_data(String, data["DOB"])
-      out.dod = SenzingTypeDef::from_json_data(String, data["DOD"])
-      out.drivers_license_number = SenzingTypeDef::from_json_data(String, data["DRIVERS_LICENSE_NUMBER"])
-      out.drivers_license_state = SenzingTypeDef::from_json_data(String, data["DRIVERS_LICENSE_STATE"])
-      out.drlic = SenzingTypeDef::from_json_data(String, data["DRLIC"])
-      out.dsrc_action = SenzingTypeDef::from_json_data(String, data["DSRC_ACTION"])
-      out.dsrc_code = SenzingTypeDef::from_json_data(String, data["DSRC_CODE"])
-      out.duns_number = SenzingTypeDef::from_json_data(String, data["DUNS_NUMBER"])
-      out.email = SenzingTypeDef::from_json_data(String, data["EMAIL"])
-      out.email_address = SenzingTypeDef::from_json_data(String, data["EMAIL_ADDRESS"])
-      out.email_key = SenzingTypeDef::from_json_data(String, data["EMAIL_KEY"])
-      out.employer_name = SenzingTypeDef::from_json_data(String, data["EMPLOYER_NAME"])
-      out.entity_type = SenzingTypeDef::from_json_data(String, data["ENTITY_TYPE"])
-      out.ent_src_desc = SenzingTypeDef::from_json_data(String, data["ENT_SRC_DESC"])
-      out.ent_src_key = SenzingTypeDef::from_json_data(String, data["ENT_SRC_KEY"])
-      out.etype_code = SenzingTypeDef::from_json_data(String, data["ETYPE_CODE"])
-      out.facebook = SenzingTypeDef::from_json_data(String, data["FACEBOOK"])
-      out.gender = SenzingTypeDef::from_json_data(String, data["GENDER"])
-      out.group_assn_id_number = SenzingTypeDef::from_json_data(String, data["GROUP_ASSN_ID_NUMBER"])
-      out.group_assn_id_type = SenzingTypeDef::from_json_data(String, data["GROUP_ASSN_ID_TYPE"])
-      out.group_association_org_name = SenzingTypeDef::from_json_data(String, data["GROUP_ASSOCIATION_ORG_NAME"])
-      out.group_association_type = SenzingTypeDef::from_json_data(String, data["GROUP_ASSOCIATION_TYPE"])
-      out.id_key = SenzingTypeDef::from_json_data(String, data["ID_KEY"])
-      out.instagram = SenzingTypeDef::from_json_data(String, data["INSTAGRAM"])
-      out.lei_number = SenzingTypeDef::from_json_data(String, data["LEI_NUMBER"])
-      out.linkedin = SenzingTypeDef::from_json_data(String, data["LINKEDIN"])
-      out.load_id = SenzingTypeDef::from_json_data(String, data["LOAD_ID"])
-      out.login_id = SenzingTypeDef::from_json_data(String, data["LOGIN_ID"])
-      out.name = SenzingTypeDef::from_json_data(Names, data["NAME"])
-      out.name_full = SenzingTypeDef::from_json_data(String, data["NAME_FULL"])
-      out.name_key = SenzingTypeDef::from_json_data(String, data["NAME_KEY"])
-      out.name_list = SenzingTypeDef::from_json_data(Names, data["NAME_LIST"])
-      out.nationality = SenzingTypeDef::from_json_data(String, data["NATIONALITY"])
-      out.national_id = SenzingTypeDef::from_json_data(String, data["NATIONAL_ID"])
-      out.national_id_country = SenzingTypeDef::from_json_data(String, data["NATIONAL_ID_COUNTRY"])
-      out.national_id_number = SenzingTypeDef::from_json_data(String, data["NATIONAL_ID_NUMBER"])
-      out.nin_country = SenzingTypeDef::from_json_data(String, data["NIN_COUNTRY"])
-      out.nin_number = SenzingTypeDef::from_json_data(String, data["NIN_NUMBER"])
-      out.npi_number = SenzingTypeDef::from_json_data(String, data["NPI_NUMBER"])
-      out.obs_src_key = SenzingTypeDef::from_json_data(String, data["OBS_SRC_KEY"])
-      out.other_id_country = SenzingTypeDef::from_json_data(String, data["OTHER_ID_COUNTRY"])
-      out.other_id_number = SenzingTypeDef::from_json_data(String, data["OTHER_ID_NUMBER"])
-      out.other_id_type = SenzingTypeDef::from_json_data(String, data["OTHER_ID_TYPE"])
-      out.passport = SenzingTypeDef::from_json_data(String, data["PASSPORT"])
-      out.passports = SenzingTypeDef::from_json_data(Passports, data["PASSPORTS"])
-      out.passport_country = SenzingTypeDef::from_json_data(String, data["PASSPORT_COUNTRY"])
-      out.passport_number = SenzingTypeDef::from_json_data(String, data["PASSPORT_NUMBER"])
-      out.phone = SenzingTypeDef::from_json_data(String, data["PHONE"])
-      out.phones = SenzingTypeDef::from_json_data(Phones, data["PHONES"])
-      out.phone_key = SenzingTypeDef::from_json_data(String, data["PHONE_KEY"])
-      out.place_of_birth = SenzingTypeDef::from_json_data(String, data["PLACE_OF_BIRTH"])
-      out.primary_name_first = SenzingTypeDef::from_json_data(String, data["PRIMARY_NAME_FIRST"])
-      out.primary_name_last = SenzingTypeDef::from_json_data(String, data["PRIMARY_NAME_LAST"])
-      out.primary_name_middle = SenzingTypeDef::from_json_data(String, data["PRIMARY_NAME_MIDDLE"])
-      out.primary_name_org = SenzingTypeDef::from_json_data(String, data["PRIMARY_NAME_ORG"])
-      out.primary_name_prefix = SenzingTypeDef::from_json_data(String, data["PRIMARY_NAME_PREFIX"])
-      out.primary_name_suffix = SenzingTypeDef::from_json_data(String, data["PRIMARY_NAME_SUFFIX"])
-      out.primary_phone_number = SenzingTypeDef::from_json_data(String, data["PRIMARY_PHONE_NUMBER"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
-      out.record_type = SenzingTypeDef::from_json_data(String, data["RECORD_TYPE"])
-      out.registration_country = SenzingTypeDef::from_json_data(String, data["REGISTRATION_COUNTRY"])
-      out.registration_date = SenzingTypeDef::from_json_data(String, data["REGISTRATION_DATE"])
-      out.relationships = SenzingTypeDef::from_json_data(Relationships, data["RELATIONSHIPS"])
-      out.rel_anchor = SenzingTypeDef::from_json_data(String, data["REL_ANCHOR"])
-      out.rel_anchor_domain = SenzingTypeDef::from_json_data(String, data["REL_ANCHOR_DOMAIN"])
-      out.rel_anchor_key = SenzingTypeDef::from_json_data(String, data["REL_ANCHOR_KEY"])
-      out.rel_link = SenzingTypeDef::from_json_data(String, data["REL_LINK"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(String, data["REL_POINTER"])
-      out.rel_pointer_domain = SenzingTypeDef::from_json_data(String, data["REL_POINTER_DOMAIN"])
-      out.rel_pointer_key = SenzingTypeDef::from_json_data(String, data["REL_POINTER_KEY"])
-      out.rel_pointer_role = SenzingTypeDef::from_json_data(String, data["REL_POINTER_ROLE"])
-      out.signal = SenzingTypeDef::from_json_data(String, data["SIGNAL"])
-      out.skype = SenzingTypeDef::from_json_data(String, data["SKYPE"])
-      out.social_handle = SenzingTypeDef::from_json_data(String, data["SOCIAL_HANDLE"])
-      out.social_network = SenzingTypeDef::from_json_data(String, data["SOCIAL_NETWORK"])
-      out.source_id = SenzingTypeDef::from_json_data(String, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(Array[JSONDataXxxSsn], data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(Array[JSONDataXxxSsnLast4], data["SSN_LAST4"])
-      out.ssn_number = SenzingTypeDef::from_json_data(String, data["SSN_NUMBER"])
-      out.tango = SenzingTypeDef::from_json_data(String, data["TANGO"])
-      out.tax_id_country = SenzingTypeDef::from_json_data(String, data["TAX_ID_COUNTRY"])
-      out.tax_id_number = SenzingTypeDef::from_json_data(String, data["TAX_ID_NUMBER"])
-      out.tax_id_type = SenzingTypeDef::from_json_data(String, data["TAX_ID_TYPE"])
-      out.telegram = SenzingTypeDef::from_json_data(String, data["TELEGRAM"])
-      out.trusted_id_number = SenzingTypeDef::from_json_data(String, data["TRUSTED_ID_NUMBER"])
-      out.trusted_id_type = SenzingTypeDef::from_json_data(String, data["TRUSTED_ID_TYPE"])
-      out.twitter = SenzingTypeDef::from_json_data(String, data["TWITTER"])
-      out.viber = SenzingTypeDef::from_json_data(String, data["VIBER"])
-      out.website_address = SenzingTypeDef::from_json_data(String, data["WEBSITE_ADDRESS"])
-      out.wechat = SenzingTypeDef::from_json_data(String, data["WECHAT"])
-      out.whatsapp = SenzingTypeDef::from_json_data(String, data["WHATSAPP"])
-      out.work_phone_number = SenzingTypeDef::from_json_data(String, data["WORK_PHONE_NUMBER"])
-      out.zoomroom = SenzingTypeDef::from_json_data(String, data["ZOOMROOM"])
-      out.name0 = SenzingTypeDef::from_json_data(Names, data["name"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ACCOUNT_DOMAIN"] = SenzingTypeDef::to_json_data(account_domain)
-      data["ACCOUNT_NUMBER"] = SenzingTypeDef::to_json_data(account_number)
-      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
-      data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
-      data["ADDRESS_LIST"] = SenzingTypeDef::to_json_data(address_list)
-      data["ADDR_FULL"] = SenzingTypeDef::to_json_data(addr_full)
-      data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
-      data["CELL_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(cell_phone_number)
-      data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
-      data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
-      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
-      data["DATE_OF_BIRTH"] = SenzingTypeDef::to_json_data(date_of_birth)
-      data["DATE_OF_DEATH"] = SenzingTypeDef::to_json_data(date_of_death)
-      data["DOB"] = SenzingTypeDef::to_json_data(dob)
-      data["DOD"] = SenzingTypeDef::to_json_data(dod)
-      data["DRIVERS_LICENSE_NUMBER"] = SenzingTypeDef::to_json_data(drivers_license_number)
-      data["DRIVERS_LICENSE_STATE"] = SenzingTypeDef::to_json_data(drivers_license_state)
-      data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
-      data["DSRC_ACTION"] = SenzingTypeDef::to_json_data(dsrc_action)
-      data["DSRC_CODE"] = SenzingTypeDef::to_json_data(dsrc_code)
-      data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
-      data["EMAIL"] = SenzingTypeDef::to_json_data(email)
-      data["EMAIL_ADDRESS"] = SenzingTypeDef::to_json_data(email_address)
-      data["EMAIL_KEY"] = SenzingTypeDef::to_json_data(email_key)
-      data["EMPLOYER_NAME"] = SenzingTypeDef::to_json_data(employer_name)
-      data["ENTITY_TYPE"] = SenzingTypeDef::to_json_data(entity_type)
-      data["ENT_SRC_DESC"] = SenzingTypeDef::to_json_data(ent_src_desc)
-      data["ENT_SRC_KEY"] = SenzingTypeDef::to_json_data(ent_src_key)
-      data["ETYPE_CODE"] = SenzingTypeDef::to_json_data(etype_code)
-      data["FACEBOOK"] = SenzingTypeDef::to_json_data(facebook)
-      data["GENDER"] = SenzingTypeDef::to_json_data(gender)
-      data["GROUP_ASSN_ID_NUMBER"] = SenzingTypeDef::to_json_data(group_assn_id_number)
-      data["GROUP_ASSN_ID_TYPE"] = SenzingTypeDef::to_json_data(group_assn_id_type)
-      data["GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypeDef::to_json_data(group_association_org_name)
-      data["GROUP_ASSOCIATION_TYPE"] = SenzingTypeDef::to_json_data(group_association_type)
-      data["ID_KEY"] = SenzingTypeDef::to_json_data(id_key)
-      data["INSTAGRAM"] = SenzingTypeDef::to_json_data(instagram)
-      data["LEI_NUMBER"] = SenzingTypeDef::to_json_data(lei_number)
-      data["LINKEDIN"] = SenzingTypeDef::to_json_data(linkedin)
-      data["LOAD_ID"] = SenzingTypeDef::to_json_data(load_id)
-      data["LOGIN_ID"] = SenzingTypeDef::to_json_data(login_id)
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["NAME_FULL"] = SenzingTypeDef::to_json_data(name_full)
-      data["NAME_KEY"] = SenzingTypeDef::to_json_data(name_key)
-      data["NAME_LIST"] = SenzingTypeDef::to_json_data(name_list)
-      data["NATIONALITY"] = SenzingTypeDef::to_json_data(nationality)
-      data["NATIONAL_ID"] = SenzingTypeDef::to_json_data(national_id)
-      data["NATIONAL_ID_COUNTRY"] = SenzingTypeDef::to_json_data(national_id_country)
-      data["NATIONAL_ID_NUMBER"] = SenzingTypeDef::to_json_data(national_id_number)
-      data["NIN_COUNTRY"] = SenzingTypeDef::to_json_data(nin_country)
-      data["NIN_NUMBER"] = SenzingTypeDef::to_json_data(nin_number)
-      data["NPI_NUMBER"] = SenzingTypeDef::to_json_data(npi_number)
-      data["OBS_SRC_KEY"] = SenzingTypeDef::to_json_data(obs_src_key)
-      data["OTHER_ID_COUNTRY"] = SenzingTypeDef::to_json_data(other_id_country)
-      data["OTHER_ID_NUMBER"] = SenzingTypeDef::to_json_data(other_id_number)
-      data["OTHER_ID_TYPE"] = SenzingTypeDef::to_json_data(other_id_type)
-      data["PASSPORT"] = SenzingTypeDef::to_json_data(passport)
-      data["PASSPORTS"] = SenzingTypeDef::to_json_data(passports)
-      data["PASSPORT_COUNTRY"] = SenzingTypeDef::to_json_data(passport_country)
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data["PHONE"] = SenzingTypeDef::to_json_data(phone)
-      data["PHONES"] = SenzingTypeDef::to_json_data(phones)
-      data["PHONE_KEY"] = SenzingTypeDef::to_json_data(phone_key)
-      data["PLACE_OF_BIRTH"] = SenzingTypeDef::to_json_data(place_of_birth)
-      data["PRIMARY_NAME_FIRST"] = SenzingTypeDef::to_json_data(primary_name_first)
-      data["PRIMARY_NAME_LAST"] = SenzingTypeDef::to_json_data(primary_name_last)
-      data["PRIMARY_NAME_MIDDLE"] = SenzingTypeDef::to_json_data(primary_name_middle)
-      data["PRIMARY_NAME_ORG"] = SenzingTypeDef::to_json_data(primary_name_org)
-      data["PRIMARY_NAME_PREFIX"] = SenzingTypeDef::to_json_data(primary_name_prefix)
-      data["PRIMARY_NAME_SUFFIX"] = SenzingTypeDef::to_json_data(primary_name_suffix)
-      data["PRIMARY_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(primary_phone_number)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data["RECORD_TYPE"] = SenzingTypeDef::to_json_data(record_type)
-      data["REGISTRATION_COUNTRY"] = SenzingTypeDef::to_json_data(registration_country)
-      data["REGISTRATION_DATE"] = SenzingTypeDef::to_json_data(registration_date)
-      data["RELATIONSHIPS"] = SenzingTypeDef::to_json_data(relationships)
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_ANCHOR_DOMAIN"] = SenzingTypeDef::to_json_data(rel_anchor_domain)
-      data["REL_ANCHOR_KEY"] = SenzingTypeDef::to_json_data(rel_anchor_key)
-      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
-      data["REL_POINTER_DOMAIN"] = SenzingTypeDef::to_json_data(rel_pointer_domain)
-      data["REL_POINTER_KEY"] = SenzingTypeDef::to_json_data(rel_pointer_key)
-      data["REL_POINTER_ROLE"] = SenzingTypeDef::to_json_data(rel_pointer_role)
-      data["SIGNAL"] = SenzingTypeDef::to_json_data(signal)
-      data["SKYPE"] = SenzingTypeDef::to_json_data(skype)
-      data["SOCIAL_HANDLE"] = SenzingTypeDef::to_json_data(social_handle)
-      data["SOCIAL_NETWORK"] = SenzingTypeDef::to_json_data(social_network)
-      data["SOURCE_ID"] = SenzingTypeDef::to_json_data(source_id)
-      data["SSN"] = SenzingTypeDef::to_json_data(ssn)
-      data["SSN_LAST4"] = SenzingTypeDef::to_json_data(ssn_last4)
-      data["SSN_NUMBER"] = SenzingTypeDef::to_json_data(ssn_number)
-      data["TANGO"] = SenzingTypeDef::to_json_data(tango)
-      data["TAX_ID_COUNTRY"] = SenzingTypeDef::to_json_data(tax_id_country)
-      data["TAX_ID_NUMBER"] = SenzingTypeDef::to_json_data(tax_id_number)
-      data["TAX_ID_TYPE"] = SenzingTypeDef::to_json_data(tax_id_type)
-      data["TELEGRAM"] = SenzingTypeDef::to_json_data(telegram)
-      data["TRUSTED_ID_NUMBER"] = SenzingTypeDef::to_json_data(trusted_id_number)
-      data["TRUSTED_ID_TYPE"] = SenzingTypeDef::to_json_data(trusted_id_type)
-      data["TWITTER"] = SenzingTypeDef::to_json_data(twitter)
-      data["VIBER"] = SenzingTypeDef::to_json_data(viber)
-      data["WEBSITE_ADDRESS"] = SenzingTypeDef::to_json_data(website_address)
-      data["WECHAT"] = SenzingTypeDef::to_json_data(wechat)
-      data["WHATSAPP"] = SenzingTypeDef::to_json_data(whatsapp)
-      data["WORK_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(work_phone_number)
-      data["ZOOMROOM"] = SenzingTypeDef::to_json_data(zoomroom)
-      data["name"] = SenzingTypeDef::to_json_data(name0)
       data
     end
   end
@@ -5151,309 +1836,16 @@ module SenzingTypeDef
   end
 
   class MatchInfoCandidateKeys
-    attr_accessor :account_domain
-    attr_accessor :account_number
-    attr_accessor :acct_num
-    attr_accessor :address
-    attr_accessor :address_list
-    attr_accessor :addr_full
-    attr_accessor :addr_key
-    attr_accessor :cell_phone_number
-    attr_accessor :citizenship
-    attr_accessor :country_of_association
-    attr_accessor :data_source
-    attr_accessor :date_of_birth
-    attr_accessor :date_of_death
-    attr_accessor :dob
-    attr_accessor :dod
-    attr_accessor :drivers_license_number
-    attr_accessor :drivers_license_state
-    attr_accessor :drlic
-    attr_accessor :duns_number
-    attr_accessor :email
-    attr_accessor :email_address
-    attr_accessor :email_key
-    attr_accessor :employer_name
-    attr_accessor :entity_type
-    attr_accessor :facebook
-    attr_accessor :gender
-    attr_accessor :group_assn_id_number
-    attr_accessor :group_assn_id_type
-    attr_accessor :group_association_org_name
-    attr_accessor :group_association_type
-    attr_accessor :id_key
-    attr_accessor :instagram
-    attr_accessor :lei_number
-    attr_accessor :linkedin
-    attr_accessor :load_id
-    attr_accessor :login_id
-    attr_accessor :name
-    attr_accessor :name_full
-    attr_accessor :name_key
-    attr_accessor :name_list
-    attr_accessor :nationality
-    attr_accessor :national_id
-    attr_accessor :national_id_country
-    attr_accessor :national_id_number
-    attr_accessor :nin_country
-    attr_accessor :nin_number
-    attr_accessor :npi_number
-    attr_accessor :other_id_country
-    attr_accessor :other_id_number
-    attr_accessor :other_id_type
-    attr_accessor :passport
-    attr_accessor :passports
-    attr_accessor :passport_country
-    attr_accessor :passport_number
-    attr_accessor :phone
-    attr_accessor :phones
-    attr_accessor :phone_key
-    attr_accessor :place_of_birth
-    attr_accessor :primary_name_first
-    attr_accessor :primary_name_last
-    attr_accessor :primary_name_middle
-    attr_accessor :primary_name_org
-    attr_accessor :primary_name_prefix
-    attr_accessor :primary_name_suffix
-    attr_accessor :primary_phone_number
-    attr_accessor :record_type
-    attr_accessor :registration_country
-    attr_accessor :registration_date
-    attr_accessor :rel_anchor
-    attr_accessor :rel_anchor_domain
-    attr_accessor :rel_anchor_key
-    attr_accessor :rel_link
-    attr_accessor :rel_pointer
-    attr_accessor :rel_pointer_domain
-    attr_accessor :rel_pointer_key
-    attr_accessor :rel_pointer_role
-    attr_accessor :signal
-    attr_accessor :skype
-    attr_accessor :social_handle
-    attr_accessor :social_network
-    attr_accessor :source_id
-    attr_accessor :ssn
-    attr_accessor :ssn_last4
-    attr_accessor :ssn_number
-    attr_accessor :tango
-    attr_accessor :tax_id_country
-    attr_accessor :tax_id_number
-    attr_accessor :tax_id_type
-    attr_accessor :telegram
-    attr_accessor :trusted_id_number
-    attr_accessor :trusted_id_type
-    attr_accessor :twitter
-    attr_accessor :viber
-    attr_accessor :website_address
-    attr_accessor :wechat
-    attr_accessor :whatsapp
-    attr_accessor :work_phone_number
-    attr_accessor :zoomroom
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = MatchInfoCandidateKeys.new
-      out.account_domain = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ACCOUNT_DOMAIN"])
-      out.account_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ACCT_NUM"])
-      out.address = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ADDRESS"])
-      out.address_list = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ADDRESS_LIST"])
-      out.addr_full = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ADDR_FULL"])
-      out.addr_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ADDR_KEY"])
-      out.cell_phone_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["CELL_PHONE_NUMBER"])
-      out.citizenship = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["CITIZENSHIP"])
-      out.country_of_association = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["COUNTRY_OF_ASSOCIATION"])
-      out.data_source = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DATA_SOURCE"])
-      out.date_of_birth = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DATE_OF_BIRTH"])
-      out.date_of_death = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DATE_OF_DEATH"])
-      out.dob = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DOB"])
-      out.dod = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DOD"])
-      out.drivers_license_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DRIVERS_LICENSE_NUMBER"])
-      out.drivers_license_state = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DRIVERS_LICENSE_STATE"])
-      out.drlic = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DRLIC"])
-      out.duns_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["DUNS_NUMBER"])
-      out.email = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["EMAIL"])
-      out.email_address = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["EMAIL_ADDRESS"])
-      out.email_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["EMAIL_KEY"])
-      out.employer_name = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["EMPLOYER_NAME"])
-      out.entity_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ENTITY_TYPE"])
-      out.facebook = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["FACEBOOK"])
-      out.gender = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["GENDER"])
-      out.group_assn_id_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["GROUP_ASSN_ID_NUMBER"])
-      out.group_assn_id_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["GROUP_ASSN_ID_TYPE"])
-      out.group_association_org_name = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["GROUP_ASSOCIATION_ORG_NAME"])
-      out.group_association_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["GROUP_ASSOCIATION_TYPE"])
-      out.id_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ID_KEY"])
-      out.instagram = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["INSTAGRAM"])
-      out.lei_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["LEI_NUMBER"])
-      out.linkedin = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["LINKEDIN"])
-      out.load_id = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["LOAD_ID"])
-      out.login_id = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["LOGIN_ID"])
-      out.name = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NAME"])
-      out.name_full = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NAME_FULL"])
-      out.name_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NAME_KEY"])
-      out.name_list = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NAME_LIST"])
-      out.nationality = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NATIONALITY"])
-      out.national_id = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NATIONAL_ID"])
-      out.national_id_country = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NATIONAL_ID_COUNTRY"])
-      out.national_id_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NATIONAL_ID_NUMBER"])
-      out.nin_country = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NIN_COUNTRY"])
-      out.nin_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NIN_NUMBER"])
-      out.npi_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["NPI_NUMBER"])
-      out.other_id_country = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["OTHER_ID_COUNTRY"])
-      out.other_id_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["OTHER_ID_NUMBER"])
-      out.other_id_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["OTHER_ID_TYPE"])
-      out.passport = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PASSPORT"])
-      out.passports = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PASSPORTS"])
-      out.passport_country = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PASSPORT_COUNTRY"])
-      out.passport_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PASSPORT_NUMBER"])
-      out.phone = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PHONE"])
-      out.phones = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PHONES"])
-      out.phone_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PHONE_KEY"])
-      out.place_of_birth = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PLACE_OF_BIRTH"])
-      out.primary_name_first = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_NAME_FIRST"])
-      out.primary_name_last = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_NAME_LAST"])
-      out.primary_name_middle = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_NAME_MIDDLE"])
-      out.primary_name_org = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_NAME_ORG"])
-      out.primary_name_prefix = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_NAME_PREFIX"])
-      out.primary_name_suffix = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_NAME_SUFFIX"])
-      out.primary_phone_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["PRIMARY_PHONE_NUMBER"])
-      out.record_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["RECORD_TYPE"])
-      out.registration_country = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REGISTRATION_COUNTRY"])
-      out.registration_date = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REGISTRATION_DATE"])
-      out.rel_anchor = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_ANCHOR"])
-      out.rel_anchor_domain = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_ANCHOR_DOMAIN"])
-      out.rel_anchor_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_ANCHOR_KEY"])
-      out.rel_link = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_LINK"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_POINTER"])
-      out.rel_pointer_domain = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_POINTER_DOMAIN"])
-      out.rel_pointer_key = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_POINTER_KEY"])
-      out.rel_pointer_role = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["REL_POINTER_ROLE"])
-      out.signal = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SIGNAL"])
-      out.skype = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SKYPE"])
-      out.social_handle = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SOCIAL_HANDLE"])
-      out.social_network = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SOCIAL_NETWORK"])
-      out.source_id = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SSN_LAST4"])
-      out.ssn_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["SSN_NUMBER"])
-      out.tango = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TANGO"])
-      out.tax_id_country = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TAX_ID_COUNTRY"])
-      out.tax_id_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TAX_ID_NUMBER"])
-      out.tax_id_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TAX_ID_TYPE"])
-      out.telegram = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TELEGRAM"])
-      out.trusted_id_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TRUSTED_ID_NUMBER"])
-      out.trusted_id_type = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TRUSTED_ID_TYPE"])
-      out.twitter = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["TWITTER"])
-      out.viber = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["VIBER"])
-      out.website_address = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["WEBSITE_ADDRESS"])
-      out.wechat = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["WECHAT"])
-      out.whatsapp = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["WHATSAPP"])
-      out.work_phone_number = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["WORK_PHONE_NUMBER"])
-      out.zoomroom = SenzingTypeDef::from_json_data(MatchInfosForAttribute, data["ZOOMROOM"])
+      out.value = SenzingTypeDef.from_json_data(String, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["ACCOUNT_DOMAIN"] = SenzingTypeDef::to_json_data(account_domain)
-      data["ACCOUNT_NUMBER"] = SenzingTypeDef::to_json_data(account_number)
-      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
-      data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
-      data["ADDRESS_LIST"] = SenzingTypeDef::to_json_data(address_list)
-      data["ADDR_FULL"] = SenzingTypeDef::to_json_data(addr_full)
-      data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
-      data["CELL_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(cell_phone_number)
-      data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
-      data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
-      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
-      data["DATE_OF_BIRTH"] = SenzingTypeDef::to_json_data(date_of_birth)
-      data["DATE_OF_DEATH"] = SenzingTypeDef::to_json_data(date_of_death)
-      data["DOB"] = SenzingTypeDef::to_json_data(dob)
-      data["DOD"] = SenzingTypeDef::to_json_data(dod)
-      data["DRIVERS_LICENSE_NUMBER"] = SenzingTypeDef::to_json_data(drivers_license_number)
-      data["DRIVERS_LICENSE_STATE"] = SenzingTypeDef::to_json_data(drivers_license_state)
-      data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
-      data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
-      data["EMAIL"] = SenzingTypeDef::to_json_data(email)
-      data["EMAIL_ADDRESS"] = SenzingTypeDef::to_json_data(email_address)
-      data["EMAIL_KEY"] = SenzingTypeDef::to_json_data(email_key)
-      data["EMPLOYER_NAME"] = SenzingTypeDef::to_json_data(employer_name)
-      data["ENTITY_TYPE"] = SenzingTypeDef::to_json_data(entity_type)
-      data["FACEBOOK"] = SenzingTypeDef::to_json_data(facebook)
-      data["GENDER"] = SenzingTypeDef::to_json_data(gender)
-      data["GROUP_ASSN_ID_NUMBER"] = SenzingTypeDef::to_json_data(group_assn_id_number)
-      data["GROUP_ASSN_ID_TYPE"] = SenzingTypeDef::to_json_data(group_assn_id_type)
-      data["GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypeDef::to_json_data(group_association_org_name)
-      data["GROUP_ASSOCIATION_TYPE"] = SenzingTypeDef::to_json_data(group_association_type)
-      data["ID_KEY"] = SenzingTypeDef::to_json_data(id_key)
-      data["INSTAGRAM"] = SenzingTypeDef::to_json_data(instagram)
-      data["LEI_NUMBER"] = SenzingTypeDef::to_json_data(lei_number)
-      data["LINKEDIN"] = SenzingTypeDef::to_json_data(linkedin)
-      data["LOAD_ID"] = SenzingTypeDef::to_json_data(load_id)
-      data["LOGIN_ID"] = SenzingTypeDef::to_json_data(login_id)
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["NAME_FULL"] = SenzingTypeDef::to_json_data(name_full)
-      data["NAME_KEY"] = SenzingTypeDef::to_json_data(name_key)
-      data["NAME_LIST"] = SenzingTypeDef::to_json_data(name_list)
-      data["NATIONALITY"] = SenzingTypeDef::to_json_data(nationality)
-      data["NATIONAL_ID"] = SenzingTypeDef::to_json_data(national_id)
-      data["NATIONAL_ID_COUNTRY"] = SenzingTypeDef::to_json_data(national_id_country)
-      data["NATIONAL_ID_NUMBER"] = SenzingTypeDef::to_json_data(national_id_number)
-      data["NIN_COUNTRY"] = SenzingTypeDef::to_json_data(nin_country)
-      data["NIN_NUMBER"] = SenzingTypeDef::to_json_data(nin_number)
-      data["NPI_NUMBER"] = SenzingTypeDef::to_json_data(npi_number)
-      data["OTHER_ID_COUNTRY"] = SenzingTypeDef::to_json_data(other_id_country)
-      data["OTHER_ID_NUMBER"] = SenzingTypeDef::to_json_data(other_id_number)
-      data["OTHER_ID_TYPE"] = SenzingTypeDef::to_json_data(other_id_type)
-      data["PASSPORT"] = SenzingTypeDef::to_json_data(passport)
-      data["PASSPORTS"] = SenzingTypeDef::to_json_data(passports)
-      data["PASSPORT_COUNTRY"] = SenzingTypeDef::to_json_data(passport_country)
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data["PHONE"] = SenzingTypeDef::to_json_data(phone)
-      data["PHONES"] = SenzingTypeDef::to_json_data(phones)
-      data["PHONE_KEY"] = SenzingTypeDef::to_json_data(phone_key)
-      data["PLACE_OF_BIRTH"] = SenzingTypeDef::to_json_data(place_of_birth)
-      data["PRIMARY_NAME_FIRST"] = SenzingTypeDef::to_json_data(primary_name_first)
-      data["PRIMARY_NAME_LAST"] = SenzingTypeDef::to_json_data(primary_name_last)
-      data["PRIMARY_NAME_MIDDLE"] = SenzingTypeDef::to_json_data(primary_name_middle)
-      data["PRIMARY_NAME_ORG"] = SenzingTypeDef::to_json_data(primary_name_org)
-      data["PRIMARY_NAME_PREFIX"] = SenzingTypeDef::to_json_data(primary_name_prefix)
-      data["PRIMARY_NAME_SUFFIX"] = SenzingTypeDef::to_json_data(primary_name_suffix)
-      data["PRIMARY_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(primary_phone_number)
-      data["RECORD_TYPE"] = SenzingTypeDef::to_json_data(record_type)
-      data["REGISTRATION_COUNTRY"] = SenzingTypeDef::to_json_data(registration_country)
-      data["REGISTRATION_DATE"] = SenzingTypeDef::to_json_data(registration_date)
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_ANCHOR_DOMAIN"] = SenzingTypeDef::to_json_data(rel_anchor_domain)
-      data["REL_ANCHOR_KEY"] = SenzingTypeDef::to_json_data(rel_anchor_key)
-      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
-      data["REL_POINTER_DOMAIN"] = SenzingTypeDef::to_json_data(rel_pointer_domain)
-      data["REL_POINTER_KEY"] = SenzingTypeDef::to_json_data(rel_pointer_key)
-      data["REL_POINTER_ROLE"] = SenzingTypeDef::to_json_data(rel_pointer_role)
-      data["SIGNAL"] = SenzingTypeDef::to_json_data(signal)
-      data["SKYPE"] = SenzingTypeDef::to_json_data(skype)
-      data["SOCIAL_HANDLE"] = SenzingTypeDef::to_json_data(social_handle)
-      data["SOCIAL_NETWORK"] = SenzingTypeDef::to_json_data(social_network)
-      data["SOURCE_ID"] = SenzingTypeDef::to_json_data(source_id)
-      data["SSN"] = SenzingTypeDef::to_json_data(ssn)
-      data["SSN_LAST4"] = SenzingTypeDef::to_json_data(ssn_last4)
-      data["SSN_NUMBER"] = SenzingTypeDef::to_json_data(ssn_number)
-      data["TANGO"] = SenzingTypeDef::to_json_data(tango)
-      data["TAX_ID_COUNTRY"] = SenzingTypeDef::to_json_data(tax_id_country)
-      data["TAX_ID_NUMBER"] = SenzingTypeDef::to_json_data(tax_id_number)
-      data["TAX_ID_TYPE"] = SenzingTypeDef::to_json_data(tax_id_type)
-      data["TELEGRAM"] = SenzingTypeDef::to_json_data(telegram)
-      data["TRUSTED_ID_NUMBER"] = SenzingTypeDef::to_json_data(trusted_id_number)
-      data["TRUSTED_ID_TYPE"] = SenzingTypeDef::to_json_data(trusted_id_type)
-      data["TWITTER"] = SenzingTypeDef::to_json_data(twitter)
-      data["VIBER"] = SenzingTypeDef::to_json_data(viber)
-      data["WEBSITE_ADDRESS"] = SenzingTypeDef::to_json_data(website_address)
-      data["WECHAT"] = SenzingTypeDef::to_json_data(wechat)
-      data["WHATSAPP"] = SenzingTypeDef::to_json_data(whatsapp)
-      data["WORK_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(work_phone_number)
-      data["ZOOMROOM"] = SenzingTypeDef::to_json_data(zoomroom)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -5473,378 +1865,6 @@ module SenzingTypeDef
       data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
       data["FEAT_ID"] = SenzingTypeDef::to_json_data(feat_id)
       data
-    end
-  end
-
-  class MatchInfosForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MatchInfosForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(Array[MatchInfoForAttribute], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class MatchScoreForAttribute
-    attr_accessor :candidate_feat
-    attr_accessor :full_score
-    attr_accessor :generation_match
-    attr_accessor :gnr_fn
-    attr_accessor :gnr_gn
-    attr_accessor :gnr_on
-    attr_accessor :gnr_sn
-    attr_accessor :inbound_feat
-
-    def self.from_json_data(data)
-      out = MatchScoreForAttribute.new
-      out.candidate_feat = SenzingTypeDef::from_json_data(String, data["CANDIDATE_FEAT"])
-      out.full_score = SenzingTypeDef::from_json_data(Integer, data["FULL_SCORE"])
-      out.generation_match = SenzingTypeDef::from_json_data(Integer, data["GENERATION_MATCH"])
-      out.gnr_fn = SenzingTypeDef::from_json_data(Integer, data["GNR_FN"])
-      out.gnr_gn = SenzingTypeDef::from_json_data(Integer, data["GNR_GN"])
-      out.gnr_on = SenzingTypeDef::from_json_data(Integer, data["GNR_ON"])
-      out.gnr_sn = SenzingTypeDef::from_json_data(Integer, data["GNR_SN"])
-      out.inbound_feat = SenzingTypeDef::from_json_data(String, data["INBOUND_FEAT"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CANDIDATE_FEAT"] = SenzingTypeDef::to_json_data(candidate_feat)
-      data["FULL_SCORE"] = SenzingTypeDef::to_json_data(full_score)
-      data["GENERATION_MATCH"] = SenzingTypeDef::to_json_data(generation_match)
-      data["GNR_FN"] = SenzingTypeDef::to_json_data(gnr_fn)
-      data["GNR_GN"] = SenzingTypeDef::to_json_data(gnr_gn)
-      data["GNR_ON"] = SenzingTypeDef::to_json_data(gnr_on)
-      data["GNR_SN"] = SenzingTypeDef::to_json_data(gnr_sn)
-      data["INBOUND_FEAT"] = SenzingTypeDef::to_json_data(inbound_feat)
-      data
-    end
-  end
-
-  class MatchScores
-    attr_accessor :account_domain
-    attr_accessor :account_number
-    attr_accessor :acct_num
-    attr_accessor :address
-    attr_accessor :address_list
-    attr_accessor :addr_full
-    attr_accessor :addr_key
-    attr_accessor :cell_phone_number
-    attr_accessor :citizenship
-    attr_accessor :country_of_association
-    attr_accessor :data_source
-    attr_accessor :date_of_birth
-    attr_accessor :date_of_death
-    attr_accessor :dob
-    attr_accessor :dod
-    attr_accessor :drivers_license_number
-    attr_accessor :drivers_license_state
-    attr_accessor :drlic
-    attr_accessor :duns_number
-    attr_accessor :email
-    attr_accessor :email_address
-    attr_accessor :email_key
-    attr_accessor :employer_name
-    attr_accessor :entity_type
-    attr_accessor :facebook
-    attr_accessor :gender
-    attr_accessor :group_assn_id_number
-    attr_accessor :group_assn_id_type
-    attr_accessor :group_association_org_name
-    attr_accessor :group_association_type
-    attr_accessor :id_key
-    attr_accessor :instagram
-    attr_accessor :lei_number
-    attr_accessor :linkedin
-    attr_accessor :load_id
-    attr_accessor :login_id
-    attr_accessor :name
-    attr_accessor :name_full
-    attr_accessor :name_key
-    attr_accessor :name_list
-    attr_accessor :nationality
-    attr_accessor :national_id
-    attr_accessor :national_id_country
-    attr_accessor :national_id_number
-    attr_accessor :nin_country
-    attr_accessor :nin_number
-    attr_accessor :npi_number
-    attr_accessor :other_id_country
-    attr_accessor :other_id_number
-    attr_accessor :other_id_type
-    attr_accessor :passport
-    attr_accessor :passports
-    attr_accessor :passport_country
-    attr_accessor :passport_number
-    attr_accessor :phone
-    attr_accessor :phones
-    attr_accessor :phone_key
-    attr_accessor :place_of_birth
-    attr_accessor :primary_name_first
-    attr_accessor :primary_name_last
-    attr_accessor :primary_name_middle
-    attr_accessor :primary_name_org
-    attr_accessor :primary_name_prefix
-    attr_accessor :primary_name_suffix
-    attr_accessor :primary_phone_number
-    attr_accessor :record_type
-    attr_accessor :registration_country
-    attr_accessor :registration_date
-    attr_accessor :rel_anchor
-    attr_accessor :rel_anchor_domain
-    attr_accessor :rel_anchor_key
-    attr_accessor :rel_link
-    attr_accessor :rel_pointer
-    attr_accessor :rel_pointer_domain
-    attr_accessor :rel_pointer_key
-    attr_accessor :rel_pointer_role
-    attr_accessor :signal
-    attr_accessor :skype
-    attr_accessor :social_handle
-    attr_accessor :social_network
-    attr_accessor :source_id
-    attr_accessor :ssn
-    attr_accessor :ssn_last4
-    attr_accessor :ssn_number
-    attr_accessor :tango
-    attr_accessor :tax_id_country
-    attr_accessor :tax_id_number
-    attr_accessor :tax_id_type
-    attr_accessor :telegram
-    attr_accessor :trusted_id_number
-    attr_accessor :trusted_id_type
-    attr_accessor :twitter
-    attr_accessor :viber
-    attr_accessor :website_address
-    attr_accessor :wechat
-    attr_accessor :whatsapp
-    attr_accessor :work_phone_number
-    attr_accessor :zoomroom
-
-    def self.from_json_data(data)
-      out = MatchScores.new
-      out.account_domain = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ACCOUNT_DOMAIN"])
-      out.account_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ACCOUNT_NUMBER"])
-      out.acct_num = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ACCT_NUM"])
-      out.address = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ADDRESS"])
-      out.address_list = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ADDRESS_LIST"])
-      out.addr_full = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ADDR_FULL"])
-      out.addr_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ADDR_KEY"])
-      out.cell_phone_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["CELL_PHONE_NUMBER"])
-      out.citizenship = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["CITIZENSHIP"])
-      out.country_of_association = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["COUNTRY_OF_ASSOCIATION"])
-      out.data_source = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DATA_SOURCE"])
-      out.date_of_birth = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DATE_OF_BIRTH"])
-      out.date_of_death = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DATE_OF_DEATH"])
-      out.dob = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DOB"])
-      out.dod = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DOD"])
-      out.drivers_license_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DRIVERS_LICENSE_NUMBER"])
-      out.drivers_license_state = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DRIVERS_LICENSE_STATE"])
-      out.drlic = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DRLIC"])
-      out.duns_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["DUNS_NUMBER"])
-      out.email = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["EMAIL"])
-      out.email_address = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["EMAIL_ADDRESS"])
-      out.email_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["EMAIL_KEY"])
-      out.employer_name = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["EMPLOYER_NAME"])
-      out.entity_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ENTITY_TYPE"])
-      out.facebook = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["FACEBOOK"])
-      out.gender = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["GENDER"])
-      out.group_assn_id_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["GROUP_ASSN_ID_NUMBER"])
-      out.group_assn_id_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["GROUP_ASSN_ID_TYPE"])
-      out.group_association_org_name = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["GROUP_ASSOCIATION_ORG_NAME"])
-      out.group_association_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["GROUP_ASSOCIATION_TYPE"])
-      out.id_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ID_KEY"])
-      out.instagram = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["INSTAGRAM"])
-      out.lei_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["LEI_NUMBER"])
-      out.linkedin = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["LINKEDIN"])
-      out.load_id = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["LOAD_ID"])
-      out.login_id = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["LOGIN_ID"])
-      out.name = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NAME"])
-      out.name_full = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NAME_FULL"])
-      out.name_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NAME_KEY"])
-      out.name_list = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NAME_LIST"])
-      out.nationality = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NATIONALITY"])
-      out.national_id = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NATIONAL_ID"])
-      out.national_id_country = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NATIONAL_ID_COUNTRY"])
-      out.national_id_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NATIONAL_ID_NUMBER"])
-      out.nin_country = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NIN_COUNTRY"])
-      out.nin_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NIN_NUMBER"])
-      out.npi_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["NPI_NUMBER"])
-      out.other_id_country = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["OTHER_ID_COUNTRY"])
-      out.other_id_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["OTHER_ID_NUMBER"])
-      out.other_id_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["OTHER_ID_TYPE"])
-      out.passport = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PASSPORT"])
-      out.passports = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PASSPORTS"])
-      out.passport_country = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PASSPORT_COUNTRY"])
-      out.passport_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PASSPORT_NUMBER"])
-      out.phone = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PHONE"])
-      out.phones = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PHONES"])
-      out.phone_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PHONE_KEY"])
-      out.place_of_birth = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PLACE_OF_BIRTH"])
-      out.primary_name_first = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_NAME_FIRST"])
-      out.primary_name_last = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_NAME_LAST"])
-      out.primary_name_middle = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_NAME_MIDDLE"])
-      out.primary_name_org = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_NAME_ORG"])
-      out.primary_name_prefix = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_NAME_PREFIX"])
-      out.primary_name_suffix = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_NAME_SUFFIX"])
-      out.primary_phone_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["PRIMARY_PHONE_NUMBER"])
-      out.record_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["RECORD_TYPE"])
-      out.registration_country = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REGISTRATION_COUNTRY"])
-      out.registration_date = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REGISTRATION_DATE"])
-      out.rel_anchor = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_ANCHOR"])
-      out.rel_anchor_domain = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_ANCHOR_DOMAIN"])
-      out.rel_anchor_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_ANCHOR_KEY"])
-      out.rel_link = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_LINK"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_POINTER"])
-      out.rel_pointer_domain = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_POINTER_DOMAIN"])
-      out.rel_pointer_key = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_POINTER_KEY"])
-      out.rel_pointer_role = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["REL_POINTER_ROLE"])
-      out.signal = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SIGNAL"])
-      out.skype = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SKYPE"])
-      out.social_handle = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SOCIAL_HANDLE"])
-      out.social_network = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SOCIAL_NETWORK"])
-      out.source_id = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SOURCE_ID"])
-      out.ssn = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SSN"])
-      out.ssn_last4 = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SSN_LAST4"])
-      out.ssn_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["SSN_NUMBER"])
-      out.tango = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TANGO"])
-      out.tax_id_country = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TAX_ID_COUNTRY"])
-      out.tax_id_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TAX_ID_NUMBER"])
-      out.tax_id_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TAX_ID_TYPE"])
-      out.telegram = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TELEGRAM"])
-      out.trusted_id_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TRUSTED_ID_NUMBER"])
-      out.trusted_id_type = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TRUSTED_ID_TYPE"])
-      out.twitter = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["TWITTER"])
-      out.viber = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["VIBER"])
-      out.website_address = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["WEBSITE_ADDRESS"])
-      out.wechat = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["WECHAT"])
-      out.whatsapp = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["WHATSAPP"])
-      out.work_phone_number = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["WORK_PHONE_NUMBER"])
-      out.zoomroom = SenzingTypeDef::from_json_data(MatchScoresForAttribute, data["ZOOMROOM"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ACCOUNT_DOMAIN"] = SenzingTypeDef::to_json_data(account_domain)
-      data["ACCOUNT_NUMBER"] = SenzingTypeDef::to_json_data(account_number)
-      data["ACCT_NUM"] = SenzingTypeDef::to_json_data(acct_num)
-      data["ADDRESS"] = SenzingTypeDef::to_json_data(address)
-      data["ADDRESS_LIST"] = SenzingTypeDef::to_json_data(address_list)
-      data["ADDR_FULL"] = SenzingTypeDef::to_json_data(addr_full)
-      data["ADDR_KEY"] = SenzingTypeDef::to_json_data(addr_key)
-      data["CELL_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(cell_phone_number)
-      data["CITIZENSHIP"] = SenzingTypeDef::to_json_data(citizenship)
-      data["COUNTRY_OF_ASSOCIATION"] = SenzingTypeDef::to_json_data(country_of_association)
-      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
-      data["DATE_OF_BIRTH"] = SenzingTypeDef::to_json_data(date_of_birth)
-      data["DATE_OF_DEATH"] = SenzingTypeDef::to_json_data(date_of_death)
-      data["DOB"] = SenzingTypeDef::to_json_data(dob)
-      data["DOD"] = SenzingTypeDef::to_json_data(dod)
-      data["DRIVERS_LICENSE_NUMBER"] = SenzingTypeDef::to_json_data(drivers_license_number)
-      data["DRIVERS_LICENSE_STATE"] = SenzingTypeDef::to_json_data(drivers_license_state)
-      data["DRLIC"] = SenzingTypeDef::to_json_data(drlic)
-      data["DUNS_NUMBER"] = SenzingTypeDef::to_json_data(duns_number)
-      data["EMAIL"] = SenzingTypeDef::to_json_data(email)
-      data["EMAIL_ADDRESS"] = SenzingTypeDef::to_json_data(email_address)
-      data["EMAIL_KEY"] = SenzingTypeDef::to_json_data(email_key)
-      data["EMPLOYER_NAME"] = SenzingTypeDef::to_json_data(employer_name)
-      data["ENTITY_TYPE"] = SenzingTypeDef::to_json_data(entity_type)
-      data["FACEBOOK"] = SenzingTypeDef::to_json_data(facebook)
-      data["GENDER"] = SenzingTypeDef::to_json_data(gender)
-      data["GROUP_ASSN_ID_NUMBER"] = SenzingTypeDef::to_json_data(group_assn_id_number)
-      data["GROUP_ASSN_ID_TYPE"] = SenzingTypeDef::to_json_data(group_assn_id_type)
-      data["GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypeDef::to_json_data(group_association_org_name)
-      data["GROUP_ASSOCIATION_TYPE"] = SenzingTypeDef::to_json_data(group_association_type)
-      data["ID_KEY"] = SenzingTypeDef::to_json_data(id_key)
-      data["INSTAGRAM"] = SenzingTypeDef::to_json_data(instagram)
-      data["LEI_NUMBER"] = SenzingTypeDef::to_json_data(lei_number)
-      data["LINKEDIN"] = SenzingTypeDef::to_json_data(linkedin)
-      data["LOAD_ID"] = SenzingTypeDef::to_json_data(load_id)
-      data["LOGIN_ID"] = SenzingTypeDef::to_json_data(login_id)
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["NAME_FULL"] = SenzingTypeDef::to_json_data(name_full)
-      data["NAME_KEY"] = SenzingTypeDef::to_json_data(name_key)
-      data["NAME_LIST"] = SenzingTypeDef::to_json_data(name_list)
-      data["NATIONALITY"] = SenzingTypeDef::to_json_data(nationality)
-      data["NATIONAL_ID"] = SenzingTypeDef::to_json_data(national_id)
-      data["NATIONAL_ID_COUNTRY"] = SenzingTypeDef::to_json_data(national_id_country)
-      data["NATIONAL_ID_NUMBER"] = SenzingTypeDef::to_json_data(national_id_number)
-      data["NIN_COUNTRY"] = SenzingTypeDef::to_json_data(nin_country)
-      data["NIN_NUMBER"] = SenzingTypeDef::to_json_data(nin_number)
-      data["NPI_NUMBER"] = SenzingTypeDef::to_json_data(npi_number)
-      data["OTHER_ID_COUNTRY"] = SenzingTypeDef::to_json_data(other_id_country)
-      data["OTHER_ID_NUMBER"] = SenzingTypeDef::to_json_data(other_id_number)
-      data["OTHER_ID_TYPE"] = SenzingTypeDef::to_json_data(other_id_type)
-      data["PASSPORT"] = SenzingTypeDef::to_json_data(passport)
-      data["PASSPORTS"] = SenzingTypeDef::to_json_data(passports)
-      data["PASSPORT_COUNTRY"] = SenzingTypeDef::to_json_data(passport_country)
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data["PHONE"] = SenzingTypeDef::to_json_data(phone)
-      data["PHONES"] = SenzingTypeDef::to_json_data(phones)
-      data["PHONE_KEY"] = SenzingTypeDef::to_json_data(phone_key)
-      data["PLACE_OF_BIRTH"] = SenzingTypeDef::to_json_data(place_of_birth)
-      data["PRIMARY_NAME_FIRST"] = SenzingTypeDef::to_json_data(primary_name_first)
-      data["PRIMARY_NAME_LAST"] = SenzingTypeDef::to_json_data(primary_name_last)
-      data["PRIMARY_NAME_MIDDLE"] = SenzingTypeDef::to_json_data(primary_name_middle)
-      data["PRIMARY_NAME_ORG"] = SenzingTypeDef::to_json_data(primary_name_org)
-      data["PRIMARY_NAME_PREFIX"] = SenzingTypeDef::to_json_data(primary_name_prefix)
-      data["PRIMARY_NAME_SUFFIX"] = SenzingTypeDef::to_json_data(primary_name_suffix)
-      data["PRIMARY_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(primary_phone_number)
-      data["RECORD_TYPE"] = SenzingTypeDef::to_json_data(record_type)
-      data["REGISTRATION_COUNTRY"] = SenzingTypeDef::to_json_data(registration_country)
-      data["REGISTRATION_DATE"] = SenzingTypeDef::to_json_data(registration_date)
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_ANCHOR_DOMAIN"] = SenzingTypeDef::to_json_data(rel_anchor_domain)
-      data["REL_ANCHOR_KEY"] = SenzingTypeDef::to_json_data(rel_anchor_key)
-      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
-      data["REL_POINTER_DOMAIN"] = SenzingTypeDef::to_json_data(rel_pointer_domain)
-      data["REL_POINTER_KEY"] = SenzingTypeDef::to_json_data(rel_pointer_key)
-      data["REL_POINTER_ROLE"] = SenzingTypeDef::to_json_data(rel_pointer_role)
-      data["SIGNAL"] = SenzingTypeDef::to_json_data(signal)
-      data["SKYPE"] = SenzingTypeDef::to_json_data(skype)
-      data["SOCIAL_HANDLE"] = SenzingTypeDef::to_json_data(social_handle)
-      data["SOCIAL_NETWORK"] = SenzingTypeDef::to_json_data(social_network)
-      data["SOURCE_ID"] = SenzingTypeDef::to_json_data(source_id)
-      data["SSN"] = SenzingTypeDef::to_json_data(ssn)
-      data["SSN_LAST4"] = SenzingTypeDef::to_json_data(ssn_last4)
-      data["SSN_NUMBER"] = SenzingTypeDef::to_json_data(ssn_number)
-      data["TANGO"] = SenzingTypeDef::to_json_data(tango)
-      data["TAX_ID_COUNTRY"] = SenzingTypeDef::to_json_data(tax_id_country)
-      data["TAX_ID_NUMBER"] = SenzingTypeDef::to_json_data(tax_id_number)
-      data["TAX_ID_TYPE"] = SenzingTypeDef::to_json_data(tax_id_type)
-      data["TELEGRAM"] = SenzingTypeDef::to_json_data(telegram)
-      data["TRUSTED_ID_NUMBER"] = SenzingTypeDef::to_json_data(trusted_id_number)
-      data["TRUSTED_ID_TYPE"] = SenzingTypeDef::to_json_data(trusted_id_type)
-      data["TWITTER"] = SenzingTypeDef::to_json_data(twitter)
-      data["VIBER"] = SenzingTypeDef::to_json_data(viber)
-      data["WEBSITE_ADDRESS"] = SenzingTypeDef::to_json_data(website_address)
-      data["WECHAT"] = SenzingTypeDef::to_json_data(wechat)
-      data["WHATSAPP"] = SenzingTypeDef::to_json_data(whatsapp)
-      data["WORK_PHONE_NUMBER"] = SenzingTypeDef::to_json_data(work_phone_number)
-      data["ZOOMROOM"] = SenzingTypeDef::to_json_data(zoomroom)
-      data
-    end
-  end
-
-  class MatchScoresForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MatchScoresForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(Array[MatchScoreForAttribute], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -5873,57 +1893,6 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = MemberRecords.new
       out.value = SenzingTypeDef.from_json_data(Array[MemberRecord], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class Name
-    attr_accessor :name_first
-    attr_accessor :name_full
-    attr_accessor :name_last
-    attr_accessor :name_middle
-    attr_accessor :name_org
-    attr_accessor :name_prefix
-    attr_accessor :name_suffix
-    attr_accessor :name_type
-
-    def self.from_json_data(data)
-      out = Name.new
-      out.name_first = SenzingTypeDef::from_json_data(String, data["NAME_FIRST"])
-      out.name_full = SenzingTypeDef::from_json_data(String, data["NAME_FULL"])
-      out.name_last = SenzingTypeDef::from_json_data(String, data["NAME_LAST"])
-      out.name_middle = SenzingTypeDef::from_json_data(String, data["NAME_MIDDLE"])
-      out.name_org = SenzingTypeDef::from_json_data(String, data["NAME_ORG"])
-      out.name_prefix = SenzingTypeDef::from_json_data(String, data["NAME_PREFIX"])
-      out.name_suffix = SenzingTypeDef::from_json_data(String, data["NAME_SUFFIX"])
-      out.name_type = SenzingTypeDef::from_json_data(String, data["NAME_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["NAME_FIRST"] = SenzingTypeDef::to_json_data(name_first)
-      data["NAME_FULL"] = SenzingTypeDef::to_json_data(name_full)
-      data["NAME_LAST"] = SenzingTypeDef::to_json_data(name_last)
-      data["NAME_MIDDLE"] = SenzingTypeDef::to_json_data(name_middle)
-      data["NAME_ORG"] = SenzingTypeDef::to_json_data(name_org)
-      data["NAME_PREFIX"] = SenzingTypeDef::to_json_data(name_prefix)
-      data["NAME_SUFFIX"] = SenzingTypeDef::to_json_data(name_suffix)
-      data["NAME_TYPE"] = SenzingTypeDef::to_json_data(name_type)
-      data
-    end
-  end
-
-  class Names
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Names.new
-      out.value = SenzingTypeDef.from_json_data(Array[Name], data)
       out
     end
 
@@ -5987,39 +1956,6 @@ module SenzingTypeDef
     end
   end
 
-  class Passport
-    attr_accessor :passport_country
-    attr_accessor :passport_number
-
-    def self.from_json_data(data)
-      out = Passport.new
-      out.passport_country = SenzingTypeDef::from_json_data(String, data["PASSPORT_COUNTRY"])
-      out.passport_number = SenzingTypeDef::from_json_data(String, data["PASSPORT_NUMBER"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["PASSPORT_COUNTRY"] = SenzingTypeDef::to_json_data(passport_country)
-      data["PASSPORT_NUMBER"] = SenzingTypeDef::to_json_data(passport_number)
-      data
-    end
-  end
-
-  class Passports
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Passports.new
-      out.value = SenzingTypeDef.from_json_data(Array[Passport], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class Path
     attr_accessor :entities
     attr_accessor :entity_paths
@@ -6039,147 +1975,73 @@ module SenzingTypeDef
     end
   end
 
-  class Phone
-    attr_accessor :phone_from_date
-    attr_accessor :phone_number
-    attr_accessor :phone_thru_date
-    attr_accessor :phone_type
+  class ProductLicense
+    attr_accessor :billing
+    attr_accessor :contract
+    attr_accessor :customer
+    attr_accessor :expire_date
+    attr_accessor :issue_date
+    attr_accessor :license_level
+    attr_accessor :license_type
+    attr_accessor :record_limit
 
     def self.from_json_data(data)
-      out = Phone.new
-      out.phone_from_date = SenzingTypeDef::from_json_data(String, data["PHONE_FROM_DATE"])
-      out.phone_number = SenzingTypeDef::from_json_data(String, data["PHONE_NUMBER"])
-      out.phone_thru_date = SenzingTypeDef::from_json_data(String, data["PHONE_THRU_DATE"])
-      out.phone_type = SenzingTypeDef::from_json_data(String, data["PHONE_TYPE"])
+      out = ProductLicense.new
+      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
+      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
+      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
+      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
+      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
+      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
+      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
+      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
       out
     end
 
     def to_json_data
       data = {}
-      data["PHONE_FROM_DATE"] = SenzingTypeDef::to_json_data(phone_from_date)
-      data["PHONE_NUMBER"] = SenzingTypeDef::to_json_data(phone_number)
-      data["PHONE_THRU_DATE"] = SenzingTypeDef::to_json_data(phone_thru_date)
-      data["PHONE_TYPE"] = SenzingTypeDef::to_json_data(phone_type)
+      data["billing"] = SenzingTypeDef::to_json_data(billing)
+      data["contract"] = SenzingTypeDef::to_json_data(contract)
+      data["customer"] = SenzingTypeDef::to_json_data(customer)
+      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
+      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
+      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
+      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
+      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
       data
     end
   end
 
-  class Phones
-    attr_accessor :value
+  class ProductVersion
+    attr_accessor :build_date
+    attr_accessor :build_number
+    attr_accessor :build_version
+    attr_accessor :compatibility_version
+    attr_accessor :product_name
+    attr_accessor :schema_version
+    attr_accessor :version
 
     def self.from_json_data(data)
-      out = Phones.new
-      out.value = SenzingTypeDef.from_json_data(Array[Phone], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class ProcessUmfProc
-    attr_accessor :name
-    attr_accessor :result
-
-    def self.from_json_data(data)
-      out = ProcessUmfProc.new
-      out.name = SenzingTypeDef::from_json_data(String, data["NAME"])
-      out.result = SenzingTypeDef::from_json_data(String, data["RESULT"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["NAME"] = SenzingTypeDef::to_json_data(name)
-      data["RESULT"] = SenzingTypeDef::to_json_data(result)
-      data
-    end
-  end
-
-  class Process
-    attr_accessor :affected_entities
-    attr_accessor :interesting_entities
-    attr_accessor :process_result
-    attr_accessor :umf_proc
-
-    def self.from_json_data(data)
-      out = Process.new
-      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
-      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
-      out.process_result = SenzingTypeDef::from_json_data(ProcessResult, data["PROCESS_RESULT"])
-      out.umf_proc = SenzingTypeDef::from_json_data(ProcessUmfProc, data["UMF_PROC"])
+      out = ProductVersion.new
+      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
+      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
+      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
+      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
+      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
+      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
+      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
       out
     end
 
     def to_json_data
       data = {}
-      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
-      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
-      data["PROCESS_RESULT"] = SenzingTypeDef::to_json_data(process_result)
-      data["UMF_PROC"] = SenzingTypeDef::to_json_data(umf_proc)
-      data
-    end
-  end
-
-  class ProcessResultResolvedEntities
-    attr_accessor :entity_id
-    attr_accessor :entity_name
-    attr_accessor :errule_code
-    attr_accessor :features
-    attr_accessor :last_seen_dt
-    attr_accessor :match_key
-    attr_accessor :match_level
-    attr_accessor :match_level_code
-    attr_accessor :match_scores
-    attr_accessor :records
-    attr_accessor :record_summary
-
-    def self.from_json_data(data)
-      out = ProcessResultResolvedEntities.new
-      out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
-      out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
-      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
-      out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
-      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
-      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
-      out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
-      out.match_scores = SenzingTypeDef::from_json_data(MatchScores, data["MATCH_SCORES"])
-      out.records = SenzingTypeDef::from_json_data(Records, data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
-      data["ENTITY_NAME"] = SenzingTypeDef::to_json_data(entity_name)
-      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
-      data["FEATURES"] = SenzingTypeDef::to_json_data(features)
-      data["LAST_SEEN_DT"] = SenzingTypeDef::to_json_data(last_seen_dt)
-      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
-      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
-      data["MATCH_LEVEL_CODE"] = SenzingTypeDef::to_json_data(match_level_code)
-      data["MATCH_SCORES"] = SenzingTypeDef::to_json_data(match_scores)
-      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
-      data["RECORD_SUMMARY"] = SenzingTypeDef::to_json_data(record_summary)
-      data
-    end
-  end
-
-  class ProcessResult
-    attr_accessor :resolved_entities
-
-    def self.from_json_data(data)
-      out = ProcessResult.new
-      out.resolved_entities = SenzingTypeDef::from_json_data(Array[ProcessResultResolvedEntities], data["RESOLVED_ENTITIES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
+      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
+      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
+      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
+      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
+      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
+      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
+      data["VERSION"] = SenzingTypeDef::to_json_data(version)
       data
     end
   end
@@ -6319,6 +2181,8 @@ module SenzingTypeDef
   end
 
   class RelatedEntity
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_name
     attr_accessor :errule_code
@@ -6361,54 +2225,6 @@ module SenzingTypeDef
       data["RECORDS"] = SenzingTypeDef::to_json_data(records)
       data["RECORD_SUMMARY"] = SenzingTypeDef::to_json_data(record_summary)
       data
-    end
-  end
-
-  class Relationship
-    attr_accessor :relationship_key
-    attr_accessor :relationship_type
-    attr_accessor :rel_anchor_domain
-    attr_accessor :rel_anchor_key
-    attr_accessor :rel_pointer_domain
-    attr_accessor :rel_pointer_key
-    attr_accessor :rel_pointer_role
-
-    def self.from_json_data(data)
-      out = Relationship.new
-      out.relationship_key = SenzingTypeDef::from_json_data(String, data["RELATIONSHIP_KEY"])
-      out.relationship_type = SenzingTypeDef::from_json_data(String, data["RELATIONSHIP_TYPE"])
-      out.rel_anchor_domain = SenzingTypeDef::from_json_data(String, data["REL_ANCHOR_DOMAIN"])
-      out.rel_anchor_key = SenzingTypeDef::from_json_data(String, data["REL_ANCHOR_KEY"])
-      out.rel_pointer_domain = SenzingTypeDef::from_json_data(String, data["REL_POINTER_DOMAIN"])
-      out.rel_pointer_key = SenzingTypeDef::from_json_data(String, data["REL_POINTER_KEY"])
-      out.rel_pointer_role = SenzingTypeDef::from_json_data(String, data["REL_POINTER_ROLE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["RELATIONSHIP_KEY"] = SenzingTypeDef::to_json_data(relationship_key)
-      data["RELATIONSHIP_TYPE"] = SenzingTypeDef::to_json_data(relationship_type)
-      data["REL_ANCHOR_DOMAIN"] = SenzingTypeDef::to_json_data(rel_anchor_domain)
-      data["REL_ANCHOR_KEY"] = SenzingTypeDef::to_json_data(rel_anchor_key)
-      data["REL_POINTER_DOMAIN"] = SenzingTypeDef::to_json_data(rel_pointer_domain)
-      data["REL_POINTER_KEY"] = SenzingTypeDef::to_json_data(rel_pointer_key)
-      data["REL_POINTER_ROLE"] = SenzingTypeDef::to_json_data(rel_pointer_role)
-      data
-    end
-  end
-
-  class Relationships
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Relationships.new
-      out.value = SenzingTypeDef.from_json_data(Array[Relationship], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -6457,21 +2273,9 @@ module SenzingTypeDef
     end
   end
 
-  class ResolvedEntities
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = ResolvedEntities.new
-      out.value = SenzingTypeDef.from_json_data(Array[ResolvedEntityAndMatchInfo], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class ResolvedEntity
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_name
     attr_accessor :errule_code
@@ -6735,6 +2539,426 @@ module SenzingTypeDef
     end
   end
 
+  class SzConfigAddDataSourceResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigAddDataSourceResponse.new
+      out.value = SenzingTypeDef.from_json_data(AddDataSource, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigGetDataSourcesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigGetDataSourcesResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetDataSources, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigGetJSONStringResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigGetJSONStringResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetJSONString, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigmgrGetConfigListResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigmgrGetConfigListResponse.new
+      out.value = SenzingTypeDef.from_json_data(ConfigList, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzConfigmgrGetConfigResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzConfigmgrGetConfigResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzDiagnosticCheckDatabasePerformanceResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzDiagnosticCheckDatabasePerformanceResponse.new
+      out.value = SenzingTypeDef.from_json_data(CheckDatabasePerformance, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineAddRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineAddRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineDeleteRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineDeleteRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFetchNextResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFetchNextResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindNetworkByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindNetworkByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindNetworkByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindNetworkByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(Record, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetVirtualEntityByRecordIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetVirtualEntityByRecordIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineHowEntityByEntityIDResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineHowEntityByEntityIDResponse.new
+      out.value = SenzingTypeDef.from_json_data(How, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineProcessRedoRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineProcessRedoRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineReevaluateEntityResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineReevaluateEntityResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineReevaluateRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineReevaluateRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineReplaceRecordResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineReplaceRecordResponse.new
+      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineSearchByAttributesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineSearchByAttributesResponse.new
+      out.value = SenzingTypeDef.from_json_data(Search, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineStreamExportJSONEntityReportResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineStreamExportJSONEntityReportResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhyEntitiesResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhyEntitiesResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhyRecordInEntityResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhyRecordInEntityResponse.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhyRecordsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhyRecordsResponse.new
+      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzProductGetLicenseResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzProductGetLicenseResponse.new
+      out.value = SenzingTypeDef.from_json_data(ProductLicense, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzProductGetVersionResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzProductGetVersionResponse.new
+      out.value = SenzingTypeDef.from_json_data(ProductVersion, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class VirtualEntity
     attr_accessor :resolved_entity
 
@@ -6789,25 +3013,6 @@ module SenzingTypeDef
     end
   end
 
-  class WhyEntity
-    attr_accessor :entities
-    attr_accessor :why_results
-
-    def self.from_json_data(data)
-      out = WhyEntity.new
-      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
-      data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
-      data
-    end
-  end
-
   class WhyRecords
     attr_accessor :entities
     attr_accessor :why_results
@@ -6828,6 +3033,8 @@ module SenzingTypeDef
   end
 
   class WhyResult
+    # The ENTITY_ID is the Senzing-generated identifier for the discovered
+    # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_id0
     attr_accessor :focus_records

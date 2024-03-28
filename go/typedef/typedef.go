@@ -6,123 +6,15 @@ import "time"
 
 type Senzingapi = interface{}
 
-type Address struct {
-	AddrCity string `json:"ADDR_CITY"`
-
-	AddrCountry string `json:"ADDR_COUNTRY"`
-
-	AddrFromDate string `json:"ADDR_FROM_DATE"`
-
-	AddrFull string `json:"ADDR_FULL"`
-
-	AddrLine1 string `json:"ADDR_LINE1"`
-
-	AddrLine2 string `json:"ADDR_LINE2"`
-
-	AddrLine3 string `json:"ADDR_LINE3"`
-
-	AddrLine4 string `json:"ADDR_LINE4"`
-
-	AddrLine5 string `json:"ADDR_LINE5"`
-
-	AddrLine6 string `json:"ADDR_LINE6"`
-
-	AddrPostalCode string `json:"ADDR_POSTAL_CODE"`
-
-	AddrState string `json:"ADDR_STATE"`
-
-	AddrThruDate string `json:"ADDR_THRU_DATE"`
-
-	AddrType string `json:"ADDR_TYPE"`
+type AddDataSource struct {
+	DsrcID int64 `json:"DSRC_ID"`
 }
-
-type Addresses = []Address
 
 type AffectedEntity struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 }
-
-type AttributeCounter struct {
-	AcctNum float64 `json:"ACCT_NUM"`
-
-	Address float64 `json:"ADDRESS"`
-
-	AddrKey float64 `json:"ADDR_KEY"`
-
-	CallSign int64 `json:"CALL_SIGN"`
-
-	Citizenship int64 `json:"CITIZENSHIP"`
-
-	CountryOfAssociation int64 `json:"COUNTRY_OF_ASSOCIATION"`
-
-	DeferredDelete float64 `json:"DEFERRED_DELETE"`
-
-	Dob float64 `json:"DOB"`
-
-	Drlic float64 `json:"DRLIC"`
-
-	DunsNumber int64 `json:"DUNS_NUMBER"`
-
-	Email float64 `json:"EMAIL"`
-
-	EmailKey float64 `json:"EMAIL_KEY"`
-
-	EntityCount int64 `json:"ENTITY_COUNT"`
-
-	EntitySize int64 `json:"ENTITY_SIZE"`
-
-	Gender float64 `json:"GENDER"`
-
-	IDKey float64 `json:"ID_KEY"`
-
-	ImoNumber int64 `json:"IMO_NUMBER"`
-
-	LeiNumber int64 `json:"LEI_NUMBER"`
-
-	LoginID float64 `json:"LOGIN_ID"`
-
-	MaxResEntID int64 `json:"MAX_RES_ENT_ID"`
-
-	MinResEntID int64 `json:"MIN_RES_ENT_ID"`
-
-	Name float64 `json:"NAME"`
-
-	NameKey float64 `json:"NAME_KEY"`
-
-	Nationality int64 `json:"NATIONALITY"`
-
-	NationalID int64 `json:"NATIONAL_ID"`
-
-	OfacID int64 `json:"OFAC_ID"`
-
-	OtherID float64 `json:"OTHER_ID"`
-
-	Passport float64 `json:"PASSPORT"`
-
-	Phone float64 `json:"PHONE"`
-
-	PhoneKey float64 `json:"PHONE_KEY"`
-
-	RecordType float64 `json:"RECORD_TYPE"`
-
-	RegistrationCountry int64 `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate int64 `json:"REGISTRATION_DATE"`
-
-	RelAnchor int64 `json:"REL_ANCHOR"`
-
-	RelPointer int64 `json:"REL_POINTER"`
-
-	SearchKey float64 `json:"SEARCH_KEY"`
-
-	Ssn float64 `json:"SSN"`
-
-	TaxID float64 `json:"TAX_ID"`
-
-	Website float64 `json:"WEBSITE"`
-}
-
-type AttributeCounters = []AttributeCounter
 
 type CfgAttr struct {
 	Advanced string `json:"ADVANCED"`
@@ -558,6 +450,12 @@ type ConfigBaseVersion struct {
 	Version string `json:"VERSION"`
 }
 
+type CheckDatabasePerformance struct {
+	InsertTime int64 `json:"insertTime"`
+
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
+}
+
 type CompatibilityVersion struct {
 	ConfigVersion string `json:"CONFIG_VERSION"`
 }
@@ -570,7 +468,9 @@ type Config struct {
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
-type Configs = []Config
+type ConfigList struct {
+	Configs []Config `json:"CONFIGS"`
+}
 
 type DataSource struct {
 	// The text representation of the datasource.
@@ -580,70 +480,10 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
-type DiagnosticFetchNextEntityBySizeResponseXxx0 struct {
-	DsrcCode string `json:"DSRC_CODE"`
-
-	EntSrcDesc string `json:"ENT_SRC_DESC"`
-
-	EntSrcKey string `json:"ENT_SRC_KEY"`
-
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	ErID int64 `json:"ER_ID"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	JSONData map[string]any `json:"JSON_DATA"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	ObsEntID int64 `json:"OBS_ENT_ID"`
-
-	RecordID string `json:"RECORD_ID"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
-}
-
-type DiagnosticFetchNextEntityBySizeResponseXxx = []DiagnosticFetchNextEntityBySizeResponseXxx0
-
-type EntitiesByFeatureID = []EntityByFeatureID
-
 type Entity struct {
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
-}
-
-type EntityByFeatureID struct {
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
-
-	UsageType string `json:"USAGE_TYPE"`
-}
-
-type EntityBySize struct {
-	DsrcCode string `json:"DSRC_CODE"`
-
-	EntSrcDesc string `json:"ENT_SRC_DESC"`
-
-	EntSrcKey string `json:"ENT_SRC_KEY"`
-
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	ErID int64 `json:"ER_ID"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	JSONData map[string]any `json:"JSON_DATA"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	ObsEntID int64 `json:"OBS_ENT_ID"`
-
-	RecordID string `json:"RECORD_ID"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
 }
 
 type EntityPath struct {
@@ -652,6 +492,10 @@ type EntityPath struct {
 	Entities []int64 `json:"ENTITIES"`
 
 	StartEntityID int64 `json:"START_ENTITY_ID"`
+}
+
+type ExportConfig struct {
+	G2Config G2config `json:"G2_CONFIG"`
 }
 
 type FeatureDescriptionValue struct {
@@ -712,405 +556,9 @@ type FeatureScoreForAttribute struct {
 	ScoreBucket string `json:"SCORE_BUCKET"`
 }
 
-type FeatureScores struct {
-	AccountDomain FeatureScoresForAttribute `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber FeatureScoresForAttribute `json:"ACCOUNT_NUMBER"`
-
-	AcctNum FeatureScoresForAttribute `json:"ACCT_NUM"`
-
-	Address FeatureScoresForAttribute `json:"ADDRESS"`
-
-	AddressList FeatureScoresForAttribute `json:"ADDRESS_LIST"`
-
-	AddrFull FeatureScoresForAttribute `json:"ADDR_FULL"`
-
-	AddrKey FeatureScoresForAttribute `json:"ADDR_KEY"`
-
-	CellPhoneNumber FeatureScoresForAttribute `json:"CELL_PHONE_NUMBER"`
-
-	Citizenship FeatureScoresForAttribute `json:"CITIZENSHIP"`
-
-	CountryOfAssociation FeatureScoresForAttribute `json:"COUNTRY_OF_ASSOCIATION"`
-
-	DataSource FeatureScoresForAttribute `json:"DATA_SOURCE"`
-
-	DateOfBirth FeatureScoresForAttribute `json:"DATE_OF_BIRTH"`
-
-	DateOfDeath FeatureScoresForAttribute `json:"DATE_OF_DEATH"`
-
-	Dob FeatureScoresForAttribute `json:"DOB"`
-
-	Dod FeatureScoresForAttribute `json:"DOD"`
-
-	DriversLicenseNumber FeatureScoresForAttribute `json:"DRIVERS_LICENSE_NUMBER"`
-
-	DriversLicenseState FeatureScoresForAttribute `json:"DRIVERS_LICENSE_STATE"`
-
-	Drlic FeatureScoresForAttribute `json:"DRLIC"`
-
-	DunsNumber FeatureScoresForAttribute `json:"DUNS_NUMBER"`
-
-	Email FeatureScoresForAttribute `json:"EMAIL"`
-
-	EmailAddress FeatureScoresForAttribute `json:"EMAIL_ADDRESS"`
-
-	EmailKey FeatureScoresForAttribute `json:"EMAIL_KEY"`
-
-	EmployerName FeatureScoresForAttribute `json:"EMPLOYER_NAME"`
-
-	EntityType FeatureScoresForAttribute `json:"ENTITY_TYPE"`
-
-	Facebook FeatureScoresForAttribute `json:"FACEBOOK"`
-
-	Gender FeatureScoresForAttribute `json:"GENDER"`
-
-	GroupAssnIDNumber FeatureScoresForAttribute `json:"GROUP_ASSN_ID_NUMBER"`
-
-	GroupAssnIDType FeatureScoresForAttribute `json:"GROUP_ASSN_ID_TYPE"`
-
-	GroupAssociationOrgName FeatureScoresForAttribute `json:"GROUP_ASSOCIATION_ORG_NAME"`
-
-	GroupAssociationType FeatureScoresForAttribute `json:"GROUP_ASSOCIATION_TYPE"`
-
-	IDKey FeatureScoresForAttribute `json:"ID_KEY"`
-
-	Instagram FeatureScoresForAttribute `json:"INSTAGRAM"`
-
-	LeiNumber FeatureScoresForAttribute `json:"LEI_NUMBER"`
-
-	Linkedin FeatureScoresForAttribute `json:"LINKEDIN"`
-
-	LoadID FeatureScoresForAttribute `json:"LOAD_ID"`
-
-	LoginID FeatureScoresForAttribute `json:"LOGIN_ID"`
-
-	Name FeatureScoresForAttribute `json:"NAME"`
-
-	NameFull FeatureScoresForAttribute `json:"NAME_FULL"`
-
-	NameKey FeatureScoresForAttribute `json:"NAME_KEY"`
-
-	NameList FeatureScoresForAttribute `json:"NAME_LIST"`
-
-	Nationality FeatureScoresForAttribute `json:"NATIONALITY"`
-
-	NationalID FeatureScoresForAttribute `json:"NATIONAL_ID"`
-
-	NationalIDCountry FeatureScoresForAttribute `json:"NATIONAL_ID_COUNTRY"`
-
-	NationalIDNumber FeatureScoresForAttribute `json:"NATIONAL_ID_NUMBER"`
-
-	NinCountry FeatureScoresForAttribute `json:"NIN_COUNTRY"`
-
-	NinNumber FeatureScoresForAttribute `json:"NIN_NUMBER"`
-
-	NpiNumber FeatureScoresForAttribute `json:"NPI_NUMBER"`
-
-	OtherIDCountry FeatureScoresForAttribute `json:"OTHER_ID_COUNTRY"`
-
-	OtherIDNumber FeatureScoresForAttribute `json:"OTHER_ID_NUMBER"`
-
-	OtherIDType FeatureScoresForAttribute `json:"OTHER_ID_TYPE"`
-
-	Passport FeatureScoresForAttribute `json:"PASSPORT"`
-
-	Passports FeatureScoresForAttribute `json:"PASSPORTS"`
-
-	PassportCountry FeatureScoresForAttribute `json:"PASSPORT_COUNTRY"`
-
-	PassportNumber FeatureScoresForAttribute `json:"PASSPORT_NUMBER"`
-
-	Phone FeatureScoresForAttribute `json:"PHONE"`
-
-	Phones FeatureScoresForAttribute `json:"PHONES"`
-
-	PhoneKey FeatureScoresForAttribute `json:"PHONE_KEY"`
-
-	PlaceOfBirth FeatureScoresForAttribute `json:"PLACE_OF_BIRTH"`
-
-	PrimaryNameFirst FeatureScoresForAttribute `json:"PRIMARY_NAME_FIRST"`
-
-	PrimaryNameLast FeatureScoresForAttribute `json:"PRIMARY_NAME_LAST"`
-
-	PrimaryNameMiddle FeatureScoresForAttribute `json:"PRIMARY_NAME_MIDDLE"`
-
-	PrimaryNameOrg FeatureScoresForAttribute `json:"PRIMARY_NAME_ORG"`
-
-	PrimaryNamePrefix FeatureScoresForAttribute `json:"PRIMARY_NAME_PREFIX"`
-
-	PrimaryNameSuffix FeatureScoresForAttribute `json:"PRIMARY_NAME_SUFFIX"`
-
-	PrimaryPhoneNumber FeatureScoresForAttribute `json:"PRIMARY_PHONE_NUMBER"`
-
-	RecordType FeatureScoresForAttribute `json:"RECORD_TYPE"`
-
-	RegistrationCountry FeatureScoresForAttribute `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate FeatureScoresForAttribute `json:"REGISTRATION_DATE"`
-
-	RelAnchor FeatureScoresForAttribute `json:"REL_ANCHOR"`
-
-	RelAnchorDomain FeatureScoresForAttribute `json:"REL_ANCHOR_DOMAIN"`
-
-	RelAnchorKey FeatureScoresForAttribute `json:"REL_ANCHOR_KEY"`
-
-	RelLink FeatureScoresForAttribute `json:"REL_LINK"`
-
-	RelPointer FeatureScoresForAttribute `json:"REL_POINTER"`
-
-	RelPointerDomain FeatureScoresForAttribute `json:"REL_POINTER_DOMAIN"`
-
-	RelPointerKey FeatureScoresForAttribute `json:"REL_POINTER_KEY"`
-
-	RelPointerRole FeatureScoresForAttribute `json:"REL_POINTER_ROLE"`
-
-	Signal FeatureScoresForAttribute `json:"SIGNAL"`
-
-	Skype FeatureScoresForAttribute `json:"SKYPE"`
-
-	SocialHandle FeatureScoresForAttribute `json:"SOCIAL_HANDLE"`
-
-	SocialNetwork FeatureScoresForAttribute `json:"SOCIAL_NETWORK"`
-
-	SourceID FeatureScoresForAttribute `json:"SOURCE_ID"`
-
-	Ssn FeatureScoresForAttribute `json:"SSN"`
-
-	SsnLast4 FeatureScoresForAttribute `json:"SSN_LAST4"`
-
-	SsnNumber FeatureScoresForAttribute `json:"SSN_NUMBER"`
-
-	Tango FeatureScoresForAttribute `json:"TANGO"`
-
-	TaxIDCountry FeatureScoresForAttribute `json:"TAX_ID_COUNTRY"`
-
-	TaxIDNumber FeatureScoresForAttribute `json:"TAX_ID_NUMBER"`
-
-	TaxIDType FeatureScoresForAttribute `json:"TAX_ID_TYPE"`
-
-	Telegram FeatureScoresForAttribute `json:"TELEGRAM"`
-
-	TrustedIDNumber FeatureScoresForAttribute `json:"TRUSTED_ID_NUMBER"`
-
-	TrustedIDType FeatureScoresForAttribute `json:"TRUSTED_ID_TYPE"`
-
-	Twitter FeatureScoresForAttribute `json:"TWITTER"`
-
-	Viber FeatureScoresForAttribute `json:"VIBER"`
-
-	WebsiteAddress FeatureScoresForAttribute `json:"WEBSITE_ADDRESS"`
-
-	Wechat FeatureScoresForAttribute `json:"WECHAT"`
-
-	Whatsapp FeatureScoresForAttribute `json:"WHATSAPP"`
-
-	WorkPhoneNumber FeatureScoresForAttribute `json:"WORK_PHONE_NUMBER"`
-
-	Zoomroom FeatureScoresForAttribute `json:"ZOOMROOM"`
-}
+type FeatureScores = map[string]FeatureScoresForAttribute
 
 type FeatureScoresForAttribute = []FeatureScoreForAttribute
-
-type FeaturesForAttribute = []FeatureForAttribute
-
-type FeaturesXxx struct {
-	AccountDomain FeaturesForAttribute `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber FeaturesForAttribute `json:"ACCOUNT_NUMBER"`
-
-	AcctNum FeaturesForAttribute `json:"ACCT_NUM"`
-
-	Address FeaturesForAttribute `json:"ADDRESS"`
-
-	AddressList FeaturesForAttribute `json:"ADDRESS_LIST"`
-
-	AddrFull FeaturesForAttribute `json:"ADDR_FULL"`
-
-	AddrKey FeaturesForAttribute `json:"ADDR_KEY"`
-
-	CellPhoneNumber FeaturesForAttribute `json:"CELL_PHONE_NUMBER"`
-
-	Citizenship FeaturesForAttribute `json:"CITIZENSHIP"`
-
-	CountryOfAssociation FeaturesForAttribute `json:"COUNTRY_OF_ASSOCIATION"`
-
-	DataSource FeaturesForAttribute `json:"DATA_SOURCE"`
-
-	DateOfBirth FeaturesForAttribute `json:"DATE_OF_BIRTH"`
-
-	DateOfDeath FeaturesForAttribute `json:"DATE_OF_DEATH"`
-
-	Dob FeaturesForAttribute `json:"DOB"`
-
-	Dod FeaturesForAttribute `json:"DOD"`
-
-	DriversLicenseNumber FeaturesForAttribute `json:"DRIVERS_LICENSE_NUMBER"`
-
-	DriversLicenseState FeaturesForAttribute `json:"DRIVERS_LICENSE_STATE"`
-
-	Drlic FeaturesForAttribute `json:"DRLIC"`
-
-	DunsNumber FeaturesForAttribute `json:"DUNS_NUMBER"`
-
-	Email FeaturesForAttribute `json:"EMAIL"`
-
-	EmailAddress FeaturesForAttribute `json:"EMAIL_ADDRESS"`
-
-	EmailKey FeaturesForAttribute `json:"EMAIL_KEY"`
-
-	EmployerName FeaturesForAttribute `json:"EMPLOYER_NAME"`
-
-	EntityType FeaturesForAttribute `json:"ENTITY_TYPE"`
-
-	Facebook FeaturesForAttribute `json:"FACEBOOK"`
-
-	Gender FeaturesForAttribute `json:"GENDER"`
-
-	GroupAssnIDNumber FeaturesForAttribute `json:"GROUP_ASSN_ID_NUMBER"`
-
-	GroupAssnIDType FeaturesForAttribute `json:"GROUP_ASSN_ID_TYPE"`
-
-	GroupAssociationOrgName FeaturesForAttribute `json:"GROUP_ASSOCIATION_ORG_NAME"`
-
-	GroupAssociationType FeaturesForAttribute `json:"GROUP_ASSOCIATION_TYPE"`
-
-	IDKey FeaturesForAttribute `json:"ID_KEY"`
-
-	Instagram FeaturesForAttribute `json:"INSTAGRAM"`
-
-	LeiNumber FeaturesForAttribute `json:"LEI_NUMBER"`
-
-	Linkedin FeaturesForAttribute `json:"LINKEDIN"`
-
-	LoadID FeaturesForAttribute `json:"LOAD_ID"`
-
-	LoginID FeaturesForAttribute `json:"LOGIN_ID"`
-
-	Name FeaturesForAttribute `json:"NAME"`
-
-	NameFull FeaturesForAttribute `json:"NAME_FULL"`
-
-	NameKey FeaturesForAttribute `json:"NAME_KEY"`
-
-	NameList FeaturesForAttribute `json:"NAME_LIST"`
-
-	Nationality FeaturesForAttribute `json:"NATIONALITY"`
-
-	NationalID FeaturesForAttribute `json:"NATIONAL_ID"`
-
-	NationalIDCountry FeaturesForAttribute `json:"NATIONAL_ID_COUNTRY"`
-
-	NationalIDNumber FeaturesForAttribute `json:"NATIONAL_ID_NUMBER"`
-
-	NinCountry FeaturesForAttribute `json:"NIN_COUNTRY"`
-
-	NinNumber FeaturesForAttribute `json:"NIN_NUMBER"`
-
-	NpiNumber FeaturesForAttribute `json:"NPI_NUMBER"`
-
-	OtherIDCountry FeaturesForAttribute `json:"OTHER_ID_COUNTRY"`
-
-	OtherIDNumber FeaturesForAttribute `json:"OTHER_ID_NUMBER"`
-
-	OtherIDType FeaturesForAttribute `json:"OTHER_ID_TYPE"`
-
-	Passport FeaturesForAttribute `json:"PASSPORT"`
-
-	Passports FeaturesForAttribute `json:"PASSPORTS"`
-
-	PassportCountry FeaturesForAttribute `json:"PASSPORT_COUNTRY"`
-
-	PassportNumber FeaturesForAttribute `json:"PASSPORT_NUMBER"`
-
-	Phone FeaturesForAttribute `json:"PHONE"`
-
-	Phones FeaturesForAttribute `json:"PHONES"`
-
-	PhoneKey FeaturesForAttribute `json:"PHONE_KEY"`
-
-	PlaceOfBirth FeaturesForAttribute `json:"PLACE_OF_BIRTH"`
-
-	PrimaryNameFirst FeaturesForAttribute `json:"PRIMARY_NAME_FIRST"`
-
-	PrimaryNameLast FeaturesForAttribute `json:"PRIMARY_NAME_LAST"`
-
-	PrimaryNameMiddle FeaturesForAttribute `json:"PRIMARY_NAME_MIDDLE"`
-
-	PrimaryNameOrg FeaturesForAttribute `json:"PRIMARY_NAME_ORG"`
-
-	PrimaryNamePrefix FeaturesForAttribute `json:"PRIMARY_NAME_PREFIX"`
-
-	PrimaryNameSuffix FeaturesForAttribute `json:"PRIMARY_NAME_SUFFIX"`
-
-	PrimaryPhoneNumber FeaturesForAttribute `json:"PRIMARY_PHONE_NUMBER"`
-
-	RecordType FeaturesForAttribute `json:"RECORD_TYPE"`
-
-	RegistrationCountry FeaturesForAttribute `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate FeaturesForAttribute `json:"REGISTRATION_DATE"`
-
-	RelAnchor FeaturesForAttribute `json:"REL_ANCHOR"`
-
-	RelAnchorDomain FeaturesForAttribute `json:"REL_ANCHOR_DOMAIN"`
-
-	RelAnchorKey FeaturesForAttribute `json:"REL_ANCHOR_KEY"`
-
-	RelLink FeaturesForAttribute `json:"REL_LINK"`
-
-	RelPointer FeaturesForAttribute `json:"REL_POINTER"`
-
-	RelPointerDomain FeaturesForAttribute `json:"REL_POINTER_DOMAIN"`
-
-	RelPointerKey FeaturesForAttribute `json:"REL_POINTER_KEY"`
-
-	RelPointerRole FeaturesForAttribute `json:"REL_POINTER_ROLE"`
-
-	Signal FeaturesForAttribute `json:"SIGNAL"`
-
-	Skype FeaturesForAttribute `json:"SKYPE"`
-
-	SocialHandle FeaturesForAttribute `json:"SOCIAL_HANDLE"`
-
-	SocialNetwork FeaturesForAttribute `json:"SOCIAL_NETWORK"`
-
-	SourceID FeaturesForAttribute `json:"SOURCE_ID"`
-
-	Ssn FeaturesForAttribute `json:"SSN"`
-
-	SsnLast4 FeaturesForAttribute `json:"SSN_LAST4"`
-
-	SsnNumber FeaturesForAttribute `json:"SSN_NUMBER"`
-
-	Tango FeaturesForAttribute `json:"TANGO"`
-
-	TaxIDCountry FeaturesForAttribute `json:"TAX_ID_COUNTRY"`
-
-	TaxIDNumber FeaturesForAttribute `json:"TAX_ID_NUMBER"`
-
-	TaxIDType FeaturesForAttribute `json:"TAX_ID_TYPE"`
-
-	Telegram FeaturesForAttribute `json:"TELEGRAM"`
-
-	TrustedIDNumber FeaturesForAttribute `json:"TRUSTED_ID_NUMBER"`
-
-	TrustedIDType FeaturesForAttribute `json:"TRUSTED_ID_TYPE"`
-
-	Twitter FeaturesForAttribute `json:"TWITTER"`
-
-	Viber FeaturesForAttribute `json:"VIBER"`
-
-	WebsiteAddress FeaturesForAttribute `json:"WEBSITE_ADDRESS"`
-
-	Wechat FeaturesForAttribute `json:"WECHAT"`
-
-	Whatsapp FeaturesForAttribute `json:"WHATSAPP"`
-
-	WorkPhoneNumber FeaturesForAttribute `json:"WORK_PHONE_NUMBER"`
-
-	Zoomroom FeaturesForAttribute `json:"ZOOMROOM"`
-}
 
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
@@ -1196,650 +644,16 @@ type G2config struct {
 	SysOom []SysOom `json:"SYS_OOM"`
 }
 
-type G2configAddDataSourceResponse struct {
-	DsrcID int64 `json:"DSRC_ID"`
+type GetConfig struct {
+	G2Config G2config `json:"G2_CONFIG"`
 }
 
-type G2configListDataSourcesResponse struct {
+type GetDataSources struct {
 	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
-type G2configSaveResponse struct {
+type GetJSONString struct {
 	G2Config G2config `json:"G2_CONFIG"`
-}
-
-type G2configmgrGetConfigListResponse struct {
-	Configs Configs `json:"CONFIGS"`
-}
-
-type G2configmgrGetConfigResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
-
-type G2diagnosticCheckDbperfResponse struct {
-	InsertTime int64 `json:"insertTime"`
-
-	NumRecordsInserted int64 `json:"numRecordsInserted"`
-}
-
-type G2diagnosticFetchNextEntityBySizeResponse = []EntityBySize
-
-type G2diagnosticFindEntitiesByFeatureIdsResponseXxx0 struct {
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
-
-	UsageType string `json:"USAGE_TYPE"`
-}
-
-type G2diagnosticFindEntitiesByFeatureIdsResponseXxx = []G2diagnosticFindEntitiesByFeatureIdsResponseXxx0
-
-type G2diagnosticGetDbinfoResponseDetail struct {
-	Name string `json:"Name"`
-
-	Type string `json:"Type"`
-}
-
-type G2diagnosticGetDbinfoResponse struct {
-	DatabaseDetails []G2diagnosticGetDbinfoResponseDetail `json:"Database Details"`
-
-	HybridMode bool `json:"Hybrid Mode"`
-}
-
-type G2diagnosticGetDataSourceCountsResponse0 struct {
-	DsrcCode string `json:"DSRC_CODE"`
-
-	DsrcID int64 `json:"DSRC_ID"`
-
-	DsrcRecordCount int64 `json:"DSRC_RECORD_COUNT"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	EtypeID int64 `json:"ETYPE_ID"`
-
-	ObsEntCount int64 `json:"OBS_ENT_COUNT"`
-}
-
-type G2diagnosticGetDataSourceCountsResponse = []G2diagnosticGetDataSourceCountsResponse0
-
-type G2diagnosticGetEntityDetailsResponse0 struct {
-	Derived string `json:"DERIVED"`
-
-	DsrcCode string `json:"DSRC_CODE"`
-
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	FeatDesc string `json:"FEAT_DESC"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	ObsEntID int64 `json:"OBS_ENT_ID"`
-
-	RecordID int64 `json:"RECORD_ID"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
-
-	UsageType string `json:"USAGE_TYPE"`
-}
-
-type G2diagnosticGetEntityDetailsResponse = []G2diagnosticGetEntityDetailsResponse0
-
-type G2diagnosticGetEntityResumeResponse0 struct {
-	DsrcCode string `json:"DSRC_CODE"`
-
-	EntSrcDesc string `json:"ENT_SRC_DESC"`
-
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	JSONData map[string]any `json:"JSON_DATA"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	RecordID string `json:"RECORD_ID"`
-
-	RelEntID int64 `json:"REL_ENT_ID"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
-}
-
-type G2diagnosticGetEntityResumeResponse = []G2diagnosticGetEntityResumeResponse0
-
-type G2diagnosticGetEntitySizeBreakdownResponse = AttributeCounters
-
-type G2diagnosticGetFeatureResponseElements struct {
-	FelemCode string `json:"FELEM_CODE"`
-
-	FelemValue string `json:"FELEM_VALUE"`
-}
-
-type G2diagnosticGetFeatureResponse struct {
-	Elements []G2diagnosticGetFeatureResponseElements `json:"ELEMENTS"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-}
-
-type G2diagnosticGetGenericFeaturesResponse0 struct {
-	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
-
-	EstimatedCount int64 `json:"ESTIMATED_COUNT"`
-
-	FeatDesc string `json:"FEAT_DESC"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-
-	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
-}
-
-type G2diagnosticGetGenericFeaturesResponse = []G2diagnosticGetGenericFeaturesResponse0
-
-type G2diagnosticGetMappingStatisticsResponse0 struct {
-	Derived string `json:"DERIVED"`
-
-	DsrcCode string `json:"DSRC_CODE"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	MaxFeatDesc string `json:"MAX_FEAT_DESC"`
-
-	MinFeatDesc string `json:"MIN_FEAT_DESC"`
-
-	RecCount int64 `json:"REC_COUNT"`
-
-	RecPct float64 `json:"REC_PCT"`
-
-	UniqCount int64 `json:"UNIQ_COUNT"`
-
-	UniqPct float64 `json:"UNIQ_PCT"`
-
-	UsageType string `json:"USAGE_TYPE"`
-}
-
-type G2diagnosticGetMappingStatisticsResponse = []G2diagnosticGetMappingStatisticsResponse0
-
-type G2diagnosticGetRelationshipDetailsResponse0 struct {
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	FeatDesc string `json:"FEAT_DESC"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	ResEntID int64 `json:"RES_ENT_ID"`
-}
-
-type G2diagnosticGetRelationshipDetailsResponse = []G2diagnosticGetRelationshipDetailsResponse0
-
-type G2diagnosticGetResolutionStatisticsResponseRawMatchKeys struct {
-	MatchKey string `json:"MATCH_KEY"`
-}
-
-type G2diagnosticGetResolutionStatisticsResponse0 struct {
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	ErruleID int64 `json:"ERRULE_ID"`
-
-	IsAmbiguous string `json:"IS_AMBIGUOUS"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	MaxResEntID int64 `json:"MAX_RES_ENT_ID"`
-
-	MaxResRelID int64 `json:"MAX_RES_REL_ID"`
-
-	MinResEntID int64 `json:"MIN_RES_ENT_ID"`
-
-	MinResRelID int64 `json:"MIN_RES_REL_ID"`
-
-	RawMatchKeys []G2diagnosticGetResolutionStatisticsResponseRawMatchKeys `json:"RAW_MATCH_KEYS"`
-
-	RecordCount int64 `json:"RECORD_COUNT"`
-}
-
-type G2diagnosticGetResolutionStatisticsResponse = []G2diagnosticGetResolutionStatisticsResponse0
-
-type G2diagnosticStreamEntityListBySizeResponse = FixmeUnknown
-
-type G2engineAddRecordWithInfoResponse = WithInfo
-
-type G2engineAddRecordWithInfoWithReturnedRecordIDResponse = WithInfo
-
-type G2engineCheckRecordResponseCheckRecordResponse struct {
-	CandidateMatch string `json:"CANDIDATE_MATCH"`
-
-	DsrcCode string `json:"DSRC_CODE"`
-
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	ErruleID int64 `json:"ERRULE_ID"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
-
-	NonGenericCandidateMatch string `json:"NON_GENERIC_CANDIDATE_MATCH"`
-
-	RecordID string `json:"RECORD_ID"`
-}
-
-type G2engineCheckRecordResponse struct {
-	CheckRecordResponse []G2engineCheckRecordResponseCheckRecordResponse `json:"CHECK_RECORD_RESPONSE"`
-}
-
-type G2engineDeleteRecordWithInfoResponse = WithInfo
-
-type G2engineExportConfigAndConfigIDResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
-
-type G2engineExportConfigResponse struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
-
-type G2engineFetchNextResponse = FixmeUnknown
-
-type G2engineFindInterestingEntitiesByEntityIDResponse = Interesting
-
-type G2engineFindInterestingEntitiesByRecordIDResponse = Interesting
-
-type G2engineFindNetworkByEntityIdv2response = Network
-
-type G2engineFindNetworkByEntityIDResponse = Network
-
-type G2engineFindNetworkByRecordIdv2response = Network
-
-type G2engineFindNetworkByRecordIDResponse = Network
-
-type G2engineFindPathByEntityIdv2response = Path
-
-type G2engineFindPathByEntityIDResponse = Path
-
-type G2engineFindPathByRecordIdv2response = Path
-
-type G2engineFindPathByRecordIDResponse = Path
-
-type G2engineFindPathExcludingByEntityIdv2response = Path
-
-type G2engineFindPathExcludingByEntityIDResponse = Path
-
-type G2engineFindPathExcludingByRecordIdv2response = Path
-
-type G2engineFindPathExcludingByRecordIDResponse = Path
-
-type G2engineFindPathIncludingSourceByEntityIdv2response = Path
-
-type G2engineFindPathIncludingSourceByEntityIDResponse = Path
-
-type G2engineFindPathIncludingSourceByRecordIdv2response = Path
-
-type G2engineFindPathIncludingSourceByRecordIDResponse = Path
-
-type G2engineGetEntityByEntityIdv2response = Entity
-
-type G2engineGetEntityByEntityIDResponse = Entity
-
-type G2engineGetEntityByRecordIdv2response = Entity
-
-type G2engineGetEntityByRecordIDResponse = Entity
-
-type G2engineGetRecordResponse = Record
-
-type G2engineGetRecordV2response = Record
-
-type G2engineGetRedoRecordResponse = FixmeUnknown
-
-type G2engineGetVirtualEntityByRecordIdv2response = VirtualEntity
-
-type G2engineGetVirtualEntityByRecordIDResponse = VirtualEntity
-
-type G2engineHowEntityByEntityIdv2response = How
-
-type G2engineHowEntityByEntityIDResponse = How
-
-type G2engineProcessRedoRecordResponse = FixmeUnknown
-
-type G2engineProcessRedoRecordWithInfoResponse = WithInfo
-
-type G2engineProcessWithInfoResponse = WithInfo
-
-type G2engineProcessWithResponseResizeResponse = Process
-
-type G2engineProcessWithResponseResponse = Process
-
-type G2engineReevaluateEntityWithInfoResponse = WithInfo
-
-type G2engineReevaluateRecordWithInfoResponse = WithInfo
-
-type G2engineReplaceRecordWithInfoResponse = WithInfo
-
-type G2engineSearchByAttributesResponse = Search
-
-type G2engineSearchByAttributesResponseXxx = EntitiesByFeatureID
-
-type G2engineSearchByAttributesV2response = Search
-
-type G2engineSearchByAttributesV3response = Search
-
-type G2engineStatsResponseDuration struct {
-	Pattern string `json:"PATTERN"`
-
-	Type string `json:"TYPE"`
-}
-
-type G2engineStatsResponseReresolveTriggers struct {
-	AbortRetry int64 `json:"abortRetry"`
-
-	MultipleResolvableCandidates int64 `json:"multipleResolvableCandidates"`
-
-	ResolveNewFeatures int64 `json:"resolveNewFeatures"`
-
-	UnresolveMovement int64 `json:"unresolveMovement"`
-}
-
-type G2engineStatsResponseUnresolveTriggers struct {
-	ExtensiveResolve int64 `json:"extensiveResolve"`
-
-	NormalResolve int64 `json:"normalResolve"`
-}
-
-type G2engineStatsResponseWorkloadExpressedFeatureCall struct {
-	EfcallID int64 `json:"EFCALL_ID"`
-
-	EfuncCode string `json:"EFUNC_CODE"`
-
-	NumCalls int64 `json:"numCalls"`
-}
-
-type G2engineStatsResponseWorkloadReresolveTriggers struct {
-	AbortRetry int64 `json:"abortRetry"`
-
-	MultipleResolvableCandidates int64 `json:"multipleResolvableCandidates"`
-
-	NewFeatureFtypes AttributeCounters `json:"newFeatureFTypes"`
-
-	ResolveNewFeatures int64 `json:"resolveNewFeatures"`
-
-	UnresolveMovement int64 `json:"unresolveMovement"`
-}
-
-type G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad struct {
-	CPUIdle float64 `json:"cpuIdle"`
-
-	CPUSoftIrq float64 `json:"cpuSoftIrq"`
-
-	CPUSystem float64 `json:"cpuSystem"`
-
-	CPUUser float64 `json:"cpuUser"`
-
-	CPUWait float64 `json:"cpuWait"`
-}
-
-type G2engineStatsResponseWorkloadSystemResourcesCurrResource struct {
-	ActiveThreads int64 `json:"activeThreads"`
-
-	AvailableMemory string `json:"availableMemory"`
-
-	SystemLoad []G2engineStatsResponseWorkloadSystemResourcesCurrResourceSystemLoad `json:"systemLoad"`
-
-	WorkerThreads int64 `json:"workerThreads"`
-}
-
-type G2engineStatsResponseWorkloadSystemResourcesInitResource struct {
-	AvailableMemory string `json:"availableMemory"`
-
-	LogicalCores int64 `json:"logicalCores"`
-
-	PhysicalCores int64 `json:"physicalCores"`
-
-	TotalMemory string `json:"totalMemory"`
-}
-
-type G2engineStatsResponseWorkloadSystemResources struct {
-	CurrResources []G2engineStatsResponseWorkloadSystemResourcesCurrResource `json:"currResources"`
-
-	InitResources []G2engineStatsResponseWorkloadSystemResourcesInitResource `json:"initResources"`
-}
-
-type G2engineStatsResponseWorkloadThreadState struct {
-	Active int64 `json:"active"`
-
-	DataLatchContention int64 `json:"dataLatchContention"`
-
-	Idle int64 `json:"idle"`
-
-	Loader int64 `json:"loader"`
-
-	ObsEntContention int64 `json:"obsEntContention"`
-
-	ResEntContention int64 `json:"resEntContention"`
-
-	Resolver int64 `json:"resolver"`
-
-	Scoring int64 `json:"scoring"`
-
-	SQLExecuting int64 `json:"sqlExecuting"`
-}
-
-type G2engineStatsResponseWorkloadUnresolveTriggers struct {
-	AmbiguousMultiResolve int64 `json:"ambiguousMultiResolve"`
-
-	AmbiguousNoResolve int64 `json:"ambiguousNoResolve"`
-
-	ExtensiveResolve int64 `json:"extensiveResolve"`
-
-	NormalResolve int64 `json:"normalResolve"`
-
-	RelLink int64 `json:"relLink"`
-
-	Update int64 `json:"update"`
-}
-
-type G2engineStatsResponseWorkload struct {
-	CorruptEntityTestDiagnosis FixmeUnknown `json:"CorruptEntityTestDiagnosis"`
-
-	AbortedUnresolve int64 `json:"abortedUnresolve"`
-
-	ActualAmbiguousTest int64 `json:"actualAmbiguousTest"`
-
-	AddedRecords int64 `json:"addedRecords"`
-
-	APIVersion string `json:"apiVersion"`
-
-	CacheHit AttributeCounters `json:"cacheHit"`
-
-	CacheMiss AttributeCounters `json:"cacheMiss"`
-
-	CachedAmbiguousTest int64 `json:"cachedAmbiguousTest"`
-
-	CandidateBuilders AttributeCounters `json:"candidateBuilders"`
-
-	Candidates int64 `json:"candidates"`
-
-	DeletedRecords int64 `json:"deletedRecords"`
-
-	Duration int64 `json:"duration"`
-
-	ExpressedFeatureCalls []G2engineStatsResponseWorkloadExpressedFeatureCall `json:"expressedFeatureCalls"`
-
-	ExpressedFeaturesCreated AttributeCounters `json:"expressedFeaturesCreated"`
-
-	FilteredObsFeat int64 `json:"filteredObsFeat"`
-
-	GenericDetect AttributeCounters `json:"genericDetect"`
-
-	GnrScorersUsed int64 `json:"gnrScorersUsed"`
-
-	HighContentionFeat AttributeCounters `json:"highContentionFeat"`
-
-	HighContentionResEnt AttributeCounters `json:"highContentionResEnt"`
-
-	LatchContention AttributeCounters `json:"latchContention"`
-
-	LibFeatCacheHit int64 `json:"libFeatCacheHit"`
-
-	LibFeatCacheMiss int64 `json:"libFeatCacheMiss"`
-
-	LoadedRecords int64 `json:"loadedRecords"`
-
-	RedoTriggers AttributeCounters `json:"redoTriggers"`
-
-	ReducedScoredFeatureType AttributeCounters `json:"reducedScoredFeatureType"`
-
-	Reevaluations int64 `json:"reevaluations"`
-
-	RepairedEntities int64 `json:"repairedEntities"`
-
-	ReresolveSkipped int64 `json:"reresolveSkipped"`
-
-	ReresolveTriggers G2engineStatsResponseWorkloadReresolveTriggers `json:"reresolveTriggers"`
-
-	ResFeatStatCacheHit int64 `json:"resFeatStatCacheHit"`
-
-	ResFeatStatCacheMiss int64 `json:"resFeatStatCacheMiss"`
-
-	ResFeatStatUpdate int64 `json:"resFeatStatUpdate"`
-
-	Retries int64 `json:"retries"`
-
-	ScoredPairs AttributeCounters `json:"scoredPairs"`
-
-	SuppressedCandidateBuilders AttributeCounters `json:"suppressedCandidateBuilders"`
-
-	SuppressedDisclosedRelationshipDomainCount int64 `json:"suppressedDisclosedRelationshipDomainCount"`
-
-	SuppressedScoredFeatureType AttributeCounters `json:"suppressedScoredFeatureType"`
-
-	SystemResources G2engineStatsResponseWorkloadSystemResources `json:"systemResources"`
-
-	ThreadState G2engineStatsResponseWorkloadThreadState `json:"threadState"`
-
-	UnresolveTest int64 `json:"unresolveTest"`
-
-	UnresolveTriggers G2engineStatsResponseWorkloadUnresolveTriggers `json:"unresolveTriggers"`
-}
-
-type G2engineStatsResponse struct {
-	MissingResEnt int64 `json:"MISSING_RES_ENT"`
-
-	MissingResEntAndOkey int64 `json:"MISSING_RES_ENT_AND_OKEY"`
-
-	AbortedUnresolve int64 `json:"abortedUnresolve"`
-
-	ActualAmbiguousTest int64 `json:"actualAmbiguousTest"`
-
-	AddedRecords int64 `json:"addedRecords"`
-
-	CacheHit AttributeCounters `json:"cacheHit"`
-
-	CandidateBuilders AttributeCounters `json:"candidateBuilders"`
-
-	Candidates int64 `json:"candidates"`
-
-	DeletedRecords int64 `json:"deletedRecords"`
-
-	Duration G2engineStatsResponseDuration `json:"duration"`
-
-	FilteredObsFeat int64 `json:"filteredObsFeat"`
-
-	GenericDetect AttributeCounters `json:"genericDetect"`
-
-	LatchContention AttributeCounters `json:"latchContention"`
-
-	LoadedRecords int64 `json:"loadedRecords"`
-
-	RedoTriggers AttributeCounters `json:"redoTriggers"`
-
-	ReducedScoredFeatureType AttributeCounters `json:"reducedScoredFeatureType"`
-
-	Reevaluations int64 `json:"reevaluations"`
-
-	RepairedEntities int64 `json:"repairedEntities"`
-
-	ReresolveSkipped int64 `json:"reresolveSkipped"`
-
-	ReresolveTriggers G2engineStatsResponseReresolveTriggers `json:"reresolveTriggers"`
-
-	Retries int64 `json:"retries"`
-
-	ScoredPairs AttributeCounters `json:"scoredPairs"`
-
-	SuppressedCandidateBuilders AttributeCounters `json:"suppressedCandidateBuilders"`
-
-	SuppressedScoredFeatureType AttributeCounters `json:"suppressedScoredFeatureType"`
-
-	UnresolveTest int64 `json:"unresolveTest"`
-
-	UnresolveTriggers G2engineStatsResponseUnresolveTriggers `json:"unresolveTriggers"`
-
-	Workload G2engineStatsResponseWorkload `json:"workload"`
-}
-
-type G2engineStreamExportJsonentityReportResponse = FixmeUnknown
-
-type G2engineWhyEntitiesResponse = WhyEntities
-
-type G2engineWhyEntitiesV2response = WhyEntities
-
-type G2engineWhyEntityByEntityIdv2response = WhyEntity
-
-type G2engineWhyEntityByEntityIDResponse = WhyEntity
-
-type G2engineWhyEntityByRecordIdv2response = WhyEntity
-
-type G2engineWhyEntityByRecordIDResponse = WhyEntity
-
-type G2engineWhyRecordsResponse = WhyRecords
-
-type G2engineWhyRecordsV2response = WhyRecords
-
-type G2productLicenseResponse struct {
-	Billing string `json:"billing"`
-
-	Contract string `json:"contract"`
-
-	Customer string `json:"customer"`
-
-	ExpireDate string `json:"expireDate"`
-
-	IssueDate string `json:"issueDate"`
-
-	LicenseLevel string `json:"licenseLevel"`
-
-	LicenseType string `json:"licenseType"`
-
-	RecordLimit int64 `json:"recordLimit"`
-}
-
-type G2productVersionResponse struct {
-	BuildDate string `json:"BUILD_DATE"`
-
-	BuildNumber string `json:"BUILD_NUMBER"`
-
-	BuildVersion string `json:"BUILD_VERSION"`
-
-	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
-
-	ProductName string `json:"PRODUCT_NAME"`
-
-	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
-
-	Version string `json:"VERSION"`
 }
 
 type How struct {
@@ -1873,243 +687,13 @@ type InterestingEntitySampleRecords struct {
 type InterestingEntity struct {
 	Degrees int64 `json:"DEGREES"`
 
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	Flags []string `json:"FLAGS"`
 
 	SampleRecords []InterestingEntitySampleRecords `json:"SAMPLE_RECORDS"`
-}
-
-type JSONDataXxxAcctNum struct {
-	AccountDomain string `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber string `json:"ACCOUNT_NUMBER"`
-}
-
-type JSONDataXxxSsn struct {
-	PassportNumber string `json:"PASSPORT_NUMBER"`
-
-	SsnNumber string `json:"SSN_NUMBER"`
-}
-
-type JSONDataXxxSsnLast4 struct {
-	SsnLast4 int64 `json:"SSN_LAST4"`
-}
-
-type JSONDataXxx struct {
-	AccountDomain string `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber string `json:"ACCOUNT_NUMBER"`
-
-	AcctNum []JSONDataXxxAcctNum `json:"ACCT_NUM"`
-
-	Address string `json:"ADDRESS"`
-
-	AddressList Addresses `json:"ADDRESS_LIST"`
-
-	AddrFull string `json:"ADDR_FULL"`
-
-	AddrKey string `json:"ADDR_KEY"`
-
-	CellPhoneNumber string `json:"CELL_PHONE_NUMBER"`
-
-	Citizenship string `json:"CITIZENSHIP"`
-
-	CountryOfAssociation string `json:"COUNTRY_OF_ASSOCIATION"`
-
-	DataSource string `json:"DATA_SOURCE"`
-
-	DateOfBirth string `json:"DATE_OF_BIRTH"`
-
-	DateOfDeath string `json:"DATE_OF_DEATH"`
-
-	Dob string `json:"DOB"`
-
-	Dod string `json:"DOD"`
-
-	DriversLicenseNumber string `json:"DRIVERS_LICENSE_NUMBER"`
-
-	DriversLicenseState string `json:"DRIVERS_LICENSE_STATE"`
-
-	Drlic string `json:"DRLIC"`
-
-	DsrcAction string `json:"DSRC_ACTION"`
-
-	DsrcCode string `json:"DSRC_CODE"`
-
-	DunsNumber string `json:"DUNS_NUMBER"`
-
-	Email string `json:"EMAIL"`
-
-	EmailAddress string `json:"EMAIL_ADDRESS"`
-
-	EmailKey string `json:"EMAIL_KEY"`
-
-	EmployerName string `json:"EMPLOYER_NAME"`
-
-	EntityType string `json:"ENTITY_TYPE"`
-
-	EntSrcDesc string `json:"ENT_SRC_DESC"`
-
-	EntSrcKey string `json:"ENT_SRC_KEY"`
-
-	EtypeCode string `json:"ETYPE_CODE"`
-
-	Facebook string `json:"FACEBOOK"`
-
-	Gender string `json:"GENDER"`
-
-	GroupAssnIDNumber string `json:"GROUP_ASSN_ID_NUMBER"`
-
-	GroupAssnIDType string `json:"GROUP_ASSN_ID_TYPE"`
-
-	GroupAssociationOrgName string `json:"GROUP_ASSOCIATION_ORG_NAME"`
-
-	GroupAssociationType string `json:"GROUP_ASSOCIATION_TYPE"`
-
-	IDKey string `json:"ID_KEY"`
-
-	Instagram string `json:"INSTAGRAM"`
-
-	LeiNumber string `json:"LEI_NUMBER"`
-
-	Linkedin string `json:"LINKEDIN"`
-
-	LoadID string `json:"LOAD_ID"`
-
-	LoginID string `json:"LOGIN_ID"`
-
-	Name Names `json:"NAME"`
-
-	NameFull string `json:"NAME_FULL"`
-
-	NameKey string `json:"NAME_KEY"`
-
-	NameList Names `json:"NAME_LIST"`
-
-	Nationality string `json:"NATIONALITY"`
-
-	NationalID string `json:"NATIONAL_ID"`
-
-	NationalIDCountry string `json:"NATIONAL_ID_COUNTRY"`
-
-	NationalIDNumber string `json:"NATIONAL_ID_NUMBER"`
-
-	NinCountry string `json:"NIN_COUNTRY"`
-
-	NinNumber string `json:"NIN_NUMBER"`
-
-	NpiNumber string `json:"NPI_NUMBER"`
-
-	ObsSrcKey string `json:"OBS_SRC_KEY"`
-
-	OtherIDCountry string `json:"OTHER_ID_COUNTRY"`
-
-	OtherIDNumber string `json:"OTHER_ID_NUMBER"`
-
-	OtherIDType string `json:"OTHER_ID_TYPE"`
-
-	Passport string `json:"PASSPORT"`
-
-	Passports Passports `json:"PASSPORTS"`
-
-	PassportCountry string `json:"PASSPORT_COUNTRY"`
-
-	PassportNumber string `json:"PASSPORT_NUMBER"`
-
-	Phone string `json:"PHONE"`
-
-	Phones Phones `json:"PHONES"`
-
-	PhoneKey string `json:"PHONE_KEY"`
-
-	PlaceOfBirth string `json:"PLACE_OF_BIRTH"`
-
-	PrimaryNameFirst string `json:"PRIMARY_NAME_FIRST"`
-
-	PrimaryNameLast string `json:"PRIMARY_NAME_LAST"`
-
-	PrimaryNameMiddle string `json:"PRIMARY_NAME_MIDDLE"`
-
-	PrimaryNameOrg string `json:"PRIMARY_NAME_ORG"`
-
-	PrimaryNamePrefix string `json:"PRIMARY_NAME_PREFIX"`
-
-	PrimaryNameSuffix string `json:"PRIMARY_NAME_SUFFIX"`
-
-	PrimaryPhoneNumber string `json:"PRIMARY_PHONE_NUMBER"`
-
-	RecordID string `json:"RECORD_ID"`
-
-	RecordType string `json:"RECORD_TYPE"`
-
-	RegistrationCountry string `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate string `json:"REGISTRATION_DATE"`
-
-	Relationships Relationships `json:"RELATIONSHIPS"`
-
-	RelAnchor string `json:"REL_ANCHOR"`
-
-	RelAnchorDomain string `json:"REL_ANCHOR_DOMAIN"`
-
-	RelAnchorKey string `json:"REL_ANCHOR_KEY"`
-
-	RelLink string `json:"REL_LINK"`
-
-	RelPointer string `json:"REL_POINTER"`
-
-	RelPointerDomain string `json:"REL_POINTER_DOMAIN"`
-
-	RelPointerKey string `json:"REL_POINTER_KEY"`
-
-	RelPointerRole string `json:"REL_POINTER_ROLE"`
-
-	Signal string `json:"SIGNAL"`
-
-	Skype string `json:"SKYPE"`
-
-	SocialHandle string `json:"SOCIAL_HANDLE"`
-
-	SocialNetwork string `json:"SOCIAL_NETWORK"`
-
-	SourceID string `json:"SOURCE_ID"`
-
-	Ssn []JSONDataXxxSsn `json:"SSN"`
-
-	SsnLast4 []JSONDataXxxSsnLast4 `json:"SSN_LAST4"`
-
-	SsnNumber string `json:"SSN_NUMBER"`
-
-	Tango string `json:"TANGO"`
-
-	TaxIDCountry string `json:"TAX_ID_COUNTRY"`
-
-	TaxIDNumber string `json:"TAX_ID_NUMBER"`
-
-	TaxIDType string `json:"TAX_ID_TYPE"`
-
-	Telegram string `json:"TELEGRAM"`
-
-	TrustedIDNumber string `json:"TRUSTED_ID_NUMBER"`
-
-	TrustedIDType string `json:"TRUSTED_ID_TYPE"`
-
-	Twitter string `json:"TWITTER"`
-
-	Viber string `json:"VIBER"`
-
-	WebsiteAddress string `json:"WEBSITE_ADDRESS"`
-
-	Wechat string `json:"WECHAT"`
-
-	Whatsapp string `json:"WHATSAPP"`
-
-	WorkPhoneNumber string `json:"WORK_PHONE_NUMBER"`
-
-	Zoomroom string `json:"ZOOMROOM"`
-
-	Name0 Names `json:"name"`
 }
 
 type MatchInfoDisclosedRelationsRelAnchor struct {
@@ -2190,429 +774,13 @@ type MatchInfo struct {
 	WhyKey string `json:"WHY_KEY"`
 }
 
-type MatchInfoCandidateKeys struct {
-	AccountDomain MatchInfosForAttribute `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber MatchInfosForAttribute `json:"ACCOUNT_NUMBER"`
-
-	AcctNum MatchInfosForAttribute `json:"ACCT_NUM"`
-
-	Address MatchInfosForAttribute `json:"ADDRESS"`
-
-	AddressList MatchInfosForAttribute `json:"ADDRESS_LIST"`
-
-	AddrFull MatchInfosForAttribute `json:"ADDR_FULL"`
-
-	AddrKey MatchInfosForAttribute `json:"ADDR_KEY"`
-
-	CellPhoneNumber MatchInfosForAttribute `json:"CELL_PHONE_NUMBER"`
-
-	Citizenship MatchInfosForAttribute `json:"CITIZENSHIP"`
-
-	CountryOfAssociation MatchInfosForAttribute `json:"COUNTRY_OF_ASSOCIATION"`
-
-	DataSource MatchInfosForAttribute `json:"DATA_SOURCE"`
-
-	DateOfBirth MatchInfosForAttribute `json:"DATE_OF_BIRTH"`
-
-	DateOfDeath MatchInfosForAttribute `json:"DATE_OF_DEATH"`
-
-	Dob MatchInfosForAttribute `json:"DOB"`
-
-	Dod MatchInfosForAttribute `json:"DOD"`
-
-	DriversLicenseNumber MatchInfosForAttribute `json:"DRIVERS_LICENSE_NUMBER"`
-
-	DriversLicenseState MatchInfosForAttribute `json:"DRIVERS_LICENSE_STATE"`
-
-	Drlic MatchInfosForAttribute `json:"DRLIC"`
-
-	DunsNumber MatchInfosForAttribute `json:"DUNS_NUMBER"`
-
-	Email MatchInfosForAttribute `json:"EMAIL"`
-
-	EmailAddress MatchInfosForAttribute `json:"EMAIL_ADDRESS"`
-
-	EmailKey MatchInfosForAttribute `json:"EMAIL_KEY"`
-
-	EmployerName MatchInfosForAttribute `json:"EMPLOYER_NAME"`
-
-	EntityType MatchInfosForAttribute `json:"ENTITY_TYPE"`
-
-	Facebook MatchInfosForAttribute `json:"FACEBOOK"`
-
-	Gender MatchInfosForAttribute `json:"GENDER"`
-
-	GroupAssnIDNumber MatchInfosForAttribute `json:"GROUP_ASSN_ID_NUMBER"`
-
-	GroupAssnIDType MatchInfosForAttribute `json:"GROUP_ASSN_ID_TYPE"`
-
-	GroupAssociationOrgName MatchInfosForAttribute `json:"GROUP_ASSOCIATION_ORG_NAME"`
-
-	GroupAssociationType MatchInfosForAttribute `json:"GROUP_ASSOCIATION_TYPE"`
-
-	IDKey MatchInfosForAttribute `json:"ID_KEY"`
-
-	Instagram MatchInfosForAttribute `json:"INSTAGRAM"`
-
-	LeiNumber MatchInfosForAttribute `json:"LEI_NUMBER"`
-
-	Linkedin MatchInfosForAttribute `json:"LINKEDIN"`
-
-	LoadID MatchInfosForAttribute `json:"LOAD_ID"`
-
-	LoginID MatchInfosForAttribute `json:"LOGIN_ID"`
-
-	Name MatchInfosForAttribute `json:"NAME"`
-
-	NameFull MatchInfosForAttribute `json:"NAME_FULL"`
-
-	NameKey MatchInfosForAttribute `json:"NAME_KEY"`
-
-	NameList MatchInfosForAttribute `json:"NAME_LIST"`
-
-	Nationality MatchInfosForAttribute `json:"NATIONALITY"`
-
-	NationalID MatchInfosForAttribute `json:"NATIONAL_ID"`
-
-	NationalIDCountry MatchInfosForAttribute `json:"NATIONAL_ID_COUNTRY"`
-
-	NationalIDNumber MatchInfosForAttribute `json:"NATIONAL_ID_NUMBER"`
-
-	NinCountry MatchInfosForAttribute `json:"NIN_COUNTRY"`
-
-	NinNumber MatchInfosForAttribute `json:"NIN_NUMBER"`
-
-	NpiNumber MatchInfosForAttribute `json:"NPI_NUMBER"`
-
-	OtherIDCountry MatchInfosForAttribute `json:"OTHER_ID_COUNTRY"`
-
-	OtherIDNumber MatchInfosForAttribute `json:"OTHER_ID_NUMBER"`
-
-	OtherIDType MatchInfosForAttribute `json:"OTHER_ID_TYPE"`
-
-	Passport MatchInfosForAttribute `json:"PASSPORT"`
-
-	Passports MatchInfosForAttribute `json:"PASSPORTS"`
-
-	PassportCountry MatchInfosForAttribute `json:"PASSPORT_COUNTRY"`
-
-	PassportNumber MatchInfosForAttribute `json:"PASSPORT_NUMBER"`
-
-	Phone MatchInfosForAttribute `json:"PHONE"`
-
-	Phones MatchInfosForAttribute `json:"PHONES"`
-
-	PhoneKey MatchInfosForAttribute `json:"PHONE_KEY"`
-
-	PlaceOfBirth MatchInfosForAttribute `json:"PLACE_OF_BIRTH"`
-
-	PrimaryNameFirst MatchInfosForAttribute `json:"PRIMARY_NAME_FIRST"`
-
-	PrimaryNameLast MatchInfosForAttribute `json:"PRIMARY_NAME_LAST"`
-
-	PrimaryNameMiddle MatchInfosForAttribute `json:"PRIMARY_NAME_MIDDLE"`
-
-	PrimaryNameOrg MatchInfosForAttribute `json:"PRIMARY_NAME_ORG"`
-
-	PrimaryNamePrefix MatchInfosForAttribute `json:"PRIMARY_NAME_PREFIX"`
-
-	PrimaryNameSuffix MatchInfosForAttribute `json:"PRIMARY_NAME_SUFFIX"`
-
-	PrimaryPhoneNumber MatchInfosForAttribute `json:"PRIMARY_PHONE_NUMBER"`
-
-	RecordType MatchInfosForAttribute `json:"RECORD_TYPE"`
-
-	RegistrationCountry MatchInfosForAttribute `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate MatchInfosForAttribute `json:"REGISTRATION_DATE"`
-
-	RelAnchor MatchInfosForAttribute `json:"REL_ANCHOR"`
-
-	RelAnchorDomain MatchInfosForAttribute `json:"REL_ANCHOR_DOMAIN"`
-
-	RelAnchorKey MatchInfosForAttribute `json:"REL_ANCHOR_KEY"`
-
-	RelLink MatchInfosForAttribute `json:"REL_LINK"`
-
-	RelPointer MatchInfosForAttribute `json:"REL_POINTER"`
-
-	RelPointerDomain MatchInfosForAttribute `json:"REL_POINTER_DOMAIN"`
-
-	RelPointerKey MatchInfosForAttribute `json:"REL_POINTER_KEY"`
-
-	RelPointerRole MatchInfosForAttribute `json:"REL_POINTER_ROLE"`
-
-	Signal MatchInfosForAttribute `json:"SIGNAL"`
-
-	Skype MatchInfosForAttribute `json:"SKYPE"`
-
-	SocialHandle MatchInfosForAttribute `json:"SOCIAL_HANDLE"`
-
-	SocialNetwork MatchInfosForAttribute `json:"SOCIAL_NETWORK"`
-
-	SourceID MatchInfosForAttribute `json:"SOURCE_ID"`
-
-	Ssn MatchInfosForAttribute `json:"SSN"`
-
-	SsnLast4 MatchInfosForAttribute `json:"SSN_LAST4"`
-
-	SsnNumber MatchInfosForAttribute `json:"SSN_NUMBER"`
-
-	Tango MatchInfosForAttribute `json:"TANGO"`
-
-	TaxIDCountry MatchInfosForAttribute `json:"TAX_ID_COUNTRY"`
-
-	TaxIDNumber MatchInfosForAttribute `json:"TAX_ID_NUMBER"`
-
-	TaxIDType MatchInfosForAttribute `json:"TAX_ID_TYPE"`
-
-	Telegram MatchInfosForAttribute `json:"TELEGRAM"`
-
-	TrustedIDNumber MatchInfosForAttribute `json:"TRUSTED_ID_NUMBER"`
-
-	TrustedIDType MatchInfosForAttribute `json:"TRUSTED_ID_TYPE"`
-
-	Twitter MatchInfosForAttribute `json:"TWITTER"`
-
-	Viber MatchInfosForAttribute `json:"VIBER"`
-
-	WebsiteAddress MatchInfosForAttribute `json:"WEBSITE_ADDRESS"`
-
-	Wechat MatchInfosForAttribute `json:"WECHAT"`
-
-	Whatsapp MatchInfosForAttribute `json:"WHATSAPP"`
-
-	WorkPhoneNumber MatchInfosForAttribute `json:"WORK_PHONE_NUMBER"`
-
-	Zoomroom MatchInfosForAttribute `json:"ZOOMROOM"`
-}
+type MatchInfoCandidateKeys = map[string][]MatchInfoForAttribute
 
 type MatchInfoForAttribute struct {
 	FeatDesc string `json:"FEAT_DESC"`
 
 	FeatID int64 `json:"FEAT_ID"`
 }
-
-type MatchInfosForAttribute = []MatchInfoForAttribute
-
-type MatchScoreForAttribute struct {
-	CandidateFeat string `json:"CANDIDATE_FEAT"`
-
-	FullScore int64 `json:"FULL_SCORE"`
-
-	GenerationMatch int64 `json:"GENERATION_MATCH"`
-
-	GnrFn int64 `json:"GNR_FN"`
-
-	GnrGn int64 `json:"GNR_GN"`
-
-	GnrOn int64 `json:"GNR_ON"`
-
-	GnrSn int64 `json:"GNR_SN"`
-
-	InboundFeat string `json:"INBOUND_FEAT"`
-}
-
-type MatchScores struct {
-	AccountDomain MatchScoresForAttribute `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber MatchScoresForAttribute `json:"ACCOUNT_NUMBER"`
-
-	AcctNum MatchScoresForAttribute `json:"ACCT_NUM"`
-
-	Address MatchScoresForAttribute `json:"ADDRESS"`
-
-	AddressList MatchScoresForAttribute `json:"ADDRESS_LIST"`
-
-	AddrFull MatchScoresForAttribute `json:"ADDR_FULL"`
-
-	AddrKey MatchScoresForAttribute `json:"ADDR_KEY"`
-
-	CellPhoneNumber MatchScoresForAttribute `json:"CELL_PHONE_NUMBER"`
-
-	Citizenship MatchScoresForAttribute `json:"CITIZENSHIP"`
-
-	CountryOfAssociation MatchScoresForAttribute `json:"COUNTRY_OF_ASSOCIATION"`
-
-	DataSource MatchScoresForAttribute `json:"DATA_SOURCE"`
-
-	DateOfBirth MatchScoresForAttribute `json:"DATE_OF_BIRTH"`
-
-	DateOfDeath MatchScoresForAttribute `json:"DATE_OF_DEATH"`
-
-	Dob MatchScoresForAttribute `json:"DOB"`
-
-	Dod MatchScoresForAttribute `json:"DOD"`
-
-	DriversLicenseNumber MatchScoresForAttribute `json:"DRIVERS_LICENSE_NUMBER"`
-
-	DriversLicenseState MatchScoresForAttribute `json:"DRIVERS_LICENSE_STATE"`
-
-	Drlic MatchScoresForAttribute `json:"DRLIC"`
-
-	DunsNumber MatchScoresForAttribute `json:"DUNS_NUMBER"`
-
-	Email MatchScoresForAttribute `json:"EMAIL"`
-
-	EmailAddress MatchScoresForAttribute `json:"EMAIL_ADDRESS"`
-
-	EmailKey MatchScoresForAttribute `json:"EMAIL_KEY"`
-
-	EmployerName MatchScoresForAttribute `json:"EMPLOYER_NAME"`
-
-	EntityType MatchScoresForAttribute `json:"ENTITY_TYPE"`
-
-	Facebook MatchScoresForAttribute `json:"FACEBOOK"`
-
-	Gender MatchScoresForAttribute `json:"GENDER"`
-
-	GroupAssnIDNumber MatchScoresForAttribute `json:"GROUP_ASSN_ID_NUMBER"`
-
-	GroupAssnIDType MatchScoresForAttribute `json:"GROUP_ASSN_ID_TYPE"`
-
-	GroupAssociationOrgName MatchScoresForAttribute `json:"GROUP_ASSOCIATION_ORG_NAME"`
-
-	GroupAssociationType MatchScoresForAttribute `json:"GROUP_ASSOCIATION_TYPE"`
-
-	IDKey MatchScoresForAttribute `json:"ID_KEY"`
-
-	Instagram MatchScoresForAttribute `json:"INSTAGRAM"`
-
-	LeiNumber MatchScoresForAttribute `json:"LEI_NUMBER"`
-
-	Linkedin MatchScoresForAttribute `json:"LINKEDIN"`
-
-	LoadID MatchScoresForAttribute `json:"LOAD_ID"`
-
-	LoginID MatchScoresForAttribute `json:"LOGIN_ID"`
-
-	Name MatchScoresForAttribute `json:"NAME"`
-
-	NameFull MatchScoresForAttribute `json:"NAME_FULL"`
-
-	NameKey MatchScoresForAttribute `json:"NAME_KEY"`
-
-	NameList MatchScoresForAttribute `json:"NAME_LIST"`
-
-	Nationality MatchScoresForAttribute `json:"NATIONALITY"`
-
-	NationalID MatchScoresForAttribute `json:"NATIONAL_ID"`
-
-	NationalIDCountry MatchScoresForAttribute `json:"NATIONAL_ID_COUNTRY"`
-
-	NationalIDNumber MatchScoresForAttribute `json:"NATIONAL_ID_NUMBER"`
-
-	NinCountry MatchScoresForAttribute `json:"NIN_COUNTRY"`
-
-	NinNumber MatchScoresForAttribute `json:"NIN_NUMBER"`
-
-	NpiNumber MatchScoresForAttribute `json:"NPI_NUMBER"`
-
-	OtherIDCountry MatchScoresForAttribute `json:"OTHER_ID_COUNTRY"`
-
-	OtherIDNumber MatchScoresForAttribute `json:"OTHER_ID_NUMBER"`
-
-	OtherIDType MatchScoresForAttribute `json:"OTHER_ID_TYPE"`
-
-	Passport MatchScoresForAttribute `json:"PASSPORT"`
-
-	Passports MatchScoresForAttribute `json:"PASSPORTS"`
-
-	PassportCountry MatchScoresForAttribute `json:"PASSPORT_COUNTRY"`
-
-	PassportNumber MatchScoresForAttribute `json:"PASSPORT_NUMBER"`
-
-	Phone MatchScoresForAttribute `json:"PHONE"`
-
-	Phones MatchScoresForAttribute `json:"PHONES"`
-
-	PhoneKey MatchScoresForAttribute `json:"PHONE_KEY"`
-
-	PlaceOfBirth MatchScoresForAttribute `json:"PLACE_OF_BIRTH"`
-
-	PrimaryNameFirst MatchScoresForAttribute `json:"PRIMARY_NAME_FIRST"`
-
-	PrimaryNameLast MatchScoresForAttribute `json:"PRIMARY_NAME_LAST"`
-
-	PrimaryNameMiddle MatchScoresForAttribute `json:"PRIMARY_NAME_MIDDLE"`
-
-	PrimaryNameOrg MatchScoresForAttribute `json:"PRIMARY_NAME_ORG"`
-
-	PrimaryNamePrefix MatchScoresForAttribute `json:"PRIMARY_NAME_PREFIX"`
-
-	PrimaryNameSuffix MatchScoresForAttribute `json:"PRIMARY_NAME_SUFFIX"`
-
-	PrimaryPhoneNumber MatchScoresForAttribute `json:"PRIMARY_PHONE_NUMBER"`
-
-	RecordType MatchScoresForAttribute `json:"RECORD_TYPE"`
-
-	RegistrationCountry MatchScoresForAttribute `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate MatchScoresForAttribute `json:"REGISTRATION_DATE"`
-
-	RelAnchor MatchScoresForAttribute `json:"REL_ANCHOR"`
-
-	RelAnchorDomain MatchScoresForAttribute `json:"REL_ANCHOR_DOMAIN"`
-
-	RelAnchorKey MatchScoresForAttribute `json:"REL_ANCHOR_KEY"`
-
-	RelLink MatchScoresForAttribute `json:"REL_LINK"`
-
-	RelPointer MatchScoresForAttribute `json:"REL_POINTER"`
-
-	RelPointerDomain MatchScoresForAttribute `json:"REL_POINTER_DOMAIN"`
-
-	RelPointerKey MatchScoresForAttribute `json:"REL_POINTER_KEY"`
-
-	RelPointerRole MatchScoresForAttribute `json:"REL_POINTER_ROLE"`
-
-	Signal MatchScoresForAttribute `json:"SIGNAL"`
-
-	Skype MatchScoresForAttribute `json:"SKYPE"`
-
-	SocialHandle MatchScoresForAttribute `json:"SOCIAL_HANDLE"`
-
-	SocialNetwork MatchScoresForAttribute `json:"SOCIAL_NETWORK"`
-
-	SourceID MatchScoresForAttribute `json:"SOURCE_ID"`
-
-	Ssn MatchScoresForAttribute `json:"SSN"`
-
-	SsnLast4 MatchScoresForAttribute `json:"SSN_LAST4"`
-
-	SsnNumber MatchScoresForAttribute `json:"SSN_NUMBER"`
-
-	Tango MatchScoresForAttribute `json:"TANGO"`
-
-	TaxIDCountry MatchScoresForAttribute `json:"TAX_ID_COUNTRY"`
-
-	TaxIDNumber MatchScoresForAttribute `json:"TAX_ID_NUMBER"`
-
-	TaxIDType MatchScoresForAttribute `json:"TAX_ID_TYPE"`
-
-	Telegram MatchScoresForAttribute `json:"TELEGRAM"`
-
-	TrustedIDNumber MatchScoresForAttribute `json:"TRUSTED_ID_NUMBER"`
-
-	TrustedIDType MatchScoresForAttribute `json:"TRUSTED_ID_TYPE"`
-
-	Twitter MatchScoresForAttribute `json:"TWITTER"`
-
-	Viber MatchScoresForAttribute `json:"VIBER"`
-
-	WebsiteAddress MatchScoresForAttribute `json:"WEBSITE_ADDRESS"`
-
-	Wechat MatchScoresForAttribute `json:"WECHAT"`
-
-	Whatsapp MatchScoresForAttribute `json:"WHATSAPP"`
-
-	WorkPhoneNumber MatchScoresForAttribute `json:"WORK_PHONE_NUMBER"`
-
-	Zoomroom MatchScoresForAttribute `json:"ZOOMROOM"`
-}
-
-type MatchScoresForAttribute = []MatchScoreForAttribute
 
 type MemberRecord struct {
 	InternalID int64 `json:"INTERNAL_ID"`
@@ -2621,26 +789,6 @@ type MemberRecord struct {
 }
 
 type MemberRecords = []MemberRecord
-
-type Name struct {
-	NameFirst string `json:"NAME_FIRST"`
-
-	NameFull string `json:"NAME_FULL"`
-
-	NameLast string `json:"NAME_LAST"`
-
-	NameMiddle string `json:"NAME_MIDDLE"`
-
-	NameOrg string `json:"NAME_ORG"`
-
-	NamePrefix string `json:"NAME_PREFIX"`
-
-	NameSuffix string `json:"NAME_SUFFIX"`
-
-	NameType string `json:"NAME_TYPE"`
-}
-
-type Names = []Name
 
 type Network struct {
 	Entities []Entity `json:"ENTITIES"`
@@ -2658,74 +806,44 @@ type Notice struct {
 
 type Notices = []Notice
 
-type Passport struct {
-	PassportCountry string `json:"PASSPORT_COUNTRY"`
-
-	PassportNumber string `json:"PASSPORT_NUMBER"`
-}
-
-type Passports = []Passport
-
 type Path struct {
 	Entities []Entity `json:"ENTITIES"`
 
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 }
 
-type Phone struct {
-	PhoneFromDate string `json:"PHONE_FROM_DATE"`
+type ProductLicense struct {
+	Billing string `json:"billing"`
 
-	PhoneNumber string `json:"PHONE_NUMBER"`
+	Contract string `json:"contract"`
 
-	PhoneThruDate string `json:"PHONE_THRU_DATE"`
+	Customer string `json:"customer"`
 
-	PhoneType string `json:"PHONE_TYPE"`
+	ExpireDate string `json:"expireDate"`
+
+	IssueDate string `json:"issueDate"`
+
+	LicenseLevel string `json:"licenseLevel"`
+
+	LicenseType string `json:"licenseType"`
+
+	RecordLimit int64 `json:"recordLimit"`
 }
 
-type Phones = []Phone
+type ProductVersion struct {
+	BuildDate string `json:"BUILD_DATE"`
 
-type ProcessUmfProc struct {
-	Name string `json:"NAME"`
+	BuildNumber string `json:"BUILD_NUMBER"`
 
-	Result string `json:"RESULT"`
-}
+	BuildVersion string `json:"BUILD_VERSION"`
 
-type Process struct {
-	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+	ProductName string `json:"PRODUCT_NAME"`
 
-	ProcessResult ProcessResult `json:"PROCESS_RESULT"`
+	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
 
-	UmfProc ProcessUmfProc `json:"UMF_PROC"`
-}
-
-type ProcessResultResolvedEntities struct {
-	EntityID int64 `json:"ENTITY_ID"`
-
-	EntityName string `json:"ENTITY_NAME"`
-
-	ErruleCode string `json:"ERRULE_CODE"`
-
-	Features map[string][]FeatureForAttribute `json:"FEATURES"`
-
-	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
-
-	MatchKey string `json:"MATCH_KEY"`
-
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
-
-	MatchScores MatchScores `json:"MATCH_SCORES"`
-
-	Records Records `json:"RECORDS"`
-
-	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
-}
-
-type ProcessResult struct {
-	ResolvedEntities []ProcessResultResolvedEntities `json:"RESOLVED_ENTITIES"`
+	Version string `json:"VERSION"`
 }
 
 type RecordFeatures struct {
@@ -2791,6 +909,8 @@ type RecordSummaryElement struct {
 type Records = []Record
 
 type RelatedEntity struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	EntityName string `json:"ENTITY_NAME"`
@@ -2814,24 +934,6 @@ type RelatedEntity struct {
 	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 }
 
-type Relationship struct {
-	RelationshipKey string `json:"RELATIONSHIP_KEY"`
-
-	RelationshipType string `json:"RELATIONSHIP_TYPE"`
-
-	RelAnchorDomain string `json:"REL_ANCHOR_DOMAIN"`
-
-	RelAnchorKey string `json:"REL_ANCHOR_KEY"`
-
-	RelPointerDomain string `json:"REL_POINTER_DOMAIN"`
-
-	RelPointerKey string `json:"REL_POINTER_KEY"`
-
-	RelPointerRole string `json:"REL_POINTER_ROLE"`
-}
-
-type Relationships = []Relationship
-
 type ResolutionStep struct {
 	InboundVirtualEntityID string `json:"INBOUND_VIRTUAL_ENTITY_ID"`
 
@@ -2848,9 +950,9 @@ type ResolutionStep struct {
 
 type ResolutionSteps = []ResolutionStep
 
-type ResolvedEntities = []ResolvedEntityAndMatchInfo
-
 type ResolvedEntity struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	EntityName string `json:"ENTITY_NAME"`
@@ -2952,6 +1054,66 @@ type SearchStatistic struct {
 
 type SearchStatistics = []SearchStatistic
 
+type SzConfigAddDataSourceResponse = AddDataSource
+
+type SzConfigGetDataSourcesResponse = GetDataSources
+
+type SzConfigGetJSONStringResponse = GetJSONString
+
+type SzConfigmgrGetConfigListResponse = ConfigList
+
+type SzConfigmgrGetConfigResponse = GetConfig
+
+type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance
+
+type SzEngineAddRecordResponse = WithInfo
+
+type SzEngineDeleteRecordResponse = WithInfo
+
+type SzEngineFetchNextResponse = FixmeUnknown
+
+type SzEngineFindNetworkByEntityIDResponse = Network
+
+type SzEngineFindNetworkByRecordIDResponse = Network
+
+type SzEngineFindPathByEntityIDResponse = Path
+
+type SzEngineFindPathByRecordIDResponse = Path
+
+type SzEngineGetEntityByEntityIDResponse = Entity
+
+type SzEngineGetEntityByRecordIDResponse = Entity
+
+type SzEngineGetRecordResponse = Record
+
+type SzEngineGetRedoRecordResponse = FixmeUnknown
+
+type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
+
+type SzEngineHowEntityByEntityIDResponse = How
+
+type SzEngineProcessRedoRecordResponse = WithInfo
+
+type SzEngineReevaluateEntityResponse = WithInfo
+
+type SzEngineReevaluateRecordResponse = WithInfo
+
+type SzEngineReplaceRecordResponse = WithInfo
+
+type SzEngineSearchByAttributesResponse = Search
+
+type SzEngineStreamExportJSONEntityReportResponse = FixmeUnknown
+
+type SzEngineWhyEntitiesResponse = WhyEntities
+
+type SzEngineWhyRecordInEntityResponse = FixmeUnknown
+
+type SzEngineWhyRecordsResponse = WhyRecords
+
+type SzProductGetLicenseResponse = ProductLicense
+
+type SzProductGetVersionResponse = ProductVersion
+
 type VirtualEntity struct {
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
@@ -2968,12 +1130,6 @@ type WhyEntities struct {
 	WhyResults WhyResults `json:"WHY_RESULTS"`
 }
 
-type WhyEntity struct {
-	Entities []Entity `json:"ENTITIES"`
-
-	WhyResults WhyResults `json:"WHY_RESULTS"`
-}
-
 type WhyRecords struct {
 	Entities []Entity `json:"ENTITIES"`
 
@@ -2981,6 +1137,8 @@ type WhyRecords struct {
 }
 
 type WhyResult struct {
+	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
+	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
 	EntityID0 int64 `json:"ENTITY_ID_2"`

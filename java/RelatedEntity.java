@@ -47,6 +47,8 @@ public class RelatedEntity {
 
     /**
      * Getter for entityId.<p>
+     * The ENTITY_ID is the Senzing-generated identifier for the discovered
+     * entity. It may change when new information is added.
      */
     public Integer getEntityId() {
         return entityId;
@@ -54,6 +56,8 @@ public class RelatedEntity {
 
     /**
      * Setter for entityId.<p>
+     * The ENTITY_ID is the Senzing-generated identifier for the discovered
+     * entity. It may change when new information is added.
      */
     public void setEntityId(Integer entityId) {
         this.entityId = entityId;

@@ -9,10 +9,36 @@ import os
 import pathlib
 
 from python.typedef import (
-    G2configListDataSourcesResponse,
-    G2engineAddRecordWithInfoResponse,
-    G2engineDeleteRecordWithInfoResponse,
-    G2engineGetVirtualEntityByRecordIDResponse,
+    SzConfigAddDataSourceResponse,
+    SzConfigGetDataSourcesResponse,
+    SzConfigGetJSONStringResponse,
+    SzConfigmgrGetConfigListResponse,
+    SzConfigmgrGetConfigResponse,
+    SzDiagnosticCheckDatabasePerformanceResponse,
+    SzEngineAddRecordResponse,
+    SzEngineDeleteRecordResponse,
+    SzEngineFetchNextResponse,
+    SzEngineFindNetworkByEntityIDResponse,
+    SzEngineFindNetworkByRecordIDResponse,
+    SzEngineFindPathByEntityIDResponse,
+    SzEngineFindPathByRecordIDResponse,
+    SzEngineGetEntityByEntityIDResponse,
+    SzEngineGetEntityByRecordIDResponse,
+    SzEngineGetRecordResponse,
+    SzEngineGetRedoRecordResponse,
+    SzEngineGetVirtualEntityByRecordIDResponse,
+    SzEngineHowEntityByEntityIDResponse,
+    SzEngineProcessRedoRecordResponse,
+    SzEngineReevaluateEntityResponse,
+    SzEngineReevaluateRecordResponse,
+    SzEngineReplaceRecordResponse,
+    SzEngineSearchByAttributesResponse,
+    SzEngineStreamExportJSONEntityReportResponse,
+    SzEngineWhyEntitiesResponse,
+    SzEngineWhyRecordInEntityResponse,
+    SzEngineWhyRecordsResponse,
+    SzProductGetLicenseResponse,
+    SzProductGetVersionResponse,
 )
 
 # -----------------------------------------------------------------------------
@@ -26,30 +52,50 @@ def path_to_testdata(filename: str) -> str:
     return result
 
 
+def file(filename: str) -> dict:
+    print(filename)
+    absolute_file = path_to_testdata(filename)
+    with open(
+        absolute_file,
+        encoding="utf-8",
+    ) as input_file:
+        return json.loads(input_file.read())
+
+
+def print_fmt(
+    response, value
+):  # pylint: disable=redefined-outer-name eval-used, unused-argument
+    """
+    Tricky code:
+    The "response" passed in needs to be part of the "value" string to be evaluated.
+    """
+    print(f"    {value} = {eval(value)}")  # pylint: disable=eval-used
+
+
 # -----------------------------------------------------------------------------
 # Mock functions - Simulate calls to Senzing SDK API.
 # -----------------------------------------------------------------------------
 
 
-def mock_g2engine_add_record_with_info() -> str:
+def mock_szengine_add_record_with_info() -> str:
     with open(
-        path_to_testdata("G2EngineAddRecordWithInfoResponse-test-001.json"),
+        path_to_testdata("SzEngineAddRecordResponse-test-001.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
 
 
-def mock_g2engine_delete_record_with_info() -> str:
+def mock_szengine_delete_record_with_info() -> str:
     with open(
-        path_to_testdata("G2EngineDeleteRecordWithInfoResponse-test-001.json"),
+        path_to_testdata("SzEngineDeleteRecordResponse-test-001.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
 
 
-def mock_g2engine_get_virtual_entity_by_record_id() -> str:
+def mock_szengine_get_virtual_entity_by_record_id() -> str:
     with open(
-        path_to_testdata("G2EngineGetVirtualEntityByRecordIdResponse-test-001.json"),
+        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-023.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
@@ -63,31 +109,31 @@ print(
     "\n---- Simple examples ----------------------------------------------------------\n"
 )
 
-# G2Engine add_record_with_info -----------------------------------------------
+# SzEngine add_record_with_info -----------------------------------------------
 
-response = G2engineAddRecordWithInfoResponse.from_json_data(
-    json.loads(mock_g2engine_add_record_with_info())
+response = SzEngineAddRecordResponse.from_json_data(
+    json.loads(mock_szengine_add_record_with_info())
 )
 print(
-    f"G2engineAddRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
+    f"SzEngineAddRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
 )
 
-# G2Engine delete_record_with_info --------------------------------------------
+# SzEngine delete_record_with_info --------------------------------------------
 
-response = G2engineDeleteRecordWithInfoResponse.from_json_data(
-    json.loads(mock_g2engine_delete_record_with_info())
-)
-print(
-    f"G2engineDeleteRecordWithInfoResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
-)
-
-# G2Engine g2engine_get_virtual_entity_by_record_id ------------------------------------
-
-response = G2engineGetVirtualEntityByRecordIDResponse.from_json_data(
-    json.loads(mock_g2engine_get_virtual_entity_by_record_id())
+response = SzEngineDeleteRecordResponse.from_json_data(
+    json.loads(mock_szengine_delete_record_with_info())
 )
 print(
-    f"G2engineGetVirtualEntityByRecordIDResponse: Simple  description: {response.value.resolved_entity.features['NAME'][0].feat_desc}"
+    f"SzEngineDeleteRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
+)
+
+# SzEngine szengine_get_virtual_entity_by_record_id ------------------------------------
+
+response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
+    json.loads(mock_szengine_get_virtual_entity_by_record_id())
+)
+print(
+    f"SzEngineGetVirtualEntityByRecordIDResponse: Simple  description: {response.value.resolved_entity.features['NAME'][0].feat_desc}"
 )
 
 feature_list = response.value.resolved_entity.features["NAME"]
@@ -95,19 +141,19 @@ for feature in feature_list:
     feat_desc_list = feature.feat_desc_values
     for feat_desc in feat_desc_list:
         print(
-            f"G2engineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}"
+            f"SzEngineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}"
         )
 
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys
 # - Issue: No editor hints
-response = json.loads(mock_g2engine_get_virtual_entity_by_record_id())
+response = json.loads(mock_szengine_get_virtual_entity_by_record_id())
 feature_list = response.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")
     for feat_desc in feat_desc_list:
         print(
-            f"G2engineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.get('FEAT_DESC')}"
+            f"SzEngineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.get('FEAT_DESC')}"
         )
 
 # -----------------------------------------------------------------------------
@@ -119,9 +165,9 @@ print(
 )
 
 JSON_STRING = '{"DATA_SOURCES": [{"DSRC_ID": 1, "DSRC_CODE": "TEST"}, {"DSRC_ID": 2, "DSRC_CODE": "SEARCH"}]}'
-JSON_STRUCT = G2configListDataSourcesResponse.from_json_data(json.loads(JSON_STRING))
+JSON_STRUCT = SzConfigGetDataSourcesResponse.from_json_data(json.loads(JSON_STRING))
 
-for data_source in JSON_STRUCT.data_sources:
+for data_source in JSON_STRUCT.value.data_sources:
     print("ID: {0}  Code: {1}".format(data_source.dsrc_id, data_source.dsrc_code))
 
 RECONSTRUCTED_STRING = json.dumps(JSON_STRUCT.to_json_data())
@@ -131,3 +177,132 @@ print(
         RECONSTRUCTED_STRING
     )
 )
+
+# -----------------------------------------------------------------------------
+# test area
+# -----------------------------------------------------------------------------
+
+
+response = SzConfigAddDataSourceResponse.from_json_data(
+    file("SzConfigAddDataSourceResponse-test-001.json")
+)
+print_fmt(response, "response.value.dsrc_id")
+
+
+response = SzConfigGetDataSourcesResponse.from_json_data(
+    file("SzConfigGetDataSourcesResponse-test-001.json")
+)
+print_fmt(response, "response.value.data_sources[0].dsrc_id")
+
+
+response = SzConfigmgrGetConfigListResponse.from_json_data(
+    file("SzConfigmgrGetConfigListResponse-test-001.json")
+)
+print_fmt(response, "response.value.configs[0].config_id")
+
+
+response = SzConfigmgrGetConfigResponse.from_json_data(
+    file("SzConfigmgrGetConfigResponse-test-001.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
+
+
+response = SzConfigGetJSONStringResponse.from_json_data(
+    file("SzConfigGetJsonStringResponse-test-001.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
+
+
+response = SzDiagnosticCheckDatabasePerformanceResponse.from_json_data(
+    file("SzDiagnosticCheckDatabasePerformanceResponse-test-001.json")
+)
+print_fmt(response, "response.value.num_records_inserted")
+
+
+response = SzEngineAddRecordResponse.from_json_data(
+    file("SzEngineAddRecordResponse-test-001.json")
+)
+print_fmt(response, "response.value.affected_entities[0].entity_id")
+
+
+response = SzEngineDeleteRecordResponse.from_json_data(
+    file("SzEngineDeleteRecordResponse-test-001.json")
+)
+print_fmt(response, "response.value.affected_entities[0].entity_id")
+
+
+response = SzEngineFetchNextResponse.from_json_data({})
+x = response.value.value  # TODO:
+
+
+response = SzEngineFindNetworkByEntityIDResponse.from_json_data(
+    file("SzEngineFindNetworkByEntityIdResponse-test-002.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = SzEngineFindNetworkByRecordIDResponse.from_json_data(
+    file("SzEngineFindNetworkByRecordIdResponse-test-002.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].related_entities[0].entity_id",
+)
+
+
+response = SzEngineFindPathByEntityIDResponse.from_json_data(
+    file("SzEngineFindPathByEntityIdResponse-test-001.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].resolved_entity.entity_id",
+)
+
+
+response = SzEngineFindPathByRecordIDResponse.from_json_data(
+    file("SzEngineFindPathByRecordIdResponse-test-001.json")
+)
+print_fmt(
+    response,
+    "response.value.entities[0].resolved_entity.entity_id",
+)
+
+
+response = SzEngineGetEntityByEntityIDResponse.from_json_data({})
+response = SzEngineGetEntityByRecordIDResponse.from_json_data({})
+response = SzEngineGetRecordResponse.from_json_data({})
+response = SzEngineGetRedoRecordResponse.from_json_data({})
+response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data({})
+response = SzEngineHowEntityByEntityIDResponse.from_json_data({})
+response = SzEngineProcessRedoRecordResponse.from_json_data({})
+response = SzEngineProcessRedoRecordResponse.from_json_data({})
+response = SzEngineReevaluateEntityResponse.from_json_data({})
+response = SzEngineReevaluateRecordResponse.from_json_data({})
+response = SzEngineReplaceRecordResponse.from_json_data({})
+response = SzEngineSearchByAttributesResponse.from_json_data({})
+response = SzEngineStreamExportJSONEntityReportResponse.from_json_data({})
+response = SzEngineWhyEntitiesResponse.from_json_data({})
+response = SzEngineWhyRecordInEntityResponse.from_json_data({})
+response = SzEngineWhyRecordsResponse.from_json_data({})
+response = SzProductGetLicenseResponse.from_json_data({})
+response = SzProductGetVersionResponse.from_json_data({})
+
+
+# response = SzEngineGetEntityByEntityIDResponse.from_json_data({})
+# x = response.value.resolved_entity
+
+# response = SzEngineFindNetworkByEntityIDResponse.from_json_data({})
+# x = response.value.entities[0].related_entities[0].record_summary[0]
+
+# response = SzConfigmgrGetConfigListResponse.from_json_data({})
+# x = response.value.configs[0].
+
+
+# response = SzProductLicenseResponse.from_json_data({})
+# response.
+
+# response = SzEngineGetEntityByEntityIDResponse.from_json_data({})
+# x = response.value.resolved_entity.entity_id
