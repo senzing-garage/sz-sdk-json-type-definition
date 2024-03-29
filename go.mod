@@ -1,4 +1,4 @@
-module github.com/senzing-garage/g2-sdk-json-type-definition
+module github.com/senzing-garage/sz-sdk-json-type-definition
 
 go 1.21
 

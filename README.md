@@ -1,4 +1,4 @@
-# g2-sdk-json-type-definition
+# sz-sdk-json-type-definition
 
 If you are beginning your journey with
 [Senzing](https://senzing.com/),
@@ -12,7 +12,7 @@ Although this GitHub repository may help you understand an approach to using Sen
 it's not considered to be "production ready" and is not considered to be part of the Senzing product.
 Heck, it may not even be appropriate for your application of Senzing!
 
-## :warning: WARNING: g2-sdk-json-type-definition is still in development :warning: _
+## :warning: WARNING: sz-sdk-json-type-definition is still in development :warning: _
 
 At the moment, this is "work-in-progress" with Semantic Versions of `0.n.x`.
 Although it can be reviewed and commented on,
@@ -20,7 +20,7 @@ the recommendation is not to use it yet.
 
 ## Synopsis
 
-The Senzing g2-sdk-json-type-definition uses
+The Senzing sz-sdk-json-type-definition uses
 [JSON Type Definition](https://jsontypedef.com/)
 to model the JSON that is returned from Senzing API calls.
 
@@ -57,4 +57,4 @@ From this specification, code is generated for the following languages:
 1. [Development](docs/development.md)
 1. [Errors](docs/errors.md)
 1. [Examples](docs/examples.md)
-1. [Package reference](https://pkg.go.dev/github.com/senzing-garage/g2-sdk-json-type-definition)
+1. [Package reference](https://pkg.go.dev/github.com/senzing-garage/sz-sdk-json-type-definition)

@@ -83,7 +83,7 @@ The variables are used throughout the installation procedure.
 
 ```console
 export GIT_ACCOUNT=senzing-garage
-export GIT_REPOSITORY=g2-sdk-json-type-definition
+export GIT_REPOSITORY=sz-sdk-json-type-definition
 ```
 
 Synthesize environment variables.

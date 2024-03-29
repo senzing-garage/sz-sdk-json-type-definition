@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/senzing-garage/g2-sdk-json-type-definition/go/typedef"
+	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
 )
 
 func pathToTestdata(filename string) string {

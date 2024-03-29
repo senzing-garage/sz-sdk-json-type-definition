@@ -1,4 +1,4 @@
-# Makefile for g2-sdk-json-type-definition.
+# Makefile for sz-sdk-json-type-definition.
 
 # "Simple expanded" variables (':=')
 

@@ -1,1 +1,1 @@
-# g2-sdk-json-type-definition errors
+# sz-sdk-json-type-definition errors
