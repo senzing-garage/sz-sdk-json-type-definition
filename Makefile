@@ -117,17 +117,18 @@ generate-typescript:
 # -----------------------------------------------------------------------------
 
 .PHONY: generate-tests
-generate-tests: generate_go_typedef_test generate_testdata
+generate-tests: generate_typedef_test_go generate_testdata
 
 
-.PHONY: generate_go_typedef_test
-generate_go_typedef_test:
+.PHONY: generate_typedef_test_go
+generate_typedef_test_go:
 	@rm ./go/typedef/generated_typedef_test.go || true
-	@./bin/generate_go_typedef_test.py
+	@./bin/generate_typedef_test_go.py
 
 
 .PHONY: generate_testdata
 generate_testdata:
+	@rm $(MAKEFILE_DIRECTORY)testdata/* || true
 	@./bin/generate_testdata.py
 
 # -----------------------------------------------------------------------------

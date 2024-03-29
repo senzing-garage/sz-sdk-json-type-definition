@@ -6,7 +6,16 @@ Pretty print the JSON.
 
 import json
 
-BLACK_LIST = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
+BLACK_LIST = [
+    "description",
+    "elements",
+    "goType",
+    "metadata",
+    "properties",
+    "ref",
+    "optionalproperties",
+    "type",
+]
 INPUT_FILENAME = "./senzingapi-RFC8927.json"
 OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
 
@@ -14,6 +23,7 @@ OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
 # -----------------------------------------------------------------------------
 # --- Helpers
 # -----------------------------------------------------------------------------
+
 
 def recurse(prefix, an_object):
     """Recurse though the dictionary, beautifying as it goes."""

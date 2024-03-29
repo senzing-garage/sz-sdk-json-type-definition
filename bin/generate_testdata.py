@@ -11,10 +11,8 @@ import json
 import logging
 import os
 
-from test_cases import TEST_CASES
-
-IS_DEBUG = False
-FINAL_RESULT = {}
+INPUT_FILE = "bin/response-testcases.json"
+OUTPUT_FILE = "testdata"
 
 # -----------------------------------------------------------------------------
 # --- Helpers
@@ -23,8 +21,7 @@ FINAL_RESULT = {}
 
 def canonical_json(json_string):
     """Create compact JSON.  No spaces."""
-    json_object = json.loads(json_string)
-    result = json.dumps(json_object, sort_keys=True, separators=(",", ":"))
+    result = json.dumps(json_string, sort_keys=True, separators=(",", ":"))
     return result
 
 
@@ -36,6 +33,8 @@ def canonical_json(json_string):
 
 logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
 
+# Prolog.
+
 logging.info("{0}".format("-" * 80))
 logging.info("--- {0} - Begin".format(os.path.basename(__file__)))
 logging.info("{0}".format("-" * 80))
@@ -45,15 +44,20 @@ logging.info("{0}".format("-" * 80))
 parser = argparse.ArgumentParser(prog="generate_testdata.py")
 parser.add_argument(
     "--output",
-    help="Output directory. Default: ./testdata",
-    default="./testdata",
+    help=f"Output directory. Default: {OUTPUT_FILE}",
+    default=OUTPUT_FILE,
 )
 args = parser.parse_args()
 OUTPUT_DIRECTORY = args.output
 
+# Load testcase metadata.
+
+with open(INPUT_FILE, encoding="utf-8") as input_file:
+    response_testcases = json.load(input_file)
+
 # Generate test data.
 
-for senzing_api_class, method_test_cases in TEST_CASES.items():
+for senzing_api_class, method_test_cases in response_testcases.items():
     metadata = method_test_cases.get("metadata", {})
     tests = method_test_cases.get("tests", {})
     for test_case_name, test_case_json in tests.items():

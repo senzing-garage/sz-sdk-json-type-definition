@@ -79,7 +79,7 @@ def print_fmt(
 
 def mock_szengine_add_record_with_info() -> str:
     with open(
-        path_to_testdata("SzEngineAddRecordResponse-test-001.json"),
+        path_to_testdata("SzEngineAddRecordResponse-test-002.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
@@ -87,7 +87,7 @@ def mock_szengine_add_record_with_info() -> str:
 
 def mock_szengine_delete_record_with_info() -> str:
     with open(
-        path_to_testdata("SzEngineDeleteRecordResponse-test-001.json"),
+        path_to_testdata("SzEngineDeleteRecordResponse-test-002.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
@@ -95,7 +95,7 @@ def mock_szengine_delete_record_with_info() -> str:
 
 def mock_szengine_get_virtual_entity_by_record_id() -> str:
     with open(
-        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-023.json"),
+        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-002.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
@@ -220,13 +220,13 @@ print_fmt(response, "response.value.num_records_inserted")
 
 
 response = SzEngineAddRecordResponse.from_json_data(
-    file("SzEngineAddRecordResponse-test-001.json")
+    file("SzEngineAddRecordResponse-test-002.json")
 )
 print_fmt(response, "response.value.affected_entities[0].entity_id")
 
 
 response = SzEngineDeleteRecordResponse.from_json_data(
-    file("SzEngineDeleteRecordResponse-test-001.json")
+    file("SzEngineDeleteRecordResponse-test-002.json")
 )
 print_fmt(response, "response.value.affected_entities[0].entity_id")
 
@@ -236,7 +236,7 @@ x = response.value.value  # TODO:
 
 
 response = SzEngineFindNetworkByEntityIDResponse.from_json_data(
-    file("SzEngineFindNetworkByEntityIdResponse-test-002.json")
+    file("SzEngineFindNetworkByEntityIdResponse-test-003.json")
 )
 print_fmt(
     response,
@@ -245,7 +245,7 @@ print_fmt(
 
 
 response = SzEngineFindNetworkByRecordIDResponse.from_json_data(
-    file("SzEngineFindNetworkByRecordIdResponse-test-002.json")
+    file("SzEngineFindNetworkByRecordIdResponse-test-003.json")
 )
 print_fmt(
     response,
