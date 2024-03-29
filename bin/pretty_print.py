@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# pylint: disable=duplicate-code
+
 """
 Pretty print the JSON.
 """
@@ -31,7 +33,7 @@ def recurse(prefix, an_object):
         if isinstance(value, dict):
             recurse("{0}.{1}".format(prefix, key), value)
             if key not in BLACK_LIST:
-                if not "metadata" in value:
+                if "metadata" not in value:
                     value["metadata"] = {}
                 if "description" not in value.get("metadata"):
                     value["metadata"]["description"] = "No description."

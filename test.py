@@ -256,4 +256,4 @@ def test_szengine_get_virtual_entity_by_record_id_002():
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    test_szengine_add_record_with_info_006()
+    test_szengine_add_record_with_info_005()

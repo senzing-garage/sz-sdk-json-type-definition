@@ -77,8 +77,8 @@ def canonical_json(json_string):
     return result
 
 
-def canonical_testcase_name(testcase_name):
-    return re.sub("[^0-9a-zA-Z]+", "", testcase_name).capitalize()
+def canonical_testcase_name(raw_testcase_name):
+    return re.sub("[^0-9a-zA-Z]+", "", raw_testcase_name).capitalize()
 
 
 # -----------------------------------------------------------------------------
