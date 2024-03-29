@@ -1,4 +1,4 @@
-# g2-sdk-json-type-definition development
+# sz-sdk-json-type-definition development
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@
 
     ```console
     export GIT_ACCOUNT=senzing
-    export GIT_REPOSITORY=g2-sdk-json-type-definition
+    export GIT_REPOSITORY=sz-sdk-json-type-definition
     export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
 

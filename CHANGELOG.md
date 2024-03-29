@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [0.2.3] - 2024-03-28
+
+### Changed in 0.2.3
+
+- Changed repository from "g2-sdk-json-type-definition" to "sz-sdk-json-type-definition"
+
 ## [0.2.2] - 2024-03-27
 
 ### Changed in 0.2.2

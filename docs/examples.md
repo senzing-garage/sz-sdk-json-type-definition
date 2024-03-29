@@ -1,4 +1,4 @@
-# g2-sdk-json-type-definition examples
+# sz-sdk-json-type-definition examples
 
 ## Run main
 
