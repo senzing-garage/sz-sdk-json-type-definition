@@ -229,9 +229,9 @@ def test_szengine_get_record_003():
 #     assert response.value.value == {}
 
 
-def test_szengine_get_virtual_entity_by_record_id_002():
+def test_szengine_get_virtual_entity_by_record_id_001():
     with open(
-        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-002.json"),
+        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"),
         encoding="utf-8",
     ) as input_file:
         response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
