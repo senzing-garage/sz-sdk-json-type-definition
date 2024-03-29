@@ -1,12 +1,23 @@
 #! /usr/bin/env python3
 
+# pylint: disable=duplicate-code
+
 """
 Pretty print the JSON.
 """
 
 import json
 
-BLACK_LIST = ["description", "elements", "goType", "metadata", "properties", "ref", "optionalproperties", "type"]
+BLACK_LIST = [
+    "description",
+    "elements",
+    "goType",
+    "metadata",
+    "properties",
+    "ref",
+    "optionalproperties",
+    "type",
+]
 INPUT_FILENAME = "./senzingapi-RFC8927.json"
 OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
 
@@ -15,13 +26,14 @@ OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
 # --- Helpers
 # -----------------------------------------------------------------------------
 
+
 def recurse(prefix, an_object):
     """Recurse though the dictionary, beautifying as it goes."""
     for key, value in an_object.items():
         if isinstance(value, dict):
             recurse("{0}.{1}".format(prefix, key), value)
             if key not in BLACK_LIST:
-                if not "metadata" in value:
+                if "metadata" not in value:
                     value["metadata"] = {}
                 if "description" not in value.get("metadata"):
                     value["metadata"]["description"] = "No description."

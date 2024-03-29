@@ -1,4 +1,7 @@
 #! /usr/bin/env python3
+
+# pylint: disable=duplicate-code
+
 """
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """

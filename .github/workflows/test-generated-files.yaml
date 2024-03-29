@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.8', '3.9', '3.10']
+        python-version: ["3.8", "3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
       - name: verify go/typedef/generated_typedef_test.go
         run: |
           mkdir /tmp/go-typedef
-          ./bin/generate_go_typedef_test.py --output /tmp/go-typedef/generated_typedef_test.go
+          ./bin/generate_typedef_test_go.py --output /tmp/go-typedef/generated_typedef_test.go
           diff ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test.go
 
       - name: verify generated files are up-to-date

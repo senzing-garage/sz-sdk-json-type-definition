@@ -16,7 +16,7 @@ func pathToTestdata(filename string) string {
 }
 
 func mockSzEngineGetVirtualEntityByRecordId() string {
-	result, err := os.ReadFile(pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-023.json"))
+	result, err := os.ReadFile(pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"))
 	if err != nil {
 		panic(err)
 	}

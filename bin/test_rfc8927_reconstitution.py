@@ -4,14 +4,11 @@
 Requires minimum Python 3.10
 """
 
-
 import builtins
 import json
 import logging
 import os
 import sys
-
-from test_cases import TEST_CASES
 
 # Tricky code:  Need to import all python.typedef.* for the "not in globals()" test
 # pylint: disable=unused-wildcard-import
@@ -20,10 +17,11 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 from python.typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
 
+INPUT_FILE = "bin/response-testcases.json"
+
 DEBUG = False
 ERROR_COUNT = 0
 TEST_COUNT = 0
-
 
 # -----------------------------------------------------------------------------
 # --- Functions
@@ -95,13 +93,22 @@ def remove_empty_elements(an_object):
 
 logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
 
+# Prolog.
+
 logging.info("{0}".format("-" * 80))
 logging.info("--- {0} - Begin".format(os.path.basename(__file__)))
 logging.info("{0}".format("-" * 80))
 
+
+# Load testcase metadata.
+
+with open(INPUT_FILE, encoding="utf-8") as input_file:
+    response_testcases = json.load(input_file)
+
+
 # Process TEST_CASES.
 
-for senzing_api_class, method_test_cases in TEST_CASES.items():
+for senzing_api_class, method_test_cases in response_testcases.items():
 
     metadata = method_test_cases.get("metadata", {})
     tests = method_test_cases.get("tests", {})
@@ -117,24 +124,25 @@ for senzing_api_class, method_test_cases in TEST_CASES.items():
     # Run though test cases.
 
     senzing_class = globals()[pythonClass]
-    for method_test_case, original_json_string in tests.items():
+    for testcase_name, testcase_dict in tests.items():
         TEST_COUNT += 1
-        test_case_name = "{0}.{1}".format(pythonClass, method_test_case)
+        canonical_testcase_name = "{0}.{1}".format(pythonClass, testcase_name)
 
         # Test for similarity in key/values.
 
-        logging.info("Testcase: {0}".format(test_case_name))
-        json_struct = senzing_class.from_json_data(json.loads(original_json_string))
+        logging.info("Testcase: {0}".format(canonical_testcase_name))
+        json_struct = senzing_class.from_json_data(testcase_dict)
         reconstructed_json_string = json.dumps(json_struct.to_json_data())
-        original_json_dict = json.loads(original_json_string)
-        reconstructed_json_dict = json.loads(reconstructed_json_string)
-        if not is_equal(test_case_name, original_json_dict, reconstructed_json_dict):
+        reconstructed_testcase_dict = json.loads(reconstructed_json_string)
+        if not is_equal(
+            canonical_testcase_name, testcase_dict, reconstructed_testcase_dict
+        ):
             ERROR_COUNT += 1
 
         # Test for similarity in JSON string lengths.
 
         original_json_string_sorted = json.dumps(
-            remove_empty_elements(original_json_dict), sort_keys=True
+            remove_empty_elements(testcase_dict), sort_keys=True
         )
         reconstructed_json_string_sorted = json.dumps(
             remove_empty_elements(json_struct.to_json_data()), sort_keys=True
@@ -145,7 +153,7 @@ for senzing_api_class, method_test_cases in TEST_CASES.items():
             ERROR_COUNT += 1
             logging.error(
                 "Lengths differ: Test: {0}; Original: {1}; Reconstructed: {2}".format(
-                    test_case_name, len_original, len_reconstructed
+                    canonical_testcase_name, len_original, len_reconstructed
                 )
             )
 
@@ -160,7 +168,7 @@ for senzing_api_class, method_test_cases in TEST_CASES.items():
                     ERROR_COUNT += 1
                     logging.error(
                         "Strings differ: Test: {0}; First difference position: {1}".format(
-                            test_case_name, index
+                            canonical_testcase_name, index
                         )
                     )
                     logging.error(

@@ -39,9 +39,9 @@ def path_to_testdata(filename: str) -> str:
 # -----------------------------------------------------------------------------
 
 
-def test_szengine_add_record_with_info_001():
+def test_szengine_add_record_with_info_005():
     with open(
-        path_to_testdata("SzEngineAddRecordResponse-test-001.json"),
+        path_to_testdata("SzEngineAddRecordResponse-test-005.json"),
         encoding="utf-8",
     ) as input_file:
         response = SzEngineAddRecordResponse.from_json_data(json.load(input_file))
@@ -50,9 +50,9 @@ def test_szengine_add_record_with_info_001():
     assert response.value.affected_entities[0].entity_id == 7
 
 
-def test_szengine_delete_record_with_info_001():
+def test_szengine_delete_record_with_info_002():
     with open(
-        path_to_testdata("SzEngineDeleteRecordResponse-test-001.json"),
+        path_to_testdata("SzEngineDeleteRecordResponse-test-002.json"),
         encoding="utf-8",
     ) as input_file:
         response = SzEngineDeleteRecordResponse.from_json_data(json.load(input_file))
@@ -164,9 +164,9 @@ def test_szengine_get_entity_by_entity_id_001():
     assert response.value.resolved_entity.features["ADDRESS"][0].lib_feat_id == 20
 
 
-def test_szengine_get_entity_by_entity_id_023():
+def test_szengine_get_entity_by_entity_id_003():
     with open(
-        path_to_testdata("SzEngineGetEntityByEntityIdResponse-test-023.json"),
+        path_to_testdata("SzEngineGetEntityByEntityIdResponse-test-003.json"),
         encoding="utf-8",
     ) as input_file:
         response = SzEngineGetEntityByEntityIDResponse.from_json_data(
@@ -229,9 +229,9 @@ def test_szengine_get_record_003():
 #     assert response.value.value == {}
 
 
-def test_szengine_get_virtual_entity_by_record_id_025():
+def test_szengine_get_virtual_entity_by_record_id_001():
     with open(
-        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-025.json"),
+        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"),
         encoding="utf-8",
     ) as input_file:
         response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
@@ -256,4 +256,4 @@ def test_szengine_get_virtual_entity_by_record_id_025():
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    test_szengine_add_record_with_info_001()
+    test_szengine_add_record_with_info_005()
