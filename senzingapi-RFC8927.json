@@ -2216,10 +2216,10 @@
         "SzConfigGetJsonStringResponse": {
             "ref": "GetJsonString"
         },
-        "SzConfigmgrGetConfigListResponse": {
+        "SzConfigManagerGetConfigListResponse": {
             "ref": "ConfigList"
         },
-        "SzConfigmgrGetConfigResponse": {
+        "SzConfigManagerGetConfigResponse": {
             "ref": "GetConfig"
         },
         "SzDiagnosticCheckDatabasePerformanceResponse": {

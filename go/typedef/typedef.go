@@ -1060,9 +1060,9 @@ type SzConfigGetDataSourcesResponse = GetDataSources
 
 type SzConfigGetJSONStringResponse = GetJSONString
 
-type SzConfigmgrGetConfigListResponse = ConfigList
+type SzConfigManagerGetConfigListResponse = ConfigList
 
-type SzConfigmgrGetConfigResponse = GetConfig
+type SzConfigManagerGetConfigResponse = GetConfig
 
 type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance
 

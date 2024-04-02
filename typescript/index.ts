@@ -728,9 +728,9 @@ export type SzConfigGetDataSourcesResponse = GetDataSources;
 
 export type SzConfigGetJsonStringResponse = GetJsonString;
 
-export type SzConfigmgrGetConfigListResponse = ConfigList;
+export type SzConfigManagerGetConfigListResponse = ConfigList;
 
-export type SzConfigmgrGetConfigResponse = GetConfig;
+export type SzConfigManagerGetConfigResponse = GetConfig;
 
 export type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
 

@@ -12,8 +12,8 @@ from python.typedef import (
     SzConfigAddDataSourceResponse,
     SzConfigGetDataSourcesResponse,
     SzConfigGetJSONStringResponse,
-    SzConfigmgrGetConfigListResponse,
-    SzConfigmgrGetConfigResponse,
+    SzConfigManagerGetConfigListResponse,
+    SzConfigManagerGetConfigResponse,
     SzDiagnosticCheckDatabasePerformanceResponse,
     SzEngineAddRecordResponse,
     SzEngineDeleteRecordResponse,
@@ -195,14 +195,14 @@ response = SzConfigGetDataSourcesResponse.from_json_data(
 print_fmt(response, "response.value.data_sources[0].dsrc_id")
 
 
-response = SzConfigmgrGetConfigListResponse.from_json_data(
-    file("SzConfigmgrGetConfigListResponse-test-001.json")
+response = SzConfigManagerGetConfigListResponse.from_json_data(
+    file("SzConfigManagerGetConfigListResponse-test-001.json")
 )
 print_fmt(response, "response.value.configs[0].config_id")
 
 
-response = SzConfigmgrGetConfigResponse.from_json_data(
-    file("SzConfigmgrGetConfigResponse-test-001.json")
+response = SzConfigManagerGetConfigResponse.from_json_data(
+    file("SzConfigManagerGetConfigResponse-test-001.json")
 )
 print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
 
@@ -297,7 +297,7 @@ response = SzProductGetVersionResponse.from_json_data({})
 # response = SzEngineFindNetworkByEntityIDResponse.from_json_data({})
 # x = response.value.entities[0].related_entities[0].record_summary[0]
 
-# response = SzConfigmgrGetConfigListResponse.from_json_data({})
+# response = SzConfigManagerGetConfigListResponse.from_json_data({})
 # x = response.value.configs[0].
 
 
