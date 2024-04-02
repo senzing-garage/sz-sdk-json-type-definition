@@ -2471,22 +2471,22 @@ class SzConfigGetJSONStringResponse:
         return _to_json_data(self.value)
 
 @dataclass
-class SzConfigmgrGetConfigListResponse:
+class SzConfigManagerGetConfigListResponse:
     value: 'ConfigList'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigmgrGetConfigListResponse':
+    def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigListResponse':
         return cls(_from_json_data(ConfigList, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
 @dataclass
-class SzConfigmgrGetConfigResponse:
+class SzConfigManagerGetConfigResponse:
     value: 'GetConfig'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigmgrGetConfigResponse':
+    def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigResponse':
         return cls(_from_json_data(GetConfig, data))
 
     def to_json_data(self) -> Any:

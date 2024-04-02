@@ -1568,9 +1568,9 @@ pub type SzConfigGetDataSourcesResponse = GetDataSources;
 
 pub type SzConfigGetJsonStringResponse = GetJsonString;
 
-pub type SzConfigmgrGetConfigListResponse = ConfigList;
+pub type SzConfigManagerGetConfigListResponse = ConfigList;
 
-pub type SzConfigmgrGetConfigResponse = GetConfig;
+pub type SzConfigManagerGetConfigResponse = GetConfig;
 
 pub type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
 

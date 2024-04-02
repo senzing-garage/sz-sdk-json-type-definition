@@ -2581,11 +2581,11 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigmgrGetConfigListResponse
+  class SzConfigManagerGetConfigListResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigmgrGetConfigListResponse.new
+      out = SzConfigManagerGetConfigListResponse.new
       out.value = SenzingTypeDef.from_json_data(ConfigList, data)
       out
     end
@@ -2595,11 +2595,11 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigmgrGetConfigResponse
+  class SzConfigManagerGetConfigResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigmgrGetConfigResponse.new
+      out = SzConfigManagerGetConfigResponse.new
       out.value = SenzingTypeDef.from_json_data(GetConfig, data)
       out
     end
