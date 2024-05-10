@@ -6,151 +6,7 @@
             }
         }
     },
-    "SzConfigGetDataSourcesResponse": {
-        "tests": {
-            "test-001": {
-                "DATA_SOURCES": [
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    }
-                ]
-            },
-            "test-002": {
-                "DATA_SOURCES": [
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    }
-                ]
-            },
-            "test-003": {
-                "DATA_SOURCES": [
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    }
-                ]
-            },
-            "test-004": {
-                "DATA_SOURCES": [
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    }
-                ]
-            },
-            "test-005": {
-                "DATA_SOURCES": [
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    }
-                ]
-            },
-            "test-006": {
-                "DATA_SOURCES": [
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    },
-                    {
-                        "DSRC_CODE": "blank",
-                        "DSRC_ID": 1
-                    }
-                ]
-            }
-        }
-    },
-    "SzConfigGetJsonStringResponse": {
+    "SzConfigExportConfigResponse": {
         "tests": {
             "test-001": {
                 "G2_CONFIG": {
@@ -10422,10 +10278,150 @@
                     ]
                 }
             }
-        },
-        "metadata": {
-            "goClass": "SzConfigGetJSONStringResponse",
-            "pythonClass": "SzConfigGetJSONStringResponse"
+        }
+    },
+    "SzConfigGetDataSourcesResponse": {
+        "tests": {
+            "test-001": {
+                "DATA_SOURCES": [
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    }
+                ]
+            },
+            "test-002": {
+                "DATA_SOURCES": [
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    }
+                ]
+            },
+            "test-003": {
+                "DATA_SOURCES": [
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    }
+                ]
+            },
+            "test-004": {
+                "DATA_SOURCES": [
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    }
+                ]
+            },
+            "test-005": {
+                "DATA_SOURCES": [
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    }
+                ]
+            },
+            "test-006": {
+                "DATA_SOURCES": [
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    },
+                    {
+                        "DSRC_CODE": "blank",
+                        "DSRC_ID": 1
+                    }
+                ]
+            }
         }
     },
     "SzConfigManagerGetConfigListResponse": {
@@ -30359,11 +30355,58 @@
             }
         }
     },
-    "SzDiagnosticCheckDatabasePerformanceResponse": {
+    "SzDiagnosticCheckDatastorePerformanceResponse": {
         "tests": {
             "test-001": {
                 "insertTime": 1,
                 "numRecordsInserted": 1
+            }
+        }
+    },
+    "SzDiagnosticGetDatastoreInfoResponse": {
+        "tests": {
+            "test-001": {
+                "dataStores": [
+                    {
+                        "id": "CORE",
+                        "type": "sqlite3",
+                        "location": "/home/senzing/senzing-garage.git/sz-sdk-go-core/target/test/szdiagnostic/G2C.db"
+                    }
+                ]
+            }
+        }
+    },
+    "SzDiagnosticGetFeatureResponse": {
+        "tests": {
+            "test-001": {
+                "LIB_FEAT_ID": 1,
+                "FTYPE_CODE": "NAME",
+                "ELEMENTS": [
+                    {
+                        "FELEM_CODE": "TOKENIZED_NM",
+                        "FELEM_VALUE": "ROBERT|SMITH"
+                    },
+                    {
+                        "FELEM_CODE": "CATEGORY",
+                        "FELEM_VALUE": "PERSON"
+                    },
+                    {
+                        "FELEM_CODE": "CULTURE",
+                        "FELEM_VALUE": "ANGLO"
+                    },
+                    {
+                        "FELEM_CODE": "GIVEN_NAME",
+                        "FELEM_VALUE": "Robert"
+                    },
+                    {
+                        "FELEM_CODE": "SUR_NAME",
+                        "FELEM_VALUE": "Smith"
+                    },
+                    {
+                        "FELEM_CODE": "FULL_NAME",
+                        "FELEM_VALUE": "Robert Smith"
+                    }
+                ]
             }
         }
     },
@@ -30484,6 +30527,32 @@
                     "ENTITIES": []
                 },
                 "RECORD_ID": "blank"
+            }
+        }
+    },
+    "SzEngineFindInterestingEntitiesByEntityIdResponse": {
+        "metadata": {
+            "goClass": "SzEngineFindInterestingEntitiesByEntityIDResponse",
+            "pythonClass": "SzEngineFindInterestingEntitiesByEntityIDResponse"
+        },
+        "tests": {
+            "test-001": {
+                "INTERESTING_ENTITIES": {
+                    "ENTITIES": []
+                }
+            }
+        }
+    },
+    "SzEngineFindInterestingEntitiesByRecordIdResponse": {
+        "metadata": {
+            "goClass": "SzEngineFindInterestingEntitiesByRecordIDResponse",
+            "pythonClass": "SzEngineFindInterestingEntitiesByRecordIDResponse"
+        },
+        "tests": {
+            "test-001": {
+                "INTERESTING_ENTITIES": {
+                    "ENTITIES": []
+                }
             }
         }
     },
@@ -44509,25 +44578,6 @@
             }
         }
     },
-    "SzEngineReplaceRecordResponse": {
-        "tests": {
-            "test-001": {
-                "AFFECTED_ENTITIES": [
-                    {
-                        "ENTITY_ID": 1
-                    },
-                    {
-                        "ENTITY_ID": 1
-                    }
-                ],
-                "DATA_SOURCE": "blank",
-                "INTERESTING_ENTITIES": {
-                    "ENTITIES": []
-                },
-                "RECORD_ID": "blank"
-            }
-        }
-    },
     "SzEngineSearchByAttributesResponse": {
         "tests": {
             "test-001": {
@@ -47991,6 +48041,9 @@
                 ]
             }
         }
+    },
+    "SzEngineWhyRecordInEntityResponse": {
+        "tests": {}
     },
     "SzEngineWhyRecordsResponse": {
         "tests": {

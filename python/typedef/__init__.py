@@ -991,24 +991,6 @@ class ConfigBaseVersion:
         return data
 
 @dataclass
-class CheckDatabasePerformance:
-    insert_time: 'int'
-    num_records_inserted: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'CheckDatabasePerformance':
-        return cls(
-            _from_json_data(int, data.get("insertTime")),
-            _from_json_data(int, data.get("numRecordsInserted")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["insertTime"] = _to_json_data(self.insert_time)
-        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
-        return data
-
-@dataclass
 class CompatibilityVersion:
     config_version: 'str'
 
@@ -1086,6 +1068,60 @@ class DataSource:
         return data
 
 @dataclass
+class Datastore:
+    id: 'str'
+    location: 'str'
+    type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Datastore':
+        return cls(
+            _from_json_data(str, data.get("id")),
+            _from_json_data(str, data.get("location")),
+            _from_json_data(str, data.get("type")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["id"] = _to_json_data(self.id)
+        data["location"] = _to_json_data(self.location)
+        data["type"] = _to_json_data(self.type)
+        return data
+
+@dataclass
+class DatastoreInfo:
+    data_stores: 'List[Datastore]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DatastoreInfo':
+        return cls(
+            _from_json_data(List[Datastore], data.get("dataStores")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["dataStores"] = _to_json_data(self.data_stores)
+        return data
+
+@dataclass
+class DatastorePerformance:
+    insert_time: 'int'
+    num_records_inserted: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DatastorePerformance':
+        return cls(
+            _from_json_data(int, data.get("insertTime")),
+            _from_json_data(int, data.get("numRecordsInserted")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["insertTime"] = _to_json_data(self.insert_time)
+        data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
+        return data
+
+@dataclass
 class Entity:
     related_entities: 'List[RelatedEntity]'
     resolved_entity: 'ResolvedEntity'
@@ -1137,6 +1173,24 @@ class ExportConfig:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class Feature:
+    felem_code: 'str'
+    felem_value: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Feature':
+        return cls(
+            _from_json_data(str, data.get("FELEM_CODE")),
+            _from_json_data(str, data.get("FELEM_VALUE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["FELEM_CODE"] = _to_json_data(self.felem_code)
+        data["FELEM_VALUE"] = _to_json_data(self.felem_value)
         return data
 
 @dataclass
@@ -1475,18 +1529,24 @@ class GetDataSources:
         return data
 
 @dataclass
-class GetJSONString:
-    g2_config: 'G2config'
+class GetFeature:
+    elements: 'List[Feature]'
+    ftype_code: 'str'
+    lib_feat_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'GetJSONString':
+    def from_json_data(cls, data: Any) -> 'GetFeature':
         return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
+            _from_json_data(List[Feature], data.get("ELEMENTS")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(int, data.get("LIB_FEAT_ID")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        data["ELEMENTS"] = _to_json_data(self.elements)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
         return data
 
 @dataclass
@@ -2449,23 +2509,23 @@ class SzConfigAddDataSourceResponse:
         return _to_json_data(self.value)
 
 @dataclass
+class SzConfigExportConfigResponse:
+    value: 'ExportConfig'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigExportConfigResponse':
+        return cls(_from_json_data(ExportConfig, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class SzConfigGetDataSourcesResponse:
     value: 'GetDataSources'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourcesResponse':
         return cls(_from_json_data(GetDataSources, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class SzConfigGetJSONStringResponse:
-    value: 'GetJSONString'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigGetJSONStringResponse':
-        return cls(_from_json_data(GetJSONString, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2493,12 +2553,34 @@ class SzConfigManagerGetConfigResponse:
         return _to_json_data(self.value)
 
 @dataclass
-class SzDiagnosticCheckDatabasePerformanceResponse:
-    value: 'CheckDatabasePerformance'
+class SzDiagnosticCheckDatastorePerformanceResponse:
+    value: 'DatastorePerformance'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckDatabasePerformanceResponse':
-        return cls(_from_json_data(CheckDatabasePerformance, data))
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckDatastorePerformanceResponse':
+        return cls(_from_json_data(DatastorePerformance, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzDiagnosticGetDatastoreInfoResponse:
+    value: 'DatastoreInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticGetDatastoreInfoResponse':
+        return cls(_from_json_data(DatastoreInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzDiagnosticGetFeatureResponse:
+    value: 'GetFeature'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticGetFeatureResponse':
+        return cls(_from_json_data(GetFeature, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2532,6 +2614,28 @@ class SzEngineFetchNextResponse:
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFetchNextResponse':
         return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindInterestingEntitiesByEntityIDResponse:
+    value: 'Interesting'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindInterestingEntitiesByEntityIDResponse':
+        return cls(_from_json_data(Interesting, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineFindInterestingEntitiesByRecordIDResponse:
+    value: 'Interesting'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineFindInterestingEntitiesByRecordIDResponse':
+        return cls(_from_json_data(Interesting, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2674,17 +2778,6 @@ class SzEngineReevaluateRecordResponse:
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineReevaluateRecordResponse':
-        return cls(_from_json_data(WithInfo, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class SzEngineReplaceRecordResponse:
-    value: 'WithInfo'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzEngineReplaceRecordResponse':
         return cls(_from_json_data(WithInfo, data))
 
     def to_json_data(self) -> Any:

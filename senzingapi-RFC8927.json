@@ -929,22 +929,6 @@
                 }
             }
         },
-        "CheckDatabasePerformance": {
-            "properties": {
-                "insertTime": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "numRecordsInserted": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
         "CompatibilityVersion": {
             "properties": {
                 "CONFIG_VERSION": {
@@ -999,13 +983,6 @@
                 }
             }
         },
-        "GetJsonString": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
         "DataSource": {
             "properties": {
                 "DSRC_CODE": {
@@ -1017,6 +994,44 @@
                 "DSRC_ID": {
                     "metadata": {
                         "description": "The unique identifier of the datasource.",
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "Datastore": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "DatastoreInfo": {
+            "properties": {
+                "dataStores": {
+                    "elements": {
+                        "ref": "Datastore"
+                    }
+                }
+            }
+        },
+        "DatastorePerformance": {
+            "properties": {
+                "insertTime": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "numRecordsInserted": {
+                    "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1063,6 +1078,16 @@
             "properties": {
                 "G2_CONFIG": {
                     "ref": "G2Config"
+                }
+            }
+        },
+        "Feature": {
+            "properties": {
+                "FELEM_CODE": {
+                    "type": "string"
+                },
+                "FELEM_VALUE": {
+                    "type": "string"
                 }
             }
         },
@@ -1414,6 +1439,33 @@
                 }
             }
         },
+        "GetDataSources": {
+            "properties": {
+                "DATA_SOURCES": {
+                    "elements": {
+                        "ref": "DataSource"
+                    }
+                }
+            }
+        },
+        "GetFeature": {
+            "properties": {
+                "ELEMENTS": {
+                    "elements": {
+                        "ref": "Feature"
+                    }
+                },
+                "FTYPE_CODE": {
+                    "type": "string"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
         "How": {
             "properties": {
                 "HOW_RESULTS": {
@@ -1485,15 +1537,6 @@
                                 "type": "string"
                             }
                         }
-                    }
-                }
-            }
-        },
-        "GetDataSources": {
-            "properties": {
-                "DATA_SOURCES": {
-                    "elements": {
-                        "ref": "DataSource"
                     }
                 }
             }
@@ -2210,11 +2253,11 @@
         "SzConfigAddDataSourceResponse": {
             "ref": "AddDataSource"
         },
+        "SzConfigExportConfigResponse": {
+            "ref": "ExportConfig"
+        },
         "SzConfigGetDataSourcesResponse": {
             "ref": "GetDataSources"
-        },
-        "SzConfigGetJsonStringResponse": {
-            "ref": "GetJsonString"
         },
         "SzConfigManagerGetConfigListResponse": {
             "ref": "ConfigList"
@@ -2222,8 +2265,14 @@
         "SzConfigManagerGetConfigResponse": {
             "ref": "GetConfig"
         },
-        "SzDiagnosticCheckDatabasePerformanceResponse": {
-            "ref": "CheckDatabasePerformance"
+        "SzDiagnosticCheckDatastorePerformanceResponse": {
+            "ref": "DatastorePerformance"
+        },
+        "SzDiagnosticGetDatastoreInfoResponse": {
+            "ref": "DatastoreInfo"
+        },
+        "SzDiagnosticGetFeatureResponse": {
+            "ref": "GetFeature"
         },
         "SzEngineAddRecordResponse": {
             "ref": "WithInfo"
@@ -2233,6 +2282,12 @@
         },
         "SzEngineFetchNextResponse": {
             "ref": "FixmeUnknown"
+        },
+        "SzEngineFindInterestingEntitiesByEntityIdResponse": {
+            "ref": "Interesting"
+        },
+        "SzEngineFindInterestingEntitiesByRecordIdResponse": {
+            "ref": "Interesting"
         },
         "SzEngineFindNetworkByEntityIdResponse": {
             "ref": "Network"
@@ -2271,9 +2326,6 @@
             "ref": "WithInfo"
         },
         "SzEngineReevaluateRecordResponse": {
-            "ref": "WithInfo"
-        },
-        "SzEngineReplaceRecordResponse": {
             "ref": "WithInfo"
         },
         "SzEngineSearchByAttributesResponse": {

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    public class CheckDatabasePerformance
+    public class DatastorePerformance
     {
         [JsonPropertyName("insertTime")]
         public int InsertTime { get; set; }

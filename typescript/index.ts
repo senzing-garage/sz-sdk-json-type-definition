@@ -294,11 +294,6 @@ export interface ConfigBaseVersion {
   VERSION: string;
 }
 
-export interface CheckDatabasePerformance {
-  insertTime: number;
-  numRecordsInserted: number;
-}
-
 export interface CompatibilityVersion {
   CONFIG_VERSION: string;
 }
@@ -325,6 +320,21 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
+export interface Datastore {
+  id: string;
+  location: string;
+  type: string;
+}
+
+export interface DatastoreInfo {
+  dataStores: Datastore[];
+}
+
+export interface DatastorePerformance {
+  insertTime: number;
+  numRecordsInserted: number;
+}
+
 export interface Entity {
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
@@ -338,6 +348,11 @@ export interface EntityPath {
 
 export interface ExportConfig {
   G2_CONFIG: G2config;
+}
+
+export interface Feature {
+  FELEM_CODE: string;
+  FELEM_VALUE: string;
 }
 
 export interface FeatureDescriptionValue {
@@ -437,8 +452,10 @@ export interface GetDataSources {
   DATA_SOURCES: DataSource[];
 }
 
-export interface GetJsonString {
-  G2_CONFIG: G2config;
+export interface GetFeature {
+  ELEMENTS: Feature[];
+  FTYPE_CODE: string;
+  LIB_FEAT_ID: number;
 }
 
 export interface How {
@@ -724,21 +741,29 @@ export type SearchStatistics = SearchStatistic[];
 
 export type SzConfigAddDataSourceResponse = AddDataSource;
 
-export type SzConfigGetDataSourcesResponse = GetDataSources;
+export type SzConfigExportConfigResponse = ExportConfig;
 
-export type SzConfigGetJsonStringResponse = GetJsonString;
+export type SzConfigGetDataSourcesResponse = GetDataSources;
 
 export type SzConfigManagerGetConfigListResponse = ConfigList;
 
 export type SzConfigManagerGetConfigResponse = GetConfig;
 
-export type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
+export type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
+
+export type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo;
+
+export type SzDiagnosticGetFeatureResponse = GetFeature;
 
 export type SzEngineAddRecordResponse = WithInfo;
 
 export type SzEngineDeleteRecordResponse = WithInfo;
 
 export type SzEngineFetchNextResponse = FixmeUnknown;
+
+export type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
+
+export type SzEngineFindInterestingEntitiesByRecordIdResponse = Interesting;
 
 export type SzEngineFindNetworkByEntityIdResponse = Network;
 
@@ -765,8 +790,6 @@ export type SzEngineProcessRedoRecordResponse = WithInfo;
 export type SzEngineReevaluateEntityResponse = WithInfo;
 
 export type SzEngineReevaluateRecordResponse = WithInfo;
-
-export type SzEngineReplaceRecordResponse = WithInfo;
 
 export type SzEngineSearchByAttributesResponse = Search;
 
