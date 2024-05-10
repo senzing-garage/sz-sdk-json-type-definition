@@ -671,15 +671,6 @@ pub struct ConfigBaseVersion {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct CheckDatabasePerformance {
-    #[serde(rename = "insertTime")]
-    pub insertTime: i32,
-
-    #[serde(rename = "numRecordsInserted")]
-    pub numRecordsInserted: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct CompatibilityVersion {
     #[serde(rename = "CONFIG_VERSION")]
     pub configVersion: String,
@@ -715,6 +706,33 @@ pub struct DataSource {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct Datastore {
+    #[serde(rename = "id")]
+    pub id: String,
+
+    #[serde(rename = "location")]
+    pub location: String,
+
+    #[serde(rename = "type")]
+    pub type_: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct DatastoreInfo {
+    #[serde(rename = "dataStores")]
+    pub dataStores: Vec<Datastore>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct DatastorePerformance {
+    #[serde(rename = "insertTime")]
+    pub insertTime: i32,
+
+    #[serde(rename = "numRecordsInserted")]
+    pub numRecordsInserted: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct Entity {
     #[serde(rename = "RELATED_ENTITIES")]
     pub relatedEntities: Vec<RelatedEntity>,
@@ -739,6 +757,15 @@ pub struct EntityPath {
 pub struct ExportConfig {
     #[serde(rename = "G2_CONFIG")]
     pub g2Config: G2config,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Feature {
+    #[serde(rename = "FELEM_CODE")]
+    pub felemCode: String,
+
+    #[serde(rename = "FELEM_VALUE")]
+    pub felemValue: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -969,9 +996,15 @@ pub struct GetDataSources {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct GetJsonString {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
+pub struct GetFeature {
+    #[serde(rename = "ELEMENTS")]
+    pub elements: Vec<Feature>,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1564,21 +1597,29 @@ pub type SearchStatistics = Vec<SearchStatistic>;
 
 pub type SzConfigAddDataSourceResponse = AddDataSource;
 
-pub type SzConfigGetDataSourcesResponse = GetDataSources;
+pub type SzConfigExportConfigResponse = ExportConfig;
 
-pub type SzConfigGetJsonStringResponse = GetJsonString;
+pub type SzConfigGetDataSourcesResponse = GetDataSources;
 
 pub type SzConfigManagerGetConfigListResponse = ConfigList;
 
 pub type SzConfigManagerGetConfigResponse = GetConfig;
 
-pub type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance;
+pub type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
+
+pub type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo;
+
+pub type SzDiagnosticGetFeatureResponse = GetFeature;
 
 pub type SzEngineAddRecordResponse = WithInfo;
 
 pub type SzEngineDeleteRecordResponse = WithInfo;
 
 pub type SzEngineFetchNextResponse = FixmeUnknown;
+
+pub type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
+
+pub type SzEngineFindInterestingEntitiesByRecordIdResponse = Interesting;
 
 pub type SzEngineFindNetworkByEntityIdResponse = Network;
 
@@ -1605,8 +1646,6 @@ pub type SzEngineProcessRedoRecordResponse = WithInfo;
 pub type SzEngineReevaluateEntityResponse = WithInfo;
 
 pub type SzEngineReevaluateRecordResponse = WithInfo;
-
-pub type SzEngineReplaceRecordResponse = WithInfo;
 
 pub type SzEngineSearchByAttributesResponse = Search;
 

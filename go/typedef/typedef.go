@@ -450,12 +450,6 @@ type ConfigBaseVersion struct {
 	Version string `json:"VERSION"`
 }
 
-type CheckDatabasePerformance struct {
-	InsertTime int64 `json:"insertTime"`
-
-	NumRecordsInserted int64 `json:"numRecordsInserted"`
-}
-
 type CompatibilityVersion struct {
 	ConfigVersion string `json:"CONFIG_VERSION"`
 }
@@ -480,6 +474,24 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
+type Datastore struct {
+	ID string `json:"id"`
+
+	Location string `json:"location"`
+
+	Type string `json:"type"`
+}
+
+type DatastoreInfo struct {
+	DataStores []Datastore `json:"dataStores"`
+}
+
+type DatastorePerformance struct {
+	InsertTime int64 `json:"insertTime"`
+
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
+}
+
 type Entity struct {
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
@@ -496,6 +508,12 @@ type EntityPath struct {
 
 type ExportConfig struct {
 	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type Feature struct {
+	FelemCode string `json:"FELEM_CODE"`
+
+	FelemValue string `json:"FELEM_VALUE"`
 }
 
 type FeatureDescriptionValue struct {
@@ -652,8 +670,12 @@ type GetDataSources struct {
 	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
-type GetJSONString struct {
-	G2Config G2config `json:"G2_CONFIG"`
+type GetFeature struct {
+	Elements []Feature `json:"ELEMENTS"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
 }
 
 type How struct {
@@ -1056,21 +1078,29 @@ type SearchStatistics = []SearchStatistic
 
 type SzConfigAddDataSourceResponse = AddDataSource
 
-type SzConfigGetDataSourcesResponse = GetDataSources
+type SzConfigExportConfigResponse = ExportConfig
 
-type SzConfigGetJSONStringResponse = GetJSONString
+type SzConfigGetDataSourcesResponse = GetDataSources
 
 type SzConfigManagerGetConfigListResponse = ConfigList
 
 type SzConfigManagerGetConfigResponse = GetConfig
 
-type SzDiagnosticCheckDatabasePerformanceResponse = CheckDatabasePerformance
+type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance
+
+type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo
+
+type SzDiagnosticGetFeatureResponse = GetFeature
 
 type SzEngineAddRecordResponse = WithInfo
 
 type SzEngineDeleteRecordResponse = WithInfo
 
 type SzEngineFetchNextResponse = FixmeUnknown
+
+type SzEngineFindInterestingEntitiesByEntityIDResponse = Interesting
+
+type SzEngineFindInterestingEntitiesByRecordIDResponse = Interesting
 
 type SzEngineFindNetworkByEntityIDResponse = Network
 
@@ -1097,8 +1127,6 @@ type SzEngineProcessRedoRecordResponse = WithInfo
 type SzEngineReevaluateEntityResponse = WithInfo
 
 type SzEngineReevaluateRecordResponse = WithInfo
-
-type SzEngineReplaceRecordResponse = WithInfo
 
 type SzEngineSearchByAttributesResponse = Search
 

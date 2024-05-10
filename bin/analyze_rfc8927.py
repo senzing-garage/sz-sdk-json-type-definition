@@ -13,6 +13,7 @@ GLOBAL_KEY_COUNT = {}
 GLOBAL_KEY_TYPE = {}
 GLOBAL_OUT_OF_ORDER = []
 GLOBAL_REFS = []
+GLOBAL_JSON_KEYS = []
 BLACK_LIST = [
     "description",
     "elements",
@@ -87,6 +88,7 @@ def recurse(prefix, list_to_check):
         add_to_key_count(key_to_check)
         add_to_key_type(key_to_check, value_to_check)
         if isinstance(value_to_check, dict):
+            GLOBAL_JSON_KEYS.append(key_to_check)
             recurse("{0}.{1}".format(prefix, key_to_check), value_to_check)
 
 
@@ -165,13 +167,26 @@ for key, value in SORTED_GLOBAL_KEY_TYPE.items():
     if len(value) > 1:
         print("{0:30s}  {1}".format(key, sorted(value)))
 
+# Print missing JSON keys that have a ref:
+
+print("")
+print("-" * 80)
+print("\nTEST 5: Refs without JSON keys.\n")
+
+MISSING_REF_COUNT = 0
+for value in GLOBAL_REFS:
+    if value not in GLOBAL_JSON_KEYS:
+        MISSING_REF_COUNT += 1
+        print("Missing:", value)
+if MISSING_REF_COUNT == 0:
+    print("No missing JSON keys")
 
 # Print result of test for similar lists.
 # Must be done last as it mutates GLOBAL_KEYS
 
 print("")
 print("-" * 80)
-print("\nTEST 5: Detect JSON keys not used.\n")
+print("\nTEST 6: Detect JSON keys not used.\n")
 
 definitions = GLOBAL_KEYS.pop("definitions")
 for key, values in GLOBAL_KEYS.items():

@@ -5,23 +5,23 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public class SzEngineReplaceRecordResponse {
+public class SzEngineFindInterestingEntitiesByEntityIdResponse {
     @JsonValue
-    private WithInfo value;
+    private Interesting value;
 
-    public SzEngineReplaceRecordResponse() {
+    public SzEngineFindInterestingEntitiesByEntityIdResponse() {
     }
 
     @JsonCreator
-    public SzEngineReplaceRecordResponse(WithInfo value) {
+    public SzEngineFindInterestingEntitiesByEntityIdResponse(Interesting value) {
         this.value = value;
     }
 
-    public WithInfo getValue() {
+    public Interesting getValue() {
         return value;
     }
 
-    public void setValue(WithInfo value) {
+    public void setValue(Interesting value) {
         this.value = value;
     }
 }

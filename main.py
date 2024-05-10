@@ -10,14 +10,18 @@ import pathlib
 
 from python.typedef import (
     SzConfigAddDataSourceResponse,
+    SzConfigExportConfigResponse,
     SzConfigGetDataSourcesResponse,
-    SzConfigGetJSONStringResponse,
     SzConfigManagerGetConfigListResponse,
     SzConfigManagerGetConfigResponse,
-    SzDiagnosticCheckDatabasePerformanceResponse,
+    SzDiagnosticCheckDatastorePerformanceResponse,
+    SzDiagnosticGetDatastoreInfoResponse,
+    SzDiagnosticGetFeatureResponse,
     SzEngineAddRecordResponse,
     SzEngineDeleteRecordResponse,
     SzEngineFetchNextResponse,
+    SzEngineFindInterestingEntitiesByEntityIDResponse,
+    SzEngineFindInterestingEntitiesByRecordIDResponse,
     SzEngineFindNetworkByEntityIDResponse,
     SzEngineFindNetworkByRecordIDResponse,
     SzEngineFindPathByEntityIDResponse,
@@ -31,7 +35,6 @@ from python.typedef import (
     SzEngineProcessRedoRecordResponse,
     SzEngineReevaluateEntityResponse,
     SzEngineReevaluateRecordResponse,
-    SzEngineReplaceRecordResponse,
     SzEngineSearchByAttributesResponse,
     SzEngineStreamExportJSONEntityReportResponse,
     SzEngineWhyEntitiesResponse,
@@ -189,6 +192,12 @@ response = SzConfigAddDataSourceResponse.from_json_data(
 print_fmt(response, "response.value.dsrc_id")
 
 
+response = SzConfigExportConfigResponse.from_json_data(
+    file("SzConfigExportConfigResponse-test-001.json")
+)
+print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
+
+
 response = SzConfigGetDataSourcesResponse.from_json_data(
     file("SzConfigGetDataSourcesResponse-test-001.json")
 )
@@ -207,16 +216,22 @@ response = SzConfigManagerGetConfigResponse.from_json_data(
 print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
 
 
-response = SzConfigGetJSONStringResponse.from_json_data(
-    file("SzConfigGetJsonStringResponse-test-001.json")
-)
-print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
-
-
-response = SzDiagnosticCheckDatabasePerformanceResponse.from_json_data(
-    file("SzDiagnosticCheckDatabasePerformanceResponse-test-001.json")
+response = SzDiagnosticCheckDatastorePerformanceResponse.from_json_data(
+    file("SzDiagnosticCheckDatastorePerformanceResponse-test-001.json")
 )
 print_fmt(response, "response.value.num_records_inserted")
+
+
+response = SzDiagnosticGetDatastoreInfoResponse.from_json_data(
+    file("SzDiagnosticGetDatastoreInfoResponse-test-001.json")
+)
+print_fmt(response, "response.value.data_stores[0].location")
+
+
+response = SzDiagnosticGetFeatureResponse.from_json_data(
+    file("SzDiagnosticGetFeatureResponse-test-001.json")
+)
+print_fmt(response, "response.value.lib_feat_id")
 
 
 response = SzEngineAddRecordResponse.from_json_data(
@@ -234,6 +249,22 @@ print_fmt(response, "response.value.affected_entities[0].entity_id")
 response = SzEngineFetchNextResponse.from_json_data({})
 x = response.value.value  # TODO:
 
+
+response = SzEngineFindInterestingEntitiesByEntityIDResponse.from_json_data(
+    file("SzEngineFindInterestingEntitiesByEntityIdResponse-test-001.json")
+)
+print_fmt(
+    response,
+    "response.value.interesting_entities",
+)
+
+response = SzEngineFindInterestingEntitiesByRecordIDResponse.from_json_data(
+    file("SzEngineFindInterestingEntitiesByRecordIdResponse-test-001.json")
+)
+print_fmt(
+    response,
+    "response.value.interesting_entities",
+)
 
 response = SzEngineFindNetworkByEntityIDResponse.from_json_data(
     file("SzEngineFindNetworkByEntityIdResponse-test-003.json")
@@ -278,10 +309,8 @@ response = SzEngineGetRedoRecordResponse.from_json_data({})
 response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data({})
 response = SzEngineHowEntityByEntityIDResponse.from_json_data({})
 response = SzEngineProcessRedoRecordResponse.from_json_data({})
-response = SzEngineProcessRedoRecordResponse.from_json_data({})
 response = SzEngineReevaluateEntityResponse.from_json_data({})
 response = SzEngineReevaluateRecordResponse.from_json_data({})
-response = SzEngineReplaceRecordResponse.from_json_data({})
 response = SzEngineSearchByAttributesResponse.from_json_data({})
 response = SzEngineStreamExportJSONEntityReportResponse.from_json_data({})
 response = SzEngineWhyEntitiesResponse.from_json_data({})

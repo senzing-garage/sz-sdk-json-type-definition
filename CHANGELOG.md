@@ -10,6 +10,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [0.2.5] - 2024-05-10
+
+### Added in 0.2.5
+
+- SzDiagnosticGetDatastoreInfoResponse
+- SzDiagnosticGetFeatureResponse
+- SzEngineFindInterestingEntitiesByEntityIdResponse
+- SzEngineFindInterestingEntitiesByRecordIdResponse
+- SzEngineWhyRecordInEntityResponse
+
+### Changed in 0.2.5
+
+- SzConfigExportConfigResponse
+- SzDiagnosticCheckDatastorePerformanceResponse
+
+### Removed in 0.2.5
+
+- SzEngineReplaceRecordResponse
+
 ## [0.2.4] - 2024-04-02
 
 ### Changed in 0.2.4
