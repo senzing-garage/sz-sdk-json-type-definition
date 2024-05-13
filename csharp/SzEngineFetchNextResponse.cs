@@ -12,19 +12,19 @@ namespace Senzing
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public FixmeUnknown Value { get; set; }
+        public FetchNext Value { get; set; }
     }
 
     public class SzEngineFetchNextResponseJsonConverter : JsonConverter<SzEngineFetchNextResponse>
     {
         public override SzEngineFetchNextResponse Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new SzEngineFetchNextResponse { Value = JsonSerializer.Deserialize<FixmeUnknown>(ref reader, options) };
+            return new SzEngineFetchNextResponse { Value = JsonSerializer.Deserialize<FetchNext>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, SzEngineFetchNextResponse value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<FixmeUnknown>(writer, value.Value, options);
+            JsonSerializer.Serialize<FetchNext>(writer, value.Value, options);
         }
     }
 }

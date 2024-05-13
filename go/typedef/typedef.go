@@ -578,6 +578,8 @@ type FeatureScores = map[string]FeatureScoresForAttribute
 
 type FeatureScoresForAttribute = []FeatureScoreForAttribute
 
+type FetchNext = FixmeUnknown
+
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
 
@@ -930,6 +932,8 @@ type RecordSummaryElement struct {
 
 type Records = []Record
 
+type RedoRecord = FixmeUnknown
+
 type RelatedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -1076,6 +1080,8 @@ type SearchStatistic struct {
 
 type SearchStatistics = []SearchStatistic
 
+type StreamExportJSONEntity = FixmeUnknown
+
 type SzConfigAddDataSourceResponse = AddDataSource
 
 type SzConfigExportConfigResponse = ExportConfig
@@ -1096,7 +1102,7 @@ type SzEngineAddRecordResponse = WithInfo
 
 type SzEngineDeleteRecordResponse = WithInfo
 
-type SzEngineFetchNextResponse = FixmeUnknown
+type SzEngineFetchNextResponse = FetchNext
 
 type SzEngineFindInterestingEntitiesByEntityIDResponse = Interesting
 
@@ -1116,7 +1122,7 @@ type SzEngineGetEntityByRecordIDResponse = Entity
 
 type SzEngineGetRecordResponse = Record
 
-type SzEngineGetRedoRecordResponse = FixmeUnknown
+type SzEngineGetRedoRecordResponse = RedoRecord
 
 type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
 
@@ -1130,11 +1136,11 @@ type SzEngineReevaluateRecordResponse = WithInfo
 
 type SzEngineSearchByAttributesResponse = Search
 
-type SzEngineStreamExportJSONEntityReportResponse = FixmeUnknown
+type SzEngineStreamExportJSONEntityReportResponse = StreamExportJSONEntity
 
 type SzEngineWhyEntitiesResponse = WhyEntities
 
-type SzEngineWhyRecordInEntityResponse = FixmeUnknown
+type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity
 
 type SzEngineWhyRecordsResponse = WhyRecords
 
@@ -1157,6 +1163,8 @@ type WhyEntities struct {
 
 	WhyResults WhyResults `json:"WHY_RESULTS"`
 }
+
+type WhyRecordInEntity = FixmeUnknown
 
 type WhyRecords struct {
 	Entities []Entity `json:"ENTITIES"`

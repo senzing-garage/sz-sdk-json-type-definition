@@ -1379,6 +1379,20 @@ module SenzingTypeDef
     end
   end
 
+  class FetchNext
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = FetchNext.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class FinalState
     attr_accessor :need_reevaluation
     attr_accessor :virtual_entities
@@ -2243,6 +2257,20 @@ module SenzingTypeDef
     end
   end
 
+  class RedoRecord
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = RedoRecord.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class RelatedEntity
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
@@ -2602,6 +2630,20 @@ module SenzingTypeDef
     end
   end
 
+  class StreamExportJSONEntity
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = StreamExportJSONEntity.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzConfigAddDataSourceResponse
     attr_accessor :value
 
@@ -2747,7 +2789,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(FetchNext, data)
       out
     end
 
@@ -2887,7 +2929,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineGetRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(RedoRecord, data)
       out
     end
 
@@ -2985,7 +3027,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineStreamExportJSONEntityReportResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(StreamExportJSONEntity, data)
       out
     end
 
@@ -3013,7 +3055,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineWhyRecordInEntityResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(WhyRecordInEntity, data)
       out
     end
 
@@ -3115,6 +3157,20 @@ module SenzingTypeDef
       data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
       data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
       data
+    end
+  end
+
+  class WhyRecordInEntity
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = WhyRecordInEntity.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 

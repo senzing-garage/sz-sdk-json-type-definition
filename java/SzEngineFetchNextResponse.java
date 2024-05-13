@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineFetchNextResponse {
     @JsonValue
-    private FixmeUnknown value;
+    private FetchNext value;
 
     public SzEngineFetchNextResponse() {
     }
 
     @JsonCreator
-    public SzEngineFetchNextResponse(FixmeUnknown value) {
+    public SzEngineFetchNextResponse(FetchNext value) {
         this.value = value;
     }
 
-    public FixmeUnknown getValue() {
+    public FetchNext getValue() {
         return value;
     }
 
-    public void setValue(FixmeUnknown value) {
+    public void setValue(FetchNext value) {
         this.value = value;
     }
 }

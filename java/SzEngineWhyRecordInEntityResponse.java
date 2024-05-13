@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineWhyRecordInEntityResponse {
     @JsonValue
-    private FixmeUnknown value;
+    private WhyRecordInEntity value;
 
     public SzEngineWhyRecordInEntityResponse() {
     }
 
     @JsonCreator
-    public SzEngineWhyRecordInEntityResponse(FixmeUnknown value) {
+    public SzEngineWhyRecordInEntityResponse(WhyRecordInEntity value) {
         this.value = value;
     }
 
-    public FixmeUnknown getValue() {
+    public WhyRecordInEntity getValue() {
         return value;
     }
 
-    public void setValue(FixmeUnknown value) {
+    public void setValue(WhyRecordInEntity value) {
         this.value = value;
     }
 }

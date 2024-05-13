@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineStreamExportJsonEntityReportResponse {
     @JsonValue
-    private FixmeUnknown value;
+    private StreamExportJsonEntity value;
 
     public SzEngineStreamExportJsonEntityReportResponse() {
     }
 
     @JsonCreator
-    public SzEngineStreamExportJsonEntityReportResponse(FixmeUnknown value) {
+    public SzEngineStreamExportJsonEntityReportResponse(StreamExportJsonEntity value) {
         this.value = value;
     }
 
-    public FixmeUnknown getValue() {
+    public StreamExportJsonEntity getValue() {
         return value;
     }
 
-    public void setValue(FixmeUnknown value) {
+    public void setValue(StreamExportJsonEntity value) {
         this.value = value;
     }
 }

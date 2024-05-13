@@ -1229,6 +1229,9 @@
                 "ref": "FeatureScoreForAttribute"
             }
         },
+        "FetchNext": {
+            "ref": "FixmeUnknown"
+        },
         "FinalState": {
             "properties": {
                 "NEED_REEVALUATION": {
@@ -1949,6 +1952,9 @@
                 }
             }
         },
+        "RedoRecord": {
+            "ref": "FixmeUnknown"
+        },
         "RelatedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -2192,6 +2198,9 @@
                 "ref": "SearchStatistic"
             }
         },
+        "StreamExportJsonEntity": {
+            "ref": "FixmeUnknown"
+        },
         "SYS_OOM": {
             "properties": {
                 "FELEM_ID": {
@@ -2281,7 +2290,7 @@
             "ref": "WithInfo"
         },
         "SzEngineFetchNextResponse": {
-            "ref": "FixmeUnknown"
+            "ref": "FetchNext"
         },
         "SzEngineFindInterestingEntitiesByEntityIdResponse": {
             "ref": "Interesting"
@@ -2311,7 +2320,7 @@
             "ref": "Record"
         },
         "SzEngineGetRedoRecordResponse": {
-            "ref": "FixmeUnknown"
+            "ref": "RedoRecord"
         },
         "SzEngineGetVirtualEntityByRecordIdResponse": {
             "ref": "VirtualEntity"
@@ -2332,13 +2341,13 @@
             "ref": "Search"
         },
         "SzEngineStreamExportJsonEntityReportResponse": {
-            "ref": "FixmeUnknown"
+            "ref": "StreamExportJsonEntity"
         },
         "SzEngineWhyEntitiesResponse": {
             "ref": "WhyEntities"
         },
         "SzEngineWhyRecordInEntityResponse": {
-            "ref": "FixmeUnknown"
+            "ref": "WhyRecordInEntity"
         },
         "SzEngineWhyRecordsResponse": {
             "ref": "WhyRecords"
@@ -2377,6 +2386,9 @@
                     "ref": "WhyResults"
                 }
             }
+        },
+        "WhyRecordInEntity": {
+            "ref": "FixmeUnknown"
         },
         "WhyRecords": {
             "properties": {
