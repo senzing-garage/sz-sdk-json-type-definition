@@ -870,7 +870,11 @@ pub struct FinalState {
     pub virtualEntities: Vec<VirtualEntitySynopsis>,
 }
 
-pub type FixmeUnknown = String;
+#[derive(Serialize, Deserialize)]
+pub struct FixmeUnknown {
+    #[serde(rename = "FIXME_UNKNOWN")]
+    pub fixmeUnknown: String,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct FocusRecord {
@@ -1599,6 +1603,8 @@ pub struct SearchStatistic {
 
 pub type SearchStatistics = Vec<SearchStatistic>;
 
+pub type Stats = FixmeUnknown;
+
 pub type StreamExportJsonEntity = FixmeUnknown;
 
 pub type SzConfigAddDataSourceResponse = AddDataSource;
@@ -1642,6 +1648,8 @@ pub type SzEngineGetEntityByRecordIdResponse = Entity;
 pub type SzEngineGetRecordResponse = Record;
 
 pub type SzEngineGetRedoRecordResponse = RedoRecord;
+
+pub type SzEngineGetStatsResponse = Stats;
 
 pub type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 

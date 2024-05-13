@@ -401,7 +401,9 @@ export interface FinalState {
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
-export type FixmeUnknown = string;
+export interface FixmeUnknown {
+  FIXME_UNKNOWN: string;
+}
 
 export interface FocusRecord {
   DATA_SOURCE: string;
@@ -743,6 +745,8 @@ export interface SearchStatistic {
 
 export type SearchStatistics = SearchStatistic[];
 
+export type Stats = FixmeUnknown;
+
 export type StreamExportJsonEntity = FixmeUnknown;
 
 export type SzConfigAddDataSourceResponse = AddDataSource;
@@ -786,6 +790,8 @@ export type SzEngineGetEntityByRecordIdResponse = Entity;
 export type SzEngineGetRecordResponse = Record;
 
 export type SzEngineGetRedoRecordResponse = RedoRecord;
+
+export type SzEngineGetStatsResponse = Stats;
 
 export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 

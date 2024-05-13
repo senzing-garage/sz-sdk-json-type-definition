@@ -10,6 +10,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [0.2.6] - 2024-05-13
+
+### Added in 0.2.6
+
+- Improved the "unknown" responses:
+  - SzEngineFetchNextResponse
+  - SzEngineGetRedoRecordResponse
+  - SzEngineGetStatsResponse
+  - SzEngineStreamExportJsonEntityReportResponse
+  - SzEngineWhyRecordInEntityResponse
+
 ## [0.2.5] - 2024-05-10
 
 ### Added in 0.2.5

@@ -586,7 +586,9 @@ type FinalState struct {
 	VirtualEntities []VirtualEntitySynopsis `json:"VIRTUAL_ENTITIES"`
 }
 
-type FixmeUnknown = any
+type FixmeUnknown struct {
+	FixmeUnknown any `json:"FIXME_UNKNOWN"`
+}
 
 type FocusRecord struct {
 	DataSource string `json:"DATA_SOURCE"`
@@ -1080,6 +1082,8 @@ type SearchStatistic struct {
 
 type SearchStatistics = []SearchStatistic
 
+type Stats = FixmeUnknown
+
 type StreamExportJSONEntity = FixmeUnknown
 
 type SzConfigAddDataSourceResponse = AddDataSource
@@ -1123,6 +1127,8 @@ type SzEngineGetEntityByRecordIDResponse = Entity
 type SzEngineGetRecordResponse = Record
 
 type SzEngineGetRedoRecordResponse = RedoRecord
+
+type SzEngineGetStatsResponse = Stats
 
 type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
 

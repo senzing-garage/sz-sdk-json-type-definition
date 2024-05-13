@@ -1413,16 +1413,18 @@ module SenzingTypeDef
   end
 
   class FixmeUnknown
-    attr_accessor :value
+    attr_accessor :fixme_unknown
 
     def self.from_json_data(data)
       out = FixmeUnknown.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
+      out.fixme_unknown = SenzingTypeDef::from_json_data(String, data["FIXME_UNKNOWN"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["FIXME_UNKNOWN"] = SenzingTypeDef::to_json_data(fixme_unknown)
+      data
     end
   end
 
@@ -2630,6 +2632,20 @@ module SenzingTypeDef
     end
   end
 
+  class Stats
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = Stats.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class StreamExportJSONEntity
     attr_accessor :value
 
@@ -2930,6 +2946,20 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = SzEngineGetRedoRecordResponse.new
       out.value = SenzingTypeDef.from_json_data(RedoRecord, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetStatsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetStatsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Stats, data)
       out
     end
 

@@ -1248,10 +1248,14 @@
             }
         },
         "FixmeUnknown": {
-            "metadata": {
-                "goType": "any"
-            },
-            "type": "string"
+            "properties": {
+                "FIXME_UNKNOWN": {
+                    "metadata": {
+                        "goType": "any"
+                    },
+                    "type": "string"
+                }
+            }
         },
         "FocusRecord": {
             "properties": {
@@ -2198,6 +2202,9 @@
                 "ref": "SearchStatistic"
             }
         },
+        "Stats": {
+            "ref": "FixmeUnknown"
+        },
         "StreamExportJsonEntity": {
             "ref": "FixmeUnknown"
         },
@@ -2321,6 +2328,9 @@
         },
         "SzEngineGetRedoRecordResponse": {
             "ref": "RedoRecord"
+        },
+        "SzEngineGetStatsResponse": {
+            "ref": "Stats"
         },
         "SzEngineGetVirtualEntityByRecordIdResponse": {
             "ref": "VirtualEntity"

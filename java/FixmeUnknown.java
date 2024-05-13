@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class FixmeUnknown {
-    @JsonValue
-    private String value;
+    @JsonProperty("FIXME_UNKNOWN")
+    private String fixmeUnknown;
 
     public FixmeUnknown() {
     }
 
-    @JsonCreator
-    public FixmeUnknown(String value) {
-        this.value = value;
+    /**
+     * Getter for fixmeUnknown.<p>
+     */
+    public String getFixmeUnknown() {
+        return fixmeUnknown;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
+    /**
+     * Setter for fixmeUnknown.<p>
+     */
+    public void setFixmeUnknown(String fixmeUnknown) {
+        this.fixmeUnknown = fixmeUnknown;
     }
 }

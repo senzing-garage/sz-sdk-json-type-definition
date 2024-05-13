@@ -1360,14 +1360,18 @@ class FinalState:
 
 @dataclass
 class FixmeUnknown:
-    value: 'str'
+    fixme_unknown: 'str'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FixmeUnknown':
-        return cls(_from_json_data(str, data))
+        return cls(
+            _from_json_data(str, data.get("FIXME_UNKNOWN")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME_UNKNOWN"] = _to_json_data(self.fixme_unknown)
+        return data
 
 @dataclass
 class FocusRecord:
@@ -2520,6 +2524,17 @@ class SearchStatistics:
         return _to_json_data(self.value)
 
 @dataclass
+class Stats:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Stats':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class StreamExportJSONEntity:
     value: 'FixmeUnknown'
 
@@ -2757,6 +2772,17 @@ class SzEngineGetRedoRecordResponse:
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRedoRecordResponse':
         return cls(_from_json_data(RedoRecord, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetStatsResponse:
+    value: 'Stats'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetStatsResponse':
+        return cls(_from_json_data(Stats, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
