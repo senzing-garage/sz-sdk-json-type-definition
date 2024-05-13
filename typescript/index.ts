@@ -394,12 +394,16 @@ export type FeatureScores = string;
 
 export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
+export type FetchNext = FixmeUnknown;
+
 export interface FinalState {
   NEED_REEVALUATION: number;
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
-export type FixmeUnknown = string;
+export interface FixmeUnknown {
+  FIXME_UNKNOWN: string;
+}
 
 export interface FocusRecord {
   DATA_SOURCE: string;
@@ -634,6 +638,8 @@ export interface RecordSummaryElement {
 
 export type Records = Record[];
 
+export type RedoRecord = FixmeUnknown;
+
 export interface RelatedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -739,6 +745,10 @@ export interface SearchStatistic {
 
 export type SearchStatistics = SearchStatistic[];
 
+export type Stats = FixmeUnknown;
+
+export type StreamExportJsonEntity = FixmeUnknown;
+
 export type SzConfigAddDataSourceResponse = AddDataSource;
 
 export type SzConfigExportConfigResponse = ExportConfig;
@@ -759,7 +769,7 @@ export type SzEngineAddRecordResponse = WithInfo;
 
 export type SzEngineDeleteRecordResponse = WithInfo;
 
-export type SzEngineFetchNextResponse = FixmeUnknown;
+export type SzEngineFetchNextResponse = FetchNext;
 
 export type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
 
@@ -779,7 +789,9 @@ export type SzEngineGetEntityByRecordIdResponse = Entity;
 
 export type SzEngineGetRecordResponse = Record;
 
-export type SzEngineGetRedoRecordResponse = FixmeUnknown;
+export type SzEngineGetRedoRecordResponse = RedoRecord;
+
+export type SzEngineGetStatsResponse = Stats;
 
 export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 
@@ -793,11 +805,11 @@ export type SzEngineReevaluateRecordResponse = WithInfo;
 
 export type SzEngineSearchByAttributesResponse = Search;
 
-export type SzEngineStreamExportJsonEntityReportResponse = FixmeUnknown;
+export type SzEngineStreamExportJsonEntityReportResponse = StreamExportJsonEntity;
 
 export type SzEngineWhyEntitiesResponse = WhyEntities;
 
-export type SzEngineWhyRecordInEntityResponse = FixmeUnknown;
+export type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity;
 
 export type SzEngineWhyRecordsResponse = WhyRecords;
 
@@ -818,6 +830,8 @@ export interface WhyEntities {
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
+
+export type WhyRecordInEntity = FixmeUnknown;
 
 export interface WhyRecords {
   ENTITIES: Entity[];

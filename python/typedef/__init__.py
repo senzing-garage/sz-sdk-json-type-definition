@@ -1330,6 +1330,17 @@ class FeatureScoresForAttribute:
         return _to_json_data(self.value)
 
 @dataclass
+class FetchNext:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'FetchNext':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class FinalState:
     need_reevaluation: 'int'
     virtual_entities: 'List[VirtualEntitySynopsis]'
@@ -1349,14 +1360,18 @@ class FinalState:
 
 @dataclass
 class FixmeUnknown:
-    value: 'str'
+    fixme_unknown: 'str'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FixmeUnknown':
-        return cls(_from_json_data(str, data))
+        return cls(
+            _from_json_data(str, data.get("FIXME_UNKNOWN")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME_UNKNOWN"] = _to_json_data(self.fixme_unknown)
+        return data
 
 @dataclass
 class FocusRecord:
@@ -2151,6 +2166,17 @@ class Records:
         return _to_json_data(self.value)
 
 @dataclass
+class RedoRecord:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RedoRecord':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class RelatedEntity:
     entity_id: 'int'
     """
@@ -2498,6 +2524,28 @@ class SearchStatistics:
         return _to_json_data(self.value)
 
 @dataclass
+class Stats:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Stats':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class StreamExportJSONEntity:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'StreamExportJSONEntity':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class SzConfigAddDataSourceResponse:
     value: 'AddDataSource'
 
@@ -2609,11 +2657,11 @@ class SzEngineDeleteRecordResponse:
 
 @dataclass
 class SzEngineFetchNextResponse:
-    value: 'FixmeUnknown'
+    value: 'FetchNext'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFetchNextResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
+        return cls(_from_json_data(FetchNext, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2719,11 +2767,22 @@ class SzEngineGetRecordResponse:
 
 @dataclass
 class SzEngineGetRedoRecordResponse:
-    value: 'FixmeUnknown'
+    value: 'RedoRecord'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRedoRecordResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
+        return cls(_from_json_data(RedoRecord, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzEngineGetStatsResponse:
+    value: 'Stats'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzEngineGetStatsResponse':
+        return cls(_from_json_data(Stats, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2796,11 +2855,11 @@ class SzEngineSearchByAttributesResponse:
 
 @dataclass
 class SzEngineStreamExportJSONEntityReportResponse:
-    value: 'FixmeUnknown'
+    value: 'StreamExportJSONEntity'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineStreamExportJSONEntityReportResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
+        return cls(_from_json_data(StreamExportJSONEntity, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2818,11 +2877,11 @@ class SzEngineWhyEntitiesResponse:
 
 @dataclass
 class SzEngineWhyRecordInEntityResponse:
-    value: 'FixmeUnknown'
+    value: 'WhyRecordInEntity'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordInEntityResponse':
-        return cls(_from_json_data(FixmeUnknown, data))
+        return cls(_from_json_data(WhyRecordInEntity, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2910,6 +2969,17 @@ class WhyEntities:
         data["ENTITIES"] = _to_json_data(self.entities)
         data["WHY_RESULTS"] = _to_json_data(self.why_results)
         return data
+
+@dataclass
+class WhyRecordInEntity:
+    value: 'FixmeUnknown'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'WhyRecordInEntity':
+        return cls(_from_json_data(FixmeUnknown, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
 
 @dataclass
 class WhyRecords:

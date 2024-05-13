@@ -859,6 +859,8 @@ pub type FeatureScores = String;
 
 pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
 
+pub type FetchNext = FixmeUnknown;
+
 #[derive(Serialize, Deserialize)]
 pub struct FinalState {
     #[serde(rename = "NEED_REEVALUATION")]
@@ -868,7 +870,11 @@ pub struct FinalState {
     pub virtualEntities: Vec<VirtualEntitySynopsis>,
 }
 
-pub type FixmeUnknown = String;
+#[derive(Serialize, Deserialize)]
+pub struct FixmeUnknown {
+    #[serde(rename = "FIXME_UNKNOWN")]
+    pub fixmeUnknown: String,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct FocusRecord {
@@ -1380,6 +1386,8 @@ pub struct RecordSummaryElement {
 
 pub type Records = Vec<Record>;
 
+pub type RedoRecord = FixmeUnknown;
+
 #[derive(Serialize, Deserialize)]
 pub struct RelatedEntity {
     /// The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -1595,6 +1603,10 @@ pub struct SearchStatistic {
 
 pub type SearchStatistics = Vec<SearchStatistic>;
 
+pub type Stats = FixmeUnknown;
+
+pub type StreamExportJsonEntity = FixmeUnknown;
+
 pub type SzConfigAddDataSourceResponse = AddDataSource;
 
 pub type SzConfigExportConfigResponse = ExportConfig;
@@ -1615,7 +1627,7 @@ pub type SzEngineAddRecordResponse = WithInfo;
 
 pub type SzEngineDeleteRecordResponse = WithInfo;
 
-pub type SzEngineFetchNextResponse = FixmeUnknown;
+pub type SzEngineFetchNextResponse = FetchNext;
 
 pub type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
 
@@ -1635,7 +1647,9 @@ pub type SzEngineGetEntityByRecordIdResponse = Entity;
 
 pub type SzEngineGetRecordResponse = Record;
 
-pub type SzEngineGetRedoRecordResponse = FixmeUnknown;
+pub type SzEngineGetRedoRecordResponse = RedoRecord;
+
+pub type SzEngineGetStatsResponse = Stats;
 
 pub type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 
@@ -1649,11 +1663,11 @@ pub type SzEngineReevaluateRecordResponse = WithInfo;
 
 pub type SzEngineSearchByAttributesResponse = Search;
 
-pub type SzEngineStreamExportJsonEntityReportResponse = FixmeUnknown;
+pub type SzEngineStreamExportJsonEntityReportResponse = StreamExportJsonEntity;
 
 pub type SzEngineWhyEntitiesResponse = WhyEntities;
 
-pub type SzEngineWhyRecordInEntityResponse = FixmeUnknown;
+pub type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity;
 
 pub type SzEngineWhyRecordsResponse = WhyRecords;
 
@@ -1684,6 +1698,8 @@ pub struct WhyEntities {
     #[serde(rename = "WHY_RESULTS")]
     pub whyResults: WhyResults,
 }
+
+pub type WhyRecordInEntity = FixmeUnknown;
 
 #[derive(Serialize, Deserialize)]
 pub struct WhyRecords {

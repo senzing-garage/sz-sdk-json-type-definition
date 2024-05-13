@@ -1379,6 +1379,20 @@ module SenzingTypeDef
     end
   end
 
+  class FetchNext
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = FetchNext.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class FinalState
     attr_accessor :need_reevaluation
     attr_accessor :virtual_entities
@@ -1399,16 +1413,18 @@ module SenzingTypeDef
   end
 
   class FixmeUnknown
-    attr_accessor :value
+    attr_accessor :fixme_unknown
 
     def self.from_json_data(data)
       out = FixmeUnknown.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
+      out.fixme_unknown = SenzingTypeDef::from_json_data(String, data["FIXME_UNKNOWN"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["FIXME_UNKNOWN"] = SenzingTypeDef::to_json_data(fixme_unknown)
+      data
     end
   end
 
@@ -2243,6 +2259,20 @@ module SenzingTypeDef
     end
   end
 
+  class RedoRecord
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = RedoRecord.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class RelatedEntity
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
@@ -2602,6 +2632,34 @@ module SenzingTypeDef
     end
   end
 
+  class Stats
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = Stats.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class StreamExportJSONEntity
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = StreamExportJSONEntity.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzConfigAddDataSourceResponse
     attr_accessor :value
 
@@ -2747,7 +2805,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(FetchNext, data)
       out
     end
 
@@ -2887,7 +2945,21 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineGetRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(RedoRecord, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetStatsResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetStatsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Stats, data)
       out
     end
 
@@ -2985,7 +3057,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineStreamExportJSONEntityReportResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(StreamExportJSONEntity, data)
       out
     end
 
@@ -3013,7 +3085,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineWhyRecordInEntityResponse.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out.value = SenzingTypeDef.from_json_data(WhyRecordInEntity, data)
       out
     end
 
@@ -3115,6 +3187,20 @@ module SenzingTypeDef
       data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
       data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
       data
+    end
+  end
+
+  class WhyRecordInEntity
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = WhyRecordInEntity.new
+      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
