@@ -2,6 +2,9 @@ name: python test
 
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   python-test:
     runs-on: ubuntu-latest

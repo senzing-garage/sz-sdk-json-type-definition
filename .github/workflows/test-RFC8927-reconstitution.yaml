@@ -2,6 +2,9 @@ name: test RFC8927 reconstitution
 
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   pylint:
     runs-on: ubuntu-latest
