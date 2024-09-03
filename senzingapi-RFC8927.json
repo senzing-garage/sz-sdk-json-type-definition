@@ -974,7 +974,7 @@
                 }
             }
         },
-        "ConfigList": {
+        "Configs": {
             "properties": {
                 "CONFIGS": {
                     "elements": {
@@ -2275,11 +2275,11 @@
         "SzConfigGetDataSourcesResponse": {
             "ref": "GetDataSources"
         },
-        "SzConfigManagerGetConfigListResponse": {
-            "ref": "ConfigList"
-        },
         "SzConfigManagerGetConfigResponse": {
             "ref": "GetConfig"
+        },
+        "SzConfigManagerGetConfigsResponse": {
+            "ref": "Configs"
         },
         "SzDiagnosticCheckDatastorePerformanceResponse": {
             "ref": "DatastorePerformance"
