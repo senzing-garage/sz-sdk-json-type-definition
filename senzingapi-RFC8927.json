@@ -929,6 +929,28 @@
                 }
             }
         },
+        "CONFIG_BASE_VERSION": {
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "VERSION": {
+                    "type": "string"
+                }
+            }
+        },
         "CompatibilityVersion": {
             "properties": {
                 "CONFIG_VERSION": {
@@ -948,28 +970,6 @@
                     "type": "int32"
                 },
                 "SYS_CREATE_DT": {
-                    "type": "string"
-                }
-            }
-        },
-        "CONFIG_BASE_VERSION": {
-            "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
-                },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "VERSION": {
                     "type": "string"
                 }
             }
@@ -1932,11 +1932,6 @@
                 }
             }
         },
-        "Records": {
-            "elements": {
-                "ref": "Record"
-            }
-        },
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
@@ -1954,6 +1949,11 @@
                     },
                     "type": "int32"
                 }
+            }
+        },
+        "Records": {
+            "elements": {
+                "ref": "Record"
             }
         },
         "RedoRecord": {
@@ -2001,13 +2001,13 @@
                 "MATCH_LEVEL_CODE": {
                     "type": "string"
                 },
+                "RECORDS": {
+                    "ref": "Records"
+                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
-                },
-                "RECORDS": {
-                    "ref": "Records"
                 }
             }
         },
@@ -2091,13 +2091,13 @@
                 "MATCH_LEVEL_CODE": {
                     "type": "string"
                 },
+                "RECORDS": {
+                    "ref": "Records"
+                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
-                },
-                "RECORDS": {
-                    "ref": "Records"
                 }
             }
         },
@@ -2112,6 +2112,64 @@
                 },
                 "MATCH_INFO": {
                     "ref": "MatchInfo"
+                }
+            }
+        },
+        "SYS_OOM": {
+            "properties": {
+                "FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FTYPE_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LENS_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LIB_FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "NEXT_THRESH": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "OOM_LEVEL": {
+                    "type": "string"
+                },
+                "OOM_TYPE": {
+                    "type": "string"
+                },
+                "THRESH1_CNT": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "THRESH1_OOM": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
@@ -2207,64 +2265,6 @@
         },
         "StreamExportJsonEntity": {
             "ref": "FixmeUnknown"
-        },
-        "SYS_OOM": {
-            "properties": {
-                "FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "FTYPE_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LENS_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NEXT_THRESH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "OOM_LEVEL": {
-                    "type": "string"
-                },
-                "OOM_TYPE": {
-                    "type": "string"
-                },
-                "THRESH1_CNT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "THRESH1_OOM": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
         },
         "SzConfigAddDataSourceResponse": {
             "ref": "AddDataSource"
