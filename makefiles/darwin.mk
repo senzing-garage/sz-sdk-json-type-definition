@@ -51,7 +51,7 @@ hello-world-osarch-specific:
 
 .PHONY: run-osarch-specific
 run-osarch-specific:
-	@go run -exec macos_exec_dyld.sh main.go
+	@go run main.go
 
 
 .PHONY: setup-osarch-specific

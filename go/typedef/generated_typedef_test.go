@@ -118,10 +118,10 @@ func TestSzConfigGetDataSourcesResponseTest006(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigManagerGetConfigListResponseTest001(test *testing.T) {
+func TestSzConfigManagerGetConfigsResponseTest001(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"CONFIGS":[{"CONFIG_COMMENTS":"blank","CONFIG_ID":1,"SYS_CREATE_DT":"blank"},{"CONFIG_COMMENTS":"blank","CONFIG_ID":1,"SYS_CREATE_DT":"blank"}]}`
-    jsonStruct := SzConfigManagerGetConfigListResponse{}
+    jsonStruct := SzConfigManagerGetConfigsResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)

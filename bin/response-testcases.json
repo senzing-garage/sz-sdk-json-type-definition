@@ -10424,7 +10424,7 @@
             }
         }
     },
-    "SzConfigManagerGetConfigListResponse": {
+    "SzConfigManagerGetConfigsResponse": {
         "tests": {
             "test-001": {
                 "CONFIGS": [

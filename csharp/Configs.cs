@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    public class ConfigList
+    public class Configs
     {
         [JsonPropertyName("CONFIGS")]
         public IList<Config> Configs { get; set; }

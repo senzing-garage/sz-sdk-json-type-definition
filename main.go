@@ -15,7 +15,7 @@ func pathToTestdata(filename string) string {
 	return fmt.Sprintf("./testdata/%s", filename)
 }
 
-func mockSzEngineGetVirtualEntityByRecordId() string {
+func mockSzEngineGetVirtualEntityByRecordID() string {
 	result, err := os.ReadFile(pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"))
 	if err != nil {
 		panic(err)
@@ -27,7 +27,7 @@ func main() {
 
 	// Simulate response from Senzing SDK API.
 
-	response := mockSzEngineGetVirtualEntityByRecordId()
+	response := mockSzEngineGetVirtualEntityByRecordID()
 	virtualEntity := typedef.SzEngineGetVirtualEntityByRecordIDResponse{}
 	err := json.Unmarshal([]byte(response), &virtualEntity)
 	if err != nil {

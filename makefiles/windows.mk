@@ -16,6 +16,7 @@ build-osarch-specific: windows/amd64
 .PHONY: clean-osarch-specific
 clean-osarch-specific:
 	@del /F /S /Q $(GOPATH)/bin/$(PROGRAM_NAME)
+	@del /F /S /Q $(MAKEFILE_DIRECTORY)/.coverage
 	@del /F /S /Q $(MAKEFILE_DIRECTORY)/coverage.html
 	@del /F /S /Q $(MAKEFILE_DIRECTORY)/coverage.out
 	@del /F /S /Q $(MAKEFILE_DIRECTORY)/cover.out
@@ -30,12 +31,8 @@ coverage-osarch-specific:
 	@explorer file://$(MAKEFILE_DIRECTORY)/coverage.html
 
 
-.PHONY: docker-build-osarch-specific
-docker-build-osarch-specific:
-	@docker build \
-		--tag $(DOCKER_IMAGE_NAME) \
-		--tag $(DOCKER_IMAGE_NAME):$(BUILD_VERSION) \
-		.
+.PHONY: dependencies-for-development-osarch-specific
+dependencies-for-development-osarch-specific: 
 
 
 .PHONY: documentation-osarch-specific
@@ -50,11 +47,6 @@ hello-world-osarch-specific:
 	$(info Hello World, from windows.)
 
 
-.PHONY: package-osarch-specific
-package-osarch-specific:
-	$(info No packaging for windows)
-
-
 .PHONY: run-osarch-specific
 run-osarch-specific:
 	@go run main.go
@@ -62,6 +54,7 @@ run-osarch-specific:
 
 .PHONY: setup-osarch-specific
 setup-osarch-specific:
+	$(info No setup required.)
 
 
 .PHONY: test-osarch-specific

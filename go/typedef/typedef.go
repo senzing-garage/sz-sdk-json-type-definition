@@ -462,7 +462,7 @@ type Config struct {
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
-type ConfigList struct {
+type Configs struct {
 	Configs []Config `json:"CONFIGS"`
 }
 
@@ -1092,9 +1092,9 @@ type SzConfigExportConfigResponse = ExportConfig
 
 type SzConfigGetDataSourcesResponse = GetDataSources
 
-type SzConfigManagerGetConfigListResponse = ConfigList
-
 type SzConfigManagerGetConfigResponse = GetConfig
+
+type SzConfigManagerGetConfigsResponse = Configs
 
 type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance
 

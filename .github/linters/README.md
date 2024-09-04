@@ -1,5 +1,19 @@
 # Linters
 
+## .checkov.yaml
+
+- [.checkov.yaml]
+- Used by [lint-workflows.yaml]
+- [checkov]
+  - [checkov configuration]
+
+## .golangci.yaml
+
+- [.golangci.yaml]
+- Used by [golangci-lint.yaml]
+- [golangci-lint]
+  - [golangci-lint configuration]
+
 ## .jscpd.json
 
 - [.jscpd.json]

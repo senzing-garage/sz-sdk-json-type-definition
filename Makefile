@@ -103,7 +103,7 @@ lint: golangci-lint
 # -----------------------------------------------------------------------------
 
 .PHONY: test
-test:
+test: test-osarch-specific
 	@./bin/test_rfc8927_reconstitution.py
 	@go run main.go
 	@go test -v -p 1 ./...
@@ -232,16 +232,17 @@ generate_testdata:
 # -----------------------------------------------------------------------------
 
 .PHONY: clean
-clean: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
+clean: clean-osarch-specific clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
 	@go clean -cache
 	@go clean -testcache
-	@rm -rf $(TARGET_DIRECTORY) || true
-	@rm $(MAKEFILE_DIRECTORY)testdata/* || true
+	@rm -fr $(MAKEFILE_DIRECTORY)/bin/__pycache__ || true
+	@rm -fr $(TARGET_DIRECTORY) || true
+	@rm $(MAKEFILE_DIRECTORY)/testdata/* || true
 
 
 .PHONY: clean-csharp
 clean-csharp:
-	@rm $(MAKEFILE_DIRECTORY)csharp/* || true
+	@rm $(MAKEFILE_DIRECTORY)/csharp/* || true
 
 
 .PHONY: clean-go
@@ -249,32 +250,32 @@ clean-go:
 	@go clean -cache
 	@go clean -testcache
 	@rm -f $(GOPATH)/bin/$(PROGRAM_NAME) || true
-	@rm $(MAKEFILE_DIRECTORY)go/typedef/typedef.go || true
+	@rm $(MAKEFILE_DIRECTORY)/go/typedef/typedef.go || true
 
 
 .PHONY: clean-java
 clean-java:
-	@rm $(MAKEFILE_DIRECTORY)java/* || true
+	@rm $(MAKEFILE_DIRECTORY)/java/* || true
 
 
 .PHONY: clean-python
 clean-python:
-	@rm -rf $(MAKEFILE_DIRECTORY)python/typedef/* || true
+	@rm -rf $(MAKEFILE_DIRECTORY)/python/typedef/* || true
 
 
 .PHONY: clean-ruby
 clean-ruby:
-	@rm $(MAKEFILE_DIRECTORY)ruby/* || true
+	@rm $(MAKEFILE_DIRECTORY)/ruby/* || true
 
 
 .PHONY: clean-rust
 clean-rust:
-	@rm $(MAKEFILE_DIRECTORY)rust/* || true
+	@rm $(MAKEFILE_DIRECTORY)/rust/* || true
 
 
 .PHONY: clean-typescript
 clean-typescript:
-	@rm $(MAKEFILE_DIRECTORY)typescript/* || true
+	@rm $(MAKEFILE_DIRECTORY)/typescript/* || true
 
 # -----------------------------------------------------------------------------
 # Utility targets

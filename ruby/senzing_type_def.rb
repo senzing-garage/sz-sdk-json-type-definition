@@ -1063,11 +1063,11 @@ module SenzingTypeDef
     end
   end
 
-  class ConfigList
+  class Configs
     attr_accessor :configs
 
     def self.from_json_data(data)
-      out = ConfigList.new
+      out = Configs.new
       out.configs = SenzingTypeDef::from_json_data(Array[Config], data["CONFIGS"])
       out
     end
@@ -2702,12 +2702,12 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigManagerGetConfigListResponse
+  class SzConfigManagerGetConfigResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigManagerGetConfigListResponse.new
-      out.value = SenzingTypeDef.from_json_data(ConfigList, data)
+      out = SzConfigManagerGetConfigResponse.new
+      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
       out
     end
 
@@ -2716,12 +2716,12 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigManagerGetConfigResponse
+  class SzConfigManagerGetConfigsResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigManagerGetConfigResponse.new
-      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
+      out = SzConfigManagerGetConfigsResponse.new
+      out.value = SenzingTypeDef.from_json_data(Configs, data)
       out
     end
 
