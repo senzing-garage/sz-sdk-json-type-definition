@@ -1,4 +1,4 @@
 /*
-Package sz-sdk-jackson-type-definition has input/output types for Senzing API SDKs.
+Package typedef defines message fields and is generated from senzingapi-RFC8927.json.
 */
 package typedef

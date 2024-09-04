@@ -150,7 +150,7 @@ generate-code: generate-csharp generate-go generate-java generate-python generat
 
 
 .PHONY: generate-csharp
-generate-csharp:
+generate-csharp: clean-csharp
 	jtd-codegen \
 		--csharp-system-text-namespace Senzing \
 		--csharp-system-text-out ./csharp \
@@ -159,7 +159,7 @@ generate-csharp:
 
 
 .PHONY: generate-go
-generate-go:
+generate-go: clean-go
 	jtd-codegen \
 		--go-out ./go/typedef \
 		--go-package typedef \
@@ -168,7 +168,7 @@ generate-go:
 
 
 .PHONY: generate-java
-generate-java:
+generate-java: clean-java
 	jtd-codegen \
 		--java-jackson-out ./java \
 		--java-jackson-package com.senzing.schema \
@@ -177,7 +177,7 @@ generate-java:
 
 
 .PHONY: generate-python
-generate-python:
+generate-python: clean-python
 	jtd-codegen \
 		--python-out ./python/typedef \
 		--root-name senzingapi \
@@ -185,7 +185,7 @@ generate-python:
 
 
 .PHONY: generate-ruby
-generate-ruby:
+generate-ruby: clean-ruby
 	jtd-codegen \
 		--root-name senzingapi \
 		--ruby-module SenzingTypeDef \
@@ -195,7 +195,7 @@ generate-ruby:
 
 
 .PHONY: generate-rust
-generate-rust:
+generate-rust: clean-rust
 	jtd-codegen \
 		--root-name senzingapi \
 		--rust-out ./rust \
@@ -203,7 +203,7 @@ generate-rust:
 
 
 .PHONY: generate-typescript
-generate-typescript:
+generate-typescript: clean-typescript
 	jtd-codegen \
 		--root-name senzingapi \
 		--typescript-out ./typescript \
@@ -225,7 +225,7 @@ generate_typedef_test_go:
 
 .PHONY: generate_testdata
 generate_testdata:
-	@rm $(MAKEFILE_DIRECTORY)testdata/* || true
+	@rm $(MAKEFILE_DIRECTORY)/testdata/* || true
 	@./bin/generate_testdata.py
 
 # -----------------------------------------------------------------------------
@@ -233,12 +233,9 @@ generate_testdata:
 # -----------------------------------------------------------------------------
 
 .PHONY: clean
-clean: clean-osarch-specific clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
+clean: clean-osarch-specific
 	@go clean -cache
 	@go clean -testcache
-	@rm -fr $(MAKEFILE_DIRECTORY)/bin/__pycache__ || true
-	@rm -fr $(TARGET_DIRECTORY) || true
-	@rm $(MAKEFILE_DIRECTORY)/testdata/* || true
 
 
 .PHONY: clean-csharp
@@ -278,6 +275,10 @@ clean-rust:
 .PHONY: clean-typescript
 clean-typescript:
 	@rm $(MAKEFILE_DIRECTORY)/typescript/* || true
+
+
+.PHONY: clean-generated
+clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
 
 # -----------------------------------------------------------------------------
 # Utility targets
