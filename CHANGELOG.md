@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.7] - 2024-09-04
+
+### Added in 0.2.7
+
+- Change SzConfig.`GetConfigList` to `SzConfig.GetConfigs`
+
 ## [0.2.6] - 2024-05-13
 
 ### Added in 0.2.6
@@ -86,4 +92,3 @@ and this project adheres to [Semantic Versioning].
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [markdownlint]: https://dlaa.me/markdownlint/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
-
