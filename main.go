@@ -1,5 +1,5 @@
 /*
-For more information, visit https://jsontypedef.com/docs/go-codegen/
+Module sz-sdk-jackson-type-definition has input/output types for Senzing API SDKs.
 */
 package main
 

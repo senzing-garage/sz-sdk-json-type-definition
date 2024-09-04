@@ -132,6 +132,7 @@ documentation: documentation-osarch-specific
 analyze:
 	@./bin/analyze_rfc8927.py
 
+
 .PHONY: pretty-print
 pretty-print:
 	@./bin/pretty_print.py
@@ -250,6 +251,7 @@ clean-go:
 	@go clean -cache
 	@go clean -testcache
 	@rm -f $(GOPATH)/bin/$(PROGRAM_NAME) || true
+	@rm $(MAKEFILE_DIRECTORY)/go/typedef/generated_typedef_test.go || true
 	@rm $(MAKEFILE_DIRECTORY)/go/typedef/typedef.go || true
 
 

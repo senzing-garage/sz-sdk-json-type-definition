@@ -162,7 +162,7 @@ Create a code coverage map.
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
-    make clean documentation
+    make documentation
 
     ```
 
