@@ -170,3 +170,5 @@ cython_debug/
 # VSCode
 .vscode/
 .history
+
+senzingapi-RFC8927-pretty.json

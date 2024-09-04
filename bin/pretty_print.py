@@ -33,13 +33,14 @@ def recurse(prefix, an_object):
         if isinstance(value, dict):
             recurse("{0}.{1}".format(prefix, key), value)
             if key not in BLACK_LIST:
-                if "metadata" not in value:
-                    value["metadata"] = {}
-                if "description" not in value.get("metadata"):
-                    value["metadata"]["description"] = "No description."
-                if "goType" not in value.get("metadata"):
-                    if value.get("type") == "int32":
-                        value["metadata"]["goType"] = "int64"
+                # if "metadata" not in value:
+                #     value["metadata"] = {}
+                # if "description" not in value.get("metadata"):
+                #     value["metadata"]["description"] = "No description."
+                if "metadata" in value:
+                    if "goType" not in value.get("metadata"):
+                        if value.get("type") == "int32":
+                            value["metadata"]["goType"] = "int64"
 
 
 # -----------------------------------------------------------------------------

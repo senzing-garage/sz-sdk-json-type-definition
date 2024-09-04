@@ -1,5 +1,9 @@
 # Makefile for sz-sdk-json-type-definition.
 
+# Detect the operating system and architecture.
+
+include makefiles/osdetect.mk
+
 # -----------------------------------------------------------------------------
 # Variables
 # -----------------------------------------------------------------------------
@@ -15,9 +19,6 @@ DIST_DIRECTORY := $(MAKEFILE_DIRECTORY)/dist
 BUILD_TAG := $(shell git describe --always --tags --abbrev=0  | sed 's/v//')
 BUILD_ITERATION := $(shell git log $(BUILD_TAG)..HEAD --oneline | wc -l | sed 's/^ *//')
 BUILD_VERSION := $(shell git describe --always --tags --abbrev=0 --dirty  | sed 's/v//')
-DOCKER_CONTAINER_NAME := $(PROGRAM_NAME)
-DOCKER_IMAGE_NAME := senzing/$(PROGRAM_NAME)
-DOCKER_BUILD_IMAGE_NAME := $(DOCKER_IMAGE_NAME)-build
 GIT_REMOTE_URL := $(shell git config --get remote.origin.url)
 GIT_REPOSITORY_NAME := $(shell basename `git rev-parse --show-toplevel`)
 GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\-0//' -e 's/\-g.......//')
@@ -26,9 +27,15 @@ PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
 
 # Recursive assignment ('=')
 
+GO_OSARCH = $(subst /, ,$@)
+GO_OS = $(word 1, $(GO_OSARCH))
+GO_ARCH = $(word 2, $(GO_OSARCH))
+
 # Conditional assignment. ('?=')
 # Can be overridden with "export"
 # Example: "export LD_LIBRARY_PATH=/path/to/my/senzing/er/lib"
+
+GOBIN ?= $(shell go env GOPATH)/bin
 
 # Export environment variables.
 
@@ -41,6 +48,16 @@ PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
 .PHONY: default
 default: help
 
+# -----------------------------------------------------------------------------
+# Operating System / Architecture targets
+# -----------------------------------------------------------------------------
+
+-include makefiles/$(OSTYPE).mk
+-include makefiles/$(OSTYPE)_$(OSARCH).mk
+
+
+.PHONY: hello-world
+hello-world: hello-world-osarch-specific
 
 # -----------------------------------------------------------------------------
 # Dependency management
@@ -64,7 +81,7 @@ dependencies:
 # -----------------------------------------------------------------------------
 
 .PHONY: setup
-setup: generate
+setup: setup-osarch-specific generate
 
 # -----------------------------------------------------------------------------
 # Lint
@@ -80,7 +97,6 @@ lint: golangci-lint
 # -----------------------------------------------------------------------------
 # Run
 # -----------------------------------------------------------------------------
-
 
 # -----------------------------------------------------------------------------
 # Test
@@ -98,9 +114,15 @@ test:
 # Coverage
 # -----------------------------------------------------------------------------
 
+.PHONY: coverage
+coverage: coverage-osarch-specific
+
 # -----------------------------------------------------------------------------
 # Documentation
 # -----------------------------------------------------------------------------
+
+.PHONY: documentation
+documentation: documentation-osarch-specific
 
 # -----------------------------------------------------------------------------
 # Analyze
@@ -211,6 +233,8 @@ generate_testdata:
 
 .PHONY: clean
 clean: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
+	@go clean -cache
+	@go clean -testcache
 	@rm -rf $(TARGET_DIRECTORY) || true
 	@rm $(MAKEFILE_DIRECTORY)testdata/* || true
 
@@ -255,7 +279,6 @@ clean-typescript:
 # -----------------------------------------------------------------------------
 # Utility targets
 # -----------------------------------------------------------------------------
-
 
 .PHONY: help
 help:
