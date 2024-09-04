@@ -62,7 +62,7 @@ From this specification, code is generated for the following languages:
 [main.go]: main.go
 [main.java]: main.java
 [main.py]: main.py
-[Package reference]: https://pkg.go.dev/github.com/senzing-garage/template-go
+[Package reference]: https://pkg.go.dev/github.com/senzing-garage/sz-sdk-json-type-definition
 [python]: python/typedef
 [ruby]: ruby
 [rust]: rust

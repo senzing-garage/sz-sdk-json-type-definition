@@ -6,7 +6,7 @@ disable=
     logging-format-interpolation,
     missing-function-docstring,
 good-names=
-    template-python
+    sz-sdk-json-type-definition
 ignore=
     __init__.py,
 notes=

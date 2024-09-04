@@ -159,7 +159,7 @@ Create a code coverage map.
 
 1. If a web page doesn't appear, visit [localhost:6060].
 1. Senzing documentation will be in the "Third party" section.
-   `github.com` > `senzing-garage` > `template-go`
+   `github.com` > `senzing-garage` > `sz-sdk-json-type-definition`
 
 1. When a versioned release is published with a `v0.0.0` format tag,
 the reference can be found by clicking on the following badge at the top of the README.md page.
@@ -183,13 +183,13 @@ Example:
 [clone-repository]: https://github.com/senzing-garage/knowledge-base/blob/main/HOWTO/clone-repository.md
 [docker]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/docker.md
 [git]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/git.md
-[Go Reference Badge]: https://pkg.go.dev/badge/github.com/senzing-garage/template-go.svg
-[Go Reference]: https://pkg.go.dev/github.com/senzing-garage/template-go
+[Go Reference Badge]: https://pkg.go.dev/badge/github.com/senzing-garage/sz-sdk-json-type-definition.svg
+[Go Reference]: https://pkg.go.dev/github.com/senzing-garage/sz-sdk-json-type-definition
 [go]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/go.md
 [JSON TypeDef on Github]: https://github.com/jsontypedef
 [JSON TypeDef]: https://jsontypedef.com/
 [jtg-codegen]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/jtd-codegen.md
-[localhost:6060]: http://localhost:6060/pkg/github.com/senzing-garage/template-go/
+[localhost:6060]: http://localhost:6060/pkg/github.com/senzing-garage/sz-sdk-json-type-definition/
 [make]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/make.md
 [senzingapi-RFC8927.json]: ../senzingapi-RFC8927.json
 [testcoverage.yaml]: ../.github/coverage/testcoverage.yaml
