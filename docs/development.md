@@ -103,16 +103,7 @@ These are "one-time tasks" which may already have been completed.
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
-    make clean generate-code
-
-    ```
-
-1. Generate testcases.
-   Example:
-
-    ```console
-    cd ${GIT_REPOSITORY_DIR}
-    make generate-tests
+    make clean generate
 
     ```
 
