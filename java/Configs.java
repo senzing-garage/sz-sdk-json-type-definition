@@ -7,11 +7,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class ConfigList {
+public class Configs {
     @JsonProperty("CONFIGS")
     private List<Config> configs;
 
-    public ConfigList() {
+    public Configs() {
     }
 
     /**

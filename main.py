@@ -12,7 +12,7 @@ from python.typedef import (
     SzConfigAddDataSourceResponse,
     SzConfigExportConfigResponse,
     SzConfigGetDataSourcesResponse,
-    SzConfigManagerGetConfigListResponse,
+    SzConfigManagerGetConfigsResponse,
     SzConfigManagerGetConfigResponse,
     SzDiagnosticCheckDatastorePerformanceResponse,
     SzDiagnosticGetDatastoreInfoResponse,
@@ -204,8 +204,8 @@ response = SzConfigGetDataSourcesResponse.from_json_data(
 print_fmt(response, "response.value.data_sources[0].dsrc_id")
 
 
-response = SzConfigManagerGetConfigListResponse.from_json_data(
-    file("SzConfigManagerGetConfigListResponse-test-001.json")
+response = SzConfigManagerGetConfigsResponse.from_json_data(
+    file("SzConfigManagerGetConfigsResponse-test-001.json")
 )
 print_fmt(response, "response.value.configs[0].config_id")
 
@@ -326,7 +326,7 @@ response = SzProductGetVersionResponse.from_json_data({})
 # response = SzEngineFindNetworkByEntityIDResponse.from_json_data({})
 # x = response.value.entities[0].related_entities[0].record_summary[0]
 
-# response = SzConfigManagerGetConfigListResponse.from_json_data({})
+# response = SzConfigManagerGetConfigsResponse.from_json_data({})
 # x = response.value.configs[0].
 
 

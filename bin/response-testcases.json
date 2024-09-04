@@ -1,6 +1,7 @@
 {
     "SzConfigAddDataSourceResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "DSRC_ID": 1
             }
@@ -8,6 +9,7 @@
     },
     "SzConfigExportConfigResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "G2_CONFIG": {
                     "CFG_ATTR": [
@@ -10282,6 +10284,7 @@
     },
     "SzConfigGetDataSourcesResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "DATA_SOURCES": [
                     {
@@ -10424,8 +10427,9 @@
             }
         }
     },
-    "SzConfigManagerGetConfigListResponse": {
+    "SzConfigManagerGetConfigsResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "CONFIGS": [
                     {
@@ -10444,6 +10448,7 @@
     },
     "SzConfigManagerGetConfigResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "G2_CONFIG": {
                     "CFG_ATTR": [
@@ -30357,6 +30362,7 @@
     },
     "SzDiagnosticCheckDatastorePerformanceResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "insertTime": 1,
                 "numRecordsInserted": 1
@@ -30365,6 +30371,7 @@
     },
     "SzDiagnosticGetDatastoreInfoResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "dataStores": [
                     {
@@ -30378,6 +30385,7 @@
     },
     "SzDiagnosticGetFeatureResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "LIB_FEAT_ID": 1,
                 "FTYPE_CODE": "NAME",
@@ -30412,6 +30420,7 @@
     },
     "SzEngineAddRecordResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "AFFECTED_ENTITIES": [],
                 "DATA_SOURCE": "blank",
@@ -30481,6 +30490,7 @@
     },
     "SzEngineDeleteRecordResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "AFFECTED_ENTITIES": [],
                 "DATA_SOURCE": "blank",
@@ -30536,6 +30546,7 @@
             "pythonClass": "SzEngineFindInterestingEntitiesByEntityIDResponse"
         },
         "tests": {
+            "test-000": {},
             "test-001": {
                 "INTERESTING_ENTITIES": {
                     "ENTITIES": []
@@ -30549,6 +30560,7 @@
             "pythonClass": "SzEngineFindInterestingEntitiesByRecordIDResponse"
         },
         "tests": {
+            "test-000": {},
             "test-001": {
                 "INTERESTING_ENTITIES": {
                     "ENTITIES": []
@@ -30558,6 +30570,7 @@
     },
     "SzEngineFindNetworkByEntityIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ENTITIES": [
                     {
@@ -32553,6 +32566,7 @@
     },
     "SzEngineFindNetworkByRecordIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ENTITIES": [
                     {
@@ -33121,6 +33135,7 @@
     },
     "SzEngineFindPathByEntityIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ENTITIES": [
                     {
@@ -34405,6 +34420,7 @@
     },
     "SzEngineFindPathByRecordIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ENTITIES": [
                     {
@@ -35246,6 +35262,7 @@
     },
     "SzEngineGetEntityByEntityIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "RELATED_ENTITIES": [],
                 "RESOLVED_ENTITY": {
@@ -37093,6 +37110,7 @@
     },
     "SzEngineGetEntityByRecordIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "RELATED_ENTITIES": [],
                 "RESOLVED_ENTITY": {
@@ -37541,6 +37559,7 @@
     },
     "SzEngineGetRecordResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ADDRESS_DATA": [],
                 "ATTRIBUTE_DATA": [],
@@ -37684,6 +37703,7 @@
     },
     "SzEngineGetVirtualEntityByRecordIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "RESOLVED_ENTITY": {
                     "ENTITY_ID": 1,
@@ -41844,6 +41864,7 @@
     },
     "SzEngineHowEntityByEntityIdResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "HOW_RESULTS": {
                     "FINAL_STATE": {
@@ -43873,6 +43894,7 @@
     },
     "SzEngineProcessRedoRecordResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "AFFECTED_ENTITIES": [],
                 "DATA_SOURCE": "blank",
@@ -43912,6 +43934,7 @@
     },
     "SzEngineReevaluateEntityResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "AFFECTED_ENTITIES": [
                     {
@@ -44564,6 +44587,7 @@
     },
     "SzEngineReevaluateRecordResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "AFFECTED_ENTITIES": [
                     {
@@ -44580,6 +44604,7 @@
     },
     "SzEngineSearchByAttributesResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "RESOLVED_ENTITIES": [],
                 "SEARCH_STATISTICS": [
@@ -46398,6 +46423,7 @@
     },
     "SzEngineWhyEntitiesResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ENTITIES": [
                     {
@@ -48047,6 +48073,7 @@
     },
     "SzEngineWhyRecordsResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "ENTITIES": [],
                 "WHY_RESULTS": [
@@ -51938,6 +51965,7 @@
     },
     "SzProductGetLicenseResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "billing": "blank",
                 "contract": "blank",
@@ -51952,6 +51980,7 @@
     },
     "SzProductGetVersionResponse": {
         "tests": {
+            "test-000": {},
             "test-001": {
                 "BUILD_DATE": "blank",
                 "BUILD_NUMBER": "blank",

@@ -61,7 +61,7 @@ def is_sorted(prefix, list_to_check):
     global GLOBAL_OUT_OF_ORDER  # pylint: disable=global-statement
     last_key = ""
     for key_to_check in list_to_check:
-        if not key_to_check.lower() > last_key.lower():
+        if not key_to_check > last_key:
             GLOBAL_OUT_OF_ORDER += [
                 "Key out of order: {0}.{1} > {2}".format(prefix, last_key, key_to_check)
             ]

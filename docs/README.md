@@ -1,5 +1,8 @@
 # sz-sdk-json-type-definition
 
-Placeholder for [GitHub pages](https://pages.github.com/).
+Placeholder for [GitHub pages].
 
-See [https://hub.senzing.com/sz-sdk-json-type-definition](https://hub.senzing.com/sz-sdk-json-type-definition).
+See [GitHub page].
+
+[GitHub page]: https://garage.senzing.com/sz-sdk-json-type-definition
+[GitHub pages]: https://pages.github.com/
