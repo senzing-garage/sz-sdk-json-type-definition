@@ -61,8 +61,8 @@ for senzing_api_class, method_test_cases in response_testcases.items():
     metadata = method_test_cases.get("metadata", {})
     tests = method_test_cases.get("tests", {})
     for test_case_name, test_case_json in tests.items():
-        filename = f"{OUTPUT_DIRECTORY}/{senzing_api_class}-{test_case_name}.json"
-        with open(filename, "w", encoding="utf-8") as file:
+        FILENAME = f"{OUTPUT_DIRECTORY}/{senzing_api_class}-{test_case_name}.json"
+        with open(FILENAME, "w", encoding="utf-8") as file:
             file.write(canonical_json(test_case_json))
 
 # Epilog.
