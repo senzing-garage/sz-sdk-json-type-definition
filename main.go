@@ -12,7 +12,7 @@ import (
 )
 
 func pathToTestdata(filename string) string {
-	return fmt.Sprintf("./testdata/%s", filename)
+	return "./testdata/" + filename
 }
 
 func mockSzEngineGetVirtualEntityByRecordID() string {
@@ -20,34 +20,39 @@ func mockSzEngineGetVirtualEntityByRecordID() string {
 	if err != nil {
 		panic(err)
 	}
+
 	return string(result)
 }
 
 func main() {
+	var err error
 
 	// Simulate response from Senzing SDK API.
 
 	response := mockSzEngineGetVirtualEntityByRecordID()
 	virtualEntity := typedef.SzEngineGetVirtualEntityByRecordIDResponse{}
-	err := json.Unmarshal([]byte(response), &virtualEntity)
-	if err != nil {
+
+	if err := json.Unmarshal([]byte(response), &virtualEntity); err != nil {
 		panic(err)
 	}
-	fmt.Printf("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n", virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc)
+
+	fmt.Printf(
+		"RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n",
+		virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc,
+	)
 
 	// Looping through list.
 
 	addresses := virtualEntity.ResolvedEntity.Features["ADDRESS"]
 	for _, address := range addresses {
-
 		addressBytes, err := json.Marshal(address)
 		if err != nil {
 			panic(err)
 		}
 
 		addressStruct := typedef.FeatureForAttribute{}
-		err = json.Unmarshal(addressBytes, &addressStruct)
-		if err != nil {
+
+		if err = json.Unmarshal(addressBytes, &addressStruct); err != nil {
 			panic(err)
 		}
 
@@ -58,8 +63,8 @@ func main() {
 
 	jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
 	jsonStruct := typedef.SzConfigGetDataSourcesResponse{}
-	err = json.Unmarshal([]byte(jsonString), &jsonStruct)
-	if err != nil {
+
+	if err = json.Unmarshal([]byte(jsonString), &jsonStruct); err != nil {
 		panic(err)
 	}
 
