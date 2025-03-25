@@ -131,8 +131,7 @@ formatters:
     - gofmt
     - gofumpt
     - goimports
-  disable:
-    - golines
+    # - golines
   exclusions:
     generated: lax
     paths:
