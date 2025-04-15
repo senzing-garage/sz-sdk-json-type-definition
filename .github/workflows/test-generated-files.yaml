@@ -6,7 +6,9 @@ permissions:
   contents: read
 
 jobs:
-  python-test:
+  test-generated-files:
+    outputs:
+      status: ${{ job.status }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -42,3 +44,12 @@ jobs:
           ./jtd-codegen --python-out /tmp/typedef --root-name senzingapi senzingapi-RFC8927.json
           ls /tmp/typedef
           diff ./python/typedef/__init__.py  /tmp/typedef/__init__.py
+
+  slack-notification:
+    needs: [test-generated-files]
+    if: ${{ always() && contains(fromJSON('["failure", "cancelled"]'), needs.test-generated-files.outputs.status ) && github.ref_name == github.event.repository.default_branch }}
+    secrets:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+    uses: senzing-factory/build-resources/.github/workflows/build-failure-slack-notification.yaml@v2
+    with:
+      job-status: ${{ needs.test-generated-files.outputs.status }}
