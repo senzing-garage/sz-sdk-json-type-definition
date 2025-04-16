@@ -6,11 +6,13 @@ permissions:
   contents: read
 
 jobs:
-  pylint:
+  test-rfc8927-reconstitution:
+    outputs:
+      status: ${{ job.status }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.10']
+        python-version: ["3.12"]
 
     steps:
       - uses: actions/checkout@v4
@@ -22,3 +24,12 @@ jobs:
 
       - name: analysing the code with test_rfcC8927_reconstitution.py
         run: ./bin/test_rfc8927_reconstitution.py
+
+  slack-notification:
+    needs: [test-rfc8927-reconstitution]
+    if: ${{ always() && contains(fromJSON('["failure", "cancelled"]'), needs.test-rfc8927-reconstitution.outputs.status ) && github.ref_name == github.event.repository.default_branch }}
+    secrets:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+    uses: senzing-factory/build-resources/.github/workflows/build-failure-slack-notification.yaml@v2
+    with:
+      job-status: ${{ needs.test-rfc8927-reconstitution.outputs.status }}
