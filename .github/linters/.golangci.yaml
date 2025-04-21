@@ -13,6 +13,7 @@ linters:
     - copyloopvar
     - cyclop
     - decorder
+    - depguard
     - dogsled
     - dupl
     - dupword
@@ -105,14 +106,6 @@ linters:
     - wrapcheck
     - wsl
     - zerologlint
-  disable:
-    - depguard
-    - exhaustruct
-    - forbidigo
-    - gochecknoglobals
-    - gochecknoinits
-    - paralleltest
-
   exclusions:
     generated: lax
     presets:
@@ -124,6 +117,21 @@ linters:
       - third_party$
       - builtin$
       - examples$
+  settings:
+    depguard:
+      rules:
+        prevent_unmaintained_packages:
+          list-mode: lax # allow unless explicitely denied
+          allow:
+            - github.com/stretchr/testify/*
+          deny:
+            - pkg: io/ioutil
+              desc: "replaced by io and os packages since Go 1.16: https://tip.golang.org/doc/go1.16#ioutil"
+    exhaustruct:
+      exclude:
+        - '.+/typedef\.VirtualEntity$'
+        - '.+/typedef\.FeatureForAttribute$'
+        - '.+/typedef\.GetDataSources$'
 
 formatters:
   enable:
