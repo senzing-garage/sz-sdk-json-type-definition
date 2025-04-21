@@ -11,12 +11,22 @@ import (
 	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
 )
 
+func outputln(message ...any) {
+	fmt.Println(message...) //nolint
+}
+
+func outputf(format string, message ...any) {
+	fmt.Printf(format, message...) //nolint
+}
+
 func pathToTestdata(filename string) string {
 	return "./testdata/" + filename
 }
 
 func mockSzEngineGetVirtualEntityByRecordID() string {
-	result, err := os.ReadFile(pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"))
+	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
+
+	result, err := os.ReadFile(filePath)
 	if err != nil {
 		panic(err)
 	}
@@ -36,7 +46,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf(
+	outputf(
 		"RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n",
 		virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc,
 	)
@@ -56,7 +66,7 @@ func main() {
 			panic(err)
 		}
 
-		fmt.Println(" ADDRESS FEAT_DESC:", addressStruct.FeatDesc)
+		outputln(" ADDRESS FEAT_DESC:", addressStruct.FeatDesc)
 	}
 
 	// Show reconstructed (Unmarshall/Marshall) JSON.
@@ -69,7 +79,7 @@ func main() {
 	}
 
 	for _, datasource := range jsonStruct.DataSources {
-		fmt.Printf("                ID: %d  Code: %s\n", datasource.DsrcID, datasource.DsrcCode)
+		outputf("                ID: %d  Code: %s\n", datasource.DsrcID, datasource.DsrcCode)
 	}
 
 	reconstructedString, err := json.Marshal(jsonStruct)
@@ -77,6 +87,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("     Original JSON: %s\n", jsonString)
-	fmt.Printf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n", string(reconstructedString))
+	outputf("     Original JSON: %s\n", jsonString)
+	outputf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n",
+		string(reconstructedString))
 }

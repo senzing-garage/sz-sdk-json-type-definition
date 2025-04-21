@@ -37,7 +37,7 @@ coverage-osarch-specific:
 
 .PHONY: dependencies-for-development-osarch-specific
 dependencies-for-development-osarch-specific:
-	@curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(shell go env GOPATH)/bin v1.58.1
+	@curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/main/install.sh | sh -s -- -b $(shell go env GOPATH)/bin latest
 
 
 .PHONY: documentation-osarch-specific
@@ -65,6 +65,11 @@ setup-osarch-specific:
 .PHONY: test-osarch-specific
 test-osarch-specific:
 	@go test -json -v -p 1 ./... 2>&1 | tee /tmp/gotest.log | gotestfmt
+
+
+.PHONY: venv-osarch-specific
+venv-osarch-specific:
+	@python3 -m venv .venv
 
 # -----------------------------------------------------------------------------
 # Makefile targets supported only by this platform.
