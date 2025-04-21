@@ -24,7 +24,9 @@ func pathToTestdata(filename string) string {
 }
 
 func mockSzEngineGetVirtualEntityByRecordID() string {
-	result, err := os.ReadFile(pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"))
+	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
+
+	result, err := os.ReadFile(filePath)
 	if err != nil {
 		panic(err)
 	}
@@ -86,5 +88,6 @@ func main() {
 	}
 
 	outputf("     Original JSON: %s\n", jsonString)
-	outputf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n", string(reconstructedString))
+	outputf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n",
+		string(reconstructedString))
 }
