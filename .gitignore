@@ -167,8 +167,10 @@ cython_debug/
 .DS_Store
 .pydevproject
 
-# VSCode
-.vscode/
+# Visual Studio code
+.vscode/*
+!.vscode/cspell.json
+*.code-workspace
 .history
 
 senzingapi-RFC8927-pretty.json
