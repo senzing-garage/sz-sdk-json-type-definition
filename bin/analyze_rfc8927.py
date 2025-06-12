@@ -149,7 +149,7 @@ for key, value in GLOBAL_KEYS.items():
 
 print("")
 print("-" * 80)
-print("\nTEST 3: Count occurance of JSON keys")
+print("\nTEST 3: Count occurrence of JSON keys")
 print("\nCOUNT  KEY")
 print("-----  -----------------------------")
 SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)

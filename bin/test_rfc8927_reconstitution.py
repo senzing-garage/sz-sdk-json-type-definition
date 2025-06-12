@@ -29,7 +29,7 @@ TEST_COUNT = 0
 
 
 def is_equal(test_name, source, target):
-    """Determin if source and target are equal. Return boolean"""
+    """Determine if source and target are equal. Return boolean"""
 
     result = True
 
