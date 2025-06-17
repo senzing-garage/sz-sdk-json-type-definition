@@ -1613,9 +1613,9 @@ pub type SzConfigExportConfigResponse = ExportConfig;
 
 pub type SzConfigGetDataSourcesResponse = GetDataSources;
 
-pub type SzConfigManagerGetConfigResponse = GetConfig;
-
 pub type SzConfigManagerGetConfigRepositoryResponse = Configs;
+
+pub type SzConfigManagerGetConfigResponse = GetConfig;
 
 pub type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
 

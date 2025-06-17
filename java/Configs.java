@@ -17,7 +17,7 @@ public class Configs {
     /**
      * Getter for configs.<p>
      */
-    public List<Config> getConfigRepository() {
+    public List<Config> getConfigs() {
         return configs;
     }
 

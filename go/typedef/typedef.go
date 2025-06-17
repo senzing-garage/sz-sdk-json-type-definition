@@ -1092,9 +1092,9 @@ type SzConfigExportConfigResponse = ExportConfig
 
 type SzConfigGetDataSourcesResponse = GetDataSources
 
-type SzConfigManagerGetConfigResponse = GetConfig
-
 type SzConfigManagerGetConfigRepositoryResponse = Configs
+
+type SzConfigManagerGetConfigResponse = GetConfig
 
 type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance
 
