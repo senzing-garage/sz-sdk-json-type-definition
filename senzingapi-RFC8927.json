@@ -974,7 +974,7 @@
                 }
             }
         },
-        "Configs": {
+        "ConfigRegistry": {
             "properties": {
                 "CONFIGS": {
                     "elements": {
@@ -2278,8 +2278,8 @@
         "SzConfigManagerGetConfigResponse": {
             "ref": "GetConfig"
         },
-        "SzConfigManagerGetConfigRepositoryResponse": {
-            "ref": "Configs"
+        "SzConfigManagerGetConfigRegistryResponse": {
+            "ref": "ConfigRegistry"
         },
         "SzDiagnosticCheckDatastorePerformanceResponse": {
             "ref": "DatastorePerformance"
