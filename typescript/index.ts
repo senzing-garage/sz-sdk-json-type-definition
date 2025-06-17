@@ -304,7 +304,7 @@ export interface Config {
   SYS_CREATE_DT: string;
 }
 
-export interface Configs {
+export interface ConfigRegistry {
   CONFIGS: Config[];
 }
 
@@ -755,9 +755,9 @@ export type SzConfigExportConfigResponse = ExportConfig;
 
 export type SzConfigGetDataSourcesResponse = GetDataSources;
 
-export type SzConfigManagerGetConfigResponse = GetConfig;
+export type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
-export type SzConfigManagerGetConfigsResponse = Configs;
+export type SzConfigManagerGetConfigResponse = GetConfig;
 
 export type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
 

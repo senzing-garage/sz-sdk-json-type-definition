@@ -10427,7 +10427,7 @@
             }
         }
     },
-    "SzConfigManagerGetConfigsResponse": {
+    "SzConfigManagerGetConfigRegistryResponse": {
         "tests": {
             "test-000": {},
             "test-001": {

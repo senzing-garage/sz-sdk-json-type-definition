@@ -5,23 +5,23 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public class SzConfigManagerGetConfigsResponse {
+public class SzConfigManagerGetConfigRegistryResponse {
     @JsonValue
-    private Configs value;
+    private ConfigRegistry value;
 
-    public SzConfigManagerGetConfigsResponse() {
+    public SzConfigManagerGetConfigRegistryResponse() {
     }
 
     @JsonCreator
-    public SzConfigManagerGetConfigsResponse(Configs value) {
+    public SzConfigManagerGetConfigRegistryResponse(ConfigRegistry value) {
         this.value = value;
     }
 
-    public Configs getValue() {
+    public ConfigRegistry getValue() {
         return value;
     }
 
-    public void setValue(Configs value) {
+    public void setValue(ConfigRegistry value) {
         this.value = value;
     }
 }

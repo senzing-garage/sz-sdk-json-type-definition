@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.9] - 2025-06-17
+
+### Changed in 0.2.9
+
+- Change `SzConfigManagerGetConfigsResponse` to `SzConfigManagerGetConfigRepositoryResponse`
+
 ## [0.2.8] - 2025-04-21
 
 ### Changed in 0.2.8

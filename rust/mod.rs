@@ -689,7 +689,7 @@ pub struct Config {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Configs {
+pub struct ConfigRegistry {
     #[serde(rename = "CONFIGS")]
     pub configs: Vec<Config>,
 }
@@ -1613,9 +1613,9 @@ pub type SzConfigExportConfigResponse = ExportConfig;
 
 pub type SzConfigGetDataSourcesResponse = GetDataSources;
 
-pub type SzConfigManagerGetConfigResponse = GetConfig;
+pub type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
-pub type SzConfigManagerGetConfigsResponse = Configs;
+pub type SzConfigManagerGetConfigResponse = GetConfig;
 
 pub type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
 

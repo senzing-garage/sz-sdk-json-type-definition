@@ -1027,11 +1027,11 @@ class Config:
         return data
 
 @dataclass
-class Configs:
+class ConfigRegistry:
     configs: 'List[Config]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Configs':
+    def from_json_data(cls, data: Any) -> 'ConfigRegistry':
         return cls(
             _from_json_data(List[Config], data.get("CONFIGS")),
         )
@@ -2579,23 +2579,23 @@ class SzConfigGetDataSourcesResponse:
         return _to_json_data(self.value)
 
 @dataclass
+class SzConfigManagerGetConfigRegistryResponse:
+    value: 'ConfigRegistry'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigRegistryResponse':
+        return cls(_from_json_data(ConfigRegistry, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
 class SzConfigManagerGetConfigResponse:
     value: 'GetConfig'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigResponse':
         return cls(_from_json_data(GetConfig, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class SzConfigManagerGetConfigsResponse:
-    value: 'Configs'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigsResponse':
-        return cls(_from_json_data(Configs, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
