@@ -757,7 +757,7 @@ export type SzConfigGetDataSourcesResponse = GetDataSources;
 
 export type SzConfigManagerGetConfigResponse = GetConfig;
 
-export type SzConfigManagerGetConfigsResponse = Configs;
+export type SzConfigManagerGetConfigRepositoryResponse = Configs;
 
 export type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
 

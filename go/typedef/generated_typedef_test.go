@@ -155,10 +155,10 @@ func TestSzConfigGetDataSourcesResponseTest006(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigManagerGetConfigsResponseTest000(test *testing.T) {
+func TestSzConfigManagerGetConfigRepositoryResponseTest000(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{}`
-    jsonStruct := SzConfigManagerGetConfigsResponse{}
+    jsonStruct := SzConfigManagerGetConfigRepositoryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -167,10 +167,10 @@ func TestSzConfigManagerGetConfigsResponseTest000(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigManagerGetConfigsResponseTest001(test *testing.T) {
+func TestSzConfigManagerGetConfigRepositoryResponseTest001(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"CONFIGS":[{"CONFIG_COMMENTS":"blank","CONFIG_ID":1,"SYS_CREATE_DT":"blank"},{"CONFIG_COMMENTS":"blank","CONFIG_ID":1,"SYS_CREATE_DT":"blank"}]}`
-    jsonStruct := SzConfigManagerGetConfigsResponse{}
+    jsonStruct := SzConfigManagerGetConfigRepositoryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)

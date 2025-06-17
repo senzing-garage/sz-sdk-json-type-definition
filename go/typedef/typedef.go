@@ -1094,7 +1094,7 @@ type SzConfigGetDataSourcesResponse = GetDataSources
 
 type SzConfigManagerGetConfigResponse = GetConfig
 
-type SzConfigManagerGetConfigsResponse = Configs
+type SzConfigManagerGetConfigRepositoryResponse = Configs
 
 type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance
 

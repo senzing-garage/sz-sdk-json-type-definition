@@ -2278,7 +2278,7 @@
         "SzConfigManagerGetConfigResponse": {
             "ref": "GetConfig"
         },
-        "SzConfigManagerGetConfigsResponse": {
+        "SzConfigManagerGetConfigRepositoryResponse": {
             "ref": "Configs"
         },
         "SzDiagnosticCheckDatastorePerformanceResponse": {

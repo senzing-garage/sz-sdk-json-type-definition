@@ -6,8 +6,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    [JsonConverter(typeof(SzConfigManagerGetConfigsResponseJsonConverter))]
-    public class SzConfigManagerGetConfigsResponse
+    [JsonConverter(typeof(SzConfigManagerGetConfigRepositoryResponseJsonConverter))]
+    public class SzConfigManagerGetConfigRepositoryResponse
     {
         /// <summary>
         /// The underlying data being wrapped.
@@ -15,14 +15,14 @@ namespace Senzing
         public Configs Value { get; set; }
     }
 
-    public class SzConfigManagerGetConfigsResponseJsonConverter : JsonConverter<SzConfigManagerGetConfigsResponse>
+    public class SzConfigManagerGetConfigRepositoryResponseJsonConverter : JsonConverter<SzConfigManagerGetConfigRepositoryResponse>
     {
-        public override SzConfigManagerGetConfigsResponse Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override SzConfigManagerGetConfigRepositoryResponse Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new SzConfigManagerGetConfigsResponse { Value = JsonSerializer.Deserialize<Configs>(ref reader, options) };
+            return new SzConfigManagerGetConfigRepositoryResponse { Value = JsonSerializer.Deserialize<Configs>(ref reader, options) };
         }
 
-        public override void Write(Utf8JsonWriter writer, SzConfigManagerGetConfigsResponse value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, SzConfigManagerGetConfigRepositoryResponse value, JsonSerializerOptions options)
         {
             JsonSerializer.Serialize<Configs>(writer, value.Value, options);
         }
