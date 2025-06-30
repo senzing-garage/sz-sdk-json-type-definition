@@ -1,12 +1,4 @@
 {
-    "SzConfigRegisterDataSourceResponse": {
-        "tests": {
-            "test-000": {},
-            "test-001": {
-                "DSRC_ID": 1
-            }
-        }
-    },
     "SzConfigExportConfigResponse": {
         "tests": {
             "test-000": {},
@@ -30357,6 +30349,14 @@
                         }
                     ]
                 }
+            }
+        }
+    },
+    "SzConfigRegisterDataSourceResponse": {
+        "tests": {
+            "test-000": {},
+            "test-001": {
+                "DSRC_ID": 1
             }
         }
     },

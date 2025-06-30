@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.10] - 2025-06-30
+
+### Changed in 0.2.10
+
+- Change `SzConfig.addDataSource` to `SzConfig.registerDataSource`
+- Change `SzConfig.deleteDataSource` to `SzConfig.unregisterDataSource`
+- Change `SzConfig.getDataSources` to `SzConfig.getDataSourceRegistry`
+- Change `SzDiagnostic.checkDatastorePerformance` to `SzDiagnostic.checkRepositoryPerformance`
+- Change `SzDiagnostic.getDatastoreInfo` to `SzDiagnostic.getRepositoryInfo`
+- Change `SzEngine.closeExport` to `SzEngine.closeExport`
+
 ## [0.2.9] - 2025-06-17
 
 ### Changed in 0.2.9
@@ -42,7 +53,7 @@ and this project adheres to [Semantic Versioning].
 
 ### Added in 0.2.5
 
-- SzDiagnosticGetRepositoryInfoResponse
+- SzDiagnosticGetDatastoreInfoResponse
 - SzDiagnosticGetFeatureResponse
 - SzEngineFindInterestingEntitiesByEntityIdResponse
 - SzEngineFindInterestingEntitiesByRecordIdResponse
@@ -51,7 +62,7 @@ and this project adheres to [Semantic Versioning].
 ### Changed in 0.2.5
 
 - SzConfigExportConfigResponse
-- SzDiagnosticCheckRepositoryPerformanceResponse
+- SzDiagnosticCheckDatastorePerformanceResponse
 
 ### Removed in 0.2.5
 
