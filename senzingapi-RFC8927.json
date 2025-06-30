@@ -1,15 +1,5 @@
 {
     "definitions": {
-        "RegisterDataSource": {
-            "properties": {
-                "DSRC_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
         "AffectedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -929,28 +919,6 @@
                 }
             }
         },
-        "CONFIG_BASE_VERSION": {
-            "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
-                },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "VERSION": {
-                    "type": "string"
-                }
-            }
-        },
         "CompatibilityVersion": {
             "properties": {
                 "CONFIG_VERSION": {
@@ -970,6 +938,28 @@
                     "type": "int32"
                 },
                 "SYS_CREATE_DT": {
+                    "type": "string"
+                }
+            }
+        },
+        "CONFIG_BASE_VERSION": {
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "VERSION": {
                     "type": "string"
                 }
             }
@@ -994,44 +984,6 @@
                 "DSRC_ID": {
                     "metadata": {
                         "description": "The unique identifier of the datasource.",
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "Datastore": {
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "location": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                }
-            }
-        },
-        "DatastoreInfo": {
-            "properties": {
-                "dataStores": {
-                    "elements": {
-                        "ref": "Datastore"
-                    }
-                }
-            }
-        },
-        "DatastorePerformance": {
-            "properties": {
-                "insertTime": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "numRecordsInserted": {
-                    "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1959,6 +1911,16 @@
         "RedoRecord": {
             "ref": "FixmeUnknown"
         },
+        "RegisterDataSource": {
+            "properties": {
+                "DSRC_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
         "RelatedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -2008,6 +1970,44 @@
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
+                }
+            }
+        },
+        "Repository": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "RepositoryInfo": {
+            "properties": {
+                "repositories": {
+                    "elements": {
+                        "ref": "Repository"
+                    }
+                }
+            }
+        },
+        "RepositoryPerformance": {
+            "properties": {
+                "insertTime": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "numRecordsInserted": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
@@ -2266,9 +2266,6 @@
         "StreamExportJsonEntity": {
             "ref": "FixmeUnknown"
         },
-        "SzConfigRegisterDataSourceResponse": {
-            "ref": "RegisterDataSource"
-        },
         "SzConfigExportConfigResponse": {
             "ref": "ExportConfig"
         },
@@ -2281,14 +2278,17 @@
         "SzConfigManagerGetConfigRegistryResponse": {
             "ref": "ConfigRegistry"
         },
-        "SzDiagnosticCheckRepositoryPerformanceResponse": {
-            "ref": "DatastorePerformance"
+        "SzConfigRegisterDataSourceResponse": {
+            "ref": "RegisterDataSource"
         },
-        "SzDiagnosticGetRepositoryInfoResponse": {
-            "ref": "DatastoreInfo"
+        "SzDiagnosticCheckRepositoryPerformanceResponse": {
+            "ref": "RepositoryPerformance"
         },
         "SzDiagnosticGetFeatureResponse": {
             "ref": "GetFeature"
+        },
+        "SzDiagnosticGetRepositoryInfoResponse": {
+            "ref": "RepositoryInfo"
         },
         "SzEngineAddRecordResponse": {
             "ref": "WithInfo"

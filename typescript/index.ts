@@ -316,21 +316,6 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
-export interface Datastore {
-  id: string;
-  location: string;
-  type: string;
-}
-
-export interface DatastoreInfo {
-  dataStores: Datastore[];
-}
-
-export interface DatastorePerformance {
-  insertTime: number;
-  numRecordsInserted: number;
-}
-
 export interface Entity {
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
@@ -658,6 +643,21 @@ export interface RelatedEntity {
   RECORD_SUMMARY: RecordSummaryElement[];
 }
 
+export interface Repository {
+  id: string;
+  location: string;
+  type: string;
+}
+
+export interface RepositoryInfo {
+  repositories: Repository[];
+}
+
+export interface RepositoryPerformance {
+  insertTime: number;
+  numRecordsInserted: number;
+}
+
 export interface ResolutionStep {
   INBOUND_VIRTUAL_ENTITY_ID: string;
   MATCH_INFO: MatchInfo;
@@ -759,11 +759,11 @@ export type SzConfigManagerGetConfigResponse = GetConfig;
 
 export type SzConfigRegisterDataSourceResponse = RegisterDataSource;
 
-export type SzDiagnosticCheckRepositoryPerformanceResponse = DatastorePerformance;
+export type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
 
 export type SzDiagnosticGetFeatureResponse = GetFeature;
 
-export type SzDiagnosticGetRepositoryInfoResponse = DatastoreInfo;
+export type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo;
 
 export type SzEngineAddRecordResponse = WithInfo;
 

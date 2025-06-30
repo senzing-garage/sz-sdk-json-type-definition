@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzDiagnosticGetRepositoryInfoResponse {
     @JsonValue
-    private DatastoreInfo value;
+    private RepositoryInfo value;
 
     public SzDiagnosticGetRepositoryInfoResponse() {
     }
 
     @JsonCreator
-    public SzDiagnosticGetRepositoryInfoResponse(DatastoreInfo value) {
+    public SzDiagnosticGetRepositoryInfoResponse(RepositoryInfo value) {
         this.value = value;
     }
 
-    public DatastoreInfo getValue() {
+    public RepositoryInfo getValue() {
         return value;
     }
 
-    public void setValue(DatastoreInfo value) {
+    public void setValue(RepositoryInfo value) {
         this.value = value;
     }
 }

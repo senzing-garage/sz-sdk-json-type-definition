@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzDiagnosticCheckRepositoryPerformanceResponse {
     @JsonValue
-    private DatastorePerformance value;
+    private RepositoryPerformance value;
 
     public SzDiagnosticCheckRepositoryPerformanceResponse() {
     }
 
     @JsonCreator
-    public SzDiagnosticCheckRepositoryPerformanceResponse(DatastorePerformance value) {
+    public SzDiagnosticCheckRepositoryPerformanceResponse(RepositoryPerformance value) {
         this.value = value;
     }
 
-    public DatastorePerformance getValue() {
+    public RepositoryPerformance getValue() {
         return value;
     }
 
-    public void setValue(DatastorePerformance value) {
+    public void setValue(RepositoryPerformance value) {
         this.value = value;
     }
 }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Datastore {
+public class Repository {
     @JsonProperty("id")
     private String id;
 
@@ -16,7 +16,7 @@ public class Datastore {
     @JsonProperty("type")
     private String type;
 
-    public Datastore() {
+    public Repository() {
     }
 
     /**

@@ -12,19 +12,19 @@ namespace Senzing
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public DatastorePerformance Value { get; set; }
+        public RepositoryPerformance Value { get; set; }
     }
 
     public class SzDiagnosticCheckRepositoryPerformanceResponseJsonConverter : JsonConverter<SzDiagnosticCheckRepositoryPerformanceResponse>
     {
         public override SzDiagnosticCheckRepositoryPerformanceResponse Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new SzDiagnosticCheckRepositoryPerformanceResponse { Value = JsonSerializer.Deserialize<DatastorePerformance>(ref reader, options) };
+            return new SzDiagnosticCheckRepositoryPerformanceResponse { Value = JsonSerializer.Deserialize<RepositoryPerformance>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, SzDiagnosticCheckRepositoryPerformanceResponse value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<DatastorePerformance>(writer, value.Value, options);
+            JsonSerializer.Serialize<RepositoryPerformance>(writer, value.Value, options);
         }
     }
 }

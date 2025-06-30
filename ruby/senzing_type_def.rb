@@ -1085,63 +1085,6 @@ module SenzingTypeDef
     end
   end
 
-  class Datastore
-    attr_accessor :id
-    attr_accessor :location
-    attr_accessor :type
-
-    def self.from_json_data(data)
-      out = Datastore.new
-      out.id = SenzingTypeDef::from_json_data(String, data["id"])
-      out.location = SenzingTypeDef::from_json_data(String, data["location"])
-      out.type = SenzingTypeDef::from_json_data(String, data["type"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["id"] = SenzingTypeDef::to_json_data(id)
-      data["location"] = SenzingTypeDef::to_json_data(location)
-      data["type"] = SenzingTypeDef::to_json_data(type)
-      data
-    end
-  end
-
-  class DatastoreInfo
-    attr_accessor :data_stores
-
-    def self.from_json_data(data)
-      out = DatastoreInfo.new
-      out.data_stores = SenzingTypeDef::from_json_data(Array[Datastore], data["dataStores"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["dataStores"] = SenzingTypeDef::to_json_data(data_stores)
-      data
-    end
-  end
-
-  class DatastorePerformance
-    attr_accessor :insert_time
-    attr_accessor :num_records_inserted
-
-    def self.from_json_data(data)
-      out = DatastorePerformance.new
-      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
-      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
-      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
-      data
-    end
-  end
-
   class Entity
     attr_accessor :related_entities
     attr_accessor :resolved_entity
@@ -2321,6 +2264,63 @@ module SenzingTypeDef
     end
   end
 
+  class Repository
+    attr_accessor :id
+    attr_accessor :location
+    attr_accessor :type
+
+    def self.from_json_data(data)
+      out = Repository.new
+      out.id = SenzingTypeDef::from_json_data(String, data["id"])
+      out.location = SenzingTypeDef::from_json_data(String, data["location"])
+      out.type = SenzingTypeDef::from_json_data(String, data["type"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["id"] = SenzingTypeDef::to_json_data(id)
+      data["location"] = SenzingTypeDef::to_json_data(location)
+      data["type"] = SenzingTypeDef::to_json_data(type)
+      data
+    end
+  end
+
+  class RepositoryInfo
+    attr_accessor :repositories
+
+    def self.from_json_data(data)
+      out = RepositoryInfo.new
+      out.repositories = SenzingTypeDef::from_json_data(Array[Repository], data["repositories"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["repositories"] = SenzingTypeDef::to_json_data(repositories)
+      data
+    end
+  end
+
+  class RepositoryPerformance
+    attr_accessor :insert_time
+    attr_accessor :num_records_inserted
+
+    def self.from_json_data(data)
+      out = RepositoryPerformance.new
+      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
+      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
+      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
+      data
+    end
+  end
+
   class ResolutionStep
     attr_accessor :inbound_virtual_entity_id
     attr_accessor :match_info
@@ -2735,7 +2735,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzDiagnosticCheckRepositoryPerformanceResponse.new
-      out.value = SenzingTypeDef.from_json_data(DatastorePerformance, data)
+      out.value = SenzingTypeDef.from_json_data(RepositoryPerformance, data)
       out
     end
 
@@ -2763,7 +2763,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzDiagnosticGetRepositoryInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(DatastoreInfo, data)
+      out.value = SenzingTypeDef.from_json_data(RepositoryInfo, data)
       out
     end
 

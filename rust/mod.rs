@@ -700,33 +700,6 @@ pub struct DataSource {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Datastore {
-    #[serde(rename = "id")]
-    pub id: String,
-
-    #[serde(rename = "location")]
-    pub location: String,
-
-    #[serde(rename = "type")]
-    pub type_: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct DatastoreInfo {
-    #[serde(rename = "dataStores")]
-    pub dataStores: Vec<Datastore>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct DatastorePerformance {
-    #[serde(rename = "insertTime")]
-    pub insertTime: i32,
-
-    #[serde(rename = "numRecordsInserted")]
-    pub numRecordsInserted: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct Entity {
     #[serde(rename = "RELATED_ENTITIES")]
     pub relatedEntities: Vec<RelatedEntity>,
@@ -1427,6 +1400,33 @@ pub struct RelatedEntity {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct Repository {
+    #[serde(rename = "id")]
+    pub id: String,
+
+    #[serde(rename = "location")]
+    pub location: String,
+
+    #[serde(rename = "type")]
+    pub type_: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct RepositoryInfo {
+    #[serde(rename = "repositories")]
+    pub repositories: Vec<Repository>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct RepositoryPerformance {
+    #[serde(rename = "insertTime")]
+    pub insertTime: i32,
+
+    #[serde(rename = "numRecordsInserted")]
+    pub numRecordsInserted: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct ResolutionStep {
     #[serde(rename = "INBOUND_VIRTUAL_ENTITY_ID")]
     pub inboundVirtualEntityId: String,
@@ -1617,11 +1617,11 @@ pub type SzConfigManagerGetConfigResponse = GetConfig;
 
 pub type SzConfigRegisterDataSourceResponse = RegisterDataSource;
 
-pub type SzDiagnosticCheckRepositoryPerformanceResponse = DatastorePerformance;
+pub type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
 
 pub type SzDiagnosticGetFeatureResponse = GetFeature;
 
-pub type SzDiagnosticGetRepositoryInfoResponse = DatastoreInfo;
+pub type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo;
 
 pub type SzEngineAddRecordResponse = WithInfo;
 

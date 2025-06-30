@@ -470,24 +470,6 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
-type Datastore struct {
-	ID string `json:"id"`
-
-	Location string `json:"location"`
-
-	Type string `json:"type"`
-}
-
-type DatastoreInfo struct {
-	DataStores []Datastore `json:"dataStores"`
-}
-
-type DatastorePerformance struct {
-	InsertTime int64 `json:"insertTime"`
-
-	NumRecordsInserted int64 `json:"numRecordsInserted"`
-}
-
 type Entity struct {
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
@@ -962,6 +944,24 @@ type RelatedEntity struct {
 	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 }
 
+type Repository struct {
+	ID string `json:"id"`
+
+	Location string `json:"location"`
+
+	Type string `json:"type"`
+}
+
+type RepositoryInfo struct {
+	Repositories []Repository `json:"repositories"`
+}
+
+type RepositoryPerformance struct {
+	InsertTime int64 `json:"insertTime"`
+
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
+}
+
 type ResolutionStep struct {
 	InboundVirtualEntityID string `json:"INBOUND_VIRTUAL_ENTITY_ID"`
 
@@ -1096,11 +1096,11 @@ type SzConfigManagerGetConfigResponse = GetConfig
 
 type SzConfigRegisterDataSourceResponse = RegisterDataSource
 
-type SzDiagnosticCheckRepositoryPerformanceResponse = DatastorePerformance
+type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance
 
 type SzDiagnosticGetFeatureResponse = GetFeature
 
-type SzDiagnosticGetRepositoryInfoResponse = DatastoreInfo
+type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo
 
 type SzEngineAddRecordResponse = WithInfo
 
