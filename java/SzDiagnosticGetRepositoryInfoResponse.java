@@ -5,15 +5,15 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public class SzDiagnosticGetDatastoreInfoResponse {
+public class SzDiagnosticGetRepositoryInfoResponse {
     @JsonValue
     private DatastoreInfo value;
 
-    public SzDiagnosticGetDatastoreInfoResponse() {
+    public SzDiagnosticGetRepositoryInfoResponse() {
     }
 
     @JsonCreator
-    public SzDiagnosticGetDatastoreInfoResponse(DatastoreInfo value) {
+    public SzDiagnosticGetRepositoryInfoResponse(DatastoreInfo value) {
         this.value = value;
     }
 

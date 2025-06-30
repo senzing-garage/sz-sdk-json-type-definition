@@ -6,10 +6,6 @@ import "time"
 
 type Senzingapi = interface{}
 
-type AddDataSource struct {
-	DsrcID int64 `json:"DSRC_ID"`
-}
-
 type AffectedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -670,7 +666,7 @@ type GetConfig struct {
 	G2Config G2config `json:"G2_CONFIG"`
 }
 
-type GetDataSources struct {
+type GetDataSourceRegistry struct {
 	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
@@ -936,6 +932,10 @@ type Records = []Record
 
 type RedoRecord = FixmeUnknown
 
+type RegisterDataSource struct {
+	DsrcID int64 `json:"DSRC_ID"`
+}
+
 type RelatedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -1086,21 +1086,21 @@ type Stats = FixmeUnknown
 
 type StreamExportJSONEntity = FixmeUnknown
 
-type SzConfigAddDataSourceResponse = AddDataSource
-
 type SzConfigExportConfigResponse = ExportConfig
 
-type SzConfigGetDataSourcesResponse = GetDataSources
+type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry
 
 type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry
 
 type SzConfigManagerGetConfigResponse = GetConfig
 
-type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance
+type SzConfigRegisterDataSourceResponse = RegisterDataSource
 
-type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo
+type SzDiagnosticCheckRepositoryPerformanceResponse = DatastorePerformance
 
 type SzDiagnosticGetFeatureResponse = GetFeature
+
+type SzDiagnosticGetRepositoryInfoResponse = DatastoreInfo
 
 type SzEngineAddRecordResponse = WithInfo
 

@@ -42,7 +42,7 @@ and this project adheres to [Semantic Versioning].
 
 ### Added in 0.2.5
 
-- SzDiagnosticGetDatastoreInfoResponse
+- SzDiagnosticGetRepositoryInfoResponse
 - SzDiagnosticGetFeatureResponse
 - SzEngineFindInterestingEntitiesByEntityIdResponse
 - SzEngineFindInterestingEntitiesByRecordIdResponse
@@ -51,7 +51,7 @@ and this project adheres to [Semantic Versioning].
 ### Changed in 0.2.5
 
 - SzConfigExportConfigResponse
-- SzDiagnosticCheckDatastorePerformanceResponse
+- SzDiagnosticCheckRepositoryPerformanceResponse
 
 ### Removed in 0.2.5
 

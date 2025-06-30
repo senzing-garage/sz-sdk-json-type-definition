@@ -18,21 +18,6 @@ class Senzingapi:
         return _to_json_data(self.value)
 
 @dataclass
-class AddDataSource:
-    dsrc_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AddDataSource':
-        return cls(
-            _from_json_data(int, data.get("DSRC_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
-        return data
-
-@dataclass
 class AffectedEntity:
     entity_id: 'int'
     """
@@ -1529,11 +1514,11 @@ class GetConfig:
         return data
 
 @dataclass
-class GetDataSources:
+class GetDataSourceRegistry:
     data_sources: 'List[DataSource]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'GetDataSources':
+    def from_json_data(cls, data: Any) -> 'GetDataSourceRegistry':
         return cls(
             _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
         )
@@ -2177,6 +2162,21 @@ class RedoRecord:
         return _to_json_data(self.value)
 
 @dataclass
+class RegisterDataSource:
+    dsrc_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RegisterDataSource':
+        return cls(
+            _from_json_data(int, data.get("DSRC_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DSRC_ID"] = _to_json_data(self.dsrc_id)
+        return data
+
+@dataclass
 class RelatedEntity:
     entity_id: 'int'
     """
@@ -2546,17 +2546,6 @@ class StreamExportJSONEntity:
         return _to_json_data(self.value)
 
 @dataclass
-class SzConfigAddDataSourceResponse:
-    value: 'AddDataSource'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigAddDataSourceResponse':
-        return cls(_from_json_data(AddDataSource, data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class SzConfigExportConfigResponse:
     value: 'ExportConfig'
 
@@ -2568,12 +2557,12 @@ class SzConfigExportConfigResponse:
         return _to_json_data(self.value)
 
 @dataclass
-class SzConfigGetDataSourcesResponse:
-    value: 'GetDataSources'
+class SzConfigGetDataSourceRegistryResponse:
+    value: 'GetDataSourceRegistry'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourcesResponse':
-        return cls(_from_json_data(GetDataSources, data))
+    def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourceRegistryResponse':
+        return cls(_from_json_data(GetDataSourceRegistry, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2601,23 +2590,23 @@ class SzConfigManagerGetConfigResponse:
         return _to_json_data(self.value)
 
 @dataclass
-class SzDiagnosticCheckDatastorePerformanceResponse:
-    value: 'DatastorePerformance'
+class SzConfigRegisterDataSourceResponse:
+    value: 'RegisterDataSource'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckDatastorePerformanceResponse':
-        return cls(_from_json_data(DatastorePerformance, data))
+    def from_json_data(cls, data: Any) -> 'SzConfigRegisterDataSourceResponse':
+        return cls(_from_json_data(RegisterDataSource, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
 @dataclass
-class SzDiagnosticGetDatastoreInfoResponse:
-    value: 'DatastoreInfo'
+class SzDiagnosticCheckRepositoryPerformanceResponse:
+    value: 'DatastorePerformance'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SzDiagnosticGetDatastoreInfoResponse':
-        return cls(_from_json_data(DatastoreInfo, data))
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckRepositoryPerformanceResponse':
+        return cls(_from_json_data(DatastorePerformance, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2629,6 +2618,17 @@ class SzDiagnosticGetFeatureResponse:
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzDiagnosticGetFeatureResponse':
         return cls(_from_json_data(GetFeature, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class SzDiagnosticGetRepositoryInfoResponse:
+    value: 'DatastoreInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticGetRepositoryInfoResponse':
+        return cls(_from_json_data(DatastoreInfo, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)

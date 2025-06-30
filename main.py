@@ -9,14 +9,14 @@ import os
 import pathlib
 
 from python.typedef import (
-    SzConfigAddDataSourceResponse,
     SzConfigExportConfigResponse,
-    SzConfigGetDataSourcesResponse,
+    SzConfigGetDataSourceRegistryResponse,
     SzConfigManagerGetConfigRegistryResponse,
     SzConfigManagerGetConfigResponse,
-    SzDiagnosticCheckDatastorePerformanceResponse,
-    SzDiagnosticGetDatastoreInfoResponse,
+    SzConfigRegisterDataSourceResponse,
+    SzDiagnosticCheckRepositoryPerformanceResponse,
     SzDiagnosticGetFeatureResponse,
+    SzDiagnosticGetRepositoryInfoResponse,
     SzEngineAddRecordResponse,
     SzEngineDeleteRecordResponse,
     SzEngineFetchNextResponse,
@@ -168,7 +168,9 @@ print(
 )
 
 JSON_STRING = '{"DATA_SOURCES": [{"DSRC_ID": 1, "DSRC_CODE": "TEST"}, {"DSRC_ID": 2, "DSRC_CODE": "SEARCH"}]}'
-JSON_STRUCT = SzConfigGetDataSourcesResponse.from_json_data(json.loads(JSON_STRING))
+JSON_STRUCT = SzConfigGetDataSourceRegistryResponse.from_json_data(
+    json.loads(JSON_STRING)
+)
 
 for data_source in JSON_STRUCT.value.data_sources:
     print("ID: {0}  Code: {1}".format(data_source.dsrc_id, data_source.dsrc_code))
@@ -186,8 +188,8 @@ print(
 # -----------------------------------------------------------------------------
 
 
-response = SzConfigAddDataSourceResponse.from_json_data(
-    file("SzConfigAddDataSourceResponse-test-001.json")
+response = SzConfigRegisterDataSourceResponse.from_json_data(
+    file("SzConfigRegisterDataSourceResponse-test-001.json")
 )
 print_fmt(response, "response.value.dsrc_id")
 
@@ -198,8 +200,8 @@ response = SzConfigExportConfigResponse.from_json_data(
 print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
 
 
-response = SzConfigGetDataSourcesResponse.from_json_data(
-    file("SzConfigGetDataSourcesResponse-test-001.json")
+response = SzConfigGetDataSourceRegistryResponse.from_json_data(
+    file("SzConfigGetDataSourceRegistryResponse-test-001.json")
 )
 print_fmt(response, "response.value.data_sources[0].dsrc_id")
 
@@ -216,14 +218,14 @@ response = SzConfigManagerGetConfigResponse.from_json_data(
 print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
 
 
-response = SzDiagnosticCheckDatastorePerformanceResponse.from_json_data(
-    file("SzDiagnosticCheckDatastorePerformanceResponse-test-001.json")
+response = SzDiagnosticCheckRepositoryPerformanceResponse.from_json_data(
+    file("SzDiagnosticCheckRepositoryPerformanceResponse-test-001.json")
 )
 print_fmt(response, "response.value.num_records_inserted")
 
 
-response = SzDiagnosticGetDatastoreInfoResponse.from_json_data(
-    file("SzDiagnosticGetDatastoreInfoResponse-test-001.json")
+response = SzDiagnosticGetRepositoryInfoResponse.from_json_data(
+    file("SzDiagnosticGetRepositoryInfoResponse-test-001.json")
 )
 print_fmt(response, "response.value.data_stores[0].location")
 

@@ -132,7 +132,7 @@ linters:
       exclude:
         - '.+/typedef\.VirtualEntity$'
         - '.+/typedef\.FeatureForAttribute$'
-        - '.+/typedef\.GetDataSources$'
+        - '.+/typedef\.GetDataSourceRegistry$'
 
 formatters:
   enable:

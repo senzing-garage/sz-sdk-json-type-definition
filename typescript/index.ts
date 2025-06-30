@@ -2,10 +2,6 @@
 
 export type Senzingapi = any;
 
-export interface AddDataSource {
-  DSRC_ID: number;
-}
-
 export interface AffectedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -452,7 +448,7 @@ export interface GetConfig {
   G2_CONFIG: G2config;
 }
 
-export interface GetDataSources {
+export interface GetDataSourceRegistry {
   DATA_SOURCES: DataSource[];
 }
 
@@ -640,6 +636,10 @@ export type Records = Record[];
 
 export type RedoRecord = FixmeUnknown;
 
+export interface RegisterDataSource {
+  DSRC_ID: number;
+}
+
 export interface RelatedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -749,21 +749,21 @@ export type Stats = FixmeUnknown;
 
 export type StreamExportJsonEntity = FixmeUnknown;
 
-export type SzConfigAddDataSourceResponse = AddDataSource;
-
 export type SzConfigExportConfigResponse = ExportConfig;
 
-export type SzConfigGetDataSourcesResponse = GetDataSources;
+export type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry;
 
 export type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
 export type SzConfigManagerGetConfigResponse = GetConfig;
 
-export type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
+export type SzConfigRegisterDataSourceResponse = RegisterDataSource;
 
-export type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo;
+export type SzDiagnosticCheckRepositoryPerformanceResponse = DatastorePerformance;
 
 export type SzDiagnosticGetFeatureResponse = GetFeature;
+
+export type SzDiagnosticGetRepositoryInfoResponse = DatastoreInfo;
 
 export type SzEngineAddRecordResponse = WithInfo;
 

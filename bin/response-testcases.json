@@ -1,5 +1,5 @@
 {
-    "SzConfigAddDataSourceResponse": {
+    "SzConfigRegisterDataSourceResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
@@ -10282,7 +10282,7 @@
             }
         }
     },
-    "SzConfigGetDataSourcesResponse": {
+    "SzConfigGetDataSourceRegistryResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
@@ -30360,7 +30360,7 @@
             }
         }
     },
-    "SzDiagnosticCheckDatastorePerformanceResponse": {
+    "SzDiagnosticCheckRepositoryPerformanceResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
@@ -30369,7 +30369,7 @@
             }
         }
     },
-    "SzDiagnosticGetDatastoreInfoResponse": {
+    "SzDiagnosticGetRepositoryInfoResponse": {
         "tests": {
             "test-000": {},
             "test-001": {

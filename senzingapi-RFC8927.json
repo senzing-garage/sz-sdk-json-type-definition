@@ -1,6 +1,6 @@
 {
     "definitions": {
-        "AddDataSource": {
+        "RegisterDataSource": {
             "properties": {
                 "DSRC_ID": {
                     "metadata": {
@@ -1446,7 +1446,7 @@
                 }
             }
         },
-        "GetDataSources": {
+        "GetDataSourceRegistry": {
             "properties": {
                 "DATA_SOURCES": {
                     "elements": {
@@ -2266,14 +2266,14 @@
         "StreamExportJsonEntity": {
             "ref": "FixmeUnknown"
         },
-        "SzConfigAddDataSourceResponse": {
-            "ref": "AddDataSource"
+        "SzConfigRegisterDataSourceResponse": {
+            "ref": "RegisterDataSource"
         },
         "SzConfigExportConfigResponse": {
             "ref": "ExportConfig"
         },
-        "SzConfigGetDataSourcesResponse": {
-            "ref": "GetDataSources"
+        "SzConfigGetDataSourceRegistryResponse": {
+            "ref": "GetDataSourceRegistry"
         },
         "SzConfigManagerGetConfigResponse": {
             "ref": "GetConfig"
@@ -2281,10 +2281,10 @@
         "SzConfigManagerGetConfigRegistryResponse": {
             "ref": "ConfigRegistry"
         },
-        "SzDiagnosticCheckDatastorePerformanceResponse": {
+        "SzDiagnosticCheckRepositoryPerformanceResponse": {
             "ref": "DatastorePerformance"
         },
-        "SzDiagnosticGetDatastoreInfoResponse": {
+        "SzDiagnosticGetRepositoryInfoResponse": {
             "ref": "DatastoreInfo"
         },
         "SzDiagnosticGetFeatureResponse": {
