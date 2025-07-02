@@ -1,12 +1,4 @@
 {
-    "SzConfigAddDataSourceResponse": {
-        "tests": {
-            "test-000": {},
-            "test-001": {
-                "DSRC_ID": 1
-            }
-        }
-    },
     "SzConfigExportConfigResponse": {
         "tests": {
             "test-000": {},
@@ -10282,7 +10274,7 @@
             }
         }
     },
-    "SzConfigGetDataSourcesResponse": {
+    "SzConfigGetDataSourceRegistryResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
@@ -30360,7 +30352,15 @@
             }
         }
     },
-    "SzDiagnosticCheckDatastorePerformanceResponse": {
+    "SzConfigRegisterDataSourceResponse": {
+        "tests": {
+            "test-000": {},
+            "test-001": {
+                "DSRC_ID": 1
+            }
+        }
+    },
+    "SzDiagnosticCheckRepositoryPerformanceResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
@@ -30369,7 +30369,7 @@
             }
         }
     },
-    "SzDiagnosticGetDatastoreInfoResponse": {
+    "SzDiagnosticGetRepositoryInfoResponse": {
         "tests": {
             "test-000": {},
             "test-001": {

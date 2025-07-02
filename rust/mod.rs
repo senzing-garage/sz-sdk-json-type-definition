@@ -7,12 +7,6 @@ use serde_json::Value;
 pub type Senzingapi = Option<Value>;
 
 #[derive(Serialize, Deserialize)]
-pub struct AddDataSource {
-    #[serde(rename = "DSRC_ID")]
-    pub dsrcId: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct AffectedEntity {
     /// The ENTITY_ID is the Senzing-generated identifier for the discovered
     /// entity. It may change when new information is added.
@@ -706,33 +700,6 @@ pub struct DataSource {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Datastore {
-    #[serde(rename = "id")]
-    pub id: String,
-
-    #[serde(rename = "location")]
-    pub location: String,
-
-    #[serde(rename = "type")]
-    pub type_: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct DatastoreInfo {
-    #[serde(rename = "dataStores")]
-    pub dataStores: Vec<Datastore>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct DatastorePerformance {
-    #[serde(rename = "insertTime")]
-    pub insertTime: i32,
-
-    #[serde(rename = "numRecordsInserted")]
-    pub numRecordsInserted: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct Entity {
     #[serde(rename = "RELATED_ENTITIES")]
     pub relatedEntities: Vec<RelatedEntity>,
@@ -996,7 +963,7 @@ pub struct GetConfig {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct GetDataSources {
+pub struct GetDataSourceRegistry {
     #[serde(rename = "DATA_SOURCES")]
     pub dataSources: Vec<DataSource>,
 }
@@ -1389,6 +1356,12 @@ pub type Records = Vec<Record>;
 pub type RedoRecord = FixmeUnknown;
 
 #[derive(Serialize, Deserialize)]
+pub struct RegisterDataSource {
+    #[serde(rename = "DSRC_ID")]
+    pub dsrcId: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct RelatedEntity {
     /// The ENTITY_ID is the Senzing-generated identifier for the discovered
     /// entity. It may change when new information is added.
@@ -1424,6 +1397,33 @@ pub struct RelatedEntity {
 
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: Vec<RecordSummaryElement>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Repository {
+    #[serde(rename = "id")]
+    pub id: String,
+
+    #[serde(rename = "location")]
+    pub location: String,
+
+    #[serde(rename = "type")]
+    pub type_: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct RepositoryInfo {
+    #[serde(rename = "dataStores")]
+    pub dataStores: Vec<Repository>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct RepositoryPerformance {
+    #[serde(rename = "insertTime")]
+    pub insertTime: i32,
+
+    #[serde(rename = "numRecordsInserted")]
+    pub numRecordsInserted: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1607,21 +1607,21 @@ pub type Stats = FixmeUnknown;
 
 pub type StreamExportJsonEntity = FixmeUnknown;
 
-pub type SzConfigAddDataSourceResponse = AddDataSource;
-
 pub type SzConfigExportConfigResponse = ExportConfig;
 
-pub type SzConfigGetDataSourcesResponse = GetDataSources;
+pub type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry;
 
 pub type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
 pub type SzConfigManagerGetConfigResponse = GetConfig;
 
-pub type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
+pub type SzConfigRegisterDataSourceResponse = RegisterDataSource;
 
-pub type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo;
+pub type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
 
 pub type SzDiagnosticGetFeatureResponse = GetFeature;
+
+pub type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo;
 
 pub type SzEngineAddRecordResponse = WithInfo;
 

@@ -7,24 +7,24 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class DatastoreInfo {
+public class RepositoryInfo {
     @JsonProperty("dataStores")
-    private List<Datastore> dataStores;
+    private List<Repository> dataStores;
 
-    public DatastoreInfo() {
+    public RepositoryInfo() {
     }
 
     /**
      * Getter for dataStores.<p>
      */
-    public List<Datastore> getDataStores() {
+    public List<Repository> getDataStores() {
         return dataStores;
     }
 
     /**
      * Setter for dataStores.<p>
      */
-    public void setDataStores(List<Datastore> dataStores) {
+    public void setDataStores(List<Repository> dataStores) {
         this.dataStores = dataStores;
     }
 }

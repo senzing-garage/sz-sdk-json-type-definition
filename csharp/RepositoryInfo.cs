@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    public class GetDataSources
+    public class RepositoryInfo
     {
-        [JsonPropertyName("DATA_SOURCES")]
-        public IList<DataSource> DataSources { get; set; }
+        [JsonPropertyName("dataStores")]
+        public IList<Repository> DataStores { get; set; }
     }
 }

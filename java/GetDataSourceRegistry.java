@@ -7,11 +7,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class GetDataSources {
+public class GetDataSourceRegistry {
     @JsonProperty("DATA_SOURCES")
     private List<DataSource> dataSources;
 
-    public GetDataSources() {
+    public GetDataSourceRegistry() {
     }
 
     /**

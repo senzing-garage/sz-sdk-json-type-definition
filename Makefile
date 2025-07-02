@@ -99,7 +99,7 @@ setup: setup-osarch-specific generate
 # -----------------------------------------------------------------------------
 
 .PHONY: lint
-lint: golangci-lint
+lint: golangci-lint cspell
 
 # -----------------------------------------------------------------------------
 # Build

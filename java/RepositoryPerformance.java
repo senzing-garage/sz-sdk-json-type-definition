@@ -6,14 +6,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class DatastorePerformance {
+public class RepositoryPerformance {
     @JsonProperty("insertTime")
     private Integer insertTime;
 
     @JsonProperty("numRecordsInserted")
     private Integer numRecordsInserted;
 
-    public DatastorePerformance() {
+    public RepositoryPerformance() {
     }
 
     /**

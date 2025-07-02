@@ -23,30 +23,6 @@ func testError(test *testing.T, ctx context.Context, err error) {
 // --- Test cases
 // ----------------------------------------------------------------------------
 
-func TestSzConfigAddDataSourceResponseTest000(test *testing.T) {
-    ctx := context.TODO()
-    jsonString := `{}`
-    jsonStruct := SzConfigAddDataSourceResponse{}
-    err := json.Unmarshal([]byte(jsonString), &jsonStruct)
-    testError(test, ctx, err)
-    _, err = json.Marshal(jsonStruct)
-    testError(test, ctx, err)
-    // assert.Equal(test, jsonString, string(reconstructedString))
-    // assert.JSONEq(test, jsonString, string(reconstructedString))
-}
-
-func TestSzConfigAddDataSourceResponseTest001(test *testing.T) {
-    ctx := context.TODO()
-    jsonString := `{"DSRC_ID":1}`
-    jsonStruct := SzConfigAddDataSourceResponse{}
-    err := json.Unmarshal([]byte(jsonString), &jsonStruct)
-    testError(test, ctx, err)
-    _, err = json.Marshal(jsonStruct)
-    testError(test, ctx, err)
-    // assert.Equal(test, jsonString, string(reconstructedString))
-    // assert.JSONEq(test, jsonString, string(reconstructedString))
-}
-
 func TestSzConfigExportConfigResponseTest000(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{}`
@@ -71,10 +47,10 @@ func TestSzConfigExportConfigResponseTest001(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest000(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest000(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -83,10 +59,10 @@ func TestSzConfigGetDataSourcesResponseTest000(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest001(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest001(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -95,10 +71,10 @@ func TestSzConfigGetDataSourcesResponseTest001(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest002(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest002(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -107,10 +83,10 @@ func TestSzConfigGetDataSourcesResponseTest002(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest003(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest003(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -119,10 +95,10 @@ func TestSzConfigGetDataSourcesResponseTest003(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest004(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest004(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -131,10 +107,10 @@ func TestSzConfigGetDataSourcesResponseTest004(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest005(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest005(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -143,10 +119,10 @@ func TestSzConfigGetDataSourcesResponseTest005(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzConfigGetDataSourcesResponseTest006(test *testing.T) {
+func TestSzConfigGetDataSourceRegistryResponseTest006(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}`
-    jsonStruct := SzConfigGetDataSourcesResponse{}
+    jsonStruct := SzConfigGetDataSourceRegistryResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -239,10 +215,10 @@ func TestSzConfigManagerGetConfigResponseTest004(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzDiagnosticCheckDatastorePerformanceResponseTest000(test *testing.T) {
+func TestSzConfigRegisterDataSourceResponseTest000(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{}`
-    jsonStruct := SzDiagnosticCheckDatastorePerformanceResponse{}
+    jsonStruct := SzConfigRegisterDataSourceResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -251,10 +227,34 @@ func TestSzDiagnosticCheckDatastorePerformanceResponseTest000(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzDiagnosticCheckDatastorePerformanceResponseTest001(test *testing.T) {
+func TestSzConfigRegisterDataSourceResponseTest001(test *testing.T) {
+    ctx := context.TODO()
+    jsonString := `{"DSRC_ID":1}`
+    jsonStruct := SzConfigRegisterDataSourceResponse{}
+    err := json.Unmarshal([]byte(jsonString), &jsonStruct)
+    testError(test, ctx, err)
+    _, err = json.Marshal(jsonStruct)
+    testError(test, ctx, err)
+    // assert.Equal(test, jsonString, string(reconstructedString))
+    // assert.JSONEq(test, jsonString, string(reconstructedString))
+}
+
+func TestSzDiagnosticCheckRepositoryPerformanceResponseTest000(test *testing.T) {
+    ctx := context.TODO()
+    jsonString := `{}`
+    jsonStruct := SzDiagnosticCheckRepositoryPerformanceResponse{}
+    err := json.Unmarshal([]byte(jsonString), &jsonStruct)
+    testError(test, ctx, err)
+    _, err = json.Marshal(jsonStruct)
+    testError(test, ctx, err)
+    // assert.Equal(test, jsonString, string(reconstructedString))
+    // assert.JSONEq(test, jsonString, string(reconstructedString))
+}
+
+func TestSzDiagnosticCheckRepositoryPerformanceResponseTest001(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"insertTime":1,"numRecordsInserted":1}`
-    jsonStruct := SzDiagnosticCheckDatastorePerformanceResponse{}
+    jsonStruct := SzDiagnosticCheckRepositoryPerformanceResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -263,10 +263,10 @@ func TestSzDiagnosticCheckDatastorePerformanceResponseTest001(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzDiagnosticGetDatastoreInfoResponseTest000(test *testing.T) {
+func TestSzDiagnosticGetRepositoryInfoResponseTest000(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{}`
-    jsonStruct := SzDiagnosticGetDatastoreInfoResponse{}
+    jsonStruct := SzDiagnosticGetRepositoryInfoResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)
@@ -275,10 +275,10 @@ func TestSzDiagnosticGetDatastoreInfoResponseTest000(test *testing.T) {
     // assert.JSONEq(test, jsonString, string(reconstructedString))
 }
 
-func TestSzDiagnosticGetDatastoreInfoResponseTest001(test *testing.T) {
+func TestSzDiagnosticGetRepositoryInfoResponseTest001(test *testing.T) {
     ctx := context.TODO()
     jsonString := `{"dataStores":[{"id":"CORE","location":"/home/senzing/senzing-garage.git/sz-sdk-go-core/target/test/szdiagnostic/G2C.db","type":"sqlite3"}]}`
-    jsonStruct := SzDiagnosticGetDatastoreInfoResponse{}
+    jsonStruct := SzDiagnosticGetRepositoryInfoResponse{}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testError(test, ctx, err)
     _, err = json.Marshal(jsonStruct)

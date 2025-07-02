@@ -72,7 +72,7 @@ func main() {
 	// Show reconstructed (Unmarshall/Marshall) JSON.
 
 	jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
-	jsonStruct := typedef.SzConfigGetDataSourcesResponse{}
+	jsonStruct := typedef.SzConfigGetDataSourceRegistryResponse{}
 
 	if err = json.Unmarshal([]byte(jsonString), &jsonStruct); err != nil {
 		panic(err)

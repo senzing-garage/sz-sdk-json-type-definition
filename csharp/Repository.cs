@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing
 {
-    public class Datastore
+    public class Repository
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

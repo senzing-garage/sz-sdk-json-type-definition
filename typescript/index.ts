@@ -2,10 +2,6 @@
 
 export type Senzingapi = any;
 
-export interface AddDataSource {
-  DSRC_ID: number;
-}
-
 export interface AffectedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -320,21 +316,6 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
-export interface Datastore {
-  id: string;
-  location: string;
-  type: string;
-}
-
-export interface DatastoreInfo {
-  dataStores: Datastore[];
-}
-
-export interface DatastorePerformance {
-  insertTime: number;
-  numRecordsInserted: number;
-}
-
 export interface Entity {
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
@@ -452,7 +433,7 @@ export interface GetConfig {
   G2_CONFIG: G2config;
 }
 
-export interface GetDataSources {
+export interface GetDataSourceRegistry {
   DATA_SOURCES: DataSource[];
 }
 
@@ -640,6 +621,10 @@ export type Records = Record[];
 
 export type RedoRecord = FixmeUnknown;
 
+export interface RegisterDataSource {
+  DSRC_ID: number;
+}
+
 export interface RelatedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -656,6 +641,21 @@ export interface RelatedEntity {
   MATCH_LEVEL_CODE: string;
   RECORDS: Records;
   RECORD_SUMMARY: RecordSummaryElement[];
+}
+
+export interface Repository {
+  id: string;
+  location: string;
+  type: string;
+}
+
+export interface RepositoryInfo {
+  dataStores: Repository[];
+}
+
+export interface RepositoryPerformance {
+  insertTime: number;
+  numRecordsInserted: number;
 }
 
 export interface ResolutionStep {
@@ -749,21 +749,21 @@ export type Stats = FixmeUnknown;
 
 export type StreamExportJsonEntity = FixmeUnknown;
 
-export type SzConfigAddDataSourceResponse = AddDataSource;
-
 export type SzConfigExportConfigResponse = ExportConfig;
 
-export type SzConfigGetDataSourcesResponse = GetDataSources;
+export type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry;
 
 export type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
 export type SzConfigManagerGetConfigResponse = GetConfig;
 
-export type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance;
+export type SzConfigRegisterDataSourceResponse = RegisterDataSource;
 
-export type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo;
+export type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
 
 export type SzDiagnosticGetFeatureResponse = GetFeature;
+
+export type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo;
 
 export type SzEngineAddRecordResponse = WithInfo;
 

@@ -6,10 +6,6 @@ import "time"
 
 type Senzingapi = interface{}
 
-type AddDataSource struct {
-	DsrcID int64 `json:"DSRC_ID"`
-}
-
 type AffectedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -474,24 +470,6 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
-type Datastore struct {
-	ID string `json:"id"`
-
-	Location string `json:"location"`
-
-	Type string `json:"type"`
-}
-
-type DatastoreInfo struct {
-	DataStores []Datastore `json:"dataStores"`
-}
-
-type DatastorePerformance struct {
-	InsertTime int64 `json:"insertTime"`
-
-	NumRecordsInserted int64 `json:"numRecordsInserted"`
-}
-
 type Entity struct {
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
@@ -670,7 +648,7 @@ type GetConfig struct {
 	G2Config G2config `json:"G2_CONFIG"`
 }
 
-type GetDataSources struct {
+type GetDataSourceRegistry struct {
 	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
@@ -936,6 +914,10 @@ type Records = []Record
 
 type RedoRecord = FixmeUnknown
 
+type RegisterDataSource struct {
+	DsrcID int64 `json:"DSRC_ID"`
+}
+
 type RelatedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -960,6 +942,24 @@ type RelatedEntity struct {
 	Records Records `json:"RECORDS"`
 
 	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
+}
+
+type Repository struct {
+	ID string `json:"id"`
+
+	Location string `json:"location"`
+
+	Type string `json:"type"`
+}
+
+type RepositoryInfo struct {
+	DataStores []Repository `json:"dataStores"`
+}
+
+type RepositoryPerformance struct {
+	InsertTime int64 `json:"insertTime"`
+
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
 }
 
 type ResolutionStep struct {
@@ -1086,21 +1086,21 @@ type Stats = FixmeUnknown
 
 type StreamExportJSONEntity = FixmeUnknown
 
-type SzConfigAddDataSourceResponse = AddDataSource
-
 type SzConfigExportConfigResponse = ExportConfig
 
-type SzConfigGetDataSourcesResponse = GetDataSources
+type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry
 
 type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry
 
 type SzConfigManagerGetConfigResponse = GetConfig
 
-type SzDiagnosticCheckDatastorePerformanceResponse = DatastorePerformance
+type SzConfigRegisterDataSourceResponse = RegisterDataSource
 
-type SzDiagnosticGetDatastoreInfoResponse = DatastoreInfo
+type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance
 
 type SzDiagnosticGetFeatureResponse = GetFeature
+
+type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo
 
 type SzEngineAddRecordResponse = WithInfo
 

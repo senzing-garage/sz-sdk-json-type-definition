@@ -6,11 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class AddDataSource {
+public class RegisterDataSource {
     @JsonProperty("DSRC_ID")
     private Integer dsrcId;
 
-    public AddDataSource() {
+    public RegisterDataSource() {
     }
 
     /**
