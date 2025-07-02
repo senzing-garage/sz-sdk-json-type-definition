@@ -8,23 +8,23 @@ import java.util.List;
 
 @JsonSerialize
 public class RepositoryInfo {
-    @JsonProperty("repositories")
-    private List<Repository> repositories;
+    @JsonProperty("dataStores")
+    private List<Repository> dataStores;
 
     public RepositoryInfo() {
     }
 
     /**
-     * Getter for repositories.<p>
+     * Getter for dataStores.<p>
      */
-    public List<Repository> getRepositories() {
-        return repositories;
+    public List<Repository> getDataStores() {
+        return dataStores;
     }
 
     /**
-     * Setter for repositories.<p>
+     * Setter for dataStores.<p>
      */
-    public void setRepositories(List<Repository> repositories) {
-        this.repositories = repositories;
+    public void setDataStores(List<Repository> dataStores) {
+        this.dataStores = dataStores;
     }
 }

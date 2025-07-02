@@ -2195,17 +2195,17 @@ class Repository:
 
 @dataclass
 class RepositoryInfo:
-    repositories: 'List[Repository]'
+    data_stores: 'List[Repository]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RepositoryInfo':
         return cls(
-            _from_json_data(List[Repository], data.get("repositories")),
+            _from_json_data(List[Repository], data.get("dataStores")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["repositories"] = _to_json_data(self.repositories)
+        data["dataStores"] = _to_json_data(self.data_stores)
         return data
 
 @dataclass

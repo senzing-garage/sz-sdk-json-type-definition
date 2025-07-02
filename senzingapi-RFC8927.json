@@ -1988,7 +1988,7 @@
         },
         "RepositoryInfo": {
             "properties": {
-                "repositories": {
+                "dataStores": {
                     "elements": {
                         "ref": "Repository"
                     }

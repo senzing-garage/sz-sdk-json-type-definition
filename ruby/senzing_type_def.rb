@@ -2287,17 +2287,17 @@ module SenzingTypeDef
   end
 
   class RepositoryInfo
-    attr_accessor :repositories
+    attr_accessor :data_stores
 
     def self.from_json_data(data)
       out = RepositoryInfo.new
-      out.repositories = SenzingTypeDef::from_json_data(Array[Repository], data["repositories"])
+      out.data_stores = SenzingTypeDef::from_json_data(Array[Repository], data["dataStores"])
       out
     end
 
     def to_json_data
       data = {}
-      data["repositories"] = SenzingTypeDef::to_json_data(repositories)
+      data["dataStores"] = SenzingTypeDef::to_json_data(data_stores)
       data
     end
   end

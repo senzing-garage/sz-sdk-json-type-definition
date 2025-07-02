@@ -7,7 +7,7 @@ namespace Senzing
 {
     public class RepositoryInfo
     {
-        [JsonPropertyName("repositories")]
-        public IList<Repository> Repositories { get; set; }
+        [JsonPropertyName("dataStores")]
+        public IList<Repository> DataStores { get; set; }
     }
 }

@@ -953,7 +953,7 @@ type Repository struct {
 }
 
 type RepositoryInfo struct {
-	Repositories []Repository `json:"repositories"`
+	DataStores []Repository `json:"dataStores"`
 }
 
 type RepositoryPerformance struct {

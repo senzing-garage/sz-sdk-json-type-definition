@@ -1413,8 +1413,8 @@ pub struct Repository {
 
 #[derive(Serialize, Deserialize)]
 pub struct RepositoryInfo {
-    #[serde(rename = "repositories")]
-    pub repositories: Vec<Repository>,
+    #[serde(rename = "dataStores")]
+    pub dataStores: Vec<Repository>,
 }
 
 #[derive(Serialize, Deserialize)]

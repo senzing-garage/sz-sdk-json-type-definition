@@ -650,7 +650,7 @@ export interface Repository {
 }
 
 export interface RepositoryInfo {
-  repositories: Repository[];
+  dataStores: Repository[];
 }
 
 export interface RepositoryPerformance {
