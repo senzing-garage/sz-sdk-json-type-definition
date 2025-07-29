@@ -1199,6 +1199,7 @@
                 }
             }
         },
+        "Fixme": {},
         "FixmeUnknown": {
             "properties": {
                 "FIXME_UNKNOWN": {
@@ -2296,6 +2297,9 @@
         "SzEngineDeleteRecordResponse": {
             "ref": "WithInfo"
         },
+        "SzEngineExportCsvEntityReportCsvColumnList": {
+            "ref": "Fixme"
+        },
         "SzEngineFetchNextResponse": {
             "ref": "FetchNext"
         },
@@ -2305,14 +2309,32 @@
         "SzEngineFindInterestingEntitiesByRecordIdResponse": {
             "ref": "Interesting"
         },
+        "SzEngineFindNetworkByEntityIdEntityIds": {
+            "ref": "Fixme"
+        },
         "SzEngineFindNetworkByEntityIdResponse": {
             "ref": "Network"
+        },
+        "SzEngineFindNetworkByRecordIdRecordKeys": {
+            "ref": "Fixme"
         },
         "SzEngineFindNetworkByRecordIdResponse": {
             "ref": "Network"
         },
+        "SzEngineFindPathByEntityIdAvoidEntityIds": {
+            "ref": "Fixme"
+        },
+        "SzEngineFindPathByEntityIdRequiredDataSources": {
+            "ref": "Fixme"
+        },
         "SzEngineFindPathByEntityIdResponse": {
             "ref": "Path"
+        },
+        "SzEngineFindPathByRecordIdAvoidRecordKeys": {
+            "ref": "Fixme"
+        },
+        "SzEngineFindPathByRecordIdRequiredDataSources": {
+            "ref": "Fixme"
         },
         "SzEngineFindPathByRecordIdResponse": {
             "ref": "Path"
@@ -2332,6 +2354,9 @@
         "SzEngineGetStatsResponse": {
             "ref": "Stats"
         },
+        "SzEngineGetVirtualEntityByRecordIdRecordKeys": {
+            "ref": "Fixme"
+        },
         "SzEngineGetVirtualEntityByRecordIdResponse": {
             "ref": "VirtualEntity"
         },
@@ -2347,6 +2372,9 @@
         "SzEngineReevaluateRecordResponse": {
             "ref": "WithInfo"
         },
+        "SzEngineSearchByAttributesSearchProfile": {
+            "ref": "Fixme"
+        },
         "SzEngineSearchByAttributesResponse": {
             "ref": "Search"
         },
@@ -2361,6 +2389,12 @@
         },
         "SzEngineWhyRecordsResponse": {
             "ref": "WhyRecords"
+        },
+        "SzEngineWhySearchAttributes": {
+            "ref": "Fixme"
+        },
+        "SzEngineWhySearchSearchProfile": {
+            "ref": "Fixme"
         },
         "SzProductGetLicenseResponse": {
             "ref": "ProductLicense"
