@@ -2267,20 +2267,20 @@
         "StreamExportJsonEntity": {
             "ref": "FixmeUnknown"
         },
-        "SzConfigExportConfigResponse": {
+        "SzConfigExportResponse": {
             "ref": "ExportConfig"
         },
         "SzConfigGetDataSourceRegistryResponse": {
             "ref": "GetDataSourceRegistry"
         },
-        "SzConfigManagerGetConfigResponse": {
-            "ref": "GetConfig"
+        "SzConfigRegisterDataSourceResponse": {
+            "ref": "RegisterDataSource"
+        },
+        "SzConfigUnregisterDataSourceResponse": {
+            "ref": "Fixme"
         },
         "SzConfigManagerGetConfigRegistryResponse": {
             "ref": "ConfigRegistry"
-        },
-        "SzConfigRegisterDataSourceResponse": {
-            "ref": "RegisterDataSource"
         },
         "SzDiagnosticCheckRepositoryPerformanceResponse": {
             "ref": "RepositoryPerformance"
@@ -2345,6 +2345,9 @@
         "SzEngineGetEntityByRecordIdResponse": {
             "ref": "Entity"
         },
+        "SzEngineGetRecordPreviewResponse": {
+            "ref": "Fixme"
+        },
         "SzEngineGetRecordResponse": {
             "ref": "Record"
         },
@@ -2372,13 +2375,16 @@
         "SzEngineReevaluateRecordResponse": {
             "ref": "WithInfo"
         },
-        "SzEngineSearchByAttributesSearchProfile": {
+        "SzEngineSearchByAttributesAttributes": {
             "ref": "Fixme"
         },
         "SzEngineSearchByAttributesResponse": {
             "ref": "Search"
         },
-        "SzEngineStreamExportJsonEntityReportResponse": {
+        "SzEngineSearchByAttributesSearchProfile": {
+            "ref": "Fixme"
+        },
+        "SzEngineStreamExportJsonEntityReportResponseXXX": {
             "ref": "StreamExportJsonEntity"
         },
         "SzEngineWhyEntitiesResponse": {
@@ -2391,6 +2397,9 @@
             "ref": "WhyRecords"
         },
         "SzEngineWhySearchAttributes": {
+            "ref": "Fixme"
+        },
+        "SzEngineWhySearchResponse": {
             "ref": "Fixme"
         },
         "SzEngineWhySearchSearchProfile": {
