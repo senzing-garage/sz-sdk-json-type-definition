@@ -30545,20 +30545,9 @@
             }
         }
     },
-    "SzEngineFindInterestingEntitiesByEntityIdResponse": {
-        "metadata": {
-            "goClass": "SzEngineFindInterestingEntitiesByEntityIDResponse",
-            "pythonClass": "SzEngineFindInterestingEntitiesByEntityIDResponse"
-        },
-        "tests": {
-            "test-000": {},
-            "test-001": {
-                "INTERESTING_ENTITIES": {
-                    "ENTITIES": []
-                }
-            }
-        }
-    },
+    "SzEngineExportCsvEntityReportCsvColumnList": {},
+    "SzEngineFetchNextResponse": {},
+    "SzEngineFindInterestingEntitiesByEntityIdResponse": {},
     "SzEngineFindInterestingEntitiesByRecordIdResponse": {
         "metadata": {
             "goClass": "SzEngineFindInterestingEntitiesByRecordIDResponse",
@@ -30573,6 +30562,7 @@
             }
         }
     },
+    "SzEngineFindNetworkByEntityIdEntityIds": {},
     "SzEngineFindNetworkByEntityIdResponse": {
         "tests": {
             "test-000": {},
@@ -32569,6 +32559,7 @@
             "pythonClass": "SzEngineFindNetworkByEntityIDResponse"
         }
     },
+    "SzEngineFindNetworkByRecordIdRecordKeys": {},
     "SzEngineFindNetworkByRecordIdResponse": {
         "tests": {
             "test-000": {},
@@ -33138,6 +33129,8 @@
             "pythonClass": "SzEngineFindNetworkByRecordIDResponse"
         }
     },
+    "SzEngineFindPathByEntityIdAvoidEntityIds": {},
+    "SzEngineFindPathByEntityIdRequiredDataSources": {},
     "SzEngineFindPathByEntityIdResponse": {
         "tests": {
             "test-000": {},
@@ -34423,6 +34416,8 @@
             "pythonClass": "SzEngineFindPathByEntityIDResponse"
         }
     },
+    "SzEngineFindPathByRecordIdAvoidRecordKeys": {},
+    "SzEngineFindPathByRecordIdRequiredDataSources": {},
     "SzEngineFindPathByRecordIdResponse": {
         "tests": {
             "test-000": {},
@@ -37562,6 +37557,7 @@
             "pythonClass": "SzEngineGetEntityByRecordIDResponse"
         }
     },
+    "SzEngineGetRecordPreviewResponse": {},
     "SzEngineGetRecordResponse": {
         "tests": {
             "test-000": {},
@@ -37706,6 +37702,9 @@
             }
         }
     },
+    "SzEngineGetRedoRecordResponse": {},
+    "SzEngineGetStatsResponse": {},
+    "SzEngineGetVirtualEntityByRecordIdRecordKeys": {},
     "SzEngineGetVirtualEntityByRecordIdResponse": {
         "tests": {
             "test-000": {},
@@ -44607,6 +44606,7 @@
             }
         }
     },
+    "SzEngineSearchByAttributesAttributes": {},
     "SzEngineSearchByAttributesResponse": {
         "tests": {
             "test-000": {},
@@ -46426,6 +46426,7 @@
             }
         }
     },
+    "SzEngineSearchByAttributesSearchProfile": {},
     "SzEngineWhyEntitiesResponse": {
         "tests": {
             "test-000": {},
@@ -51968,6 +51969,9 @@
             }
         }
     },
+    "SzEngineWhySearchAttributes": {},
+    "SzEngineWhySearchResponse": {},
+    "SzEngineWhySearchSearchProfile": {},
     "SzProductGetLicenseResponse": {
         "tests": {
             "test-000": {},
