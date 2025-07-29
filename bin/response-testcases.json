@@ -1,5 +1,5 @@
 {
-    "SzConfigExportConfigResponse": {
+    "SzConfigExportResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
@@ -10417,6 +10417,19 @@
                     }
                 ]
             }
+        }
+    },
+    "SzConfigRegisterDataSourceResponse": {
+        "tests": {
+            "test-000": {},
+            "test-001": {
+                "DSRC_ID": 1
+            }
+        }
+    },
+    "SzConfigUnregisterDataSourceResponse": {
+        "tests": {
+            "test-000": {}
         }
     },
     "SzConfigManagerGetConfigRegistryResponse": {
@@ -30352,34 +30365,12 @@
             }
         }
     },
-    "SzConfigRegisterDataSourceResponse": {
-        "tests": {
-            "test-000": {},
-            "test-001": {
-                "DSRC_ID": 1
-            }
-        }
-    },
     "SzDiagnosticCheckRepositoryPerformanceResponse": {
         "tests": {
             "test-000": {},
             "test-001": {
                 "insertTime": 1,
                 "numRecordsInserted": 1
-            }
-        }
-    },
-    "SzDiagnosticGetRepositoryInfoResponse": {
-        "tests": {
-            "test-000": {},
-            "test-001": {
-                "dataStores": [
-                    {
-                        "id": "CORE",
-                        "type": "sqlite3",
-                        "location": "/home/senzing/senzing-garage.git/sz-sdk-go-core/target/test/szdiagnostic/G2C.db"
-                    }
-                ]
             }
         }
     },
@@ -30413,6 +30404,20 @@
                     {
                         "FELEM_CODE": "FULL_NAME",
                         "FELEM_VALUE": "Robert Smith"
+                    }
+                ]
+            }
+        }
+    },
+    "SzDiagnosticGetRepositoryInfoResponse": {
+        "tests": {
+            "test-000": {},
+            "test-001": {
+                "dataStores": [
+                    {
+                        "id": "CORE",
+                        "type": "sqlite3",
+                        "location": "/home/senzing/senzing-garage.git/sz-sdk-go-core/target/test/szdiagnostic/G2C.db"
                     }
                 ]
             }
