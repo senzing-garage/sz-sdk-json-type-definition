@@ -382,6 +382,10 @@ export interface FinalState {
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
+export interface Fixme {
+  FIXME: string;
+}
+
 export interface FixmeUnknown {
   FIXME_UNKNOWN: string;
 }
@@ -610,6 +614,18 @@ export interface Record {
   RELATIONSHIP_DATA: string[];
 }
 
+export interface RecordKey {
+  /**
+   * The data source code identifying the provenance of the record.
+   */
+  DATA_SOURCE: string;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
+  RECORD_ID: string;
+}
+
 export interface RecordSummaryElement {
   DATA_SOURCE: string;
   FIRST_SEEN_DT: string;
@@ -749,15 +765,15 @@ export type Stats = FixmeUnknown;
 
 export type StreamExportJsonEntity = FixmeUnknown;
 
-export type SzConfigExportConfigResponse = ExportConfig;
+export type SzConfigExportResponse = ExportConfig;
 
 export type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry;
 
 export type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
-export type SzConfigManagerGetConfigResponse = GetConfig;
-
 export type SzConfigRegisterDataSourceResponse = RegisterDataSource;
+
+export type SzConfigUnregisterDataSourceResponse = Fixme;
 
 export type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
 
@@ -769,17 +785,36 @@ export type SzEngineAddRecordResponse = WithInfo;
 
 export type SzEngineDeleteRecordResponse = WithInfo;
 
+export type SzEngineExportCsvEntityReportCsvColumnList = Fixme;
+
 export type SzEngineFetchNextResponse = FetchNext;
 
 export type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
 
 export type SzEngineFindInterestingEntitiesByRecordIdResponse = Interesting;
 
+export type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
+
 export type SzEngineFindNetworkByEntityIdResponse = Network;
+
+export interface SzEngineFindNetworkByRecordIdRecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: DataSource[];
+}
 
 export type SzEngineFindNetworkByRecordIdResponse = Network;
 
+export type SzEngineFindPathByEntityIdAvoidEntityIds = Fixme;
+
+export type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
+
 export type SzEngineFindPathByEntityIdResponse = Path;
+
+export type SzEngineFindPathByRecordIdAvoidRecordKeys = Fixme;
+
+export type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
 
 export type SzEngineFindPathByRecordIdResponse = Path;
 
@@ -787,11 +822,15 @@ export type SzEngineGetEntityByEntityIdResponse = Entity;
 
 export type SzEngineGetEntityByRecordIdResponse = Entity;
 
+export type SzEngineGetRecordPreviewResponse = Fixme;
+
 export type SzEngineGetRecordResponse = Record;
 
 export type SzEngineGetRedoRecordResponse = RedoRecord;
 
 export type SzEngineGetStatsResponse = Stats;
+
+export type SzEngineGetVirtualEntityByRecordIdRecordKeys = Fixme;
 
 export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 
@@ -803,15 +842,25 @@ export type SzEngineReevaluateEntityResponse = WithInfo;
 
 export type SzEngineReevaluateRecordResponse = WithInfo;
 
+export type SzEngineSearchByAttributesAttributes = Fixme;
+
 export type SzEngineSearchByAttributesResponse = Search;
 
-export type SzEngineStreamExportJsonEntityReportResponse = StreamExportJsonEntity;
+export type SzEngineSearchByAttributesSearchProfile = Fixme;
+
+export type SzEngineStreamExportJsonEntityReportResponseXxx = StreamExportJsonEntity;
 
 export type SzEngineWhyEntitiesResponse = WhyEntities;
 
 export type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity;
 
 export type SzEngineWhyRecordsResponse = WhyRecords;
+
+export type SzEngineWhySearchAttributes = Fixme;
+
+export type SzEngineWhySearchResponse = Fixme;
+
+export type SzEngineWhySearchSearchProfile = Fixme;
 
 export type SzProductGetLicenseResponse = ProductLicense;
 

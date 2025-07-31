@@ -1199,7 +1199,16 @@
                 }
             }
         },
-        "Fixme": {},
+        "Fixme": {
+            "properties": {
+                "FIXME": {
+                    "metadata": {
+                        "goType": "any"
+                    },
+                    "type": "string"
+                }
+            }
+        },
         "FixmeUnknown": {
             "properties": {
                 "FIXME_UNKNOWN": {
@@ -1885,6 +1894,22 @@
                 }
             }
         },
+        "RecordKey": {
+            "properties": {
+                "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "The data source code identifying the provenance of the record."
+                    },
+                    "type": "string"
+                },
+                "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
+                    "type": "string"
+                }
+            }
+        },
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
@@ -2316,7 +2341,16 @@
             "ref": "Network"
         },
         "SzEngineFindNetworkByRecordIdRecordKeys": {
-            "ref": "Fixme"
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "DataSource"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
+                }
+            }
         },
         "SzEngineFindNetworkByRecordIdResponse": {
             "ref": "Network"

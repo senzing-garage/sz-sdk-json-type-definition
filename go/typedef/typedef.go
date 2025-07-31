@@ -564,6 +564,10 @@ type FinalState struct {
 	VirtualEntities []VirtualEntitySynopsis `json:"VIRTUAL_ENTITIES"`
 }
 
+type Fixme struct {
+	Fixme any `json:"FIXME"`
+}
+
 type FixmeUnknown struct {
 	FixmeUnknown any `json:"FIXME_UNKNOWN"`
 }
@@ -900,6 +904,14 @@ type Record struct {
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 }
 
+type RecordKey struct {
+	// The data source code identifying the provenance of the record.
+	DataSource string `json:"DATA_SOURCE"`
+
+	// The unique identifier within the set of records in the DATA_SOURCE.
+	RecordID string `json:"RECORD_ID"`
+}
+
 type RecordSummaryElement struct {
 	DataSource string `json:"DATA_SOURCE"`
 
@@ -1086,15 +1098,15 @@ type Stats = FixmeUnknown
 
 type StreamExportJSONEntity = FixmeUnknown
 
-type SzConfigExportConfigResponse = ExportConfig
+type SzConfigExportResponse = ExportConfig
 
 type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry
 
 type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry
 
-type SzConfigManagerGetConfigResponse = GetConfig
-
 type SzConfigRegisterDataSourceResponse = RegisterDataSource
+
+type SzConfigUnregisterDataSourceResponse = Fixme
 
 type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance
 
@@ -1106,17 +1118,34 @@ type SzEngineAddRecordResponse = WithInfo
 
 type SzEngineDeleteRecordResponse = WithInfo
 
+type SzEngineExportCsvEntityReportCsvColumnList = Fixme
+
 type SzEngineFetchNextResponse = FetchNext
 
 type SzEngineFindInterestingEntitiesByEntityIDResponse = Interesting
 
 type SzEngineFindInterestingEntitiesByRecordIDResponse = Interesting
 
+type SzEngineFindNetworkByEntityIDEntityIds = Fixme
+
 type SzEngineFindNetworkByEntityIDResponse = Network
+
+type SzEngineFindNetworkByRecordIDRecordKeys struct {
+	// A list of (data source code, record id) pairs.
+	Records []DataSource `json:"RECORDS"`
+}
 
 type SzEngineFindNetworkByRecordIDResponse = Network
 
+type SzEngineFindPathByEntityIDAvoidEntityIds = Fixme
+
+type SzEngineFindPathByEntityIDRequiredDataSources = Fixme
+
 type SzEngineFindPathByEntityIDResponse = Path
+
+type SzEngineFindPathByRecordIDAvoidRecordKeys = Fixme
+
+type SzEngineFindPathByRecordIDRequiredDataSources = Fixme
 
 type SzEngineFindPathByRecordIDResponse = Path
 
@@ -1124,11 +1153,15 @@ type SzEngineGetEntityByEntityIDResponse = Entity
 
 type SzEngineGetEntityByRecordIDResponse = Entity
 
+type SzEngineGetRecordPreviewResponse = Fixme
+
 type SzEngineGetRecordResponse = Record
 
 type SzEngineGetRedoRecordResponse = RedoRecord
 
 type SzEngineGetStatsResponse = Stats
+
+type SzEngineGetVirtualEntityByRecordIDRecordKeys = Fixme
 
 type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
 
@@ -1140,15 +1173,25 @@ type SzEngineReevaluateEntityResponse = WithInfo
 
 type SzEngineReevaluateRecordResponse = WithInfo
 
+type SzEngineSearchByAttributesAttributes = Fixme
+
 type SzEngineSearchByAttributesResponse = Search
 
-type SzEngineStreamExportJSONEntityReportResponse = StreamExportJSONEntity
+type SzEngineSearchByAttributesSearchProfile = Fixme
+
+type SzEngineStreamExportJSONEntityReportResponseXxx = StreamExportJSONEntity
 
 type SzEngineWhyEntitiesResponse = WhyEntities
 
 type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity
 
 type SzEngineWhyRecordsResponse = WhyRecords
+
+type SzEngineWhySearchAttributes = Fixme
+
+type SzEngineWhySearchResponse = Fixme
+
+type SzEngineWhySearchSearchProfile = Fixme
 
 type SzProductGetLicenseResponse = ProductLicense
 

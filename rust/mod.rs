@@ -838,6 +838,12 @@ pub struct FinalState {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct Fixme {
+    #[serde(rename = "FIXME")]
+    pub fixme: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct FixmeUnknown {
     #[serde(rename = "FIXME_UNKNOWN")]
     pub fixmeUnknown: String,
@@ -1337,6 +1343,17 @@ pub struct Record {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct RecordKey {
+    /// The data source code identifying the provenance of the record.
+    #[serde(rename = "DATA_SOURCE")]
+    pub dataSource: String,
+
+    /// The unique identifier within the set of records in the DATA_SOURCE.
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct RecordSummaryElement {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
@@ -1607,15 +1624,15 @@ pub type Stats = FixmeUnknown;
 
 pub type StreamExportJsonEntity = FixmeUnknown;
 
-pub type SzConfigExportConfigResponse = ExportConfig;
+pub type SzConfigExportResponse = ExportConfig;
 
 pub type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry;
 
 pub type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
 
-pub type SzConfigManagerGetConfigResponse = GetConfig;
-
 pub type SzConfigRegisterDataSourceResponse = RegisterDataSource;
+
+pub type SzConfigUnregisterDataSourceResponse = Fixme;
 
 pub type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
 
@@ -1627,17 +1644,36 @@ pub type SzEngineAddRecordResponse = WithInfo;
 
 pub type SzEngineDeleteRecordResponse = WithInfo;
 
+pub type SzEngineExportCsvEntityReportCsvColumnList = Fixme;
+
 pub type SzEngineFetchNextResponse = FetchNext;
 
 pub type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
 
 pub type SzEngineFindInterestingEntitiesByRecordIdResponse = Interesting;
 
+pub type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
+
 pub type SzEngineFindNetworkByEntityIdResponse = Network;
+
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineFindNetworkByRecordIdRecordKeys {
+    /// A list of (data source code, record id) pairs.
+    #[serde(rename = "RECORDS")]
+    pub records: Vec<DataSource>,
+}
 
 pub type SzEngineFindNetworkByRecordIdResponse = Network;
 
+pub type SzEngineFindPathByEntityIdAvoidEntityIds = Fixme;
+
+pub type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
+
 pub type SzEngineFindPathByEntityIdResponse = Path;
+
+pub type SzEngineFindPathByRecordIdAvoidRecordKeys = Fixme;
+
+pub type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
 
 pub type SzEngineFindPathByRecordIdResponse = Path;
 
@@ -1645,11 +1681,15 @@ pub type SzEngineGetEntityByEntityIdResponse = Entity;
 
 pub type SzEngineGetEntityByRecordIdResponse = Entity;
 
+pub type SzEngineGetRecordPreviewResponse = Fixme;
+
 pub type SzEngineGetRecordResponse = Record;
 
 pub type SzEngineGetRedoRecordResponse = RedoRecord;
 
 pub type SzEngineGetStatsResponse = Stats;
+
+pub type SzEngineGetVirtualEntityByRecordIdRecordKeys = Fixme;
 
 pub type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 
@@ -1661,15 +1701,25 @@ pub type SzEngineReevaluateEntityResponse = WithInfo;
 
 pub type SzEngineReevaluateRecordResponse = WithInfo;
 
+pub type SzEngineSearchByAttributesAttributes = Fixme;
+
 pub type SzEngineSearchByAttributesResponse = Search;
 
-pub type SzEngineStreamExportJsonEntityReportResponse = StreamExportJsonEntity;
+pub type SzEngineSearchByAttributesSearchProfile = Fixme;
+
+pub type SzEngineStreamExportJsonEntityReportResponseXxx = StreamExportJsonEntity;
 
 pub type SzEngineWhyEntitiesResponse = WhyEntities;
 
 pub type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity;
 
 pub type SzEngineWhyRecordsResponse = WhyRecords;
+
+pub type SzEngineWhySearchAttributes = Fixme;
+
+pub type SzEngineWhySearchResponse = Fixme;
+
+pub type SzEngineWhySearchSearchProfile = Fixme;
 
 pub type SzProductGetLicenseResponse = ProductLicense;
 

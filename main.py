@@ -9,10 +9,11 @@ import os
 import pathlib
 
 from python.typedef import (
-    SzConfigExportConfigResponse,
+    DataSource,
+    List,
+    SzConfigExportResponse,
     SzConfigGetDataSourceRegistryResponse,
     SzConfigManagerGetConfigRegistryResponse,
-    SzConfigManagerGetConfigResponse,
     SzConfigRegisterDataSourceResponse,
     SzDiagnosticCheckRepositoryPerformanceResponse,
     SzDiagnosticGetFeatureResponse,
@@ -23,6 +24,7 @@ from python.typedef import (
     SzEngineFindInterestingEntitiesByEntityIDResponse,
     SzEngineFindInterestingEntitiesByRecordIDResponse,
     SzEngineFindNetworkByEntityIDResponse,
+    SzEngineFindNetworkByRecordIDRecordKeys,
     SzEngineFindNetworkByRecordIDResponse,
     SzEngineFindPathByEntityIDResponse,
     SzEngineFindPathByRecordIDResponse,
@@ -107,6 +109,15 @@ def mock_szengine_get_virtual_entity_by_record_id() -> str:
 # -----------------------------------------------------------------------------
 # Show transformation from "from_json_data()" to "to_json_data"
 # -----------------------------------------------------------------------------
+
+bob = SzEngineFindNetworkByRecordIDRecordKeys.from_json_data({})
+ds = DataSource
+ds.dsrc_code = "Bob_DS"
+ds.dsrc_id = 1
+records = List[ds]
+
+bob.records = List[ds]
+
 
 print(
     "\n---- Simple examples ----------------------------------------------------------\n"
@@ -194,8 +205,8 @@ response = SzConfigRegisterDataSourceResponse.from_json_data(
 print_fmt(response, "response.value.dsrc_id")
 
 
-response = SzConfigExportConfigResponse.from_json_data(
-    file("SzConfigExportConfigResponse-test-001.json")
+response = SzConfigExportResponse.from_json_data(
+    file("SzConfigExportResponse-test-001.json")
 )
 print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
 
@@ -210,12 +221,6 @@ response = SzConfigManagerGetConfigRegistryResponse.from_json_data(
     file("SzConfigManagerGetConfigRegistryResponse-test-001.json")
 )
 print_fmt(response, "response.value.configs[0].config_id")
-
-
-response = SzConfigManagerGetConfigResponse.from_json_data(
-    file("SzConfigManagerGetConfigResponse-test-001.json")
-)
-print_fmt(response, "response.value.g2_config.cfg_attr[0].attr_id")
 
 
 response = SzDiagnosticCheckRepositoryPerformanceResponse.from_json_data(

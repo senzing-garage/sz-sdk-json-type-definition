@@ -37,6 +37,11 @@ func mockSzEngineGetVirtualEntityByRecordID() string {
 func main() {
 	var err error
 
+	// mary := SzEngineGetVirtualEntityByRecordIDResponse{}
+	// mary.
+	bob := typedef.SzEngineFindNetworkByRecordIdRecordKeys{}
+	bob.value.RESOLVED_ENTITY.ENTITY
+
 	// Simulate response from Senzing SDK API.
 
 	response := mockSzEngineGetVirtualEntityByRecordID()

@@ -1339,6 +1339,22 @@ module SenzingTypeDef
     end
   end
 
+  class Fixme
+    attr_accessor :fixme
+
+    def self.from_json_data(data)
+      out = Fixme.new
+      out.fixme = SenzingTypeDef::from_json_data(String, data["FIXME"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["FIXME"] = SenzingTypeDef::to_json_data(fixme)
+      data
+    end
+  end
+
   class FixmeUnknown
     attr_accessor :fixme_unknown
 
@@ -2147,6 +2163,28 @@ module SenzingTypeDef
     end
   end
 
+  class RecordKey
+    # The data source code identifying the provenance of the record.
+    attr_accessor :data_source
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
+    attr_accessor :record_id
+
+    def self.from_json_data(data)
+      out = RecordKey.new
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
+    end
+  end
+
   class RecordSummaryElement
     attr_accessor :data_source
     attr_accessor :first_seen_dt
@@ -2660,11 +2698,11 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigExportConfigResponse
+  class SzConfigExportResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigExportConfigResponse.new
+      out = SzConfigExportResponse.new
       out.value = SenzingTypeDef.from_json_data(ExportConfig, data)
       out
     end
@@ -2702,12 +2740,12 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigManagerGetConfigResponse
+  class SzConfigRegisterDataSourceResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigManagerGetConfigResponse.new
-      out.value = SenzingTypeDef.from_json_data(GetConfig, data)
+      out = SzConfigRegisterDataSourceResponse.new
+      out.value = SenzingTypeDef.from_json_data(RegisterDataSource, data)
       out
     end
 
@@ -2716,12 +2754,12 @@ module SenzingTypeDef
     end
   end
 
-  class SzConfigRegisterDataSourceResponse
+  class SzConfigUnregisterDataSourceResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzConfigRegisterDataSourceResponse.new
-      out.value = SenzingTypeDef.from_json_data(RegisterDataSource, data)
+      out = SzConfigUnregisterDataSourceResponse.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -2800,6 +2838,20 @@ module SenzingTypeDef
     end
   end
 
+  class SzEngineExportCsvEntityReportCsvColumnList
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineExportCsvEntityReportCsvColumnList.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzEngineFetchNextResponse
     attr_accessor :value
 
@@ -2842,6 +2894,20 @@ module SenzingTypeDef
     end
   end
 
+  class SzEngineFindNetworkByEntityIDEntityIds
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindNetworkByEntityIDEntityIds.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzEngineFindNetworkByEntityIDResponse
     attr_accessor :value
 
@@ -2853,6 +2919,23 @@ module SenzingTypeDef
 
     def to_json_data
       SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindNetworkByRecordIDRecordKeys
+    # A list of (data source code, record id) pairs.
+    attr_accessor :records
+
+    def self.from_json_data(data)
+      out = SzEngineFindNetworkByRecordIDRecordKeys.new
+      out.records = SenzingTypeDef::from_json_data(Array[DataSource], data["RECORDS"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
+      data
     end
   end
 
@@ -2870,12 +2953,68 @@ module SenzingTypeDef
     end
   end
 
+  class SzEngineFindPathByEntityIDAvoidEntityIds
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByEntityIDAvoidEntityIds.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByEntityIDRequiredDataSources
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByEntityIDRequiredDataSources.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzEngineFindPathByEntityIDResponse
     attr_accessor :value
 
     def self.from_json_data(data)
       out = SzEngineFindPathByEntityIDResponse.new
       out.value = SenzingTypeDef.from_json_data(Path, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByRecordIDAvoidRecordKeys
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByRecordIDAvoidRecordKeys.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineFindPathByRecordIDRequiredDataSources
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineFindPathByRecordIDRequiredDataSources.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -2926,6 +3065,20 @@ module SenzingTypeDef
     end
   end
 
+  class SzEngineGetRecordPreviewResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetRecordPreviewResponse.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzEngineGetRecordResponse
     attr_accessor :value
 
@@ -2960,6 +3113,20 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = SzEngineGetStatsResponse.new
       out.value = SenzingTypeDef.from_json_data(Stats, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineGetVirtualEntityByRecordIDRecordKeys
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineGetVirtualEntityByRecordIDRecordKeys.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -3038,6 +3205,20 @@ module SenzingTypeDef
     end
   end
 
+  class SzEngineSearchByAttributesAttributes
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineSearchByAttributesAttributes.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
   class SzEngineSearchByAttributesResponse
     attr_accessor :value
 
@@ -3052,11 +3233,25 @@ module SenzingTypeDef
     end
   end
 
-  class SzEngineStreamExportJSONEntityReportResponse
+  class SzEngineSearchByAttributesSearchProfile
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzEngineStreamExportJSONEntityReportResponse.new
+      out = SzEngineSearchByAttributesSearchProfile.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineStreamExportJSONEntityReportResponseXxx
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineStreamExportJSONEntityReportResponseXxx.new
       out.value = SenzingTypeDef.from_json_data(StreamExportJSONEntity, data)
       out
     end
@@ -3100,6 +3295,48 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = SzEngineWhyRecordsResponse.new
       out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhySearchAttributes
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhySearchAttributes.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhySearchResponse
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhySearchResponse.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class SzEngineWhySearchSearchProfile
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = SzEngineWhySearchSearchProfile.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 

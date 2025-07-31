@@ -5,23 +5,23 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public class SzConfigExportConfigResponse {
+public class SzEngineFindPathByEntityIdRequiredDataSources {
     @JsonValue
-    private ExportConfig value;
+    private Fixme value;
 
-    public SzConfigExportConfigResponse() {
+    public SzEngineFindPathByEntityIdRequiredDataSources() {
     }
 
     @JsonCreator
-    public SzConfigExportConfigResponse(ExportConfig value) {
+    public SzEngineFindPathByEntityIdRequiredDataSources(Fixme value) {
         this.value = value;
     }
 
-    public ExportConfig getValue() {
+    public Fixme getValue() {
         return value;
     }
 
-    public void setValue(ExportConfig value) {
+    public void setValue(Fixme value) {
         this.value = value;
     }
 }

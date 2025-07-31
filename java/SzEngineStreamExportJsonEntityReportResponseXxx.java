@@ -5,15 +5,15 @@ package com.senzing.schema;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public class SzEngineStreamExportJsonEntityReportResponse {
+public class SzEngineStreamExportJsonEntityReportResponseXxx {
     @JsonValue
     private StreamExportJsonEntity value;
 
-    public SzEngineStreamExportJsonEntityReportResponse() {
+    public SzEngineStreamExportJsonEntityReportResponseXxx() {
     }
 
     @JsonCreator
-    public SzEngineStreamExportJsonEntityReportResponse(StreamExportJsonEntity value) {
+    public SzEngineStreamExportJsonEntityReportResponseXxx(StreamExportJsonEntity value) {
         this.value = value;
     }
 
