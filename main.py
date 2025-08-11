@@ -32,13 +32,13 @@ from python.typedef import (
     SzEngineGetEntityByRecordIDResponse,
     SzEngineGetRecordResponse,
     SzEngineGetRedoRecordResponse,
+    SzEngineGetVirtualEntityByRecordIDRecordKeys,
     SzEngineGetVirtualEntityByRecordIDResponse,
     SzEngineHowEntityByEntityIDResponse,
     SzEngineProcessRedoRecordResponse,
     SzEngineReevaluateEntityResponse,
     SzEngineReevaluateRecordResponse,
     SzEngineSearchByAttributesResponse,
-    SzEngineStreamExportJSONEntityReportResponse,
     SzEngineWhyEntitiesResponse,
     SzEngineWhyRecordInEntityResponse,
     SzEngineWhyRecordsResponse,
@@ -98,12 +98,46 @@ def mock_szengine_delete_record_with_info() -> str:
         return input_file.read()
 
 
-def mock_szengine_get_virtual_entity_by_record_id() -> str:
+    def get_virtual_entity_by_record_id(
+        self,
+        record_keys: List[Tuple[str, str]],
+        flags: int = SzEngineFlags.SZ_VIRTUAL_ENTITY_DEFAULT_FLAGS,
+    ) -> str:
+
+def mock_szengine_get_virtual_entity_by_record_id(
+            record_keys: List[Tuple[str, str]],
+        flags: int ,
+
+    ) -> str:
     with open(
         path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-002.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
+
+
+# -----------------------------------------------------------------------------
+# Demonstrate creating input parameter and parsing output result.
+# -----------------------------------------------------------------------------
+
+print(
+    "--- Demonstrate creating input parameter and parsing output result ------------\n\n"
+)
+
+yyy = {
+    "RECORDS": [
+        {"DATA_SOURCE": "DATA_SOURCE_1", "RECORD_ID": "RECORD_ID_1"},
+        {"DATA_SOURCE": "DATA_SOURCE_2", "RECORD_ID": "RECORD_ID_2"},
+    ]
+}
+
+
+xxx = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(yyy)
+
+xxx.value.records[0].data_source = "DATA_SOURCE_x"
+xxx.value.records[0].record_id = "RECORD_ID_x"
+
+print(xxx.to_json_data())
 
 
 # -----------------------------------------------------------------------------
