@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineFindPathByRecordIdAvoidRecordKeys {
     @JsonValue
-    private Fixme value;
+    private RecordKeys value;
 
     public SzEngineFindPathByRecordIdAvoidRecordKeys() {
     }
 
     @JsonCreator
-    public SzEngineFindPathByRecordIdAvoidRecordKeys(Fixme value) {
+    public SzEngineFindPathByRecordIdAvoidRecordKeys(RecordKeys value) {
         this.value = value;
     }
 
-    public Fixme getValue() {
+    public RecordKeys getValue() {
         return value;
     }
 
-    public void setValue(Fixme value) {
+    public void setValue(RecordKeys value) {
         this.value = value;
     }
 }

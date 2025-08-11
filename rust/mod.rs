@@ -1354,6 +1354,13 @@ pub struct RecordKey {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct RecordKeys {
+    /// A list of (data source code, record id) pairs.
+    #[serde(rename = "RECORDS")]
+    pub records: Vec<RecordKey>,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct RecordSummaryElement {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
@@ -1656,12 +1663,7 @@ pub type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
 
 pub type SzEngineFindNetworkByEntityIdResponse = Network;
 
-#[derive(Serialize, Deserialize)]
-pub struct SzEngineFindNetworkByRecordIdRecordKeys {
-    /// A list of (data source code, record id) pairs.
-    #[serde(rename = "RECORDS")]
-    pub records: Vec<DataSource>,
-}
+pub type SzEngineFindNetworkByRecordIdRecordKeys = RecordKeys;
 
 pub type SzEngineFindNetworkByRecordIdResponse = Network;
 
@@ -1671,7 +1673,7 @@ pub type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
 
 pub type SzEngineFindPathByEntityIdResponse = Path;
 
-pub type SzEngineFindPathByRecordIdAvoidRecordKeys = Fixme;
+pub type SzEngineFindPathByRecordIdAvoidRecordKeys = RecordKeys;
 
 pub type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
 
@@ -1689,7 +1691,7 @@ pub type SzEngineGetRedoRecordResponse = RedoRecord;
 
 pub type SzEngineGetStatsResponse = Stats;
 
-pub type SzEngineGetVirtualEntityByRecordIdRecordKeys = Fixme;
+pub type SzEngineGetVirtualEntityByRecordIdRecordKeys = RecordKeys;
 
 pub type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 

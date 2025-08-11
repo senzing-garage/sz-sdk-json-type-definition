@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineGetVirtualEntityByRecordIdRecordKeys {
     @JsonValue
-    private Fixme value;
+    private RecordKeys value;
 
     public SzEngineGetVirtualEntityByRecordIdRecordKeys() {
     }
 
     @JsonCreator
-    public SzEngineGetVirtualEntityByRecordIdRecordKeys(Fixme value) {
+    public SzEngineGetVirtualEntityByRecordIdRecordKeys(RecordKeys value) {
         this.value = value;
     }
 
-    public Fixme getValue() {
+    public RecordKeys getValue() {
         return value;
     }
 
-    public void setValue(Fixme value) {
+    public void setValue(RecordKeys value) {
         this.value = value;
     }
 }

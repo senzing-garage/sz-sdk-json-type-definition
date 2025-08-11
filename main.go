@@ -4,6 +4,7 @@ Module sz-sdk-jackson-type-definition has input/output types for Senzing API SDK
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -23,28 +24,55 @@ func pathToTestdata(filename string) string {
 	return "./testdata/" + filename
 }
 
-func mockSzEngineGetVirtualEntityByRecordID() string {
+func mockSzEngineGetVirtualEntityByRecordID(ctx context.Context, recordKeys string, flags int64) (string, error) {
+	_ = ctx
+	_ = flags
+
+	outputf("recordKeys Parameter: %s\n", recordKeys)
+
 	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
-
 	result, err := os.ReadFile(filePath)
-	if err != nil {
-		panic(err)
-	}
 
-	return string(result)
+	return string(result), err
 }
 
 func main() {
 	var err error
+	ctx := context.Background()
 
-	// mary := SzEngineGetVirtualEntityByRecordIDResponse{}
-	// mary.
-	bob := typedef.SzEngineFindNetworkByRecordIdRecordKeys{}
-	bob.value.RESOLVED_ENTITY.ENTITY
+	// ------------------------------------------------------------------------
+	// Demonstrate creating input parameter and parsing output result.
+	// ------------------------------------------------------------------------
 
-	// Simulate response from Senzing SDK API.
+	outputf("--- Demonstrate creating input parameter and parsing output result ------------\n\n")
 
-	response := mockSzEngineGetVirtualEntityByRecordID()
+	// Example of creating a JSON input parameter.
+	// The advantage is that this is checked at compilation time.
+
+	recordKeysStruct := typedef.SzEngineGetVirtualEntityByRecordIDRecordKeys{
+		Records: []typedef.RecordKey{
+			{
+				DataSource: "DATA_SOURCE_1",
+				RecordID:   "RECORD_ID_1",
+			},
+			{
+				DataSource: "DATA_SOURCE_2",
+				RecordID:   "RECORD_ID_2",
+			},
+		},
+	}
+
+	recordKeysBytes, err := json.Marshal(recordKeysStruct)
+	if err != nil {
+		panic(err)
+	}
+
+	// Simulate calling Senzing SDK.
+
+	response, err := mockSzEngineGetVirtualEntityByRecordID(ctx, string(recordKeysBytes), 0)
+
+	// Parse result.
+
 	virtualEntity := typedef.SzEngineGetVirtualEntityByRecordIDResponse{}
 
 	if err := json.Unmarshal([]byte(response), &virtualEntity); err != nil {
@@ -71,26 +99,37 @@ func main() {
 			panic(err)
 		}
 
-		outputln(" ADDRESS FEAT_DESC:", addressStruct.FeatDesc)
+		outputln("   ADDRESS FEAT_DESC:", addressStruct.FeatDesc)
 	}
 
-	// Show reconstructed (Unmarshall/Marshall) JSON.
+	// ------------------------------------------------------------------------
+	// Demonstrate reconstructed JSON.
+	// ------------------------------------------------------------------------
 
+	outputf("\n--- Demonstrate reconstructed JSON --------------------------------------------\n\n")
 	jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
-	jsonStruct := typedef.SzConfigGetDataSourceRegistryResponse{}
 
+	// Unmarshall JSON string into a structure.
+
+	jsonStruct := typedef.SzConfigGetDataSourceRegistryResponse{}
 	if err = json.Unmarshal([]byte(jsonString), &jsonStruct); err != nil {
 		panic(err)
 	}
+
+	// Show individual (ID, Code) pairs.
 
 	for _, datasource := range jsonStruct.DataSources {
 		outputf("                ID: %d  Code: %s\n", datasource.DsrcID, datasource.DsrcCode)
 	}
 
+	// Reconstruct JSON.
+
 	reconstructedString, err := json.Marshal(jsonStruct)
 	if err != nil {
 		panic(err)
 	}
+
+	// Compare original and reconstructed JSON.
 
 	outputf("     Original JSON: %s\n", jsonString)
 	outputf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n",

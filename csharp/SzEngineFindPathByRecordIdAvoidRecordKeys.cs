@@ -12,19 +12,19 @@ namespace Senzing
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public Fixme Value { get; set; }
+        public RecordKeys Value { get; set; }
     }
 
     public class SzEngineFindPathByRecordIdAvoidRecordKeysJsonConverter : JsonConverter<SzEngineFindPathByRecordIdAvoidRecordKeys>
     {
         public override SzEngineFindPathByRecordIdAvoidRecordKeys Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new SzEngineFindPathByRecordIdAvoidRecordKeys { Value = JsonSerializer.Deserialize<Fixme>(ref reader, options) };
+            return new SzEngineFindPathByRecordIdAvoidRecordKeys { Value = JsonSerializer.Deserialize<RecordKeys>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, SzEngineFindPathByRecordIdAvoidRecordKeys value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<Fixme>(writer, value.Value, options);
+            JsonSerializer.Serialize<RecordKeys>(writer, value.Value, options);
         }
     }
 }

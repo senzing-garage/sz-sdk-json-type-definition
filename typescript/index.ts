@@ -626,6 +626,13 @@ export interface RecordKey {
   RECORD_ID: string;
 }
 
+export interface RecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: RecordKey[];
+}
+
 export interface RecordSummaryElement {
   DATA_SOURCE: string;
   FIRST_SEEN_DT: string;
@@ -797,12 +804,7 @@ export type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
 
 export type SzEngineFindNetworkByEntityIdResponse = Network;
 
-export interface SzEngineFindNetworkByRecordIdRecordKeys {
-  /**
-   * A list of (data source code, record id) pairs.
-   */
-  RECORDS: DataSource[];
-}
+export type SzEngineFindNetworkByRecordIdRecordKeys = RecordKeys;
 
 export type SzEngineFindNetworkByRecordIdResponse = Network;
 
@@ -812,7 +814,7 @@ export type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
 
 export type SzEngineFindPathByEntityIdResponse = Path;
 
-export type SzEngineFindPathByRecordIdAvoidRecordKeys = Fixme;
+export type SzEngineFindPathByRecordIdAvoidRecordKeys = RecordKeys;
 
 export type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
 
@@ -830,7 +832,7 @@ export type SzEngineGetRedoRecordResponse = RedoRecord;
 
 export type SzEngineGetStatsResponse = Stats;
 
-export type SzEngineGetVirtualEntityByRecordIdRecordKeys = Fixme;
+export type SzEngineGetVirtualEntityByRecordIdRecordKeys = RecordKeys;
 
 export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
 

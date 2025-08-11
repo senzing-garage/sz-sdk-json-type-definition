@@ -912,6 +912,11 @@ type RecordKey struct {
 	RecordID string `json:"RECORD_ID"`
 }
 
+type RecordKeys struct {
+	// A list of (data source code, record id) pairs.
+	Records []RecordKey `json:"RECORDS"`
+}
+
 type RecordSummaryElement struct {
 	DataSource string `json:"DATA_SOURCE"`
 
@@ -1130,10 +1135,7 @@ type SzEngineFindNetworkByEntityIDEntityIds = Fixme
 
 type SzEngineFindNetworkByEntityIDResponse = Network
 
-type SzEngineFindNetworkByRecordIDRecordKeys struct {
-	// A list of (data source code, record id) pairs.
-	Records []DataSource `json:"RECORDS"`
-}
+type SzEngineFindNetworkByRecordIDRecordKeys = RecordKeys
 
 type SzEngineFindNetworkByRecordIDResponse = Network
 
@@ -1143,7 +1145,7 @@ type SzEngineFindPathByEntityIDRequiredDataSources = Fixme
 
 type SzEngineFindPathByEntityIDResponse = Path
 
-type SzEngineFindPathByRecordIDAvoidRecordKeys = Fixme
+type SzEngineFindPathByRecordIDAvoidRecordKeys = RecordKeys
 
 type SzEngineFindPathByRecordIDRequiredDataSources = Fixme
 
@@ -1161,7 +1163,7 @@ type SzEngineGetRedoRecordResponse = RedoRecord
 
 type SzEngineGetStatsResponse = Stats
 
-type SzEngineGetVirtualEntityByRecordIDRecordKeys = Fixme
+type SzEngineGetVirtualEntityByRecordIDRecordKeys = RecordKeys
 
 type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
 

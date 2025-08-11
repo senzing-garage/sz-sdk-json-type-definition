@@ -1910,6 +1910,18 @@
                 }
             }
         },
+        "RecordKeys": {
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordKey"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
+                }
+            }
+        },
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
@@ -2341,16 +2353,7 @@
             "ref": "Network"
         },
         "SzEngineFindNetworkByRecordIdRecordKeys": {
-            "properties": {
-                "RECORDS": {
-                    "elements": {
-                        "ref": "DataSource"
-                    },
-                    "metadata": {
-                        "description": "A list of (data source code, record id) pairs."
-                    }
-                }
-            }
+            "ref": "RecordKeys"
         },
         "SzEngineFindNetworkByRecordIdResponse": {
             "ref": "Network"
@@ -2365,7 +2368,7 @@
             "ref": "Path"
         },
         "SzEngineFindPathByRecordIdAvoidRecordKeys": {
-            "ref": "Fixme"
+            "ref": "RecordKeys"
         },
         "SzEngineFindPathByRecordIdRequiredDataSources": {
             "ref": "Fixme"
@@ -2392,7 +2395,7 @@
             "ref": "Stats"
         },
         "SzEngineGetVirtualEntityByRecordIdRecordKeys": {
-            "ref": "Fixme"
+            "ref": "RecordKeys"
         },
         "SzEngineGetVirtualEntityByRecordIdResponse": {
             "ref": "VirtualEntity"

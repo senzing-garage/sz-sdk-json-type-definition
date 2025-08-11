@@ -2,31 +2,26 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonSerialize
 public class SzEngineFindNetworkByRecordIdRecordKeys {
-    @JsonProperty("RECORDS")
-    private List<DataSource> records;
+    @JsonValue
+    private RecordKeys value;
 
     public SzEngineFindNetworkByRecordIdRecordKeys() {
     }
 
-    /**
-     * Getter for records.<p>
-     * A list of (data source code, record id) pairs.
-     */
-    public List<DataSource> getRecords() {
-        return records;
+    @JsonCreator
+    public SzEngineFindNetworkByRecordIdRecordKeys(RecordKeys value) {
+        this.value = value;
     }
 
-    /**
-     * Setter for records.<p>
-     * A list of (data source code, record id) pairs.
-     */
-    public void setRecords(List<DataSource> records) {
-        this.records = records;
+    public RecordKeys getValue() {
+        return value;
+    }
+
+    public void setValue(RecordKeys value) {
+        this.value = value;
     }
 }

@@ -2185,6 +2185,23 @@ module SenzingTypeDef
     end
   end
 
+  class RecordKeys
+    # A list of (data source code, record id) pairs.
+    attr_accessor :records
+
+    def self.from_json_data(data)
+      out = RecordKeys.new
+      out.records = SenzingTypeDef::from_json_data(Array[RecordKey], data["RECORDS"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
+      data
+    end
+  end
+
   class RecordSummaryElement
     attr_accessor :data_source
     attr_accessor :first_seen_dt
@@ -2923,19 +2940,16 @@ module SenzingTypeDef
   end
 
   class SzEngineFindNetworkByRecordIDRecordKeys
-    # A list of (data source code, record id) pairs.
-    attr_accessor :records
+    attr_accessor :value
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByRecordIDRecordKeys.new
-      out.records = SenzingTypeDef::from_json_data(Array[DataSource], data["RECORDS"])
+      out.value = SenzingTypeDef.from_json_data(RecordKeys, data)
       out
     end
 
     def to_json_data
-      data = {}
-      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
-      data
+      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -3000,7 +3014,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineFindPathByRecordIDAvoidRecordKeys.new
-      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out.value = SenzingTypeDef.from_json_data(RecordKeys, data)
       out
     end
 
@@ -3126,7 +3140,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineGetVirtualEntityByRecordIDRecordKeys.new
-      out.value = SenzingTypeDef.from_json_data(Fixme, data)
+      out.value = SenzingTypeDef.from_json_data(RecordKeys, data)
       out
     end
 
