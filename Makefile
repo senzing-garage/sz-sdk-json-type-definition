@@ -196,9 +196,9 @@ generate-go: clean-go
 .PHONY: generate-java
 generate-java: clean-java
 	jtd-codegen \
-		--java-jackson-out ./java \
+		--java-jackson-out ./java/src/main/java/com/senzing/schema \
 		--java-jackson-package com.senzing.schema \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		senzingapi-RFC8927.json
 
 

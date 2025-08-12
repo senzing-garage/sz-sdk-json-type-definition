@@ -2,6 +2,7 @@
 
 import com.senzing.schema.ConfigListDataSourcesResponse;
 import java.util.Map;
+import com.fasterxml.jackson.databind.ObjectMapper
 
 class Main {
     public static void main(String[] args) {
