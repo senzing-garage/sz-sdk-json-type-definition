@@ -2,7 +2,7 @@
 
 import com.senzing.schema.ConfigListDataSourcesResponse;
 import java.util.Map;
-import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 class Main {
     public static void main(String[] args) {
@@ -12,6 +12,8 @@ class Main {
                 ConfigListDataSourcesResponse.class);
 
         // TODO: Loop through jsonStruct to print "ID: {0} Code: {1}"
+
+        jsonStruct.ConfigListDataSourcesResponse
 
         String reconstructedString = objectMapper.writeValueAsString(jsonString);
         System.out.printf("     Original JSON: %s%n", jsonString);

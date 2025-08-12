@@ -5,7 +5,7 @@
   <groupId>com.senzing</groupId>
   <artifactId>json-schema</artifactId>
   <packaging>jar</packaging>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>JSON Schema</name>
   <url>http://maven.apache.org</url>
   <properties>
