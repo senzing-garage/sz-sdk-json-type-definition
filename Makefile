@@ -24,6 +24,7 @@ GIT_REPOSITORY_NAME := $(shell basename `git rev-parse --show-toplevel`)
 GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\-0//' -e 's/\-g.......//')
 GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|github.com/|' -e 's|\.git$$||' -e 's|Senzing|senzing|')
 PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
+CLASSPATH := $(MAKEFILE_DIRECTORY)/java
 
 # Recursive assignment ('=')
 
@@ -121,6 +122,11 @@ test: test-osarch-specific test-python test-go
 test-go:
 	@go run main.go
 	@go test -v -p 1 ./...
+
+.PHONY: test-java
+test-java:
+	@javac main.java
+# 	@java run main.go
 
 
 .PHONY: test-python
