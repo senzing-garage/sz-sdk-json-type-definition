@@ -125,7 +125,7 @@ test-go:
 
 .PHONY: test-java
 test-java:
-	@mvn compile
+	mvn --file java/pom.xml compile
 # 	@java run main.go
 
 
@@ -280,7 +280,8 @@ clean-go:
 
 .PHONY: clean-java
 clean-java:
-	@rm $(MAKEFILE_DIRECTORY)/java/* || true
+	@mvn --file java/pom.xml clean
+	@rm java/src/main/java/com/senzing/schema/*.java || true
 
 
 .PHONY: clean-python
