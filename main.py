@@ -9,8 +9,6 @@ import os
 import pathlib
 
 from python.typedef import (
-    DataSource,
-    List,
     SzConfigExportResponse,
     SzConfigGetDataSourceRegistryResponse,
     SzConfigManagerGetConfigRegistryResponse,
@@ -21,10 +19,8 @@ from python.typedef import (
     SzEngineAddRecordResponse,
     SzEngineDeleteRecordResponse,
     SzEngineFetchNextResponse,
-    SzEngineFindInterestingEntitiesByEntityIDResponse,
     SzEngineFindInterestingEntitiesByRecordIDResponse,
     SzEngineFindNetworkByEntityIDResponse,
-    SzEngineFindNetworkByRecordIDRecordKeys,
     SzEngineFindNetworkByRecordIDResponse,
     SzEngineFindPathByEntityIDResponse,
     SzEngineFindPathByRecordIDResponse,
@@ -98,19 +94,12 @@ def mock_szengine_delete_record_with_info() -> str:
         return input_file.read()
 
 
-    def get_virtual_entity_by_record_id(
-        self,
-        record_keys: List[Tuple[str, str]],
-        flags: int = SzEngineFlags.SZ_VIRTUAL_ENTITY_DEFAULT_FLAGS,
-    ) -> str:
+def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> str:
+    if flags:
+        print(f"recordKeys Parameter: {record_keys}\n")
 
-def mock_szengine_get_virtual_entity_by_record_id(
-            record_keys: List[Tuple[str, str]],
-        flags: int ,
-
-    ) -> str:
     with open(
-        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-002.json"),
+        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
@@ -121,37 +110,80 @@ def mock_szengine_get_virtual_entity_by_record_id(
 # -----------------------------------------------------------------------------
 
 print(
-    "--- Demonstrate creating input parameter and parsing output result ------------\n\n"
+    "--- Demonstrate creating input parameter and parsing output result ------------\n"
 )
 
-yyy = {
+recordKeysDict = {
     "RECORDS": [
-        {"DATA_SOURCE": "DATA_SOURCE_1", "RECORD_ID": "RECORD_ID_1"},
+        {"DATA_SOURCE": "Unknown", "RECORD_ID": "Unknown"},
         {"DATA_SOURCE": "DATA_SOURCE_2", "RECORD_ID": "RECORD_ID_2"},
     ]
 }
 
+recordKeys = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(recordKeysDict)
 
-xxx = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(yyy)
+recordKeys.value.records[0].data_source = "DATA_SOURCE_1"
+recordKeys.value.records[0].record_id = "RECORD_ID_1"
 
-xxx.value.records[0].data_source = "DATA_SOURCE_x"
-xxx.value.records[0].record_id = "RECORD_ID_x"
+# Simulate calling Senzing SDK.
 
-print(xxx.to_json_data())
+response = mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 1)
 
+# Parse response.
+
+virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
+    json.loads(response)
+)
+
+print(
+    f"RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: {virtual_entity.value.resolved_entity.features["ADDRESS"][0].feat_desc}"
+)
+
+# Looping through list.
+
+addresses = virtual_entity.value.resolved_entity.features["ADDRESS"]
+for address in addresses:
+    print(f"   ADDRESS FEAT_DESC: {address.feat_desc}")
+
+# -----------------------------------------------------------------------------
+# Demonstrate reconstructed JSON.
+# -----------------------------------------------------------------------------
+
+print(
+    "\n--- Demonstrate reconstructed JSON --------------------------------------------\n"
+)
+
+json_dict = {
+    "DATA_SOURCES": [
+        {"DSRC_ID": 1, "DSRC_CODE": "TEST"},
+        {"DSRC_ID": 2, "DSRC_CODE": "SEARCH"},
+    ]
+}
+json_string = json.dumps(json_dict)
+
+# Unmarshall JSON string into a object.
+
+data_source_registry = SzConfigGetDataSourceRegistryResponse.from_json_data(json_dict)
+
+# Show individual (ID, Code) pairs.
+
+for data_source in data_source_registry.value.data_sources:
+    print(f"                ID: {data_source.dsrc_id} Code: {data_source.dsrc_code}")
+
+# Reconstruct JSON.
+
+reconstructed_string = data_source_registry.to_json_data()
+
+# Compare original and reconstructed JSON.
+
+print(f"     Original JSON: {json_string}")
+print(
+    f"Reconstructed JSON: {reconstructed_string} - notice JSON keys have been sorted."
+)
 
 # -----------------------------------------------------------------------------
 # Show transformation from "from_json_data()" to "to_json_data"
 # -----------------------------------------------------------------------------
-
-bob = SzEngineFindNetworkByRecordIDRecordKeys.from_json_data({})
-ds = DataSource
-ds.dsrc_code = "Bob_DS"
-ds.dsrc_id = 1
-records = List[ds]
-
-bob.records = List[ds]
-
 
 print(
     "\n---- Simple examples ----------------------------------------------------------\n"
@@ -159,32 +191,34 @@ print(
 
 # SzEngine add_record_with_info -----------------------------------------------
 
-response = SzEngineAddRecordResponse.from_json_data(
+virtual_entity = SzEngineAddRecordResponse.from_json_data(
     json.loads(mock_szengine_add_record_with_info())
 )
 print(
-    f"SzEngineAddRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
+    f"SzEngineAddRecordResponse: DataSource: {virtual_entity.value.data_source}; RecordID: {virtual_entity.value.record_id}; Affected entity: {virtual_entity.value.affected_entities[0].entity_id}"
 )
 
 # SzEngine delete_record_with_info --------------------------------------------
 
-response = SzEngineDeleteRecordResponse.from_json_data(
+virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
     json.loads(mock_szengine_delete_record_with_info())
 )
 print(
-    f"SzEngineDeleteRecordResponse: DataSource: {response.value.data_source}; RecordID: {response.value.record_id}; Affected entity: {response.value.affected_entities[0].entity_id}"
+    f"SzEngineDeleteRecordResponse: DataSource: {virtual_entity.value.data_source}; RecordID: {virtual_entity.value.record_id}; Affected entity: {virtual_entity.value.affected_entities[0].entity_id}"
 )
 
 # SzEngine szengine_get_virtual_entity_by_record_id ------------------------------------
 
-response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
-    json.loads(mock_szengine_get_virtual_entity_by_record_id())
+virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
+    json.loads(
+        mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0)
+    )
 )
 print(
-    f"SzEngineGetVirtualEntityByRecordIDResponse: Simple  description: {response.value.resolved_entity.features['NAME'][0].feat_desc}"
+    f"SzEngineGetVirtualEntityByRecordIDResponse: Simple  description: {virtual_entity.value.resolved_entity.features['NAME'][0].feat_desc}"
 )
 
-feature_list = response.value.resolved_entity.features["NAME"]
+feature_list = virtual_entity.value.resolved_entity.features["NAME"]
 for feature in feature_list:
     feat_desc_list = feature.feat_desc_values
     for feat_desc in feat_desc_list:
@@ -195,8 +229,12 @@ for feature in feature_list:
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys
 # - Issue: No editor hints
-response = json.loads(mock_szengine_get_virtual_entity_by_record_id())
-feature_list = response.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
+virtual_entity = json.loads(
+    mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0)
+)
+feature_list = (
+    virtual_entity.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
+)
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")
     for feat_desc in feat_desc_list:
@@ -205,160 +243,130 @@ for feature in feature_list:
         )
 
 # -----------------------------------------------------------------------------
-# Show transformation from "from_json_data()" to "to_json_data"
-# -----------------------------------------------------------------------------
-
-print(
-    "\n---- Transformation example ---------------------------------------------------\n"
-)
-
-JSON_STRING = '{"DATA_SOURCES": [{"DSRC_ID": 1, "DSRC_CODE": "TEST"}, {"DSRC_ID": 2, "DSRC_CODE": "SEARCH"}]}'
-JSON_STRUCT = SzConfigGetDataSourceRegistryResponse.from_json_data(
-    json.loads(JSON_STRING)
-)
-
-for data_source in JSON_STRUCT.value.data_sources:
-    print("ID: {0}  Code: {1}".format(data_source.dsrc_id, data_source.dsrc_code))
-
-RECONSTRUCTED_STRING = json.dumps(JSON_STRUCT.to_json_data())
-print("     Original JSON: {0}".format(JSON_STRING))
-print(
-    "Reconstructed JSON: {0} - notice JSON keys have been sorted.".format(
-        RECONSTRUCTED_STRING
-    )
-)
-
-# -----------------------------------------------------------------------------
 # test area
 # -----------------------------------------------------------------------------
 
+print(
+    "\n---- Test area ----------------------------------------------------------------\n"
+)
 
-response = SzConfigRegisterDataSourceResponse.from_json_data(
+virtual_entity = SzConfigRegisterDataSourceResponse.from_json_data(
     file("SzConfigRegisterDataSourceResponse-test-001.json")
 )
-print_fmt(response, "response.value.dsrc_id")
+print_fmt(virtual_entity, "response.value.dsrc_id")
 
 
-response = SzConfigExportResponse.from_json_data(
+virtual_entity = SzConfigExportResponse.from_json_data(
     file("SzConfigExportResponse-test-001.json")
 )
-print_fmt(response, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
+print_fmt(virtual_entity, "response.value.g2_config.cfg_dfbom[0].dfcall_id")
 
 
-response = SzConfigGetDataSourceRegistryResponse.from_json_data(
+virtual_entity = SzConfigGetDataSourceRegistryResponse.from_json_data(
     file("SzConfigGetDataSourceRegistryResponse-test-001.json")
 )
-print_fmt(response, "response.value.data_sources[0].dsrc_id")
+print_fmt(virtual_entity, "response.value.data_sources[0].dsrc_id")
 
 
-response = SzConfigManagerGetConfigRegistryResponse.from_json_data(
+virtual_entity = SzConfigManagerGetConfigRegistryResponse.from_json_data(
     file("SzConfigManagerGetConfigRegistryResponse-test-001.json")
 )
-print_fmt(response, "response.value.configs[0].config_id")
+print_fmt(virtual_entity, "response.value.configs[0].config_id")
 
 
-response = SzDiagnosticCheckRepositoryPerformanceResponse.from_json_data(
+virtual_entity = SzDiagnosticCheckRepositoryPerformanceResponse.from_json_data(
     file("SzDiagnosticCheckRepositoryPerformanceResponse-test-001.json")
 )
-print_fmt(response, "response.value.num_records_inserted")
+print_fmt(virtual_entity, "response.value.num_records_inserted")
 
 
-response = SzDiagnosticGetRepositoryInfoResponse.from_json_data(
+virtual_entity = SzDiagnosticGetRepositoryInfoResponse.from_json_data(
     file("SzDiagnosticGetRepositoryInfoResponse-test-001.json")
 )
-print_fmt(response, "response.value.data_stores[0].location")
+print_fmt(virtual_entity, "response.value.data_stores[0].location")
 
 
-response = SzDiagnosticGetFeatureResponse.from_json_data(
+virtual_entity = SzDiagnosticGetFeatureResponse.from_json_data(
     file("SzDiagnosticGetFeatureResponse-test-001.json")
 )
-print_fmt(response, "response.value.lib_feat_id")
+print_fmt(virtual_entity, "response.value.lib_feat_id")
 
 
-response = SzEngineAddRecordResponse.from_json_data(
+virtual_entity = SzEngineAddRecordResponse.from_json_data(
     file("SzEngineAddRecordResponse-test-002.json")
 )
-print_fmt(response, "response.value.affected_entities[0].entity_id")
+print_fmt(virtual_entity, "response.value.affected_entities[0].entity_id")
 
 
-response = SzEngineDeleteRecordResponse.from_json_data(
+virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
     file("SzEngineDeleteRecordResponse-test-002.json")
 )
-print_fmt(response, "response.value.affected_entities[0].entity_id")
+print_fmt(virtual_entity, "response.value.affected_entities[0].entity_id")
 
 
-response = SzEngineFetchNextResponse.from_json_data({})
-x = response.value.value  # TODO:
+virtual_entity = SzEngineFetchNextResponse.from_json_data({})
+x = virtual_entity.value.value  # TODO:
 
 
-response = SzEngineFindInterestingEntitiesByEntityIDResponse.from_json_data(
-    file("SzEngineFindInterestingEntitiesByEntityIdResponse-test-001.json")
-)
-print_fmt(
-    response,
-    "response.value.interesting_entities",
-)
-
-response = SzEngineFindInterestingEntitiesByRecordIDResponse.from_json_data(
+virtual_entity = SzEngineFindInterestingEntitiesByRecordIDResponse.from_json_data(
     file("SzEngineFindInterestingEntitiesByRecordIdResponse-test-001.json")
 )
 print_fmt(
-    response,
+    virtual_entity,
     "response.value.interesting_entities",
 )
 
-response = SzEngineFindNetworkByEntityIDResponse.from_json_data(
+virtual_entity = SzEngineFindNetworkByEntityIDResponse.from_json_data(
     file("SzEngineFindNetworkByEntityIdResponse-test-003.json")
 )
 print_fmt(
-    response,
+    virtual_entity,
     "response.value.entities[0].related_entities[0].entity_id",
 )
 
 
-response = SzEngineFindNetworkByRecordIDResponse.from_json_data(
+virtual_entity = SzEngineFindNetworkByRecordIDResponse.from_json_data(
     file("SzEngineFindNetworkByRecordIdResponse-test-003.json")
 )
 print_fmt(
-    response,
+    virtual_entity,
     "response.value.entities[0].related_entities[0].entity_id",
 )
 
 
-response = SzEngineFindPathByEntityIDResponse.from_json_data(
+virtual_entity = SzEngineFindPathByEntityIDResponse.from_json_data(
     file("SzEngineFindPathByEntityIdResponse-test-001.json")
 )
 print_fmt(
-    response,
+    virtual_entity,
     "response.value.entities[0].resolved_entity.entity_id",
 )
 
 
-response = SzEngineFindPathByRecordIDResponse.from_json_data(
+virtual_entity = SzEngineFindPathByRecordIDResponse.from_json_data(
     file("SzEngineFindPathByRecordIdResponse-test-001.json")
 )
 print_fmt(
-    response,
+    virtual_entity,
     "response.value.entities[0].resolved_entity.entity_id",
 )
 
 
-response = SzEngineGetEntityByEntityIDResponse.from_json_data({})
-response = SzEngineGetEntityByRecordIDResponse.from_json_data({})
-response = SzEngineGetRecordResponse.from_json_data({})
-response = SzEngineGetRedoRecordResponse.from_json_data({})
-response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data({})
-response = SzEngineHowEntityByEntityIDResponse.from_json_data({})
-response = SzEngineProcessRedoRecordResponse.from_json_data({})
-response = SzEngineReevaluateEntityResponse.from_json_data({})
-response = SzEngineReevaluateRecordResponse.from_json_data({})
-response = SzEngineSearchByAttributesResponse.from_json_data({})
-response = SzEngineStreamExportJSONEntityReportResponse.from_json_data({})
-response = SzEngineWhyEntitiesResponse.from_json_data({})
-response = SzEngineWhyRecordInEntityResponse.from_json_data({})
-response = SzEngineWhyRecordsResponse.from_json_data({})
-response = SzProductGetLicenseResponse.from_json_data({})
-response = SzProductGetVersionResponse.from_json_data({})
+virtual_entity = SzEngineGetEntityByEntityIDResponse.from_json_data({})
+virtual_entity = SzEngineGetEntityByRecordIDResponse.from_json_data({})
+virtual_entity = SzEngineGetRecordResponse.from_json_data({})
+virtual_entity = SzEngineGetRedoRecordResponse.from_json_data({})
+virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data({})
+virtual_entity = SzEngineHowEntityByEntityIDResponse.from_json_data({})
+virtual_entity = SzEngineProcessRedoRecordResponse.from_json_data({})
+virtual_entity = SzEngineReevaluateEntityResponse.from_json_data({})
+virtual_entity = SzEngineReevaluateRecordResponse.from_json_data({})
+virtual_entity = SzEngineSearchByAttributesResponse.from_json_data({})
+virtual_entity = SzEngineWhyEntitiesResponse.from_json_data({})
+virtual_entity = SzEngineWhyRecordInEntityResponse.from_json_data({})
+virtual_entity = SzEngineWhyRecordsResponse.from_json_data({})
+virtual_entity = SzProductGetLicenseResponse.from_json_data({})
+virtual_entity = SzProductGetVersionResponse.from_json_data({})
 
 
 # response = SzEngineGetEntityByEntityIDResponse.from_json_data({})

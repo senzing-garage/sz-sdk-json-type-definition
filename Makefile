@@ -114,7 +114,11 @@ lint: golangci-lint cspell
 # -----------------------------------------------------------------------------
 
 .PHONY: test
-test: test-osarch-specific test-python
+test: test-osarch-specific test-python test-go
+
+
+.PHONY: test-go
+test-go:
 	@go run main.go
 	@go test -v -p 1 ./...
 

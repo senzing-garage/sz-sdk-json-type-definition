@@ -71,7 +71,7 @@ func main() {
 
 	response, err := mockSzEngineGetVirtualEntityByRecordID(ctx, string(recordKeysBytes), 0)
 
-	// Parse result.
+	// Parse response.
 
 	virtualEntity := typedef.SzEngineGetVirtualEntityByRecordIDResponse{}
 
