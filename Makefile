@@ -125,7 +125,7 @@ test-go:
 
 .PHONY: test-java
 test-java:
-	@javac main.java
+	@mvn compile
 # 	@java run main.go
 
 

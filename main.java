@@ -1,6 +1,7 @@
 // # For more information, visit https://jsontypedef.com/docs/java-codegen/
 
 import com.senzing.schema.ConfigListDataSourcesResponse;
+import java.util.Map;
 
 class Main {
     public static void main(String[] args) {
