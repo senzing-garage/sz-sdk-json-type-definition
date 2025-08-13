@@ -17,9 +17,11 @@ class Main {
         SzConfigGetDataSourceRegistryResponse jsonStruct = objectMapper.readValue(jsonString,
                 SzConfigGetDataSourceRegistryResponse.class);
 
+
+        bob = jsonStruct.DATA_SOURCES
+
         // TODO: Loop through jsonStruct to print "ID: {0} Code: {1}"
 
-        bob = jsonStruct.DATA_SOURCES.
 
         String reconstructedString = objectMapper.writeValueAsString(jsonString);
         System.out.printf("     Original JSON: %s%n", jsonString);

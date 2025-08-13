@@ -129,9 +129,9 @@ test-go:
 
 .PHONY: test-java
 test-java:
-	@mvn --file java/pom.xml package
+	@mvn --file java/pom.xml install
 	@mvn --file pom.xml package
-	@java -jar target/example-0.0.1.jar
+	java -jar target/example-0.0.1.jar
 
 
 .PHONY: test-python

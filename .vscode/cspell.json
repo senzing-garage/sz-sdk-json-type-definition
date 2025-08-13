@@ -62,6 +62,7 @@
     "gotesttools",
     "Gplan",
     "ICLA",
+    "javadocs",
     "Lensrl",
     "lqez",
     "MMDD",
@@ -112,7 +113,8 @@
     "Unmarshall",
     "UTYPE",
     "venv",
-    "vladopajic"
+    "vladopajic",
+    "Xlint"
   ],
   "ignorePaths": [
     ".git/**",
