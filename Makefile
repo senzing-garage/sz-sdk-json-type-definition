@@ -132,7 +132,6 @@ test-java:
 	@mvn --file java/pom.xml package
 	@mvn --file pom.xml package
 	@java -jar target/example-0.0.1.jar
-# 	@java run main.go
 
 
 .PHONY: test-python
