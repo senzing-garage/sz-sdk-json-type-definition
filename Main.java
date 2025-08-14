@@ -1,15 +1,105 @@
 // # For more information, visit https://jsontypedef.com/docs/java-codegen/
 
-import com.senzing.schema.SzConfigGetDataSourceRegistryResponse;
-import com.senzing.schema.GetDataSourceRegistry;
-import com.senzing.schema.DataSource;
-
-import java.util.Map;
-import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.senzing.schema.DataSource;
+import com.senzing.schema.FeatureForAttribute;
+import com.senzing.schema.GetDataSourceRegistry;
+import com.senzing.schema.RecordKey;
+import com.senzing.schema.RecordKeys;
+import com.senzing.schema.SzConfigGetDataSourceRegistryResponse;
+import com.senzing.schema.SzEngineGetVirtualEntityByRecordIdRecordKeys;
+import com.senzing.schema.SzEngineGetVirtualEntityByRecordIdResponse;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 class Main {
-    public static void main(String[] args) {
+
+    public static String mockSzEngineGetVirtualEntityByRecordId(String recordKeys, int flags) {
+        String result = "";
+
+        if (flags > 0) {
+            System.out.printf("recordKeys Parameter; %s\n", recordKeys);
+        }
+
+        Path currentPath = Paths.get("").toAbsolutePath();
+        String filePath = currentPath + "/testdata/SzEngineGetVirtualEntityByRecordIdResponse-test-001.json";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result += line;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+
+        // --------------------------------------------------------------------
+        // Demonstrate creating input parameter and parsing output result.
+        // --------------------------------------------------------------------
+
+        System.out.printf("\n--- Demonstrate creating input parameter and parsing output result ------------\n\n");
+
+        // Simulate calling Senzing SDK.
+
+        RecordKeys recordKeys = new RecordKeys();
+        List<RecordKey> recordKeyList = new ArrayList<>();
+
+        RecordKey recordKey1 = new RecordKey();
+        recordKey1.setDataSource("DATA_SOURCE_1");
+        recordKey1.setRecordId("RECORD_ID_1");
+        recordKeyList.add(recordKey1);
+
+        RecordKey recordKey2 = new RecordKey();
+        recordKey2.setDataSource("DATA_SOURCE_2");
+        recordKey2.setRecordId("RECORD_ID_2");
+        recordKeyList.add(recordKey2);
+
+        recordKeys.setRecords(recordKeyList);
+        SzEngineGetVirtualEntityByRecordIdRecordKeys keys = new SzEngineGetVirtualEntityByRecordIdRecordKeys(
+                recordKeys);
+
+        String recordKeysJson;
+        try {
+            recordKeysJson = objectMapper.writeValueAsString(keys);
+        } catch (Exception e) {
+            throw e;
+        }
+
+        // Simulate calling Senzing SDK.
+
+        String response = mockSzEngineGetVirtualEntityByRecordId(recordKeysJson, 1);
+
+        // Parse response.
+
+        SzEngineGetVirtualEntityByRecordIdResponse virtualEntity;
+        try {
+            virtualEntity = objectMapper.readValue(response, SzEngineGetVirtualEntityByRecordIdResponse.class);
+        } catch (Exception e) {
+            throw e;
+        }
+
+        System.out.printf("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n",
+                virtualEntity.getValue().getResolvedEntity().getFeatures().get("ADDRESS").get(0).getFeatDesc());
+
+        // Looping through list.
+
+        for (FeatureForAttribute feature : virtualEntity.getValue().getResolvedEntity().getFeatures().get("ADDRESS")) {
+            System.out.printf(" FEAT_DESC: %s\n", feature.getFeatDesc());
+        }
 
         // --------------------------------------------------------------------
         // Demonstrate reconstructed JSON.
@@ -17,21 +107,20 @@ class Main {
 
         System.out.printf("\n--- Demonstrate reconstructed JSON --------------------------------------------\n");
 
-        try {
         String jsonString = "{\"DATA_SOURCES\":[{\"DSRC_ID\":1,\"DSRC_CODE\":\"TEST\"},{\"DSRC_ID\":2,\"DSRC_CODE\":\"SEARCH\"}]}";
 
         // Unmarshall JSON string into a object.
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        SzConfigGetDataSourceRegistryResponse jsonStruct = objectMapper.readValue(jsonString,
-                SzConfigGetDataSourceRegistryResponse.class);
+        SzConfigGetDataSourceRegistryResponse jsonStruct;
+        try {
+            jsonStruct = objectMapper.readValue(jsonString, SzConfigGetDataSourceRegistryResponse.class);
+        } catch (Exception e) {
+            throw e;
+        }
 
         // Show individual (ID, Code) pairs.
 
-        GetDataSourceRegistry dataSourceRegistry = jsonStruct.getValue();
-
-
-        for (DataSource dataSource : dataSourceRegistry.getDataSources()) {
+        for (DataSource dataSource : jsonStruct.getValue().getDataSources()) {
             System.out.printf("                ID: %s  Code: %s\n", dataSource.getDsrcId(), dataSource.getDsrcCode());
         }
 
@@ -43,8 +132,6 @@ class Main {
 
         System.out.printf("     Original JSON: %s\n", jsonString);
         System.out.printf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n", reconstructedString);
-        } catch (Exception e) {
 
-        }
     }
 }
