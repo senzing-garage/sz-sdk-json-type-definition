@@ -19,27 +19,6 @@ import java.util.List;
 
 class Main {
 
-    public static String mockSzEngineGetVirtualEntityByRecordId(String recordKeys, int flags) {
-        String result = "";
-
-        if (flags > 0) {
-            System.out.printf("recordKeys Parameter; %s\n", recordKeys);
-        }
-
-        Path currentPath = Paths.get("").toAbsolutePath();
-        String filePath = currentPath + "/testdata/SzEngineGetVirtualEntityByRecordIdResponse-test-001.json";
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                result += line;
-            }
-        } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
-        }
-
-        return result;
-    }
-
     public static void main(String[] args) throws Exception {
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -132,4 +111,26 @@ class Main {
         System.out.printf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n", reconstructedString);
 
     }
+
+    public static String mockSzEngineGetVirtualEntityByRecordId(String recordKeys, int flags) {
+        String result = "";
+
+        if (flags > 0) {
+            System.out.printf("recordKeys Parameter; %s\n", recordKeys);
+        }
+
+        Path currentPath = Paths.get("").toAbsolutePath();
+        String filePath = currentPath + "/testdata/SzEngineGetVirtualEntityByRecordIdResponse-test-001.json";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result += line;
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+
+        return result;
+    }
+
 }

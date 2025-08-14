@@ -187,8 +187,8 @@ generate-code: generate-csharp generate-go generate-java generate-python generat
 .PHONY: generate-csharp
 generate-csharp: clean-csharp
 	jtd-codegen \
-		--csharp-system-text-namespace Senzing \
-		--csharp-system-text-out ./csharp \
+		--csharp-system-text-namespace Senzing.Schema \
+		--csharp-system-text-out ./csharp/Senzing.Schema \
 		--root-name senzingapi \
 		senzingapi-RFC8927.json
 
