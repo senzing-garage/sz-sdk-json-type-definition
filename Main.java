@@ -1,9 +1,9 @@
 // # For more information, visit https://jsontypedef.com/docs/java-codegen/
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.senzing.schema.DataSource;
 import com.senzing.schema.FeatureForAttribute;
-import com.senzing.schema.GetDataSourceRegistry;
 import com.senzing.schema.RecordKey;
 import com.senzing.schema.RecordKeys;
 import com.senzing.schema.SzConfigGetDataSourceRegistryResponse;
@@ -16,8 +16,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 class Main {
 
@@ -105,7 +103,7 @@ class Main {
         // Demonstrate reconstructed JSON.
         // --------------------------------------------------------------------
 
-        System.out.printf("\n--- Demonstrate reconstructed JSON --------------------------------------------\n");
+        System.out.printf("\n--- Demonstrate reconstructed JSON --------------------------------------------\n\n");
 
         String jsonString = "{\"DATA_SOURCES\":[{\"DSRC_ID\":1,\"DSRC_CODE\":\"TEST\"},{\"DSRC_ID\":2,\"DSRC_CODE\":\"SEARCH\"}]}";
 
