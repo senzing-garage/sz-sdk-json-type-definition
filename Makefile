@@ -125,6 +125,11 @@ run-java:
 test: test-osarch-specific test-python test-go
 
 
+.PHONY: test-csharp
+test-csharp:
+	@dotnet run --project csharp
+
+
 .PHONY: test-go
 test-go:
 	@go run main.go
@@ -281,6 +286,7 @@ clean: clean-osarch-specific
 
 .PHONY: clean-csharp
 clean-csharp:
+	@dotnet clean $(MAKEFILE_DIRECTORY)/csharp
 	@rm $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/* || true
 
 

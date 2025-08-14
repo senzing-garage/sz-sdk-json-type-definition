@@ -177,3 +177,10 @@ senzingapi-RFC8927-pretty.json
 
 coverage.html
 coverage.out
+
+
+# Generated files from dotnet builds
+csharp/bin/
+csharp/obj/
+Senzing.Schema/bin/
+Senzing.Schema/obj/
