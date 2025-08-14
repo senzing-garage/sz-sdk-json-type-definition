@@ -68,6 +68,7 @@
     "MMDD",
     "MMYY",
     "mypy",
+    "Newtonsoft",
     "nolint",
     "oneline",
     "optionalproperties",
