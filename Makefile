@@ -281,7 +281,7 @@ clean: clean-osarch-specific
 
 .PHONY: clean-csharp
 clean-csharp:
-	@rm $(MAKEFILE_DIRECTORY)/csharp/* || true
+	@rm $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/* || true
 
 
 .PHONY: clean-go
