@@ -1201,7 +1201,7 @@
         },
         "Fixme": {
             "properties": {
-                "FIXME": {
+                "FIXME_KEY": {
                     "metadata": {
                         "goType": "any"
                     },
@@ -1211,7 +1211,7 @@
         },
         "FixmeUnknown": {
             "properties": {
-                "FIXME_UNKNOWN": {
+                "FIXME_UNKNOWN_KEY": {
                     "metadata": {
                         "goType": "any"
                     },

@@ -25,9 +25,38 @@ GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\
 GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|github.com/|' -e 's|\.git$$||' -e 's|Senzing|senzing|')
 PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
 
-FIX_FILES_MAP := Record.java FeatureScores.java MatchInfoCandidateKeys.java ResolvedEntity.java
-FIX_FILES_LIST := MatchInfoCandidateKeys.java ResolvedEntity.java
-
+FIX_FILES_CS8601 := \
+	Record.cs \
+	SzDiagnosticCheckRepositoryPerformanceResponse.cs \
+	SzDiagnosticGetFeatureResponse.cs \
+	SzEngineDeleteRecordResponse.cs \
+	SzEngineFindNetworkByEntityIdEntityIds.cs \
+	SzEngineGetRecordPreviewResponse.cs \
+	SzEngineGetVirtualEntityByRecordIdRecordKeys.cs \
+	SzEngineProcessRedoRecordResponse.cs \
+	SzEngineReevaluateEntityResponse.cs \
+	SzEngineReevaluateRecordResponse.cs \
+	SzEngineSearchByAttributesAttributes.cs \
+	SzEngineSearchByAttributesResponse.cs \
+	SzEngineSearchByAttributesSearchProfile.cs \
+	SzEngineSearchByAttributesSearchProfile.cs \
+	SzEngineStreamExportJsonEntityReportResponseXxx.cs \
+	SzEngineWhyEntitiesResponse.cs \
+	SzEngineWhyRecordInEntityResponse.cs \
+	SzEngineWhyRecordsResponse.cs \
+	SzEngineWhySearchAttributes.cs \
+	SzEngineWhySearchResponse.cs \
+	SzEngineWhySearchSearchProfile.cs \
+	SzProductGetLicenseResponse.cs \
+	SzProductGetVersionResponse.cs
+FIX_FILES_LIST := \
+	MatchInfoCandidateKeys.java \
+	ResolvedEntity.java
+FIX_FILES_MAP := \
+	FeatureScores.java \
+	MatchInfoCandidateKeys.java \
+	Record.java \
+	ResolvedEntity.java
 
 # Recursive assignment ('=')
 
@@ -196,7 +225,9 @@ generate-csharp: clean-csharp
 		--csharp-system-text-out ./csharp/Senzing.Schema \
 		--root-name senzingapi \
 		senzingapi-RFC8927.json
-
+	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/*; do \
+		sed -i '2i #pragma warning disable CS8601, CS8618' "$$file"; \
+	done
 
 .PHONY: generate-go
 generate-go: clean-go
