@@ -1,27 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Senzing.Schema;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
 
 namespace Bob
 
 {
-
-    // ------------------------------------------------------------------------
-    // Demonstrate creating input parameter and parsing output result.
-    // ------------------------------------------------------------------------
-
-    public class Account
-    {
-        public string? Name { get; set; }
-        public string? Email { get; set; }
-        public DateTime DOB { get; set; }
-    }
     internal class Program
     {
         static void Main(string[] args)
         {
+
+            Program myProgram = new Program();
+
+            // ----------------------------------------------------------------
+            // Demonstrate creating input parameter and parsing output result.
+            // ----------------------------------------------------------------
+
+            Console.WriteLine("--- Demonstrate creating input parameter and parsing output result ------------\n\n");
+
+            // Example of creating a JSON input parameter.
+            // The advantage is that this is checked at compilation time.
 
             IList<RecordKey> recordKeyList = new List<RecordKey>();
 
@@ -49,18 +51,64 @@ namespace Bob
                 Value = recordKeys
             };
 
+            string recordKeysJson = JsonSerializer.Serialize(recordKeyStruct);
 
 
-            Account account = new Account
+            SzEngineGetVirtualEntityByRecordIdRecordKeys? xyz = JsonSerializer.Deserialize<SzEngineGetVirtualEntityByRecordIdRecordKeys>(recordKeysJson);
+
+            Console.WriteLine(">>>>> {0:G}", xyz);
+
+            // Simulate calling Senzing SDK.
+
+            string response = myProgram.mockSzEngineGetVirtualEntityByRecordID(recordKeysJson, 1);
+
+            // Parse response.  FIXME;
+
+            SzEngineGetVirtualEntityByRecordIdResponse? virtualEntity = JsonSerializer.Deserialize<SzEngineGetVirtualEntityByRecordIdResponse>(response);
+
+            if (virtualEntity != null)
             {
-                Name = "John Doe",
-                Email = "john@nuget.org",
-                DOB = new DateTime(1980, 2, 20, 0, 0, 0, DateTimeKind.Utc),
-            };
 
-            // string json = JsonConvert.SerializeObject(account, Formatting.Indented);
-            string json2 = JsonSerializer.Serialize(recordKeyStruct);
-            Console.WriteLine(json2);
+                // string x = virtualEntity.Value.ResolvedEntity.Features["ADDRESS"][0].FEAT_DESC;
+                string x = virtualEntity.Value.ResolvedEntity.Features["ADDRESS"][0].FeatDesc;
+
+                Console.WriteLine("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: {0:G}\n", x);
+            }
         }
+
+        public string mockSzEngineGetVirtualEntityByRecordID(string recordKeys, int flags)
+        {
+            if (flags > 0)
+            {
+                Console.WriteLine("recordKeys Parameter: {0:G}\n", recordKeys);
+            }
+
+            string currentPath = Directory.GetCurrentDirectory();
+            string filePath = currentPath + "/testdata/SzEngineGetVirtualEntityByRecordIdResponse-test-001.json";
+
+            string result = "";
+            StreamReader file = new StreamReader(filePath);
+
+            try
+            {
+                string? line = file.ReadLine();
+                while (line != null)
+                {
+                    result += line;
+                    line = file.ReadLine();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                file.Close();
+            }
+
+            return result;
+        }
+
     }
 }

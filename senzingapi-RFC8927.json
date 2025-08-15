@@ -2096,6 +2096,7 @@
                 },
                 "FEATURES": {
                     "metadata": {
+                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttribute>>",
                         "goType": "map[string][]FeatureForAttribute",
                         "javaJacksonType": "Map<String, List<FeatureForAttribute>>",
                         "pythonType": "Dict[str, List[FeatureForAttribute]]"

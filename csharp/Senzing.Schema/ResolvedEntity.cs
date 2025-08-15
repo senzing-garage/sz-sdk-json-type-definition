@@ -23,7 +23,7 @@ namespace Senzing.Schema
         public string ErruleCode { get; set; }
 
         [JsonPropertyName("FEATURES")]
-        public string Features { get; set; }
+        public Dictionary<string, List<FeatureForAttribute>> Features { get; set; }
 
         [JsonPropertyName("IS_AMBIGUOUS")]
         public int IsAmbiguous { get; set; }

@@ -12,30 +12,6 @@ import (
 	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
 )
 
-func outputln(message ...any) {
-	fmt.Println(message...) //nolint
-}
-
-func outputf(format string, message ...any) {
-	fmt.Printf(format, message...) //nolint
-}
-
-func pathToTestdata(filename string) string {
-	return "./testdata/" + filename
-}
-
-func mockSzEngineGetVirtualEntityByRecordID(ctx context.Context, recordKeys string, flags int64) (string, error) {
-	_ = ctx
-	_ = flags
-
-	outputf("recordKeys Parameter: %s\n", recordKeys)
-
-	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
-	result, err := os.ReadFile(filePath)
-
-	return string(result), err
-}
-
 func main() {
 	var err error
 	ctx := context.Background()
@@ -134,4 +110,28 @@ func main() {
 	outputf("     Original JSON: %s\n", jsonString)
 	outputf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n",
 		string(reconstructedString))
+}
+
+func outputln(message ...any) {
+	fmt.Println(message...) //nolint
+}
+
+func outputf(format string, message ...any) {
+	fmt.Printf(format, message...) //nolint
+}
+
+func pathToTestdata(filename string) string {
+	return "./testdata/" + filename
+}
+
+func mockSzEngineGetVirtualEntityByRecordID(ctx context.Context, recordKeys string, flags int64) (string, error) {
+	_ = ctx
+	_ = flags
+
+	outputf("recordKeys Parameter: %s\n", recordKeys)
+
+	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
+	result, err := os.ReadFile(filePath)
+
+	return string(result), err
 }
