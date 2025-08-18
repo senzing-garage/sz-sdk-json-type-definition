@@ -23,7 +23,7 @@ GIT_REMOTE_URL := $(shell git config --get remote.origin.url)
 GIT_REPOSITORY_NAME := $(shell basename `git rev-parse --show-toplevel`)
 GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\-0//' -e 's/\-g.......//')
 GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|github.com/|' -e 's|\.git$$||' -e 's|Senzing|senzing|')
-PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
+# PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
 
 FIX_FILES_CS8601 := \
 	Record.cs \
@@ -60,6 +60,7 @@ FIX_FILES_MAP := \
 
 # Recursive assignment ('=')
 
+SHELL=/bin/bash
 GO_OSARCH = $(subst /, ,$@)
 GO_OS = $(word 1, $(GO_OSARCH))
 GO_ARCH = $(word 2, $(GO_OSARCH))
