@@ -183,7 +183,8 @@ test-python:
 
 .PHONY: test-typescript
 test-typescript:
-	@go run main.go
+	@tsc main.ts
+	@node main.js
 
 
 # -----------------------------------------------------------------------------

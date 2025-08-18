@@ -184,3 +184,5 @@ csharp/bin/
 csharp/obj/
 Senzing.Schema/bin/
 Senzing.Schema/obj/
+
+main.js
