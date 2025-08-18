@@ -186,3 +186,4 @@ Senzing.Schema/bin/
 Senzing.Schema/obj/
 
 main.js
+node_modules/

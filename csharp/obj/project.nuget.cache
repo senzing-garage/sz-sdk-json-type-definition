@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qBjc0RJFje2/Y0mTrfeyvTGtBrcg8BIxlWnpt4EbBqdKuubbhjjsJdZVR6+zXpVTHlOY32dl+wWls+X7y8HVSA==",
+  "dgSpecHash": "1fJv6ICTDyrtoDnNa6ecfjWHcbW60/HmwbDAs4IpjfoPdJODj0HlrngIO41mmkvPlCXpRSIwAfhJDLd1yhjt5A==",
   "success": true,
   "projectFilePath": "/home/senzing/senzing-garage.git/sz-sdk-json-type-definition/csharp/csharp.csproj",
   "expectedPackageFiles": [

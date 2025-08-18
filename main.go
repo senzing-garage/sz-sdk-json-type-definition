@@ -56,7 +56,7 @@ func main() {
 	}
 
 	outputf(
-		"RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n",
+		"RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n\n",
 		virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc,
 	)
 
@@ -112,6 +112,10 @@ func main() {
 		string(reconstructedString))
 }
 
+// ----------------------------------------------------------------------------
+// Helper functions
+// ----------------------------------------------------------------------------
+
 func outputln(message ...any) {
 	fmt.Println(message...) //nolint
 }
@@ -128,7 +132,7 @@ func mockSzEngineGetVirtualEntityByRecordID(ctx context.Context, recordKeys stri
 	_ = ctx
 	_ = flags
 
-	outputf("recordKeys Parameter: %s\n", recordKeys)
+	outputf("recordKeys Parameter: %s\n\n", recordKeys)
 
 	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
 	result, err := os.ReadFile(filePath)

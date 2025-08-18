@@ -69,13 +69,13 @@ class Main {
             throw e;
         }
 
-        System.out.printf("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n",
+        System.out.printf("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n\n",
                 virtualEntity.getValue().getResolvedEntity().getFeatures().get("ADDRESS").get(0).getFeatDesc());
 
         // Looping through list.
 
         for (FeatureForAttribute feature : virtualEntity.getValue().getResolvedEntity().getFeatures().get("ADDRESS")) {
-            System.out.printf(" FEAT_DESC: %s\n", feature.getFeatDesc());
+            System.out.printf("   ADDRESS FEAT_DESC: %s\n", feature.getFeatDesc());
         }
 
         // --------------------------------------------------------------------
@@ -116,7 +116,7 @@ class Main {
         String result = "";
 
         if (flags > 0) {
-            System.out.printf("recordKeys Parameter; %s\n", recordKeys);
+            System.out.printf("recordKeys Parameter: %s\n\n", recordKeys);
         }
 
         Path currentPath = Paths.get("").toAbsolutePath();
