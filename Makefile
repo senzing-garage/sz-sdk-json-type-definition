@@ -180,6 +180,12 @@ test-python:
 		./main.py; \
 		pytest test.py --verbose
 
+
+.PHONY: test-typescript
+test-typescript:
+	@go run main.go
+
+
 # -----------------------------------------------------------------------------
 # Coverage
 # -----------------------------------------------------------------------------
