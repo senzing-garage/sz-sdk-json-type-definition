@@ -62,11 +62,11 @@ namespace Bob
             if (virtualEntity != null)
             {
                 Console.WriteLine("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: {0:G}\n",
-                    virtualEntity.Value.ResolvedEntity.Features["ADDRESS"][0].FeatDesc);
+                    virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc);
 
                 // Looping through list.
 
-                IList<FeatureForAttribute> addresses = virtualEntity.Value.ResolvedEntity.Features["ADDRESS"];
+                IList<FeatureForAttribute> addresses = virtualEntity.ResolvedEntity.Features["ADDRESS"];
                 foreach (FeatureForAttribute address in addresses)
                 {
                     Console.WriteLine("   ADDRESS FEAT_DESC: {0:G}", address.FeatDesc);
@@ -88,7 +88,7 @@ namespace Bob
 
             if (dataSourceRegistry != null)
             {
-                foreach (DataSource datasource in dataSourceRegistry.Value.DataSources)
+                foreach (DataSource datasource in dataSourceRegistry.DataSources)
                 {
                     Console.WriteLine("                ID: {0:G}  Code: {1:G}", datasource.DsrcId, datasource.DsrcCode);
                 }

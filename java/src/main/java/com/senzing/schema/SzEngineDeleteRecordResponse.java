@@ -2,26 +2,80 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzEngineDeleteRecordResponse {
-    @JsonValue
-    private WithInfo value;
+    @JsonProperty("AFFECTED_ENTITIES")
+    private List<AffectedEntity> affectedEntities;
+
+    @JsonProperty("DATA_SOURCE")
+    private String dataSource;
+
+    @JsonProperty("INTERESTING_ENTITIES")
+    private InterestingEntities interestingEntities;
+
+    @JsonProperty("RECORD_ID")
+    private String recordId;
 
     public SzEngineDeleteRecordResponse() {
     }
 
-    @JsonCreator
-    public SzEngineDeleteRecordResponse(WithInfo value) {
-        this.value = value;
+    /**
+     * Getter for affectedEntities.<p>
+     */
+    public List<AffectedEntity> getAffectedEntities() {
+        return affectedEntities;
     }
 
-    public WithInfo getValue() {
-        return value;
+    /**
+     * Setter for affectedEntities.<p>
+     */
+    public void setAffectedEntities(List<AffectedEntity> affectedEntities) {
+        this.affectedEntities = affectedEntities;
     }
 
-    public void setValue(WithInfo value) {
-        this.value = value;
+    /**
+     * Getter for dataSource.<p>
+     */
+    public String getDataSource() {
+        return dataSource;
+    }
+
+    /**
+     * Setter for dataSource.<p>
+     */
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    /**
+     * Getter for interestingEntities.<p>
+     */
+    public InterestingEntities getInterestingEntities() {
+        return interestingEntities;
+    }
+
+    /**
+     * Setter for interestingEntities.<p>
+     */
+    public void setInterestingEntities(InterestingEntities interestingEntities) {
+        this.interestingEntities = interestingEntities;
+    }
+
+    /**
+     * Getter for recordId.<p>
+     */
+    public String getRecordId() {
+        return recordId;
+    }
+
+    /**
+     * Setter for recordId.<p>
+     */
+    public void setRecordId(String recordId) {
+        this.recordId = recordId;
     }
 }

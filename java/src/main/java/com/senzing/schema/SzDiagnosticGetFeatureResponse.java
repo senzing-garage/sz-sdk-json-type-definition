@@ -2,26 +2,63 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzDiagnosticGetFeatureResponse {
-    @JsonValue
-    private GetFeature value;
+    @JsonProperty("ELEMENTS")
+    private List<Feature> elements;
+
+    @JsonProperty("FTYPE_CODE")
+    private String ftypeCode;
+
+    @JsonProperty("LIB_FEAT_ID")
+    private Integer libFeatId;
 
     public SzDiagnosticGetFeatureResponse() {
     }
 
-    @JsonCreator
-    public SzDiagnosticGetFeatureResponse(GetFeature value) {
-        this.value = value;
+    /**
+     * Getter for elements.<p>
+     */
+    public List<Feature> getElements() {
+        return elements;
     }
 
-    public GetFeature getValue() {
-        return value;
+    /**
+     * Setter for elements.<p>
+     */
+    public void setElements(List<Feature> elements) {
+        this.elements = elements;
     }
 
-    public void setValue(GetFeature value) {
-        this.value = value;
+    /**
+     * Getter for ftypeCode.<p>
+     */
+    public String getFtypeCode() {
+        return ftypeCode;
+    }
+
+    /**
+     * Setter for ftypeCode.<p>
+     */
+    public void setFtypeCode(String ftypeCode) {
+        this.ftypeCode = ftypeCode;
+    }
+
+    /**
+     * Getter for libFeatId.<p>
+     */
+    public Integer getLibFeatId() {
+        return libFeatId;
+    }
+
+    /**
+     * Setter for libFeatId.<p>
+     */
+    public void setLibFeatId(Integer libFeatId) {
+        this.libFeatId = libFeatId;
     }
 }

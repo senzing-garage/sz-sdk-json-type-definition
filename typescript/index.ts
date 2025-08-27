@@ -244,7 +244,7 @@ export interface CfgLens {
   LENS_ID: number;
 }
 
-export type CfgLensrl = FixmeUnknown[];
+export type CfgLensrl = Fixme[];
 
 export interface CfgRclass {
   IS_DISCLOSED: string;
@@ -300,10 +300,6 @@ export interface Config {
   SYS_CREATE_DT: string;
 }
 
-export interface ConfigRegistry {
-  CONFIGS: Config[];
-}
-
 export interface DataSource {
   /**
    * The text representation of the datasource.
@@ -327,10 +323,6 @@ export interface EntityPath {
   START_ENTITY_ID: number;
 }
 
-export interface ExportConfig {
-  G2_CONFIG: G2config;
-}
-
 export interface Feature {
   FELEM_CODE: string;
   FELEM_VALUE: string;
@@ -345,13 +337,6 @@ export interface FeatureDescriptionValue {
   SUPPRESSED: string;
   USED_FOR_CAND: string;
   USED_FOR_SCORING: string;
-}
-
-export interface FeatureForAttribute {
-  FEAT_DESC: string;
-  FEAT_DESC_VALUES: FeatureDescriptionValue[];
-  LIB_FEAT_ID: number;
-  USAGE_TYPE: string;
 }
 
 export interface FeatureScoreForAttribute {
@@ -373,21 +358,13 @@ export interface FeatureScoreForAttribute {
 
 export type FeatureScores = string;
 
-export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
-
-export type FetchNext = FixmeUnknown;
-
 export interface FinalState {
   NEED_REEVALUATION: number;
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
 export interface Fixme {
-  FIXME: string;
-}
-
-export interface FixmeUnknown {
-  FIXME_UNKNOWN: string;
+  FIXME_KEY: string;
 }
 
 export interface FocusRecord {
@@ -433,31 +410,9 @@ export interface G2config {
   SYS_OOM: SysOom[];
 }
 
-export interface GetConfig {
-  G2_CONFIG: G2config;
-}
-
-export interface GetDataSourceRegistry {
-  DATA_SOURCES: DataSource[];
-}
-
-export interface GetFeature {
-  ELEMENTS: Feature[];
-  FTYPE_CODE: string;
-  LIB_FEAT_ID: number;
-}
-
-export interface How {
-  HOW_RESULTS: HowResults;
-}
-
 export interface HowResults {
   FINAL_STATE: FinalState;
   RESOLUTION_STEPS: ResolutionSteps;
-}
-
-export interface Interesting {
-  INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface InterestingEntities {
@@ -534,11 +489,6 @@ export interface MatchInfo {
 
 export type MatchInfoCandidateKeys = string;
 
-export interface MatchInfoForAttribute {
-  FEAT_DESC: string;
-  FEAT_ID: number;
-}
-
 export interface MemberRecord {
   INTERNAL_ID: number;
   RECORDS: Records;
@@ -546,44 +496,12 @@ export interface MemberRecord {
 
 export type MemberRecords = MemberRecord[];
 
-export interface Network {
-  ENTITIES: Entity[];
-  ENTITY_PATHS: EntityPath[];
-  MAX_ENTITY_LIMIT_REACHED: string;
-}
-
 export interface Notice {
   CODE: string;
   DESCRIPTION: string;
 }
 
 export type Notices = Notice[];
-
-export interface Path {
-  ENTITIES: Entity[];
-  ENTITY_PATHS: EntityPath[];
-}
-
-export interface ProductLicense {
-  billing: string;
-  contract: string;
-  customer: string;
-  expireDate: string;
-  issueDate: string;
-  licenseLevel: string;
-  licenseType: string;
-  recordLimit: number;
-}
-
-export interface ProductVersion {
-  BUILD_DATE: string;
-  BUILD_NUMBER: string;
-  BUILD_VERSION: string;
-  COMPATIBILITY_VERSION: CompatibilityVersion;
-  PRODUCT_NAME: string;
-  SCHEMA_VERSION: SchemaVersion;
-  VERSION: string;
-}
 
 export interface RecordFeatures {
   LIB_FEAT_ID: number;
@@ -626,13 +544,6 @@ export interface RecordKey {
   RECORD_ID: string;
 }
 
-export interface RecordKeys {
-  /**
-   * A list of (data source code, record id) pairs.
-   */
-  RECORDS: RecordKey[];
-}
-
 export interface RecordSummaryElement {
   DATA_SOURCE: string;
   FIRST_SEEN_DT: string;
@@ -641,12 +552,6 @@ export interface RecordSummaryElement {
 }
 
 export type Records = Record[];
-
-export type RedoRecord = FixmeUnknown;
-
-export interface RegisterDataSource {
-  DSRC_ID: number;
-}
 
 export interface RelatedEntity {
   /**
@@ -670,15 +575,6 @@ export interface Repository {
   id: string;
   location: string;
   type: string;
-}
-
-export interface RepositoryInfo {
-  dataStores: Repository[];
-}
-
-export interface RepositoryPerformance {
-  insertTime: number;
-  numRecordsInserted: number;
 }
 
 export interface ResolutionStep {
@@ -739,11 +635,6 @@ export interface SchemaVersion {
   MINIMUM_REQUIRED_SCHEMA_VERSION: string;
 }
 
-export interface Search {
-  RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
-  SEARCH_STATISTICS: SearchStatistics;
-}
-
 export interface SearchStatisticCandidateKeysFeatureTypes {
   FOUND: number;
   FTYPE_CODE: string;
@@ -768,95 +659,212 @@ export interface SearchStatistic {
 
 export type SearchStatistics = SearchStatistic[];
 
-export type Stats = FixmeUnknown;
+export interface SzConfigExportResponse {
+  G2_CONFIG: G2config;
+}
 
-export type StreamExportJsonEntity = FixmeUnknown;
+export interface SzConfigGetDataSourceRegistryResponse {
+  DATA_SOURCES: DataSource[];
+}
 
-export type SzConfigExportResponse = ExportConfig;
+export interface SzConfigManagerGetConfigRegistryResponse {
+  CONFIGS: Config[];
+}
 
-export type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry;
-
-export type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry;
-
-export type SzConfigRegisterDataSourceResponse = RegisterDataSource;
+export interface SzConfigRegisterDataSourceResponse {
+  DSRC_ID: number;
+}
 
 export type SzConfigUnregisterDataSourceResponse = Fixme;
 
-export type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance;
+export interface SzDiagnosticCheckRepositoryPerformanceResponse {
+  insertTime: number;
+  numRecordsInserted: number;
+}
 
-export type SzDiagnosticGetFeatureResponse = GetFeature;
+export interface SzDiagnosticGetFeatureResponse {
+  ELEMENTS: Feature[];
+  FTYPE_CODE: string;
+  LIB_FEAT_ID: number;
+}
 
-export type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo;
+export interface SzDiagnosticGetRepositoryInfoResponse {
+  dataStores: Repository[];
+}
 
-export type SzEngineAddRecordResponse = WithInfo;
+export interface SzEngineAddRecordResponse {
+  AFFECTED_ENTITIES: AffectedEntity[];
+  DATA_SOURCE: string;
+  INTERESTING_ENTITIES: InterestingEntities;
+  RECORD_ID: string;
+}
 
-export type SzEngineDeleteRecordResponse = WithInfo;
+export interface SzEngineDeleteRecordResponse {
+  AFFECTED_ENTITIES: AffectedEntity[];
+  DATA_SOURCE: string;
+  INTERESTING_ENTITIES: InterestingEntities;
+  RECORD_ID: string;
+}
 
 export type SzEngineExportCsvEntityReportCsvColumnList = Fixme;
 
-export type SzEngineFetchNextResponse = FetchNext;
+export type SzEngineFetchNextResponse = Fixme;
 
-export type SzEngineFindInterestingEntitiesByEntityIdResponse = Interesting;
+export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
+  INTERESTING_ENTITIES: InterestingEntities;
+}
 
-export type SzEngineFindInterestingEntitiesByRecordIdResponse = Interesting;
+export interface SzEngineFindInterestingEntitiesByRecordIdResponse {
+  INTERESTING_ENTITIES: InterestingEntities;
+}
 
 export type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
 
-export type SzEngineFindNetworkByEntityIdResponse = Network;
+export interface SzEngineFindNetworkByEntityIdResponse {
+  ENTITIES: Entity[];
+  ENTITY_PATHS: EntityPath[];
+  MAX_ENTITY_LIMIT_REACHED: string;
+}
 
-export type SzEngineFindNetworkByRecordIdRecordKeys = RecordKeys;
+export interface SzEngineFindNetworkByRecordIdRecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: RecordKey[];
+}
 
-export type SzEngineFindNetworkByRecordIdResponse = Network;
+export interface SzEngineFindNetworkByRecordIdResponse {
+  ENTITIES: Entity[];
+  ENTITY_PATHS: EntityPath[];
+  MAX_ENTITY_LIMIT_REACHED: string;
+}
 
 export type SzEngineFindPathByEntityIdAvoidEntityIds = Fixme;
 
 export type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
 
-export type SzEngineFindPathByEntityIdResponse = Path;
+export interface SzEngineFindPathByEntityIdResponse {
+  ENTITIES: Entity[];
+  ENTITY_PATHS: EntityPath[];
+}
 
-export type SzEngineFindPathByRecordIdAvoidRecordKeys = RecordKeys;
+export interface SzEngineFindPathByRecordIdAvoidRecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: RecordKey[];
+}
 
 export type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
 
-export type SzEngineFindPathByRecordIdResponse = Path;
+export interface SzEngineFindPathByRecordIdResponse {
+  ENTITIES: Entity[];
+  ENTITY_PATHS: EntityPath[];
+}
 
-export type SzEngineGetEntityByEntityIdResponse = Entity;
+export interface SzEngineGetEntityByEntityIdResponse {
+  RELATED_ENTITIES: RelatedEntity[];
+  RESOLVED_ENTITY: ResolvedEntity;
+}
 
-export type SzEngineGetEntityByRecordIdResponse = Entity;
+export interface SzEngineGetEntityByRecordIdResponse {
+  RELATED_ENTITIES: RelatedEntity[];
+  RESOLVED_ENTITY: ResolvedEntity;
+}
 
 export type SzEngineGetRecordPreviewResponse = Fixme;
 
-export type SzEngineGetRecordResponse = Record;
+export interface SzEngineGetRecordResponseFeatures {
+  LIB_FEAT_ID: number;
+  USAGE_TYPE: string;
+}
 
-export type SzEngineGetRedoRecordResponse = RedoRecord;
+export interface SzEngineGetRecordResponse {
+  ADDRESS_DATA: string[];
+  ATTRIBUTE_DATA: string[];
+  DATA_SOURCE: string;
+  ENTITY_DATA: string[];
+  ENTITY_DESC: string;
+  ENTITY_KEY: string;
+  ENTITY_TYPE: string;
+  ERRULE_CODE: string;
+  FEATURES: SzEngineGetRecordResponseFeatures[];
+  IDENTIFIER_DATA: string[];
+  INTERNAL_ID: number;
+  JSON_DATA: string;
+  LAST_SEEN_DT: string;
+  MATCH_KEY: string;
+  MATCH_LEVEL: number;
+  MATCH_LEVEL_CODE: string;
+  NAME_DATA: string[];
+  OTHER_DATA: string[];
+  PHONE_DATA: string[];
+  RECORD_ID: string;
+  RELATIONSHIP_DATA: string[];
+}
 
-export type SzEngineGetStatsResponse = Stats;
+export type SzEngineGetRedoRecordResponse = Fixme;
 
-export type SzEngineGetVirtualEntityByRecordIdRecordKeys = RecordKeys;
+export type SzEngineGetStatsResponse = Fixme;
 
-export type SzEngineGetVirtualEntityByRecordIdResponse = VirtualEntity;
+export interface SzEngineGetVirtualEntityByRecordIdRecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: RecordKey[];
+}
 
-export type SzEngineHowEntityByEntityIdResponse = How;
+export interface SzEngineGetVirtualEntityByRecordIdResponse {
+  RESOLVED_ENTITY: ResolvedEntity;
+}
 
-export type SzEngineProcessRedoRecordResponse = WithInfo;
+export interface SzEngineHowEntityByEntityIdResponse {
+  HOW_RESULTS: HowResults;
+}
 
-export type SzEngineReevaluateEntityResponse = WithInfo;
+export interface SzEngineProcessRedoRecordResponse {
+  AFFECTED_ENTITIES: AffectedEntity[];
+  DATA_SOURCE: string;
+  INTERESTING_ENTITIES: InterestingEntities;
+  RECORD_ID: string;
+}
 
-export type SzEngineReevaluateRecordResponse = WithInfo;
+export interface SzEngineReevaluateEntityResponse {
+  AFFECTED_ENTITIES: AffectedEntity[];
+  DATA_SOURCE: string;
+  INTERESTING_ENTITIES: InterestingEntities;
+  RECORD_ID: string;
+}
+
+export interface SzEngineReevaluateRecordResponse {
+  AFFECTED_ENTITIES: AffectedEntity[];
+  DATA_SOURCE: string;
+  INTERESTING_ENTITIES: InterestingEntities;
+  RECORD_ID: string;
+}
 
 export type SzEngineSearchByAttributesAttributes = Fixme;
 
-export type SzEngineSearchByAttributesResponse = Search;
+export interface SzEngineSearchByAttributesResponse {
+  RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
+  SEARCH_STATISTICS: SearchStatistics;
+}
 
 export type SzEngineSearchByAttributesSearchProfile = Fixme;
 
-export type SzEngineStreamExportJsonEntityReportResponseXxx = StreamExportJsonEntity;
+export type SzEngineStreamExportJsonEntityReportResponse = Fixme;
 
-export type SzEngineWhyEntitiesResponse = WhyEntities;
+export interface SzEngineWhyEntitiesResponse {
+  ENTITIES: Entity[];
+  WHY_RESULTS: WhyResults;
+}
 
-export type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity;
+export type SzEngineWhyRecordInEntityResponse = Fixme;
 
-export type SzEngineWhyRecordsResponse = WhyRecords;
+export interface SzEngineWhyRecordsResponse {
+  ENTITIES: Entity[];
+  WHY_RESULTS: WhyResults;
+}
 
 export type SzEngineWhySearchAttributes = Fixme;
 
@@ -864,29 +872,30 @@ export type SzEngineWhySearchResponse = Fixme;
 
 export type SzEngineWhySearchSearchProfile = Fixme;
 
-export type SzProductGetLicenseResponse = ProductLicense;
+export interface SzProductGetLicenseResponse {
+  billing: string;
+  contract: string;
+  customer: string;
+  expireDate: string;
+  issueDate: string;
+  licenseLevel: string;
+  licenseType: string;
+  recordLimit: number;
+}
 
-export type SzProductGetVersionResponse = ProductVersion;
-
-export interface VirtualEntity {
-  RESOLVED_ENTITY: ResolvedEntity;
+export interface SzProductGetVersionResponse {
+  BUILD_DATE: string;
+  BUILD_NUMBER: string;
+  BUILD_VERSION: string;
+  COMPATIBILITY_VERSION: CompatibilityVersion;
+  PRODUCT_NAME: string;
+  SCHEMA_VERSION: SchemaVersion;
+  VERSION: string;
 }
 
 export interface VirtualEntitySynopsis {
   MEMBER_RECORDS: MemberRecords;
   VIRTUAL_ENTITY_ID: string;
-}
-
-export interface WhyEntities {
-  ENTITIES: Entity[];
-  WHY_RESULTS: WhyResults;
-}
-
-export type WhyRecordInEntity = FixmeUnknown;
-
-export interface WhyRecords {
-  ENTITIES: Entity[];
-  WHY_RESULTS: WhyResults;
 }
 
 export interface WhyResult {
@@ -905,9 +914,28 @@ export interface WhyResult {
 
 export type WhyResults = WhyResult[];
 
-export interface WithInfo {
-  AFFECTED_ENTITIES: AffectedEntity[];
-  DATA_SOURCE: string;
-  INTERESTING_ENTITIES: InterestingEntities;
-  RECORD_ID: string;
+export interface XxfeatureForAttribute {
+  FEAT_DESC: string;
+  FEAT_DESC_VALUES: FeatureDescriptionValue[];
+  LIB_FEAT_ID: number;
+  USAGE_TYPE: string;
+}
+
+export type XxfeatureScoresForAttribute = FeatureScoreForAttribute[];
+
+export interface XxgetConfig {
+  G2_CONFIG: G2config;
+}
+
+export interface XxgetDataSourceRegistry {
+  DATA_SOURCES: DataSource[];
+}
+
+export interface XxmatchInfoForAttribute {
+  FEAT_DESC: string;
+  FEAT_ID: number;
+}
+
+export interface XxvirtualEntity {
+  RESOLVED_ENTITY: ResolvedEntity;
 }

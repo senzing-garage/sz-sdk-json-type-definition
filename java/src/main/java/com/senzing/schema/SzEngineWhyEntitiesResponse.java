@@ -2,26 +2,46 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzEngineWhyEntitiesResponse {
-    @JsonValue
-    private WhyEntities value;
+    @JsonProperty("ENTITIES")
+    private List<Entity> entities;
+
+    @JsonProperty("WHY_RESULTS")
+    private WhyResults whyResults;
 
     public SzEngineWhyEntitiesResponse() {
     }
 
-    @JsonCreator
-    public SzEngineWhyEntitiesResponse(WhyEntities value) {
-        this.value = value;
+    /**
+     * Getter for entities.<p>
+     */
+    public List<Entity> getEntities() {
+        return entities;
     }
 
-    public WhyEntities getValue() {
-        return value;
+    /**
+     * Setter for entities.<p>
+     */
+    public void setEntities(List<Entity> entities) {
+        this.entities = entities;
     }
 
-    public void setValue(WhyEntities value) {
-        this.value = value;
+    /**
+     * Getter for whyResults.<p>
+     */
+    public WhyResults getWhyResults() {
+        return whyResults;
+    }
+
+    /**
+     * Setter for whyResults.<p>
+     */
+    public void setWhyResults(WhyResults whyResults) {
+        this.whyResults = whyResults;
     }
 }

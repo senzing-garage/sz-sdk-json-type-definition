@@ -376,7 +376,7 @@ type CfgLens struct {
 	LensID int64 `json:"LENS_ID"`
 }
 
-type CfgLensrl = []FixmeUnknown
+type CfgLensrl = []Fixme
 
 type CfgRclass struct {
 	IsDisclosed string `json:"IS_DISCLOSED"`
@@ -458,10 +458,6 @@ type Config struct {
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
-type ConfigRegistry struct {
-	Configs []Config `json:"CONFIGS"`
-}
-
 type DataSource struct {
 	// The text representation of the datasource.
 	DsrcCode string `json:"DSRC_CODE"`
@@ -482,10 +478,6 @@ type EntityPath struct {
 	Entities []int64 `json:"ENTITIES"`
 
 	StartEntityID int64 `json:"START_ENTITY_ID"`
-}
-
-type ExportConfig struct {
-	G2Config G2config `json:"G2_CONFIG"`
 }
 
 type Feature struct {
@@ -510,16 +502,6 @@ type FeatureDescriptionValue struct {
 	UsedForCand string `json:"USED_FOR_CAND"`
 
 	UsedForScoring string `json:"USED_FOR_SCORING"`
-}
-
-type FeatureForAttribute struct {
-	FeatDesc string `json:"FEAT_DESC"`
-
-	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
-
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-
-	UsageType string `json:"USAGE_TYPE"`
 }
 
 type FeatureScoreForAttribute struct {
@@ -554,10 +536,6 @@ type FeatureScoreForAttribute struct {
 
 type FeatureScores = map[string]FeatureScoresForAttribute
 
-type FeatureScoresForAttribute = []FeatureScoreForAttribute
-
-type FetchNext = FixmeUnknown
-
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
 
@@ -565,11 +543,7 @@ type FinalState struct {
 }
 
 type Fixme struct {
-	Fixme any `json:"FIXME"`
-}
-
-type FixmeUnknown struct {
-	FixmeUnknown any `json:"FIXME_UNKNOWN"`
+	FixmeKey any `json:"FIXME_KEY"`
 }
 
 type FocusRecord struct {
@@ -648,34 +622,10 @@ type G2config struct {
 	SysOom []SysOom `json:"SYS_OOM"`
 }
 
-type GetConfig struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
-
-type GetDataSourceRegistry struct {
-	DataSources []DataSource `json:"DATA_SOURCES"`
-}
-
-type GetFeature struct {
-	Elements []Feature `json:"ELEMENTS"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-}
-
-type How struct {
-	HowResults HowResults `json:"HOW_RESULTS"`
-}
-
 type HowResults struct {
 	FinalState FinalState `json:"FINAL_STATE"`
 
 	ResolutionSteps ResolutionSteps `json:"RESOLUTION_STEPS"`
-}
-
-type Interesting struct {
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 }
 
 type InterestingEntities struct {
@@ -784,12 +734,6 @@ type MatchInfo struct {
 
 type MatchInfoCandidateKeys = map[string][]MatchInfoForAttribute
 
-type MatchInfoForAttribute struct {
-	FeatDesc string `json:"FEAT_DESC"`
-
-	FeatID int64 `json:"FEAT_ID"`
-}
-
 type MemberRecord struct {
 	InternalID int64 `json:"INTERNAL_ID"`
 
@@ -798,14 +742,6 @@ type MemberRecord struct {
 
 type MemberRecords = []MemberRecord
 
-type Network struct {
-	Entities []Entity `json:"ENTITIES"`
-
-	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
-
-	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
-}
-
 type Notice struct {
 	Code string `json:"CODE"`
 
@@ -813,46 +749,6 @@ type Notice struct {
 }
 
 type Notices = []Notice
-
-type Path struct {
-	Entities []Entity `json:"ENTITIES"`
-
-	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
-}
-
-type ProductLicense struct {
-	Billing string `json:"billing"`
-
-	Contract string `json:"contract"`
-
-	Customer string `json:"customer"`
-
-	ExpireDate string `json:"expireDate"`
-
-	IssueDate string `json:"issueDate"`
-
-	LicenseLevel string `json:"licenseLevel"`
-
-	LicenseType string `json:"licenseType"`
-
-	RecordLimit int64 `json:"recordLimit"`
-}
-
-type ProductVersion struct {
-	BuildDate string `json:"BUILD_DATE"`
-
-	BuildNumber string `json:"BUILD_NUMBER"`
-
-	BuildVersion string `json:"BUILD_VERSION"`
-
-	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
-
-	ProductName string `json:"PRODUCT_NAME"`
-
-	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
-
-	Version string `json:"VERSION"`
-}
 
 type RecordFeatures struct {
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
@@ -912,11 +808,6 @@ type RecordKey struct {
 	RecordID string `json:"RECORD_ID"`
 }
 
-type RecordKeys struct {
-	// A list of (data source code, record id) pairs.
-	Records []RecordKey `json:"RECORDS"`
-}
-
 type RecordSummaryElement struct {
 	DataSource string `json:"DATA_SOURCE"`
 
@@ -928,12 +819,6 @@ type RecordSummaryElement struct {
 }
 
 type Records = []Record
-
-type RedoRecord = FixmeUnknown
-
-type RegisterDataSource struct {
-	DsrcID int64 `json:"DSRC_ID"`
-}
 
 type RelatedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
@@ -967,16 +852,6 @@ type Repository struct {
 	Location string `json:"location"`
 
 	Type string `json:"type"`
-}
-
-type RepositoryInfo struct {
-	DataStores []Repository `json:"dataStores"`
-}
-
-type RepositoryPerformance struct {
-	InsertTime int64 `json:"insertTime"`
-
-	NumRecordsInserted int64 `json:"numRecordsInserted"`
 }
 
 type ResolutionStep struct {
@@ -1063,12 +938,6 @@ type SchemaVersion struct {
 	MinimumRequiredSchemaVersion string `json:"MINIMUM_REQUIRED_SCHEMA_VERSION"`
 }
 
-type Search struct {
-	ResolvedEntities []ResolvedEntityAndMatchInfo `json:"RESOLVED_ENTITIES"`
-
-	SearchStatistics SearchStatistics `json:"SEARCH_STATISTICS"`
-}
-
 type SearchStatisticCandidateKeysFeatureTypes struct {
 	Found int64 `json:"FOUND"`
 
@@ -1099,95 +968,256 @@ type SearchStatistic struct {
 
 type SearchStatistics = []SearchStatistic
 
-type Stats = FixmeUnknown
+type SzConfigExportResponse struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
 
-type StreamExportJSONEntity = FixmeUnknown
+type SzConfigGetDataSourceRegistryResponse struct {
+	DataSources []DataSource `json:"DATA_SOURCES"`
+}
 
-type SzConfigExportResponse = ExportConfig
+type SzConfigManagerGetConfigRegistryResponse struct {
+	Configs []Config `json:"CONFIGS"`
+}
 
-type SzConfigGetDataSourceRegistryResponse = GetDataSourceRegistry
-
-type SzConfigManagerGetConfigRegistryResponse = ConfigRegistry
-
-type SzConfigRegisterDataSourceResponse = RegisterDataSource
+type SzConfigRegisterDataSourceResponse struct {
+	DsrcID int64 `json:"DSRC_ID"`
+}
 
 type SzConfigUnregisterDataSourceResponse = Fixme
 
-type SzDiagnosticCheckRepositoryPerformanceResponse = RepositoryPerformance
+type SzDiagnosticCheckRepositoryPerformanceResponse struct {
+	InsertTime int64 `json:"insertTime"`
 
-type SzDiagnosticGetFeatureResponse = GetFeature
+	NumRecordsInserted int64 `json:"numRecordsInserted"`
+}
 
-type SzDiagnosticGetRepositoryInfoResponse = RepositoryInfo
+type SzDiagnosticGetFeatureResponse struct {
+	Elements []Feature `json:"ELEMENTS"`
 
-type SzEngineAddRecordResponse = WithInfo
+	FtypeCode string `json:"FTYPE_CODE"`
 
-type SzEngineDeleteRecordResponse = WithInfo
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
+}
+
+type SzDiagnosticGetRepositoryInfoResponse struct {
+	DataStores []Repository `json:"dataStores"`
+}
+
+type SzEngineAddRecordResponse struct {
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+
+	DataSource string `json:"DATA_SOURCE"`
+
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
+	RecordID string `json:"RECORD_ID"`
+}
+
+type SzEngineDeleteRecordResponse struct {
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+
+	DataSource string `json:"DATA_SOURCE"`
+
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
+	RecordID string `json:"RECORD_ID"`
+}
 
 type SzEngineExportCsvEntityReportCsvColumnList = Fixme
 
-type SzEngineFetchNextResponse = FetchNext
+type SzEngineFetchNextResponse = Fixme
 
-type SzEngineFindInterestingEntitiesByEntityIDResponse = Interesting
+type SzEngineFindInterestingEntitiesByEntityIDResponse struct {
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+}
 
-type SzEngineFindInterestingEntitiesByRecordIDResponse = Interesting
+type SzEngineFindInterestingEntitiesByRecordIDResponse struct {
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+}
 
 type SzEngineFindNetworkByEntityIDEntityIds = Fixme
 
-type SzEngineFindNetworkByEntityIDResponse = Network
+type SzEngineFindNetworkByEntityIDResponse struct {
+	Entities []Entity `json:"ENTITIES"`
 
-type SzEngineFindNetworkByRecordIDRecordKeys = RecordKeys
+	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
-type SzEngineFindNetworkByRecordIDResponse = Network
+	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
+}
+
+type SzEngineFindNetworkByRecordIDRecordKeys struct {
+	// A list of (data source code, record id) pairs.
+	Records []RecordKey `json:"RECORDS"`
+}
+
+type SzEngineFindNetworkByRecordIDResponse struct {
+	Entities []Entity `json:"ENTITIES"`
+
+	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
+
+	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
+}
 
 type SzEngineFindPathByEntityIDAvoidEntityIds = Fixme
 
 type SzEngineFindPathByEntityIDRequiredDataSources = Fixme
 
-type SzEngineFindPathByEntityIDResponse = Path
+type SzEngineFindPathByEntityIDResponse struct {
+	Entities []Entity `json:"ENTITIES"`
 
-type SzEngineFindPathByRecordIDAvoidRecordKeys = RecordKeys
+	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
+}
+
+type SzEngineFindPathByRecordIDAvoidRecordKeys struct {
+	// A list of (data source code, record id) pairs.
+	Records []RecordKey `json:"RECORDS"`
+}
 
 type SzEngineFindPathByRecordIDRequiredDataSources = Fixme
 
-type SzEngineFindPathByRecordIDResponse = Path
+type SzEngineFindPathByRecordIDResponse struct {
+	Entities []Entity `json:"ENTITIES"`
 
-type SzEngineGetEntityByEntityIDResponse = Entity
+	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
+}
 
-type SzEngineGetEntityByRecordIDResponse = Entity
+type SzEngineGetEntityByEntityIDResponse struct {
+	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
+
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+}
+
+type SzEngineGetEntityByRecordIDResponse struct {
+	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
+
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+}
 
 type SzEngineGetRecordPreviewResponse = Fixme
 
-type SzEngineGetRecordResponse = Record
+type SzEngineGetRecordResponseFeatures struct {
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
-type SzEngineGetRedoRecordResponse = RedoRecord
+	UsageType string `json:"USAGE_TYPE"`
+}
 
-type SzEngineGetStatsResponse = Stats
+type SzEngineGetRecordResponse struct {
+	AddressData []string `json:"ADDRESS_DATA"`
 
-type SzEngineGetVirtualEntityByRecordIDRecordKeys = RecordKeys
+	AttributeData []string `json:"ATTRIBUTE_DATA"`
 
-type SzEngineGetVirtualEntityByRecordIDResponse = VirtualEntity
+	DataSource string `json:"DATA_SOURCE"`
 
-type SzEngineHowEntityByEntityIDResponse = How
+	EntityData []string `json:"ENTITY_DATA"`
 
-type SzEngineProcessRedoRecordResponse = WithInfo
+	EntityDesc string `json:"ENTITY_DESC"`
 
-type SzEngineReevaluateEntityResponse = WithInfo
+	EntityKey string `json:"ENTITY_KEY"`
 
-type SzEngineReevaluateRecordResponse = WithInfo
+	EntityType string `json:"ENTITY_TYPE"`
+
+	ErruleCode string `json:"ERRULE_CODE"`
+
+	Features []SzEngineGetRecordResponseFeatures `json:"FEATURES"`
+
+	IdentifierData []string `json:"IDENTIFIER_DATA"`
+
+	InternalID int64 `json:"INTERNAL_ID"`
+
+	JSONData map[string]any `json:"JSON_DATA"`
+
+	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
+
+	MatchKey string `json:"MATCH_KEY"`
+
+	MatchLevel int64 `json:"MATCH_LEVEL"`
+
+	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
+
+	NameData []string `json:"NAME_DATA"`
+
+	OtherData []string `json:"OTHER_DATA"`
+
+	PhoneData []string `json:"PHONE_DATA"`
+
+	RecordID string `json:"RECORD_ID"`
+
+	RelationshipData []string `json:"RELATIONSHIP_DATA"`
+}
+
+type SzEngineGetRedoRecordResponse = Fixme
+
+type SzEngineGetStatsResponse = Fixme
+
+type SzEngineGetVirtualEntityByRecordIDRecordKeys struct {
+	// A list of (data source code, record id) pairs.
+	Records []RecordKey `json:"RECORDS"`
+}
+
+type SzEngineGetVirtualEntityByRecordIDResponse struct {
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+}
+
+type SzEngineHowEntityByEntityIDResponse struct {
+	HowResults HowResults `json:"HOW_RESULTS"`
+}
+
+type SzEngineProcessRedoRecordResponse struct {
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+
+	DataSource string `json:"DATA_SOURCE"`
+
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
+	RecordID string `json:"RECORD_ID"`
+}
+
+type SzEngineReevaluateEntityResponse struct {
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+
+	DataSource string `json:"DATA_SOURCE"`
+
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
+	RecordID string `json:"RECORD_ID"`
+}
+
+type SzEngineReevaluateRecordResponse struct {
+	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+
+	DataSource string `json:"DATA_SOURCE"`
+
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
+	RecordID string `json:"RECORD_ID"`
+}
 
 type SzEngineSearchByAttributesAttributes = Fixme
 
-type SzEngineSearchByAttributesResponse = Search
+type SzEngineSearchByAttributesResponse struct {
+	ResolvedEntities []ResolvedEntityAndMatchInfo `json:"RESOLVED_ENTITIES"`
+
+	SearchStatistics SearchStatistics `json:"SEARCH_STATISTICS"`
+}
 
 type SzEngineSearchByAttributesSearchProfile = Fixme
 
-type SzEngineStreamExportJSONEntityReportResponseXxx = StreamExportJSONEntity
+type SzEngineStreamExportJSONEntityReportResponse = Fixme
 
-type SzEngineWhyEntitiesResponse = WhyEntities
+type SzEngineWhyEntitiesResponse struct {
+	Entities []Entity `json:"ENTITIES"`
 
-type SzEngineWhyRecordInEntityResponse = WhyRecordInEntity
+	WhyResults WhyResults `json:"WHY_RESULTS"`
+}
 
-type SzEngineWhyRecordsResponse = WhyRecords
+type SzEngineWhyRecordInEntityResponse = Fixme
+
+type SzEngineWhyRecordsResponse struct {
+	Entities []Entity `json:"ENTITIES"`
+
+	WhyResults WhyResults `json:"WHY_RESULTS"`
+}
 
 type SzEngineWhySearchAttributes = Fixme
 
@@ -1195,32 +1225,44 @@ type SzEngineWhySearchResponse = Fixme
 
 type SzEngineWhySearchSearchProfile = Fixme
 
-type SzProductGetLicenseResponse = ProductLicense
+type SzProductGetLicenseResponse struct {
+	Billing string `json:"billing"`
 
-type SzProductGetVersionResponse = ProductVersion
+	Contract string `json:"contract"`
 
-type VirtualEntity struct {
-	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+	Customer string `json:"customer"`
+
+	ExpireDate string `json:"expireDate"`
+
+	IssueDate string `json:"issueDate"`
+
+	LicenseLevel string `json:"licenseLevel"`
+
+	LicenseType string `json:"licenseType"`
+
+	RecordLimit int64 `json:"recordLimit"`
+}
+
+type SzProductGetVersionResponse struct {
+	BuildDate string `json:"BUILD_DATE"`
+
+	BuildNumber string `json:"BUILD_NUMBER"`
+
+	BuildVersion string `json:"BUILD_VERSION"`
+
+	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
+
+	ProductName string `json:"PRODUCT_NAME"`
+
+	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
+
+	Version string `json:"VERSION"`
 }
 
 type VirtualEntitySynopsis struct {
 	MemberRecords MemberRecords `json:"MEMBER_RECORDS"`
 
 	VirtualEntityID string `json:"VIRTUAL_ENTITY_ID"`
-}
-
-type WhyEntities struct {
-	Entities []Entity `json:"ENTITIES"`
-
-	WhyResults WhyResults `json:"WHY_RESULTS"`
-}
-
-type WhyRecordInEntity = FixmeUnknown
-
-type WhyRecords struct {
-	Entities []Entity `json:"ENTITIES"`
-
-	WhyResults WhyResults `json:"WHY_RESULTS"`
 }
 
 type WhyResult struct {
@@ -1243,12 +1285,32 @@ type WhyResult struct {
 
 type WhyResults = []WhyResult
 
-type WithInfo struct {
-	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
+type XxfeatureForAttribute struct {
+	FeatDesc string `json:"FEAT_DESC"`
 
-	DataSource string `json:"DATA_SOURCE"`
+	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
-	RecordID string `json:"RECORD_ID"`
+	UsageType string `json:"USAGE_TYPE"`
+}
+
+type XxfeatureScoresForAttribute = []FeatureScoreForAttribute
+
+type XxgetConfig struct {
+	G2Config G2config `json:"G2_CONFIG"`
+}
+
+type XxgetDataSourceRegistry struct {
+	DataSources []DataSource `json:"DATA_SOURCES"`
+}
+
+type XxmatchInfoForAttribute struct {
+	FeatDesc string `json:"FEAT_DESC"`
+
+	FeatID int64 `json:"FEAT_ID"`
+}
+
+type XxvirtualEntity struct {
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }

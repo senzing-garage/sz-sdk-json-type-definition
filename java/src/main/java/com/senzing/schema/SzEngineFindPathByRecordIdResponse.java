@@ -2,26 +2,46 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzEngineFindPathByRecordIdResponse {
-    @JsonValue
-    private Path value;
+    @JsonProperty("ENTITIES")
+    private List<Entity> entities;
+
+    @JsonProperty("ENTITY_PATHS")
+    private List<EntityPath> entityPaths;
 
     public SzEngineFindPathByRecordIdResponse() {
     }
 
-    @JsonCreator
-    public SzEngineFindPathByRecordIdResponse(Path value) {
-        this.value = value;
+    /**
+     * Getter for entities.<p>
+     */
+    public List<Entity> getEntities() {
+        return entities;
     }
 
-    public Path getValue() {
-        return value;
+    /**
+     * Setter for entities.<p>
+     */
+    public void setEntities(List<Entity> entities) {
+        this.entities = entities;
     }
 
-    public void setValue(Path value) {
-        this.value = value;
+    /**
+     * Getter for entityPaths.<p>
+     */
+    public List<EntityPath> getEntityPaths() {
+        return entityPaths;
+    }
+
+    /**
+     * Setter for entityPaths.<p>
+     */
+    public void setEntityPaths(List<EntityPath> entityPaths) {
+        this.entityPaths = entityPaths;
     }
 }

@@ -2,26 +2,29 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzDiagnosticGetRepositoryInfoResponse {
-    @JsonValue
-    private RepositoryInfo value;
+    @JsonProperty("dataStores")
+    private List<Repository> dataStores;
 
     public SzDiagnosticGetRepositoryInfoResponse() {
     }
 
-    @JsonCreator
-    public SzDiagnosticGetRepositoryInfoResponse(RepositoryInfo value) {
-        this.value = value;
+    /**
+     * Getter for dataStores.<p>
+     */
+    public List<Repository> getDataStores() {
+        return dataStores;
     }
 
-    public RepositoryInfo getValue() {
-        return value;
-    }
-
-    public void setValue(RepositoryInfo value) {
-        this.value = value;
+    /**
+     * Setter for dataStores.<p>
+     */
+    public void setDataStores(List<Repository> dataStores) {
+        this.dataStores = dataStores;
     }
 }

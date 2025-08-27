@@ -2,26 +2,29 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzConfigManagerGetConfigRegistryResponse {
-    @JsonValue
-    private ConfigRegistry value;
+    @JsonProperty("CONFIGS")
+    private List<Config> configs;
 
     public SzConfigManagerGetConfigRegistryResponse() {
     }
 
-    @JsonCreator
-    public SzConfigManagerGetConfigRegistryResponse(ConfigRegistry value) {
-        this.value = value;
+    /**
+     * Getter for configs.<p>
+     */
+    public List<Config> getConfigs() {
+        return configs;
     }
 
-    public ConfigRegistry getValue() {
-        return value;
-    }
-
-    public void setValue(ConfigRegistry value) {
-        this.value = value;
+    /**
+     * Setter for configs.<p>
+     */
+    public void setConfigs(List<Config> configs) {
+        this.configs = configs;
     }
 }

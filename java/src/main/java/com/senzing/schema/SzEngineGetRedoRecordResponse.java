@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineGetRedoRecordResponse {
     @JsonValue
-    private RedoRecord value;
+    private Fixme value;
 
     public SzEngineGetRedoRecordResponse() {
     }
 
     @JsonCreator
-    public SzEngineGetRedoRecordResponse(RedoRecord value) {
+    public SzEngineGetRedoRecordResponse(Fixme value) {
         this.value = value;
     }
 
-    public RedoRecord getValue() {
+    public Fixme getValue() {
         return value;
     }
 
-    public void setValue(RedoRecord value) {
+    public void setValue(Fixme value) {
         this.value = value;
     }
 }

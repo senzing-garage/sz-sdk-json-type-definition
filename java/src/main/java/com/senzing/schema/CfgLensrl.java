@@ -8,21 +8,21 @@ import java.util.List;
 
 public class CfgLensrl {
     @JsonValue
-    private List<FixmeUnknown> value;
+    private List<Fixme> value;
 
     public CfgLensrl() {
     }
 
     @JsonCreator
-    public CfgLensrl(List<FixmeUnknown> value) {
+    public CfgLensrl(List<Fixme> value) {
         this.value = value;
     }
 
-    public List<FixmeUnknown> getValue() {
+    public List<Fixme> getValue() {
         return value;
     }
 
-    public void setValue(List<FixmeUnknown> value) {
+    public void setValue(List<Fixme> value) {
         this.value = value;
     }
 }

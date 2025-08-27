@@ -7,23 +7,23 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class Fixme {
-    @JsonProperty("FIXME")
-    private String fixme;
+    @JsonProperty("FIXME_KEY")
+    private String fixmeKey;
 
     public Fixme() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for fixmeKey.<p>
      */
-    public String getFixme() {
-        return fixme;
+    public String getFixmeKey() {
+        return fixmeKey;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for fixmeKey.<p>
      */
-    public void setFixme(String fixme) {
-        this.fixme = fixme;
+    public void setFixmeKey(String fixmeKey) {
+        this.fixmeKey = fixmeKey;
     }
 }

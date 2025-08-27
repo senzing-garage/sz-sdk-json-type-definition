@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzEngineHowEntityByEntityIdResponse {
-    @JsonValue
-    private How value;
+    @JsonProperty("HOW_RESULTS")
+    private HowResults howResults;
 
     public SzEngineHowEntityByEntityIdResponse() {
     }
 
-    @JsonCreator
-    public SzEngineHowEntityByEntityIdResponse(How value) {
-        this.value = value;
+    /**
+     * Getter for howResults.<p>
+     */
+    public HowResults getHowResults() {
+        return howResults;
     }
 
-    public How getValue() {
-        return value;
-    }
-
-    public void setValue(How value) {
-        this.value = value;
+    /**
+     * Setter for howResults.<p>
+     */
+    public void setHowResults(HowResults howResults) {
+        this.howResults = howResults;
     }
 }

@@ -2,26 +2,45 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzDiagnosticCheckRepositoryPerformanceResponse {
-    @JsonValue
-    private RepositoryPerformance value;
+    @JsonProperty("insertTime")
+    private Integer insertTime;
+
+    @JsonProperty("numRecordsInserted")
+    private Integer numRecordsInserted;
 
     public SzDiagnosticCheckRepositoryPerformanceResponse() {
     }
 
-    @JsonCreator
-    public SzDiagnosticCheckRepositoryPerformanceResponse(RepositoryPerformance value) {
-        this.value = value;
+    /**
+     * Getter for insertTime.<p>
+     */
+    public Integer getInsertTime() {
+        return insertTime;
     }
 
-    public RepositoryPerformance getValue() {
-        return value;
+    /**
+     * Setter for insertTime.<p>
+     */
+    public void setInsertTime(Integer insertTime) {
+        this.insertTime = insertTime;
     }
 
-    public void setValue(RepositoryPerformance value) {
-        this.value = value;
+    /**
+     * Getter for numRecordsInserted.<p>
+     */
+    public Integer getNumRecordsInserted() {
+        return numRecordsInserted;
+    }
+
+    /**
+     * Setter for numRecordsInserted.<p>
+     */
+    public void setNumRecordsInserted(Integer numRecordsInserted) {
+        this.numRecordsInserted = numRecordsInserted;
     }
 }

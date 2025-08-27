@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzEngineGetVirtualEntityByRecordIdResponse {
-    @JsonValue
-    private VirtualEntity value;
+    @JsonProperty("RESOLVED_ENTITY")
+    private ResolvedEntity resolvedEntity;
 
     public SzEngineGetVirtualEntityByRecordIdResponse() {
     }
 
-    @JsonCreator
-    public SzEngineGetVirtualEntityByRecordIdResponse(VirtualEntity value) {
-        this.value = value;
+    /**
+     * Getter for resolvedEntity.<p>
+     */
+    public ResolvedEntity getResolvedEntity() {
+        return resolvedEntity;
     }
 
-    public VirtualEntity getValue() {
-        return value;
-    }
-
-    public void setValue(VirtualEntity value) {
-        this.value = value;
+    /**
+     * Setter for resolvedEntity.<p>
+     */
+    public void setResolvedEntity(ResolvedEntity resolvedEntity) {
+        this.resolvedEntity = resolvedEntity;
     }
 }

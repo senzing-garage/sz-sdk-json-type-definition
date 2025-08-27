@@ -7,21 +7,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class SzEngineGetStatsResponse {
     @JsonValue
-    private Stats value;
+    private Fixme value;
 
     public SzEngineGetStatsResponse() {
     }
 
     @JsonCreator
-    public SzEngineGetStatsResponse(Stats value) {
+    public SzEngineGetStatsResponse(Fixme value) {
         this.value = value;
     }
 
-    public Stats getValue() {
+    public Fixme getValue() {
         return value;
     }
 
-    public void setValue(Stats value) {
+    public void setValue(Fixme value) {
         this.value = value;
     }
 }

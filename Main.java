@@ -70,11 +70,11 @@ class Main {
         }
 
         System.out.printf("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n\n",
-                virtualEntity.getValue().getResolvedEntity().getFeatures().get("ADDRESS").get(0).getFeatDesc());
+                virtualEntity.getResolvedEntity().getFeatures().get("ADDRESS").get(0).getFeatDesc());
 
         // Looping through list.
 
-        for (FeatureForAttribute feature : virtualEntity.getValue().getResolvedEntity().getFeatures().get("ADDRESS")) {
+        for (FeatureForAttribute feature : virtualEntity.getResolvedEntity().getFeatures().get("ADDRESS")) {
             System.out.printf("   ADDRESS FEAT_DESC: %s\n", feature.getFeatDesc());
         }
 
@@ -97,7 +97,7 @@ class Main {
 
         // Show individual (ID, Code) pairs.
 
-        for (DataSource dataSource : jsonStruct.getValue().getDataSources()) {
+        for (DataSource dataSource : jsonStruct.getDataSources()) {
             System.out.printf("                ID: %s  Code: %s\n", dataSource.getDsrcId(), dataSource.getDsrcCode());
         }
 

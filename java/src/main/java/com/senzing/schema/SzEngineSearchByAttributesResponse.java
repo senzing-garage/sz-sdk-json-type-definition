@@ -2,26 +2,46 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzEngineSearchByAttributesResponse {
-    @JsonValue
-    private Search value;
+    @JsonProperty("RESOLVED_ENTITIES")
+    private List<ResolvedEntityAndMatchInfo> resolvedEntities;
+
+    @JsonProperty("SEARCH_STATISTICS")
+    private SearchStatistics searchStatistics;
 
     public SzEngineSearchByAttributesResponse() {
     }
 
-    @JsonCreator
-    public SzEngineSearchByAttributesResponse(Search value) {
-        this.value = value;
+    /**
+     * Getter for resolvedEntities.<p>
+     */
+    public List<ResolvedEntityAndMatchInfo> getResolvedEntities() {
+        return resolvedEntities;
     }
 
-    public Search getValue() {
-        return value;
+    /**
+     * Setter for resolvedEntities.<p>
+     */
+    public void setResolvedEntities(List<ResolvedEntityAndMatchInfo> resolvedEntities) {
+        this.resolvedEntities = resolvedEntities;
     }
 
-    public void setValue(Search value) {
-        this.value = value;
+    /**
+     * Getter for searchStatistics.<p>
+     */
+    public SearchStatistics getSearchStatistics() {
+        return searchStatistics;
+    }
+
+    /**
+     * Setter for searchStatistics.<p>
+     */
+    public void setSearchStatistics(SearchStatistics searchStatistics) {
+        this.searchStatistics = searchStatistics;
     }
 }

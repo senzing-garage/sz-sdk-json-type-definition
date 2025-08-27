@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzEngineFindInterestingEntitiesByRecordIdResponse {
-    @JsonValue
-    private Interesting value;
+    @JsonProperty("INTERESTING_ENTITIES")
+    private InterestingEntities interestingEntities;
 
     public SzEngineFindInterestingEntitiesByRecordIdResponse() {
     }
 
-    @JsonCreator
-    public SzEngineFindInterestingEntitiesByRecordIdResponse(Interesting value) {
-        this.value = value;
+    /**
+     * Getter for interestingEntities.<p>
+     */
+    public InterestingEntities getInterestingEntities() {
+        return interestingEntities;
     }
 
-    public Interesting getValue() {
-        return value;
-    }
-
-    public void setValue(Interesting value) {
-        this.value = value;
+    /**
+     * Setter for interestingEntities.<p>
+     */
+    public void setInterestingEntities(InterestingEntities interestingEntities) {
+        this.interestingEntities = interestingEntities;
     }
 }

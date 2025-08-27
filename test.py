@@ -237,16 +237,12 @@ def test_szengine_get_virtual_entity_by_record_id_001():
         response = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
             json.load(input_file)
         )
-    assert response.value.resolved_entity.entity_id == 1
-    assert response.value.resolved_entity.entity_name == "Robert Smith"
+    assert response.resolved_entity.entity_id == 1
+    assert response.resolved_entity.entity_name == "Robert Smith"
+    assert response.resolved_entity.features["NAME"][0].feat_desc == "Robert Smith"
+    assert response.resolved_entity.features["NAME"][0].lib_feat_id == 1
     assert (
-        response.value.resolved_entity.features["NAME"][0].feat_desc == "Robert Smith"
-    )
-    assert response.value.resolved_entity.features["NAME"][0].lib_feat_id == 1
-    assert (
-        response.value.resolved_entity.features["NAME"][0]
-        .feat_desc_values[1]
-        .lib_feat_id
+        response.resolved_entity.features["NAME"][0].feat_desc_values[1].lib_feat_id
         == 18
     )
 

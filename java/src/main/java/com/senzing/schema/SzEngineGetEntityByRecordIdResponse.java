@@ -2,26 +2,46 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzEngineGetEntityByRecordIdResponse {
-    @JsonValue
-    private Entity value;
+    @JsonProperty("RELATED_ENTITIES")
+    private List<RelatedEntity> relatedEntities;
+
+    @JsonProperty("RESOLVED_ENTITY")
+    private ResolvedEntity resolvedEntity;
 
     public SzEngineGetEntityByRecordIdResponse() {
     }
 
-    @JsonCreator
-    public SzEngineGetEntityByRecordIdResponse(Entity value) {
-        this.value = value;
+    /**
+     * Getter for relatedEntities.<p>
+     */
+    public List<RelatedEntity> getRelatedEntities() {
+        return relatedEntities;
     }
 
-    public Entity getValue() {
-        return value;
+    /**
+     * Setter for relatedEntities.<p>
+     */
+    public void setRelatedEntities(List<RelatedEntity> relatedEntities) {
+        this.relatedEntities = relatedEntities;
     }
 
-    public void setValue(Entity value) {
-        this.value = value;
+    /**
+     * Getter for resolvedEntity.<p>
+     */
+    public ResolvedEntity getResolvedEntity() {
+        return resolvedEntity;
+    }
+
+    /**
+     * Setter for resolvedEntity.<p>
+     */
+    public void setResolvedEntity(ResolvedEntity resolvedEntity) {
+        this.resolvedEntity = resolvedEntity;
     }
 }

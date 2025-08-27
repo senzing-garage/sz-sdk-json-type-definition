@@ -2,26 +2,31 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzEngineGetVirtualEntityByRecordIdRecordKeys {
-    @JsonValue
-    private RecordKeys value;
+    @JsonProperty("RECORDS")
+    private List<RecordKey> records;
 
     public SzEngineGetVirtualEntityByRecordIdRecordKeys() {
     }
 
-    @JsonCreator
-    public SzEngineGetVirtualEntityByRecordIdRecordKeys(RecordKeys value) {
-        this.value = value;
+    /**
+     * Getter for records.<p>
+     * A list of (data source code, record id) pairs.
+     */
+    public List<RecordKey> getRecords() {
+        return records;
     }
 
-    public RecordKeys getValue() {
-        return value;
-    }
-
-    public void setValue(RecordKeys value) {
-        this.value = value;
+    /**
+     * Setter for records.<p>
+     * A list of (data source code, record id) pairs.
+     */
+    public void setRecords(List<RecordKey> records) {
+        this.records = records;
     }
 }

@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzConfigRegisterDataSourceResponse {
-    @JsonValue
-    private RegisterDataSource value;
+    @JsonProperty("DSRC_ID")
+    private Integer dsrcId;
 
     public SzConfigRegisterDataSourceResponse() {
     }
 
-    @JsonCreator
-    public SzConfigRegisterDataSourceResponse(RegisterDataSource value) {
-        this.value = value;
+    /**
+     * Getter for dsrcId.<p>
+     */
+    public Integer getDsrcId() {
+        return dsrcId;
     }
 
-    public RegisterDataSource getValue() {
-        return value;
-    }
-
-    public void setValue(RegisterDataSource value) {
-        this.value = value;
+    /**
+     * Setter for dsrcId.<p>
+     */
+    public void setDsrcId(Integer dsrcId) {
+        this.dsrcId = dsrcId;
     }
 }

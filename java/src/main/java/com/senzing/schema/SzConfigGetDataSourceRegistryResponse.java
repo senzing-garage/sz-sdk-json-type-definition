@@ -2,26 +2,29 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
+@JsonSerialize
 public class SzConfigGetDataSourceRegistryResponse {
-    @JsonValue
-    private GetDataSourceRegistry value;
+    @JsonProperty("DATA_SOURCES")
+    private List<DataSource> dataSources;
 
     public SzConfigGetDataSourceRegistryResponse() {
     }
 
-    @JsonCreator
-    public SzConfigGetDataSourceRegistryResponse(GetDataSourceRegistry value) {
-        this.value = value;
+    /**
+     * Getter for dataSources.<p>
+     */
+    public List<DataSource> getDataSources() {
+        return dataSources;
     }
 
-    public GetDataSourceRegistry getValue() {
-        return value;
-    }
-
-    public void setValue(GetDataSourceRegistry value) {
-        this.value = value;
+    /**
+     * Setter for dataSources.<p>
+     */
+    public void setDataSources(List<DataSource> dataSources) {
+        this.dataSources = dataSources;
     }
 }

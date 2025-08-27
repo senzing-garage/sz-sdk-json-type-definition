@@ -801,7 +801,7 @@
         },
         "CFG_LENSRL": {
             "elements": {
-                "ref": "FixmeUnknown"
+                "ref": "Fixme"
             }
         },
         "CFG_RCLASS": {
@@ -964,15 +964,6 @@
                 }
             }
         },
-        "ConfigRegistry": {
-            "properties": {
-                "CONFIGS": {
-                    "elements": {
-                        "ref": "Config"
-                    }
-                }
-            }
-        },
         "DataSource": {
             "properties": {
                 "DSRC_CODE": {
@@ -1026,13 +1017,6 @@
                 }
             }
         },
-        "ExportConfig": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
         "Feature": {
             "properties": {
                 "FELEM_CODE": {
@@ -1077,7 +1061,7 @@
                 }
             }
         },
-        "FeatureForAttribute": {
+        "XXFeatureForAttribute": {
             "properties": {
                 "FEAT_DESC": {
                     "type": "string"
@@ -1176,13 +1160,10 @@
             },
             "type": "string"
         },
-        "FeatureScoresForAttribute": {
+        "XXFeatureScoresForAttribute": {
             "elements": {
                 "ref": "FeatureScoreForAttribute"
             }
-        },
-        "FetchNext": {
-            "ref": "FixmeUnknown"
         },
         "FinalState": {
             "properties": {
@@ -1202,16 +1183,6 @@
         "Fixme": {
             "properties": {
                 "FIXME_KEY": {
-                    "metadata": {
-                        "goType": "any"
-                    },
-                    "type": "string"
-                }
-            }
-        },
-        "FixmeUnknown": {
-            "properties": {
-                "FIXME_UNKNOWN_KEY": {
                     "metadata": {
                         "goType": "any"
                     },
@@ -1401,44 +1372,19 @@
                 }
             }
         },
-        "GetConfig": {
+        "XXGetConfig": {
             "properties": {
                 "G2_CONFIG": {
                     "ref": "G2Config"
                 }
             }
         },
-        "GetDataSourceRegistry": {
+        "XXGetDataSourceRegistry": {
             "properties": {
                 "DATA_SOURCES": {
                     "elements": {
                         "ref": "DataSource"
                     }
-                }
-            }
-        },
-        "GetFeature": {
-            "properties": {
-                "ELEMENTS": {
-                    "elements": {
-                        "ref": "Feature"
-                    }
-                },
-                "FTYPE_CODE": {
-                    "type": "string"
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "How": {
-            "properties": {
-                "HOW_RESULTS": {
-                    "ref": "HowResults"
                 }
             }
         },
@@ -1449,13 +1395,6 @@
                 },
                 "RESOLUTION_STEPS": {
                     "ref": "ResolutionSteps"
-                }
-            }
-        },
-        "Interesting": {
-            "properties": {
-                "INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
                 }
             }
         },
@@ -1655,7 +1594,7 @@
             },
             "type": "string"
         },
-        "MatchInfoForAttribute": {
+        "XXMatchInfoForAttribute": {
             "properties": {
                 "FEAT_DESC": {
                     "type": "string"
@@ -1686,23 +1625,6 @@
                 "ref": "MemberRecord"
             }
         },
-        "Network": {
-            "properties": {
-                "ENTITIES": {
-                    "elements": {
-                        "ref": "Entity"
-                    }
-                },
-                "ENTITY_PATHS": {
-                    "elements": {
-                        "ref": "EntityPath"
-                    }
-                },
-                "MAX_ENTITY_LIMIT_REACHED": {
-                    "type": "string"
-                }
-            }
-        },
         "Notice": {
             "properties": {
                 "CODE": {
@@ -1716,76 +1638,6 @@
         "Notices": {
             "elements": {
                 "ref": "Notice"
-            }
-        },
-        "Path": {
-            "properties": {
-                "ENTITIES": {
-                    "elements": {
-                        "ref": "Entity"
-                    }
-                },
-                "ENTITY_PATHS": {
-                    "elements": {
-                        "ref": "EntityPath"
-                    }
-                }
-            }
-        },
-        "ProductLicense": {
-            "properties": {
-                "billing": {
-                    "type": "string"
-                },
-                "contract": {
-                    "type": "string"
-                },
-                "customer": {
-                    "type": "string"
-                },
-                "expireDate": {
-                    "type": "string"
-                },
-                "issueDate": {
-                    "type": "string"
-                },
-                "licenseLevel": {
-                    "type": "string"
-                },
-                "licenseType": {
-                    "type": "string"
-                },
-                "recordLimit": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
-        "ProductVersion": {
-            "properties": {
-                "BUILD_DATE": {
-                    "type": "string"
-                },
-                "BUILD_NUMBER": {
-                    "type": "string"
-                },
-                "BUILD_VERSION": {
-                    "type": "string"
-                },
-                "COMPATIBILITY_VERSION": {
-                    "ref": "CompatibilityVersion"
-                },
-                "PRODUCT_NAME": {
-                    "type": "string"
-                },
-                "SCHEMA_VERSION": {
-                    "ref": "SchemaVersion"
-                },
-                "VERSION": {
-                    "type": "string"
-                }
             }
         },
         "Record": {
@@ -1910,18 +1762,6 @@
                 }
             }
         },
-        "RecordKeys": {
-            "properties": {
-                "RECORDS": {
-                    "elements": {
-                        "ref": "RecordKey"
-                    },
-                    "metadata": {
-                        "description": "A list of (data source code, record id) pairs."
-                    }
-                }
-            }
-        },
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
@@ -1944,19 +1784,6 @@
         "Records": {
             "elements": {
                 "ref": "Record"
-            }
-        },
-        "RedoRecord": {
-            "ref": "FixmeUnknown"
-        },
-        "RegisterDataSource": {
-            "properties": {
-                "DSRC_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
             }
         },
         "RelatedEntity": {
@@ -2021,31 +1848,6 @@
                 },
                 "type": {
                     "type": "string"
-                }
-            }
-        },
-        "RepositoryInfo": {
-            "properties": {
-                "dataStores": {
-                    "elements": {
-                        "ref": "Repository"
-                    }
-                }
-            }
-        },
-        "RepositoryPerformance": {
-            "properties": {
-                "insertTime": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "numRecordsInserted": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
                 }
             }
         },
@@ -2225,18 +2027,6 @@
                 }
             }
         },
-        "Search": {
-            "properties": {
-                "RESOLVED_ENTITIES": {
-                    "elements": {
-                        "ref": "ResolvedEntityAndMatchInfo"
-                    }
-                },
-                "SEARCH_STATISTICS": {
-                    "ref": "SearchStatistics"
-                }
-            }
-        },
         "SearchStatistic": {
             "properties": {
                 "CANDIDATE_KEYS": {
@@ -2299,65 +2089,191 @@
                 "ref": "SearchStatistic"
             }
         },
-        "Stats": {
-            "ref": "FixmeUnknown"
-        },
-        "StreamExportJsonEntity": {
-            "ref": "FixmeUnknown"
-        },
         "SzConfigExportResponse": {
-            "ref": "ExportConfig"
+            "properties": {
+                "G2_CONFIG": {
+                    "ref": "G2Config"
+                }
+            }
         },
         "SzConfigGetDataSourceRegistryResponse": {
-            "ref": "GetDataSourceRegistry"
+            "properties": {
+                "DATA_SOURCES": {
+                    "elements": {
+                        "ref": "DataSource"
+                    }
+                }
+            }
         },
         "SzConfigRegisterDataSourceResponse": {
-            "ref": "RegisterDataSource"
+            "properties": {
+                "DSRC_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
         },
         "SzConfigUnregisterDataSourceResponse": {
             "ref": "Fixme"
         },
         "SzConfigManagerGetConfigRegistryResponse": {
-            "ref": "ConfigRegistry"
+            "properties": {
+                "CONFIGS": {
+                    "elements": {
+                        "ref": "Config"
+                    }
+                }
+            }
         },
         "SzDiagnosticCheckRepositoryPerformanceResponse": {
-            "ref": "RepositoryPerformance"
+            "properties": {
+                "insertTime": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "numRecordsInserted": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
         },
         "SzDiagnosticGetFeatureResponse": {
-            "ref": "GetFeature"
+            "properties": {
+                "ELEMENTS": {
+                    "elements": {
+                        "ref": "Feature"
+                    }
+                },
+                "FTYPE_CODE": {
+                    "type": "string"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
         },
         "SzDiagnosticGetRepositoryInfoResponse": {
-            "ref": "RepositoryInfo"
+            "properties": {
+                "dataStores": {
+                    "elements": {
+                        "ref": "Repository"
+                    }
+                }
+            }
         },
         "SzEngineAddRecordResponse": {
-            "ref": "WithInfo"
+            "properties": {
+                "AFFECTED_ENTITIES": {
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineDeleteRecordResponse": {
-            "ref": "WithInfo"
+            "properties": {
+                "AFFECTED_ENTITIES": {
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineExportCsvEntityReportCsvColumnList": {
             "ref": "Fixme"
         },
         "SzEngineFetchNextResponse": {
-            "ref": "FetchNext"
+            "ref": "Fixme"
         },
         "SzEngineFindInterestingEntitiesByEntityIdResponse": {
-            "ref": "Interesting"
+            "properties": {
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                }
+            }
         },
         "SzEngineFindInterestingEntitiesByRecordIdResponse": {
-            "ref": "Interesting"
+            "properties": {
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                }
+            }
         },
         "SzEngineFindNetworkByEntityIdEntityIds": {
             "ref": "Fixme"
         },
         "SzEngineFindNetworkByEntityIdResponse": {
-            "ref": "Network"
+            "properties": {
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
+                    }
+                },
+                "MAX_ENTITY_LIMIT_REACHED": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineFindNetworkByRecordIdRecordKeys": {
-            "ref": "RecordKeys"
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordKey"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
+                }
+            }
         },
         "SzEngineFindNetworkByRecordIdResponse": {
-            "ref": "Network"
+            "properties": {
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
+                    }
+                },
+                "MAX_ENTITY_LIMIT_REACHED": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineFindPathByEntityIdAvoidEntityIds": {
             "ref": "Fixme"
@@ -2366,73 +2282,314 @@
             "ref": "Fixme"
         },
         "SzEngineFindPathByEntityIdResponse": {
-            "ref": "Path"
+            "properties": {
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
+                    }
+                }
+            }
         },
         "SzEngineFindPathByRecordIdAvoidRecordKeys": {
-            "ref": "RecordKeys"
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordKey"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
+                }
+            }
         },
         "SzEngineFindPathByRecordIdRequiredDataSources": {
             "ref": "Fixme"
         },
         "SzEngineFindPathByRecordIdResponse": {
-            "ref": "Path"
+            "properties": {
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
+                    }
+                }
+            }
         },
         "SzEngineGetEntityByEntityIdResponse": {
-            "ref": "Entity"
+            "properties": {
+                "RELATED_ENTITIES": {
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
+                },
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
+                }
+            }
         },
         "SzEngineGetEntityByRecordIdResponse": {
-            "ref": "Entity"
+            "properties": {
+                "RELATED_ENTITIES": {
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
+                },
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
+                }
+            }
         },
         "SzEngineGetRecordPreviewResponse": {
             "ref": "Fixme"
         },
         "SzEngineGetRecordResponse": {
-            "ref": "Record"
+            "properties": {
+                "ADDRESS_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "ATTRIBUTE_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "ENTITY_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "ENTITY_DESC": {
+                    "type": "string"
+                },
+                "ENTITY_KEY": {
+                    "type": "string"
+                },
+                "ENTITY_TYPE": {
+                    "type": "string"
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                },
+                "FEATURES": {
+                    "elements": {
+                        "properties": {
+                            "LIB_FEAT_ID": {
+                                "metadata": {
+                                    "goType": "int64"
+                                },
+                                "type": "int32"
+                            },
+                            "USAGE_TYPE": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "IDENTIFIER_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "INTERNAL_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "JSON_DATA": {
+                    "metadata": {
+                        "goType": "map[string]any",
+                        "javaJacksonType": "Map<String, Map<String, Object>>",
+                        "pythonType": "Dict[str, object]"
+                    },
+                    "type": "string"
+                },
+                "LAST_SEEN_DT": {
+                    "type": "timestamp"
+                },
+                "MATCH_KEY": {
+                    "type": "string"
+                },
+                "MATCH_LEVEL": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "type": "string"
+                },
+                "NAME_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "OTHER_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "PHONE_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                },
+                "RELATIONSHIP_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                }
+            }
         },
         "SzEngineGetRedoRecordResponse": {
-            "ref": "RedoRecord"
+            "ref": "Fixme"
         },
         "SzEngineGetStatsResponse": {
-            "ref": "Stats"
+            "ref": "Fixme"
         },
         "SzEngineGetVirtualEntityByRecordIdRecordKeys": {
-            "ref": "RecordKeys"
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordKey"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
+                }
+            }
         },
         "SzEngineGetVirtualEntityByRecordIdResponse": {
-            "ref": "VirtualEntity"
+            "properties": {
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
+                }
+            }
         },
         "SzEngineHowEntityByEntityIdResponse": {
-            "ref": "How"
+            "properties": {
+                "HOW_RESULTS": {
+                    "ref": "HowResults"
+                }
+            }
         },
         "SzEngineProcessRedoRecordResponse": {
-            "ref": "WithInfo"
+            "properties": {
+                "AFFECTED_ENTITIES": {
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineReevaluateEntityResponse": {
-            "ref": "WithInfo"
+            "properties": {
+                "AFFECTED_ENTITIES": {
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineReevaluateRecordResponse": {
-            "ref": "WithInfo"
+            "properties": {
+                "AFFECTED_ENTITIES": {
+                    "elements": {
+                        "ref": "AffectedEntity"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                }
+            }
         },
         "SzEngineSearchByAttributesAttributes": {
             "ref": "Fixme"
         },
         "SzEngineSearchByAttributesResponse": {
-            "ref": "Search"
+            "properties": {
+                "RESOLVED_ENTITIES": {
+                    "elements": {
+                        "ref": "ResolvedEntityAndMatchInfo"
+                    }
+                },
+                "SEARCH_STATISTICS": {
+                    "ref": "SearchStatistics"
+                }
+            }
         },
         "SzEngineSearchByAttributesSearchProfile": {
             "ref": "Fixme"
         },
-        "SzEngineStreamExportJsonEntityReportResponseXXX": {
-            "ref": "StreamExportJsonEntity"
+        "SzEngineStreamExportJsonEntityReportResponse": {
+            "ref": "Fixme"
         },
         "SzEngineWhyEntitiesResponse": {
-            "ref": "WhyEntities"
+            "properties": {
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
+                },
+                "WHY_RESULTS": {
+                    "ref": "WhyResults"
+                }
+            }
         },
         "SzEngineWhyRecordInEntityResponse": {
-            "ref": "WhyRecordInEntity"
+            "ref": "Fixme"
         },
         "SzEngineWhyRecordsResponse": {
-            "ref": "WhyRecords"
+            "properties": {
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
+                },
+                "WHY_RESULTS": {
+                    "ref": "WhyResults"
+                }
+            }
         },
         "SzEngineWhySearchAttributes": {
             "ref": "Fixme"
@@ -2444,12 +2601,62 @@
             "ref": "Fixme"
         },
         "SzProductGetLicenseResponse": {
-            "ref": "ProductLicense"
+            "properties": {
+                "billing": {
+                    "type": "string"
+                },
+                "contract": {
+                    "type": "string"
+                },
+                "customer": {
+                    "type": "string"
+                },
+                "expireDate": {
+                    "type": "string"
+                },
+                "issueDate": {
+                    "type": "string"
+                },
+                "licenseLevel": {
+                    "type": "string"
+                },
+                "licenseType": {
+                    "type": "string"
+                },
+                "recordLimit": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
         },
         "SzProductGetVersionResponse": {
-            "ref": "ProductVersion"
+            "properties": {
+                "BUILD_DATE": {
+                    "type": "string"
+                },
+                "BUILD_NUMBER": {
+                    "type": "string"
+                },
+                "BUILD_VERSION": {
+                    "type": "string"
+                },
+                "COMPATIBILITY_VERSION": {
+                    "ref": "CompatibilityVersion"
+                },
+                "PRODUCT_NAME": {
+                    "type": "string"
+                },
+                "SCHEMA_VERSION": {
+                    "ref": "SchemaVersion"
+                },
+                "VERSION": {
+                    "type": "string"
+                }
+            }
         },
-        "VirtualEntity": {
+        "XXVirtualEntity": {
             "properties": {
                 "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
@@ -2463,33 +2670,6 @@
                 },
                 "VIRTUAL_ENTITY_ID": {
                     "type": "string"
-                }
-            }
-        },
-        "WhyEntities": {
-            "properties": {
-                "ENTITIES": {
-                    "elements": {
-                        "ref": "Entity"
-                    }
-                },
-                "WHY_RESULTS": {
-                    "ref": "WhyResults"
-                }
-            }
-        },
-        "WhyRecordInEntity": {
-            "ref": "FixmeUnknown"
-        },
-        "WhyRecords": {
-            "properties": {
-                "ENTITIES": {
-                    "elements": {
-                        "ref": "Entity"
-                    }
-                },
-                "WHY_RESULTS": {
-                    "ref": "WhyResults"
                 }
             }
         },
@@ -2534,24 +2714,6 @@
         "WhyResults": {
             "elements": {
                 "ref": "WhyResult"
-            }
-        },
-        "WithInfo": {
-            "properties": {
-                "AFFECTED_ENTITIES": {
-                    "elements": {
-                        "ref": "AffectedEntity"
-                    }
-                },
-                "DATA_SOURCE": {
-                    "type": "string"
-                },
-                "INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
-                },
-                "RECORD_ID": {
-                    "type": "string"
-                }
             }
         }
     }

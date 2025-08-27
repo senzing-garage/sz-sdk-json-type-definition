@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzConfigExportResponse {
-    @JsonValue
-    private ExportConfig value;
+    @JsonProperty("G2_CONFIG")
+    private G2config g2Config;
 
     public SzConfigExportResponse() {
     }
 
-    @JsonCreator
-    public SzConfigExportResponse(ExportConfig value) {
-        this.value = value;
+    /**
+     * Getter for g2Config.<p>
+     */
+    public G2config getG2Config() {
+        return g2Config;
     }
 
-    public ExportConfig getValue() {
-        return value;
-    }
-
-    public void setValue(ExportConfig value) {
-        this.value = value;
+    /**
+     * Setter for g2Config.<p>
+     */
+    public void setG2Config(G2config g2Config) {
+        this.g2Config = g2Config;
     }
 }

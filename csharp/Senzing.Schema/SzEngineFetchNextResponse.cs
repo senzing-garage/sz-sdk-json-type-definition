@@ -13,19 +13,19 @@ namespace Senzing.Schema
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public FetchNext Value { get; set; }
+        public Fixme Value { get; set; }
     }
 
     public class SzEngineFetchNextResponseJsonConverter : JsonConverter<SzEngineFetchNextResponse>
     {
         public override SzEngineFetchNextResponse Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new SzEngineFetchNextResponse { Value = JsonSerializer.Deserialize<FetchNext>(ref reader, options) };
+            return new SzEngineFetchNextResponse { Value = JsonSerializer.Deserialize<Fixme>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, SzEngineFetchNextResponse value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<FetchNext>(writer, value.Value, options);
+            JsonSerializer.Serialize<Fixme>(writer, value.Value, options);
         }
     }
 }

@@ -848,7 +848,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = CfgLensrl.new
-      out.value = SenzingTypeDef.from_json_data(Array[FixmeUnknown], data)
+      out.value = SenzingTypeDef.from_json_data(Array[Fixme], data)
       out
     end
 
@@ -1047,22 +1047,6 @@ module SenzingTypeDef
     end
   end
 
-  class ConfigRegistry
-    attr_accessor :configs
-
-    def self.from_json_data(data)
-      out = ConfigRegistry.new
-      out.configs = SenzingTypeDef::from_json_data(Array[Config], data["CONFIGS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
-      data
-    end
-  end
-
   class DataSource
     # The text representation of the datasource.
     attr_accessor :dsrc_code
@@ -1126,22 +1110,6 @@ module SenzingTypeDef
     end
   end
 
-  class ExportConfig
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = ExportConfig.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
   class Feature
     attr_accessor :felem_code
     attr_accessor :felem_value
@@ -1194,31 +1162,6 @@ module SenzingTypeDef
       data["SUPPRESSED"] = SenzingTypeDef::to_json_data(suppressed)
       data["USED_FOR_CAND"] = SenzingTypeDef::to_json_data(used_for_cand)
       data["USED_FOR_SCORING"] = SenzingTypeDef::to_json_data(used_for_scoring)
-      data
-    end
-  end
-
-  class FeatureForAttribute
-    attr_accessor :feat_desc
-    attr_accessor :feat_desc_values
-    attr_accessor :lib_feat_id
-    attr_accessor :usage_type
-
-    def self.from_json_data(data)
-      out = FeatureForAttribute.new
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.feat_desc_values = SenzingTypeDef::from_json_data(Array[FeatureDescriptionValue], data["FEAT_DESC_VALUES"])
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FEAT_DESC_VALUES"] = SenzingTypeDef::to_json_data(feat_desc_values)
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
       data
     end
   end
@@ -1292,34 +1235,6 @@ module SenzingTypeDef
     end
   end
 
-  class FeatureScoresForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FeatureScoresForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(Array[FeatureScoreForAttribute], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class FetchNext
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = FetchNext.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class FinalState
     attr_accessor :need_reevaluation
     attr_accessor :virtual_entities
@@ -1340,33 +1255,17 @@ module SenzingTypeDef
   end
 
   class Fixme
-    attr_accessor :fixme
+    attr_accessor :fixme_key
 
     def self.from_json_data(data)
       out = Fixme.new
-      out.fixme = SenzingTypeDef::from_json_data(String, data["FIXME"])
+      out.fixme_key = SenzingTypeDef::from_json_data(String, data["FIXME_KEY"])
       out
     end
 
     def to_json_data
       data = {}
-      data["FIXME"] = SenzingTypeDef::to_json_data(fixme)
-      data
-    end
-  end
-
-  class FixmeUnknown
-    attr_accessor :fixme_unknown
-
-    def self.from_json_data(data)
-      out = FixmeUnknown.new
-      out.fixme_unknown = SenzingTypeDef::from_json_data(String, data["FIXME_UNKNOWN"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FIXME_UNKNOWN"] = SenzingTypeDef::to_json_data(fixme_unknown)
+      data["FIXME_KEY"] = SenzingTypeDef::to_json_data(fixme_key)
       data
     end
   end
@@ -1516,76 +1415,6 @@ module SenzingTypeDef
     end
   end
 
-  class GetConfig
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = GetConfig.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  class GetDataSourceRegistry
-    attr_accessor :data_sources
-
-    def self.from_json_data(data)
-      out = GetDataSourceRegistry.new
-      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
-      data
-    end
-  end
-
-  class GetFeature
-    attr_accessor :elements
-    attr_accessor :ftype_code
-    attr_accessor :lib_feat_id
-
-    def self.from_json_data(data)
-      out = GetFeature.new
-      out.elements = SenzingTypeDef::from_json_data(Array[Feature], data["ELEMENTS"])
-      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
-      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ELEMENTS"] = SenzingTypeDef::to_json_data(elements)
-      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
-      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
-      data
-    end
-  end
-
-  class How
-    attr_accessor :how_results
-
-    def self.from_json_data(data)
-      out = How.new
-      out.how_results = SenzingTypeDef::from_json_data(HowResults, data["HOW_RESULTS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["HOW_RESULTS"] = SenzingTypeDef::to_json_data(how_results)
-      data
-    end
-  end
-
   class HowResults
     attr_accessor :final_state
     attr_accessor :resolution_steps
@@ -1601,22 +1430,6 @@ module SenzingTypeDef
       data = {}
       data["FINAL_STATE"] = SenzingTypeDef::to_json_data(final_state)
       data["RESOLUTION_STEPS"] = SenzingTypeDef::to_json_data(resolution_steps)
-      data
-    end
-  end
-
-  class Interesting
-    attr_accessor :interesting_entities
-
-    def self.from_json_data(data)
-      out = Interesting.new
-      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
       data
     end
   end
@@ -1871,25 +1684,6 @@ module SenzingTypeDef
     end
   end
 
-  class MatchInfoForAttribute
-    attr_accessor :feat_desc
-    attr_accessor :feat_id
-
-    def self.from_json_data(data)
-      out = MatchInfoForAttribute.new
-      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
-      out.feat_id = SenzingTypeDef::from_json_data(Integer, data["FEAT_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
-      data["FEAT_ID"] = SenzingTypeDef::to_json_data(feat_id)
-      data
-    end
-  end
-
   class MemberRecord
     attr_accessor :internal_id
     attr_accessor :records
@@ -1923,28 +1717,6 @@ module SenzingTypeDef
     end
   end
 
-  class Network
-    attr_accessor :entities
-    attr_accessor :entity_paths
-    attr_accessor :max_entity_limit_reached
-
-    def self.from_json_data(data)
-      out = Network.new
-      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
-      out.max_entity_limit_reached = SenzingTypeDef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
-      data["ENTITY_PATHS"] = SenzingTypeDef::to_json_data(entity_paths)
-      data["MAX_ENTITY_LIMIT_REACHED"] = SenzingTypeDef::to_json_data(max_entity_limit_reached)
-      data
-    end
-  end
-
   class Notice
     attr_accessor :code
     attr_accessor :description
@@ -1975,96 +1747,6 @@ module SenzingTypeDef
 
     def to_json_data
       SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class Path
-    attr_accessor :entities
-    attr_accessor :entity_paths
-
-    def self.from_json_data(data)
-      out = Path.new
-      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
-      data["ENTITY_PATHS"] = SenzingTypeDef::to_json_data(entity_paths)
-      data
-    end
-  end
-
-  class ProductLicense
-    attr_accessor :billing
-    attr_accessor :contract
-    attr_accessor :customer
-    attr_accessor :expire_date
-    attr_accessor :issue_date
-    attr_accessor :license_level
-    attr_accessor :license_type
-    attr_accessor :record_limit
-
-    def self.from_json_data(data)
-      out = ProductLicense.new
-      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
-      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
-      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
-      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
-      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
-      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
-      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
-      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["billing"] = SenzingTypeDef::to_json_data(billing)
-      data["contract"] = SenzingTypeDef::to_json_data(contract)
-      data["customer"] = SenzingTypeDef::to_json_data(customer)
-      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
-      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
-      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
-      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
-      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
-      data
-    end
-  end
-
-  class ProductVersion
-    attr_accessor :build_date
-    attr_accessor :build_number
-    attr_accessor :build_version
-    attr_accessor :compatibility_version
-    attr_accessor :product_name
-    attr_accessor :schema_version
-    attr_accessor :version
-
-    def self.from_json_data(data)
-      out = ProductVersion.new
-      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
-      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
-      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
-      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
-      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
-      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
-      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
-      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
-      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
-      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
-      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
-      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
-      data["VERSION"] = SenzingTypeDef::to_json_data(version)
-      data
     end
   end
 
@@ -2185,23 +1867,6 @@ module SenzingTypeDef
     end
   end
 
-  class RecordKeys
-    # A list of (data source code, record id) pairs.
-    attr_accessor :records
-
-    def self.from_json_data(data)
-      out = RecordKeys.new
-      out.records = SenzingTypeDef::from_json_data(Array[RecordKey], data["RECORDS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
-      data
-    end
-  end
-
   class RecordSummaryElement
     attr_accessor :data_source
     attr_accessor :first_seen_dt
@@ -2238,36 +1903,6 @@ module SenzingTypeDef
 
     def to_json_data
       SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class RedoRecord
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = RedoRecord.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class RegisterDataSource
-    attr_accessor :dsrc_id
-
-    def self.from_json_data(data)
-      out = RegisterDataSource.new
-      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
-      data
     end
   end
 
@@ -2337,41 +1972,6 @@ module SenzingTypeDef
       data["id"] = SenzingTypeDef::to_json_data(id)
       data["location"] = SenzingTypeDef::to_json_data(location)
       data["type"] = SenzingTypeDef::to_json_data(type)
-      data
-    end
-  end
-
-  class RepositoryInfo
-    attr_accessor :data_stores
-
-    def self.from_json_data(data)
-      out = RepositoryInfo.new
-      out.data_stores = SenzingTypeDef::from_json_data(Array[Repository], data["dataStores"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["dataStores"] = SenzingTypeDef::to_json_data(data_stores)
-      data
-    end
-  end
-
-  class RepositoryPerformance
-    attr_accessor :insert_time
-    attr_accessor :num_records_inserted
-
-    def self.from_json_data(data)
-      out = RepositoryPerformance.new
-      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
-      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
-      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
       data
     end
   end
@@ -2572,25 +2172,6 @@ module SenzingTypeDef
     end
   end
 
-  class Search
-    attr_accessor :resolved_entities
-    attr_accessor :search_statistics
-
-    def self.from_json_data(data)
-      out = Search.new
-      out.resolved_entities = SenzingTypeDef::from_json_data(Array[ResolvedEntityAndMatchInfo], data["RESOLVED_ENTITIES"])
-      out.search_statistics = SenzingTypeDef::from_json_data(SearchStatistics, data["SEARCH_STATISTICS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
-      data["SEARCH_STATISTICS"] = SenzingTypeDef::to_json_data(search_statistics)
-      data
-    end
-  end
-
   class SearchStatisticCandidateKeysFeatureTypes
     attr_accessor :found
     attr_accessor :ftype_code
@@ -2687,87 +2268,67 @@ module SenzingTypeDef
     end
   end
 
-  class Stats
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = Stats.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class StreamExportJSONEntity
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = StreamExportJSONEntity.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class SzConfigExportResponse
-    attr_accessor :value
+    attr_accessor :g2_config
 
     def self.from_json_data(data)
       out = SzConfigExportResponse.new
-      out.value = SenzingTypeDef.from_json_data(ExportConfig, data)
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
     end
   end
 
   class SzConfigGetDataSourceRegistryResponse
-    attr_accessor :value
+    attr_accessor :data_sources
 
     def self.from_json_data(data)
       out = SzConfigGetDataSourceRegistryResponse.new
-      out.value = SenzingTypeDef.from_json_data(GetDataSourceRegistry, data)
+      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
+      data
     end
   end
 
   class SzConfigManagerGetConfigRegistryResponse
-    attr_accessor :value
+    attr_accessor :configs
 
     def self.from_json_data(data)
       out = SzConfigManagerGetConfigRegistryResponse.new
-      out.value = SenzingTypeDef.from_json_data(ConfigRegistry, data)
+      out.configs = SenzingTypeDef::from_json_data(Array[Config], data["CONFIGS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["CONFIGS"] = SenzingTypeDef::to_json_data(configs)
+      data
     end
   end
 
   class SzConfigRegisterDataSourceResponse
-    attr_accessor :value
+    attr_accessor :dsrc_id
 
     def self.from_json_data(data)
       out = SzConfigRegisterDataSourceResponse.new
-      out.value = SenzingTypeDef.from_json_data(RegisterDataSource, data)
+      out.dsrc_id = SenzingTypeDef::from_json_data(Integer, data["DSRC_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["DSRC_ID"] = SenzingTypeDef::to_json_data(dsrc_id)
+      data
     end
   end
 
@@ -2786,72 +2347,109 @@ module SenzingTypeDef
   end
 
   class SzDiagnosticCheckRepositoryPerformanceResponse
-    attr_accessor :value
+    attr_accessor :insert_time
+    attr_accessor :num_records_inserted
 
     def self.from_json_data(data)
       out = SzDiagnosticCheckRepositoryPerformanceResponse.new
-      out.value = SenzingTypeDef.from_json_data(RepositoryPerformance, data)
+      out.insert_time = SenzingTypeDef::from_json_data(Integer, data["insertTime"])
+      out.num_records_inserted = SenzingTypeDef::from_json_data(Integer, data["numRecordsInserted"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["insertTime"] = SenzingTypeDef::to_json_data(insert_time)
+      data["numRecordsInserted"] = SenzingTypeDef::to_json_data(num_records_inserted)
+      data
     end
   end
 
   class SzDiagnosticGetFeatureResponse
-    attr_accessor :value
+    attr_accessor :elements
+    attr_accessor :ftype_code
+    attr_accessor :lib_feat_id
 
     def self.from_json_data(data)
       out = SzDiagnosticGetFeatureResponse.new
-      out.value = SenzingTypeDef.from_json_data(GetFeature, data)
+      out.elements = SenzingTypeDef::from_json_data(Array[Feature], data["ELEMENTS"])
+      out.ftype_code = SenzingTypeDef::from_json_data(String, data["FTYPE_CODE"])
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ELEMENTS"] = SenzingTypeDef::to_json_data(elements)
+      data["FTYPE_CODE"] = SenzingTypeDef::to_json_data(ftype_code)
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data
     end
   end
 
   class SzDiagnosticGetRepositoryInfoResponse
-    attr_accessor :value
+    attr_accessor :data_stores
 
     def self.from_json_data(data)
       out = SzDiagnosticGetRepositoryInfoResponse.new
-      out.value = SenzingTypeDef.from_json_data(RepositoryInfo, data)
+      out.data_stores = SenzingTypeDef::from_json_data(Array[Repository], data["dataStores"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["dataStores"] = SenzingTypeDef::to_json_data(data_stores)
+      data
     end
   end
 
   class SzEngineAddRecordResponse
-    attr_accessor :value
+    attr_accessor :affected_entities
+    attr_accessor :data_source
+    attr_accessor :interesting_entities
+    attr_accessor :record_id
 
     def self.from_json_data(data)
       out = SzEngineAddRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
     end
   end
 
   class SzEngineDeleteRecordResponse
-    attr_accessor :value
+    attr_accessor :affected_entities
+    attr_accessor :data_source
+    attr_accessor :interesting_entities
+    attr_accessor :record_id
 
     def self.from_json_data(data)
       out = SzEngineDeleteRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
     end
   end
 
@@ -2874,7 +2472,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineFetchNextResponse.new
-      out.value = SenzingTypeDef.from_json_data(FetchNext, data)
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -2884,30 +2482,34 @@ module SenzingTypeDef
   end
 
   class SzEngineFindInterestingEntitiesByEntityIDResponse
-    attr_accessor :value
+    attr_accessor :interesting_entities
 
     def self.from_json_data(data)
       out = SzEngineFindInterestingEntitiesByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data
     end
   end
 
   class SzEngineFindInterestingEntitiesByRecordIDResponse
-    attr_accessor :value
+    attr_accessor :interesting_entities
 
     def self.from_json_data(data)
       out = SzEngineFindInterestingEntitiesByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Interesting, data)
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data
     end
   end
 
@@ -2926,44 +2528,63 @@ module SenzingTypeDef
   end
 
   class SzEngineFindNetworkByEntityIDResponse
-    attr_accessor :value
+    attr_accessor :entities
+    attr_accessor :entity_paths
+    attr_accessor :max_entity_limit_reached
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
+      out.max_entity_limit_reached = SenzingTypeDef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
+      data["ENTITY_PATHS"] = SenzingTypeDef::to_json_data(entity_paths)
+      data["MAX_ENTITY_LIMIT_REACHED"] = SenzingTypeDef::to_json_data(max_entity_limit_reached)
+      data
     end
   end
 
   class SzEngineFindNetworkByRecordIDRecordKeys
-    attr_accessor :value
+    # A list of (data source code, record id) pairs.
+    attr_accessor :records
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByRecordIDRecordKeys.new
-      out.value = SenzingTypeDef.from_json_data(RecordKeys, data)
+      out.records = SenzingTypeDef::from_json_data(Array[RecordKey], data["RECORDS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
+      data
     end
   end
 
   class SzEngineFindNetworkByRecordIDResponse
-    attr_accessor :value
+    attr_accessor :entities
+    attr_accessor :entity_paths
+    attr_accessor :max_entity_limit_reached
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Network, data)
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
+      out.max_entity_limit_reached = SenzingTypeDef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
+      data["ENTITY_PATHS"] = SenzingTypeDef::to_json_data(entity_paths)
+      data["MAX_ENTITY_LIMIT_REACHED"] = SenzingTypeDef::to_json_data(max_entity_limit_reached)
+      data
     end
   end
 
@@ -2996,30 +2617,38 @@ module SenzingTypeDef
   end
 
   class SzEngineFindPathByEntityIDResponse
-    attr_accessor :value
+    attr_accessor :entities
+    attr_accessor :entity_paths
 
     def self.from_json_data(data)
       out = SzEngineFindPathByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
+      data["ENTITY_PATHS"] = SenzingTypeDef::to_json_data(entity_paths)
+      data
     end
   end
 
   class SzEngineFindPathByRecordIDAvoidRecordKeys
-    attr_accessor :value
+    # A list of (data source code, record id) pairs.
+    attr_accessor :records
 
     def self.from_json_data(data)
       out = SzEngineFindPathByRecordIDAvoidRecordKeys.new
-      out.value = SenzingTypeDef.from_json_data(RecordKeys, data)
+      out.records = SenzingTypeDef::from_json_data(Array[RecordKey], data["RECORDS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
+      data
     end
   end
 
@@ -3038,44 +2667,59 @@ module SenzingTypeDef
   end
 
   class SzEngineFindPathByRecordIDResponse
-    attr_accessor :value
+    attr_accessor :entities
+    attr_accessor :entity_paths
 
     def self.from_json_data(data)
       out = SzEngineFindPathByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Path, data)
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.entity_paths = SenzingTypeDef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
+      data["ENTITY_PATHS"] = SenzingTypeDef::to_json_data(entity_paths)
+      data
     end
   end
 
   class SzEngineGetEntityByEntityIDResponse
-    attr_accessor :value
+    attr_accessor :related_entities
+    attr_accessor :resolved_entity
 
     def self.from_json_data(data)
       out = SzEngineGetEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out.related_entities = SenzingTypeDef::from_json_data(Array[RelatedEntity], data["RELATED_ENTITIES"])
+      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RELATED_ENTITIES"] = SenzingTypeDef::to_json_data(related_entities)
+      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data
     end
   end
 
   class SzEngineGetEntityByRecordIDResponse
-    attr_accessor :value
+    attr_accessor :related_entities
+    attr_accessor :resolved_entity
 
     def self.from_json_data(data)
       out = SzEngineGetEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(Entity, data)
+      out.related_entities = SenzingTypeDef::from_json_data(Array[RelatedEntity], data["RELATED_ENTITIES"])
+      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RELATED_ENTITIES"] = SenzingTypeDef::to_json_data(related_entities)
+      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data
     end
   end
 
@@ -3093,17 +2737,98 @@ module SenzingTypeDef
     end
   end
 
-  class SzEngineGetRecordResponse
-    attr_accessor :value
+  class SzEngineGetRecordResponseFeatures
+    attr_accessor :lib_feat_id
+    attr_accessor :usage_type
 
     def self.from_json_data(data)
-      out = SzEngineGetRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(Record, data)
+      out = SzEngineGetRecordResponseFeatures.new
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
+      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
+      data
+    end
+  end
+
+  class SzEngineGetRecordResponse
+    attr_accessor :address_data
+    attr_accessor :attribute_data
+    attr_accessor :data_source
+    attr_accessor :entity_data
+    attr_accessor :entity_desc
+    attr_accessor :entity_key
+    attr_accessor :entity_type
+    attr_accessor :errule_code
+    attr_accessor :features
+    attr_accessor :identifier_data
+    attr_accessor :internal_id
+    attr_accessor :json_data
+    attr_accessor :last_seen_dt
+    attr_accessor :match_key
+    attr_accessor :match_level
+    attr_accessor :match_level_code
+    attr_accessor :name_data
+    attr_accessor :other_data
+    attr_accessor :phone_data
+    attr_accessor :record_id
+    attr_accessor :relationship_data
+
+    def self.from_json_data(data)
+      out = SzEngineGetRecordResponse.new
+      out.address_data = SenzingTypeDef::from_json_data(Array[String], data["ADDRESS_DATA"])
+      out.attribute_data = SenzingTypeDef::from_json_data(Array[String], data["ATTRIBUTE_DATA"])
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.entity_data = SenzingTypeDef::from_json_data(Array[String], data["ENTITY_DATA"])
+      out.entity_desc = SenzingTypeDef::from_json_data(String, data["ENTITY_DESC"])
+      out.entity_key = SenzingTypeDef::from_json_data(String, data["ENTITY_KEY"])
+      out.entity_type = SenzingTypeDef::from_json_data(String, data["ENTITY_TYPE"])
+      out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
+      out.features = SenzingTypeDef::from_json_data(Array[SzEngineGetRecordResponseFeatures], data["FEATURES"])
+      out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
+      out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
+      out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
+      out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
+      out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
+      out.name_data = SenzingTypeDef::from_json_data(Array[String], data["NAME_DATA"])
+      out.other_data = SenzingTypeDef::from_json_data(Array[String], data["OTHER_DATA"])
+      out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
+      out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ADDRESS_DATA"] = SenzingTypeDef::to_json_data(address_data)
+      data["ATTRIBUTE_DATA"] = SenzingTypeDef::to_json_data(attribute_data)
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["ENTITY_DATA"] = SenzingTypeDef::to_json_data(entity_data)
+      data["ENTITY_DESC"] = SenzingTypeDef::to_json_data(entity_desc)
+      data["ENTITY_KEY"] = SenzingTypeDef::to_json_data(entity_key)
+      data["ENTITY_TYPE"] = SenzingTypeDef::to_json_data(entity_type)
+      data["ERRULE_CODE"] = SenzingTypeDef::to_json_data(errule_code)
+      data["FEATURES"] = SenzingTypeDef::to_json_data(features)
+      data["IDENTIFIER_DATA"] = SenzingTypeDef::to_json_data(identifier_data)
+      data["INTERNAL_ID"] = SenzingTypeDef::to_json_data(internal_id)
+      data["JSON_DATA"] = SenzingTypeDef::to_json_data(json_data)
+      data["LAST_SEEN_DT"] = SenzingTypeDef::to_json_data(last_seen_dt)
+      data["MATCH_KEY"] = SenzingTypeDef::to_json_data(match_key)
+      data["MATCH_LEVEL"] = SenzingTypeDef::to_json_data(match_level)
+      data["MATCH_LEVEL_CODE"] = SenzingTypeDef::to_json_data(match_level_code)
+      data["NAME_DATA"] = SenzingTypeDef::to_json_data(name_data)
+      data["OTHER_DATA"] = SenzingTypeDef::to_json_data(other_data)
+      data["PHONE_DATA"] = SenzingTypeDef::to_json_data(phone_data)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data["RELATIONSHIP_DATA"] = SenzingTypeDef::to_json_data(relationship_data)
+      data
     end
   end
 
@@ -3112,7 +2837,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineGetRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(RedoRecord, data)
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -3126,7 +2851,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineGetStatsResponse.new
-      out.value = SenzingTypeDef.from_json_data(Stats, data)
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -3136,86 +2861,126 @@ module SenzingTypeDef
   end
 
   class SzEngineGetVirtualEntityByRecordIDRecordKeys
-    attr_accessor :value
+    # A list of (data source code, record id) pairs.
+    attr_accessor :records
 
     def self.from_json_data(data)
       out = SzEngineGetVirtualEntityByRecordIDRecordKeys.new
-      out.value = SenzingTypeDef.from_json_data(RecordKeys, data)
+      out.records = SenzingTypeDef::from_json_data(Array[RecordKey], data["RECORDS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
+      data
     end
   end
 
   class SzEngineGetVirtualEntityByRecordIDResponse
-    attr_accessor :value
+    attr_accessor :resolved_entity
 
     def self.from_json_data(data)
       out = SzEngineGetVirtualEntityByRecordIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(VirtualEntity, data)
+      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data
     end
   end
 
   class SzEngineHowEntityByEntityIDResponse
-    attr_accessor :value
+    attr_accessor :how_results
 
     def self.from_json_data(data)
       out = SzEngineHowEntityByEntityIDResponse.new
-      out.value = SenzingTypeDef.from_json_data(How, data)
+      out.how_results = SenzingTypeDef::from_json_data(HowResults, data["HOW_RESULTS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["HOW_RESULTS"] = SenzingTypeDef::to_json_data(how_results)
+      data
     end
   end
 
   class SzEngineProcessRedoRecordResponse
-    attr_accessor :value
+    attr_accessor :affected_entities
+    attr_accessor :data_source
+    attr_accessor :interesting_entities
+    attr_accessor :record_id
 
     def self.from_json_data(data)
       out = SzEngineProcessRedoRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
     end
   end
 
   class SzEngineReevaluateEntityResponse
-    attr_accessor :value
+    attr_accessor :affected_entities
+    attr_accessor :data_source
+    attr_accessor :interesting_entities
+    attr_accessor :record_id
 
     def self.from_json_data(data)
       out = SzEngineReevaluateEntityResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
     end
   end
 
   class SzEngineReevaluateRecordResponse
-    attr_accessor :value
+    attr_accessor :affected_entities
+    attr_accessor :data_source
+    attr_accessor :interesting_entities
+    attr_accessor :record_id
 
     def self.from_json_data(data)
       out = SzEngineReevaluateRecordResponse.new
-      out.value = SenzingTypeDef.from_json_data(WithInfo, data)
+      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
+      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
+      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
+      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
+      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
+      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
+      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data
     end
   end
 
@@ -3234,16 +2999,21 @@ module SenzingTypeDef
   end
 
   class SzEngineSearchByAttributesResponse
-    attr_accessor :value
+    attr_accessor :resolved_entities
+    attr_accessor :search_statistics
 
     def self.from_json_data(data)
       out = SzEngineSearchByAttributesResponse.new
-      out.value = SenzingTypeDef.from_json_data(Search, data)
+      out.resolved_entities = SenzingTypeDef::from_json_data(Array[ResolvedEntityAndMatchInfo], data["RESOLVED_ENTITIES"])
+      out.search_statistics = SenzingTypeDef::from_json_data(SearchStatistics, data["SEARCH_STATISTICS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
+      data["SEARCH_STATISTICS"] = SenzingTypeDef::to_json_data(search_statistics)
+      data
     end
   end
 
@@ -3261,12 +3031,12 @@ module SenzingTypeDef
     end
   end
 
-  class SzEngineStreamExportJSONEntityReportResponseXxx
+  class SzEngineStreamExportJSONEntityReportResponse
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = SzEngineStreamExportJSONEntityReportResponseXxx.new
-      out.value = SenzingTypeDef.from_json_data(StreamExportJSONEntity, data)
+      out = SzEngineStreamExportJSONEntityReportResponse.new
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -3276,16 +3046,21 @@ module SenzingTypeDef
   end
 
   class SzEngineWhyEntitiesResponse
-    attr_accessor :value
+    attr_accessor :entities
+    attr_accessor :why_results
 
     def self.from_json_data(data)
       out = SzEngineWhyEntitiesResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyEntities, data)
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
+      data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
+      data
     end
   end
 
@@ -3294,7 +3069,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineWhyRecordInEntityResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecordInEntity, data)
+      out.value = SenzingTypeDef.from_json_data(Fixme, data)
       out
     end
 
@@ -3304,16 +3079,21 @@ module SenzingTypeDef
   end
 
   class SzEngineWhyRecordsResponse
-    attr_accessor :value
+    attr_accessor :entities
+    attr_accessor :why_results
 
     def self.from_json_data(data)
       out = SzEngineWhyRecordsResponse.new
-      out.value = SenzingTypeDef.from_json_data(WhyRecords, data)
+      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
+      out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
       out
     end
 
     def to_json_data
-      SenzingTypeDef.to_json_data(value)
+      data = {}
+      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
+      data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
+      data
     end
   end
 
@@ -3360,45 +3140,72 @@ module SenzingTypeDef
   end
 
   class SzProductGetLicenseResponse
-    attr_accessor :value
+    attr_accessor :billing
+    attr_accessor :contract
+    attr_accessor :customer
+    attr_accessor :expire_date
+    attr_accessor :issue_date
+    attr_accessor :license_level
+    attr_accessor :license_type
+    attr_accessor :record_limit
 
     def self.from_json_data(data)
       out = SzProductGetLicenseResponse.new
-      out.value = SenzingTypeDef.from_json_data(ProductLicense, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class SzProductGetVersionResponse
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = SzProductGetVersionResponse.new
-      out.value = SenzingTypeDef.from_json_data(ProductVersion, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class VirtualEntity
-    attr_accessor :resolved_entity
-
-    def self.from_json_data(data)
-      out = VirtualEntity.new
-      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
+      out.billing = SenzingTypeDef::from_json_data(String, data["billing"])
+      out.contract = SenzingTypeDef::from_json_data(String, data["contract"])
+      out.customer = SenzingTypeDef::from_json_data(String, data["customer"])
+      out.expire_date = SenzingTypeDef::from_json_data(String, data["expireDate"])
+      out.issue_date = SenzingTypeDef::from_json_data(String, data["issueDate"])
+      out.license_level = SenzingTypeDef::from_json_data(String, data["licenseLevel"])
+      out.license_type = SenzingTypeDef::from_json_data(String, data["licenseType"])
+      out.record_limit = SenzingTypeDef::from_json_data(Integer, data["recordLimit"])
       out
     end
 
     def to_json_data
       data = {}
-      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
+      data["billing"] = SenzingTypeDef::to_json_data(billing)
+      data["contract"] = SenzingTypeDef::to_json_data(contract)
+      data["customer"] = SenzingTypeDef::to_json_data(customer)
+      data["expireDate"] = SenzingTypeDef::to_json_data(expire_date)
+      data["issueDate"] = SenzingTypeDef::to_json_data(issue_date)
+      data["licenseLevel"] = SenzingTypeDef::to_json_data(license_level)
+      data["licenseType"] = SenzingTypeDef::to_json_data(license_type)
+      data["recordLimit"] = SenzingTypeDef::to_json_data(record_limit)
+      data
+    end
+  end
+
+  class SzProductGetVersionResponse
+    attr_accessor :build_date
+    attr_accessor :build_number
+    attr_accessor :build_version
+    attr_accessor :compatibility_version
+    attr_accessor :product_name
+    attr_accessor :schema_version
+    attr_accessor :version
+
+    def self.from_json_data(data)
+      out = SzProductGetVersionResponse.new
+      out.build_date = SenzingTypeDef::from_json_data(String, data["BUILD_DATE"])
+      out.build_number = SenzingTypeDef::from_json_data(String, data["BUILD_NUMBER"])
+      out.build_version = SenzingTypeDef::from_json_data(String, data["BUILD_VERSION"])
+      out.compatibility_version = SenzingTypeDef::from_json_data(CompatibilityVersion, data["COMPATIBILITY_VERSION"])
+      out.product_name = SenzingTypeDef::from_json_data(String, data["PRODUCT_NAME"])
+      out.schema_version = SenzingTypeDef::from_json_data(SchemaVersion, data["SCHEMA_VERSION"])
+      out.version = SenzingTypeDef::from_json_data(String, data["VERSION"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["BUILD_DATE"] = SenzingTypeDef::to_json_data(build_date)
+      data["BUILD_NUMBER"] = SenzingTypeDef::to_json_data(build_number)
+      data["BUILD_VERSION"] = SenzingTypeDef::to_json_data(build_version)
+      data["COMPATIBILITY_VERSION"] = SenzingTypeDef::to_json_data(compatibility_version)
+      data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
+      data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
+      data["VERSION"] = SenzingTypeDef::to_json_data(version)
       data
     end
   end
@@ -3418,58 +3225,6 @@ module SenzingTypeDef
       data = {}
       data["MEMBER_RECORDS"] = SenzingTypeDef::to_json_data(member_records)
       data["VIRTUAL_ENTITY_ID"] = SenzingTypeDef::to_json_data(virtual_entity_id)
-      data
-    end
-  end
-
-  class WhyEntities
-    attr_accessor :entities
-    attr_accessor :why_results
-
-    def self.from_json_data(data)
-      out = WhyEntities.new
-      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
-      data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
-      data
-    end
-  end
-
-  class WhyRecordInEntity
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = WhyRecordInEntity.new
-      out.value = SenzingTypeDef.from_json_data(FixmeUnknown, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class WhyRecords
-    attr_accessor :entities
-    attr_accessor :why_results
-
-    def self.from_json_data(data)
-      out = WhyRecords.new
-      out.entities = SenzingTypeDef::from_json_data(Array[Entity], data["ENTITIES"])
-      out.why_results = SenzingTypeDef::from_json_data(WhyResults, data["WHY_RESULTS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITIES"] = SenzingTypeDef::to_json_data(entities)
-      data["WHY_RESULTS"] = SenzingTypeDef::to_json_data(why_results)
       data
     end
   end
@@ -3524,27 +3279,108 @@ module SenzingTypeDef
     end
   end
 
-  class WithInfo
-    attr_accessor :affected_entities
-    attr_accessor :data_source
-    attr_accessor :interesting_entities
-    attr_accessor :record_id
+  class XxfeatureForAttribute
+    attr_accessor :feat_desc
+    attr_accessor :feat_desc_values
+    attr_accessor :lib_feat_id
+    attr_accessor :usage_type
 
     def self.from_json_data(data)
-      out = WithInfo.new
-      out.affected_entities = SenzingTypeDef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
-      out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
-      out.interesting_entities = SenzingTypeDef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
-      out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
+      out = XxfeatureForAttribute.new
+      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
+      out.feat_desc_values = SenzingTypeDef::from_json_data(Array[FeatureDescriptionValue], data["FEAT_DESC_VALUES"])
+      out.lib_feat_id = SenzingTypeDef::from_json_data(Integer, data["LIB_FEAT_ID"])
+      out.usage_type = SenzingTypeDef::from_json_data(String, data["USAGE_TYPE"])
       out
     end
 
     def to_json_data
       data = {}
-      data["AFFECTED_ENTITIES"] = SenzingTypeDef::to_json_data(affected_entities)
-      data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
-      data["INTERESTING_ENTITIES"] = SenzingTypeDef::to_json_data(interesting_entities)
-      data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
+      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
+      data["FEAT_DESC_VALUES"] = SenzingTypeDef::to_json_data(feat_desc_values)
+      data["LIB_FEAT_ID"] = SenzingTypeDef::to_json_data(lib_feat_id)
+      data["USAGE_TYPE"] = SenzingTypeDef::to_json_data(usage_type)
+      data
+    end
+  end
+
+  class XxfeatureScoresForAttribute
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = XxfeatureScoresForAttribute.new
+      out.value = SenzingTypeDef.from_json_data(Array[FeatureScoreForAttribute], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class XxgetConfig
+    attr_accessor :g2_config
+
+    def self.from_json_data(data)
+      out = XxgetConfig.new
+      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
+      data
+    end
+  end
+
+  class XxgetDataSourceRegistry
+    attr_accessor :data_sources
+
+    def self.from_json_data(data)
+      out = XxgetDataSourceRegistry.new
+      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
+      data
+    end
+  end
+
+  class XxmatchInfoForAttribute
+    attr_accessor :feat_desc
+    attr_accessor :feat_id
+
+    def self.from_json_data(data)
+      out = XxmatchInfoForAttribute.new
+      out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
+      out.feat_id = SenzingTypeDef::from_json_data(Integer, data["FEAT_ID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["FEAT_DESC"] = SenzingTypeDef::to_json_data(feat_desc)
+      data["FEAT_ID"] = SenzingTypeDef::to_json_data(feat_id)
+      data
+    end
+  end
+
+  class XxvirtualEntity
+    attr_accessor :resolved_entity
+
+    def self.from_json_data(data)
+      out = XxvirtualEntity.new
+      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
       data
     end
   end
