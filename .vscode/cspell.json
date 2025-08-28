@@ -115,7 +115,9 @@
     "UTYPE",
     "venv",
     "vladopajic",
-    "Xlint"
+    "WECHAT",
+    "Xlint",
+    "ZOOMROOM"
   ],
   "ignorePaths": [
     ".git/**",

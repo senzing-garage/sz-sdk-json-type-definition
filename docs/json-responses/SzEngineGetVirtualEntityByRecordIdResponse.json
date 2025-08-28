@@ -7,7 +7,7 @@
             "user_defined_json_key": [
                 {
                     "FEAT_DESC": "string",
-                    "FEAT_DESC_VALUES": [
+                    "ATTRIBUTES": [
                         {
                             "CANDIDATE_CAP_REACHED": "string",
                             "ENTITY_COUNT": "int32",
