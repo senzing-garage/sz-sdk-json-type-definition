@@ -1,0 +1,175 @@
+{
+    "ENTITIES": [
+        {
+            "RELATED_ENTITIES": [
+                {
+                    "ENTITY_ID": "int32",
+                    "ENTITY_NAME": "string",
+                    "ERRULE_CODE": "string",
+                    "IS_AMBIGUOUS": "int32",
+                    "IS_DISCLOSED": "int32",
+                    "LAST_SEEN_DT": "timestamp",
+                    "MATCH_KEY": "string",
+                    "MATCH_LEVEL": "int32",
+                    "MATCH_LEVEL_CODE": "string",
+                    "RECORDS": [
+                        {
+                            "ADDRESS_DATA": [
+                                "string"
+                            ],
+                            "ATTRIBUTE_DATA": [
+                                "string"
+                            ],
+                            "DATA_SOURCE": "string",
+                            "ENTITY_DATA": [
+                                "string"
+                            ],
+                            "ENTITY_DESC": "string",
+                            "ENTITY_KEY": "string",
+                            "ENTITY_TYPE": "string",
+                            "ERRULE_CODE": "string",
+                            "FEATURES": [
+                                {
+                                    "LIB_FEAT_ID": "int32",
+                                    "USAGE_TYPE": "string"
+                                }
+                            ],
+                            "IDENTIFIER_DATA": [
+                                "string"
+                            ],
+                            "INTERNAL_ID": "int32",
+                            "JSON_DATA": {
+                                "customer_record_json_key_1": "customer_record_json_value_1",
+                                "customer_record_json_key_2": "customer_record_json_value_2"
+                            },
+                            "LAST_SEEN_DT": "timestamp",
+                            "MATCH_KEY": "string",
+                            "MATCH_LEVEL": "int32",
+                            "MATCH_LEVEL_CODE": "string",
+                            "NAME_DATA": [
+                                "string"
+                            ],
+                            "OTHER_DATA": [
+                                "string"
+                            ],
+                            "PHONE_DATA": [
+                                "string"
+                            ],
+                            "RECORD_ID": "string",
+                            "RELATIONSHIP_DATA": [
+                                "string"
+                            ]
+                        }
+                    ],
+                    "RECORD_SUMMARY": [
+                        {
+                            "DATA_SOURCE": "string",
+                            "FIRST_SEEN_DT": "timestamp",
+                            "LAST_SEEN_DT": "timestamp",
+                            "RECORD_COUNT": "int32"
+                        }
+                    ]
+                }
+            ],
+            "RESOLVED_ENTITY": {
+                "ENTITY_ID": "int32",
+                "ENTITY_NAME": "string",
+                "ERRULE_CODE": "string",
+                "FEATURES": {
+                    "user_defined_json_key": [
+                        {
+                            "FEAT_DESC": "string",
+                            "FEAT_DESC_VALUES": [
+                                {
+                                    "CANDIDATE_CAP_REACHED": "string",
+                                    "ENTITY_COUNT": "int32",
+                                    "FEAT_DESC": "string",
+                                    "LIB_FEAT_ID": "int32",
+                                    "SCORING_CAP_REACHED": "string",
+                                    "SUPPRESSED": "string",
+                                    "USED_FOR_CAND": "string",
+                                    "USED_FOR_SCORING": "string"
+                                }
+                            ],
+                            "LIB_FEAT_ID": "int32",
+                            "USAGE_TYPE": "string"
+                        }
+                    ]
+                },
+                "IS_AMBIGUOUS": "int32",
+                "IS_DISCLOSED": "int32",
+                "LAST_SEEN_DT": "timestamp",
+                "MATCH_KEY": "string",
+                "MATCH_LEVEL": "int32",
+                "MATCH_LEVEL_CODE": "string",
+                "RECORDS": [
+                    {
+                        "ADDRESS_DATA": [
+                            "string"
+                        ],
+                        "ATTRIBUTE_DATA": [
+                            "string"
+                        ],
+                        "DATA_SOURCE": "string",
+                        "ENTITY_DATA": [
+                            "string"
+                        ],
+                        "ENTITY_DESC": "string",
+                        "ENTITY_KEY": "string",
+                        "ENTITY_TYPE": "string",
+                        "ERRULE_CODE": "string",
+                        "FEATURES": [
+                            {
+                                "LIB_FEAT_ID": "int32",
+                                "USAGE_TYPE": "string"
+                            }
+                        ],
+                        "IDENTIFIER_DATA": [
+                            "string"
+                        ],
+                        "INTERNAL_ID": "int32",
+                        "JSON_DATA": {
+                            "customer_record_json_key_1": "customer_record_json_value_1",
+                            "customer_record_json_key_2": "customer_record_json_value_2"
+                        },
+                        "LAST_SEEN_DT": "timestamp",
+                        "MATCH_KEY": "string",
+                        "MATCH_LEVEL": "int32",
+                        "MATCH_LEVEL_CODE": "string",
+                        "NAME_DATA": [
+                            "string"
+                        ],
+                        "OTHER_DATA": [
+                            "string"
+                        ],
+                        "PHONE_DATA": [
+                            "string"
+                        ],
+                        "RECORD_ID": "string",
+                        "RELATIONSHIP_DATA": [
+                            "string"
+                        ]
+                    }
+                ],
+                "RECORD_SUMMARY": [
+                    {
+                        "DATA_SOURCE": "string",
+                        "FIRST_SEEN_DT": "timestamp",
+                        "LAST_SEEN_DT": "timestamp",
+                        "RECORD_COUNT": "int32"
+                    }
+                ]
+            }
+        }
+    ],
+    "ENTITY_PATHS": [
+        {
+            "END_ENTITY_ID": "int32",
+            "ENTITIES": [
+                "int32"
+            ],
+            "START_ENTITY_ID": "int32"
+        }
+    ],
+    "MAX_ENTITY_LIMIT_REACHED": "string"
+}

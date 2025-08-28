@@ -295,6 +295,12 @@ virtual_entity = SzEngineAddRecordResponse.from_json_data(
     file("SzEngineAddRecordResponse-test-002.json")
 )
 print_fmt(virtual_entity, "response.affected_entities[0].entity_id")
+print_fmt(virtual_entity, "response.interesting_entities.notices[0].description")
+
+# x = virtual_entity.interesting_entities.notices[0].description
+
+
+print_fmt(virtual_entity, "response.")
 
 
 virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
@@ -349,6 +355,8 @@ print_fmt(
     virtual_entity,
     "response.entities[0].resolved_entity.entity_id",
 )
+
+xxx = SzEngineProcessRedoRecordResponse
 
 
 virtual_entity = SzEngineGetEntityByEntityIDResponse.from_json_data({})

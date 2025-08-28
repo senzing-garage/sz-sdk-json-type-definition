@@ -1,0 +1,47 @@
+{
+    "ADDRESS_DATA": [
+        "string"
+    ],
+    "ATTRIBUTE_DATA": [
+        "string"
+    ],
+    "DATA_SOURCE": "string",
+    "ENTITY_DATA": [
+        "string"
+    ],
+    "ENTITY_DESC": "string",
+    "ENTITY_KEY": "string",
+    "ENTITY_TYPE": "string",
+    "ERRULE_CODE": "string",
+    "FEATURES": [
+        {
+            "LIB_FEAT_ID": "int32",
+            "USAGE_TYPE": "string"
+        }
+    ],
+    "IDENTIFIER_DATA": [
+        "string"
+    ],
+    "INTERNAL_ID": "int32",
+    "JSON_DATA": {
+        "customer_record_json_key_1": "customer_record_json_value_1",
+        "customer_record_json_key_2": "customer_record_json_value_2"
+    },
+    "LAST_SEEN_DT": "timestamp",
+    "MATCH_KEY": "string",
+    "MATCH_LEVEL": "int32",
+    "MATCH_LEVEL_CODE": "string",
+    "NAME_DATA": [
+        "string"
+    ],
+    "OTHER_DATA": [
+        "string"
+    ],
+    "PHONE_DATA": [
+        "string"
+    ],
+    "RECORD_ID": "string",
+    "RELATIONSHIP_DATA": [
+        "string"
+    ]
+}

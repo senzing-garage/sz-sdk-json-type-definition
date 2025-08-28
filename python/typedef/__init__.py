@@ -1452,15 +1452,33 @@ class HowResults:
         return data
 
 @dataclass
+class InterestingEntitiesNotices:
+    code: 'str'
+    description: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'InterestingEntitiesNotices':
+        return cls(
+            _from_json_data(str, data.get("CODE")),
+            _from_json_data(str, data.get("DESCRIPTION")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CODE"] = _to_json_data(self.code)
+        data["DESCRIPTION"] = _to_json_data(self.description)
+        return data
+
+@dataclass
 class InterestingEntities:
     entities: 'List[InterestingEntity]'
-    notices: 'Notices'
+    notices: 'List[InterestingEntitiesNotices]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntities':
         return cls(
             _from_json_data(List[InterestingEntity], data.get("ENTITIES")),
-            _from_json_data(Notices, data.get("NOTICES")),
+            _from_json_data(List[InterestingEntitiesNotices], data.get("NOTICES")),
         )
 
     def to_json_data(self) -> Any:
@@ -1758,12 +1776,30 @@ class Notice:
         return data
 
 @dataclass
+class Notice0:
+    code: 'str'
+    description: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Notice0':
+        return cls(
+            _from_json_data(str, data.get("CODE")),
+            _from_json_data(str, data.get("DESCRIPTION")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["CODE"] = _to_json_data(self.code)
+        data["DESCRIPTION"] = _to_json_data(self.description)
+        return data
+
+@dataclass
 class Notices:
-    value: 'List[Notice]'
+    value: 'List[Notice0]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Notices':
-        return cls(_from_json_data(List[Notice], data))
+        return cls(_from_json_data(List[Notice0], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)

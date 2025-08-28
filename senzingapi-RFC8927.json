@@ -1406,7 +1406,16 @@
                     }
                 },
                 "NOTICES": {
-                    "ref": "Notices"
+                    "elements": {
+                        "properties": {
+                            "CODE": {
+                                "type": "string"
+                            },
+                            "DESCRIPTION": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1637,7 +1646,14 @@
         },
         "Notices": {
             "elements": {
-                "ref": "Notice"
+                "properties": {
+                    "CODE": {
+                        "type": "string"
+                    },
+                    "DESCRIPTION": {
+                        "type": "string"
+                    }
+                }
             }
         },
         "Record": {

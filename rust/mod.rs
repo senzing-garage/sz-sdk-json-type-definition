@@ -964,12 +964,21 @@ pub struct HowResults {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct InterestingEntitiesNotices {
+    #[serde(rename = "CODE")]
+    pub code: String,
+
+    #[serde(rename = "DESCRIPTION")]
+    pub description: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct InterestingEntities {
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<InterestingEntity>,
 
     #[serde(rename = "NOTICES")]
-    pub notices: Notices,
+    pub notices: Vec<InterestingEntitiesNotices>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1149,7 +1158,16 @@ pub struct Notice {
     pub description: String,
 }
 
-pub type Notices = Vec<Notice>;
+#[derive(Serialize, Deserialize)]
+pub struct Notice0 {
+    #[serde(rename = "CODE")]
+    pub code: String,
+
+    #[serde(rename = "DESCRIPTION")]
+    pub description: String,
+}
+
+pub type Notices = Vec<Notice0>;
 
 #[derive(Serialize, Deserialize)]
 pub struct RecordFeatures {

@@ -14,19 +14,19 @@ namespace Senzing.Schema
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public IList<Notice> Value { get; set; }
+        public IList<Notice0> Value { get; set; }
     }
 
     public class NoticesJsonConverter : JsonConverter<Notices>
     {
         public override Notices Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new Notices { Value = JsonSerializer.Deserialize<IList<Notice>>(ref reader, options) };
+            return new Notices { Value = JsonSerializer.Deserialize<IList<Notice0>>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, Notices value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<IList<Notice>>(writer, value.Value, options);
+            JsonSerializer.Serialize<IList<Notice0>>(writer, value.Value, options);
         }
     }
 }

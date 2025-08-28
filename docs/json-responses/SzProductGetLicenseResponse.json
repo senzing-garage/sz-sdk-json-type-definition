@@ -1,0 +1,10 @@
+{
+    "billing": "string",
+    "contract": "string",
+    "customer": "string",
+    "expireDate": "string",
+    "issueDate": "string",
+    "licenseLevel": "string",
+    "licenseType": "string",
+    "recordLimit": "int32"
+}

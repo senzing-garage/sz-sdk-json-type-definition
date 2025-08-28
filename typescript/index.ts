@@ -432,9 +432,14 @@ export interface HowResults {
   RESOLUTION_STEPS: ResolutionSteps;
 }
 
+export interface InterestingEntitiesNotices {
+  CODE: string;
+  DESCRIPTION: string;
+}
+
 export interface InterestingEntities {
   ENTITIES: InterestingEntity[];
-  NOTICES: Notices;
+  NOTICES: InterestingEntitiesNotices[];
 }
 
 export interface InterestingEntitySampleRecords {
@@ -523,7 +528,12 @@ export interface Notice {
   DESCRIPTION: string;
 }
 
-export type Notices = Notice[];
+export interface Notice0 {
+  CODE: string;
+  DESCRIPTION: string;
+}
+
+export type Notices = Notice0[];
 
 export interface RecordFeatures {
   LIB_FEAT_ID: number;

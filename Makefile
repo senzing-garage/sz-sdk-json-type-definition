@@ -314,6 +314,13 @@ generate_testdata:
 	@rm $(MAKEFILE_DIRECTORY)/testdata/* || true
 	@./bin/generate_testdata.py
 
+
+.PHONY: generate_json_responses
+generate_json_responses:
+	@rm $(MAKEFILE_DIRECTORY)/docs/json-responses/* || true
+	@./bin/generate_json_responses.py
+
+
 # -----------------------------------------------------------------------------
 # Clean
 # -----------------------------------------------------------------------------

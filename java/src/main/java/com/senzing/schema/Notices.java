@@ -8,21 +8,21 @@ import java.util.List;
 
 public class Notices {
     @JsonValue
-    private List<Notice> value;
+    private List<Notice0> value;
 
     public Notices() {
     }
 
     @JsonCreator
-    public Notices(List<Notice> value) {
+    public Notices(List<Notice0> value) {
         this.value = value;
     }
 
-    public List<Notice> getValue() {
+    public List<Notice0> getValue() {
         return value;
     }
 
-    public void setValue(List<Notice> value) {
+    public void setValue(List<Notice0> value) {
         this.value = value;
     }
 }

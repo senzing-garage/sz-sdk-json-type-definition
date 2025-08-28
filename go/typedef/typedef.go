@@ -648,10 +648,16 @@ type HowResults struct {
 	ResolutionSteps ResolutionSteps `json:"RESOLUTION_STEPS"`
 }
 
+type InterestingEntitiesNotices struct {
+	Code string `json:"CODE"`
+
+	Description string `json:"DESCRIPTION"`
+}
+
 type InterestingEntities struct {
 	Entities []InterestingEntity `json:"ENTITIES"`
 
-	Notices Notices `json:"NOTICES"`
+	Notices []InterestingEntitiesNotices `json:"NOTICES"`
 }
 
 type InterestingEntitySampleRecords struct {
@@ -774,7 +780,13 @@ type Notice struct {
 	Description string `json:"DESCRIPTION"`
 }
 
-type Notices = []Notice
+type Notice0 struct {
+	Code string `json:"CODE"`
+
+	Description string `json:"DESCRIPTION"`
+}
+
+type Notices = []Notice0
 
 type RecordFeatures struct {
 	LibFeatID int64 `json:"LIB_FEAT_ID"`

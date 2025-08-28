@@ -12,6 +12,6 @@ namespace Senzing.Schema
         public IList<InterestingEntity> Entities { get; set; }
 
         [JsonPropertyName("NOTICES")]
-        public Notices Notices { get; set; }
+        public IList<InterestingEntitiesNotices> Notices { get; set; }
     }
 }

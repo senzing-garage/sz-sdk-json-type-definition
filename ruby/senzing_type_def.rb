@@ -1505,6 +1505,25 @@ module SenzingTypeDef
     end
   end
 
+  class InterestingEntitiesNotices
+    attr_accessor :code
+    attr_accessor :description
+
+    def self.from_json_data(data)
+      out = InterestingEntitiesNotices.new
+      out.code = SenzingTypeDef::from_json_data(String, data["CODE"])
+      out.description = SenzingTypeDef::from_json_data(String, data["DESCRIPTION"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CODE"] = SenzingTypeDef::to_json_data(code)
+      data["DESCRIPTION"] = SenzingTypeDef::to_json_data(description)
+      data
+    end
+  end
+
   class InterestingEntities
     attr_accessor :entities
     attr_accessor :notices
@@ -1512,7 +1531,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = InterestingEntities.new
       out.entities = SenzingTypeDef::from_json_data(Array[InterestingEntity], data["ENTITIES"])
-      out.notices = SenzingTypeDef::from_json_data(Notices, data["NOTICES"])
+      out.notices = SenzingTypeDef::from_json_data(Array[InterestingEntitiesNotices], data["NOTICES"])
       out
     end
 
@@ -1826,12 +1845,31 @@ module SenzingTypeDef
     end
   end
 
+  class Notice0
+    attr_accessor :code
+    attr_accessor :description
+
+    def self.from_json_data(data)
+      out = Notice0.new
+      out.code = SenzingTypeDef::from_json_data(String, data["CODE"])
+      out.description = SenzingTypeDef::from_json_data(String, data["DESCRIPTION"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["CODE"] = SenzingTypeDef::to_json_data(code)
+      data["DESCRIPTION"] = SenzingTypeDef::to_json_data(description)
+      data
+    end
+  end
+
   class Notices
     attr_accessor :value
 
     def self.from_json_data(data)
       out = Notices.new
-      out.value = SenzingTypeDef.from_json_data(Array[Notice], data)
+      out.value = SenzingTypeDef.from_json_data(Array[Notice0], data)
       out
     end
 
