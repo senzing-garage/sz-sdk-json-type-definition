@@ -56,7 +56,8 @@ FIX_FILES_MAP := \
 	FeatureScores.java \
 	MatchInfoCandidateKeys.java \
 	Record.java \
-	ResolvedEntity.java
+	ResolvedEntity.java \
+	SzEngineGetRecordResponse.java
 
 # Recursive assignment ('=')
 

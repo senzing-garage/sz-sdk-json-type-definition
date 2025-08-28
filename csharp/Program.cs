@@ -1,8 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Senzing.Schema;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
 
@@ -40,14 +38,9 @@ namespace Bob
             };
             recordKeyList.Add(recordKey2);
 
-            RecordKeys recordKeys = new RecordKeys
-            {
-                Records = recordKeyList
-            };
-
             SzEngineGetVirtualEntityByRecordIdRecordKeys recordKeyStruct = new SzEngineGetVirtualEntityByRecordIdRecordKeys
             {
-                Value = recordKeys
+                Records = recordKeyList
             };
 
             string recordKeysJson = JsonSerializer.Serialize(recordKeyStruct);

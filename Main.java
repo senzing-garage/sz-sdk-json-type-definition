@@ -46,12 +46,9 @@ class Main {
         recordKeyList.add(recordKey2);
 
         recordKeys.setRecords(recordKeyList);
-        SzEngineGetVirtualEntityByRecordIdRecordKeys keys = new SzEngineGetVirtualEntityByRecordIdRecordKeys(
-                recordKeys);
-
         String recordKeysJson;
         try {
-            recordKeysJson = objectMapper.writeValueAsString(keys);
+            recordKeysJson = objectMapper.writeValueAsString(recordKeys);
         } catch (Exception e) {
             throw e;
         }

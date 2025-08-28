@@ -339,6 +339,13 @@ export interface FeatureDescriptionValue {
   USED_FOR_SCORING: string;
 }
 
+export interface FeatureForAttribute {
+  FEAT_DESC: string;
+  FEAT_DESC_VALUES: FeatureDescriptionValue[];
+  LIB_FEAT_ID: number;
+  USAGE_TYPE: string;
+}
+
 export interface FeatureScoreForAttribute {
   CANDIDATE_FEAT: string;
   CANDIDATE_FEAT_ID: number;
@@ -357,6 +364,8 @@ export interface FeatureScoreForAttribute {
 }
 
 export type FeatureScores = string;
+
+export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
 export interface FinalState {
   NEED_REEVALUATION: number;
@@ -408,6 +417,14 @@ export interface G2config {
   CFG_SFUNC: CfgSfunc[];
   CONFIG_BASE_VERSION: ConfigBaseVersion;
   SYS_OOM: SysOom[];
+}
+
+export interface GetConfig {
+  G2_CONFIG: G2config;
+}
+
+export interface GetDataSourceRegistry {
+  DATA_SOURCES: DataSource[];
 }
 
 export interface HowResults {
@@ -489,6 +506,11 @@ export interface MatchInfo {
 
 export type MatchInfoCandidateKeys = string;
 
+export interface MatchInfoForAttribute {
+  FEAT_DESC: string;
+  FEAT_ID: number;
+}
+
 export interface MemberRecord {
   INTERNAL_ID: number;
   RECORDS: Records;
@@ -542,6 +564,13 @@ export interface RecordKey {
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+}
+
+export interface RecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: RecordKey[];
 }
 
 export interface RecordSummaryElement {
@@ -675,7 +704,9 @@ export interface SzConfigRegisterDataSourceResponse {
   DSRC_ID: number;
 }
 
-export type SzConfigUnregisterDataSourceResponse = Fixme;
+export interface SzConfigUnregisterDataSourceResponse {
+  FIXME: Fixme;
+}
 
 export interface SzDiagnosticCheckRepositoryPerformanceResponse {
   insertTime: number;
@@ -706,9 +737,13 @@ export interface SzEngineDeleteRecordResponse {
   RECORD_ID: string;
 }
 
-export type SzEngineExportCsvEntityReportCsvColumnList = Fixme;
+export interface SzEngineExportCsvEntityReportCsvColumnList {
+  FIXME: Fixme;
+}
 
-export type SzEngineFetchNextResponse = Fixme;
+export interface SzEngineFetchNextResponse {
+  FIXME: Fixme;
+}
 
 export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
   INTERESTING_ENTITIES: InterestingEntities;
@@ -718,7 +753,9 @@ export interface SzEngineFindInterestingEntitiesByRecordIdResponse {
   INTERESTING_ENTITIES: InterestingEntities;
 }
 
-export type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
+export interface SzEngineFindNetworkByEntityIdEntityIds {
+  FIXME: Fixme;
+}
 
 export interface SzEngineFindNetworkByEntityIdResponse {
   ENTITIES: Entity[];
@@ -739,9 +776,13 @@ export interface SzEngineFindNetworkByRecordIdResponse {
   MAX_ENTITY_LIMIT_REACHED: string;
 }
 
-export type SzEngineFindPathByEntityIdAvoidEntityIds = Fixme;
+export interface SzEngineFindPathByEntityIdAvoidEntityIds {
+  FIXME: Fixme;
+}
 
-export type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
+export interface SzEngineFindPathByEntityIdRequiredDataSources {
+  FIXME: Fixme;
+}
 
 export interface SzEngineFindPathByEntityIdResponse {
   ENTITIES: Entity[];
@@ -755,7 +796,9 @@ export interface SzEngineFindPathByRecordIdAvoidRecordKeys {
   RECORDS: RecordKey[];
 }
 
-export type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
+export interface SzEngineFindPathByRecordIdRequiredDataSources {
+  FIXME: Fixme;
+}
 
 export interface SzEngineFindPathByRecordIdResponse {
   ENTITIES: Entity[];
@@ -772,7 +815,9 @@ export interface SzEngineGetEntityByRecordIdResponse {
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
-export type SzEngineGetRecordPreviewResponse = Fixme;
+export interface SzEngineGetRecordPreviewResponse {
+  FIXME: Fixme;
+}
 
 export interface SzEngineGetRecordResponseFeatures {
   LIB_FEAT_ID: number;
@@ -803,9 +848,13 @@ export interface SzEngineGetRecordResponse {
   RELATIONSHIP_DATA: string[];
 }
 
-export type SzEngineGetRedoRecordResponse = Fixme;
+export interface SzEngineGetRedoRecordResponse {
+  FIXME: Fixme;
+}
 
-export type SzEngineGetStatsResponse = Fixme;
+export interface SzEngineGetStatsResponse {
+  FIXME: Fixme;
+}
 
 export interface SzEngineGetVirtualEntityByRecordIdRecordKeys {
   /**
@@ -843,34 +892,48 @@ export interface SzEngineReevaluateRecordResponse {
   RECORD_ID: string;
 }
 
-export type SzEngineSearchByAttributesAttributes = Fixme;
+export interface SzEngineSearchByAttributesAttributes {
+  FIXME: Fixme;
+}
 
 export interface SzEngineSearchByAttributesResponse {
   RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
   SEARCH_STATISTICS: SearchStatistics;
 }
 
-export type SzEngineSearchByAttributesSearchProfile = Fixme;
+export interface SzEngineSearchByAttributesSearchProfile {
+  FIXME: Fixme;
+}
 
-export type SzEngineStreamExportJsonEntityReportResponse = Fixme;
+export interface SzEngineStreamExportJsonEntityReportResponse {
+  FIXME: Fixme;
+}
 
 export interface SzEngineWhyEntitiesResponse {
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
-export type SzEngineWhyRecordInEntityResponse = Fixme;
+export interface SzEngineWhyRecordInEntityResponse {
+  FIXME: Fixme;
+}
 
 export interface SzEngineWhyRecordsResponse {
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResults;
 }
 
-export type SzEngineWhySearchAttributes = Fixme;
+export interface SzEngineWhySearchAttributes {
+  FIXME: Fixme;
+}
 
-export type SzEngineWhySearchResponse = Fixme;
+export interface SzEngineWhySearchResponse {
+  FIXME: Fixme;
+}
 
-export type SzEngineWhySearchSearchProfile = Fixme;
+export interface SzEngineWhySearchSearchProfile {
+  FIXME: Fixme;
+}
 
 export interface SzProductGetLicenseResponse {
   billing: string;
@@ -893,6 +956,10 @@ export interface SzProductGetVersionResponse {
   VERSION: string;
 }
 
+export interface VirtualEntity {
+  RESOLVED_ENTITY: ResolvedEntity;
+}
+
 export interface VirtualEntitySynopsis {
   MEMBER_RECORDS: MemberRecords;
   VIRTUAL_ENTITY_ID: string;
@@ -913,29 +980,3 @@ export interface WhyResult {
 }
 
 export type WhyResults = WhyResult[];
-
-export interface XxfeatureForAttribute {
-  FEAT_DESC: string;
-  FEAT_DESC_VALUES: FeatureDescriptionValue[];
-  LIB_FEAT_ID: number;
-  USAGE_TYPE: string;
-}
-
-export type XxfeatureScoresForAttribute = FeatureScoreForAttribute[];
-
-export interface XxgetConfig {
-  G2_CONFIG: G2config;
-}
-
-export interface XxgetDataSourceRegistry {
-  DATA_SOURCES: DataSource[];
-}
-
-export interface XxmatchInfoForAttribute {
-  FEAT_DESC: string;
-  FEAT_ID: number;
-}
-
-export interface XxvirtualEntity {
-  RESOLVED_ENTITY: ResolvedEntity;
-}

@@ -6,11 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class SzEngineWhySearchResponse {
+public class SzEngineStreamExportJsonEntityReportResponse {
     @JsonProperty("FIXME")
     private Fixme fixme;
 
-    public SzEngineWhySearchResponse() {
+    public SzEngineStreamExportJsonEntityReportResponse() {
     }
 
     /**

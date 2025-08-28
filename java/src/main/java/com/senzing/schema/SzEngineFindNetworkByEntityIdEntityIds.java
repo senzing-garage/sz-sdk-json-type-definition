@@ -2,26 +2,28 @@
 
 package com.senzing.schema;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+@JsonSerialize
 public class SzEngineFindNetworkByEntityIdEntityIds {
-    @JsonValue
-    private Fixme value;
+    @JsonProperty("FIXME")
+    private Fixme fixme;
 
     public SzEngineFindNetworkByEntityIdEntityIds() {
     }
 
-    @JsonCreator
-    public SzEngineFindNetworkByEntityIdEntityIds(Fixme value) {
-        this.value = value;
+    /**
+     * Getter for fixme.<p>
+     */
+    public Fixme getFixme() {
+        return fixme;
     }
 
-    public Fixme getValue() {
-        return value;
-    }
-
-    public void setValue(Fixme value) {
-        this.value = value;
+    /**
+     * Setter for fixme.<p>
+     */
+    public void setFixme(Fixme fixme) {
+        this.fixme = fixme;
     }
 }

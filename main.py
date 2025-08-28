@@ -18,7 +18,6 @@ from python.typedef import (
     SzDiagnosticGetRepositoryInfoResponse,
     SzEngineAddRecordResponse,
     SzEngineDeleteRecordResponse,
-    SzEngineFetchNextResponse,
     SzEngineFindInterestingEntitiesByRecordIDResponse,
     SzEngineFindNetworkByEntityIDResponse,
     SzEngineFindNetworkByRecordIDResponse,
@@ -304,8 +303,8 @@ virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
 print_fmt(virtual_entity, "response.affected_entities[0].entity_id")
 
 
-virtual_entity = SzEngineFetchNextResponse.from_json_data({})
-x = virtual_entity.value  # TODO:
+# virtual_entity = SzEngineFetchNextResponse.from_json_data({})
+# x = virtual_entity.value
 
 
 virtual_entity = SzEngineFindInterestingEntitiesByRecordIDResponse.from_json_data(

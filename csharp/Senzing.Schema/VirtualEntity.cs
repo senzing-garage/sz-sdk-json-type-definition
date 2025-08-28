@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class SzEngineSearchByAttributesAttributes
+    public class VirtualEntity
     {
-        [JsonPropertyName("FIXME")]
-        public Fixme Fixme { get; set; }
+        [JsonPropertyName("RESOLVED_ENTITY")]
+        public ResolvedEntity ResolvedEntity { get; set; }
     }
 }

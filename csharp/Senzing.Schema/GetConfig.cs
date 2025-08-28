@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class SzEngineSearchByAttributesAttributes
+    public class GetConfig
     {
-        [JsonPropertyName("FIXME")]
-        public Fixme Fixme { get; set; }
+        [JsonPropertyName("G2_CONFIG")]
+        public G2config G2Config { get; set; }
     }
 }

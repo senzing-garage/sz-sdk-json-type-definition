@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class SzEngineSearchByAttributesAttributes
+    public class SzEngineStreamExportJsonEntityReportResponse
     {
         [JsonPropertyName("FIXME")]
         public Fixme Fixme { get; set; }

@@ -46,6 +46,9 @@ func main() {
 	// Simulate calling Senzing SDK.
 
 	response, err := mockSzEngineGetVirtualEntityByRecordID(ctx, string(recordKeysBytes), 0)
+	if err != nil {
+		panic(err)
+	}
 
 	// Parse response.
 

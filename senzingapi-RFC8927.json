@@ -1061,7 +1061,7 @@
                 }
             }
         },
-        "XXFeatureForAttribute": {
+        "FeatureForAttribute": {
             "properties": {
                 "FEAT_DESC": {
                     "type": "string"
@@ -1160,7 +1160,7 @@
             },
             "type": "string"
         },
-        "XXFeatureScoresForAttribute": {
+        "FeatureScoresForAttribute": {
             "elements": {
                 "ref": "FeatureScoreForAttribute"
             }
@@ -1372,14 +1372,14 @@
                 }
             }
         },
-        "XXGetConfig": {
+        "GetConfig": {
             "properties": {
                 "G2_CONFIG": {
                     "ref": "G2Config"
                 }
             }
         },
-        "XXGetDataSourceRegistry": {
+        "GetDataSourceRegistry": {
             "properties": {
                 "DATA_SOURCES": {
                     "elements": {
@@ -1594,7 +1594,7 @@
             },
             "type": "string"
         },
-        "XXMatchInfoForAttribute": {
+        "MatchInfoForAttribute": {
             "properties": {
                 "FEAT_DESC": {
                     "type": "string"
@@ -1759,6 +1759,18 @@
                         "description": "The unique identifier within the set of records in the DATA_SOURCE."
                     },
                     "type": "string"
+                }
+            }
+        },
+        "RecordKeys": {
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordKey"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
                 }
             }
         },
@@ -2116,7 +2128,11 @@
             }
         },
         "SzConfigUnregisterDataSourceResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzConfigManagerGetConfigRegistryResponse": {
             "properties": {
@@ -2207,10 +2223,18 @@
             }
         },
         "SzEngineExportCsvEntityReportCsvColumnList": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineFetchNextResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineFindInterestingEntitiesByEntityIdResponse": {
             "properties": {
@@ -2227,7 +2251,11 @@
             }
         },
         "SzEngineFindNetworkByEntityIdEntityIds": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineFindNetworkByEntityIdResponse": {
             "properties": {
@@ -2276,10 +2304,18 @@
             }
         },
         "SzEngineFindPathByEntityIdAvoidEntityIds": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineFindPathByEntityIdRequiredDataSources": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineFindPathByEntityIdResponse": {
             "properties": {
@@ -2308,7 +2344,11 @@
             }
         },
         "SzEngineFindPathByRecordIdRequiredDataSources": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineFindPathByRecordIdResponse": {
             "properties": {
@@ -2349,7 +2389,11 @@
             }
         },
         "SzEngineGetRecordPreviewResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineGetRecordResponse": {
             "properties": {
@@ -2458,10 +2502,18 @@
             }
         },
         "SzEngineGetRedoRecordResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineGetStatsResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineGetVirtualEntityByRecordIdRecordKeys": {
             "properties": {
@@ -2544,7 +2596,11 @@
             }
         },
         "SzEngineSearchByAttributesAttributes": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineSearchByAttributesResponse": {
             "properties": {
@@ -2559,10 +2615,18 @@
             }
         },
         "SzEngineSearchByAttributesSearchProfile": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineStreamExportJsonEntityReportResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineWhyEntitiesResponse": {
             "properties": {
@@ -2577,7 +2641,11 @@
             }
         },
         "SzEngineWhyRecordInEntityResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineWhyRecordsResponse": {
             "properties": {
@@ -2592,13 +2660,25 @@
             }
         },
         "SzEngineWhySearchAttributes": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineWhySearchResponse": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzEngineWhySearchSearchProfile": {
-            "ref": "Fixme"
+            "properties": {
+                "FIXME": {
+                    "ref": "Fixme"
+                }
+            }
         },
         "SzProductGetLicenseResponse": {
             "properties": {
@@ -2656,7 +2736,7 @@
                 }
             }
         },
-        "XXVirtualEntity": {
+        "VirtualEntity": {
             "properties": {
                 "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"

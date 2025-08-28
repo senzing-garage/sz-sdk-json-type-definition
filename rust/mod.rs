@@ -751,6 +751,21 @@ pub struct FeatureDescriptionValue {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct FeatureForAttribute {
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "FEAT_DESC_VALUES")]
+    pub featDescValues: Vec<FeatureDescriptionValue>,
+
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
+
+    #[serde(rename = "USAGE_TYPE")]
+    pub usageType: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct FeatureScoreForAttribute {
     #[serde(rename = "CANDIDATE_FEAT")]
     pub candidateFeat: String,
@@ -796,6 +811,8 @@ pub struct FeatureScoreForAttribute {
 }
 
 pub type FeatureScores = String;
+
+pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
 
 #[derive(Serialize, Deserialize)]
 pub struct FinalState {
@@ -923,6 +940,18 @@ pub struct G2config {
 
     #[serde(rename = "SYS_OOM")]
     pub sysOom: Vec<SysOom>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct GetConfig {
+    #[serde(rename = "G2_CONFIG")]
+    pub g2Config: G2config,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct GetDataSourceRegistry {
+    #[serde(rename = "DATA_SOURCES")]
+    pub dataSources: Vec<DataSource>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1092,6 +1121,15 @@ pub struct MatchInfo {
 pub type MatchInfoCandidateKeys = String;
 
 #[derive(Serialize, Deserialize)]
+pub struct MatchInfoForAttribute {
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "FEAT_ID")]
+    pub featId: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct MemberRecord {
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
@@ -1197,6 +1235,13 @@ pub struct RecordKey {
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct RecordKeys {
+    /// A list of (data source code, record id) pairs.
+    #[serde(rename = "RECORDS")]
+    pub records: Vec<RecordKey>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1458,7 +1503,11 @@ pub struct SzConfigRegisterDataSourceResponse {
     pub dsrcId: i32,
 }
 
-pub type SzConfigUnregisterDataSourceResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzConfigUnregisterDataSourceResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzDiagnosticCheckRepositoryPerformanceResponse {
@@ -1517,9 +1566,17 @@ pub struct SzEngineDeleteRecordResponse {
     pub recordId: String,
 }
 
-pub type SzEngineExportCsvEntityReportCsvColumnList = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineExportCsvEntityReportCsvColumnList {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
-pub type SzEngineFetchNextResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineFetchNextResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindInterestingEntitiesByEntityIdResponse {
@@ -1533,7 +1590,11 @@ pub struct SzEngineFindInterestingEntitiesByRecordIdResponse {
     pub interestingEntities: InterestingEntities,
 }
 
-pub type SzEngineFindNetworkByEntityIdEntityIds = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineFindNetworkByEntityIdEntityIds {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindNetworkByEntityIdResponse {
@@ -1566,9 +1627,17 @@ pub struct SzEngineFindNetworkByRecordIdResponse {
     pub maxEntityLimitReached: String,
 }
 
-pub type SzEngineFindPathByEntityIdAvoidEntityIds = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineFindPathByEntityIdAvoidEntityIds {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
-pub type SzEngineFindPathByEntityIdRequiredDataSources = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineFindPathByEntityIdRequiredDataSources {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByEntityIdResponse {
@@ -1586,7 +1655,11 @@ pub struct SzEngineFindPathByRecordIdAvoidRecordKeys {
     pub records: Vec<RecordKey>,
 }
 
-pub type SzEngineFindPathByRecordIdRequiredDataSources = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineFindPathByRecordIdRequiredDataSources {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByRecordIdResponse {
@@ -1615,7 +1688,11 @@ pub struct SzEngineGetEntityByRecordIdResponse {
     pub resolvedEntity: ResolvedEntity,
 }
 
-pub type SzEngineGetRecordPreviewResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineGetRecordPreviewResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetRecordResponseFeatures {
@@ -1692,9 +1769,17 @@ pub struct SzEngineGetRecordResponse {
     pub relationshipData: Vec<String>,
 }
 
-pub type SzEngineGetRedoRecordResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineGetRedoRecordResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
-pub type SzEngineGetStatsResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineGetStatsResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetVirtualEntityByRecordIdRecordKeys {
@@ -1760,7 +1845,11 @@ pub struct SzEngineReevaluateRecordResponse {
     pub recordId: String,
 }
 
-pub type SzEngineSearchByAttributesAttributes = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineSearchByAttributesAttributes {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineSearchByAttributesResponse {
@@ -1771,9 +1860,17 @@ pub struct SzEngineSearchByAttributesResponse {
     pub searchStatistics: SearchStatistics,
 }
 
-pub type SzEngineSearchByAttributesSearchProfile = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineSearchByAttributesSearchProfile {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
-pub type SzEngineStreamExportJsonEntityReportResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineStreamExportJsonEntityReportResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhyEntitiesResponse {
@@ -1784,7 +1881,11 @@ pub struct SzEngineWhyEntitiesResponse {
     pub whyResults: WhyResults,
 }
 
-pub type SzEngineWhyRecordInEntityResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineWhyRecordInEntityResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhyRecordsResponse {
@@ -1795,11 +1896,23 @@ pub struct SzEngineWhyRecordsResponse {
     pub whyResults: WhyResults,
 }
 
-pub type SzEngineWhySearchAttributes = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineWhySearchAttributes {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
-pub type SzEngineWhySearchResponse = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineWhySearchResponse {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
-pub type SzEngineWhySearchSearchProfile = Fixme;
+#[derive(Serialize, Deserialize)]
+pub struct SzEngineWhySearchSearchProfile {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct SzProductGetLicenseResponse {
@@ -1853,6 +1966,12 @@ pub struct SzProductGetVersionResponse {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct VirtualEntity {
+    #[serde(rename = "RESOLVED_ENTITY")]
+    pub resolvedEntity: ResolvedEntity,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct VirtualEntitySynopsis {
     #[serde(rename = "MEMBER_RECORDS")]
     pub memberRecords: MemberRecords,
@@ -1888,47 +2007,3 @@ pub struct WhyResult {
 }
 
 pub type WhyResults = Vec<WhyResult>;
-
-#[derive(Serialize, Deserialize)]
-pub struct XxfeatureForAttribute {
-    #[serde(rename = "FEAT_DESC")]
-    pub featDesc: String,
-
-    #[serde(rename = "FEAT_DESC_VALUES")]
-    pub featDescValues: Vec<FeatureDescriptionValue>,
-
-    #[serde(rename = "LIB_FEAT_ID")]
-    pub libFeatId: i32,
-
-    #[serde(rename = "USAGE_TYPE")]
-    pub usageType: String,
-}
-
-pub type XxfeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
-
-#[derive(Serialize, Deserialize)]
-pub struct XxgetConfig {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct XxgetDataSourceRegistry {
-    #[serde(rename = "DATA_SOURCES")]
-    pub dataSources: Vec<DataSource>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct XxmatchInfoForAttribute {
-    #[serde(rename = "FEAT_DESC")]
-    pub featDesc: String,
-
-    #[serde(rename = "FEAT_ID")]
-    pub featId: i32,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct XxvirtualEntity {
-    #[serde(rename = "RESOLVED_ENTITY")]
-    pub resolvedEntity: ResolvedEntity,
-}

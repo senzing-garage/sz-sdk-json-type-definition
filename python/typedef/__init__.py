@@ -1131,6 +1131,30 @@ class FeatureDescriptionValue:
         return data
 
 @dataclass
+class FeatureForAttribute:
+    feat_desc: 'str'
+    feat_desc_values: 'List[FeatureDescriptionValue]'
+    lib_feat_id: 'int'
+    usage_type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
+        return cls(
+            _from_json_data(str, data.get("FEAT_DESC")),
+            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
+            _from_json_data(int, data.get("LIB_FEAT_ID")),
+            _from_json_data(str, data.get("USAGE_TYPE")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
+        data["FEAT_DESC_VALUES"] = _to_json_data(self.feat_desc_values)
+        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
+        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
+        return data
+
+@dataclass
 class FeatureScoreForAttribute:
     candidate_feat: 'str'
     candidate_feat_id: 'int'
@@ -1191,6 +1215,17 @@ class FeatureScores:
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScores':
         return cls(_from_json_data(Dict[str, FeatureScoresForAttribute], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class FeatureScoresForAttribute:
+    value: 'List[FeatureScoreForAttribute]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'FeatureScoresForAttribute':
+        return cls(_from_json_data(List[FeatureScoreForAttribute], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -1366,6 +1401,36 @@ class G2config:
         data["CFG_SFUNC"] = _to_json_data(self.cfg_sfunc)
         data["CONFIG_BASE_VERSION"] = _to_json_data(self.config_base_version)
         data["SYS_OOM"] = _to_json_data(self.sys_oom)
+        return data
+
+@dataclass
+class GetConfig:
+    g2_config: 'G2config'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'GetConfig':
+        return cls(
+            _from_json_data(G2config, data.get("G2_CONFIG")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["G2_CONFIG"] = _to_json_data(self.g2_config)
+        return data
+
+@dataclass
+class GetDataSourceRegistry:
+    data_sources: 'List[DataSource]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'GetDataSourceRegistry':
+        return cls(
+            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
         return data
 
 @dataclass
@@ -1628,6 +1693,24 @@ class MatchInfoCandidateKeys:
         return _to_json_data(self.value)
 
 @dataclass
+class MatchInfoForAttribute:
+    feat_desc: 'str'
+    feat_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'MatchInfoForAttribute':
+        return cls(
+            _from_json_data(str, data.get("FEAT_DESC")),
+            _from_json_data(int, data.get("FEAT_ID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
+        data["FEAT_ID"] = _to_json_data(self.feat_id)
+        return data
+
+@dataclass
 class MemberRecord:
     internal_id: 'int'
     records: 'Records'
@@ -1802,6 +1885,25 @@ class RecordKey:
         data: Dict[str, Any] = {}
         data["DATA_SOURCE"] = _to_json_data(self.data_source)
         data["RECORD_ID"] = _to_json_data(self.record_id)
+        return data
+
+@dataclass
+class RecordKeys:
+    records: 'List[RecordKey]'
+    """
+    A list of (data source code, record id) pairs.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RecordKeys':
+        return cls(
+            _from_json_data(List[RecordKey], data.get("RECORDS")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["RECORDS"] = _to_json_data(self.records)
         return data
 
 @dataclass
@@ -2251,14 +2353,18 @@ class SzConfigRegisterDataSourceResponse:
 
 @dataclass
 class SzConfigUnregisterDataSourceResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzConfigUnregisterDataSourceResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzDiagnosticCheckRepositoryPerformanceResponse:
@@ -2364,25 +2470,33 @@ class SzEngineDeleteRecordResponse:
 
 @dataclass
 class SzEngineExportCsvEntityReportCsvColumnList:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineExportCsvEntityReportCsvColumnList':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineFetchNextResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFetchNextResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineFindInterestingEntitiesByEntityIDResponse:
@@ -2416,14 +2530,18 @@ class SzEngineFindInterestingEntitiesByRecordIDResponse:
 
 @dataclass
 class SzEngineFindNetworkByEntityIDEntityIds:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByEntityIDEntityIds':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineFindNetworkByEntityIDResponse:
@@ -2488,25 +2606,33 @@ class SzEngineFindNetworkByRecordIDResponse:
 
 @dataclass
 class SzEngineFindPathByEntityIDAvoidEntityIds:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDAvoidEntityIds':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineFindPathByEntityIDRequiredDataSources:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDRequiredDataSources':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineFindPathByEntityIDResponse:
@@ -2547,14 +2673,18 @@ class SzEngineFindPathByRecordIDAvoidRecordKeys:
 
 @dataclass
 class SzEngineFindPathByRecordIDRequiredDataSources:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDRequiredDataSources':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineFindPathByRecordIDResponse:
@@ -2612,14 +2742,18 @@ class SzEngineGetEntityByRecordIDResponse:
 
 @dataclass
 class SzEngineGetRecordPreviewResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordPreviewResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineGetRecordResponseFeatures:
@@ -2716,25 +2850,33 @@ class SzEngineGetRecordResponse:
 
 @dataclass
 class SzEngineGetRedoRecordResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRedoRecordResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineGetStatsResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetStatsResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineGetVirtualEntityByRecordIDRecordKeys:
@@ -2859,14 +3001,18 @@ class SzEngineReevaluateRecordResponse:
 
 @dataclass
 class SzEngineSearchByAttributesAttributes:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesAttributes':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineSearchByAttributesResponse:
@@ -2888,25 +3034,33 @@ class SzEngineSearchByAttributesResponse:
 
 @dataclass
 class SzEngineSearchByAttributesSearchProfile:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesSearchProfile':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineStreamExportJSONEntityReportResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineStreamExportJSONEntityReportResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineWhyEntitiesResponse:
@@ -2928,14 +3082,18 @@ class SzEngineWhyEntitiesResponse:
 
 @dataclass
 class SzEngineWhyRecordInEntityResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordInEntityResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineWhyRecordsResponse:
@@ -2957,36 +3115,48 @@ class SzEngineWhyRecordsResponse:
 
 @dataclass
 class SzEngineWhySearchAttributes:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhySearchAttributes':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineWhySearchResponse:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhySearchResponse':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzEngineWhySearchSearchProfile:
-    value: 'Fixme'
+    fixme: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhySearchSearchProfile':
-        return cls(_from_json_data(Fixme, data))
+        return cls(
+            _from_json_data(Fixme, data.get("FIXME")),
+        )
 
     def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
+        data: Dict[str, Any] = {}
+        data["FIXME"] = _to_json_data(self.fixme)
+        return data
 
 @dataclass
 class SzProductGetLicenseResponse:
@@ -3058,6 +3228,21 @@ class SzProductGetVersionResponse:
         return data
 
 @dataclass
+class VirtualEntity:
+    resolved_entity: 'ResolvedEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'VirtualEntity':
+        return cls(
+            _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
+        return data
+
+@dataclass
 class VirtualEntitySynopsis:
     member_records: 'MemberRecords'
     virtual_entity_id: 'str'
@@ -3123,104 +3308,6 @@ class WhyResults:
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
-
-@dataclass
-class XxfeatureForAttribute:
-    feat_desc: 'str'
-    feat_desc_values: 'List[FeatureDescriptionValue]'
-    lib_feat_id: 'int'
-    usage_type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'XxfeatureForAttribute':
-        return cls(
-            _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
-            _from_json_data(int, data.get("LIB_FEAT_ID")),
-            _from_json_data(str, data.get("USAGE_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
-        data["FEAT_DESC_VALUES"] = _to_json_data(self.feat_desc_values)
-        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
-        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
-        return data
-
-@dataclass
-class XxfeatureScoresForAttribute:
-    value: 'List[FeatureScoreForAttribute]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'XxfeatureScoresForAttribute':
-        return cls(_from_json_data(List[FeatureScoreForAttribute], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class XxgetConfig:
-    g2_config: 'G2config'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'XxgetConfig':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
-
-@dataclass
-class XxgetDataSourceRegistry:
-    data_sources: 'List[DataSource]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'XxgetDataSourceRegistry':
-        return cls(
-            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
-        return data
-
-@dataclass
-class XxmatchInfoForAttribute:
-    feat_desc: 'str'
-    feat_id: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'XxmatchInfoForAttribute':
-        return cls(
-            _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(int, data.get("FEAT_ID")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
-        data["FEAT_ID"] = _to_json_data(self.feat_id)
-        return data
-
-@dataclass
-class XxvirtualEntity:
-    resolved_entity: 'ResolvedEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'XxvirtualEntity':
-        return cls(
-            _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
-        return data
 
 def _from_json_data(cls: Any, data: Any) -> Any:
     if data is None or cls in [bool, int, float, str, object] or cls is Any:
