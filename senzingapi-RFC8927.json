@@ -1066,7 +1066,7 @@
                 "FEAT_DESC": {
                     "type": "string"
                 },
-                "ATTRIBUTES": {
+                "FEAT_DESC_VALUES": {
                     "elements": {
                         "ref": "FeatureDescriptionValue"
                     }
