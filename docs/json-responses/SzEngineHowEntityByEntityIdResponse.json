@@ -34,8 +34,8 @@
                                     ],
                                     "INTERNAL_ID": "int32",
                                     "JSON_DATA": {
-                                        "customer_record_json_key_1": "customer_record_json_value_1",
-                                        "customer_record_json_key_2": "customer_record_json_value_2"
+                                        "<user_record_json_key_1>": "user_record_json_value_1",
+                                        "<user_record_json_key_2>": "user_record_json_value_2"
                                     },
                                     "LAST_SEEN_DT": "timestamp",
                                     "MATCH_KEY": "string",
@@ -53,7 +53,11 @@
                                     "RECORD_ID": "string",
                                     "RELATIONSHIP_DATA": [
                                         "string"
-                                    ]
+                                    ],
+                                    "UNMAPPED_DATA": {
+                                        "<user_record_json_key_1>": "user_record_json_value_1",
+                                        "<user_record_json_key_2>": "user_record_json_value_2"
+                                    }
                                 }
                             ]
                         }
@@ -67,7 +71,7 @@
                 "INBOUND_VIRTUAL_ENTITY_ID": "string",
                 "MATCH_INFO": {
                     "CANDIDATE_KEYS": {
-                        "user_defined_json_key": [
+                        "<user_defined_json_key>": [
                             {
                                 "FEAT_DESC": "string",
                                 "FEAT_ID": "int32"
@@ -112,7 +116,7 @@
                     },
                     "ERRULE_CODE": "string",
                     "FEATURE_SCORES": {
-                        "user_defined_json_key": [
+                        "<user_defined_json_key>": [
                             {
                                 "CANDIDATE_FEAT": "string",
                                 "CANDIDATE_FEAT_ID": "int32",
@@ -170,8 +174,8 @@
                                     ],
                                     "INTERNAL_ID": "int32",
                                     "JSON_DATA": {
-                                        "customer_record_json_key_1": "customer_record_json_value_1",
-                                        "customer_record_json_key_2": "customer_record_json_value_2"
+                                        "<user_record_json_key_1>": "user_record_json_value_1",
+                                        "<user_record_json_key_2>": "user_record_json_value_2"
                                     },
                                     "LAST_SEEN_DT": "timestamp",
                                     "MATCH_KEY": "string",
@@ -189,7 +193,11 @@
                                     "RECORD_ID": "string",
                                     "RELATIONSHIP_DATA": [
                                         "string"
-                                    ]
+                                    ],
+                                    "UNMAPPED_DATA": {
+                                        "<user_record_json_key_1>": "user_record_json_value_1",
+                                        "<user_record_json_key_2>": "user_record_json_value_2"
+                                    }
                                 }
                             ]
                         }
@@ -227,8 +235,8 @@
                                     ],
                                     "INTERNAL_ID": "int32",
                                     "JSON_DATA": {
-                                        "customer_record_json_key_1": "customer_record_json_value_1",
-                                        "customer_record_json_key_2": "customer_record_json_value_2"
+                                        "<user_record_json_key_1>": "user_record_json_value_1",
+                                        "<user_record_json_key_2>": "user_record_json_value_2"
                                     },
                                     "LAST_SEEN_DT": "timestamp",
                                     "MATCH_KEY": "string",
@@ -246,7 +254,11 @@
                                     "RECORD_ID": "string",
                                     "RELATIONSHIP_DATA": [
                                         "string"
-                                    ]
+                                    ],
+                                    "UNMAPPED_DATA": {
+                                        "<user_record_json_key_1>": "user_record_json_value_1",
+                                        "<user_record_json_key_2>": "user_record_json_value_2"
+                                    }
                                 }
                             ]
                         }

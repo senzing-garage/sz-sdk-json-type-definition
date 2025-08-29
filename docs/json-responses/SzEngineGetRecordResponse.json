@@ -14,7 +14,7 @@
     "ENTITY_TYPE": "string",
     "ERRULE_CODE": "string",
     "FEATURES": {
-        "user_defined_json_key": [
+        "<user_defined_json_key>": [
             {
                 "FEAT_DESC": "string",
                 "ATTRIBUTES": [
@@ -104,8 +104,8 @@
     ],
     "INTERNAL_ID": "int32",
     "JSON_DATA": {
-        "customer_record_json_key_1": "customer_record_json_value_1",
-        "customer_record_json_key_2": "customer_record_json_value_2"
+        "<user_record_json_key_1>": "user_record_json_value_1",
+        "<user_record_json_key_2>": "user_record_json_value_2"
     },
     "LAST_SEEN_DT": "timestamp",
     "MATCH_KEY": "string",
@@ -125,7 +125,7 @@
         "string"
     ],
     "UNMAPPED_DATA": {
-        "customer_record_json_key_1": "customer_record_json_value_1",
-        "customer_record_json_key_2": "customer_record_json_value_2"
+        "<user_record_json_key_1>": "user_record_json_value_1",
+        "<user_record_json_key_2>": "user_record_json_value_2"
     }
 }

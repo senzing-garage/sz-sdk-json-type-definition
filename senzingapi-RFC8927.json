@@ -1082,7 +1082,7 @@
                 }
             }
         },
-        "FeatureForAttributeGetRecord": {
+        "FeatureForAttributeWithAttributes": {
             "properties": {
                 "FEAT_DESC": {
                     "type": "string"
@@ -1090,6 +1090,32 @@
                 "ATTRIBUTES": {
                     "elements": {
                         "ref": "SenzingEntitySpecification"
+                    }
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "USAGE_TYPE": {
+                    "type": "string"
+                }
+            }
+        },
+        "FeatureForGetEntity": {
+            "properties": {
+                "ATTRIBUTES": {
+                    "elements": {
+                        "ref": "SenzingEntitySpecification"
+                    }
+                },
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "FEAT_DESC_VALUES": {
+                    "elements": {
+                        "ref": "FeatureDescriptionValue"
                     }
                 },
                 "LIB_FEAT_ID": {
@@ -1780,6 +1806,128 @@
                     "elements": {
                         "type": "string"
                     }
+                },
+                "UNMAPPED_DATA": {
+                    "metadata": {
+                        "goType": "map[string]any",
+                        "javaJacksonType": "Map<String, Map<String, Object>>",
+                        "pythonType": "Dict[str, object]"
+                    },
+                    "type": "string"
+                }
+            }
+        },
+        "RecordForGetEntity": {
+            "properties": {
+                "ADDRESS_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "ATTRIBUTE_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "DATA_SOURCE": {
+                    "type": "string"
+                },
+                "ENTITY_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "ENTITY_DESC": {
+                    "type": "string"
+                },
+                "ENTITY_KEY": {
+                    "type": "string"
+                },
+                "ENTITY_TYPE": {
+                    "type": "string"
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                },
+                "FEATURES": {
+                    "elements": {
+                        "properties": {
+                            "LIB_FEAT_ID": {
+                                "metadata": {
+                                    "goType": "int64"
+                                },
+                                "type": "int32"
+                            },
+                            "USAGE_TYPE": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "IDENTIFIER_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "INTERNAL_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "JSON_DATA": {
+                    "metadata": {
+                        "goType": "map[string]any",
+                        "javaJacksonType": "Map<String, Map<String, Object>>",
+                        "pythonType": "Dict[str, object]"
+                    },
+                    "type": "string"
+                },
+                "LAST_SEEN_DT": {
+                    "type": "timestamp"
+                },
+                "MATCH_KEY": {
+                    "type": "string"
+                },
+                "MATCH_LEVEL": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "type": "string"
+                },
+                "NAME_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "OTHER_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "PHONE_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "RECORD_ID": {
+                    "type": "string"
+                },
+                "RELATIONSHIP_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "UNMAPPED_DATA": {
+                    "metadata": {
+                        "goType": "map[string]any",
+                        "javaJacksonType": "Map<String, Map<String, Object>>",
+                        "pythonType": "Dict[str, object]"
+                    },
+                    "type": "string"
                 }
             }
         },
@@ -1833,6 +1981,11 @@
         "Records": {
             "elements": {
                 "ref": "Record"
+            }
+        },
+        "RecordsForGetEntity": {
+            "elements": {
+                "ref": "RecordForGetEntity"
             }
         },
         "RelatedEntity": {
@@ -1947,10 +2100,10 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttribute>>",
-                        "goType": "map[string][]FeatureForAttribute",
-                        "javaJacksonType": "Map<String, List<FeatureForAttribute>>",
-                        "pythonType": "Dict[str, List[FeatureForAttribute]]"
+                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
+                        "goType": "map[string][]FeatureForAttributeWithAttributes",
+                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
+                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]"
                     },
                     "type": "string"
                 },
@@ -1983,6 +2136,67 @@
                 },
                 "RECORDS": {
                     "ref": "Records"
+                },
+                "RECORD_SUMMARY": {
+                    "elements": {
+                        "ref": "RecordSummaryElement"
+                    }
+                }
+            }
+        },
+        "ResolvedEntityForGetEntity": {
+            "properties": {
+                "ENTITY_ID": {
+                    "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "ENTITY_NAME": {
+                    "type": "string"
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                },
+                "FEATURES": {
+                    "metadata": {
+                        "csharpSystemTextType": "Dictionary<string, List<FeatureForGetEntity>>",
+                        "goType": "map[string][]FeatureForGetEntity",
+                        "javaJacksonType": "Map<String, List<FeatureForGetEntity>>",
+                        "pythonType": "Dict[str, List[FeatureForGetEntity]]"
+                    },
+                    "type": "string"
+                },
+                "IS_AMBIGUOUS": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "IS_DISCLOSED": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LAST_SEEN_DT": {
+                    "type": "timestamp"
+                },
+                "MATCH_KEY": {
+                    "type": "string"
+                },
+                "MATCH_LEVEL": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "type": "string"
+                },
+                "RECORDS": {
+                    "ref": "RecordsForGetEntity"
                 },
                 "RECORD_SUMMARY": {
                     "elements": {
@@ -2632,7 +2846,7 @@
                     }
                 },
                 "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
+                    "ref": "ResolvedEntityForGetEntity"
                 }
             }
         },
@@ -2644,7 +2858,7 @@
                     }
                 },
                 "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
+                    "ref": "ResolvedEntityForGetEntity"
                 }
             }
         },
@@ -2689,10 +2903,10 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeGetRecord>>",
-                        "goType": "map[string][]FeatureForAttributeGetRecord",
-                        "javaJacksonType": "Map<String, List<FeatureForAttributeGetRecord>>",
-                        "pythonType": "Dict[str, List[FeatureForAttributeGetRecord]]"
+                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
+                        "goType": "map[string][]FeatureForAttributeWithAttributes",
+                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
+                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]"
                     },
                     "type": "string"
                 },
