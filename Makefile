@@ -188,6 +188,10 @@ test-typescript:
 	@node main.js
 
 
+.PHONY: test-using-senzing
+test-using-senzing:
+	./bin/test_using_senzing.py
+
 # -----------------------------------------------------------------------------
 # Coverage
 # -----------------------------------------------------------------------------
