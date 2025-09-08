@@ -107,6 +107,21 @@ These are "one-time tasks" which may already have been completed.
 
     ```
 
+## Update testdata/sqlite
+
+1. Create a SQLite database with TruthSet datasources.
+
+    ```console
+    rm ${GIT_REPOSITORY_DIR}/testdata/sqlite/G2C.db
+
+    docker run \
+        --env SENZING_TOOLS_DATABASE_URL=sqlite3://na:na@/tmp/sqlite/G2C.db \
+        --env SENZING_TOOLS_DATASOURCES="CUSTOMER REFERENCE WATCHLIST" \
+        --rm \
+        --volume ${GIT_REPOSITORY_DIR}/testdata/sqlite/:/tmp/sqlite \
+        senzing/init-database
+    ```
+
 ## Lint
 
 1. Run linting.
