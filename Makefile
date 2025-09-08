@@ -190,7 +190,7 @@ test-typescript:
 
 .PHONY: test-using-senzing
 test-using-senzing:
-	@./bin/test_using_senzing.py
+	@$(activate-venv); ./bin/test_using_senzing.py
 
 # -----------------------------------------------------------------------------
 # Coverage

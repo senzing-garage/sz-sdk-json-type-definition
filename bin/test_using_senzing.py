@@ -10,10 +10,15 @@ import json
 import os
 import pathlib
 import subprocess
-import sys
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
+from senzing import SzAbstractFactory, SzError
+from senzing_core import SzAbstractFactoryCore
+
+# import sys
+
+
+# SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# sys.path.append(os.path.dirname(SCRIPT_DIR))
 # from python.typedef import (  # pylint: disable=wrong-import-position disable=wildcard-import
 #     SzEngineAddRecordResponse,
 #     SzEngineDeleteRecordResponse,
@@ -29,12 +34,7 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 
 # -----------------------------------------------------------------------------
-# Utility functions
-# -----------------------------------------------------------------------------
-
-
-# -----------------------------------------------------------------------------
-# Methods to process RFC8927.json file
+# Methods to process RFC8927.json file and create SCHEMA variable.
 # -----------------------------------------------------------------------------
 
 GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
@@ -193,61 +193,86 @@ def recurse(json_value):
 # Utility functions
 # -----------------------------------------------------------------------------
 
+
+def compare_sz_config(sz_abstract_factory: SzAbstractFactory):
+    """
+    Test
+        "SzConfigExportResponse",
+        "SzConfigGetDataSourceRegistryResponse",
+        "SzConfigManagerGetConfigRegistryResponse",
+        "SzConfigRegisterDataSourceResponse",
+        "SzConfigUnregisterDataSourceResponse",
+    """
+
+    sz_config_manager = sz_abstract_factory.create_configmanager()
+    sz_config = sz_config_manager.create_config_from_template()
+
+    # X
+
+    test_name = "sz_config.export()"
+    xxx = sz_config.export()
+    title = "SzConfigExportResponse"
+    json_schema = SCHEMA.get(title)
+    compare_to_schema(test_name, title, json_schema, json.loads(xxx))
+
+    # X
+    test_name = "sz_config.get_data_source_registry()"
+    xxx = sz_config.get_data_source_registry()
+    title = "SzConfigGetDataSourceRegistryResponse"
+    json_schema = SCHEMA.get(title)
+    compare_to_schema(test_name, title, json_schema, json.loads(xxx))
+
+
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
 
 
-def compare_to_schema(json_path, schema, fragment):
-
-    # indent = "    "
-
-    output(1, f"Path: {json_path}")
+def compare_to_schema(test_name, json_path, schema, fragment):
 
     if isinstance(fragment, list):
         if not isinstance(schema, list):
-            output(2, "Error:")
-            output(3, "Missing list")
-            output(3, f"schema: {schema}")
-            output(3, f"  json: {fragment}")
+            error_message(test_name, json_path, "Missing list", schema, fragment)
+            return
         schema_list = schema[0]
         index = 0
         for x in fragment:
             index += 1
-            compare_to_schema(f"{json_path}.{index}", schema_list, x)
+            compare_to_schema(test_name, f"{json_path}.{index}", schema_list, x)
         return
 
     if isinstance(fragment, dict):
         if not isinstance(schema, dict):
-            output(2, "Error:")
-            output(3, "Missing dict")
-            output(3, f"schema: {schema}")
-            output(3, f"  json: {fragment}")
+            error_message(test_name, json_path, "Missing dict", schema, fragment)
+            return
         for key, value in fragment.items():
             schema_value = schema.get(key, {})
-            compare_to_schema(f"{json_path}.{key}", schema_value, value)
+            compare_to_schema(test_name, f"{json_path}.{key}", schema_value, value)
         return
 
     if isinstance(fragment, int):
         if not schema == "int32":
-            output(2, "Error:")
-            output(3, "Incorrect specification for int")
-            output(3, f"schema: {schema}")
-            output(3, f"  json: {fragment}")
+            error_message(
+                test_name,
+                json_path,
+                "Incorrect specification for int",
+                schema,
+                fragment,
+            )
         return
 
     if isinstance(fragment, str):
         if not schema == "string":
-            output(2, "Error:")
-            output(3, "Incorrect specification for string")
-            output(3, f"schema: {schema}")
-            output(3, f"  json: {fragment}")
+            error_message(
+                test_name,
+                json_path,
+                "Incorrect specification for string",
+                schema,
+                fragment,
+            )
         return
 
-    output(2, "Error:")
-    output(3, "Unknown value")
-    output(3, f"schema: {schema}")
-    output(3, f"  json: {fragment}")
+    error_message(test_name, json_path, "Unknown value", schema, fragment)
 
 
 def is_json_subset(subset_json, full_json):
@@ -318,6 +343,15 @@ def output(indentation, message):
     print(f"{"    " * indentation}{message}")
 
 
+def error_message(test_name, json_path, message, schema, fragment):
+    output(0, test_name)
+    output(1, f"Path: {json_path}")
+    output(2, "Error:")
+    output(3, message)
+    output(3, f"schema: {schema}")
+    output(3, f"  json: {fragment}")
+
+
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
@@ -346,7 +380,26 @@ if __name__ == "__main__":
 
         SCHEMA[requested_json_key] = recurse(json_value)
 
+    # Create SzAbstractFactory
+
+    instance_name = "Example"
+    settings = {
+        "PIPELINE": {
+            "CONFIGPATH": "/etc/opt/senzing",
+            "RESOURCEPATH": "/opt/senzing/er/resources",
+            "SUPPORTPATH": "/opt/senzing/data",
+        },
+        "SQL": {"CONNECTION": "sqlite3://na:na@/tmp/sqlite/G2C.db"},
+    }
+
+    try:
+        sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
+    except SzError as err:
+        print(f"\nERROR: {err}\n")
+
     # Xxxxxx
+
+    compare_sz_config(sz_abstract_factory)
 
     example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
     example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
@@ -360,4 +413,5 @@ if __name__ == "__main__":
     # print(json.dumps(json_schema))
 
     # print(is_json_subset(example_json, json_schema))
-    compare_to_schema(title, json_schema, json.loads(example_json))
+    test_name = "bob"
+    compare_to_schema(test_name, title, json_schema, json.loads(example_json))
