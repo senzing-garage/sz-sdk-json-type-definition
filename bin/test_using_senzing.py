@@ -10,12 +10,15 @@ import json
 import os
 import pathlib
 import subprocess
+import sys
 
-from senzing import SzAbstractFactory, SzError
+from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
 
+ERROR_COUNT = 0
+
 # -----------------------------------------------------------------------------
-# Methods to process RFC8927.json file and create SCHEMA variable.
+# Functions to process RFC8927.json file and create SCHEMA variable.
 # -----------------------------------------------------------------------------
 
 GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
@@ -171,12 +174,56 @@ def recurse(json_value):
 
 
 # -----------------------------------------------------------------------------
-# Utility functions
+# Functions to compare JSON vs the RFC8927 schema.
 # -----------------------------------------------------------------------------
 
 
 def add_records(sz_abstract_factory: SzAbstractFactory):
-    pass
+
+    filenames = [
+        "customers.jsonl",
+        "reference.jsonl",
+        "watchlist.jsonl",
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    sz_config_manager = sz_abstract_factory.create_configmanager()
+
+    # Register datasources.  TODO: fix underlying database.
+
+    current_config_id = sz_config_manager.get_default_config_id()
+    sz_config = sz_config_manager.create_config_from_config_id(current_config_id)
+
+    for data_source in ("CUSTOMERS", "REFERENCE", "WATCHLIST"):
+        sz_config.register_data_source(data_source)
+
+    new_config = sz_config.export()
+    new_config_id = sz_config_manager.register_config(
+        new_config, "sz-sdk-json-type-definition"
+    )
+    sz_config_manager.replace_default_config_id(current_config_id, new_config_id)
+    sz_abstract_factory.reinitialize(new_config_id)
+
+    # Add records.
+
+    flags = SzEngineFlags.SZ_ADD_RECORD_DEFAULT_FLAGS
+
+    current_path = pathlib.Path(__file__).parent.resolve()
+    for filename in filenames:
+        file_path = os.path.abspath(
+            "{0}/../testdata/truthsets/{1}".format(current_path, filename)
+        )
+        with open(file_path, "r", encoding="utf-8") as input_file:
+            for line in input_file:
+                line_as_dict = json.loads(line)
+                data_source = line_as_dict.get("DATA_SOURCE")
+                record_id = line_as_dict.get("RECORD_ID")
+                response = sz_engine.add_record(data_source, record_id, line, flags)
+                test_this(
+                    f"Add record: {filename}/{data_source}/{record_id}",
+                    "SzEngineAddRecordResponse",
+                    response,
+                )
 
 
 def compare_static(sz_abstract_factory: SzAbstractFactory):
@@ -184,6 +231,7 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
     sz_config_manager = sz_abstract_factory.create_configmanager()
     sz_config = sz_config_manager.create_config_from_template()
     sz_diagnostic = sz_abstract_factory.create_diagnostic()
+    sz_engine = sz_abstract_factory.create_engine()
     sz_product = sz_abstract_factory.create_product()
 
     # Define testcases
@@ -222,6 +270,10 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
             "response": "SzDiagnosticGetRepositoryInfoResponse",
         },
         {
+            "testcase": "sz_engine.get_stats()",
+            "response": "SzEngineGetStatsResponse",
+        },
+        {
             "testcase": "sz_product.get_license()",
             "response": "SzProductGetLicenseResponse",
         },
@@ -251,9 +303,11 @@ def test_this(test_name, title, response):
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):
+    global ERROR_COUNT
 
     if isinstance(fragment, list):
         if not isinstance(schema, list):
+            ERROR_COUNT += 1
             error_message(test_name, json_path, "Missing list", schema, fragment)
             return
         schema_list = schema[0]
@@ -265,6 +319,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
 
     if isinstance(fragment, dict):
         if not isinstance(schema, dict):
+            ERROR_COUNT += 1
             error_message(test_name, json_path, "Missing dict", schema, fragment)
             return
         for key, value in fragment.items():
@@ -274,6 +329,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
 
     if isinstance(fragment, int):
         if not schema == "int32":
+            ERROR_COUNT += 1
             error_message(
                 test_name,
                 json_path,
@@ -297,6 +353,9 @@ def compare_to_schema(test_name, json_path, schema, fragment):
     if fragment is None:
         return
 
+    # If ending up here, there's an error.
+
+    ERROR_COUNT += 1
     error_message(test_name, json_path, "Unknown value", schema, fragment)
 
 
@@ -441,3 +500,6 @@ if __name__ == "__main__":
     # print(is_json_subset(example_json, json_schema))
     # test_name = "bob"
     # compare_to_schema(test_name, title, json_schema, json.loads(example_json))
+
+if ERROR_COUNT > 0:
+    sys.exit(1)
