@@ -122,6 +122,28 @@ These are "one-time tasks" which may already have been completed.
         senzing/init-database
     ```
 
+## Update testdata/truthsets
+
+1. Download the 3 Truth-Set files into the `testdata/truthsets` directory.
+
+    ```console
+    curl -X GET \
+        --output ${GIT_REPOSITORY_DIR}/testdata/truthsets/customers.jsonl \
+        https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/customers.jsonl
+    ```
+
+    ```console
+    curl -X GET \
+        --output ${GIT_REPOSITORY_DIR}/testdata/truthsets/reference.jsonl \
+        https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/reference.jsonl
+    ```
+
+    ```console
+    curl -X GET \
+        --output ${GIT_REPOSITORY_DIR}/testdata/truthsets/watchlist.jsonl \
+        https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
+    ```
+
 ## Lint
 
 1. Run linting.
