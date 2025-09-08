@@ -14,25 +14,6 @@ import subprocess
 from senzing import SzAbstractFactory, SzError
 from senzing_core import SzAbstractFactoryCore
 
-# import sys
-
-
-# SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-# sys.path.append(os.path.dirname(SCRIPT_DIR))
-# from python.typedef import (  # pylint: disable=wrong-import-position disable=wildcard-import
-#     SzEngineAddRecordResponse,
-#     SzEngineDeleteRecordResponse,
-#     SzEngineFindNetworkByEntityIDResponse,
-#     SzEngineFindNetworkByRecordIDResponse,
-#     SzEngineFindPathByEntityIDResponse,
-#     SzEngineFindPathByRecordIDResponse,
-#     SzEngineGetEntityByEntityIDResponse,
-#     SzEngineGetEntityByRecordIDResponse,
-#     SzEngineGetRecordResponse,
-#     SzEngineGetVirtualEntityByRecordIDResponse,
-# )
-
-
 # -----------------------------------------------------------------------------
 # Methods to process RFC8927.json file and create SCHEMA variable.
 # -----------------------------------------------------------------------------
@@ -195,37 +176,79 @@ def recurse(json_value):
 
 
 def compare_sz_config(sz_abstract_factory: SzAbstractFactory):
-    """
-    Test
-        "SzConfigExportResponse",
-        "SzConfigGetDataSourceRegistryResponse",
-        "SzConfigManagerGetConfigRegistryResponse",
-        "SzConfigRegisterDataSourceResponse",
-        "SzConfigUnregisterDataSourceResponse",
-    """
 
     sz_config_manager = sz_abstract_factory.create_configmanager()
     sz_config = sz_config_manager.create_config_from_template()
 
+    # Define testcases
+
+    testcases = [
+        {
+            "testcase": "sz_config.export()",
+            "response": "SzConfigExportResponse",
+        },
+        {
+            "testcase": "sz_config.get_data_source_registry()",
+            "response": "SzConfigGetDataSourceRegistryResponse",
+        },
+        {
+            "testcase": "sz_config_manager.get_config_registry()",
+            "response": "SzConfigManagerGetConfigRegistryResponse",
+        },
+        {
+            "testcase": 'sz_config.register_data_source("A_DATASOURCE_NAME")',
+            "response": "SzConfigRegisterDataSourceResponse",
+        },
+        {
+            "testcase": 'sz_config.unregister_data_source("A_DATASOURCE_NAME")',
+            "response": "SzConfigUnregisterDataSourceResponse",
+        },
+    ]
+
+    for testcase in testcases:
+        test_this(
+            testcase.get("testcase"),
+            testcase.get("response"),
+            eval(testcase.get("testcase")),
+        )
+
+    # test_this(
+    #     "sz_config.get_data_source_registry()",
+    #     "SzConfigGetDataSourceRegistryResponse",
+    #     sz_config.get_data_source_registry(),
+    # )
+
     # X
 
-    test_name = "sz_config.export()"
-    xxx = sz_config.export()
-    title = "SzConfigExportResponse"
-    json_schema = SCHEMA.get(title)
-    compare_to_schema(test_name, title, json_schema, json.loads(xxx))
+    # test_this(
+    #     "sz_config.export()",
+    #     "SzConfigExportResponse",
+    #     sz_config.export(),
+    # )
+
+    # test_name = "sz_config.export()"
+    # xxx = sz_config.export()
+    # title = "SzConfigExportResponse"
+    # json_schema = SCHEMA.get(title)
+    # compare_to_schema(test_name, title, json_schema, json.loads(xxx))
 
     # X
-    test_name = "sz_config.get_data_source_registry()"
-    xxx = sz_config.get_data_source_registry()
-    title = "SzConfigGetDataSourceRegistryResponse"
-    json_schema = SCHEMA.get(title)
-    compare_to_schema(test_name, title, json_schema, json.loads(xxx))
+    # test_name = "sz_config.get_data_source_registry()"
+    # xxx = sz_config.get_data_source_registry()
+    # title = "SzConfigGetDataSourceRegistryResponse"
+    # json_schema = SCHEMA.get(title)
+    # compare_to_schema(test_name, title, json_schema, json.loads(xxx))
 
 
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
+
+
+def test_this(test_name, title, response):
+    if response:
+        json_schema = SCHEMA.get(title)
+        compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):
@@ -270,6 +293,9 @@ def compare_to_schema(test_name, json_path, schema, fragment):
                 schema,
                 fragment,
             )
+        return
+
+    if fragment is None:
         return
 
     error_message(test_name, json_path, "Unknown value", schema, fragment)
@@ -401,17 +427,17 @@ if __name__ == "__main__":
 
     compare_sz_config(sz_abstract_factory)
 
-    example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
-    example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
+    # example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
+    # example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
     # example_json = '{"AFFECTED_ENTITIES": [{"ENTITY_ID": "int32"}], "DATA_SOURCE": "string", "INTERESTING_ENTITIES": {"ENTITIES": [{"DEGREES": "int32", "ENTITY_ID": "int32", "FLAGS": ["string"], "SAMPLE_RECORDS": [{"DATA_SOURCE": "string", "FLAGS": ["string"], "RECORD_ID": "string"}]}], "NOTICES": [{"CODE": "string", "DESCRIPTION": "string"}]}, "RECORD_ID": "string"}'
 
-    title = "SzEngineDeleteRecordResponse"
-    json_schema = SCHEMA.get(title)
+    # title = "SzEngineDeleteRecordResponse"
+    # json_schema = SCHEMA.get(title)
 
     # xschema = infer_json_type_definition(example_json)
     # print(xschema)
     # print(json.dumps(json_schema))
 
     # print(is_json_subset(example_json, json_schema))
-    test_name = "bob"
-    compare_to_schema(test_name, title, json_schema, json.loads(example_json))
+    # test_name = "bob"
+    # compare_to_schema(test_name, title, json_schema, json.loads(example_json))

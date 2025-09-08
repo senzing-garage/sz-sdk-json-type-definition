@@ -1412,6 +1412,13 @@
                 "CONFIG_BASE_VERSION": {
                     "ref": "CONFIG_BASE_VERSION"
                 },
+                "SETTINGS": {
+                    "properties": {
+                        "METAPHONE_VERSION": {
+                            "type": "int32"
+                        }
+                    }
+                },
                 "SYS_OOM": {
                     "elements": {
                         "ref": "SYS_OOM"
