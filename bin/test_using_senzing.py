@@ -27,15 +27,18 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 #     SzEngineGetVirtualEntityByRecordIDResponse,
 # )
 
+
+INDENT = "    "
+
+
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
 
 
 # -----------------------------------------------------------------------------
-# Parse
+# Methods to process RFC8927.json file
 # -----------------------------------------------------------------------------
-
 
 GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
 GLOBAL_JSON_KEYS = [
@@ -193,6 +196,62 @@ def recurse(json_value):
 # Utility functions
 # -----------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
+# Utility functions
+# -----------------------------------------------------------------------------
+
+
+def compare_to_schema(json_path, schema, fragment):
+
+    # indent = "    "
+
+    print(f"{INDENT}Path: {json_path}")
+
+    if isinstance(fragment, list):
+        if not isinstance(schema, list):
+            print(f"{INDENT * 2}Error:")
+            print(f"{INDENT * 3}Missing list")
+            print(f"{INDENT * 3}schema: {schema}")
+            print(f"{INDENT * 3}  json: {fragment}")
+        schema_list = schema[0]
+        index = 0
+        for x in fragment:
+            index += 1
+            compare_to_schema(f"{json_path}.{index}", schema_list, x)
+        return
+
+    if isinstance(fragment, dict):
+        if not isinstance(schema, dict):
+            print(f"{INDENT * 2}Error:")
+            print(f"{INDENT * 3}Missing dict")
+            print(f"{INDENT * 3}schema: {schema}")
+            print(f"{INDENT * 3}  json: {fragment}")
+        for key, value in fragment.items():
+            schema_value = schema.get(key, {})
+            compare_to_schema(f"{json_path}.{key}", schema_value, value)
+        return
+
+    if isinstance(fragment, int):
+        if not schema == "int32":
+            print(f"{INDENT * 2}Error:")
+            print(f"{INDENT * 3}Incorrect specification for int")
+            print(f"{INDENT * 3}schema: {schema}")
+            print(f"{INDENT * 3}  json: {fragment}")
+        return
+
+    if isinstance(fragment, str):
+        if not schema == "string":
+            print(f"{INDENT * 2}Error:")
+            print(f"{INDENT * 3}Incorrect specification for string")
+            print(f"{INDENT * 3}schema: {schema}")
+            print(f"{INDENT * 3}  json: {fragment}")
+        return
+
+    print(f"{INDENT * 2}Error:")
+    print(f"{INDENT * 3}Unknown value")
+    print(f"{INDENT * 3}schema: {schema}")
+    print(f"{INDENT * 3}  json: {fragment}")
+
 
 def is_json_subset(subset_json, full_json):
     """
@@ -258,6 +317,10 @@ def infer_json_type_definition(example_json: str) -> str:
     return ""
 
 
+def output(indentation, message):
+    pass
+
+
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
@@ -285,12 +348,18 @@ if __name__ == "__main__":
 
         SCHEMA[requested_json_key] = recurse(json_value)
 
+    # Xxxxxx
+
     example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
-    example_json = '{"AFFECTED_ENTITIES": [{"ENTITY_ID": "int32"}], "DATA_SOURCE": "string", "INTERESTING_ENTITIES": {"ENTITIES": [{"DEGREES": "int32", "ENTITY_ID": "int32", "FLAGS": ["string"], "SAMPLE_RECORDS": [{"DATA_SOURCE": "string", "FLAGS": ["string"], "RECORD_ID": "string"}]}], "NOTICES": [{"CODE": "string", "DESCRIPTION": "string"}]}, "RECORD_ID": "string"}'
-    xschema = infer_json_type_definition(example_json)
-    print(xschema)
+    example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
+    # example_json = '{"AFFECTED_ENTITIES": [{"ENTITY_ID": "int32"}], "DATA_SOURCE": "string", "INTERESTING_ENTITIES": {"ENTITIES": [{"DEGREES": "int32", "ENTITY_ID": "int32", "FLAGS": ["string"], "SAMPLE_RECORDS": [{"DATA_SOURCE": "string", "FLAGS": ["string"], "RECORD_ID": "string"}]}], "NOTICES": [{"CODE": "string", "DESCRIPTION": "string"}]}, "RECORD_ID": "string"}'
 
-    full_json = SCHEMA.get("SzEngineDeleteRecordResponse")
-    print(json.dumps(full_json))
+    title = "SzEngineDeleteRecordResponse"
+    json_schema = SCHEMA.get(title)
 
-    print(is_json_subset(example_json, full_json))
+    # xschema = infer_json_type_definition(example_json)
+    # print(xschema)
+    print(json.dumps(json_schema))
+
+    print(is_json_subset(example_json, json_schema))
+    compare_to_schema(title, json_schema, json.loads(example_json))

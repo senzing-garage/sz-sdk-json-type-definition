@@ -25,6 +25,7 @@ clean-osarch-specific:
 	@rm -fr $(MAKEFILE_DIRECTORY)/__pycache__ || true
 	@rm -fr $(MAKEFILE_DIRECTORY)/bin/__pycache__ || true
 	@rm -fr $(TARGET_DIRECTORY) || true
+	@rm -fr /tmp/sqlite || true
 	@pkill godoc || true
 
 
@@ -59,8 +60,8 @@ run-osarch-specific:
 
 .PHONY: setup-osarch-specific
 setup-osarch-specific:
-	$(info No setup required.)
-
+	@mkdir /tmp/sqlite
+	@cp testdata/sqlite/G2C.db /tmp/sqlite/G2C.db
 
 .PHONY: test-osarch-specific
 test-osarch-specific:
