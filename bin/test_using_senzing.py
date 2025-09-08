@@ -28,9 +28,6 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 # )
 
 
-INDENT = "    "
-
-
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
@@ -205,14 +202,14 @@ def compare_to_schema(json_path, schema, fragment):
 
     # indent = "    "
 
-    print(f"{INDENT}Path: {json_path}")
+    output(1, f"Path: {json_path}")
 
     if isinstance(fragment, list):
         if not isinstance(schema, list):
-            print(f"{INDENT * 2}Error:")
-            print(f"{INDENT * 3}Missing list")
-            print(f"{INDENT * 3}schema: {schema}")
-            print(f"{INDENT * 3}  json: {fragment}")
+            output(2, "Error:")
+            output(3, "Missing list")
+            output(3, f"schema: {schema}")
+            output(3, f"  json: {fragment}")
         schema_list = schema[0]
         index = 0
         for x in fragment:
@@ -222,10 +219,10 @@ def compare_to_schema(json_path, schema, fragment):
 
     if isinstance(fragment, dict):
         if not isinstance(schema, dict):
-            print(f"{INDENT * 2}Error:")
-            print(f"{INDENT * 3}Missing dict")
-            print(f"{INDENT * 3}schema: {schema}")
-            print(f"{INDENT * 3}  json: {fragment}")
+            output(2, "Error:")
+            output(3, "Missing dict")
+            output(3, f"schema: {schema}")
+            output(3, f"  json: {fragment}")
         for key, value in fragment.items():
             schema_value = schema.get(key, {})
             compare_to_schema(f"{json_path}.{key}", schema_value, value)
@@ -233,24 +230,24 @@ def compare_to_schema(json_path, schema, fragment):
 
     if isinstance(fragment, int):
         if not schema == "int32":
-            print(f"{INDENT * 2}Error:")
-            print(f"{INDENT * 3}Incorrect specification for int")
-            print(f"{INDENT * 3}schema: {schema}")
-            print(f"{INDENT * 3}  json: {fragment}")
+            output(2, "Error:")
+            output(3, "Incorrect specification for int")
+            output(3, f"schema: {schema}")
+            output(3, f"  json: {fragment}")
         return
 
     if isinstance(fragment, str):
         if not schema == "string":
-            print(f"{INDENT * 2}Error:")
-            print(f"{INDENT * 3}Incorrect specification for string")
-            print(f"{INDENT * 3}schema: {schema}")
-            print(f"{INDENT * 3}  json: {fragment}")
+            output(2, "Error:")
+            output(3, "Incorrect specification for string")
+            output(3, f"schema: {schema}")
+            output(3, f"  json: {fragment}")
         return
 
-    print(f"{INDENT * 2}Error:")
-    print(f"{INDENT * 3}Unknown value")
-    print(f"{INDENT * 3}schema: {schema}")
-    print(f"{INDENT * 3}  json: {fragment}")
+    output(2, "Error:")
+    output(3, "Unknown value")
+    output(3, f"schema: {schema}")
+    output(3, f"  json: {fragment}")
 
 
 def is_json_subset(subset_json, full_json):
@@ -318,12 +315,13 @@ def infer_json_type_definition(example_json: str) -> str:
 
 
 def output(indentation, message):
-    pass
+    print(f"{"    " * indentation}{message}")
 
 
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
+
 
 if __name__ == "__main__":
 
@@ -359,7 +357,7 @@ if __name__ == "__main__":
 
     # xschema = infer_json_type_definition(example_json)
     # print(xschema)
-    print(json.dumps(json_schema))
+    # print(json.dumps(json_schema))
 
-    print(is_json_subset(example_json, json_schema))
+    # print(is_json_subset(example_json, json_schema))
     compare_to_schema(title, json_schema, json.loads(example_json))
