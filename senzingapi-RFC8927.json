@@ -3165,6 +3165,9 @@
         },
         "SzProductGetLicenseResponse": {
             "properties": {
+                "advSearch": {
+                    "type": "int32"
+                },
                 "billing": {
                     "type": "string"
                 },

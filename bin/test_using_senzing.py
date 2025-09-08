@@ -175,10 +175,16 @@ def recurse(json_value):
 # -----------------------------------------------------------------------------
 
 
-def compare_sz_config(sz_abstract_factory: SzAbstractFactory):
+def add_records(sz_abstract_factory: SzAbstractFactory):
+    pass
+
+
+def compare_static(sz_abstract_factory: SzAbstractFactory):
 
     sz_config_manager = sz_abstract_factory.create_configmanager()
     sz_config = sz_config_manager.create_config_from_template()
+    sz_diagnostic = sz_abstract_factory.create_diagnostic()
+    sz_product = sz_abstract_factory.create_product()
 
     # Define testcases
 
@@ -203,6 +209,26 @@ def compare_sz_config(sz_abstract_factory: SzAbstractFactory):
             "testcase": 'sz_config.unregister_data_source("A_DATASOURCE_NAME")',
             "response": "SzConfigUnregisterDataSourceResponse",
         },
+        {
+            "testcase": "sz_diagnostic.check_repository_performance(2)",
+            "response": "SzDiagnosticCheckRepositoryPerformanceResponse",
+        },
+        # {
+        #     "testcase": "sz_diagnostic.get_feature(1)",
+        #     "response": "SzDiagnosticGetFeatureResponse",
+        # },
+        {
+            "testcase": "sz_diagnostic.get_repository_info()",
+            "response": "SzDiagnosticGetRepositoryInfoResponse",
+        },
+        {
+            "testcase": "sz_product.get_license()",
+            "response": "SzProductGetLicenseResponse",
+        },
+        {
+            "testcase": "sz_product.get_version()",
+            "response": "SzProductGetVersionResponse",
+        },
     ]
 
     for testcase in testcases:
@@ -211,33 +237,6 @@ def compare_sz_config(sz_abstract_factory: SzAbstractFactory):
             testcase.get("response"),
             eval(testcase.get("testcase")),
         )
-
-    # test_this(
-    #     "sz_config.get_data_source_registry()",
-    #     "SzConfigGetDataSourceRegistryResponse",
-    #     sz_config.get_data_source_registry(),
-    # )
-
-    # X
-
-    # test_this(
-    #     "sz_config.export()",
-    #     "SzConfigExportResponse",
-    #     sz_config.export(),
-    # )
-
-    # test_name = "sz_config.export()"
-    # xxx = sz_config.export()
-    # title = "SzConfigExportResponse"
-    # json_schema = SCHEMA.get(title)
-    # compare_to_schema(test_name, title, json_schema, json.loads(xxx))
-
-    # X
-    # test_name = "sz_config.get_data_source_registry()"
-    # xxx = sz_config.get_data_source_registry()
-    # title = "SzConfigGetDataSourceRegistryResponse"
-    # json_schema = SCHEMA.get(title)
-    # compare_to_schema(test_name, title, json_schema, json.loads(xxx))
 
 
 # -----------------------------------------------------------------------------
@@ -425,7 +424,8 @@ if __name__ == "__main__":
 
     # Xxxxxx
 
-    compare_sz_config(sz_abstract_factory)
+    add_records(sz_abstract_factory)
+    compare_static(sz_abstract_factory)
 
     # example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
     # example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
