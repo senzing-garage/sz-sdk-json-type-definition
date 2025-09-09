@@ -234,6 +234,8 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
     sz_engine = sz_abstract_factory.create_engine()
     sz_product = sz_abstract_factory.create_product()
 
+    print(sz_engine.get_stats())
+
     # Define testcases
 
     testcases = [

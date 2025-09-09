@@ -11,6 +11,40 @@
                 }
             }
         },
+        "Caches": {
+            "properties": {
+                "libFeatCacheHit": {
+                    "type": "int32"
+                },
+                "libFeatCacheMiss": {
+                    "type": "int32"
+                },
+                "resFeatStatCacheHit": {
+                    "type": "int32"
+                },
+                "resFeatStatCacheMiss": {
+                    "type": "int32"
+                },
+                "libFeatInsert": {
+                    "type": "int32"
+                },
+                "resFeatStatInsert": {
+                    "type": "int32"
+                },
+                "resFeatStatUpdateAttempt": {
+                    "type": "int32"
+                },
+                "resFeatStatUpdateFail": {
+                    "type": "int32"
+                }
+            }
+        },
+        "Candidates": {
+            "properties": {
+                "candidateBuilders": [],
+                "suppressedCandidateBuilders": []
+            }
+        },
         "CFG_ATTR": {
             "properties": {
                 "ADVANCED": {
@@ -964,6 +998,34 @@
                 }
             }
         },
+        "Contention": {
+            "properties": {
+                "feature": [],
+                "resent": [],
+                "valuelatch": []
+            }
+        },
+        "CurrResources": {
+            "properties": {
+                "availableMemory": {
+                    "type": "string"
+                },
+                "processMemory": {
+                    "type": "string"
+                },
+                "activeThreads": {
+                    "type": "int32"
+                },
+                "workerThreads": {
+                    "type": "int32"
+                },
+                "systemLoad": {
+                    "elements": {
+                        "ref": "SystemLoad"
+                    }
+                }
+            }
+        },
         "DataSource": {
             "properties": {
                 "DSRC_CODE": {
@@ -1015,6 +1077,12 @@
                     },
                     "type": "int32"
                 }
+            }
+        },
+        "ExpressedFeatures": {
+            "properties": {
+                "calls": [],
+                "created": []
             }
         },
         "Feature": {
@@ -1452,6 +1520,22 @@
                 }
             }
         },
+        "InitResources": {
+            "properties": {
+                "physicalCores": {
+                    "type": "int32"
+                },
+                "logicalCores": {
+                    "type": "int32"
+                },
+                "totalMemory": {
+                    "type": "string"
+                },
+                "availableMemory": {
+                    "type": "string"
+                }
+            }
+        },
         "InterestingEntities": {
             "properties": {
                 "ENTITIES": {
@@ -1509,6 +1593,26 @@
                             }
                         }
                     }
+                }
+            }
+        },
+        "License": {
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "dsrLimit": {
+                    "type": "string"
+                }
+            }
+        },
+        "LockWaits": {
+            "properties": {
+                "refreshLocks": {
+                    "ref": "RefreshLocks"
                 }
             }
         },
@@ -1707,6 +1811,78 @@
                     "DESCRIPTION": {
                         "type": "string"
                     }
+                }
+            }
+        },
+        "Processing": {
+            "properties": {
+                "addedRecords": {
+                    "type": "int32"
+                },
+                "ambiguous": {
+                    "ref": "ProcessingAmbiguous"
+                },
+                "batchAddedRecords": {
+                    "type": "int32"
+                },
+                "deletedRecords": {
+                    "type": "int32"
+                },
+                "details": {
+                    "ref": "ProcessingDetails"
+                },
+                "reevaluations": {
+                    "type": "int32"
+                },
+                "repairedEntities": {
+                    "type": "int32"
+                }
+            }
+        },
+        "ProcessingAmbiguous": {
+            "properties": {
+                "actualTest": {
+                    "type": "int32"
+                },
+                "cachedTest": {
+                    "type": "int32"
+                }
+            }
+        },
+        "ProcessingDetails": {
+            "properties": {
+                "optimizedOut": {
+                    "type": "int32"
+                },
+                "optimizedOutSkipped": {
+                    "type": "int32"
+                },
+                "newObsEnt": {
+                    "type": "int32"
+                },
+                "obsEntHashSame": {
+                    "type": "int32"
+                },
+                "obsEntHashDiff": {
+                    "type": "int32"
+                },
+                "filteredObsFeat": {
+                    "type": "int32"
+                },
+                "partiallyResolved": {
+                    "type": "int32"
+                },
+                "changeDeletes": {
+                    "type": "int32"
+                },
+                "retries": {
+                    "type": "int32"
+                },
+                "candidates": {
+                    "type": "int32"
+                },
+                "duration": {
+                    "type": "int32"
                 }
             }
         },
@@ -1995,6 +2171,19 @@
                 "ref": "RecordForGetEntity"
             }
         },
+        "RefreshLocks": {
+            "properties": {
+                "maxMS": {
+                    "type": "int32"
+                },
+                "totalMS": {
+                    "type": "int32"
+                },
+                "count": {
+                    "type": "int32"
+                }
+            }
+        },
         "RelatedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -2047,6 +2236,13 @@
                 }
             }
         },
+        "RepairDiagnosis": {
+            "properties": {
+                "types": {
+                    "type": "int32"
+                }
+            }
+        },
         "Repository": {
             "properties": {
                 "id": {
@@ -2057,6 +2253,35 @@
                 },
                 "type": {
                     "type": "string"
+                }
+            }
+        },
+        "Reresolve": {
+            "properties": {
+                "triggers": {
+                    "ref": "ReresolveTriggers"
+                },
+                "suppressedCandidateBuildersForReresolve": [],
+                "suppressedScoredFeatureTypeForReresolve": []
+            }
+        },
+        "ReresolveTriggers": {
+            "properties": {
+                "abortRetry": {
+                    "type": "int32"
+                },
+                "multipleResolvableCandidates": {
+                    "type": "int32"
+                },
+                "newFeatureFTypes": [],
+                "resolveNewFeatures": {
+                    "type": "int32"
+                },
+                "skipped": {
+                    "type": "int32"
+                },
+                "unresolveMovement": {
+                    "type": "int32"
                 }
             }
         },
@@ -2295,6 +2520,17 @@
                 "MINIMUM_REQUIRED_SCHEMA_VERSION": {
                     "type": "string"
                 }
+            }
+        },
+        "Scoring": {
+            "properties": {
+                "cacheHit": [],
+                "cacheMiss": [],
+                "scoredPairs": [],
+                "suppressedDisclosedRelationshipDomainCount": {
+                    "type": "int32"
+                },
+                "suppressedScoredFeatureType": []
             }
         },
         "SearchStatistic": {
@@ -2579,6 +2815,70 @@
                 },
                 "GROUP_ASSN_ID_NUMBER": {
                     "type": "string"
+                }
+            }
+        },
+        "ThreadState": {
+            "properties": {
+                "active": {
+                    "type": "int32"
+                },
+                "dataLatchContention": {
+                    "type": "int32"
+                },
+                "governorContention": {
+                    "type": "int32"
+                },
+                "idle": {
+                    "type": "int32"
+                },
+                "loader": {
+                    "type": "int32"
+                },
+                "obsEntContention": {
+                    "type": "int32"
+                },
+                "resEntContention": {
+                    "type": "int32"
+                },
+                "resolver": {
+                    "type": "int32"
+                },
+                "scoring": {
+                    "type": "int32"
+                },
+                "sqlExecuting": {
+                    "type": "int32"
+                }
+            }
+        },
+        "SystemLoad": {
+            "properties": {
+                "cpuUser": {
+                    "type": "int32"
+                },
+                "cpuSystem": {
+                    "type": "int32"
+                },
+                "cpuIdle": {
+                    "type": "int32"
+                },
+                "cpuWait": {
+                    "type": "int32"
+                }
+            }
+        },
+        "SystemResources": {
+            "properties": {
+                "initResources": {
+                    "elements": {
+                        "ref": "InitResources"
+                    }
+                },
+                "currResources": {
+                    "elements": {
+                        "ref": "CurrResources"
+                    }
                 }
             }
         },
@@ -2993,8 +3293,8 @@
         },
         "SzEngineGetStatsResponse": {
             "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
+                "workload": {
+                    "ref": "Workload"
                 }
             }
         },
@@ -3222,6 +3522,41 @@
                 }
             }
         },
+        "Unresolve": {
+            "properties": {
+                "triggers": {
+                    "ref": "UnresolveTriggers"
+                },
+                "unresolveTest": {
+                    "type": "int32"
+                },
+                "abortedUnresolve": {
+                    "type": "int32"
+                }
+            }
+        },
+        "UnresolveTriggers": {
+            "properties": {
+                "normalResolve": {
+                    "type": "int32"
+                },
+                "update": {
+                    "type": "int32"
+                },
+                "relLink": {
+                    "type": "int32"
+                },
+                "extensiveResolve": {
+                    "type": "int32"
+                },
+                "ambiguousNoResolve": {
+                    "type": "int32"
+                },
+                "ambiguousMultiResolve": {
+                    "type": "int32"
+                }
+            }
+        },
         "VirtualEntity": {
             "properties": {
                 "RESOLVED_ENTITY": {
@@ -3280,6 +3615,60 @@
         "WhyResults": {
             "elements": {
                 "ref": "WhyResult"
+            }
+        },
+        "Workload": {
+            "properties": {
+                "apiVersion": {
+                    "type": "string"
+                },
+                "caches": {
+                    "ref": "Caches"
+                },
+                "candidates": {
+                    "ref": "Candidates"
+                },
+                "contention": {
+                    "ref": "Contention"
+                },
+                "datetimestamp": {
+                    "type": "string"
+                },
+                "expressedFeatures": {
+                    "ref": "ExpressedFeatures"
+                },
+                "genericDetect": [],
+                "license": {
+                    "ref": "License"
+                },
+                "loadedRecords": {
+                    "type": "int32"
+                },
+                "lockWaits": {
+                    "ref": "LockWaits"
+                },
+                "processing": {
+                    "ref": "Processing"
+                },
+                "redoTriggers": [],
+                "repairDiagnosis": {
+                    "ref": "RepairDiagnosis"
+                },
+                "reresolve": {
+                    "ref": "Reresolve"
+                },
+                "scoring": {
+                    "ref": "Scoring"
+                },
+                "threadState": {
+                    "ref": "ThreadState"
+                },
+                "systemResources": {
+                    "ref": "SystemResources"
+                },
+                "unresolve": {
+                    "ref": "Unresolve"
+                }
             }
         }
     }
