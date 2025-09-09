@@ -246,10 +246,6 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
             "response": "SzConfigGetDataSourceRegistryResponse",
         },
         {
-            "testcase": "sz_config_manager.get_config_registry()",
-            "response": "SzConfigManagerGetConfigRegistryResponse",
-        },
-        {
             "testcase": 'sz_config.register_data_source("A_DATASOURCE_NAME")',
             "response": "SzConfigRegisterDataSourceResponse",
         },
@@ -258,17 +254,21 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
             "response": "SzConfigUnregisterDataSourceResponse",
         },
         {
+            "testcase": "sz_config_manager.get_config_registry()",
+            "response": "SzConfigManagerGetConfigRegistryResponse",
+        },
+        {
             "testcase": "sz_diagnostic.check_repository_performance(2)",
             "response": "SzDiagnosticCheckRepositoryPerformanceResponse",
+        },
+        {
+            "testcase": "sz_diagnostic.get_repository_info()",
+            "response": "SzDiagnosticGetRepositoryInfoResponse",
         },
         # {
         #     "testcase": "sz_diagnostic.get_feature(1)",
         #     "response": "SzDiagnosticGetFeatureResponse",
         # },
-        {
-            "testcase": "sz_diagnostic.get_repository_info()",
-            "response": "SzDiagnosticGetRepositoryInfoResponse",
-        },
         {
             "testcase": "sz_engine.get_stats()",
             "response": "SzEngineGetStatsResponse",
@@ -289,6 +289,48 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
             testcase.get("response"),
             eval(testcase.get("testcase")),
         )
+
+
+def compare_get_entity_by_xxx(sz_abstract_factory: SzAbstractFactory):
+
+    records = [
+        {"data_source": "CUSTOMERS", "record_id": "1001"},
+        {"data_source": "CUSTOMERS", "record_id": "1033"},
+    ]
+
+    flags = [
+        SzEngineFlags.SZ_ENTITY_DEFAULT_FLAGS,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_RELATIONS,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_DISCLOSED_RELATIONS,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_ENTITY_NAME,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_NAME_ONLY_RELATIONS,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_RELATED_RELATIONS,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_SAME_RELATIONS,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATA,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_MATCHING_INFO,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_SUMMARY,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_ENTITY_NAME,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_MATCHING_INFO,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_SUMMARY,
+        SzEngineFlags.SZ_ENTITY_INCLUDE_REPRESENTATIVE_FEATURES,
+        SzEngineFlags.SZ_RECORD_DEFAULT_FLAGS,
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+
+    title = "SzEngineGetEntityByRecordIdResponse"
+    record_count = 0
+    for record in records:
+        record_count += 1
+        flag_count = 0
+        for flag in flags:
+            flag_count += 1
+            test_name = f"get_entity_by_record_id-{record_count}.{flag_count}"
+            response = sz_engine.get_entity_by_record_id(
+                record.get("data_source"), record.get("record_id"), flag
+            )
+            json_schema = SCHEMA.get("SzEngineGetEntityByRecordIdResponse")
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 # -----------------------------------------------------------------------------
@@ -324,6 +366,8 @@ def compare_to_schema(test_name, json_path, schema, fragment):
             return
         for key, value in fragment.items():
             schema_value = schema.get(key, {})
+            if key not in schema:
+                schema_value = schema.get("<user_defined_json_key>", {})
             compare_to_schema(test_name, f"{json_path}.{key}", schema_value, value)
         return
 
@@ -496,6 +540,7 @@ if __name__ == "__main__":
 
     add_records(sz_abstract_factory)
     compare_static(sz_abstract_factory)
+    compare_get_entity_by_xxx(sz_abstract_factory)
 
     # example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
     # example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
