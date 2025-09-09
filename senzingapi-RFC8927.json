@@ -19,16 +19,16 @@
                 "libFeatCacheMiss": {
                     "type": "int32"
                 },
-                "resFeatStatCacheHit": {
-                    "type": "int32"
-                },
-                "resFeatStatCacheMiss": {
-                    "type": "int32"
-                },
                 "libFeatInsert": {
                     "type": "int32"
                 },
+                "resFeatStatCacheHit": {
+                    "type": "int32"
+                },
                 "resFeatStatInsert": {
+                    "type": "int32"
+                },
+                "resFeatStatCacheMiss": {
                     "type": "int32"
                 },
                 "resFeatStatUpdateAttempt": {
@@ -1027,22 +1027,22 @@
         },
         "CurrResources": {
             "properties": {
+                "activeThreads": {
+                    "type": "int32"
+                },
                 "availableMemory": {
                     "type": "string"
                 },
                 "processMemory": {
                     "type": "string"
                 },
-                "activeThreads": {
-                    "type": "int32"
-                },
-                "workerThreads": {
-                    "type": "int32"
-                },
                 "systemLoad": {
                     "elements": {
                         "ref": "SystemLoad"
                     }
+                },
+                "workerThreads": {
+                    "type": "int32"
                 }
             }
         },
@@ -1180,13 +1180,11 @@
         },
         "FeatureForAttributeWithAttributes": {
             "properties": {
+                "ATTRIBUTES": {
+                    "ref": "SenzingEntitySpecification"
+                },
                 "FEAT_DESC": {
                     "type": "string"
-                },
-                "ATTRIBUTES": {
-                    "elements": {
-                        "ref": "SenzingEntitySpecification"
-                    }
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
@@ -1214,6 +1212,24 @@
                         "ref": "FeatureDescriptionValue"
                     }
                 },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "USAGE_TYPE": {
+                    "type": "string"
+                }
+            }
+        },
+        "FeatureIDs": {
+            "elements": {
+                "ref": "FeatureID"
+            }
+        },
+        "FeatureID": {
+            "properties": {
                 "LIB_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
@@ -1946,6 +1962,9 @@
                 "ERRULE_CODE": {
                     "type": "string"
                 },
+                "FIRST_SEEN_DT": {
+                    "type": "timestamp"
+                },
                 "FEATURES": {
                     "elements": {
                         "properties": {
@@ -2061,19 +2080,19 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "elements": {
-                        "properties": {
-                            "LIB_FEAT_ID": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            },
-                            "USAGE_TYPE": {
-                                "type": "string"
-                            }
-                        }
-                    }
+                    "metadata": {
+                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
+                        "goType": "map[string][]FeatureForAttributeWithAttributes",
+                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
+                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]"
+                    },
+                    "type": "string"
+                },
+                "FEATURE_IDS": {
+                    "ref": "FeatureIDs"
+                },
+                "FIRST_SEEN_DT": {
+                    "type": "timestamp"
                 },
                 "IDENTIFIER_DATA": {
                     "elements": {
@@ -2440,6 +2459,9 @@
                     },
                     "type": "string"
                 },
+                "FEATURE_IDS": {
+                    "type": "FeatureIDs"
+                },
                 "IS_AMBIGUOUS": {
                     "metadata": {
                         "goType": "int64"
@@ -2473,6 +2495,11 @@
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
+                    }
+                },
+                "RECORD_TYPES": {
+                    "elements": {
+                        "type": "string"
                     }
                 }
             }
@@ -2653,31 +2680,19 @@
         },
         "SenzingEntitySpecification": {
             "properties": {
-                "NAME_TYPE": {
+                "ACCOUNT_DOMAIN": {
                     "type": "string"
                 },
-                "NAME_FULL": {
+                "ACCOUNT_NUMBER": {
                     "type": "string"
                 },
-                "NAME_ORG": {
+                "ADDR_CITY": {
                     "type": "string"
                 },
-                "NAME_LAST": {
+                "ADDR_COUNTRY": {
                     "type": "string"
                 },
-                "NAME_FIRST": {
-                    "type": "string"
-                },
-                "NAME_MIDDLE": {
-                    "type": "string"
-                },
-                "NAME_PREFIX": {
-                    "type": "string"
-                },
-                "NAME_SUFFIX": {
-                    "type": "string"
-                },
-                "ADDR_TYPE": {
+                "ADDR_FROM_DATE": {
                     "type": "string"
                 },
                 "ADDR_FULL": {
@@ -2701,37 +2716,19 @@
                 "ADDR_LINE6": {
                     "type": "string"
                 },
-                "ADDR_CITY": {
+                "ADDR_POSTAL_CODE": {
                     "type": "string"
                 },
                 "ADDR_STATE": {
                     "type": "string"
                 },
-                "ADDR_POSTAL_CODE": {
-                    "type": "string"
-                },
-                "ADDR_COUNTRY": {
-                    "type": "string"
-                },
-                "ADDR_FROM_DATE": {
-                    "type": "string"
-                },
                 "ADDR_THRU_DATE": {
                     "type": "string"
                 },
-                "PHONE_TYPE": {
+                "ADDR_TYPE": {
                     "type": "string"
                 },
-                "PHONE_NUMBER": {
-                    "type": "string"
-                },
-                "PHONE_FROM_DATE": {
-                    "type": "string"
-                },
-                "PHONE_THRU_DATE": {
-                    "type": "string"
-                },
-                "GENDER": {
+                "CITIZENSHIP": {
                     "type": "string"
                 },
                 "DATE_OF_BIRTH": {
@@ -2740,13 +2737,130 @@
                 "DATE_OF_DEATH": {
                     "type": "string"
                 },
+                "DRIVERS_LICENSE_NUMBER": {
+                    "type": "string"
+                },
+                "DRIVERS_LICENSE_STATE": {
+                    "type": "string"
+                },
+                "DUNS_NUMBER": {
+                    "type": "string"
+                },
+                "EMAIL_ADDRESS": {
+                    "type": "string"
+                },
+                "EMPLOYER": {
+                    "type": "string"
+                },
+                "EMPLOYER_NAME": {
+                    "type": "string"
+                },
+                "FACEBOOK": {
+                    "type": "string"
+                },
+                "GENDER": {
+                    "type": "string"
+                },
+                "GROUP_ASSOCIATION_ORG_NAME": {
+                    "type": "string"
+                },
+                "GROUP_ASSOCIATION_TYPE": {
+                    "type": "string"
+                },
+                "GROUP_ASSN_ID_NUMBER": {
+                    "type": "string"
+                },
+                "GROUP_ASSN_ID_TYPE": {
+                    "type": "string"
+                },
+                "INSTAGRAM": {
+                    "type": "string"
+                },
+                "LEI_NUMBER": {
+                    "type": "string"
+                },
+                "LINKEDIN": {
+                    "type": "string"
+                },
+                "NAME_FIRST": {
+                    "type": "string"
+                },
+                "NAME_FULL": {
+                    "type": "string"
+                },
+                "NAME_LAST": {
+                    "type": "string"
+                },
+                "NAME_ORG": {
+                    "type": "string"
+                },
+                "NAME_PREFIX": {
+                    "type": "string"
+                },
+                "NAME_SUFFIX": {
+                    "type": "string"
+                },
+                "NAME_TYPE": {
+                    "type": "string"
+                },
                 "NATIONALITY": {
                     "type": "string"
                 },
-                "CITIZENSHIP": {
+                "NATIONAL_ID_COUNTRY": {
+                    "type": "string"
+                },
+                "NATIONAL_ID_NUMBER": {
+                    "type": "string"
+                },
+                "NATIVE_NAME_FULL": {
+                    "type": "string"
+                },
+                "NPI_NUMBER": {
+                    "type": "string"
+                },
+                "OTHER_ID_COUNTRY": {
+                    "type": "string"
+                },
+                "OTHER_ID_NUMBER": {
+                    "type": "string"
+                },
+                "OTHER_ID_TYPE": {
+                    "type": "string"
+                },
+                "PASSPORT_COUNTRY": {
+                    "type": "string"
+                },
+                "PASSPORT_NUMBER": {
+                    "type": "string"
+                },
+                "PHONE_FROM_DATE": {
+                    "type": "string"
+                },
+                "PHONE_NUMBER": {
+                    "type": "string"
+                },
+                "PHONE_THRU_DATE": {
+                    "type": "string"
+                },
+                "PHONE_TYPE": {
                     "type": "string"
                 },
                 "PLACE_OF_BIRTH": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_FIRST": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_FULL": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_LAST": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_MIDDLE": {
+                    "type": "string"
+                },
+                "RECORD_TYPE": {
                     "type": "string"
                 },
                 "REGISTRATION_DATE": {
@@ -2755,121 +2869,55 @@
                 "REGISTRATION_COUNTRY": {
                     "type": "string"
                 },
-                "PASSPORT_NUMBER": {
-                    "type": "string"
-                },
-                "PASSPORT_COUNTRY": {
-                    "type": "string"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "type": "string"
-                },
-                "DRIVERS_LICENSE_STATE": {
-                    "type": "string"
-                },
-                "SSN_NUMBER": {
-                    "type": "string"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "type": "string"
-                },
-                "NATIONAL_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "TAX_ID_TYPE": {
-                    "type": "string"
-                },
-                "TAX_ID_NUMBER": {
-                    "type": "string"
-                },
-                "TAX_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "OTHER_ID_TYPE": {
-                    "type": "string"
-                },
-                "OTHER_ID_NUMBER": {
-                    "type": "string"
-                },
-                "OTHER_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "TRUSTED_ID_TYPE": {
-                    "type": "string"
-                },
-                "TRUSTED_ID_NUMBER": {
-                    "type": "string"
-                },
-                "ACCOUNT_NUMBER": {
-                    "type": "string"
-                },
-                "ACCOUNT_DOMAIN": {
-                    "type": "string"
-                },
-                "DUNS_NUMBER": {
-                    "type": "string"
-                },
-                "NPI_NUMBER": {
-                    "type": "string"
-                },
-                "LEI_NUMBER": {
-                    "type": "string"
-                },
-                "WEBSITE_ADDRESS": {
-                    "type": "string"
-                },
-                "EMAIL_ADDRESS": {
-                    "type": "string"
-                },
-                "LINKEDIN": {
-                    "type": "string"
-                },
-                "FACEBOOK": {
-                    "type": "string"
-                },
-                "TWITTER": {
-                    "type": "string"
-                },
-                "SKYPE": {
-                    "type": "string"
-                },
-                "ZOOMROOM": {
-                    "type": "string"
-                },
-                "INSTAGRAM": {
-                    "type": "string"
-                },
-                "WHATSAPP": {
+                "REL_POINTER_KEY": {
                     "type": "string"
                 },
                 "SIGNAL": {
                     "type": "string"
                 },
-                "TELEGRAM": {
+                "SKYPE": {
+                    "type": "string"
+                },
+                "SSN_NUMBER": {
                     "type": "string"
                 },
                 "TANGO": {
                     "type": "string"
                 },
+                "TAX_ID_COUNTRY": {
+                    "type": "string"
+                },
+                "TAX_ID_NUMBER": {
+                    "type": "string"
+                },
+                "TAX_ID_TYPE": {
+                    "type": "string"
+                },
+                "TELEGRAM": {
+                    "type": "string"
+                },
+                "TRUSTED_ID_NUMBER": {
+                    "type": "string"
+                },
+                "TRUSTED_ID_TYPE": {
+                    "type": "string"
+                },
+                "TWITTER": {
+                    "type": "string"
+                },
                 "VIBER": {
+                    "type": "string"
+                },
+                "WEBSITE_ADDRESS": {
                     "type": "string"
                 },
                 "WECHAT": {
                     "type": "string"
                 },
-                "EMPLOYER": {
+                "WHATSAPP": {
                     "type": "string"
                 },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "type": "string"
-                },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "type": "string"
-                },
-                "GROUP_ASSN_ID_TYPE": {
-                    "type": "string"
-                },
-                "GROUP_ASSN_ID_NUMBER": {
+                "ZOOMROOM": {
                     "type": "string"
                 }
             }

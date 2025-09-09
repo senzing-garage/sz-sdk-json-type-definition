@@ -15,7 +15,12 @@ import sys
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
 
+DEBUG = False
 ERROR_COUNT = 0
+HR_START = ">" * 80
+HR_STOP = "<" * 80
+
+VARIABLE_JSON_KEY = "<user_defined_json_key>"
 
 FLAGS = [
     SzEngineFlags.SZ_ADD_RECORD_DEFAULT_FLAGS,  # 1
@@ -35,7 +40,7 @@ FLAGS = [
     SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATA,  # 15
     SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATES,  # 16
     SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_DETAILS,  # 17
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_STATS,  # 17
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_STATS,  # 18
     SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURES,  # 19
     SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_JSON_DATA,  # 20
     SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_MATCHING_INFO,  # 21
@@ -90,6 +95,16 @@ FLAGS = [
     SzEngineFlags.SZ_WHY_RECORD_IN_ENTITY_DEFAULT_FLAGS,  # 70
     SzEngineFlags.SZ_WHY_RECORDS_DEFAULT_FLAGS,  # 71
     SzEngineFlags.SZ_WHY_SEARCH_DEFAULT_FLAGS,  # 72
+]
+
+
+RECORDS = [
+    {"data_source": "CUSTOMERS", "record_id": "1001"},
+    {"data_source": "CUSTOMERS", "record_id": "1033"},
+    {"data_source": "REFERENCE", "record_id": "2013"},
+    {"data_source": "REFERENCE", "record_id": "2121"},
+    {"data_source": "WATCHLIST", "record_id": "1027"},
+    {"data_source": "WATCHLIST", "record_id": "2052"},
 ]
 
 # -----------------------------------------------------------------------------
@@ -180,38 +195,29 @@ def handle_python_type(python_type):
     match python_type:
         case "Dict[str, FeatureScoresForAttribute]":
             return {
-                "<user_defined_json_key>": recurse(
-                    DEFINITIONS.get("FeatureScoresForAttribute")
-                )
+                VARIABLE_JSON_KEY: recurse(DEFINITIONS.get("FeatureScoresForAttribute"))
             }
         case "Dict[str, List[FeatureForAttribute]]":
             return {
-                "<user_defined_json_key>": [
-                    recurse(DEFINITIONS.get("FeatureForAttribute"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttribute"))]
             }
         case "Dict[str, List[FeatureForAttributeWithAttributes]]":
             return {
-                "<user_defined_json_key>": [
+                VARIABLE_JSON_KEY: [
                     recurse(DEFINITIONS.get("FeatureForAttributeWithAttributes"))
                 ]
             }
         case "Dict[str, List[FeatureForGetEntity]]":
             return {
-                "<user_defined_json_key>": [
-                    recurse(DEFINITIONS.get("FeatureForGetEntity"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForGetEntity"))]
             }
         case "Dict[str, List[MatchInfoForAttribute]]":
             return {
-                "<user_defined_json_key>": [
-                    recurse(DEFINITIONS.get("MatchInfoForAttribute"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("MatchInfoForAttribute"))]
             }
         case "Dict[str, object]":
             return {
-                "<user_record_json_key_1>": "user_record_json_value_1",
-                "<user_record_json_key_2>": "user_record_json_value_2",
+                VARIABLE_JSON_KEY: "string",
             }
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
@@ -374,107 +380,38 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_entity_by_xxx(sz_abstract_factory: SzAbstractFactory):
+    global DEBUG
 
-    records = [
-        {"data_source": "CUSTOMERS", "record_id": "1001"},
-        {"data_source": "CUSTOMERS", "record_id": "1033"},
-    ]
-
-    flags = [
-        SzEngineFlags.SZ_ADD_RECORD_DEFAULT_FLAGS,  # 1
-        SzEngineFlags.SZ_DELETE_RECORD_DEFAULT_FLAGS,  # 2
-        SzEngineFlags.SZ_ENTITY_BRIEF_DEFAULT_FLAGS,  # 3
-        SzEngineFlags.SZ_ENTITY_CORE_FLAGS,  # 4
-        SzEngineFlags.SZ_ENTITY_DEFAULT_FLAGS,  # 5
-        SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_FEATURES,  # 6
-        SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_RELATIONS,  # 7
-        SzEngineFlags.SZ_ENTITY_INCLUDE_DISCLOSED_RELATIONS,  # 8
-        SzEngineFlags.SZ_ENTITY_INCLUDE_ENTITY_NAME,  # 9
-        SzEngineFlags.SZ_ENTITY_INCLUDE_FEATURE_STATS,  # 10
-        SzEngineFlags.SZ_ENTITY_INCLUDE_INTERNAL_FEATURES,  # 11
-        SzEngineFlags.SZ_ENTITY_INCLUDE_NAME_ONLY_RELATIONS,  # 12
-        SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_RELATED_RELATIONS,  # 13
-        SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_SAME_RELATIONS,  # 14
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATA,  # 15
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATES,  # 16
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_DETAILS,  # 17
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_STATS,  # 17
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURES,  # 19
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_JSON_DATA,  # 20
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_MATCHING_INFO,  # 21
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_SUMMARY,  # 22
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_TYPES,  # 23
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_UNMAPPED_DATA,  # 24
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_ENTITY_NAME,  # 25
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_MATCHING_INFO,  # 26
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_DATA,  # 27
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_SUMMARY,  # 28
-        SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_TYPES,  # 29
-        SzEngineFlags.SZ_ENTITY_INCLUDE_REPRESENTATIVE_FEATURES,  # 30
-        SzEngineFlags.SZ_EXPORT_DEFAULT_FLAGS,  # 31
-        SzEngineFlags.SZ_EXPORT_INCLUDE_ALL_ENTITIES,  # 32
-        SzEngineFlags.SZ_EXPORT_INCLUDE_ALL_HAVING_RELATIONSHIPS,  # 33
-        SzEngineFlags.SZ_EXPORT_INCLUDE_DISCLOSED,  # 34
-        SzEngineFlags.SZ_EXPORT_INCLUDE_MULTI_RECORD_ENTITIES,  # 35
-        SzEngineFlags.SZ_EXPORT_INCLUDE_NAME_ONLY,  # 36
-        SzEngineFlags.SZ_EXPORT_INCLUDE_POSSIBLY_RELATED,  # 37
-        SzEngineFlags.SZ_EXPORT_INCLUDE_POSSIBLY_SAME,  # 38
-        SzEngineFlags.SZ_EXPORT_INCLUDE_SINGLE_RECORD_ENTITIES,  # 39
-        SzEngineFlags.SZ_FIND_INTERESTING_ENTITIES_DEFAULT_FLAGS,  # 40
-        SzEngineFlags.SZ_FIND_NETWORK_DEFAULT_FLAGS,  # 41
-        SzEngineFlags.SZ_FIND_NETWORK_INCLUDE_MATCHING_INFO,  # 42
-        SzEngineFlags.SZ_FIND_PATH_DEFAULT_FLAGS,  # 43
-        SzEngineFlags.SZ_FIND_PATH_INCLUDE_MATCHING_INFO,  # 44
-        SzEngineFlags.SZ_FIND_PATH_STRICT_AVOID,  # 45
-        SzEngineFlags.SZ_HOW_ENTITY_DEFAULT_FLAGS,  # 46
-        SzEngineFlags.SZ_INCLUDE_FEATURE_SCORES,  # 47
-        SzEngineFlags.SZ_INCLUDE_MATCH_KEY_DETAILS,  # 48
-        SzEngineFlags.SZ_NO_FLAGS,  # 49
-        SzEngineFlags.SZ_RECORD_DEFAULT_FLAGS,  # 50
-        SzEngineFlags.SZ_RECORD_PREVIEW_DEFAULT_FLAGS,  # 51
-        SzEngineFlags.SZ_REEVALUATE_ENTITY_DEFAULT_FLAGS,  # 52
-        SzEngineFlags.SZ_REEVALUATE_RECORD_DEFAULT_FLAGS,  # 53
-        SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_ALL,  # 54
-        SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_DEFAULT_FLAGS,  # 55
-        SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_MINIMAL_ALL,  # 56
-        SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_MINIMAL_STRONG,  # 57
-        SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_STRONG,  # 58
-        SzEngineFlags.SZ_SEARCH_INCLUDE_ALL_CANDIDATES,  # 59
-        SzEngineFlags.SZ_SEARCH_INCLUDE_ALL_ENTITIES,  # 60
-        SzEngineFlags.SZ_SEARCH_INCLUDE_NAME_ONLY,  # 61
-        SzEngineFlags.SZ_SEARCH_INCLUDE_POSSIBLY_RELATED,  # 62
-        SzEngineFlags.SZ_SEARCH_INCLUDE_POSSIBLY_SAME,  # 63
-        SzEngineFlags.SZ_SEARCH_INCLUDE_REQUEST_DETAILS,  # 64
-        SzEngineFlags.SZ_SEARCH_INCLUDE_REQUEST,  # 65
-        SzEngineFlags.SZ_SEARCH_INCLUDE_RESOLVED,  # 66
-        SzEngineFlags.SZ_SEARCH_INCLUDE_STATS,  # 67
-        SzEngineFlags.SZ_VIRTUAL_ENTITY_DEFAULT_FLAGS,  # 68
-        SzEngineFlags.SZ_WHY_ENTITIES_DEFAULT_FLAGS,  # 69
-        SzEngineFlags.SZ_WHY_RECORD_IN_ENTITY_DEFAULT_FLAGS,  # 70
-        SzEngineFlags.SZ_WHY_RECORDS_DEFAULT_FLAGS,  # 71
-        SzEngineFlags.SZ_WHY_SEARCH_DEFAULT_FLAGS,  # 72
-    ]
+    debug_records = [(0, 0)]
 
     sz_engine = sz_abstract_factory.create_engine()
 
     title = "SzEngineGetEntityByRecordIdResponse"
+    json_schema = SCHEMA.get(title)
+
     record_count = 0
-    for record in records:
+    for record in RECORDS:
         record_count += 1
         flag_count = 0
-        for flag in flags:
+        for flag in FLAGS:
             flag_count += 1
+
+            DEBUG = 0
+            if (record_count, flag_count) in debug_records:
+                DEBUG = 1
+
             test_name = (
                 f"get_entity_by_record_id  Record #{record_count}  Flag #{flag_count}"
             )
             response = sz_engine.get_entity_by_record_id(
                 record.get("data_source", ""), record.get("record_id", ""), flag
             )
-
-            print("\n\n")
-            print(response)
-            json_schema = SCHEMA.get("SzEngineGetEntityByRecordIdResponse")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+            debug(
+                1,
+                f"{HR_START}\nRecord: {record_count}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
+            )
 
 
 # -----------------------------------------------------------------------------
@@ -489,7 +426,9 @@ def test_this(test_name, title, response):
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):
-    global ERROR_COUNT
+    global ERROR_COUNT, DEBUG
+
+    debug(1, f"{HR_START}\nSchema for {json_path}:\n{json.dumps(schema)}\n{HR_STOP}\n")
 
     if isinstance(fragment, list):
         if not isinstance(schema, list):
@@ -509,9 +448,10 @@ def compare_to_schema(test_name, json_path, schema, fragment):
             error_message(test_name, json_path, "Missing dict", schema, fragment)
             return
         for key, value in fragment.items():
+
             schema_value = schema.get(key, {})
             if key not in schema:
-                schema_value = schema.get("<user_defined_json_key>", {})
+                schema_value = schema.get(VARIABLE_JSON_KEY, {})
             compare_to_schema(test_name, f"{json_path}.{key}", schema_value, value)
         return
 
@@ -528,7 +468,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
         return
 
     if isinstance(fragment, str):
-        if not schema == "string":
+        if schema not in ["string", "timestamp"]:
             error_message(
                 test_name,
                 json_path,
@@ -622,6 +562,11 @@ def infer_json_type_definition(example_json: str) -> str:
     return ""
 
 
+def debug(level, message):
+    if DEBUG >= level:
+        print(message)
+
+
 def output(indentation, message):
     print(f"{"    " * indentation}{message}")
 
@@ -631,8 +576,8 @@ def error_message(test_name, json_path, message, schema, fragment):
     output(1, f"Path: {json_path}")
     output(2, "Error:")
     output(3, message)
-    output(3, f"schema: {schema}")
-    output(3, f"  json: {fragment}")
+    output(3, f"schema: {json.dumps(schema)}")
+    output(3, f"  json: {json.dumps(fragment)}")
 
 
 # -----------------------------------------------------------------------------
@@ -663,7 +608,7 @@ if __name__ == "__main__":
 
         SCHEMA[requested_json_key] = recurse(json_value)
 
-    # Create SzAbstractFactory
+    # Create SzAbstractFactory.
 
     instance_name = "Example"
     settings = {
@@ -680,26 +625,13 @@ if __name__ == "__main__":
     except SzError as err:
         print(f"\nERROR: {err}\n")
 
-    # Xxxxxx
+    # Make comparisons.
 
     add_records(sz_abstract_factory)
     compare_static(sz_abstract_factory)
     compare_get_entity_by_xxx(sz_abstract_factory)
 
-    # example_json = '{"DATA_SOURCES":[{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1},{"DSRC_CODE":"blank","DSRC_ID":1}]}'
-    # example_json = '{"AFFECTED_ENTITIES":[{"ENTITY_ID":"100002"}],"DATA_SOURCE":"TEST","INTERESTING_ENTITIES":{"ENTITIES":[]},"RECORD_ID":"DELETE_TEST"}'
-    # example_json = '{"AFFECTED_ENTITIES": [{"ENTITY_ID": "int32"}], "DATA_SOURCE": "string", "INTERESTING_ENTITIES": {"ENTITIES": [{"DEGREES": "int32", "ENTITY_ID": "int32", "FLAGS": ["string"], "SAMPLE_RECORDS": [{"DATA_SOURCE": "string", "FLAGS": ["string"], "RECORD_ID": "string"}]}], "NOTICES": [{"CODE": "string", "DESCRIPTION": "string"}]}, "RECORD_ID": "string"}'
+    # Epilog.
 
-    # title = "SzEngineDeleteRecordResponse"
-    # json_schema = SCHEMA.get(title)
-
-    # schema = infer_json_type_definition(example_json)
-    # print(schema)
-    # print(json.dumps(json_schema))
-
-    # print(is_json_subset(example_json, json_schema))
-    # test_name = "bob"
-    # compare_to_schema(test_name, title, json_schema, json.loads(example_json))
-
-if ERROR_COUNT > 0:
-    sys.exit(1)
+    if ERROR_COUNT > 0:
+        sys.exit(1)
