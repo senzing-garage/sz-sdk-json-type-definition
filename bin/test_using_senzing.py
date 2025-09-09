@@ -234,8 +234,6 @@ def compare_static(sz_abstract_factory: SzAbstractFactory):
     sz_engine = sz_abstract_factory.create_engine()
     sz_product = sz_abstract_factory.create_product()
 
-    print(sz_engine.get_stats())
-
     # Define testcases
 
     testcases = [
@@ -335,7 +333,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
             error_message(
                 test_name,
                 json_path,
-                "Incorrect specification for int",
+                "Incorrect specification for int32",
                 schema,
                 fragment,
             )
@@ -347,6 +345,17 @@ def compare_to_schema(test_name, json_path, schema, fragment):
                 test_name,
                 json_path,
                 "Incorrect specification for string",
+                schema,
+                fragment,
+            )
+        return
+
+    if isinstance(fragment, float):
+        if not schema == "float32":
+            error_message(
+                test_name,
+                json_path,
+                "Incorrect specification for float32",
                 schema,
                 fragment,
             )

@@ -41,8 +41,16 @@
         },
         "Candidates": {
             "properties": {
-                "candidateBuilders": [],
-                "suppressedCandidateBuilders": []
+                "candidateBuilders": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "suppressedCandidateBuilders": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                }
             }
         },
         "CFG_ATTR": {
@@ -1000,9 +1008,21 @@
         },
         "Contention": {
             "properties": {
-                "feature": [],
-                "resent": [],
-                "valuelatch": []
+                "feature": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "resent": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "valuelatch": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                }
             }
         },
         "CurrResources": {
@@ -1081,8 +1101,16 @@
         },
         "ExpressedFeatures": {
             "properties": {
-                "calls": [],
-                "created": []
+                "calls": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "created": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                }
             }
         },
         "Feature": {
@@ -2261,8 +2289,16 @@
                 "triggers": {
                     "ref": "ReresolveTriggers"
                 },
-                "suppressedCandidateBuildersForReresolve": [],
-                "suppressedScoredFeatureTypeForReresolve": []
+                "suppressedCandidateBuildersForReresolve": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "suppressedScoredFeatureTypeForReresolve": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                }
             }
         },
         "ReresolveTriggers": {
@@ -2273,7 +2309,11 @@
                 "multipleResolvableCandidates": {
                     "type": "int32"
                 },
-                "newFeatureFTypes": [],
+                "newFeatureFTypes": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
                 "resolveNewFeatures": {
                     "type": "int32"
                 },
@@ -2524,13 +2564,29 @@
         },
         "Scoring": {
             "properties": {
-                "cacheHit": [],
-                "cacheMiss": [],
-                "scoredPairs": [],
+                "cacheHit": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "cacheMiss": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
+                "scoredPairs": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
                 "suppressedDisclosedRelationshipDomainCount": {
                     "type": "int32"
                 },
-                "suppressedScoredFeatureType": []
+                "suppressedScoredFeatureType": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                }
             }
         },
         "SearchStatistic": {
@@ -2855,16 +2911,16 @@
         "SystemLoad": {
             "properties": {
                 "cpuUser": {
-                    "type": "int32"
+                    "type": "float32"
                 },
                 "cpuSystem": {
-                    "type": "int32"
+                    "type": "float32"
                 },
                 "cpuIdle": {
-                    "type": "int32"
+                    "type": "float32"
                 },
                 "cpuWait": {
-                    "type": "int32"
+                    "type": "float32"
                 }
             }
         },
@@ -3637,7 +3693,11 @@
                 "expressedFeatures": {
                     "ref": "ExpressedFeatures"
                 },
-                "genericDetect": [],
+                "genericDetect": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
                 "license": {
                     "ref": "License"
                 },
@@ -3650,7 +3710,11 @@
                 "processing": {
                     "ref": "Processing"
                 },
-                "redoTriggers": [],
+                "redoTriggers": {
+                    "elements": {
+                        "ref": "Fixme"
+                    }
+                },
                 "repairDiagnosis": {
                     "ref": "RepairDiagnosis"
                 },
