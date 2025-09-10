@@ -100,6 +100,8 @@ FLAGS = [
     SzEngineFlags.SZ_WHY_SEARCH_DEFAULT_FLAGS,  # 72
 ]
 
+FLAGS_LEN = len(FLAGS)
+
 
 RECORDS = [
     {"data_source": "CUSTOMERS", "record_id": "1001"},
@@ -122,46 +124,46 @@ GLOBAL_JSON_KEYS = [
     "SzConfigRegisterDataSourceResponse",
     "SzConfigUnregisterDataSourceResponse",
     "SzDiagnosticCheckRepositoryPerformanceResponse",
-    "SzDiagnosticGetFeatureResponse",
+    # "SzDiagnosticGetFeatureResponse",
     "SzDiagnosticGetRepositoryInfoResponse",
     "SzEngineAddRecordResponse",
-    "SzEngineDeleteRecordResponse",
-    "SzEngineExportCsvEntityReportCsvColumnList",
-    "SzEngineFetchNextResponse",
+    # "SzEngineDeleteRecordResponse",
+    # "SzEngineExportCsvEntityReportCsvColumnList",
+    # "SzEngineFetchNextResponse",
     "SzEngineFindInterestingEntitiesByEntityIdResponse",
     "SzEngineFindInterestingEntitiesByRecordIdResponse",
-    "SzEngineFindNetworkByEntityIdEntityIds",
+    # "SzEngineFindNetworkByEntityIdEntityIds",
     "SzEngineFindNetworkByEntityIdResponse",
-    "SzEngineFindNetworkByRecordIdRecordKeys",
+    # "SzEngineFindNetworkByRecordIdRecordKeys",
     "SzEngineFindNetworkByRecordIdResponse",
-    "SzEngineFindPathByEntityIdAvoidEntityIds",
-    "SzEngineFindPathByEntityIdRequiredDataSources",
-    "SzEngineFindPathByEntityIdResponse",
-    "SzEngineFindPathByRecordIdAvoidRecordKeys",
-    "SzEngineFindPathByRecordIdRequiredDataSources",
-    "SzEngineFindPathByRecordIdResponse",
+    # "SzEngineFindPathByEntityIdAvoidEntityIds",
+    # "SzEngineFindPathByEntityIdRequiredDataSources",
+    # "SzEngineFindPathByEntityIdResponse",
+    # "SzEngineFindPathByRecordIdAvoidRecordKeys",
+    # "SzEngineFindPathByRecordIdRequiredDataSources",
+    # "SzEngineFindPathByRecordIdResponse",
     "SzEngineGetEntityByEntityIdResponse",
     "SzEngineGetEntityByRecordIdResponse",
-    "SzEngineGetRecordPreviewResponse",
-    "SzEngineGetRecordResponse",
-    "SzEngineGetRedoRecordResponse",
+    # "SzEngineGetRecordPreviewResponse",
+    # "SzEngineGetRecordResponse",
+    # "SzEngineGetRedoRecordResponse",
     "SzEngineGetStatsResponse",
-    "SzEngineGetVirtualEntityByRecordIdRecordKeys",
-    "SzEngineGetVirtualEntityByRecordIdResponse",
-    "SzEngineHowEntityByEntityIdResponse",
-    "SzEngineProcessRedoRecordResponse",
+    # "SzEngineGetVirtualEntityByRecordIdRecordKeys",
+    # "SzEngineGetVirtualEntityByRecordIdResponse",
+    # "SzEngineHowEntityByEntityIdResponse",
+    # "SzEngineProcessRedoRecordResponse",
     "SzEngineReevaluateEntityResponse",
-    "SzEngineReevaluateRecordResponse",
-    "SzEngineSearchByAttributesAttributes",
-    "SzEngineSearchByAttributesResponse",
-    "SzEngineSearchByAttributesSearchProfile",
-    "SzEngineStreamExportJsonEntityReportResponse",
-    "SzEngineWhyEntitiesResponse",
-    "SzEngineWhyRecordInEntityResponse",
-    "SzEngineWhyRecordsResponse",
-    "SzEngineWhySearchAttributes",
-    "SzEngineWhySearchResponse",
-    "SzEngineWhySearchSearchProfile",
+    # "SzEngineReevaluateRecordResponse",
+    # "SzEngineSearchByAttributesAttributes",
+    # "SzEngineSearchByAttributesResponse",
+    # "SzEngineSearchByAttributesSearchProfile",
+    # "SzEngineStreamExportJsonEntityReportResponse",
+    # "SzEngineWhyEntitiesResponse",
+    # "SzEngineWhyRecordInEntityResponse",
+    # "SzEngineWhyRecordsResponse",
+    # "SzEngineWhySearchAttributes",
+    # "SzEngineWhySearchResponse",
+    # "SzEngineWhySearchSearchProfile",
     "SzProductGetLicenseResponse",
     "SzProductGetVersionResponse",
 ]
@@ -322,6 +324,11 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
                 )
 
 
+# -----------------------------------------------------------------------------
+# FindInterestingEntities
+# -----------------------------------------------------------------------------
+
+
 def compare_find_interesting_entities_by_entity_id(
     sz_abstract_factory: SzAbstractFactory,
 ):
@@ -368,10 +375,11 @@ def compare_find_interesting_entities_by_record_id(
 
     for record in LOADED_RECORD_KEYS:
         flag_count = 0
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
         for flag in FLAGS:
             flag_count += 1
-            data_source = record.get("data_source", "")
-            record_id = record.get("record_id", "")
 
             DEBUG = 0
             if ((data_source, record_id), flag_count) in debug_records:
@@ -390,7 +398,12 @@ def compare_find_interesting_entities_by_record_id(
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
-def compare_network_by_entity_id(
+# -----------------------------------------------------------------------------
+# FindNetwork
+# -----------------------------------------------------------------------------
+
+
+def compare_find_network_by_entity_id(
     sz_abstract_factory: SzAbstractFactory,
 ):
     global DEBUG
@@ -401,21 +414,20 @@ def compare_network_by_entity_id(
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindNetworkByEntityIdResponse"
     json_schema = SCHEMA.get(title)
-    max_degrees = 3
-    build_out_degrees = 3
+    max_degrees = 5
+    build_out_degrees = 5
     build_out_max_entities = 5
 
-    for entity_id in LOADED_ENTITY_IDS[0:1]:
+    for entity_id in LOADED_ENTITY_IDS:
         flag_count = 0
 
-        # Randomize entity_list.
+        # Randomize entity_ids.
 
-        entity_list = [entity_id]
-        for i in range(random.randint(3, 10)):
-            for j in range(i):
-                new_entity_id = LOADED_ENTITY_IDS[j]
-                if new_entity_id not in entity_list:
-                    entity_list.append(new_entity_id)
+        entity_ids = [entity_id]
+        for _ in range(random.randint(3, 10)):
+            new_entity_id = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
+            if new_entity_id not in entity_ids:
+                entity_ids.append(new_entity_id)
 
         # Compare.
 
@@ -427,7 +439,7 @@ def compare_network_by_entity_id(
                 DEBUG = 1
 
             response = sz_engine.find_network_by_entity_id(
-                entity_list,
+                entity_ids,
                 max_degrees,
                 build_out_degrees,
                 build_out_max_entities,
@@ -436,11 +448,80 @@ def compare_network_by_entity_id(
 
             debug(
                 1,
-                f"{HR_START}\nEntity ID: {entity_id}; Entity List: {entity_list}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
+                f"{HR_START}\nEntity ID: {entity_id}; Entity List: {entity_ids}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
             )
 
             test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+def compare_find_network_by_record_id(
+    sz_abstract_factory: SzAbstractFactory,
+):
+    global DEBUG
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMER", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineFindNetworkByRecordIdResponse"
+    json_schema = SCHEMA.get(title)
+    max_degrees = 5
+    build_out_degrees = 5
+    build_out_max_entities = 5
+
+    for record in LOADED_RECORD_KEYS:
+        flag_count = 0
+
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
+        # Randomize record_list.
+
+        record_keys = [(data_source, record_id)]
+        for _ in range(random.randint(3, 10)):
+            record_key_dict = LOADED_RECORD_KEYS[random.randint(0, FLAGS_LEN - 1)]
+            record_key = (
+                record_key_dict.get("data_source", ""),
+                record_key_dict.get("record_id", ""),
+            )
+            if record_key not in record_keys:
+                record_keys.append(record_key)
+
+        # Compare.
+
+        for flag in FLAGS:
+            flag_count += 1
+
+            DEBUG = 0
+            if ((data_source, record_id), flag_count) in debug_records:
+                DEBUG = 1
+
+            response = sz_engine.find_network_by_record_id(
+                record_keys,
+                max_degrees,
+                build_out_degrees,
+                build_out_max_entities,
+                flag,
+            )
+
+            debug(
+                1,
+                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Record Keys: {record_keys}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+            )
+
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# FindPath
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# GetEntity
+# -----------------------------------------------------------------------------
 
 
 def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
@@ -485,10 +566,11 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
     for record in LOADED_RECORD_KEYS:
         flag_count = 0
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
         for flag in FLAGS:
             flag_count += 1
-            data_source = record.get("data_source", "")
-            record_id = record.get("record_id", "")
 
             DEBUG = 0
             if ((data_source, record_id), flag_count) in debug_records:
@@ -503,6 +585,11 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# Static calls
+# -----------------------------------------------------------------------------
 
 
 def compare_static(sz_abstract_factory: SzAbstractFactory):
@@ -811,15 +898,16 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    # compare_static(sz_abstract_factory)
+    compare_static(sz_abstract_factory)
 
-    # compare_get_entity_by_record_id(sz_abstract_factory)
-    # compare_get_entity_by_entity_id(sz_abstract_factory)
+    compare_get_entity_by_record_id(sz_abstract_factory)
+    compare_get_entity_by_entity_id(sz_abstract_factory)
 
-    # compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
-    # compare_find_interesting_entities_by_record_id(sz_abstract_factory)
+    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
+    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
 
-    compare_network_by_entity_id(sz_abstract_factory)
+    compare_find_network_by_entity_id(sz_abstract_factory)
+    compare_find_network_by_record_id(sz_abstract_factory)
 
     # Epilog.
 

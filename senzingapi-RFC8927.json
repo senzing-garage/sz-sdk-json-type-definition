@@ -3290,9 +3290,19 @@
                         "ref": "Entity"
                     }
                 },
+                "ENTITY_NETWORK_LINKS": {
+                    "elements": {
+                        "ref": "EntityNetworkLink"
+                    }
+                },
                 "ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
+                    }
+                },
+                "ENTITY_PATH_LINKS": {
+                    "elements": {
+                        "ref": "EntityPathLink"
                     }
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
