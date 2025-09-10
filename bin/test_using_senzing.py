@@ -138,10 +138,10 @@ GLOBAL_JSON_KEYS = [
     "SzEngineFindNetworkByRecordIdResponse",
     # "SzEngineFindPathByEntityIdAvoidEntityIds",
     # "SzEngineFindPathByEntityIdRequiredDataSources",
-    # "SzEngineFindPathByEntityIdResponse",
+    "SzEngineFindPathByEntityIdResponse",
     # "SzEngineFindPathByRecordIdAvoidRecordKeys",
     # "SzEngineFindPathByRecordIdRequiredDataSources",
-    # "SzEngineFindPathByRecordIdResponse",
+    "SzEngineFindPathByRecordIdResponse",
     "SzEngineGetEntityByEntityIdResponse",
     "SzEngineGetEntityByRecordIdResponse",
     # "SzEngineGetRecordPreviewResponse",
@@ -517,6 +517,93 @@ def compare_find_network_by_record_id(
 # -----------------------------------------------------------------------------
 # FindPath
 # -----------------------------------------------------------------------------
+
+
+def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
+    global DEBUG
+    debug_entities = [  # Format (entity_id, flag_count)
+        (0, 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineFindPathByEntityIdResponse"
+    json_schema = SCHEMA.get(title)
+    max_degrees = 5
+    avoid_entity_ids = None
+    required_data_sources = None
+
+    for entity_id in LOADED_ENTITY_IDS:
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+
+            DEBUG = 0
+            if (entity_id, flag_count) in debug_entities:
+                DEBUG = 1
+
+            end_entity_id = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
+            response = sz_engine.find_path_by_entity_id(
+                entity_id,
+                end_entity_id,
+                max_degrees,
+                avoid_entity_ids,
+                required_data_sources,
+                flag,
+            )
+
+            debug(
+                1,
+                f"{HR_START}\nStart Entity ID: {entity_id}, End Entity ID: {end_entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
+            )
+
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
+    global DEBUG
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMER", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineFindPathByRecordIdResponse"
+    json_schema = SCHEMA.get(title)
+    max_degrees = 5
+    avoid_record_keys = None
+    required_data_sources = None
+
+    for record in LOADED_RECORD_KEYS:
+        flag_count = 0
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
+        for flag in FLAGS:
+            flag_count += 1
+
+            DEBUG = 0
+            if ((data_source, record_id), flag_count) in debug_records:
+                DEBUG = 1
+
+            end_record = LOADED_RECORD_KEYS[random.randint(0, FLAGS_LEN - 1)]
+            response = sz_engine.find_path_by_record_id(
+                data_source,
+                record_id,
+                end_record.get("data_source", ""),
+                end_record.get("record_id", ""),
+                max_degrees,
+                avoid_record_keys,
+                required_data_sources,
+                flag,
+            )
+
+            debug(
+                1,
+                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; End Record: {end_record} Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+            )
+
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 # -----------------------------------------------------------------------------
@@ -898,16 +985,19 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    compare_static(sz_abstract_factory)
+    # compare_static(sz_abstract_factory)
 
-    compare_get_entity_by_record_id(sz_abstract_factory)
-    compare_get_entity_by_entity_id(sz_abstract_factory)
+    # compare_get_entity_by_record_id(sz_abstract_factory)
+    # compare_get_entity_by_entity_id(sz_abstract_factory)
 
-    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
-    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
+    # compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
+    # compare_find_interesting_entities_by_record_id(sz_abstract_factory)
 
-    compare_find_network_by_entity_id(sz_abstract_factory)
-    compare_find_network_by_record_id(sz_abstract_factory)
+    # compare_find_network_by_entity_id(sz_abstract_factory)
+    # compare_find_network_by_record_id(sz_abstract_factory)
+
+    compare_find_path_by_entity_id(sz_abstract_factory)
+    compare_find_path_by_record_id(sz_abstract_factory)
 
     # Epilog.
 

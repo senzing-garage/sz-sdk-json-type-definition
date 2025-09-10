@@ -3335,6 +3335,11 @@
                     "elements": {
                         "ref": "EntityPath"
                     }
+                },
+                "ENTITY_PATH_LINKS": {
+                    "elements": {
+                        "ref": "EntityPathLink"
+                    }
                 }
             }
         },
@@ -3367,6 +3372,11 @@
                 "ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
+                    }
+                },
+                "ENTITY_PATH_LINKS": {
+                    "elements": {
+                        "ref": "EntityPathLink"
                     }
                 }
             }
