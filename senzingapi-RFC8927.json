@@ -3447,6 +3447,12 @@
                 "FEATURES": {
                     "ref": "MapStringToListOfFeatureForAttributeWithAttributes"
                 },
+                "FEATURE_IDS": {
+                    "ref": "FeatureIDs"
+                },
+                "FIRST_SEEN_DT": {
+                    "type": "timestamp"
+                },
                 "IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"

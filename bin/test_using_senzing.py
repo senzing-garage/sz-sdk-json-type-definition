@@ -145,7 +145,7 @@ GLOBAL_JSON_KEYS = [
     "SzEngineGetEntityByEntityIdResponse",
     "SzEngineGetEntityByRecordIdResponse",
     # "SzEngineGetRecordPreviewResponse",
-    # "SzEngineGetRecordResponse",
+    "SzEngineGetRecordResponse",
     # "SzEngineGetRedoRecordResponse",
     "SzEngineGetStatsResponse",
     # "SzEngineGetVirtualEntityByRecordIdRecordKeys",
@@ -675,6 +675,44 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# GetRecord
+# -----------------------------------------------------------------------------
+
+
+def compare_get_record(sz_abstract_factory: SzAbstractFactory):
+    global DEBUG
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMER", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineGetRecordResponse"
+    json_schema = SCHEMA.get(title)
+
+    for record in LOADED_RECORD_KEYS:
+        flag_count = 0
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
+        for flag in FLAGS:
+            flag_count += 1
+
+            DEBUG = 0
+            if ((data_source, record_id), flag_count) in debug_records:
+                DEBUG = 1
+
+            response = sz_engine.get_record(data_source, record_id, flag)
+
+            debug(
+                1,
+                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+            )
+
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
 # Static calls
 # -----------------------------------------------------------------------------
 
@@ -996,8 +1034,10 @@ if __name__ == "__main__":
     # compare_find_network_by_entity_id(sz_abstract_factory)
     # compare_find_network_by_record_id(sz_abstract_factory)
 
-    compare_find_path_by_entity_id(sz_abstract_factory)
-    compare_find_path_by_record_id(sz_abstract_factory)
+    # compare_find_path_by_entity_id(sz_abstract_factory)
+    # compare_find_path_by_record_id(sz_abstract_factory)
+
+    compare_get_record(sz_abstract_factory)
 
     # Epilog.
 
