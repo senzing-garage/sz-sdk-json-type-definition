@@ -1,5 +1,27 @@
 {
     "definitions": {
+        "AdditionalScores": {
+            "properties": {
+                "FULL_SCORE": {
+                    "type": "int32"
+                },
+                "GENERATION_MATCH": {
+                    "type": "int32"
+                },
+                "GNR_FN": {
+                    "type": "int32"
+                },
+                "GNR_GN": {
+                    "type": "int32"
+                },
+                "GNR_ON": {
+                    "type": "int32"
+                },
+                "GNR_SN": {
+                    "type": "int32"
+                }
+            }
+        },
         "AffectedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -1006,6 +1028,58 @@
                 }
             }
         },
+        "Confirmation": {
+            "properties": {
+                "ADDITIONAL_SCORES": {
+                    "ref": "AdditionalScores"
+                },
+                "CANDIDATE_FEAT_DESC": {
+                    "type": "string"
+                },
+                "CANDIDATE_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "CANDIDATE_FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "FTYPE_CODE": {
+                    "type": "string"
+                },
+                "INBOUND_FEAT_DESC": {
+                    "type": "string"
+                },
+                "INBOUND_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "INBOUND_FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "SCORE": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "SCORE_BEHAVIOR": {
+                    "type": "string"
+                },
+                "SCORE_BUCKET": {
+                    "type": "string"
+                },
+                "SOURCE": {
+                    "type": "string"
+                },
+                "TOKEN": {
+                    "type": "string"
+                }
+            }
+        },
         "Contention": {
             "properties": {
                 "feature": {
@@ -1335,7 +1409,16 @@
         },
         "FeatureScoreForAttribute": {
             "properties": {
-                "CANDIDATE_FEAT": {
+                "INBOUND_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "INBOUND_FEAT_DESC": {
+                    "type": "string"
+                },
+                "INBOUND_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
                 "CANDIDATE_FEAT_ID": {
@@ -1344,56 +1427,20 @@
                     },
                     "type": "int32"
                 },
+                "CANDIDATE_FEAT_DESC": {
+                    "type": "string"
+                },
                 "CANDIDATE_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "FULL_SCORE": {
+                "SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "GENERATION_MATCH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_FN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_GN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_ON": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GNR_SN": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "INBOUND_FEAT": {
-                    "type": "string"
-                },
-                "INBOUND_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "INBOUND_FEAT_USAGE_TYPE": {
-                    "type": "string"
+                "ADDITIONAL_SCORES": {
+                    "ref": "AdditionalScores"
                 },
                 "SCORE_BEHAVIOR": {
                     "type": "string"
@@ -1797,6 +1844,23 @@
             },
             "type": "string"
         },
+        "MatchKeyDetails": {
+            "properties": {
+                "CONFIRMATIONS": {
+                    "elements": {
+                        "ref": "Confirmation"
+                    }
+                },
+                "DENIALS": {
+                    "elements": {
+                        "ref": "Confirmation"
+                    }
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                }
+            }
+        },
         "MatchInfo": {
             "properties": {
                 "CANDIDATE_KEYS": {
@@ -1916,6 +1980,9 @@
                 },
                 "MATCH_KEY": {
                     "type": "string"
+                },
+                "MATCH_KEY_DETAILS": {
+                    "ref": "MatchKeyDetails"
                 },
                 "MATCH_LEVEL": {
                     "metadata": {

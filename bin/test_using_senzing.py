@@ -16,7 +16,7 @@ import sys
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
 
-DEBUG = False
+DEBUG = 0
 ERROR_COUNT = 0
 HR_START = ">" * 80
 HR_STOP = "<" * 80
@@ -149,11 +149,11 @@ GLOBAL_JSON_KEYS = [
     # "SzEngineGetRedoRecordResponse",
     "SzEngineGetStatsResponse",
     # "SzEngineGetVirtualEntityByRecordIdRecordKeys",
-    # "SzEngineGetVirtualEntityByRecordIdResponse",
-    # "SzEngineHowEntityByEntityIdResponse",
+    "SzEngineGetVirtualEntityByRecordIdResponse",
+    "SzEngineHowEntityByEntityIdResponse",
     # "SzEngineProcessRedoRecordResponse",
     "SzEngineReevaluateEntityResponse",
-    # "SzEngineReevaluateRecordResponse",
+    "SzEngineReevaluateRecordResponse",
     # "SzEngineSearchByAttributesAttributes",
     # "SzEngineSearchByAttributesResponse",
     # "SzEngineSearchByAttributesSearchProfile",
@@ -332,7 +332,6 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
 def compare_find_interesting_entities_by_entity_id(
     sz_abstract_factory: SzAbstractFactory,
 ):
-    global DEBUG
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -345,18 +344,12 @@ def compare_find_interesting_entities_by_entity_id(
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if (entity_id, flag_count) in debug_entities:
-                DEBUG = 1
-
             response = sz_engine.find_interesting_entities_by_entity_id(entity_id, flag)
-
+            set_debug((entity_id, flag_count), debug_entities)
             debug(
                 1,
                 f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
@@ -364,7 +357,6 @@ def compare_find_interesting_entities_by_entity_id(
 def compare_find_interesting_entities_by_record_id(
     sz_abstract_factory: SzAbstractFactory,
 ):
-    global DEBUG
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -380,20 +372,14 @@ def compare_find_interesting_entities_by_record_id(
 
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if ((data_source, record_id), flag_count) in debug_records:
-                DEBUG = 1
-
             response = sz_engine.find_interesting_entities_by_record_id(
                 data_source, record_id, flag
             )
-
+            set_debug(((data_source, record_id), flag_count), debug_records)
             debug(
                 1,
                 f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
@@ -403,10 +389,7 @@ def compare_find_interesting_entities_by_record_id(
 # -----------------------------------------------------------------------------
 
 
-def compare_find_network_by_entity_id(
-    sz_abstract_factory: SzAbstractFactory,
-):
-    global DEBUG
+def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -433,11 +416,6 @@ def compare_find_network_by_entity_id(
 
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if (entity_id, flag_count) in debug_entities:
-                DEBUG = 1
-
             response = sz_engine.find_network_by_entity_id(
                 entity_ids,
                 max_degrees,
@@ -445,20 +423,16 @@ def compare_find_network_by_entity_id(
                 build_out_max_entities,
                 flag,
             )
-
+            set_debug((entity_id, flag_count), debug_entities)
             debug(
                 1,
                 f"{HR_START}\nEntity ID: {entity_id}; Entity List: {entity_ids}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
-def compare_find_network_by_record_id(
-    sz_abstract_factory: SzAbstractFactory,
-):
-    global DEBUG
+def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -476,7 +450,7 @@ def compare_find_network_by_record_id(
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
 
-        # Randomize record_list.
+        # Randomize record_keys.
 
         record_keys = [(data_source, record_id)]
         for _ in range(random.randint(3, 10)):
@@ -492,11 +466,6 @@ def compare_find_network_by_record_id(
 
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if ((data_source, record_id), flag_count) in debug_records:
-                DEBUG = 1
-
             response = sz_engine.find_network_by_record_id(
                 record_keys,
                 max_degrees,
@@ -504,12 +473,11 @@ def compare_find_network_by_record_id(
                 build_out_max_entities,
                 flag,
             )
-
+            set_debug(((data_source, record_id), flag_count), debug_records)
             debug(
                 1,
                 f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Record Keys: {record_keys}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
@@ -520,7 +488,6 @@ def compare_find_network_by_record_id(
 
 
 def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
-    global DEBUG
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -536,11 +503,6 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if (entity_id, flag_count) in debug_entities:
-                DEBUG = 1
-
             end_entity_id = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
             response = sz_engine.find_path_by_entity_id(
                 entity_id,
@@ -550,18 +512,16 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
                 required_data_sources,
                 flag,
             )
-
+            set_debug((entity_id, flag_count), debug_entities)
             debug(
                 1,
                 f"{HR_START}\nStart Entity ID: {entity_id}, End Entity ID: {end_entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
-    global DEBUG
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -580,11 +540,6 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if ((data_source, record_id), flag_count) in debug_records:
-                DEBUG = 1
-
             end_record = LOADED_RECORD_KEYS[random.randint(0, FLAGS_LEN - 1)]
             response = sz_engine.find_path_by_record_id(
                 data_source,
@@ -596,12 +551,11 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
                 required_data_sources,
                 flag,
             )
-
+            set_debug(((data_source, record_id), flag_count), debug_records)
             debug(
                 1,
                 f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; End Record: {end_record} Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
@@ -612,7 +566,6 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
-    global DEBUG
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -625,24 +578,17 @@ def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if (entity_id, flag_count) in debug_entities:
-                DEBUG = 1
-
             response = sz_engine.get_entity_by_entity_id(entity_id, flag)
-
+            set_debug((entity_id, flag_count), debug_entities)
             debug(
                 1,
                 f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
-    global DEBUG
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -658,18 +604,12 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if ((data_source, record_id), flag_count) in debug_records:
-                DEBUG = 1
-
             response = sz_engine.get_entity_by_record_id(data_source, record_id, flag)
-
+            set_debug(((data_source, record_id), flag_count), debug_records)
             debug(
                 1,
                 f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
@@ -680,7 +620,6 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_record(sz_abstract_factory: SzAbstractFactory):
-    global DEBUG
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -696,21 +635,148 @@ def compare_get_record(sz_abstract_factory: SzAbstractFactory):
 
         for flag in FLAGS:
             flag_count += 1
-
-            DEBUG = 0
-            if ((data_source, record_id), flag_count) in debug_records:
-                DEBUG = 1
-
             response = sz_engine.get_record(data_source, record_id, flag)
-
+            set_debug(((data_source, record_id), flag_count), debug_records)
             debug(
                 1,
                 f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
             )
-
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
+
+# -----------------------------------------------------------------------------
+# GetVirtualEntity
+# -----------------------------------------------------------------------------
+
+
+def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMER", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineGetVirtualEntityByRecordIdResponse"
+    json_schema = SCHEMA.get(title)
+
+    for record in LOADED_RECORD_KEYS:
+        flag_count = 0
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
+        # Randomize record_keys.
+
+        record_keys = [(data_source, record_id)]
+        for _ in range(random.randint(3, 10)):
+            record_key_dict = LOADED_RECORD_KEYS[random.randint(0, FLAGS_LEN - 1)]
+            record_key = (
+                record_key_dict.get("data_source", ""),
+                record_key_dict.get("record_id", ""),
+            )
+            if record_key not in record_keys:
+                record_keys.append(record_key)
+
+        for flag in FLAGS:
+            flag_count += 1
+            response = sz_engine.get_virtual_entity_by_record_id(record_keys, flag)
+            set_debug(((data_source, record_id), flag_count), debug_records)
+            debug(
+                1,
+                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Record keys: {record_keys}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+            )
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# HowEntity
+# -----------------------------------------------------------------------------
+
+
+def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
+    debug_entities = [  # Format (entity_id, flag_count)
+        (0, 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineHowEntityByEntityIdResponse"
+    json_schema = SCHEMA.get(title)
+
+    for entity_id in LOADED_ENTITY_IDS:
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            response = sz_engine.how_entity_by_entity_id(entity_id, flag)
+            set_debug((entity_id, flag_count), debug_entities)
+            debug(
+                1,
+                f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
+            )
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# Reevaluate
+# -----------------------------------------------------------------------------
+
+
+def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
+    debug_entities = [  # Format (entity_id, flag_count)
+        (0, 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineReevaluateEntityResponse"
+    json_schema = SCHEMA.get(title)
+
+    for entity_id in LOADED_ENTITY_IDS:
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            response = sz_engine.reevaluate_entity(entity_id, flag)
+            if not response:
+                continue
+            set_debug((entity_id, flag_count), debug_entities)
+            debug(
+                1,
+                f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
+            )
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMER", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineReevaluateRecordResponse"
+    json_schema = SCHEMA.get(title)
+
+    for record in LOADED_RECORD_KEYS:
+        flag_count = 0
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
+        for flag in FLAGS:
+            flag_count += 1
+            response = sz_engine.reevaluate_record(data_source, record_id, flag)
+            if not response:
+                continue
+            set_debug(((data_source, record_id), flag_count), debug_records)
+            debug(
+                1,
+                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+            )
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# SearchByAttributes
+# -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
 # Static calls
@@ -817,9 +883,9 @@ def test_this(test_name, title, response):
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):
-    global ERROR_COUNT, DEBUG
+    global ERROR_COUNT
 
-    debug(1, f"{HR_START}\nSchema for {json_path}:\n{json.dumps(schema)}\n{HR_STOP}\n")
+    debug(2, f"{HR_START}\nSchema for {json_path}:\n{json.dumps(schema)}\n{HR_STOP}\n")
 
     if isinstance(fragment, list):
         if not isinstance(schema, list):
@@ -962,6 +1028,14 @@ def output(indentation, message):
     print(f"{"    " * indentation}{message}")
 
 
+def set_debug(needle, haystack):
+    global DEBUG
+
+    DEBUG = 0
+    if needle in haystack:
+        DEBUG = 1
+
+
 def error_message(test_name, json_path, message, schema, fragment):
     output(0, test_name)
     output(1, f"Path: {json_path}")
@@ -1037,7 +1111,12 @@ if __name__ == "__main__":
     # compare_find_path_by_entity_id(sz_abstract_factory)
     # compare_find_path_by_record_id(sz_abstract_factory)
 
-    compare_get_record(sz_abstract_factory)
+    # compare_get_record(sz_abstract_factory)
+    # compare_get_virtual_entity_by_record_id(sz_abstract_factory)
+    # compare_how_entity_by_entity_id(sz_abstract_factory)
+
+    compare_reevaluate_entity(sz_abstract_factory)
+    compare_reevaluate_record(sz_abstract_factory)
 
     # Epilog.
 
