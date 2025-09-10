@@ -219,6 +219,10 @@ def handle_python_type(python_type):
             return {
                 VARIABLE_JSON_KEY: "string",
             }
+        case "Dict[str, int]":
+            return {
+                VARIABLE_JSON_KEY: "int32",
+            }
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
             raise NotImplementedError
