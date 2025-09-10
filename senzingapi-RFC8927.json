@@ -2866,6 +2866,9 @@
                 "PRIMARY_NAME_FIRST": {
                     "type": "string"
                 },
+                "PRIMARY_NAME_ORG": {
+                    "type": "string"
+                },
                 "PRIMARY_NAME_FULL": {
                     "type": "string"
                 },
@@ -2884,7 +2887,13 @@
                 "REGISTRATION_COUNTRY": {
                     "type": "string"
                 },
+                "REL_ANCHOR_KEY": {
+                    "type": "string"
+                },
                 "REL_POINTER_KEY": {
+                    "type": "string"
+                },
+                "SECONDARY_NAME_ORG": {
                     "type": "string"
                 },
                 "SIGNAL": {

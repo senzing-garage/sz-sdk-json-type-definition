@@ -19,6 +19,8 @@ DEBUG = False
 ERROR_COUNT = 0
 HR_START = ">" * 80
 HR_STOP = "<" * 80
+LOADED_ENTITY_IDS = []
+LOADED_RECORD_KEYS = []
 
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
 
@@ -264,6 +266,7 @@ def recurse(json_value):
 
 
 def add_records(sz_abstract_factory: SzAbstractFactory):
+    global LOADED_RECORD_KEYS
 
     filenames = [
         "customers.jsonl",
@@ -303,12 +306,35 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
                 line_as_dict = json.loads(line)
                 data_source = line_as_dict.get("DATA_SOURCE")
                 record_id = line_as_dict.get("RECORD_ID")
+                LOADED_RECORD_KEYS.append(
+                    {
+                        "data_source": data_source,
+                        "record_id": record_id,
+                    }
+                )
+
                 response = sz_engine.add_record(data_source, record_id, line, flags)
                 test_this(
                     f"Add record: {filename}/{data_source}/{record_id}",
                     "SzEngineAddRecordResponse",
                     response,
                 )
+
+
+def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
+    result = []
+    sz_engine = sz_abstract_factory.create_engine()
+
+    for record in LOADED_RECORD_KEYS:
+        response = sz_engine.get_entity_by_record_id(
+            record.get("data_source", ""), record.get("record_id", "")
+        )
+        response_dict = json.loads(response)
+        entity_id = response_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
+        if entity_id not in result:
+            result.append(entity_id)
+
+    return result
 
 
 def compare_static(sz_abstract_factory: SzAbstractFactory):
@@ -394,7 +420,7 @@ def compare_get_entity_by_xxx(sz_abstract_factory: SzAbstractFactory):
     json_schema = SCHEMA.get(title)
 
     record_count = 0
-    for record in RECORDS:
+    for record in LOADED_RECORD_KEYS:
         record_count += 1
         flag_count = 0
         for flag in FLAGS:
@@ -632,6 +658,8 @@ if __name__ == "__main__":
     # Make comparisons.
 
     add_records(sz_abstract_factory)
+    LOADED_ENTITY_IDS = get_entity_ids(sz_abstract_factory)
+
     compare_static(sz_abstract_factory)
     compare_get_entity_by_xxx(sz_abstract_factory)
 
