@@ -1075,6 +1075,43 @@
                 }
             }
         },
+        "EntityNetworkLink": {
+            "properties": {
+                "MIN_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MAX_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "type": "string"
+                },
+                "MATCH_KEY": {
+                    "type": "string"
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                },
+                "IS_DISCLOSED": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "IS_AMBIGUOUS": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
         "EntityPath": {
             "properties": {
                 "END_ENTITY_ID": {
@@ -1092,6 +1129,43 @@
                     }
                 },
                 "START_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
+        "EntityPathLink": {
+            "properties": {
+                "MIN_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MAX_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "type": "string"
+                },
+                "MATCH_KEY": {
+                    "type": "string"
+                },
+                "ERRULE_CODE": {
+                    "type": "string"
+                },
+                "IS_DISCLOSED": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "IS_AMBIGUOUS": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -1198,6 +1272,11 @@
                 },
                 "FEAT_DESC": {
                     "type": "string"
+                },
+                "FEAT_DESC_VALUES": {
+                    "elements": {
+                        "ref": "FeatureDescriptionValue"
+                    }
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
@@ -2019,19 +2098,7 @@
                     "type": "timestamp"
                 },
                 "FEATURES": {
-                    "elements": {
-                        "properties": {
-                            "LIB_FEAT_ID": {
-                                "metadata": {
-                                    "goType": "int64"
-                                },
-                                "type": "int32"
-                            },
-                            "USAGE_TYPE": {
-                                "type": "string"
-                            }
-                        }
-                    }
+                    "ref": "MapStringToListOfFeatureForAttributeWithAttributes"
                 },
                 "IDENTIFIER_DATA": {
                     "elements": {
@@ -2419,6 +2486,9 @@
                 "FEATURES": {
                     "ref": "MapStringToListOfFeatureForAttributeWithAttributes"
                 },
+                "FEATURE_IDS": {
+                    "type": "FeatureIDs"
+                },
                 "IS_AMBIGUOUS": {
                     "metadata": {
                         "goType": "int64"
@@ -2449,6 +2519,11 @@
                 "RECORDS": {
                     "ref": "Records"
                 },
+                "RECORDS_TYPES": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummaryElement"
@@ -2475,7 +2550,7 @@
                     "ref": "MapStringToListOfFeatureForGetEntity"
                 },
                 "FEATURE_IDS": {
-                    "type": "FeatureIDs"
+                    "ref": "FeatureIDs"
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
@@ -3173,9 +3248,19 @@
                         "ref": "Entity"
                     }
                 },
+                "ENTITY_NETWORK_LINKS": {
+                    "elements": {
+                        "ref": "EntityNetworkLink"
+                    }
+                },
                 "ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
+                    }
+                },
+                "ENTITY_PATH_LINKS": {
+                    "elements": {
+                        "ref": "EntityPathLink"
                     }
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
