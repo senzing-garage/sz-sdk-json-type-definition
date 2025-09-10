@@ -155,7 +155,7 @@ GLOBAL_JSON_KEYS = [
     "SzEngineReevaluateEntityResponse",
     "SzEngineReevaluateRecordResponse",
     # "SzEngineSearchByAttributesAttributes",
-    # "SzEngineSearchByAttributesResponse",
+    "SzEngineSearchByAttributesResponse",
     # "SzEngineSearchByAttributesSearchProfile",
     # "SzEngineStreamExportJsonEntityReportResponse",
     # "SzEngineWhyEntitiesResponse",
@@ -778,6 +778,49 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
 # SearchByAttributes
 # -----------------------------------------------------------------------------
 
+
+def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
+
+    SEARCH_RECORDS = [
+        {
+            "NAME_FULL": "Susan Moony",
+            "DATE_OF_BIRTH": "15/6/1998",
+            "SSN_NUMBER": "521212123",
+        },
+        {
+            "NAME_FIRST": "Robert",
+            "NAME_LAST": "Smith",
+            "ADDR_FULL": "123 Main Street Las Vegas NV 89132",
+        },
+        {
+            "NAME_FIRST": "Makio",
+            "NAME_LAST": "Yamanaka",
+            "ADDR_FULL": "787 Rotary Drive Rotorville FL 78720",
+        },
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineSearchByAttributesResponse"
+    json_schema = SCHEMA.get(title)
+
+    attributes = ""
+    search_profile = ""
+
+    for search_record in SEARCH_RECORDS:
+        flag_count = 0
+        attributes = json.dumps(search_record)
+        for flag in FLAGS:
+            flag_count += 1
+            response = sz_engine.search_by_attributes(attributes, flag, search_profile)
+            set_debug(flag_count, [3])
+            debug(
+                1,
+                f"{HR_START}\nFlag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+            )
+            test_name = f"{title} - Flag #{flag_count}"
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
 # -----------------------------------------------------------------------------
 # Static calls
 # -----------------------------------------------------------------------------
@@ -1115,8 +1158,10 @@ if __name__ == "__main__":
     # compare_get_virtual_entity_by_record_id(sz_abstract_factory)
     # compare_how_entity_by_entity_id(sz_abstract_factory)
 
-    compare_reevaluate_entity(sz_abstract_factory)
-    compare_reevaluate_record(sz_abstract_factory)
+    # compare_reevaluate_entity(sz_abstract_factory)
+    # compare_reevaluate_record(sz_abstract_factory)
+
+    compare_search_by_attributes(sz_abstract_factory)
 
     # Epilog.
 

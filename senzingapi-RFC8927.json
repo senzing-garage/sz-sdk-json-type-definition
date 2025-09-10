@@ -2670,6 +2670,11 @@
                     "properties": {
                         "RESOLVED_ENTITY": {
                             "ref": "ResolvedEntity"
+                        },
+                        "RELATED_ENTITIES": {
+                            "elements": {
+                                "ref": "RelatedEntity"
+                            }
                         }
                     }
                 },
