@@ -2100,6 +2100,9 @@
                 "FEATURES": {
                     "ref": "MapStringToListOfFeatureForAttributeWithAttributes"
                 },
+                "FEATURE_IDS": {
+                    "ref": "FeatureIDs"
+                },
                 "IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"
@@ -2519,7 +2522,7 @@
                 "RECORDS": {
                     "ref": "Records"
                 },
-                "RECORDS_TYPES": {
+                "RECORD_TYPES": {
                     "elements": {
                         "type": "string"
                     }

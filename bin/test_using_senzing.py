@@ -395,7 +395,7 @@ def compare_network_by_entity_id(
 ):
     global DEBUG
     debug_entities = [  # Format (entity_id, flag_count)
-        (1, 23),
+        (0, 0),
     ]
 
     sz_engine = sz_abstract_factory.create_engine()
