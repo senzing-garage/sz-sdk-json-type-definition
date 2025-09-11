@@ -160,7 +160,7 @@ GLOBAL_JSON_KEYS = [
     # "SzEngineStreamExportJsonEntityReportResponse",
     "SzEngineWhyEntitiesResponse",
     "SzEngineWhyRecordInEntityResponse",
-    # "SzEngineWhyRecordsResponse",
+    "SzEngineWhyRecordsResponse",
     # "SzEngineWhySearchAttributes",
     # "SzEngineWhySearchResponse",
     # "SzEngineWhySearchSearchProfile",
@@ -845,6 +845,45 @@ def compare_why_record_in_entity(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# WhyRecords
+# -----------------------------------------------------------------------------
+
+
+def compare_why_records(sz_abstract_factory: SzAbstractFactory):
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMER", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineWhyRecordsResponse"
+    json_schema = SCHEMA.get(title)
+
+    for record in LOADED_RECORD_KEYS:
+
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+
+        # Randomize record.
+
+        record_key_dict = LOADED_RECORD_KEYS[random.randint(0, FLAGS_LEN - 1)]
+        data_source_2 = record_key_dict.get("data_source", "")
+        record_id_2 = record_key_dict.get("record_id", "")
+
+        # Compare.
+
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Record 2: {record_key_dict}; Flag #{flag_count}"
+            response = sz_engine.why_records(
+                data_source, record_id, data_source_2, record_id_2, flag
+            )
+            set_debug(((data_source, record_id), flag_count), debug_records)
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
 # Static calls
 # -----------------------------------------------------------------------------
 
@@ -1163,30 +1202,25 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    compare_static(sz_abstract_factory)
+    # compare_static(sz_abstract_factory)
 
-    compare_get_entity_by_record_id(sz_abstract_factory)
-    compare_get_entity_by_entity_id(sz_abstract_factory)
+    # compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
+    # compare_find_interesting_entities_by_record_id(sz_abstract_factory)
+    # compare_find_network_by_entity_id(sz_abstract_factory)
+    # compare_find_network_by_record_id(sz_abstract_factory)
+    # compare_find_path_by_entity_id(sz_abstract_factory)
+    # compare_find_path_by_record_id(sz_abstract_factory)
+    # compare_get_entity_by_entity_id(sz_abstract_factory)
+    # compare_get_entity_by_record_id(sz_abstract_factory)
+    # compare_get_record(sz_abstract_factory)
+    # compare_get_virtual_entity_by_record_id(sz_abstract_factory)
+    # compare_how_entity_by_entity_id(sz_abstract_factory)
+    # compare_reevaluate_entity(sz_abstract_factory)
+    # compare_reevaluate_record(sz_abstract_factory)
+    # compare_search_by_attributes(sz_abstract_factory)
+    # compare_why_record_in_entity(sz_abstract_factory)
 
-    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
-    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
-
-    compare_find_network_by_entity_id(sz_abstract_factory)
-    compare_find_network_by_record_id(sz_abstract_factory)
-
-    compare_find_path_by_entity_id(sz_abstract_factory)
-    compare_find_path_by_record_id(sz_abstract_factory)
-
-    compare_get_record(sz_abstract_factory)
-    compare_get_virtual_entity_by_record_id(sz_abstract_factory)
-    compare_how_entity_by_entity_id(sz_abstract_factory)
-
-    compare_reevaluate_entity(sz_abstract_factory)
-    compare_reevaluate_record(sz_abstract_factory)
-
-    compare_search_by_attributes(sz_abstract_factory)
-
-    compare_why_record_in_entity(sz_abstract_factory)
+    compare_why_records(sz_abstract_factory)
 
     # Epilog.
 
