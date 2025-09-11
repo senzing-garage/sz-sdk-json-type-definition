@@ -202,6 +202,10 @@ def handle_python_type(python_type):
             return {
                 VARIABLE_JSON_KEY: recurse(DEFINITIONS.get("FeatureScoresForAttribute"))
             }
+        case "Dict[str, List[FeatureDescriptionValue]]":
+            return {
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureDescriptionValue"))]
+            }
         case "Dict[str, List[FeatureForAttribute]]":
             return {
                 VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttribute"))]
@@ -219,6 +223,10 @@ def handle_python_type(python_type):
         case "Dict[str, List[MatchInfoForAttribute]]":
             return {
                 VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("MatchInfoForAttribute"))]
+            }
+        case "Dict[str, str]":
+            return {
+                VARIABLE_JSON_KEY: "string",
             }
         case "Dict[str, object]":
             return {
@@ -780,7 +788,9 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
-
+    debug_search = [  # Format: (search_record_count, flag_count)
+        (0, 0),
+    ]
     SEARCH_RECORDS = [
         {
             "NAME_FULL": "Susan Moony",
@@ -802,22 +812,24 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineSearchByAttributesResponse"
     json_schema = SCHEMA.get(title)
-
-    attributes = ""
     search_profile = ""
 
+    search_record_count = 0
     for search_record in SEARCH_RECORDS:
-        flag_count = 0
+        search_record_count += 1
         attributes = json.dumps(search_record)
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
             response = sz_engine.search_by_attributes(attributes, flag, search_profile)
-            set_debug(flag_count, [3])
+            set_debug((search_record_count, flag_count), debug_search)
             debug(
                 1,
-                f"{HR_START}\nFlag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
+                f"{HR_START}\nSearch record: {search_record_count}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
             )
-            test_name = f"{title} - Flag #{flag_count}"
+            test_name = (
+                f"{title} - Search record #{search_record_count}; Flag #{flag_count}"
+            )
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -1140,26 +1152,26 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    # compare_static(sz_abstract_factory)
+    compare_static(sz_abstract_factory)
 
-    # compare_get_entity_by_record_id(sz_abstract_factory)
-    # compare_get_entity_by_entity_id(sz_abstract_factory)
+    compare_get_entity_by_record_id(sz_abstract_factory)
+    compare_get_entity_by_entity_id(sz_abstract_factory)
 
-    # compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
-    # compare_find_interesting_entities_by_record_id(sz_abstract_factory)
+    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
+    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
 
-    # compare_find_network_by_entity_id(sz_abstract_factory)
-    # compare_find_network_by_record_id(sz_abstract_factory)
+    compare_find_network_by_entity_id(sz_abstract_factory)
+    compare_find_network_by_record_id(sz_abstract_factory)
 
-    # compare_find_path_by_entity_id(sz_abstract_factory)
-    # compare_find_path_by_record_id(sz_abstract_factory)
+    compare_find_path_by_entity_id(sz_abstract_factory)
+    compare_find_path_by_record_id(sz_abstract_factory)
 
-    # compare_get_record(sz_abstract_factory)
-    # compare_get_virtual_entity_by_record_id(sz_abstract_factory)
-    # compare_how_entity_by_entity_id(sz_abstract_factory)
+    compare_get_record(sz_abstract_factory)
+    compare_get_virtual_entity_by_record_id(sz_abstract_factory)
+    compare_how_entity_by_entity_id(sz_abstract_factory)
 
-    # compare_reevaluate_entity(sz_abstract_factory)
-    # compare_reevaluate_record(sz_abstract_factory)
+    compare_reevaluate_entity(sz_abstract_factory)
+    compare_reevaluate_record(sz_abstract_factory)
 
     compare_search_by_attributes(sz_abstract_factory)
 

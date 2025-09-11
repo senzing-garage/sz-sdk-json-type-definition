@@ -68,6 +68,7 @@
     "javadocs",
     "Lensrl",
     "lqez",
+    "Makio",
     "METAPHONE",
     "MMDD",
     "MMYY",
@@ -93,6 +94,7 @@
     "Rclass",
     "reresolve",
     "RESOURCEPATH",
+    "Rotorville",
     "RTNVAL",
     "Rtype",
     "Senzing",
@@ -128,6 +130,7 @@
     "WATCHLIST",
     "WECHAT",
     "Xlint",
+    "Yamanaka",
     "ZOOMROOM"
   ],
   "ignorePaths": [

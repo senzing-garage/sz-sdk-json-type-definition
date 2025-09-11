@@ -1286,6 +1286,9 @@
         },
         "FeatureDescriptionValue": {
             "properties": {
+                "ATTRIBUTES": {
+                    "ref": "MapStringToString"
+                },
                 "CANDIDATE_CAP_REACHED": {
                     "type": "string"
                 },
@@ -1810,6 +1813,15 @@
             },
             "type": "string"
         },
+        "MapStringToListOfFeatureDescriptionValue": {
+            "metadata": {
+                "csharpSystemTextType": "Dictionary<string, List<FeatureDescriptionValue>>",
+                "goType": "map[string][]FeatureDescriptionValue",
+                "javaJacksonType": "Map<String, List<FeatureDescriptionValue>>",
+                "pythonType": "Dict[str, List[FeatureDescriptionValue]]"
+            },
+            "type": "string"
+        },
         "MapStringToListOfFeatureForAttributeWithAttributes": {
             "metadata": {
                 "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
@@ -1833,6 +1845,14 @@
                 "goType": "map[string][]MatchInfoForAttribute",
                 "javaJacksonType": "Map<String, List<MatchInfoForAttribute>>",
                 "pythonType": "Dict[str, List[MatchInfoForAttribute]]"
+            },
+            "type": "string"
+        },
+        "MapStringToString": {
+            "metadata": {
+                "goType": "map[string]string",
+                "javaJacksonType": "Map<String, String>",
+                "pythonType": "Dict[str, str]"
             },
             "type": "string"
         },
@@ -2838,6 +2858,19 @@
                 }
             }
         },
+        "SearchRequest": {
+            "properties": {
+                "JSON_DATA": {
+                    "type": "string"
+                },
+                "SEARCH_PROFILE": {
+                    "type": "string"
+                },
+                "FEATURES": {
+                    "ref": "MapStringToListOfFeatureDescriptionValue"
+                }
+            }
+        },
         "SearchStatistics": {
             "elements": {
                 "ref": "SearchStatistic"
@@ -3689,6 +3722,9 @@
                     "elements": {
                         "ref": "ResolvedEntityAndMatchInfo"
                     }
+                },
+                "SEARCH_REQUEST": {
+                    "ref": "SearchRequest"
                 },
                 "SEARCH_STATISTICS": {
                     "ref": "SearchStatistics"
