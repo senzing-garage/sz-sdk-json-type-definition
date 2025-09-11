@@ -158,7 +158,7 @@ GLOBAL_JSON_KEYS = [
     "SzEngineSearchByAttributesResponse",
     # "SzEngineSearchByAttributesSearchProfile",
     # "SzEngineStreamExportJsonEntityReportResponse",
-    # "SzEngineWhyEntitiesResponse",
+    "SzEngineWhyEntitiesResponse",
     # "SzEngineWhyRecordInEntityResponse",
     # "SzEngineWhyRecordsResponse",
     # "SzEngineWhySearchAttributes",
@@ -352,13 +352,10 @@ def compare_find_interesting_entities_by_entity_id(
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             response = sz_engine.find_interesting_entities_by_entity_id(entity_id, flag)
             set_debug((entity_id, flag_count), debug_entities)
-            debug(
-                1,
-                f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -374,21 +371,17 @@ def compare_find_interesting_entities_by_record_id(
     json_schema = SCHEMA.get(title)
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
-
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             response = sz_engine.find_interesting_entities_by_record_id(
                 data_source, record_id, flag
             )
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -410,7 +403,6 @@ def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
     build_out_max_entities = 5
 
     for entity_id in LOADED_ENTITY_IDS:
-        flag_count = 0
 
         # Randomize entity_ids.
 
@@ -422,8 +414,10 @@ def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
 
         # Compare.
 
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Entity List: {entity_ids}; Flag #{flag_count}"
             response = sz_engine.find_network_by_entity_id(
                 entity_ids,
                 max_degrees,
@@ -432,11 +426,7 @@ def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
                 flag,
             )
             set_debug((entity_id, flag_count), debug_entities)
-            debug(
-                1,
-                f"{HR_START}\nEntity ID: {entity_id}; Entity List: {entity_ids}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -453,7 +443,6 @@ def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
     build_out_max_entities = 5
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
 
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
@@ -472,8 +461,10 @@ def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
         # Compare.
 
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Record Keys: {record_keys}; Flag #{flag_count}"
             response = sz_engine.find_network_by_record_id(
                 record_keys,
                 max_degrees,
@@ -482,11 +473,7 @@ def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
                 flag,
             )
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Record Keys: {record_keys}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -512,6 +499,7 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
         for flag in FLAGS:
             flag_count += 1
             end_entity_id = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
+            test_name = f"{title} - Entity #{entity_id}; End Entity #{end_entity_id}; Flag #{flag_count}"
             response = sz_engine.find_path_by_entity_id(
                 entity_id,
                 end_entity_id,
@@ -521,11 +509,7 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
                 flag,
             )
             set_debug((entity_id, flag_count), debug_entities)
-            debug(
-                1,
-                f"{HR_START}\nStart Entity ID: {entity_id}, End Entity ID: {end_entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -542,13 +526,13 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
     required_data_sources = None
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
-
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
             end_record = LOADED_RECORD_KEYS[random.randint(0, FLAGS_LEN - 1)]
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; End Record: {end_record}; Flag #{flag_count}"
             response = sz_engine.find_path_by_record_id(
                 data_source,
                 record_id,
@@ -560,11 +544,7 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
                 flag,
             )
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; End Record: {end_record} Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -586,13 +566,10 @@ def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             response = sz_engine.get_entity_by_entity_id(entity_id, flag)
             set_debug((entity_id, flag_count), debug_entities)
-            debug(
-                1,
-                f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -606,19 +583,16 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
     json_schema = SCHEMA.get(title)
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
 
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             response = sz_engine.get_entity_by_record_id(data_source, record_id, flag)
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -637,19 +611,16 @@ def compare_get_record(sz_abstract_factory: SzAbstractFactory):
     json_schema = SCHEMA.get(title)
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
 
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             response = sz_engine.get_record(data_source, record_id, flag)
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -668,7 +639,6 @@ def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFacto
     json_schema = SCHEMA.get(title)
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
 
@@ -684,15 +654,15 @@ def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFacto
             if record_key not in record_keys:
                 record_keys.append(record_key)
 
+        # Compare.
+
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Record keys: {record_keys}; Flag #{flag_count}"
             response = sz_engine.get_virtual_entity_by_record_id(record_keys, flag)
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Record keys: {record_keys}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -714,13 +684,10 @@ def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             response = sz_engine.how_entity_by_entity_id(entity_id, flag)
             set_debug((entity_id, flag_count), debug_entities)
-            debug(
-                1,
-                f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -742,15 +709,12 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             response = sz_engine.reevaluate_entity(entity_id, flag)
             if not response:
                 continue
             set_debug((entity_id, flag_count), debug_entities)
-            debug(
-                1,
-                f"{HR_START}\nEntity ID: {entity_id}, Flag: {flag_count}, Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -764,21 +728,17 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
     json_schema = SCHEMA.get(title)
 
     for record in LOADED_RECORD_KEYS:
-        flag_count = 0
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
-
+        flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             response = sz_engine.reevaluate_record(data_source, record_id, flag)
             if not response:
                 continue
             set_debug(((data_source, record_id), flag_count), debug_records)
-            debug(
-                1,
-                f"{HR_START}\nDataSource: {data_source}; RecordID: {record_id}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
-            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
@@ -821,15 +781,39 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
-            response = sz_engine.search_by_attributes(attributes, flag, search_profile)
-            set_debug((search_record_count, flag_count), debug_search)
-            debug(
-                1,
-                f"{HR_START}\nSearch record: {search_record_count}; Flag: {flag_count}; Response:\n{response}\n{HR_STOP}\n",
-            )
             test_name = (
                 f"{title} - Search record #{search_record_count}; Flag #{flag_count}"
             )
+            response = sz_engine.search_by_attributes(attributes, flag, search_profile)
+            set_debug((search_record_count, flag_count), debug_search)
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# WhyEntities
+# -----------------------------------------------------------------------------
+
+
+def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
+    debug_entities = [  # Format (entity_id, flag_count)
+        (0, 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineWhyEntitiesResponse"
+    json_schema = SCHEMA.get(title)
+
+    for entity_id in LOADED_ENTITY_IDS:
+        entity_id_2 = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
+
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Entity2 #{entity_id_2}; Flag #{flag_count}"
+            response = sz_engine.why_entities(entity_id, entity_id_2, flag)
+            set_debug((entity_id, flag_count), debug_entities)
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
