@@ -2037,6 +2037,28 @@
                 }
             }
         },
+        "MatchInfoForWhy": {
+            "properties": {
+                "CANDIDATE_KEYS": {
+                    "ref": "MapStringToListOfMatchInfoForAttribute"
+                },
+                "FEATURE_SCORES": {
+                    "ref": "FeatureScores"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "type": "string"
+                },
+                "WHY_ERRULE_CODE": {
+                    "type": "string"
+                },
+                "WHY_KEY": {
+                    "type": "string"
+                },
+                "WHY_KEY_DETAILS": {
+                    "ref": "WhyKeyDetails"
+                }
+            }
+        },
         "MemberRecord": {
             "properties": {
                 "INTERNAL_ID": {
@@ -3759,8 +3781,15 @@
         },
         "SzEngineWhyRecordInEntityResponse": {
             "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
+                "WHY_RESULTS": {
+                    "elements": {
+                        "ref": "WhyResult"
+                    }
+                },
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "Entity"
+                    }
                 }
             }
         },
@@ -3908,6 +3937,20 @@
                 }
             }
         },
+        "WhyKeyDetails": {
+            "properties": {
+                "CONFIRMATIONS": {
+                    "elements": {
+                        "ref": "Confirmation"
+                    }
+                },
+                "DENIALS": {
+                    "elements": {
+                        "ref": "Confirmation"
+                    }
+                }
+            }
+        },
         "WhyResult": {
             "properties": {
                 "ENTITY_ID": {
@@ -3942,7 +3985,7 @@
                     "type": "int32"
                 },
                 "MATCH_INFO": {
-                    "ref": "MatchInfo"
+                    "ref": "MatchInfoForWhy"
                 }
             }
         },

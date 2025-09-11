@@ -159,7 +159,7 @@ GLOBAL_JSON_KEYS = [
     # "SzEngineSearchByAttributesSearchProfile",
     # "SzEngineStreamExportJsonEntityReportResponse",
     "SzEngineWhyEntitiesResponse",
-    # "SzEngineWhyRecordInEntityResponse",
+    "SzEngineWhyRecordInEntityResponse",
     # "SzEngineWhyRecordsResponse",
     # "SzEngineWhySearchAttributes",
     # "SzEngineWhySearchResponse",
@@ -818,6 +818,33 @@ def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# WhyRecordInEntity
+# -----------------------------------------------------------------------------
+
+
+def compare_why_record_in_entity(sz_abstract_factory: SzAbstractFactory):
+    debug_records = [  # Format: ((data_source, record_id), flag_count)
+        (("CUSTOMERS", "0"), 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineWhyRecordInEntityResponse"
+    json_schema = SCHEMA.get(title)
+
+    for record in LOADED_RECORD_KEYS:
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            response = sz_engine.why_record_in_entity(data_source, record_id, flag)
+            set_debug(((data_source, record_id), flag_count), debug_records)
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
 # Static calls
 # -----------------------------------------------------------------------------
 
@@ -1158,6 +1185,8 @@ if __name__ == "__main__":
     compare_reevaluate_record(sz_abstract_factory)
 
     compare_search_by_attributes(sz_abstract_factory)
+
+    compare_why_record_in_entity(sz_abstract_factory)
 
     # Epilog.
 
