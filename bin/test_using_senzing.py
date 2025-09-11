@@ -103,13 +103,31 @@ FLAGS = [
 FLAGS_LEN = len(FLAGS)
 
 
-RECORDS = [
-    {"data_source": "CUSTOMERS", "record_id": "1001"},
-    {"data_source": "CUSTOMERS", "record_id": "1033"},
-    {"data_source": "REFERENCE", "record_id": "2013"},
-    {"data_source": "REFERENCE", "record_id": "2121"},
-    {"data_source": "WATCHLIST", "record_id": "1027"},
-    {"data_source": "WATCHLIST", "record_id": "2052"},
+# RECORDS = [
+#     {"data_source": "CUSTOMERS", "record_id": "1001"},
+#     {"data_source": "CUSTOMERS", "record_id": "1033"},
+#     {"data_source": "REFERENCE", "record_id": "2013"},
+#     {"data_source": "REFERENCE", "record_id": "2121"},
+#     {"data_source": "WATCHLIST", "record_id": "1027"},
+#     {"data_source": "WATCHLIST", "record_id": "2052"},
+# ]
+
+SEARCH_RECORDS = [
+    {
+        "NAME_FULL": "Susan Moony",
+        "DATE_OF_BIRTH": "15/6/1998",
+        "SSN_NUMBER": "521212123",
+    },
+    {
+        "NAME_FIRST": "Robert",
+        "NAME_LAST": "Smith",
+        "ADDR_FULL": "123 Main Street Las Vegas NV 89132",
+    },
+    {
+        "NAME_FIRST": "Makio",
+        "NAME_LAST": "Yamanaka",
+        "ADDR_FULL": "787 Rotary Drive Rotorville FL 78720",
+    },
 ]
 
 # -----------------------------------------------------------------------------
@@ -162,7 +180,7 @@ GLOBAL_JSON_KEYS = [
     "SzEngineWhyRecordInEntityResponse",
     "SzEngineWhyRecordsResponse",
     # "SzEngineWhySearchAttributes",
-    # "SzEngineWhySearchResponse",
+    "SzEngineWhySearchResponse",
     # "SzEngineWhySearchSearchProfile",
     "SzProductGetLicenseResponse",
     "SzProductGetVersionResponse",
@@ -751,23 +769,6 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
     debug_search = [  # Format: (search_record_count, flag_count)
         (0, 0),
     ]
-    SEARCH_RECORDS = [
-        {
-            "NAME_FULL": "Susan Moony",
-            "DATE_OF_BIRTH": "15/6/1998",
-            "SSN_NUMBER": "521212123",
-        },
-        {
-            "NAME_FIRST": "Robert",
-            "NAME_LAST": "Smith",
-            "ADDR_FULL": "123 Main Street Las Vegas NV 89132",
-        },
-        {
-            "NAME_FIRST": "Makio",
-            "NAME_LAST": "Yamanaka",
-            "ADDR_FULL": "787 Rotary Drive Rotorville FL 78720",
-        },
-    ]
 
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineSearchByAttributesResponse"
@@ -884,11 +885,43 @@ def compare_why_records(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
-# Static calls
+# WhySearch
 # -----------------------------------------------------------------------------
 
 
-def compare_static(sz_abstract_factory: SzAbstractFactory):
+def compare_why_search(sz_abstract_factory: SzAbstractFactory):
+    debug_search = [  # Format: (entity, search_record_count, flag_count)
+        (0, 0, 0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineWhySearchResponse"
+    json_schema = SCHEMA.get(title)
+    search_profile = ""
+
+    for entity_id in LOADED_ENTITY_IDS:
+        search_record_count = 0
+        for search_record in SEARCH_RECORDS:
+            search_record_count += 1
+            attributes = json.dumps(search_record)
+            flag_count = 0
+            for flag in FLAGS:
+                flag_count += 1
+                test_name = f"{title} - Entity #{entity_id}; Search record #{search_record_count}; Flag #{flag_count}"
+                response = sz_engine.why_search(
+                    attributes, entity_id, flag, search_profile
+                )
+                set_debug((entity_id, search_record_count, flag_count), debug_search)
+                debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+                compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# Static method signature calls
+# -----------------------------------------------------------------------------
+
+
+def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
 
     sz_config_manager = sz_abstract_factory.create_configmanager()
     sz_config = sz_config_manager.create_config_from_template()
@@ -1202,8 +1235,7 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    # compare_static(sz_abstract_factory)
-
+    # compare_static_method_signatures(sz_abstract_factory)
     # compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
     # compare_find_interesting_entities_by_record_id(sz_abstract_factory)
     # compare_find_network_by_entity_id(sz_abstract_factory)
@@ -1219,8 +1251,8 @@ if __name__ == "__main__":
     # compare_reevaluate_record(sz_abstract_factory)
     # compare_search_by_attributes(sz_abstract_factory)
     # compare_why_record_in_entity(sz_abstract_factory)
-
-    compare_why_records(sz_abstract_factory)
+    # compare_why_records(sz_abstract_factory)
+    compare_why_search(sz_abstract_factory)
 
     # Epilog.
 

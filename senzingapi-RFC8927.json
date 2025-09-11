@@ -1149,6 +1149,18 @@
                 }
             }
         },
+        "EntityForWhySearch": {
+            "properties": {
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
+                },
+                "RELATED_ENTITIES": {
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
+                }
+            }
+        },
         "EntityNetworkLink": {
             "properties": {
                 "MIN_ENTITY_ID": {
@@ -2042,6 +2054,9 @@
                 "CANDIDATE_KEYS": {
                     "ref": "MapStringToListOfMatchInfoForAttribute"
                 },
+                "DISCLOSED_RELATIONS": {
+                    "ref": "Fixme"
+                },
                 "FEATURE_SCORES": {
                     "ref": "FeatureScores"
                 },
@@ -2643,6 +2658,25 @@
                 }
             }
         },
+        "ResolvedEntityAndMatchInfo": {
+            "properties": {
+                "ENTITY": {
+                    "properties": {
+                        "RESOLVED_ENTITY": {
+                            "ref": "ResolvedEntity"
+                        },
+                        "RELATED_ENTITIES": {
+                            "elements": {
+                                "ref": "RelatedEntity"
+                            }
+                        }
+                    }
+                },
+                "MATCH_INFO": {
+                    "ref": "MatchInfo"
+                }
+            }
+        },
         "ResolvedEntityForGetEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -2706,22 +2740,19 @@
                 }
             }
         },
-        "ResolvedEntityAndMatchInfo": {
+        "ResolvedEntityForWhySearch": {
             "properties": {
-                "ENTITY": {
-                    "properties": {
-                        "RESOLVED_ENTITY": {
-                            "ref": "ResolvedEntity"
-                        },
-                        "RELATED_ENTITIES": {
-                            "elements": {
-                                "ref": "RelatedEntity"
-                            }
-                        }
-                    }
+                "ENTITY_ID": {
+                    "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
-                "MATCH_INFO": {
-                    "ref": "MatchInfo"
+                "RELATED_ENTITIES": {
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
                 }
             }
         },
@@ -3814,8 +3845,23 @@
         },
         "SzEngineWhySearchResponse": {
             "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
+                "ENTITIES": {
+                    "elements": {
+                        "ref": "EntityForWhySearch"
+                    }
+                },
+                "SEARCH_REQUEST": {
+                    "ref": "SearchRequest"
+                },
+                "SEARCH_STATISTICS": {
+                    "elements": {
+                        "ref": "SearchStatistic"
+                    }
+                },
+                "WHY_RESULTS": {
+                    "elements": {
+                        "ref": "WhyResult"
+                    }
                 }
             }
         },
@@ -3992,6 +4038,20 @@
         "WhyResults": {
             "elements": {
                 "ref": "WhyResult"
+            }
+        },
+        "WhySearchResult": {
+            "properties": {
+                "ENTITY_ID": {
+                    "metadata": {
+                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MATCH_INFO": {
+                    "ref": "MatchInfoForWhy"
+                }
             }
         },
         "Workload": {
