@@ -26,78 +26,79 @@ LOADED_RECORD_KEYS = []
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
 
 FLAGS = [
-    SzEngineFlags.SZ_ADD_RECORD_DEFAULT_FLAGS,  # 1
-    SzEngineFlags.SZ_DELETE_RECORD_DEFAULT_FLAGS,  # 2
-    SzEngineFlags.SZ_ENTITY_BRIEF_DEFAULT_FLAGS,  # 3
-    SzEngineFlags.SZ_ENTITY_CORE_FLAGS,  # 4
-    SzEngineFlags.SZ_ENTITY_DEFAULT_FLAGS,  # 5
-    SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_FEATURES,  # 6
-    SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_RELATIONS,  # 7
-    SzEngineFlags.SZ_ENTITY_INCLUDE_DISCLOSED_RELATIONS,  # 8
-    SzEngineFlags.SZ_ENTITY_INCLUDE_ENTITY_NAME,  # 9
-    SzEngineFlags.SZ_ENTITY_INCLUDE_FEATURE_STATS,  # 10
-    SzEngineFlags.SZ_ENTITY_INCLUDE_INTERNAL_FEATURES,  # 11
-    SzEngineFlags.SZ_ENTITY_INCLUDE_NAME_ONLY_RELATIONS,  # 12
-    SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_RELATED_RELATIONS,  # 13
-    SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_SAME_RELATIONS,  # 14
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATA,  # 15
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATES,  # 16
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_DETAILS,  # 17
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_STATS,  # 18
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURES,  # 19
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_JSON_DATA,  # 20
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_MATCHING_INFO,  # 21
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_SUMMARY,  # 22
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_TYPES,  # 23
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_UNMAPPED_DATA,  # 24
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_ENTITY_NAME,  # 25
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_MATCHING_INFO,  # 26
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_DATA,  # 27
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_SUMMARY,  # 28
-    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_TYPES,  # 29
-    SzEngineFlags.SZ_ENTITY_INCLUDE_REPRESENTATIVE_FEATURES,  # 30
-    SzEngineFlags.SZ_EXPORT_DEFAULT_FLAGS,  # 31
-    SzEngineFlags.SZ_EXPORT_INCLUDE_ALL_ENTITIES,  # 32
-    SzEngineFlags.SZ_EXPORT_INCLUDE_ALL_HAVING_RELATIONSHIPS,  # 33
-    SzEngineFlags.SZ_EXPORT_INCLUDE_DISCLOSED,  # 34
-    SzEngineFlags.SZ_EXPORT_INCLUDE_MULTI_RECORD_ENTITIES,  # 35
-    SzEngineFlags.SZ_EXPORT_INCLUDE_NAME_ONLY,  # 36
-    SzEngineFlags.SZ_EXPORT_INCLUDE_POSSIBLY_RELATED,  # 37
-    SzEngineFlags.SZ_EXPORT_INCLUDE_POSSIBLY_SAME,  # 38
-    SzEngineFlags.SZ_EXPORT_INCLUDE_SINGLE_RECORD_ENTITIES,  # 39
-    SzEngineFlags.SZ_FIND_INTERESTING_ENTITIES_DEFAULT_FLAGS,  # 40
-    SzEngineFlags.SZ_FIND_NETWORK_DEFAULT_FLAGS,  # 41
-    SzEngineFlags.SZ_FIND_NETWORK_INCLUDE_MATCHING_INFO,  # 42
-    SzEngineFlags.SZ_FIND_PATH_DEFAULT_FLAGS,  # 43
-    SzEngineFlags.SZ_FIND_PATH_INCLUDE_MATCHING_INFO,  # 44
-    SzEngineFlags.SZ_FIND_PATH_STRICT_AVOID,  # 45
-    SzEngineFlags.SZ_HOW_ENTITY_DEFAULT_FLAGS,  # 46
-    SzEngineFlags.SZ_INCLUDE_FEATURE_SCORES,  # 47
-    SzEngineFlags.SZ_INCLUDE_MATCH_KEY_DETAILS,  # 48
-    SzEngineFlags.SZ_NO_FLAGS,  # 49
-    SzEngineFlags.SZ_RECORD_DEFAULT_FLAGS,  # 50
-    SzEngineFlags.SZ_RECORD_PREVIEW_DEFAULT_FLAGS,  # 51
-    SzEngineFlags.SZ_REEVALUATE_ENTITY_DEFAULT_FLAGS,  # 52
-    SzEngineFlags.SZ_REEVALUATE_RECORD_DEFAULT_FLAGS,  # 53
-    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_ALL,  # 54
-    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_DEFAULT_FLAGS,  # 55
-    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_MINIMAL_ALL,  # 56
-    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_MINIMAL_STRONG,  # 57
-    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_STRONG,  # 58
-    SzEngineFlags.SZ_SEARCH_INCLUDE_ALL_CANDIDATES,  # 59
-    SzEngineFlags.SZ_SEARCH_INCLUDE_ALL_ENTITIES,  # 60
-    SzEngineFlags.SZ_SEARCH_INCLUDE_NAME_ONLY,  # 61
-    SzEngineFlags.SZ_SEARCH_INCLUDE_POSSIBLY_RELATED,  # 62
-    SzEngineFlags.SZ_SEARCH_INCLUDE_POSSIBLY_SAME,  # 63
-    SzEngineFlags.SZ_SEARCH_INCLUDE_REQUEST_DETAILS,  # 64
-    SzEngineFlags.SZ_SEARCH_INCLUDE_REQUEST,  # 65
-    SzEngineFlags.SZ_SEARCH_INCLUDE_RESOLVED,  # 66
-    SzEngineFlags.SZ_SEARCH_INCLUDE_STATS,  # 67
-    SzEngineFlags.SZ_VIRTUAL_ENTITY_DEFAULT_FLAGS,  # 68
-    SzEngineFlags.SZ_WHY_ENTITIES_DEFAULT_FLAGS,  # 69
-    SzEngineFlags.SZ_WHY_RECORD_IN_ENTITY_DEFAULT_FLAGS,  # 70
-    SzEngineFlags.SZ_WHY_RECORDS_DEFAULT_FLAGS,  # 71
-    SzEngineFlags.SZ_WHY_SEARCH_DEFAULT_FLAGS,  # 72
+    SzEngineFlags.SZ_WITH_INFO,  # 1
+    SzEngineFlags.SZ_ADD_RECORD_DEFAULT_FLAGS,  # 2
+    SzEngineFlags.SZ_DELETE_RECORD_DEFAULT_FLAGS,  # 3
+    SzEngineFlags.SZ_ENTITY_BRIEF_DEFAULT_FLAGS,  # 4
+    SzEngineFlags.SZ_ENTITY_CORE_FLAGS,  # 5
+    SzEngineFlags.SZ_ENTITY_DEFAULT_FLAGS,  # 6
+    SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_FEATURES,  # 7
+    SzEngineFlags.SZ_ENTITY_INCLUDE_ALL_RELATIONS,  # 8
+    SzEngineFlags.SZ_ENTITY_INCLUDE_DISCLOSED_RELATIONS,  # 9
+    SzEngineFlags.SZ_ENTITY_INCLUDE_ENTITY_NAME,  # 10
+    SzEngineFlags.SZ_ENTITY_INCLUDE_FEATURE_STATS,  # 11
+    SzEngineFlags.SZ_ENTITY_INCLUDE_INTERNAL_FEATURES,  # 12
+    SzEngineFlags.SZ_ENTITY_INCLUDE_NAME_ONLY_RELATIONS,  # 13
+    SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_RELATED_RELATIONS,  # 14
+    SzEngineFlags.SZ_ENTITY_INCLUDE_POSSIBLY_SAME_RELATIONS,  # 15
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATA,  # 16
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_DATES,  # 17
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_DETAILS,  # 18
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURE_STATS,  # 19
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_FEATURES,  # 20
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_JSON_DATA,  # 21
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_MATCHING_INFO,  # 22
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_SUMMARY,  # 23
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_TYPES,  # 24
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RECORD_UNMAPPED_DATA,  # 25
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_ENTITY_NAME,  # 26
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_MATCHING_INFO,  # 27
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_DATA,  # 28
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_SUMMARY,  # 29
+    SzEngineFlags.SZ_ENTITY_INCLUDE_RELATED_RECORD_TYPES,  # 30
+    SzEngineFlags.SZ_ENTITY_INCLUDE_REPRESENTATIVE_FEATURES,  # 31
+    SzEngineFlags.SZ_EXPORT_DEFAULT_FLAGS,  # 32
+    SzEngineFlags.SZ_EXPORT_INCLUDE_ALL_ENTITIES,  # 33
+    SzEngineFlags.SZ_EXPORT_INCLUDE_ALL_HAVING_RELATIONSHIPS,  # 34
+    SzEngineFlags.SZ_EXPORT_INCLUDE_DISCLOSED,  # 35
+    SzEngineFlags.SZ_EXPORT_INCLUDE_MULTI_RECORD_ENTITIES,  # 36
+    SzEngineFlags.SZ_EXPORT_INCLUDE_NAME_ONLY,  # 37
+    SzEngineFlags.SZ_EXPORT_INCLUDE_POSSIBLY_RELATED,  # 38
+    SzEngineFlags.SZ_EXPORT_INCLUDE_POSSIBLY_SAME,  # 39
+    SzEngineFlags.SZ_EXPORT_INCLUDE_SINGLE_RECORD_ENTITIES,  # 40
+    SzEngineFlags.SZ_FIND_INTERESTING_ENTITIES_DEFAULT_FLAGS,  # 41
+    SzEngineFlags.SZ_FIND_NETWORK_DEFAULT_FLAGS,  # 42
+    SzEngineFlags.SZ_FIND_NETWORK_INCLUDE_MATCHING_INFO,  # 43
+    SzEngineFlags.SZ_FIND_PATH_DEFAULT_FLAGS,  # 44
+    SzEngineFlags.SZ_FIND_PATH_INCLUDE_MATCHING_INFO,  # 45
+    SzEngineFlags.SZ_FIND_PATH_STRICT_AVOID,  # 46
+    SzEngineFlags.SZ_HOW_ENTITY_DEFAULT_FLAGS,  # 47
+    SzEngineFlags.SZ_INCLUDE_FEATURE_SCORES,  # 48
+    SzEngineFlags.SZ_INCLUDE_MATCH_KEY_DETAILS,  # 49
+    SzEngineFlags.SZ_NO_FLAGS,  # 50
+    SzEngineFlags.SZ_RECORD_DEFAULT_FLAGS,  # 51
+    SzEngineFlags.SZ_RECORD_PREVIEW_DEFAULT_FLAGS,  # 52
+    SzEngineFlags.SZ_REEVALUATE_ENTITY_DEFAULT_FLAGS,  # 53
+    SzEngineFlags.SZ_REEVALUATE_RECORD_DEFAULT_FLAGS,  # 54
+    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_ALL,  # 55
+    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_DEFAULT_FLAGS,  # 56
+    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_MINIMAL_ALL,  # 57
+    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_MINIMAL_STRONG,  # 58
+    SzEngineFlags.SZ_SEARCH_BY_ATTRIBUTES_STRONG,  # 59
+    SzEngineFlags.SZ_SEARCH_INCLUDE_ALL_CANDIDATES,  # 60
+    SzEngineFlags.SZ_SEARCH_INCLUDE_ALL_ENTITIES,  # 61
+    SzEngineFlags.SZ_SEARCH_INCLUDE_NAME_ONLY,  # 62
+    SzEngineFlags.SZ_SEARCH_INCLUDE_POSSIBLY_RELATED,  # 63
+    SzEngineFlags.SZ_SEARCH_INCLUDE_POSSIBLY_SAME,  # 64
+    SzEngineFlags.SZ_SEARCH_INCLUDE_REQUEST_DETAILS,  # 65
+    SzEngineFlags.SZ_SEARCH_INCLUDE_REQUEST,  # 66
+    SzEngineFlags.SZ_SEARCH_INCLUDE_RESOLVED,  # 67
+    SzEngineFlags.SZ_SEARCH_INCLUDE_STATS,  # 68
+    SzEngineFlags.SZ_VIRTUAL_ENTITY_DEFAULT_FLAGS,  # 69
+    SzEngineFlags.SZ_WHY_ENTITIES_DEFAULT_FLAGS,  # 70
+    SzEngineFlags.SZ_WHY_RECORD_IN_ENTITY_DEFAULT_FLAGS,  # 71
+    SzEngineFlags.SZ_WHY_RECORDS_DEFAULT_FLAGS,  # 72
+    SzEngineFlags.SZ_WHY_SEARCH_DEFAULT_FLAGS,  # 73
 ]
 
 FLAGS_LEN = len(FLAGS)
@@ -145,7 +146,7 @@ GLOBAL_JSON_KEYS = [
     # "SzDiagnosticGetFeatureResponse",
     "SzDiagnosticGetRepositoryInfoResponse",
     "SzEngineAddRecordResponse",
-    # "SzEngineDeleteRecordResponse",
+    "SzEngineDeleteRecordResponse",
     # "SzEngineExportCsvEntityReportCsvColumnList",
     # "SzEngineFetchNextResponse",
     "SzEngineFindInterestingEntitiesByEntityIdResponse",
@@ -290,21 +291,21 @@ def recurse(json_value):
 
 
 # -----------------------------------------------------------------------------
-# Functions to compare JSON vs the RFC8927 schema.
+# Add records.
 # -----------------------------------------------------------------------------
 
 
 def add_records(sz_abstract_factory: SzAbstractFactory):
     global LOADED_RECORD_KEYS
 
-    filenames = [
-        "customers.jsonl",
-        "reference.jsonl",
-        "watchlist.jsonl",
+    debug_records = [  # Format: (data_source, record_id)
+        ("CUSTOMER", "0"),
     ]
 
     sz_engine = sz_abstract_factory.create_engine()
     sz_config_manager = sz_abstract_factory.create_configmanager()
+    title = "SzEngineAddRecordResponse"
+    json_schema = SCHEMA.get(title)
 
     # Register datasources.  TODO: fix underlying database.
 
@@ -323,9 +324,14 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
 
     # Add records.
 
-    flags = SzEngineFlags.SZ_ADD_RECORD_DEFAULT_FLAGS
+    filenames = [
+        "customers.jsonl",
+        "reference.jsonl",
+        "watchlist.jsonl",
+    ]
 
     current_path = pathlib.Path(__file__).parent.resolve()
+    test_count = 0
     for filename in filenames:
         file_path = os.path.abspath(
             "{0}/../testdata/truthsets/{1}".format(current_path, filename)
@@ -335,19 +341,25 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
                 line_as_dict = json.loads(line)
                 data_source = line_as_dict.get("DATA_SOURCE")
                 record_id = line_as_dict.get("RECORD_ID")
+
                 LOADED_RECORD_KEYS.append(
                     {
                         "data_source": data_source,
                         "record_id": record_id,
                     }
                 )
-
-                response = sz_engine.add_record(data_source, record_id, line, flags)
-                test_this(
-                    f"Add record: {filename}/{data_source}/{record_id}",
-                    "SzEngineAddRecordResponse",
-                    response,
+                test_name = f"Add record: {filename}/{data_source}/{record_id}"
+                response = sz_engine.add_record(
+                    data_source, record_id, line, SzEngineFlags.SZ_WITH_INFO
                 )
+                if not response:
+                    continue
+                set_debug((data_source, record_id), debug_records)
+                debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+                compare_to_schema(test_name, title, json_schema, json.loads(response))
+                test_count += 1
+    if not test_count:
+        output(0, f"No tests performed for {title}")
 
 
 # -----------------------------------------------------------------------------
@@ -723,6 +735,7 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
     title = "SzEngineReevaluateEntityResponse"
     json_schema = SCHEMA.get(title)
 
+    test_count = 0
     for entity_id in LOADED_ENTITY_IDS:
         flag_count = 0
         for flag in FLAGS:
@@ -734,6 +747,9 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
             set_debug((entity_id, flag_count), debug_entities)
             debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
+            test_count += 1
+    if not test_count:
+        output(0, f"No tests performed for {title}")
 
 
 def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
@@ -745,6 +761,7 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
     title = "SzEngineReevaluateRecordResponse"
     json_schema = SCHEMA.get(title)
 
+    test_count = 0
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
@@ -758,6 +775,9 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
             set_debug(((data_source, record_id), flag_count), debug_records)
             debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
+            test_count += 1
+    if not test_count:
+        output(0, f"No tests performed for {title}")
 
 
 # -----------------------------------------------------------------------------
@@ -1010,6 +1030,40 @@ def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# Delete records
+# -----------------------------------------------------------------------------
+
+
+def delete_records(sz_abstract_factory: SzAbstractFactory):
+    debug_records = [  # Format: ((data_source, record_id), flag_number)
+        ("CUSTOMER", "0"),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineDeleteRecordResponse"
+    json_schema = SCHEMA.get(title)
+
+    test_count = 0
+    record_count = 0
+    for record in LOADED_RECORD_KEYS:
+        record_count += 1
+        data_source = record.get("data_source", "")
+        record_id = record.get("record_id", "")
+        test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}"
+        response = sz_engine.delete_record(
+            data_source, record_id, SzEngineFlags.SZ_WITH_INFO
+        )
+        if not response:
+            continue
+        set_debug((data_source, record_id), debug_records)
+        debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+        compare_to_schema(test_name, title, json_schema, json.loads(response))
+        test_count += 1
+    if not test_count:
+        output(0, f"No tests performed for {title}")
+
+
+# -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
 
@@ -1235,24 +1289,28 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    # compare_static_method_signatures(sz_abstract_factory)
-    # compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
-    # compare_find_interesting_entities_by_record_id(sz_abstract_factory)
-    # compare_find_network_by_entity_id(sz_abstract_factory)
-    # compare_find_network_by_record_id(sz_abstract_factory)
-    # compare_find_path_by_entity_id(sz_abstract_factory)
-    # compare_find_path_by_record_id(sz_abstract_factory)
-    # compare_get_entity_by_entity_id(sz_abstract_factory)
-    # compare_get_entity_by_record_id(sz_abstract_factory)
-    # compare_get_record(sz_abstract_factory)
-    # compare_get_virtual_entity_by_record_id(sz_abstract_factory)
-    # compare_how_entity_by_entity_id(sz_abstract_factory)
-    # compare_reevaluate_entity(sz_abstract_factory)
-    # compare_reevaluate_record(sz_abstract_factory)
-    # compare_search_by_attributes(sz_abstract_factory)
-    # compare_why_record_in_entity(sz_abstract_factory)
-    # compare_why_records(sz_abstract_factory)
+    compare_static_method_signatures(sz_abstract_factory)
+    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
+    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
+    compare_find_network_by_entity_id(sz_abstract_factory)
+    compare_find_network_by_record_id(sz_abstract_factory)
+    compare_find_path_by_entity_id(sz_abstract_factory)
+    compare_find_path_by_record_id(sz_abstract_factory)
+    compare_get_entity_by_entity_id(sz_abstract_factory)
+    compare_get_entity_by_record_id(sz_abstract_factory)
+    compare_get_record(sz_abstract_factory)
+    compare_get_virtual_entity_by_record_id(sz_abstract_factory)
+    compare_how_entity_by_entity_id(sz_abstract_factory)
+    compare_reevaluate_entity(sz_abstract_factory)
+    compare_reevaluate_record(sz_abstract_factory)
+    compare_search_by_attributes(sz_abstract_factory)
+    compare_why_record_in_entity(sz_abstract_factory)
+    compare_why_records(sz_abstract_factory)
     compare_why_search(sz_abstract_factory)
+
+    # Delete test data.
+
+    delete_records(sz_abstract_factory)
 
     # Epilog.
 
