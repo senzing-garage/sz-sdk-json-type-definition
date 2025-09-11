@@ -627,6 +627,15 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# GetFeature
+# -----------------------------------------------------------------------------
+
+
+def compare_get_feature(sz_abstract_factory: SzAbstractFactory):
+    pass
+
+
+# -----------------------------------------------------------------------------
 # GetRecord
 # -----------------------------------------------------------------------------
 
@@ -812,6 +821,83 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# Static method signature calls
+# -----------------------------------------------------------------------------
+
+
+def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
+
+    sz_config_manager = sz_abstract_factory.create_configmanager()
+    sz_config = sz_config_manager.create_config_from_template()
+    sz_diagnostic = sz_abstract_factory.create_diagnostic()
+    sz_engine = sz_abstract_factory.create_engine()
+    sz_product = sz_abstract_factory.create_product()
+
+    # For linter
+
+    _ = sz_config
+    _ = sz_engine
+    _ = sz_diagnostic
+    _ = sz_product
+
+    # Define testcases
+
+    testcases = [
+        {
+            "testcase": "sz_config.export()",
+            "response": "SzConfigExportResponse",
+        },
+        {
+            "testcase": "sz_config.get_data_source_registry()",
+            "response": "SzConfigGetDataSourceRegistryResponse",
+        },
+        {
+            "testcase": 'sz_config.register_data_source("A_DATASOURCE_NAME")',
+            "response": "SzConfigRegisterDataSourceResponse",
+        },
+        {
+            "testcase": 'sz_config.unregister_data_source("A_DATASOURCE_NAME")',
+            "response": "SzConfigUnregisterDataSourceResponse",
+        },
+        {
+            "testcase": "sz_config_manager.get_config_registry()",
+            "response": "SzConfigManagerGetConfigRegistryResponse",
+        },
+        {
+            "testcase": "sz_diagnostic.check_repository_performance(2)",
+            "response": "SzDiagnosticCheckRepositoryPerformanceResponse",
+        },
+        {
+            "testcase": "sz_diagnostic.get_repository_info()",
+            "response": "SzDiagnosticGetRepositoryInfoResponse",
+        },
+        # {
+        #     "testcase": "sz_diagnostic.get_feature(1)",
+        #     "response": "SzDiagnosticGetFeatureResponse",
+        # },
+        {
+            "testcase": "sz_engine.get_stats()",
+            "response": "SzEngineGetStatsResponse",
+        },
+        {
+            "testcase": "sz_product.get_license()",
+            "response": "SzProductGetLicenseResponse",
+        },
+        {
+            "testcase": "sz_product.get_version()",
+            "response": "SzProductGetVersionResponse",
+        },
+    ]
+
+    for testcase in testcases:
+        test_this(
+            testcase.get("testcase"),
+            testcase.get("response"),
+            eval(testcase.get("testcase", "")),
+        )
+
+
+# -----------------------------------------------------------------------------
 # WhyEntities
 # -----------------------------------------------------------------------------
 
@@ -827,7 +913,6 @@ def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
 
     for entity_id in LOADED_ENTITY_IDS:
         entity_id_2 = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
-
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
@@ -937,99 +1022,6 @@ def compare_why_search(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
-# Static method signature calls
-# -----------------------------------------------------------------------------
-
-
-def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
-
-    sz_config_manager = sz_abstract_factory.create_configmanager()
-    sz_config = sz_config_manager.create_config_from_template()
-    sz_diagnostic = sz_abstract_factory.create_diagnostic()
-    sz_engine = sz_abstract_factory.create_engine()
-    sz_product = sz_abstract_factory.create_product()
-
-    # For linter
-
-    _ = sz_config
-    _ = sz_engine
-    _ = sz_diagnostic
-    _ = sz_product
-
-    # Define testcases
-
-    testcases = [
-        {
-            "testcase": "sz_config.export()",
-            "response": "SzConfigExportResponse",
-        },
-        {
-            "testcase": "sz_config.get_data_source_registry()",
-            "response": "SzConfigGetDataSourceRegistryResponse",
-        },
-        {
-            "testcase": 'sz_config.register_data_source("A_DATASOURCE_NAME")',
-            "response": "SzConfigRegisterDataSourceResponse",
-        },
-        {
-            "testcase": 'sz_config.unregister_data_source("A_DATASOURCE_NAME")',
-            "response": "SzConfigUnregisterDataSourceResponse",
-        },
-        {
-            "testcase": "sz_config_manager.get_config_registry()",
-            "response": "SzConfigManagerGetConfigRegistryResponse",
-        },
-        {
-            "testcase": "sz_diagnostic.check_repository_performance(2)",
-            "response": "SzDiagnosticCheckRepositoryPerformanceResponse",
-        },
-        {
-            "testcase": "sz_diagnostic.get_repository_info()",
-            "response": "SzDiagnosticGetRepositoryInfoResponse",
-        },
-        # {
-        #     "testcase": "sz_diagnostic.get_feature(1)",
-        #     "response": "SzDiagnosticGetFeatureResponse",
-        # },
-        {
-            "testcase": "sz_engine.get_stats()",
-            "response": "SzEngineGetStatsResponse",
-        },
-        {
-            "testcase": "sz_product.get_license()",
-            "response": "SzProductGetLicenseResponse",
-        },
-        {
-            "testcase": "sz_product.get_version()",
-            "response": "SzProductGetVersionResponse",
-        },
-    ]
-
-    for testcase in testcases:
-        test_this(
-            testcase.get("testcase"),
-            testcase.get("response"),
-            eval(testcase.get("testcase", "")),
-        )
-
-
-def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
-    result = []
-    sz_engine = sz_abstract_factory.create_engine()
-
-    for record in LOADED_RECORD_KEYS:
-        response = sz_engine.get_entity_by_record_id(
-            record.get("data_source", ""), record.get("record_id", "")
-        )
-        response_dict = json.loads(response)
-        entity_id = response_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
-        if entity_id not in result:
-            result.append(entity_id)
-
-    return result
-
-
-# -----------------------------------------------------------------------------
 # Delete records
 # -----------------------------------------------------------------------------
 
@@ -1066,12 +1058,6 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
-
-
-def test_this(test_name, title, response):
-    if response:
-        json_schema = SCHEMA.get(title)
-        compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):
@@ -1147,6 +1133,63 @@ def compare_to_schema(test_name, json_path, schema, fragment):
     error_message(test_name, json_path, "Unknown value", schema, fragment)
 
 
+def debug(level, message):
+    if DEBUG >= level:
+        print(message)
+
+
+def error_message(test_name, json_path, message, schema, fragment):
+    output(0, test_name)
+    output(1, f"Path: {json_path}")
+    output(2, "Error:")
+    output(3, message)
+    output(3, f"schema: {json.dumps(schema)}")
+    output(3, f"  json: {json.dumps(fragment)}")
+
+
+def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
+    result = []
+    sz_engine = sz_abstract_factory.create_engine()
+
+    for record in LOADED_RECORD_KEYS:
+        response = sz_engine.get_entity_by_record_id(
+            record.get("data_source", ""), record.get("record_id", "")
+        )
+        response_dict = json.loads(response)
+        entity_id = response_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
+        if entity_id not in result:
+            result.append(entity_id)
+
+    return result
+
+
+def infer_json_type_definition(example_json: str) -> str:
+    try:
+        cmd_echo_result = subprocess.run(
+            ["echo", example_json],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+        cmd_jtd_infer_result = subprocess.run(
+            ["jtd-infer"],
+            input=cmd_echo_result.stdout,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+        return cmd_jtd_infer_result.stdout
+    except subprocess.CalledProcessError as e:
+        print(f"Error executing command: {e}")
+        print(f"Stderr: {e.stderr}")
+    except FileNotFoundError:
+        print("Error: The specified command was not found.")
+
+    return ""
+
+
 def is_json_subset(subset_json, full_json):
     """
     Checks if one JSON object (subset_json) is a subset of another (full_json).
@@ -1178,46 +1221,14 @@ def is_json_subset(subset_json, full_json):
         return subset_json == full_json
 
 
+def output(indentation, message):
+    print(f"{"    " * indentation}{message}")
+
+
 def path_to_testdata(filename: str) -> str:
     current_path = pathlib.Path(__file__).parent.resolve()
     result = os.path.abspath("{0}/testdata/{1}".format(current_path, filename))
     return result
-
-
-def infer_json_type_definition(example_json: str) -> str:
-    try:
-        cmd_echo_result = subprocess.run(
-            ["echo", example_json],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-
-        cmd_jtd_infer_result = subprocess.run(
-            ["jtd-infer"],
-            input=cmd_echo_result.stdout,
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-
-        return cmd_jtd_infer_result.stdout
-    except subprocess.CalledProcessError as e:
-        print(f"Error executing command: {e}")
-        print(f"Stderr: {e.stderr}")
-    except FileNotFoundError:
-        print("Error: The specified command was not found.")
-
-    return ""
-
-
-def debug(level, message):
-    if DEBUG >= level:
-        print(message)
-
-
-def output(indentation, message):
-    print(f"{"    " * indentation}{message}")
 
 
 def set_debug(needle, haystack):
@@ -1228,13 +1239,10 @@ def set_debug(needle, haystack):
         DEBUG = 1
 
 
-def error_message(test_name, json_path, message, schema, fragment):
-    output(0, test_name)
-    output(1, f"Path: {json_path}")
-    output(2, "Error:")
-    output(3, message)
-    output(3, f"schema: {json.dumps(schema)}")
-    output(3, f"  json: {json.dumps(fragment)}")
+def test_this(test_name, title, response):
+    if response:
+        json_schema = SCHEMA.get(title)
+        compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 # -----------------------------------------------------------------------------
@@ -1289,7 +1297,6 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    compare_static_method_signatures(sz_abstract_factory)
     compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
     compare_find_interesting_entities_by_record_id(sz_abstract_factory)
     compare_find_network_by_entity_id(sz_abstract_factory)
@@ -1298,12 +1305,15 @@ if __name__ == "__main__":
     compare_find_path_by_record_id(sz_abstract_factory)
     compare_get_entity_by_entity_id(sz_abstract_factory)
     compare_get_entity_by_record_id(sz_abstract_factory)
+    compare_get_feature(sz_abstract_factory)
     compare_get_record(sz_abstract_factory)
     compare_get_virtual_entity_by_record_id(sz_abstract_factory)
     compare_how_entity_by_entity_id(sz_abstract_factory)
     compare_reevaluate_entity(sz_abstract_factory)
     compare_reevaluate_record(sz_abstract_factory)
     compare_search_by_attributes(sz_abstract_factory)
+    compare_static_method_signatures(sz_abstract_factory)
+    compare_why_entities(sz_abstract_factory)
     compare_why_record_in_entity(sz_abstract_factory)
     compare_why_records(sz_abstract_factory)
     compare_why_search(sz_abstract_factory)

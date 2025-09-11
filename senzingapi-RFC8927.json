@@ -1137,6 +1137,42 @@
                 }
             }
         },
+        "DisclosedRelation": {
+            "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_DESC": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LINKED_FEAT_TYPE": {
+                    "type": "string"
+                },
+                "REL_ANCHOR": {
+                    "elements": {
+                        "ref": "RelAnchor"
+                    }
+                }
+            }
+        },
         "Entity": {
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1902,104 +1938,17 @@
                     "properties": {
                         "REL_ANCHOR": {
                             "elements": {
-                                "properties": {
-                                    "DOMAIN": {
-                                        "type": "string"
-                                    },
-                                    "FEAT_DESC": {
-                                        "type": "string"
-                                    },
-                                    "FEAT_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "LINKED_FEAT_DESC": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "LINKED_FEAT_TYPE": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_USAGE_TYPE": {
-                                        "type": "string"
-                                    }
-                                }
+                                "ref": "RelAnchor"
                             }
                         },
                         "REL_LINK": {
                             "elements": {
-                                "properties": {
-                                    "DOMAIN": {
-                                        "type": "string"
-                                    },
-                                    "FEAT_DESC": {
-                                        "type": "string"
-                                    },
-                                    "FEAT_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "FEAT_USAGE_TYPE": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_DESC": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "LINKED_FEAT_TYPE": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_USAGE_TYPE": {
-                                        "type": "string"
-                                    }
-                                }
+                                "ref": "RelLink"
                             }
                         },
                         "REL_POINTER": {
                             "elements": {
-                                "properties": {
-                                    "DOMAIN": {
-                                        "type": "string"
-                                    },
-                                    "FEAT_DESC": {
-                                        "type": "string"
-                                    },
-                                    "FEAT_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "FEAT_USAGE_TYPE": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_DESC": {
-                                        "type": "string"
-                                    },
-                                    "LINKED_FEAT_ID": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "LINKED_FEAT_TYPE": {
-                                        "type": "string"
-                                    }
-                                }
+                                "ref": "RelPointer"
                             }
                         }
                     }
@@ -2055,7 +2004,7 @@
                     "ref": "MapStringToListOfMatchInfoForAttribute"
                 },
                 "DISCLOSED_RELATIONS": {
-                    "ref": "Fixme"
+                    "ref": "DisclosedRelation"
                 },
                 "FEATURE_SCORES": {
                     "ref": "FeatureScores"
@@ -2452,6 +2401,37 @@
                 }
             }
         },
+        "RelAnchor": {
+            "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LINKED_FEAT_DESC": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LINKED_FEAT_TYPE": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_USAGE_TYPE": {
+                    "type": "string"
+                }
+            }
+        },
         "RelatedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -2501,6 +2481,71 @@
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
+                }
+            }
+        },
+        "RelLink": {
+            "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_DESC": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LINKED_FEAT_TYPE": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_USAGE_TYPE": {
+                    "type": "string"
+                }
+            }
+        },
+        "RelPointer": {
+            "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_DESC": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LINKED_FEAT_TYPE": {
+                    "type": "string"
                 }
             }
         },
