@@ -319,11 +319,16 @@ generate_testdata:
 	@./bin/generate_testdata.py
 
 
-.PHONY: generate_json_responses
-generate_json_responses:
-	@rm $(MAKEFILE_DIRECTORY)/docs/json-responses/* || true
-	@./bin/generate_json_responses.py
+.PHONY: generate_responses_html
+generate_responses_html:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
+	@./bin/generate_responses_html.py
 
+
+.PHONY: generate_responses_json
+generate_responses_json:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
+	@./bin/generate_responses_json.py
 
 # -----------------------------------------------------------------------------
 # Clean
