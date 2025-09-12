@@ -2051,6 +2051,31 @@
                 }
             }
         },
+        "Object": {
+            "metadata": {
+                "goType": "any",
+                "javaJacksonType": "Object",
+                "pythonType": "object"
+            },
+            "type": "string"
+        },
+        "Param": {
+            "properties": {
+                "PARAM": {
+                    "ref": "ParamDetails"
+                }
+            }
+        },
+        "ParamDetails": {
+            "properties": {
+                "NAME": {
+                    "type": "string"
+                },
+                "VALUE": {
+                    "ref": "Object"
+                }
+            }
+        },
         "Processing": {
             "properties": {
                 "addedRecords": {
@@ -3607,8 +3632,19 @@
         },
         "SzEngineGetRecordPreviewResponse": {
             "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
+                "FEATURES": {
+                    "ref": "MapStringToListOfFeatureForAttributeWithAttributes"
+                },
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
+                "JSON_DATA": {
+                    "ref": "MapStringToObject"
+                },
+                "UNMAPPED_DATA": {
+                    "ref": "MapStringToObject"
                 }
             }
         },
@@ -3712,8 +3748,8 @@
         },
         "SzEngineGetRedoRecordResponse": {
             "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
+                "UMF_PROC": {
+                    "ref": "UmfProc"
                 }
             }
         },
@@ -3970,6 +4006,18 @@
                 },
                 "VERSION": {
                     "type": "string"
+                }
+            }
+        },
+        "UmfProc": {
+            "properties": {
+                "NAME": {
+                    "type": "string"
+                },
+                "PARAMS": {
+                    "elements": {
+                        "ref": "Param"
+                    }
                 }
             }
         },

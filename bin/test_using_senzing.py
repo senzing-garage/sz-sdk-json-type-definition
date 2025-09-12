@@ -16,13 +16,17 @@ import sys
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
 
+# Global variables.
+
 DEBUG = 0
+DEFINITIONS = {}
 ERROR_COUNT = 0
+GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
 HR_START = ">" * 80
 HR_STOP = "<" * 80
 LOADED_ENTITY_IDS = []
 LOADED_RECORD_KEYS = []
-
+SCHEMA = {}
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
 
 FLAGS = [
@@ -103,39 +107,6 @@ FLAGS = [
 
 FLAGS_LEN = len(FLAGS)
 
-
-# RECORDS = [
-#     {"data_source": "CUSTOMERS", "record_id": "1001"},
-#     {"data_source": "CUSTOMERS", "record_id": "1033"},
-#     {"data_source": "REFERENCE", "record_id": "2013"},
-#     {"data_source": "REFERENCE", "record_id": "2121"},
-#     {"data_source": "WATCHLIST", "record_id": "1027"},
-#     {"data_source": "WATCHLIST", "record_id": "2052"},
-# ]
-
-SEARCH_RECORDS = [
-    {
-        "NAME_FULL": "Susan Moony",
-        "DATE_OF_BIRTH": "15/6/1998",
-        "SSN_NUMBER": "521212123",
-    },
-    {
-        "NAME_FIRST": "Robert",
-        "NAME_LAST": "Smith",
-        "ADDR_FULL": "123 Main Street Las Vegas NV 89132",
-    },
-    {
-        "NAME_FIRST": "Makio",
-        "NAME_LAST": "Yamanaka",
-        "ADDR_FULL": "787 Rotary Drive Rotorville FL 78720",
-    },
-]
-
-# -----------------------------------------------------------------------------
-# Functions to process RFC8927.json file and create SCHEMA variable.
-# -----------------------------------------------------------------------------
-
-GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
     "SzConfigGetDataSourceRegistryResponse",
@@ -163,14 +134,14 @@ GLOBAL_JSON_KEYS = [
     "SzEngineFindPathByRecordIdResponse",
     "SzEngineGetEntityByEntityIdResponse",
     "SzEngineGetEntityByRecordIdResponse",
-    # "SzEngineGetRecordPreviewResponse",
+    "SzEngineGetRecordPreviewResponse",
     "SzEngineGetRecordResponse",
-    # "SzEngineGetRedoRecordResponse",
+    "SzEngineGetRedoRecordResponse",
     "SzEngineGetStatsResponse",
     # "SzEngineGetVirtualEntityByRecordIdRecordKeys",
     "SzEngineGetVirtualEntityByRecordIdResponse",
     "SzEngineHowEntityByEntityIdResponse",
-    # "SzEngineProcessRedoRecordResponse",
+    "SzEngineProcessRedoRecordResponse",
     "SzEngineReevaluateEntityResponse",
     "SzEngineReevaluateRecordResponse",
     # "SzEngineSearchByAttributesAttributes",
@@ -187,8 +158,27 @@ GLOBAL_JSON_KEYS = [
     "SzProductGetVersionResponse",
 ]
 
-DEFINITIONS = {}
-SCHEMA = {}
+SEARCH_RECORDS = [
+    {
+        "NAME_FULL": "Susan Moony",
+        "DATE_OF_BIRTH": "15/6/1998",
+        "SSN_NUMBER": "521212123",
+    },
+    {
+        "NAME_FIRST": "Robert",
+        "NAME_LAST": "Smith",
+        "ADDR_FULL": "123 Main Street Las Vegas NV 89132",
+    },
+    {
+        "NAME_FIRST": "Makio",
+        "NAME_LAST": "Yamanaka",
+        "ADDR_FULL": "787 Rotary Drive Rotorville FL 78720",
+    },
+]
+
+# -----------------------------------------------------------------------------
+# Functions to process RFC8927.json file and create SCHEMA variable.
+# -----------------------------------------------------------------------------
 
 
 def handle_elements(json_value):
@@ -255,6 +245,8 @@ def handle_python_type(python_type):
             return {
                 VARIABLE_JSON_KEY: "int32",
             }
+        case "object":
+            return "object"
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
             raise NotImplementedError
@@ -377,9 +369,11 @@ def compare(sz_abstract_factory: SzAbstractFactory):
     compare_get_entity_by_entity_id(sz_abstract_factory)
     compare_get_entity_by_record_id(sz_abstract_factory)
     compare_get_feature(sz_abstract_factory)
+    compare_get_record_preview(sz_abstract_factory)
     compare_get_record(sz_abstract_factory)
     compare_get_virtual_entity_by_record_id(sz_abstract_factory)
     compare_how_entity_by_entity_id(sz_abstract_factory)
+    compare_redo(sz_abstract_factory)
     compare_reevaluate_entity(sz_abstract_factory)
     compare_reevaluate_record(sz_abstract_factory)
     compare_search_by_attributes(sz_abstract_factory)
@@ -731,6 +725,43 @@ def compare_get_record(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# GetRecordPreview
+# -----------------------------------------------------------------------------
+
+
+def compare_get_record_preview(sz_abstract_factory: SzAbstractFactory):
+    debug_records = [  # Format: (flag_count)
+        (0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzEngineGetRecordPreviewResponse"
+    json_schema = SCHEMA.get(title)
+
+    for record_dict in LOADED_RECORD_KEYS:
+
+        # Fetch actual record.
+
+        data_source = record_dict.get("data_source", "")
+        record_id = record_dict.get("record_id", "")
+        record_str = sz_engine.get_record(data_source, record_id)
+        record_dict = json.loads(record_str)
+        record_json_dict = record_dict.get("JSON_DATA")
+        record_json = json.dumps(record_json_dict)
+
+        # Preview record with various flags.
+
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
+            response = sz_engine.get_record_preview(record_json, flag)
+            set_debug((flag_count), debug_records)
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+            compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
 # GetVirtualEntity
 # -----------------------------------------------------------------------------
 
@@ -795,6 +826,53 @@ def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
             set_debug((entity_id, flag_count), debug_entities)
             debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+
+# -----------------------------------------------------------------------------
+# Redo
+# -----------------------------------------------------------------------------
+
+
+def compare_redo(sz_abstract_factory: SzAbstractFactory):
+    debug_get_redo = [  # Format (redo_record_count)
+        (0),
+    ]
+
+    sz_engine = sz_abstract_factory.create_engine()
+
+    # Get all redo records.
+
+    title = "SzEngineGetRedoRecordResponse"
+    json_schema = SCHEMA.get(title)
+
+    redo_records = []
+    redo_record_count = 0
+    while True:
+        redo_record_count += 1
+        response = sz_engine.get_redo_record()
+        if not response:
+            break
+        redo_records.append(response)
+        test_name = f"{title} - Redo Record count:{redo_record_count}"
+        set_debug((redo_record_count), debug_get_redo)
+        debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+        compare_to_schema(test_name, title, json_schema, json.loads(response))
+
+    # Process redo records.
+
+    title = "SzEngineProcessRedoRecordResponse"
+    json_schema = SCHEMA.get(title)
+
+    redo_record_count = 0
+    for redo_record in redo_records:
+        redo_record_count += 1
+        response = sz_engine.process_redo_record(
+            redo_record, SzEngineFlags.SZ_WITH_INFO
+        )
+        test_name = f"{title} - Redo Record count:{redo_record_count}"
+        set_debug((redo_record_count), debug_get_redo)
+        debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+        compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 # -----------------------------------------------------------------------------
@@ -1160,7 +1238,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
         return
 
     if isinstance(fragment, int):
-        if not schema == "int32":
+        if schema not in ["int32", "object"]:
             ERROR_COUNT += 1
             error_message(
                 test_name,
@@ -1172,7 +1250,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
         return
 
     if isinstance(fragment, str):
-        if schema not in ["string", "timestamp"]:
+        if schema not in ["string", "timestamp", "object"]:
             error_message(
                 test_name,
                 json_path,
@@ -1378,9 +1456,7 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    # compare(sz_abstract_factory)
-
-    compare_get_feature(sz_abstract_factory)
+    compare(sz_abstract_factory)
 
     # Delete test data.
 
