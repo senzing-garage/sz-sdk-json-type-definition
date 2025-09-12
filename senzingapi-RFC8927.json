@@ -64,14 +64,10 @@
         "Candidates": {
             "properties": {
                 "candidateBuilders": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 },
                 "suppressedCandidateBuilders": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 }
             }
         },
@@ -1083,19 +1079,13 @@
         "Contention": {
             "properties": {
                 "feature": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                    "ref": "Fixme"
                 },
-                "resent": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                "resEnt": {
+                    "ref": "Fixme"
                 },
                 "valuelatch": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                    "ref": "Fixme"
                 }
             }
         },
@@ -1303,9 +1293,7 @@
                     }
                 },
                 "created": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 }
             }
         },
@@ -2100,37 +2088,40 @@
         },
         "ProcessingDetails": {
             "properties": {
+                "addedRecords": {
+                    "type": "int32"
+                },
+                "candidates": {
+                    "type": "int32"
+                },
+                "changeDeletes": {
+                    "type": "int32"
+                },
+                "duration": {
+                    "type": "int32"
+                },
+                "filteredObsFeat": {
+                    "type": "int32"
+                },
+                "newObsEnt": {
+                    "type": "int32"
+                },
+                "obsEntHashDiff": {
+                    "type": "int32"
+                },
+                "obsEntHashSame": {
+                    "type": "int32"
+                },
                 "optimizedOut": {
                     "type": "int32"
                 },
                 "optimizedOutSkipped": {
                     "type": "int32"
                 },
-                "newObsEnt": {
-                    "type": "int32"
-                },
-                "obsEntHashSame": {
-                    "type": "int32"
-                },
-                "obsEntHashDiff": {
-                    "type": "int32"
-                },
-                "filteredObsFeat": {
-                    "type": "int32"
-                },
                 "partiallyResolved": {
                     "type": "int32"
                 },
-                "changeDeletes": {
-                    "type": "int32"
-                },
                 "retries": {
-                    "type": "int32"
-                },
-                "candidates": {
-                    "type": "int32"
-                },
-                "duration": {
                     "type": "int32"
                 }
             }
@@ -2574,15 +2565,14 @@
                 "triggers": {
                     "ref": "ReresolveTriggers"
                 },
+                "newFeatureFTypes": {
+                    "ref": "MapStringToInteger"
+                },
                 "suppressedCandidateBuildersForReresolve": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                    "ref": "Fixme"
                 },
                 "suppressedScoredFeatureTypeForReresolve": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                    "ref": "Fixme"
                 }
             }
         },
@@ -2593,11 +2583,6 @@
                 },
                 "multipleResolvableCandidates": {
                     "type": "int32"
-                },
-                "newFeatureFTypes": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
                 },
                 "resolveNewFeatures": {
                     "type": "int32"
@@ -2875,27 +2860,19 @@
         "Scoring": {
             "properties": {
                 "cacheHit": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 },
                 "cacheMiss": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 },
                 "scoredPairs": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 },
                 "suppressedDisclosedRelationshipDomainCount": {
                     "type": "int32"
                 },
                 "suppressedScoredFeatureType": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                    "ref": "Fixme"
                 }
             }
         },
@@ -3277,17 +3254,32 @@
                 }
             }
         },
+        "SystemLoadStrings": {
+            "properties": {
+                "cpuUser": {
+                    "type": "string"
+                },
+                "cpuSystem": {
+                    "type": "string"
+                },
+                "cpuIdle": {
+                    "type": "string"
+                },
+                "cpuWait": {
+                    "type": "string"
+                }
+            }
+        },
         "SystemResources": {
             "properties": {
-                "initResources": {
-                    "elements": {
-                        "ref": "InitResources"
-                    }
-                },
                 "currResources": {
-                    "elements": {
-                        "ref": "CurrResources"
-                    }
+                    "ref": "CurrResources"
+                },
+                "initResources": {
+                    "ref": "InitResources"
+                },
+                "systemLoad": {
+                    "ref": "SystemLoadStrings"
                 }
             }
         },
@@ -4120,9 +4112,7 @@
                     "ref": "ExpressedFeatures"
                 },
                 "genericDetect": {
-                    "elements": {
-                        "ref": "Fixme"
-                    }
+                    "ref": "Fixme"
                 },
                 "license": {
                     "ref": "License"
@@ -4137,9 +4127,7 @@
                     "ref": "Processing"
                 },
                 "redoTriggers": {
-                    "elements": {
-                        "ref": "MapStringToInteger"
-                    }
+                    "ref": "MapStringToInteger"
                 },
                 "repairDiagnosis": {
                     "ref": "RepairDiagnosis"

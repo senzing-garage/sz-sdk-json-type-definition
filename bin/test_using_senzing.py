@@ -749,6 +749,7 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            flag = flag | SzEngineFlags.SZ_WITH_INFO
             test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
             response = sz_engine.reevaluate_entity(entity_id, flag)
             if not response:
@@ -777,6 +778,7 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
+            flag = flag | SzEngineFlags.SZ_WITH_INFO
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
             response = sz_engine.reevaluate_record(data_source, record_id, flag)
             if not response:
@@ -886,6 +888,13 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
         {
             "testcase": "sz_product.get_version()",
             "response": "SzProductGetVersionResponse",
+        },
+    ]
+
+    testcases = [
+        {
+            "testcase": "sz_engine.get_stats()",
+            "response": "SzEngineGetStatsResponse",
         },
     ]
 
