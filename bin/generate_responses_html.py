@@ -8,7 +8,7 @@ import json
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
-GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
+GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-html"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
     "SzConfigGetDataSourceRegistryResponse",
