@@ -143,7 +143,7 @@ GLOBAL_JSON_KEYS = [
     "SzConfigRegisterDataSourceResponse",
     "SzConfigUnregisterDataSourceResponse",
     "SzDiagnosticCheckRepositoryPerformanceResponse",
-    # "SzDiagnosticGetFeatureResponse",
+    "SzDiagnosticGetFeatureResponse",
     "SzDiagnosticGetRepositoryInfoResponse",
     "SzEngineAddRecordResponse",
     "SzEngineDeleteRecordResponse",
@@ -660,7 +660,46 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_feature(sz_abstract_factory: SzAbstractFactory):
-    pass
+    debug_entities = [  # Format (entity_id, flag_count)
+        (0, 0),
+    ]
+    debug_feature_ids = [  # Format (feature_id)
+        (0),
+    ]
+
+    sz_diagnostic = sz_abstract_factory.create_diagnostic()
+    sz_engine = sz_abstract_factory.create_engine()
+    title = "SzDiagnosticGetFeatureResponse"
+    json_schema = SCHEMA.get(title)
+
+    # Extract feature IDs.
+
+    feature_ids = []
+    for entity_id in LOADED_ENTITY_IDS:
+        flag_count = 0
+        for flag in FLAGS:
+            flag_count += 1
+            test_name = f"{title} - Entity #{entity_id}; Flag #{flag_count}"
+            response = sz_engine.get_entity_by_entity_id(entity_id, flag)
+            response_dict = json.loads(response)
+            feature = response_dict.get("RESOLVED_ENTITY", {}).get("FEATURES", {})
+            for feature_values in feature.values():
+                for feature_value in feature_values:
+                    feature_id = feature_value.get("LIB_FEAT_ID", None)
+                    if feature_id:
+                        if feature_id not in feature_ids:
+                            feature_ids.append(feature_id)
+            set_debug((entity_id, flag_count), debug_entities)
+            debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+
+    # Test get_feature.
+
+    for feature_id in feature_ids:
+        test_name = f"{title} - Feature #{feature_id}"
+        response = sz_diagnostic.get_feature(feature_id)
+        set_debug((feature_id), debug_feature_ids)
+        debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
+        compare_to_schema(test_name, title, json_schema, json.loads(response))
 
 
 # -----------------------------------------------------------------------------
@@ -1339,7 +1378,9 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    compare(sz_abstract_factory)
+    # compare(sz_abstract_factory)
+
+    compare_get_feature(sz_abstract_factory)
 
     # Delete test data.
 
