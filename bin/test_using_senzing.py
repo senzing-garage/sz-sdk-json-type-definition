@@ -363,6 +363,34 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# Compare
+# -----------------------------------------------------------------------------
+
+
+def compare(sz_abstract_factory: SzAbstractFactory):
+    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
+    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
+    compare_find_network_by_entity_id(sz_abstract_factory)
+    compare_find_network_by_record_id(sz_abstract_factory)
+    compare_find_path_by_entity_id(sz_abstract_factory)
+    compare_find_path_by_record_id(sz_abstract_factory)
+    compare_get_entity_by_entity_id(sz_abstract_factory)
+    compare_get_entity_by_record_id(sz_abstract_factory)
+    compare_get_feature(sz_abstract_factory)
+    compare_get_record(sz_abstract_factory)
+    compare_get_virtual_entity_by_record_id(sz_abstract_factory)
+    compare_how_entity_by_entity_id(sz_abstract_factory)
+    compare_reevaluate_entity(sz_abstract_factory)
+    compare_reevaluate_record(sz_abstract_factory)
+    compare_search_by_attributes(sz_abstract_factory)
+    compare_static_method_signatures(sz_abstract_factory)
+    compare_why_entities(sz_abstract_factory)
+    compare_why_record_in_entity(sz_abstract_factory)
+    compare_why_records(sz_abstract_factory)
+    compare_why_search(sz_abstract_factory)
+
+
+# -----------------------------------------------------------------------------
 # FindInterestingEntities
 # -----------------------------------------------------------------------------
 
@@ -891,13 +919,6 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
         },
     ]
 
-    testcases = [
-        {
-            "testcase": "sz_engine.get_stats()",
-            "response": "SzEngineGetStatsResponse",
-        },
-    ]
-
     for testcase in testcases:
         test_this(
             testcase.get("testcase"),
@@ -1142,6 +1163,25 @@ def compare_to_schema(test_name, json_path, schema, fragment):
     error_message(test_name, json_path, "Unknown value", schema, fragment)
 
 
+def create_sz_abstract_factory() -> SzAbstractFactory:
+    instance_name = "Example"
+    settings = {
+        "PIPELINE": {
+            "CONFIGPATH": "/etc/opt/senzing",
+            "RESOURCEPATH": "/opt/senzing/er/resources",
+            "SUPPORTPATH": "/opt/senzing/data",
+        },
+        "SQL": {"CONNECTION": "sqlite3://na:na@/tmp/sqlite/G2C.db"},
+    }
+
+    try:
+        sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
+    except SzError as err:
+        print(f"\nERROR: {err}\n")
+
+    return sz_abstract_factory
+
+
 def debug(level, message):
     if DEBUG >= level:
         print(message)
@@ -1240,6 +1280,29 @@ def path_to_testdata(filename: str) -> str:
     return result
 
 
+def process_RFC8927():
+    global DEFINITIONS, SCHEMA
+
+    input_filename = "./senzingapi-RFC8927.json"
+    with open(input_filename, "r", encoding="utf-8") as input_file:
+        rfc8927 = json.load(input_file)
+
+    DEFINITIONS = rfc8927.get("definitions", {})
+
+    # Recurse through dictionary.
+
+    for requested_json_key in GLOBAL_JSON_KEYS:
+        json_value = DEFINITIONS.get(requested_json_key)
+
+        # Short-circuit when JSON key not found.
+
+        if json_value is None:
+            print(f"Could not find JSON key: {requested_json_key}")
+            continue
+
+        SCHEMA[requested_json_key] = recurse(json_value)
+
+
 def set_debug(needle, haystack):
     global DEBUG
 
@@ -1261,43 +1324,13 @@ def test_this(test_name, title, response):
 
 if __name__ == "__main__":
 
-    # Read JSON from file.
+    # Process RFC8927 file to create SCHEMA.
 
-    INPUT_FILENAME = "./senzingapi-RFC8927.json"
-    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
-        DATA = json.load(input_file)
-
-    DEFINITIONS = DATA.get("definitions", {})
-
-    # Recurse through dictionary.
-
-    for requested_json_key in GLOBAL_JSON_KEYS:
-        json_value = DEFINITIONS.get(requested_json_key)
-
-        # Short-circuit when JSON key not found.
-
-        if json_value is None:
-            print(f"Could not find JSON key: {requested_json_key}")
-            continue
-
-        SCHEMA[requested_json_key] = recurse(json_value)
+    process_RFC8927()
 
     # Create SzAbstractFactory.
 
-    instance_name = "Example"
-    settings = {
-        "PIPELINE": {
-            "CONFIGPATH": "/etc/opt/senzing",
-            "RESOURCEPATH": "/opt/senzing/er/resources",
-            "SUPPORTPATH": "/opt/senzing/data",
-        },
-        "SQL": {"CONNECTION": "sqlite3://na:na@/tmp/sqlite/G2C.db"},
-    }
-
-    try:
-        sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
-    except SzError as err:
-        print(f"\nERROR: {err}\n")
+    sz_abstract_factory = create_sz_abstract_factory()
 
     # Insert test data.
 
@@ -1306,26 +1339,7 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
-    compare_find_interesting_entities_by_record_id(sz_abstract_factory)
-    compare_find_network_by_entity_id(sz_abstract_factory)
-    compare_find_network_by_record_id(sz_abstract_factory)
-    compare_find_path_by_entity_id(sz_abstract_factory)
-    compare_find_path_by_record_id(sz_abstract_factory)
-    compare_get_entity_by_entity_id(sz_abstract_factory)
-    compare_get_entity_by_record_id(sz_abstract_factory)
-    compare_get_feature(sz_abstract_factory)
-    compare_get_record(sz_abstract_factory)
-    compare_get_virtual_entity_by_record_id(sz_abstract_factory)
-    compare_how_entity_by_entity_id(sz_abstract_factory)
-    compare_reevaluate_entity(sz_abstract_factory)
-    compare_reevaluate_record(sz_abstract_factory)
-    compare_search_by_attributes(sz_abstract_factory)
-    compare_static_method_signatures(sz_abstract_factory)
-    compare_why_entities(sz_abstract_factory)
-    compare_why_record_in_entity(sz_abstract_factory)
-    compare_why_records(sz_abstract_factory)
-    compare_why_search(sz_abstract_factory)
+    compare(sz_abstract_factory)
 
     # Delete test data.
 

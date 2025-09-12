@@ -47,10 +47,10 @@
                 "resFeatStatCacheHit": {
                     "type": "int32"
                 },
-                "resFeatStatInsert": {
+                "resFeatStatCacheMiss": {
                     "type": "int32"
                 },
-                "resFeatStatCacheMiss": {
+                "resFeatStatInsert": {
                     "type": "int32"
                 },
                 "resFeatStatUpdateAttempt": {
@@ -2420,6 +2420,11 @@
                 },
                 "LINKED_FEAT_USAGE_TYPE": {
                     "type": "string"
+                },
+                "REL_POINTER": {
+                    "elements": {
+                        "ref": "RelPointer"
+                    }
                 }
             }
         },
