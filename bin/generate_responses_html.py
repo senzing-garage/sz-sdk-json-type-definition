@@ -196,7 +196,7 @@ def handle_html_dict(level, json_value) -> str:
     for key, value in json_value.items():
         xxx = recurse_html(level + 2, value)
         result += f'\n{indent2}<span href="{popup}" title="bob">{key}</span>: {xxx}'
-    result += f"{indent1}}}<br>"
+    result += f"{indent1}}}<br>\n"
 
     return result
 
@@ -209,7 +209,7 @@ def handle_html_list(level, json_value) -> str:
     for value in json_value:
         xxx = recurse_html(level + 2, value)
         result += xxx
-    result += f"{indent1}]<br>"
+    result += f"{indent1}]<br>\n"
     return result
 
 
