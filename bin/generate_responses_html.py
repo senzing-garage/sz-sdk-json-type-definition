@@ -85,7 +85,7 @@ def handle_json_elements(level, metadata, key, json_value) -> str:
     else:
         result += html_println(level, "[")
     result += recurse_json(level + 1, metadata, None, elements)
-    result = result[:-2]
+    result = result[:-1]
     result += html_println(level, "],")
     return result
 
@@ -172,16 +172,41 @@ def handle_json_python_type(level, metadata, key, value) -> str:
     return result
 
 
-def handle_json_ref(level, metadata, key, json_value) -> str:
-    return recurse_json(level, metadata, key, DEFINITIONS.get(json_value.get("ref")))
+def handle_json_ref(level, metadata, key, value) -> str:
+    print(
+        f">>>>>>>> handle_json_ref: level {level}, metadata: {metadata}, key: {key}, json_value: {value}"
+    )
+    message = ""
+    description = value.get("metadata", {}).get("description")
+
+    if description and key:
+        message += f'<a href="_" title="{description}">"{key}"</a>: '
+
+    elif key:
+        message += f'"{key}": '
+
+    message += recurse_json(level + 1, metadata, key, DEFINITIONS.get(value.get("ref")))
+    return html_println(level, message)
 
 
 def handle_json_type(level, metadata, key, value) -> str:
     data_type = value.get("type")
-    if key:
-        message = f'"{key}": "{data_type}",'
+    description = value.get("metadata", {}).get("description")
+
+    html_value = ""
+    if description and key:
+        html_value += f'"{data_type} - {description}"'
     else:
-        message = f'"{data_type}",'
+        html_value += f'"{data_type}"'
+
+    message = ""
+    if description and key:
+        message += f'<a href="_" title="{description}">"{key}"</a>: {html_value},'
+    elif key:
+        message += f'"{key}": {html_value},'
+    else:
+        message += f"{html_value},"
+
     return html_println(level, message)
 
 
