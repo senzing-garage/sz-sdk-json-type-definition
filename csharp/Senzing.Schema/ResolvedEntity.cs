@@ -23,7 +23,10 @@ namespace Senzing.Schema
         public string ErruleCode { get; set; }
 
         [JsonPropertyName("FEATURES")]
-        public Dictionary<string, List<FeatureForAttribute>> Features { get; set; }
+        public MapStringToListOfFeatureForAttributeWithAttributes Features { get; set; }
+
+        [JsonPropertyName("FEATURE_IDS")]
+        public FeatureIds FeatureIds { get; set; }
 
         [JsonPropertyName("IS_AMBIGUOUS")]
         public int IsAmbiguous { get; set; }
@@ -48,5 +51,8 @@ namespace Senzing.Schema
 
         [JsonPropertyName("RECORD_SUMMARY")]
         public IList<RecordSummaryElement> RecordSummary { get; set; }
+
+        [JsonPropertyName("RECORD_TYPES")]
+        public IList<string> RecordTypes { get; set; }
     }
 }

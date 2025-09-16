@@ -7,7 +7,7 @@ namespace Senzing.Schema
 {
     public class SzEngineGetRedoRecordResponse
     {
-        [JsonPropertyName("FIXME")]
-        public Fixme Fixme { get; set; }
+        [JsonPropertyName("UMF_PROC")]
+        public UmfProc UmfProc { get; set; }
     }
 }

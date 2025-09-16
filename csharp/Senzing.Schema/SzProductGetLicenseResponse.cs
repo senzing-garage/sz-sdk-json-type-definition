@@ -7,6 +7,9 @@ namespace Senzing.Schema
 {
     public class SzProductGetLicenseResponse
     {
+        [JsonPropertyName("advSearch")]
+        public int AdvSearch { get; set; }
+
         [JsonPropertyName("billing")]
         public string Billing { get; set; }
 

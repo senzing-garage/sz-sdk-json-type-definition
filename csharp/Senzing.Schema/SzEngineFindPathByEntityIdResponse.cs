@@ -13,5 +13,8 @@ namespace Senzing.Schema
 
         [JsonPropertyName("ENTITY_PATHS")]
         public IList<EntityPath> EntityPaths { get; set; }
+
+        [JsonPropertyName("ENTITY_PATH_LINKS")]
+        public IList<EntityPathLink> EntityPathLinks { get; set; }
     }
 }

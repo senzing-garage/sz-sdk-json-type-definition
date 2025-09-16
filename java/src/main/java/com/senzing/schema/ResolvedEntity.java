@@ -21,7 +21,10 @@ public class ResolvedEntity {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private Map<String, List<FeatureForAttribute>> features;
+    private MapStringToListOfFeatureForAttributeWithAttributes features;
+
+    @JsonProperty("FEATURE_IDS")
+    private FeatureIds featureIds;
 
     @JsonProperty("IS_AMBIGUOUS")
     private Integer isAmbiguous;
@@ -46,6 +49,9 @@ public class ResolvedEntity {
 
     @JsonProperty("RECORD_SUMMARY")
     private List<RecordSummaryElement> recordSummary;
+
+    @JsonProperty("RECORD_TYPES")
+    private List<String> recordTypes;
 
     public ResolvedEntity() {
     }
@@ -99,15 +105,29 @@ public class ResolvedEntity {
     /**
      * Getter for features.<p>
      */
-    public Map<String, List<FeatureForAttribute>> getFeatures() {
+    public MapStringToListOfFeatureForAttributeWithAttributes getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(Map<String, List<FeatureForAttribute>> features) {
+    public void setFeatures(MapStringToListOfFeatureForAttributeWithAttributes features) {
         this.features = features;
+    }
+
+    /**
+     * Getter for featureIds.<p>
+     */
+    public FeatureIds getFeatureIds() {
+        return featureIds;
+    }
+
+    /**
+     * Setter for featureIds.<p>
+     */
+    public void setFeatureIds(FeatureIds featureIds) {
+        this.featureIds = featureIds;
     }
 
     /**
@@ -220,5 +240,19 @@ public class ResolvedEntity {
      */
     public void setRecordSummary(List<RecordSummaryElement> recordSummary) {
         this.recordSummary = recordSummary;
+    }
+
+    /**
+     * Getter for recordTypes.<p>
+     */
+    public List<String> getRecordTypes() {
+        return recordTypes;
+    }
+
+    /**
+     * Setter for recordTypes.<p>
+     */
+    public void setRecordTypes(List<String> recordTypes) {
+        this.recordTypes = recordTypes;
     }
 }

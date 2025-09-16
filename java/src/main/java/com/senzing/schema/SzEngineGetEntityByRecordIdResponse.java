@@ -12,7 +12,7 @@ public class SzEngineGetEntityByRecordIdResponse {
     private List<RelatedEntity> relatedEntities;
 
     @JsonProperty("RESOLVED_ENTITY")
-    private ResolvedEntity resolvedEntity;
+    private ResolvedEntityForGetEntity resolvedEntity;
 
     public SzEngineGetEntityByRecordIdResponse() {
     }
@@ -34,14 +34,14 @@ public class SzEngineGetEntityByRecordIdResponse {
     /**
      * Getter for resolvedEntity.<p>
      */
-    public ResolvedEntity getResolvedEntity() {
+    public ResolvedEntityForGetEntity getResolvedEntity() {
         return resolvedEntity;
     }
 
     /**
      * Setter for resolvedEntity.<p>
      */
-    public void setResolvedEntity(ResolvedEntity resolvedEntity) {
+    public void setResolvedEntity(ResolvedEntityForGetEntity resolvedEntity) {
         this.resolvedEntity = resolvedEntity;
     }
 }

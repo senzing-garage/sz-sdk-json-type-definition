@@ -4,26 +4,78 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class SzEngineWhySearchResponse {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("ENTITIES")
+    private List<EntityForWhySearch> entities;
+
+    @JsonProperty("SEARCH_REQUEST")
+    private SearchRequest searchRequest;
+
+    @JsonProperty("SEARCH_STATISTICS")
+    private List<SearchStatistic> searchStatistics;
+
+    @JsonProperty("WHY_RESULTS")
+    private List<WhyResult> whyResults;
 
     public SzEngineWhySearchResponse() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for entities.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public List<EntityForWhySearch> getEntities() {
+        return entities;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for entities.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setEntities(List<EntityForWhySearch> entities) {
+        this.entities = entities;
+    }
+
+    /**
+     * Getter for searchRequest.<p>
+     */
+    public SearchRequest getSearchRequest() {
+        return searchRequest;
+    }
+
+    /**
+     * Setter for searchRequest.<p>
+     */
+    public void setSearchRequest(SearchRequest searchRequest) {
+        this.searchRequest = searchRequest;
+    }
+
+    /**
+     * Getter for searchStatistics.<p>
+     */
+    public List<SearchStatistic> getSearchStatistics() {
+        return searchStatistics;
+    }
+
+    /**
+     * Setter for searchStatistics.<p>
+     */
+    public void setSearchStatistics(List<SearchStatistic> searchStatistics) {
+        this.searchStatistics = searchStatistics;
+    }
+
+    /**
+     * Getter for whyResults.<p>
+     */
+    public List<WhyResult> getWhyResults() {
+        return whyResults;
+    }
+
+    /**
+     * Setter for whyResults.<p>
+     */
+    public void setWhyResults(List<WhyResult> whyResults) {
+        this.whyResults = whyResults;
     }
 }

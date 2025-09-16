@@ -7,8 +7,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class FeatureScoreForAttribute {
-    @JsonProperty("CANDIDATE_FEAT")
-    private String candidateFeat;
+    @JsonProperty("ADDITIONAL_SCORES")
+    private AdditionalScores additionalScores;
+
+    @JsonProperty("CANDIDATE_FEAT_DESC")
+    private String candidateFeatDesc;
 
     @JsonProperty("CANDIDATE_FEAT_ID")
     private Integer candidateFeatId;
@@ -16,32 +19,17 @@ public class FeatureScoreForAttribute {
     @JsonProperty("CANDIDATE_FEAT_USAGE_TYPE")
     private String candidateFeatUsageType;
 
-    @JsonProperty("FULL_SCORE")
-    private Integer fullScore;
-
-    @JsonProperty("GENERATION_MATCH")
-    private Integer generationMatch;
-
-    @JsonProperty("GNR_FN")
-    private Integer gnrFn;
-
-    @JsonProperty("GNR_GN")
-    private Integer gnrGn;
-
-    @JsonProperty("GNR_ON")
-    private Integer gnrOn;
-
-    @JsonProperty("GNR_SN")
-    private Integer gnrSn;
-
-    @JsonProperty("INBOUND_FEAT")
-    private String inboundFeat;
+    @JsonProperty("INBOUND_FEAT_DESC")
+    private String inboundFeatDesc;
 
     @JsonProperty("INBOUND_FEAT_ID")
     private Integer inboundFeatId;
 
     @JsonProperty("INBOUND_FEAT_USAGE_TYPE")
     private String inboundFeatUsageType;
+
+    @JsonProperty("SCORE")
+    private Integer score;
 
     @JsonProperty("SCORE_BEHAVIOR")
     private String scoreBehavior;
@@ -53,17 +41,31 @@ public class FeatureScoreForAttribute {
     }
 
     /**
-     * Getter for candidateFeat.<p>
+     * Getter for additionalScores.<p>
      */
-    public String getCandidateFeat() {
-        return candidateFeat;
+    public AdditionalScores getAdditionalScores() {
+        return additionalScores;
     }
 
     /**
-     * Setter for candidateFeat.<p>
+     * Setter for additionalScores.<p>
      */
-    public void setCandidateFeat(String candidateFeat) {
-        this.candidateFeat = candidateFeat;
+    public void setAdditionalScores(AdditionalScores additionalScores) {
+        this.additionalScores = additionalScores;
+    }
+
+    /**
+     * Getter for candidateFeatDesc.<p>
+     */
+    public String getCandidateFeatDesc() {
+        return candidateFeatDesc;
+    }
+
+    /**
+     * Setter for candidateFeatDesc.<p>
+     */
+    public void setCandidateFeatDesc(String candidateFeatDesc) {
+        this.candidateFeatDesc = candidateFeatDesc;
     }
 
     /**
@@ -95,101 +97,17 @@ public class FeatureScoreForAttribute {
     }
 
     /**
-     * Getter for fullScore.<p>
+     * Getter for inboundFeatDesc.<p>
      */
-    public Integer getFullScore() {
-        return fullScore;
+    public String getInboundFeatDesc() {
+        return inboundFeatDesc;
     }
 
     /**
-     * Setter for fullScore.<p>
+     * Setter for inboundFeatDesc.<p>
      */
-    public void setFullScore(Integer fullScore) {
-        this.fullScore = fullScore;
-    }
-
-    /**
-     * Getter for generationMatch.<p>
-     */
-    public Integer getGenerationMatch() {
-        return generationMatch;
-    }
-
-    /**
-     * Setter for generationMatch.<p>
-     */
-    public void setGenerationMatch(Integer generationMatch) {
-        this.generationMatch = generationMatch;
-    }
-
-    /**
-     * Getter for gnrFn.<p>
-     */
-    public Integer getGnrFn() {
-        return gnrFn;
-    }
-
-    /**
-     * Setter for gnrFn.<p>
-     */
-    public void setGnrFn(Integer gnrFn) {
-        this.gnrFn = gnrFn;
-    }
-
-    /**
-     * Getter for gnrGn.<p>
-     */
-    public Integer getGnrGn() {
-        return gnrGn;
-    }
-
-    /**
-     * Setter for gnrGn.<p>
-     */
-    public void setGnrGn(Integer gnrGn) {
-        this.gnrGn = gnrGn;
-    }
-
-    /**
-     * Getter for gnrOn.<p>
-     */
-    public Integer getGnrOn() {
-        return gnrOn;
-    }
-
-    /**
-     * Setter for gnrOn.<p>
-     */
-    public void setGnrOn(Integer gnrOn) {
-        this.gnrOn = gnrOn;
-    }
-
-    /**
-     * Getter for gnrSn.<p>
-     */
-    public Integer getGnrSn() {
-        return gnrSn;
-    }
-
-    /**
-     * Setter for gnrSn.<p>
-     */
-    public void setGnrSn(Integer gnrSn) {
-        this.gnrSn = gnrSn;
-    }
-
-    /**
-     * Getter for inboundFeat.<p>
-     */
-    public String getInboundFeat() {
-        return inboundFeat;
-    }
-
-    /**
-     * Setter for inboundFeat.<p>
-     */
-    public void setInboundFeat(String inboundFeat) {
-        this.inboundFeat = inboundFeat;
+    public void setInboundFeatDesc(String inboundFeatDesc) {
+        this.inboundFeatDesc = inboundFeatDesc;
     }
 
     /**
@@ -218,6 +136,20 @@ public class FeatureScoreForAttribute {
      */
     public void setInboundFeatUsageType(String inboundFeatUsageType) {
         this.inboundFeatUsageType = inboundFeatUsageType;
+    }
+
+    /**
+     * Getter for score.<p>
+     */
+    public Integer getScore() {
+        return score;
+    }
+
+    /**
+     * Setter for score.<p>
+     */
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     /**

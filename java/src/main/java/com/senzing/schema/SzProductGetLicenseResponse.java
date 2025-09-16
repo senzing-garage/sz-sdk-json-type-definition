@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SzProductGetLicenseResponse {
+    @JsonProperty("advSearch")
+    private Integer advSearch;
+
     @JsonProperty("billing")
     private String billing;
 
@@ -32,6 +35,20 @@ public class SzProductGetLicenseResponse {
     private Integer recordLimit;
 
     public SzProductGetLicenseResponse() {
+    }
+
+    /**
+     * Getter for advSearch.<p>
+     */
+    public Integer getAdvSearch() {
+        return advSearch;
+    }
+
+    /**
+     * Setter for advSearch.<p>
+     */
+    public void setAdvSearch(Integer advSearch) {
+        this.advSearch = advSearch;
     }
 
     /**

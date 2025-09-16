@@ -4,13 +4,31 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class ResolvedEntityAndMatchInfoEntity {
+    @JsonProperty("RELATED_ENTITIES")
+    private List<RelatedEntity> relatedEntities;
+
     @JsonProperty("RESOLVED_ENTITY")
     private ResolvedEntity resolvedEntity;
 
     public ResolvedEntityAndMatchInfoEntity() {
+    }
+
+    /**
+     * Getter for relatedEntities.<p>
+     */
+    public List<RelatedEntity> getRelatedEntities() {
+        return relatedEntities;
+    }
+
+    /**
+     * Setter for relatedEntities.<p>
+     */
+    public void setRelatedEntities(List<RelatedEntity> relatedEntities) {
+        this.relatedEntities = relatedEntities;
     }
 
     /**

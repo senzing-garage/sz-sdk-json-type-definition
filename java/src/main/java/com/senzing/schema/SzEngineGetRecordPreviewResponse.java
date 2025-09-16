@@ -4,26 +4,78 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class SzEngineGetRecordPreviewResponse {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("FEATURES")
+    private MapStringToListOfFeatureForAttributeWithAttributes features;
+
+    @JsonProperty("FEATURE_IDS")
+    private List<FeatureId> featureIds;
+
+    @JsonProperty("JSON_DATA")
+    private MapStringToObject jsonData;
+
+    @JsonProperty("UNMAPPED_DATA")
+    private MapStringToObject unmappedData;
 
     public SzEngineGetRecordPreviewResponse() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for features.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public MapStringToListOfFeatureForAttributeWithAttributes getFeatures() {
+        return features;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for features.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setFeatures(MapStringToListOfFeatureForAttributeWithAttributes features) {
+        this.features = features;
+    }
+
+    /**
+     * Getter for featureIds.<p>
+     */
+    public List<FeatureId> getFeatureIds() {
+        return featureIds;
+    }
+
+    /**
+     * Setter for featureIds.<p>
+     */
+    public void setFeatureIds(List<FeatureId> featureIds) {
+        this.featureIds = featureIds;
+    }
+
+    /**
+     * Getter for jsonData.<p>
+     */
+    public MapStringToObject getJsonData() {
+        return jsonData;
+    }
+
+    /**
+     * Setter for jsonData.<p>
+     */
+    public void setJsonData(MapStringToObject jsonData) {
+        this.jsonData = jsonData;
+    }
+
+    /**
+     * Getter for unmappedData.<p>
+     */
+    public MapStringToObject getUnmappedData() {
+        return unmappedData;
+    }
+
+    /**
+     * Setter for unmappedData.<p>
+     */
+    public void setUnmappedData(MapStringToObject unmappedData) {
+        this.unmappedData = unmappedData;
     }
 }

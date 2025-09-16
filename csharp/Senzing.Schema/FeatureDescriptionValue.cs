@@ -7,6 +7,9 @@ namespace Senzing.Schema
 {
     public class FeatureDescriptionValue
     {
+        [JsonPropertyName("ATTRIBUTES")]
+        public MapStringToString Attributes { get; set; }
+
         [JsonPropertyName("CANDIDATE_CAP_REACHED")]
         public string CandidateCapReached { get; set; }
 

@@ -9,13 +9,13 @@ import java.util.List;
 @JsonSerialize
 public class MatchInfoDisclosedRelations {
     @JsonProperty("REL_ANCHOR")
-    private List<MatchInfoDisclosedRelationsRelAnchor> relAnchor;
+    private List<RelAnchor> relAnchor;
 
     @JsonProperty("REL_LINK")
-    private List<MatchInfoDisclosedRelationsRelLink> relLink;
+    private List<RelLink> relLink;
 
     @JsonProperty("REL_POINTER")
-    private List<MatchInfoDisclosedRelationsRelPointer> relPointer;
+    private List<RelPointer> relPointer;
 
     public MatchInfoDisclosedRelations() {
     }
@@ -23,42 +23,42 @@ public class MatchInfoDisclosedRelations {
     /**
      * Getter for relAnchor.<p>
      */
-    public List<MatchInfoDisclosedRelationsRelAnchor> getRelAnchor() {
+    public List<RelAnchor> getRelAnchor() {
         return relAnchor;
     }
 
     /**
      * Setter for relAnchor.<p>
      */
-    public void setRelAnchor(List<MatchInfoDisclosedRelationsRelAnchor> relAnchor) {
+    public void setRelAnchor(List<RelAnchor> relAnchor) {
         this.relAnchor = relAnchor;
     }
 
     /**
      * Getter for relLink.<p>
      */
-    public List<MatchInfoDisclosedRelationsRelLink> getRelLink() {
+    public List<RelLink> getRelLink() {
         return relLink;
     }
 
     /**
      * Setter for relLink.<p>
      */
-    public void setRelLink(List<MatchInfoDisclosedRelationsRelLink> relLink) {
+    public void setRelLink(List<RelLink> relLink) {
         this.relLink = relLink;
     }
 
     /**
      * Getter for relPointer.<p>
      */
-    public List<MatchInfoDisclosedRelationsRelPointer> getRelPointer() {
+    public List<RelPointer> getRelPointer() {
         return relPointer;
     }
 
     /**
      * Setter for relPointer.<p>
      */
-    public void setRelPointer(List<MatchInfoDisclosedRelationsRelPointer> relPointer) {
+    public void setRelPointer(List<RelPointer> relPointer) {
         this.relPointer = relPointer;
     }
 }

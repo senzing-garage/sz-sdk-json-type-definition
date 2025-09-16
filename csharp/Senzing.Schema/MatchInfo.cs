@@ -22,6 +22,9 @@ namespace Senzing.Schema
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
+        [JsonPropertyName("MATCH_KEY_DETAILS")]
+        public MatchKeyDetails MatchKeyDetails { get; set; }
+
         [JsonPropertyName("MATCH_LEVEL")]
         public int MatchLevel { get; set; }
 

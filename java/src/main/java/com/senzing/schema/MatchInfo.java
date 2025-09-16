@@ -22,6 +22,9 @@ public class MatchInfo {
     @JsonProperty("MATCH_KEY")
     private String matchKey;
 
+    @JsonProperty("MATCH_KEY_DETAILS")
+    private MatchKeyDetails matchKeyDetails;
+
     @JsonProperty("MATCH_LEVEL")
     private Integer matchLevel;
 
@@ -105,6 +108,20 @@ public class MatchInfo {
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
+    }
+
+    /**
+     * Getter for matchKeyDetails.<p>
+     */
+    public MatchKeyDetails getMatchKeyDetails() {
+        return matchKeyDetails;
+    }
+
+    /**
+     * Setter for matchKeyDetails.<p>
+     */
+    public void setMatchKeyDetails(MatchKeyDetails matchKeyDetails) {
+        this.matchKeyDetails = matchKeyDetails;
     }
 
     /**

@@ -104,6 +104,9 @@ namespace Senzing.Schema
         [JsonPropertyName("CONFIG_BASE_VERSION")]
         public ConfigBaseVersion ConfigBaseVersion { get; set; }
 
+        [JsonPropertyName("SETTINGS")]
+        public G2configSettings Settings { get; set; }
+
         [JsonPropertyName("SYS_OOM")]
         public IList<SysOom> SysOom { get; set; }
     }

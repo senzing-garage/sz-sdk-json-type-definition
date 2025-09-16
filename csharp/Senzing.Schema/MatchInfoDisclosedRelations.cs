@@ -9,12 +9,12 @@ namespace Senzing.Schema
     public class MatchInfoDisclosedRelations
     {
         [JsonPropertyName("REL_ANCHOR")]
-        public IList<MatchInfoDisclosedRelationsRelAnchor> RelAnchor { get; set; }
+        public IList<RelAnchor> RelAnchor { get; set; }
 
         [JsonPropertyName("REL_LINK")]
-        public IList<MatchInfoDisclosedRelationsRelLink> RelLink { get; set; }
+        public IList<RelLink> RelLink { get; set; }
 
         [JsonPropertyName("REL_POINTER")]
-        public IList<MatchInfoDisclosedRelationsRelPointer> RelPointer { get; set; }
+        public IList<RelPointer> RelPointer { get; set; }
     }
 }

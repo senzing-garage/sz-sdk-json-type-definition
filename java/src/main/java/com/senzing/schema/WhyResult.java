@@ -26,7 +26,7 @@ public class WhyResult {
     private Integer internalId0;
 
     @JsonProperty("MATCH_INFO")
-    private MatchInfo matchInfo;
+    private MatchInfoForWhy matchInfo;
 
     public WhyResult() {
     }
@@ -122,14 +122,14 @@ public class WhyResult {
     /**
      * Getter for matchInfo.<p>
      */
-    public MatchInfo getMatchInfo() {
+    public MatchInfoForWhy getMatchInfo() {
         return matchInfo;
     }
 
     /**
      * Setter for matchInfo.<p>
      */
-    public void setMatchInfo(MatchInfo matchInfo) {
+    public void setMatchInfo(MatchInfoForWhy matchInfo) {
         this.matchInfo = matchInfo;
     }
 }

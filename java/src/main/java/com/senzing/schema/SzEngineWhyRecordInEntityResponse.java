@@ -4,26 +4,44 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class SzEngineWhyRecordInEntityResponse {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("ENTITIES")
+    private List<Entity> entities;
+
+    @JsonProperty("WHY_RESULTS")
+    private List<WhyResult> whyResults;
 
     public SzEngineWhyRecordInEntityResponse() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for entities.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public List<Entity> getEntities() {
+        return entities;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for entities.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setEntities(List<Entity> entities) {
+        this.entities = entities;
+    }
+
+    /**
+     * Getter for whyResults.<p>
+     */
+    public List<WhyResult> getWhyResults() {
+        return whyResults;
+    }
+
+    /**
+     * Setter for whyResults.<p>
+     */
+    public void setWhyResults(List<WhyResult> whyResults) {
+        this.whyResults = whyResults;
     }
 }

@@ -8,21 +8,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class FeatureScores {
     @JsonValue
-    private Map<String, FeatureScoresForAttribute> value;
+    private MapStringToFeatureScoresForAttribute value;
 
     public FeatureScores() {
     }
 
     @JsonCreator
-    public FeatureScores(Map<String, FeatureScoresForAttribute> value) {
+    public FeatureScores(MapStringToFeatureScoresForAttribute value) {
         this.value = value;
     }
 
-    public Map<String, FeatureScoresForAttribute> getValue() {
+    public MapStringToFeatureScoresForAttribute getValue() {
         return value;
     }
 
-    public void setValue(Map<String, FeatureScoresForAttribute> value) {
+    public void setValue(MapStringToFeatureScoresForAttribute value) {
         this.value = value;
     }
 }

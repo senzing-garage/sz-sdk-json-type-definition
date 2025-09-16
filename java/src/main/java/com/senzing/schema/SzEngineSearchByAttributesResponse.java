@@ -11,6 +11,9 @@ public class SzEngineSearchByAttributesResponse {
     @JsonProperty("RESOLVED_ENTITIES")
     private List<ResolvedEntityAndMatchInfo> resolvedEntities;
 
+    @JsonProperty("SEARCH_REQUEST")
+    private SearchRequest searchRequest;
+
     @JsonProperty("SEARCH_STATISTICS")
     private SearchStatistics searchStatistics;
 
@@ -29,6 +32,20 @@ public class SzEngineSearchByAttributesResponse {
      */
     public void setResolvedEntities(List<ResolvedEntityAndMatchInfo> resolvedEntities) {
         this.resolvedEntities = resolvedEntities;
+    }
+
+    /**
+     * Getter for searchRequest.<p>
+     */
+    public SearchRequest getSearchRequest() {
+        return searchRequest;
+    }
+
+    /**
+     * Setter for searchRequest.<p>
+     */
+    public void setSearchRequest(SearchRequest searchRequest) {
+        this.searchRequest = searchRequest;
     }
 
     /**

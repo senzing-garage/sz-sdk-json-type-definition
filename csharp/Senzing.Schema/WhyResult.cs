@@ -30,6 +30,6 @@ namespace Senzing.Schema
         public int InternalId0 { get; set; }
 
         [JsonPropertyName("MATCH_INFO")]
-        public MatchInfo MatchInfo { get; set; }
+        public MatchInfoForWhy MatchInfo { get; set; }
     }
 }

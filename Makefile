@@ -207,17 +207,11 @@ coverage: coverage-osarch-specific
 documentation: documentation-osarch-specific
 
 # -----------------------------------------------------------------------------
-# Analyze
+# everything
 # -----------------------------------------------------------------------------
 
-.PHONY: analyze
-analyze:
-	@./bin/analyze_rfc8927.py
-
-
-.PHONY: pretty-print
-pretty-print:
-	@./bin/pretty_print.py
+.PHONY: everything
+all: clean setup generate-code generate-tests
 
 # -----------------------------------------------------------------------------
 # Generate code
@@ -412,6 +406,28 @@ update-pkg-cache:
 # Specific programs
 # -----------------------------------------------------------------------------
 
+.PHONY: analyze-RFC8927
+analyze-RFC8927:
+	@./bin/analyze_rfc8927.py
+
+
+.PHONY: generate-testdata-using-senzing
+generate-testdata-using-senzing:
+	$(activate-venv); \
+		./bin/generate_testdata_using_senzing.py
+
+
 .PHONY: golangci-lint
 golangci-lint:
 	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
+
+
+.PHONY: load-database-with-truthsets
+load-database-with-truthsets:
+	$(activate-venv); \
+		./bin/load_database_with_truthsets.py
+
+
+.PHONY: pretty-print
+pretty-print:
+	@./bin/pretty_print.py

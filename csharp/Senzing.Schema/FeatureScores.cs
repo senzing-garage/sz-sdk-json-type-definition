@@ -13,19 +13,19 @@ namespace Senzing.Schema
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public string Value { get; set; }
+        public MapStringToFeatureScoresForAttribute Value { get; set; }
     }
 
     public class FeatureScoresJsonConverter : JsonConverter<FeatureScores>
     {
         public override FeatureScores Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new FeatureScores { Value = JsonSerializer.Deserialize<string>(ref reader, options) };
+            return new FeatureScores { Value = JsonSerializer.Deserialize<MapStringToFeatureScoresForAttribute>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, FeatureScores value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<string>(writer, value.Value, options);
+            JsonSerializer.Serialize<MapStringToFeatureScoresForAttribute>(writer, value.Value, options);
         }
     }
 }

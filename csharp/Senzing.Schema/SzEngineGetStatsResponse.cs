@@ -7,7 +7,7 @@ namespace Senzing.Schema
 {
     public class SzEngineGetStatsResponse
     {
-        [JsonPropertyName("FIXME")]
-        public Fixme Fixme { get; set; }
+        [JsonPropertyName("workload")]
+        public Workload Workload { get; set; }
     }
 }

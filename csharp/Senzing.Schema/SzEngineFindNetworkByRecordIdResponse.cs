@@ -11,8 +11,14 @@ namespace Senzing.Schema
         [JsonPropertyName("ENTITIES")]
         public IList<Entity> Entities { get; set; }
 
+        [JsonPropertyName("ENTITY_NETWORK_LINKS")]
+        public IList<EntityNetworkLink> EntityNetworkLinks { get; set; }
+
         [JsonPropertyName("ENTITY_PATHS")]
         public IList<EntityPath> EntityPaths { get; set; }
+
+        [JsonPropertyName("ENTITY_PATH_LINKS")]
+        public IList<EntityPathLink> EntityPathLinks { get; set; }
 
         [JsonPropertyName("MAX_ENTITY_LIMIT_REACHED")]
         public string MaxEntityLimitReached { get; set; }

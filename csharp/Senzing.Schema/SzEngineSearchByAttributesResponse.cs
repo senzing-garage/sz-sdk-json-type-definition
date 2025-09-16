@@ -11,6 +11,9 @@ namespace Senzing.Schema
         [JsonPropertyName("RESOLVED_ENTITIES")]
         public IList<ResolvedEntityAndMatchInfo> ResolvedEntities { get; set; }
 
+        [JsonPropertyName("SEARCH_REQUEST")]
+        public SearchRequest SearchRequest { get; set; }
+
         [JsonPropertyName("SEARCH_STATISTICS")]
         public SearchStatistics SearchStatistics { get; set; }
     }

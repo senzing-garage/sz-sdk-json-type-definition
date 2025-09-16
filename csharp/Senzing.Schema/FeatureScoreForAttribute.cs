@@ -7,8 +7,11 @@ namespace Senzing.Schema
 {
     public class FeatureScoreForAttribute
     {
-        [JsonPropertyName("CANDIDATE_FEAT")]
-        public string CandidateFeat { get; set; }
+        [JsonPropertyName("ADDITIONAL_SCORES")]
+        public AdditionalScores AdditionalScores { get; set; }
+
+        [JsonPropertyName("CANDIDATE_FEAT_DESC")]
+        public string CandidateFeatDesc { get; set; }
 
         [JsonPropertyName("CANDIDATE_FEAT_ID")]
         public int CandidateFeatId { get; set; }
@@ -16,32 +19,17 @@ namespace Senzing.Schema
         [JsonPropertyName("CANDIDATE_FEAT_USAGE_TYPE")]
         public string CandidateFeatUsageType { get; set; }
 
-        [JsonPropertyName("FULL_SCORE")]
-        public int FullScore { get; set; }
-
-        [JsonPropertyName("GENERATION_MATCH")]
-        public int GenerationMatch { get; set; }
-
-        [JsonPropertyName("GNR_FN")]
-        public int GnrFn { get; set; }
-
-        [JsonPropertyName("GNR_GN")]
-        public int GnrGn { get; set; }
-
-        [JsonPropertyName("GNR_ON")]
-        public int GnrOn { get; set; }
-
-        [JsonPropertyName("GNR_SN")]
-        public int GnrSn { get; set; }
-
-        [JsonPropertyName("INBOUND_FEAT")]
-        public string InboundFeat { get; set; }
+        [JsonPropertyName("INBOUND_FEAT_DESC")]
+        public string InboundFeatDesc { get; set; }
 
         [JsonPropertyName("INBOUND_FEAT_ID")]
         public int InboundFeatId { get; set; }
 
         [JsonPropertyName("INBOUND_FEAT_USAGE_TYPE")]
         public string InboundFeatUsageType { get; set; }
+
+        [JsonPropertyName("SCORE")]
+        public int Score { get; set; }
 
         [JsonPropertyName("SCORE_BEHAVIOR")]
         public string ScoreBehavior { get; set; }

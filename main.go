@@ -8,13 +8,36 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
 
+	"github.com/senzing-garage/go-helpers/settings"
+	"github.com/senzing-garage/sz-sdk-go-core/szabstractfactory"
+	"github.com/senzing-garage/sz-sdk-go/senzing"
 	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
+)
+
+const (
+	instanceName   = "SzEngine Test"
+	verboseLogging = senzing.SzNoLogging
 )
 
 func main() {
 	var err error
 	ctx := context.Background()
+
+	// ------------------------------------------------------------------------
+	// Create Senzing objects.
+	// ------------------------------------------------------------------------
+
+	szAbstractFactory := createSzAbstractFactory(ctx)
+	szEngine, err := szAbstractFactory.CreateEngine(ctx)
+	panicOnError(err)
+	szConfigManager, err := szAbstractFactory.CreateConfigManager(ctx)
+	panicOnError(err)
+
+	// ------------------------------------------------------------------------
+	// Create Senzing objects.
+	// ------------------------------------------------------------------------
 
 	// ------------------------------------------------------------------------
 	// Demonstrate creating input parameter and parsing output result.
@@ -28,32 +51,31 @@ func main() {
 	recordKeysStruct := typedef.SzEngineGetVirtualEntityByRecordIDRecordKeys{
 		Records: []typedef.RecordKey{
 			{
-				DataSource: "DATA_SOURCE_1",
-				RecordID:   "RECORD_ID_1",
+				DataSource: "CUSTOMERS",
+				RecordID:   "1001",
 			},
 			{
-				DataSource: "DATA_SOURCE_2",
-				RecordID:   "RECORD_ID_2",
+				DataSource: "REFERENCE",
+				RecordID:   "2141",
 			},
 		},
 	}
 
 	recordKeysBytes, err := json.Marshal(recordKeysStruct)
-	if err != nil {
-		panic(err)
-	}
+	panicOnError(err)
 
-	// Simulate calling Senzing SDK.
+	// Call Senzing SDK.
 
-	response, err := mockSzEngineGetVirtualEntityByRecordID(ctx, string(recordKeysBytes), 0)
-	if err != nil {
-		panic(err)
-	}
+	response, err := szEngine.GetVirtualEntityByRecordID(
+		ctx,
+		string(recordKeysBytes),
+		senzing.SzVirtualEntityDefaultFlags,
+	)
+	panicOnError(err)
 
 	// Parse response.
 
 	virtualEntity := typedef.SzEngineGetVirtualEntityByRecordIDResponse{}
-
 	if err := json.Unmarshal([]byte(response), &virtualEntity); err != nil {
 		panic(err)
 	}
@@ -68,9 +90,7 @@ func main() {
 	addresses := virtualEntity.ResolvedEntity.Features["ADDRESS"]
 	for _, address := range addresses {
 		addressBytes, err := json.Marshal(address)
-		if err != nil {
-			panic(err)
-		}
+		panicOnError(err)
 
 		addressStruct := typedef.FeatureForAttribute{}
 
@@ -85,13 +105,20 @@ func main() {
 	// Demonstrate reconstructed JSON.
 	// ------------------------------------------------------------------------
 
+	activeConfigID, err := szEngine.GetActiveConfigID(ctx)
+	panicOnError(err)
+	szConfig, err := szConfigManager.CreateConfigFromConfigID(ctx, activeConfigID)
+	panicOnError(err)
+
+	dataSourceRegistry, err := szConfig.GetDataSourceRegistry(ctx)
+
 	outputf("\n--- Demonstrate reconstructed JSON --------------------------------------------\n\n")
-	jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
+	// jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
 
 	// Unmarshall JSON string into a structure.
 
 	jsonStruct := typedef.SzConfigGetDataSourceRegistryResponse{}
-	if err = json.Unmarshal([]byte(jsonString), &jsonStruct); err != nil {
+	if err = json.Unmarshal([]byte(dataSourceRegistry), &jsonStruct); err != nil {
 		panic(err)
 	}
 
@@ -104,13 +131,11 @@ func main() {
 	// Reconstruct JSON.
 
 	reconstructedString, err := json.Marshal(jsonStruct)
-	if err != nil {
-		panic(err)
-	}
+	panicOnError(err)
 
 	// Compare original and reconstructed JSON.
 
-	outputf("     Original JSON: %s\n", jsonString)
+	outputf("     Original JSON: %s\n", dataSourceRegistry)
 	outputf("Reconstructed JSON: %s - notice JSON keys have been sorted.\n",
 		string(reconstructedString))
 }
@@ -118,6 +143,43 @@ func main() {
 // ----------------------------------------------------------------------------
 // Helper functions
 // ----------------------------------------------------------------------------
+
+func panicOnError(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
+func getTestDirectoryPath() string {
+	return filepath.FromSlash("/tmp/sqlite")
+}
+
+func createSzAbstractFactory(ctx context.Context) senzing.SzAbstractFactory {
+	var result senzing.SzAbstractFactory
+
+	_ = ctx
+
+	testDirectoryPath := getTestDirectoryPath()
+	dbTargetPath, err := filepath.Abs(filepath.Join(testDirectoryPath, "G2C.db"))
+	panicOnError(err)
+
+	databaseURL := "sqlite3://na:na@nowhere/" + dbTargetPath
+
+	// Create Senzing engine configuration JSON.
+
+	configAttrMap := map[string]string{"databaseURL": databaseURL}
+	settings, err := settings.BuildSimpleSettingsUsingMap(configAttrMap)
+	panicOnError(err)
+
+	result = &szabstractfactory.Szabstractfactory{
+		ConfigID:       senzing.SzInitializeWithDefaultConfiguration,
+		InstanceName:   instanceName,
+		Settings:       settings,
+		VerboseLogging: verboseLogging,
+	}
+
+	return result
+}
 
 func outputln(message ...any) {
 	fmt.Println(message...) //nolint

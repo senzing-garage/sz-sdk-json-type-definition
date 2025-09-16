@@ -35,7 +35,13 @@ public class SzEngineGetRecordResponse {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private List<SzEngineGetRecordResponseFeatures> features;
+    private MapStringToListOfFeatureForAttributeWithAttributes features;
+
+    @JsonProperty("FEATURE_IDS")
+    private FeatureIds featureIds;
+
+    @JsonProperty("FIRST_SEEN_DT")
+    private OffsetDateTime firstSeenDt;
 
     @JsonProperty("IDENTIFIER_DATA")
     private List<String> identifierData;
@@ -44,7 +50,7 @@ public class SzEngineGetRecordResponse {
     private Integer internalId;
 
     @JsonProperty("JSON_DATA")
-    private Map<String, Map<String, Object>> jsonData;
+    private MapStringToObject jsonData;
 
     @JsonProperty("LAST_SEEN_DT")
     private OffsetDateTime lastSeenDt;
@@ -72,6 +78,9 @@ public class SzEngineGetRecordResponse {
 
     @JsonProperty("RELATIONSHIP_DATA")
     private List<String> relationshipData;
+
+    @JsonProperty("UNMAPPED_DATA")
+    private MapStringToObject unmappedData;
 
     public SzEngineGetRecordResponse() {
     }
@@ -191,15 +200,43 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for features.<p>
      */
-    public List<SzEngineGetRecordResponseFeatures> getFeatures() {
+    public MapStringToListOfFeatureForAttributeWithAttributes getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(List<SzEngineGetRecordResponseFeatures> features) {
+    public void setFeatures(MapStringToListOfFeatureForAttributeWithAttributes features) {
         this.features = features;
+    }
+
+    /**
+     * Getter for featureIds.<p>
+     */
+    public FeatureIds getFeatureIds() {
+        return featureIds;
+    }
+
+    /**
+     * Setter for featureIds.<p>
+     */
+    public void setFeatureIds(FeatureIds featureIds) {
+        this.featureIds = featureIds;
+    }
+
+    /**
+     * Getter for firstSeenDt.<p>
+     */
+    public OffsetDateTime getFirstSeenDt() {
+        return firstSeenDt;
+    }
+
+    /**
+     * Setter for firstSeenDt.<p>
+     */
+    public void setFirstSeenDt(OffsetDateTime firstSeenDt) {
+        this.firstSeenDt = firstSeenDt;
     }
 
     /**
@@ -233,14 +270,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for jsonData.<p>
      */
-    public Map<String, Map<String, Object>> getJsonData() {
+    public MapStringToObject getJsonData() {
         return jsonData;
     }
 
     /**
      * Setter for jsonData.<p>
      */
-    public void setJsonData(Map<String, Map<String, Object>> jsonData) {
+    public void setJsonData(MapStringToObject jsonData) {
         this.jsonData = jsonData;
     }
 
@@ -368,5 +405,19 @@ public class SzEngineGetRecordResponse {
      */
     public void setRelationshipData(List<String> relationshipData) {
         this.relationshipData = relationshipData;
+    }
+
+    /**
+     * Getter for unmappedData.<p>
+     */
+    public MapStringToObject getUnmappedData() {
+        return unmappedData;
+    }
+
+    /**
+     * Setter for unmappedData.<p>
+     */
+    public void setUnmappedData(MapStringToObject unmappedData) {
+        this.unmappedData = unmappedData;
     }
 }

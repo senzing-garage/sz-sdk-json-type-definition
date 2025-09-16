@@ -12,6 +12,6 @@ namespace Senzing.Schema
         public IList<RelatedEntity> RelatedEntities { get; set; }
 
         [JsonPropertyName("RESOLVED_ENTITY")]
-        public ResolvedEntity ResolvedEntity { get; set; }
+        public ResolvedEntityForGetEntity ResolvedEntity { get; set; }
     }
 }

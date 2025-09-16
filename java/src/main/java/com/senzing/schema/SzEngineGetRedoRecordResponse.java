@@ -7,23 +7,23 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SzEngineGetRedoRecordResponse {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("UMF_PROC")
+    private UmfProc umfProc;
 
     public SzEngineGetRedoRecordResponse() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for umfProc.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public UmfProc getUmfProc() {
+        return umfProc;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for umfProc.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setUmfProc(UmfProc umfProc) {
+        this.umfProc = umfProc;
     }
 }

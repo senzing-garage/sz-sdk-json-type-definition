@@ -104,6 +104,9 @@ public class G2config {
     @JsonProperty("CONFIG_BASE_VERSION")
     private ConfigBaseVersion configBaseVersion;
 
+    @JsonProperty("SETTINGS")
+    private G2configSettings settings;
+
     @JsonProperty("SYS_OOM")
     private List<SysOom> sysOom;
 
@@ -556,6 +559,20 @@ public class G2config {
      */
     public void setConfigBaseVersion(ConfigBaseVersion configBaseVersion) {
         this.configBaseVersion = configBaseVersion;
+    }
+
+    /**
+     * Getter for settings.<p>
+     */
+    public G2configSettings getSettings() {
+        return settings;
+    }
+
+    /**
+     * Setter for settings.<p>
+     */
+    public void setSettings(G2configSettings settings) {
+        this.settings = settings;
     }
 
     /**

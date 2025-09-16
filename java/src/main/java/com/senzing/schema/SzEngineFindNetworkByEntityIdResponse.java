@@ -11,8 +11,14 @@ public class SzEngineFindNetworkByEntityIdResponse {
     @JsonProperty("ENTITIES")
     private List<Entity> entities;
 
+    @JsonProperty("ENTITY_NETWORK_LINKS")
+    private List<EntityNetworkLink> entityNetworkLinks;
+
     @JsonProperty("ENTITY_PATHS")
     private List<EntityPath> entityPaths;
+
+    @JsonProperty("ENTITY_PATH_LINKS")
+    private List<EntityPathLink> entityPathLinks;
 
     @JsonProperty("MAX_ENTITY_LIMIT_REACHED")
     private String maxEntityLimitReached;
@@ -35,6 +41,20 @@ public class SzEngineFindNetworkByEntityIdResponse {
     }
 
     /**
+     * Getter for entityNetworkLinks.<p>
+     */
+    public List<EntityNetworkLink> getEntityNetworkLinks() {
+        return entityNetworkLinks;
+    }
+
+    /**
+     * Setter for entityNetworkLinks.<p>
+     */
+    public void setEntityNetworkLinks(List<EntityNetworkLink> entityNetworkLinks) {
+        this.entityNetworkLinks = entityNetworkLinks;
+    }
+
+    /**
      * Getter for entityPaths.<p>
      */
     public List<EntityPath> getEntityPaths() {
@@ -46,6 +66,20 @@ public class SzEngineFindNetworkByEntityIdResponse {
      */
     public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
+    }
+
+    /**
+     * Getter for entityPathLinks.<p>
+     */
+    public List<EntityPathLink> getEntityPathLinks() {
+        return entityPathLinks;
+    }
+
+    /**
+     * Setter for entityPathLinks.<p>
+     */
+    public void setEntityPathLinks(List<EntityPathLink> entityPathLinks) {
+        this.entityPathLinks = entityPathLinks;
     }
 
     /**

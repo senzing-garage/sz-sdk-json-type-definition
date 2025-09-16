@@ -14,6 +14,9 @@ public class SzEngineFindPathByRecordIdResponse {
     @JsonProperty("ENTITY_PATHS")
     private List<EntityPath> entityPaths;
 
+    @JsonProperty("ENTITY_PATH_LINKS")
+    private List<EntityPathLink> entityPathLinks;
+
     public SzEngineFindPathByRecordIdResponse() {
     }
 
@@ -43,5 +46,19 @@ public class SzEngineFindPathByRecordIdResponse {
      */
     public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
+    }
+
+    /**
+     * Getter for entityPathLinks.<p>
+     */
+    public List<EntityPathLink> getEntityPathLinks() {
+        return entityPathLinks;
+    }
+
+    /**
+     * Setter for entityPathLinks.<p>
+     */
+    public void setEntityPathLinks(List<EntityPathLink> entityPathLinks) {
+        this.entityPathLinks = entityPathLinks;
     }
 }

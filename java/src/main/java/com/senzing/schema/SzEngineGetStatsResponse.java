@@ -7,23 +7,23 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SzEngineGetStatsResponse {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("workload")
+    private Workload workload;
 
     public SzEngineGetStatsResponse() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for workload.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public Workload getWorkload() {
+        return workload;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for workload.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setWorkload(Workload workload) {
+        this.workload = workload;
     }
 }
