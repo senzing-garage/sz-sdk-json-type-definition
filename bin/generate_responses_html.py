@@ -2,7 +2,6 @@
 
 # pylint: disable=duplicate-code
 
-
 import json
 
 """
@@ -10,7 +9,7 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 
-VARIABLE_JSON_KEY = "<user_defined_json_key>"
+VARIABLE_JSON_KEY = "user_defined_json_key"
 DEFINITIONS = {}
 INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
@@ -72,6 +71,38 @@ GLOBAL_JSON_KEYS = [
 # -----------------------------------------------------------------------------
 
 
+def recurse_json(level, key, value) -> str:
+
+    # if not key:
+    #     raise Exception
+
+    print(f"\n>>>>>> level: {level};  key: {key}; json_value: {json.dumps(value)}")
+    result = ""
+
+    if value.get("metadata", {}).get("pythonType"):
+        print(f">>>>>>>>> level: {level};  python_type")
+        result += handle_json_python_type(
+            level, key, value.get("metadata", {}).get("description"), value
+        )
+    elif "type" in value:
+        print(f">>>>>>>>> level: {level};  type")
+        result += handle_json_type(level, key, value)
+    elif "ref" in value:
+        print(f">>>>>>>>> level: {level};  ref")
+        result += handle_json_ref(level, key, value)
+    elif "properties" in value:
+        print(f">>>>>>>>> level: {level};  properties")
+        result += handle_json_properties(level, key, value)
+    elif "elements" in value:
+        print(f">>>>>>>>> level: {level};  elements")
+        result += handle_json_elements(level, key, value)
+    elif "metadata" in value:
+        print(f">>>>>>>>> level: {level};  metadata")
+        result += handle_json_metadata(level, key, value)
+
+    return result
+
+
 def html_println(level, message) -> str:
     return f"\n<br>{INDENT * level}{message}"
 
@@ -79,7 +110,7 @@ def html_println(level, message) -> str:
 def make_json_key(key, description, suffix) -> str:
     result = suffix
     if description and key:
-        result = f'<a href="_" title="{description}">"{key}"</a>: {suffix}'
+        result = f'"<a href="#" data-toggle="tooltip" data-placement="bottom" title="{description}">{key}</a>": {suffix}'
     elif key:
         result = f'"{key}": {suffix}'
     return result
@@ -89,18 +120,18 @@ def handle_json_elements(level, key, value) -> str:
     elements = value.get("elements", [])
     description = value.get("metadata", {}).get("description")
     result = html_println(level, make_json_key(key, description, "["))
-    result += recurse_json(level + 1, None, elements)
-    result = result[:-1]
+    result += recurse_json(level + 1, None, elements)[:-1]
     result += html_println(level, "],")
     return result
 
 
 def handle_json_metadata(level, key, json_value) -> str:
     result = ""
-    metadata = json_value.get("metadata")
+    metadata = json_value.get("metadata", {})
     python_type = metadata.get("pythonType")
     if python_type:
-        result += handle_json_python_type(level, key, python_type)
+        description = metadata.get("description")
+        result += handle_json_python_type(level, key, description, python_type)
     return result
 
 
@@ -115,73 +146,78 @@ def handle_json_properties(level, key, json_value) -> str:
     return result
 
 
-def handle_json_python_type(level, key, value) -> str:
+def handle_json_dict(level, key, description, json_key):
+    result = make_json_key(key, description, "{")
+    result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(json_key, {}))[
+        :-1
+    ]
+    result += html_println(level, "},")
+    return html_println(level, result)
+
+
+def handle_json_dict_list(level, key, description, json_key):
+    result = make_json_key(key, description, "{")
+    result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": [')
+    result += recurse_json(level + 2, None, DEFINITIONS.get(json_key, {}))[:-1]
+    result += html_println(level + 1, "]")
+    result += html_println(level, "},")
+    return html_println(level, result)
+
+
+def handle_json_dict_data_type(level, key, description, data_type):
+    result = make_json_key(key, description, "{")
+    result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{data_type}"')
+    result += html_println(level, "},")
+    return html_println(level, result)
+
+
+def handle_json_python_type(level, key, description, value) -> str:
     result = ""
 
-    match value:
+    print(f">>>>>> level {level}, key {key} ------------------------------------")
+    python_type = value.get("metadata", {}).get("pythonType")
+
+    match python_type:
         case "Dict[str, FeatureScoresForAttribute]":
-            return {
-                VARIABLE_JSON_KEY: recurse_json(
-                    DEFINITIONS.get("FeatureScoresForAttribute")
-                )
-            }
+            return handle_json_dict(
+                level, key, description, "FeatureScoresForAttribute"
+            )
         case "Dict[str, List[FeatureDescriptionValue]]":
-            return {
-                VARIABLE_JSON_KEY: [
-                    recurse_json(DEFINITIONS.get("FeatureDescriptionValue"))
-                ]
-            }
+            return handle_json_dict_list(
+                level, key, description, "FeatureDescriptionValue"
+            )
         case "Dict[str, List[FeatureForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [
-                    recurse_json(DEFINITIONS.get("FeatureForAttribute"))
-                ]
-            }
+            return handle_json_dict_list(level, key, description, "FeatureForAttribute")
+
         case "Dict[str, List[FeatureForAttributeWithAttributes]]":
-            return {
-                VARIABLE_JSON_KEY: [
-                    recurse_json(DEFINITIONS.get("FeatureForAttributeWithAttributes"))
-                ]
-            }
+            return handle_json_dict_list(
+                level, key, description, "FeatureForAttributeWithAttributes"
+            )
         case "Dict[str, List[FeatureForGetEntity]]":
-            return {
-                VARIABLE_JSON_KEY: [
-                    recurse_json(DEFINITIONS.get("FeatureForGetEntity"))
-                ]
-            }
+            return handle_json_dict_list(level, key, description, "FeatureForGetEntity")
         case "Dict[str, List[MatchInfoForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [
-                    recurse_json(DEFINITIONS.get("MatchInfoForAttribute"))
-                ]
-            }
-        case "Dict[str, str]":
-            return {
-                VARIABLE_JSON_KEY: "string",
-            }
-        case "Dict[str, object]":
-            return {
-                VARIABLE_JSON_KEY: "string",
-            }
+            return handle_json_dict_list(
+                level, key, description, "MatchInfoForAttribute"
+            )
         case "Dict[str, int]":
-            return {
-                VARIABLE_JSON_KEY: "int32",
-            }
+            return handle_json_dict_data_type(level, key, description, "int32")
+        case "Dict[str, object]":
+            return handle_json_dict_data_type(level, key, description, "object")
+        case "Dict[str, str]":
+            return handle_json_dict_data_type(level, key, description, "string")
         case "object":
-            return "object"
+            return '"objectx,"'
         case "string":
-            return "string"
+            return '"stringx",'
         case _:
             print(f"Error: Bad 'pythonType:' {value}")
             raise NotImplementedError
+
     return result
 
 
 def handle_json_ref(level, key, value) -> str:
-    # description = value.get("metadata", {}).get("description")
-    # result = html_println(level, make_json_key(key, description, ""))
-    result = recurse_json(level, key, DEFINITIONS.get(value.get("ref")))
-    return result
+    return recurse_json(level, key, DEFINITIONS.get(value.get("ref")))
 
 
 def handle_json_type(level, key, value) -> str:
@@ -199,40 +235,12 @@ def handle_json_type(level, key, value) -> str:
     return html_println(level, json_key)
 
 
-def recurse_json(level, key, value) -> str:
-
-    print(f"\n>>>>>> level: {level};  json_value: {json.dumps(value)}")
-    result = ""
-
-    if "type" in value:
-        print(f">>>>>>>>> level: {level};  type")
-        result += handle_json_type(level, key, value)
-
-    elif "ref" in value:
-        print(f">>>>>>>>> level: {level};  ref")
-        result += handle_json_ref(level, key, value)
-
-    elif "properties" in value:
-        print(f">>>>>>>>> level: {level};  properties")
-        result += handle_json_properties(level, key, value)
-
-    elif "elements" in value:
-        print(f">>>>>>>>> level: {level};  elements")
-        result += handle_json_elements(level, key, value)
-
-    elif "metadata" in value:
-        print(f">>>>>>>>> level: {level};  metadata")
-        result += handle_json_metadata(level, key, value)
-
-    return result
-
-
 # -----------------------------------------------------------------------------
 # --- Make HTML
 # -----------------------------------------------------------------------------
 
 
-def make_html(input_dict: dict) -> str:
+def make_html(title: str, input_dict: dict) -> str:
 
     print(f">>>> Initial JSON: \n{json.dumps(input_dict)}")
 
@@ -240,8 +248,28 @@ def make_html(input_dict: dict) -> str:
 
     result = """<!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {background-color: White;}
+        .code-block {font-family: "Courier New", Courier, monospace; background-color: LightGrey;}
+    </style>
+"""
+
+    result += f"    <title>{title}</title>"
+
+    result += """
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
 """
+
+    result += f"<h1>{title}</h1>"
+    result += """
+<div class="code-block">"""
 
     # HTML body.
 
@@ -250,6 +278,8 @@ def make_html(input_dict: dict) -> str:
     # HTML suffix.
 
     result += """
+<br>&nbsp;
+</div>
 </body>
 </html>
 """
@@ -271,7 +301,7 @@ DEFINITIONS = DATA.get("definitions", {})
 
 # Recurse through dictionary.
 
-for requested_json_key in GLOBAL_JSON_KEYS[10:11]:
+for requested_json_key in GLOBAL_JSON_KEYS:
     json_value = DEFINITIONS.get(requested_json_key)
 
     # Short-circuit when JSON key not found.
@@ -280,7 +310,7 @@ for requested_json_key in GLOBAL_JSON_KEYS[10:11]:
         print(f"Could not find JSON key: {requested_json_key}")
         continue
 
-    html = make_html(json_value)
+    html = make_html(requested_json_key, json_value)
 
     output_file = f"{GLOBAL_OUTPUT_DIRECTORY}/{requested_json_key}.html"
     with open(output_file, "w", encoding="utf-8") as json_file:
