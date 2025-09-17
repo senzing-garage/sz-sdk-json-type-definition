@@ -6,11 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Param {
+public class Params {
     @JsonProperty("PARAM")
     private ParamDetails param;
 
-    public Param() {
+    public Params() {
     }
 
     /**

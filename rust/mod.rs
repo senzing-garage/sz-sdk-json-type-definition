@@ -1466,18 +1466,18 @@ pub type Notices = Vec<Notice0>;
 pub type Object = String;
 
 #[derive(Serialize, Deserialize)]
-pub struct Param {
-    #[serde(rename = "PARAM")]
-    pub param: ParamDetails,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct ParamDetails {
     #[serde(rename = "NAME")]
     pub name: String,
 
     #[serde(rename = "VALUE")]
     pub value: Object,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Params {
+    #[serde(rename = "PARAM")]
+    pub param: ParamDetails,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3054,7 +3054,7 @@ pub struct UmfProc {
     pub name: String,
 
     #[serde(rename = "PARAMS")]
-    pub params: Vec<Param>,
+    pub params: Vec<Params>,
 }
 
 #[derive(Serialize, Deserialize)]

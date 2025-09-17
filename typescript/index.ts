@@ -683,13 +683,13 @@ export type Notices = Notice0[];
 
 export type Object = string;
 
-export interface Param {
-  PARAM: ParamDetails;
-}
-
 export interface ParamDetails {
   NAME: string;
   VALUE: Object;
+}
+
+export interface Params {
+  PARAM: ParamDetails;
 }
 
 export interface Processing {
@@ -1425,7 +1425,7 @@ export interface ThreadState {
 
 export interface UmfProc {
   NAME: string;
-  PARAMS: Param[];
+  PARAMS: Params[];
 }
 
 export interface Unresolve {

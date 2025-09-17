@@ -2353,21 +2353,6 @@ class Object:
         return _to_json_data(self.value)
 
 @dataclass
-class Param:
-    param: 'ParamDetails'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Param':
-        return cls(
-            _from_json_data(ParamDetails, data.get("PARAM")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["PARAM"] = _to_json_data(self.param)
-        return data
-
-@dataclass
 class ParamDetails:
     name: 'str'
     value: 'Object'
@@ -2383,6 +2368,21 @@ class ParamDetails:
         data: Dict[str, Any] = {}
         data["NAME"] = _to_json_data(self.name)
         data["VALUE"] = _to_json_data(self.value)
+        return data
+
+@dataclass
+class Params:
+    param: 'ParamDetails'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'Params':
+        return cls(
+            _from_json_data(ParamDetails, data.get("PARAM")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["PARAM"] = _to_json_data(self.param)
         return data
 
 @dataclass
@@ -4790,13 +4790,13 @@ class ThreadState:
 @dataclass
 class UmfProc:
     name: 'str'
-    params: 'List[Param]'
+    params: 'List[Params]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'UmfProc':
         return cls(
             _from_json_data(str, data.get("NAME")),
-            _from_json_data(List[Param], data.get("PARAMS")),
+            _from_json_data(List[Params], data.get("PARAMS")),
         )
 
     def to_json_data(self) -> Any:

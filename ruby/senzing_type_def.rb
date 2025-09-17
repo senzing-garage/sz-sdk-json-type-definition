@@ -2474,22 +2474,6 @@ module SenzingTypeDef
     end
   end
 
-  class Param
-    attr_accessor :param
-
-    def self.from_json_data(data)
-      out = Param.new
-      out.param = SenzingTypeDef::from_json_data(ParamDetails, data["PARAM"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["PARAM"] = SenzingTypeDef::to_json_data(param)
-      data
-    end
-  end
-
   class ParamDetails
     attr_accessor :name
     attr_accessor :value
@@ -2505,6 +2489,22 @@ module SenzingTypeDef
       data = {}
       data["NAME"] = SenzingTypeDef::to_json_data(name)
       data["VALUE"] = SenzingTypeDef::to_json_data(value)
+      data
+    end
+  end
+
+  class Params
+    attr_accessor :param
+
+    def self.from_json_data(data)
+      out = Params.new
+      out.param = SenzingTypeDef::from_json_data(ParamDetails, data["PARAM"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["PARAM"] = SenzingTypeDef::to_json_data(param)
       data
     end
   end
@@ -4983,7 +4983,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = UmfProc.new
       out.name = SenzingTypeDef::from_json_data(String, data["NAME"])
-      out.params = SenzingTypeDef::from_json_data(Array[Param], data["PARAMS"])
+      out.params = SenzingTypeDef::from_json_data(Array[Params], data["PARAMS"])
       out
     end
 

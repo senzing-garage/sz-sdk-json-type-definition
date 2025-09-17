@@ -2109,7 +2109,7 @@
             },
             "type": "string"
         },
-        "Param": {
+        "Params": {
             "properties": {
                 "PARAM": {
                     "ref": "ParamDetails"
@@ -4197,7 +4197,7 @@
                 },
                 "PARAMS": {
                     "elements": {
-                        "ref": "Param"
+                        "ref": "Params"
                     }
                 }
             }

@@ -12,7 +12,7 @@ public class UmfProc {
     private String name;
 
     @JsonProperty("PARAMS")
-    private List<Param> params;
+    private List<Params> params;
 
     public UmfProc() {
     }
@@ -34,14 +34,14 @@ public class UmfProc {
     /**
      * Getter for params.<p>
      */
-    public List<Param> getParams() {
+    public List<Params> getParams() {
         return params;
     }
 
     /**
      * Setter for params.<p>
      */
-    public void setParams(List<Param> params) {
+    public void setParams(List<Params> params) {
         this.params = params;
     }
 }

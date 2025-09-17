@@ -992,14 +992,14 @@ type Notices = []Notice0
 
 type Object = any
 
-type Param struct {
-	Param ParamDetails `json:"PARAM"`
-}
-
 type ParamDetails struct {
 	Name string `json:"NAME"`
 
 	Value Object `json:"VALUE"`
+}
+
+type Params struct {
+	Param ParamDetails `json:"PARAM"`
 }
 
 type Processing struct {
@@ -2058,7 +2058,7 @@ type ThreadState struct {
 type UmfProc struct {
 	Name string `json:"NAME"`
 
-	Params []Param `json:"PARAMS"`
+	Params []Params `json:"PARAMS"`
 }
 
 type Unresolve struct {

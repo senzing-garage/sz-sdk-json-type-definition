@@ -59,8 +59,8 @@ namespace Bob
 
                 // Looping through list.
 
-                IList<FeatureForAttribute> addresses = virtualEntity.ResolvedEntity.Features["ID_KEY"];
-                foreach (FeatureForAttribute address in addresses)
+                IList<FeatureForAttributeWithAttributes> addresses = virtualEntity.ResolvedEntity.Features["ID_KEY"];
+                foreach (FeatureForAttributeWithAttributes address in addresses)
                 {
                     Console.WriteLine("    ID_KEY FEAT_DESC: {0:G}", address.FeatDesc);
                 }

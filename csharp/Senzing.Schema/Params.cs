@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class Param
+    public class Params
     {
         [JsonPropertyName("PARAM")]
         public ParamDetails Param { get; set; }

@@ -12,6 +12,6 @@ namespace Senzing.Schema
         public string Name { get; set; }
 
         [JsonPropertyName("PARAMS")]
-        public IList<Param> Params { get; set; }
+        public IList<Params> Params { get; set; }
     }
 }
