@@ -73,31 +73,21 @@ GLOBAL_JSON_KEYS = [
 
 def recurse_json(level, key, value) -> str:
 
-    # if not key:
-    #     raise Exception
-
-    print(f"\n>>>>>> level: {level};  key: {key}; json_value: {json.dumps(value)}")
     result = ""
 
     if value.get("metadata", {}).get("pythonType"):
-        print(f">>>>>>>>> level: {level};  python_type")
         result += handle_json_python_type(
             level, key, value.get("metadata", {}).get("description"), value
         )
     elif "type" in value:
-        print(f">>>>>>>>> level: {level};  type")
         result += handle_json_type(level, key, value)
     elif "ref" in value:
-        print(f">>>>>>>>> level: {level};  ref")
         result += handle_json_ref(level, key, value)
     elif "properties" in value:
-        print(f">>>>>>>>> level: {level};  properties")
         result += handle_json_properties(level, key, value)
     elif "elements" in value:
-        print(f">>>>>>>>> level: {level};  elements")
         result += handle_json_elements(level, key, value)
     elif "metadata" in value:
-        print(f">>>>>>>>> level: {level};  metadata")
         result += handle_json_metadata(level, key, value)
 
     return result
@@ -174,7 +164,6 @@ def handle_json_dict_data_type(level, key, description, data_type):
 def handle_json_python_type(level, key, description, value) -> str:
     result = ""
 
-    print(f">>>>>> level {level}, key {key} ------------------------------------")
     python_type = value.get("metadata", {}).get("pythonType")
 
     match python_type:
@@ -224,11 +213,12 @@ def handle_json_type(level, key, value) -> str:
     data_type = value.get("type")
     description = value.get("metadata", {}).get("description")
 
-    html_value = ""
-    if description and key:
-        html_value += f'"{data_type} - {description}",'
-    else:
-        html_value += f'"{data_type}",'
+    # html_value = ""
+    # if description and key:
+    #     html_value += f'"{data_type} - {description}",'
+    # else:
+    #     html_value += f'"{data_type}",'
+    html_value = f'"{data_type}",'
 
     json_key = make_json_key(key, description, html_value)
 
@@ -241,8 +231,6 @@ def handle_json_type(level, key, value) -> str:
 
 
 def make_html(title: str, input_dict: dict) -> str:
-
-    print(f">>>> Initial JSON: \n{json.dumps(input_dict)}")
 
     # HTML prefix.
 
