@@ -14,7 +14,7 @@
     "ENTITY_TYPE": "string",
     "ERRULE_CODE": "string",
     "FEATURES": {
-        "<user_defined_json_key>": [
+        "user_defined_json_key": [
             {
                 "ATTRIBUTES": {
                     "ACCOUNT_DOMAIN": "string",
@@ -105,7 +105,7 @@
                 "FEAT_DESC_VALUES": [
                     {
                         "ATTRIBUTES": {
-                            "<user_defined_json_key>": "string"
+                            "user_defined_json_key": "string"
                         },
                         "CANDIDATE_CAP_REACHED": "string",
                         "ENTITY_COUNT": "int32",
@@ -134,7 +134,7 @@
     ],
     "INTERNAL_ID": "int32",
     "JSON_DATA": {
-        "<user_defined_json_key>": "object"
+        "user_defined_json_key": "object"
     },
     "LAST_SEEN_DT": "timestamp",
     "MATCH_KEY": "string",
@@ -154,6 +154,6 @@
         "string"
     ],
     "UNMAPPED_DATA": {
-        "<user_defined_json_key>": "object"
+        "user_defined_json_key": "object"
     }
 }

@@ -13,10 +13,10 @@
         },
         "candidates": {
             "candidateBuilders": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             },
             "suppressedCandidateBuilders": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             }
         },
         "contention": {
@@ -40,7 +40,7 @@
                 }
             ],
             "created": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             }
         },
         "genericDetect": {
@@ -85,7 +85,7 @@
             "repairedEntities": "int32"
         },
         "redoTriggers": {
-            "<user_defined_json_key>": "int32"
+            "user_defined_json_key": "int32"
         },
         "repairDiagnosis": {
             "types": "int32"
@@ -99,7 +99,7 @@
                 "unresolveMovement": "int32"
             },
             "newFeatureFTypes": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             },
             "suppressedCandidateBuildersForReresolve": {
                 "FIXME_KEY": "string"
@@ -110,13 +110,13 @@
         },
         "scoring": {
             "cacheHit": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             },
             "cacheMiss": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             },
             "scoredPairs": {
-                "<user_defined_json_key>": "int32"
+                "user_defined_json_key": "int32"
             },
             "suppressedDisclosedRelationshipDomainCount": "int32",
             "suppressedScoredFeatureType": {

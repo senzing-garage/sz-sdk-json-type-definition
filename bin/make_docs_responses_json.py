@@ -91,51 +91,51 @@ def handle_python_type(python_type):
     match python_type:
         case "Dict[str, FeatureScoresForAttribute]":
             return {
-                "<user_defined_json_key>": recurse(
+                "user_defined_json_key": recurse(
                     DEFINITIONS.get("FeatureScoresForAttribute")
                 )
             }
         case "Dict[str, List[FeatureDescriptionValue]]":
             return {
-                "<user_defined_json_key>": [
+                "user_defined_json_key": [
                     recurse(DEFINITIONS.get("FeatureScoresForAttribute"))
                 ]
             }
         case "Dict[str, List[FeatureForAttribute]]":
             return {
-                "<user_defined_json_key>": [
+                "user_defined_json_key": [
                     recurse(DEFINITIONS.get("FeatureForAttribute"))
                 ]
             }
         case "Dict[str, List[FeatureForAttributeWithAttributes]]":
             return {
-                "<user_defined_json_key>": [
+                "user_defined_json_key": [
                     recurse(DEFINITIONS.get("FeatureForAttributeWithAttributes"))
                 ]
             }
         case "Dict[str, List[FeatureForGetEntity]]":
             return {
-                "<user_defined_json_key>": [
+                "user_defined_json_key": [
                     recurse(DEFINITIONS.get("FeatureForGetEntity"))
                 ]
             }
         case "Dict[str, List[MatchInfoForAttribute]]":
             return {
-                "<user_defined_json_key>": [
+                "user_defined_json_key": [
                     recurse(DEFINITIONS.get("MatchInfoForAttribute"))
                 ]
             }
         case "Dict[str, int]":
             return {
-                "<user_defined_json_key>": "int32",
+                "user_defined_json_key": "int32",
             }
         case "Dict[str, object]":
             return {
-                "<user_defined_json_key>": "object",
+                "user_defined_json_key": "object",
             }
         case "Dict[str, str]":
             return {
-                "<user_defined_json_key>": "string",
+                "user_defined_json_key": "string",
             }
         case "object":
             return '"object"'
