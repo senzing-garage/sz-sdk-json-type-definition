@@ -3,7 +3,6 @@ package typedef
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"io/fs"
 	"os"
 	"path"
@@ -27,27 +26,6 @@ func testError(test *testing.T, ctx context.Context, err error) {
 // ----------------------------------------------------------------------------
 // --- Test cases
 // ----------------------------------------------------------------------------
-
-func TestSzConfigExportResponse(test *testing.T) {
-	ctx := context.TODO()
-	root := os.DirFS(testDataPath)
-	filter := "SzConfigExport*.json"
-	jsonStruct := SzConfigExportResponse{}
-
-	entries, err := fs.Glob(root, filter)
-	testError(test, ctx, err)
-
-	for _, entry := range entries {
-		testFile := path.Join(testDataPath, entry)
-		fileBytes, err := os.ReadFile(testFile)
-		testError(test, ctx, err)
-
-		err = json.Unmarshal(fileBytes, &jsonStruct)
-		testError(test, ctx, err)
-		_, err = json.Marshal(jsonStruct)
-		testError(test, ctx, err)
-	}
-}
 
 func TestSz(test *testing.T) {
 	ctx := context.TODO()
@@ -85,6 +63,94 @@ func TestSz(test *testing.T) {
 			name:      "SzDiagnosticGetFeatureResponse*.json",
 			theStruct: SzDiagnosticGetFeatureResponse{},
 		},
+		{
+			name:      "SzEngineDeleteRecordResponse*.json",
+			theStruct: SzEngineDeleteRecordResponse{},
+		},
+		{
+			name:      "SzEngineFindInterestingEntitiesByEntityIdResponse*.json",
+			theStruct: SzEngineFindInterestingEntitiesByEntityIDResponse{},
+		},
+		{
+			name:      "SzEngineFindInterestingEntitiesByRecordIdResponse*.json",
+			theStruct: SzEngineFindInterestingEntitiesByRecordIDResponse{},
+		},
+		{
+			name:      "SzEngineFindNetworkByEntityIdResponse*.json",
+			theStruct: SzEngineFindNetworkByEntityIDResponse{},
+		},
+		{
+			name:      "SzEngineFindNetworkByRecordIdResponse*.json",
+			theStruct: SzEngineFindNetworkByRecordIDResponse{},
+		},
+		{
+			name:      "SzEngineFindPathByEntityIdResponse*.json",
+			theStruct: SzEngineFindPathByEntityIDResponse{},
+		},
+		{
+			name:      "SzEngineFindPathByRecordIdResponse*.json",
+			theStruct: SzEngineFindPathByRecordIDResponse{},
+		},
+		{
+			name:      "SzEngineGetEntityByEntityIdResponse*.json",
+			theStruct: SzEngineGetEntityByEntityIDResponse{},
+		},
+		{
+			name:      "SzEngineGetEntityByRecordIdResponse*.json",
+			theStruct: SzEngineGetEntityByRecordIDResponse{},
+		},
+		{
+			name:      "SzEngineGetRecordResponse*.json",
+			theStruct: SzEngineGetRecordResponse{},
+		},
+		{
+			name:      "SzEngineGetRecordPreviewResponse*.json",
+			theStruct: SzEngineGetRecordPreviewResponse{},
+		},
+		{
+			name:      "SzEngineGetVirtualEntityByRecordIdResponse*.json",
+			theStruct: SzEngineGetVirtualEntityByRecordIDResponse{},
+		},
+		{
+			name:      "SzEngineHowEntityByEntityIdResponse*.json",
+			theStruct: SzEngineHowEntityByEntityIDResponse{},
+		},
+		{
+			name:      "SzEngineGetRedoRecordResponse*.json",
+			theStruct: SzEngineGetRedoRecordResponse{},
+		},
+		{
+			name:      "SzEngineProcessRedoRecordResponse*.json",
+			theStruct: SzEngineProcessRedoRecordResponse{},
+		},
+		{
+			name:      "SzEngineReevaluateEntityResponse*.json",
+			theStruct: SzEngineReevaluateEntityResponse{},
+		},
+		{
+			name:      "SzEngineReevaluateRecordResponse*.json",
+			theStruct: SzEngineReevaluateRecordResponse{},
+		},
+		{
+			name:      "SzEngineSearchByAttributesResponse*.json",
+			theStruct: SzEngineSearchByAttributesResponse{},
+		},
+		{
+			name:      "SzDiagnosticGetRepositoryInfoResponse*.json",
+			theStruct: SzDiagnosticGetRepositoryInfoResponse{},
+		},
+		{
+			name:      "SzEngineGetStatsResponse*.json",
+			theStruct: SzEngineGetStatsResponse{},
+		},
+		{
+			name:      "SzProductGetLicenseResponse*.json",
+			theStruct: SzProductGetLicenseResponse{},
+		},
+		{
+			name:      "SzProductGetVersionResponse*.json",
+			theStruct: SzProductGetVersionResponse{},
+		},
 	}
 
 	for _, testCase := range testCases {
@@ -95,10 +161,7 @@ func TestSz(test *testing.T) {
 			entries, err := fs.Glob(root, testCase.name)
 			testError(test, ctx, err)
 
-			count := 0
 			for _, entry := range entries {
-				count += 1
-				fmt.Println(count)
 				testFile := path.Join(testDataPath, entry)
 				fileBytes, err := os.ReadFile(testFile)
 				testError(test, ctx, err)
@@ -109,7 +172,6 @@ func TestSz(test *testing.T) {
 					testError(test, ctx, err)
 				}
 			}
-
 		})
 	}
 
