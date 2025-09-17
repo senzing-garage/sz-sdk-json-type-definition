@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	testDataPath = "../../testdata/example_responses"
+	testDataPath = "../../testdata/senzing_responses"
 )
 
 func testError(test *testing.T, ctx context.Context, err error) {

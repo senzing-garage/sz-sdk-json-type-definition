@@ -301,10 +301,7 @@ generate-typescript: clean-typescript
 generate-tests: generate_typedef_test_go generate_testdata
 
 
-.PHONY: generate_typedef_test_go
-generate_typedef_test_go:
-	@rm ./go/typedef/generated_typedef_test.go || true
-	@./bin/generate_typedef_test_go.py
+
 
 
 .PHONY: generate_testdata
@@ -313,16 +310,8 @@ generate_testdata:
 	@./bin/generate_testdata.py
 
 
-.PHONY: generate_responses_html
-generate_responses_html:
-	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
-	@./bin/generate_responses_html.py
 
 
-.PHONY: generate_responses_json
-generate_responses_json:
-	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
-	@./bin/generate_responses_json.py
 
 # -----------------------------------------------------------------------------
 # Clean
@@ -408,18 +397,8 @@ update-pkg-cache:
 
 .PHONY: analyze-RFC8927
 analyze-RFC8927:
-	@./bin/analyze_rfc8927.py
-
-
-.PHONY: generate-testdata-using-senzing
-generate-testdata-using-senzing:
 	$(activate-venv); \
-		./bin/generate_testdata_using_senzing.py
-
-
-.PHONY: golangci-lint
-golangci-lint:
-	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
+		@./bin/analyze_rfc8927.py
 
 
 .PHONY: load-database-with-truthsets
@@ -428,6 +407,56 @@ load-database-with-truthsets:
 		./bin/load_database_with_truthsets.py
 
 
+.PHONY: make-bin-response-testcases-json
+make-bin-response-testcases-json:
+	$(activate-venv); \
+		./bin/make_bin_response_testcases_json.py
+
+
+.PHONY: make-docs-responses-html
+make-docs-responses-html:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
+	$(activate-venv); \
+		./bin/make_docs_responses_html.py
+
+
+.PHONY: make-docs-responses-json
+make-docs-responses-json:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
+	$(activate-venv); \
+		./bin/make_docs_responses_json.py
+
+
+.PHONY: make-go-typedef-generated-typedef-test-go
+make-go-typedef-generated-typedef-test-go:
+	@rm ./go/typedef/generated_typedef_test.go || true
+	$(activate-venv); \
+		./bin/make_go_typedef_generated_typedef_test_go.py
+
+
+.PHONY: make-testdata-senzing-responses
+make-testdata-senzing-responses:
+	$(activate-venv); \
+		./bin/make_testdata_senzing_responses.py
+
+
+.PHONY: golangci-lint
+golangci-lint:
+	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
+
+
 .PHONY: pretty-print
 pretty-print:
 	@./bin/pretty_print.py
+
+
+.PHONY: test-rfc8927-reconstitution
+test-rfc8927-reconstitution:
+	$(activate-venv); \
+		./bin/test_rfc8927_reconstitution.py
+
+
+.PHONY: test-using-senzing
+test-using-senzing:
+	$(activate-venv); \
+		./bin/test_using_senzing.py
