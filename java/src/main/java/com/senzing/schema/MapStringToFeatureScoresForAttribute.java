@@ -2,6 +2,7 @@
 
 package com.senzing.schema;
 
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 

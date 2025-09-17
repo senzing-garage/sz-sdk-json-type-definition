@@ -50,14 +50,42 @@ FIX_FILES_CS8601 := \
 	SzProductGetLicenseResponse.cs \
 	SzProductGetVersionResponse.cs
 FIX_FILES_LIST := \
+	MapStringToListOfFeatureDescriptionValue.java \
+	MapStringToListOfFeatureForAttributeWithAttributes.java \
+	MapStringToListOfFeatureForGetEntity.java \
+	MapStringToListOfMatchInfoForAttribute.java \
 	MatchInfoCandidateKeys.java \
-	ResolvedEntity.java
-FIX_FILES_MAP := \
-	FeatureScores.java \
-	MatchInfoCandidateKeys.java \
-	Record.java \
+	MatchInfoForWhy.java \
 	ResolvedEntity.java \
-	SzEngineGetRecordResponse.java
+	SearchRequest.java
+FIX_FILES_MAP := \
+	Candidates.java \
+	ExpressedFeatures.java \
+	FeatureDescriptionValue.java \
+	FeatureScores.java \
+	MapStringToFeatureScoresForAttribute.java \
+	MapStringToInteger.java \
+	MapStringToListOfFeatureDescriptionValue.java \
+	MapStringToListOfFeatureForAttributeWithAttributes.java \
+	MapStringToListOfFeatureForAttributeWithAttributes.java \
+	MapStringToListOfFeatureForGetEntity.java \
+	MapStringToListOfMatchInfoForAttribute.java \
+	MapStringToObject.java \
+	MapStringToString.java \
+	MatchInfoCandidateKeys.java \
+	MatchInfoForWhy.java \
+	MatchInfoForWhy.java \
+	Record.java \
+	RecordForGetEntity.java \
+	Reresolve.java \
+	ResolvedEntity.java \
+	ResolvedEntityForGetEntity.java \
+	Scoring.java \
+	SearchRequest.java \
+	SearchRequest.java \
+	SzEngineGetRecordPreviewResponse.java \
+	SzEngineGetRecordResponse.java \
+	Workload.java
 
 # Recursive assignment ('=')
 
