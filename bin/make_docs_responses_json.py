@@ -138,9 +138,9 @@ def handle_python_type(python_type):
                 "user_defined_json_key": "string",
             }
         case "object":
-            return '"object"'
+            return "object"
         case "string":
-            return '"string"'
+            return "string"
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
             raise NotImplementedError

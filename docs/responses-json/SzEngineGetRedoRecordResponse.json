@@ -5,7 +5,7 @@
             {
                 "PARAM": {
                     "NAME": "string",
-                    "VALUE": "\"object\""
+                    "VALUE": "object"
                 }
             }
         ]

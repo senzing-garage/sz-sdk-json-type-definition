@@ -195,7 +195,7 @@ def handle_json_python_type(level, key, description, value) -> str:
         case "Dict[str, str]":
             return handle_json_dict_data_type(level, key, description, "string")
         case "object":
-            return '"object,"'
+            return '"object",'
         case "string":
             return '"string",'
         case _:
