@@ -195,9 +195,9 @@ def handle_json_python_type(level, key, description, value) -> str:
         case "Dict[str, str]":
             return handle_json_dict_data_type(level, key, description, "string")
         case "object":
-            return '"object",'
+            return html_println(level, f'"{key}": "object",')
         case "string":
-            return '"string",'
+            return html_println(level, f'"{key}": "string",')
         case _:
             print(f"Error: Bad 'pythonType:' {value}")
             raise NotImplementedError
