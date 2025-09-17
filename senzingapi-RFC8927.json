@@ -3446,32 +3446,6 @@
                 }
             }
         },
-        "SzTestResponse": {
-            "properties": {
-                "RESOLVED_ENTITIES": {
-                    "elements": {
-                        "ref": "ResolvedEntityAndMatchInfo"
-                    }
-                },
-                "FIELD_1": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
-                "FIELD_2": {
-                    "metadata": {
-                        "description": "FIXME: 2"
-                    },
-                    "type": "int32"
-                },
-                "FIELD_3": {
-                    "metadata": {
-                        "description": "FIXME: 3"
-                    },
-                    "ref": "SzTestResponse1"
-                }
-            }
-        },
         "SzTestResponse1": {
             "properties": {
                 "FIELD_1.1": {
