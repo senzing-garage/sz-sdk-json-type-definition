@@ -1043,14 +1043,14 @@ class Caches:
 
 @dataclass
 class Candidates:
-    candidate_builders: 'MapStringToInteger'
-    suppressed_candidate_builders: 'MapStringToInteger'
+    candidate_builders: 'Dict[str, int]'
+    suppressed_candidate_builders: 'Dict[str, int]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Candidates':
         return cls(
-            _from_json_data(MapStringToInteger, data.get("candidateBuilders")),
-            _from_json_data(MapStringToInteger, data.get("suppressedCandidateBuilders")),
+            _from_json_data(Dict[str, int], data.get("candidateBuilders")),
+            _from_json_data(Dict[str, int], data.get("suppressedCandidateBuilders")),
         )
 
     def to_json_data(self) -> Any:
@@ -1382,13 +1382,13 @@ class EntityPathLink:
 @dataclass
 class ExpressedFeatures:
     calls: 'List[ExpressedFeaturesCall]'
-    created: 'MapStringToInteger'
+    created: 'Dict[str, int]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ExpressedFeatures':
         return cls(
             _from_json_data(List[ExpressedFeaturesCall], data.get("calls")),
-            _from_json_data(MapStringToInteger, data.get("created")),
+            _from_json_data(Dict[str, int], data.get("created")),
         )
 
     def to_json_data(self) -> Any:
@@ -1438,7 +1438,7 @@ class Feature:
 
 @dataclass
 class FeatureDescriptionValue:
-    attributes: 'MapStringToString'
+    attributes: 'Dict[str, str]'
     candidate_cap_reached: 'str'
     entity_count: 'int'
     feat_desc: 'str'
@@ -1451,7 +1451,7 @@ class FeatureDescriptionValue:
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureDescriptionValue':
         return cls(
-            _from_json_data(MapStringToString, data.get("ATTRIBUTES")),
+            _from_json_data(Dict[str, str], data.get("ATTRIBUTES")),
             _from_json_data(str, data.get("CANDIDATE_CAP_REACHED")),
             _from_json_data(int, data.get("ENTITY_COUNT")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -1626,11 +1626,11 @@ class FeatureScoreForAttribute:
 
 @dataclass
 class FeatureScores:
-    value: 'MapStringToFeatureScoresForAttribute'
+    value: 'Dict[str, FeatureScoresForAttribute]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScores':
-        return cls(_from_json_data(MapStringToFeatureScoresForAttribute, data))
+        return cls(_from_json_data(Dict[str, FeatureScoresForAttribute], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2184,11 +2184,11 @@ class MatchInfo:
 
 @dataclass
 class MatchInfoCandidateKeys:
-    value: 'MapStringToListOfMatchInfoForAttribute'
+    value: 'Dict[str, List[MatchInfoForAttribute]]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoCandidateKeys':
-        return cls(_from_json_data(MapStringToListOfMatchInfoForAttribute, data))
+        return cls(_from_json_data(Dict[str, List[MatchInfoForAttribute]], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
@@ -2213,7 +2213,7 @@ class MatchInfoForAttribute:
 
 @dataclass
 class MatchInfoForWhy:
-    candidate_keys: 'MapStringToListOfMatchInfoForAttribute'
+    candidate_keys: 'Dict[str, List[MatchInfoForAttribute]]'
     disclosed_relations: 'DisclosedRelation'
     feature_scores: 'FeatureScores'
     match_level_code: 'str'
@@ -2224,7 +2224,7 @@ class MatchInfoForWhy:
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoForWhy':
         return cls(
-            _from_json_data(MapStringToListOfMatchInfoForAttribute, data.get("CANDIDATE_KEYS")),
+            _from_json_data(Dict[str, List[MatchInfoForAttribute]], data.get("CANDIDATE_KEYS")),
             _from_json_data(DisclosedRelation, data.get("DISCLOSED_RELATIONS")),
             _from_json_data(FeatureScores, data.get("FEATURE_SCORES")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
@@ -2494,12 +2494,12 @@ class Record:
     entity_key: 'str'
     entity_type: 'str'
     errule_code: 'str'
-    features: 'MapStringToListOfFeatureForAttributeWithAttributes'
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
     internal_id: 'int'
-    json_data: 'MapStringToObject'
+    json_data: 'Dict[str, object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
@@ -2509,7 +2509,7 @@ class Record:
     phone_data: 'List[str]'
     record_id: 'str'
     relationship_data: 'List[str]'
-    unmapped_data: 'MapStringToObject'
+    unmapped_data: 'Dict[str, object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Record':
@@ -2522,12 +2522,12 @@ class Record:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(FeatureIds, data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(MapStringToObject, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -2537,7 +2537,7 @@ class Record:
             _from_json_data(List[str], data.get("PHONE_DATA")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(List[str], data.get("RELATIONSHIP_DATA")),
-            _from_json_data(MapStringToObject, data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -2578,12 +2578,12 @@ class RecordForGetEntity:
     entity_key: 'str'
     entity_type: 'str'
     errule_code: 'str'
-    features: 'MapStringToListOfFeatureForAttributeWithAttributes'
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
     internal_id: 'int'
-    json_data: 'MapStringToObject'
+    json_data: 'Dict[str, object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
@@ -2593,7 +2593,7 @@ class RecordForGetEntity:
     phone_data: 'List[str]'
     record_id: 'str'
     relationship_data: 'List[str]'
-    unmapped_data: 'MapStringToObject'
+    unmapped_data: 'Dict[str, object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordForGetEntity':
@@ -2606,12 +2606,12 @@ class RecordForGetEntity:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(FeatureIds, data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(MapStringToObject, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -2621,7 +2621,7 @@ class RecordForGetEntity:
             _from_json_data(List[str], data.get("PHONE_DATA")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(List[str], data.get("RELATIONSHIP_DATA")),
-            _from_json_data(MapStringToObject, data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -2957,7 +2957,7 @@ class Repository:
 
 @dataclass
 class Reresolve:
-    new_feature_ftypes: 'MapStringToInteger'
+    new_feature_ftypes: 'Dict[str, int]'
     suppressed_candidate_builders_for_reresolve: 'Fixme'
     suppressed_scored_feature_type_for_reresolve: 'Fixme'
     triggers: 'ReresolveTriggers'
@@ -2965,7 +2965,7 @@ class Reresolve:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Reresolve':
         return cls(
-            _from_json_data(MapStringToInteger, data.get("newFeatureFTypes")),
+            _from_json_data(Dict[str, int], data.get("newFeatureFTypes")),
             _from_json_data(Fixme, data.get("suppressedCandidateBuildersForReresolve")),
             _from_json_data(Fixme, data.get("suppressedScoredFeatureTypeForReresolve")),
             _from_json_data(ReresolveTriggers, data.get("triggers")),
@@ -3057,7 +3057,7 @@ class ResolvedEntity:
 
     entity_name: 'str'
     errule_code: 'str'
-    features: 'MapStringToListOfFeatureForAttributeWithAttributes'
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     is_ambiguous: 'int'
     is_disclosed: 'int'
@@ -3075,7 +3075,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(FeatureIds, data.get("FEATURE_IDS")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
@@ -3152,7 +3152,7 @@ class ResolvedEntityForGetEntity:
 
     entity_name: 'str'
     errule_code: 'str'
-    features: 'MapStringToListOfFeatureForGetEntity'
+    features: 'Dict[str, List[FeatureForGetEntity]]'
     feature_ids: 'FeatureIds'
     is_ambiguous: 'int'
     is_disclosed: 'int'
@@ -3170,7 +3170,7 @@ class ResolvedEntityForGetEntity:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(MapStringToListOfFeatureForGetEntity, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForGetEntity]], data.get("FEATURES")),
             _from_json_data(FeatureIds, data.get("FEATURE_IDS")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
@@ -3289,18 +3289,18 @@ class SchemaVersion:
 
 @dataclass
 class Scoring:
-    cache_hit: 'MapStringToInteger'
-    cache_miss: 'MapStringToInteger'
-    scored_pairs: 'MapStringToInteger'
+    cache_hit: 'Dict[str, int]'
+    cache_miss: 'Dict[str, int]'
+    scored_pairs: 'Dict[str, int]'
     suppressed_disclosed_relationship_domain_count: 'int'
     suppressed_scored_feature_type: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Scoring':
         return cls(
-            _from_json_data(MapStringToInteger, data.get("cacheHit")),
-            _from_json_data(MapStringToInteger, data.get("cacheMiss")),
-            _from_json_data(MapStringToInteger, data.get("scoredPairs")),
+            _from_json_data(Dict[str, int], data.get("cacheHit")),
+            _from_json_data(Dict[str, int], data.get("cacheMiss")),
+            _from_json_data(Dict[str, int], data.get("scoredPairs")),
             _from_json_data(int, data.get("suppressedDisclosedRelationshipDomainCount")),
             _from_json_data(Fixme, data.get("suppressedScoredFeatureType")),
         )
@@ -3316,14 +3316,14 @@ class Scoring:
 
 @dataclass
 class SearchRequest:
-    features: 'MapStringToListOfFeatureDescriptionValue'
+    features: 'Dict[str, List[FeatureDescriptionValue]]'
     json_data: 'str'
     search_profile: 'str'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchRequest':
         return cls(
-            _from_json_data(MapStringToListOfFeatureDescriptionValue, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureDescriptionValue]], data.get("FEATURES")),
             _from_json_data(str, data.get("JSON_DATA")),
             _from_json_data(str, data.get("SEARCH_PROFILE")),
         )
@@ -4223,18 +4223,18 @@ class SzEngineGetEntityByRecordIDResponse:
 
 @dataclass
 class SzEngineGetRecordPreviewResponse:
-    features: 'MapStringToListOfFeatureForAttributeWithAttributes'
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'List[FeatureID]'
-    json_data: 'MapStringToObject'
-    unmapped_data: 'MapStringToObject'
+    json_data: 'Dict[str, object]'
+    unmapped_data: 'Dict[str, object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordPreviewResponse':
         return cls(
-            _from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
-            _from_json_data(MapStringToObject, data.get("JSON_DATA")),
-            _from_json_data(MapStringToObject, data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -4255,12 +4255,12 @@ class SzEngineGetRecordResponse:
     entity_key: 'str'
     entity_type: 'str'
     errule_code: 'str'
-    features: 'MapStringToListOfFeatureForAttributeWithAttributes'
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
     internal_id: 'int'
-    json_data: 'MapStringToObject'
+    json_data: 'Dict[str, object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
     match_level: 'int'
@@ -4270,7 +4270,7 @@ class SzEngineGetRecordResponse:
     phone_data: 'List[str]'
     record_id: 'str'
     relationship_data: 'List[str]'
-    unmapped_data: 'MapStringToObject'
+    unmapped_data: 'Dict[str, object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordResponse':
@@ -4283,12 +4283,12 @@ class SzEngineGetRecordResponse:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(FeatureIds, data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(MapStringToObject, data.get("JSON_DATA")),
+            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
             _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -4298,7 +4298,7 @@ class SzEngineGetRecordResponse:
             _from_json_data(List[str], data.get("PHONE_DATA")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(List[str], data.get("RELATIONSHIP_DATA")),
-            _from_json_data(MapStringToObject, data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -5024,7 +5024,7 @@ class Workload:
     loaded_records: 'int'
     lock_waits: 'LockWaits'
     processing: 'Processing'
-    redo_triggers: 'MapStringToInteger'
+    redo_triggers: 'Dict[str, int]'
     repair_diagnosis: 'RepairDiagnosis'
     reresolve: 'Reresolve'
     scoring: 'Scoring'
@@ -5046,7 +5046,7 @@ class Workload:
             _from_json_data(int, data.get("loadedRecords")),
             _from_json_data(LockWaits, data.get("lockWaits")),
             _from_json_data(Processing, data.get("processing")),
-            _from_json_data(MapStringToInteger, data.get("redoTriggers")),
+            _from_json_data(Dict[str, int], data.get("redoTriggers")),
             _from_json_data(RepairDiagnosis, data.get("repairDiagnosis")),
             _from_json_data(Reresolve, data.get("reresolve")),
             _from_json_data(Scoring, data.get("scoring")),

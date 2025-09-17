@@ -9,21 +9,21 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public class MatchInfoCandidateKeys {
     @JsonValue
-    private MapStringToListOfMatchInfoForAttribute value;
+    private Map<String, List<MatchInfoForAttribute>> value;
 
     public MatchInfoCandidateKeys() {
     }
 
     @JsonCreator
-    public MatchInfoCandidateKeys(MapStringToListOfMatchInfoForAttribute value) {
+    public MatchInfoCandidateKeys(Map<String, List<MatchInfoForAttribute>> value) {
         this.value = value;
     }
 
-    public MapStringToListOfMatchInfoForAttribute getValue() {
+    public Map<String, List<MatchInfoForAttribute>> getValue() {
         return value;
     }
 
-    public void setValue(MapStringToListOfMatchInfoForAttribute value) {
+    public void setValue(Map<String, List<MatchInfoForAttribute>> value) {
         this.value = value;
     }
 }

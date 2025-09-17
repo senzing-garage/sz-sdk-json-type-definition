@@ -9,15 +9,15 @@ namespace Senzing.Schema
     public class SzEngineGetRecordPreviewResponse
     {
         [JsonPropertyName("FEATURES")]
-        public MapStringToListOfFeatureForAttributeWithAttributes Features { get; set; }
+        public Dictionary<string, List<FeatureForAttributeWithAttributes>> Features { get; set; }
 
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }
 
         [JsonPropertyName("JSON_DATA")]
-        public MapStringToObject JsonData { get; set; }
+        public string JsonData { get; set; }
 
         [JsonPropertyName("UNMAPPED_DATA")]
-        public MapStringToObject UnmappedData { get; set; }
+        public string UnmappedData { get; set; }
     }
 }

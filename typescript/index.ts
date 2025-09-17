@@ -311,8 +311,8 @@ export interface Caches {
 }
 
 export interface Candidates {
-  candidateBuilders: MapStringToInteger;
-  suppressedCandidateBuilders: MapStringToInteger;
+  candidateBuilders: string;
+  suppressedCandidateBuilders: string;
 }
 
 export interface CompatibilityVersion {
@@ -416,7 +416,7 @@ export interface EntityPathLink {
 
 export interface ExpressedFeatures {
   calls: ExpressedFeaturesCall[];
-  created: MapStringToInteger;
+  created: string;
 }
 
 export interface ExpressedFeaturesCall {
@@ -431,7 +431,7 @@ export interface Feature {
 }
 
 export interface FeatureDescriptionValue {
-  ATTRIBUTES: MapStringToString;
+  ATTRIBUTES: string;
   CANDIDATE_CAP_REACHED: string;
   ENTITY_COUNT: number;
   FEAT_DESC: string;
@@ -485,7 +485,7 @@ export interface FeatureScoreForAttribute {
   SCORE_BUCKET: string;
 }
 
-export type FeatureScores = MapStringToFeatureScoresForAttribute;
+export type FeatureScores = string;
 
 export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
@@ -639,7 +639,7 @@ export interface MatchInfo {
   WHY_KEY: string;
 }
 
-export type MatchInfoCandidateKeys = MapStringToListOfMatchInfoForAttribute;
+export type MatchInfoCandidateKeys = string;
 
 export interface MatchInfoForAttribute {
   FEAT_DESC: string;
@@ -647,7 +647,7 @@ export interface MatchInfoForAttribute {
 }
 
 export interface MatchInfoForWhy {
-  CANDIDATE_KEYS: MapStringToListOfMatchInfoForAttribute;
+  CANDIDATE_KEYS: string;
   DISCLOSED_RELATIONS: DisclosedRelation;
   FEATURE_SCORES: FeatureScores;
   MATCH_LEVEL_CODE: string;
@@ -731,12 +731,12 @@ export interface Record {
   ENTITY_KEY: string;
   ENTITY_TYPE: string;
   ERRULE_CODE: string;
-  FEATURES: MapStringToListOfFeatureForAttributeWithAttributes;
+  FEATURES: string;
   FEATURE_IDS: FeatureIds;
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
   INTERNAL_ID: number;
-  JSON_DATA: MapStringToObject;
+  JSON_DATA: string;
   LAST_SEEN_DT: string;
   MATCH_KEY: string;
   MATCH_LEVEL: number;
@@ -746,7 +746,7 @@ export interface Record {
   PHONE_DATA: string[];
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
-  UNMAPPED_DATA: MapStringToObject;
+  UNMAPPED_DATA: string;
 }
 
 export interface RecordForGetEntity {
@@ -758,12 +758,12 @@ export interface RecordForGetEntity {
   ENTITY_KEY: string;
   ENTITY_TYPE: string;
   ERRULE_CODE: string;
-  FEATURES: MapStringToListOfFeatureForAttributeWithAttributes;
+  FEATURES: string;
   FEATURE_IDS: FeatureIds;
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
   INTERNAL_ID: number;
-  JSON_DATA: MapStringToObject;
+  JSON_DATA: string;
   LAST_SEEN_DT: string;
   MATCH_KEY: string;
   MATCH_LEVEL: number;
@@ -773,7 +773,7 @@ export interface RecordForGetEntity {
   PHONE_DATA: string[];
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
-  UNMAPPED_DATA: MapStringToObject;
+  UNMAPPED_DATA: string;
 }
 
 export interface RecordKey {
@@ -873,7 +873,7 @@ export interface Repository {
 }
 
 export interface Reresolve {
-  newFeatureFTypes: MapStringToInteger;
+  newFeatureFTypes: string;
   suppressedCandidateBuildersForReresolve: Fixme;
   suppressedScoredFeatureTypeForReresolve: Fixme;
   triggers: ReresolveTriggers;
@@ -906,7 +906,7 @@ export interface ResolvedEntity {
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
-  FEATURES: MapStringToListOfFeatureForAttributeWithAttributes;
+  FEATURES: string;
   FEATURE_IDS: FeatureIds;
   IS_AMBIGUOUS: number;
   IS_DISCLOSED: number;
@@ -937,7 +937,7 @@ export interface ResolvedEntityForGetEntity {
   ENTITY_ID: number;
   ENTITY_NAME: string;
   ERRULE_CODE: string;
-  FEATURES: MapStringToListOfFeatureForGetEntity;
+  FEATURES: string;
   FEATURE_IDS: FeatureIds;
   IS_AMBIGUOUS: number;
   IS_DISCLOSED: number;
@@ -979,15 +979,15 @@ export interface SchemaVersion {
 }
 
 export interface Scoring {
-  cacheHit: MapStringToInteger;
-  cacheMiss: MapStringToInteger;
-  scoredPairs: MapStringToInteger;
+  cacheHit: string;
+  cacheMiss: string;
+  scoredPairs: string;
   suppressedDisclosedRelationshipDomainCount: number;
   suppressedScoredFeatureType: Fixme;
 }
 
 export interface SearchRequest {
-  FEATURES: MapStringToListOfFeatureDescriptionValue;
+  FEATURES: string;
   JSON_DATA: string;
   SEARCH_PROFILE: string;
 }
@@ -1256,10 +1256,10 @@ export interface SzEngineGetEntityByRecordIdResponse {
 }
 
 export interface SzEngineGetRecordPreviewResponse {
-  FEATURES: MapStringToListOfFeatureForAttributeWithAttributes;
+  FEATURES: string;
   FEATURE_IDS: FeatureId[];
-  JSON_DATA: MapStringToObject;
-  UNMAPPED_DATA: MapStringToObject;
+  JSON_DATA: string;
+  UNMAPPED_DATA: string;
 }
 
 export interface SzEngineGetRecordResponse {
@@ -1271,12 +1271,12 @@ export interface SzEngineGetRecordResponse {
   ENTITY_KEY: string;
   ENTITY_TYPE: string;
   ERRULE_CODE: string;
-  FEATURES: MapStringToListOfFeatureForAttributeWithAttributes;
+  FEATURES: string;
   FEATURE_IDS: FeatureIds;
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
   INTERNAL_ID: number;
-  JSON_DATA: MapStringToObject;
+  JSON_DATA: string;
   LAST_SEEN_DT: string;
   MATCH_KEY: string;
   MATCH_LEVEL: number;
@@ -1286,7 +1286,7 @@ export interface SzEngineGetRecordResponse {
   PHONE_DATA: string[];
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
-  UNMAPPED_DATA: MapStringToObject;
+  UNMAPPED_DATA: string;
 }
 
 export interface SzEngineGetRedoRecordResponse {
@@ -1509,7 +1509,7 @@ export interface Workload {
   loadedRecords: number;
   lockWaits: LockWaits;
   processing: Processing;
-  redoTriggers: MapStringToInteger;
+  redoTriggers: string;
   repairDiagnosis: RepairDiagnosis;
   reresolve: Reresolve;
   scoring: Scoring;

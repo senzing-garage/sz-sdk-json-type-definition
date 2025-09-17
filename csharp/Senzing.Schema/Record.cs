@@ -34,7 +34,7 @@ namespace Senzing.Schema
         public string ErruleCode { get; set; }
 
         [JsonPropertyName("FEATURES")]
-        public MapStringToListOfFeatureForAttributeWithAttributes Features { get; set; }
+        public Dictionary<string, List<FeatureForAttributeWithAttributes>> Features { get; set; }
 
         [JsonPropertyName("FEATURE_IDS")]
         public FeatureIds FeatureIds { get; set; }
@@ -49,7 +49,7 @@ namespace Senzing.Schema
         public int InternalId { get; set; }
 
         [JsonPropertyName("JSON_DATA")]
-        public MapStringToObject JsonData { get; set; }
+        public string JsonData { get; set; }
 
         [JsonPropertyName("LAST_SEEN_DT")]
         public DateTimeOffset LastSeenDt { get; set; }
@@ -79,6 +79,6 @@ namespace Senzing.Schema
         public IList<string> RelationshipData { get; set; }
 
         [JsonPropertyName("UNMAPPED_DATA")]
-        public MapStringToObject UnmappedData { get; set; }
+        public string UnmappedData { get; set; }
     }
 }

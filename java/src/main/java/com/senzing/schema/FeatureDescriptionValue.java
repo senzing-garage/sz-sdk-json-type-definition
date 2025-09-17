@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class FeatureDescriptionValue {
     @JsonProperty("ATTRIBUTES")
-    private MapStringToString attributes;
+    private Map<String, String> attributes;
 
     @JsonProperty("CANDIDATE_CAP_REACHED")
     private String candidateCapReached;
@@ -40,14 +40,14 @@ public class FeatureDescriptionValue {
     /**
      * Getter for attributes.<p>
      */
-    public MapStringToString getAttributes() {
+    public Map<String, String> getAttributes() {
         return attributes;
     }
 
     /**
      * Setter for attributes.<p>
      */
-    public void setAttributes(MapStringToString attributes) {
+    public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }
 

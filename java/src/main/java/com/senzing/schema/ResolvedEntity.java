@@ -21,7 +21,7 @@ public class ResolvedEntity {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private MapStringToListOfFeatureForAttributeWithAttributes features;
+    private Map<String, List<FeatureForAttributeWithAttributes>> features;
 
     @JsonProperty("FEATURE_IDS")
     private FeatureIds featureIds;
@@ -105,14 +105,14 @@ public class ResolvedEntity {
     /**
      * Getter for features.<p>
      */
-    public MapStringToListOfFeatureForAttributeWithAttributes getFeatures() {
+    public Map<String, List<FeatureForAttributeWithAttributes>> getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(MapStringToListOfFeatureForAttributeWithAttributes features) {
+    public void setFeatures(Map<String, List<FeatureForAttributeWithAttributes>> features) {
         this.features = features;
     }
 

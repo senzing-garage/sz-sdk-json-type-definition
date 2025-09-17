@@ -13,19 +13,19 @@ namespace Senzing.Schema
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public MapStringToListOfMatchInfoForAttribute Value { get; set; }
+        public string Value { get; set; }
     }
 
     public class MatchInfoCandidateKeysJsonConverter : JsonConverter<MatchInfoCandidateKeys>
     {
         public override MatchInfoCandidateKeys Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new MatchInfoCandidateKeys { Value = JsonSerializer.Deserialize<MapStringToListOfMatchInfoForAttribute>(ref reader, options) };
+            return new MatchInfoCandidateKeys { Value = JsonSerializer.Deserialize<string>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, MatchInfoCandidateKeys value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<MapStringToListOfMatchInfoForAttribute>(writer, value.Value, options);
+            JsonSerializer.Serialize<string>(writer, value.Value, options);
         }
     }
 }

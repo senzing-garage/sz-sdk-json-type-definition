@@ -35,7 +35,7 @@ public class SzEngineGetRecordResponse {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private MapStringToListOfFeatureForAttributeWithAttributes features;
+    private Map<String, List<FeatureForAttributeWithAttributes>> features;
 
     @JsonProperty("FEATURE_IDS")
     private FeatureIds featureIds;
@@ -50,7 +50,7 @@ public class SzEngineGetRecordResponse {
     private Integer internalId;
 
     @JsonProperty("JSON_DATA")
-    private MapStringToObject jsonData;
+    private Map<String, Map<String, Object>> jsonData;
 
     @JsonProperty("LAST_SEEN_DT")
     private OffsetDateTime lastSeenDt;
@@ -80,7 +80,7 @@ public class SzEngineGetRecordResponse {
     private List<String> relationshipData;
 
     @JsonProperty("UNMAPPED_DATA")
-    private MapStringToObject unmappedData;
+    private Map<String, Map<String, Object>> unmappedData;
 
     public SzEngineGetRecordResponse() {
     }
@@ -200,14 +200,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for features.<p>
      */
-    public MapStringToListOfFeatureForAttributeWithAttributes getFeatures() {
+    public Map<String, List<FeatureForAttributeWithAttributes>> getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(MapStringToListOfFeatureForAttributeWithAttributes features) {
+    public void setFeatures(Map<String, List<FeatureForAttributeWithAttributes>> features) {
         this.features = features;
     }
 
@@ -270,14 +270,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for jsonData.<p>
      */
-    public MapStringToObject getJsonData() {
+    public Map<String, Map<String, Object>> getJsonData() {
         return jsonData;
     }
 
     /**
      * Setter for jsonData.<p>
      */
-    public void setJsonData(MapStringToObject jsonData) {
+    public void setJsonData(Map<String, Map<String, Object>> jsonData) {
         this.jsonData = jsonData;
     }
 
@@ -410,14 +410,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for unmappedData.<p>
      */
-    public MapStringToObject getUnmappedData() {
+    public Map<String, Map<String, Object>> getUnmappedData() {
         return unmappedData;
     }
 
     /**
      * Setter for unmappedData.<p>
      */
-    public void setUnmappedData(MapStringToObject unmappedData) {
+    public void setUnmappedData(Map<String, Map<String, Object>> unmappedData) {
         this.unmappedData = unmappedData;
     }
 }

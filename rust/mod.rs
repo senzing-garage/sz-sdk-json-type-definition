@@ -715,10 +715,10 @@ pub struct Caches {
 #[derive(Serialize, Deserialize)]
 pub struct Candidates {
     #[serde(rename = "candidateBuilders")]
-    pub candidateBuilders: MapStringToInteger,
+    pub candidateBuilders: String,
 
     #[serde(rename = "suppressedCandidateBuilders")]
-    pub suppressedCandidateBuilders: MapStringToInteger,
+    pub suppressedCandidateBuilders: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -933,7 +933,7 @@ pub struct ExpressedFeatures {
     pub calls: Vec<ExpressedFeaturesCall>,
 
     #[serde(rename = "created")]
-    pub created: MapStringToInteger,
+    pub created: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -960,7 +960,7 @@ pub struct Feature {
 #[derive(Serialize, Deserialize)]
 pub struct FeatureDescriptionValue {
     #[serde(rename = "ATTRIBUTES")]
-    pub attributes: MapStringToString,
+    pub attributes: String,
 
     #[serde(rename = "CANDIDATE_CAP_REACHED")]
     pub candidateCapReached: String,
@@ -1082,7 +1082,7 @@ pub struct FeatureScoreForAttribute {
     pub scoreBucket: String,
 }
 
-pub type FeatureScores = MapStringToFeatureScoresForAttribute;
+pub type FeatureScores = String;
 
 pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
 
@@ -1385,7 +1385,7 @@ pub struct MatchInfo {
     pub whyKey: String,
 }
 
-pub type MatchInfoCandidateKeys = MapStringToListOfMatchInfoForAttribute;
+pub type MatchInfoCandidateKeys = String;
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoForAttribute {
@@ -1399,7 +1399,7 @@ pub struct MatchInfoForAttribute {
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoForWhy {
     #[serde(rename = "CANDIDATE_KEYS")]
-    pub candidateKeys: MapStringToListOfMatchInfoForAttribute,
+    pub candidateKeys: String,
 
     #[serde(rename = "DISCLOSED_RELATIONS")]
     pub disclosedRelations: DisclosedRelation,
@@ -1579,7 +1579,7 @@ pub struct Record {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureForAttributeWithAttributes,
+    pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: FeatureIds,
@@ -1594,7 +1594,7 @@ pub struct Record {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: MapStringToObject,
+    pub jsonData: String,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
@@ -1624,7 +1624,7 @@ pub struct Record {
     pub relationshipData: Vec<String>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: MapStringToObject,
+    pub unmappedData: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1654,7 +1654,7 @@ pub struct RecordForGetEntity {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureForAttributeWithAttributes,
+    pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: FeatureIds,
@@ -1669,7 +1669,7 @@ pub struct RecordForGetEntity {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: MapStringToObject,
+    pub jsonData: String,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
@@ -1699,7 +1699,7 @@ pub struct RecordForGetEntity {
     pub relationshipData: Vec<String>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: MapStringToObject,
+    pub unmappedData: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1888,7 +1888,7 @@ pub struct Repository {
 #[derive(Serialize, Deserialize)]
 pub struct Reresolve {
     #[serde(rename = "newFeatureFTypes")]
-    pub newFeatureFtypes: MapStringToInteger,
+    pub newFeatureFtypes: String,
 
     #[serde(rename = "suppressedCandidateBuildersForReresolve")]
     pub suppressedCandidateBuildersForReresolve: Fixme,
@@ -1955,7 +1955,7 @@ pub struct ResolvedEntity {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureForAttributeWithAttributes,
+    pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: FeatureIds,
@@ -2020,7 +2020,7 @@ pub struct ResolvedEntityForGetEntity {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureForGetEntity,
+    pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: FeatureIds,
@@ -2112,13 +2112,13 @@ pub struct SchemaVersion {
 #[derive(Serialize, Deserialize)]
 pub struct Scoring {
     #[serde(rename = "cacheHit")]
-    pub cacheHit: MapStringToInteger,
+    pub cacheHit: String,
 
     #[serde(rename = "cacheMiss")]
-    pub cacheMiss: MapStringToInteger,
+    pub cacheMiss: String,
 
     #[serde(rename = "scoredPairs")]
-    pub scoredPairs: MapStringToInteger,
+    pub scoredPairs: String,
 
     #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
     pub suppressedDisclosedRelationshipDomainCount: i32,
@@ -2130,7 +2130,7 @@ pub struct Scoring {
 #[derive(Serialize, Deserialize)]
 pub struct SearchRequest {
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureDescriptionValue,
+    pub features: String,
 
     #[serde(rename = "JSON_DATA")]
     pub jsonData: String,
@@ -2707,16 +2707,16 @@ pub struct SzEngineGetEntityByRecordIdResponse {
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetRecordPreviewResponse {
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureForAttributeWithAttributes,
+    pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: MapStringToObject,
+    pub jsonData: String,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: MapStringToObject,
+    pub unmappedData: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2746,7 +2746,7 @@ pub struct SzEngineGetRecordResponse {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: MapStringToListOfFeatureForAttributeWithAttributes,
+    pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: FeatureIds,
@@ -2761,7 +2761,7 @@ pub struct SzEngineGetRecordResponse {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: MapStringToObject,
+    pub jsonData: String,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
@@ -2791,7 +2791,7 @@ pub struct SzEngineGetRecordResponse {
     pub relationshipData: Vec<String>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: MapStringToObject,
+    pub unmappedData: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3206,7 +3206,7 @@ pub struct Workload {
     pub processing: Processing,
 
     #[serde(rename = "redoTriggers")]
-    pub redoTriggers: MapStringToInteger,
+    pub redoTriggers: String,
 
     #[serde(rename = "repairDiagnosis")]
     pub repairDiagnosis: RepairDiagnosis,

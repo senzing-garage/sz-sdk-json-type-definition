@@ -1083,8 +1083,8 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Candidates.new
-      out.candidate_builders = SenzingTypeDef::from_json_data(MapStringToInteger, data["candidateBuilders"])
-      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(MapStringToInteger, data["suppressedCandidateBuilders"])
+      out.candidate_builders = SenzingTypeDef::from_json_data(String, data["candidateBuilders"])
+      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(String, data["suppressedCandidateBuilders"])
       out
     end
 
@@ -1430,7 +1430,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = ExpressedFeatures.new
       out.calls = SenzingTypeDef::from_json_data(Array[ExpressedFeaturesCall], data["calls"])
-      out.created = SenzingTypeDef::from_json_data(MapStringToInteger, data["created"])
+      out.created = SenzingTypeDef::from_json_data(String, data["created"])
       out
     end
 
@@ -1496,7 +1496,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = FeatureDescriptionValue.new
-      out.attributes = SenzingTypeDef::from_json_data(MapStringToString, data["ATTRIBUTES"])
+      out.attributes = SenzingTypeDef::from_json_data(String, data["ATTRIBUTES"])
       out.candidate_cap_reached = SenzingTypeDef::from_json_data(String, data["CANDIDATE_CAP_REACHED"])
       out.entity_count = SenzingTypeDef::from_json_data(Integer, data["ENTITY_COUNT"])
       out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
@@ -1685,7 +1685,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = FeatureScores.new
-      out.value = SenzingTypeDef.from_json_data(MapStringToFeatureScoresForAttribute, data)
+      out.value = SenzingTypeDef.from_json_data(String, data)
       out
     end
 
@@ -2291,7 +2291,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = MatchInfoCandidateKeys.new
-      out.value = SenzingTypeDef.from_json_data(MapStringToListOfMatchInfoForAttribute, data)
+      out.value = SenzingTypeDef.from_json_data(String, data)
       out
     end
 
@@ -2330,7 +2330,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = MatchInfoForWhy.new
-      out.candidate_keys = SenzingTypeDef::from_json_data(MapStringToListOfMatchInfoForAttribute, data["CANDIDATE_KEYS"])
+      out.candidate_keys = SenzingTypeDef::from_json_data(String, data["CANDIDATE_KEYS"])
       out.disclosed_relations = SenzingTypeDef::from_json_data(DisclosedRelation, data["DISCLOSED_RELATIONS"])
       out.feature_scores = SenzingTypeDef::from_json_data(FeatureScores, data["FEATURE_SCORES"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
@@ -2647,12 +2647,12 @@ module SenzingTypeDef
       out.entity_key = SenzingTypeDef::from_json_data(String, data["ENTITY_KEY"])
       out.entity_type = SenzingTypeDef::from_json_data(String, data["ENTITY_TYPE"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(FeatureIds, data["FEATURE_IDS"])
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(MapStringToObject, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -2662,7 +2662,7 @@ module SenzingTypeDef
       out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(MapStringToObject, data["UNMAPPED_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
       out
     end
 
@@ -2732,12 +2732,12 @@ module SenzingTypeDef
       out.entity_key = SenzingTypeDef::from_json_data(String, data["ENTITY_KEY"])
       out.entity_type = SenzingTypeDef::from_json_data(String, data["ENTITY_TYPE"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(FeatureIds, data["FEATURE_IDS"])
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(MapStringToObject, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -2747,7 +2747,7 @@ module SenzingTypeDef
       out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(MapStringToObject, data["UNMAPPED_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
       out
     end
 
@@ -3097,7 +3097,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Reresolve.new
-      out.new_feature_ftypes = SenzingTypeDef::from_json_data(MapStringToInteger, data["newFeatureFTypes"])
+      out.new_feature_ftypes = SenzingTypeDef::from_json_data(String, data["newFeatureFTypes"])
       out.suppressed_candidate_builders_for_reresolve = SenzingTypeDef::from_json_data(Fixme, data["suppressedCandidateBuildersForReresolve"])
       out.suppressed_scored_feature_type_for_reresolve = SenzingTypeDef::from_json_data(Fixme, data["suppressedScoredFeatureTypeForReresolve"])
       out.triggers = SenzingTypeDef::from_json_data(ReresolveTriggers, data["triggers"])
@@ -3210,7 +3210,7 @@ module SenzingTypeDef
       out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
       out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(FeatureIds, data["FEATURE_IDS"])
       out.is_ambiguous = SenzingTypeDef::from_json_data(Integer, data["IS_AMBIGUOUS"])
       out.is_disclosed = SenzingTypeDef::from_json_data(Integer, data["IS_DISCLOSED"])
@@ -3305,7 +3305,7 @@ module SenzingTypeDef
       out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
       out.entity_name = SenzingTypeDef::from_json_data(String, data["ENTITY_NAME"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureForGetEntity, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(FeatureIds, data["FEATURE_IDS"])
       out.is_ambiguous = SenzingTypeDef::from_json_data(Integer, data["IS_AMBIGUOUS"])
       out.is_disclosed = SenzingTypeDef::from_json_data(Integer, data["IS_DISCLOSED"])
@@ -3434,9 +3434,9 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Scoring.new
-      out.cache_hit = SenzingTypeDef::from_json_data(MapStringToInteger, data["cacheHit"])
-      out.cache_miss = SenzingTypeDef::from_json_data(MapStringToInteger, data["cacheMiss"])
-      out.scored_pairs = SenzingTypeDef::from_json_data(MapStringToInteger, data["scoredPairs"])
+      out.cache_hit = SenzingTypeDef::from_json_data(String, data["cacheHit"])
+      out.cache_miss = SenzingTypeDef::from_json_data(String, data["cacheMiss"])
+      out.scored_pairs = SenzingTypeDef::from_json_data(String, data["scoredPairs"])
       out.suppressed_disclosed_relationship_domain_count = SenzingTypeDef::from_json_data(Integer, data["suppressedDisclosedRelationshipDomainCount"])
       out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(Fixme, data["suppressedScoredFeatureType"])
       out
@@ -3460,7 +3460,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SearchRequest.new
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureDescriptionValue, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.search_profile = SenzingTypeDef::from_json_data(String, data["SEARCH_PROFILE"])
       out
@@ -4400,10 +4400,10 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SzEngineGetRecordPreviewResponse.new
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(Array[FeatureID], data["FEATURE_IDS"])
-      out.json_data = SenzingTypeDef::from_json_data(MapStringToObject, data["JSON_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(MapStringToObject, data["UNMAPPED_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
       out
     end
 
@@ -4453,12 +4453,12 @@ module SenzingTypeDef
       out.entity_key = SenzingTypeDef::from_json_data(String, data["ENTITY_KEY"])
       out.entity_type = SenzingTypeDef::from_json_data(String, data["ENTITY_TYPE"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
-      out.features = SenzingTypeDef::from_json_data(MapStringToListOfFeatureForAttributeWithAttributes, data["FEATURES"])
+      out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(FeatureIds, data["FEATURE_IDS"])
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(MapStringToObject, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -4468,7 +4468,7 @@ module SenzingTypeDef
       out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(MapStringToObject, data["UNMAPPED_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
       out
     end
 
@@ -5235,7 +5235,7 @@ module SenzingTypeDef
       out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
       out.lock_waits = SenzingTypeDef::from_json_data(LockWaits, data["lockWaits"])
       out.processing = SenzingTypeDef::from_json_data(Processing, data["processing"])
-      out.redo_triggers = SenzingTypeDef::from_json_data(MapStringToInteger, data["redoTriggers"])
+      out.redo_triggers = SenzingTypeDef::from_json_data(String, data["redoTriggers"])
       out.repair_diagnosis = SenzingTypeDef::from_json_data(RepairDiagnosis, data["repairDiagnosis"])
       out.reresolve = SenzingTypeDef::from_json_data(Reresolve, data["reresolve"])
       out.scoring = SenzingTypeDef::from_json_data(Scoring, data["scoring"])

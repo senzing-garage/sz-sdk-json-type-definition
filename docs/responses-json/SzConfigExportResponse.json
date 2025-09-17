@@ -316,6 +316,9 @@
             "PRODUCT_NAME": "string",
             "VERSION": "string"
         },
+        "SETTINGS": {
+            "METAPHONE_VERSION": "int32"
+        },
         "SYS_OOM": [
             {
                 "FELEM_ID": "int32",
