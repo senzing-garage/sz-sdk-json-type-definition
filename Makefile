@@ -244,8 +244,8 @@ generate-csharp: clean-csharp
 	jtd-codegen \
 		--csharp-system-text-namespace Senzing.Schema \
 		--csharp-system-text-out ./csharp/Senzing.Schema \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
 	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/*; do \
 		sed -i '2i #pragma warning disable CS8601, CS8618' "$$file"; \
 	done
@@ -256,8 +256,8 @@ generate-go: clean-go
 	jtd-codegen \
 		--go-out ./go/typedef \
 		--go-package typedef \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-java
@@ -266,7 +266,7 @@ generate-java: clean-java
 		--java-jackson-out ./java/src/main/java/com/senzing/schema \
 		--java-jackson-package com.senzing.schema \
 		--root-name senzingsdk \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 	@for file in $(FIX_FILES_MAP); do \
 		sed -i '5i import java.util.Map;' "java/src/main/java/com/senzing/schema/$$file"; \
 	done
@@ -279,34 +279,34 @@ generate-java: clean-java
 generate-python: clean-python
 	jtd-codegen \
 		--python-out ./python/typedef \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-ruby
 generate-ruby: clean-ruby
 	jtd-codegen \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		--ruby-module SenzingTypeDef \
 		--ruby-out ./ruby \
 		--ruby-sig-module SenzingSig \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-rust
 generate-rust: clean-rust
 	jtd-codegen \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		--rust-out ./rust \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-typescript
 generate-typescript: clean-typescript
 	jtd-codegen \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		--typescript-out ./typescript \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 
 # -----------------------------------------------------------------------------
 # Generate tests

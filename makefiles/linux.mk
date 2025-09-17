@@ -16,7 +16,7 @@ build-osarch-specific: linux/amd64
 
 .PHONY: clean-osarch-specific
 clean-osarch-specific:
-	@rm     $(MAKEFILE_DIRECTORY)/senzingapi-RFC8927-pretty.json || true
+	@rm     $(MAKEFILE_DIRECTORY)/senzingsdk-RFC8927-pretty.json || true
 	@rm -f  $(GOPATH)/bin/$(PROGRAM_NAME) || true
 	@rm -f  $(MAKEFILE_DIRECTORY)/.coverage || true
 	@rm -f  $(MAKEFILE_DIRECTORY)/cover.out || true

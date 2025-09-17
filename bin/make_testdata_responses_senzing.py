@@ -1270,7 +1270,7 @@ def path_to_testdata(filename: str) -> str:
 def process_RFC8927():
     global DEFINITIONS, SCHEMA
 
-    input_filename = "./senzingapi-RFC8927.json"
+    input_filename = "./senzingsdk-RFC8927.json"
     with open(input_filename, "r", encoding="utf-8") as input_file:
         rfc8927 = json.load(input_file)
 

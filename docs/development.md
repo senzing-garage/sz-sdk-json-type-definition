@@ -52,10 +52,10 @@ These are "one-time tasks" which may already have been completed.
 
     ```
 
-## Update senzingapi-RFC8927.json
+## Update senzingsdk-RFC8927.json
 
-1. Make changes to [senzingapi-RFC8927.json]
-1. Analyse [senzingapi-RFC8927.json] after the changes.
+1. Make changes to [senzingsdk-RFC8927.json]
+1. Analyse [senzingsdk-RFC8927.json] after the changes.
    Example:
 
     ```console
@@ -88,13 +88,13 @@ These are "one-time tasks" which may already have been completed.
 
         ```
 
-    1. Compare  `senzingapi-RFC8927-pretty.json` and `senzingapi-RFC8927.json`.
-    Determine if any modifications need to be added to `senzingapi-RFC8927.json`.
+    1. Compare  `senzingsdk-RFC8927-pretty.json` and `senzingsdk-RFC8927.json`.
+    Determine if any modifications need to be added to `senzingsdk-RFC8927.json`.
     Example:
 
         ```console
         cd ${GIT_REPOSITORY_DIR}
-        diff senzingapi-RFC8927-pretty.json senzingapi-RFC8927.json
+        diff senzingsdk-RFC8927-pretty.json senzingsdk-RFC8927.json
 
         ```
 
@@ -228,5 +228,5 @@ Example:
 [jtg-codegen]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/jtd-codegen.md
 [localhost:6060]: http://localhost:6060/pkg/github.com/senzing-garage/sz-sdk-json-type-definition/
 [make]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/make.md
-[senzingapi-RFC8927.json]: ../senzingapi-RFC8927.json
+[senzingsdk-RFC8927.json]: ../senzingsdk-RFC8927.json
 [testcoverage.yaml]: ../.github/coverage/testcoverage.yaml

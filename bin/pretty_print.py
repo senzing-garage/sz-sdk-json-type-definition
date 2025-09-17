@@ -18,8 +18,8 @@ BLACK_LIST = [
     "optionalproperties",
     "type",
 ]
-INPUT_FILENAME = "./senzingapi-RFC8927.json"
-OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
+INPUT_FILENAME = "./senzingsdk-RFC8927.json"
+OUTPUT_FILENAME = "./senzingsdk-RFC8927-pretty.json"
 
 
 # -----------------------------------------------------------------------------

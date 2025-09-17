@@ -110,7 +110,7 @@ def search_list(search_term):
 
 # Read JSON from file.
 
-INPUT_FILENAME = "./senzingapi-RFC8927.json"
+INPUT_FILENAME = "./senzingsdk-RFC8927.json"
 with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
     DATA = json.load(input_file)
 

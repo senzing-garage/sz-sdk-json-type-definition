@@ -172,7 +172,7 @@ cython_debug/
 *.code-workspace
 .history
 
-senzingapi-RFC8927-pretty.json
+senzingsdk-RFC8927-pretty.json
 
 coverage.html
 coverage.out

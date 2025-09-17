@@ -29,7 +29,7 @@ Examples:
 1. Go - [main.go]
 1. Java - [main.java]
 
-The actual specification is [senzingapi-RFC8927.json].
+The actual specification is [senzingsdk-RFC8927.json].
 
 From this specification, code is generated for the following languages:
 
@@ -69,5 +69,5 @@ From this specification, code is generated for the following languages:
 [Senzing Garage]: https://github.com/senzing-garage
 [Senzing Quick Start guides]: https://docs.senzing.com/quickstart/
 [Senzing]: https://senzing.com/
-[senzingapi-RFC8927.json]: senzingapi-RFC8927.json
+[senzingsdk-RFC8927.json]: senzingsdk-RFC8927.json
 [typescript]: typescript
