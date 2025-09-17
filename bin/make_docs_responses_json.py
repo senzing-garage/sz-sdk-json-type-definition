@@ -95,6 +95,12 @@ def handle_python_type(python_type):
                     DEFINITIONS.get("FeatureScoresForAttribute")
                 )
             }
+        case "Dict[str, List[FeatureDescriptionValue]]":
+            return {
+                "<user_defined_json_key>": [
+                    recurse(DEFINITIONS.get("FeatureScoresForAttribute"))
+                ]
+            }
         case "Dict[str, List[FeatureForAttribute]]":
             return {
                 "<user_defined_json_key>": [
@@ -119,11 +125,22 @@ def handle_python_type(python_type):
                     recurse(DEFINITIONS.get("MatchInfoForAttribute"))
                 ]
             }
+        case "Dict[str, int]":
+            return {
+                "<user_defined_json_key>": "int32",
+            }
         case "Dict[str, object]":
             return {
-                "<user_record_json_key_1>": "user_record_json_value_1",
-                "<user_record_json_key_2>": "user_record_json_value_2",
+                "<user_defined_json_key>": "object",
             }
+        case "Dict[str, str]":
+            return {
+                "<user_defined_json_key>": "string",
+            }
+        case "object":
+            return '"object"'
+        case "string":
+            return '"string"'
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
             raise NotImplementedError
@@ -139,6 +156,7 @@ def handle_type(json_value):
 
 
 def recurse(json_value):
+
     if "metadata" in json_value:
         result = handle_metadata(json_value)
         if result:

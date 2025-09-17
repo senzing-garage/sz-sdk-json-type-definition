@@ -201,8 +201,8 @@ coverage: coverage-osarch-specific
 .PHONY: documentation
 documentation: \
 	documentation-osarch-specific \
-	make-docs-responses-html \
-	make-docs-responses-json
+	docs-responses-html \
+	docs-responses-json
 
 # -----------------------------------------------------------------------------
 # Generate code
@@ -299,9 +299,9 @@ generate-typescript: clean-typescript
 
 .PHONY: generate-tests
 generate-tests: \
-	make-go-typedef-generated-typedef-test-go \
-	make-testdata-responses-generated \
-	make-testdata-responses-senzing
+	go-typedef-generated-typedef-test-go \
+	testdata-responses-generated \
+	testdata-responses-senzing
 
 # -----------------------------------------------------------------------------
 # Clean
@@ -397,36 +397,36 @@ load-database-with-truthsets:
 		./bin/load_database_with_truthsets.py
 
 
-.PHONY: make-docs-responses-html
-make-docs-responses-html:
+.PHONY: docs-responses-html
+docs-responses-html:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
 	$(activate-venv); \
 		./bin/make_docs_responses_html.py
 
 
-.PHONY: make-docs-responses-json
-make-docs-responses-json:
+.PHONY: docs-responses-json
+docs-responses-json:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
 	$(activate-venv); \
 		./bin/make_docs_responses_json.py
 
 
-.PHONY: make-go-typedef-generated-typedef-test-go
-make-go-typedef-generated-typedef-test-go:
+.PHONY: go-typedef-generated-typedef-test-go
+go-typedef-generated-typedef-test-go:
 	@rm ./go/typedef/generated_typedef_test.go || true
 	$(activate-venv); \
 		./bin/make_go_typedef_generated_typedef_test_go.py
 
 
-.PHONY: make-testdata-responses-generated
-make-testdata-responses-generated:
+.PHONY: testdata-responses-generated
+testdata-responses-generated:
 	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
 	$(activate-venv); \
 		./bin/make_testdata_responses_generated.py
 
 
-.PHONY: make-testdata-responses-senzing
-make-testdata-responses-senzing:
+.PHONY: testdata-responses-senzing
+testdata-responses-senzing:
 	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
 	$(activate-venv); \
 		./bin/make_testdata_responses_senzing.py
