@@ -402,7 +402,7 @@ def compare_find_interesting_entities_by_entity_id(
             response = sz_engine.find_interesting_entities_by_entity_id(entity_id, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 def compare_find_interesting_entities_by_record_id(
@@ -422,7 +422,7 @@ def compare_find_interesting_entities_by_record_id(
             )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -462,7 +462,7 @@ def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
             )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
@@ -504,7 +504,7 @@ def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
             )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -535,7 +535,7 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
             )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
@@ -565,7 +565,7 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
             )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -585,7 +585,7 @@ def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.get_entity_by_entity_id(entity_id, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
@@ -603,7 +603,7 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.get_entity_by_record_id(data_source, record_id, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -640,7 +640,7 @@ def compare_get_feature(sz_abstract_factory: SzAbstractFactory):
         response = sz_diagnostic.get_feature(feature_id)
         if response not in test_cases:
             test_cases.append(response)
-            output_file(f"{title}-{feature_id}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -663,7 +663,7 @@ def compare_get_record(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.get_record(data_source, record_id, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -695,7 +695,7 @@ def compare_get_record_preview(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.get_record_preview(record_json, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -732,7 +732,7 @@ def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFacto
             response = sz_engine.get_virtual_entity_by_record_id(record_keys, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -752,7 +752,7 @@ def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.how_entity_by_entity_id(entity_id, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -778,7 +778,7 @@ def compare_redo(sz_abstract_factory: SzAbstractFactory):
         redo_records.append(response)
         if response not in test_cases:
             test_cases.append(response)
-            output_file(f"{title}-redo-get-{redo_record_count}", response)
+    output_file(title, test_cases)
 
     # Process redo records.
 
@@ -792,7 +792,7 @@ def compare_redo(sz_abstract_factory: SzAbstractFactory):
         )
         if response not in test_cases:
             test_cases.append(response)
-            output_file(f"{title}-redo-process-{redo_record_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -815,7 +815,7 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
                 continue
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
@@ -835,7 +835,7 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
                 continue
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -859,7 +859,7 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.search_by_attributes(attributes, flag, search_profile)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{search_record_count}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -933,7 +933,7 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
 
     for testcase in testcases:
         response = eval(testcase.get("testcase", ""))
-        output_file(f"{testcase.get("response")}", response)
+        output_file(f"{testcase.get("response")}", [response])
 
 
 # -----------------------------------------------------------------------------
@@ -954,7 +954,7 @@ def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.why_entities(entity_id, entity_id_2, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{entity_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -976,7 +976,7 @@ def compare_why_record_in_entity(sz_abstract_factory: SzAbstractFactory):
             response = sz_engine.why_record_in_entity(data_source, record_id, flag)
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -1010,7 +1010,7 @@ def compare_why_records(sz_abstract_factory: SzAbstractFactory):
             )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(f"{title}-{data_source}-{record_id}-{flag_count}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -1037,9 +1037,7 @@ def compare_why_search(sz_abstract_factory: SzAbstractFactory):
                 )
             if response not in test_cases:
                 test_cases.append(response)
-                output_file(
-                    f"{title}-{entity_id}-{search_record_count}-{flag_count}", response
-                )
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -1051,7 +1049,6 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineDeleteRecordResponse"
     test_cases = []
-
     record_count = 0
     for record in LOADED_RECORD_KEYS:
         record_count += 1
@@ -1062,7 +1059,7 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
         )
         if response not in test_cases:
             test_cases.append(response)
-            output_file(f"{title}-{data_source}-{record_id}", response)
+    output_file(title, test_cases)
 
 
 # -----------------------------------------------------------------------------
@@ -1073,10 +1070,11 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
 def output_file(filename, response):
     current_path = pathlib.Path(__file__).parent.resolve()
     absolute_filename = os.path.abspath(
-        "{0}/../testdata/responses_senzing/{1}.json".format(current_path, filename)
+        "{0}/../testdata/responses_senzing/{1}.jsonl".format(current_path, filename)
     )
     with open(absolute_filename, "w") as file:
-        file.write(response)
+        for line in response:
+            file.write(f"{line}\n")
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):

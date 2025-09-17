@@ -126,8 +126,22 @@ dependencies: venv
 # Setup
 # -----------------------------------------------------------------------------
 
+.PHONY: version
+version: \
+	clean \
+	setup \
+	documentation
+
+
+# -----------------------------------------------------------------------------
+# Setup
+# -----------------------------------------------------------------------------
+
 .PHONY: setup
-setup: setup-osarch-specific generate
+setup: \
+	setup-osarch-specific \
+	load-database-with-truthsets \
+	generate
 
 # -----------------------------------------------------------------------------
 # Lint
@@ -235,6 +249,7 @@ generate-csharp: clean-csharp
 	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/*; do \
 		sed -i '2i #pragma warning disable CS8601, CS8618' "$$file"; \
 	done
+
 
 .PHONY: generate-go
 generate-go: clean-go

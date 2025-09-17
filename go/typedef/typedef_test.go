@@ -1,6 +1,7 @@
 package typedef
 
 import (
+	"bufio"
 	"context"
 	"encoding/json"
 	"io/fs"
@@ -36,119 +37,119 @@ func TestSz(test *testing.T) {
 		theStruct any
 	}{
 		{
-			name:      "SzConfigExportResponse*.json",
+			name:      "SzConfigExportResponse*.jsonl",
 			theStruct: SzConfigExportResponse{},
 		},
 		{
-			name:      "SzConfigGetDataSourceRegistryResponse*.json",
+			name:      "SzConfigGetDataSourceRegistryResponse*.jsonl",
 			theStruct: SzConfigGetDataSourceRegistryResponse{},
 		},
 		{
-			name:      "SzConfigManagerGetConfigRegistryResponse*.json",
+			name:      "SzConfigManagerGetConfigRegistryResponse*.jsonl",
 			theStruct: SzConfigManagerGetConfigRegistryResponse{},
 		},
 		{
-			name:      "SzConfigRegisterDataSourceResponse*.json",
+			name:      "SzConfigRegisterDataSourceResponse*.jsonl",
 			theStruct: SzConfigRegisterDataSourceResponse{},
 		},
 		{
-			name:      "SzConfigUnregisterDataSourceResponse*.json",
+			name:      "SzConfigUnregisterDataSourceResponse*.jsonl",
 			theStruct: SzConfigUnregisterDataSourceResponse{},
 		},
 		{
-			name:      "SzDiagnosticCheckRepositoryPerformanceResponse*.json",
+			name:      "SzDiagnosticCheckRepositoryPerformanceResponse*.jsonl",
 			theStruct: SzDiagnosticCheckRepositoryPerformanceResponse{},
 		},
 		{
-			name:      "SzDiagnosticGetFeatureResponse*.json",
+			name:      "SzDiagnosticGetFeatureResponse*.jsonl",
 			theStruct: SzDiagnosticGetFeatureResponse{},
 		},
 		{
-			name:      "SzEngineDeleteRecordResponse*.json",
+			name:      "SzEngineDeleteRecordResponse*.jsonl",
 			theStruct: SzEngineDeleteRecordResponse{},
 		},
 		{
-			name:      "SzEngineFindInterestingEntitiesByEntityIdResponse*.json",
+			name:      "SzEngineFindInterestingEntitiesByEntityIdResponse*.jsonl",
 			theStruct: SzEngineFindInterestingEntitiesByEntityIDResponse{},
 		},
 		{
-			name:      "SzEngineFindInterestingEntitiesByRecordIdResponse*.json",
+			name:      "SzEngineFindInterestingEntitiesByRecordIdResponse*.jsonl",
 			theStruct: SzEngineFindInterestingEntitiesByRecordIDResponse{},
 		},
 		{
-			name:      "SzEngineFindNetworkByEntityIdResponse*.json",
+			name:      "SzEngineFindNetworkByEntityIdResponse*.jsonl",
 			theStruct: SzEngineFindNetworkByEntityIDResponse{},
 		},
 		{
-			name:      "SzEngineFindNetworkByRecordIdResponse*.json",
+			name:      "SzEngineFindNetworkByRecordIdResponse*.jsonl",
 			theStruct: SzEngineFindNetworkByRecordIDResponse{},
 		},
 		{
-			name:      "SzEngineFindPathByEntityIdResponse*.json",
+			name:      "SzEngineFindPathByEntityIdResponse*.jsonl",
 			theStruct: SzEngineFindPathByEntityIDResponse{},
 		},
 		{
-			name:      "SzEngineFindPathByRecordIdResponse*.json",
+			name:      "SzEngineFindPathByRecordIdResponse*.jsonl",
 			theStruct: SzEngineFindPathByRecordIDResponse{},
 		},
 		{
-			name:      "SzEngineGetEntityByEntityIdResponse*.json",
+			name:      "SzEngineGetEntityByEntityIdResponse*.jsonl",
 			theStruct: SzEngineGetEntityByEntityIDResponse{},
 		},
 		{
-			name:      "SzEngineGetEntityByRecordIdResponse*.json",
+			name:      "SzEngineGetEntityByRecordIdResponse*.jsonl",
 			theStruct: SzEngineGetEntityByRecordIDResponse{},
 		},
 		{
-			name:      "SzEngineGetRecordResponse*.json",
+			name:      "SzEngineGetRecordResponse*.jsonl",
 			theStruct: SzEngineGetRecordResponse{},
 		},
 		{
-			name:      "SzEngineGetRecordPreviewResponse*.json",
+			name:      "SzEngineGetRecordPreviewResponse*.jsonl",
 			theStruct: SzEngineGetRecordPreviewResponse{},
 		},
 		{
-			name:      "SzEngineGetVirtualEntityByRecordIdResponse*.json",
+			name:      "SzEngineGetVirtualEntityByRecordIdResponse*.jsonl",
 			theStruct: SzEngineGetVirtualEntityByRecordIDResponse{},
 		},
 		{
-			name:      "SzEngineHowEntityByEntityIdResponse*.json",
+			name:      "SzEngineHowEntityByEntityIdResponse*.jsonl",
 			theStruct: SzEngineHowEntityByEntityIDResponse{},
 		},
 		{
-			name:      "SzEngineGetRedoRecordResponse*.json",
+			name:      "SzEngineGetRedoRecordResponse*.jsonl",
 			theStruct: SzEngineGetRedoRecordResponse{},
 		},
 		{
-			name:      "SzEngineProcessRedoRecordResponse*.json",
+			name:      "SzEngineProcessRedoRecordResponse*.jsonl",
 			theStruct: SzEngineProcessRedoRecordResponse{},
 		},
 		{
-			name:      "SzEngineReevaluateEntityResponse*.json",
+			name:      "SzEngineReevaluateEntityResponse*.jsonl",
 			theStruct: SzEngineReevaluateEntityResponse{},
 		},
 		{
-			name:      "SzEngineReevaluateRecordResponse*.json",
+			name:      "SzEngineReevaluateRecordResponse*.jsonl",
 			theStruct: SzEngineReevaluateRecordResponse{},
 		},
 		{
-			name:      "SzEngineSearchByAttributesResponse*.json",
+			name:      "SzEngineSearchByAttributesResponse*.jsonl",
 			theStruct: SzEngineSearchByAttributesResponse{},
 		},
 		{
-			name:      "SzDiagnosticGetRepositoryInfoResponse*.json",
+			name:      "SzDiagnosticGetRepositoryInfoResponse*.jsonl",
 			theStruct: SzDiagnosticGetRepositoryInfoResponse{},
 		},
 		{
-			name:      "SzEngineGetStatsResponse*.json",
+			name:      "SzEngineGetStatsResponse*.jsonl",
 			theStruct: SzEngineGetStatsResponse{},
 		},
 		{
-			name:      "SzProductGetLicenseResponse*.json",
+			name:      "SzProductGetLicenseResponse*.jsonl",
 			theStruct: SzProductGetLicenseResponse{},
 		},
 		{
-			name:      "SzProductGetVersionResponse*.json",
+			name:      "SzProductGetVersionResponse*.jsonl",
 			theStruct: SzProductGetVersionResponse{},
 		},
 	}
@@ -163,13 +164,18 @@ func TestSz(test *testing.T) {
 
 			for _, entry := range entries {
 				testFile := path.Join(testDataPath, entry)
-				fileBytes, err := os.ReadFile(testFile)
+				file, err := os.Open(testFile)
 				testError(test, ctx, err)
-				if len(fileBytes) > 0 {
-					err = json.Unmarshal(fileBytes, &jsonStruct)
-					testError(test, ctx, err)
-					_, err = json.Marshal(jsonStruct)
-					testError(test, ctx, err)
+				defer file.Close()
+				scanner := bufio.NewScanner(file)
+				for scanner.Scan() {
+					line := scanner.Text()
+					if len(line) > 0 {
+						err = json.Unmarshal([]byte(line), &jsonStruct)
+						testError(test, ctx, err)
+						_, err = json.Marshal(jsonStruct)
+						testError(test, ctx, err)
+					}
 				}
 			}
 		})
