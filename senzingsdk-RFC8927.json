@@ -582,6 +582,9 @@
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "ERRULE_DESC": {
@@ -879,6 +882,9 @@
         "CFG_RCLASS": {
             "properties": {
                 "IS_DISCLOSED": {
+                    "metadata": {
+                        "description": "Indicates if this is a disclosed relationship."
+                    },
                     "type": "string"
                 },
                 "RCLASS_CODE": {
@@ -1145,6 +1151,9 @@
                     "type": "string"
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
@@ -1214,22 +1223,33 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
+                        "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1275,22 +1295,33 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
+                        "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1359,6 +1390,9 @@
                     "type": "int32"
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "LIB_FEAT_ID": {
@@ -1384,9 +1418,15 @@
         "FeatureForAttribute": {
             "properties": {
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "elements": {
                         "ref": "FeatureDescriptionValue"
                     }
@@ -1398,6 +1438,9 @@
                     "type": "int32"
                 },
                 "USAGE_TYPE": {
+                    "metadata": {
+                        "description": "Label to identify how some features are being used (can also change some features behavior)."
+                    },
                     "type": "string"
                 }
             }
@@ -1408,9 +1451,15 @@
                     "ref": "SenzingEntitySpecification"
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "elements": {
                         "ref": "FeatureDescriptionValue"
                     }
@@ -1422,6 +1471,9 @@
                     "type": "int32"
                 },
                 "USAGE_TYPE": {
+                    "metadata": {
+                        "description": "Label to identify how some features are being used (can also change some features behavior)."
+                    },
                     "type": "string"
                 }
             }
@@ -1434,9 +1486,15 @@
                     }
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "elements": {
                         "ref": "FeatureDescriptionValue"
                     }
@@ -1448,6 +1506,9 @@
                     "type": "int32"
                 },
                 "USAGE_TYPE": {
+                    "metadata": {
+                        "description": "Label to identify how some features are being used (can also change some features behavior)."
+                    },
                     "type": "string"
                 }
             }
@@ -1466,6 +1527,9 @@
                     "type": "int32"
                 },
                 "USAGE_TYPE": {
+                    "metadata": {
+                        "description": "Label to identify how some features are being used (can also change some features behavior)."
+                    },
                     "type": "string"
                 }
             }
@@ -1555,9 +1619,15 @@
         "FocusRecord": {
             "properties": {
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 }
             }
@@ -1828,6 +1898,9 @@
                     "elements": {
                         "properties": {
                             "DATA_SOURCE": {
+                                "metadata": {
+                                    "description": "A label identifying the provenance of the record."
+                                },
                                 "type": "string"
                             },
                             "FLAGS": {
@@ -1836,6 +1909,9 @@
                                 }
                             },
                             "RECORD_ID": {
+                                "metadata": {
+                                    "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                                },
                                 "type": "string"
                             }
                         }
@@ -1951,6 +2027,9 @@
                     }
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 }
             }
@@ -1980,12 +2059,18 @@
                     }
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "FEATURE_SCORES": {
                     "ref": "FeatureScores"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_KEY_DETAILS": {
@@ -1998,6 +2083,9 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "WHY_ERRULE_CODE": {
@@ -2020,6 +2108,9 @@
         "MatchInfoForAttribute": {
             "properties": {
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
@@ -2048,6 +2139,9 @@
                     "ref": "FeatureScores"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "WHY_ERRULE_CODE": {
@@ -2065,6 +2159,7 @@
             "properties": {
                 "INTERNAL_ID": {
                     "metadata": {
+                        "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2214,6 +2309,9 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "ENTITY_DATA": {
@@ -2231,6 +2329,9 @@
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "FIRST_SEEN_DT": {
@@ -2256,6 +2357,7 @@
                 },
                 "INTERNAL_ID": {
                     "metadata": {
+                        "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2273,6 +2375,9 @@
                     "type": "timestamp"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_LEVEL": {
@@ -2282,6 +2387,9 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "NAME_DATA": {
@@ -2300,6 +2408,9 @@
                     }
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 },
                 "RELATIONSHIP_DATA": {
@@ -2331,6 +2442,9 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "ENTITY_DATA": {
@@ -2348,6 +2462,9 @@
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "FEATURES": {
@@ -2373,6 +2490,7 @@
                 },
                 "INTERNAL_ID": {
                     "metadata": {
+                        "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2390,6 +2508,9 @@
                     "type": "timestamp"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_LEVEL": {
@@ -2399,6 +2520,9 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "NAME_DATA": {
@@ -2417,6 +2541,9 @@
                     }
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 },
                 "RELATIONSHIP_DATA": {
@@ -2439,7 +2566,7 @@
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
-                        "description": "The data source code identifying the provenance of the record."
+                        "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
@@ -2466,6 +2593,9 @@
         "RecordSummaryElement": {
             "properties": {
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "FIRST_SEEN_DT": {
@@ -2476,6 +2606,7 @@
                 },
                 "RECORD_COUNT": {
                     "metadata": {
+                        "description": "The number of records for the entity with the same data source code.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2511,6 +2642,9 @@
                     "type": "string"
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
@@ -2551,19 +2685,27 @@
                     "type": "int32"
                 },
                 "ENTITY_NAME": {
+                    "metadata": {
+                        "description": "A name this entity goes by. An entity could have multiple names."
+                    },
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
+                        "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2572,6 +2714,9 @@
                     "type": "timestamp"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_LEVEL": {
@@ -2581,12 +2726,18 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "RECORDS": {
                     "ref": "Records"
                 },
                 "RECORD_SUMMARY": {
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
+                    },
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
@@ -2599,6 +2750,9 @@
                     "type": "string"
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
@@ -2633,6 +2787,9 @@
                     "type": "string"
                 },
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
@@ -2759,9 +2916,15 @@
                     "type": "int32"
                 },
                 "ENTITY_NAME": {
+                    "metadata": {
+                        "description": "A name this entity goes by. An entity could have multiple names."
+                    },
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "FEATURES": {
@@ -2779,12 +2942,14 @@
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
+                        "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2793,6 +2958,9 @@
                     "type": "timestamp"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_LEVEL": {
@@ -2802,6 +2970,9 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "RECORDS": {
@@ -2813,6 +2984,9 @@
                     }
                 },
                 "RECORD_SUMMARY": {
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
+                    },
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
@@ -2848,9 +3022,15 @@
                     "type": "int32"
                 },
                 "ENTITY_NAME": {
+                    "metadata": {
+                        "description": "A name this entity goes by. An entity could have multiple names."
+                    },
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "FEATURES": {
@@ -2868,12 +3048,14 @@
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
+                        "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2882,6 +3064,9 @@
                     "type": "timestamp"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_LEVEL": {
@@ -2891,12 +3076,18 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "RECORDS": {
                     "ref": "RecordsForGetEntity"
                 },
                 "RECORD_SUMMARY": {
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
+                    },
                     "elements": {
                         "ref": "RecordSummaryElement"
                     }
@@ -3446,16 +3637,6 @@
                 }
             }
         },
-        "SzTestResponse1": {
-            "properties": {
-                "FIELD_1.1": {
-                    "metadata": {
-                        "description": "FIXME: 1.1"
-                    },
-                    "type": "string"
-                }
-            }
-        },
         "SzConfigExportResponse": {
             "properties": {
                 "G2_CONFIG": {
@@ -3549,12 +3730,18 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 }
             }
@@ -3567,12 +3754,18 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 }
             }
@@ -3823,6 +4016,9 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "ENTITY_DATA": {
@@ -3840,6 +4036,9 @@
                     "type": "string"
                 },
                 "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
                     "type": "string"
                 },
                 "FEATURES": {
@@ -3865,6 +4064,7 @@
                 },
                 "INTERNAL_ID": {
                     "metadata": {
+                        "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -3882,6 +4082,9 @@
                     "type": "timestamp"
                 },
                 "MATCH_KEY": {
+                    "metadata": {
+                        "description": "Representation of matched source record features."
+                    },
                     "type": "string"
                 },
                 "MATCH_LEVEL": {
@@ -3891,6 +4094,9 @@
                     "type": "int32"
                 },
                 "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
                     "type": "string"
                 },
                 "NAME_DATA": {
@@ -3909,6 +4115,9 @@
                     }
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 },
                 "RELATIONSHIP_DATA": {
@@ -3975,12 +4184,18 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 }
             }
@@ -3993,12 +4208,18 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 }
             }
@@ -4011,12 +4232,18 @@
                     }
                 },
                 "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
                     "type": "string"
                 },
                 "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
                 "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
                     "type": "string"
                 }
             }
@@ -4291,12 +4518,14 @@
                 },
                 "INTERNAL_ID": {
                     "metadata": {
+                        "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "INTERNAL_ID_2": {
                     "metadata": {
+                        "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"

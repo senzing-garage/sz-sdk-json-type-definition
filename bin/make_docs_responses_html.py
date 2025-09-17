@@ -15,7 +15,6 @@ INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
 GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-html"
 GLOBAL_JSON_KEYS = [
-    "SzTestResponse",
     "SzConfigExportResponse",
     "SzConfigGetDataSourceRegistryResponse",
     "SzConfigManagerGetConfigRegistryResponse",
