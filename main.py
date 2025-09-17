@@ -48,7 +48,9 @@ from python.typedef import (
 
 def path_to_testdata(filename: str) -> str:
     current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath("{0}/testdata/{1}".format(current_path, filename))
+    result = os.path.abspath(
+        "{0}/testdata/responses_generated/{1}".format(current_path, filename)
+    )
     return result
 
 
@@ -69,7 +71,8 @@ def print_fmt(
     Tricky code:
     The "response" passed in needs to be part of the "value" string to be evaluated.
     """
-    print(f"    {value} = {eval(value)}")  # pylint: disable=eval-used
+    if value:
+        print(f"    {value} = {eval(value)}")  # pylint: disable=eval-used
 
 
 # -----------------------------------------------------------------------------
@@ -98,7 +101,7 @@ def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> st
         print(f"recordKeys Parameter: {record_keys}\n")
 
     with open(
-        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json"),
+        path_to_testdata("SzEngineGetVirtualEntityByRecordIdResponse-test-015.json"),
         encoding="utf-8",
     ) as input_file:
         return input_file.read()
@@ -135,14 +138,15 @@ virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
 )
 
 print(
-    f"RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: {virtual_entity.resolved_entity.features["ADDRESS"][0].feat_desc}\n"
+    f"RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: {virtual_entity.resolved_entity.features["ID_KEY"][0].feat_desc}\n"
 )
 
 # Looping through list.
 
-addresses = virtual_entity.resolved_entity.features["ADDRESS"]
+# bob = virtual_entity.resolved_entity.features.
+addresses = virtual_entity.resolved_entity.features["ID_KEY"]
 for address in addresses:
-    print(f"   ADDRESS FEAT_DESC: {address.feat_desc}")
+    print(f"    ID_KEY FEAT_DESC: {address.feat_desc}")
 
 # -----------------------------------------------------------------------------
 # Demonstrate reconstructed JSON.
@@ -295,12 +299,6 @@ virtual_entity = SzEngineAddRecordResponse.from_json_data(
     file("SzEngineAddRecordResponse-test-002.json")
 )
 print_fmt(virtual_entity, "response.affected_entities[0].entity_id")
-print_fmt(virtual_entity, "response.interesting_entities.notices[0].description")
-
-# x = virtual_entity.interesting_entities.notices[0].description
-
-
-print_fmt(virtual_entity, "response.")
 
 
 virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
