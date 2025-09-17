@@ -626,19 +626,21 @@
         "JSON_DATA": "string",
         "SEARCH_PROFILE": "string",
         "FEATURES": {
-            "user_defined_json_key": {
-                "ATTRIBUTES": {
-                    "user_defined_json_key": "string"
-                },
-                "CANDIDATE_CAP_REACHED": "string",
-                "ENTITY_COUNT": "int32",
-                "FEAT_DESC": "string",
-                "LIB_FEAT_ID": "int32",
-                "SCORING_CAP_REACHED": "string",
-                "SUPPRESSED": "string",
-                "USED_FOR_CAND": "string",
-                "USED_FOR_SCORING": "string"
-            }
+            "user_defined_json_key": [
+                {
+                    "ATTRIBUTES": {
+                        "user_defined_json_key": "string"
+                    },
+                    "CANDIDATE_CAP_REACHED": "string",
+                    "ENTITY_COUNT": "int32",
+                    "FEAT_DESC": "string",
+                    "LIB_FEAT_ID": "int32",
+                    "SCORING_CAP_REACHED": "string",
+                    "SUPPRESSED": "string",
+                    "USED_FOR_CAND": "string",
+                    "USED_FOR_SCORING": "string"
+                }
+            ]
         }
     },
     "SEARCH_STATISTICS": [

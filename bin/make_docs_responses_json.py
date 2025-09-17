@@ -97,9 +97,9 @@ def handle_python_type(python_type):
             }
         case "Dict[str, List[FeatureDescriptionValue]]":
             return {
-                "user_defined_json_key": recurse(
-                    DEFINITIONS.get("FeatureDescriptionValue")
-                )
+                "user_defined_json_key": [
+                    recurse(DEFINITIONS.get("FeatureDescriptionValue"))
+                ]
             }
         case "Dict[str, List[FeatureForAttribute]]":
             return {
