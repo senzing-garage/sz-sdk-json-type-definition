@@ -12,7 +12,7 @@ import logging
 import os
 
 INPUT_FILE = "bin/response-testcases.json"
-OUTPUT_FILE = "testdata"
+OUTPUT_FILE = "testdata/responses_generated"
 
 # -----------------------------------------------------------------------------
 # --- Helpers

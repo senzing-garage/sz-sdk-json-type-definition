@@ -222,7 +222,14 @@ generate: generate-code generate-tests
 
 
 .PHONY: generate-code
-generate-code: generate-csharp generate-go generate-java generate-python generate-ruby generate-rust generate-typescript
+generate-code: \
+	generate-csharp \
+	generate-go \
+	generate-java \
+	generate-python \
+	generate-ruby \
+	generate-rust \
+	generate-typescript
 
 
 .PHONY: generate-csharp
@@ -298,20 +305,10 @@ generate-typescript: clean-typescript
 # -----------------------------------------------------------------------------
 
 .PHONY: generate-tests
-generate-tests: generate_typedef_test_go generate_testdata
-
-
-
-
-
-.PHONY: generate_testdata
-generate_testdata:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/* || true
-	@./bin/generate_testdata.py
-
-
-
-
+generate-tests: \
+	make-go-typedef-generated-typedef-test-go \
+	make-testdata-responses-generated \
+	make-testdata-responses-senzing
 
 # -----------------------------------------------------------------------------
 # Clean
@@ -407,12 +404,6 @@ load-database-with-truthsets:
 		./bin/load_database_with_truthsets.py
 
 
-.PHONY: make-bin-response-testcases-json
-make-bin-response-testcases-json:
-	$(activate-venv); \
-		./bin/make_bin_response_testcases_json.py
-
-
 .PHONY: make-docs-responses-html
 make-docs-responses-html:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
@@ -434,10 +425,18 @@ make-go-typedef-generated-typedef-test-go:
 		./bin/make_go_typedef_generated_typedef_test_go.py
 
 
-.PHONY: make-testdata-senzing-responses
-make-testdata-senzing-responses:
+.PHONY: make-testdata-responses-generated
+make-testdata-responses-generated:
+	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
 	$(activate-venv); \
-		./bin/make_testdata_senzing_responses.py
+		./bin/make_testdata_responses_generated.py
+
+
+.PHONY: make-testdata-responses-senzing
+make-testdata-responses-senzing:
+	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/* || true
+	$(activate-venv); \
+		./bin/make_testdata_responses_senzing.py
 
 
 .PHONY: golangci-lint
