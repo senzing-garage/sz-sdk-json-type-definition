@@ -1073,7 +1073,7 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
 def output_file(filename, response):
     current_path = pathlib.Path(__file__).parent.resolve()
     absolute_filename = os.path.abspath(
-        "{0}/../testdata/senzing_responses/{1}.json".format(current_path, filename)
+        "{0}/../testdata/responses_senzing/{1}.json".format(current_path, filename)
     )
     with open(absolute_filename, "w") as file:
         file.write(response)

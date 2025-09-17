@@ -479,9 +479,9 @@ type Caches struct {
 }
 
 type Candidates struct {
-	CandidateBuilders MapStringToInteger `json:"candidateBuilders"`
+	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
 
-	SuppressedCandidateBuilders MapStringToInteger `json:"suppressedCandidateBuilders"`
+	SuppressedCandidateBuilders map[string]int64 `json:"suppressedCandidateBuilders"`
 }
 
 type CompatibilityVersion struct {
@@ -625,7 +625,7 @@ type EntityPathLink struct {
 type ExpressedFeatures struct {
 	Calls []ExpressedFeaturesCall `json:"calls"`
 
-	Created MapStringToInteger `json:"created"`
+	Created map[string]int64 `json:"created"`
 }
 
 type ExpressedFeaturesCall struct {
@@ -643,7 +643,7 @@ type Feature struct {
 }
 
 type FeatureDescriptionValue struct {
-	Attributes MapStringToString `json:"ATTRIBUTES"`
+	Attributes map[string]string `json:"ATTRIBUTES"`
 
 	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
 
@@ -726,7 +726,7 @@ type FeatureScoreForAttribute struct {
 	ScoreBucket string `json:"SCORE_BUCKET"`
 }
 
-type FeatureScores = MapStringToFeatureScoresForAttribute
+type FeatureScores = map[string]FeatureScoresForAttribute
 
 type FeatureScoresForAttribute = []FeatureScoreForAttribute
 
@@ -936,7 +936,7 @@ type MatchInfo struct {
 	WhyKey string `json:"WHY_KEY"`
 }
 
-type MatchInfoCandidateKeys = MapStringToListOfMatchInfoForAttribute
+type MatchInfoCandidateKeys = map[string][]MatchInfoForAttribute
 
 type MatchInfoForAttribute struct {
 	FeatDesc string `json:"FEAT_DESC"`
@@ -945,7 +945,7 @@ type MatchInfoForAttribute struct {
 }
 
 type MatchInfoForWhy struct {
-	CandidateKeys MapStringToListOfMatchInfoForAttribute `json:"CANDIDATE_KEYS"`
+	CandidateKeys map[string][]MatchInfoForAttribute `json:"CANDIDATE_KEYS"`
 
 	DisclosedRelations DisclosedRelation `json:"DISCLOSED_RELATIONS"`
 
@@ -1067,7 +1067,7 @@ type Record struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features MapStringToListOfFeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
@@ -1077,7 +1077,7 @@ type Record struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData MapStringToObject `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
@@ -1097,7 +1097,7 @@ type Record struct {
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 
-	UnmappedData MapStringToObject `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
 }
 
 type RecordForGetEntity struct {
@@ -1117,7 +1117,7 @@ type RecordForGetEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features MapStringToListOfFeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
@@ -1127,7 +1127,7 @@ type RecordForGetEntity struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData MapStringToObject `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
@@ -1147,7 +1147,7 @@ type RecordForGetEntity struct {
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 
-	UnmappedData MapStringToObject `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
 }
 
 type RecordKey struct {
@@ -1276,7 +1276,7 @@ type Repository struct {
 }
 
 type Reresolve struct {
-	NewFeatureFtypes MapStringToInteger `json:"newFeatureFTypes"`
+	NewFeatureFtypes map[string]int64 `json:"newFeatureFTypes"`
 
 	SuppressedCandidateBuildersForReresolve Fixme `json:"suppressedCandidateBuildersForReresolve"`
 
@@ -1322,7 +1322,7 @@ type ResolvedEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features MapStringToListOfFeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
@@ -1366,7 +1366,7 @@ type ResolvedEntityForGetEntity struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features MapStringToListOfFeatureForGetEntity `json:"FEATURES"`
+	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
@@ -1428,11 +1428,11 @@ type SchemaVersion struct {
 }
 
 type Scoring struct {
-	CacheHit MapStringToInteger `json:"cacheHit"`
+	CacheHit map[string]int64 `json:"cacheHit"`
 
-	CacheMiss MapStringToInteger `json:"cacheMiss"`
+	CacheMiss map[string]int64 `json:"cacheMiss"`
 
-	ScoredPairs MapStringToInteger `json:"scoredPairs"`
+	ScoredPairs map[string]int64 `json:"scoredPairs"`
 
 	SuppressedDisclosedRelationshipDomainCount int32 `json:"suppressedDisclosedRelationshipDomainCount"`
 
@@ -1440,7 +1440,7 @@ type Scoring struct {
 }
 
 type SearchRequest struct {
-	Features MapStringToListOfFeatureDescriptionValue `json:"FEATURES"`
+	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
 
 	JSONData string `json:"JSON_DATA"`
 
@@ -1826,13 +1826,13 @@ type SzEngineGetEntityByRecordIDResponse struct {
 }
 
 type SzEngineGetRecordPreviewResponse struct {
-	Features MapStringToListOfFeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
-	JSONData MapStringToObject `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
-	UnmappedData MapStringToObject `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
 }
 
 type SzEngineGetRecordResponse struct {
@@ -1852,7 +1852,7 @@ type SzEngineGetRecordResponse struct {
 
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features MapStringToListOfFeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
@@ -1862,7 +1862,7 @@ type SzEngineGetRecordResponse struct {
 
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData MapStringToObject `json:"JSON_DATA"`
+	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
@@ -1882,7 +1882,7 @@ type SzEngineGetRecordResponse struct {
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 
-	UnmappedData MapStringToObject `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
 }
 
 type SzEngineGetRedoRecordResponse struct {
@@ -2162,7 +2162,7 @@ type Workload struct {
 
 	Processing Processing `json:"processing"`
 
-	RedoTriggers MapStringToInteger `json:"redoTriggers"`
+	RedoTriggers map[string]int64 `json:"redoTriggers"`
 
 	RepairDiagnosis RepairDiagnosis `json:"repairDiagnosis"`
 

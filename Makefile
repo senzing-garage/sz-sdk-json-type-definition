@@ -187,11 +187,6 @@ test-typescript:
 	@tsc main.ts
 	@node main.js
 
-
-.PHONY: test-using-senzing
-test-using-senzing:
-	@$(activate-venv); ./bin/test_using_senzing.py
-
 # -----------------------------------------------------------------------------
 # Coverage
 # -----------------------------------------------------------------------------
@@ -204,21 +199,19 @@ coverage: coverage-osarch-specific
 # -----------------------------------------------------------------------------
 
 .PHONY: documentation
-documentation: documentation-osarch-specific
-
-# -----------------------------------------------------------------------------
-# everything
-# -----------------------------------------------------------------------------
-
-.PHONY: everything
-all: clean setup generate-code generate-tests
+documentation: \
+	documentation-osarch-specific \
+	make-docs-responses-html \
+	make-docs-responses-json
 
 # -----------------------------------------------------------------------------
 # Generate code
 # -----------------------------------------------------------------------------
 
 .PHONY: generate
-generate: generate-code generate-tests
+generate: \
+	generate-code \
+	generate-tests
 
 
 .PHONY: generate-code
@@ -434,7 +427,7 @@ make-testdata-responses-generated:
 
 .PHONY: make-testdata-responses-senzing
 make-testdata-responses-senzing:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/* || true
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
 	$(activate-venv); \
 		./bin/make_testdata_responses_senzing.py
 
