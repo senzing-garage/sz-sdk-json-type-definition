@@ -34,14 +34,14 @@ let virtualEntityJson = mockSzEngineGetVirtualEntityByRecordID(JSON.stringify(re
 
 let virtualEntity: SzEngineGetVirtualEntityByRecordIdResponse = JSON.parse(virtualEntityJson) as SzEngineGetVirtualEntityByRecordIdResponse
 console.log(
-    "RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: %s\n",
-    virtualEntity.RESOLVED_ENTITY.FEATURES["ADDRESS"][0].FEAT_DESC,
+    "RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: %s\n",
+    virtualEntity.RESOLVED_ENTITY.FEATURES["ID_KEY"][0].FEAT_DESC,
 )
 
 // Looping through list.
 
-for (const address of virtualEntity.RESOLVED_ENTITY.FEATURES["ADDRESS"]) {
-    console.log("   ADDRESS FEAT_DESC:", address.FEAT_DESC)
+for (const address of virtualEntity.RESOLVED_ENTITY.FEATURES["ID_KEY"]) {
+    console.log("    ID_KEY FEAT_DESC:", address.FEAT_DESC)
 }
 
 // ----------------------------------------------------------------------------
@@ -76,5 +76,5 @@ console.log(`Reconstructed JSON: ${reconstructedString}\n`,);
 
 function mockSzEngineGetVirtualEntityByRecordID(recordKeys: string): string {
     console.log(`recordKeys Parameters ${recordKeys}\n`)
-    return fs.readFileSync('./testdata/SzEngineGetVirtualEntityByRecordIdResponse-test-001.json', 'utf-8');
+    return fs.readFileSync('./testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json', 'utf-8');
 }

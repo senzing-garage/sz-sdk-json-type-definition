@@ -54,15 +54,15 @@ namespace Bob
             SzEngineGetVirtualEntityByRecordIdResponse? virtualEntity = JsonSerializer.Deserialize<SzEngineGetVirtualEntityByRecordIdResponse>(response);
             if (virtualEntity != null)
             {
-                Console.WriteLine("RESOLVED_ENTITY.FEATURES['ADDRESS'][0].FEAT_DESC: {0:G}\n",
-                    virtualEntity.ResolvedEntity.Features["ADDRESS"][0].FeatDesc);
+                Console.WriteLine("RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: {0:G}\n",
+                    virtualEntity.ResolvedEntity.Features["ID_KEY"][0].FeatDesc);
 
                 // Looping through list.
 
-                IList<FeatureForAttribute> addresses = virtualEntity.ResolvedEntity.Features["ADDRESS"];
+                IList<FeatureForAttribute> addresses = virtualEntity.ResolvedEntity.Features["ID_KEY"];
                 foreach (FeatureForAttribute address in addresses)
                 {
-                    Console.WriteLine("   ADDRESS FEAT_DESC: {0:G}", address.FeatDesc);
+                    Console.WriteLine("    ID_KEY FEAT_DESC: {0:G}", address.FeatDesc);
                 }
             }
 
@@ -106,7 +106,7 @@ namespace Bob
             }
 
             string currentPath = Directory.GetCurrentDirectory();
-            string filePath = currentPath + "/testdata/SzEngineGetVirtualEntityByRecordIdResponse-test-001.json";
+            string filePath = currentPath + "/testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
 
             string result = "";
             StreamReader file = new StreamReader(filePath);
