@@ -4,7 +4,7 @@ use chrono::{DateTime, FixedOffset};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-pub type Senzingapi = Option<Value>;
+pub type Senzingsdk = Option<Value>;
 
 #[derive(Serialize, Deserialize)]
 pub struct AdditionalScores {
@@ -3006,23 +3006,6 @@ pub struct SzProductGetVersionResponse {
 
     #[serde(rename = "VERSION")]
     pub version: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct SzTestResponse {
-    #[serde(rename = "FIELD_1")]
-    pub field: Vec<String>,
-
-    /// FIXME: 2
-    #[serde(rename = "FIELD_2")]
-    pub field0: i32,
-
-    /// FIXME: 3
-    #[serde(rename = "FIELD_3")]
-    pub field1: SzTestResponse1,
-
-    #[serde(rename = "RESOLVED_ENTITIES")]
-    pub resolvedEntities: Vec<ResolvedEntityAndMatchInfo>,
 }
 
 #[derive(Serialize, Deserialize)]

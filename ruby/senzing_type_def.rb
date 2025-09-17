@@ -5,11 +5,11 @@ require 'time'
 
 module SenzingTypeDef
 
-  class Senzingapi
+  class Senzingsdk
     attr_accessor :value
 
     def self.from_json_data(data)
-      out = Senzingapi.new
+      out = Senzingsdk.new
       out.value = SenzingTypeDef.from_json_data(Object, data)
       out
     end
@@ -4912,35 +4912,6 @@ module SenzingTypeDef
       data["PRODUCT_NAME"] = SenzingTypeDef::to_json_data(product_name)
       data["SCHEMA_VERSION"] = SenzingTypeDef::to_json_data(schema_version)
       data["VERSION"] = SenzingTypeDef::to_json_data(version)
-      data
-    end
-  end
-
-  class SzTestResponse
-    attr_accessor :field
-
-    # FIXME: 2
-    attr_accessor :field0
-
-    # FIXME: 3
-    attr_accessor :field1
-    attr_accessor :resolved_entities
-
-    def self.from_json_data(data)
-      out = SzTestResponse.new
-      out.field = SenzingTypeDef::from_json_data(Array[String], data["FIELD_1"])
-      out.field0 = SenzingTypeDef::from_json_data(Integer, data["FIELD_2"])
-      out.field1 = SenzingTypeDef::from_json_data(SzTestResponse1, data["FIELD_3"])
-      out.resolved_entities = SenzingTypeDef::from_json_data(Array[ResolvedEntityAndMatchInfo], data["RESOLVED_ENTITIES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FIELD_1"] = SenzingTypeDef::to_json_data(field)
-      data["FIELD_2"] = SenzingTypeDef::to_json_data(field0)
-      data["FIELD_3"] = SenzingTypeDef::to_json_data(field1)
-      data["RESOLVED_ENTITIES"] = SenzingTypeDef::to_json_data(resolved_entities)
       data
     end
   end

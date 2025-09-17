@@ -7,11 +7,11 @@ from typing import Any, Dict, List, Optional, Union, get_args, get_origin
 
 
 @dataclass
-class Senzingapi:
+class Senzingsdk:
     value: 'Any'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'Senzingapi':
+    def from_json_data(cls, data: Any) -> 'Senzingsdk':
         return cls(_from_json_data(Any, data))
 
     def to_json_data(self) -> Any:
@@ -4724,38 +4724,6 @@ class SzProductGetVersionResponse:
         data["PRODUCT_NAME"] = _to_json_data(self.product_name)
         data["SCHEMA_VERSION"] = _to_json_data(self.schema_version)
         data["VERSION"] = _to_json_data(self.version)
-        return data
-
-@dataclass
-class SzTestResponse:
-    field: 'List[str]'
-    field0: 'int'
-    """
-    FIXME: 2
-    """
-
-    field1: 'SzTestResponse1'
-    """
-    FIXME: 3
-    """
-
-    resolved_entities: 'List[ResolvedEntityAndMatchInfo]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzTestResponse':
-        return cls(
-            _from_json_data(List[str], data.get("FIELD_1")),
-            _from_json_data(int, data.get("FIELD_2")),
-            _from_json_data(SzTestResponse1, data.get("FIELD_3")),
-            _from_json_data(List[ResolvedEntityAndMatchInfo], data.get("RESOLVED_ENTITIES")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FIELD_1"] = _to_json_data(self.field)
-        data["FIELD_2"] = _to_json_data(self.field0)
-        data["FIELD_3"] = _to_json_data(self.field1)
-        data["RESOLVED_ENTITIES"] = _to_json_data(self.resolved_entities)
         return data
 
 @dataclass

@@ -4,7 +4,7 @@ package typedef
 
 import "time"
 
-type Senzingapi = interface{}
+type Senzingsdk = interface{}
 
 type AdditionalScores struct {
 	FullScore int32 `json:"FULL_SCORE"`
@@ -2026,18 +2026,6 @@ type SzProductGetVersionResponse struct {
 	SchemaVersion SchemaVersion `json:"SCHEMA_VERSION"`
 
 	Version string `json:"VERSION"`
-}
-
-type SzTestResponse struct {
-	Field []string `json:"FIELD_1"`
-
-	// FIXME: 2
-	Field0 int32 `json:"FIELD_2"`
-
-	// FIXME: 3
-	Field1 SzTestResponse1 `json:"FIELD_3"`
-
-	ResolvedEntities []ResolvedEntityAndMatchInfo `json:"RESOLVED_ENTITIES"`
 }
 
 type SzTestResponse1 struct {

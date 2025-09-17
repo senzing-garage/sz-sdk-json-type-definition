@@ -7,8 +7,8 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    [JsonConverter(typeof(SenzingapiJsonConverter))]
-    public class Senzingapi
+    [JsonConverter(typeof(SenzingsdkJsonConverter))]
+    public class Senzingsdk
     {
         /// <summary>
         /// The underlying data being wrapped.
@@ -16,14 +16,14 @@ namespace Senzing.Schema
         public object Value { get; set; }
     }
 
-    public class SenzingapiJsonConverter : JsonConverter<Senzingapi>
+    public class SenzingsdkJsonConverter : JsonConverter<Senzingsdk>
     {
-        public override Senzingapi Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override Senzingsdk Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new Senzingapi { Value = JsonSerializer.Deserialize<object>(ref reader, options) };
+            return new Senzingsdk { Value = JsonSerializer.Deserialize<object>(ref reader, options) };
         }
 
-        public override void Write(Utf8JsonWriter writer, Senzingapi value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, Senzingsdk value, JsonSerializerOptions options)
         {
             JsonSerializer.Serialize<object>(writer, value.Value, options);
         }
