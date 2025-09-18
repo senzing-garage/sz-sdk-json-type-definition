@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.OffsetDateTime;
 
 @JsonSerialize
-public class RecordSummaryElement {
+public class RecordSummary {
     @JsonProperty("DATA_SOURCE")
     private String dataSource;
 
@@ -20,7 +20,7 @@ public class RecordSummaryElement {
     @JsonProperty("RECORD_COUNT")
     private Integer recordCount;
 
-    public RecordSummaryElement() {
+    public RecordSummary() {
     }
 
     /**

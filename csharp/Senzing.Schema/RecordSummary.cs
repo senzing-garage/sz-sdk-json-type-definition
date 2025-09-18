@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class RecordSummaryElement
+    public class RecordSummary
     {
         /// <summary>
         /// A label identifying the provenance of the record.

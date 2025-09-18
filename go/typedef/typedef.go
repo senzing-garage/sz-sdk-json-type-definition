@@ -1188,7 +1188,7 @@ type RecordKeys struct {
 	Records []RecordKey `json:"RECORDS"`
 }
 
-type RecordSummaryElement struct {
+type RecordSummary struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
@@ -1294,7 +1294,7 @@ type RelatedEntity struct {
 
 	// Overview of the source systems the records came from comprising this related
 	// entity.
-	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
+	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 }
 
 type RepairDiagnosis struct {
@@ -1380,7 +1380,7 @@ type ResolvedEntity struct {
 
 	// Overview of the source systems the records came from comprising this related
 	// entity.
-	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
+	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
 	RecordTypes []string `json:"RECORD_TYPES"`
 }
@@ -1426,7 +1426,7 @@ type ResolvedEntityForGetEntity struct {
 
 	// Overview of the source systems the records came from comprising this related
 	// entity.
-	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
+	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
 	RecordTypes []string `json:"RECORD_TYPES"`
 }

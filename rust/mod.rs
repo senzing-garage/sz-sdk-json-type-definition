@@ -1748,7 +1748,7 @@ pub struct RecordKeys {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct RecordSummaryElement {
+pub struct RecordSummary {
     /// A label identifying the provenance of the record.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
@@ -1900,7 +1900,7 @@ pub struct RelatedEntity {
     /// Overview of the source systems the records came from comprising this
     /// related entity.
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: Vec<RecordSummaryElement>,
+    pub recordSummary: Vec<RecordSummary>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2024,7 +2024,7 @@ pub struct ResolvedEntity {
     /// Overview of the source systems the records came from comprising this
     /// related entity.
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: Vec<RecordSummaryElement>,
+    pub recordSummary: Vec<RecordSummary>,
 
     #[serde(rename = "RECORD_TYPES")]
     pub recordTypes: Vec<String>,
@@ -2088,7 +2088,7 @@ pub struct ResolvedEntityForGetEntity {
     /// Overview of the source systems the records came from comprising this
     /// related entity.
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: Vec<RecordSummaryElement>,
+    pub recordSummary: Vec<RecordSummary>,
 
     #[serde(rename = "RECORD_TYPES")]
     pub recordTypes: Vec<String>,

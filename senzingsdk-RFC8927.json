@@ -2027,9 +2027,6 @@
             }
         },
         "MatchInfoCandidateKeys": {
-            "metadata": {
-                "reference": "MapStringToListOfMatchInfoForAttribute"
-            },
             "values": {
                 "elements": {
                     "ref": "MatchInfoForAttribute"
@@ -2055,9 +2052,6 @@
         "MatchInfoForWhy": {
             "properties": {
                 "CANDIDATE_KEYS": {
-                    "metadata": {
-                        "reference": "MapStringToListOfMatchInfoForAttribute"
-                    },
                     "values": {
                         "elements": {
                             "ref": "MatchInfoForAttribute"
@@ -2255,9 +2249,6 @@
                     "type": "timestamp"
                 },
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
@@ -2379,9 +2370,6 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
@@ -2495,7 +2483,7 @@
                 }
             }
         },
-        "RecordSummaryElement": {
+        "RecordSummary": {
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -2636,7 +2624,7 @@
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     },
                     "elements": {
-                        "ref": "RecordSummaryElement"
+                        "ref": "RecordSummary"
                     }
                 }
             }
@@ -2819,9 +2807,6 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
@@ -2883,7 +2868,7 @@
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     },
                     "elements": {
-                        "ref": "RecordSummaryElement"
+                        "ref": "RecordSummary"
                     }
                 }
             }
@@ -2920,9 +2905,6 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureForGetEntity"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureForGetEntity"
@@ -2979,7 +2961,7 @@
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     },
                     "elements": {
-                        "ref": "RecordSummaryElement"
+                        "ref": "RecordSummary"
                     }
                 },
                 "RECORD_TYPES": {
@@ -3147,9 +3129,6 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureDescriptionValue"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureDescriptionValue"
@@ -3844,9 +3823,6 @@
         "SzEngineGetRecordPreviewResponse": {
             "properties": {
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
@@ -3909,9 +3885,6 @@
                     "type": "string"
                 },
                 "FEATURES": {
-                    "metadata": {
-                        "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
-                    },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"

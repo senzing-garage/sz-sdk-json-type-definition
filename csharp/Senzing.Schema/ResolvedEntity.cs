@@ -72,7 +72,7 @@ namespace Senzing.Schema
         /// related entity.
         /// </summary>
         [JsonPropertyName("RECORD_SUMMARY")]
-        public IList<RecordSummaryElement> RecordSummary { get; set; }
+        public IList<RecordSummary> RecordSummary { get; set; }
 
         [JsonPropertyName("RECORD_TYPES")]
         public IList<string> RecordTypes { get; set; }

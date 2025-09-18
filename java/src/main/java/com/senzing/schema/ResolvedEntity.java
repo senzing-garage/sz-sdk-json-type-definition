@@ -47,7 +47,7 @@ public class ResolvedEntity {
     private List<Record> records;
 
     @JsonProperty("RECORD_SUMMARY")
-    private List<RecordSummaryElement> recordSummary;
+    private List<RecordSummary> recordSummary;
 
     @JsonProperty("RECORD_TYPES")
     private List<String> recordTypes;
@@ -244,7 +244,7 @@ public class ResolvedEntity {
      * Overview of the source systems the records came from comprising this
      * related entity.
      */
-    public List<RecordSummaryElement> getRecordSummary() {
+    public List<RecordSummary> getRecordSummary() {
         return recordSummary;
     }
 
@@ -253,7 +253,7 @@ public class ResolvedEntity {
      * Overview of the source systems the records came from comprising this
      * related entity.
      */
-    public void setRecordSummary(List<RecordSummaryElement> recordSummary) {
+    public void setRecordSummary(List<RecordSummary> recordSummary) {
         this.recordSummary = recordSummary;
     }
 

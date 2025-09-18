@@ -2742,7 +2742,7 @@ class RecordKeys:
         return data
 
 @dataclass
-class RecordSummaryElement:
+class RecordSummary:
     data_source: 'str'
     """
     A label identifying the provenance of the record.
@@ -2757,7 +2757,7 @@ class RecordSummaryElement:
 
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'RecordSummaryElement':
+    def from_json_data(cls, data: Any) -> 'RecordSummary':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
@@ -2952,7 +2952,7 @@ class RelatedEntity:
     """
 
     records: 'List[Record]'
-    record_summary: 'List[RecordSummaryElement]'
+    record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
     entity.
@@ -2972,7 +2972,7 @@ class RelatedEntity:
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(List[Record], data.get("RECORDS")),
-            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
+            _from_json_data(List[RecordSummary], data.get("RECORD_SUMMARY")),
         )
 
     def to_json_data(self) -> Any:
@@ -3150,7 +3150,7 @@ class ResolvedEntity:
     """
 
     records: 'List[Record]'
-    record_summary: 'List[RecordSummaryElement]'
+    record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
     entity.
@@ -3173,7 +3173,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(List[Record], data.get("RECORDS")),
-            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
+            _from_json_data(List[RecordSummary], data.get("RECORD_SUMMARY")),
             _from_json_data(List[str], data.get("RECORD_TYPES")),
         )
 
@@ -3256,7 +3256,7 @@ class ResolvedEntityForGetEntity:
     """
 
     records: 'List[RecordForGetEntity]'
-    record_summary: 'List[RecordSummaryElement]'
+    record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
     entity.
@@ -3279,7 +3279,7 @@ class ResolvedEntityForGetEntity:
             _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(List[RecordForGetEntity], data.get("RECORDS")),
-            _from_json_data(List[RecordSummaryElement], data.get("RECORD_SUMMARY")),
+            _from_json_data(List[RecordSummary], data.get("RECORD_SUMMARY")),
             _from_json_data(List[str], data.get("RECORD_TYPES")),
         )
 

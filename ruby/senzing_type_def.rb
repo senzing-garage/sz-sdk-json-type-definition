@@ -2728,7 +2728,7 @@ module SenzingTypeDef
     end
   end
 
-  class RecordSummaryElement
+  class RecordSummary
     # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :first_seen_dt
@@ -2738,7 +2738,7 @@ module SenzingTypeDef
     attr_accessor :record_count
 
     def self.from_json_data(data)
-      out = RecordSummaryElement.new
+      out = RecordSummary.new
       out.data_source = SenzingTypeDef::from_json_data(String, data["DATA_SOURCE"])
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
@@ -2934,7 +2934,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Array[Record], data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummary], data["RECORD_SUMMARY"])
       out
     end
 
@@ -3124,7 +3124,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Array[Record], data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummary], data["RECORD_SUMMARY"])
       out.record_types = SenzingTypeDef::from_json_data(Array[String], data["RECORD_TYPES"])
       out
     end
@@ -3215,7 +3215,7 @@ module SenzingTypeDef
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypeDef::from_json_data(Array[RecordForGetEntity], data["RECORDS"])
-      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummaryElement], data["RECORD_SUMMARY"])
+      out.record_summary = SenzingTypeDef::from_json_data(Array[RecordSummary], data["RECORD_SUMMARY"])
       out.record_types = SenzingTypeDef::from_json_data(Array[String], data["RECORD_TYPES"])
       out
     end

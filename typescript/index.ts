@@ -947,7 +947,7 @@ export interface RecordKeys {
   RECORDS: RecordKey[];
 }
 
-export interface RecordSummaryElement {
+export interface RecordSummary {
   /**
    * A label identifying the provenance of the record.
    */
@@ -1055,7 +1055,7 @@ export interface RelatedEntity {
    * Overview of the source systems the records came from comprising this
    * related entity.
    */
-  RECORD_SUMMARY: RecordSummaryElement[];
+  RECORD_SUMMARY: RecordSummary[];
 }
 
 export interface RepairDiagnosis {
@@ -1138,7 +1138,7 @@ export interface ResolvedEntity {
    * Overview of the source systems the records came from comprising this
    * related entity.
    */
-  RECORD_SUMMARY: RecordSummaryElement[];
+  RECORD_SUMMARY: RecordSummary[];
   RECORD_TYPES: string[];
 }
 
@@ -1193,7 +1193,7 @@ export interface ResolvedEntityForGetEntity {
    * Overview of the source systems the records came from comprising this
    * related entity.
    */
-  RECORD_SUMMARY: RecordSummaryElement[];
+  RECORD_SUMMARY: RecordSummary[];
   RECORD_TYPES: string[];
 }
 
