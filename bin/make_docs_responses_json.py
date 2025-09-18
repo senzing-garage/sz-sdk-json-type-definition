@@ -89,11 +89,11 @@ def handle_python_type(python_type):
     result = {}
 
     match python_type:
-        case "Dict[str, FeatureScoresForAttribute]":
+        case "Dict[str, List[FeatureScoreForAttribute]]":
             return {
-                "user_defined_json_key": recurse(
-                    DEFINITIONS.get("FeatureScoresForAttribute")
-                )
+                "user_defined_json_key": [
+                    recurse(DEFINITIONS.get("FeatureScoreForAttribute"))
+                ]
             }
         case "Dict[str, List[FeatureDescriptionValue]]":
             return {

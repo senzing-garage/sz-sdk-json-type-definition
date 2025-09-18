@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class HowResults {
@@ -11,7 +12,7 @@ public class HowResults {
     private FinalState finalState;
 
     @JsonProperty("RESOLUTION_STEPS")
-    private ResolutionSteps resolutionSteps;
+    private List<ResolutionStep> resolutionSteps;
 
     public HowResults() {
     }
@@ -33,14 +34,14 @@ public class HowResults {
     /**
      * Getter for resolutionSteps.<p>
      */
-    public ResolutionSteps getResolutionSteps() {
+    public List<ResolutionStep> getResolutionSteps() {
         return resolutionSteps;
     }
 
     /**
      * Setter for resolutionSteps.<p>
      */
-    public void setResolutionSteps(ResolutionSteps resolutionSteps) {
+    public void setResolutionSteps(List<ResolutionStep> resolutionSteps) {
         this.resolutionSteps = resolutionSteps;
     }
 }

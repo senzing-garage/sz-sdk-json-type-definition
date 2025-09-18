@@ -24,7 +24,7 @@ public class ResolvedEntity {
     private Map<String, List<FeatureForAttributeWithAttributes>> features;
 
     @JsonProperty("FEATURE_IDS")
-    private FeatureIds featureIds;
+    private List<FeatureId> featureIds;
 
     @JsonProperty("IS_AMBIGUOUS")
     private Integer isAmbiguous;
@@ -45,7 +45,7 @@ public class ResolvedEntity {
     private String matchLevelCode;
 
     @JsonProperty("RECORDS")
-    private Records records;
+    private List<Record> records;
 
     @JsonProperty("RECORD_SUMMARY")
     private List<RecordSummaryElement> recordSummary;
@@ -123,14 +123,14 @@ public class ResolvedEntity {
     /**
      * Getter for featureIds.<p>
      */
-    public FeatureIds getFeatureIds() {
+    public List<FeatureId> getFeatureIds() {
         return featureIds;
     }
 
     /**
      * Setter for featureIds.<p>
      */
-    public void setFeatureIds(FeatureIds featureIds) {
+    public void setFeatureIds(List<FeatureId> featureIds) {
         this.featureIds = featureIds;
     }
 
@@ -229,14 +229,14 @@ public class ResolvedEntity {
     /**
      * Getter for records.<p>
      */
-    public Records getRecords() {
+    public List<Record> getRecords() {
         return records;
     }
 
     /**
      * Setter for records.<p>
      */
-    public void setRecords(Records records) {
+    public void setRecords(List<Record> records) {
         this.records = records;
     }
 

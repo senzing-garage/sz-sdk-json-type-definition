@@ -166,8 +166,8 @@ def handle_json_python_type(level, key, description, value) -> str:
     python_type = value.get("metadata", {}).get("pythonType")
 
     match python_type:
-        case "Dict[str, FeatureScoresForAttribute]":
-            return handle_json_dict(
+        case "Dict[str, List[FeatureScoreForAttribute]]":
+            return handle_json_dict_list(
                 level, key, description, "FeatureScoresForAttribute"
             )
         case "Dict[str, List[FeatureDescriptionValue]]":

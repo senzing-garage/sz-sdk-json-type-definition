@@ -1513,11 +1513,6 @@
                 }
             }
         },
-        "FeatureIDs": {
-            "elements": {
-                "ref": "FeatureID"
-            }
-        },
         "FeatureID": {
             "properties": {
                 "LIB_FEAT_ID": {
@@ -1579,17 +1574,12 @@
         },
         "FeatureScores": {
             "metadata": {
-                "goType": "map[string]FeatureScoresForAttribute",
-                "javaJacksonType": "Map<String, FeatureScoresForAttribute>",
-                "pythonType": "Dict[str, FeatureScoresForAttribute]",
-                "reference": "MapStringToFeatureScoresForAttribute"
+                "goType": "map[string][]FeatureScoreForAttribute",
+                "javaJacksonType": "Map<String, List<FeatureScoreForAttribute>>",
+                "pythonType": "Dict[str, List[FeatureScoreForAttribute]]",
+                "reference": "MapStringToFeatureScoreForAttribute"
             },
             "type": "string"
-        },
-        "FeatureScoresForAttribute": {
-            "elements": {
-                "ref": "FeatureScoreForAttribute"
-            }
         },
         "FinalState": {
             "properties": {
@@ -1630,11 +1620,6 @@
                     },
                     "type": "string"
                 }
-            }
-        },
-        "FocusRecords": {
-            "elements": {
-                "ref": "FocusRecord"
             }
         },
         "G2Config": {
@@ -1833,7 +1818,9 @@
                     "ref": "FinalState"
                 },
                 "RESOLUTION_STEPS": {
-                    "ref": "ResolutionSteps"
+                    "elements": {
+                        "ref": "ResolutionStep"
+                    }
                 }
             }
         },
@@ -1862,14 +1849,7 @@
                 },
                 "NOTICES": {
                     "elements": {
-                        "properties": {
-                            "CODE": {
-                                "type": "string"
-                            },
-                            "DESCRIPTION": {
-                                "type": "string"
-                            }
-                        }
+                        "ref": "Notice"
                     }
                 }
             }
@@ -1939,12 +1919,12 @@
                 }
             }
         },
-        "MapStringToFeatureScoresForAttribute": {
+        "MapStringToListFeatureScoreForAttribute": {
             "metadata": {
-                "goType": "map[string]FeatureScoresForAttribute",
-                "javaJacksonType": "Map<String, FeatureScoresForAttribute>",
-                "pythonType": "Dict[str, FeatureScoresForAttribute]",
-                "reference": "MapStringToFeatureScoresForAttribute"
+                "goType": "map[string][]FeatureScoreForAttribute",
+                "javaJacksonType": "Map<String, List<FeatureScoreForAttribute>>",
+                "pythonType": "Dict[str, List[FeatureScoreForAttribute]]",
+                "reference": "MapStringToListFeatureScoreForAttribute"
             },
             "type": "string"
         },
@@ -2165,13 +2145,10 @@
                     "type": "int32"
                 },
                 "RECORDS": {
-                    "ref": "Records"
+                    "elements": {
+                        "ref": "Record"
+                    }
                 }
-            }
-        },
-        "MemberRecords": {
-            "elements": {
-                "ref": "MemberRecord"
             }
         },
         "Notice": {
@@ -2181,18 +2158,6 @@
                 },
                 "DESCRIPTION": {
                     "type": "string"
-                }
-            }
-        },
-        "Notices": {
-            "elements": {
-                "properties": {
-                    "CODE": {
-                        "type": "string"
-                    },
-                    "DESCRIPTION": {
-                        "type": "string"
-                    }
                 }
             }
         },
@@ -2348,7 +2313,9 @@
                     "type": "string"
                 },
                 "FEATURE_IDS": {
-                    "ref": "FeatureIDs"
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
                 },
                 "IDENTIFIER_DATA": {
                     "elements": {
@@ -2478,7 +2445,9 @@
                     "type": "string"
                 },
                 "FEATURE_IDS": {
-                    "ref": "FeatureIDs"
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
                 },
                 "FIRST_SEEN_DT": {
                     "type": "timestamp"
@@ -2613,16 +2582,6 @@
                 }
             }
         },
-        "Records": {
-            "elements": {
-                "ref": "Record"
-            }
-        },
-        "RecordsForGetEntity": {
-            "elements": {
-                "ref": "RecordForGetEntity"
-            }
-        },
         "RefreshLocks": {
             "properties": {
                 "maxMS": {
@@ -2732,7 +2691,9 @@
                     "type": "string"
                 },
                 "RECORDS": {
-                    "ref": "Records"
+                    "elements": {
+                        "ref": "Record"
+                    }
                 },
                 "RECORD_SUMMARY": {
                     "metadata": {
@@ -2901,11 +2862,6 @@
                 }
             }
         },
-        "ResolutionSteps": {
-            "elements": {
-                "ref": "ResolutionStep"
-            }
-        },
         "ResolvedEntity": {
             "properties": {
                 "ENTITY_ID": {
@@ -2938,7 +2894,9 @@
                     "type": "string"
                 },
                 "FEATURE_IDS": {
-                    "ref": "FeatureIDs"
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
@@ -2976,7 +2934,9 @@
                     "type": "string"
                 },
                 "RECORDS": {
-                    "ref": "Records"
+                    "elements": {
+                        "ref": "Record"
+                    }
                 },
                 "RECORD_TYPES": {
                     "elements": {
@@ -3044,7 +3004,9 @@
                     "type": "string"
                 },
                 "FEATURE_IDS": {
-                    "ref": "FeatureIDs"
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
                 },
                 "IS_AMBIGUOUS": {
                     "metadata": {
@@ -3082,7 +3044,9 @@
                     "type": "string"
                 },
                 "RECORDS": {
-                    "ref": "RecordsForGetEntity"
+                    "elements": {
+                        "ref": "RecordForGetEntity"
+                    }
                 },
                 "RECORD_SUMMARY": {
                     "metadata": {
@@ -3298,11 +3262,6 @@
                     },
                     "type": "string"
                 }
-            }
-        },
-        "SearchStatistics": {
-            "elements": {
-                "ref": "SearchStatistic"
             }
         },
         "SenzingEntitySpecification": {
@@ -4052,7 +4011,9 @@
                     "type": "string"
                 },
                 "FEATURE_IDS": {
-                    "ref": "FeatureIDs"
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
                 },
                 "FIRST_SEEN_DT": {
                     "type": "timestamp"
@@ -4266,7 +4227,9 @@
                     "ref": "SearchRequest"
                 },
                 "SEARCH_STATISTICS": {
-                    "ref": "SearchStatistics"
+                    "elements": {
+                        "ref": "SearchStatistic"
+                    }
                 }
             }
         },
@@ -4292,7 +4255,9 @@
                     }
                 },
                 "WHY_RESULTS": {
-                    "ref": "WhyResults"
+                    "elements": {
+                        "ref": "WhyResult"
+                    }
                 }
             }
         },
@@ -4318,7 +4283,9 @@
                     }
                 },
                 "WHY_RESULTS": {
-                    "ref": "WhyResults"
+                    "elements": {
+                        "ref": "WhyResult"
+                    }
                 }
             }
         },
@@ -4474,7 +4441,9 @@
         "VirtualEntitySynopsis": {
             "properties": {
                 "MEMBER_RECORDS": {
-                    "ref": "MemberRecords"
+                    "elements": {
+                        "ref": "MemberRecord"
+                    }
                 },
                 "VIRTUAL_ENTITY_ID": {
                     "type": "string"
@@ -4511,10 +4480,14 @@
                     "type": "int32"
                 },
                 "FOCUS_RECORDS": {
-                    "ref": "FocusRecords"
+                    "elements": {
+                        "ref": "FocusRecord"
+                    }
                 },
                 "FOCUS_RECORDS_2": {
-                    "ref": "FocusRecords"
+                    "elements": {
+                        "ref": "FocusRecord"
+                    }
                 },
                 "INTERNAL_ID": {
                     "metadata": {
@@ -4533,11 +4506,6 @@
                 "MATCH_INFO": {
                     "ref": "MatchInfoForWhy"
                 }
-            }
-        },
-        "WhyResults": {
-            "elements": {
-                "ref": "WhyResult"
             }
         },
         "WhySearchResult": {

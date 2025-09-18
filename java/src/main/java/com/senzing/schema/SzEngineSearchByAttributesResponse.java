@@ -15,7 +15,7 @@ public class SzEngineSearchByAttributesResponse {
     private SearchRequest searchRequest;
 
     @JsonProperty("SEARCH_STATISTICS")
-    private SearchStatistics searchStatistics;
+    private List<SearchStatistic> searchStatistics;
 
     public SzEngineSearchByAttributesResponse() {
     }
@@ -51,14 +51,14 @@ public class SzEngineSearchByAttributesResponse {
     /**
      * Getter for searchStatistics.<p>
      */
-    public SearchStatistics getSearchStatistics() {
+    public List<SearchStatistic> getSearchStatistics() {
         return searchStatistics;
     }
 
     /**
      * Setter for searchStatistics.<p>
      */
-    public void setSearchStatistics(SearchStatistics searchStatistics) {
+    public void setSearchStatistics(List<SearchStatistic> searchStatistics) {
         this.searchStatistics = searchStatistics;
     }
 }

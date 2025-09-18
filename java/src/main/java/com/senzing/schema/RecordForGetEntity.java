@@ -38,7 +38,7 @@ public class RecordForGetEntity {
     private Map<String, List<FeatureForAttributeWithAttributes>> features;
 
     @JsonProperty("FEATURE_IDS")
-    private FeatureIds featureIds;
+    private List<FeatureId> featureIds;
 
     @JsonProperty("FIRST_SEEN_DT")
     private OffsetDateTime firstSeenDt;
@@ -218,14 +218,14 @@ public class RecordForGetEntity {
     /**
      * Getter for featureIds.<p>
      */
-    public FeatureIds getFeatureIds() {
+    public List<FeatureId> getFeatureIds() {
         return featureIds;
     }
 
     /**
      * Setter for featureIds.<p>
      */
-    public void setFeatureIds(FeatureIds featureIds) {
+    public void setFeatureIds(List<FeatureId> featureIds) {
         this.featureIds = featureIds;
     }
 

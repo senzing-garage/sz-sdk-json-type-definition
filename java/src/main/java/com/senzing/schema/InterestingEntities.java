@@ -12,7 +12,7 @@ public class InterestingEntities {
     private List<InterestingEntity> entities;
 
     @JsonProperty("NOTICES")
-    private List<InterestingEntitiesNotices> notices;
+    private List<Notice> notices;
 
     public InterestingEntities() {
     }
@@ -34,14 +34,14 @@ public class InterestingEntities {
     /**
      * Getter for notices.<p>
      */
-    public List<InterestingEntitiesNotices> getNotices() {
+    public List<Notice> getNotices() {
         return notices;
     }
 
     /**
      * Setter for notices.<p>
      */
-    public void setNotices(List<InterestingEntitiesNotices> notices) {
+    public void setNotices(List<Notice> notices) {
         this.notices = notices;
     }
 }

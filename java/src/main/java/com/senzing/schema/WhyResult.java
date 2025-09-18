@@ -4,6 +4,7 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 @JsonSerialize
 public class WhyResult {
@@ -14,10 +15,10 @@ public class WhyResult {
     private Integer entityId0;
 
     @JsonProperty("FOCUS_RECORDS")
-    private FocusRecords focusRecords;
+    private List<FocusRecord> focusRecords;
 
     @JsonProperty("FOCUS_RECORDS_2")
-    private FocusRecords focusRecords0;
+    private List<FocusRecord> focusRecords0;
 
     @JsonProperty("INTERNAL_ID")
     private Integer internalId;
@@ -66,28 +67,28 @@ public class WhyResult {
     /**
      * Getter for focusRecords.<p>
      */
-    public FocusRecords getFocusRecords() {
+    public List<FocusRecord> getFocusRecords() {
         return focusRecords;
     }
 
     /**
      * Setter for focusRecords.<p>
      */
-    public void setFocusRecords(FocusRecords focusRecords) {
+    public void setFocusRecords(List<FocusRecord> focusRecords) {
         this.focusRecords = focusRecords;
     }
 
     /**
      * Getter for focusRecords0.<p>
      */
-    public FocusRecords getFocusRecords0() {
+    public List<FocusRecord> getFocusRecords0() {
         return focusRecords0;
     }
 
     /**
      * Setter for focusRecords0.<p>
      */
-    public void setFocusRecords0(FocusRecords focusRecords0) {
+    public void setFocusRecords0(List<FocusRecord> focusRecords0) {
         this.focusRecords0 = focusRecords0;
     }
 

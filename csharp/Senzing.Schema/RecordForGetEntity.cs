@@ -43,7 +43,7 @@ namespace Senzing.Schema
         public Dictionary<string, List<FeatureForAttributeWithAttributes>> Features { get; set; }
 
         [JsonPropertyName("FEATURE_IDS")]
-        public FeatureIds FeatureIds { get; set; }
+        public IList<FeatureId> FeatureIds { get; set; }
 
         [JsonPropertyName("FIRST_SEEN_DT")]
         public DateTimeOffset FirstSeenDt { get; set; }

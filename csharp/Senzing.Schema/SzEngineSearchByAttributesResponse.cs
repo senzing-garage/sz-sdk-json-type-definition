@@ -15,6 +15,6 @@ namespace Senzing.Schema
         public SearchRequest SearchRequest { get; set; }
 
         [JsonPropertyName("SEARCH_STATISTICS")]
-        public SearchStatistics SearchStatistics { get; set; }
+        public IList<SearchStatistic> SearchStatistics { get; set; }
     }
 }

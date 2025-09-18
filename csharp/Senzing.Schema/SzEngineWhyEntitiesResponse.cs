@@ -12,6 +12,6 @@ namespace Senzing.Schema
         public IList<Entity> Entities { get; set; }
 
         [JsonPropertyName("WHY_RESULTS")]
-        public WhyResults WhyResults { get; set; }
+        public IList<WhyResult> WhyResults { get; set; }
     }
 }

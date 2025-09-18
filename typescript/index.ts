@@ -566,8 +566,6 @@ export interface FeatureId {
   USAGE_TYPE: string;
 }
 
-export type FeatureIds = FeatureId[];
-
 export interface FeatureScoreForAttribute {
   ADDITIONAL_SCORES: AdditionalScores;
   CANDIDATE_FEAT_DESC: string;
@@ -582,8 +580,6 @@ export interface FeatureScoreForAttribute {
 }
 
 export type FeatureScores = string;
-
-export type FeatureScoresForAttribute = FeatureScoreForAttribute[];
 
 export interface FinalState {
   NEED_REEVALUATION: number;
@@ -605,8 +601,6 @@ export interface FocusRecord {
    */
   RECORD_ID: string;
 }
-
-export type FocusRecords = FocusRecord[];
 
 export interface G2configSettings {
   METAPHONE_VERSION: number;
@@ -659,7 +653,7 @@ export interface GetDataSourceRegistry {
 
 export interface HowResults {
   FINAL_STATE: FinalState;
-  RESOLUTION_STEPS: ResolutionSteps;
+  RESOLUTION_STEPS: ResolutionStep[];
 }
 
 export interface InitResources {
@@ -669,14 +663,9 @@ export interface InitResources {
   totalMemory: string;
 }
 
-export interface InterestingEntitiesNotices {
-  CODE: string;
-  DESCRIPTION: string;
-}
-
 export interface InterestingEntities {
   ENTITIES: InterestingEntity[];
-  NOTICES: InterestingEntitiesNotices[];
+  NOTICES: Notice[];
 }
 
 export interface InterestingEntitySampleRecords {
@@ -714,9 +703,9 @@ export interface LockWaits {
   refreshLocks: RefreshLocks;
 }
 
-export type MapStringToFeatureScoresForAttribute = string;
-
 export type MapStringToInteger = string;
+
+export type MapStringToListFeatureScoreForAttribute = string;
 
 export type MapStringToListOfFeatureDescriptionValue = string;
 
@@ -800,22 +789,13 @@ export interface MemberRecord {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
-  RECORDS: Records;
+  RECORDS: Record[];
 }
-
-export type MemberRecords = MemberRecord[];
 
 export interface Notice {
   CODE: string;
   DESCRIPTION: string;
 }
-
-export interface Notice0 {
-  CODE: string;
-  DESCRIPTION: string;
-}
-
-export type Notices = Notice0[];
 
 export type Object = string;
 
@@ -876,7 +856,7 @@ export interface Record {
    */
   ERRULE_CODE: string;
   FEATURES: string;
-  FEATURE_IDS: FeatureIds;
+  FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
 
@@ -927,7 +907,7 @@ export interface RecordForGetEntity {
    */
   ERRULE_CODE: string;
   FEATURES: string;
-  FEATURE_IDS: FeatureIds;
+  FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
 
@@ -992,10 +972,6 @@ export interface RecordSummaryElement {
    */
   RECORD_COUNT: number;
 }
-
-export type Records = Record[];
-
-export type RecordsForGetEntity = RecordForGetEntity[];
 
 export interface RefreshLocks {
   count: number;
@@ -1085,7 +1061,7 @@ export interface RelatedEntity {
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  RECORDS: Records;
+  RECORDS: Record[];
 
   /**
    * Overview of the source systems the records came from comprising this
@@ -1128,8 +1104,6 @@ export interface ResolutionStep {
   VIRTUAL_ENTITY_2: VirtualEntitySynopsis;
 }
 
-export type ResolutionSteps = ResolutionStep[];
-
 export interface ResolvedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -1147,7 +1121,7 @@ export interface ResolvedEntity {
    */
   ERRULE_CODE: string;
   FEATURES: string;
-  FEATURE_IDS: FeatureIds;
+  FEATURE_IDS: FeatureId[];
 
   /**
    * Indicates if this is an ambiguous relationship.
@@ -1170,7 +1144,7 @@ export interface ResolvedEntity {
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  RECORDS: Records;
+  RECORDS: Record[];
 
   /**
    * Overview of the source systems the records came from comprising this
@@ -1207,7 +1181,7 @@ export interface ResolvedEntityForGetEntity {
    */
   ERRULE_CODE: string;
   FEATURES: string;
-  FEATURE_IDS: FeatureIds;
+  FEATURE_IDS: FeatureId[];
 
   /**
    * Indicates if this is an ambiguous relationship.
@@ -1230,7 +1204,7 @@ export interface ResolvedEntityForGetEntity {
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  RECORDS: RecordsForGetEntity;
+  RECORDS: RecordForGetEntity[];
 
   /**
    * Overview of the source systems the records came from comprising this
@@ -1303,8 +1277,6 @@ export interface SearchStatisticCandidateKeys {
 export interface SearchStatistic {
   CANDIDATE_KEYS: SearchStatisticCandidateKeys;
 }
-
-export type SearchStatistics = SearchStatistic[];
 
 export interface SenzingEntitySpecification {
   ACCOUNT_DOMAIN: string;
@@ -1586,7 +1558,7 @@ export interface SzEngineGetRecordResponse {
    */
   ERRULE_CODE: string;
   FEATURES: string;
-  FEATURE_IDS: FeatureIds;
+  FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
 
@@ -1694,7 +1666,7 @@ export interface SzEngineSearchByAttributesAttributes {
 export interface SzEngineSearchByAttributesResponse {
   RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
   SEARCH_REQUEST: SearchRequest;
-  SEARCH_STATISTICS: SearchStatistics;
+  SEARCH_STATISTICS: SearchStatistic[];
 }
 
 export interface SzEngineSearchByAttributesSearchProfile {
@@ -1707,7 +1679,7 @@ export interface SzEngineStreamExportJsonEntityReportResponse {
 
 export interface SzEngineWhyEntitiesResponse {
   ENTITIES: Entity[];
-  WHY_RESULTS: WhyResults;
+  WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineWhyRecordInEntityResponse {
@@ -1717,7 +1689,7 @@ export interface SzEngineWhyRecordInEntityResponse {
 
 export interface SzEngineWhyRecordsResponse {
   ENTITIES: Entity[];
-  WHY_RESULTS: WhyResults;
+  WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineWhySearchAttributes {
@@ -1795,7 +1767,7 @@ export interface VirtualEntity {
 }
 
 export interface VirtualEntitySynopsis {
-  MEMBER_RECORDS: MemberRecords;
+  MEMBER_RECORDS: MemberRecord[];
   VIRTUAL_ENTITY_ID: string;
 }
 
@@ -1811,8 +1783,8 @@ export interface WhyResult {
    */
   ENTITY_ID: number;
   ENTITY_ID_2: number;
-  FOCUS_RECORDS: FocusRecords;
-  FOCUS_RECORDS_2: FocusRecords;
+  FOCUS_RECORDS: FocusRecord[];
+  FOCUS_RECORDS_2: FocusRecord[];
 
   /**
    * Internal identifier for the record.
@@ -1825,8 +1797,6 @@ export interface WhyResult {
   INTERNAL_ID_2: number;
   MATCH_INFO: MatchInfoForWhy;
 }
-
-export type WhyResults = WhyResult[];
 
 export interface WhySearchResult {
   /**

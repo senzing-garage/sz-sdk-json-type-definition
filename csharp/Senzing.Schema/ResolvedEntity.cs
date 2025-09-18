@@ -32,7 +32,7 @@ namespace Senzing.Schema
         public Dictionary<string, List<FeatureForAttributeWithAttributes>> Features { get; set; }
 
         [JsonPropertyName("FEATURE_IDS")]
-        public FeatureIds FeatureIds { get; set; }
+        public IList<FeatureId> FeatureIds { get; set; }
 
         /// <summary>
         /// Indicates if this is an ambiguous relationship.
@@ -65,7 +65,7 @@ namespace Senzing.Schema
         public string MatchLevelCode { get; set; }
 
         [JsonPropertyName("RECORDS")]
-        public Records Records { get; set; }
+        public IList<Record> Records { get; set; }
 
         /// <summary>
         /// Overview of the source systems the records came from comprising this

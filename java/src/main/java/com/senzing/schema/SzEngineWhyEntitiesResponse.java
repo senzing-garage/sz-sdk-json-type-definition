@@ -12,7 +12,7 @@ public class SzEngineWhyEntitiesResponse {
     private List<Entity> entities;
 
     @JsonProperty("WHY_RESULTS")
-    private WhyResults whyResults;
+    private List<WhyResult> whyResults;
 
     public SzEngineWhyEntitiesResponse() {
     }
@@ -34,14 +34,14 @@ public class SzEngineWhyEntitiesResponse {
     /**
      * Getter for whyResults.<p>
      */
-    public WhyResults getWhyResults() {
+    public List<WhyResult> getWhyResults() {
         return whyResults;
     }
 
     /**
      * Setter for whyResults.<p>
      */
-    public void setWhyResults(WhyResults whyResults) {
+    public void setWhyResults(List<WhyResult> whyResults) {
         this.whyResults = whyResults;
     }
 }

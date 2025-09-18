@@ -59,7 +59,7 @@ namespace Senzing.Schema
         public string MatchLevelCode { get; set; }
 
         [JsonPropertyName("RECORDS")]
-        public Records Records { get; set; }
+        public IList<Record> Records { get; set; }
 
         /// <summary>
         /// Overview of the source systems the records came from comprising this

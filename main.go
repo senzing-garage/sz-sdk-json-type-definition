@@ -39,6 +39,12 @@ func main() {
 	// Create Senzing objects.
 	// ------------------------------------------------------------------------
 
+	testStruct1 := typedef.SzEngineGetEntityByEntityIDResponse{}
+	x := testStruct1.ResolvedEntity.FeatureIds[0].UsageType
+
+	testStruct2 := typedef.SzEngineWhyEntitiesResponse{}
+	y := testStruct2.WhyResults[0].MatchInfo.WhyKey
+
 	// ------------------------------------------------------------------------
 	// Demonstrate creating input parameter and parsing output result.
 	// ------------------------------------------------------------------------

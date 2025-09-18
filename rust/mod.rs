@@ -1075,8 +1075,6 @@ pub struct FeatureId {
     pub usageType: String,
 }
 
-pub type FeatureIds = Vec<FeatureId>;
-
 #[derive(Serialize, Deserialize)]
 pub struct FeatureScoreForAttribute {
     #[serde(rename = "ADDITIONAL_SCORES")]
@@ -1112,8 +1110,6 @@ pub struct FeatureScoreForAttribute {
 
 pub type FeatureScores = String;
 
-pub type FeatureScoresForAttribute = Vec<FeatureScoreForAttribute>;
-
 #[derive(Serialize, Deserialize)]
 pub struct FinalState {
     #[serde(rename = "NEED_REEVALUATION")]
@@ -1139,8 +1135,6 @@ pub struct FocusRecord {
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 }
-
-pub type FocusRecords = Vec<FocusRecord>;
 
 #[derive(Serialize, Deserialize)]
 pub struct G2configSettings {
@@ -1271,7 +1265,7 @@ pub struct HowResults {
     pub finalState: FinalState,
 
     #[serde(rename = "RESOLUTION_STEPS")]
-    pub resolutionSteps: ResolutionSteps,
+    pub resolutionSteps: Vec<ResolutionStep>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1290,21 +1284,12 @@ pub struct InitResources {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct InterestingEntitiesNotices {
-    #[serde(rename = "CODE")]
-    pub code: String,
-
-    #[serde(rename = "DESCRIPTION")]
-    pub description: String,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct InterestingEntities {
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<InterestingEntity>,
 
     #[serde(rename = "NOTICES")]
-    pub notices: Vec<InterestingEntitiesNotices>,
+    pub notices: Vec<Notice>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1356,9 +1341,9 @@ pub struct LockWaits {
     pub refreshLocks: RefreshLocks,
 }
 
-pub type MapStringToFeatureScoresForAttribute = String;
-
 pub type MapStringToInteger = String;
+
+pub type MapStringToListFeatureScoreForAttribute = String;
 
 pub type MapStringToListOfFeatureDescriptionValue = String;
 
@@ -1477,10 +1462,8 @@ pub struct MemberRecord {
     pub internalId: i32,
 
     #[serde(rename = "RECORDS")]
-    pub records: Records,
+    pub records: Vec<Record>,
 }
-
-pub type MemberRecords = Vec<MemberRecord>;
 
 #[derive(Serialize, Deserialize)]
 pub struct Notice {
@@ -1490,17 +1473,6 @@ pub struct Notice {
     #[serde(rename = "DESCRIPTION")]
     pub description: String,
 }
-
-#[derive(Serialize, Deserialize)]
-pub struct Notice0 {
-    #[serde(rename = "CODE")]
-    pub code: String,
-
-    #[serde(rename = "DESCRIPTION")]
-    pub description: String,
-}
-
-pub type Notices = Vec<Notice0>;
 
 pub type Object = String;
 
@@ -1623,7 +1595,7 @@ pub struct Record {
     pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: FeatureIds,
+    pub featureIds: Vec<FeatureId>,
 
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
@@ -1704,7 +1676,7 @@ pub struct RecordForGetEntity {
     pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: FeatureIds,
+    pub featureIds: Vec<FeatureId>,
 
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
@@ -1787,10 +1759,6 @@ pub struct RecordSummaryElement {
     #[serde(rename = "RECORD_COUNT")]
     pub recordCount: i32,
 }
-
-pub type Records = Vec<Record>;
-
-pub type RecordsForGetEntity = Vec<RecordForGetEntity>;
 
 #[derive(Serialize, Deserialize)]
 pub struct RefreshLocks {
@@ -1923,7 +1891,7 @@ pub struct RelatedEntity {
     pub matchLevelCode: String,
 
     #[serde(rename = "RECORDS")]
-    pub records: Records,
+    pub records: Vec<Record>,
 
     /// Overview of the source systems the records came from comprising this
     /// related entity.
@@ -2003,8 +1971,6 @@ pub struct ResolutionStep {
     pub virtualEntity0: VirtualEntitySynopsis,
 }
 
-pub type ResolutionSteps = Vec<ResolutionStep>;
-
 #[derive(Serialize, Deserialize)]
 pub struct ResolvedEntity {
     /// The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -2024,7 +1990,7 @@ pub struct ResolvedEntity {
     pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: FeatureIds,
+    pub featureIds: Vec<FeatureId>,
 
     /// Indicates if this is an ambiguous relationship.
     #[serde(rename = "IS_AMBIGUOUS")]
@@ -2049,7 +2015,7 @@ pub struct ResolvedEntity {
     pub matchLevelCode: String,
 
     #[serde(rename = "RECORDS")]
-    pub records: Records,
+    pub records: Vec<Record>,
 
     /// Overview of the source systems the records came from comprising this
     /// related entity.
@@ -2097,7 +2063,7 @@ pub struct ResolvedEntityForGetEntity {
     pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: FeatureIds,
+    pub featureIds: Vec<FeatureId>,
 
     /// Indicates if this is an ambiguous relationship.
     #[serde(rename = "IS_AMBIGUOUS")]
@@ -2122,7 +2088,7 @@ pub struct ResolvedEntityForGetEntity {
     pub matchLevelCode: String,
 
     #[serde(rename = "RECORDS")]
-    pub records: RecordsForGetEntity,
+    pub records: Vec<RecordForGetEntity>,
 
     /// Overview of the source systems the records came from comprising this
     /// related entity.
@@ -2260,8 +2226,6 @@ pub struct SearchStatistic {
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: SearchStatisticCandidateKeys,
 }
-
-pub type SearchStatistics = Vec<SearchStatistic>;
 
 #[derive(Serialize, Deserialize)]
 pub struct SenzingEntitySpecification {
@@ -2835,7 +2799,7 @@ pub struct SzEngineGetRecordResponse {
     pub features: String,
 
     #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: FeatureIds,
+    pub featureIds: Vec<FeatureId>,
 
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
@@ -2981,7 +2945,7 @@ pub struct SzEngineSearchByAttributesResponse {
     pub searchRequest: SearchRequest,
 
     #[serde(rename = "SEARCH_STATISTICS")]
-    pub searchStatistics: SearchStatistics,
+    pub searchStatistics: Vec<SearchStatistic>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3002,7 +2966,7 @@ pub struct SzEngineWhyEntitiesResponse {
     pub entities: Vec<Entity>,
 
     #[serde(rename = "WHY_RESULTS")]
-    pub whyResults: WhyResults,
+    pub whyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3020,7 +2984,7 @@ pub struct SzEngineWhyRecordsResponse {
     pub entities: Vec<Entity>,
 
     #[serde(rename = "WHY_RESULTS")]
-    pub whyResults: WhyResults,
+    pub whyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3188,7 +3152,7 @@ pub struct VirtualEntity {
 #[derive(Serialize, Deserialize)]
 pub struct VirtualEntitySynopsis {
     #[serde(rename = "MEMBER_RECORDS")]
-    pub memberRecords: MemberRecords,
+    pub memberRecords: Vec<MemberRecord>,
 
     #[serde(rename = "VIRTUAL_ENTITY_ID")]
     pub virtualEntityId: String,
@@ -3214,10 +3178,10 @@ pub struct WhyResult {
     pub entityId0: i32,
 
     #[serde(rename = "FOCUS_RECORDS")]
-    pub focusRecords: FocusRecords,
+    pub focusRecords: Vec<FocusRecord>,
 
     #[serde(rename = "FOCUS_RECORDS_2")]
-    pub focusRecords0: FocusRecords,
+    pub focusRecords0: Vec<FocusRecord>,
 
     /// Internal identifier for the record.
     #[serde(rename = "INTERNAL_ID")]
@@ -3230,8 +3194,6 @@ pub struct WhyResult {
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfoForWhy,
 }
-
-pub type WhyResults = Vec<WhyResult>;
 
 #[derive(Serialize, Deserialize)]
 pub struct WhySearchResult {

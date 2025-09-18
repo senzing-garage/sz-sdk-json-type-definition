@@ -207,9 +207,11 @@ def handle_python_type(python_type):
     result = {}
 
     match python_type:
-        case "Dict[str, FeatureScoresForAttribute]":
+        case "Dict[str, List[FeatureScoreForAttribute]]":
             return {
-                VARIABLE_JSON_KEY: recurse(DEFINITIONS.get("FeatureScoresForAttribute"))
+                VARIABLE_JSON_KEY: [
+                    recurse(DEFINITIONS.get("FeatureScoreForAttribute"))
+                ]
             }
         case "Dict[str, List[FeatureDescriptionValue]]":
             return {

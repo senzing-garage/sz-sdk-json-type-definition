@@ -730,8 +730,6 @@ type FeatureID struct {
 	UsageType string `json:"USAGE_TYPE"`
 }
 
-type FeatureIds = []FeatureID
-
 type FeatureScoreForAttribute struct {
 	AdditionalScores AdditionalScores `json:"ADDITIONAL_SCORES"`
 
@@ -754,9 +752,7 @@ type FeatureScoreForAttribute struct {
 	ScoreBucket string `json:"SCORE_BUCKET"`
 }
 
-type FeatureScores = map[string]FeatureScoresForAttribute
-
-type FeatureScoresForAttribute = []FeatureScoreForAttribute
+type FeatureScores = map[string][]FeatureScoreForAttribute
 
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
@@ -775,8 +771,6 @@ type FocusRecord struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
-
-type FocusRecords = []FocusRecord
 
 type G2configSettings struct {
 	MetaphoneVersion int32 `json:"METAPHONE_VERSION"`
@@ -863,7 +857,7 @@ type GetDataSourceRegistry struct {
 type HowResults struct {
 	FinalState FinalState `json:"FINAL_STATE"`
 
-	ResolutionSteps ResolutionSteps `json:"RESOLUTION_STEPS"`
+	ResolutionSteps []ResolutionStep `json:"RESOLUTION_STEPS"`
 }
 
 type InitResources struct {
@@ -876,16 +870,10 @@ type InitResources struct {
 	TotalMemory string `json:"totalMemory"`
 }
 
-type InterestingEntitiesNotices struct {
-	Code string `json:"CODE"`
-
-	Description string `json:"DESCRIPTION"`
-}
-
 type InterestingEntities struct {
 	Entities []InterestingEntity `json:"ENTITIES"`
 
-	Notices []InterestingEntitiesNotices `json:"NOTICES"`
+	Notices []Notice `json:"NOTICES"`
 }
 
 type InterestingEntitySampleRecords struct {
@@ -922,9 +910,9 @@ type LockWaits struct {
 	RefreshLocks RefreshLocks `json:"refreshLocks"`
 }
 
-type MapStringToFeatureScoresForAttribute = map[string]FeatureScoresForAttribute
-
 type MapStringToInteger = map[string]int64
+
+type MapStringToListFeatureScoreForAttribute = map[string][]FeatureScoreForAttribute
 
 type MapStringToListOfFeatureDescriptionValue = map[string][]FeatureDescriptionValue
 
@@ -1010,24 +998,14 @@ type MemberRecord struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	Records Records `json:"RECORDS"`
+	Records []Record `json:"RECORDS"`
 }
-
-type MemberRecords = []MemberRecord
 
 type Notice struct {
 	Code string `json:"CODE"`
 
 	Description string `json:"DESCRIPTION"`
 }
-
-type Notice0 struct {
-	Code string `json:"CODE"`
-
-	Description string `json:"DESCRIPTION"`
-}
-
-type Notices = []Notice0
 
 type Object = any
 
@@ -1110,7 +1088,7 @@ type Record struct {
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
-	FeatureIds FeatureIds `json:"FEATURE_IDS"`
+	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
@@ -1166,7 +1144,7 @@ type RecordForGetEntity struct {
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
-	FeatureIds FeatureIds `json:"FEATURE_IDS"`
+	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
@@ -1225,10 +1203,6 @@ type RecordSummaryElement struct {
 	// The number of records for the entity with the same data source code.
 	RecordCount int64 `json:"RECORD_COUNT"`
 }
-
-type Records = []Record
-
-type RecordsForGetEntity = []RecordForGetEntity
 
 type RefreshLocks struct {
 	Count int32 `json:"count"`
@@ -1320,7 +1294,7 @@ type RelatedEntity struct {
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
-	Records Records `json:"RECORDS"`
+	Records []Record `json:"RECORDS"`
 
 	// Overview of the source systems the records came from comprising this related
 	// entity.
@@ -1375,8 +1349,6 @@ type ResolutionStep struct {
 	VirtualEntity0 VirtualEntitySynopsis `json:"VIRTUAL_ENTITY_2"`
 }
 
-type ResolutionSteps = []ResolutionStep
-
 type ResolvedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -1390,7 +1362,7 @@ type ResolvedEntity struct {
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
-	FeatureIds FeatureIds `json:"FEATURE_IDS"`
+	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
@@ -1408,7 +1380,7 @@ type ResolvedEntity struct {
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
-	Records Records `json:"RECORDS"`
+	Records []Record `json:"RECORDS"`
 
 	// Overview of the source systems the records came from comprising this related
 	// entity.
@@ -1442,7 +1414,7 @@ type ResolvedEntityForGetEntity struct {
 
 	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
 
-	FeatureIds FeatureIds `json:"FEATURE_IDS"`
+	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
@@ -1460,7 +1432,7 @@ type ResolvedEntityForGetEntity struct {
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
-	Records RecordsForGetEntity `json:"RECORDS"`
+	Records []RecordForGetEntity `json:"RECORDS"`
 
 	// Overview of the source systems the records came from comprising this related
 	// entity.
@@ -1554,8 +1526,6 @@ type SearchStatisticCandidateKeys struct {
 type SearchStatistic struct {
 	CandidateKeys SearchStatisticCandidateKeys `json:"CANDIDATE_KEYS"`
 }
-
-type SearchStatistics = []SearchStatistic
 
 type SenzingEntitySpecification struct {
 	AccountDomain string `json:"ACCOUNT_DOMAIN"`
@@ -1940,7 +1910,7 @@ type SzEngineGetRecordResponse struct {
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
-	FeatureIds FeatureIds `json:"FEATURE_IDS"`
+	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
@@ -2041,7 +2011,7 @@ type SzEngineSearchByAttributesResponse struct {
 
 	SearchRequest SearchRequest `json:"SEARCH_REQUEST"`
 
-	SearchStatistics SearchStatistics `json:"SEARCH_STATISTICS"`
+	SearchStatistics []SearchStatistic `json:"SEARCH_STATISTICS"`
 }
 
 type SzEngineSearchByAttributesSearchProfile struct {
@@ -2055,7 +2025,7 @@ type SzEngineStreamExportJSONEntityReportResponse struct {
 type SzEngineWhyEntitiesResponse struct {
 	Entities []Entity `json:"ENTITIES"`
 
-	WhyResults WhyResults `json:"WHY_RESULTS"`
+	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineWhyRecordInEntityResponse struct {
@@ -2067,7 +2037,7 @@ type SzEngineWhyRecordInEntityResponse struct {
 type SzEngineWhyRecordsResponse struct {
 	Entities []Entity `json:"ENTITIES"`
 
-	WhyResults WhyResults `json:"WHY_RESULTS"`
+	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineWhySearchAttributes struct {
@@ -2179,7 +2149,7 @@ type VirtualEntity struct {
 }
 
 type VirtualEntitySynopsis struct {
-	MemberRecords MemberRecords `json:"MEMBER_RECORDS"`
+	MemberRecords []MemberRecord `json:"MEMBER_RECORDS"`
 
 	VirtualEntityID string `json:"VIRTUAL_ENTITY_ID"`
 }
@@ -2197,9 +2167,9 @@ type WhyResult struct {
 
 	EntityID0 int64 `json:"ENTITY_ID_2"`
 
-	FocusRecords FocusRecords `json:"FOCUS_RECORDS"`
+	FocusRecords []FocusRecord `json:"FOCUS_RECORDS"`
 
-	FocusRecords0 FocusRecords `json:"FOCUS_RECORDS_2"`
+	FocusRecords0 []FocusRecord `json:"FOCUS_RECORDS_2"`
 
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
@@ -2209,8 +2179,6 @@ type WhyResult struct {
 
 	MatchInfo MatchInfoForWhy `json:"MATCH_INFO"`
 }
-
-type WhyResults = []WhyResult
 
 type WhySearchResult struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.

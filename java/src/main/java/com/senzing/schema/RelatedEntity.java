@@ -37,7 +37,7 @@ public class RelatedEntity {
     private String matchLevelCode;
 
     @JsonProperty("RECORDS")
-    private Records records;
+    private List<Record> records;
 
     @JsonProperty("RECORD_SUMMARY")
     private List<RecordSummaryElement> recordSummary;
@@ -190,14 +190,14 @@ public class RelatedEntity {
     /**
      * Getter for records.<p>
      */
-    public Records getRecords() {
+    public List<Record> getRecords() {
         return records;
     }
 
     /**
      * Setter for records.<p>
      */
-    public void setRecords(Records records) {
+    public void setRecords(List<Record> records) {
         this.records = records;
     }
 
