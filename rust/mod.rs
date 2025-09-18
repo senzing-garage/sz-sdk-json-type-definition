@@ -974,7 +974,7 @@ pub struct Feature {
 #[derive(Serialize, Deserialize)]
 pub struct FeatureDescriptionValue {
     #[serde(rename = "ATTRIBUTES")]
-    pub attributes: String,
+    pub attributes: HashMap<String, String>,
 
     #[serde(rename = "CANDIDATE_CAP_REACHED")]
     pub candidateCapReached: String,
@@ -1342,8 +1342,6 @@ pub struct LockWaits {
     pub refreshLocks: RefreshLocks,
 }
 
-pub type MapStringToInteger = String;
-
 pub type MapStringToListFeatureScoreForAttribute = String;
 
 pub type MapStringToListOfFeatureDescriptionValue = String;
@@ -1355,8 +1353,6 @@ pub type MapStringToListOfFeatureForGetEntity = String;
 pub type MapStringToListOfMatchInfoForAttribute = String;
 
 pub type MapStringToObject = String;
-
-pub type MapStringToString = String;
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoDisclosedRelations {

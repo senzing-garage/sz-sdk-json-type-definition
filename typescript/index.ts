@@ -480,7 +480,7 @@ export interface Feature {
 }
 
 export interface FeatureDescriptionValue {
-  ATTRIBUTES: string;
+  ATTRIBUTES: { [key: string]: string };
   CANDIDATE_CAP_REACHED: string;
   ENTITY_COUNT: number;
 
@@ -703,8 +703,6 @@ export interface LockWaits {
   refreshLocks: RefreshLocks;
 }
 
-export type MapStringToInteger = string;
-
 export type MapStringToListFeatureScoreForAttribute = string;
 
 export type MapStringToListOfFeatureDescriptionValue = string;
@@ -716,8 +714,6 @@ export type MapStringToListOfFeatureForGetEntity = string;
 export type MapStringToListOfMatchInfoForAttribute = string;
 
 export type MapStringToObject = string;
-
-export type MapStringToString = string;
 
 export interface MatchInfoDisclosedRelations {
   REL_ANCHOR: RelAnchor[];

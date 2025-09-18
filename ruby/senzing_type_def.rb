@@ -1521,7 +1521,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = FeatureDescriptionValue.new
-      out.attributes = SenzingTypeDef::from_json_data(String, data["ATTRIBUTES"])
+      out.attributes = SenzingTypeDef::from_json_data(Hash[String, String], data["ATTRIBUTES"])
       out.candidate_cap_reached = SenzingTypeDef::from_json_data(String, data["CANDIDATE_CAP_REACHED"])
       out.entity_count = SenzingTypeDef::from_json_data(Integer, data["ENTITY_COUNT"])
       out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
@@ -2102,20 +2102,6 @@ module SenzingTypeDef
     end
   end
 
-  class MapStringToInteger
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MapStringToInteger.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class MapStringToListFeatureScoreForAttribute
     attr_accessor :value
 
@@ -2191,20 +2177,6 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = MapStringToObject.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
-  class MapStringToString
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MapStringToString.new
       out.value = SenzingTypeDef.from_json_data(String, data)
       out
     end

@@ -65,8 +65,7 @@
             "properties": {
                 "candidateBuilders": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -74,8 +73,7 @@
                 },
                 "suppressedCandidateBuilders": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -1337,8 +1335,7 @@
                 },
                 "created": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -1372,13 +1369,9 @@
         "FeatureDescriptionValue": {
             "properties": {
                 "ATTRIBUTES": {
-                    "metadata": {
-                        "goType": "map[string]string",
-                        "javaJacksonType": "Map<String, String>",
-                        "pythonType": "Dict[str, str]",
-                        "reference": "MapStringToString"
-                    },
-                    "type": "string"
+                    "values": {
+                        "type": "string"
+                    }
                 },
                 "CANDIDATE_CAP_REACHED": {
                     "type": "string"
@@ -1928,15 +1921,6 @@
             },
             "type": "string"
         },
-        "MapStringToInteger": {
-            "metadata": {
-                "goType": "map[string]int64",
-                "javaJacksonType": "Map<String, Integer>",
-                "pythonType": "Dict[str, int]",
-                "reference": "MapStringToInteger"
-            },
-            "type": "string"
-        },
         "MapStringToListOfFeatureDescriptionValue": {
             "metadata": {
                 "csharpSystemTextType": "Dictionary<string, List<FeatureDescriptionValue>>",
@@ -1973,15 +1957,6 @@
                 "javaJacksonType": "Map<String, List<MatchInfoForAttribute>>",
                 "pythonType": "Dict[str, List[MatchInfoForAttribute]]",
                 "reference": "MapStringToListOfMatchInfoForAttribute"
-            },
-            "type": "string"
-        },
-        "MapStringToString": {
-            "metadata": {
-                "goType": "map[string]string",
-                "javaJacksonType": "Map<String, String>",
-                "pythonType": "Dict[str, str]",
-                "reference": "MapStringToString"
             },
             "type": "string"
         },
@@ -2803,8 +2778,7 @@
                 },
                 "newFeatureFTypes": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -3154,8 +3128,7 @@
             "properties": {
                 "cacheHit": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -3163,8 +3136,7 @@
                 },
                 "cacheMiss": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -3172,8 +3144,7 @@
                 },
                 "scoredPairs": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"
@@ -4559,8 +4530,7 @@
                 },
                 "redoTriggers": {
                     "metadata": {
-                        "goType": "map[string]int64",
-                        "reference": "MapStringToInteger"
+                        "goType": "map[string]int64"
                     },
                     "values": {
                         "type": "int32"

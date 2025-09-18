@@ -910,8 +910,6 @@ type LockWaits struct {
 	RefreshLocks RefreshLocks `json:"refreshLocks"`
 }
 
-type MapStringToInteger = map[string]int64
-
 type MapStringToListFeatureScoreForAttribute = map[string][]FeatureScoreForAttribute
 
 type MapStringToListOfFeatureDescriptionValue = map[string][]FeatureDescriptionValue
@@ -923,8 +921,6 @@ type MapStringToListOfFeatureForGetEntity = map[string][]FeatureForGetEntity
 type MapStringToListOfMatchInfoForAttribute = map[string][]MatchInfoForAttribute
 
 type MapStringToObject = map[string]any
-
-type MapStringToString = map[string]string
 
 type MatchInfoDisclosedRelations struct {
 	RelAnchor []RelAnchor `json:"REL_ANCHOR"`

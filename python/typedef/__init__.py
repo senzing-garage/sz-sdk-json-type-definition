@@ -2097,17 +2097,6 @@ class LockWaits:
         return data
 
 @dataclass
-class MapStringToInteger:
-    value: 'Dict[str, int]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToInteger':
-        return cls(_from_json_data(Dict[str, int], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class MapStringToListFeatureScoreForAttribute:
     value: 'Dict[str, List[FeatureScoreForAttribute]]'
 
@@ -2169,17 +2158,6 @@ class MapStringToObject:
     @classmethod
     def from_json_data(cls, data: Any) -> 'MapStringToObject':
         return cls(_from_json_data(Dict[str, object], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class MapStringToString:
-    value: 'Dict[str, str]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToString':
-        return cls(_from_json_data(Dict[str, str], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
