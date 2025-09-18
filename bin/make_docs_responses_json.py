@@ -8,6 +8,7 @@ import json
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
+VARIABLE_JSON_KEY = "user_defined_json_key"
 GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-json"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
@@ -91,51 +92,43 @@ def handle_python_type(python_type):
     match python_type:
         case "Dict[str, List[FeatureScoreForAttribute]]":
             return {
-                "user_defined_json_key": [
+                VARIABLE_JSON_KEY: [
                     recurse(DEFINITIONS.get("FeatureScoreForAttribute"))
                 ]
             }
         case "Dict[str, List[FeatureDescriptionValue]]":
             return {
-                "user_defined_json_key": [
-                    recurse(DEFINITIONS.get("FeatureDescriptionValue"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureDescriptionValue"))]
             }
         case "Dict[str, List[FeatureForAttribute]]":
             return {
-                "user_defined_json_key": [
-                    recurse(DEFINITIONS.get("FeatureForAttribute"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttribute"))]
             }
         case "Dict[str, List[FeatureForAttributeWithAttributes]]":
             return {
-                "user_defined_json_key": [
+                VARIABLE_JSON_KEY: [
                     recurse(DEFINITIONS.get("FeatureForAttributeWithAttributes"))
                 ]
             }
         case "Dict[str, List[FeatureForGetEntity]]":
             return {
-                "user_defined_json_key": [
-                    recurse(DEFINITIONS.get("FeatureForGetEntity"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForGetEntity"))]
             }
         case "Dict[str, List[MatchInfoForAttribute]]":
             return {
-                "user_defined_json_key": [
-                    recurse(DEFINITIONS.get("MatchInfoForAttribute"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("MatchInfoForAttribute"))]
             }
         case "Dict[str, int]":
             return {
-                "user_defined_json_key": "int32",
+                VARIABLE_JSON_KEY: "int32",
             }
         case "Dict[str, object]":
             return {
-                "user_defined_json_key": "object",
+                VARIABLE_JSON_KEY: "object",
             }
         case "Dict[str, str]":
             return {
-                "user_defined_json_key": "string",
+                VARIABLE_JSON_KEY: "string",
             }
         case "object":
             return "object"
@@ -156,8 +149,14 @@ def handle_type(json_value):
 
 
 def handle_values(json_value):
-    type = json_value.get("values", {}).get("type")
-    result = {"user_defined_json_key": type}
+    type = json_value.get("values", {}).get("ref")
+    if not type:
+        type = json_value.get("values", {}).get("type")
+
+    if type in ["int32", "string"]:
+        result = {VARIABLE_JSON_KEY: type}
+    else:
+        result = {VARIABLE_JSON_KEY: recurse(DEFINITIONS.get(type))}
     return result
 
 

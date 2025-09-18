@@ -229,16 +229,19 @@ def handle_json_type(level, key, value) -> str:
 
 
 def handle_json_values(level, key, value) -> str:
-    data_type = value.get("values", {}).get("type")
+    type = value.get("values", {}).get("ref")
+    if not type:
+        type = value.get("values", {}).get("type")
+
     description = value.get("metadata", {}).get("description")
 
     result = make_json_key(key, description, "{")
-    if data_type in ["int32", "string"]:
-        result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{data_type}"')
+    if type in ["int32", "string"]:
+        result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{type}"')
     else:
-        result += recurse_json(
-            level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(data_type, {})
-        )[:-1]
+        result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(type, {}))[
+            :-1
+        ]
     result += html_println(level, "},")
 
     return html_println(level, result)

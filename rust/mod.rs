@@ -1352,8 +1352,6 @@ pub type MapStringToListOfFeatureForGetEntity = String;
 
 pub type MapStringToListOfMatchInfoForAttribute = String;
 
-pub type MapStringToObject = String;
-
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoDisclosedRelations {
     #[serde(rename = "REL_ANCHOR")]
@@ -1605,7 +1603,7 @@ pub struct Record {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: String,
+    pub jsonData: HashMap<String, Object>,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
@@ -1638,7 +1636,7 @@ pub struct Record {
     pub relationshipData: Vec<String>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: String,
+    pub unmappedData: HashMap<String, Object>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1686,7 +1684,7 @@ pub struct RecordForGetEntity {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: String,
+    pub jsonData: HashMap<String, Object>,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
@@ -1719,7 +1717,7 @@ pub struct RecordForGetEntity {
     pub relationshipData: Vec<String>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: String,
+    pub unmappedData: HashMap<String, Object>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2758,10 +2756,10 @@ pub struct SzEngineGetRecordPreviewResponse {
     pub featureIds: Vec<FeatureId>,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: String,
+    pub jsonData: HashMap<String, Object>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: String,
+    pub unmappedData: HashMap<String, Object>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2809,7 +2807,7 @@ pub struct SzEngineGetRecordResponse {
     pub internalId: i32,
 
     #[serde(rename = "JSON_DATA")]
-    pub jsonData: String,
+    pub jsonData: HashMap<String, Object>,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
@@ -2842,7 +2840,7 @@ pub struct SzEngineGetRecordResponse {
     pub relationshipData: Vec<String>,
 
     #[serde(rename = "UNMAPPED_DATA")]
-    pub unmappedData: String,
+    pub unmappedData: HashMap<String, Object>,
 }
 
 #[derive(Serialize, Deserialize)]

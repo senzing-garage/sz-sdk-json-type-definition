@@ -713,8 +713,6 @@ export type MapStringToListOfFeatureForGetEntity = string;
 
 export type MapStringToListOfMatchInfoForAttribute = string;
 
-export type MapStringToObject = string;
-
 export interface MatchInfoDisclosedRelations {
   REL_ANCHOR: RelAnchor[];
   REL_LINK: RelLink[];
@@ -860,7 +858,7 @@ export interface Record {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
-  JSON_DATA: string;
+  JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
 
   /**
@@ -882,7 +880,7 @@ export interface Record {
    */
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
-  UNMAPPED_DATA: string;
+  UNMAPPED_DATA: { [key: string]: Object };
 }
 
 export interface RecordForGetEntity {
@@ -911,7 +909,7 @@ export interface RecordForGetEntity {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
-  JSON_DATA: string;
+  JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
 
   /**
@@ -933,7 +931,7 @@ export interface RecordForGetEntity {
    */
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
-  UNMAPPED_DATA: string;
+  UNMAPPED_DATA: { [key: string]: Object };
 }
 
 export interface RecordKey {
@@ -1532,8 +1530,8 @@ export interface SzEngineGetEntityByRecordIdResponse {
 export interface SzEngineGetRecordPreviewResponse {
   FEATURES: string;
   FEATURE_IDS: FeatureId[];
-  JSON_DATA: string;
-  UNMAPPED_DATA: string;
+  JSON_DATA: { [key: string]: Object };
+  UNMAPPED_DATA: { [key: string]: Object };
 }
 
 export interface SzEngineGetRecordResponse {
@@ -1562,7 +1560,7 @@ export interface SzEngineGetRecordResponse {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
-  JSON_DATA: string;
+  JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
 
   /**
@@ -1584,7 +1582,7 @@ export interface SzEngineGetRecordResponse {
    */
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
-  UNMAPPED_DATA: string;
+  UNMAPPED_DATA: { [key: string]: Object };
 }
 
 export interface SzEngineGetRedoRecordResponse {

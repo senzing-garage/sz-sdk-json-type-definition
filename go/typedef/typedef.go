@@ -920,8 +920,6 @@ type MapStringToListOfFeatureForGetEntity = map[string][]FeatureForGetEntity
 
 type MapStringToListOfMatchInfoForAttribute = map[string][]MatchInfoForAttribute
 
-type MapStringToObject = map[string]any
-
 type MatchInfoDisclosedRelations struct {
 	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
 
@@ -1093,7 +1091,7 @@ type Record struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData map[string]any `json:"JSON_DATA"`
+	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
@@ -1116,7 +1114,7 @@ type Record struct {
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 
-	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 }
 
 type RecordForGetEntity struct {
@@ -1149,7 +1147,7 @@ type RecordForGetEntity struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData map[string]any `json:"JSON_DATA"`
+	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
@@ -1172,7 +1170,7 @@ type RecordForGetEntity struct {
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 
-	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 }
 
 type RecordKey struct {
@@ -1880,9 +1878,9 @@ type SzEngineGetRecordPreviewResponse struct {
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
-	JSONData map[string]any `json:"JSON_DATA"`
+	JSONData map[string]Object `json:"JSON_DATA"`
 
-	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 }
 
 type SzEngineGetRecordResponse struct {
@@ -1915,7 +1913,7 @@ type SzEngineGetRecordResponse struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	JSONData map[string]any `json:"JSON_DATA"`
+	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
@@ -1938,7 +1936,7 @@ type SzEngineGetRecordResponse struct {
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
 
-	UnmappedData map[string]any `json:"UNMAPPED_DATA"`
+	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 }
 
 type SzEngineGetRedoRecordResponse struct {

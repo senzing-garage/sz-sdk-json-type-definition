@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 @JsonSerialize
 public class SzEngineGetRecordResponse {
@@ -50,7 +51,7 @@ public class SzEngineGetRecordResponse {
     private Integer internalId;
 
     @JsonProperty("JSON_DATA")
-    private Map<String, Map<String, Object>> jsonData;
+    private Map<String, Object> jsonData;
 
     @JsonProperty("LAST_SEEN_DT")
     private OffsetDateTime lastSeenDt;
@@ -80,7 +81,7 @@ public class SzEngineGetRecordResponse {
     private List<String> relationshipData;
 
     @JsonProperty("UNMAPPED_DATA")
-    private Map<String, Map<String, Object>> unmappedData;
+    private Map<String, Object> unmappedData;
 
     public SzEngineGetRecordResponse() {
     }
@@ -276,14 +277,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for jsonData.<p>
      */
-    public Map<String, Map<String, Object>> getJsonData() {
+    public Map<String, Object> getJsonData() {
         return jsonData;
     }
 
     /**
      * Setter for jsonData.<p>
      */
-    public void setJsonData(Map<String, Map<String, Object>> jsonData) {
+    public void setJsonData(Map<String, Object> jsonData) {
         this.jsonData = jsonData;
     }
 
@@ -422,14 +423,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for unmappedData.<p>
      */
-    public Map<String, Map<String, Object>> getUnmappedData() {
+    public Map<String, Object> getUnmappedData() {
         return unmappedData;
     }
 
     /**
      * Setter for unmappedData.<p>
      */
-    public void setUnmappedData(Map<String, Map<String, Object>> unmappedData) {
+    public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;
     }
 }

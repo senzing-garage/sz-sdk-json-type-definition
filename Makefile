@@ -73,14 +73,9 @@ FIX_FILES_MAP := \
 	MatchInfoCandidateKeys.java \
 	MatchInfoForWhy.java \
 	MatchInfoForWhy.java \
-	Record.java \
-	RecordForGetEntity.java \
 	ResolvedEntity.java \
 	ResolvedEntityForGetEntity.java \
-	SearchRequest.java \
-	SearchRequest.java \
-	SzEngineGetRecordPreviewResponse.java \
-	SzEngineGetRecordResponse.java
+	SearchRequest.java
 
 # Recursive assignment ('=')
 

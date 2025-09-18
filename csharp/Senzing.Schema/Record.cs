@@ -58,7 +58,7 @@ namespace Senzing.Schema
         public int InternalId { get; set; }
 
         [JsonPropertyName("JSON_DATA")]
-        public string JsonData { get; set; }
+        public IDictionary<string, Object_> JsonData { get; set; }
 
         [JsonPropertyName("LAST_SEEN_DT")]
         public DateTimeOffset LastSeenDt { get; set; }
@@ -97,6 +97,6 @@ namespace Senzing.Schema
         public IList<string> RelationshipData { get; set; }
 
         [JsonPropertyName("UNMAPPED_DATA")]
-        public string UnmappedData { get; set; }
+        public IDictionary<string, Object_> UnmappedData { get; set; }
     }
 }

@@ -45,6 +45,9 @@ func main() {
 	testStruct2 := typedef.SzEngineWhyEntitiesResponse{}
 	y := testStruct2.WhyResults[0].MatchInfo.WhyKey
 
+	testStruct3 := typedef.SzEngineGetRecordResponse{}
+	z := testStruct3.JSONData["bob"]
+
 	// ------------------------------------------------------------------------
 	// Demonstrate creating input parameter and parsing output result.
 	// ------------------------------------------------------------------------

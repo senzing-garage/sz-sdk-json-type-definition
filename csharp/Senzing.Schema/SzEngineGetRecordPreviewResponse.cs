@@ -15,9 +15,9 @@ namespace Senzing.Schema
         public IList<FeatureId> FeatureIds { get; set; }
 
         [JsonPropertyName("JSON_DATA")]
-        public string JsonData { get; set; }
+        public IDictionary<string, Object_> JsonData { get; set; }
 
         [JsonPropertyName("UNMAPPED_DATA")]
-        public string UnmappedData { get; set; }
+        public IDictionary<string, Object_> UnmappedData { get; set; }
     }
 }

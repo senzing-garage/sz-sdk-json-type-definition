@@ -2172,20 +2172,6 @@ module SenzingTypeDef
     end
   end
 
-  class MapStringToObject
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MapStringToObject.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
-    end
-  end
-
   class MatchInfoDisclosedRelations
     attr_accessor :rel_anchor
     attr_accessor :rel_link
@@ -2594,7 +2580,7 @@ module SenzingTypeDef
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -2604,7 +2590,7 @@ module SenzingTypeDef
       out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["UNMAPPED_DATA"])
       out
     end
 
@@ -2691,7 +2677,7 @@ module SenzingTypeDef
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -2701,7 +2687,7 @@ module SenzingTypeDef
       out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["UNMAPPED_DATA"])
       out
     end
 
@@ -4362,8 +4348,8 @@ module SenzingTypeDef
       out = SzEngineGetRecordPreviewResponse.new
       out.features = SenzingTypeDef::from_json_data(String, data["FEATURES"])
       out.feature_ids = SenzingTypeDef::from_json_data(Array[FeatureID], data["FEATURE_IDS"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["JSON_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["UNMAPPED_DATA"])
       out
     end
 
@@ -4430,7 +4416,7 @@ module SenzingTypeDef
       out.first_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["FIRST_SEEN_DT"])
       out.identifier_data = SenzingTypeDef::from_json_data(Array[String], data["IDENTIFIER_DATA"])
       out.internal_id = SenzingTypeDef::from_json_data(Integer, data["INTERNAL_ID"])
-      out.json_data = SenzingTypeDef::from_json_data(String, data["JSON_DATA"])
+      out.json_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["JSON_DATA"])
       out.last_seen_dt = SenzingTypeDef::from_json_data(DateTime, data["LAST_SEEN_DT"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
       out.match_level = SenzingTypeDef::from_json_data(Integer, data["MATCH_LEVEL"])
@@ -4440,7 +4426,7 @@ module SenzingTypeDef
       out.phone_data = SenzingTypeDef::from_json_data(Array[String], data["PHONE_DATA"])
       out.record_id = SenzingTypeDef::from_json_data(String, data["RECORD_ID"])
       out.relationship_data = SenzingTypeDef::from_json_data(Array[String], data["RELATIONSHIP_DATA"])
-      out.unmapped_data = SenzingTypeDef::from_json_data(String, data["UNMAPPED_DATA"])
+      out.unmapped_data = SenzingTypeDef::from_json_data(Hash[String, Object], data["UNMAPPED_DATA"])
       out
     end
 

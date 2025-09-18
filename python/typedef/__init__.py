@@ -2152,17 +2152,6 @@ class MapStringToListOfMatchInfoForAttribute:
         return _to_json_data(self.value)
 
 @dataclass
-class MapStringToObject:
-    value: 'Dict[str, object]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToObject':
-        return cls(_from_json_data(Dict[str, object], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class MatchInfoDisclosedRelations:
     rel_anchor: 'List[RelAnchor]'
     rel_link: 'List[RelLink]'
@@ -2542,7 +2531,7 @@ class Record:
     Internal identifier for the record.
     """
 
-    json_data: 'Dict[str, object]'
+    json_data: 'Dict[str, Object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
     """
@@ -2564,7 +2553,7 @@ class Record:
     """
 
     relationship_data: 'List[str]'
-    unmapped_data: 'Dict[str, object]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Record':
@@ -2582,7 +2571,7 @@ class Record:
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
+            _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
             _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -2592,7 +2581,7 @@ class Record:
             _from_json_data(List[str], data.get("PHONE_DATA")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(List[str], data.get("RELATIONSHIP_DATA")),
-            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -2650,7 +2639,7 @@ class RecordForGetEntity:
     Internal identifier for the record.
     """
 
-    json_data: 'Dict[str, object]'
+    json_data: 'Dict[str, Object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
     """
@@ -2672,7 +2661,7 @@ class RecordForGetEntity:
     """
 
     relationship_data: 'List[str]'
-    unmapped_data: 'Dict[str, object]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordForGetEntity':
@@ -2690,7 +2679,7 @@ class RecordForGetEntity:
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
+            _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
             _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -2700,7 +2689,7 @@ class RecordForGetEntity:
             _from_json_data(List[str], data.get("PHONE_DATA")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(List[str], data.get("RELATIONSHIP_DATA")),
-            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -4383,16 +4372,16 @@ class SzEngineGetEntityByRecordIDResponse:
 class SzEngineGetRecordPreviewResponse:
     features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'List[FeatureID]'
-    json_data: 'Dict[str, object]'
-    unmapped_data: 'Dict[str, object]'
+    json_data: 'Dict[str, Object]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordPreviewResponse':
         return cls(
             _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
-            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
+            _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -4430,7 +4419,7 @@ class SzEngineGetRecordResponse:
     Internal identifier for the record.
     """
 
-    json_data: 'Dict[str, object]'
+    json_data: 'Dict[str, Object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
     """
@@ -4452,7 +4441,7 @@ class SzEngineGetRecordResponse:
     """
 
     relationship_data: 'List[str]'
-    unmapped_data: 'Dict[str, object]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordResponse':
@@ -4470,7 +4459,7 @@ class SzEngineGetRecordResponse:
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
             _from_json_data(int, data.get("INTERNAL_ID")),
-            _from_json_data(Dict[str, object], data.get("JSON_DATA")),
+            _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
             _from_json_data(datetime, data.get("LAST_SEEN_DT")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(int, data.get("MATCH_LEVEL")),
@@ -4480,7 +4469,7 @@ class SzEngineGetRecordResponse:
             _from_json_data(List[str], data.get("PHONE_DATA")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(List[str], data.get("RELATIONSHIP_DATA")),
-            _from_json_data(Dict[str, object], data.get("UNMAPPED_DATA")),
+            _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
         )
 
     def to_json_data(self) -> Any:

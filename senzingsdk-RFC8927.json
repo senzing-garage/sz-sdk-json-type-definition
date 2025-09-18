@@ -1960,15 +1960,6 @@
             },
             "type": "string"
         },
-        "MapStringToObject": {
-            "metadata": {
-                "goType": "map[string]any",
-                "javaJacksonType": "Map<String, Map<String, Object>>",
-                "pythonType": "Dict[str, object]",
-                "reference": "MapStringToObject"
-            },
-            "type": "string"
-        },
         "MatchKeyDetails": {
             "properties": {
                 "CONFIRMATIONS": {
@@ -2305,13 +2296,9 @@
                     "type": "int32"
                 },
                 "JSON_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 },
                 "LAST_SEEN_DT": {
                     "type": "timestamp"
@@ -2361,13 +2348,9 @@
                     }
                 },
                 "UNMAPPED_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 }
             }
         },
@@ -2440,13 +2423,9 @@
                     "type": "int32"
                 },
                 "JSON_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 },
                 "LAST_SEEN_DT": {
                     "type": "timestamp"
@@ -2496,13 +2475,9 @@
                     }
                 },
                 "UNMAPPED_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 }
             }
         },
@@ -3914,22 +3889,14 @@
                     }
                 },
                 "JSON_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 },
                 "UNMAPPED_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 }
             }
         },
@@ -4002,13 +3969,9 @@
                     "type": "int32"
                 },
                 "JSON_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 },
                 "LAST_SEEN_DT": {
                     "type": "timestamp"
@@ -4058,13 +4021,9 @@
                     }
                 },
                 "UNMAPPED_DATA": {
-                    "metadata": {
-                        "goType": "map[string]any",
-                        "javaJacksonType": "Map<String, Map<String, Object>>",
-                        "pythonType": "Dict[str, object]",
-                        "reference": "MapStringToObject"
-                    },
-                    "type": "string"
+                    "values": {
+                        "ref": "Object"
+                    }
                 }
             }
         },

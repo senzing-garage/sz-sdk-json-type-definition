@@ -137,6 +137,10 @@ recordKeysDict = {
     ]
 }
 
+xxx = SzEngineGetRecordResponse.from_json_data(recordKeysDict)
+xx = xxx.json_data["bob"]
+xx.value.
+
 recordKeys = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(recordKeysDict)
 
 recordKeys.records[0].data_source = "DATA_SOURCE_1"
