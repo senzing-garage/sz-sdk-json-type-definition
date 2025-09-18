@@ -61,6 +61,18 @@
                 }
             }
         },
+        "CandidateKeys": {
+            "properties": {
+                "FEATURE_TYPES": {
+                    "elements": {
+                        "ref": "FeatureType"
+                    }
+                },
+                "SUMMARY": {
+                    "ref": "Summary"
+                }
+            }
+        },
         "Candidates": {
             "properties": {
                 "candidateBuilders": {
@@ -1182,6 +1194,25 @@
                 }
             }
         },
+        "DisclosedRelations": {
+            "properties": {
+                "REL_ANCHOR": {
+                    "elements": {
+                        "ref": "RelAnchor"
+                    }
+                },
+                "REL_LINK": {
+                    "elements": {
+                        "ref": "RelLink"
+                    }
+                },
+                "REL_POINTER": {
+                    "elements": {
+                        "ref": "RelPointer"
+                    }
+                }
+            }
+        },
         "Entity": {
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1191,6 +1222,18 @@
                 },
                 "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
+                }
+            }
+        },
+        "EntityForResolvedEntity": {
+            "properties": {
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
+                },
+                "RELATED_ENTITIES": {
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
                 }
             }
         },
@@ -1572,6 +1615,31 @@
                 }
             }
         },
+        "FeatureType": {
+            "properties": {
+                "FOUND": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FTYPE_CODE": {
+                    "type": "string"
+                },
+                "GENERIC": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "NOT_FOUND": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                }
+            }
+        },
         "FinalState": {
             "properties": {
                 "NEED_REEVALUATION": {
@@ -1867,25 +1935,7 @@
                 },
                 "SAMPLE_RECORDS": {
                     "elements": {
-                        "properties": {
-                            "DATA_SOURCE": {
-                                "metadata": {
-                                    "description": "A label identifying the provenance of the record."
-                                },
-                                "type": "string"
-                            },
-                            "FLAGS": {
-                                "elements": {
-                                    "type": "string"
-                                }
-                            },
-                            "RECORD_ID": {
-                                "metadata": {
-                                    "description": "The unique identifier within the set of records in the DATA_SOURCE."
-                                },
-                                "type": "string"
-                            }
-                        }
+                        "ref": "SampleRecord"
                     }
                 }
             }
@@ -1936,23 +1986,7 @@
                     "ref": "MatchInfoCandidateKeys"
                 },
                 "DISCLOSED_RELATIONS": {
-                    "properties": {
-                        "REL_ANCHOR": {
-                            "elements": {
-                                "ref": "RelAnchor"
-                            }
-                        },
-                        "REL_LINK": {
-                            "elements": {
-                                "ref": "RelLink"
-                            }
-                        },
-                        "REL_POINTER": {
-                            "elements": {
-                                "ref": "RelPointer"
-                            }
-                        }
-                    }
+                    "ref": "DisclosedRelations"
                 },
                 "ERRULE_CODE": {
                     "metadata": {
@@ -2857,16 +2891,7 @@
         "ResolvedEntityAndMatchInfo": {
             "properties": {
                 "ENTITY": {
-                    "properties": {
-                        "RESOLVED_ENTITY": {
-                            "ref": "ResolvedEntity"
-                        },
-                        "RELATED_ENTITIES": {
-                            "elements": {
-                                "ref": "RelatedEntity"
-                            }
-                        }
-                    }
+                    "ref": "EntityForResolvedEntity"
                 },
                 "MATCH_INFO": {
                     "ref": "MatchInfo"
@@ -2980,6 +3005,27 @@
                 }
             }
         },
+        "SampleRecord": {
+            "properties": {
+                "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
+                    "type": "string"
+                },
+                "FLAGS": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                    },
+                    "type": "string"
+                }
+            }
+        },
         "SYS_OOM": {
             "properties": {
                 "FELEM_ID": {
@@ -3088,57 +3134,7 @@
         "SearchStatistic": {
             "properties": {
                 "CANDIDATE_KEYS": {
-                    "properties": {
-                        "FEATURE_TYPES": {
-                            "elements": {
-                                "properties": {
-                                    "FOUND": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "FTYPE_CODE": {
-                                        "type": "string"
-                                    },
-                                    "GENERIC": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    },
-                                    "NOT_FOUND": {
-                                        "metadata": {
-                                            "goType": "int64"
-                                        },
-                                        "type": "int32"
-                                    }
-                                }
-                            }
-                        },
-                        "SUMMARY": {
-                            "properties": {
-                                "FOUND": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "GENERIC": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                },
-                                "NOT_FOUND": {
-                                    "metadata": {
-                                        "goType": "int64"
-                                    },
-                                    "type": "int32"
-                                }
-                            }
-                        }
-                    }
+                    "ref": "CandidateKeys"
                 }
             }
         },
@@ -3412,6 +3408,28 @@
                 },
                 "ZOOMROOM": {
                     "type": "string"
+                }
+            }
+        },
+        "Summary": {
+            "properties": {
+                "FOUND": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "GENERIC": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "NOT_FOUND": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },

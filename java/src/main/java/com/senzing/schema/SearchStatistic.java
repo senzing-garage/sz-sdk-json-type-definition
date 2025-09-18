@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class SearchStatistic {
     @JsonProperty("CANDIDATE_KEYS")
-    private SearchStatisticCandidateKeys candidateKeys;
+    private CandidateKeys candidateKeys;
 
     public SearchStatistic() {
     }
@@ -16,14 +16,14 @@ public class SearchStatistic {
     /**
      * Getter for candidateKeys.<p>
      */
-    public SearchStatisticCandidateKeys getCandidateKeys() {
+    public CandidateKeys getCandidateKeys() {
         return candidateKeys;
     }
 
     /**
      * Setter for candidateKeys.<p>
      */
-    public void setCandidateKeys(SearchStatisticCandidateKeys candidateKeys) {
+    public void setCandidateKeys(CandidateKeys candidateKeys) {
         this.candidateKeys = candidateKeys;
     }
 }

@@ -6,12 +6,12 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class SearchStatisticCandidateKeys
+    public class CandidateKeys
     {
         [JsonPropertyName("FEATURE_TYPES")]
-        public IList<SearchStatisticCandidateKeysFeatureTypes> FeatureTypes { get; set; }
+        public IList<FeatureType> FeatureTypes { get; set; }
 
         [JsonPropertyName("SUMMARY")]
-        public SearchStatisticCandidateKeysSummary Summary { get; set; }
+        public Summary Summary { get; set; }
     }
 }

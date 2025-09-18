@@ -11,7 +11,7 @@ public class MatchInfo {
     private MatchInfoCandidateKeys candidateKeys;
 
     @JsonProperty("DISCLOSED_RELATIONS")
-    private MatchInfoDisclosedRelations disclosedRelations;
+    private DisclosedRelations disclosedRelations;
 
     @JsonProperty("ERRULE_CODE")
     private String erruleCode;
@@ -57,14 +57,14 @@ public class MatchInfo {
     /**
      * Getter for disclosedRelations.<p>
      */
-    public MatchInfoDisclosedRelations getDisclosedRelations() {
+    public DisclosedRelations getDisclosedRelations() {
         return disclosedRelations;
     }
 
     /**
      * Setter for disclosedRelations.<p>
      */
-    public void setDisclosedRelations(MatchInfoDisclosedRelations disclosedRelations) {
+    public void setDisclosedRelations(DisclosedRelations disclosedRelations) {
         this.disclosedRelations = disclosedRelations;
     }
 

@@ -11,7 +11,7 @@ namespace Senzing.Schema
         public MatchInfoCandidateKeys CandidateKeys { get; set; }
 
         [JsonPropertyName("DISCLOSED_RELATIONS")]
-        public MatchInfoDisclosedRelations DisclosedRelations { get; set; }
+        public DisclosedRelations DisclosedRelations { get; set; }
 
         /// <summary>
         /// Identifier of the entity resolution rule that was triggered.

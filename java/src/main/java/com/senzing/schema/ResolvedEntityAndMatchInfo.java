@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class ResolvedEntityAndMatchInfo {
     @JsonProperty("ENTITY")
-    private ResolvedEntityAndMatchInfoEntity entity;
+    private EntityForResolvedEntity entity;
 
     @JsonProperty("MATCH_INFO")
     private MatchInfo matchInfo;
@@ -19,14 +19,14 @@ public class ResolvedEntityAndMatchInfo {
     /**
      * Getter for entity.<p>
      */
-    public ResolvedEntityAndMatchInfoEntity getEntity() {
+    public EntityForResolvedEntity getEntity() {
         return entity;
     }
 
     /**
      * Setter for entity.<p>
      */
-    public void setEntity(ResolvedEntityAndMatchInfoEntity entity) {
+    public void setEntity(EntityForResolvedEntity entity) {
         this.entity = entity;
     }
 

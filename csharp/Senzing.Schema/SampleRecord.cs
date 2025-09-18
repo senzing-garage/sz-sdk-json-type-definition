@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class InterestingEntitySampleRecords
+    public class SampleRecord
     {
         /// <summary>
         /// A label identifying the provenance of the record.

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class SearchStatisticCandidateKeysSummary {
+public class Summary {
     @JsonProperty("FOUND")
     private Integer found;
 
@@ -16,7 +16,7 @@ public class SearchStatisticCandidateKeysSummary {
     @JsonProperty("NOT_FOUND")
     private Integer notFound;
 
-    public SearchStatisticCandidateKeysSummary() {
+    public Summary() {
     }
 
     /**

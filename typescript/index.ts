@@ -317,6 +317,11 @@ export interface Caches {
   resFeatStatUpdateFail: number;
 }
 
+export interface CandidateKeys {
+  FEATURE_TYPES: FeatureType[];
+  SUMMARY: Summary;
+}
+
 export interface Candidates {
   candidateBuilders: { [key: string]: number };
   suppressedCandidateBuilders: { [key: string]: number };
@@ -389,7 +394,18 @@ export interface DisclosedRelation {
   REL_ANCHOR: RelAnchor[];
 }
 
+export interface DisclosedRelations {
+  REL_ANCHOR: RelAnchor[];
+  REL_LINK: RelLink[];
+  REL_POINTER: RelPointer[];
+}
+
 export interface Entity {
+  RELATED_ENTITIES: RelatedEntity[];
+  RESOLVED_ENTITY: ResolvedEntity;
+}
+
+export interface EntityForResolvedEntity {
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
@@ -581,6 +597,13 @@ export interface FeatureScoreForAttribute {
 
 export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
+export interface FeatureType {
+  FOUND: number;
+  FTYPE_CODE: string;
+  GENERIC: number;
+  NOT_FOUND: number;
+}
+
 export interface FinalState {
   NEED_REEVALUATION: number;
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
@@ -668,19 +691,6 @@ export interface InterestingEntities {
   NOTICES: Notice[];
 }
 
-export interface InterestingEntitySampleRecords {
-  /**
-   * A label identifying the provenance of the record.
-   */
-  DATA_SOURCE: string;
-  FLAGS: string[];
-
-  /**
-   * The unique identifier within the set of records in the DATA_SOURCE.
-   */
-  RECORD_ID: string;
-}
-
 export interface InterestingEntity {
   DEGREES: number;
 
@@ -690,7 +700,7 @@ export interface InterestingEntity {
    */
   ENTITY_ID: number;
   FLAGS: string[];
-  SAMPLE_RECORDS: InterestingEntitySampleRecords[];
+  SAMPLE_RECORDS: SampleRecord[];
 }
 
 export interface License {
@@ -703,15 +713,9 @@ export interface LockWaits {
   refreshLocks: RefreshLocks;
 }
 
-export interface MatchInfoDisclosedRelations {
-  REL_ANCHOR: RelAnchor[];
-  REL_LINK: RelLink[];
-  REL_POINTER: RelPointer[];
-}
-
 export interface MatchInfo {
   CANDIDATE_KEYS: MatchInfoCandidateKeys;
-  DISCLOSED_RELATIONS: MatchInfoDisclosedRelations;
+  DISCLOSED_RELATIONS: DisclosedRelations;
 
   /**
    * Identifier of the entity resolution rule that was triggered.
@@ -1138,13 +1142,8 @@ export interface ResolvedEntity {
   RECORD_TYPES: string[];
 }
 
-export interface ResolvedEntityAndMatchInfoEntity {
-  RELATED_ENTITIES: RelatedEntity[];
-  RESOLVED_ENTITY: ResolvedEntity;
-}
-
 export interface ResolvedEntityAndMatchInfo {
-  ENTITY: ResolvedEntityAndMatchInfoEntity;
+  ENTITY: EntityForResolvedEntity;
   MATCH_INFO: MatchInfo;
 }
 
@@ -1220,6 +1219,19 @@ export interface SysOom {
   THRESH1_OOM: number;
 }
 
+export interface SampleRecord {
+  /**
+   * A label identifying the provenance of the record.
+   */
+  DATA_SOURCE: string;
+  FLAGS: string[];
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
+  RECORD_ID: string;
+}
+
 export interface SchemaVersion {
   ENGINE_SCHEMA_VERSION: string;
   MAXIMUM_REQUIRED_SCHEMA_VERSION: string;
@@ -1240,26 +1252,8 @@ export interface SearchRequest {
   SEARCH_PROFILE: string;
 }
 
-export interface SearchStatisticCandidateKeysFeatureTypes {
-  FOUND: number;
-  FTYPE_CODE: string;
-  GENERIC: number;
-  NOT_FOUND: number;
-}
-
-export interface SearchStatisticCandidateKeysSummary {
-  FOUND: number;
-  GENERIC: number;
-  NOT_FOUND: number;
-}
-
-export interface SearchStatisticCandidateKeys {
-  FEATURE_TYPES: SearchStatisticCandidateKeysFeatureTypes[];
-  SUMMARY: SearchStatisticCandidateKeysSummary;
-}
-
 export interface SearchStatistic {
-  CANDIDATE_KEYS: SearchStatisticCandidateKeys;
+  CANDIDATE_KEYS: CandidateKeys;
 }
 
 export interface SenzingEntitySpecification {
@@ -1346,6 +1340,12 @@ export interface SenzingEntitySpecification {
   WECHAT: string;
   WHATSAPP: string;
   ZOOMROOM: string;
+}
+
+export interface Summary {
+  FOUND: number;
+  GENERIC: number;
+  NOT_FOUND: number;
 }
 
 export interface SystemLoad {

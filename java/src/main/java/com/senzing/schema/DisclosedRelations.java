@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class MatchInfoDisclosedRelations {
+public class DisclosedRelations {
     @JsonProperty("REL_ANCHOR")
     private List<RelAnchor> relAnchor;
 
@@ -17,7 +17,7 @@ public class MatchInfoDisclosedRelations {
     @JsonProperty("REL_POINTER")
     private List<RelPointer> relPointer;
 
-    public MatchInfoDisclosedRelations() {
+    public DisclosedRelations() {
     }
 
     /**

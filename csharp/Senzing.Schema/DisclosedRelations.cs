@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class MatchInfoDisclosedRelations
+    public class DisclosedRelations
     {
         [JsonPropertyName("REL_ANCHOR")]
         public IList<RelAnchor> RelAnchor { get; set; }

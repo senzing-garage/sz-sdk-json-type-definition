@@ -8,7 +8,7 @@ namespace Senzing.Schema
     public class ResolvedEntityAndMatchInfo
     {
         [JsonPropertyName("ENTITY")]
-        public ResolvedEntityAndMatchInfoEntity Entity { get; set; }
+        public EntityForResolvedEntity Entity { get; set; }
 
         [JsonPropertyName("MATCH_INFO")]
         public MatchInfo MatchInfo { get; set; }

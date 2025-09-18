@@ -7,41 +7,41 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class SearchStatisticCandidateKeys {
+public class CandidateKeys {
     @JsonProperty("FEATURE_TYPES")
-    private List<SearchStatisticCandidateKeysFeatureTypes> featureTypes;
+    private List<FeatureType> featureTypes;
 
     @JsonProperty("SUMMARY")
-    private SearchStatisticCandidateKeysSummary summary;
+    private Summary summary;
 
-    public SearchStatisticCandidateKeys() {
+    public CandidateKeys() {
     }
 
     /**
      * Getter for featureTypes.<p>
      */
-    public List<SearchStatisticCandidateKeysFeatureTypes> getFeatureTypes() {
+    public List<FeatureType> getFeatureTypes() {
         return featureTypes;
     }
 
     /**
      * Setter for featureTypes.<p>
      */
-    public void setFeatureTypes(List<SearchStatisticCandidateKeysFeatureTypes> featureTypes) {
+    public void setFeatureTypes(List<FeatureType> featureTypes) {
         this.featureTypes = featureTypes;
     }
 
     /**
      * Getter for summary.<p>
      */
-    public SearchStatisticCandidateKeysSummary getSummary() {
+    public Summary getSummary() {
         return summary;
     }
 
     /**
      * Setter for summary.<p>
      */
-    public void setSummary(SearchStatisticCandidateKeysSummary summary) {
+    public void setSummary(Summary summary) {
         this.summary = summary;
     }
 }

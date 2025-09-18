@@ -716,6 +716,15 @@ pub struct Caches {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct CandidateKeys {
+    #[serde(rename = "FEATURE_TYPES")]
+    pub featureTypes: Vec<FeatureType>,
+
+    #[serde(rename = "SUMMARY")]
+    pub summary: Summary,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct Candidates {
     #[serde(rename = "candidateBuilders")]
     pub candidateBuilders: HashMap<String, i32>,
@@ -854,7 +863,28 @@ pub struct DisclosedRelation {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct DisclosedRelations {
+    #[serde(rename = "REL_ANCHOR")]
+    pub relAnchor: Vec<RelAnchor>,
+
+    #[serde(rename = "REL_LINK")]
+    pub relLink: Vec<RelLink>,
+
+    #[serde(rename = "REL_POINTER")]
+    pub relPointer: Vec<RelPointer>,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct Entity {
+    #[serde(rename = "RELATED_ENTITIES")]
+    pub relatedEntities: Vec<RelatedEntity>,
+
+    #[serde(rename = "RESOLVED_ENTITY")]
+    pub resolvedEntity: ResolvedEntity,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EntityForResolvedEntity {
     #[serde(rename = "RELATED_ENTITIES")]
     pub relatedEntities: Vec<RelatedEntity>,
 
@@ -1112,6 +1142,21 @@ pub struct FeatureScoreForAttribute {
 pub type FeatureScores = HashMap<String, Vec<FeatureScoreForAttribute>>;
 
 #[derive(Serialize, Deserialize)]
+pub struct FeatureType {
+    #[serde(rename = "FOUND")]
+    pub found: i32,
+
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
+
+    #[serde(rename = "GENERIC")]
+    pub generic: i32,
+
+    #[serde(rename = "NOT_FOUND")]
+    pub notFound: i32,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct FinalState {
     #[serde(rename = "NEED_REEVALUATION")]
     pub needReevaluation: i32,
@@ -1294,20 +1339,6 @@ pub struct InterestingEntities {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct InterestingEntitySampleRecords {
-    /// A label identifying the provenance of the record.
-    #[serde(rename = "DATA_SOURCE")]
-    pub dataSource: String,
-
-    #[serde(rename = "FLAGS")]
-    pub flags: Vec<String>,
-
-    /// The unique identifier within the set of records in the DATA_SOURCE.
-    #[serde(rename = "RECORD_ID")]
-    pub recordId: String,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct InterestingEntity {
     #[serde(rename = "DEGREES")]
     pub degrees: i32,
@@ -1321,7 +1352,7 @@ pub struct InterestingEntity {
     pub flags: Vec<String>,
 
     #[serde(rename = "SAMPLE_RECORDS")]
-    pub sampleRecords: Vec<InterestingEntitySampleRecords>,
+    pub sampleRecords: Vec<SampleRecord>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1343,24 +1374,12 @@ pub struct LockWaits {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct MatchInfoDisclosedRelations {
-    #[serde(rename = "REL_ANCHOR")]
-    pub relAnchor: Vec<RelAnchor>,
-
-    #[serde(rename = "REL_LINK")]
-    pub relLink: Vec<RelLink>,
-
-    #[serde(rename = "REL_POINTER")]
-    pub relPointer: Vec<RelPointer>,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct MatchInfo {
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: MatchInfoCandidateKeys,
 
     #[serde(rename = "DISCLOSED_RELATIONS")]
-    pub disclosedRelations: MatchInfoDisclosedRelations,
+    pub disclosedRelations: DisclosedRelations,
 
     /// Identifier of the entity resolution rule that was triggered.
     #[serde(rename = "ERRULE_CODE")]
@@ -2012,18 +2031,9 @@ pub struct ResolvedEntity {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct ResolvedEntityAndMatchInfoEntity {
-    #[serde(rename = "RELATED_ENTITIES")]
-    pub relatedEntities: Vec<RelatedEntity>,
-
-    #[serde(rename = "RESOLVED_ENTITY")]
-    pub resolvedEntity: ResolvedEntity,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct ResolvedEntityAndMatchInfo {
     #[serde(rename = "ENTITY")]
-    pub entity: ResolvedEntityAndMatchInfoEntity,
+    pub entity: EntityForResolvedEntity,
 
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfo,
@@ -2129,6 +2139,20 @@ pub struct SysOom {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct SampleRecord {
+    /// A label identifying the provenance of the record.
+    #[serde(rename = "DATA_SOURCE")]
+    pub dataSource: String,
+
+    #[serde(rename = "FLAGS")]
+    pub flags: Vec<String>,
+
+    /// The unique identifier within the set of records in the DATA_SOURCE.
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct SchemaVersion {
     #[serde(rename = "ENGINE_SCHEMA_VERSION")]
     pub engineSchemaVersion: String,
@@ -2171,45 +2195,9 @@ pub struct SearchRequest {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SearchStatisticCandidateKeysFeatureTypes {
-    #[serde(rename = "FOUND")]
-    pub found: i32,
-
-    #[serde(rename = "FTYPE_CODE")]
-    pub ftypeCode: String,
-
-    #[serde(rename = "GENERIC")]
-    pub generic: i32,
-
-    #[serde(rename = "NOT_FOUND")]
-    pub notFound: i32,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct SearchStatisticCandidateKeysSummary {
-    #[serde(rename = "FOUND")]
-    pub found: i32,
-
-    #[serde(rename = "GENERIC")]
-    pub generic: i32,
-
-    #[serde(rename = "NOT_FOUND")]
-    pub notFound: i32,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct SearchStatisticCandidateKeys {
-    #[serde(rename = "FEATURE_TYPES")]
-    pub featureTypes: Vec<SearchStatisticCandidateKeysFeatureTypes>,
-
-    #[serde(rename = "SUMMARY")]
-    pub summary: SearchStatisticCandidateKeysSummary,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct SearchStatistic {
     #[serde(rename = "CANDIDATE_KEYS")]
-    pub candidateKeys: SearchStatisticCandidateKeys,
+    pub candidateKeys: CandidateKeys,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2462,6 +2450,18 @@ pub struct SenzingEntitySpecification {
 
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Summary {
+    #[serde(rename = "FOUND")]
+    pub found: i32,
+
+    #[serde(rename = "GENERIC")]
+    pub generic: i32,
+
+    #[serde(rename = "NOT_FOUND")]
+    pub notFound: i32,
 }
 
 #[derive(Serialize, Deserialize)]

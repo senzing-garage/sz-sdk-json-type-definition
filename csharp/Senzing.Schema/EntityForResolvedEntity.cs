@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class ResolvedEntityAndMatchInfoEntity
+    public class EntityForResolvedEntity
     {
         [JsonPropertyName("RELATED_ENTITIES")]
         public IList<RelatedEntity> RelatedEntities { get; set; }

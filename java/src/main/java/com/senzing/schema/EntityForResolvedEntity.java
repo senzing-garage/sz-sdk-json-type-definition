@@ -7,14 +7,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class ResolvedEntityAndMatchInfoEntity {
+public class EntityForResolvedEntity {
     @JsonProperty("RELATED_ENTITIES")
     private List<RelatedEntity> relatedEntities;
 
     @JsonProperty("RESOLVED_ENTITY")
     private ResolvedEntity resolvedEntity;
 
-    public ResolvedEntityAndMatchInfoEntity() {
+    public EntityForResolvedEntity() {
     }
 
     /**

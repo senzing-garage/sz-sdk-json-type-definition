@@ -18,7 +18,7 @@ public class InterestingEntity {
     private List<String> flags;
 
     @JsonProperty("SAMPLE_RECORDS")
-    private List<InterestingEntitySampleRecords> sampleRecords;
+    private List<SampleRecord> sampleRecords;
 
     public InterestingEntity() {
     }
@@ -72,14 +72,14 @@ public class InterestingEntity {
     /**
      * Getter for sampleRecords.<p>
      */
-    public List<InterestingEntitySampleRecords> getSampleRecords() {
+    public List<SampleRecord> getSampleRecords() {
         return sampleRecords;
     }
 
     /**
      * Setter for sampleRecords.<p>
      */
-    public void setSampleRecords(List<InterestingEntitySampleRecords> sampleRecords) {
+    public void setSampleRecords(List<SampleRecord> sampleRecords) {
         this.sampleRecords = sampleRecords;
     }
 }

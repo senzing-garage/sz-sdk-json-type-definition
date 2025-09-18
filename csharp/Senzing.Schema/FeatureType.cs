@@ -5,10 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class SearchStatisticCandidateKeysSummary
+    public class FeatureType
     {
         [JsonPropertyName("FOUND")]
         public int Found { get; set; }
+
+        [JsonPropertyName("FTYPE_CODE")]
+        public string FtypeCode { get; set; }
 
         [JsonPropertyName("GENERIC")]
         public int Generic { get; set; }

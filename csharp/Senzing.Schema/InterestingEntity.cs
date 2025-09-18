@@ -22,6 +22,6 @@ namespace Senzing.Schema
         public IList<string> Flags { get; set; }
 
         [JsonPropertyName("SAMPLE_RECORDS")]
-        public IList<InterestingEntitySampleRecords> SampleRecords { get; set; }
+        public IList<SampleRecord> SampleRecords { get; set; }
     }
 }

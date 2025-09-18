@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class InterestingEntitySampleRecords {
+public class SampleRecord {
     @JsonProperty("DATA_SOURCE")
     private String dataSource;
 
@@ -17,7 +17,7 @@ public class InterestingEntitySampleRecords {
     @JsonProperty("RECORD_ID")
     private String recordId;
 
-    public InterestingEntitySampleRecords() {
+    public SampleRecord() {
     }
 
     /**

@@ -480,6 +480,12 @@ type Caches struct {
 	ResFeatStatUpdateFail int32 `json:"resFeatStatUpdateFail"`
 }
 
+type CandidateKeys struct {
+	FeatureTypes []FeatureType `json:"FEATURE_TYPES"`
+
+	Summary Summary `json:"SUMMARY"`
+}
+
 type Candidates struct {
 	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
 
@@ -573,7 +579,21 @@ type DisclosedRelation struct {
 	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
 }
 
+type DisclosedRelations struct {
+	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+
+	RelLink []RelLink `json:"REL_LINK"`
+
+	RelPointer []RelPointer `json:"REL_POINTER"`
+}
+
 type Entity struct {
+	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
+
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+}
+
+type EntityForResolvedEntity struct {
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
@@ -754,6 +774,16 @@ type FeatureScoreForAttribute struct {
 
 type FeatureScores = map[string][]FeatureScoreForAttribute
 
+type FeatureType struct {
+	Found int64 `json:"FOUND"`
+
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	Generic int64 `json:"GENERIC"`
+
+	NotFound int64 `json:"NOT_FOUND"`
+}
+
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
 
@@ -876,16 +906,6 @@ type InterestingEntities struct {
 	Notices []Notice `json:"NOTICES"`
 }
 
-type InterestingEntitySampleRecords struct {
-	// A label identifying the provenance of the record.
-	DataSource string `json:"DATA_SOURCE"`
-
-	Flags []string `json:"FLAGS"`
-
-	// The unique identifier within the set of records in the DATA_SOURCE.
-	RecordID string `json:"RECORD_ID"`
-}
-
 type InterestingEntity struct {
 	Degrees int64 `json:"DEGREES"`
 
@@ -895,7 +915,7 @@ type InterestingEntity struct {
 
 	Flags []string `json:"FLAGS"`
 
-	SampleRecords []InterestingEntitySampleRecords `json:"SAMPLE_RECORDS"`
+	SampleRecords []SampleRecord `json:"SAMPLE_RECORDS"`
 }
 
 type License struct {
@@ -910,18 +930,10 @@ type LockWaits struct {
 	RefreshLocks RefreshLocks `json:"refreshLocks"`
 }
 
-type MatchInfoDisclosedRelations struct {
-	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
-
-	RelLink []RelLink `json:"REL_LINK"`
-
-	RelPointer []RelPointer `json:"REL_POINTER"`
-}
-
 type MatchInfo struct {
 	CandidateKeys MatchInfoCandidateKeys `json:"CANDIDATE_KEYS"`
 
-	DisclosedRelations MatchInfoDisclosedRelations `json:"DISCLOSED_RELATIONS"`
+	DisclosedRelations DisclosedRelations `json:"DISCLOSED_RELATIONS"`
 
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -1373,14 +1385,8 @@ type ResolvedEntity struct {
 	RecordTypes []string `json:"RECORD_TYPES"`
 }
 
-type ResolvedEntityAndMatchInfoEntity struct {
-	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
-
-	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
-}
-
 type ResolvedEntityAndMatchInfo struct {
-	Entity ResolvedEntityAndMatchInfoEntity `json:"ENTITY"`
+	Entity EntityForResolvedEntity `json:"ENTITY"`
 
 	MatchInfo MatchInfo `json:"MATCH_INFO"`
 }
@@ -1455,6 +1461,16 @@ type SysOom struct {
 	Thresh1Oom int64 `json:"THRESH1_OOM"`
 }
 
+type SampleRecord struct {
+	// A label identifying the provenance of the record.
+	DataSource string `json:"DATA_SOURCE"`
+
+	Flags []string `json:"FLAGS"`
+
+	// The unique identifier within the set of records in the DATA_SOURCE.
+	RecordID string `json:"RECORD_ID"`
+}
+
 type SchemaVersion struct {
 	EngineSchemaVersion string `json:"ENGINE_SCHEMA_VERSION"`
 
@@ -1483,32 +1499,8 @@ type SearchRequest struct {
 	SearchProfile string `json:"SEARCH_PROFILE"`
 }
 
-type SearchStatisticCandidateKeysFeatureTypes struct {
-	Found int64 `json:"FOUND"`
-
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	Generic int64 `json:"GENERIC"`
-
-	NotFound int64 `json:"NOT_FOUND"`
-}
-
-type SearchStatisticCandidateKeysSummary struct {
-	Found int64 `json:"FOUND"`
-
-	Generic int64 `json:"GENERIC"`
-
-	NotFound int64 `json:"NOT_FOUND"`
-}
-
-type SearchStatisticCandidateKeys struct {
-	FeatureTypes []SearchStatisticCandidateKeysFeatureTypes `json:"FEATURE_TYPES"`
-
-	Summary SearchStatisticCandidateKeysSummary `json:"SUMMARY"`
-}
-
 type SearchStatistic struct {
-	CandidateKeys SearchStatisticCandidateKeys `json:"CANDIDATE_KEYS"`
+	CandidateKeys CandidateKeys `json:"CANDIDATE_KEYS"`
 }
 
 type SenzingEntitySpecification struct {
@@ -1677,6 +1669,14 @@ type SenzingEntitySpecification struct {
 	Whatsapp string `json:"WHATSAPP"`
 
 	Zoomroom string `json:"ZOOMROOM"`
+}
+
+type Summary struct {
+	Found int64 `json:"FOUND"`
+
+	Generic int64 `json:"GENERIC"`
+
+	NotFound int64 `json:"NOT_FOUND"`
 }
 
 type SystemLoad struct {
