@@ -3,6 +3,7 @@
 use chrono::{DateTime, FixedOffset};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
+use std::collections::HashMap;
 
 pub type Senzingsdk = Option<Value>;
 
@@ -717,10 +718,10 @@ pub struct Caches {
 #[derive(Serialize, Deserialize)]
 pub struct Candidates {
     #[serde(rename = "candidateBuilders")]
-    pub candidateBuilders: String,
+    pub candidateBuilders: HashMap<String, i32>,
 
     #[serde(rename = "suppressedCandidateBuilders")]
-    pub suppressedCandidateBuilders: String,
+    pub suppressedCandidateBuilders: HashMap<String, i32>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -946,7 +947,7 @@ pub struct ExpressedFeatures {
     pub calls: Vec<ExpressedFeaturesCall>,
 
     #[serde(rename = "created")]
-    pub created: String,
+    pub created: HashMap<String, i32>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1920,7 +1921,7 @@ pub struct Repository {
 #[derive(Serialize, Deserialize)]
 pub struct Reresolve {
     #[serde(rename = "newFeatureFTypes")]
-    pub newFeatureFtypes: String,
+    pub newFeatureFtypes: HashMap<String, i32>,
 
     #[serde(rename = "suppressedCandidateBuildersForReresolve")]
     pub suppressedCandidateBuildersForReresolve: Fixme,
@@ -2158,13 +2159,13 @@ pub struct SchemaVersion {
 #[derive(Serialize, Deserialize)]
 pub struct Scoring {
     #[serde(rename = "cacheHit")]
-    pub cacheHit: String,
+    pub cacheHit: HashMap<String, i32>,
 
     #[serde(rename = "cacheMiss")]
-    pub cacheMiss: String,
+    pub cacheMiss: HashMap<String, i32>,
 
     #[serde(rename = "scoredPairs")]
-    pub scoredPairs: String,
+    pub scoredPairs: HashMap<String, i32>,
 
     #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
     pub suppressedDisclosedRelationshipDomainCount: i32,
@@ -3242,7 +3243,7 @@ pub struct Workload {
     pub processing: Processing,
 
     #[serde(rename = "redoTriggers")]
-    pub redoTriggers: String,
+    pub redoTriggers: HashMap<String, i32>,
 
     #[serde(rename = "repairDiagnosis")]
     pub repairDiagnosis: RepairDiagnosis,

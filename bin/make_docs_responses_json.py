@@ -155,6 +155,12 @@ def handle_type(json_value):
     return json_value.get("type")
 
 
+def handle_values(json_value):
+    type = json_value.get("values", {}).get("type")
+    result = {"user_defined_json_key": type}
+    return result
+
+
 def recurse(json_value):
 
     if "metadata" in json_value:
@@ -164,6 +170,9 @@ def recurse(json_value):
 
     if "type" in json_value:
         return handle_type(json_value)
+
+    if "values" in json_value:
+        return handle_values(json_value)
 
     if "ref" in json_value:
         return handle_ref(json_value)

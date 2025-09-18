@@ -12,6 +12,6 @@ namespace Senzing.Schema
         public IList<ExpressedFeaturesCall> Calls { get; set; }
 
         [JsonPropertyName("created")]
-        public string Created { get; set; }
+        public IDictionary<string, int> Created { get; set; }
     }
 }

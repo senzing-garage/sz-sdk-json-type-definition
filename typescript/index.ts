@@ -318,8 +318,8 @@ export interface Caches {
 }
 
 export interface Candidates {
-  candidateBuilders: string;
-  suppressedCandidateBuilders: string;
+  candidateBuilders: { [key: string]: number };
+  suppressedCandidateBuilders: { [key: string]: number };
 }
 
 export interface CompatibilityVersion {
@@ -465,7 +465,7 @@ export interface EntityPathLink {
 
 export interface ExpressedFeatures {
   calls: ExpressedFeaturesCall[];
-  created: string;
+  created: { [key: string]: number };
 }
 
 export interface ExpressedFeaturesCall {
@@ -1081,7 +1081,7 @@ export interface Repository {
 }
 
 export interface Reresolve {
-  newFeatureFTypes: string;
+  newFeatureFTypes: { [key: string]: number };
   suppressedCandidateBuildersForReresolve: Fixme;
   suppressedScoredFeatureTypeForReresolve: Fixme;
   triggers: ReresolveTriggers;
@@ -1243,9 +1243,9 @@ export interface SchemaVersion {
 }
 
 export interface Scoring {
-  cacheHit: string;
-  cacheMiss: string;
-  scoredPairs: string;
+  cacheHit: { [key: string]: number };
+  cacheMiss: { [key: string]: number };
+  scoredPairs: { [key: string]: number };
   suppressedDisclosedRelationshipDomainCount: number;
   suppressedScoredFeatureType: Fixme;
 }
@@ -1819,7 +1819,7 @@ export interface Workload {
   loadedRecords: number;
   lockWaits: LockWaits;
   processing: Processing;
-  redoTriggers: string;
+  redoTriggers: { [key: string]: number };
   repairDiagnosis: RepairDiagnosis;
   reresolve: Reresolve;
   scoring: Scoring;

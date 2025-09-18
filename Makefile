@@ -59,8 +59,6 @@ FIX_FILES_LIST := \
 	ResolvedEntity.java \
 	SearchRequest.java
 FIX_FILES_MAP := \
-	Candidates.java \
-	ExpressedFeatures.java \
 	FeatureDescriptionValue.java \
 	FeatureScores.java \
 	MapStringToFeatureScoresForAttribute.java \
@@ -77,15 +75,12 @@ FIX_FILES_MAP := \
 	MatchInfoForWhy.java \
 	Record.java \
 	RecordForGetEntity.java \
-	Reresolve.java \
 	ResolvedEntity.java \
 	ResolvedEntityForGetEntity.java \
-	Scoring.java \
 	SearchRequest.java \
 	SearchRequest.java \
 	SzEngineGetRecordPreviewResponse.java \
-	SzEngineGetRecordResponse.java \
-	Workload.java
+	SzEngineGetRecordResponse.java
 
 # Recursive assignment ('=')
 
@@ -264,8 +259,8 @@ generate-code: \
 	generate-python \
 	generate-ruby \
 	generate-rust \
-	generate-typescript
-
+	generate-typescript \
+	go-typedef-generated-typedef-test-go
 
 .PHONY: generate-csharp
 generate-csharp: clean-csharp

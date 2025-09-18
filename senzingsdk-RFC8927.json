@@ -66,20 +66,20 @@
                 "candidateBuilders": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 },
                 "suppressedCandidateBuilders": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 }
             }
         },
@@ -1338,11 +1338,11 @@
                 "created": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 }
             }
         },
@@ -2804,11 +2804,11 @@
                 "newFeatureFTypes": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 },
                 "suppressedCandidateBuildersForReresolve": {
                     "ref": "Fixme"
@@ -3155,29 +3155,29 @@
                 "cacheHit": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 },
                 "cacheMiss": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 },
                 "scoredPairs": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 },
                 "suppressedDisclosedRelationshipDomainCount": {
                     "type": "int32"
@@ -4560,11 +4560,11 @@
                 "redoTriggers": {
                     "metadata": {
                         "goType": "map[string]int64",
-                        "javaJacksonType": "Map<String, Integer>",
-                        "pythonType": "Dict[str, int]",
                         "reference": "MapStringToInteger"
                     },
-                    "type": "string"
+                    "values": {
+                        "type": "int32"
+                    }
                 },
                 "repairDiagnosis": {
                     "ref": "RepairDiagnosis"

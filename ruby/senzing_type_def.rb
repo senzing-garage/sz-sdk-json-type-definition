@@ -1086,8 +1086,8 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Candidates.new
-      out.candidate_builders = SenzingTypeDef::from_json_data(String, data["candidateBuilders"])
-      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(String, data["suppressedCandidateBuilders"])
+      out.candidate_builders = SenzingTypeDef::from_json_data(Hash[String, Integer], data["candidateBuilders"])
+      out.suppressed_candidate_builders = SenzingTypeDef::from_json_data(Hash[String, Integer], data["suppressedCandidateBuilders"])
       out
     end
 
@@ -1453,7 +1453,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = ExpressedFeatures.new
       out.calls = SenzingTypeDef::from_json_data(Array[ExpressedFeaturesCall], data["calls"])
-      out.created = SenzingTypeDef::from_json_data(String, data["created"])
+      out.created = SenzingTypeDef::from_json_data(Hash[String, Integer], data["created"])
       out
     end
 
@@ -3075,7 +3075,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Reresolve.new
-      out.new_feature_ftypes = SenzingTypeDef::from_json_data(String, data["newFeatureFTypes"])
+      out.new_feature_ftypes = SenzingTypeDef::from_json_data(Hash[String, Integer], data["newFeatureFTypes"])
       out.suppressed_candidate_builders_for_reresolve = SenzingTypeDef::from_json_data(Fixme, data["suppressedCandidateBuildersForReresolve"])
       out.suppressed_scored_feature_type_for_reresolve = SenzingTypeDef::from_json_data(Fixme, data["suppressedScoredFeatureTypeForReresolve"])
       out.triggers = SenzingTypeDef::from_json_data(ReresolveTriggers, data["triggers"])
@@ -3428,9 +3428,9 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = Scoring.new
-      out.cache_hit = SenzingTypeDef::from_json_data(String, data["cacheHit"])
-      out.cache_miss = SenzingTypeDef::from_json_data(String, data["cacheMiss"])
-      out.scored_pairs = SenzingTypeDef::from_json_data(String, data["scoredPairs"])
+      out.cache_hit = SenzingTypeDef::from_json_data(Hash[String, Integer], data["cacheHit"])
+      out.cache_miss = SenzingTypeDef::from_json_data(Hash[String, Integer], data["cacheMiss"])
+      out.scored_pairs = SenzingTypeDef::from_json_data(Hash[String, Integer], data["scoredPairs"])
       out.suppressed_disclosed_relationship_domain_count = SenzingTypeDef::from_json_data(Integer, data["suppressedDisclosedRelationshipDomainCount"])
       out.suppressed_scored_feature_type = SenzingTypeDef::from_json_data(Fixme, data["suppressedScoredFeatureType"])
       out
@@ -5191,7 +5191,7 @@ module SenzingTypeDef
       out.loaded_records = SenzingTypeDef::from_json_data(Integer, data["loadedRecords"])
       out.lock_waits = SenzingTypeDef::from_json_data(LockWaits, data["lockWaits"])
       out.processing = SenzingTypeDef::from_json_data(Processing, data["processing"])
-      out.redo_triggers = SenzingTypeDef::from_json_data(String, data["redoTriggers"])
+      out.redo_triggers = SenzingTypeDef::from_json_data(Hash[String, Integer], data["redoTriggers"])
       out.repair_diagnosis = SenzingTypeDef::from_json_data(RepairDiagnosis, data["repairDiagnosis"])
       out.reresolve = SenzingTypeDef::from_json_data(Reresolve, data["reresolve"])
       out.scoring = SenzingTypeDef::from_json_data(Scoring, data["scoring"])

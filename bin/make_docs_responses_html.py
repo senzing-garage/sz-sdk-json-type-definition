@@ -80,6 +80,8 @@ def recurse_json(level, key, value) -> str:
         )
     elif "type" in value:
         result += handle_json_type(level, key, value)
+    elif "values" in value:
+        result += handle_json_values(level, key, value)
     elif "ref" in value:
         result += handle_json_ref(level, key, value)
     elif "properties" in value:
@@ -197,6 +199,8 @@ def handle_json_python_type(level, key, description, value) -> str:
             return html_println(level, f'"{key}": "object",')
         case "string":
             return html_println(level, f'"{key}": "string",')
+        case "int32":
+            return html_println(level, f'"{key}": "int32",')
         case _:
             print(f"Error: Bad 'pythonType:' {value}")
             raise NotImplementedError
@@ -222,6 +226,22 @@ def handle_json_type(level, key, value) -> str:
     json_key = make_json_key(key, description, html_value)
 
     return html_println(level, json_key)
+
+
+def handle_json_values(level, key, value) -> str:
+    data_type = value.get("values", {}).get("type")
+    description = value.get("metadata", {}).get("description")
+
+    result = make_json_key(key, description, "{")
+    if data_type in ["int32", "string"]:
+        result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{data_type}"')
+    else:
+        result += recurse_json(
+            level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(data_type, {})
+        )[:-1]
+    result += html_println(level, "},")
+
+    return html_println(level, result)
 
 
 # -----------------------------------------------------------------------------
