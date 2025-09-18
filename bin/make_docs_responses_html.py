@@ -95,7 +95,8 @@ def recurse_json(level, key, value) -> str:
 
 
 def html_println(level, message) -> str:
-    return f"\n<br>{INDENT * level}{message}"
+    # return f'\n<br/><span style="width: {50 * level}px; display: inline-block"></span>{message}'
+    return f"\n<br/>{INDENT * level}{message}"
 
 
 def make_json_key(key, description, suffix) -> str:
@@ -292,7 +293,7 @@ def make_html(title: str, input_dict: dict) -> str:
     # HTML suffix.
 
     result += """
-<br>&nbsp;
+<br/>&nbsp;
 </div>
 </body>
 </html>
