@@ -1719,7 +1719,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = FeatureScores.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
+      out.value = SenzingTypeDef.from_json_data(Hash[String, Array[FeatureScoreForAttribute]], data)
       out
     end
 
@@ -2099,20 +2099,6 @@ module SenzingTypeDef
       data = {}
       data["refreshLocks"] = SenzingTypeDef::to_json_data(refresh_locks)
       data
-    end
-  end
-
-  class MapStringToListFeatureScoreForAttribute
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MapStringToListFeatureScoreForAttribute.new
-      out.value = SenzingTypeDef.from_json_data(String, data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 

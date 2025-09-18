@@ -910,8 +910,6 @@ type LockWaits struct {
 	RefreshLocks RefreshLocks `json:"refreshLocks"`
 }
 
-type MapStringToListFeatureScoreForAttribute = map[string][]FeatureScoreForAttribute
-
 type MapStringToListOfFeatureDescriptionValue = map[string][]FeatureDescriptionValue
 
 type MapStringToListOfFeatureForAttributeWithAttributes = map[string][]FeatureForAttributeWithAttributes

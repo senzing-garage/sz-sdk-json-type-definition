@@ -155,8 +155,10 @@ def handle_values(json_value):
 
     if type in ["int32", "string"]:
         result = {VARIABLE_JSON_KEY: type}
-    else:
+    elif type:
         result = {VARIABLE_JSON_KEY: recurse(DEFINITIONS.get(type))}
+    else:
+        result = {VARIABLE_JSON_KEY: recurse(json_value.get("values", {}))}
     return result
 
 

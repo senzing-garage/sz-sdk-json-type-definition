@@ -1109,7 +1109,7 @@ pub struct FeatureScoreForAttribute {
     pub scoreBucket: String,
 }
 
-pub type FeatureScores = String;
+pub type FeatureScores = HashMap<String, Vec<FeatureScoreForAttribute>>;
 
 #[derive(Serialize, Deserialize)]
 pub struct FinalState {
@@ -1341,8 +1341,6 @@ pub struct LockWaits {
     #[serde(rename = "refreshLocks")]
     pub refreshLocks: RefreshLocks,
 }
-
-pub type MapStringToListFeatureScoreForAttribute = String;
 
 pub type MapStringToListOfFeatureDescriptionValue = String;
 

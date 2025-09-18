@@ -60,7 +60,6 @@ FIX_FILES_LIST := \
 	SearchRequest.java
 FIX_FILES_MAP := \
 	FeatureDescriptionValue.java \
-	FeatureScores.java \
 	MapStringToFeatureScoresForAttribute.java \
 	MapStringToInteger.java \
 	MapStringToListOfFeatureDescriptionValue.java \

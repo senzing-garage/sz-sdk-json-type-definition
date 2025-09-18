@@ -579,7 +579,7 @@ export interface FeatureScoreForAttribute {
   SCORE_BUCKET: string;
 }
 
-export type FeatureScores = string;
+export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
 export interface FinalState {
   NEED_REEVALUATION: number;
@@ -702,8 +702,6 @@ export interface License {
 export interface LockWaits {
   refreshLocks: RefreshLocks;
 }
-
-export type MapStringToListFeatureScoreForAttribute = string;
 
 export type MapStringToListOfFeatureDescriptionValue = string;
 

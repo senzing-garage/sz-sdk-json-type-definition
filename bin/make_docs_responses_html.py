@@ -232,16 +232,20 @@ def handle_json_values(level, key, value) -> str:
     type = value.get("values", {}).get("ref")
     if not type:
         type = value.get("values", {}).get("type")
-
     description = value.get("metadata", {}).get("description")
 
     result = make_json_key(key, description, "{")
     if type in ["int32", "string"]:
         result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{type}"')
-    else:
+    elif type:
         result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(type, {}))[
             :-1
         ]
+    else:
+        result += recurse_json(level + 1, VARIABLE_JSON_KEY, value.get("values", {}))[
+            :-1
+        ]
+
     result += html_println(level, "},")
 
     return html_println(level, result)
