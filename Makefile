@@ -25,57 +25,6 @@ GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\
 GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|github.com/|' -e 's|\.git$$||' -e 's|Senzing|senzing|')
 # PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
 
-FIX_FILES_CS8601 := \
-	Record.cs \
-	SzDiagnosticCheckRepositoryPerformanceResponse.cs \
-	SzDiagnosticGetFeatureResponse.cs \
-	SzEngineDeleteRecordResponse.cs \
-	SzEngineFindNetworkByEntityIdEntityIds.cs \
-	SzEngineGetRecordPreviewResponse.cs \
-	SzEngineGetVirtualEntityByRecordIdRecordKeys.cs \
-	SzEngineProcessRedoRecordResponse.cs \
-	SzEngineReevaluateEntityResponse.cs \
-	SzEngineReevaluateRecordResponse.cs \
-	SzEngineSearchByAttributesAttributes.cs \
-	SzEngineSearchByAttributesResponse.cs \
-	SzEngineSearchByAttributesSearchProfile.cs \
-	SzEngineSearchByAttributesSearchProfile.cs \
-	SzEngineStreamExportJsonEntityReportResponseXxx.cs \
-	SzEngineWhyEntitiesResponse.cs \
-	SzEngineWhyRecordInEntityResponse.cs \
-	SzEngineWhyRecordsResponse.cs \
-	SzEngineWhySearchAttributes.cs \
-	SzEngineWhySearchResponse.cs \
-	SzEngineWhySearchSearchProfile.cs \
-	SzProductGetLicenseResponse.cs \
-	SzProductGetVersionResponse.cs
-FIX_FILES_LIST := \
-	MapStringToListOfFeatureDescriptionValue.java \
-	MapStringToListOfFeatureForAttributeWithAttributes.java \
-	MapStringToListOfFeatureForGetEntity.java \
-	MapStringToListOfMatchInfoForAttribute.java \
-	MatchInfoCandidateKeys.java \
-	MatchInfoForWhy.java \
-	ResolvedEntity.java \
-	SearchRequest.java
-FIX_FILES_MAP := \
-	FeatureDescriptionValue.java \
-	MapStringToFeatureScoresForAttribute.java \
-	MapStringToInteger.java \
-	MapStringToListOfFeatureDescriptionValue.java \
-	MapStringToListOfFeatureForAttributeWithAttributes.java \
-	MapStringToListOfFeatureForAttributeWithAttributes.java \
-	MapStringToListOfFeatureForGetEntity.java \
-	MapStringToListOfMatchInfoForAttribute.java \
-	MapStringToObject.java \
-	MapStringToString.java \
-	MatchInfoCandidateKeys.java \
-	MatchInfoForWhy.java \
-	MatchInfoForWhy.java \
-	ResolvedEntity.java \
-	ResolvedEntityForGetEntity.java \
-	SearchRequest.java
-
 # Recursive assignment ('=')
 
 SHELL=/bin/bash
@@ -284,12 +233,6 @@ generate-java: clean-java
 		--java-jackson-package com.senzing.schema \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
-	@for file in $(FIX_FILES_MAP); do \
-		sed -i '5i import java.util.Map;' "java/src/main/java/com/senzing/schema/$$file"; \
-	done
-	@for file in $(FIX_FILES_LIST); do \
-		sed -i '5i import java.util.List;' "java/src/main/java/com/senzing/schema/$$file"; \
-	done
 
 
 .PHONY: generate-python

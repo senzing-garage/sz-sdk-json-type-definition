@@ -1910,45 +1910,6 @@
                 }
             }
         },
-        "MapStringToListOfFeatureDescriptionValue": {
-            "metadata": {
-                "csharpSystemTextType": "Dictionary<string, List<FeatureDescriptionValue>>",
-                "goType": "map[string][]FeatureDescriptionValue",
-                "javaJacksonType": "Map<String, List<FeatureDescriptionValue>>",
-                "pythonType": "Dict[str, List[FeatureDescriptionValue]]",
-                "reference": "MapStringToListOfFeatureDescriptionValue"
-            },
-            "type": "string"
-        },
-        "MapStringToListOfFeatureForAttributeWithAttributes": {
-            "metadata": {
-                "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
-                "goType": "map[string][]FeatureForAttributeWithAttributes",
-                "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
-                "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]",
-                "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
-            },
-            "type": "string"
-        },
-        "MapStringToListOfFeatureForGetEntity": {
-            "metadata": {
-                "csharpSystemTextType": "Dictionary<string, List<FeatureForGetEntity>>",
-                "goType": "map[string][]FeatureForGetEntity",
-                "javaJacksonType": "Map<String, List<FeatureForGetEntity>>",
-                "pythonType": "Dict[str, List[FeatureForGetEntity]]",
-                "reference": "MapStringToListOfFeatureForGetEntity"
-            },
-            "type": "string"
-        },
-        "MapStringToListOfMatchInfoForAttribute": {
-            "metadata": {
-                "goType": "map[string][]MatchInfoForAttribute",
-                "javaJacksonType": "Map<String, List<MatchInfoForAttribute>>",
-                "pythonType": "Dict[str, List[MatchInfoForAttribute]]",
-                "reference": "MapStringToListOfMatchInfoForAttribute"
-            },
-            "type": "string"
-        },
         "MatchKeyDetails": {
             "properties": {
                 "CONFIRMATIONS": {
@@ -2033,12 +1994,13 @@
         },
         "MatchInfoCandidateKeys": {
             "metadata": {
-                "goType": "map[string][]MatchInfoForAttribute",
-                "javaJacksonType": "Map<String, List<MatchInfoForAttribute>>",
-                "pythonType": "Dict[str, List[MatchInfoForAttribute]]",
                 "reference": "MapStringToListOfMatchInfoForAttribute"
             },
-            "type": "string"
+            "values": {
+                "elements": {
+                    "ref": "MatchInfoForAttribute"
+                }
+            }
         },
         "MatchInfoForAttribute": {
             "properties": {
@@ -2060,12 +2022,13 @@
             "properties": {
                 "CANDIDATE_KEYS": {
                     "metadata": {
-                        "goType": "map[string][]MatchInfoForAttribute",
-                        "javaJacksonType": "Map<String, List<MatchInfoForAttribute>>",
-                        "pythonType": "Dict[str, List[MatchInfoForAttribute]]",
                         "reference": "MapStringToListOfMatchInfoForAttribute"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "MatchInfoForAttribute"
+                        }
+                    }
                 },
                 "DISCLOSED_RELATIONS": {
                     "ref": "DisclosedRelation"
@@ -2259,13 +2222,13 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
-                        "goType": "map[string][]FeatureForAttributeWithAttributes",
-                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
-                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]",
                         "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForAttributeWithAttributes"
+                        }
+                    }
                 },
                 "FEATURE_IDS": {
                     "elements": {
@@ -2383,13 +2346,13 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
-                        "goType": "map[string][]FeatureForAttributeWithAttributes",
-                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
-                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]",
                         "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForAttributeWithAttributes"
+                        }
+                    }
                 },
                 "FEATURE_IDS": {
                     "elements": {
@@ -2823,13 +2786,13 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
-                        "goType": "map[string][]FeatureForAttributeWithAttributes",
-                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
-                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]",
                         "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForAttributeWithAttributes"
+                        }
+                    }
                 },
                 "FEATURE_IDS": {
                     "elements": {
@@ -2933,13 +2896,13 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForGetEntity>>",
-                        "goType": "map[string][]FeatureForGetEntity",
-                        "javaJacksonType": "Map<String, List<FeatureForGetEntity>>",
-                        "pythonType": "Dict[str, List[FeatureForGetEntity]]",
                         "reference": "MapStringToListOfFeatureForGetEntity"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForGetEntity"
+                        }
+                    }
                 },
                 "FEATURE_IDS": {
                     "elements": {
@@ -3189,13 +3152,13 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureDescriptionValue>>",
-                        "goType": "map[string][]FeatureDescriptionValue",
-                        "javaJacksonType": "Map<String, List<FeatureDescriptionValue>>",
-                        "pythonType": "Dict[str, List[FeatureDescriptionValue]]",
                         "reference": "MapStringToListOfFeatureDescriptionValue"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureDescriptionValue"
+                        }
+                    }
                 }
             }
         },
@@ -3864,13 +3827,13 @@
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
-                        "goType": "map[string][]FeatureForAttributeWithAttributes",
-                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
-                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]",
                         "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForAttributeWithAttributes"
+                        }
+                    }
                 },
                 "FEATURE_IDS": {
                     "elements": {
@@ -3929,13 +3892,13 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "csharpSystemTextType": "Dictionary<string, List<FeatureForAttributeWithAttributes>>",
-                        "goType": "map[string][]FeatureForAttributeWithAttributes",
-                        "javaJacksonType": "Map<String, List<FeatureForAttributeWithAttributes>>",
-                        "pythonType": "Dict[str, List[FeatureForAttributeWithAttributes]]",
                         "reference": "MapStringToListOfFeatureForAttributeWithAttributes"
                     },
-                    "type": "string"
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForAttributeWithAttributes"
+                        }
+                    }
                 },
                 "FEATURE_IDS": {
                     "elements": {

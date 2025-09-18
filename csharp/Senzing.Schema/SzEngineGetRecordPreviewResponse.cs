@@ -9,7 +9,7 @@ namespace Senzing.Schema
     public class SzEngineGetRecordPreviewResponse
     {
         [JsonPropertyName("FEATURES")]
-        public Dictionary<string, List<FeatureForAttributeWithAttributes>> Features { get; set; }
+        public IDictionary<string, IList<FeatureForAttributeWithAttributes>> Features { get; set; }
 
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }

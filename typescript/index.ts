@@ -703,14 +703,6 @@ export interface LockWaits {
   refreshLocks: RefreshLocks;
 }
 
-export type MapStringToListOfFeatureDescriptionValue = string;
-
-export type MapStringToListOfFeatureForAttributeWithAttributes = string;
-
-export type MapStringToListOfFeatureForGetEntity = string;
-
-export type MapStringToListOfMatchInfoForAttribute = string;
-
 export interface MatchInfoDisclosedRelations {
   REL_ANCHOR: RelAnchor[];
   REL_LINK: RelLink[];
@@ -742,7 +734,7 @@ export interface MatchInfo {
   WHY_KEY: string;
 }
 
-export type MatchInfoCandidateKeys = string;
+export type MatchInfoCandidateKeys = { [key: string]: MatchInfoForAttribute[] };
 
 export interface MatchInfoForAttribute {
   /**
@@ -753,7 +745,7 @@ export interface MatchInfoForAttribute {
 }
 
 export interface MatchInfoForWhy {
-  CANDIDATE_KEYS: string;
+  CANDIDATE_KEYS: { [key: string]: MatchInfoForAttribute[] };
   DISCLOSED_RELATIONS: DisclosedRelation;
   FEATURE_SCORES: FeatureScores;
 
@@ -847,7 +839,7 @@ export interface Record {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
@@ -898,7 +890,7 @@ export interface RecordForGetEntity {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
@@ -1112,7 +1104,7 @@ export interface ResolvedEntity {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
   FEATURE_IDS: FeatureId[];
 
   /**
@@ -1172,7 +1164,7 @@ export interface ResolvedEntityForGetEntity {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureForGetEntity[] };
   FEATURE_IDS: FeatureId[];
 
   /**
@@ -1243,7 +1235,7 @@ export interface Scoring {
 }
 
 export interface SearchRequest {
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureDescriptionValue[] };
   JSON_DATA: string;
   SEARCH_PROFILE: string;
 }
@@ -1526,7 +1518,7 @@ export interface SzEngineGetEntityByRecordIdResponse {
 }
 
 export interface SzEngineGetRecordPreviewResponse {
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
   FEATURE_IDS: FeatureId[];
   JSON_DATA: { [key: string]: Object };
   UNMAPPED_DATA: { [key: string]: Object };
@@ -1549,7 +1541,7 @@ export interface SzEngineGetRecordResponse {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: string;
+  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];

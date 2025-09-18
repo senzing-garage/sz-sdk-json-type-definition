@@ -910,14 +910,6 @@ type LockWaits struct {
 	RefreshLocks RefreshLocks `json:"refreshLocks"`
 }
 
-type MapStringToListOfFeatureDescriptionValue = map[string][]FeatureDescriptionValue
-
-type MapStringToListOfFeatureForAttributeWithAttributes = map[string][]FeatureForAttributeWithAttributes
-
-type MapStringToListOfFeatureForGetEntity = map[string][]FeatureForGetEntity
-
-type MapStringToListOfMatchInfoForAttribute = map[string][]MatchInfoForAttribute
-
 type MatchInfoDisclosedRelations struct {
 	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
 

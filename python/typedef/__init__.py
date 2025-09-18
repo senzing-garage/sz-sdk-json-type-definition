@@ -2097,50 +2097,6 @@ class LockWaits:
         return data
 
 @dataclass
-class MapStringToListOfFeatureDescriptionValue:
-    value: 'Dict[str, List[FeatureDescriptionValue]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToListOfFeatureDescriptionValue':
-        return cls(_from_json_data(Dict[str, List[FeatureDescriptionValue]], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class MapStringToListOfFeatureForAttributeWithAttributes:
-    value: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToListOfFeatureForAttributeWithAttributes':
-        return cls(_from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class MapStringToListOfFeatureForGetEntity:
-    value: 'Dict[str, List[FeatureForGetEntity]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToListOfFeatureForGetEntity':
-        return cls(_from_json_data(Dict[str, List[FeatureForGetEntity]], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
-class MapStringToListOfMatchInfoForAttribute:
-    value: 'Dict[str, List[MatchInfoForAttribute]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MapStringToListOfMatchInfoForAttribute':
-        return cls(_from_json_data(Dict[str, List[MatchInfoForAttribute]], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
-
-@dataclass
 class MatchInfoDisclosedRelations:
     rel_anchor: 'List[RelAnchor]'
     rel_link: 'List[RelLink]'

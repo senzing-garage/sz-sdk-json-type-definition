@@ -29,7 +29,7 @@ namespace Senzing.Schema
         public string ErruleCode { get; set; }
 
         [JsonPropertyName("FEATURES")]
-        public Dictionary<string, List<FeatureForAttributeWithAttributes>> Features { get; set; }
+        public IDictionary<string, IList<FeatureForAttributeWithAttributes>> Features { get; set; }
 
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }

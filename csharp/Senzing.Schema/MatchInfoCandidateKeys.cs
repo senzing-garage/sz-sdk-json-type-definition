@@ -2,6 +2,7 @@
 #pragma warning disable CS8601, CS8618
 
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -13,19 +14,19 @@ namespace Senzing.Schema
         /// <summary>
         /// The underlying data being wrapped.
         /// </summary>
-        public string Value { get; set; }
+        public IDictionary<string, IList<MatchInfoForAttribute>> Value { get; set; }
     }
 
     public class MatchInfoCandidateKeysJsonConverter : JsonConverter<MatchInfoCandidateKeys>
     {
         public override MatchInfoCandidateKeys Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new MatchInfoCandidateKeys { Value = JsonSerializer.Deserialize<string>(ref reader, options) };
+            return new MatchInfoCandidateKeys { Value = JsonSerializer.Deserialize<IDictionary<string, IList<MatchInfoForAttribute>>>(ref reader, options) };
         }
 
         public override void Write(Utf8JsonWriter writer, MatchInfoCandidateKeys value, JsonSerializerOptions options)
         {
-            JsonSerializer.Serialize<string>(writer, value.Value, options);
+            JsonSerializer.Serialize<IDictionary<string, IList<MatchInfoForAttribute>>>(writer, value.Value, options);
         }
     }
 }
