@@ -8,12 +8,18 @@ namespace Senzing.Schema
 {
     public class InterestingEntitySampleRecords
     {
+        /// <summary>
+        /// A label identifying the provenance of the record.
+        /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }
 
+        /// <summary>
+        /// The unique identifier within the set of records in the DATA_SOURCE.
+        /// </summary>
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }
     }

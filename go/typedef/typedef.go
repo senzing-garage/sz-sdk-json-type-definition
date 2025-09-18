@@ -251,6 +251,7 @@ type CfgErfrag struct {
 type CfgErrule struct {
 	DisqErfragCode string `json:"DISQ_ERFRAG_CODE"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	ErruleDesc string `json:"ERRULE_DESC"`
@@ -393,6 +394,7 @@ type CfgLens struct {
 type CfgLensrl = []Fixme
 
 type CfgRclass struct {
+	// Indicates if this is a disclosed relationship.
 	IsDisclosed string `json:"IS_DISCLOSED"`
 
 	RclassCode string `json:"RCLASS_CODE"`
@@ -555,6 +557,7 @@ type DataSource struct {
 type DisclosedRelation struct {
 	Domain string `json:"DOMAIN"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	FeatID int64 `json:"FEAT_ID"`
@@ -583,14 +586,19 @@ type EntityForWhySearch struct {
 }
 
 type EntityNetworkLink struct {
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
+	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
+	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	MaxEntityID int64 `json:"MAX_ENTITY_ID"`
@@ -607,14 +615,19 @@ type EntityPath struct {
 }
 
 type EntityPathLink struct {
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
+	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
+	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	MaxEntityID int64 `json:"MAX_ENTITY_ID"`
@@ -649,6 +662,7 @@ type FeatureDescriptionValue struct {
 
 	EntityCount int64 `json:"ENTITY_COUNT"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
@@ -663,42 +677,56 @@ type FeatureDescriptionValue struct {
 }
 
 type FeatureForAttribute struct {
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	// Describes the attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
+	// Label to identify how some features are being used (can also change some
+	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
 }
 
 type FeatureForAttributeWithAttributes struct {
 	Attributes SenzingEntitySpecification `json:"ATTRIBUTES"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	// Describes the attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
+	// Label to identify how some features are being used (can also change some
+	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
 }
 
 type FeatureForGetEntity struct {
 	Attributes []SenzingEntitySpecification `json:"ATTRIBUTES"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	// Describes the attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
+	// Label to identify how some features are being used (can also change some
+	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
 }
 
 type FeatureID struct {
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
+	// Label to identify how some features are being used (can also change some
+	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
 }
 
@@ -741,8 +769,10 @@ type Fixme struct {
 }
 
 type FocusRecord struct {
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
@@ -859,10 +889,12 @@ type InterestingEntities struct {
 }
 
 type InterestingEntitySampleRecords struct {
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	Flags []string `json:"FLAGS"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
@@ -919,16 +951,19 @@ type MatchInfo struct {
 
 	DisclosedRelations MatchInfoDisclosedRelations `json:"DISCLOSED_RELATIONS"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	FeatureScores FeatureScores `json:"FEATURE_SCORES"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	WhyErruleCode string `json:"WHY_ERRULE_CODE"`
@@ -939,6 +974,7 @@ type MatchInfo struct {
 type MatchInfoCandidateKeys = map[string][]MatchInfoForAttribute
 
 type MatchInfoForAttribute struct {
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	FeatID int64 `json:"FEAT_ID"`
@@ -951,6 +987,7 @@ type MatchInfoForWhy struct {
 
 	FeatureScores FeatureScores `json:"FEATURE_SCORES"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	WhyErruleCode string `json:"WHY_ERRULE_CODE"`
@@ -965,10 +1002,12 @@ type MatchKeyDetails struct {
 
 	Denials []Confirmation `json:"DENIALS"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 }
 
 type MemberRecord struct {
+	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
 	Records Records `json:"RECORDS"`
@@ -1055,6 +1094,7 @@ type Record struct {
 
 	AttributeData []string `json:"ATTRIBUTE_DATA"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	EntityData []string `json:"ENTITY_DATA"`
@@ -1065,6 +1105,7 @@ type Record struct {
 
 	EntityType string `json:"ENTITY_TYPE"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
@@ -1075,16 +1116,19 @@ type Record struct {
 
 	IdentifierData []string `json:"IDENTIFIER_DATA"`
 
+	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
 	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	NameData []string `json:"NAME_DATA"`
@@ -1093,6 +1137,7 @@ type Record struct {
 
 	PhoneData []string `json:"PHONE_DATA"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
@@ -1105,6 +1150,7 @@ type RecordForGetEntity struct {
 
 	AttributeData []string `json:"ATTRIBUTE_DATA"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	EntityData []string `json:"ENTITY_DATA"`
@@ -1115,6 +1161,7 @@ type RecordForGetEntity struct {
 
 	EntityType string `json:"ENTITY_TYPE"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
@@ -1125,16 +1172,19 @@ type RecordForGetEntity struct {
 
 	IdentifierData []string `json:"IDENTIFIER_DATA"`
 
+	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
 	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	NameData []string `json:"NAME_DATA"`
@@ -1143,6 +1193,7 @@ type RecordForGetEntity struct {
 
 	PhoneData []string `json:"PHONE_DATA"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
@@ -1151,7 +1202,7 @@ type RecordForGetEntity struct {
 }
 
 type RecordKey struct {
-	// The data source code identifying the provenance of the record.
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -1164,12 +1215,14 @@ type RecordKeys struct {
 }
 
 type RecordSummaryElement struct {
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// The number of records for the entity with the same data source code.
 	RecordCount int64 `json:"RECORD_COUNT"`
 }
 
@@ -1188,6 +1241,7 @@ type RefreshLocks struct {
 type RelAnchor struct {
 	Domain string `json:"DOMAIN"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	FeatID int64 `json:"FEAT_ID"`
@@ -1206,6 +1260,7 @@ type RelAnchor struct {
 type RelLink struct {
 	Domain string `json:"DOMAIN"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	FeatID int64 `json:"FEAT_ID"`
@@ -1224,6 +1279,7 @@ type RelLink struct {
 type RelPointer struct {
 	Domain string `json:"DOMAIN"`
 
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	FeatID int64 `json:"FEAT_ID"`
@@ -1242,24 +1298,32 @@ type RelatedEntity struct {
 	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
+	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
+	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
+	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	Records Records `json:"RECORDS"`
 
+	// Overview of the source systems the records came from comprising this related
+	// entity.
 	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 }
 
@@ -1318,28 +1382,36 @@ type ResolvedEntity struct {
 	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
+	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
+	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
+	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	Records Records `json:"RECORDS"`
 
+	// Overview of the source systems the records came from comprising this related
+	// entity.
 	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 
 	RecordTypes []string `json:"RECORD_TYPES"`
@@ -1362,28 +1434,36 @@ type ResolvedEntityForGetEntity struct {
 	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
+	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
 
 	FeatureIds FeatureIds `json:"FEATURE_IDS"`
 
+	// Indicates if this is an ambiguous relationship.
 	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
 
+	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	Records RecordsForGetEntity `json:"RECORDS"`
 
+	// Overview of the source systems the records came from comprising this related
+	// entity.
 	RecordSummary []RecordSummaryElement `json:"RECORD_SUMMARY"`
 
 	RecordTypes []string `json:"RECORD_TYPES"`
@@ -1714,20 +1794,24 @@ type SzDiagnosticGetRepositoryInfoResponse struct {
 type SzEngineAddRecordResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineDeleteRecordResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
@@ -1840,6 +1924,7 @@ type SzEngineGetRecordResponse struct {
 
 	AttributeData []string `json:"ATTRIBUTE_DATA"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	EntityData []string `json:"ENTITY_DATA"`
@@ -1850,6 +1935,7 @@ type SzEngineGetRecordResponse struct {
 
 	EntityType string `json:"ENTITY_TYPE"`
 
+	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
@@ -1860,16 +1946,19 @@ type SzEngineGetRecordResponse struct {
 
 	IdentifierData []string `json:"IDENTIFIER_DATA"`
 
+	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
 	JSONData map[string]any `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
+	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
+	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	NameData []string `json:"NAME_DATA"`
@@ -1878,6 +1967,7 @@ type SzEngineGetRecordResponse struct {
 
 	PhoneData []string `json:"PHONE_DATA"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
 	RelationshipData []string `json:"RELATIONSHIP_DATA"`
@@ -1909,30 +1999,36 @@ type SzEngineHowEntityByEntityIDResponse struct {
 type SzEngineProcessRedoRecordResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineReevaluateEntityResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineReevaluateRecordResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
+	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 }
 
@@ -2028,11 +2124,6 @@ type SzProductGetVersionResponse struct {
 	Version string `json:"VERSION"`
 }
 
-type SzTestResponse1 struct {
-	// FIXME: 1.1
-	Field string `json:"FIELD_1.1"`
-}
-
 type ThreadState struct {
 	Active int32 `json:"active"`
 
@@ -2110,8 +2201,10 @@ type WhyResult struct {
 
 	FocusRecords0 FocusRecords `json:"FOCUS_RECORDS_2"`
 
+	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
+	// Internal identifier for the record.
 	InternalID0 int64 `json:"INTERNAL_ID_2"`
 
 	MatchInfo MatchInfoForWhy `json:"MATCH_INFO"`

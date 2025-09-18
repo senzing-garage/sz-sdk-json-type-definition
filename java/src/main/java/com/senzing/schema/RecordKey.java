@@ -18,7 +18,7 @@ public class RecordKey {
 
     /**
      * Getter for dataSource.<p>
-     * The data source code identifying the provenance of the record.
+     * A label identifying the provenance of the record.
      */
     public String getDataSource() {
         return dataSource;
@@ -26,7 +26,7 @@ public class RecordKey {
 
     /**
      * Setter for dataSource.<p>
-     * The data source code identifying the provenance of the record.
+     * A label identifying the provenance of the record.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;

@@ -16,6 +16,9 @@ namespace Senzing.Schema
         [JsonPropertyName("ENTITY_COUNT")]
         public int EntityCount { get; set; }
 
+        /// <summary>
+        /// Describes the attributes that make up the feature.
+        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 

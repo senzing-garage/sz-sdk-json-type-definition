@@ -42,6 +42,7 @@ public class FeatureForAttributeWithAttributes {
 
     /**
      * Getter for featDesc.<p>
+     * Describes the attributes that make up the feature.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -49,6 +50,7 @@ public class FeatureForAttributeWithAttributes {
 
     /**
      * Setter for featDesc.<p>
+     * Describes the attributes that make up the feature.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;
@@ -56,6 +58,7 @@ public class FeatureForAttributeWithAttributes {
 
     /**
      * Getter for featDescValues.<p>
+     * Describes the attributes that make up the feature.
      */
     public List<FeatureDescriptionValue> getFeatDescValues() {
         return featDescValues;
@@ -63,6 +66,7 @@ public class FeatureForAttributeWithAttributes {
 
     /**
      * Setter for featDescValues.<p>
+     * Describes the attributes that make up the feature.
      */
     public void setFeatDescValues(List<FeatureDescriptionValue> featDescValues) {
         this.featDescValues = featDescValues;
@@ -84,6 +88,8 @@ public class FeatureForAttributeWithAttributes {
 
     /**
      * Getter for usageType.<p>
+     * Label to identify how some features are being used (can also change some
+     * features behavior).
      */
     public String getUsageType() {
         return usageType;
@@ -91,6 +97,8 @@ public class FeatureForAttributeWithAttributes {
 
     /**
      * Setter for usageType.<p>
+     * Label to identify how some features are being used (can also change some
+     * features behavior).
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

@@ -25,6 +25,7 @@ public class RecordSummaryElement {
 
     /**
      * Getter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public String getDataSource() {
         return dataSource;
@@ -32,6 +33,7 @@ public class RecordSummaryElement {
 
     /**
      * Setter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -67,6 +69,7 @@ public class RecordSummaryElement {
 
     /**
      * Getter for recordCount.<p>
+     * The number of records for the entity with the same data source code.
      */
     public Integer getRecordCount() {
         return recordCount;
@@ -74,6 +77,7 @@ public class RecordSummaryElement {
 
     /**
      * Setter for recordCount.<p>
+     * The number of records for the entity with the same data source code.
      */
     public void setRecordCount(Integer recordCount) {
         this.recordCount = recordCount;

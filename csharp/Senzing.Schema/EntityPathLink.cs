@@ -7,18 +7,33 @@ namespace Senzing.Schema
 {
     public class EntityPathLink
     {
+        /// <summary>
+        /// Identifier of the entity resolution rule that was triggered.
+        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
+        /// <summary>
+        /// Indicates if this is an ambiguous relationship.
+        /// </summary>
         [JsonPropertyName("IS_AMBIGUOUS")]
         public int IsAmbiguous { get; set; }
 
+        /// <summary>
+        /// Indicates if this is a disclosed relationship.
+        /// </summary>
         [JsonPropertyName("IS_DISCLOSED")]
         public int IsDisclosed { get; set; }
 
+        /// <summary>
+        /// Representation of matched source record features.
+        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
+        /// <summary>
+        /// The type of match that occurred for the record.
+        /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 

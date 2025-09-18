@@ -75,6 +75,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for entityName.<p>
+     * A name this entity goes by. An entity could have multiple names.
      */
     public String getEntityName() {
         return entityName;
@@ -82,6 +83,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for entityName.<p>
+     * A name this entity goes by. An entity could have multiple names.
      */
     public void setEntityName(String entityName) {
         this.entityName = entityName;
@@ -89,6 +91,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -96,6 +99,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -131,6 +135,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for isAmbiguous.<p>
+     * Indicates if this is an ambiguous relationship.
      */
     public Integer getIsAmbiguous() {
         return isAmbiguous;
@@ -138,6 +143,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for isAmbiguous.<p>
+     * Indicates if this is an ambiguous relationship.
      */
     public void setIsAmbiguous(Integer isAmbiguous) {
         this.isAmbiguous = isAmbiguous;
@@ -145,6 +151,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for isDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
      */
     public Integer getIsDisclosed() {
         return isDisclosed;
@@ -152,6 +159,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for isDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
      */
     public void setIsDisclosed(Integer isDisclosed) {
         this.isDisclosed = isDisclosed;
@@ -173,6 +181,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public String getMatchKey() {
         return matchKey;
@@ -180,6 +189,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -201,6 +211,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -208,6 +219,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -229,6 +241,8 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for recordSummary.<p>
+     * Overview of the source systems the records came from comprising this
+     * related entity.
      */
     public List<RecordSummaryElement> getRecordSummary() {
         return recordSummary;
@@ -236,6 +250,8 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for recordSummary.<p>
+     * Overview of the source systems the records came from comprising this
+     * related entity.
      */
     public void setRecordSummary(List<RecordSummaryElement> recordSummary) {
         this.recordSummary = recordSummary;

@@ -8,6 +8,9 @@ namespace Senzing.Schema
 {
     public class RecordSummaryElement
     {
+        /// <summary>
+        /// A label identifying the provenance of the record.
+        /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
@@ -17,6 +20,9 @@ namespace Senzing.Schema
         [JsonPropertyName("LAST_SEEN_DT")]
         public DateTimeOffset LastSeenDt { get; set; }
 
+        /// <summary>
+        /// The number of records for the entity with the same data source code.
+        /// </summary>
         [JsonPropertyName("RECORD_COUNT")]
         public int RecordCount { get; set; }
     }

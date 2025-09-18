@@ -16,6 +16,9 @@ namespace Senzing.Schema
         [JsonPropertyName("FEATURE_SCORES")]
         public FeatureScores FeatureScores { get; set; }
 
+        /// <summary>
+        /// The type of match that occurred for the record.
+        /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 

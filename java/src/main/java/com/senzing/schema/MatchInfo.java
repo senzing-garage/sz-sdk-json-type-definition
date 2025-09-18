@@ -70,6 +70,7 @@ public class MatchInfo {
 
     /**
      * Getter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -77,6 +78,7 @@ public class MatchInfo {
 
     /**
      * Setter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -98,6 +100,7 @@ public class MatchInfo {
 
     /**
      * Getter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public String getMatchKey() {
         return matchKey;
@@ -105,6 +108,7 @@ public class MatchInfo {
 
     /**
      * Setter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -140,6 +144,7 @@ public class MatchInfo {
 
     /**
      * Getter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -147,6 +152,7 @@ public class MatchInfo {
 
     /**
      * Setter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;

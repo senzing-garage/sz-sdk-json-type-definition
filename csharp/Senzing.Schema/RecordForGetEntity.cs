@@ -15,6 +15,9 @@ namespace Senzing.Schema
         [JsonPropertyName("ATTRIBUTE_DATA")]
         public IList<string> AttributeData { get; set; }
 
+        /// <summary>
+        /// A label identifying the provenance of the record.
+        /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
@@ -30,6 +33,9 @@ namespace Senzing.Schema
         [JsonPropertyName("ENTITY_TYPE")]
         public string EntityType { get; set; }
 
+        /// <summary>
+        /// Identifier of the entity resolution rule that was triggered.
+        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
@@ -45,6 +51,9 @@ namespace Senzing.Schema
         [JsonPropertyName("IDENTIFIER_DATA")]
         public IList<string> IdentifierData { get; set; }
 
+        /// <summary>
+        /// Internal identifier for the record.
+        /// </summary>
         [JsonPropertyName("INTERNAL_ID")]
         public int InternalId { get; set; }
 
@@ -54,12 +63,18 @@ namespace Senzing.Schema
         [JsonPropertyName("LAST_SEEN_DT")]
         public DateTimeOffset LastSeenDt { get; set; }
 
+        /// <summary>
+        /// Representation of matched source record features.
+        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
         [JsonPropertyName("MATCH_LEVEL")]
         public int MatchLevel { get; set; }
 
+        /// <summary>
+        /// The type of match that occurred for the record.
+        /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 
@@ -72,6 +87,9 @@ namespace Senzing.Schema
         [JsonPropertyName("PHONE_DATA")]
         public IList<string> PhoneData { get; set; }
 
+        /// <summary>
+        /// The unique identifier within the set of records in the DATA_SOURCE.
+        /// </summary>
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }
 

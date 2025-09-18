@@ -8,15 +8,25 @@ namespace Senzing.Schema
 {
     public class FeatureForAttribute
     {
+        /// <summary>
+        /// Describes the attributes that make up the feature.
+        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// Describes the attributes that make up the feature.
+        /// </summary>
         [JsonPropertyName("FEAT_DESC_VALUES")]
         public IList<FeatureDescriptionValue> FeatDescValues { get; set; }
 
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
+        /// <summary>
+        /// Label to identify how some features are being used (can also change
+        /// some features behavior).
+        /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
     }

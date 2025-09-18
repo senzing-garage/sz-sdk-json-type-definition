@@ -8,7 +8,7 @@ namespace Senzing.Schema
     public class RecordKey
     {
         /// <summary>
-        /// The data source code identifying the provenance of the record.
+        /// A label identifying the provenance of the record.
         /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }

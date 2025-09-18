@@ -18,6 +18,7 @@ public class MemberRecord {
 
     /**
      * Getter for internalId.<p>
+     * Internal identifier for the record.
      */
     public Integer getInternalId() {
         return internalId;
@@ -25,6 +26,7 @@ public class MemberRecord {
 
     /**
      * Setter for internalId.<p>
+     * Internal identifier for the record.
      */
     public void setInternalId(Integer internalId) {
         this.internalId = internalId;

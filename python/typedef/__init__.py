@@ -548,6 +548,10 @@ class CfgErfrag:
 class CfgErrule:
     disq_erfrag_code: 'str'
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     errule_desc: 'str'
     errule_id: 'int'
     errule_tier: 'int'
@@ -861,6 +865,10 @@ class CfgLensrl:
 @dataclass
 class CfgRclass:
     is_disclosed: 'str'
+    """
+    Indicates if this is a disclosed relationship.
+    """
+
     rclass_code: 'str'
     rclass_desc: 'str'
     rclass_id: 'int'
@@ -1224,6 +1232,10 @@ class DataSource:
 class DisclosedRelation:
     domain: 'str'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_id: 'int'
     feat_usage_type: 'str'
     linked_feat_desc: 'str'
@@ -1295,10 +1307,30 @@ class EntityForWhySearch:
 @dataclass
 class EntityNetworkLink:
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     is_ambiguous: 'int'
+    """
+    Indicates if this is an ambiguous relationship.
+    """
+
     is_disclosed: 'int'
+    """
+    Indicates if this is a disclosed relationship.
+    """
+
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     max_entity_id: 'int'
     min_entity_id: 'int'
 
@@ -1349,10 +1381,30 @@ class EntityPath:
 @dataclass
 class EntityPathLink:
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     is_ambiguous: 'int'
+    """
+    Indicates if this is an ambiguous relationship.
+    """
+
     is_disclosed: 'int'
+    """
+    Indicates if this is a disclosed relationship.
+    """
+
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     max_entity_id: 'int'
     min_entity_id: 'int'
 
@@ -1442,6 +1494,10 @@ class FeatureDescriptionValue:
     candidate_cap_reached: 'str'
     entity_count: 'int'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     lib_feat_id: 'int'
     scoring_cap_reached: 'str'
     suppressed: 'str'
@@ -1478,9 +1534,22 @@ class FeatureDescriptionValue:
 @dataclass
 class FeatureForAttribute:
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_desc_values: 'List[FeatureDescriptionValue]'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     lib_feat_id: 'int'
     usage_type: 'str'
+    """
+    Label to identify how some features are being used (can also change some
+    features behavior).
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
@@ -1503,9 +1572,22 @@ class FeatureForAttribute:
 class FeatureForAttributeWithAttributes:
     attributes: 'SenzingEntitySpecification'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_desc_values: 'List[FeatureDescriptionValue]'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     lib_feat_id: 'int'
     usage_type: 'str'
+    """
+    Label to identify how some features are being used (can also change some
+    features behavior).
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureForAttributeWithAttributes':
@@ -1530,9 +1612,22 @@ class FeatureForAttributeWithAttributes:
 class FeatureForGetEntity:
     attributes: 'List[SenzingEntitySpecification]'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_desc_values: 'List[FeatureDescriptionValue]'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     lib_feat_id: 'int'
     usage_type: 'str'
+    """
+    Label to identify how some features are being used (can also change some
+    features behavior).
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureForGetEntity':
@@ -1557,6 +1652,11 @@ class FeatureForGetEntity:
 class FeatureID:
     lib_feat_id: 'int'
     usage_type: 'str'
+    """
+    Label to identify how some features are being used (can also change some
+    features behavior).
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureID':
@@ -1682,7 +1782,15 @@ class Fixme:
 @dataclass
 class FocusRecord:
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FocusRecord':
@@ -1948,8 +2056,16 @@ class InterestingEntities:
 @dataclass
 class InterestingEntitySampleRecords:
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     flags: 'List[str]'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntitySampleRecords':
@@ -2145,11 +2261,23 @@ class MatchInfo:
     candidate_keys: 'MatchInfoCandidateKeys'
     disclosed_relations: 'MatchInfoDisclosedRelations'
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     feature_scores: 'FeatureScores'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_key_details: 'MatchKeyDetails'
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     why_errule_code: 'str'
     why_key: 'str'
 
@@ -2196,6 +2324,10 @@ class MatchInfoCandidateKeys:
 @dataclass
 class MatchInfoForAttribute:
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_id: 'int'
 
     @classmethod
@@ -2217,6 +2349,10 @@ class MatchInfoForWhy:
     disclosed_relations: 'DisclosedRelation'
     feature_scores: 'FeatureScores'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     why_errule_code: 'str'
     why_key: 'str'
     why_key_details: 'WhyKeyDetails'
@@ -2249,6 +2385,10 @@ class MatchKeyDetails:
     confirmations: 'List[Confirmation]'
     denials: 'List[Confirmation]'
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchKeyDetails':
@@ -2268,6 +2408,10 @@ class MatchKeyDetails:
 @dataclass
 class MemberRecord:
     internal_id: 'int'
+    """
+    Internal identifier for the record.
+    """
+
     records: 'Records'
 
     @classmethod
@@ -2489,25 +2633,49 @@ class Record:
     address_data: 'List[str]'
     attribute_data: 'List[str]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     entity_data: 'List[str]'
     entity_desc: 'str'
     entity_key: 'str'
     entity_type: 'str'
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
     internal_id: 'int'
+    """
+    Internal identifier for the record.
+    """
+
     json_data: 'Dict[str, object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     name_data: 'List[str]'
     other_data: 'List[str]'
     phone_data: 'List[str]'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
     relationship_data: 'List[str]'
     unmapped_data: 'Dict[str, object]'
 
@@ -2573,25 +2741,49 @@ class RecordForGetEntity:
     address_data: 'List[str]'
     attribute_data: 'List[str]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     entity_data: 'List[str]'
     entity_desc: 'str'
     entity_key: 'str'
     entity_type: 'str'
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
     internal_id: 'int'
+    """
+    Internal identifier for the record.
+    """
+
     json_data: 'Dict[str, object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     name_data: 'List[str]'
     other_data: 'List[str]'
     phone_data: 'List[str]'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
     relationship_data: 'List[str]'
     unmapped_data: 'Dict[str, object]'
 
@@ -2656,7 +2848,7 @@ class RecordForGetEntity:
 class RecordKey:
     data_source: 'str'
     """
-    The data source code identifying the provenance of the record.
+    A label identifying the provenance of the record.
     """
 
     record_id: 'str'
@@ -2700,9 +2892,17 @@ class RecordKeys:
 @dataclass
 class RecordSummaryElement:
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     first_seen_dt: 'datetime'
     last_seen_dt: 'datetime'
     record_count: 'int'
+    """
+    The number of records for the entity with the same data source code.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordSummaryElement':
@@ -2768,6 +2968,10 @@ class RefreshLocks:
 class RelAnchor:
     domain: 'str'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_id: 'int'
     linked_feat_desc: 'str'
     linked_feat_id: 'int'
@@ -2804,6 +3008,10 @@ class RelAnchor:
 class RelLink:
     domain: 'str'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_id: 'int'
     feat_usage_type: 'str'
     linked_feat_desc: 'str'
@@ -2840,6 +3048,10 @@ class RelLink:
 class RelPointer:
     domain: 'str'
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     feat_id: 'int'
     feat_usage_type: 'str'
     linked_feat_desc: 'str'
@@ -2878,15 +3090,44 @@ class RelatedEntity:
     """
 
     entity_name: 'str'
+    """
+    A name this entity goes by. An entity could have multiple names.
+    """
+
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     is_ambiguous: 'int'
+    """
+    Indicates if this is an ambiguous relationship.
+    """
+
     is_disclosed: 'int'
+    """
+    Indicates if this is a disclosed relationship.
+    """
+
     last_seen_dt: 'datetime'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     records: 'Records'
     record_summary: 'List[RecordSummaryElement]'
+    """
+    Overview of the source systems the records came from comprising this related
+    entity.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelatedEntity':
@@ -3056,17 +3297,46 @@ class ResolvedEntity:
     """
 
     entity_name: 'str'
+    """
+    A name this entity goes by. An entity could have multiple names.
+    """
+
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     is_ambiguous: 'int'
+    """
+    Indicates if this is an ambiguous relationship.
+    """
+
     is_disclosed: 'int'
+    """
+    Indicates if this is a disclosed relationship.
+    """
+
     last_seen_dt: 'datetime'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     records: 'Records'
     record_summary: 'List[RecordSummaryElement]'
+    """
+    Overview of the source systems the records came from comprising this related
+    entity.
+    """
+
     record_types: 'List[str]'
 
     @classmethod
@@ -3151,17 +3421,46 @@ class ResolvedEntityForGetEntity:
     """
 
     entity_name: 'str'
+    """
+    A name this entity goes by. An entity could have multiple names.
+    """
+
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     features: 'Dict[str, List[FeatureForGetEntity]]'
     feature_ids: 'FeatureIds'
     is_ambiguous: 'int'
+    """
+    Indicates if this is an ambiguous relationship.
+    """
+
     is_disclosed: 'int'
+    """
+    Indicates if this is a disclosed relationship.
+    """
+
     last_seen_dt: 'datetime'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     records: 'RecordsForGetEntity'
     record_summary: 'List[RecordSummaryElement]'
+    """
+    Overview of the source systems the records came from comprising this related
+    entity.
+    """
+
     record_types: 'List[str]'
 
     @classmethod
@@ -3887,8 +4186,16 @@ class SzDiagnosticGetRepositoryInfoResponse:
 class SzEngineAddRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     interesting_entities: 'InterestingEntities'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineAddRecordResponse':
@@ -3911,8 +4218,16 @@ class SzEngineAddRecordResponse:
 class SzEngineDeleteRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     interesting_entities: 'InterestingEntities'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineDeleteRecordResponse':
@@ -4250,25 +4565,49 @@ class SzEngineGetRecordResponse:
     address_data: 'List[str]'
     attribute_data: 'List[str]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     entity_data: 'List[str]'
     entity_desc: 'str'
     entity_key: 'str'
     entity_type: 'str'
     errule_code: 'str'
+    """
+    Identifier of the entity resolution rule that was triggered.
+    """
+
     features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
     feature_ids: 'FeatureIds'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
     internal_id: 'int'
+    """
+    Internal identifier for the record.
+    """
+
     json_data: 'Dict[str, object]'
     last_seen_dt: 'datetime'
     match_key: 'str'
+    """
+    Representation of matched source record features.
+    """
+
     match_level: 'int'
     match_level_code: 'str'
+    """
+    The type of match that occurred for the record.
+    """
+
     name_data: 'List[str]'
     other_data: 'List[str]'
     phone_data: 'List[str]'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
     relationship_data: 'List[str]'
     unmapped_data: 'Dict[str, object]'
 
@@ -4412,8 +4751,16 @@ class SzEngineHowEntityByEntityIDResponse:
 class SzEngineProcessRedoRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     interesting_entities: 'InterestingEntities'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineProcessRedoRecordResponse':
@@ -4436,8 +4783,16 @@ class SzEngineProcessRedoRecordResponse:
 class SzEngineReevaluateEntityResponse:
     affected_entities: 'List[AffectedEntity]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     interesting_entities: 'InterestingEntities'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineReevaluateEntityResponse':
@@ -4460,8 +4815,16 @@ class SzEngineReevaluateEntityResponse:
 class SzEngineReevaluateRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     data_source: 'str'
+    """
+    A label identifying the provenance of the record.
+    """
+
     interesting_entities: 'InterestingEntities'
     record_id: 'str'
+    """
+    The unique identifier within the set of records in the DATA_SOURCE.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineReevaluateRecordResponse':
@@ -4727,25 +5090,6 @@ class SzProductGetVersionResponse:
         return data
 
 @dataclass
-class SzTestResponse1:
-    field: 'str'
-    """
-    FIXME: 1.1
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzTestResponse1':
-        return cls(
-            _from_json_data(str, data.get("FIELD_1.1")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FIELD_1.1"] = _to_json_data(self.field)
-        return data
-
-@dataclass
 class ThreadState:
     active: 'int'
     data_latch_contention: 'int'
@@ -4919,7 +5263,15 @@ class WhyResult:
     focus_records: 'FocusRecords'
     focus_records0: 'FocusRecords'
     internal_id: 'int'
+    """
+    Internal identifier for the record.
+    """
+
     internal_id0: 'int'
+    """
+    Internal identifier for the record.
+    """
+
     match_info: 'MatchInfoForWhy'
 
     @classmethod

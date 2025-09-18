@@ -563,6 +563,8 @@ module SenzingTypeDef
 
   class CfgErrule
     attr_accessor :disq_erfrag_code
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :errule_desc
     attr_accessor :errule_id
@@ -889,6 +891,7 @@ module SenzingTypeDef
   end
 
   class CfgRclass
+    # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
     attr_accessor :rclass_code
     attr_accessor :rclass_desc
@@ -1260,6 +1263,8 @@ module SenzingTypeDef
 
   class DisclosedRelation
     attr_accessor :domain
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :feat_id
     attr_accessor :feat_usage_type
@@ -1334,10 +1339,19 @@ module SenzingTypeDef
   end
 
   class EntityNetworkLink
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
+
+    # Indicates if this is an ambiguous relationship.
     attr_accessor :is_ambiguous
+
+    # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
+
+    # Representation of matched source record features.
     attr_accessor :match_key
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :max_entity_id
     attr_accessor :min_entity_id
@@ -1390,10 +1404,19 @@ module SenzingTypeDef
   end
 
   class EntityPathLink
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
+
+    # Indicates if this is an ambiguous relationship.
     attr_accessor :is_ambiguous
+
+    # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
+
+    # Representation of matched source record features.
     attr_accessor :match_key
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :max_entity_id
     attr_accessor :min_entity_id
@@ -1487,6 +1510,8 @@ module SenzingTypeDef
     attr_accessor :attributes
     attr_accessor :candidate_cap_reached
     attr_accessor :entity_count
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :lib_feat_id
     attr_accessor :scoring_cap_reached
@@ -1524,9 +1549,15 @@ module SenzingTypeDef
   end
 
   class FeatureForAttribute
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc_values
     attr_accessor :lib_feat_id
+
+    # Label to identify how some features are being used (can also change some
+    # features behavior).
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -1550,9 +1581,16 @@ module SenzingTypeDef
 
   class FeatureForAttributeWithAttributes
     attr_accessor :attributes
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc_values
     attr_accessor :lib_feat_id
+
+    # Label to identify how some features are being used (can also change some
+    # features behavior).
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -1578,9 +1616,16 @@ module SenzingTypeDef
 
   class FeatureForGetEntity
     attr_accessor :attributes
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc_values
     attr_accessor :lib_feat_id
+
+    # Label to identify how some features are being used (can also change some
+    # features behavior).
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -1606,6 +1651,9 @@ module SenzingTypeDef
 
   class FeatureID
     attr_accessor :lib_feat_id
+
+    # Label to identify how some features are being used (can also change some
+    # features behavior).
     attr_accessor :usage_type
 
     def self.from_json_data(data)
@@ -1744,7 +1792,10 @@ module SenzingTypeDef
   end
 
   class FocusRecord
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -2022,8 +2073,11 @@ module SenzingTypeDef
   end
 
   class InterestingEntitySampleRecords
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :flags
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -2246,11 +2300,17 @@ module SenzingTypeDef
   class MatchInfo
     attr_accessor :candidate_keys
     attr_accessor :disclosed_relations
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :feature_scores
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_key_details
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :why_errule_code
     attr_accessor :why_key
@@ -2301,6 +2361,7 @@ module SenzingTypeDef
   end
 
   class MatchInfoForAttribute
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :feat_id
 
@@ -2323,6 +2384,8 @@ module SenzingTypeDef
     attr_accessor :candidate_keys
     attr_accessor :disclosed_relations
     attr_accessor :feature_scores
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :why_errule_code
     attr_accessor :why_key
@@ -2356,6 +2419,8 @@ module SenzingTypeDef
   class MatchKeyDetails
     attr_accessor :confirmations
     attr_accessor :denials
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
 
     def self.from_json_data(data)
@@ -2376,6 +2441,7 @@ module SenzingTypeDef
   end
 
   class MemberRecord
+    # Internal identifier for the record.
     attr_accessor :internal_id
     attr_accessor :records
 
@@ -2614,25 +2680,37 @@ module SenzingTypeDef
   class Record
     attr_accessor :address_data
     attr_accessor :attribute_data
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :entity_data
     attr_accessor :entity_desc
     attr_accessor :entity_key
     attr_accessor :entity_type
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :features
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
     attr_accessor :identifier_data
+
+    # Internal identifier for the record.
     attr_accessor :internal_id
     attr_accessor :json_data
     attr_accessor :last_seen_dt
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :name_data
     attr_accessor :other_data
     attr_accessor :phone_data
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
     attr_accessor :relationship_data
     attr_accessor :unmapped_data
@@ -2699,25 +2777,37 @@ module SenzingTypeDef
   class RecordForGetEntity
     attr_accessor :address_data
     attr_accessor :attribute_data
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :entity_data
     attr_accessor :entity_desc
     attr_accessor :entity_key
     attr_accessor :entity_type
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :features
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
     attr_accessor :identifier_data
+
+    # Internal identifier for the record.
     attr_accessor :internal_id
     attr_accessor :json_data
     attr_accessor :last_seen_dt
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :name_data
     attr_accessor :other_data
     attr_accessor :phone_data
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
     attr_accessor :relationship_data
     attr_accessor :unmapped_data
@@ -2782,7 +2872,7 @@ module SenzingTypeDef
   end
 
   class RecordKey
-    # The data source code identifying the provenance of the record.
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
 
     # The unique identifier within the set of records in the DATA_SOURCE.
@@ -2821,9 +2911,12 @@ module SenzingTypeDef
   end
 
   class RecordSummaryElement
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :first_seen_dt
     attr_accessor :last_seen_dt
+
+    # The number of records for the entity with the same data source code.
     attr_accessor :record_count
 
     def self.from_json_data(data)
@@ -2897,6 +2990,8 @@ module SenzingTypeDef
 
   class RelAnchor
     attr_accessor :domain
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :feat_id
     attr_accessor :linked_feat_desc
@@ -2934,6 +3029,8 @@ module SenzingTypeDef
 
   class RelLink
     attr_accessor :domain
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :feat_id
     attr_accessor :feat_usage_type
@@ -2971,6 +3068,8 @@ module SenzingTypeDef
 
   class RelPointer
     attr_accessor :domain
+
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :feat_id
     attr_accessor :feat_usage_type
@@ -3007,15 +3106,30 @@ module SenzingTypeDef
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
     attr_accessor :entity_id
+
+    # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
+
+    # Indicates if this is an ambiguous relationship.
     attr_accessor :is_ambiguous
+
+    # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
     attr_accessor :last_seen_dt
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :records
+
+    # Overview of the source systems the records came from comprising this
+    # related entity.
     attr_accessor :record_summary
 
     def self.from_json_data(data)
@@ -3191,17 +3305,32 @@ module SenzingTypeDef
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
     attr_accessor :entity_id
+
+    # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :features
     attr_accessor :feature_ids
+
+    # Indicates if this is an ambiguous relationship.
     attr_accessor :is_ambiguous
+
+    # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
     attr_accessor :last_seen_dt
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :records
+
+    # Overview of the source systems the records came from comprising this
+    # related entity.
     attr_accessor :record_summary
     attr_accessor :record_types
 
@@ -3286,17 +3415,32 @@ module SenzingTypeDef
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
     attr_accessor :entity_id
+
+    # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :features
     attr_accessor :feature_ids
+
+    # Indicates if this is an ambiguous relationship.
     attr_accessor :is_ambiguous
+
+    # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
     attr_accessor :last_seen_dt
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :records
+
+    # Overview of the source systems the records came from comprising this
+    # related entity.
     attr_accessor :record_summary
     attr_accessor :record_types
 
@@ -4044,8 +4188,12 @@ module SenzingTypeDef
 
   class SzEngineAddRecordResponse
     attr_accessor :affected_entities
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :interesting_entities
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -4069,8 +4217,12 @@ module SenzingTypeDef
 
   class SzEngineDeleteRecordResponse
     attr_accessor :affected_entities
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :interesting_entities
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -4420,25 +4572,37 @@ module SenzingTypeDef
   class SzEngineGetRecordResponse
     attr_accessor :address_data
     attr_accessor :attribute_data
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :entity_data
     attr_accessor :entity_desc
     attr_accessor :entity_key
     attr_accessor :entity_type
+
+    # Identifier of the entity resolution rule that was triggered.
     attr_accessor :errule_code
     attr_accessor :features
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
     attr_accessor :identifier_data
+
+    # Internal identifier for the record.
     attr_accessor :internal_id
     attr_accessor :json_data
     attr_accessor :last_seen_dt
+
+    # Representation of matched source record features.
     attr_accessor :match_key
     attr_accessor :match_level
+
+    # The type of match that occurred for the record.
     attr_accessor :match_level_code
     attr_accessor :name_data
     attr_accessor :other_data
     attr_accessor :phone_data
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
     attr_accessor :relationship_data
     attr_accessor :unmapped_data
@@ -4585,8 +4749,12 @@ module SenzingTypeDef
 
   class SzEngineProcessRedoRecordResponse
     attr_accessor :affected_entities
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :interesting_entities
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -4610,8 +4778,12 @@ module SenzingTypeDef
 
   class SzEngineReevaluateEntityResponse
     attr_accessor :affected_entities
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :interesting_entities
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -4635,8 +4807,12 @@ module SenzingTypeDef
 
   class SzEngineReevaluateRecordResponse
     attr_accessor :affected_entities
+
+    # A label identifying the provenance of the record.
     attr_accessor :data_source
     attr_accessor :interesting_entities
+
+    # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -4916,23 +5092,6 @@ module SenzingTypeDef
     end
   end
 
-  class SzTestResponse1
-    # FIXME: 1.1
-    attr_accessor :field
-
-    def self.from_json_data(data)
-      out = SzTestResponse1.new
-      out.field = SenzingTypeDef::from_json_data(String, data["FIELD_1.1"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FIELD_1.1"] = SenzingTypeDef::to_json_data(field)
-      data
-    end
-  end
-
   class ThreadState
     attr_accessor :active
     attr_accessor :data_latch_contention
@@ -5109,7 +5268,11 @@ module SenzingTypeDef
     attr_accessor :entity_id0
     attr_accessor :focus_records
     attr_accessor :focus_records0
+
+    # Internal identifier for the record.
     attr_accessor :internal_id
+
+    # Internal identifier for the record.
     attr_accessor :internal_id0
     attr_accessor :match_info
 

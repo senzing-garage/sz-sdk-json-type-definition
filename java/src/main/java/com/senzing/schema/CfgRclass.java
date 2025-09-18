@@ -24,6 +24,7 @@ public class CfgRclass {
 
     /**
      * Getter for isDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
      */
     public String getIsDisclosed() {
         return isDisclosed;
@@ -31,6 +32,7 @@ public class CfgRclass {
 
     /**
      * Setter for isDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
      */
     public void setIsDisclosed(String isDisclosed) {
         this.isDisclosed = isDisclosed;

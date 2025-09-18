@@ -115,6 +115,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public String getDataSource() {
         return dataSource;
@@ -122,6 +123,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -185,6 +187,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -192,6 +195,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -255,6 +259,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for internalId.<p>
+     * Internal identifier for the record.
      */
     public Integer getInternalId() {
         return internalId;
@@ -262,6 +267,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for internalId.<p>
+     * Internal identifier for the record.
      */
     public void setInternalId(Integer internalId) {
         this.internalId = internalId;
@@ -297,6 +303,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public String getMatchKey() {
         return matchKey;
@@ -304,6 +311,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -325,6 +333,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -332,6 +341,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -381,6 +391,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for recordId.<p>
+     * The unique identifier within the set of records in the DATA_SOURCE.
      */
     public String getRecordId() {
         return recordId;
@@ -388,6 +399,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for recordId.<p>
+     * The unique identifier within the set of records in the DATA_SOURCE.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

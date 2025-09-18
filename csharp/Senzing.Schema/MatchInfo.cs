@@ -13,12 +13,18 @@ namespace Senzing.Schema
         [JsonPropertyName("DISCLOSED_RELATIONS")]
         public MatchInfoDisclosedRelations DisclosedRelations { get; set; }
 
+        /// <summary>
+        /// Identifier of the entity resolution rule that was triggered.
+        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
         [JsonPropertyName("FEATURE_SCORES")]
         public FeatureScores FeatureScores { get; set; }
 
+        /// <summary>
+        /// Representation of matched source record features.
+        /// </summary>
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
@@ -28,6 +34,9 @@ namespace Senzing.Schema
         [JsonPropertyName("MATCH_LEVEL")]
         public int MatchLevel { get; set; }
 
+        /// <summary>
+        /// The type of match that occurred for the record.
+        /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 

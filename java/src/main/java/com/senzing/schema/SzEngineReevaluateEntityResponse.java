@@ -39,6 +39,7 @@ public class SzEngineReevaluateEntityResponse {
 
     /**
      * Getter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public String getDataSource() {
         return dataSource;
@@ -46,6 +47,7 @@ public class SzEngineReevaluateEntityResponse {
 
     /**
      * Setter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -67,6 +69,7 @@ public class SzEngineReevaluateEntityResponse {
 
     /**
      * Getter for recordId.<p>
+     * The unique identifier within the set of records in the DATA_SOURCE.
      */
     public String getRecordId() {
         return recordId;
@@ -74,6 +77,7 @@ public class SzEngineReevaluateEntityResponse {
 
     /**
      * Setter for recordId.<p>
+     * The unique identifier within the set of records in the DATA_SOURCE.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

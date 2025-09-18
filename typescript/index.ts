@@ -164,6 +164,10 @@ export interface CfgErfrag {
 
 export interface CfgErrule {
   DISQ_ERFRAG_CODE: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   ERRULE_DESC: string;
   ERRULE_ID: number;
@@ -256,6 +260,9 @@ export interface CfgLens {
 export type CfgLensrl = Fixme[];
 
 export interface CfgRclass {
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
   IS_DISCLOSED: string;
   RCLASS_CODE: string;
   RCLASS_DESC: string;
@@ -369,6 +376,10 @@ export interface DataSource {
 
 export interface DisclosedRelation {
   DOMAIN: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   FEAT_ID: number;
   FEAT_USAGE_TYPE: string;
@@ -389,10 +400,29 @@ export interface EntityForWhySearch {
 }
 
 export interface EntityNetworkLink {
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
   IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
   IS_DISCLOSED: number;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   MAX_ENTITY_ID: number;
   MIN_ENTITY_ID: number;
@@ -405,10 +435,29 @@ export interface EntityPath {
 }
 
 export interface EntityPathLink {
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
   IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
   IS_DISCLOSED: number;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   MAX_ENTITY_ID: number;
   MIN_ENTITY_ID: number;
@@ -434,6 +483,10 @@ export interface FeatureDescriptionValue {
   ATTRIBUTES: string;
   CANDIDATE_CAP_REACHED: string;
   ENTITY_COUNT: number;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   LIB_FEAT_ID: number;
   SCORING_CAP_REACHED: string;
@@ -443,30 +496,73 @@ export interface FeatureDescriptionValue {
 }
 
 export interface FeatureForAttribute {
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
   LIB_FEAT_ID: number;
+
+  /**
+   * Label to identify how some features are being used (can also change some
+   * features behavior).
+   */
   USAGE_TYPE: string;
 }
 
 export interface FeatureForAttributeWithAttributes {
   ATTRIBUTES: SenzingEntitySpecification;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
   LIB_FEAT_ID: number;
+
+  /**
+   * Label to identify how some features are being used (can also change some
+   * features behavior).
+   */
   USAGE_TYPE: string;
 }
 
 export interface FeatureForGetEntity {
   ATTRIBUTES: SenzingEntitySpecification[];
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
   LIB_FEAT_ID: number;
+
+  /**
+   * Label to identify how some features are being used (can also change some
+   * features behavior).
+   */
   USAGE_TYPE: string;
 }
 
 export interface FeatureId {
   LIB_FEAT_ID: number;
+
+  /**
+   * Label to identify how some features are being used (can also change some
+   * features behavior).
+   */
   USAGE_TYPE: string;
 }
 
@@ -499,7 +595,14 @@ export interface Fixme {
 }
 
 export interface FocusRecord {
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
@@ -577,8 +680,15 @@ export interface InterestingEntities {
 }
 
 export interface InterestingEntitySampleRecords {
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   FLAGS: string[];
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
@@ -629,11 +739,23 @@ export interface MatchInfoDisclosedRelations {
 export interface MatchInfo {
   CANDIDATE_KEYS: MatchInfoCandidateKeys;
   DISCLOSED_RELATIONS: MatchInfoDisclosedRelations;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   FEATURE_SCORES: FeatureScores;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_KEY_DETAILS: MatchKeyDetails;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   WHY_ERRULE_CODE: string;
   WHY_KEY: string;
@@ -642,6 +764,9 @@ export interface MatchInfo {
 export type MatchInfoCandidateKeys = string;
 
 export interface MatchInfoForAttribute {
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   FEAT_ID: number;
 }
@@ -650,6 +775,10 @@ export interface MatchInfoForWhy {
   CANDIDATE_KEYS: string;
   DISCLOSED_RELATIONS: DisclosedRelation;
   FEATURE_SCORES: FeatureScores;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   WHY_ERRULE_CODE: string;
   WHY_KEY: string;
@@ -659,10 +788,17 @@ export interface MatchInfoForWhy {
 export interface MatchKeyDetails {
   CONFIRMATIONS: Confirmation[];
   DENIALS: Confirmation[];
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
 }
 
 export interface MemberRecord {
+  /**
+   * Internal identifier for the record.
+   */
   INTERNAL_ID: number;
   RECORDS: Records;
 }
@@ -725,25 +861,49 @@ export interface ProcessingDetails {
 export interface Record {
   ADDRESS_DATA: string[];
   ATTRIBUTE_DATA: string[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   ENTITY_DATA: string[];
   ENTITY_DESC: string;
   ENTITY_KEY: string;
   ENTITY_TYPE: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   FEATURES: string;
   FEATURE_IDS: FeatureIds;
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
+
+  /**
+   * Internal identifier for the record.
+   */
   INTERNAL_ID: number;
   JSON_DATA: string;
   LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   NAME_DATA: string[];
   OTHER_DATA: string[];
   PHONE_DATA: string[];
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
   UNMAPPED_DATA: string;
@@ -752,25 +912,49 @@ export interface Record {
 export interface RecordForGetEntity {
   ADDRESS_DATA: string[];
   ATTRIBUTE_DATA: string[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   ENTITY_DATA: string[];
   ENTITY_DESC: string;
   ENTITY_KEY: string;
   ENTITY_TYPE: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   FEATURES: string;
   FEATURE_IDS: FeatureIds;
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
+
+  /**
+   * Internal identifier for the record.
+   */
   INTERNAL_ID: number;
   JSON_DATA: string;
   LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   NAME_DATA: string[];
   OTHER_DATA: string[];
   PHONE_DATA: string[];
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
   UNMAPPED_DATA: string;
@@ -778,7 +962,7 @@ export interface RecordForGetEntity {
 
 export interface RecordKey {
   /**
-   * The data source code identifying the provenance of the record.
+   * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
 
@@ -796,9 +980,16 @@ export interface RecordKeys {
 }
 
 export interface RecordSummaryElement {
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   FIRST_SEEN_DT: string;
   LAST_SEEN_DT: string;
+
+  /**
+   * The number of records for the entity with the same data source code.
+   */
   RECORD_COUNT: number;
 }
 
@@ -814,6 +1005,10 @@ export interface RefreshLocks {
 
 export interface RelAnchor {
   DOMAIN: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   FEAT_ID: number;
   LINKED_FEAT_DESC: string;
@@ -825,6 +1020,10 @@ export interface RelAnchor {
 
 export interface RelLink {
   DOMAIN: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   FEAT_ID: number;
   FEAT_USAGE_TYPE: string;
@@ -836,6 +1035,10 @@ export interface RelLink {
 
 export interface RelPointer {
   DOMAIN: string;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   FEAT_ID: number;
   FEAT_USAGE_TYPE: string;
@@ -850,15 +1053,44 @@ export interface RelatedEntity {
    * entity. It may change when new information is added.
    */
   ENTITY_ID: number;
+
+  /**
+   * A name this entity goes by. An entity could have multiple names.
+   */
   ENTITY_NAME: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
   IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
   IS_DISCLOSED: number;
   LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   RECORDS: Records;
+
+  /**
+   * Overview of the source systems the records came from comprising this
+   * related entity.
+   */
   RECORD_SUMMARY: RecordSummaryElement[];
 }
 
@@ -904,17 +1136,46 @@ export interface ResolvedEntity {
    * entity. It may change when new information is added.
    */
   ENTITY_ID: number;
+
+  /**
+   * A name this entity goes by. An entity could have multiple names.
+   */
   ENTITY_NAME: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   FEATURES: string;
   FEATURE_IDS: FeatureIds;
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
   IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
   IS_DISCLOSED: number;
   LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   RECORDS: Records;
+
+  /**
+   * Overview of the source systems the records came from comprising this
+   * related entity.
+   */
   RECORD_SUMMARY: RecordSummaryElement[];
   RECORD_TYPES: string[];
 }
@@ -935,17 +1196,46 @@ export interface ResolvedEntityForGetEntity {
    * entity. It may change when new information is added.
    */
   ENTITY_ID: number;
+
+  /**
+   * A name this entity goes by. An entity could have multiple names.
+   */
   ENTITY_NAME: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   FEATURES: string;
   FEATURE_IDS: FeatureIds;
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
   IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
   IS_DISCLOSED: number;
   LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   RECORDS: RecordsForGetEntity;
+
+  /**
+   * Overview of the source systems the records came from comprising this
+   * related entity.
+   */
   RECORD_SUMMARY: RecordSummaryElement[];
   RECORD_TYPES: string[];
 }
@@ -1159,15 +1449,31 @@ export interface SzDiagnosticGetRepositoryInfoResponse {
 
 export interface SzEngineAddRecordResponse {
   AFFECTED_ENTITIES: AffectedEntity[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
 export interface SzEngineDeleteRecordResponse {
   AFFECTED_ENTITIES: AffectedEntity[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
@@ -1265,25 +1571,49 @@ export interface SzEngineGetRecordPreviewResponse {
 export interface SzEngineGetRecordResponse {
   ADDRESS_DATA: string[];
   ATTRIBUTE_DATA: string[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   ENTITY_DATA: string[];
   ENTITY_DESC: string;
   ENTITY_KEY: string;
   ENTITY_TYPE: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
   ERRULE_CODE: string;
   FEATURES: string;
   FEATURE_IDS: FeatureIds;
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
+
+  /**
+   * Internal identifier for the record.
+   */
   INTERNAL_ID: number;
   JSON_DATA: string;
   LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
   MATCH_KEY: string;
   MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
   MATCH_LEVEL_CODE: string;
   NAME_DATA: string[];
   OTHER_DATA: string[];
   PHONE_DATA: string[];
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
   RELATIONSHIP_DATA: string[];
   UNMAPPED_DATA: string;
@@ -1314,22 +1644,46 @@ export interface SzEngineHowEntityByEntityIdResponse {
 
 export interface SzEngineProcessRedoRecordResponse {
   AFFECTED_ENTITIES: AffectedEntity[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
 export interface SzEngineReevaluateEntityResponse {
   AFFECTED_ENTITIES: AffectedEntity[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
 export interface SzEngineReevaluateRecordResponse {
   AFFECTED_ENTITIES: AffectedEntity[];
+
+  /**
+   * A label identifying the provenance of the record.
+   */
   DATA_SOURCE: string;
   INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the set of records in the DATA_SOURCE.
+   */
   RECORD_ID: string;
 }
 
@@ -1403,13 +1757,6 @@ export interface SzProductGetVersionResponse {
   VERSION: string;
 }
 
-export interface SzTestResponse1 {
-  /**
-   * FIXME: 1.1
-   */
-  "FIELD_1.1": string;
-}
-
 export interface ThreadState {
   active: number;
   dataLatchContention: number;
@@ -1466,7 +1813,15 @@ export interface WhyResult {
   ENTITY_ID_2: number;
   FOCUS_RECORDS: FocusRecords;
   FOCUS_RECORDS_2: FocusRecords;
+
+  /**
+   * Internal identifier for the record.
+   */
   INTERNAL_ID: number;
+
+  /**
+   * Internal identifier for the record.
+   */
   INTERNAL_ID_2: number;
   MATCH_INFO: MatchInfoForWhy;
 }

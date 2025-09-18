@@ -50,6 +50,7 @@ public class MatchKeyDetails {
 
     /**
      * Getter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -57,6 +58,7 @@ public class MatchKeyDetails {
 
     /**
      * Setter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;

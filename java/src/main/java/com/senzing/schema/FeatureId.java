@@ -32,6 +32,8 @@ public class FeatureId {
 
     /**
      * Getter for usageType.<p>
+     * Label to identify how some features are being used (can also change some
+     * features behavior).
      */
     public String getUsageType() {
         return usageType;
@@ -39,6 +41,8 @@ public class FeatureId {
 
     /**
      * Setter for usageType.<p>
+     * Label to identify how some features are being used (can also change some
+     * features behavior).
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;

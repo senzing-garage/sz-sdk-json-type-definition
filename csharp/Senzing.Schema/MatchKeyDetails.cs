@@ -14,6 +14,9 @@ namespace Senzing.Schema
         [JsonPropertyName("DENIALS")]
         public IList<Confirmation> Denials { get; set; }
 
+        /// <summary>
+        /// Identifier of the entity resolution rule that was triggered.
+        /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
     }

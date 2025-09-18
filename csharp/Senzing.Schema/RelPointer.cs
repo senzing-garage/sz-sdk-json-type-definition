@@ -10,6 +10,9 @@ namespace Senzing.Schema
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
+        /// <summary>
+        /// Describes the attributes that make up the feature.
+        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 

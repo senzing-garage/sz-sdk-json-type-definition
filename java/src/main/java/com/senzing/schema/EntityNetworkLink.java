@@ -33,6 +33,7 @@ public class EntityNetworkLink {
 
     /**
      * Getter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -40,6 +41,7 @@ public class EntityNetworkLink {
 
     /**
      * Setter for erruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -47,6 +49,7 @@ public class EntityNetworkLink {
 
     /**
      * Getter for isAmbiguous.<p>
+     * Indicates if this is an ambiguous relationship.
      */
     public Integer getIsAmbiguous() {
         return isAmbiguous;
@@ -54,6 +57,7 @@ public class EntityNetworkLink {
 
     /**
      * Setter for isAmbiguous.<p>
+     * Indicates if this is an ambiguous relationship.
      */
     public void setIsAmbiguous(Integer isAmbiguous) {
         this.isAmbiguous = isAmbiguous;
@@ -61,6 +65,7 @@ public class EntityNetworkLink {
 
     /**
      * Getter for isDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
      */
     public Integer getIsDisclosed() {
         return isDisclosed;
@@ -68,6 +73,7 @@ public class EntityNetworkLink {
 
     /**
      * Setter for isDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
      */
     public void setIsDisclosed(Integer isDisclosed) {
         this.isDisclosed = isDisclosed;
@@ -75,6 +81,7 @@ public class EntityNetworkLink {
 
     /**
      * Getter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public String getMatchKey() {
         return matchKey;
@@ -82,6 +89,7 @@ public class EntityNetworkLink {
 
     /**
      * Setter for matchKey.<p>
+     * Representation of matched source record features.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -89,6 +97,7 @@ public class EntityNetworkLink {
 
     /**
      * Getter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -96,6 +105,7 @@ public class EntityNetworkLink {
 
     /**
      * Setter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;

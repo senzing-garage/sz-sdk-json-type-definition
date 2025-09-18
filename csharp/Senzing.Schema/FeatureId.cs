@@ -10,6 +10,10 @@ namespace Senzing.Schema
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
+        /// <summary>
+        /// Label to identify how some features are being used (can also change
+        /// some features behavior).
+        /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
     }

@@ -93,6 +93,7 @@ public class WhyResult {
 
     /**
      * Getter for internalId.<p>
+     * Internal identifier for the record.
      */
     public Integer getInternalId() {
         return internalId;
@@ -100,6 +101,7 @@ public class WhyResult {
 
     /**
      * Setter for internalId.<p>
+     * Internal identifier for the record.
      */
     public void setInternalId(Integer internalId) {
         this.internalId = internalId;
@@ -107,6 +109,7 @@ public class WhyResult {
 
     /**
      * Getter for internalId0.<p>
+     * Internal identifier for the record.
      */
     public Integer getInternalId0() {
         return internalId0;
@@ -114,6 +117,7 @@ public class WhyResult {
 
     /**
      * Setter for internalId0.<p>
+     * Internal identifier for the record.
      */
     public void setInternalId0(Integer internalId0) {
         this.internalId0 = internalId0;

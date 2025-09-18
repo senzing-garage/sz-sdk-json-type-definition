@@ -50,6 +50,7 @@ public class RelLink {
 
     /**
      * Getter for featDesc.<p>
+     * Describes the attributes that make up the feature.
      */
     public String getFeatDesc() {
         return featDesc;
@@ -57,6 +58,7 @@ public class RelLink {
 
     /**
      * Setter for featDesc.<p>
+     * Describes the attributes that make up the feature.
      */
     public void setFeatDesc(String featDesc) {
         this.featDesc = featDesc;

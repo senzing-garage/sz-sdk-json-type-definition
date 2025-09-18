@@ -18,6 +18,7 @@ public class FocusRecord {
 
     /**
      * Getter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public String getDataSource() {
         return dataSource;
@@ -25,6 +26,7 @@ public class FocusRecord {
 
     /**
      * Setter for dataSource.<p>
+     * A label identifying the provenance of the record.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -32,6 +34,7 @@ public class FocusRecord {
 
     /**
      * Getter for recordId.<p>
+     * The unique identifier within the set of records in the DATA_SOURCE.
      */
     public String getRecordId() {
         return recordId;
@@ -39,6 +42,7 @@ public class FocusRecord {
 
     /**
      * Setter for recordId.<p>
+     * The unique identifier within the set of records in the DATA_SOURCE.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

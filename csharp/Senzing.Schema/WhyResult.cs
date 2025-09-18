@@ -23,9 +23,15 @@ namespace Senzing.Schema
         [JsonPropertyName("FOCUS_RECORDS_2")]
         public FocusRecords FocusRecords0 { get; set; }
 
+        /// <summary>
+        /// Internal identifier for the record.
+        /// </summary>
         [JsonPropertyName("INTERNAL_ID")]
         public int InternalId { get; set; }
 
+        /// <summary>
+        /// Internal identifier for the record.
+        /// </summary>
         [JsonPropertyName("INTERNAL_ID_2")]
         public int InternalId0 { get; set; }
 

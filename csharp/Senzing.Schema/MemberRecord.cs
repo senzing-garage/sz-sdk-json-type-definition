@@ -7,6 +7,9 @@ namespace Senzing.Schema
 {
     public class MemberRecord
     {
+        /// <summary>
+        /// Internal identifier for the record.
+        /// </summary>
         [JsonPropertyName("INTERNAL_ID")]
         public int InternalId { get; set; }
 

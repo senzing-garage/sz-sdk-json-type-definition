@@ -7,6 +7,9 @@ namespace Senzing.Schema
 {
     public class CfgRclass
     {
+        /// <summary>
+        /// Indicates if this is a disclosed relationship.
+        /// </summary>
         [JsonPropertyName("IS_DISCLOSED")]
         public string IsDisclosed { get; set; }
 

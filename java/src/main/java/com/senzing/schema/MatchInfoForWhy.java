@@ -78,6 +78,7 @@ public class MatchInfoForWhy {
 
     /**
      * Getter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -85,6 +86,7 @@ public class MatchInfoForWhy {
 
     /**
      * Setter for matchLevelCode.<p>
+     * The type of match that occurred for the record.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
