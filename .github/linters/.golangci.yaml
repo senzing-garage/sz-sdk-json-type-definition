@@ -133,7 +133,7 @@ linters:
     exhaustruct:
       exclude:
         - '.+/typedef\.VirtualEntity$'
-        - '.+/typedef\.FeatureForAttribute$'
+        - '.+/typedef\.FeatureForAttributes$'
         - '.+/typedef\.GetDataSourceRegistry$'
         - '.+/typedef\.SzConfigExportResponse$'
         - '.+/typedef\.SzConfigGetDataSourceRegistryResponse$'

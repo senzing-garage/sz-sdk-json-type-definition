@@ -63,6 +63,7 @@ setup-osarch-specific:
 	@mkdir /tmp/sqlite
 	@cp testdata/sqlite/G2C.db /tmp/sqlite/G2C.db
 
+
 .PHONY: test-osarch-specific
 test-osarch-specific:
 	@go test -json -v -p 1 ./... 2>&1 | tee /tmp/gotest.log | gotestfmt

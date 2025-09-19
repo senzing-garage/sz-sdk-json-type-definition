@@ -25,6 +25,10 @@ def path_to_testdata(filename: str) -> str:
 # -----------------------------------------------------------------------------
 
 
+def test_szengine_find_network_by_record_id_001():
+    pass
+
+
 # def test_szengine_find_network_by_record_id_001():
 #     with open(
 #         path_to_testdata("SzEngineFindNetworkByRecordIdResponse-test-001.json"),

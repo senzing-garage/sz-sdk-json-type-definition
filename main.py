@@ -111,16 +111,16 @@ def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> st
 # Main
 # -----------------------------------------------------------------------------
 
-testDict = {}
+# testDict = {}
 
-testResponse1 = SzEngineGetEntityByEntityIDResponse.from_json_data(testDict)
+# testResponse1 = SzEngineGetEntityByEntityIDResponse.from_json_data(testDict)
 
-x = testResponse1.resolved_entity.feature_ids[0].usage_type
-y = testResponse1.resolved_entity.feature_ids
+# x = testResponse1.resolved_entity.features
+# y = testResponse1.resolved_entity.feature_ids
 
 
-testResponse2 = SzEngineWhyEntitiesResponse.from_json_data(testDict)
-w = testResponse2.why_results[0].entity_id0
+# testResponse2 = SzEngineWhyEntitiesResponse.from_json_data(testDict)
+# w = testResponse2.why_results[0].entity_id0
 
 # -----------------------------------------------------------------------------
 # Demonstrate creating input parameter and parsing output result.
@@ -136,10 +136,6 @@ recordKeysDict = {
         {"DATA_SOURCE": "DATA_SOURCE_2", "RECORD_ID": "RECORD_ID_2"},
     ]
 }
-
-xxx = SzEngineGetRecordResponse.from_json_data(recordKeysDict)
-xx = xxx.json_data["bob"]
-xx.value.
 
 recordKeys = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(recordKeysDict)
 

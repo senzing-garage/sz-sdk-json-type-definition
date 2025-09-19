@@ -101,7 +101,7 @@ func main() {
 		addressBytes, err := json.Marshal(address)
 		panicOnError(err)
 
-		addressStruct := typedef.FeatureForAttribute{}
+		addressStruct := typedef.FeatureForAttributes{}
 
 		if err = json.Unmarshal(addressBytes, &addressStruct); err != nil {
 			panic(err)

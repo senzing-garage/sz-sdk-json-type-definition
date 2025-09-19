@@ -142,8 +142,8 @@ test: \
 	test-java \
 	test-python \
 	test-typescript \
-	test-using-senzing \
-	test-osarch-specific
+	test-osarch-specific \
+	test-using-senzing
 
 
 .PHONY: test-csharp
