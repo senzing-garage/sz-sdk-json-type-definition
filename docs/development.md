@@ -99,23 +99,6 @@ These are "one-time tasks" which may already have been completed.
 
     ```
 
-## Coverage
-
-Create a code coverage map.
-
-1. Run Go tests.
-   Example:
-
-    ```console
-    cd ${GIT_REPOSITORY_DIR}
-    make clean setup coverage
-
-    ```
-
-   A web-browser will show the results of the coverage.
-   The goal is to have over 80% coverage.
-   Anything less needs to be reflected in [testcoverage.yaml].
-
 ## References
 
 1. [JSON TypeDef]
@@ -130,4 +113,3 @@ Create a code coverage map.
 [jtg-codegen]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/jtd-codegen.md
 [make]: https://github.com/senzing-garage/knowledge-base/blob/main/WHATIS/make.md
 [senzingsdk-RFC8927.json]: ../senzingsdk-RFC8927.json
-[testcoverage.yaml]: ../.github/coverage/testcoverage.yaml
