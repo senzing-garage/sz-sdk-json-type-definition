@@ -98,7 +98,6 @@ version: \
 	setup \
 	documentation
 
-
 # -----------------------------------------------------------------------------
 # Setup
 # -----------------------------------------------------------------------------
@@ -114,7 +113,10 @@ setup: \
 # -----------------------------------------------------------------------------
 
 .PHONY: lint
-lint: golangci-lint cspell
+lint: \
+	golangci-lint \
+	cspell \
+	analyze-RFC8927
 
 # -----------------------------------------------------------------------------
 # Build
@@ -133,7 +135,15 @@ run-java:
 # -----------------------------------------------------------------------------
 
 .PHONY: test
-test: test-osarch-specific test-python test-go
+test: \
+	test-osarch-specific \
+	test-rfc8927-reconstitution \
+	test-using-senzing \
+	test-csharp \
+	test-go \
+	test-java \
+	test-python \
+	test-typescript
 
 
 .PHONY: test-csharp
@@ -204,6 +214,7 @@ generate-code: \
 	generate-rust \
 	generate-typescript \
 	go-typedef-generated-typedef-test-go
+
 
 .PHONY: generate-csharp
 generate-csharp: clean-csharp
@@ -363,7 +374,7 @@ update-pkg-cache:
 .PHONY: analyze-RFC8927
 analyze-RFC8927:
 	$(activate-venv); \
-		@./bin/analyze_rfc8927.py
+		./bin/analyze_rfc8927.py
 
 
 .PHONY: load-database-with-truthsets

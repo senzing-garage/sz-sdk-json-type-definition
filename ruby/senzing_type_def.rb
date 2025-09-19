@@ -1080,12 +1080,26 @@ module SenzingTypeDef
     end
   end
 
-  class CandidateKeys
+  class CandidateKeysForMatchInfo
+    attr_accessor :value
+
+    def self.from_json_data(data)
+      out = CandidateKeysForMatchInfo.new
+      out.value = SenzingTypeDef.from_json_data(Hash[String, Array[MatchInfoForAttribute]], data)
+      out
+    end
+
+    def to_json_data
+      SenzingTypeDef.to_json_data(value)
+    end
+  end
+
+  class CandidateKeysForSearchStatistic
     attr_accessor :feature_types
     attr_accessor :summary
 
     def self.from_json_data(data)
-      out = CandidateKeys.new
+      out = CandidateKeysForSearchStatistic.new
       out.feature_types = SenzingTypeDef::from_json_data(Array[FeatureType], data["FEATURE_TYPES"])
       out.summary = SenzingTypeDef::from_json_data(Summary, data["SUMMARY"])
       out
@@ -1280,7 +1294,29 @@ module SenzingTypeDef
     end
   end
 
-  class DisclosedRelation
+  class DisclosedRelationsForMatchInfo
+    attr_accessor :rel_anchor
+    attr_accessor :rel_link
+    attr_accessor :rel_pointer
+
+    def self.from_json_data(data)
+      out = DisclosedRelationsForMatchInfo.new
+      out.rel_anchor = SenzingTypeDef::from_json_data(Array[RelAnchor], data["REL_ANCHOR"])
+      out.rel_link = SenzingTypeDef::from_json_data(Array[RelLink], data["REL_LINK"])
+      out.rel_pointer = SenzingTypeDef::from_json_data(Array[RelPointer], data["REL_POINTER"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
+      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
+      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
+      data
+    end
+  end
+
+  class DisclosedRelationsForMatchInfoForWhy
     attr_accessor :domain
 
     # Describes the attributes that make up the feature.
@@ -1293,7 +1329,7 @@ module SenzingTypeDef
     attr_accessor :rel_anchor
 
     def self.from_json_data(data)
-      out = DisclosedRelation.new
+      out = DisclosedRelationsForMatchInfoForWhy.new
       out.domain = SenzingTypeDef::from_json_data(String, data["DOMAIN"])
       out.feat_desc = SenzingTypeDef::from_json_data(String, data["FEAT_DESC"])
       out.feat_id = SenzingTypeDef::from_json_data(Integer, data["FEAT_ID"])
@@ -1315,28 +1351,6 @@ module SenzingTypeDef
       data["LINKED_FEAT_ID"] = SenzingTypeDef::to_json_data(linked_feat_id)
       data["LINKED_FEAT_TYPE"] = SenzingTypeDef::to_json_data(linked_feat_type)
       data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data
-    end
-  end
-
-  class DisclosedRelations
-    attr_accessor :rel_anchor
-    attr_accessor :rel_link
-    attr_accessor :rel_pointer
-
-    def self.from_json_data(data)
-      out = DisclosedRelations.new
-      out.rel_anchor = SenzingTypeDef::from_json_data(Array[RelAnchor], data["REL_ANCHOR"])
-      out.rel_link = SenzingTypeDef::from_json_data(Array[RelLink], data["REL_LINK"])
-      out.rel_pointer = SenzingTypeDef::from_json_data(Array[RelPointer], data["REL_POINTER"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["REL_ANCHOR"] = SenzingTypeDef::to_json_data(rel_anchor)
-      data["REL_LINK"] = SenzingTypeDef::to_json_data(rel_link)
-      data["REL_POINTER"] = SenzingTypeDef::to_json_data(rel_pointer)
       data
     end
   end
@@ -2001,38 +2015,6 @@ module SenzingTypeDef
     end
   end
 
-  class GetConfig
-    attr_accessor :g2_config
-
-    def self.from_json_data(data)
-      out = GetConfig.new
-      out.g2_config = SenzingTypeDef::from_json_data(G2config, data["G2_CONFIG"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["G2_CONFIG"] = SenzingTypeDef::to_json_data(g2_config)
-      data
-    end
-  end
-
-  class GetDataSourceRegistry
-    attr_accessor :data_sources
-
-    def self.from_json_data(data)
-      out = GetDataSourceRegistry.new
-      out.data_sources = SenzingTypeDef::from_json_data(Array[DataSource], data["DATA_SOURCES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["DATA_SOURCES"] = SenzingTypeDef::to_json_data(data_sources)
-      data
-    end
-  end
-
   class HowResults
     attr_accessor :final_state
     attr_accessor :resolution_steps
@@ -2182,8 +2164,8 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = MatchInfo.new
-      out.candidate_keys = SenzingTypeDef::from_json_data(MatchInfoCandidateKeys, data["CANDIDATE_KEYS"])
-      out.disclosed_relations = SenzingTypeDef::from_json_data(DisclosedRelations, data["DISCLOSED_RELATIONS"])
+      out.candidate_keys = SenzingTypeDef::from_json_data(CandidateKeysForMatchInfo, data["CANDIDATE_KEYS"])
+      out.disclosed_relations = SenzingTypeDef::from_json_data(DisclosedRelationsForMatchInfo, data["DISCLOSED_RELATIONS"])
       out.errule_code = SenzingTypeDef::from_json_data(String, data["ERRULE_CODE"])
       out.feature_scores = SenzingTypeDef::from_json_data(FeatureScores, data["FEATURE_SCORES"])
       out.match_key = SenzingTypeDef::from_json_data(String, data["MATCH_KEY"])
@@ -2208,20 +2190,6 @@ module SenzingTypeDef
       data["WHY_ERRULE_CODE"] = SenzingTypeDef::to_json_data(why_errule_code)
       data["WHY_KEY"] = SenzingTypeDef::to_json_data(why_key)
       data
-    end
-  end
-
-  class MatchInfoCandidateKeys
-    attr_accessor :value
-
-    def self.from_json_data(data)
-      out = MatchInfoCandidateKeys.new
-      out.value = SenzingTypeDef.from_json_data(Hash[String, Array[MatchInfoForAttribute]], data)
-      out
-    end
-
-    def to_json_data
-      SenzingTypeDef.to_json_data(value)
     end
   end
 
@@ -2259,7 +2227,7 @@ module SenzingTypeDef
     def self.from_json_data(data)
       out = MatchInfoForWhy.new
       out.candidate_keys = SenzingTypeDef::from_json_data(Hash[String, Array[MatchInfoForAttribute]], data["CANDIDATE_KEYS"])
-      out.disclosed_relations = SenzingTypeDef::from_json_data(DisclosedRelation, data["DISCLOSED_RELATIONS"])
+      out.disclosed_relations = SenzingTypeDef::from_json_data(DisclosedRelationsForMatchInfoForWhy, data["DISCLOSED_RELATIONS"])
       out.feature_scores = SenzingTypeDef::from_json_data(FeatureScores, data["FEATURE_SCORES"])
       out.match_level_code = SenzingTypeDef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.why_errule_code = SenzingTypeDef::from_json_data(String, data["WHY_ERRULE_CODE"])
@@ -2707,23 +2675,6 @@ module SenzingTypeDef
       data = {}
       data["DATA_SOURCE"] = SenzingTypeDef::to_json_data(data_source)
       data["RECORD_ID"] = SenzingTypeDef::to_json_data(record_id)
-      data
-    end
-  end
-
-  class RecordKeys
-    # A list of (data source code, record id) pairs.
-    attr_accessor :records
-
-    def self.from_json_data(data)
-      out = RecordKeys.new
-      out.records = SenzingTypeDef::from_json_data(Array[RecordKey], data["RECORDS"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["RECORDS"] = SenzingTypeDef::to_json_data(records)
       data
     end
   end
@@ -3240,27 +3191,6 @@ module SenzingTypeDef
     end
   end
 
-  class ResolvedEntityForWhySearch
-    # The ENTITY_ID is the Senzing-generated identifier for the discovered
-    # entity. It may change when new information is added.
-    attr_accessor :entity_id
-    attr_accessor :related_entities
-
-    def self.from_json_data(data)
-      out = ResolvedEntityForWhySearch.new
-      out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
-      out.related_entities = SenzingTypeDef::from_json_data(Array[RelatedEntity], data["RELATED_ENTITIES"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
-      data["RELATED_ENTITIES"] = SenzingTypeDef::to_json_data(related_entities)
-      data
-    end
-  end
-
   class SysOom
     attr_accessor :felem_id
     attr_accessor :ftype_id
@@ -3406,7 +3336,7 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SearchStatistic.new
-      out.candidate_keys = SenzingTypeDef::from_json_data(CandidateKeys, data["CANDIDATE_KEYS"])
+      out.candidate_keys = SenzingTypeDef::from_json_data(CandidateKeysForSearchStatistic, data["CANDIDATE_KEYS"])
       out
     end
 
@@ -4931,22 +4861,6 @@ module SenzingTypeDef
     end
   end
 
-  class VirtualEntity
-    attr_accessor :resolved_entity
-
-    def self.from_json_data(data)
-      out = VirtualEntity.new
-      out.resolved_entity = SenzingTypeDef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["RESOLVED_ENTITY"] = SenzingTypeDef::to_json_data(resolved_entity)
-      data
-    end
-  end
-
   class VirtualEntitySynopsis
     attr_accessor :member_records
     attr_accessor :virtual_entity_id
@@ -5020,27 +4934,6 @@ module SenzingTypeDef
       data["FOCUS_RECORDS_2"] = SenzingTypeDef::to_json_data(focus_records0)
       data["INTERNAL_ID"] = SenzingTypeDef::to_json_data(internal_id)
       data["INTERNAL_ID_2"] = SenzingTypeDef::to_json_data(internal_id0)
-      data["MATCH_INFO"] = SenzingTypeDef::to_json_data(match_info)
-      data
-    end
-  end
-
-  class WhySearchResult
-    # The ENTITY_ID is the Senzing-generated identifier for the discovered
-    # entity. It may change when new information is added.
-    attr_accessor :entity_id
-    attr_accessor :match_info
-
-    def self.from_json_data(data)
-      out = WhySearchResult.new
-      out.entity_id = SenzingTypeDef::from_json_data(Integer, data["ENTITY_ID"])
-      out.match_info = SenzingTypeDef::from_json_data(MatchInfoForWhy, data["MATCH_INFO"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ENTITY_ID"] = SenzingTypeDef::to_json_data(entity_id)
       data["MATCH_INFO"] = SenzingTypeDef::to_json_data(match_info)
       data
     end

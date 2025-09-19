@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class MatchInfo {
     @JsonProperty("CANDIDATE_KEYS")
-    private MatchInfoCandidateKeys candidateKeys;
+    private CandidateKeysForMatchInfo candidateKeys;
 
     @JsonProperty("DISCLOSED_RELATIONS")
-    private DisclosedRelations disclosedRelations;
+    private DisclosedRelationsForMatchInfo disclosedRelations;
 
     @JsonProperty("ERRULE_CODE")
     private String erruleCode;
@@ -43,28 +43,28 @@ public class MatchInfo {
     /**
      * Getter for candidateKeys.<p>
      */
-    public MatchInfoCandidateKeys getCandidateKeys() {
+    public CandidateKeysForMatchInfo getCandidateKeys() {
         return candidateKeys;
     }
 
     /**
      * Setter for candidateKeys.<p>
      */
-    public void setCandidateKeys(MatchInfoCandidateKeys candidateKeys) {
+    public void setCandidateKeys(CandidateKeysForMatchInfo candidateKeys) {
         this.candidateKeys = candidateKeys;
     }
 
     /**
      * Getter for disclosedRelations.<p>
      */
-    public DisclosedRelations getDisclosedRelations() {
+    public DisclosedRelationsForMatchInfo getDisclosedRelations() {
         return disclosedRelations;
     }
 
     /**
      * Setter for disclosedRelations.<p>
      */
-    public void setDisclosedRelations(DisclosedRelations disclosedRelations) {
+    public void setDisclosedRelations(DisclosedRelationsForMatchInfo disclosedRelations) {
         this.disclosedRelations = disclosedRelations;
     }
 

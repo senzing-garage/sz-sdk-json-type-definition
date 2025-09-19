@@ -8,10 +8,10 @@ namespace Senzing.Schema
     public class MatchInfo
     {
         [JsonPropertyName("CANDIDATE_KEYS")]
-        public MatchInfoCandidateKeys CandidateKeys { get; set; }
+        public CandidateKeysForMatchInfo CandidateKeys { get; set; }
 
         [JsonPropertyName("DISCLOSED_RELATIONS")]
-        public DisclosedRelations DisclosedRelations { get; set; }
+        public DisclosedRelationsForMatchInfo DisclosedRelations { get; set; }
 
         /// <summary>
         /// Identifier of the entity resolution rule that was triggered.

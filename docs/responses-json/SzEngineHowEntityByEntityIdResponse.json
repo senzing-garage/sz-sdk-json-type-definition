@@ -23,7 +23,12 @@
                                     "ENTITY_KEY": "string",
                                     "ENTITY_TYPE": "string",
                                     "ERRULE_CODE": "string",
-                                    "FIRST_SEEN_DT": "timestamp",
+                                    "FEATURE_IDS": [
+                                        {
+                                            "LIB_FEAT_ID": "int32",
+                                            "USAGE_TYPE": "string"
+                                        }
+                                    ],
                                     "FEATURES": {
                                         "user_defined_json_key": [
                                             {
@@ -55,10 +60,10 @@
                                                     "EMPLOYER_NAME": "string",
                                                     "FACEBOOK": "string",
                                                     "GENDER": "string",
-                                                    "GROUP_ASSOCIATION_ORG_NAME": "string",
-                                                    "GROUP_ASSOCIATION_TYPE": "string",
                                                     "GROUP_ASSN_ID_NUMBER": "string",
                                                     "GROUP_ASSN_ID_TYPE": "string",
+                                                    "GROUP_ASSOCIATION_ORG_NAME": "string",
+                                                    "GROUP_ASSOCIATION_TYPE": "string",
                                                     "INSTAGRAM": "string",
                                                     "LEI_NUMBER": "string",
                                                     "LINKEDIN": "string",
@@ -69,9 +74,9 @@
                                                     "NAME_PREFIX": "string",
                                                     "NAME_SUFFIX": "string",
                                                     "NAME_TYPE": "string",
-                                                    "NATIONALITY": "string",
                                                     "NATIONAL_ID_COUNTRY": "string",
                                                     "NATIONAL_ID_NUMBER": "string",
+                                                    "NATIONALITY": "string",
                                                     "NATIVE_NAME_FULL": "string",
                                                     "NPI_NUMBER": "string",
                                                     "OTHER_ID_COUNTRY": "string",
@@ -85,13 +90,13 @@
                                                     "PHONE_TYPE": "string",
                                                     "PLACE_OF_BIRTH": "string",
                                                     "PRIMARY_NAME_FIRST": "string",
-                                                    "PRIMARY_NAME_ORG": "string",
                                                     "PRIMARY_NAME_FULL": "string",
                                                     "PRIMARY_NAME_LAST": "string",
                                                     "PRIMARY_NAME_MIDDLE": "string",
+                                                    "PRIMARY_NAME_ORG": "string",
                                                     "RECORD_TYPE": "string",
-                                                    "REGISTRATION_DATE": "string",
                                                     "REGISTRATION_COUNTRY": "string",
+                                                    "REGISTRATION_DATE": "string",
                                                     "REL_ANCHOR_KEY": "string",
                                                     "REL_POINTER_KEY": "string",
                                                     "SECONDARY_NAME_ORG": "string",
@@ -133,12 +138,7 @@
                                             }
                                         ]
                                     },
-                                    "FEATURE_IDS": [
-                                        {
-                                            "LIB_FEAT_ID": "int32",
-                                            "USAGE_TYPE": "string"
-                                        }
-                                    ],
+                                    "FIRST_SEEN_DT": "timestamp",
                                     "IDENTIFIER_DATA": [
                                         "string"
                                     ],
@@ -237,13 +237,6 @@
                     "FEATURE_SCORES": {
                         "user_defined_json_key": [
                             {
-                                "INBOUND_FEAT_ID": "int32",
-                                "INBOUND_FEAT_DESC": "string",
-                                "INBOUND_FEAT_USAGE_TYPE": "string",
-                                "CANDIDATE_FEAT_ID": "int32",
-                                "CANDIDATE_FEAT_DESC": "string",
-                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
-                                "SCORE": "int32",
                                 "ADDITIONAL_SCORES": {
                                     "FULL_SCORE": "int32",
                                     "GENERATION_MATCH": "int32",
@@ -252,6 +245,13 @@
                                     "GNR_ON": "int32",
                                     "GNR_SN": "int32"
                                 },
+                                "CANDIDATE_FEAT_DESC": "string",
+                                "CANDIDATE_FEAT_ID": "int32",
+                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                                "INBOUND_FEAT_DESC": "string",
+                                "INBOUND_FEAT_ID": "int32",
+                                "INBOUND_FEAT_USAGE_TYPE": "string",
+                                "SCORE": "int32",
                                 "SCORE_BEHAVIOR": "string",
                                 "SCORE_BUCKET": "string"
                             }
@@ -336,7 +336,12 @@
                                     "ENTITY_KEY": "string",
                                     "ENTITY_TYPE": "string",
                                     "ERRULE_CODE": "string",
-                                    "FIRST_SEEN_DT": "timestamp",
+                                    "FEATURE_IDS": [
+                                        {
+                                            "LIB_FEAT_ID": "int32",
+                                            "USAGE_TYPE": "string"
+                                        }
+                                    ],
                                     "FEATURES": {
                                         "user_defined_json_key": [
                                             {
@@ -368,10 +373,10 @@
                                                     "EMPLOYER_NAME": "string",
                                                     "FACEBOOK": "string",
                                                     "GENDER": "string",
-                                                    "GROUP_ASSOCIATION_ORG_NAME": "string",
-                                                    "GROUP_ASSOCIATION_TYPE": "string",
                                                     "GROUP_ASSN_ID_NUMBER": "string",
                                                     "GROUP_ASSN_ID_TYPE": "string",
+                                                    "GROUP_ASSOCIATION_ORG_NAME": "string",
+                                                    "GROUP_ASSOCIATION_TYPE": "string",
                                                     "INSTAGRAM": "string",
                                                     "LEI_NUMBER": "string",
                                                     "LINKEDIN": "string",
@@ -382,9 +387,9 @@
                                                     "NAME_PREFIX": "string",
                                                     "NAME_SUFFIX": "string",
                                                     "NAME_TYPE": "string",
-                                                    "NATIONALITY": "string",
                                                     "NATIONAL_ID_COUNTRY": "string",
                                                     "NATIONAL_ID_NUMBER": "string",
+                                                    "NATIONALITY": "string",
                                                     "NATIVE_NAME_FULL": "string",
                                                     "NPI_NUMBER": "string",
                                                     "OTHER_ID_COUNTRY": "string",
@@ -398,13 +403,13 @@
                                                     "PHONE_TYPE": "string",
                                                     "PLACE_OF_BIRTH": "string",
                                                     "PRIMARY_NAME_FIRST": "string",
-                                                    "PRIMARY_NAME_ORG": "string",
                                                     "PRIMARY_NAME_FULL": "string",
                                                     "PRIMARY_NAME_LAST": "string",
                                                     "PRIMARY_NAME_MIDDLE": "string",
+                                                    "PRIMARY_NAME_ORG": "string",
                                                     "RECORD_TYPE": "string",
-                                                    "REGISTRATION_DATE": "string",
                                                     "REGISTRATION_COUNTRY": "string",
+                                                    "REGISTRATION_DATE": "string",
                                                     "REL_ANCHOR_KEY": "string",
                                                     "REL_POINTER_KEY": "string",
                                                     "SECONDARY_NAME_ORG": "string",
@@ -446,12 +451,7 @@
                                             }
                                         ]
                                     },
-                                    "FEATURE_IDS": [
-                                        {
-                                            "LIB_FEAT_ID": "int32",
-                                            "USAGE_TYPE": "string"
-                                        }
-                                    ],
+                                    "FIRST_SEEN_DT": "timestamp",
                                     "IDENTIFIER_DATA": [
                                         "string"
                                     ],
@@ -505,7 +505,12 @@
                                     "ENTITY_KEY": "string",
                                     "ENTITY_TYPE": "string",
                                     "ERRULE_CODE": "string",
-                                    "FIRST_SEEN_DT": "timestamp",
+                                    "FEATURE_IDS": [
+                                        {
+                                            "LIB_FEAT_ID": "int32",
+                                            "USAGE_TYPE": "string"
+                                        }
+                                    ],
                                     "FEATURES": {
                                         "user_defined_json_key": [
                                             {
@@ -537,10 +542,10 @@
                                                     "EMPLOYER_NAME": "string",
                                                     "FACEBOOK": "string",
                                                     "GENDER": "string",
-                                                    "GROUP_ASSOCIATION_ORG_NAME": "string",
-                                                    "GROUP_ASSOCIATION_TYPE": "string",
                                                     "GROUP_ASSN_ID_NUMBER": "string",
                                                     "GROUP_ASSN_ID_TYPE": "string",
+                                                    "GROUP_ASSOCIATION_ORG_NAME": "string",
+                                                    "GROUP_ASSOCIATION_TYPE": "string",
                                                     "INSTAGRAM": "string",
                                                     "LEI_NUMBER": "string",
                                                     "LINKEDIN": "string",
@@ -551,9 +556,9 @@
                                                     "NAME_PREFIX": "string",
                                                     "NAME_SUFFIX": "string",
                                                     "NAME_TYPE": "string",
-                                                    "NATIONALITY": "string",
                                                     "NATIONAL_ID_COUNTRY": "string",
                                                     "NATIONAL_ID_NUMBER": "string",
+                                                    "NATIONALITY": "string",
                                                     "NATIVE_NAME_FULL": "string",
                                                     "NPI_NUMBER": "string",
                                                     "OTHER_ID_COUNTRY": "string",
@@ -567,13 +572,13 @@
                                                     "PHONE_TYPE": "string",
                                                     "PLACE_OF_BIRTH": "string",
                                                     "PRIMARY_NAME_FIRST": "string",
-                                                    "PRIMARY_NAME_ORG": "string",
                                                     "PRIMARY_NAME_FULL": "string",
                                                     "PRIMARY_NAME_LAST": "string",
                                                     "PRIMARY_NAME_MIDDLE": "string",
+                                                    "PRIMARY_NAME_ORG": "string",
                                                     "RECORD_TYPE": "string",
-                                                    "REGISTRATION_DATE": "string",
                                                     "REGISTRATION_COUNTRY": "string",
+                                                    "REGISTRATION_DATE": "string",
                                                     "REL_ANCHOR_KEY": "string",
                                                     "REL_POINTER_KEY": "string",
                                                     "SECONDARY_NAME_ORG": "string",
@@ -615,12 +620,7 @@
                                             }
                                         ]
                                     },
-                                    "FEATURE_IDS": [
-                                        {
-                                            "LIB_FEAT_ID": "int32",
-                                            "USAGE_TYPE": "string"
-                                        }
-                                    ],
+                                    "FIRST_SEEN_DT": "timestamp",
                                     "IDENTIFIER_DATA": [
                                         "string"
                                     ],

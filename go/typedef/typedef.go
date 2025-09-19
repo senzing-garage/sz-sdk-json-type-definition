@@ -480,7 +480,9 @@ type Caches struct {
 	ResFeatStatUpdateFail int32 `json:"resFeatStatUpdateFail"`
 }
 
-type CandidateKeys struct {
+type CandidateKeysForMatchInfo = map[string][]MatchInfoForAttribute
+
+type CandidateKeysForSearchStatistic struct {
 	FeatureTypes []FeatureType `json:"FEATURE_TYPES"`
 
 	Summary Summary `json:"SUMMARY"`
@@ -560,7 +562,15 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
-type DisclosedRelation struct {
+type DisclosedRelationsForMatchInfo struct {
+	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+
+	RelLink []RelLink `json:"REL_LINK"`
+
+	RelPointer []RelPointer `json:"REL_POINTER"`
+}
+
+type DisclosedRelationsForMatchInfoForWhy struct {
 	Domain string `json:"DOMAIN"`
 
 	// Describes the attributes that make up the feature.
@@ -577,14 +587,6 @@ type DisclosedRelation struct {
 	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
 
 	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
-}
-
-type DisclosedRelations struct {
-	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
-
-	RelLink []RelLink `json:"REL_LINK"`
-
-	RelPointer []RelPointer `json:"REL_POINTER"`
 }
 
 type Entity struct {
@@ -876,14 +878,6 @@ type G2config struct {
 	SysOom []SysOom `json:"SYS_OOM"`
 }
 
-type GetConfig struct {
-	G2Config G2config `json:"G2_CONFIG"`
-}
-
-type GetDataSourceRegistry struct {
-	DataSources []DataSource `json:"DATA_SOURCES"`
-}
-
 type HowResults struct {
 	FinalState FinalState `json:"FINAL_STATE"`
 
@@ -931,9 +925,9 @@ type LockWaits struct {
 }
 
 type MatchInfo struct {
-	CandidateKeys MatchInfoCandidateKeys `json:"CANDIDATE_KEYS"`
+	CandidateKeys CandidateKeysForMatchInfo `json:"CANDIDATE_KEYS"`
 
-	DisclosedRelations DisclosedRelations `json:"DISCLOSED_RELATIONS"`
+	DisclosedRelations DisclosedRelationsForMatchInfo `json:"DISCLOSED_RELATIONS"`
 
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -955,8 +949,6 @@ type MatchInfo struct {
 	WhyKey string `json:"WHY_KEY"`
 }
 
-type MatchInfoCandidateKeys = map[string][]MatchInfoForAttribute
-
 type MatchInfoForAttribute struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
@@ -967,7 +959,7 @@ type MatchInfoForAttribute struct {
 type MatchInfoForWhy struct {
 	CandidateKeys map[string][]MatchInfoForAttribute `json:"CANDIDATE_KEYS"`
 
-	DisclosedRelations DisclosedRelation `json:"DISCLOSED_RELATIONS"`
+	DisclosedRelations DisclosedRelationsForMatchInfoForWhy `json:"DISCLOSED_RELATIONS"`
 
 	FeatureScores FeatureScores `json:"FEATURE_SCORES"`
 
@@ -1181,11 +1173,6 @@ type RecordKey struct {
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
-}
-
-type RecordKeys struct {
-	// A list of (data source code, record id) pairs.
-	Records []RecordKey `json:"RECORDS"`
 }
 
 type RecordSummary struct {
@@ -1431,14 +1418,6 @@ type ResolvedEntityForGetEntity struct {
 	RecordTypes []string `json:"RECORD_TYPES"`
 }
 
-type ResolvedEntityForWhySearch struct {
-	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
-	// It may change when new information is added.
-	EntityID int64 `json:"ENTITY_ID"`
-
-	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
-}
-
 type SysOom struct {
 	FelemID int64 `json:"FELEM_ID"`
 
@@ -1500,7 +1479,7 @@ type SearchRequest struct {
 }
 
 type SearchStatistic struct {
-	CandidateKeys CandidateKeys `json:"CANDIDATE_KEYS"`
+	CandidateKeys CandidateKeysForSearchStatistic `json:"CANDIDATE_KEYS"`
 }
 
 type SenzingEntitySpecification struct {
@@ -2128,10 +2107,6 @@ type UnresolveTriggers struct {
 	Update int32 `json:"update"`
 }
 
-type VirtualEntity struct {
-	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
-}
-
 type VirtualEntitySynopsis struct {
 	MemberRecords []MemberRecord `json:"MEMBER_RECORDS"`
 
@@ -2160,14 +2135,6 @@ type WhyResult struct {
 
 	// Internal identifier for the record.
 	InternalID0 int64 `json:"INTERNAL_ID_2"`
-
-	MatchInfo MatchInfoForWhy `json:"MATCH_INFO"`
-}
-
-type WhySearchResult struct {
-	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
-	// It may change when new information is added.
-	EntityID int64 `json:"ENTITY_ID"`
 
 	MatchInfo MatchInfoForWhy `json:"MATCH_INFO"`
 }

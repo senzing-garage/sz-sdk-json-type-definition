@@ -715,8 +715,10 @@ pub struct Caches {
     pub resFeatStatUpdateFail: i32,
 }
 
+pub type CandidateKeysForMatchInfo = HashMap<String, Vec<MatchInfoForAttribute>>;
+
 #[derive(Serialize, Deserialize)]
-pub struct CandidateKeys {
+pub struct CandidateKeysForSearchStatistic {
     #[serde(rename = "FEATURE_TYPES")]
     pub featureTypes: Vec<FeatureType>,
 
@@ -835,7 +837,19 @@ pub struct DataSource {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct DisclosedRelation {
+pub struct DisclosedRelationsForMatchInfo {
+    #[serde(rename = "REL_ANCHOR")]
+    pub relAnchor: Vec<RelAnchor>,
+
+    #[serde(rename = "REL_LINK")]
+    pub relLink: Vec<RelLink>,
+
+    #[serde(rename = "REL_POINTER")]
+    pub relPointer: Vec<RelPointer>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct DisclosedRelationsForMatchInfoForWhy {
     #[serde(rename = "DOMAIN")]
     pub domain: String,
 
@@ -860,18 +874,6 @@ pub struct DisclosedRelation {
 
     #[serde(rename = "REL_ANCHOR")]
     pub relAnchor: Vec<RelAnchor>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct DisclosedRelations {
-    #[serde(rename = "REL_ANCHOR")]
-    pub relAnchor: Vec<RelAnchor>,
-
-    #[serde(rename = "REL_LINK")]
-    pub relLink: Vec<RelLink>,
-
-    #[serde(rename = "REL_POINTER")]
-    pub relPointer: Vec<RelPointer>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1294,18 +1296,6 @@ pub struct G2config {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct GetConfig {
-    #[serde(rename = "G2_CONFIG")]
-    pub g2Config: G2config,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct GetDataSourceRegistry {
-    #[serde(rename = "DATA_SOURCES")]
-    pub dataSources: Vec<DataSource>,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct HowResults {
     #[serde(rename = "FINAL_STATE")]
     pub finalState: FinalState,
@@ -1376,10 +1366,10 @@ pub struct LockWaits {
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfo {
     #[serde(rename = "CANDIDATE_KEYS")]
-    pub candidateKeys: MatchInfoCandidateKeys,
+    pub candidateKeys: CandidateKeysForMatchInfo,
 
     #[serde(rename = "DISCLOSED_RELATIONS")]
-    pub disclosedRelations: DisclosedRelations,
+    pub disclosedRelations: DisclosedRelationsForMatchInfo,
 
     /// Identifier of the entity resolution rule that was triggered.
     #[serde(rename = "ERRULE_CODE")]
@@ -1409,8 +1399,6 @@ pub struct MatchInfo {
     pub whyKey: String,
 }
 
-pub type MatchInfoCandidateKeys = HashMap<String, Vec<MatchInfoForAttribute>>;
-
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoForAttribute {
     /// Describes the attributes that make up the feature.
@@ -1427,7 +1415,7 @@ pub struct MatchInfoForWhy {
     pub candidateKeys: HashMap<String, Vec<MatchInfoForAttribute>>,
 
     #[serde(rename = "DISCLOSED_RELATIONS")]
-    pub disclosedRelations: DisclosedRelation,
+    pub disclosedRelations: DisclosedRelationsForMatchInfoForWhy,
 
     #[serde(rename = "FEATURE_SCORES")]
     pub featureScores: FeatureScores,
@@ -1738,13 +1726,6 @@ pub struct RecordKey {
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct RecordKeys {
-    /// A list of (data source code, record id) pairs.
-    #[serde(rename = "RECORDS")]
-    pub records: Vec<RecordKey>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2095,17 +2076,6 @@ pub struct ResolvedEntityForGetEntity {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct ResolvedEntityForWhySearch {
-    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
-    /// entity. It may change when new information is added.
-    #[serde(rename = "ENTITY_ID")]
-    pub entityId: i32,
-
-    #[serde(rename = "RELATED_ENTITIES")]
-    pub relatedEntities: Vec<RelatedEntity>,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct SysOom {
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
@@ -2197,7 +2167,7 @@ pub struct SearchRequest {
 #[derive(Serialize, Deserialize)]
 pub struct SearchStatistic {
     #[serde(rename = "CANDIDATE_KEYS")]
-    pub candidateKeys: CandidateKeys,
+    pub candidateKeys: CandidateKeysForSearchStatistic,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3129,12 +3099,6 @@ pub struct UnresolveTriggers {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct VirtualEntity {
-    #[serde(rename = "RESOLVED_ENTITY")]
-    pub resolvedEntity: ResolvedEntity,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct VirtualEntitySynopsis {
     #[serde(rename = "MEMBER_RECORDS")]
     pub memberRecords: Vec<MemberRecord>,
@@ -3175,17 +3139,6 @@ pub struct WhyResult {
     /// Internal identifier for the record.
     #[serde(rename = "INTERNAL_ID_2")]
     pub internalId0: i32,
-
-    #[serde(rename = "MATCH_INFO")]
-    pub matchInfo: MatchInfoForWhy,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct WhySearchResult {
-    /// The ENTITY_ID is the Senzing-generated identifier for the discovered
-    /// entity. It may change when new information is added.
-    #[serde(rename = "ENTITY_ID")]
-    pub entityId: i32,
 
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfoForWhy,

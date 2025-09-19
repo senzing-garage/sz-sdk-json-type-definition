@@ -1050,12 +1050,23 @@ class Caches:
         return data
 
 @dataclass
-class CandidateKeys:
+class CandidateKeysForMatchInfo:
+    value: 'Dict[str, List[MatchInfoForAttribute]]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'CandidateKeysForMatchInfo':
+        return cls(_from_json_data(Dict[str, List[MatchInfoForAttribute]], data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class CandidateKeysForSearchStatistic:
     feature_types: 'List[FeatureType]'
     summary: 'Summary'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'CandidateKeys':
+    def from_json_data(cls, data: Any) -> 'CandidateKeysForSearchStatistic':
         return cls(
             _from_json_data(List[FeatureType], data.get("FEATURE_TYPES")),
             _from_json_data(Summary, data.get("SUMMARY")),
@@ -1247,7 +1258,28 @@ class DataSource:
         return data
 
 @dataclass
-class DisclosedRelation:
+class DisclosedRelationsForMatchInfo:
+    rel_anchor: 'List[RelAnchor]'
+    rel_link: 'List[RelLink]'
+    rel_pointer: 'List[RelPointer]'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'DisclosedRelationsForMatchInfo':
+        return cls(
+            _from_json_data(List[RelAnchor], data.get("REL_ANCHOR")),
+            _from_json_data(List[RelLink], data.get("REL_LINK")),
+            _from_json_data(List[RelPointer], data.get("REL_POINTER")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
+        data["REL_LINK"] = _to_json_data(self.rel_link)
+        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
+        return data
+
+@dataclass
+class DisclosedRelationsForMatchInfoForWhy:
     domain: 'str'
     feat_desc: 'str'
     """
@@ -1262,7 +1294,7 @@ class DisclosedRelation:
     rel_anchor: 'List[RelAnchor]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'DisclosedRelation':
+    def from_json_data(cls, data: Any) -> 'DisclosedRelationsForMatchInfoForWhy':
         return cls(
             _from_json_data(str, data.get("DOMAIN")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -1284,27 +1316,6 @@ class DisclosedRelation:
         data["LINKED_FEAT_ID"] = _to_json_data(self.linked_feat_id)
         data["LINKED_FEAT_TYPE"] = _to_json_data(self.linked_feat_type)
         data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        return data
-
-@dataclass
-class DisclosedRelations:
-    rel_anchor: 'List[RelAnchor]'
-    rel_link: 'List[RelLink]'
-    rel_pointer: 'List[RelPointer]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'DisclosedRelations':
-        return cls(
-            _from_json_data(List[RelAnchor], data.get("REL_ANCHOR")),
-            _from_json_data(List[RelLink], data.get("REL_LINK")),
-            _from_json_data(List[RelPointer], data.get("REL_POINTER")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
-        data["REL_LINK"] = _to_json_data(self.rel_link)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
         return data
 
 @dataclass
@@ -1994,36 +2005,6 @@ class G2config:
         return data
 
 @dataclass
-class GetConfig:
-    g2_config: 'G2config'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'GetConfig':
-        return cls(
-            _from_json_data(G2config, data.get("G2_CONFIG")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["G2_CONFIG"] = _to_json_data(self.g2_config)
-        return data
-
-@dataclass
-class GetDataSourceRegistry:
-    data_sources: 'List[DataSource]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'GetDataSourceRegistry':
-        return cls(
-            _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["DATA_SOURCES"] = _to_json_data(self.data_sources)
-        return data
-
-@dataclass
 class HowResults:
     final_state: 'FinalState'
     resolution_steps: 'List[ResolutionStep]'
@@ -2150,8 +2131,8 @@ class LockWaits:
 
 @dataclass
 class MatchInfo:
-    candidate_keys: 'MatchInfoCandidateKeys'
-    disclosed_relations: 'DisclosedRelations'
+    candidate_keys: 'CandidateKeysForMatchInfo'
+    disclosed_relations: 'DisclosedRelationsForMatchInfo'
     errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
@@ -2176,8 +2157,8 @@ class MatchInfo:
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfo':
         return cls(
-            _from_json_data(MatchInfoCandidateKeys, data.get("CANDIDATE_KEYS")),
-            _from_json_data(DisclosedRelations, data.get("DISCLOSED_RELATIONS")),
+            _from_json_data(CandidateKeysForMatchInfo, data.get("CANDIDATE_KEYS")),
+            _from_json_data(DisclosedRelationsForMatchInfo, data.get("DISCLOSED_RELATIONS")),
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(FeatureScores, data.get("FEATURE_SCORES")),
             _from_json_data(str, data.get("MATCH_KEY")),
@@ -2201,17 +2182,6 @@ class MatchInfo:
         data["WHY_ERRULE_CODE"] = _to_json_data(self.why_errule_code)
         data["WHY_KEY"] = _to_json_data(self.why_key)
         return data
-
-@dataclass
-class MatchInfoCandidateKeys:
-    value: 'Dict[str, List[MatchInfoForAttribute]]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'MatchInfoCandidateKeys':
-        return cls(_from_json_data(Dict[str, List[MatchInfoForAttribute]], data))
-
-    def to_json_data(self) -> Any:
-        return _to_json_data(self.value)
 
 @dataclass
 class MatchInfoForAttribute:
@@ -2238,7 +2208,7 @@ class MatchInfoForAttribute:
 @dataclass
 class MatchInfoForWhy:
     candidate_keys: 'Dict[str, List[MatchInfoForAttribute]]'
-    disclosed_relations: 'DisclosedRelation'
+    disclosed_relations: 'DisclosedRelationsForMatchInfoForWhy'
     feature_scores: 'FeatureScores'
     match_level_code: 'str'
     """
@@ -2253,7 +2223,7 @@ class MatchInfoForWhy:
     def from_json_data(cls, data: Any) -> 'MatchInfoForWhy':
         return cls(
             _from_json_data(Dict[str, List[MatchInfoForAttribute]], data.get("CANDIDATE_KEYS")),
-            _from_json_data(DisclosedRelation, data.get("DISCLOSED_RELATIONS")),
+            _from_json_data(DisclosedRelationsForMatchInfoForWhy, data.get("DISCLOSED_RELATIONS")),
             _from_json_data(FeatureScores, data.get("FEATURE_SCORES")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(str, data.get("WHY_ERRULE_CODE")),
@@ -2720,25 +2690,6 @@ class RecordKey:
         data: Dict[str, Any] = {}
         data["DATA_SOURCE"] = _to_json_data(self.data_source)
         data["RECORD_ID"] = _to_json_data(self.record_id)
-        return data
-
-@dataclass
-class RecordKeys:
-    records: 'List[RecordKey]'
-    """
-    A list of (data source code, record id) pairs.
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'RecordKeys':
-        return cls(
-            _from_json_data(List[RecordKey], data.get("RECORDS")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["RECORDS"] = _to_json_data(self.records)
         return data
 
 @dataclass
@@ -3302,29 +3253,6 @@ class ResolvedEntityForGetEntity:
         return data
 
 @dataclass
-class ResolvedEntityForWhySearch:
-    entity_id: 'int'
-    """
-    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
-    It may change when new information is added.
-    """
-
-    related_entities: 'List[RelatedEntity]'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'ResolvedEntityForWhySearch':
-        return cls(
-            _from_json_data(int, data.get("ENTITY_ID")),
-            _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ENTITY_ID"] = _to_json_data(self.entity_id)
-        data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
-        return data
-
-@dataclass
 class SysOom:
     felem_id: 'int'
     ftype_id: 'int'
@@ -3466,12 +3394,12 @@ class SearchRequest:
 
 @dataclass
 class SearchStatistic:
-    candidate_keys: 'CandidateKeys'
+    candidate_keys: 'CandidateKeysForSearchStatistic'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SearchStatistic':
         return cls(
-            _from_json_data(CandidateKeys, data.get("CANDIDATE_KEYS")),
+            _from_json_data(CandidateKeysForSearchStatistic, data.get("CANDIDATE_KEYS")),
         )
 
     def to_json_data(self) -> Any:
@@ -4978,21 +4906,6 @@ class UnresolveTriggers:
         return data
 
 @dataclass
-class VirtualEntity:
-    resolved_entity: 'ResolvedEntity'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'VirtualEntity':
-        return cls(
-            _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
-        return data
-
-@dataclass
 class VirtualEntitySynopsis:
     member_records: 'List[MemberRecord]'
     virtual_entity_id: 'str'
@@ -5071,29 +4984,6 @@ class WhyResult:
         data["FOCUS_RECORDS_2"] = _to_json_data(self.focus_records0)
         data["INTERNAL_ID"] = _to_json_data(self.internal_id)
         data["INTERNAL_ID_2"] = _to_json_data(self.internal_id0)
-        data["MATCH_INFO"] = _to_json_data(self.match_info)
-        return data
-
-@dataclass
-class WhySearchResult:
-    entity_id: 'int'
-    """
-    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
-    It may change when new information is added.
-    """
-
-    match_info: 'MatchInfoForWhy'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'WhySearchResult':
-        return cls(
-            _from_json_data(int, data.get("ENTITY_ID")),
-            _from_json_data(MatchInfoForWhy, data.get("MATCH_INFO")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ENTITY_ID"] = _to_json_data(self.entity_id)
         data["MATCH_INFO"] = _to_json_data(self.match_info)
         return data
 

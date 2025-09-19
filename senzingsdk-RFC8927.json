@@ -61,7 +61,7 @@
                 }
             }
         },
-        "CandidateKeys": {
+        "CandidateKeysForSearchStatistic": {
             "properties": {
                 "FEATURE_TYPES": {
                     "elements": {
@@ -70,6 +70,13 @@
                 },
                 "SUMMARY": {
                     "ref": "Summary"
+                }
+            }
+        },
+        "CandidateKeysForMatchInfo": {
+            "values": {
+                "elements": {
+                    "ref": "MatchInfoForAttribute"
                 }
             }
         },
@@ -1155,7 +1162,26 @@
                 }
             }
         },
-        "DisclosedRelation": {
+        "DisclosedRelationsForMatchInfo": {
+            "properties": {
+                "REL_ANCHOR": {
+                    "elements": {
+                        "ref": "RelAnchor"
+                    }
+                },
+                "REL_LINK": {
+                    "elements": {
+                        "ref": "RelLink"
+                    }
+                },
+                "REL_POINTER": {
+                    "elements": {
+                        "ref": "RelPointer"
+                    }
+                }
+            }
+        },
+        "DisclosedRelationsForMatchInfoForWhy": {
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -1194,25 +1220,6 @@
                 }
             }
         },
-        "DisclosedRelations": {
-            "properties": {
-                "REL_ANCHOR": {
-                    "elements": {
-                        "ref": "RelAnchor"
-                    }
-                },
-                "REL_LINK": {
-                    "elements": {
-                        "ref": "RelLink"
-                    }
-                },
-                "REL_POINTER": {
-                    "elements": {
-                        "ref": "RelPointer"
-                    }
-                }
-            }
-        },
         "Entity": {
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1227,59 +1234,42 @@
         },
         "EntityForResolvedEntity": {
             "properties": {
-                "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
-                },
                 "RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
+                },
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
                 }
             }
         },
         "EntityForWhySearch": {
             "properties": {
-                "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
-                },
                 "RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
+                },
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
                 }
             }
         },
         "EntityNetworkLink": {
             "properties": {
-                "MIN_ENTITY_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MAX_ENTITY_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MATCH_LEVEL_CODE": {
-                    "metadata": {
-                        "description": "The type of match that occurred for the record."
-                    },
-                    "type": "string"
-                },
-                "MATCH_KEY": {
-                    "metadata": {
-                        "description": "Representation of matched source record features."
-                    },
-                    "type": "string"
-                },
                 "ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
+                },
+                "IS_AMBIGUOUS": {
+                    "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
@@ -1288,9 +1278,26 @@
                     },
                     "type": "int32"
                 },
-                "IS_AMBIGUOUS": {
+                "MATCH_KEY": {
                     "metadata": {
-                        "description": "Indicates if this is an ambiguous relationship.",
+                        "description": "Representation of matched source record features."
+                    },
+                    "type": "string"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
+                    "type": "string"
+                },
+                "MAX_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MIN_ENTITY_ID": {
+                    "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1323,35 +1330,18 @@
         },
         "EntityPathLink": {
             "properties": {
-                "MIN_ENTITY_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MAX_ENTITY_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MATCH_LEVEL_CODE": {
-                    "metadata": {
-                        "description": "The type of match that occurred for the record."
-                    },
-                    "type": "string"
-                },
-                "MATCH_KEY": {
-                    "metadata": {
-                        "description": "Representation of matched source record features."
-                    },
-                    "type": "string"
-                },
                 "ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
+                },
+                "IS_AMBIGUOUS": {
+                    "metadata": {
+                        "description": "Indicates if this is an ambiguous relationship.",
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
                 "IS_DISCLOSED": {
                     "metadata": {
@@ -1360,9 +1350,26 @@
                     },
                     "type": "int32"
                 },
-                "IS_AMBIGUOUS": {
+                "MATCH_KEY": {
                     "metadata": {
-                        "description": "Indicates if this is an ambiguous relationship.",
+                        "description": "Representation of matched source record features."
+                    },
+                    "type": "string"
+                },
+                "MATCH_LEVEL_CODE": {
+                    "metadata": {
+                        "description": "The type of match that occurred for the record."
+                    },
+                    "type": "string"
+                },
+                "MAX_ENTITY_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "MIN_ENTITY_ID": {
+                    "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1460,11 +1467,11 @@
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
-                    "metadata": {
-                        "description": "Describes the attributes that make up the feature."
-                    },
                     "elements": {
                         "ref": "FeatureDescriptionValue"
+                    },
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
                     }
                 },
                 "LIB_FEAT_ID": {
@@ -1493,11 +1500,11 @@
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
-                    "metadata": {
-                        "description": "Describes the attributes that make up the feature."
-                    },
                     "elements": {
                         "ref": "FeatureDescriptionValue"
+                    },
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
                     }
                 },
                 "LIB_FEAT_ID": {
@@ -1528,11 +1535,11 @@
                     "type": "string"
                 },
                 "FEAT_DESC_VALUES": {
-                    "metadata": {
-                        "description": "Describes the attributes that make up the feature."
-                    },
                     "elements": {
                         "ref": "FeatureDescriptionValue"
+                    },
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
                     }
                 },
                 "LIB_FEAT_ID": {
@@ -1567,16 +1574,10 @@
         },
         "FeatureScoreForAttribute": {
             "properties": {
-                "INBOUND_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
+                "ADDITIONAL_SCORES": {
+                    "ref": "AdditionalScores"
                 },
-                "INBOUND_FEAT_DESC": {
-                    "type": "string"
-                },
-                "INBOUND_FEAT_USAGE_TYPE": {
+                "CANDIDATE_FEAT_DESC": {
                     "type": "string"
                 },
                 "CANDIDATE_FEAT_ID": {
@@ -1585,10 +1586,19 @@
                     },
                     "type": "int32"
                 },
-                "CANDIDATE_FEAT_DESC": {
+                "CANDIDATE_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "CANDIDATE_FEAT_USAGE_TYPE": {
+                "INBOUND_FEAT_DESC": {
+                    "type": "string"
+                },
+                "INBOUND_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "INBOUND_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
                 "SCORE": {
@@ -1596,9 +1606,6 @@
                         "goType": "int64"
                     },
                     "type": "int32"
-                },
-                "ADDITIONAL_SCORES": {
-                    "ref": "AdditionalScores"
                 },
                 "SCORE_BEHAVIOR": {
                     "type": "string"
@@ -1855,22 +1862,6 @@
                 }
             }
         },
-        "GetConfig": {
-            "properties": {
-                "G2_CONFIG": {
-                    "ref": "G2Config"
-                }
-            }
-        },
-        "GetDataSourceRegistry": {
-            "properties": {
-                "DATA_SOURCES": {
-                    "elements": {
-                        "ref": "DataSource"
-                    }
-                }
-            }
-        },
         "HowResults": {
             "properties": {
                 "FINAL_STATE": {
@@ -1885,16 +1876,16 @@
         },
         "InitResources": {
             "properties": {
-                "physicalCores": {
-                    "type": "int32"
+                "availableMemory": {
+                    "type": "string"
                 },
                 "logicalCores": {
                     "type": "int32"
                 },
-                "totalMemory": {
-                    "type": "string"
+                "physicalCores": {
+                    "type": "int32"
                 },
-                "availableMemory": {
+                "totalMemory": {
                     "type": "string"
                 }
             }
@@ -1942,13 +1933,13 @@
         },
         "License": {
             "properties": {
+                "dsrLimit": {
+                    "type": "string"
+                },
                 "status": {
                     "type": "string"
                 },
                 "type": {
-                    "type": "string"
-                },
-                "dsrLimit": {
                     "type": "string"
                 }
             }
@@ -1960,33 +1951,13 @@
                 }
             }
         },
-        "MatchKeyDetails": {
-            "properties": {
-                "CONFIRMATIONS": {
-                    "elements": {
-                        "ref": "Confirmation"
-                    }
-                },
-                "DENIALS": {
-                    "elements": {
-                        "ref": "Confirmation"
-                    }
-                },
-                "ERRULE_CODE": {
-                    "metadata": {
-                        "description": "Identifier of the entity resolution rule that was triggered."
-                    },
-                    "type": "string"
-                }
-            }
-        },
         "MatchInfo": {
             "properties": {
                 "CANDIDATE_KEYS": {
-                    "ref": "MatchInfoCandidateKeys"
+                    "ref": "CandidateKeysForMatchInfo"
                 },
                 "DISCLOSED_RELATIONS": {
-                    "ref": "DisclosedRelations"
+                    "ref": "DisclosedRelationsForMatchInfo"
                 },
                 "ERRULE_CODE": {
                     "metadata": {
@@ -2026,13 +1997,6 @@
                 }
             }
         },
-        "MatchInfoCandidateKeys": {
-            "values": {
-                "elements": {
-                    "ref": "MatchInfoForAttribute"
-                }
-            }
-        },
         "MatchInfoForAttribute": {
             "properties": {
                 "FEAT_DESC": {
@@ -2059,7 +2023,7 @@
                     }
                 },
                 "DISCLOSED_RELATIONS": {
-                    "ref": "DisclosedRelation"
+                    "ref": "DisclosedRelationsForMatchInfoForWhy"
                 },
                 "FEATURE_SCORES": {
                     "ref": "FeatureScores"
@@ -2078,6 +2042,26 @@
                 },
                 "WHY_KEY_DETAILS": {
                     "ref": "WhyKeyDetails"
+                }
+            }
+        },
+        "MatchKeyDetails": {
+            "properties": {
+                "CONFIRMATIONS": {
+                    "elements": {
+                        "ref": "Confirmation"
+                    }
+                },
+                "DENIALS": {
+                    "elements": {
+                        "ref": "Confirmation"
+                    }
+                },
+                "ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
+                    "type": "string"
                 }
             }
         },
@@ -2115,13 +2099,6 @@
             },
             "type": "string"
         },
-        "Params": {
-            "properties": {
-                "PARAM": {
-                    "ref": "ParamDetails"
-                }
-            }
-        },
         "ParamDetails": {
             "properties": {
                 "NAME": {
@@ -2129,6 +2106,13 @@
                 },
                 "VALUE": {
                     "ref": "Object"
+                }
+            }
+        },
+        "Params": {
+            "properties": {
+                "PARAM": {
+                    "ref": "ParamDetails"
                 }
             }
         },
@@ -2245,8 +2229,10 @@
                     },
                     "type": "string"
                 },
-                "FIRST_SEEN_DT": {
-                    "type": "timestamp"
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
                 },
                 "FEATURES": {
                     "values": {
@@ -2255,10 +2241,8 @@
                         }
                     }
                 },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
-                    }
+                "FIRST_SEEN_DT": {
+                    "type": "timestamp"
                 },
                 "IDENTIFIER_DATA": {
                     "elements": {
@@ -2369,16 +2353,16 @@
                     },
                     "type": "string"
                 },
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
                         }
-                    }
-                },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
                     }
                 },
                 "FIRST_SEEN_DT": {
@@ -2471,18 +2455,6 @@
                 }
             }
         },
-        "RecordKeys": {
-            "properties": {
-                "RECORDS": {
-                    "elements": {
-                        "ref": "RecordKey"
-                    },
-                    "metadata": {
-                        "description": "A list of (data source code, record id) pairs."
-                    }
-                }
-            }
-        },
         "RecordSummary": {
             "properties": {
                 "DATA_SOURCE": {
@@ -2508,13 +2480,13 @@
         },
         "RefreshLocks": {
             "properties": {
+                "count": {
+                    "type": "int32"
+                },
                 "maxMS": {
                     "type": "int32"
                 },
                 "totalMS": {
-                    "type": "int32"
-                },
-                "count": {
                     "type": "int32"
                 }
             }
@@ -2614,17 +2586,17 @@
                     },
                     "type": "string"
                 },
+                "RECORD_SUMMARY": {
+                    "elements": {
+                        "ref": "RecordSummary"
+                    },
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
+                    }
+                },
                 "RECORDS": {
                     "elements": {
                         "ref": "Record"
-                    }
-                },
-                "RECORD_SUMMARY": {
-                    "metadata": {
-                        "description": "Overview of the source systems the records came from comprising this related entity."
-                    },
-                    "elements": {
-                        "ref": "RecordSummary"
                     }
                 }
             }
@@ -2722,9 +2694,6 @@
         },
         "Reresolve": {
             "properties": {
-                "triggers": {
-                    "ref": "ReresolveTriggers"
-                },
                 "newFeatureFTypes": {
                     "metadata": {
                         "goType": "map[string]int64"
@@ -2738,6 +2707,9 @@
                 },
                 "suppressedScoredFeatureTypeForReresolve": {
                     "ref": "Fixme"
+                },
+                "triggers": {
+                    "ref": "ReresolveTriggers"
                 }
             }
         },
@@ -2806,16 +2778,16 @@
                     },
                     "type": "string"
                 },
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
                         }
-                    }
-                },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
                     }
                 },
                 "IS_AMBIGUOUS": {
@@ -2853,9 +2825,12 @@
                     },
                     "type": "string"
                 },
-                "RECORDS": {
+                "RECORD_SUMMARY": {
                     "elements": {
-                        "ref": "Record"
+                        "ref": "RecordSummary"
+                    },
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
                     }
                 },
                 "RECORD_TYPES": {
@@ -2863,12 +2838,9 @@
                         "type": "string"
                     }
                 },
-                "RECORD_SUMMARY": {
-                    "metadata": {
-                        "description": "Overview of the source systems the records came from comprising this related entity."
-                    },
+                "RECORDS": {
                     "elements": {
-                        "ref": "RecordSummary"
+                        "ref": "Record"
                     }
                 }
             }
@@ -2904,16 +2876,16 @@
                     },
                     "type": "string"
                 },
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForGetEntity"
                         }
-                    }
-                },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
                     }
                 },
                 "IS_AMBIGUOUS": {
@@ -2951,38 +2923,22 @@
                     },
                     "type": "string"
                 },
-                "RECORDS": {
-                    "elements": {
-                        "ref": "RecordForGetEntity"
-                    }
-                },
                 "RECORD_SUMMARY": {
-                    "metadata": {
-                        "description": "Overview of the source systems the records came from comprising this related entity."
-                    },
                     "elements": {
                         "ref": "RecordSummary"
+                    },
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
                     }
                 },
                 "RECORD_TYPES": {
                     "elements": {
                         "type": "string"
                     }
-                }
-            }
-        },
-        "ResolvedEntityForWhySearch": {
-            "properties": {
-                "ENTITY_ID": {
-                    "metadata": {
-                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-                        "goType": "int64"
-                    },
-                    "type": "int32"
                 },
-                "RELATED_ENTITIES": {
+                "RECORDS": {
                     "elements": {
-                        "ref": "RelatedEntity"
+                        "ref": "RecordForGetEntity"
                     }
                 }
             }
@@ -3005,64 +2961,6 @@
                         "description": "The unique identifier within the set of records in the DATA_SOURCE."
                     },
                     "type": "string"
-                }
-            }
-        },
-        "SYS_OOM": {
-            "properties": {
-                "FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "FTYPE_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LENS_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "LIB_FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NEXT_THRESH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "OOM_LEVEL": {
-                    "type": "string"
-                },
-                "OOM_TYPE": {
-                    "type": "string"
-                },
-                "THRESH1_CNT": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "THRESH1_OOM": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
                 }
             }
         },
@@ -3113,27 +3011,27 @@
                 }
             }
         },
-        "SearchStatistic": {
-            "properties": {
-                "CANDIDATE_KEYS": {
-                    "ref": "CandidateKeys"
-                }
-            }
-        },
         "SearchRequest": {
             "properties": {
-                "JSON_DATA": {
-                    "type": "string"
-                },
-                "SEARCH_PROFILE": {
-                    "type": "string"
-                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureDescriptionValue"
                         }
                     }
+                },
+                "JSON_DATA": {
+                    "type": "string"
+                },
+                "SEARCH_PROFILE": {
+                    "type": "string"
+                }
+            }
+        },
+        "SearchStatistic": {
+            "properties": {
+                "CANDIDATE_KEYS": {
+                    "ref": "CandidateKeysForSearchStatistic"
                 }
             }
         },
@@ -3220,16 +3118,16 @@
                 "GENDER": {
                     "type": "string"
                 },
-                "GROUP_ASSOCIATION_ORG_NAME": {
-                    "type": "string"
-                },
-                "GROUP_ASSOCIATION_TYPE": {
-                    "type": "string"
-                },
                 "GROUP_ASSN_ID_NUMBER": {
                     "type": "string"
                 },
                 "GROUP_ASSN_ID_TYPE": {
+                    "type": "string"
+                },
+                "GROUP_ASSOCIATION_ORG_NAME": {
+                    "type": "string"
+                },
+                "GROUP_ASSOCIATION_TYPE": {
                     "type": "string"
                 },
                 "INSTAGRAM": {
@@ -3262,13 +3160,13 @@
                 "NAME_TYPE": {
                     "type": "string"
                 },
-                "NATIONALITY": {
-                    "type": "string"
-                },
                 "NATIONAL_ID_COUNTRY": {
                     "type": "string"
                 },
                 "NATIONAL_ID_NUMBER": {
+                    "type": "string"
+                },
+                "NATIONALITY": {
                     "type": "string"
                 },
                 "NATIVE_NAME_FULL": {
@@ -3310,9 +3208,6 @@
                 "PRIMARY_NAME_FIRST": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_ORG": {
-                    "type": "string"
-                },
                 "PRIMARY_NAME_FULL": {
                     "type": "string"
                 },
@@ -3322,13 +3217,16 @@
                 "PRIMARY_NAME_MIDDLE": {
                     "type": "string"
                 },
+                "PRIMARY_NAME_ORG": {
+                    "type": "string"
+                },
                 "RECORD_TYPE": {
                     "type": "string"
                 },
-                "REGISTRATION_DATE": {
+                "REGISTRATION_COUNTRY": {
                     "type": "string"
                 },
-                "REGISTRATION_COUNTRY": {
+                "REGISTRATION_DATE": {
                     "type": "string"
                 },
                 "REL_ANCHOR_KEY": {
@@ -3412,49 +3310,73 @@
                 }
             }
         },
-        "ThreadState": {
+        "SYS_OOM": {
             "properties": {
-                "active": {
+                "FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "dataLatchContention": {
+                "FTYPE_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "governorContention": {
+                "LENS_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "idle": {
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "loader": {
+                "LIB_FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "obsEntContention": {
+                "NEXT_THRESH": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "resEntContention": {
+                "OOM_LEVEL": {
+                    "type": "string"
+                },
+                "OOM_TYPE": {
+                    "type": "string"
+                },
+                "THRESH1_CNT": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 },
-                "resolver": {
-                    "type": "int32"
-                },
-                "scoring": {
-                    "type": "int32"
-                },
-                "sqlExecuting": {
+                "THRESH1_OOM": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
                     "type": "int32"
                 }
             }
         },
         "SystemLoad": {
             "properties": {
-                "cpuUser": {
+                "cpuIdle": {
                     "type": "float32"
                 },
                 "cpuSystem": {
                     "type": "float32"
                 },
-                "cpuIdle": {
+                "cpuUser": {
                     "type": "float32"
                 },
                 "cpuWait": {
@@ -3464,13 +3386,13 @@
         },
         "SystemLoadStrings": {
             "properties": {
-                "cpuUser": {
+                "cpuIdle": {
                     "type": "string"
                 },
                 "cpuSystem": {
                     "type": "string"
                 },
-                "cpuIdle": {
+                "cpuUser": {
                     "type": "string"
                 },
                 "cpuWait": {
@@ -3507,6 +3429,15 @@
                 }
             }
         },
+        "SzConfigManagerGetConfigRegistryResponse": {
+            "properties": {
+                "CONFIGS": {
+                    "elements": {
+                        "ref": "Config"
+                    }
+                }
+            }
+        },
         "SzConfigRegisterDataSourceResponse": {
             "properties": {
                 "DSRC_ID": {
@@ -3521,15 +3452,6 @@
             "properties": {
                 "FIXME": {
                     "ref": "Fixme"
-                }
-            }
-        },
-        "SzConfigManagerGetConfigRegistryResponse": {
-            "properties": {
-                "CONFIGS": {
-                    "elements": {
-                        "ref": "Config"
-                    }
                 }
             }
         },
@@ -3671,14 +3593,14 @@
                         "ref": "EntityNetworkLink"
                     }
                 },
-                "ENTITY_PATHS": {
-                    "elements": {
-                        "ref": "EntityPath"
-                    }
-                },
                 "ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
                     }
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
@@ -3710,14 +3632,14 @@
                         "ref": "EntityNetworkLink"
                     }
                 },
-                "ENTITY_PATHS": {
-                    "elements": {
-                        "ref": "EntityPath"
-                    }
-                },
                 "ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
                     }
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
@@ -3746,14 +3668,14 @@
                         "ref": "Entity"
                     }
                 },
-                "ENTITY_PATHS": {
-                    "elements": {
-                        "ref": "EntityPath"
-                    }
-                },
                 "ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
                     }
                 }
             }
@@ -3784,14 +3706,14 @@
                         "ref": "Entity"
                     }
                 },
-                "ENTITY_PATHS": {
-                    "elements": {
-                        "ref": "EntityPath"
-                    }
-                },
                 "ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
+                    }
+                },
+                "ENTITY_PATHS": {
+                    "elements": {
+                        "ref": "EntityPath"
                     }
                 }
             }
@@ -3822,16 +3744,16 @@
         },
         "SzEngineGetRecordPreviewResponse": {
             "properties": {
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
                         }
-                    }
-                },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
                     }
                 },
                 "JSON_DATA": {
@@ -3884,16 +3806,16 @@
                     },
                     "type": "string"
                 },
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributeWithAttributes"
                         }
-                    }
-                },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
                     }
                 },
                 "FIRST_SEEN_DT": {
@@ -4136,14 +4058,14 @@
         },
         "SzEngineWhyRecordInEntityResponse": {
             "properties": {
-                "WHY_RESULTS": {
-                    "elements": {
-                        "ref": "WhyResult"
-                    }
-                },
                 "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
+                    }
+                },
+                "WHY_RESULTS": {
+                    "elements": {
+                        "ref": "WhyResult"
                     }
                 }
             }
@@ -4257,6 +4179,40 @@
                 }
             }
         },
+        "ThreadState": {
+            "properties": {
+                "active": {
+                    "type": "int32"
+                },
+                "dataLatchContention": {
+                    "type": "int32"
+                },
+                "governorContention": {
+                    "type": "int32"
+                },
+                "idle": {
+                    "type": "int32"
+                },
+                "loader": {
+                    "type": "int32"
+                },
+                "obsEntContention": {
+                    "type": "int32"
+                },
+                "resEntContention": {
+                    "type": "int32"
+                },
+                "resolver": {
+                    "type": "int32"
+                },
+                "scoring": {
+                    "type": "int32"
+                },
+                "sqlExecuting": {
+                    "type": "int32"
+                }
+            }
+        },
         "UmfProc": {
             "properties": {
                 "NAME": {
@@ -4271,43 +4227,36 @@
         },
         "Unresolve": {
             "properties": {
+                "abortedUnresolve": {
+                    "type": "int32"
+                },
                 "triggers": {
                     "ref": "UnresolveTriggers"
                 },
                 "unresolveTest": {
-                    "type": "int32"
-                },
-                "abortedUnresolve": {
                     "type": "int32"
                 }
             }
         },
         "UnresolveTriggers": {
             "properties": {
-                "normalResolve": {
-                    "type": "int32"
-                },
-                "update": {
-                    "type": "int32"
-                },
-                "relLink": {
-                    "type": "int32"
-                },
-                "extensiveResolve": {
+                "ambiguousMultiResolve": {
                     "type": "int32"
                 },
                 "ambiguousNoResolve": {
                     "type": "int32"
                 },
-                "ambiguousMultiResolve": {
+                "extensiveResolve": {
                     "type": "int32"
-                }
-            }
-        },
-        "VirtualEntity": {
-            "properties": {
-                "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
+                },
+                "normalResolve": {
+                    "type": "int32"
+                },
+                "relLink": {
+                    "type": "int32"
+                },
+                "update": {
+                    "type": "int32"
                 }
             }
         },
@@ -4381,20 +4330,6 @@
                 }
             }
         },
-        "WhySearchResult": {
-            "properties": {
-                "ENTITY_ID": {
-                    "metadata": {
-                        "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "MATCH_INFO": {
-                    "ref": "MatchInfoForWhy"
-                }
-            }
-        },
         "Workload": {
             "properties": {
                 "apiVersion": {
@@ -4447,11 +4382,11 @@
                 "scoring": {
                     "ref": "Scoring"
                 },
-                "threadState": {
-                    "ref": "ThreadState"
-                },
                 "systemResources": {
                     "ref": "SystemResources"
+                },
+                "threadState": {
+                    "ref": "ThreadState"
                 },
                 "unresolve": {
                     "ref": "Unresolve"

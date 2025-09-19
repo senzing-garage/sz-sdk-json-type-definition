@@ -8,6 +8,6 @@ namespace Senzing.Schema
     public class SearchStatistic
     {
         [JsonPropertyName("CANDIDATE_KEYS")]
-        public CandidateKeys CandidateKeys { get; set; }
+        public CandidateKeysForSearchStatistic CandidateKeys { get; set; }
     }
 }

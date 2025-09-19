@@ -12,7 +12,7 @@ namespace Senzing.Schema
         public IDictionary<string, IList<MatchInfoForAttribute>> CandidateKeys { get; set; }
 
         [JsonPropertyName("DISCLOSED_RELATIONS")]
-        public DisclosedRelation DisclosedRelations { get; set; }
+        public DisclosedRelationsForMatchInfoForWhy DisclosedRelations { get; set; }
 
         [JsonPropertyName("FEATURE_SCORES")]
         public FeatureScores FeatureScores { get; set; }

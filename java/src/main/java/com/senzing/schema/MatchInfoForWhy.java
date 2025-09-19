@@ -13,7 +13,7 @@ public class MatchInfoForWhy {
     private Map<String, List<MatchInfoForAttribute>> candidateKeys;
 
     @JsonProperty("DISCLOSED_RELATIONS")
-    private DisclosedRelation disclosedRelations;
+    private DisclosedRelationsForMatchInfoForWhy disclosedRelations;
 
     @JsonProperty("FEATURE_SCORES")
     private FeatureScores featureScores;
@@ -50,14 +50,14 @@ public class MatchInfoForWhy {
     /**
      * Getter for disclosedRelations.<p>
      */
-    public DisclosedRelation getDisclosedRelations() {
+    public DisclosedRelationsForMatchInfoForWhy getDisclosedRelations() {
         return disclosedRelations;
     }
 
     /**
      * Setter for disclosedRelations.<p>
      */
-    public void setDisclosedRelations(DisclosedRelation disclosedRelations) {
+    public void setDisclosedRelations(DisclosedRelationsForMatchInfoForWhy disclosedRelations) {
         this.disclosedRelations = disclosedRelations;
     }
 

@@ -317,7 +317,9 @@ export interface Caches {
   resFeatStatUpdateFail: number;
 }
 
-export interface CandidateKeys {
+export type CandidateKeysForMatchInfo = { [key: string]: MatchInfoForAttribute[] };
+
+export interface CandidateKeysForSearchStatistic {
   FEATURE_TYPES: FeatureType[];
   SUMMARY: Summary;
 }
@@ -379,7 +381,13 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
-export interface DisclosedRelation {
+export interface DisclosedRelationsForMatchInfo {
+  REL_ANCHOR: RelAnchor[];
+  REL_LINK: RelLink[];
+  REL_POINTER: RelPointer[];
+}
+
+export interface DisclosedRelationsForMatchInfoForWhy {
   DOMAIN: string;
 
   /**
@@ -392,12 +400,6 @@ export interface DisclosedRelation {
   LINKED_FEAT_ID: number;
   LINKED_FEAT_TYPE: string;
   REL_ANCHOR: RelAnchor[];
-}
-
-export interface DisclosedRelations {
-  REL_ANCHOR: RelAnchor[];
-  REL_LINK: RelLink[];
-  REL_POINTER: RelPointer[];
 }
 
 export interface Entity {
@@ -666,14 +668,6 @@ export interface G2config {
   SYS_OOM: SysOom[];
 }
 
-export interface GetConfig {
-  G2_CONFIG: G2config;
-}
-
-export interface GetDataSourceRegistry {
-  DATA_SOURCES: DataSource[];
-}
-
 export interface HowResults {
   FINAL_STATE: FinalState;
   RESOLUTION_STEPS: ResolutionStep[];
@@ -714,8 +708,8 @@ export interface LockWaits {
 }
 
 export interface MatchInfo {
-  CANDIDATE_KEYS: MatchInfoCandidateKeys;
-  DISCLOSED_RELATIONS: DisclosedRelations;
+  CANDIDATE_KEYS: CandidateKeysForMatchInfo;
+  DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfo;
 
   /**
    * Identifier of the entity resolution rule that was triggered.
@@ -738,8 +732,6 @@ export interface MatchInfo {
   WHY_KEY: string;
 }
 
-export type MatchInfoCandidateKeys = { [key: string]: MatchInfoForAttribute[] };
-
 export interface MatchInfoForAttribute {
   /**
    * Describes the attributes that make up the feature.
@@ -750,7 +742,7 @@ export interface MatchInfoForAttribute {
 
 export interface MatchInfoForWhy {
   CANDIDATE_KEYS: { [key: string]: MatchInfoForAttribute[] };
-  DISCLOSED_RELATIONS: DisclosedRelation;
+  DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfoForWhy;
   FEATURE_SCORES: FeatureScores;
 
   /**
@@ -938,13 +930,6 @@ export interface RecordKey {
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
-}
-
-export interface RecordKeys {
-  /**
-   * A list of (data source code, record id) pairs.
-   */
-  RECORDS: RecordKey[];
 }
 
 export interface RecordSummary {
@@ -1197,15 +1182,6 @@ export interface ResolvedEntityForGetEntity {
   RECORD_TYPES: string[];
 }
 
-export interface ResolvedEntityForWhySearch {
-  /**
-   * The ENTITY_ID is the Senzing-generated identifier for the discovered
-   * entity. It may change when new information is added.
-   */
-  ENTITY_ID: number;
-  RELATED_ENTITIES: RelatedEntity[];
-}
-
 export interface SysOom {
   FELEM_ID: number;
   FTYPE_ID: number;
@@ -1253,7 +1229,7 @@ export interface SearchRequest {
 }
 
 export interface SearchStatistic {
-  CANDIDATE_KEYS: CandidateKeys;
+  CANDIDATE_KEYS: CandidateKeysForSearchStatistic;
 }
 
 export interface SenzingEntitySpecification {
@@ -1746,10 +1722,6 @@ export interface UnresolveTriggers {
   update: number;
 }
 
-export interface VirtualEntity {
-  RESOLVED_ENTITY: ResolvedEntity;
-}
-
 export interface VirtualEntitySynopsis {
   MEMBER_RECORDS: MemberRecord[];
   VIRTUAL_ENTITY_ID: string;
@@ -1779,15 +1751,6 @@ export interface WhyResult {
    * Internal identifier for the record.
    */
   INTERNAL_ID_2: number;
-  MATCH_INFO: MatchInfoForWhy;
-}
-
-export interface WhySearchResult {
-  /**
-   * The ENTITY_ID is the Senzing-generated identifier for the discovered
-   * entity. It may change when new information is added.
-   */
-  ENTITY_ID: number;
   MATCH_INFO: MatchInfoForWhy;
 }
 

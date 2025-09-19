@@ -47,16 +47,16 @@
             "FIXME_KEY": "string"
         },
         "license": {
+            "dsrLimit": "string",
             "status": "string",
-            "type": "string",
-            "dsrLimit": "string"
+            "type": "string"
         },
         "loadedRecords": "int32",
         "lockWaits": {
             "refreshLocks": {
+                "count": "int32",
                 "maxMS": "int32",
-                "totalMS": "int32",
-                "count": "int32"
+                "totalMS": "int32"
             }
         },
         "processing": {
@@ -91,13 +91,6 @@
             "types": "int32"
         },
         "reresolve": {
-            "triggers": {
-                "abortRetry": "int32",
-                "multipleResolvableCandidates": "int32",
-                "resolveNewFeatures": "int32",
-                "skipped": "int32",
-                "unresolveMovement": "int32"
-            },
             "newFeatureFTypes": {
                 "user_defined_json_key": "int32"
             },
@@ -106,6 +99,13 @@
             },
             "suppressedScoredFeatureTypeForReresolve": {
                 "FIXME_KEY": "string"
+            },
+            "triggers": {
+                "abortRetry": "int32",
+                "multipleResolvableCandidates": "int32",
+                "resolveNewFeatures": "int32",
+                "skipped": "int32",
+                "unresolveMovement": "int32"
             }
         },
         "scoring": {
@@ -123,6 +123,34 @@
                 "FIXME_KEY": "string"
             }
         },
+        "systemResources": {
+            "currResources": {
+                "activeThreads": "int32",
+                "availableMemory": "string",
+                "processMemory": "string",
+                "systemLoad": [
+                    {
+                        "cpuIdle": "float32",
+                        "cpuSystem": "float32",
+                        "cpuUser": "float32",
+                        "cpuWait": "float32"
+                    }
+                ],
+                "workerThreads": "int32"
+            },
+            "initResources": {
+                "availableMemory": "string",
+                "logicalCores": "int32",
+                "physicalCores": "int32",
+                "totalMemory": "string"
+            },
+            "systemLoad": {
+                "cpuIdle": "string",
+                "cpuSystem": "string",
+                "cpuUser": "string",
+                "cpuWait": "string"
+            }
+        },
         "threadState": {
             "active": "int32",
             "dataLatchContention": "int32",
@@ -135,45 +163,17 @@
             "scoring": "int32",
             "sqlExecuting": "int32"
         },
-        "systemResources": {
-            "currResources": {
-                "activeThreads": "int32",
-                "availableMemory": "string",
-                "processMemory": "string",
-                "systemLoad": [
-                    {
-                        "cpuUser": "float32",
-                        "cpuSystem": "float32",
-                        "cpuIdle": "float32",
-                        "cpuWait": "float32"
-                    }
-                ],
-                "workerThreads": "int32"
-            },
-            "initResources": {
-                "physicalCores": "int32",
-                "logicalCores": "int32",
-                "totalMemory": "string",
-                "availableMemory": "string"
-            },
-            "systemLoad": {
-                "cpuUser": "string",
-                "cpuSystem": "string",
-                "cpuIdle": "string",
-                "cpuWait": "string"
-            }
-        },
         "unresolve": {
+            "abortedUnresolve": "int32",
             "triggers": {
-                "normalResolve": "int32",
-                "update": "int32",
-                "relLink": "int32",
-                "extensiveResolve": "int32",
+                "ambiguousMultiResolve": "int32",
                 "ambiguousNoResolve": "int32",
-                "ambiguousMultiResolve": "int32"
+                "extensiveResolve": "int32",
+                "normalResolve": "int32",
+                "relLink": "int32",
+                "update": "int32"
             },
-            "unresolveTest": "int32",
-            "abortedUnresolve": "int32"
+            "unresolveTest": "int32"
         }
     }
 }
