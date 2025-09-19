@@ -233,20 +233,22 @@ def handle_python_type(python_type):
             return {
                 VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("MatchInfoForAttribute"))]
             }
-        case "Dict[str, str]":
-            return {
-                VARIABLE_JSON_KEY: "string",
-            }
-        case "Dict[str, object]":
-            return {
-                VARIABLE_JSON_KEY: "string",
-            }
         case "Dict[str, int]":
             return {
                 VARIABLE_JSON_KEY: "int32",
             }
+        case "Dict[str, object]":
+            return {
+                VARIABLE_JSON_KEY: "object",
+            }
+        case "Dict[str, str]":
+            return {
+                VARIABLE_JSON_KEY: "string",
+            }
         case "object":
             return "object"
+        case "string":
+            return "string"
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
             raise NotImplementedError
@@ -261,7 +263,22 @@ def handle_type(json_value):
     return json_value.get("type")
 
 
+def handle_values(json_value):
+    type = json_value.get("values", {}).get("ref")
+    if not type:
+        type = json_value.get("values", {}).get("type")
+
+    if type in ["int32", "string"]:
+        result = {VARIABLE_JSON_KEY: type}
+    elif type:
+        result = {VARIABLE_JSON_KEY: recurse(DEFINITIONS.get(type))}
+    else:
+        result = {VARIABLE_JSON_KEY: recurse(json_value.get("values", {}))}
+    return result
+
+
 def recurse(json_value):
+
     if "metadata" in json_value:
         result = handle_metadata(json_value)
         if result:
@@ -269,6 +286,9 @@ def recurse(json_value):
 
     if "type" in json_value:
         return handle_type(json_value)
+
+    if "values" in json_value:
+        return handle_values(json_value)
 
     if "ref" in json_value:
         return handle_ref(json_value)
@@ -1456,7 +1476,8 @@ if __name__ == "__main__":
 
     # Make comparisons.
 
-    compare(sz_abstract_factory)
+    # compare(sz_abstract_factory)
+    compare_find_network_by_entity_id(sz_abstract_factory)
 
     # Delete test data.
 

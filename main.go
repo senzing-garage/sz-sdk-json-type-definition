@@ -7,7 +7,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"os"
 	"path/filepath"
 
 	"github.com/senzing-garage/go-helpers/settings"
@@ -23,6 +22,7 @@ const (
 
 func main() {
 	var err error
+
 	ctx := context.Background()
 
 	// ------------------------------------------------------------------------
@@ -39,14 +39,14 @@ func main() {
 	// Create Senzing objects.
 	// ------------------------------------------------------------------------
 
-	testStruct1 := typedef.SzEngineGetEntityByEntityIDResponse{}
-	x := testStruct1.ResolvedEntity.FeatureIds[0].UsageType
+	// testStruct1 := typedef.SzEngineGetEntityByEntityIDResponse{}
+	// x := testStruct1.ResolvedEntity.FeatureIds[0].UsageType
 
-	testStruct2 := typedef.SzEngineWhyEntitiesResponse{}
-	y := testStruct2.WhyResults[0].MatchInfo.WhyKey
+	// testStruct2 := typedef.SzEngineWhyEntitiesResponse{}
+	// y := testStruct2.WhyResults[0].MatchInfo.WhyKey
 
-	testStruct3 := typedef.SzEngineGetRecordResponse{}
-	z := testStruct3.JSONData["bob"]
+	// testStruct3 := typedef.SzEngineGetRecordResponse{}
+	// z := testStruct3.JSONData["bob"]
 
 	// ------------------------------------------------------------------------
 	// Demonstrate creating input parameter and parsing output result.
@@ -120,6 +120,7 @@ func main() {
 	panicOnError(err)
 
 	dataSourceRegistry, err := szConfig.GetDataSourceRegistry(ctx)
+	panicOnError(err)
 
 	outputf("\n--- Demonstrate reconstructed JSON --------------------------------------------\n\n")
 	// jsonString := `{"DATA_SOURCES":[{"DSRC_ID":1,"DSRC_CODE":"TEST"},{"DSRC_ID":2,"DSRC_CODE":"SEARCH"}]}`
@@ -198,18 +199,18 @@ func outputf(format string, message ...any) {
 	fmt.Printf(format, message...) //nolint
 }
 
-func pathToTestdata(filename string) string {
-	return "./testdata/" + filename
-}
+// func pathToTestdata(filename string) string {
+// 	return "./testdata/" + filename
+// }
 
-func mockSzEngineGetVirtualEntityByRecordID(ctx context.Context, recordKeys string, flags int64) (string, error) {
-	_ = ctx
-	_ = flags
+// func mockSzEngineGetVirtualEntityByRecordID(ctx context.Context, recordKeys string, flags int64) (string, error) {
+// 	_ = ctx
+// 	_ = flags
 
-	outputf("recordKeys Parameter: %s\n\n", recordKeys)
+// 	outputf("recordKeys Parameter: %s\n\n", recordKeys)
 
-	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
-	result, err := os.ReadFile(filePath)
+// 	filePath := pathToTestdata("SzEngineGetVirtualEntityByRecordIdResponse-test-001.json")
+// 	result, err := os.ReadFile(filePath)
 
-	return string(result), err
-}
+// 	return string(result), err
+// }

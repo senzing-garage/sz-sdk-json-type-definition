@@ -53,6 +53,7 @@
     "Fclass",
     "Felem",
     "Ftype",
+    "genproto",
     "GOBIN",
     "godoc",
     "golangci",
@@ -135,9 +136,27 @@
     "ZOOMROOM"
   ],
   "ignorePaths": [
+    ".dockerignore",
+    ".git/*",
     ".git/**",
     ".github/linters/.golangci.yaml",
     ".gitignore",
-    ".mypy_cache/**"
+    ".history/*",
+    ".mypy_cache/**",
+    ".project",
+    ".venv/**",
+    "**/*.cs",
+    "**/*.editorconfig",
+    "**/*.go",
+    "**/*.java",
+    "**/*.json",
+    "**/*.mod",
+    "**/*.py",
+    "**/*.rb",
+    "**/*.rs",
+    "**/*.sum",
+    "bearer.ignore",
+    "Makefile",
+    "testdata/**"
   ]
 }

@@ -53,7 +53,7 @@ with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
 
 # Recurse through dictionary.
 
-recurse("definitions", DATA.get("definitions"))
+# recurse("definitions", DATA.get("definitions"))
 
 # Write JSON to file.
 

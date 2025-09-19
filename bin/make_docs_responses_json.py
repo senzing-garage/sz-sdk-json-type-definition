@@ -8,8 +8,9 @@ import json
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
-VARIABLE_JSON_KEY = "user_defined_json_key"
+DEFINITIONS = {}
 GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-json"
+VARIABLE_JSON_KEY = "user_defined_json_key"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
     "SzConfigGetDataSourceRegistryResponse",
@@ -61,7 +62,9 @@ GLOBAL_JSON_KEYS = [
     "SzProductGetVersionResponse",
 ]
 
-DEFINITIONS = {}
+# -----------------------------------------------------------------------------
+# Functions to process RFC8927.json file and create SCHEMA variable.
+# -----------------------------------------------------------------------------
 
 
 def handle_elements(json_value):

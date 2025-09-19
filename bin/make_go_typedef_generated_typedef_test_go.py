@@ -28,13 +28,14 @@ OUTPUT_HEADER = """// DO NOT EDIT.  This code is generated.
 OUTPUT_HEADER += f"// Generated date: {datetime.now(timezone.utc).isoformat()}\n"
 
 OUTPUT_HEADER += """
-package typedef
+package typedef_test
 
 import (
     "context"
     "testing"
     "encoding/json"
     "github.com/stretchr/testify/assert"
+	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
 )
 
 func testErr(test *testing.T, ctx context.Context, err error) {
@@ -54,7 +55,7 @@ func testErr(test *testing.T, ctx context.Context, err error) {
 TEST_FUNCTION_TEMPLATE = f"""
     ctx := context.TODO()
     jsonString := `{{json}}`
-    jsonStruct := {{struct}}{{parens}}
+    jsonStruct := typedef.{{struct}}{{parens}}
     err := json.Unmarshal([]byte(jsonString), &jsonStruct)
     testErr(test, ctx, err)
     _, err = json.Marshal(jsonStruct)

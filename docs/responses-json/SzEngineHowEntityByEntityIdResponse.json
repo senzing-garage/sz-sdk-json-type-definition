@@ -23,12 +23,6 @@
                                     "ENTITY_KEY": "string",
                                     "ENTITY_TYPE": "string",
                                     "ERRULE_CODE": "string",
-                                    "FEATURE_IDS": [
-                                        {
-                                            "LIB_FEAT_ID": "int32",
-                                            "USAGE_TYPE": "string"
-                                        }
-                                    ],
                                     "FEATURES": {
                                         "user_defined_json_key": [
                                             {
@@ -74,9 +68,9 @@
                                                     "NAME_PREFIX": "string",
                                                     "NAME_SUFFIX": "string",
                                                     "NAME_TYPE": "string",
+                                                    "NATIONALITY": "string",
                                                     "NATIONAL_ID_COUNTRY": "string",
                                                     "NATIONAL_ID_NUMBER": "string",
-                                                    "NATIONALITY": "string",
                                                     "NATIVE_NAME_FULL": "string",
                                                     "NPI_NUMBER": "string",
                                                     "OTHER_ID_COUNTRY": "string",
@@ -138,6 +132,12 @@
                                             }
                                         ]
                                     },
+                                    "FEATURE_IDS": [
+                                        {
+                                            "LIB_FEAT_ID": "int32",
+                                            "USAGE_TYPE": "string"
+                                        }
+                                    ],
                                     "FIRST_SEEN_DT": "timestamp",
                                     "IDENTIFIER_DATA": [
                                         "string"
@@ -336,12 +336,6 @@
                                     "ENTITY_KEY": "string",
                                     "ENTITY_TYPE": "string",
                                     "ERRULE_CODE": "string",
-                                    "FEATURE_IDS": [
-                                        {
-                                            "LIB_FEAT_ID": "int32",
-                                            "USAGE_TYPE": "string"
-                                        }
-                                    ],
                                     "FEATURES": {
                                         "user_defined_json_key": [
                                             {
@@ -387,9 +381,9 @@
                                                     "NAME_PREFIX": "string",
                                                     "NAME_SUFFIX": "string",
                                                     "NAME_TYPE": "string",
+                                                    "NATIONALITY": "string",
                                                     "NATIONAL_ID_COUNTRY": "string",
                                                     "NATIONAL_ID_NUMBER": "string",
-                                                    "NATIONALITY": "string",
                                                     "NATIVE_NAME_FULL": "string",
                                                     "NPI_NUMBER": "string",
                                                     "OTHER_ID_COUNTRY": "string",
@@ -451,6 +445,12 @@
                                             }
                                         ]
                                     },
+                                    "FEATURE_IDS": [
+                                        {
+                                            "LIB_FEAT_ID": "int32",
+                                            "USAGE_TYPE": "string"
+                                        }
+                                    ],
                                     "FIRST_SEEN_DT": "timestamp",
                                     "IDENTIFIER_DATA": [
                                         "string"
@@ -505,12 +505,6 @@
                                     "ENTITY_KEY": "string",
                                     "ENTITY_TYPE": "string",
                                     "ERRULE_CODE": "string",
-                                    "FEATURE_IDS": [
-                                        {
-                                            "LIB_FEAT_ID": "int32",
-                                            "USAGE_TYPE": "string"
-                                        }
-                                    ],
                                     "FEATURES": {
                                         "user_defined_json_key": [
                                             {
@@ -556,9 +550,9 @@
                                                     "NAME_PREFIX": "string",
                                                     "NAME_SUFFIX": "string",
                                                     "NAME_TYPE": "string",
+                                                    "NATIONALITY": "string",
                                                     "NATIONAL_ID_COUNTRY": "string",
                                                     "NATIONAL_ID_NUMBER": "string",
-                                                    "NATIONALITY": "string",
                                                     "NATIVE_NAME_FULL": "string",
                                                     "NPI_NUMBER": "string",
                                                     "OTHER_ID_COUNTRY": "string",
@@ -620,6 +614,12 @@
                                             }
                                         ]
                                     },
+                                    "FEATURE_IDS": [
+                                        {
+                                            "LIB_FEAT_ID": "int32",
+                                            "USAGE_TYPE": "string"
+                                        }
+                                    ],
                                     "FIRST_SEEN_DT": "timestamp",
                                     "IDENTIFIER_DATA": [
                                         "string"

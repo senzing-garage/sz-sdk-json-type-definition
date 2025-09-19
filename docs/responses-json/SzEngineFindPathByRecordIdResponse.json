@@ -12,14 +12,6 @@
                     "MATCH_KEY": "string",
                     "MATCH_LEVEL": "int32",
                     "MATCH_LEVEL_CODE": "string",
-                    "RECORD_SUMMARY": [
-                        {
-                            "DATA_SOURCE": "string",
-                            "FIRST_SEEN_DT": "timestamp",
-                            "LAST_SEEN_DT": "timestamp",
-                            "RECORD_COUNT": "int32"
-                        }
-                    ],
                     "RECORDS": [
                         {
                             "ADDRESS_DATA": [
@@ -36,12 +28,6 @@
                             "ENTITY_KEY": "string",
                             "ENTITY_TYPE": "string",
                             "ERRULE_CODE": "string",
-                            "FEATURE_IDS": [
-                                {
-                                    "LIB_FEAT_ID": "int32",
-                                    "USAGE_TYPE": "string"
-                                }
-                            ],
                             "FEATURES": {
                                 "user_defined_json_key": [
                                     {
@@ -87,9 +73,9 @@
                                             "NAME_PREFIX": "string",
                                             "NAME_SUFFIX": "string",
                                             "NAME_TYPE": "string",
+                                            "NATIONALITY": "string",
                                             "NATIONAL_ID_COUNTRY": "string",
                                             "NATIONAL_ID_NUMBER": "string",
-                                            "NATIONALITY": "string",
                                             "NATIVE_NAME_FULL": "string",
                                             "NPI_NUMBER": "string",
                                             "OTHER_ID_COUNTRY": "string",
@@ -151,6 +137,12 @@
                                     }
                                 ]
                             },
+                            "FEATURE_IDS": [
+                                {
+                                    "LIB_FEAT_ID": "int32",
+                                    "USAGE_TYPE": "string"
+                                }
+                            ],
                             "FIRST_SEEN_DT": "timestamp",
                             "IDENTIFIER_DATA": [
                                 "string"
@@ -180,6 +172,14 @@
                                 "user_defined_json_key": "object"
                             }
                         }
+                    ],
+                    "RECORD_SUMMARY": [
+                        {
+                            "DATA_SOURCE": "string",
+                            "FIRST_SEEN_DT": "timestamp",
+                            "LAST_SEEN_DT": "timestamp",
+                            "RECORD_COUNT": "int32"
+                        }
                     ]
                 }
             ],
@@ -187,12 +187,6 @@
                 "ENTITY_ID": "int32",
                 "ENTITY_NAME": "string",
                 "ERRULE_CODE": "string",
-                "FEATURE_IDS": [
-                    {
-                        "LIB_FEAT_ID": "int32",
-                        "USAGE_TYPE": "string"
-                    }
-                ],
                 "FEATURES": {
                     "user_defined_json_key": [
                         {
@@ -238,9 +232,9 @@
                                 "NAME_PREFIX": "string",
                                 "NAME_SUFFIX": "string",
                                 "NAME_TYPE": "string",
+                                "NATIONALITY": "string",
                                 "NATIONAL_ID_COUNTRY": "string",
                                 "NATIONAL_ID_NUMBER": "string",
-                                "NATIONALITY": "string",
                                 "NATIVE_NAME_FULL": "string",
                                 "NPI_NUMBER": "string",
                                 "OTHER_ID_COUNTRY": "string",
@@ -302,23 +296,18 @@
                         }
                     ]
                 },
+                "FEATURE_IDS": [
+                    {
+                        "LIB_FEAT_ID": "int32",
+                        "USAGE_TYPE": "string"
+                    }
+                ],
                 "IS_AMBIGUOUS": "int32",
                 "IS_DISCLOSED": "int32",
                 "LAST_SEEN_DT": "timestamp",
                 "MATCH_KEY": "string",
                 "MATCH_LEVEL": "int32",
                 "MATCH_LEVEL_CODE": "string",
-                "RECORD_SUMMARY": [
-                    {
-                        "DATA_SOURCE": "string",
-                        "FIRST_SEEN_DT": "timestamp",
-                        "LAST_SEEN_DT": "timestamp",
-                        "RECORD_COUNT": "int32"
-                    }
-                ],
-                "RECORD_TYPES": [
-                    "string"
-                ],
                 "RECORDS": [
                     {
                         "ADDRESS_DATA": [
@@ -335,12 +324,6 @@
                         "ENTITY_KEY": "string",
                         "ENTITY_TYPE": "string",
                         "ERRULE_CODE": "string",
-                        "FEATURE_IDS": [
-                            {
-                                "LIB_FEAT_ID": "int32",
-                                "USAGE_TYPE": "string"
-                            }
-                        ],
                         "FEATURES": {
                             "user_defined_json_key": [
                                 {
@@ -386,9 +369,9 @@
                                         "NAME_PREFIX": "string",
                                         "NAME_SUFFIX": "string",
                                         "NAME_TYPE": "string",
+                                        "NATIONALITY": "string",
                                         "NATIONAL_ID_COUNTRY": "string",
                                         "NATIONAL_ID_NUMBER": "string",
-                                        "NATIONALITY": "string",
                                         "NATIVE_NAME_FULL": "string",
                                         "NPI_NUMBER": "string",
                                         "OTHER_ID_COUNTRY": "string",
@@ -450,6 +433,12 @@
                                 }
                             ]
                         },
+                        "FEATURE_IDS": [
+                            {
+                                "LIB_FEAT_ID": "int32",
+                                "USAGE_TYPE": "string"
+                            }
+                        ],
                         "FIRST_SEEN_DT": "timestamp",
                         "IDENTIFIER_DATA": [
                             "string"
@@ -479,8 +468,28 @@
                             "user_defined_json_key": "object"
                         }
                     }
+                ],
+                "RECORD_SUMMARY": [
+                    {
+                        "DATA_SOURCE": "string",
+                        "FIRST_SEEN_DT": "timestamp",
+                        "LAST_SEEN_DT": "timestamp",
+                        "RECORD_COUNT": "int32"
+                    }
+                ],
+                "RECORD_TYPES": [
+                    "string"
                 ]
             }
+        }
+    ],
+    "ENTITY_PATHS": [
+        {
+            "END_ENTITY_ID": "int32",
+            "ENTITIES": [
+                "int32"
+            ],
+            "START_ENTITY_ID": "int32"
         }
     ],
     "ENTITY_PATH_LINKS": [
@@ -492,15 +501,6 @@
             "MATCH_LEVEL_CODE": "string",
             "MAX_ENTITY_ID": "int32",
             "MIN_ENTITY_ID": "int32"
-        }
-    ],
-    "ENTITY_PATHS": [
-        {
-            "END_ENTITY_ID": "int32",
-            "ENTITIES": [
-                "int32"
-            ],
-            "START_ENTITY_ID": "int32"
         }
     ]
 }

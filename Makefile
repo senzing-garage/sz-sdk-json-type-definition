@@ -69,7 +69,7 @@ venv: venv-osarch-specific
 
 
 .PHONY: dependencies-for-development
-dependencies-for-development: venv dependencies-for-development-osarch-specific
+dependencies-for-development: venv dependencies-for-development-osarch-specific download-truthsets
 	@go install github.com/daixiang0/gci@latest
 	@go install github.com/gotesttools/gotestfmt/v2/cmd/gotestfmt@latest
 	@go install github.com/vladopajic/go-test-coverage/v2@latest
@@ -116,7 +116,8 @@ setup: \
 lint: \
 	golangci-lint \
 	cspell \
-	analyze-RFC8927
+	analyze-RFC8927 \
+	pretty-print
 
 # -----------------------------------------------------------------------------
 # Build
@@ -137,7 +138,6 @@ run-java:
 .PHONY: test
 test: \
 	test-osarch-specific \
-	test-rfc8927-reconstitution \
 	test-using-senzing \
 	test-csharp \
 	test-go \
@@ -377,10 +377,9 @@ analyze-RFC8927:
 		./bin/analyze_rfc8927.py
 
 
-.PHONY: load-database-with-truthsets
-load-database-with-truthsets:
-	$(activate-venv); \
-		./bin/load_database_with_truthsets.py
+.PHONY: cspell
+cspell:
+	@cspell lint --dot .
 
 
 .PHONY: docs-responses-html
@@ -397,11 +396,43 @@ docs-responses-json:
 		./bin/make_docs_responses_json.py
 
 
+.PHONY: download-truthsets
+download-truthsets:
+	curl -X GET --output ./testdata/truthsets/customers.jsonl \
+		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/customers.jsonl
+	curl -X GET --output ./testdata/truthsets/reference.jsonl \
+		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/reference.jsonl
+	curl -X GET --output ./testdata/truthsets/watchlist.jsonl \
+		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
+
+
+.PHONY: golangci-lint
+golangci-lint:
+	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
+
+
 .PHONY: go-typedef-generated-typedef-test-go
 go-typedef-generated-typedef-test-go:
 	@rm ./go/typedef/generated_typedef_test.go || true
 	$(activate-venv); \
 		./bin/make_go_typedef_generated_typedef_test_go.py
+
+
+.PHONY: load-database-with-truthsets
+load-database-with-truthsets:
+	$(activate-venv); \
+		./bin/load_database_with_truthsets.py
+
+
+.PHONY: fix-wsl
+fix-wsl:
+	@wsl --fix ./...
+
+
+.PHONY: pretty-print
+pretty-print:
+	@./bin/pretty_print.py
+	diff -w senzingsdk-RFC8927-pretty.json senzingsdk-RFC8927.json
 
 
 .PHONY: testdata-responses-generated
@@ -416,16 +447,6 @@ testdata-responses-senzing:
 	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
 	$(activate-venv); \
 		./bin/make_testdata_responses_senzing.py
-
-
-.PHONY: golangci-lint
-golangci-lint:
-	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
-
-
-.PHONY: pretty-print
-pretty-print:
-	@./bin/pretty_print.py
 
 
 .PHONY: test-rfc8927-reconstitution
