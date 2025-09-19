@@ -24,9 +24,7 @@ BLACK_LIST = [
     "type",
 ]
 USED_KEYS = [
-    "FeatureForAttribute",
-    "FeatureScoresForAttribute",
-    "MatchInfoForAttribute",
+    "RecordKeys",
 ]
 EXCLUDE_LIST = []
 

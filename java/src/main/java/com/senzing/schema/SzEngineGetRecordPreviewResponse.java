@@ -10,7 +10,7 @@ import java.util.Map;
 @JsonSerialize
 public class SzEngineGetRecordPreviewResponse {
     @JsonProperty("FEATURES")
-    private Map<String, List<FeatureForAttributeWithAttributes>> features;
+    private Map<String, List<FeatureForAttribute>> features;
 
     @JsonProperty("FEATURE_IDS")
     private List<FeatureId> featureIds;
@@ -27,14 +27,14 @@ public class SzEngineGetRecordPreviewResponse {
     /**
      * Getter for features.<p>
      */
-    public Map<String, List<FeatureForAttributeWithAttributes>> getFeatures() {
+    public Map<String, List<FeatureForAttribute>> getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(Map<String, List<FeatureForAttributeWithAttributes>> features) {
+    public void setFeatures(Map<String, List<FeatureForAttribute>> features) {
         this.features = features;
     }
 

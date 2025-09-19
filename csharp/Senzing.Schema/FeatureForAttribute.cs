@@ -8,6 +8,9 @@ namespace Senzing.Schema
 {
     public class FeatureForAttribute
     {
+        [JsonPropertyName("ATTRIBUTES")]
+        public SenzingEntitySpecification Attributes { get; set; }
+
         /// <summary>
         /// Describes the attributes that make up the feature.
         /// </summary>

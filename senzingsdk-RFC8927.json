@@ -1455,36 +1455,6 @@
         },
         "FeatureForAttribute": {
             "properties": {
-                "FEAT_DESC": {
-                    "metadata": {
-                        "description": "Describes the attributes that make up the feature."
-                    },
-                    "type": "string"
-                },
-                "FEAT_DESC_VALUES": {
-                    "elements": {
-                        "ref": "FeatureDescriptionValue"
-                    },
-                    "metadata": {
-                        "description": "Describes the attributes that make up the feature."
-                    }
-                },
-                "LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "USAGE_TYPE": {
-                    "metadata": {
-                        "description": "Label to identify how some features are being used (can also change some features behavior)."
-                    },
-                    "type": "string"
-                }
-            }
-        },
-        "FeatureForAttributeWithAttributes": {
-            "properties": {
                 "ATTRIBUTES": {
                     "ref": "SenzingEntitySpecification"
                 },
@@ -2227,7 +2197,7 @@
                 "FEATURES": {
                     "values": {
                         "elements": {
-                            "ref": "FeatureForAttributeWithAttributes"
+                            "ref": "FeatureForAttribute"
                         }
                     }
                 },
@@ -2351,7 +2321,7 @@
                 "FEATURES": {
                     "values": {
                         "elements": {
-                            "ref": "FeatureForAttributeWithAttributes"
+                            "ref": "FeatureForAttribute"
                         }
                     }
                 },
@@ -2447,6 +2417,18 @@
                         "description": "The unique identifier within the set of records in the DATA_SOURCE."
                     },
                     "type": "string"
+                }
+            }
+        },
+        "RecordKeys": {
+            "properties": {
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordKey"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
+                    }
                 }
             }
         },
@@ -2776,7 +2758,7 @@
                 "FEATURES": {
                     "values": {
                         "elements": {
-                            "ref": "FeatureForAttributeWithAttributes"
+                            "ref": "FeatureForAttribute"
                         }
                     }
                 },
@@ -3726,7 +3708,7 @@
                 "FEATURES": {
                     "values": {
                         "elements": {
-                            "ref": "FeatureForAttributeWithAttributes"
+                            "ref": "FeatureForAttribute"
                         }
                     }
                 },
@@ -3788,7 +3770,7 @@
                 "FEATURES": {
                     "values": {
                         "elements": {
-                            "ref": "FeatureForAttributeWithAttributes"
+                            "ref": "FeatureForAttribute"
                         }
                     }
                 },

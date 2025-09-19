@@ -513,25 +513,6 @@ export interface FeatureDescriptionValue {
 }
 
 export interface FeatureForAttribute {
-  /**
-   * Describes the attributes that make up the feature.
-   */
-  FEAT_DESC: string;
-
-  /**
-   * Describes the attributes that make up the feature.
-   */
-  FEAT_DESC_VALUES: FeatureDescriptionValue[];
-  LIB_FEAT_ID: number;
-
-  /**
-   * Label to identify how some features are being used (can also change some
-   * features behavior).
-   */
-  USAGE_TYPE: string;
-}
-
-export interface FeatureForAttributeWithAttributes {
   ATTRIBUTES: SenzingEntitySpecification;
 
   /**
@@ -834,7 +815,7 @@ export interface Record {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
+  FEATURES: { [key: string]: FeatureForAttribute[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
@@ -885,7 +866,7 @@ export interface RecordForGetEntity {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
+  FEATURES: { [key: string]: FeatureForAttribute[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];
@@ -929,6 +910,13 @@ export interface RecordKey {
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+}
+
+export interface RecordKeys {
+  /**
+   * A list of (data source code, record id) pairs.
+   */
+  RECORDS: RecordKey[];
 }
 
 export interface RecordSummary {
@@ -1092,7 +1080,7 @@ export interface ResolvedEntity {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
+  FEATURES: { [key: string]: FeatureForAttribute[] };
   FEATURE_IDS: FeatureId[];
 
   /**
@@ -1486,7 +1474,7 @@ export interface SzEngineGetEntityByRecordIdResponse {
 }
 
 export interface SzEngineGetRecordPreviewResponse {
-  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
+  FEATURES: { [key: string]: FeatureForAttribute[] };
   FEATURE_IDS: FeatureId[];
   JSON_DATA: { [key: string]: Object };
   UNMAPPED_DATA: { [key: string]: Object };
@@ -1509,7 +1497,7 @@ export interface SzEngineGetRecordResponse {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  FEATURES: { [key: string]: FeatureForAttributeWithAttributes[] };
+  FEATURES: { [key: string]: FeatureForAttribute[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
   IDENTIFIER_DATA: string[];

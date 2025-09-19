@@ -152,7 +152,7 @@ test-csharp:
 
 
 .PHONY: test-go
-test-go:
+test-go: load-database-with-truthsets
 	@go run main.go
 	@go test -v -p 1 ./...
 

@@ -8,6 +8,9 @@ import java.util.List;
 
 @JsonSerialize
 public class FeatureForAttribute {
+    @JsonProperty("ATTRIBUTES")
+    private SenzingEntitySpecification attributes;
+
     @JsonProperty("FEAT_DESC")
     private String featDesc;
 
@@ -21,6 +24,20 @@ public class FeatureForAttribute {
     private String usageType;
 
     public FeatureForAttribute() {
+    }
+
+    /**
+     * Getter for attributes.<p>
+     */
+    public SenzingEntitySpecification getAttributes() {
+        return attributes;
+    }
+
+    /**
+     * Setter for attributes.<p>
+     */
+    public void setAttributes(SenzingEntitySpecification attributes) {
+        this.attributes = attributes;
     }
 
     /**

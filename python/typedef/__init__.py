@@ -1598,43 +1598,6 @@ class FeatureDescriptionValue:
 
 @dataclass
 class FeatureForAttribute:
-    feat_desc: 'str'
-    """
-    Describes the attributes that make up the feature.
-    """
-
-    feat_desc_values: 'List[FeatureDescriptionValue]'
-    """
-    Describes the attributes that make up the feature.
-    """
-
-    lib_feat_id: 'int'
-    usage_type: 'str'
-    """
-    Label to identify how some features are being used (can also change some
-    features behavior).
-    """
-
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
-        return cls(
-            _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
-            _from_json_data(int, data.get("LIB_FEAT_ID")),
-            _from_json_data(str, data.get("USAGE_TYPE")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FEAT_DESC"] = _to_json_data(self.feat_desc)
-        data["FEAT_DESC_VALUES"] = _to_json_data(self.feat_desc_values)
-        data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
-        data["USAGE_TYPE"] = _to_json_data(self.usage_type)
-        return data
-
-@dataclass
-class FeatureForAttributeWithAttributes:
     attributes: 'SenzingEntitySpecification'
     feat_desc: 'str'
     """
@@ -1655,7 +1618,7 @@ class FeatureForAttributeWithAttributes:
 
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'FeatureForAttributeWithAttributes':
+    def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
         return cls(
             _from_json_data(SenzingEntitySpecification, data.get("ATTRIBUTES")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -2465,7 +2428,7 @@ class Record:
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     feature_ids: 'List[FeatureID]'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
@@ -2509,7 +2472,7 @@ class Record:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
@@ -2573,7 +2536,7 @@ class RecordForGetEntity:
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     feature_ids: 'List[FeatureID]'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
@@ -2617,7 +2580,7 @@ class RecordForGetEntity:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
@@ -2687,6 +2650,25 @@ class RecordKey:
         data: Dict[str, Any] = {}
         data["DATA_SOURCE"] = _to_json_data(self.data_source)
         data["RECORD_ID"] = _to_json_data(self.record_id)
+        return data
+
+@dataclass
+class RecordKeys:
+    records: 'List[RecordKey]'
+    """
+    A list of (data source code, record id) pairs.
+    """
+
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'RecordKeys':
+        return cls(
+            _from_json_data(List[RecordKey], data.get("RECORDS")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["RECORDS"] = _to_json_data(self.records)
         return data
 
 @dataclass
@@ -3073,7 +3055,7 @@ class ResolvedEntity:
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     feature_ids: 'List[FeatureID]'
     is_ambiguous: 'int'
     """
@@ -3112,7 +3094,7 @@ class ResolvedEntity:
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
@@ -4216,7 +4198,7 @@ class SzEngineGetEntityByRecordIDResponse:
 
 @dataclass
 class SzEngineGetRecordPreviewResponse:
-    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     feature_ids: 'List[FeatureID]'
     json_data: 'Dict[str, Object]'
     unmapped_data: 'Dict[str, Object]'
@@ -4224,7 +4206,7 @@ class SzEngineGetRecordPreviewResponse:
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordPreviewResponse':
         return cls(
-            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
             _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
@@ -4256,7 +4238,7 @@ class SzEngineGetRecordResponse:
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    features: 'Dict[str, List[FeatureForAttribute]]'
     feature_ids: 'List[FeatureID]'
     first_seen_dt: 'datetime'
     identifier_data: 'List[str]'
@@ -4300,7 +4282,7 @@ class SzEngineGetRecordResponse:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
+            _from_json_data(Dict[str, List[FeatureForAttribute]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),

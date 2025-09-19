@@ -1033,25 +1033,6 @@ pub struct FeatureDescriptionValue {
 
 #[derive(Serialize, Deserialize)]
 pub struct FeatureForAttribute {
-    /// Describes the attributes that make up the feature.
-    #[serde(rename = "FEAT_DESC")]
-    pub featDesc: String,
-
-    /// Describes the attributes that make up the feature.
-    #[serde(rename = "FEAT_DESC_VALUES")]
-    pub featDescValues: Vec<FeatureDescriptionValue>,
-
-    #[serde(rename = "LIB_FEAT_ID")]
-    pub libFeatId: i32,
-
-    /// Label to identify how some features are being used (can also change some
-    /// features behavior).
-    #[serde(rename = "USAGE_TYPE")]
-    pub usageType: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct FeatureForAttributeWithAttributes {
     #[serde(rename = "ATTRIBUTES")]
     pub attributes: SenzingEntitySpecification,
 
@@ -1581,7 +1562,7 @@ pub struct Record {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForAttributeWithAttributes>>,
+    pub features: HashMap<String, Vec<FeatureForAttribute>>,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,
@@ -1662,7 +1643,7 @@ pub struct RecordForGetEntity {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForAttributeWithAttributes>>,
+    pub features: HashMap<String, Vec<FeatureForAttribute>>,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,
@@ -1723,6 +1704,13 @@ pub struct RecordKey {
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct RecordKeys {
+    /// A list of (data source code, record id) pairs.
+    #[serde(rename = "RECORDS")]
+    pub records: Vec<RecordKey>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1969,7 +1957,7 @@ pub struct ResolvedEntity {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForAttributeWithAttributes>>,
+    pub features: HashMap<String, Vec<FeatureForAttribute>>,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,
@@ -2692,7 +2680,7 @@ pub struct SzEngineGetEntityByRecordIdResponse {
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetRecordPreviewResponse {
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForAttributeWithAttributes>>,
+    pub features: HashMap<String, Vec<FeatureForAttribute>>,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,
@@ -2733,7 +2721,7 @@ pub struct SzEngineGetRecordResponse {
     pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForAttributeWithAttributes>>,
+    pub features: HashMap<String, Vec<FeatureForAttribute>>,
 
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,

@@ -697,20 +697,6 @@ type FeatureDescriptionValue struct {
 }
 
 type FeatureForAttribute struct {
-	// Describes the attributes that make up the feature.
-	FeatDesc string `json:"FEAT_DESC"`
-
-	// Describes the attributes that make up the feature.
-	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
-
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-
-	// Label to identify how some features are being used (can also change some
-	// features behavior).
-	UsageType string `json:"USAGE_TYPE"`
-}
-
-type FeatureForAttributeWithAttributes struct {
 	Attributes SenzingEntitySpecification `json:"ATTRIBUTES"`
 
 	// Describes the attributes that make up the feature.
@@ -1072,7 +1058,7 @@ type Record struct {
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
@@ -1128,7 +1114,7 @@ type RecordForGetEntity struct {
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
@@ -1171,6 +1157,11 @@ type RecordKey struct {
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
+}
+
+type RecordKeys struct {
+	// A list of (data source code, record id) pairs.
+	Records []RecordKey `json:"RECORDS"`
 }
 
 type RecordSummary struct {
@@ -1341,7 +1332,7 @@ type ResolvedEntity struct {
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
@@ -1831,7 +1822,7 @@ type SzEngineGetEntityByRecordIDResponse struct {
 }
 
 type SzEngineGetRecordPreviewResponse struct {
-	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
@@ -1859,7 +1850,7 @@ type SzEngineGetRecordResponse struct {
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	Features map[string][]FeatureForAttributeWithAttributes `json:"FEATURES"`
+	Features map[string][]FeatureForAttribute `json:"FEATURES"`
 
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
