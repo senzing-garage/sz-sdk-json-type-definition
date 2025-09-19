@@ -128,14 +128,6 @@
                 "activeThreads": "int32",
                 "availableMemory": "string",
                 "processMemory": "string",
-                "systemLoad": [
-                    {
-                        "cpuIdle": "float32",
-                        "cpuSystem": "float32",
-                        "cpuUser": "float32",
-                        "cpuWait": "float32"
-                    }
-                ],
                 "workerThreads": "int32"
             },
             "initResources": {

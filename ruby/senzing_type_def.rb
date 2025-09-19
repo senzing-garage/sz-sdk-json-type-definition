@@ -1248,7 +1248,6 @@ module SenzingTypeDef
     attr_accessor :active_threads
     attr_accessor :available_memory
     attr_accessor :process_memory
-    attr_accessor :system_load
     attr_accessor :worker_threads
 
     def self.from_json_data(data)
@@ -1256,7 +1255,6 @@ module SenzingTypeDef
       out.active_threads = SenzingTypeDef::from_json_data(Integer, data["activeThreads"])
       out.available_memory = SenzingTypeDef::from_json_data(String, data["availableMemory"])
       out.process_memory = SenzingTypeDef::from_json_data(String, data["processMemory"])
-      out.system_load = SenzingTypeDef::from_json_data(Array[SystemLoad], data["systemLoad"])
       out.worker_threads = SenzingTypeDef::from_json_data(Integer, data["workerThreads"])
       out
     end
@@ -1266,7 +1264,6 @@ module SenzingTypeDef
       data["activeThreads"] = SenzingTypeDef::to_json_data(active_threads)
       data["availableMemory"] = SenzingTypeDef::to_json_data(available_memory)
       data["processMemory"] = SenzingTypeDef::to_json_data(process_memory)
-      data["systemLoad"] = SenzingTypeDef::to_json_data(system_load)
       data["workerThreads"] = SenzingTypeDef::to_json_data(worker_threads)
       data
     end
@@ -3639,31 +3636,6 @@ module SenzingTypeDef
 
     def self.from_json_data(data)
       out = SystemLoad.new
-      out.cpu_idle = SenzingTypeDef::from_json_data(Float, data["cpuIdle"])
-      out.cpu_system = SenzingTypeDef::from_json_data(Float, data["cpuSystem"])
-      out.cpu_user = SenzingTypeDef::from_json_data(Float, data["cpuUser"])
-      out.cpu_wait = SenzingTypeDef::from_json_data(Float, data["cpuWait"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["cpuIdle"] = SenzingTypeDef::to_json_data(cpu_idle)
-      data["cpuSystem"] = SenzingTypeDef::to_json_data(cpu_system)
-      data["cpuUser"] = SenzingTypeDef::to_json_data(cpu_user)
-      data["cpuWait"] = SenzingTypeDef::to_json_data(cpu_wait)
-      data
-    end
-  end
-
-  class SystemLoadStrings
-    attr_accessor :cpu_idle
-    attr_accessor :cpu_system
-    attr_accessor :cpu_user
-    attr_accessor :cpu_wait
-
-    def self.from_json_data(data)
-      out = SystemLoadStrings.new
       out.cpu_idle = SenzingTypeDef::from_json_data(String, data["cpuIdle"])
       out.cpu_system = SenzingTypeDef::from_json_data(String, data["cpuSystem"])
       out.cpu_user = SenzingTypeDef::from_json_data(String, data["cpuUser"])
@@ -3690,7 +3662,7 @@ module SenzingTypeDef
       out = SystemResources.new
       out.curr_resources = SenzingTypeDef::from_json_data(CurrResources, data["currResources"])
       out.init_resources = SenzingTypeDef::from_json_data(InitResources, data["initResources"])
-      out.system_load = SenzingTypeDef::from_json_data(SystemLoadStrings, data["systemLoad"])
+      out.system_load = SenzingTypeDef::from_json_data(SystemLoad, data["systemLoad"])
       out
     end
 

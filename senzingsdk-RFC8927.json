@@ -61,6 +61,13 @@
                 }
             }
         },
+        "CandidateKeysForMatchInfo": {
+            "values": {
+                "elements": {
+                    "ref": "MatchInfoForAttribute"
+                }
+            }
+        },
         "CandidateKeysForSearchStatistic": {
             "properties": {
                 "FEATURE_TYPES": {
@@ -70,13 +77,6 @@
                 },
                 "SUMMARY": {
                     "ref": "Summary"
-                }
-            }
-        },
-        "CandidateKeysForMatchInfo": {
-            "values": {
-                "elements": {
-                    "ref": "MatchInfoForAttribute"
                 }
             }
         },
@@ -1134,11 +1134,6 @@
                 },
                 "processMemory": {
                     "type": "string"
-                },
-                "systemLoad": {
-                    "elements": {
-                        "ref": "SystemLoad"
-                    }
                 },
                 "workerThreads": {
                     "type": "int32"
@@ -3371,22 +3366,6 @@
         "SystemLoad": {
             "properties": {
                 "cpuIdle": {
-                    "type": "float32"
-                },
-                "cpuSystem": {
-                    "type": "float32"
-                },
-                "cpuUser": {
-                    "type": "float32"
-                },
-                "cpuWait": {
-                    "type": "float32"
-                }
-            }
-        },
-        "SystemLoadStrings": {
-            "properties": {
-                "cpuIdle": {
                     "type": "string"
                 },
                 "cpuSystem": {
@@ -3409,7 +3388,7 @@
                     "ref": "InitResources"
                 },
                 "systemLoad": {
-                    "ref": "SystemLoadStrings"
+                    "ref": "SystemLoad"
                 }
             }
         },

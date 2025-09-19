@@ -14,6 +14,6 @@ namespace Senzing.Schema
         public InitResources InitResources { get; set; }
 
         [JsonPropertyName("systemLoad")]
-        public SystemLoadStrings SystemLoad { get; set; }
+        public SystemLoad SystemLoad { get; set; }
     }
 }

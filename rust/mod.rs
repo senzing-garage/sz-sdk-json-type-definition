@@ -818,9 +818,6 @@ pub struct CurrResources {
     #[serde(rename = "processMemory")]
     pub processMemory: String,
 
-    #[serde(rename = "systemLoad")]
-    pub systemLoad: Vec<SystemLoad>,
-
     #[serde(rename = "workerThreads")]
     pub workerThreads: i32,
 }
@@ -2437,21 +2434,6 @@ pub struct Summary {
 #[derive(Serialize, Deserialize)]
 pub struct SystemLoad {
     #[serde(rename = "cpuIdle")]
-    pub cpuIdle: f32,
-
-    #[serde(rename = "cpuSystem")]
-    pub cpuSystem: f32,
-
-    #[serde(rename = "cpuUser")]
-    pub cpuUser: f32,
-
-    #[serde(rename = "cpuWait")]
-    pub cpuWait: f32,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct SystemLoadStrings {
-    #[serde(rename = "cpuIdle")]
     pub cpuIdle: String,
 
     #[serde(rename = "cpuSystem")]
@@ -2473,7 +2455,7 @@ pub struct SystemResources {
     pub initResources: InitResources,
 
     #[serde(rename = "systemLoad")]
-    pub systemLoad: SystemLoadStrings,
+    pub systemLoad: SystemLoad,
 }
 
 #[derive(Serialize, Deserialize)]

@@ -8,15 +8,15 @@ namespace Senzing.Schema
     public class SystemLoad
     {
         [JsonPropertyName("cpuIdle")]
-        public float CpuIdle { get; set; }
+        public string CpuIdle { get; set; }
 
         [JsonPropertyName("cpuSystem")]
-        public float CpuSystem { get; set; }
+        public string CpuSystem { get; set; }
 
         [JsonPropertyName("cpuUser")]
-        public float CpuUser { get; set; }
+        public string CpuUser { get; set; }
 
         [JsonPropertyName("cpuWait")]
-        public float CpuWait { get; set; }
+        public string CpuWait { get; set; }
     }
 }

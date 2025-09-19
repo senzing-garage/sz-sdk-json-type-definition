@@ -14,7 +14,7 @@ public class SystemResources {
     private InitResources initResources;
 
     @JsonProperty("systemLoad")
-    private SystemLoadStrings systemLoad;
+    private SystemLoad systemLoad;
 
     public SystemResources() {
     }
@@ -50,14 +50,14 @@ public class SystemResources {
     /**
      * Getter for systemLoad.<p>
      */
-    public SystemLoadStrings getSystemLoad() {
+    public SystemLoad getSystemLoad() {
         return systemLoad;
     }
 
     /**
      * Setter for systemLoad.<p>
      */
-    public void setSystemLoad(SystemLoadStrings systemLoad) {
+    public void setSystemLoad(SystemLoad systemLoad) {
         this.systemLoad = systemLoad;
     }
 }

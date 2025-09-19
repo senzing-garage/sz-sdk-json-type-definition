@@ -549,8 +549,6 @@ type CurrResources struct {
 
 	ProcessMemory string `json:"processMemory"`
 
-	SystemLoad []SystemLoad `json:"systemLoad"`
-
 	WorkerThreads int32 `json:"workerThreads"`
 }
 
@@ -1659,16 +1657,6 @@ type Summary struct {
 }
 
 type SystemLoad struct {
-	CPUIdle float32 `json:"cpuIdle"`
-
-	CPUSystem float32 `json:"cpuSystem"`
-
-	CPUUser float32 `json:"cpuUser"`
-
-	CPUWait float32 `json:"cpuWait"`
-}
-
-type SystemLoadStrings struct {
 	CPUIdle string `json:"cpuIdle"`
 
 	CPUSystem string `json:"cpuSystem"`
@@ -1683,7 +1671,7 @@ type SystemResources struct {
 
 	InitResources InitResources `json:"initResources"`
 
-	SystemLoad SystemLoadStrings `json:"systemLoad"`
+	SystemLoad SystemLoad `json:"systemLoad"`
 }
 
 type SzConfigExportResponse struct {

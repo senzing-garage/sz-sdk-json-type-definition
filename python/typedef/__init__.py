@@ -1209,7 +1209,6 @@ class CurrResources:
     active_threads: 'int'
     available_memory: 'str'
     process_memory: 'str'
-    system_load: 'List[SystemLoad]'
     worker_threads: 'int'
 
     @classmethod
@@ -1218,7 +1217,6 @@ class CurrResources:
             _from_json_data(int, data.get("activeThreads")),
             _from_json_data(str, data.get("availableMemory")),
             _from_json_data(str, data.get("processMemory")),
-            _from_json_data(List[SystemLoad], data.get("systemLoad")),
             _from_json_data(int, data.get("workerThreads")),
         )
 
@@ -1227,7 +1225,6 @@ class CurrResources:
         data["activeThreads"] = _to_json_data(self.active_threads)
         data["availableMemory"] = _to_json_data(self.available_memory)
         data["processMemory"] = _to_json_data(self.process_memory)
-        data["systemLoad"] = _to_json_data(self.system_load)
         data["workerThreads"] = _to_json_data(self.worker_threads)
         return data
 
@@ -3691,37 +3688,13 @@ class Summary:
 
 @dataclass
 class SystemLoad:
-    cpu_idle: 'float'
-    cpu_system: 'float'
-    cpu_user: 'float'
-    cpu_wait: 'float'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SystemLoad':
-        return cls(
-            _from_json_data(float, data.get("cpuIdle")),
-            _from_json_data(float, data.get("cpuSystem")),
-            _from_json_data(float, data.get("cpuUser")),
-            _from_json_data(float, data.get("cpuWait")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["cpuIdle"] = _to_json_data(self.cpu_idle)
-        data["cpuSystem"] = _to_json_data(self.cpu_system)
-        data["cpuUser"] = _to_json_data(self.cpu_user)
-        data["cpuWait"] = _to_json_data(self.cpu_wait)
-        return data
-
-@dataclass
-class SystemLoadStrings:
     cpu_idle: 'str'
     cpu_system: 'str'
     cpu_user: 'str'
     cpu_wait: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> 'SystemLoadStrings':
+    def from_json_data(cls, data: Any) -> 'SystemLoad':
         return cls(
             _from_json_data(str, data.get("cpuIdle")),
             _from_json_data(str, data.get("cpuSystem")),
@@ -3741,14 +3714,14 @@ class SystemLoadStrings:
 class SystemResources:
     curr_resources: 'CurrResources'
     init_resources: 'InitResources'
-    system_load: 'SystemLoadStrings'
+    system_load: 'SystemLoad'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SystemResources':
         return cls(
             _from_json_data(CurrResources, data.get("currResources")),
             _from_json_data(InitResources, data.get("initResources")),
-            _from_json_data(SystemLoadStrings, data.get("systemLoad")),
+            _from_json_data(SystemLoad, data.get("systemLoad")),
         )
 
     def to_json_data(self) -> Any:

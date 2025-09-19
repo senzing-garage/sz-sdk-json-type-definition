@@ -365,7 +365,6 @@ export interface CurrResources {
   activeThreads: number;
   availableMemory: string;
   processMemory: string;
-  systemLoad: SystemLoad[];
   workerThreads: number;
 }
 
@@ -1325,13 +1324,6 @@ export interface Summary {
 }
 
 export interface SystemLoad {
-  cpuIdle: number;
-  cpuSystem: number;
-  cpuUser: number;
-  cpuWait: number;
-}
-
-export interface SystemLoadStrings {
   cpuIdle: string;
   cpuSystem: string;
   cpuUser: string;
@@ -1341,7 +1333,7 @@ export interface SystemLoadStrings {
 export interface SystemResources {
   currResources: CurrResources;
   initResources: InitResources;
-  systemLoad: SystemLoadStrings;
+  systemLoad: SystemLoad;
 }
 
 export interface SzConfigExportResponse {

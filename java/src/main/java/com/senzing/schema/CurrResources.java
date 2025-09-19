@@ -4,7 +4,6 @@ package com.senzing.schema;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
 
 @JsonSerialize
 public class CurrResources {
@@ -16,9 +15,6 @@ public class CurrResources {
 
     @JsonProperty("processMemory")
     private String processMemory;
-
-    @JsonProperty("systemLoad")
-    private List<SystemLoad> systemLoad;
 
     @JsonProperty("workerThreads")
     private Integer workerThreads;
@@ -66,20 +62,6 @@ public class CurrResources {
      */
     public void setProcessMemory(String processMemory) {
         this.processMemory = processMemory;
-    }
-
-    /**
-     * Getter for systemLoad.<p>
-     */
-    public List<SystemLoad> getSystemLoad() {
-        return systemLoad;
-    }
-
-    /**
-     * Setter for systemLoad.<p>
-     */
-    public void setSystemLoad(List<SystemLoad> systemLoad) {
-        this.systemLoad = systemLoad;
     }
 
     /**

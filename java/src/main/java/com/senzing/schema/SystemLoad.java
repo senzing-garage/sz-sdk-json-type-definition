@@ -8,16 +8,16 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class SystemLoad {
     @JsonProperty("cpuIdle")
-    private Float cpuIdle;
+    private String cpuIdle;
 
     @JsonProperty("cpuSystem")
-    private Float cpuSystem;
+    private String cpuSystem;
 
     @JsonProperty("cpuUser")
-    private Float cpuUser;
+    private String cpuUser;
 
     @JsonProperty("cpuWait")
-    private Float cpuWait;
+    private String cpuWait;
 
     public SystemLoad() {
     }
@@ -25,56 +25,56 @@ public class SystemLoad {
     /**
      * Getter for cpuIdle.<p>
      */
-    public Float getCpuIdle() {
+    public String getCpuIdle() {
         return cpuIdle;
     }
 
     /**
      * Setter for cpuIdle.<p>
      */
-    public void setCpuIdle(Float cpuIdle) {
+    public void setCpuIdle(String cpuIdle) {
         this.cpuIdle = cpuIdle;
     }
 
     /**
      * Getter for cpuSystem.<p>
      */
-    public Float getCpuSystem() {
+    public String getCpuSystem() {
         return cpuSystem;
     }
 
     /**
      * Setter for cpuSystem.<p>
      */
-    public void setCpuSystem(Float cpuSystem) {
+    public void setCpuSystem(String cpuSystem) {
         this.cpuSystem = cpuSystem;
     }
 
     /**
      * Getter for cpuUser.<p>
      */
-    public Float getCpuUser() {
+    public String getCpuUser() {
         return cpuUser;
     }
 
     /**
      * Setter for cpuUser.<p>
      */
-    public void setCpuUser(Float cpuUser) {
+    public void setCpuUser(String cpuUser) {
         this.cpuUser = cpuUser;
     }
 
     /**
      * Getter for cpuWait.<p>
      */
-    public Float getCpuWait() {
+    public String getCpuWait() {
         return cpuWait;
     }
 
     /**
      * Setter for cpuWait.<p>
      */
-    public void setCpuWait(Float cpuWait) {
+    public void setCpuWait(String cpuWait) {
         this.cpuWait = cpuWait;
     }
 }
