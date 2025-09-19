@@ -31,19 +31,20 @@ OUTPUT_HEADER += """
 package typedef_test
 
 import (
-    "context"
-    "testing"
-    "encoding/json"
-    "github.com/stretchr/testify/assert"
+	"context"
+	"encoding/json"
+	"testing"
+
 	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
+	"github.com/stretchr/testify/assert"
 )
 
 func testErr(test *testing.T, ctx context.Context, err error) {
-    _ = ctx
-    if err != nil {
-        test.Log("Error:", err.Error())
-        assert.FailNow(test, err.Error())
-    }
+	_ = ctx
+	if err != nil {
+		test.Log("Error:", err.Error())
+		assert.FailNow(test, err.Error())
+	}
 }
 
 // ----------------------------------------------------------------------------
@@ -53,15 +54,15 @@ func testErr(test *testing.T, ctx context.Context, err error) {
 """
 
 TEST_FUNCTION_TEMPLATE = f"""
-    ctx := context.TODO()
-    jsonString := `{{json}}`
-    jsonStruct := typedef.{{struct}}{{parens}}
-    err := json.Unmarshal([]byte(jsonString), &jsonStruct)
-    testErr(test, ctx, err)
-    _, err = json.Marshal(jsonStruct)
-    testErr(test, ctx, err)
-    // assert.Equal(test, jsonString, string(reconstructedString))
-    // assert.JSONEq(test, jsonString, string(reconstructedString))
+	ctx := context.TODO()
+	jsonString := `{{json}}`
+	jsonStruct := typedef.{{struct}}{{parens}}
+	err := json.Unmarshal([]byte(jsonString), &jsonStruct)
+	testErr(test, ctx, err)
+	_, err = json.Marshal(jsonStruct)
+	testErr(test, ctx, err)
+	// assert.Equal(test, jsonString, string(reconstructedString))
+	// assert.JSONEq(test, jsonString, string(reconstructedString))
 """
 
 OUTPUT_FOOTER = """

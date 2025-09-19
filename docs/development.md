@@ -56,7 +56,7 @@ These are "one-time tasks" which may already have been completed.
 
 1. Make changes to [senzingsdk-RFC8927.json]
 
-### Version
+## Version
 
 1. Create artifacts for a version.
    Example:

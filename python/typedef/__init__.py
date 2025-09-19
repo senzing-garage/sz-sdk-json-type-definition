@@ -3,32 +3,31 @@
 import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List, Union, get_args, get_origin
+from typing import Any, Dict, List, Optional, Union, get_args, get_origin
 
 
 @dataclass
 class Senzingsdk:
-    value: "Any"
+    value: 'Any'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Senzingsdk":
+    def from_json_data(cls, data: Any) -> 'Senzingsdk':
         return cls(_from_json_data(Any, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-
 @dataclass
 class AdditionalScores:
-    full_score: "int"
-    generation_match: "int"
-    gnr_fn: "int"
-    gnr_gn: "int"
-    gnr_on: "int"
-    gnr_sn: "int"
+    full_score: 'int'
+    generation_match: 'int'
+    gnr_fn: 'int'
+    gnr_gn: 'int'
+    gnr_on: 'int'
+    gnr_sn: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "AdditionalScores":
+    def from_json_data(cls, data: Any) -> 'AdditionalScores':
         return cls(
             _from_json_data(int, data.get("FULL_SCORE")),
             _from_json_data(int, data.get("GENERATION_MATCH")),
@@ -48,17 +47,17 @@ class AdditionalScores:
         data["GNR_SN"] = _to_json_data(self.gnr_sn)
         return data
 
-
 @dataclass
 class AffectedEntity:
-    entity_id: "int"
+    entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
     It may change when new information is added.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "AffectedEntity":
+    def from_json_data(cls, data: Any) -> 'AffectedEntity':
         return cls(
             _from_json_data(int, data.get("ENTITY_ID")),
         )
@@ -68,21 +67,20 @@ class AffectedEntity:
         data["ENTITY_ID"] = _to_json_data(self.entity_id)
         return data
 
-
 @dataclass
 class CfgAttr:
-    advanced: "str"
-    attr_class: "str"
-    attr_code: "str"
-    attr_id: "int"
-    default_value: "str"
-    felem_code: "str"
-    felem_req: "str"
-    ftype_code: "str"
-    internal: "str"
+    advanced: 'str'
+    attr_class: 'str'
+    attr_code: 'str'
+    attr_id: 'int'
+    default_value: 'str'
+    felem_code: 'str'
+    felem_req: 'str'
+    ftype_code: 'str'
+    internal: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgAttr":
+    def from_json_data(cls, data: Any) -> 'CfgAttr':
         return cls(
             _from_json_data(str, data.get("ADVANCED")),
             _from_json_data(str, data.get("ATTR_CLASS")),
@@ -108,16 +106,15 @@ class CfgAttr:
         data["INTERNAL"] = _to_json_data(self.internal)
         return data
 
-
 @dataclass
 class CfgCfbom:
-    cfcall_id: "int"
-    exec_order: "int"
-    felem_id: "int"
-    ftype_id: "int"
+    cfcall_id: 'int'
+    exec_order: 'int'
+    felem_id: 'int'
+    ftype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgCfbom":
+    def from_json_data(cls, data: Any) -> 'CfgCfbom':
         return cls(
             _from_json_data(int, data.get("CFCALL_ID")),
             _from_json_data(int, data.get("EXEC_ORDER")),
@@ -133,16 +130,15 @@ class CfgCfbom:
         data["FTYPE_ID"] = _to_json_data(self.ftype_id)
         return data
 
-
 @dataclass
 class CfgCfcall:
-    cfcall_id: "int"
-    cfunc_id: "int"
-    exec_order: "int"
-    ftype_id: "int"
+    cfcall_id: 'int'
+    cfunc_id: 'int'
+    exec_order: 'int'
+    ftype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgCfcall":
+    def from_json_data(cls, data: Any) -> 'CfgCfcall':
         return cls(
             _from_json_data(int, data.get("CFCALL_ID")),
             _from_json_data(int, data.get("CFUNC_ID")),
@@ -158,22 +154,21 @@ class CfgCfcall:
         data["FTYPE_ID"] = _to_json_data(self.ftype_id)
         return data
 
-
 @dataclass
 class CfgCfrtn:
-    cfrtn_id: "int"
-    cfunc_id: "int"
-    cfunc_rtnval: "str"
-    close_score: "int"
-    exec_order: "int"
-    ftype_id: "int"
-    likely_score: "int"
-    plausible_score: "int"
-    same_score: "int"
-    un_likely_score: "int"
+    cfrtn_id: 'int'
+    cfunc_id: 'int'
+    cfunc_rtnval: 'str'
+    close_score: 'int'
+    exec_order: 'int'
+    ftype_id: 'int'
+    likely_score: 'int'
+    plausible_score: 'int'
+    same_score: 'int'
+    un_likely_score: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgCfrtn":
+    def from_json_data(cls, data: Any) -> 'CfgCfrtn':
         return cls(
             _from_json_data(int, data.get("CFRTN_ID")),
             _from_json_data(int, data.get("CFUNC_ID")),
@@ -201,21 +196,20 @@ class CfgCfrtn:
         data["UN_LIKELY_SCORE"] = _to_json_data(self.un_likely_score)
         return data
 
-
 @dataclass
 class CfgCfunc:
-    anon_support: "str"
-    cfunc_code: "str"
-    cfunc_desc: "str"
-    cfunc_id: "int"
-    connect_str: "str"
-    func_lib: "str"
-    func_ver: "str"
-    java_class_name: "str"
-    language: "str"
+    anon_support: 'str'
+    cfunc_code: 'str'
+    cfunc_desc: 'str'
+    cfunc_id: 'int'
+    connect_str: 'str'
+    func_lib: 'str'
+    func_ver: 'str'
+    java_class_name: 'str'
+    language: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgCfunc":
+    def from_json_data(cls, data: Any) -> 'CfgCfunc':
         return cls(
             _from_json_data(str, data.get("ANON_SUPPORT")),
             _from_json_data(str, data.get("CFUNC_CODE")),
@@ -241,16 +235,15 @@ class CfgCfunc:
         data["LANGUAGE"] = _to_json_data(self.language)
         return data
 
-
 @dataclass
 class CfgDfbom:
-    dfcall_id: "int"
-    exec_order: "int"
-    felem_id: "int"
-    ftype_id: "int"
+    dfcall_id: 'int'
+    exec_order: 'int'
+    felem_id: 'int'
+    ftype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgDfbom":
+    def from_json_data(cls, data: Any) -> 'CfgDfbom':
         return cls(
             _from_json_data(int, data.get("DFCALL_ID")),
             _from_json_data(int, data.get("EXEC_ORDER")),
@@ -266,16 +259,15 @@ class CfgDfbom:
         data["FTYPE_ID"] = _to_json_data(self.ftype_id)
         return data
 
-
 @dataclass
 class CfgDfcall:
-    dfcall_id: "int"
-    dfunc_id: "int"
-    exec_order: "int"
-    ftype_id: "int"
+    dfcall_id: 'int'
+    dfunc_id: 'int'
+    exec_order: 'int'
+    ftype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgDfcall":
+    def from_json_data(cls, data: Any) -> 'CfgDfcall':
         return cls(
             _from_json_data(int, data.get("DFCALL_ID")),
             _from_json_data(int, data.get("DFUNC_ID")),
@@ -291,21 +283,20 @@ class CfgDfcall:
         data["FTYPE_ID"] = _to_json_data(self.ftype_id)
         return data
 
-
 @dataclass
 class CfgDfunc:
-    anon_support: "str"
-    connect_str: "str"
-    dfunc_code: "str"
-    dfunc_desc: "str"
-    dfunc_id: "int"
-    func_lib: "str"
-    func_ver: "str"
-    java_class_name: "str"
-    language: "str"
+    anon_support: 'str'
+    connect_str: 'str'
+    dfunc_code: 'str'
+    dfunc_desc: 'str'
+    dfunc_id: 'int'
+    func_lib: 'str'
+    func_ver: 'str'
+    java_class_name: 'str'
+    language: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgDfunc":
+    def from_json_data(cls, data: Any) -> 'CfgDfunc':
         return cls(
             _from_json_data(str, data.get("ANON_SUPPORT")),
             _from_json_data(str, data.get("CONNECT_STR")),
@@ -331,18 +322,17 @@ class CfgDfunc:
         data["LANGUAGE"] = _to_json_data(self.language)
         return data
 
-
 @dataclass
 class CfgDsrc:
-    conversational: "str"
-    dsrc_code: "str"
-    dsrc_desc: "str"
-    dsrc_id: "int"
-    dsrc_rely: "int"
-    retention_level: "str"
+    conversational: 'str'
+    dsrc_code: 'str'
+    dsrc_desc: 'str'
+    dsrc_id: 'int'
+    dsrc_rely: 'int'
+    retention_level: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgDsrc":
+    def from_json_data(cls, data: Any) -> 'CfgDsrc':
         return cls(
             _from_json_data(str, data.get("CONVERSATIONAL")),
             _from_json_data(str, data.get("DSRC_CODE")),
@@ -362,15 +352,14 @@ class CfgDsrc:
         data["RETENTION_LEVEL"] = _to_json_data(self.retention_level)
         return data
 
-
 @dataclass
 class CfgDsrcInterest:
-    dsrc_id: "int"
-    interest_flag: "str"
-    max_degree: "int"
+    dsrc_id: 'int'
+    interest_flag: 'str'
+    max_degree: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgDsrcInterest":
+    def from_json_data(cls, data: Any) -> 'CfgDsrcInterest':
         return cls(
             _from_json_data(int, data.get("DSRC_ID")),
             _from_json_data(str, data.get("INTEREST_FLAG")),
@@ -384,16 +373,15 @@ class CfgDsrcInterest:
         data["MAX_DEGREE"] = _to_json_data(self.max_degree)
         return data
 
-
 @dataclass
 class CfgEbom:
-    etype_id: "int"
-    exec_order: "int"
-    ftype_id: "int"
-    utype_code: "str"
+    etype_id: 'int'
+    exec_order: 'int'
+    ftype_id: 'int'
+    utype_code: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgEbom":
+    def from_json_data(cls, data: Any) -> 'CfgEbom':
         return cls(
             _from_json_data(int, data.get("ETYPE_ID")),
             _from_json_data(int, data.get("EXEC_ORDER")),
@@ -409,16 +397,15 @@ class CfgEbom:
         data["UTYPE_CODE"] = _to_json_data(self.utype_code)
         return data
 
-
 @dataclass
 class CfgEclass:
-    eclass_code: "str"
-    eclass_desc: "str"
-    eclass_id: "int"
-    resolve: "str"
+    eclass_code: 'str'
+    eclass_desc: 'str'
+    eclass_id: 'int'
+    resolve: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgEclass":
+    def from_json_data(cls, data: Any) -> 'CfgEclass':
         return cls(
             _from_json_data(str, data.get("ECLASS_CODE")),
             _from_json_data(str, data.get("ECLASS_DESC")),
@@ -434,17 +421,16 @@ class CfgEclass:
         data["RESOLVE"] = _to_json_data(self.resolve)
         return data
 
-
 @dataclass
 class CfgEfbom:
-    efcall_id: "int"
-    exec_order: "int"
-    felem_id: "int"
-    felem_req: "str"
-    ftype_id: "int"
+    efcall_id: 'int'
+    exec_order: 'int'
+    felem_id: 'int'
+    felem_req: 'str'
+    ftype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgEfbom":
+    def from_json_data(cls, data: Any) -> 'CfgEfbom':
         return cls(
             _from_json_data(int, data.get("EFCALL_ID")),
             _from_json_data(int, data.get("EXEC_ORDER")),
@@ -462,19 +448,18 @@ class CfgEfbom:
         data["FTYPE_ID"] = _to_json_data(self.ftype_id)
         return data
 
-
 @dataclass
 class CfgEfcall:
-    efcall_id: "int"
-    efeat_ftype_id: "int"
-    efunc_id: "int"
-    exec_order: "int"
-    felem_id: "int"
-    ftype_id: "int"
-    is_virtual: "str"
+    efcall_id: 'int'
+    efeat_ftype_id: 'int'
+    efunc_id: 'int'
+    exec_order: 'int'
+    felem_id: 'int'
+    ftype_id: 'int'
+    is_virtual: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgEfcall":
+    def from_json_data(cls, data: Any) -> 'CfgEfcall':
         return cls(
             _from_json_data(int, data.get("EFCALL_ID")),
             _from_json_data(int, data.get("EFEAT_FTYPE_ID")),
@@ -496,20 +481,19 @@ class CfgEfcall:
         data["IS_VIRTUAL"] = _to_json_data(self.is_virtual)
         return data
 
-
 @dataclass
 class CfgEfunc:
-    connect_str: "str"
-    efunc_code: "str"
-    efunc_desc: "str"
-    efunc_id: "int"
-    func_lib: "str"
-    func_ver: "str"
-    java_class_name: "str"
-    language: "str"
+    connect_str: 'str'
+    efunc_code: 'str'
+    efunc_desc: 'str'
+    efunc_id: 'int'
+    func_lib: 'str'
+    func_ver: 'str'
+    java_class_name: 'str'
+    language: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgEfunc":
+    def from_json_data(cls, data: Any) -> 'CfgEfunc':
         return cls(
             _from_json_data(str, data.get("CONNECT_STR")),
             _from_json_data(str, data.get("EFUNC_CODE")),
@@ -533,17 +517,16 @@ class CfgEfunc:
         data["LANGUAGE"] = _to_json_data(self.language)
         return data
 
-
 @dataclass
 class CfgErfrag:
-    erfrag_code: "str"
-    erfrag_depends: "str"
-    erfrag_desc: "str"
-    erfrag_id: "int"
-    erfrag_source: "str"
+    erfrag_code: 'str'
+    erfrag_depends: 'str'
+    erfrag_desc: 'str'
+    erfrag_id: 'int'
+    erfrag_source: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgErfrag":
+    def from_json_data(cls, data: Any) -> 'CfgErfrag':
         return cls(
             _from_json_data(str, data.get("ERFRAG_CODE")),
             _from_json_data(str, data.get("ERFRAG_DEPENDS")),
@@ -561,26 +544,25 @@ class CfgErfrag:
         data["ERFRAG_SOURCE"] = _to_json_data(self.erfrag_source)
         return data
 
-
 @dataclass
 class CfgErrule:
-    disq_erfrag_code: "str"
-    errule_code: "str"
+    disq_erfrag_code: 'str'
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    errule_desc: "str"
-    errule_id: "int"
-    errule_tier: "int"
-    qual_erfrag_code: "str"
-    ref_score: "int"
-    relate: "str"
-    resolve: "str"
-    rtype_id: "int"
+    errule_desc: 'str'
+    errule_id: 'int'
+    errule_tier: 'int'
+    qual_erfrag_code: 'str'
+    ref_score: 'int'
+    relate: 'str'
+    resolve: 'str'
+    rtype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgErrule":
+    def from_json_data(cls, data: Any) -> 'CfgErrule':
         return cls(
             _from_json_data(str, data.get("DISQ_ERFRAG_CODE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
@@ -608,16 +590,15 @@ class CfgErrule:
         data["RTYPE_ID"] = _to_json_data(self.rtype_id)
         return data
 
-
 @dataclass
 class CfgEtype:
-    eclass_id: "int"
-    etype_code: "str"
-    etype_desc: "str"
-    etype_id: "int"
+    eclass_id: 'int'
+    etype_code: 'str'
+    etype_desc: 'str'
+    etype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgEtype":
+    def from_json_data(cls, data: Any) -> 'CfgEtype':
         return cls(
             _from_json_data(int, data.get("ECLASS_ID")),
             _from_json_data(str, data.get("ETYPE_CODE")),
@@ -633,18 +614,17 @@ class CfgEtype:
         data["ETYPE_ID"] = _to_json_data(self.etype_id)
         return data
 
-
 @dataclass
 class CfgFbom:
-    derived: "str"
-    display_delim: "str"
-    display_level: "int"
-    exec_order: "int"
-    felem_id: "int"
-    ftype_id: "int"
+    derived: 'str'
+    display_delim: 'str'
+    display_level: 'int'
+    exec_order: 'int'
+    felem_id: 'int'
+    ftype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgFbom":
+    def from_json_data(cls, data: Any) -> 'CfgFbom':
         return cls(
             _from_json_data(str, data.get("DERIVED")),
             _from_json_data(str, data.get("DISPLAY_DELIM")),
@@ -664,18 +644,17 @@ class CfgFbom:
         data["FTYPE_ID"] = _to_json_data(self.ftype_id)
         return data
 
-
 @dataclass
 class CfgFbovr:
-    eclass_id: "int"
-    ftype_excl: "str"
-    ftype_freq: "str"
-    ftype_id: "int"
-    ftype_stab: "str"
-    utype_code: "str"
+    eclass_id: 'int'
+    ftype_excl: 'str'
+    ftype_freq: 'str'
+    ftype_id: 'int'
+    ftype_stab: 'str'
+    utype_code: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgFbovr":
+    def from_json_data(cls, data: Any) -> 'CfgFbovr':
         return cls(
             _from_json_data(int, data.get("ECLASS_ID")),
             _from_json_data(str, data.get("FTYPE_EXCL")),
@@ -695,15 +674,14 @@ class CfgFbovr:
         data["UTYPE_CODE"] = _to_json_data(self.utype_code)
         return data
 
-
 @dataclass
 class CfgFclass:
-    fclass_code: "str"
-    fclass_desc: "str"
-    fclass_id: "int"
+    fclass_code: 'str'
+    fclass_desc: 'str'
+    fclass_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgFclass":
+    def from_json_data(cls, data: Any) -> 'CfgFclass':
         return cls(
             _from_json_data(str, data.get("FCLASS_CODE")),
             _from_json_data(str, data.get("FCLASS_DESC")),
@@ -717,17 +695,16 @@ class CfgFclass:
         data["FCLASS_ID"] = _to_json_data(self.fclass_id)
         return data
 
-
 @dataclass
 class CfgFelem:
-    data_type: "str"
-    felem_code: "str"
-    felem_desc: "str"
-    felem_id: "int"
-    tokenize: "str"
+    data_type: 'str'
+    felem_code: 'str'
+    felem_desc: 'str'
+    felem_id: 'int'
+    tokenize: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgFelem":
+    def from_json_data(cls, data: Any) -> 'CfgFelem':
         return cls(
             _from_json_data(str, data.get("DATA_TYPE")),
             _from_json_data(str, data.get("FELEM_CODE")),
@@ -745,27 +722,26 @@ class CfgFelem:
         data["TOKENIZE"] = _to_json_data(self.tokenize)
         return data
 
-
 @dataclass
 class CfgFtype:
-    anonymize: "str"
-    derivation: "str"
-    derived: "str"
-    fclass_id: "int"
-    ftype_code: "str"
-    ftype_desc: "str"
-    ftype_excl: "str"
-    ftype_freq: "str"
-    ftype_id: "int"
-    ftype_stab: "str"
-    persist_history: "str"
-    rtype_id: "int"
-    show_in_match_key: "str"
-    used_for_cand: "str"
-    version: "int"
+    anonymize: 'str'
+    derivation: 'str'
+    derived: 'str'
+    fclass_id: 'int'
+    ftype_code: 'str'
+    ftype_desc: 'str'
+    ftype_excl: 'str'
+    ftype_freq: 'str'
+    ftype_id: 'int'
+    ftype_stab: 'str'
+    persist_history: 'str'
+    rtype_id: 'int'
+    show_in_match_key: 'str'
+    used_for_cand: 'str'
+    version: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgFtype":
+    def from_json_data(cls, data: Any) -> 'CfgFtype':
         return cls(
             _from_json_data(str, data.get("ANONYMIZE")),
             _from_json_data(str, data.get("DERIVATION")),
@@ -803,18 +779,17 @@ class CfgFtype:
         data["VERSION"] = _to_json_data(self.version)
         return data
 
-
 @dataclass
 class CfgGenericThreshold:
-    behavior: "str"
-    candidate_cap: "int"
-    ftype_id: "int"
-    gplan_id: "int"
-    scoring_cap: "int"
-    send_to_redo: "str"
+    behavior: 'str'
+    candidate_cap: 'int'
+    ftype_id: 'int'
+    gplan_id: 'int'
+    scoring_cap: 'int'
+    send_to_redo: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgGenericThreshold":
+    def from_json_data(cls, data: Any) -> 'CfgGenericThreshold':
         return cls(
             _from_json_data(str, data.get("BEHAVIOR")),
             _from_json_data(int, data.get("CANDIDATE_CAP")),
@@ -834,15 +809,14 @@ class CfgGenericThreshold:
         data["SEND_TO_REDO"] = _to_json_data(self.send_to_redo)
         return data
 
-
 @dataclass
 class CfgGplan:
-    gplan_code: "str"
-    gplan_desc: "str"
-    gplan_id: "int"
+    gplan_code: 'str'
+    gplan_desc: 'str'
+    gplan_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgGplan":
+    def from_json_data(cls, data: Any) -> 'CfgGplan':
         return cls(
             _from_json_data(str, data.get("GPLAN_CODE")),
             _from_json_data(str, data.get("GPLAN_DESC")),
@@ -856,15 +830,14 @@ class CfgGplan:
         data["GPLAN_ID"] = _to_json_data(self.gplan_id)
         return data
 
-
 @dataclass
 class CfgLens:
-    lens_code: "str"
-    lens_desc: "str"
-    lens_id: "int"
+    lens_code: 'str'
+    lens_desc: 'str'
+    lens_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgLens":
+    def from_json_data(cls, data: Any) -> 'CfgLens':
         return cls(
             _from_json_data(str, data.get("LENS_CODE")),
             _from_json_data(str, data.get("LENS_DESC")),
@@ -878,32 +851,30 @@ class CfgLens:
         data["LENS_ID"] = _to_json_data(self.lens_id)
         return data
 
-
 @dataclass
 class CfgLensrl:
-    value: "List[Fixme]"
+    value: 'List[Fixme]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgLensrl":
+    def from_json_data(cls, data: Any) -> 'CfgLensrl':
         return cls(_from_json_data(List[Fixme], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-
 @dataclass
 class CfgRclass:
-    is_disclosed: "str"
+    is_disclosed: 'str'
     """
     Indicates if this is a disclosed relationship.
     """
 
-    rclass_code: "str"
-    rclass_desc: "str"
-    rclass_id: "int"
+    rclass_code: 'str'
+    rclass_desc: 'str'
+    rclass_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgRclass":
+    def from_json_data(cls, data: Any) -> 'CfgRclass':
         return cls(
             _from_json_data(str, data.get("IS_DISCLOSED")),
             _from_json_data(str, data.get("RCLASS_CODE")),
@@ -919,18 +890,17 @@ class CfgRclass:
         data["RCLASS_ID"] = _to_json_data(self.rclass_id)
         return data
 
-
 @dataclass
 class CfgRtype:
-    break_res: "str"
-    rclass_id: "int"
-    rel_strength: "int"
-    rtype_code: "str"
-    rtype_desc: "str"
-    rtype_id: "int"
+    break_res: 'str'
+    rclass_id: 'int'
+    rel_strength: 'int'
+    rtype_code: 'str'
+    rtype_desc: 'str'
+    rtype_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgRtype":
+    def from_json_data(cls, data: Any) -> 'CfgRtype':
         return cls(
             _from_json_data(str, data.get("BREAK_RES")),
             _from_json_data(int, data.get("RCLASS_ID")),
@@ -950,17 +920,16 @@ class CfgRtype:
         data["RTYPE_ID"] = _to_json_data(self.rtype_id)
         return data
 
-
 @dataclass
 class CfgSfcall:
-    exec_order: "int"
-    felem_id: "int"
-    ftype_id: "int"
-    sfcall_id: "int"
-    sfunc_id: "int"
+    exec_order: 'int'
+    felem_id: 'int'
+    ftype_id: 'int'
+    sfcall_id: 'int'
+    sfunc_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgSfcall":
+    def from_json_data(cls, data: Any) -> 'CfgSfcall':
         return cls(
             _from_json_data(int, data.get("EXEC_ORDER")),
             _from_json_data(int, data.get("FELEM_ID")),
@@ -978,20 +947,19 @@ class CfgSfcall:
         data["SFUNC_ID"] = _to_json_data(self.sfunc_id)
         return data
 
-
 @dataclass
 class CfgSfunc:
-    connect_str: "str"
-    func_lib: "str"
-    func_ver: "str"
-    java_class_name: "str"
-    language: "str"
-    sfunc_code: "str"
-    sfunc_desc: "str"
-    sfunc_id: "int"
+    connect_str: 'str'
+    func_lib: 'str'
+    func_ver: 'str'
+    java_class_name: 'str'
+    language: 'str'
+    sfunc_code: 'str'
+    sfunc_desc: 'str'
+    sfunc_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CfgSfunc":
+    def from_json_data(cls, data: Any) -> 'CfgSfunc':
         return cls(
             _from_json_data(str, data.get("CONNECT_STR")),
             _from_json_data(str, data.get("FUNC_LIB")),
@@ -1015,18 +983,17 @@ class CfgSfunc:
         data["SFUNC_ID"] = _to_json_data(self.sfunc_id)
         return data
 
-
 @dataclass
 class ConfigBaseVersion:
-    build_date: "str"
-    build_number: "str"
-    build_version: "str"
-    compatibility_version: "CompatibilityVersion"
-    product_name: "str"
-    version: "str"
+    build_date: 'str'
+    build_number: 'str'
+    build_version: 'str'
+    compatibility_version: 'CompatibilityVersion'
+    product_name: 'str'
+    version: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ConfigBaseVersion":
+    def from_json_data(cls, data: Any) -> 'ConfigBaseVersion':
         return cls(
             _from_json_data(str, data.get("BUILD_DATE")),
             _from_json_data(str, data.get("BUILD_NUMBER")),
@@ -1046,20 +1013,19 @@ class ConfigBaseVersion:
         data["VERSION"] = _to_json_data(self.version)
         return data
 
-
 @dataclass
 class Caches:
-    lib_feat_cache_hit: "int"
-    lib_feat_cache_miss: "int"
-    lib_feat_insert: "int"
-    res_feat_stat_cache_hit: "int"
-    res_feat_stat_cache_miss: "int"
-    res_feat_stat_insert: "int"
-    res_feat_stat_update_attempt: "int"
-    res_feat_stat_update_fail: "int"
+    lib_feat_cache_hit: 'int'
+    lib_feat_cache_miss: 'int'
+    lib_feat_insert: 'int'
+    res_feat_stat_cache_hit: 'int'
+    res_feat_stat_cache_miss: 'int'
+    res_feat_stat_insert: 'int'
+    res_feat_stat_update_attempt: 'int'
+    res_feat_stat_update_fail: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Caches":
+    def from_json_data(cls, data: Any) -> 'Caches':
         return cls(
             _from_json_data(int, data.get("libFeatCacheHit")),
             _from_json_data(int, data.get("libFeatCacheMiss")),
@@ -1079,32 +1045,28 @@ class Caches:
         data["resFeatStatCacheHit"] = _to_json_data(self.res_feat_stat_cache_hit)
         data["resFeatStatCacheMiss"] = _to_json_data(self.res_feat_stat_cache_miss)
         data["resFeatStatInsert"] = _to_json_data(self.res_feat_stat_insert)
-        data["resFeatStatUpdateAttempt"] = _to_json_data(
-            self.res_feat_stat_update_attempt
-        )
+        data["resFeatStatUpdateAttempt"] = _to_json_data(self.res_feat_stat_update_attempt)
         data["resFeatStatUpdateFail"] = _to_json_data(self.res_feat_stat_update_fail)
         return data
 
-
 @dataclass
 class CandidateKeysForMatchInfo:
-    value: "Dict[str, List[MatchInfoForAttribute]]"
+    value: 'Dict[str, List[MatchInfoForAttribute]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CandidateKeysForMatchInfo":
+    def from_json_data(cls, data: Any) -> 'CandidateKeysForMatchInfo':
         return cls(_from_json_data(Dict[str, List[MatchInfoForAttribute]], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-
 @dataclass
 class CandidateKeysForSearchStatistic:
-    feature_types: "List[FeatureType]"
-    summary: "Summary"
+    feature_types: 'List[FeatureType]'
+    summary: 'Summary'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CandidateKeysForSearchStatistic":
+    def from_json_data(cls, data: Any) -> 'CandidateKeysForSearchStatistic':
         return cls(
             _from_json_data(List[FeatureType], data.get("FEATURE_TYPES")),
             _from_json_data(Summary, data.get("SUMMARY")),
@@ -1116,14 +1078,13 @@ class CandidateKeysForSearchStatistic:
         data["SUMMARY"] = _to_json_data(self.summary)
         return data
 
-
 @dataclass
 class Candidates:
-    candidate_builders: "Dict[str, int]"
-    suppressed_candidate_builders: "Dict[str, int]"
+    candidate_builders: 'Dict[str, int]'
+    suppressed_candidate_builders: 'Dict[str, int]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Candidates":
+    def from_json_data(cls, data: Any) -> 'Candidates':
         return cls(
             _from_json_data(Dict[str, int], data.get("candidateBuilders")),
             _from_json_data(Dict[str, int], data.get("suppressedCandidateBuilders")),
@@ -1132,18 +1093,15 @@ class Candidates:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["candidateBuilders"] = _to_json_data(self.candidate_builders)
-        data["suppressedCandidateBuilders"] = _to_json_data(
-            self.suppressed_candidate_builders
-        )
+        data["suppressedCandidateBuilders"] = _to_json_data(self.suppressed_candidate_builders)
         return data
-
 
 @dataclass
 class CompatibilityVersion:
-    config_version: "str"
+    config_version: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CompatibilityVersion":
+    def from_json_data(cls, data: Any) -> 'CompatibilityVersion':
         return cls(
             _from_json_data(str, data.get("CONFIG_VERSION")),
         )
@@ -1153,15 +1111,14 @@ class CompatibilityVersion:
         data["CONFIG_VERSION"] = _to_json_data(self.config_version)
         return data
 
-
 @dataclass
 class Config:
-    config_comments: "str"
-    config_id: "int"
-    sys_create_dt: "str"
+    config_comments: 'str'
+    config_id: 'int'
+    sys_create_dt: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Config":
+    def from_json_data(cls, data: Any) -> 'Config':
         return cls(
             _from_json_data(str, data.get("CONFIG_COMMENTS")),
             _from_json_data(int, data.get("CONFIG_ID")),
@@ -1175,25 +1132,24 @@ class Config:
         data["SYS_CREATE_DT"] = _to_json_data(self.sys_create_dt)
         return data
 
-
 @dataclass
 class Confirmation:
-    additional_scores: "AdditionalScores"
-    candidate_feat_desc: "str"
-    candidate_feat_id: "int"
-    candidate_feat_usage_type: "str"
-    ftype_code: "str"
-    inbound_feat_desc: "str"
-    inbound_feat_id: "int"
-    inbound_feat_usage_type: "str"
-    score: "int"
-    score_behavior: "str"
-    score_bucket: "str"
-    source: "str"
-    token: "str"
+    additional_scores: 'AdditionalScores'
+    candidate_feat_desc: 'str'
+    candidate_feat_id: 'int'
+    candidate_feat_usage_type: 'str'
+    ftype_code: 'str'
+    inbound_feat_desc: 'str'
+    inbound_feat_id: 'int'
+    inbound_feat_usage_type: 'str'
+    score: 'int'
+    score_behavior: 'str'
+    score_bucket: 'str'
+    source: 'str'
+    token: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Confirmation":
+    def from_json_data(cls, data: Any) -> 'Confirmation':
         return cls(
             _from_json_data(AdditionalScores, data.get("ADDITIONAL_SCORES")),
             _from_json_data(str, data.get("CANDIDATE_FEAT_DESC")),
@@ -1215,9 +1171,7 @@ class Confirmation:
         data["ADDITIONAL_SCORES"] = _to_json_data(self.additional_scores)
         data["CANDIDATE_FEAT_DESC"] = _to_json_data(self.candidate_feat_desc)
         data["CANDIDATE_FEAT_ID"] = _to_json_data(self.candidate_feat_id)
-        data["CANDIDATE_FEAT_USAGE_TYPE"] = _to_json_data(
-            self.candidate_feat_usage_type
-        )
+        data["CANDIDATE_FEAT_USAGE_TYPE"] = _to_json_data(self.candidate_feat_usage_type)
         data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
         data["INBOUND_FEAT_DESC"] = _to_json_data(self.inbound_feat_desc)
         data["INBOUND_FEAT_ID"] = _to_json_data(self.inbound_feat_id)
@@ -1229,15 +1183,14 @@ class Confirmation:
         data["TOKEN"] = _to_json_data(self.token)
         return data
 
-
 @dataclass
 class Contention:
-    feature: "Fixme"
-    res_ent: "Fixme"
-    valuelatch: "Fixme"
+    feature: 'Fixme'
+    res_ent: 'Fixme'
+    valuelatch: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Contention":
+    def from_json_data(cls, data: Any) -> 'Contention':
         return cls(
             _from_json_data(Fixme, data.get("feature")),
             _from_json_data(Fixme, data.get("resEnt")),
@@ -1251,16 +1204,15 @@ class Contention:
         data["valuelatch"] = _to_json_data(self.valuelatch)
         return data
 
-
 @dataclass
 class CurrResources:
-    active_threads: "int"
-    available_memory: "str"
-    process_memory: "str"
-    worker_threads: "int"
+    active_threads: 'int'
+    available_memory: 'str'
+    process_memory: 'str'
+    worker_threads: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "CurrResources":
+    def from_json_data(cls, data: Any) -> 'CurrResources':
         return cls(
             _from_json_data(int, data.get("activeThreads")),
             _from_json_data(str, data.get("availableMemory")),
@@ -1276,21 +1228,21 @@ class CurrResources:
         data["workerThreads"] = _to_json_data(self.worker_threads)
         return data
 
-
 @dataclass
 class DataSource:
-    dsrc_code: "str"
+    dsrc_code: 'str'
     """
     The text representation of the datasource.
     """
 
-    dsrc_id: "int"
+    dsrc_id: 'int'
     """
     The unique identifier of the datasource.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "DataSource":
+    def from_json_data(cls, data: Any) -> 'DataSource':
         return cls(
             _from_json_data(str, data.get("DSRC_CODE")),
             _from_json_data(int, data.get("DSRC_ID")),
@@ -1302,15 +1254,14 @@ class DataSource:
         data["DSRC_ID"] = _to_json_data(self.dsrc_id)
         return data
 
-
 @dataclass
 class DisclosedRelationsForMatchInfo:
-    rel_anchor: "List[RelAnchor]"
-    rel_link: "List[RelLink]"
-    rel_pointer: "List[RelPointer]"
+    rel_anchor: 'List[RelAnchor]'
+    rel_link: 'List[RelLink]'
+    rel_pointer: 'List[RelPointer]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "DisclosedRelationsForMatchInfo":
+    def from_json_data(cls, data: Any) -> 'DisclosedRelationsForMatchInfo':
         return cls(
             _from_json_data(List[RelAnchor], data.get("REL_ANCHOR")),
             _from_json_data(List[RelLink], data.get("REL_LINK")),
@@ -1324,24 +1275,23 @@ class DisclosedRelationsForMatchInfo:
         data["REL_POINTER"] = _to_json_data(self.rel_pointer)
         return data
 
-
 @dataclass
 class DisclosedRelationsForMatchInfoForWhy:
-    domain: "str"
-    feat_desc: "str"
+    domain: 'str'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_id: "int"
-    feat_usage_type: "str"
-    linked_feat_desc: "str"
-    linked_feat_id: "int"
-    linked_feat_type: "str"
-    rel_anchor: "List[RelAnchor]"
+    feat_id: 'int'
+    feat_usage_type: 'str'
+    linked_feat_desc: 'str'
+    linked_feat_id: 'int'
+    linked_feat_type: 'str'
+    rel_anchor: 'List[RelAnchor]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "DisclosedRelationsForMatchInfoForWhy":
+    def from_json_data(cls, data: Any) -> 'DisclosedRelationsForMatchInfoForWhy':
         return cls(
             _from_json_data(str, data.get("DOMAIN")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -1365,14 +1315,13 @@ class DisclosedRelationsForMatchInfoForWhy:
         data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
         return data
 
-
 @dataclass
 class Entity:
-    related_entities: "List[RelatedEntity]"
-    resolved_entity: "ResolvedEntity"
+    related_entities: 'List[RelatedEntity]'
+    resolved_entity: 'ResolvedEntity'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Entity":
+    def from_json_data(cls, data: Any) -> 'Entity':
         return cls(
             _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
@@ -1383,15 +1332,14 @@ class Entity:
         data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
         return data
-
 
 @dataclass
 class EntityForResolvedEntity:
-    related_entities: "List[RelatedEntity]"
-    resolved_entity: "ResolvedEntity"
+    related_entities: 'List[RelatedEntity]'
+    resolved_entity: 'ResolvedEntity'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "EntityForResolvedEntity":
+    def from_json_data(cls, data: Any) -> 'EntityForResolvedEntity':
         return cls(
             _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
@@ -1402,15 +1350,14 @@ class EntityForResolvedEntity:
         data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
         return data
-
 
 @dataclass
 class EntityForWhySearch:
-    related_entities: "List[RelatedEntity]"
-    resolved_entity: "ResolvedEntity"
+    related_entities: 'List[RelatedEntity]'
+    resolved_entity: 'ResolvedEntity'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "EntityForWhySearch":
+    def from_json_data(cls, data: Any) -> 'EntityForWhySearch':
         return cls(
             _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
@@ -1422,39 +1369,38 @@ class EntityForWhySearch:
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
         return data
 
-
 @dataclass
 class EntityNetworkLink:
-    errule_code: "str"
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    is_ambiguous: "int"
+    is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
     """
 
-    is_disclosed: "int"
+    is_disclosed: 'int'
     """
     Indicates if this is a disclosed relationship.
     """
 
-    match_key: "str"
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level_code: "str"
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    max_entity_id: "int"
-    min_entity_id: "int"
+    max_entity_id: 'int'
+    min_entity_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "EntityNetworkLink":
+    def from_json_data(cls, data: Any) -> 'EntityNetworkLink':
         return cls(
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
@@ -1476,15 +1422,14 @@ class EntityNetworkLink:
         data["MIN_ENTITY_ID"] = _to_json_data(self.min_entity_id)
         return data
 
-
 @dataclass
 class EntityPath:
-    end_entity_id: "int"
-    entities: "List[int]"
-    start_entity_id: "int"
+    end_entity_id: 'int'
+    entities: 'List[int]'
+    start_entity_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "EntityPath":
+    def from_json_data(cls, data: Any) -> 'EntityPath':
         return cls(
             _from_json_data(int, data.get("END_ENTITY_ID")),
             _from_json_data(List[int], data.get("ENTITIES")),
@@ -1498,39 +1443,38 @@ class EntityPath:
         data["START_ENTITY_ID"] = _to_json_data(self.start_entity_id)
         return data
 
-
 @dataclass
 class EntityPathLink:
-    errule_code: "str"
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    is_ambiguous: "int"
+    is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
     """
 
-    is_disclosed: "int"
+    is_disclosed: 'int'
     """
     Indicates if this is a disclosed relationship.
     """
 
-    match_key: "str"
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level_code: "str"
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    max_entity_id: "int"
-    min_entity_id: "int"
+    max_entity_id: 'int'
+    min_entity_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "EntityPathLink":
+    def from_json_data(cls, data: Any) -> 'EntityPathLink':
         return cls(
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
@@ -1552,14 +1496,13 @@ class EntityPathLink:
         data["MIN_ENTITY_ID"] = _to_json_data(self.min_entity_id)
         return data
 
-
 @dataclass
 class ExpressedFeatures:
-    calls: "List[ExpressedFeaturesCall]"
-    created: "Dict[str, int]"
+    calls: 'List[ExpressedFeaturesCall]'
+    created: 'Dict[str, int]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ExpressedFeatures":
+    def from_json_data(cls, data: Any) -> 'ExpressedFeatures':
         return cls(
             _from_json_data(List[ExpressedFeaturesCall], data.get("calls")),
             _from_json_data(Dict[str, int], data.get("created")),
@@ -1571,15 +1514,14 @@ class ExpressedFeatures:
         data["created"] = _to_json_data(self.created)
         return data
 
-
 @dataclass
 class ExpressedFeaturesCall:
-    efcall_id: "int"
-    efunc_code: "str"
-    num_calls: "int"
+    efcall_id: 'int'
+    efunc_code: 'str'
+    num_calls: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ExpressedFeaturesCall":
+    def from_json_data(cls, data: Any) -> 'ExpressedFeaturesCall':
         return cls(
             _from_json_data(int, data.get("EFCALL_ID")),
             _from_json_data(str, data.get("EFUNC_CODE")),
@@ -1593,14 +1535,13 @@ class ExpressedFeaturesCall:
         data["numCalls"] = _to_json_data(self.num_calls)
         return data
 
-
 @dataclass
 class Feature:
-    felem_code: "str"
-    felem_value: "str"
+    felem_code: 'str'
+    felem_value: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Feature":
+    def from_json_data(cls, data: Any) -> 'Feature':
         return cls(
             _from_json_data(str, data.get("FELEM_CODE")),
             _from_json_data(str, data.get("FELEM_VALUE")),
@@ -1612,25 +1553,24 @@ class Feature:
         data["FELEM_VALUE"] = _to_json_data(self.felem_value)
         return data
 
-
 @dataclass
 class FeatureDescriptionValue:
-    attributes: "Dict[str, str]"
-    candidate_cap_reached: "str"
-    entity_count: "int"
-    feat_desc: "str"
+    attributes: 'Dict[str, str]'
+    candidate_cap_reached: 'str'
+    entity_count: 'int'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    lib_feat_id: "int"
-    scoring_cap_reached: "str"
-    suppressed: "str"
-    used_for_cand: "str"
-    used_for_scoring: "str"
+    lib_feat_id: 'int'
+    scoring_cap_reached: 'str'
+    suppressed: 'str'
+    used_for_cand: 'str'
+    used_for_scoring: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureDescriptionValue":
+    def from_json_data(cls, data: Any) -> 'FeatureDescriptionValue':
         return cls(
             _from_json_data(Dict[str, str], data.get("ATTRIBUTES")),
             _from_json_data(str, data.get("CANDIDATE_CAP_REACHED")),
@@ -1656,33 +1596,31 @@ class FeatureDescriptionValue:
         data["USED_FOR_SCORING"] = _to_json_data(self.used_for_scoring)
         return data
 
-
 @dataclass
 class FeatureForAttribute:
-    feat_desc: "str"
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_desc_values: "List[FeatureDescriptionValue]"
+    feat_desc_values: 'List[FeatureDescriptionValue]'
     """
     Describes the attributes that make up the feature.
     """
 
-    lib_feat_id: "int"
-    usage_type: "str"
+    lib_feat_id: 'int'
+    usage_type: 'str'
     """
     Label to identify how some features are being used (can also change some
     features behavior).
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureForAttribute":
+    def from_json_data(cls, data: Any) -> 'FeatureForAttribute':
         return cls(
             _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(
-                List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")
-            ),
+            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
             _from_json_data(int, data.get("LIB_FEAT_ID")),
             _from_json_data(str, data.get("USAGE_TYPE")),
         )
@@ -1694,36 +1632,34 @@ class FeatureForAttribute:
         data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
         data["USAGE_TYPE"] = _to_json_data(self.usage_type)
         return data
-
 
 @dataclass
 class FeatureForAttributeWithAttributes:
-    attributes: "SenzingEntitySpecification"
-    feat_desc: "str"
+    attributes: 'SenzingEntitySpecification'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_desc_values: "List[FeatureDescriptionValue]"
+    feat_desc_values: 'List[FeatureDescriptionValue]'
     """
     Describes the attributes that make up the feature.
     """
 
-    lib_feat_id: "int"
-    usage_type: "str"
+    lib_feat_id: 'int'
+    usage_type: 'str'
     """
     Label to identify how some features are being used (can also change some
     features behavior).
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureForAttributeWithAttributes":
+    def from_json_data(cls, data: Any) -> 'FeatureForAttributeWithAttributes':
         return cls(
             _from_json_data(SenzingEntitySpecification, data.get("ATTRIBUTES")),
             _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(
-                List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")
-            ),
+            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
             _from_json_data(int, data.get("LIB_FEAT_ID")),
             _from_json_data(str, data.get("USAGE_TYPE")),
         )
@@ -1736,36 +1672,34 @@ class FeatureForAttributeWithAttributes:
         data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
         data["USAGE_TYPE"] = _to_json_data(self.usage_type)
         return data
-
 
 @dataclass
 class FeatureForGetEntity:
-    attributes: "List[SenzingEntitySpecification]"
-    feat_desc: "str"
+    attributes: 'List[SenzingEntitySpecification]'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_desc_values: "List[FeatureDescriptionValue]"
+    feat_desc_values: 'List[FeatureDescriptionValue]'
     """
     Describes the attributes that make up the feature.
     """
 
-    lib_feat_id: "int"
-    usage_type: "str"
+    lib_feat_id: 'int'
+    usage_type: 'str'
     """
     Label to identify how some features are being used (can also change some
     features behavior).
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureForGetEntity":
+    def from_json_data(cls, data: Any) -> 'FeatureForGetEntity':
         return cls(
             _from_json_data(List[SenzingEntitySpecification], data.get("ATTRIBUTES")),
             _from_json_data(str, data.get("FEAT_DESC")),
-            _from_json_data(
-                List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")
-            ),
+            _from_json_data(List[FeatureDescriptionValue], data.get("FEAT_DESC_VALUES")),
             _from_json_data(int, data.get("LIB_FEAT_ID")),
             _from_json_data(str, data.get("USAGE_TYPE")),
         )
@@ -1779,18 +1713,18 @@ class FeatureForGetEntity:
         data["USAGE_TYPE"] = _to_json_data(self.usage_type)
         return data
 
-
 @dataclass
 class FeatureID:
-    lib_feat_id: "int"
-    usage_type: "str"
+    lib_feat_id: 'int'
+    usage_type: 'str'
     """
     Label to identify how some features are being used (can also change some
     features behavior).
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureID":
+    def from_json_data(cls, data: Any) -> 'FeatureID':
         return cls(
             _from_json_data(int, data.get("LIB_FEAT_ID")),
             _from_json_data(str, data.get("USAGE_TYPE")),
@@ -1802,22 +1736,21 @@ class FeatureID:
         data["USAGE_TYPE"] = _to_json_data(self.usage_type)
         return data
 
-
 @dataclass
 class FeatureScoreForAttribute:
-    additional_scores: "AdditionalScores"
-    candidate_feat_desc: "str"
-    candidate_feat_id: "int"
-    candidate_feat_usage_type: "str"
-    inbound_feat_desc: "str"
-    inbound_feat_id: "int"
-    inbound_feat_usage_type: "str"
-    score: "int"
-    score_behavior: "str"
-    score_bucket: "str"
+    additional_scores: 'AdditionalScores'
+    candidate_feat_desc: 'str'
+    candidate_feat_id: 'int'
+    candidate_feat_usage_type: 'str'
+    inbound_feat_desc: 'str'
+    inbound_feat_id: 'int'
+    inbound_feat_usage_type: 'str'
+    score: 'int'
+    score_behavior: 'str'
+    score_bucket: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureScoreForAttribute":
+    def from_json_data(cls, data: Any) -> 'FeatureScoreForAttribute':
         return cls(
             _from_json_data(AdditionalScores, data.get("ADDITIONAL_SCORES")),
             _from_json_data(str, data.get("CANDIDATE_FEAT_DESC")),
@@ -1836,9 +1769,7 @@ class FeatureScoreForAttribute:
         data["ADDITIONAL_SCORES"] = _to_json_data(self.additional_scores)
         data["CANDIDATE_FEAT_DESC"] = _to_json_data(self.candidate_feat_desc)
         data["CANDIDATE_FEAT_ID"] = _to_json_data(self.candidate_feat_id)
-        data["CANDIDATE_FEAT_USAGE_TYPE"] = _to_json_data(
-            self.candidate_feat_usage_type
-        )
+        data["CANDIDATE_FEAT_USAGE_TYPE"] = _to_json_data(self.candidate_feat_usage_type)
         data["INBOUND_FEAT_DESC"] = _to_json_data(self.inbound_feat_desc)
         data["INBOUND_FEAT_ID"] = _to_json_data(self.inbound_feat_id)
         data["INBOUND_FEAT_USAGE_TYPE"] = _to_json_data(self.inbound_feat_usage_type)
@@ -1847,28 +1778,26 @@ class FeatureScoreForAttribute:
         data["SCORE_BUCKET"] = _to_json_data(self.score_bucket)
         return data
 
-
 @dataclass
 class FeatureScores:
-    value: "Dict[str, List[FeatureScoreForAttribute]]"
+    value: 'Dict[str, List[FeatureScoreForAttribute]]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureScores":
+    def from_json_data(cls, data: Any) -> 'FeatureScores':
         return cls(_from_json_data(Dict[str, List[FeatureScoreForAttribute]], data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-
 @dataclass
 class FeatureType:
-    found: "int"
-    ftype_code: "str"
-    generic: "int"
-    not_found: "int"
+    found: 'int'
+    ftype_code: 'str'
+    generic: 'int'
+    not_found: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "FeatureType":
+    def from_json_data(cls, data: Any) -> 'FeatureType':
         return cls(
             _from_json_data(int, data.get("FOUND")),
             _from_json_data(str, data.get("FTYPE_CODE")),
@@ -1884,14 +1813,13 @@ class FeatureType:
         data["NOT_FOUND"] = _to_json_data(self.not_found)
         return data
 
-
 @dataclass
 class FinalState:
-    need_reevaluation: "int"
-    virtual_entities: "List[VirtualEntitySynopsis]"
+    need_reevaluation: 'int'
+    virtual_entities: 'List[VirtualEntitySynopsis]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "FinalState":
+    def from_json_data(cls, data: Any) -> 'FinalState':
         return cls(
             _from_json_data(int, data.get("NEED_REEVALUATION")),
             _from_json_data(List[VirtualEntitySynopsis], data.get("VIRTUAL_ENTITIES")),
@@ -1903,13 +1831,12 @@ class FinalState:
         data["VIRTUAL_ENTITIES"] = _to_json_data(self.virtual_entities)
         return data
 
-
 @dataclass
 class Fixme:
-    fixme_key: "str"
+    fixme_key: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Fixme":
+    def from_json_data(cls, data: Any) -> 'Fixme':
         return cls(
             _from_json_data(str, data.get("FIXME_KEY")),
         )
@@ -1919,21 +1846,21 @@ class Fixme:
         data["FIXME_KEY"] = _to_json_data(self.fixme_key)
         return data
 
-
 @dataclass
 class FocusRecord:
-    data_source: "str"
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    record_id: "str"
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "FocusRecord":
+    def from_json_data(cls, data: Any) -> 'FocusRecord':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(str, data.get("RECORD_ID")),
@@ -1945,13 +1872,12 @@ class FocusRecord:
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
 
-
 @dataclass
 class G2configSettings:
-    metaphone_version: "int"
+    metaphone_version: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "G2configSettings":
+    def from_json_data(cls, data: Any) -> 'G2configSettings':
         return cls(
             _from_json_data(int, data.get("METAPHONE_VERSION")),
         )
@@ -1961,46 +1887,45 @@ class G2configSettings:
         data["METAPHONE_VERSION"] = _to_json_data(self.metaphone_version)
         return data
 
-
 @dataclass
 class G2config:
-    cfg_attr: "List[CfgAttr]"
-    cfg_cfbom: "List[CfgCfbom]"
-    cfg_cfcall: "List[CfgCfcall]"
-    cfg_cfrtn: "List[CfgCfrtn]"
-    cfg_cfunc: "List[CfgCfunc]"
-    cfg_dfbom: "List[CfgDfbom]"
-    cfg_dfcall: "List[CfgDfcall]"
-    cfg_dfunc: "List[CfgDfunc]"
-    cfg_dsrc: "List[CfgDsrc]"
-    cfg_dsrc_interest: "List[CfgDsrcInterest]"
-    cfg_ebom: "List[CfgEbom]"
-    cfg_eclass: "List[CfgEclass]"
-    cfg_efbom: "List[CfgEfbom]"
-    cfg_efcall: "List[CfgEfcall]"
-    cfg_efunc: "List[CfgEfunc]"
-    cfg_erfrag: "List[CfgErfrag]"
-    cfg_errule: "List[CfgErrule]"
-    cfg_etype: "List[CfgEtype]"
-    cfg_fbom: "List[CfgFbom]"
-    cfg_fbovr: "List[CfgFbovr]"
-    cfg_fclass: "List[CfgFclass]"
-    cfg_felem: "List[CfgFelem]"
-    cfg_ftype: "List[CfgFtype]"
-    cfg_generic_threshold: "List[CfgGenericThreshold]"
-    cfg_gplan: "List[CfgGplan]"
-    cfg_lens: "List[CfgLens]"
-    cfg_lensrl: "List[CfgLensrl]"
-    cfg_rclass: "List[CfgRclass]"
-    cfg_rtype: "List[CfgRtype]"
-    cfg_sfcall: "List[CfgSfcall]"
-    cfg_sfunc: "List[CfgSfunc]"
-    config_base_version: "ConfigBaseVersion"
-    settings: "G2configSettings"
-    sys_oom: "List[SysOom]"
+    cfg_attr: 'List[CfgAttr]'
+    cfg_cfbom: 'List[CfgCfbom]'
+    cfg_cfcall: 'List[CfgCfcall]'
+    cfg_cfrtn: 'List[CfgCfrtn]'
+    cfg_cfunc: 'List[CfgCfunc]'
+    cfg_dfbom: 'List[CfgDfbom]'
+    cfg_dfcall: 'List[CfgDfcall]'
+    cfg_dfunc: 'List[CfgDfunc]'
+    cfg_dsrc: 'List[CfgDsrc]'
+    cfg_dsrc_interest: 'List[CfgDsrcInterest]'
+    cfg_ebom: 'List[CfgEbom]'
+    cfg_eclass: 'List[CfgEclass]'
+    cfg_efbom: 'List[CfgEfbom]'
+    cfg_efcall: 'List[CfgEfcall]'
+    cfg_efunc: 'List[CfgEfunc]'
+    cfg_erfrag: 'List[CfgErfrag]'
+    cfg_errule: 'List[CfgErrule]'
+    cfg_etype: 'List[CfgEtype]'
+    cfg_fbom: 'List[CfgFbom]'
+    cfg_fbovr: 'List[CfgFbovr]'
+    cfg_fclass: 'List[CfgFclass]'
+    cfg_felem: 'List[CfgFelem]'
+    cfg_ftype: 'List[CfgFtype]'
+    cfg_generic_threshold: 'List[CfgGenericThreshold]'
+    cfg_gplan: 'List[CfgGplan]'
+    cfg_lens: 'List[CfgLens]'
+    cfg_lensrl: 'List[CfgLensrl]'
+    cfg_rclass: 'List[CfgRclass]'
+    cfg_rtype: 'List[CfgRtype]'
+    cfg_sfcall: 'List[CfgSfcall]'
+    cfg_sfunc: 'List[CfgSfunc]'
+    config_base_version: 'ConfigBaseVersion'
+    settings: 'G2configSettings'
+    sys_oom: 'List[SysOom]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "G2config":
+    def from_json_data(cls, data: Any) -> 'G2config':
         return cls(
             _from_json_data(List[CfgAttr], data.get("CFG_ATTR")),
             _from_json_data(List[CfgCfbom], data.get("CFG_CFBOM")),
@@ -2025,9 +1950,7 @@ class G2config:
             _from_json_data(List[CfgFclass], data.get("CFG_FCLASS")),
             _from_json_data(List[CfgFelem], data.get("CFG_FELEM")),
             _from_json_data(List[CfgFtype], data.get("CFG_FTYPE")),
-            _from_json_data(
-                List[CfgGenericThreshold], data.get("CFG_GENERIC_THRESHOLD")
-            ),
+            _from_json_data(List[CfgGenericThreshold], data.get("CFG_GENERIC_THRESHOLD")),
             _from_json_data(List[CfgGplan], data.get("CFG_GPLAN")),
             _from_json_data(List[CfgLens], data.get("CFG_LENS")),
             _from_json_data(List[CfgLensrl], data.get("CFG_LENSRL")),
@@ -2078,14 +2001,13 @@ class G2config:
         data["SYS_OOM"] = _to_json_data(self.sys_oom)
         return data
 
-
 @dataclass
 class HowResults:
-    final_state: "FinalState"
-    resolution_steps: "List[ResolutionStep]"
+    final_state: 'FinalState'
+    resolution_steps: 'List[ResolutionStep]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "HowResults":
+    def from_json_data(cls, data: Any) -> 'HowResults':
         return cls(
             _from_json_data(FinalState, data.get("FINAL_STATE")),
             _from_json_data(List[ResolutionStep], data.get("RESOLUTION_STEPS")),
@@ -2097,16 +2019,15 @@ class HowResults:
         data["RESOLUTION_STEPS"] = _to_json_data(self.resolution_steps)
         return data
 
-
 @dataclass
 class InitResources:
-    available_memory: "str"
-    logical_cores: "int"
-    physical_cores: "int"
-    total_memory: "str"
+    available_memory: 'str'
+    logical_cores: 'int'
+    physical_cores: 'int'
+    total_memory: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "InitResources":
+    def from_json_data(cls, data: Any) -> 'InitResources':
         return cls(
             _from_json_data(str, data.get("availableMemory")),
             _from_json_data(int, data.get("logicalCores")),
@@ -2122,14 +2043,13 @@ class InitResources:
         data["totalMemory"] = _to_json_data(self.total_memory)
         return data
 
-
 @dataclass
 class InterestingEntities:
-    entities: "List[InterestingEntity]"
-    notices: "List[Notice]"
+    entities: 'List[InterestingEntity]'
+    notices: 'List[Notice]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "InterestingEntities":
+    def from_json_data(cls, data: Any) -> 'InterestingEntities':
         return cls(
             _from_json_data(List[InterestingEntity], data.get("ENTITIES")),
             _from_json_data(List[Notice], data.get("NOTICES")),
@@ -2141,21 +2061,20 @@ class InterestingEntities:
         data["NOTICES"] = _to_json_data(self.notices)
         return data
 
-
 @dataclass
 class InterestingEntity:
-    degrees: "int"
-    entity_id: "int"
+    degrees: 'int'
+    entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
     It may change when new information is added.
     """
 
-    flags: "List[str]"
-    sample_records: "List[SampleRecord]"
+    flags: 'List[str]'
+    sample_records: 'List[SampleRecord]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "InterestingEntity":
+    def from_json_data(cls, data: Any) -> 'InterestingEntity':
         return cls(
             _from_json_data(int, data.get("DEGREES")),
             _from_json_data(int, data.get("ENTITY_ID")),
@@ -2171,15 +2090,14 @@ class InterestingEntity:
         data["SAMPLE_RECORDS"] = _to_json_data(self.sample_records)
         return data
 
-
 @dataclass
 class License:
-    dsr_limit: "str"
-    status: "str"
-    type: "str"
+    dsr_limit: 'str'
+    status: 'str'
+    type: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "License":
+    def from_json_data(cls, data: Any) -> 'License':
         return cls(
             _from_json_data(str, data.get("dsrLimit")),
             _from_json_data(str, data.get("status")),
@@ -2193,13 +2111,12 @@ class License:
         data["type"] = _to_json_data(self.type)
         return data
 
-
 @dataclass
 class LockWaits:
-    refresh_locks: "RefreshLocks"
+    refresh_locks: 'RefreshLocks'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "LockWaits":
+    def from_json_data(cls, data: Any) -> 'LockWaits':
         return cls(
             _from_json_data(RefreshLocks, data.get("refreshLocks")),
         )
@@ -2209,39 +2126,36 @@ class LockWaits:
         data["refreshLocks"] = _to_json_data(self.refresh_locks)
         return data
 
-
 @dataclass
 class MatchInfo:
-    candidate_keys: "CandidateKeysForMatchInfo"
-    disclosed_relations: "DisclosedRelationsForMatchInfo"
-    errule_code: "str"
+    candidate_keys: 'CandidateKeysForMatchInfo'
+    disclosed_relations: 'DisclosedRelationsForMatchInfo'
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    feature_scores: "FeatureScores"
-    match_key: "str"
+    feature_scores: 'FeatureScores'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_key_details: "MatchKeyDetails"
-    match_level: "int"
-    match_level_code: "str"
+    match_key_details: 'MatchKeyDetails'
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    why_errule_code: "str"
-    why_key: "str"
+    why_errule_code: 'str'
+    why_key: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "MatchInfo":
+    def from_json_data(cls, data: Any) -> 'MatchInfo':
         return cls(
             _from_json_data(CandidateKeysForMatchInfo, data.get("CANDIDATE_KEYS")),
-            _from_json_data(
-                DisclosedRelationsForMatchInfo, data.get("DISCLOSED_RELATIONS")
-            ),
+            _from_json_data(DisclosedRelationsForMatchInfo, data.get("DISCLOSED_RELATIONS")),
             _from_json_data(str, data.get("ERRULE_CODE")),
             _from_json_data(FeatureScores, data.get("FEATURE_SCORES")),
             _from_json_data(str, data.get("MATCH_KEY")),
@@ -2266,18 +2180,17 @@ class MatchInfo:
         data["WHY_KEY"] = _to_json_data(self.why_key)
         return data
 
-
 @dataclass
 class MatchInfoForAttribute:
-    feat_desc: "str"
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_id: "int"
+    feat_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "MatchInfoForAttribute":
+    def from_json_data(cls, data: Any) -> 'MatchInfoForAttribute':
         return cls(
             _from_json_data(str, data.get("FEAT_DESC")),
             _from_json_data(int, data.get("FEAT_ID")),
@@ -2289,30 +2202,25 @@ class MatchInfoForAttribute:
         data["FEAT_ID"] = _to_json_data(self.feat_id)
         return data
 
-
 @dataclass
 class MatchInfoForWhy:
-    candidate_keys: "Dict[str, List[MatchInfoForAttribute]]"
-    disclosed_relations: "DisclosedRelationsForMatchInfoForWhy"
-    feature_scores: "FeatureScores"
-    match_level_code: "str"
+    candidate_keys: 'Dict[str, List[MatchInfoForAttribute]]'
+    disclosed_relations: 'DisclosedRelationsForMatchInfoForWhy'
+    feature_scores: 'FeatureScores'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    why_errule_code: "str"
-    why_key: "str"
-    why_key_details: "WhyKeyDetails"
+    why_errule_code: 'str'
+    why_key: 'str'
+    why_key_details: 'WhyKeyDetails'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "MatchInfoForWhy":
+    def from_json_data(cls, data: Any) -> 'MatchInfoForWhy':
         return cls(
-            _from_json_data(
-                Dict[str, List[MatchInfoForAttribute]], data.get("CANDIDATE_KEYS")
-            ),
-            _from_json_data(
-                DisclosedRelationsForMatchInfoForWhy, data.get("DISCLOSED_RELATIONS")
-            ),
+            _from_json_data(Dict[str, List[MatchInfoForAttribute]], data.get("CANDIDATE_KEYS")),
+            _from_json_data(DisclosedRelationsForMatchInfoForWhy, data.get("DISCLOSED_RELATIONS")),
             _from_json_data(FeatureScores, data.get("FEATURE_SCORES")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(str, data.get("WHY_ERRULE_CODE")),
@@ -2331,18 +2239,18 @@ class MatchInfoForWhy:
         data["WHY_KEY_DETAILS"] = _to_json_data(self.why_key_details)
         return data
 
-
 @dataclass
 class MatchKeyDetails:
-    confirmations: "List[Confirmation]"
-    denials: "List[Confirmation]"
-    errule_code: "str"
+    confirmations: 'List[Confirmation]'
+    denials: 'List[Confirmation]'
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "MatchKeyDetails":
+    def from_json_data(cls, data: Any) -> 'MatchKeyDetails':
         return cls(
             _from_json_data(List[Confirmation], data.get("CONFIRMATIONS")),
             _from_json_data(List[Confirmation], data.get("DENIALS")),
@@ -2356,18 +2264,17 @@ class MatchKeyDetails:
         data["ERRULE_CODE"] = _to_json_data(self.errule_code)
         return data
 
-
 @dataclass
 class MemberRecord:
-    internal_id: "int"
+    internal_id: 'int'
     """
     Internal identifier for the record.
     """
 
-    records: "List[Record]"
+    records: 'List[Record]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "MemberRecord":
+    def from_json_data(cls, data: Any) -> 'MemberRecord':
         return cls(
             _from_json_data(int, data.get("INTERNAL_ID")),
             _from_json_data(List[Record], data.get("RECORDS")),
@@ -2379,14 +2286,13 @@ class MemberRecord:
         data["RECORDS"] = _to_json_data(self.records)
         return data
 
-
 @dataclass
 class Notice:
-    code: "str"
-    description: "str"
+    code: 'str'
+    description: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Notice":
+    def from_json_data(cls, data: Any) -> 'Notice':
         return cls(
             _from_json_data(str, data.get("CODE")),
             _from_json_data(str, data.get("DESCRIPTION")),
@@ -2398,26 +2304,24 @@ class Notice:
         data["DESCRIPTION"] = _to_json_data(self.description)
         return data
 
-
 @dataclass
 class Object:
-    value: "object"
+    value: 'object'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Object":
+    def from_json_data(cls, data: Any) -> 'Object':
         return cls(_from_json_data(object, data))
 
     def to_json_data(self) -> Any:
         return _to_json_data(self.value)
 
-
 @dataclass
 class ParamDetails:
-    name: "str"
-    value: "Object"
+    name: 'str'
+    value: 'Object'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ParamDetails":
+    def from_json_data(cls, data: Any) -> 'ParamDetails':
         return cls(
             _from_json_data(str, data.get("NAME")),
             _from_json_data(Object, data.get("VALUE")),
@@ -2429,13 +2333,12 @@ class ParamDetails:
         data["VALUE"] = _to_json_data(self.value)
         return data
 
-
 @dataclass
 class Params:
-    param: "ParamDetails"
+    param: 'ParamDetails'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Params":
+    def from_json_data(cls, data: Any) -> 'Params':
         return cls(
             _from_json_data(ParamDetails, data.get("PARAM")),
         )
@@ -2445,19 +2348,18 @@ class Params:
         data["PARAM"] = _to_json_data(self.param)
         return data
 
-
 @dataclass
 class Processing:
-    added_records: "int"
-    ambiguous: "ProcessingAmbiguous"
-    batch_added_records: "int"
-    deleted_records: "int"
-    details: "ProcessingDetails"
-    reevaluations: "int"
-    repaired_entities: "int"
+    added_records: 'int'
+    ambiguous: 'ProcessingAmbiguous'
+    batch_added_records: 'int'
+    deleted_records: 'int'
+    details: 'ProcessingDetails'
+    reevaluations: 'int'
+    repaired_entities: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Processing":
+    def from_json_data(cls, data: Any) -> 'Processing':
         return cls(
             _from_json_data(int, data.get("addedRecords")),
             _from_json_data(ProcessingAmbiguous, data.get("ambiguous")),
@@ -2479,14 +2381,13 @@ class Processing:
         data["repairedEntities"] = _to_json_data(self.repaired_entities)
         return data
 
-
 @dataclass
 class ProcessingAmbiguous:
-    actual_test: "int"
-    cached_test: "int"
+    actual_test: 'int'
+    cached_test: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ProcessingAmbiguous":
+    def from_json_data(cls, data: Any) -> 'ProcessingAmbiguous':
         return cls(
             _from_json_data(int, data.get("actualTest")),
             _from_json_data(int, data.get("cachedTest")),
@@ -2498,24 +2399,23 @@ class ProcessingAmbiguous:
         data["cachedTest"] = _to_json_data(self.cached_test)
         return data
 
-
 @dataclass
 class ProcessingDetails:
-    added_records: "int"
-    candidates: "int"
-    change_deletes: "int"
-    duration: "int"
-    filtered_obs_feat: "int"
-    new_obs_ent: "int"
-    obs_ent_hash_diff: "int"
-    obs_ent_hash_same: "int"
-    optimized_out: "int"
-    optimized_out_skipped: "int"
-    partially_resolved: "int"
-    retries: "int"
+    added_records: 'int'
+    candidates: 'int'
+    change_deletes: 'int'
+    duration: 'int'
+    filtered_obs_feat: 'int'
+    new_obs_ent: 'int'
+    obs_ent_hash_diff: 'int'
+    obs_ent_hash_same: 'int'
+    optimized_out: 'int'
+    optimized_out_skipped: 'int'
+    partially_resolved: 'int'
+    retries: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ProcessingDetails":
+    def from_json_data(cls, data: Any) -> 'ProcessingDetails':
         return cls(
             _from_json_data(int, data.get("addedRecords")),
             _from_json_data(int, data.get("candidates")),
@@ -2547,60 +2447,59 @@ class ProcessingDetails:
         data["retries"] = _to_json_data(self.retries)
         return data
 
-
 @dataclass
 class Record:
-    address_data: "List[str]"
-    attribute_data: "List[str]"
-    data_source: "str"
+    address_data: 'List[str]'
+    attribute_data: 'List[str]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    entity_data: "List[str]"
-    entity_desc: "str"
-    entity_key: "str"
-    entity_type: "str"
-    errule_code: "str"
+    entity_data: 'List[str]'
+    entity_desc: 'str'
+    entity_key: 'str'
+    entity_type: 'str'
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: "Dict[str, List[FeatureForAttributeWithAttributes]]"
-    feature_ids: "List[FeatureID]"
-    first_seen_dt: "datetime"
-    identifier_data: "List[str]"
-    internal_id: "int"
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    feature_ids: 'List[FeatureID]'
+    first_seen_dt: 'datetime'
+    identifier_data: 'List[str]'
+    internal_id: 'int'
     """
     Internal identifier for the record.
     """
 
-    json_data: "Dict[str, Object]"
-    last_seen_dt: "datetime"
-    match_key: "str"
+    json_data: 'Dict[str, Object]'
+    last_seen_dt: 'datetime'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level: "int"
-    match_level_code: "str"
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    name_data: "List[str]"
-    other_data: "List[str]"
-    phone_data: "List[str]"
-    record_id: "str"
+    name_data: 'List[str]'
+    other_data: 'List[str]'
+    phone_data: 'List[str]'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
-    relationship_data: "List[str]"
-    unmapped_data: "Dict[str, Object]"
+    relationship_data: 'List[str]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Record":
+    def from_json_data(cls, data: Any) -> 'Record':
         return cls(
             _from_json_data(List[str], data.get("ADDRESS_DATA")),
             _from_json_data(List[str], data.get("ATTRIBUTE_DATA")),
@@ -2610,9 +2509,7 @@ class Record:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(
-                Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")
-            ),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
@@ -2657,61 +2554,60 @@ class Record:
         data["RELATIONSHIP_DATA"] = _to_json_data(self.relationship_data)
         data["UNMAPPED_DATA"] = _to_json_data(self.unmapped_data)
         return data
-
 
 @dataclass
 class RecordForGetEntity:
-    address_data: "List[str]"
-    attribute_data: "List[str]"
-    data_source: "str"
+    address_data: 'List[str]'
+    attribute_data: 'List[str]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    entity_data: "List[str]"
-    entity_desc: "str"
-    entity_key: "str"
-    entity_type: "str"
-    errule_code: "str"
+    entity_data: 'List[str]'
+    entity_desc: 'str'
+    entity_key: 'str'
+    entity_type: 'str'
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: "Dict[str, List[FeatureForAttributeWithAttributes]]"
-    feature_ids: "List[FeatureID]"
-    first_seen_dt: "datetime"
-    identifier_data: "List[str]"
-    internal_id: "int"
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    feature_ids: 'List[FeatureID]'
+    first_seen_dt: 'datetime'
+    identifier_data: 'List[str]'
+    internal_id: 'int'
     """
     Internal identifier for the record.
     """
 
-    json_data: "Dict[str, Object]"
-    last_seen_dt: "datetime"
-    match_key: "str"
+    json_data: 'Dict[str, Object]'
+    last_seen_dt: 'datetime'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level: "int"
-    match_level_code: "str"
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    name_data: "List[str]"
-    other_data: "List[str]"
-    phone_data: "List[str]"
-    record_id: "str"
+    name_data: 'List[str]'
+    other_data: 'List[str]'
+    phone_data: 'List[str]'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
-    relationship_data: "List[str]"
-    unmapped_data: "Dict[str, Object]"
+    relationship_data: 'List[str]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "RecordForGetEntity":
+    def from_json_data(cls, data: Any) -> 'RecordForGetEntity':
         return cls(
             _from_json_data(List[str], data.get("ADDRESS_DATA")),
             _from_json_data(List[str], data.get("ATTRIBUTE_DATA")),
@@ -2721,9 +2617,7 @@ class RecordForGetEntity:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(
-                Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")
-            ),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
@@ -2769,21 +2663,21 @@ class RecordForGetEntity:
         data["UNMAPPED_DATA"] = _to_json_data(self.unmapped_data)
         return data
 
-
 @dataclass
 class RecordKey:
-    data_source: "str"
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    record_id: "str"
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "RecordKey":
+    def from_json_data(cls, data: Any) -> 'RecordKey':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(str, data.get("RECORD_ID")),
@@ -2795,23 +2689,23 @@ class RecordKey:
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
 
-
 @dataclass
 class RecordSummary:
-    data_source: "str"
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    first_seen_dt: "datetime"
-    last_seen_dt: "datetime"
-    record_count: "int"
+    first_seen_dt: 'datetime'
+    last_seen_dt: 'datetime'
+    record_count: 'int'
     """
     The number of records for the entity with the same data source code.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "RecordSummary":
+    def from_json_data(cls, data: Any) -> 'RecordSummary':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
@@ -2827,15 +2721,14 @@ class RecordSummary:
         data["RECORD_COUNT"] = _to_json_data(self.record_count)
         return data
 
-
 @dataclass
 class RefreshLocks:
-    count: "int"
-    max_ms: "int"
-    total_ms: "int"
+    count: 'int'
+    max_ms: 'int'
+    total_ms: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "RefreshLocks":
+    def from_json_data(cls, data: Any) -> 'RefreshLocks':
         return cls(
             _from_json_data(int, data.get("count")),
             _from_json_data(int, data.get("maxMS")),
@@ -2849,24 +2742,23 @@ class RefreshLocks:
         data["totalMS"] = _to_json_data(self.total_ms)
         return data
 
-
 @dataclass
 class RelAnchor:
-    domain: "str"
-    feat_desc: "str"
+    domain: 'str'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_id: "int"
-    linked_feat_desc: "str"
-    linked_feat_id: "int"
-    linked_feat_type: "str"
-    linked_feat_usage_type: "str"
-    rel_pointer: "List[RelPointer]"
+    feat_id: 'int'
+    linked_feat_desc: 'str'
+    linked_feat_id: 'int'
+    linked_feat_type: 'str'
+    linked_feat_usage_type: 'str'
+    rel_pointer: 'List[RelPointer]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "RelAnchor":
+    def from_json_data(cls, data: Any) -> 'RelAnchor':
         return cls(
             _from_json_data(str, data.get("DOMAIN")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -2890,24 +2782,23 @@ class RelAnchor:
         data["REL_POINTER"] = _to_json_data(self.rel_pointer)
         return data
 
-
 @dataclass
 class RelLink:
-    domain: "str"
-    feat_desc: "str"
+    domain: 'str'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_id: "int"
-    feat_usage_type: "str"
-    linked_feat_desc: "str"
-    linked_feat_id: "int"
-    linked_feat_type: "str"
-    linked_feat_usage_type: "str"
+    feat_id: 'int'
+    feat_usage_type: 'str'
+    linked_feat_desc: 'str'
+    linked_feat_id: 'int'
+    linked_feat_type: 'str'
+    linked_feat_usage_type: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "RelLink":
+    def from_json_data(cls, data: Any) -> 'RelLink':
         return cls(
             _from_json_data(str, data.get("DOMAIN")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -2931,23 +2822,22 @@ class RelLink:
         data["LINKED_FEAT_USAGE_TYPE"] = _to_json_data(self.linked_feat_usage_type)
         return data
 
-
 @dataclass
 class RelPointer:
-    domain: "str"
-    feat_desc: "str"
+    domain: 'str'
+    feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
-    feat_id: "int"
-    feat_usage_type: "str"
-    linked_feat_desc: "str"
-    linked_feat_id: "int"
-    linked_feat_type: "str"
+    feat_id: 'int'
+    feat_usage_type: 'str'
+    linked_feat_desc: 'str'
+    linked_feat_id: 'int'
+    linked_feat_type: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "RelPointer":
+    def from_json_data(cls, data: Any) -> 'RelPointer':
         return cls(
             _from_json_data(str, data.get("DOMAIN")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -2969,56 +2859,56 @@ class RelPointer:
         data["LINKED_FEAT_TYPE"] = _to_json_data(self.linked_feat_type)
         return data
 
-
 @dataclass
 class RelatedEntity:
-    entity_id: "int"
+    entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
     It may change when new information is added.
     """
 
-    entity_name: "str"
+    entity_name: 'str'
     """
     A name this entity goes by. An entity could have multiple names.
     """
 
-    errule_code: "str"
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    is_ambiguous: "int"
+    is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
     """
 
-    is_disclosed: "int"
+    is_disclosed: 'int'
     """
     Indicates if this is a disclosed relationship.
     """
 
-    last_seen_dt: "datetime"
-    match_key: "str"
+    last_seen_dt: 'datetime'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level: "int"
-    match_level_code: "str"
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    records: "List[Record]"
-    record_summary: "List[RecordSummary]"
+    records: 'List[Record]'
+    record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
     entity.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "RelatedEntity":
+    def from_json_data(cls, data: Any) -> 'RelatedEntity':
         return cls(
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
@@ -3048,13 +2938,12 @@ class RelatedEntity:
         data["RECORD_SUMMARY"] = _to_json_data(self.record_summary)
         return data
 
-
 @dataclass
 class RepairDiagnosis:
-    types: "int"
+    types: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "RepairDiagnosis":
+    def from_json_data(cls, data: Any) -> 'RepairDiagnosis':
         return cls(
             _from_json_data(int, data.get("types")),
         )
@@ -3064,15 +2953,14 @@ class RepairDiagnosis:
         data["types"] = _to_json_data(self.types)
         return data
 
-
 @dataclass
 class Repository:
-    id: "str"
-    location: "str"
-    type: "str"
+    id: 'str'
+    location: 'str'
+    type: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Repository":
+    def from_json_data(cls, data: Any) -> 'Repository':
         return cls(
             _from_json_data(str, data.get("id")),
             _from_json_data(str, data.get("location")),
@@ -3086,16 +2974,15 @@ class Repository:
         data["type"] = _to_json_data(self.type)
         return data
 
-
 @dataclass
 class Reresolve:
-    new_feature_ftypes: "Dict[str, int]"
-    suppressed_candidate_builders_for_reresolve: "Fixme"
-    suppressed_scored_feature_type_for_reresolve: "Fixme"
-    triggers: "ReresolveTriggers"
+    new_feature_ftypes: 'Dict[str, int]'
+    suppressed_candidate_builders_for_reresolve: 'Fixme'
+    suppressed_scored_feature_type_for_reresolve: 'Fixme'
+    triggers: 'ReresolveTriggers'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Reresolve":
+    def from_json_data(cls, data: Any) -> 'Reresolve':
         return cls(
             _from_json_data(Dict[str, int], data.get("newFeatureFTypes")),
             _from_json_data(Fixme, data.get("suppressedCandidateBuildersForReresolve")),
@@ -3106,26 +2993,21 @@ class Reresolve:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["newFeatureFTypes"] = _to_json_data(self.new_feature_ftypes)
-        data["suppressedCandidateBuildersForReresolve"] = _to_json_data(
-            self.suppressed_candidate_builders_for_reresolve
-        )
-        data["suppressedScoredFeatureTypeForReresolve"] = _to_json_data(
-            self.suppressed_scored_feature_type_for_reresolve
-        )
+        data["suppressedCandidateBuildersForReresolve"] = _to_json_data(self.suppressed_candidate_builders_for_reresolve)
+        data["suppressedScoredFeatureTypeForReresolve"] = _to_json_data(self.suppressed_scored_feature_type_for_reresolve)
         data["triggers"] = _to_json_data(self.triggers)
         return data
 
-
 @dataclass
 class ReresolveTriggers:
-    abort_retry: "int"
-    multiple_resolvable_candidates: "int"
-    resolve_new_features: "int"
-    skipped: "int"
-    unresolve_movement: "int"
+    abort_retry: 'int'
+    multiple_resolvable_candidates: 'int'
+    resolve_new_features: 'int'
+    skipped: 'int'
+    unresolve_movement: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ReresolveTriggers":
+    def from_json_data(cls, data: Any) -> 'ReresolveTriggers':
         return cls(
             _from_json_data(int, data.get("abortRetry")),
             _from_json_data(int, data.get("multipleResolvableCandidates")),
@@ -3137,26 +3019,23 @@ class ReresolveTriggers:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["abortRetry"] = _to_json_data(self.abort_retry)
-        data["multipleResolvableCandidates"] = _to_json_data(
-            self.multiple_resolvable_candidates
-        )
+        data["multipleResolvableCandidates"] = _to_json_data(self.multiple_resolvable_candidates)
         data["resolveNewFeatures"] = _to_json_data(self.resolve_new_features)
         data["skipped"] = _to_json_data(self.skipped)
         data["unresolveMovement"] = _to_json_data(self.unresolve_movement)
         return data
 
-
 @dataclass
 class ResolutionStep:
-    inbound_virtual_entity_id: "str"
-    match_info: "MatchInfo"
-    result_virtual_entity_id: "str"
-    step: "int"
-    virtual_entity: "VirtualEntitySynopsis"
-    virtual_entity0: "VirtualEntitySynopsis"
+    inbound_virtual_entity_id: 'str'
+    match_info: 'MatchInfo'
+    result_virtual_entity_id: 'str'
+    step: 'int'
+    virtual_entity: 'VirtualEntitySynopsis'
+    virtual_entity0: 'VirtualEntitySynopsis'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ResolutionStep":
+    def from_json_data(cls, data: Any) -> 'ResolutionStep':
         return cls(
             _from_json_data(str, data.get("INBOUND_VIRTUAL_ENTITY_ID")),
             _from_json_data(MatchInfo, data.get("MATCH_INFO")),
@@ -3168,9 +3047,7 @@ class ResolutionStep:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["INBOUND_VIRTUAL_ENTITY_ID"] = _to_json_data(
-            self.inbound_virtual_entity_id
-        )
+        data["INBOUND_VIRTUAL_ENTITY_ID"] = _to_json_data(self.inbound_virtual_entity_id)
         data["MATCH_INFO"] = _to_json_data(self.match_info)
         data["RESULT_VIRTUAL_ENTITY_ID"] = _to_json_data(self.result_virtual_entity_id)
         data["STEP"] = _to_json_data(self.step)
@@ -3178,67 +3055,64 @@ class ResolutionStep:
         data["VIRTUAL_ENTITY_2"] = _to_json_data(self.virtual_entity0)
         return data
 
-
 @dataclass
 class ResolvedEntity:
-    entity_id: "int"
+    entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
     It may change when new information is added.
     """
 
-    entity_name: "str"
+    entity_name: 'str'
     """
     A name this entity goes by. An entity could have multiple names.
     """
 
-    errule_code: "str"
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: "Dict[str, List[FeatureForAttributeWithAttributes]]"
-    feature_ids: "List[FeatureID]"
-    is_ambiguous: "int"
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    feature_ids: 'List[FeatureID]'
+    is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
     """
 
-    is_disclosed: "int"
+    is_disclosed: 'int'
     """
     Indicates if this is a disclosed relationship.
     """
 
-    last_seen_dt: "datetime"
-    match_key: "str"
+    last_seen_dt: 'datetime'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level: "int"
-    match_level_code: "str"
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    records: "List[Record]"
-    record_summary: "List[RecordSummary]"
+    records: 'List[Record]'
+    record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
     entity.
     """
 
-    record_types: "List[str]"
+    record_types: 'List[str]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ResolvedEntity":
+    def from_json_data(cls, data: Any) -> 'ResolvedEntity':
         return cls(
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(
-                Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")
-            ),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(int, data.get("IS_AMBIGUOUS")),
             _from_json_data(int, data.get("IS_DISCLOSED")),
@@ -3269,14 +3143,13 @@ class ResolvedEntity:
         data["RECORD_TYPES"] = _to_json_data(self.record_types)
         return data
 
-
 @dataclass
 class ResolvedEntityAndMatchInfo:
-    entity: "EntityForResolvedEntity"
-    match_info: "MatchInfo"
+    entity: 'EntityForResolvedEntity'
+    match_info: 'MatchInfo'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ResolvedEntityAndMatchInfo":
+    def from_json_data(cls, data: Any) -> 'ResolvedEntityAndMatchInfo':
         return cls(
             _from_json_data(EntityForResolvedEntity, data.get("ENTITY")),
             _from_json_data(MatchInfo, data.get("MATCH_INFO")),
@@ -3288,60 +3161,59 @@ class ResolvedEntityAndMatchInfo:
         data["MATCH_INFO"] = _to_json_data(self.match_info)
         return data
 
-
 @dataclass
 class ResolvedEntityForGetEntity:
-    entity_id: "int"
+    entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
     It may change when new information is added.
     """
 
-    entity_name: "str"
+    entity_name: 'str'
     """
     A name this entity goes by. An entity could have multiple names.
     """
 
-    errule_code: "str"
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: "Dict[str, List[FeatureForGetEntity]]"
-    feature_ids: "List[FeatureID]"
-    is_ambiguous: "int"
+    features: 'Dict[str, List[FeatureForGetEntity]]'
+    feature_ids: 'List[FeatureID]'
+    is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
     """
 
-    is_disclosed: "int"
+    is_disclosed: 'int'
     """
     Indicates if this is a disclosed relationship.
     """
 
-    last_seen_dt: "datetime"
-    match_key: "str"
+    last_seen_dt: 'datetime'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level: "int"
-    match_level_code: "str"
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    records: "List[RecordForGetEntity]"
-    record_summary: "List[RecordSummary]"
+    records: 'List[RecordForGetEntity]'
+    record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
     entity.
     """
 
-    record_types: "List[str]"
+    record_types: 'List[str]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ResolvedEntityForGetEntity":
+    def from_json_data(cls, data: Any) -> 'ResolvedEntityForGetEntity':
         return cls(
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
@@ -3377,22 +3249,21 @@ class ResolvedEntityForGetEntity:
         data["RECORD_TYPES"] = _to_json_data(self.record_types)
         return data
 
-
 @dataclass
 class SysOom:
-    felem_id: "int"
-    ftype_id: "int"
-    lens_id: "int"
-    lib_feat_id: "int"
-    lib_felem_id: "int"
-    next_thresh: "int"
-    oom_level: "str"
-    oom_type: "str"
-    thresh1_cnt: "int"
-    thresh1_oom: "int"
+    felem_id: 'int'
+    ftype_id: 'int'
+    lens_id: 'int'
+    lib_feat_id: 'int'
+    lib_felem_id: 'int'
+    next_thresh: 'int'
+    oom_level: 'str'
+    oom_type: 'str'
+    thresh1_cnt: 'int'
+    thresh1_oom: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SysOom":
+    def from_json_data(cls, data: Any) -> 'SysOom':
         return cls(
             _from_json_data(int, data.get("FELEM_ID")),
             _from_json_data(int, data.get("FTYPE_ID")),
@@ -3420,22 +3291,22 @@ class SysOom:
         data["THRESH1_OOM"] = _to_json_data(self.thresh1_oom)
         return data
 
-
 @dataclass
 class SampleRecord:
-    data_source: "str"
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    flags: "List[str]"
-    record_id: "str"
+    flags: 'List[str]'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SampleRecord":
+    def from_json_data(cls, data: Any) -> 'SampleRecord':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(List[str], data.get("FLAGS")),
@@ -3449,15 +3320,14 @@ class SampleRecord:
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
 
-
 @dataclass
 class SchemaVersion:
-    engine_schema_version: "str"
-    maximum_required_schema_version: "str"
-    minimum_required_schema_version: "str"
+    engine_schema_version: 'str'
+    maximum_required_schema_version: 'str'
+    minimum_required_schema_version: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SchemaVersion":
+    def from_json_data(cls, data: Any) -> 'SchemaVersion':
         return cls(
             _from_json_data(str, data.get("ENGINE_SCHEMA_VERSION")),
             _from_json_data(str, data.get("MAXIMUM_REQUIRED_SCHEMA_VERSION")),
@@ -3467,32 +3337,25 @@ class SchemaVersion:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["ENGINE_SCHEMA_VERSION"] = _to_json_data(self.engine_schema_version)
-        data["MAXIMUM_REQUIRED_SCHEMA_VERSION"] = _to_json_data(
-            self.maximum_required_schema_version
-        )
-        data["MINIMUM_REQUIRED_SCHEMA_VERSION"] = _to_json_data(
-            self.minimum_required_schema_version
-        )
+        data["MAXIMUM_REQUIRED_SCHEMA_VERSION"] = _to_json_data(self.maximum_required_schema_version)
+        data["MINIMUM_REQUIRED_SCHEMA_VERSION"] = _to_json_data(self.minimum_required_schema_version)
         return data
-
 
 @dataclass
 class Scoring:
-    cache_hit: "Dict[str, int]"
-    cache_miss: "Dict[str, int]"
-    scored_pairs: "Dict[str, int]"
-    suppressed_disclosed_relationship_domain_count: "int"
-    suppressed_scored_feature_type: "Fixme"
+    cache_hit: 'Dict[str, int]'
+    cache_miss: 'Dict[str, int]'
+    scored_pairs: 'Dict[str, int]'
+    suppressed_disclosed_relationship_domain_count: 'int'
+    suppressed_scored_feature_type: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Scoring":
+    def from_json_data(cls, data: Any) -> 'Scoring':
         return cls(
             _from_json_data(Dict[str, int], data.get("cacheHit")),
             _from_json_data(Dict[str, int], data.get("cacheMiss")),
             _from_json_data(Dict[str, int], data.get("scoredPairs")),
-            _from_json_data(
-                int, data.get("suppressedDisclosedRelationshipDomainCount")
-            ),
+            _from_json_data(int, data.get("suppressedDisclosedRelationshipDomainCount")),
             _from_json_data(Fixme, data.get("suppressedScoredFeatureType")),
         )
 
@@ -3501,27 +3364,20 @@ class Scoring:
         data["cacheHit"] = _to_json_data(self.cache_hit)
         data["cacheMiss"] = _to_json_data(self.cache_miss)
         data["scoredPairs"] = _to_json_data(self.scored_pairs)
-        data["suppressedDisclosedRelationshipDomainCount"] = _to_json_data(
-            self.suppressed_disclosed_relationship_domain_count
-        )
-        data["suppressedScoredFeatureType"] = _to_json_data(
-            self.suppressed_scored_feature_type
-        )
+        data["suppressedDisclosedRelationshipDomainCount"] = _to_json_data(self.suppressed_disclosed_relationship_domain_count)
+        data["suppressedScoredFeatureType"] = _to_json_data(self.suppressed_scored_feature_type)
         return data
-
 
 @dataclass
 class SearchRequest:
-    features: "Dict[str, List[FeatureDescriptionValue]]"
-    json_data: "str"
-    search_profile: "str"
+    features: 'Dict[str, List[FeatureDescriptionValue]]'
+    json_data: 'str'
+    search_profile: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SearchRequest":
+    def from_json_data(cls, data: Any) -> 'SearchRequest':
         return cls(
-            _from_json_data(
-                Dict[str, List[FeatureDescriptionValue]], data.get("FEATURES")
-            ),
+            _from_json_data(Dict[str, List[FeatureDescriptionValue]], data.get("FEATURES")),
             _from_json_data(str, data.get("JSON_DATA")),
             _from_json_data(str, data.get("SEARCH_PROFILE")),
         )
@@ -3533,17 +3389,14 @@ class SearchRequest:
         data["SEARCH_PROFILE"] = _to_json_data(self.search_profile)
         return data
 
-
 @dataclass
 class SearchStatistic:
-    candidate_keys: "CandidateKeysForSearchStatistic"
+    candidate_keys: 'CandidateKeysForSearchStatistic'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SearchStatistic":
+    def from_json_data(cls, data: Any) -> 'SearchStatistic':
         return cls(
-            _from_json_data(
-                CandidateKeysForSearchStatistic, data.get("CANDIDATE_KEYS")
-            ),
+            _from_json_data(CandidateKeysForSearchStatistic, data.get("CANDIDATE_KEYS")),
         )
 
     def to_json_data(self) -> Any:
@@ -3551,95 +3404,94 @@ class SearchStatistic:
         data["CANDIDATE_KEYS"] = _to_json_data(self.candidate_keys)
         return data
 
-
 @dataclass
 class SenzingEntitySpecification:
-    account_domain: "str"
-    account_number: "str"
-    addr_city: "str"
-    addr_country: "str"
-    addr_from_date: "str"
-    addr_full: "str"
-    addr_line1: "str"
-    addr_line2: "str"
-    addr_line3: "str"
-    addr_line4: "str"
-    addr_line5: "str"
-    addr_line6: "str"
-    addr_postal_code: "str"
-    addr_state: "str"
-    addr_thru_date: "str"
-    addr_type: "str"
-    citizenship: "str"
-    date_of_birth: "str"
-    date_of_death: "str"
-    drivers_license_number: "str"
-    drivers_license_state: "str"
-    duns_number: "str"
-    email_address: "str"
-    employer: "str"
-    employer_name: "str"
-    facebook: "str"
-    gender: "str"
-    group_assn_id_number: "str"
-    group_assn_id_type: "str"
-    group_association_org_name: "str"
-    group_association_type: "str"
-    instagram: "str"
-    lei_number: "str"
-    linkedin: "str"
-    name_first: "str"
-    name_full: "str"
-    name_last: "str"
-    name_org: "str"
-    name_prefix: "str"
-    name_suffix: "str"
-    name_type: "str"
-    nationality: "str"
-    national_id_country: "str"
-    national_id_number: "str"
-    native_name_full: "str"
-    npi_number: "str"
-    other_id_country: "str"
-    other_id_number: "str"
-    other_id_type: "str"
-    passport_country: "str"
-    passport_number: "str"
-    phone_from_date: "str"
-    phone_number: "str"
-    phone_thru_date: "str"
-    phone_type: "str"
-    place_of_birth: "str"
-    primary_name_first: "str"
-    primary_name_full: "str"
-    primary_name_last: "str"
-    primary_name_middle: "str"
-    primary_name_org: "str"
-    record_type: "str"
-    registration_country: "str"
-    registration_date: "str"
-    rel_anchor_key: "str"
-    rel_pointer_key: "str"
-    secondary_name_org: "str"
-    signal: "str"
-    skype: "str"
-    ssn_number: "str"
-    tango: "str"
-    tax_id_country: "str"
-    tax_id_number: "str"
-    tax_id_type: "str"
-    telegram: "str"
-    trusted_id_number: "str"
-    trusted_id_type: "str"
-    twitter: "str"
-    viber: "str"
-    website_address: "str"
-    wechat: "str"
-    whatsapp: "str"
-    zoomroom: "str"
+    account_domain: 'str'
+    account_number: 'str'
+    addr_city: 'str'
+    addr_country: 'str'
+    addr_from_date: 'str'
+    addr_full: 'str'
+    addr_line1: 'str'
+    addr_line2: 'str'
+    addr_line3: 'str'
+    addr_line4: 'str'
+    addr_line5: 'str'
+    addr_line6: 'str'
+    addr_postal_code: 'str'
+    addr_state: 'str'
+    addr_thru_date: 'str'
+    addr_type: 'str'
+    citizenship: 'str'
+    date_of_birth: 'str'
+    date_of_death: 'str'
+    drivers_license_number: 'str'
+    drivers_license_state: 'str'
+    duns_number: 'str'
+    email_address: 'str'
+    employer: 'str'
+    employer_name: 'str'
+    facebook: 'str'
+    gender: 'str'
+    group_assn_id_number: 'str'
+    group_assn_id_type: 'str'
+    group_association_org_name: 'str'
+    group_association_type: 'str'
+    instagram: 'str'
+    lei_number: 'str'
+    linkedin: 'str'
+    name_first: 'str'
+    name_full: 'str'
+    name_last: 'str'
+    name_org: 'str'
+    name_prefix: 'str'
+    name_suffix: 'str'
+    name_type: 'str'
+    nationality: 'str'
+    national_id_country: 'str'
+    national_id_number: 'str'
+    native_name_full: 'str'
+    npi_number: 'str'
+    other_id_country: 'str'
+    other_id_number: 'str'
+    other_id_type: 'str'
+    passport_country: 'str'
+    passport_number: 'str'
+    phone_from_date: 'str'
+    phone_number: 'str'
+    phone_thru_date: 'str'
+    phone_type: 'str'
+    place_of_birth: 'str'
+    primary_name_first: 'str'
+    primary_name_full: 'str'
+    primary_name_last: 'str'
+    primary_name_middle: 'str'
+    primary_name_org: 'str'
+    record_type: 'str'
+    registration_country: 'str'
+    registration_date: 'str'
+    rel_anchor_key: 'str'
+    rel_pointer_key: 'str'
+    secondary_name_org: 'str'
+    signal: 'str'
+    skype: 'str'
+    ssn_number: 'str'
+    tango: 'str'
+    tax_id_country: 'str'
+    tax_id_number: 'str'
+    tax_id_type: 'str'
+    telegram: 'str'
+    trusted_id_number: 'str'
+    trusted_id_type: 'str'
+    twitter: 'str'
+    viber: 'str'
+    website_address: 'str'
+    wechat: 'str'
+    whatsapp: 'str'
+    zoomroom: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SenzingEntitySpecification":
+    def from_json_data(cls, data: Any) -> 'SenzingEntitySpecification':
         return cls(
             _from_json_data(str, data.get("ACCOUNT_DOMAIN")),
             _from_json_data(str, data.get("ACCOUNT_NUMBER")),
@@ -3757,9 +3609,7 @@ class SenzingEntitySpecification:
         data["GENDER"] = _to_json_data(self.gender)
         data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
         data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
-        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(
-            self.group_association_org_name
-        )
+        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
         data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
         data["INSTAGRAM"] = _to_json_data(self.instagram)
         data["LEI_NUMBER"] = _to_json_data(self.lei_number)
@@ -3815,15 +3665,14 @@ class SenzingEntitySpecification:
         data["ZOOMROOM"] = _to_json_data(self.zoomroom)
         return data
 
-
 @dataclass
 class Summary:
-    found: "int"
-    generic: "int"
-    not_found: "int"
+    found: 'int'
+    generic: 'int'
+    not_found: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Summary":
+    def from_json_data(cls, data: Any) -> 'Summary':
         return cls(
             _from_json_data(int, data.get("FOUND")),
             _from_json_data(int, data.get("GENERIC")),
@@ -3837,16 +3686,15 @@ class Summary:
         data["NOT_FOUND"] = _to_json_data(self.not_found)
         return data
 
-
 @dataclass
 class SystemLoad:
-    cpu_idle: "str"
-    cpu_system: "str"
-    cpu_user: "str"
-    cpu_wait: "str"
+    cpu_idle: 'str'
+    cpu_system: 'str'
+    cpu_user: 'str'
+    cpu_wait: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SystemLoad":
+    def from_json_data(cls, data: Any) -> 'SystemLoad':
         return cls(
             _from_json_data(str, data.get("cpuIdle")),
             _from_json_data(str, data.get("cpuSystem")),
@@ -3862,15 +3710,14 @@ class SystemLoad:
         data["cpuWait"] = _to_json_data(self.cpu_wait)
         return data
 
-
 @dataclass
 class SystemResources:
-    curr_resources: "CurrResources"
-    init_resources: "InitResources"
-    system_load: "SystemLoad"
+    curr_resources: 'CurrResources'
+    init_resources: 'InitResources'
+    system_load: 'SystemLoad'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SystemResources":
+    def from_json_data(cls, data: Any) -> 'SystemResources':
         return cls(
             _from_json_data(CurrResources, data.get("currResources")),
             _from_json_data(InitResources, data.get("initResources")),
@@ -3884,13 +3731,12 @@ class SystemResources:
         data["systemLoad"] = _to_json_data(self.system_load)
         return data
 
-
 @dataclass
 class SzConfigExportResponse:
-    g2_config: "G2config"
+    g2_config: 'G2config'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzConfigExportResponse":
+    def from_json_data(cls, data: Any) -> 'SzConfigExportResponse':
         return cls(
             _from_json_data(G2config, data.get("G2_CONFIG")),
         )
@@ -3900,13 +3746,12 @@ class SzConfigExportResponse:
         data["G2_CONFIG"] = _to_json_data(self.g2_config)
         return data
 
-
 @dataclass
 class SzConfigGetDataSourceRegistryResponse:
-    data_sources: "List[DataSource]"
+    data_sources: 'List[DataSource]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzConfigGetDataSourceRegistryResponse":
+    def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourceRegistryResponse':
         return cls(
             _from_json_data(List[DataSource], data.get("DATA_SOURCES")),
         )
@@ -3916,13 +3761,12 @@ class SzConfigGetDataSourceRegistryResponse:
         data["DATA_SOURCES"] = _to_json_data(self.data_sources)
         return data
 
-
 @dataclass
 class SzConfigManagerGetConfigRegistryResponse:
-    configs: "List[Config]"
+    configs: 'List[Config]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzConfigManagerGetConfigRegistryResponse":
+    def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigRegistryResponse':
         return cls(
             _from_json_data(List[Config], data.get("CONFIGS")),
         )
@@ -3932,13 +3776,12 @@ class SzConfigManagerGetConfigRegistryResponse:
         data["CONFIGS"] = _to_json_data(self.configs)
         return data
 
-
 @dataclass
 class SzConfigRegisterDataSourceResponse:
-    dsrc_id: "int"
+    dsrc_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzConfigRegisterDataSourceResponse":
+    def from_json_data(cls, data: Any) -> 'SzConfigRegisterDataSourceResponse':
         return cls(
             _from_json_data(int, data.get("DSRC_ID")),
         )
@@ -3948,13 +3791,12 @@ class SzConfigRegisterDataSourceResponse:
         data["DSRC_ID"] = _to_json_data(self.dsrc_id)
         return data
 
-
 @dataclass
 class SzConfigUnregisterDataSourceResponse:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzConfigUnregisterDataSourceResponse":
+    def from_json_data(cls, data: Any) -> 'SzConfigUnregisterDataSourceResponse':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -3964,16 +3806,13 @@ class SzConfigUnregisterDataSourceResponse:
         data["FIXME"] = _to_json_data(self.fixme)
         return data
 
-
 @dataclass
 class SzDiagnosticCheckRepositoryPerformanceResponse:
-    insert_time: "int"
-    num_records_inserted: "int"
+    insert_time: 'int'
+    num_records_inserted: 'int'
 
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzDiagnosticCheckRepositoryPerformanceResponse":
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckRepositoryPerformanceResponse':
         return cls(
             _from_json_data(int, data.get("insertTime")),
             _from_json_data(int, data.get("numRecordsInserted")),
@@ -3985,15 +3824,14 @@ class SzDiagnosticCheckRepositoryPerformanceResponse:
         data["numRecordsInserted"] = _to_json_data(self.num_records_inserted)
         return data
 
-
 @dataclass
 class SzDiagnosticGetFeatureResponse:
-    elements: "List[Feature]"
-    ftype_code: "str"
-    lib_feat_id: "int"
+    elements: 'List[Feature]'
+    ftype_code: 'str'
+    lib_feat_id: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzDiagnosticGetFeatureResponse":
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticGetFeatureResponse':
         return cls(
             _from_json_data(List[Feature], data.get("ELEMENTS")),
             _from_json_data(str, data.get("FTYPE_CODE")),
@@ -4007,13 +3845,12 @@ class SzDiagnosticGetFeatureResponse:
         data["LIB_FEAT_ID"] = _to_json_data(self.lib_feat_id)
         return data
 
-
 @dataclass
 class SzDiagnosticGetRepositoryInfoResponse:
-    data_stores: "List[Repository]"
+    data_stores: 'List[Repository]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzDiagnosticGetRepositoryInfoResponse":
+    def from_json_data(cls, data: Any) -> 'SzDiagnosticGetRepositoryInfoResponse':
         return cls(
             _from_json_data(List[Repository], data.get("dataStores")),
         )
@@ -4023,23 +3860,23 @@ class SzDiagnosticGetRepositoryInfoResponse:
         data["dataStores"] = _to_json_data(self.data_stores)
         return data
 
-
 @dataclass
 class SzEngineAddRecordResponse:
-    affected_entities: "List[AffectedEntity]"
-    data_source: "str"
+    affected_entities: 'List[AffectedEntity]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    interesting_entities: "InterestingEntities"
-    record_id: "str"
+    interesting_entities: 'InterestingEntities'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineAddRecordResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineAddRecordResponse':
         return cls(
             _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(str, data.get("DATA_SOURCE")),
@@ -4054,24 +3891,24 @@ class SzEngineAddRecordResponse:
         data["INTERESTING_ENTITIES"] = _to_json_data(self.interesting_entities)
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
-
 
 @dataclass
 class SzEngineDeleteRecordResponse:
-    affected_entities: "List[AffectedEntity]"
-    data_source: "str"
+    affected_entities: 'List[AffectedEntity]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    interesting_entities: "InterestingEntities"
-    record_id: "str"
+    interesting_entities: 'InterestingEntities'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineDeleteRecordResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineDeleteRecordResponse':
         return cls(
             _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(str, data.get("DATA_SOURCE")),
@@ -4087,13 +3924,12 @@ class SzEngineDeleteRecordResponse:
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
 
-
 @dataclass
 class SzEngineExportCsvEntityReportCsvColumnList:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineExportCsvEntityReportCsvColumnList":
+    def from_json_data(cls, data: Any) -> 'SzEngineExportCsvEntityReportCsvColumnList':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4102,14 +3938,13 @@ class SzEngineExportCsvEntityReportCsvColumnList:
         data: Dict[str, Any] = {}
         data["FIXME"] = _to_json_data(self.fixme)
         return data
-
 
 @dataclass
 class SzEngineFetchNextResponse:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFetchNextResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFetchNextResponse':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4118,16 +3953,13 @@ class SzEngineFetchNextResponse:
         data: Dict[str, Any] = {}
         data["FIXME"] = _to_json_data(self.fixme)
         return data
-
 
 @dataclass
 class SzEngineFindInterestingEntitiesByEntityIDResponse:
-    interesting_entities: "InterestingEntities"
+    interesting_entities: 'InterestingEntities'
 
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzEngineFindInterestingEntitiesByEntityIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindInterestingEntitiesByEntityIDResponse':
         return cls(
             _from_json_data(InterestingEntities, data.get("INTERESTING_ENTITIES")),
         )
@@ -4136,16 +3968,13 @@ class SzEngineFindInterestingEntitiesByEntityIDResponse:
         data: Dict[str, Any] = {}
         data["INTERESTING_ENTITIES"] = _to_json_data(self.interesting_entities)
         return data
-
 
 @dataclass
 class SzEngineFindInterestingEntitiesByRecordIDResponse:
-    interesting_entities: "InterestingEntities"
+    interesting_entities: 'InterestingEntities'
 
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzEngineFindInterestingEntitiesByRecordIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindInterestingEntitiesByRecordIDResponse':
         return cls(
             _from_json_data(InterestingEntities, data.get("INTERESTING_ENTITIES")),
         )
@@ -4155,13 +3984,12 @@ class SzEngineFindInterestingEntitiesByRecordIDResponse:
         data["INTERESTING_ENTITIES"] = _to_json_data(self.interesting_entities)
         return data
 
-
 @dataclass
 class SzEngineFindNetworkByEntityIDEntityIds:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindNetworkByEntityIDEntityIds":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByEntityIDEntityIds':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4170,18 +3998,17 @@ class SzEngineFindNetworkByEntityIDEntityIds:
         data: Dict[str, Any] = {}
         data["FIXME"] = _to_json_data(self.fixme)
         return data
-
 
 @dataclass
 class SzEngineFindNetworkByEntityIDResponse:
-    entities: "List[Entity]"
-    entity_network_links: "List[EntityNetworkLink]"
-    entity_paths: "List[EntityPath]"
-    entity_path_links: "List[EntityPathLink]"
-    max_entity_limit_reached: "str"
+    entities: 'List[Entity]'
+    entity_network_links: 'List[EntityNetworkLink]'
+    entity_paths: 'List[EntityPath]'
+    entity_path_links: 'List[EntityPathLink]'
+    max_entity_limit_reached: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindNetworkByEntityIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByEntityIDResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[EntityNetworkLink], data.get("ENTITY_NETWORK_LINKS")),
@@ -4198,17 +4025,17 @@ class SzEngineFindNetworkByEntityIDResponse:
         data["ENTITY_PATH_LINKS"] = _to_json_data(self.entity_path_links)
         data["MAX_ENTITY_LIMIT_REACHED"] = _to_json_data(self.max_entity_limit_reached)
         return data
-
 
 @dataclass
 class SzEngineFindNetworkByRecordIDRecordKeys:
-    records: "List[RecordKey]"
+    records: 'List[RecordKey]'
     """
     A list of (data source code, record id) pairs.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindNetworkByRecordIDRecordKeys":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByRecordIDRecordKeys':
         return cls(
             _from_json_data(List[RecordKey], data.get("RECORDS")),
         )
@@ -4218,17 +4045,16 @@ class SzEngineFindNetworkByRecordIDRecordKeys:
         data["RECORDS"] = _to_json_data(self.records)
         return data
 
-
 @dataclass
 class SzEngineFindNetworkByRecordIDResponse:
-    entities: "List[Entity]"
-    entity_network_links: "List[EntityNetworkLink]"
-    entity_paths: "List[EntityPath]"
-    entity_path_links: "List[EntityPathLink]"
-    max_entity_limit_reached: "str"
+    entities: 'List[Entity]'
+    entity_network_links: 'List[EntityNetworkLink]'
+    entity_paths: 'List[EntityPath]'
+    entity_path_links: 'List[EntityPathLink]'
+    max_entity_limit_reached: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindNetworkByRecordIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByRecordIDResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[EntityNetworkLink], data.get("ENTITY_NETWORK_LINKS")),
@@ -4246,13 +4072,12 @@ class SzEngineFindNetworkByRecordIDResponse:
         data["MAX_ENTITY_LIMIT_REACHED"] = _to_json_data(self.max_entity_limit_reached)
         return data
 
-
 @dataclass
 class SzEngineFindPathByEntityIDAvoidEntityIds:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindPathByEntityIDAvoidEntityIds":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDAvoidEntityIds':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4261,16 +4086,13 @@ class SzEngineFindPathByEntityIDAvoidEntityIds:
         data: Dict[str, Any] = {}
         data["FIXME"] = _to_json_data(self.fixme)
         return data
-
 
 @dataclass
 class SzEngineFindPathByEntityIDRequiredDataSources:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzEngineFindPathByEntityIDRequiredDataSources":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDRequiredDataSources':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4280,15 +4102,14 @@ class SzEngineFindPathByEntityIDRequiredDataSources:
         data["FIXME"] = _to_json_data(self.fixme)
         return data
 
-
 @dataclass
 class SzEngineFindPathByEntityIDResponse:
-    entities: "List[Entity]"
-    entity_paths: "List[EntityPath]"
-    entity_path_links: "List[EntityPathLink]"
+    entities: 'List[Entity]'
+    entity_paths: 'List[EntityPath]'
+    entity_path_links: 'List[EntityPathLink]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindPathByEntityIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[EntityPath], data.get("ENTITY_PATHS")),
@@ -4302,16 +4123,16 @@ class SzEngineFindPathByEntityIDResponse:
         data["ENTITY_PATH_LINKS"] = _to_json_data(self.entity_path_links)
         return data
 
-
 @dataclass
 class SzEngineFindPathByRecordIDAvoidRecordKeys:
-    records: "List[RecordKey]"
+    records: 'List[RecordKey]'
     """
     A list of (data source code, record id) pairs.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindPathByRecordIDAvoidRecordKeys":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDAvoidRecordKeys':
         return cls(
             _from_json_data(List[RecordKey], data.get("RECORDS")),
         )
@@ -4321,15 +4142,12 @@ class SzEngineFindPathByRecordIDAvoidRecordKeys:
         data["RECORDS"] = _to_json_data(self.records)
         return data
 
-
 @dataclass
 class SzEngineFindPathByRecordIDRequiredDataSources:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzEngineFindPathByRecordIDRequiredDataSources":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDRequiredDataSources':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4339,15 +4157,14 @@ class SzEngineFindPathByRecordIDRequiredDataSources:
         data["FIXME"] = _to_json_data(self.fixme)
         return data
 
-
 @dataclass
 class SzEngineFindPathByRecordIDResponse:
-    entities: "List[Entity]"
-    entity_paths: "List[EntityPath]"
-    entity_path_links: "List[EntityPathLink]"
+    entities: 'List[Entity]'
+    entity_paths: 'List[EntityPath]'
+    entity_path_links: 'List[EntityPathLink]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineFindPathByRecordIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[EntityPath], data.get("ENTITY_PATHS")),
@@ -4361,14 +4178,13 @@ class SzEngineFindPathByRecordIDResponse:
         data["ENTITY_PATH_LINKS"] = _to_json_data(self.entity_path_links)
         return data
 
-
 @dataclass
 class SzEngineGetEntityByEntityIDResponse:
-    related_entities: "List[RelatedEntity]"
-    resolved_entity: "ResolvedEntityForGetEntity"
+    related_entities: 'List[RelatedEntity]'
+    resolved_entity: 'ResolvedEntityForGetEntity'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetEntityByEntityIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetEntityByEntityIDResponse':
         return cls(
             _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntityForGetEntity, data.get("RESOLVED_ENTITY")),
@@ -4379,15 +4195,14 @@ class SzEngineGetEntityByEntityIDResponse:
         data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
         return data
-
 
 @dataclass
 class SzEngineGetEntityByRecordIDResponse:
-    related_entities: "List[RelatedEntity]"
-    resolved_entity: "ResolvedEntityForGetEntity"
+    related_entities: 'List[RelatedEntity]'
+    resolved_entity: 'ResolvedEntityForGetEntity'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetEntityByRecordIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetEntityByRecordIDResponse':
         return cls(
             _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntityForGetEntity, data.get("RESOLVED_ENTITY")),
@@ -4399,20 +4214,17 @@ class SzEngineGetEntityByRecordIDResponse:
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
         return data
 
-
 @dataclass
 class SzEngineGetRecordPreviewResponse:
-    features: "Dict[str, List[FeatureForAttributeWithAttributes]]"
-    feature_ids: "List[FeatureID]"
-    json_data: "Dict[str, Object]"
-    unmapped_data: "Dict[str, Object]"
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    feature_ids: 'List[FeatureID]'
+    json_data: 'Dict[str, Object]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetRecordPreviewResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRecordPreviewResponse':
         return cls(
-            _from_json_data(
-                Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")
-            ),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
             _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
@@ -4426,60 +4238,59 @@ class SzEngineGetRecordPreviewResponse:
         data["UNMAPPED_DATA"] = _to_json_data(self.unmapped_data)
         return data
 
-
 @dataclass
 class SzEngineGetRecordResponse:
-    address_data: "List[str]"
-    attribute_data: "List[str]"
-    data_source: "str"
+    address_data: 'List[str]'
+    attribute_data: 'List[str]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    entity_data: "List[str]"
-    entity_desc: "str"
-    entity_key: "str"
-    entity_type: "str"
-    errule_code: "str"
+    entity_data: 'List[str]'
+    entity_desc: 'str'
+    entity_key: 'str'
+    entity_type: 'str'
+    errule_code: 'str'
     """
     Identifier of the entity resolution rule that was triggered.
     """
 
-    features: "Dict[str, List[FeatureForAttributeWithAttributes]]"
-    feature_ids: "List[FeatureID]"
-    first_seen_dt: "datetime"
-    identifier_data: "List[str]"
-    internal_id: "int"
+    features: 'Dict[str, List[FeatureForAttributeWithAttributes]]'
+    feature_ids: 'List[FeatureID]'
+    first_seen_dt: 'datetime'
+    identifier_data: 'List[str]'
+    internal_id: 'int'
     """
     Internal identifier for the record.
     """
 
-    json_data: "Dict[str, Object]"
-    last_seen_dt: "datetime"
-    match_key: "str"
+    json_data: 'Dict[str, Object]'
+    last_seen_dt: 'datetime'
+    match_key: 'str'
     """
     Representation of matched source record features.
     """
 
-    match_level: "int"
-    match_level_code: "str"
+    match_level: 'int'
+    match_level_code: 'str'
     """
     The type of match that occurred for the record.
     """
 
-    name_data: "List[str]"
-    other_data: "List[str]"
-    phone_data: "List[str]"
-    record_id: "str"
+    name_data: 'List[str]'
+    other_data: 'List[str]'
+    phone_data: 'List[str]'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
-    relationship_data: "List[str]"
-    unmapped_data: "Dict[str, Object]"
+    relationship_data: 'List[str]'
+    unmapped_data: 'Dict[str, Object]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetRecordResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRecordResponse':
         return cls(
             _from_json_data(List[str], data.get("ADDRESS_DATA")),
             _from_json_data(List[str], data.get("ATTRIBUTE_DATA")),
@@ -4489,9 +4300,7 @@ class SzEngineGetRecordResponse:
             _from_json_data(str, data.get("ENTITY_KEY")),
             _from_json_data(str, data.get("ENTITY_TYPE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(
-                Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")
-            ),
+            _from_json_data(Dict[str, List[FeatureForAttributeWithAttributes]], data.get("FEATURES")),
             _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(List[str], data.get("IDENTIFIER_DATA")),
@@ -4537,13 +4346,12 @@ class SzEngineGetRecordResponse:
         data["UNMAPPED_DATA"] = _to_json_data(self.unmapped_data)
         return data
 
-
 @dataclass
 class SzEngineGetRedoRecordResponse:
-    umf_proc: "UmfProc"
+    umf_proc: 'UmfProc'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetRedoRecordResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetRedoRecordResponse':
         return cls(
             _from_json_data(UmfProc, data.get("UMF_PROC")),
         )
@@ -4553,13 +4361,12 @@ class SzEngineGetRedoRecordResponse:
         data["UMF_PROC"] = _to_json_data(self.umf_proc)
         return data
 
-
 @dataclass
 class SzEngineGetStatsResponse:
-    workload: "Workload"
+    workload: 'Workload'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetStatsResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetStatsResponse':
         return cls(
             _from_json_data(Workload, data.get("workload")),
         )
@@ -4569,18 +4376,16 @@ class SzEngineGetStatsResponse:
         data["workload"] = _to_json_data(self.workload)
         return data
 
-
 @dataclass
 class SzEngineGetVirtualEntityByRecordIDRecordKeys:
-    records: "List[RecordKey]"
+    records: 'List[RecordKey]'
     """
     A list of (data source code, record id) pairs.
     """
 
+
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzEngineGetVirtualEntityByRecordIDRecordKeys":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetVirtualEntityByRecordIDRecordKeys':
         return cls(
             _from_json_data(List[RecordKey], data.get("RECORDS")),
         )
@@ -4590,13 +4395,12 @@ class SzEngineGetVirtualEntityByRecordIDRecordKeys:
         data["RECORDS"] = _to_json_data(self.records)
         return data
 
-
 @dataclass
 class SzEngineGetVirtualEntityByRecordIDResponse:
-    resolved_entity: "ResolvedEntity"
+    resolved_entity: 'ResolvedEntity'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineGetVirtualEntityByRecordIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineGetVirtualEntityByRecordIDResponse':
         return cls(
             _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
         )
@@ -4606,13 +4410,12 @@ class SzEngineGetVirtualEntityByRecordIDResponse:
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
         return data
 
-
 @dataclass
 class SzEngineHowEntityByEntityIDResponse:
-    how_results: "HowResults"
+    how_results: 'HowResults'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineHowEntityByEntityIDResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineHowEntityByEntityIDResponse':
         return cls(
             _from_json_data(HowResults, data.get("HOW_RESULTS")),
         )
@@ -4622,23 +4425,23 @@ class SzEngineHowEntityByEntityIDResponse:
         data["HOW_RESULTS"] = _to_json_data(self.how_results)
         return data
 
-
 @dataclass
 class SzEngineProcessRedoRecordResponse:
-    affected_entities: "List[AffectedEntity]"
-    data_source: "str"
+    affected_entities: 'List[AffectedEntity]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    interesting_entities: "InterestingEntities"
-    record_id: "str"
+    interesting_entities: 'InterestingEntities'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineProcessRedoRecordResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineProcessRedoRecordResponse':
         return cls(
             _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(str, data.get("DATA_SOURCE")),
@@ -4653,24 +4456,24 @@ class SzEngineProcessRedoRecordResponse:
         data["INTERESTING_ENTITIES"] = _to_json_data(self.interesting_entities)
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
-
 
 @dataclass
 class SzEngineReevaluateEntityResponse:
-    affected_entities: "List[AffectedEntity]"
-    data_source: "str"
+    affected_entities: 'List[AffectedEntity]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    interesting_entities: "InterestingEntities"
-    record_id: "str"
+    interesting_entities: 'InterestingEntities'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineReevaluateEntityResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineReevaluateEntityResponse':
         return cls(
             _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(str, data.get("DATA_SOURCE")),
@@ -4685,24 +4488,24 @@ class SzEngineReevaluateEntityResponse:
         data["INTERESTING_ENTITIES"] = _to_json_data(self.interesting_entities)
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
-
 
 @dataclass
 class SzEngineReevaluateRecordResponse:
-    affected_entities: "List[AffectedEntity]"
-    data_source: "str"
+    affected_entities: 'List[AffectedEntity]'
+    data_source: 'str'
     """
     A label identifying the provenance of the record.
     """
 
-    interesting_entities: "InterestingEntities"
-    record_id: "str"
+    interesting_entities: 'InterestingEntities'
+    record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
     """
 
+
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineReevaluateRecordResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineReevaluateRecordResponse':
         return cls(
             _from_json_data(List[AffectedEntity], data.get("AFFECTED_ENTITIES")),
             _from_json_data(str, data.get("DATA_SOURCE")),
@@ -4718,13 +4521,12 @@ class SzEngineReevaluateRecordResponse:
         data["RECORD_ID"] = _to_json_data(self.record_id)
         return data
 
-
 @dataclass
 class SzEngineSearchByAttributesAttributes:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineSearchByAttributesAttributes":
+    def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesAttributes':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4734,19 +4536,16 @@ class SzEngineSearchByAttributesAttributes:
         data["FIXME"] = _to_json_data(self.fixme)
         return data
 
-
 @dataclass
 class SzEngineSearchByAttributesResponse:
-    resolved_entities: "List[ResolvedEntityAndMatchInfo]"
-    search_request: "SearchRequest"
-    search_statistics: "List[SearchStatistic]"
+    resolved_entities: 'List[ResolvedEntityAndMatchInfo]'
+    search_request: 'SearchRequest'
+    search_statistics: 'List[SearchStatistic]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineSearchByAttributesResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesResponse':
         return cls(
-            _from_json_data(
-                List[ResolvedEntityAndMatchInfo], data.get("RESOLVED_ENTITIES")
-            ),
+            _from_json_data(List[ResolvedEntityAndMatchInfo], data.get("RESOLVED_ENTITIES")),
             _from_json_data(SearchRequest, data.get("SEARCH_REQUEST")),
             _from_json_data(List[SearchStatistic], data.get("SEARCH_STATISTICS")),
         )
@@ -4758,13 +4557,12 @@ class SzEngineSearchByAttributesResponse:
         data["SEARCH_STATISTICS"] = _to_json_data(self.search_statistics)
         return data
 
-
 @dataclass
 class SzEngineSearchByAttributesSearchProfile:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineSearchByAttributesSearchProfile":
+    def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesSearchProfile':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4773,16 +4571,13 @@ class SzEngineSearchByAttributesSearchProfile:
         data: Dict[str, Any] = {}
         data["FIXME"] = _to_json_data(self.fixme)
         return data
-
 
 @dataclass
 class SzEngineStreamExportJSONEntityReportResponse:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(
-        cls, data: Any
-    ) -> "SzEngineStreamExportJSONEntityReportResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineStreamExportJSONEntityReportResponse':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4791,15 +4586,14 @@ class SzEngineStreamExportJSONEntityReportResponse:
         data: Dict[str, Any] = {}
         data["FIXME"] = _to_json_data(self.fixme)
         return data
-
 
 @dataclass
 class SzEngineWhyEntitiesResponse:
-    entities: "List[Entity]"
-    why_results: "List[WhyResult]"
+    entities: 'List[Entity]'
+    why_results: 'List[WhyResult]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineWhyEntitiesResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyEntitiesResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[WhyResult], data.get("WHY_RESULTS")),
@@ -4810,15 +4604,14 @@ class SzEngineWhyEntitiesResponse:
         data["ENTITIES"] = _to_json_data(self.entities)
         data["WHY_RESULTS"] = _to_json_data(self.why_results)
         return data
-
 
 @dataclass
 class SzEngineWhyRecordInEntityResponse:
-    entities: "List[Entity]"
-    why_results: "List[WhyResult]"
+    entities: 'List[Entity]'
+    why_results: 'List[WhyResult]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineWhyRecordInEntityResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordInEntityResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[WhyResult], data.get("WHY_RESULTS")),
@@ -4829,15 +4622,14 @@ class SzEngineWhyRecordInEntityResponse:
         data["ENTITIES"] = _to_json_data(self.entities)
         data["WHY_RESULTS"] = _to_json_data(self.why_results)
         return data
-
 
 @dataclass
 class SzEngineWhyRecordsResponse:
-    entities: "List[Entity]"
-    why_results: "List[WhyResult]"
+    entities: 'List[Entity]'
+    why_results: 'List[WhyResult]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineWhyRecordsResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordsResponse':
         return cls(
             _from_json_data(List[Entity], data.get("ENTITIES")),
             _from_json_data(List[WhyResult], data.get("WHY_RESULTS")),
@@ -4849,13 +4641,12 @@ class SzEngineWhyRecordsResponse:
         data["WHY_RESULTS"] = _to_json_data(self.why_results)
         return data
 
-
 @dataclass
 class SzEngineWhySearchAttributes:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineWhySearchAttributes":
+    def from_json_data(cls, data: Any) -> 'SzEngineWhySearchAttributes':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4865,16 +4656,15 @@ class SzEngineWhySearchAttributes:
         data["FIXME"] = _to_json_data(self.fixme)
         return data
 
-
 @dataclass
 class SzEngineWhySearchResponse:
-    entities: "List[EntityForWhySearch]"
-    search_request: "SearchRequest"
-    search_statistics: "List[SearchStatistic]"
-    why_results: "List[WhyResult]"
+    entities: 'List[EntityForWhySearch]'
+    search_request: 'SearchRequest'
+    search_statistics: 'List[SearchStatistic]'
+    why_results: 'List[WhyResult]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineWhySearchResponse":
+    def from_json_data(cls, data: Any) -> 'SzEngineWhySearchResponse':
         return cls(
             _from_json_data(List[EntityForWhySearch], data.get("ENTITIES")),
             _from_json_data(SearchRequest, data.get("SEARCH_REQUEST")),
@@ -4890,13 +4680,12 @@ class SzEngineWhySearchResponse:
         data["WHY_RESULTS"] = _to_json_data(self.why_results)
         return data
 
-
 @dataclass
 class SzEngineWhySearchSearchProfile:
-    fixme: "Fixme"
+    fixme: 'Fixme'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzEngineWhySearchSearchProfile":
+    def from_json_data(cls, data: Any) -> 'SzEngineWhySearchSearchProfile':
         return cls(
             _from_json_data(Fixme, data.get("FIXME")),
         )
@@ -4906,21 +4695,20 @@ class SzEngineWhySearchSearchProfile:
         data["FIXME"] = _to_json_data(self.fixme)
         return data
 
-
 @dataclass
 class SzProductGetLicenseResponse:
-    adv_search: "int"
-    billing: "str"
-    contract: "str"
-    customer: "str"
-    expire_date: "str"
-    issue_date: "str"
-    license_level: "str"
-    license_type: "str"
-    record_limit: "int"
+    adv_search: 'int'
+    billing: 'str'
+    contract: 'str'
+    customer: 'str'
+    expire_date: 'str'
+    issue_date: 'str'
+    license_level: 'str'
+    license_type: 'str'
+    record_limit: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzProductGetLicenseResponse":
+    def from_json_data(cls, data: Any) -> 'SzProductGetLicenseResponse':
         return cls(
             _from_json_data(int, data.get("advSearch")),
             _from_json_data(str, data.get("billing")),
@@ -4946,19 +4734,18 @@ class SzProductGetLicenseResponse:
         data["recordLimit"] = _to_json_data(self.record_limit)
         return data
 
-
 @dataclass
 class SzProductGetVersionResponse:
-    build_date: "str"
-    build_number: "str"
-    build_version: "str"
-    compatibility_version: "CompatibilityVersion"
-    product_name: "str"
-    schema_version: "SchemaVersion"
-    version: "str"
+    build_date: 'str'
+    build_number: 'str'
+    build_version: 'str'
+    compatibility_version: 'CompatibilityVersion'
+    product_name: 'str'
+    schema_version: 'SchemaVersion'
+    version: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "SzProductGetVersionResponse":
+    def from_json_data(cls, data: Any) -> 'SzProductGetVersionResponse':
         return cls(
             _from_json_data(str, data.get("BUILD_DATE")),
             _from_json_data(str, data.get("BUILD_NUMBER")),
@@ -4980,22 +4767,21 @@ class SzProductGetVersionResponse:
         data["VERSION"] = _to_json_data(self.version)
         return data
 
-
 @dataclass
 class ThreadState:
-    active: "int"
-    data_latch_contention: "int"
-    governor_contention: "int"
-    idle: "int"
-    loader: "int"
-    obs_ent_contention: "int"
-    res_ent_contention: "int"
-    resolver: "int"
-    scoring: "int"
-    sql_executing: "int"
+    active: 'int'
+    data_latch_contention: 'int'
+    governor_contention: 'int'
+    idle: 'int'
+    loader: 'int'
+    obs_ent_contention: 'int'
+    res_ent_contention: 'int'
+    resolver: 'int'
+    scoring: 'int'
+    sql_executing: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "ThreadState":
+    def from_json_data(cls, data: Any) -> 'ThreadState':
         return cls(
             _from_json_data(int, data.get("active")),
             _from_json_data(int, data.get("dataLatchContention")),
@@ -5023,14 +4809,13 @@ class ThreadState:
         data["sqlExecuting"] = _to_json_data(self.sql_executing)
         return data
 
-
 @dataclass
 class UmfProc:
-    name: "str"
-    params: "List[Params]"
+    name: 'str'
+    params: 'List[Params]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "UmfProc":
+    def from_json_data(cls, data: Any) -> 'UmfProc':
         return cls(
             _from_json_data(str, data.get("NAME")),
             _from_json_data(List[Params], data.get("PARAMS")),
@@ -5042,15 +4827,14 @@ class UmfProc:
         data["PARAMS"] = _to_json_data(self.params)
         return data
 
-
 @dataclass
 class Unresolve:
-    aborted_unresolve: "int"
-    triggers: "UnresolveTriggers"
-    unresolve_test: "int"
+    aborted_unresolve: 'int'
+    triggers: 'UnresolveTriggers'
+    unresolve_test: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Unresolve":
+    def from_json_data(cls, data: Any) -> 'Unresolve':
         return cls(
             _from_json_data(int, data.get("abortedUnresolve")),
             _from_json_data(UnresolveTriggers, data.get("triggers")),
@@ -5064,18 +4848,17 @@ class Unresolve:
         data["unresolveTest"] = _to_json_data(self.unresolve_test)
         return data
 
-
 @dataclass
 class UnresolveTriggers:
-    ambiguous_multi_resolve: "int"
-    ambiguous_no_resolve: "int"
-    extensive_resolve: "int"
-    normal_resolve: "int"
-    rel_link: "int"
-    update: "int"
+    ambiguous_multi_resolve: 'int'
+    ambiguous_no_resolve: 'int'
+    extensive_resolve: 'int'
+    normal_resolve: 'int'
+    rel_link: 'int'
+    update: 'int'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "UnresolveTriggers":
+    def from_json_data(cls, data: Any) -> 'UnresolveTriggers':
         return cls(
             _from_json_data(int, data.get("ambiguousMultiResolve")),
             _from_json_data(int, data.get("ambiguousNoResolve")),
@@ -5095,14 +4878,13 @@ class UnresolveTriggers:
         data["update"] = _to_json_data(self.update)
         return data
 
-
 @dataclass
 class VirtualEntitySynopsis:
-    member_records: "List[MemberRecord]"
-    virtual_entity_id: "str"
+    member_records: 'List[MemberRecord]'
+    virtual_entity_id: 'str'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "VirtualEntitySynopsis":
+    def from_json_data(cls, data: Any) -> 'VirtualEntitySynopsis':
         return cls(
             _from_json_data(List[MemberRecord], data.get("MEMBER_RECORDS")),
             _from_json_data(str, data.get("VIRTUAL_ENTITY_ID")),
@@ -5114,14 +4896,13 @@ class VirtualEntitySynopsis:
         data["VIRTUAL_ENTITY_ID"] = _to_json_data(self.virtual_entity_id)
         return data
 
-
 @dataclass
 class WhyKeyDetails:
-    confirmations: "List[Confirmation]"
-    denials: "List[Confirmation]"
+    confirmations: 'List[Confirmation]'
+    denials: 'List[Confirmation]'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "WhyKeyDetails":
+    def from_json_data(cls, data: Any) -> 'WhyKeyDetails':
         return cls(
             _from_json_data(List[Confirmation], data.get("CONFIRMATIONS")),
             _from_json_data(List[Confirmation], data.get("DENIALS")),
@@ -5133,32 +4914,31 @@ class WhyKeyDetails:
         data["DENIALS"] = _to_json_data(self.denials)
         return data
 
-
 @dataclass
 class WhyResult:
-    entity_id: "int"
+    entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
     It may change when new information is added.
     """
 
-    entity_id0: "int"
-    focus_records: "List[FocusRecord]"
-    focus_records0: "List[FocusRecord]"
-    internal_id: "int"
+    entity_id0: 'int'
+    focus_records: 'List[FocusRecord]'
+    focus_records0: 'List[FocusRecord]'
+    internal_id: 'int'
     """
     Internal identifier for the record.
     """
 
-    internal_id0: "int"
+    internal_id0: 'int'
     """
     Internal identifier for the record.
     """
 
-    match_info: "MatchInfoForWhy"
+    match_info: 'MatchInfoForWhy'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "WhyResult":
+    def from_json_data(cls, data: Any) -> 'WhyResult':
         return cls(
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(int, data.get("ENTITY_ID_2")),
@@ -5180,30 +4960,29 @@ class WhyResult:
         data["MATCH_INFO"] = _to_json_data(self.match_info)
         return data
 
-
 @dataclass
 class Workload:
-    api_version: "str"
-    caches: "Caches"
-    candidates: "Candidates"
-    contention: "Contention"
-    datetimestamp: "str"
-    expressed_features: "ExpressedFeatures"
-    generic_detect: "Fixme"
-    license: "License"
-    loaded_records: "int"
-    lock_waits: "LockWaits"
-    processing: "Processing"
-    redo_triggers: "Dict[str, int]"
-    repair_diagnosis: "RepairDiagnosis"
-    reresolve: "Reresolve"
-    scoring: "Scoring"
-    system_resources: "SystemResources"
-    thread_state: "ThreadState"
-    unresolve: "Unresolve"
+    api_version: 'str'
+    caches: 'Caches'
+    candidates: 'Candidates'
+    contention: 'Contention'
+    datetimestamp: 'str'
+    expressed_features: 'ExpressedFeatures'
+    generic_detect: 'Fixme'
+    license: 'License'
+    loaded_records: 'int'
+    lock_waits: 'LockWaits'
+    processing: 'Processing'
+    redo_triggers: 'Dict[str, int]'
+    repair_diagnosis: 'RepairDiagnosis'
+    reresolve: 'Reresolve'
+    scoring: 'Scoring'
+    system_resources: 'SystemResources'
+    thread_state: 'ThreadState'
+    unresolve: 'Unresolve'
 
     @classmethod
-    def from_json_data(cls, data: Any) -> "Workload":
+    def from_json_data(cls, data: Any) -> 'Workload':
         return cls(
             _from_json_data(str, data.get("apiVersion")),
             _from_json_data(Caches, data.get("caches")),
@@ -5247,7 +5026,6 @@ class Workload:
         data["unresolve"] = _to_json_data(self.unresolve)
         return data
 
-
 def _from_json_data(cls: Any, data: Any) -> Any:
     if data is None or cls in [bool, int, float, str, object] or cls is Any:
         return data
@@ -5258,9 +5036,8 @@ def _from_json_data(cls: Any, data: Any) -> Any:
     if get_origin(cls) is list:
         return [_from_json_data(get_args(cls)[0], d) for d in data]
     if get_origin(cls) is dict:
-        return {k: _from_json_data(get_args(cls)[1], v) for k, v in data.items()}
+        return { k: _from_json_data(get_args(cls)[1], v) for k, v in data.items() }
     return cls.from_json_data(data)
-
 
 def _to_json_data(data: Any) -> Any:
     if data is None or type(data) in [bool, int, float, str, object]:
@@ -5270,17 +5047,17 @@ def _to_json_data(data: Any) -> Any:
     if type(data) is list:
         return [_to_json_data(d) for d in data]
     if type(data) is dict:
-        return {k: _to_json_data(v) for k, v in data.items()}
+        return { k: _to_json_data(v) for k, v in data.items() }
     return data.to_json_data()
 
-
 def _parse_rfc3339(s: str) -> datetime:
-    datetime_re = "^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(\.\d+)?([zZ]|((\+|-)(\d{2}):(\d{2})))$"
+    datetime_re = '^(\d{4})-(\d{2})-(\d{2})[tT](\d{2}):(\d{2}):(\d{2})(\.\d+)?([zZ]|((\+|-)(\d{2}):(\d{2})))$'
     match = re.match(datetime_re, s)
     if not match:
-        raise ValueError("Invalid RFC3339 date/time", s)
+        raise ValueError('Invalid RFC3339 date/time', s)
 
-    (year, month, day, hour, minute, second, frac_seconds, offset, *tz) = match.groups()
+    (year, month, day, hour, minute, second, frac_seconds, offset,
+     *tz) = match.groups()
 
     frac_seconds_parsed = None
     if frac_seconds:
@@ -5289,15 +5066,15 @@ def _parse_rfc3339(s: str) -> datetime:
         frac_seconds_parsed = 0
 
     tzinfo = None
-    if offset == "Z":
+    if offset == 'Z':
         tzinfo = timezone.utc
     else:
         hours = int(tz[2])
         minutes = int(tz[3])
-        sign = 1 if tz[1] == "+" else -1
+        sign = 1 if tz[1] == '+' else -1
 
         if minutes not in range(60):
-            raise ValueError("minute offset must be in 0..59")
+            raise ValueError('minute offset must be in 0..59')
 
         tzinfo = timezone(timedelta(minutes=sign * (60 * hours + minutes)))
 
@@ -5305,13 +5082,5 @@ def _parse_rfc3339(s: str) -> datetime:
     if second_parsed == 60:
         second_parsed = 59
 
-    return datetime(
-        int(year),
-        int(month),
-        int(day),
-        int(hour),
-        int(minute),
-        second_parsed,
-        frac_seconds_parsed,
-        tzinfo,
-    )
+    return datetime(int(year), int(month), int(day), int(hour), int(minute),
+                    second_parsed, frac_seconds_parsed, tzinfo)            
