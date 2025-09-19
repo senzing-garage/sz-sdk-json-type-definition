@@ -10,7 +10,6 @@ import (
 	"testing"
 
 	"github.com/senzing-garage/sz-sdk-json-type-definition/go/typedef"
-
 	"github.com/stretchr/testify/assert"
 )
 
