@@ -137,13 +137,13 @@ run-java:
 
 .PHONY: test
 test: \
-	test-osarch-specific \
-	test-using-senzing \
-	test-csharp \
 	test-go \
+	test-csharp \
 	test-java \
 	test-python \
-	test-typescript
+	test-typescript \
+	test-using-senzing \
+	test-osarch-specific
 
 
 .PHONY: test-csharp

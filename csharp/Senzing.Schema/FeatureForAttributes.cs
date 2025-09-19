@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Schema
 {
-    public class FeatureForAttribute
+    public class FeatureForAttributes
     {
         [JsonPropertyName("ATTRIBUTES")]
         public SenzingEntitySpecification Attributes { get; set; }

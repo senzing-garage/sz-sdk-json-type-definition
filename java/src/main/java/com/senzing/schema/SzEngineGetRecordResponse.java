@@ -35,7 +35,7 @@ public class SzEngineGetRecordResponse {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private Map<String, List<FeatureForAttribute>> features;
+    private Map<String, List<FeatureForAttributes>> features;
 
     @JsonProperty("FEATURE_IDS")
     private List<FeatureId> featureIds;
@@ -204,14 +204,14 @@ public class SzEngineGetRecordResponse {
     /**
      * Getter for features.<p>
      */
-    public Map<String, List<FeatureForAttribute>> getFeatures() {
+    public Map<String, List<FeatureForAttributes>> getFeatures() {
         return features;
     }
 
     /**
      * Setter for features.<p>
      */
-    public void setFeatures(Map<String, List<FeatureForAttribute>> features) {
+    public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
         this.features = features;
     }
 

@@ -3,7 +3,7 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.senzing.schema.DataSource;
-import com.senzing.schema.FeatureForAttributeWithAttributes;
+import com.senzing.schema.FeatureForAttributes;
 import com.senzing.schema.RecordKey;
 import com.senzing.schema.RecordKeys;
 import com.senzing.schema.SzConfigGetDataSourceRegistryResponse;
@@ -71,7 +71,7 @@ class Main {
 
         // Looping through list.
 
-        for (FeatureForAttributeWithAttributes feature : virtualEntity.getResolvedEntity().getFeatures().get("ID_KEY")) {
+        for (FeatureForAttributes feature : virtualEntity.getResolvedEntity().getFeatures().get("ID_KEY")) {
             System.out.printf("   ID_KEY FEAT_DESC: %s\n", feature.getFeatDesc());
         }
 

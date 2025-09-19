@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 @JsonSerialize
-public class FeatureForAttribute {
+public class FeatureForAttributes {
     @JsonProperty("ATTRIBUTES")
     private SenzingEntitySpecification attributes;
 
@@ -23,7 +23,7 @@ public class FeatureForAttribute {
     @JsonProperty("USAGE_TYPE")
     private String usageType;
 
-    public FeatureForAttribute() {
+    public FeatureForAttributes() {
     }
 
     /**

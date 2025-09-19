@@ -180,9 +180,9 @@ def handle_json_python_type(level, key, description, value) -> str:
         case "Dict[str, List[FeatureForAttribute]]":
             return handle_json_dict_list(level, key, description, "FeatureForAttribute")
 
-        case "Dict[str, List[FeatureForAttributeWithAttributes]]":
+        case "Dict[str, List[FeatureForAttributes]]":
             return handle_json_dict_list(
-                level, key, description, "FeatureForAttributeWithAttributes"
+                level, key, description, "FeatureForAttributes"
             )
         case "Dict[str, List[FeatureForGetEntity]]":
             return handle_json_dict_list(level, key, description, "FeatureForGetEntity")

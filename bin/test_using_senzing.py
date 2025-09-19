@@ -219,11 +219,9 @@ def handle_python_type(python_type):
             return {
                 VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttribute"))]
             }
-        case "Dict[str, List[FeatureForAttributeWithAttributes]]":
+        case "Dict[str, List[FeatureForAttributes]]":
             return {
-                VARIABLE_JSON_KEY: [
-                    recurse(DEFINITIONS.get("FeatureForAttributeWithAttributes"))
-                ]
+                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttributes"))]
             }
         case "Dict[str, List[FeatureForGetEntity]]":
             return {
