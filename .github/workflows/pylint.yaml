@@ -25,8 +25,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m venv ./venv
+          source ./venv/bin/activate
+          echo "PATH=${PATH}" >> "${GITHUB_ENV}"
           python -m pip install --upgrade pip
-          python -m pip install pylint
+          python -m pip install --group all .
 
       - name: Analysing the code with pylint
         run: |

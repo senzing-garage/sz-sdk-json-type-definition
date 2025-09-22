@@ -1391,7 +1391,7 @@ def is_json_subset(subset_json, full_json):
 
 def output(indentation, message):
     """Create an indented message."""
-    print(f"{"    " * indentation}{message}")
+    print(f"{'    ' * indentation}{message}")
 
 
 def path_to_testdata(filename: str) -> str:

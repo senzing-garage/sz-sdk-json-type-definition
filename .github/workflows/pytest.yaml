@@ -24,8 +24,11 @@ jobs:
 
       - name: install dependencies
         run: |
+          python -m venv ./venv
+          source ./venv/bin/activate
+          echo "PATH=${PATH}" >> "${GITHUB_ENV}"
           python -m pip install --upgrade pip
-          pip install pytest pytest-cov pytest-schema
+          python -m pip install --group all .
 
       - name: test test.py
         run: ./test.py

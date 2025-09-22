@@ -944,7 +944,7 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
 
     for testcase in testcases:
         response = eval(testcase.get("testcase", ""))
-        output_file(f"{testcase.get("response")}", [response])
+        output_file(f"{testcase.get('response')}", [response])
 
 
 # -----------------------------------------------------------------------------
