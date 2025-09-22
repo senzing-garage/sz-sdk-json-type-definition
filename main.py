@@ -153,7 +153,7 @@ virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
 )
 
 print(
-    f"RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: {virtual_entity.resolved_entity.features["ID_KEY"][0].feat_desc}\n"
+    f"RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: {virtual_entity.resolved_entity.features['ID_KEY'][0].feat_desc}\n"
 )
 
 # Looping through list.
