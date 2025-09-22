@@ -58,10 +58,6 @@ jobs:
           mkdir -p /tmp/sqlite
           cp testdata/sqlite/G2C.db /tmp/sqlite/
 
-      - name: Run go testx
-        run: |
-          go test -v -p 1 ./...
-
       - name: Run go test
         run: |
           go test -json -v -p 1 -coverprofile="./cover-${{ matrix.senzingsdk-version }}.out" -covermode=atomic -coverpkg=./... ./...  2>&1 | tee "/tmp/gotest-${{ matrix.senzingsdk-version }}.log" | gotestfmt
