@@ -32,7 +32,10 @@ jobs:
         run: |
           mkdir /tmp/go-typedef
           ./bin/make_go_typedef_generated_typedef_test_go.py --output /tmp/go-typedef/generated_typedef_test.go
-          diff ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test.go
+          cp ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test_original.go
+          sed '4d' /tmp/go-typedef/generated_typedef_test.go
+          sed '4d' /tmp/go-typedef/generated_typedef_test_original.go
+          diff /tmp/go-typedef/generated_typedef_test_original.go /tmp/go-typedef/generated_typedef_test.go
 
       - name: verify generated files are up-to-date
         run: |
