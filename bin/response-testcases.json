@@ -10633,7 +10633,7 @@
     },
     "SzEngineExportCsvEntityReportCsvColumnList": {},
     "SzEngineFetchNextResponse": {},
-    "SzEngineFindInterestingEntitiesByEntityIdResponse": {},
+    "SzEngineFindInterestingEntitiesByEntityIDResponse": {},
     "SzEngineFindInterestingEntitiesByRecordIdResponse": {
         "metadata": {
             "goClass": "SzEngineFindInterestingEntitiesByRecordIDResponse",
@@ -10648,7 +10648,7 @@
             }
         }
     },
-    "SzEngineFindNetworkByEntityIdEntityIds": {},
+    "SzEngineFindNetworkByEntityIDEntityIds": {},
     "SzEngineFindNetworkByEntityIdResponse": {
         "tests": {
             "test-000": {},
@@ -12645,7 +12645,7 @@
             "pythonClass": "SzEngineFindNetworkByEntityIDResponse"
         }
     },
-    "SzEngineFindNetworkByRecordIdRecordKeys": {},
+    "SzEngineFindNetworkByRecordIDRecordKeys": {},
     "SzEngineFindNetworkByRecordIdResponse": {
         "tests": {
             "test-000": {},
@@ -13215,8 +13215,8 @@
             "pythonClass": "SzEngineFindNetworkByRecordIDResponse"
         }
     },
-    "SzEngineFindPathByEntityIdAvoidEntityIds": {},
-    "SzEngineFindPathByEntityIdRequiredDataSources": {},
+    "SzEngineFindPathByEntityIDAvoidEntityIds": {},
+    "SzEngineFindPathByEntityIDRequiredDataSources": {},
     "SzEngineFindPathByEntityIdResponse": {
         "tests": {
             "test-000": {},
@@ -14502,8 +14502,8 @@
             "pythonClass": "SzEngineFindPathByEntityIDResponse"
         }
     },
-    "SzEngineFindPathByRecordIdAvoidRecordKeys": {},
-    "SzEngineFindPathByRecordIdRequiredDataSources": {},
+    "SzEngineFindPathByRecordIDAvoidRecordKeys": {},
+    "SzEngineFindPathByRecordIDRequiredDataSources": {},
     "SzEngineFindPathByRecordIdResponse": {
         "tests": {
             "test-000": {},
@@ -17417,7 +17417,7 @@
     },
     "SzEngineGetRedoRecordResponse": {},
     "SzEngineGetStatsResponse": {},
-    "SzEngineGetVirtualEntityByRecordIdRecordKeys": {},
+    "SzEngineGetVirtualEntityByRecordIDRecordKeys": {},
     "SzEngineGetVirtualEntityByRecordIdResponse": {
         "tests": {
             "test-000": {},

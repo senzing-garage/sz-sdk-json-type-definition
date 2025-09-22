@@ -31,7 +31,7 @@ jobs:
       - name: verify go/typedef/generated_typedef_test.go
         run: |
           mkdir /tmp/go-typedef
-          ./bin/generate_typedef_test_go.py --output /tmp/go-typedef/generated_typedef_test.go
+          ./bin/make_go_typedef_generated_typedef_test_go.py --output /tmp/go-typedef/generated_typedef_test.go
           diff ./go/typedef/generated_typedef_test.go /tmp/go-typedef/generated_typedef_test.go
 
       - name: verify generated files are up-to-date
