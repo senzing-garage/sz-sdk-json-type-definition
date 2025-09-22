@@ -162,6 +162,7 @@
     "csharp/obj/Debug/**",
     "java/target/**",
     "Makefile",
+    "pyproject.toml",
     "testdata/**"
   ]
 }

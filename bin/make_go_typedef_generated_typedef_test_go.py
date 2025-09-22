@@ -61,7 +61,7 @@ func testErr(test *testing.T, ctx context.Context, err error) {
 """  # noqa: E101,F541,W191
 
 
-TEST_FUNCTION_TEMPLATE = """
+TEST_FUNCTION_TEMPLATE = f"""
 	ctx := context.TODO()
 	jsonString := `{{json}}`
 	jsonStruct := typedef.{{struct}}{{parens}}

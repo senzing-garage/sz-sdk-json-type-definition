@@ -118,7 +118,7 @@ lint: \
 	golangci-lint \
 	cspell \
 	analyze-RFC8927 \
-	pretty-print \
+	pretty-print
 
 # -----------------------------------------------------------------------------
 # Build
@@ -438,8 +438,8 @@ pretty-print:
 
 .PHONY: pylint
 pylint:
-	$(activate-venv); \
-		pylint $(git ls-files '*.py')
+	@$(activate-venv); \
+		pylint $(shell git ls-files '*.py')
 
 
 .PHONY: testdata-responses-generated
