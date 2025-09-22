@@ -41,7 +41,7 @@ logging.info("{0}".format("-" * 80))
 
 # Command line options.
 
-parser = argparse.ArgumentParser(prog="generate_testdata.py")
+parser = argparse.ArgumentParser(prog="make_testdata_responses_generated.py")
 parser.add_argument(
     "--output",
     help=f"Output directory. Default: {OUTPUT_FILE}",

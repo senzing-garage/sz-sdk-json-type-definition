@@ -195,4 +195,5 @@ def test_szengine_find_network_by_record_id_001():
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    test_szengine_add_record_with_info_005()
+    # test_szengine_add_record_with_info_005()
+    pass
