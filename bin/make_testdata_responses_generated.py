@@ -35,9 +35,10 @@ logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
 
 # Prolog.
 
-logging.info("{0}".format("-" * 80))
-logging.info("--- {0} - Begin".format(os.path.basename(__file__)))
-logging.info("{0}".format("-" * 80))
+horizontal_rule = format("-" * 80)
+logging.info("%s", horizontal_rule)
+logging.info("--- %s - Begin", format(os.path.basename(__file__)))
+logging.info("%s", horizontal_rule)
 
 # Command line options.
 
@@ -67,6 +68,6 @@ for senzing_api_class, method_test_cases in response_testcases.items():
 
 # Epilog.
 
-logging.info("{0}".format("-" * 80))
-logging.info("--- {0} - End".format(os.path.basename(__file__)))
-logging.info("{0}".format("-" * 80))
+logging.info("%s", horizontal_rule)
+logging.info("--- %s - End", os.path.basename(__file__))
+logging.info("%s", horizontal_rule)

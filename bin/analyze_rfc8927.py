@@ -54,18 +54,6 @@ def add_to_key_type(key_to_add, value_to_add):
                     GLOBAL_KEY_TYPE[key_to_add] += [the_ref]
 
 
-def is_sorted(prefix, list_to_check):
-    """Determine if list is sorted.  Return boolean"""
-    global GLOBAL_OUT_OF_ORDER  # pylint: disable=global-statement
-    last_key = ""
-    for key_to_check in list_to_check:
-        if not normalize(key_to_check) > normalize(last_key):
-            GLOBAL_OUT_OF_ORDER += [
-                "Key out of order: {0}.{1} > {2}".format(prefix, last_key, key_to_check)
-            ]
-        last_key = key_to_check
-
-
 def add_to_list(prefix, list_to_check):
     """Add a key to GLOBAL_KEYS."""
     key_list = [x for x in list_to_check.keys() if x not in BLACK_LIST]
@@ -74,7 +62,18 @@ def add_to_list(prefix, list_to_check):
         GLOBAL_KEYS[prefix] = key_list
 
 
+def is_sorted(prefix, list_to_check):
+    """Determine if list is sorted.  Return boolean"""
+    global GLOBAL_OUT_OF_ORDER  # pylint: disable=global-statement
+    last_key = ""
+    for key_to_check in list_to_check:
+        if not normalize(key_to_check) > normalize(last_key):
+            GLOBAL_OUT_OF_ORDER += [f"Key out of order: {prefix}.{last_key} > {key_to_check}"]
+        last_key = key_to_check
+
+
 def normalize(input_string):
+    """Make a better sortable string."""
     return input_string.replace("_", "Z")
 
 
@@ -91,7 +90,7 @@ def recurse(prefix, list_to_check):
         add_to_key_type(key_to_check, value_to_check)
         if isinstance(value_to_check, dict):
             GLOBAL_JSON_KEYS.append(key_to_check)
-            recurse("{0}.{1}".format(prefix, key_to_check), value_to_check)
+            recurse(f"{prefix}.{key_to_check}", value_to_check)
 
 
 def search_list(search_term):
@@ -143,9 +142,9 @@ for key, value in GLOBAL_KEYS.items():
     EXCLUDE_LIST.append(key)
     results = search_list(key)
     if len(results) > 0:
-        print("\n{0}:".format(key))
+        print(f"\n{key}:")
         for result in results:
-            print("  - {0}".format(result))
+            print(f"  - {result}")
 
 # Print JSON key count results.
 
@@ -157,7 +156,7 @@ print("-----  -----------------------------")
 SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)
 for key, value in SORTED_KEY_COUNTS:
     if value > 1:
-        print("{0:5d}  {1}".format(value, key))
+        print(f"{value:5d}  {key}")
 
 # Print type/ref variances.
 
@@ -167,7 +166,7 @@ print("\nTEST 4: Check for JSON keys having different types\n")
 SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
 for key, value in SORTED_GLOBAL_KEY_TYPE.items():
     if len(value) > 1:
-        print("{0:30s}  {1}".format(key, sorted(value)))
+        print(f"{key:30s}  {sorted(value)}")
 
 # Print missing JSON keys that have a ref:
 

@@ -10,7 +10,6 @@ import json
 import os
 import pathlib
 import random
-import subprocess
 import sys
 
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
@@ -181,56 +180,48 @@ SEARCH_RECORDS = [
 # -----------------------------------------------------------------------------
 
 
-def handle_elements(json_value):
+def handle_json_elements(json_value):
+    """Unwrap an RFC8927 'element'."""
     elements = json_value.get("elements", {})
-    result = recurse(elements)
+    result = recurse_json(elements)
     return [result]
 
 
-def handle_metadata(json_value):
+def handle_json_metadata(json_value):
+    """Unwrap an RFC8927 'metadata'."""
     metadata = json_value.get("metadata")
     python_type = metadata.get("pythonType")
     if python_type:
-        return handle_python_type(python_type)
+        return handle_json_python_type(python_type)
     return None
 
 
-def handle_properties(json_value):
+def handle_json_properties(json_value):
+    """Unwrap an RFC8927 'properties'."""
     result = {}
     properties = json_value.get("properties", {})
     for key, value in properties.items():
-        result[key] = recurse(value)
+        result[key] = recurse_json(value)
     return result
 
 
-def handle_python_type(python_type):
-    result = {}
+def handle_json_python_type(python_type):
+    """Unwrap based on custom datatype."""
 
+    result = {}
     match python_type:
         case "Dict[str, FeatureScoresForAttribute]":
-            return {
-                VARIABLE_JSON_KEY: recurse(DEFINITIONS.get("FeatureScoresForAttribute"))
-            }
+            return {VARIABLE_JSON_KEY: recurse_json(DEFINITIONS.get("FeatureScoresForAttribute"))}
         case "Dict[str, List[FeatureDescriptionValue]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureDescriptionValue"))]
-            }
+            return {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureDescriptionValue"))]}
         case "Dict[str, List[FeatureForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttribute"))]
-            }
+            return {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureForAttribute"))]}
         case "Dict[str, List[FeatureForAttributes]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttributes"))]
-            }
+            return {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureForAttributes"))]}
         case "Dict[str, List[FeatureForGetEntity]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForGetEntity"))]
-            }
+            return {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureForGetEntity"))]}
         case "Dict[str, List[MatchInfoForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("MatchInfoForAttribute"))]
-            }
+            return {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("MatchInfoForAttribute"))]}
         case "Dict[str, int]":
             return {
                 VARIABLE_JSON_KEY: "int32",
@@ -253,51 +244,56 @@ def handle_python_type(python_type):
     return result
 
 
-def handle_ref(json_value):
-    return recurse(DEFINITIONS.get(json_value.get("ref")))
+def handle_json_ref(json_value):
+    """Unwrap an RFC8927 'ref'."""
+    return recurse_json(DEFINITIONS.get(json_value.get("ref")))
 
 
-def handle_type(json_value):
+def handle_json_type(json_value):
+    """Unwrap an RFC8927 'type'."""
     return json_value.get("type")
 
 
-def handle_values(json_value):
-    type = json_value.get("values", {}).get("ref")
-    if not type:
-        type = json_value.get("values", {}).get("type")
+def handle_json_values(json_value):
+    """Unwrap an RFC8927 'value'."""
+    ref_type = json_value.get("values", {}).get("ref")
+    if not ref_type:
+        ref_type = json_value.get("values", {}).get("type")
 
-    if type in ["int32", "string"]:
-        result = {VARIABLE_JSON_KEY: type}
-    elif type:
-        result = {VARIABLE_JSON_KEY: recurse(DEFINITIONS.get(type))}
+    if ref_type in ["int32", "string"]:
+        result = {VARIABLE_JSON_KEY: ref_type}
+    elif ref_type:
+        result = {VARIABLE_JSON_KEY: recurse_json(DEFINITIONS.get(ref_type))}
     else:
-        result = {VARIABLE_JSON_KEY: recurse(json_value.get("values", {}))}
+        result = {VARIABLE_JSON_KEY: recurse_json(json_value.get("values", {}))}
     return result
 
 
-def recurse(json_value):
+def recurse_json(json_value):
+    """Do recursive descent through the JSON/dictionary."""
 
+    result = {}
     if "metadata" in json_value:
-        result = handle_metadata(json_value)
+        result = handle_json_metadata(json_value)
         if result:
             return result
 
     if "type" in json_value:
-        return handle_type(json_value)
+        return handle_json_type(json_value)
 
     if "values" in json_value:
-        return handle_values(json_value)
+        return handle_json_values(json_value)
 
     if "ref" in json_value:
-        return handle_ref(json_value)
+        return handle_json_ref(json_value)
 
     if "properties" in json_value:
-        return handle_properties(json_value)
+        return handle_json_properties(json_value)
 
     if "elements" in json_value:
-        return handle_elements(json_value)
+        return handle_json_elements(json_value)
 
-    return {}
+    return result
 
 
 # -----------------------------------------------------------------------------
@@ -306,7 +302,9 @@ def recurse(json_value):
 
 
 def add_records(sz_abstract_factory: SzAbstractFactory):
-    global LOADED_RECORD_KEYS
+    """Add records to the Senzing repository."""
+
+    # global LOADED_RECORD_KEYS
 
     debug_records = [  # Format: (data_source, record_id)
         ("CUSTOMER", "0"),
@@ -326,9 +324,7 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
         sz_config.register_data_source(data_source)
 
     new_config = sz_config.export()
-    new_config_id = sz_config_manager.register_config(
-        new_config, "sz-sdk-json-type-definition"
-    )
+    new_config_id = sz_config_manager.register_config(new_config, "sz-sdk-json-type-definition")
     sz_config_manager.replace_default_config_id(current_config_id, new_config_id)
     sz_abstract_factory.reinitialize(new_config_id)
 
@@ -343,9 +339,7 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
     current_path = pathlib.Path(__file__).parent.resolve()
     test_count = 0
     for filename in filenames:
-        file_path = os.path.abspath(
-            "{0}/../testdata/truthsets/{1}".format(current_path, filename)
-        )
+        file_path = os.path.abspath(f"{current_path}/../testdata/truthsets/{filename}")
         with open(file_path, "r", encoding="utf-8") as input_file:
             for line in input_file:
                 line_as_dict = json.loads(line)
@@ -359,9 +353,7 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
                     }
                 )
                 test_name = f"Add record: {filename}/{data_source}/{record_id}"
-                response = sz_engine.add_record(
-                    data_source, record_id, line, SzEngineFlags.SZ_WITH_INFO
-                )
+                response = sz_engine.add_record(data_source, record_id, line, SzEngineFlags.SZ_WITH_INFO)
                 if not response:
                     continue
                 set_debug((data_source, record_id), debug_records)
@@ -378,6 +370,7 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare(sz_abstract_factory: SzAbstractFactory):
+    """Aggregate all compare functions."""
     compare_find_interesting_entities_by_entity_id(sz_abstract_factory)
     compare_find_interesting_entities_by_record_id(sz_abstract_factory)
     compare_find_network_by_entity_id(sz_abstract_factory)
@@ -410,6 +403,7 @@ def compare(sz_abstract_factory: SzAbstractFactory):
 def compare_find_interesting_entities_by_entity_id(
     sz_abstract_factory: SzAbstractFactory,
 ):
+    """Compare find_interesting_entities_by_entity_id."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -432,6 +426,7 @@ def compare_find_interesting_entities_by_entity_id(
 def compare_find_interesting_entities_by_record_id(
     sz_abstract_factory: SzAbstractFactory,
 ):
+    """Compare find_interesting_entities_by_record_id."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -447,9 +442,7 @@ def compare_find_interesting_entities_by_record_id(
         for flag in FLAGS:
             flag_count += 1
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Flag #{flag_count}"
-            response = sz_engine.find_interesting_entities_by_record_id(
-                data_source, record_id, flag
-            )
+            response = sz_engine.find_interesting_entities_by_record_id(data_source, record_id, flag)
             set_debug(((data_source, record_id), flag_count), debug_records)
             debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
@@ -461,6 +454,7 @@ def compare_find_interesting_entities_by_record_id(
 
 
 def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare find_network_by_entity_id."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -501,6 +495,8 @@ def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare find_network_by_record_id."""
+
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -553,6 +549,7 @@ def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare find_path_by_entity_id."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -584,6 +581,7 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare find_path_by_record_id."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -624,6 +622,7 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_entity_by_entity_id."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -644,6 +643,7 @@ def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_entity_by_record_id."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -672,6 +672,7 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_feature(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_feature."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -720,6 +721,7 @@ def compare_get_feature(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_record(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_record."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -748,6 +750,7 @@ def compare_get_record(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_record_preview(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_record_preview."""
     debug_records = [  # Format: (flag_count)
         (0),
     ]
@@ -785,6 +788,7 @@ def compare_get_record_preview(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_virtual_entity_by_record_id."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -827,6 +831,7 @@ def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFacto
 
 
 def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
+    """Compare how_entity_by_entity_id."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -852,6 +857,7 @@ def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_redo(sz_abstract_factory: SzAbstractFactory):
+    """Compare get_redo_record."""
     debug_get_redo = [  # Format (redo_record_count)
         (0),
     ]
@@ -884,9 +890,7 @@ def compare_redo(sz_abstract_factory: SzAbstractFactory):
     redo_record_count = 0
     for redo_record in redo_records:
         redo_record_count += 1
-        response = sz_engine.process_redo_record(
-            redo_record, SzEngineFlags.SZ_WITH_INFO
-        )
+        response = sz_engine.process_redo_record(redo_record, SzEngineFlags.SZ_WITH_INFO)
         test_name = f"{title} - Redo Record count:{redo_record_count}"
         set_debug((redo_record_count), debug_get_redo)
         debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
@@ -899,6 +903,7 @@ def compare_redo(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
+    """Compare reevaluate_entity."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -926,6 +931,7 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
+    """Compare reevaluate_record."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -960,6 +966,7 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
+    """Compare search_by_attributes."""
     debug_search = [  # Format: (search_record_count, flag_count)
         (0, 0),
     ]
@@ -976,9 +983,7 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
         flag_count = 0
         for flag in FLAGS:
             flag_count += 1
-            test_name = (
-                f"{title} - Search record #{search_record_count}; Flag #{flag_count}"
-            )
+            test_name = f"{title} - Search record #{search_record_count}; Flag #{flag_count}"
             response = sz_engine.search_by_attributes(attributes, flag, search_profile)
             set_debug((search_record_count, flag_count), debug_search)
             debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
@@ -991,6 +996,7 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
+    """Compare methods without variable parameters."""
 
     sz_config_manager = sz_abstract_factory.create_configmanager()
     sz_config = sz_config_manager.create_config_from_template()
@@ -1068,6 +1074,7 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
+    """Compare why_entities."""
     debug_entities = [  # Format (entity_id, flag_count)
         (0, 0),
     ]
@@ -1094,6 +1101,7 @@ def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_why_record_in_entity(sz_abstract_factory: SzAbstractFactory):
+    """Compare why_record_in_entity."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMERS", "0"), 0),
     ]
@@ -1121,6 +1129,7 @@ def compare_why_record_in_entity(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_why_records(sz_abstract_factory: SzAbstractFactory):
+    """Compare why_records."""
     debug_records = [  # Format: ((data_source, record_id), flag_count)
         (("CUSTOMER", "0"), 0),
     ]
@@ -1146,9 +1155,7 @@ def compare_why_records(sz_abstract_factory: SzAbstractFactory):
         for flag in FLAGS:
             flag_count += 1
             test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}; Record 2: {record_key_dict}; Flag #{flag_count}"
-            response = sz_engine.why_records(
-                data_source, record_id, data_source_2, record_id_2, flag
-            )
+            response = sz_engine.why_records(data_source, record_id, data_source_2, record_id_2, flag)
             set_debug(((data_source, record_id), flag_count), debug_records)
             debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
             compare_to_schema(test_name, title, json_schema, json.loads(response))
@@ -1160,6 +1167,7 @@ def compare_why_records(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_why_search(sz_abstract_factory: SzAbstractFactory):
+    """Compare why_search."""
     debug_search = [  # Format: (entity, search_record_count, flag_count)
         (0, 0, 0),
     ]
@@ -1178,9 +1186,7 @@ def compare_why_search(sz_abstract_factory: SzAbstractFactory):
             for flag in FLAGS:
                 flag_count += 1
                 test_name = f"{title} - Entity #{entity_id}; Search record #{search_record_count}; Flag #{flag_count}"
-                response = sz_engine.why_search(
-                    attributes, entity_id, flag, search_profile
-                )
+                response = sz_engine.why_search(attributes, entity_id, flag, search_profile)
                 set_debug((entity_id, search_record_count, flag_count), debug_search)
                 debug(1, f"{HR_START}\n{test_name}; Response:\n{response}\n{HR_STOP}\n")
                 compare_to_schema(test_name, title, json_schema, json.loads(response))
@@ -1192,6 +1198,7 @@ def compare_why_search(sz_abstract_factory: SzAbstractFactory):
 
 
 def delete_records(sz_abstract_factory: SzAbstractFactory):
+    """Compare delete_record."""
     debug_records = [  # Format: ((data_source, record_id), flag_number)
         ("CUSTOMER", "0"),
     ]
@@ -1207,9 +1214,7 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
         test_name = f"{title} - DataSource: {data_source}; RecordID: {record_id}"
-        response = sz_engine.delete_record(
-            data_source, record_id, SzEngineFlags.SZ_WITH_INFO
-        )
+        response = sz_engine.delete_record(data_source, record_id, SzEngineFlags.SZ_WITH_INFO)
         if not response:
             continue
         set_debug((data_source, record_id), debug_records)
@@ -1226,6 +1231,7 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
 
 
 def compare_to_schema(test_name, json_path, schema, fragment):
+    """Compare a JSON fragment to the schema."""
     global ERROR_COUNT
 
     debug(2, f"{HR_START}\nSchema for {json_path}:\n{json.dumps(schema)}\n{HR_STOP}\n")
@@ -1299,6 +1305,7 @@ def compare_to_schema(test_name, json_path, schema, fragment):
 
 
 def create_sz_abstract_factory() -> SzAbstractFactory:
+    """Create an SzAbstractFactory."""
     instance_name = "Example"
     settings = {
         "PIPELINE": {
@@ -1318,11 +1325,13 @@ def create_sz_abstract_factory() -> SzAbstractFactory:
 
 
 def debug(level, message):
+    """If appropriate, print debug statement."""
     if DEBUG >= level:
         print(message)
 
 
 def error_message(test_name, json_path, message, schema, fragment):
+    """Create an error message."""
     output(0, test_name)
     output(1, f"Path: {json_path}")
     output(2, "Error:")
@@ -1332,46 +1341,19 @@ def error_message(test_name, json_path, message, schema, fragment):
 
 
 def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
+    """Get a list of entity IDs."""
+
     result = []
     sz_engine = sz_abstract_factory.create_engine()
 
     for record in LOADED_RECORD_KEYS:
-        response = sz_engine.get_entity_by_record_id(
-            record.get("data_source", ""), record.get("record_id", "")
-        )
+        response = sz_engine.get_entity_by_record_id(record.get("data_source", ""), record.get("record_id", ""))
         response_dict = json.loads(response)
         entity_id = response_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
         if entity_id not in result:
             result.append(entity_id)
 
     return result
-
-
-def infer_json_type_definition(example_json: str) -> str:
-    try:
-        cmd_echo_result = subprocess.run(
-            ["echo", example_json],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-
-        cmd_jtd_infer_result = subprocess.run(
-            ["jtd-infer"],
-            input=cmd_echo_result.stdout,
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-
-        return cmd_jtd_infer_result.stdout
-    except subprocess.CalledProcessError as e:
-        print(f"Error executing command: {e}")
-        print(f"Stderr: {e.stderr}")
-    except FileNotFoundError:
-        print("Error: The specified command was not found.")
-
-    return ""
 
 
 def is_json_subset(subset_json, full_json):
@@ -1394,29 +1376,35 @@ def is_json_subset(subset_json, full_json):
             if not is_json_subset(value, full_json[key]):
                 return False
         return True
-    elif isinstance(subset_json, list):
+
+    if isinstance(subset_json, list):
         if not isinstance(full_json, list):
             return False
         for item in subset_json:
             if item not in full_json:
                 return False
         return True
-    else:  # Primitive types (int, str, bool, float, None)
-        return subset_json == full_json
+
+    # Primitive types (int, str, bool, float, None)
+    return subset_json == full_json
 
 
 def output(indentation, message):
+    """Create an indented message."""
     print(f"{"    " * indentation}{message}")
 
 
 def path_to_testdata(filename: str) -> str:
+    """Determine the path to the test data."""
     current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath("{0}/testdata/{1}".format(current_path, filename))
+    result = os.path.abspath(f"{current_path}/testdata/{filename}")
     return result
 
 
-def process_RFC8927():
-    global DEFINITIONS, SCHEMA
+def process_rfc8927():
+    """Process the RFC8927 JSON."""
+    # global DEFINITIONS, SCHEMA
+    global DEFINITIONS
 
     input_filename = "./senzingsdk-RFC8927.json"
     with open(input_filename, "r", encoding="utf-8") as input_file:
@@ -1435,10 +1423,11 @@ def process_RFC8927():
             print(f"Could not find JSON key: {requested_json_key}")
             continue
 
-        SCHEMA[requested_json_key] = recurse(json_value)
+        SCHEMA[requested_json_key] = recurse_json(json_value)
 
 
 def set_debug(needle, haystack):
+    """Determine if debug should be set."""
     global DEBUG
 
     DEBUG = 0
@@ -1447,6 +1436,7 @@ def set_debug(needle, haystack):
 
 
 def test_this(test_name, title, response):
+    """Test the response against a schema."""
     if response:
         json_schema = SCHEMA.get(title)
         compare_to_schema(test_name, title, json_schema, json.loads(response))
@@ -1461,25 +1451,25 @@ if __name__ == "__main__":
 
     # Process RFC8927 file to create SCHEMA.
 
-    process_RFC8927()
+    process_rfc8927()
 
     # Create SzAbstractFactory.
 
-    sz_abstract_factory = create_sz_abstract_factory()
+    the_sz_abstract_factory = create_sz_abstract_factory()
 
     # Insert test data.
 
-    add_records(sz_abstract_factory)
-    LOADED_ENTITY_IDS = get_entity_ids(sz_abstract_factory)
+    add_records(the_sz_abstract_factory)
+    LOADED_ENTITY_IDS = get_entity_ids(the_sz_abstract_factory)
 
     # Make comparisons.
 
     # compare(sz_abstract_factory)
-    compare_find_network_by_entity_id(sz_abstract_factory)
+    compare_find_network_by_entity_id(the_sz_abstract_factory)
 
     # Delete test data.
 
-    delete_records(sz_abstract_factory)
+    delete_records(the_sz_abstract_factory)
 
     # Epilog.
 

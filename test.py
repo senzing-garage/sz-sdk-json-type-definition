@@ -15,8 +15,9 @@ import pathlib
 
 
 def path_to_testdata(filename: str) -> str:
+    """Determine the path to the test data."""
     current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath("{0}/testdata/{1}".format(current_path, filename))
+    result = os.path.abspath(f"{current_path}/testdata/{filename}")
     return result
 
 
@@ -26,7 +27,7 @@ def path_to_testdata(filename: str) -> str:
 
 
 def test_szengine_find_network_by_record_id_001():
-    pass
+    """Test sz_engine.find_network_by_record_id()"""
 
 
 # def test_szengine_find_network_by_record_id_001():

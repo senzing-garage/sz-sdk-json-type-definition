@@ -146,9 +146,12 @@
     ".project",
     ".venv/**",
     "**/*.cs",
+    "**/*.css",
     "**/*.editorconfig",
     "**/*.go",
+    "**/*.html",
     "**/*.java",
+    "**/*.js",
     "**/*.json",
     "**/*.mod",
     "**/*.py",
@@ -156,6 +159,8 @@
     "**/*.rs",
     "**/*.sum",
     "bearer.ignore",
+    "csharp/obj/Debug/**",
+    "java/target/**",
     "Makefile",
     "testdata/**"
   ]

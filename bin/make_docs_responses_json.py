@@ -2,11 +2,11 @@
 
 # pylint: disable=duplicate-code
 
-import json
-
 """
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
+
+import json
 
 DEFINITIONS = {}
 GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-json"
@@ -67,125 +67,122 @@ GLOBAL_JSON_KEYS = [
 # -----------------------------------------------------------------------------
 
 
-def handle_elements(json_value):
+def handle_json_elements(json_value):
+    """Unwrap an RFC8927 'element'."""
     elements = json_value.get("elements", {})
-    result = recurse(elements)
+    result = recurse_json(elements)
     return [result]
 
 
-def handle_metadata(json_value):
+def handle_json_metadata(json_value):
+    """Unwrap an RFC8927 'metadata'."""
     metadata = json_value.get("metadata")
     python_type = metadata.get("pythonType")
     if python_type:
-        return handle_python_type(python_type)
+        return handle_json_python_type(python_type)
     return None
 
 
-def handle_properties(json_value):
+def handle_json_properties(json_value):
+    """Unwrap an RFC8927 'properties'."""
     result = {}
     properties = json_value.get("properties", {})
     for key, value in properties.items():
-        result[key] = recurse(value)
+        result[key] = recurse_json(value)
     return result
 
 
-def handle_python_type(python_type):
+def handle_json_python_type(python_type):
+    """Unwrap based on custom datatype."""
+
     result = {}
 
     match python_type:
         case "Dict[str, List[FeatureScoreForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [
-                    recurse(DEFINITIONS.get("FeatureScoreForAttribute"))
-                ]
-            }
+            result = {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureScoreForAttribute"))]}
         case "Dict[str, List[FeatureDescriptionValue]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureDescriptionValue"))]
-            }
+            result = {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureDescriptionValue"))]}
         case "Dict[str, List[FeatureForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttribute"))]
-            }
+            result = {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureForAttribute"))]}
         case "Dict[str, List[FeatureForAttributes]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForAttributes"))]
-            }
+            result = {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureForAttributes"))]}
         case "Dict[str, List[FeatureForGetEntity]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("FeatureForGetEntity"))]
-            }
+            result = {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("FeatureForGetEntity"))]}
         case "Dict[str, List[MatchInfoForAttribute]]":
-            return {
-                VARIABLE_JSON_KEY: [recurse(DEFINITIONS.get("MatchInfoForAttribute"))]
-            }
+            result = {VARIABLE_JSON_KEY: [recurse_json(DEFINITIONS.get("MatchInfoForAttribute"))]}
         case "Dict[str, int]":
-            return {
+            result = {
                 VARIABLE_JSON_KEY: "int32",
             }
         case "Dict[str, object]":
-            return {
+            result = {
                 VARIABLE_JSON_KEY: "object",
             }
         case "Dict[str, str]":
-            return {
+            result = {
                 VARIABLE_JSON_KEY: "string",
             }
         case "object":
-            return "object"
+            result = "object"
         case "string":
-            return "string"
+            result = "string"
         case _:
             print(f"Error: Bad 'pythonType:' {python_type}")
             raise NotImplementedError
     return result
 
 
-def handle_ref(json_value):
-    return recurse(DEFINITIONS.get(json_value.get("ref")))
+def handle_json_ref(json_value):
+    """Unwrap an RFC8927 'ref'."""
+    return recurse_json(DEFINITIONS.get(json_value.get("ref")))
 
 
-def handle_type(json_value):
+def handle_json_type(json_value):
+    """Unwrap an RFC8927 'type'."""
     return json_value.get("type")
 
 
-def handle_values(json_value):
-    type = json_value.get("values", {}).get("ref")
-    if not type:
-        type = json_value.get("values", {}).get("type")
+def handle_json_values(json_value):
+    """Unwrap an RFC8927 'value'."""
+    ref_type = json_value.get("values", {}).get("ref")
+    if not ref_type:
+        ref_type = json_value.get("values", {}).get("type")
 
-    if type in ["int32", "string"]:
-        result = {VARIABLE_JSON_KEY: type}
-    elif type:
-        result = {VARIABLE_JSON_KEY: recurse(DEFINITIONS.get(type))}
+    if ref_type in ["int32", "string"]:
+        result = {VARIABLE_JSON_KEY: ref_type}
+    elif ref_type:
+        result = {VARIABLE_JSON_KEY: recurse_json(DEFINITIONS.get(ref_type))}
     else:
-        result = {VARIABLE_JSON_KEY: recurse(json_value.get("values", {}))}
+        result = {VARIABLE_JSON_KEY: recurse_json(json_value.get("values", {}))}
     return result
 
 
-def recurse(json_value):
+def recurse_json(json_value):
+    """Do recursive descent through the JSON/dictionary."""
+
+    result = {}
 
     if "metadata" in json_value:
-        result = handle_metadata(json_value)
+        result = handle_json_metadata(json_value)
         if result:
             return result
 
     if "type" in json_value:
-        return handle_type(json_value)
+        result = handle_json_type(json_value)
 
     if "values" in json_value:
-        return handle_values(json_value)
+        result = handle_json_values(json_value)
 
     if "ref" in json_value:
-        return handle_ref(json_value)
+        result = handle_json_ref(json_value)
 
     if "properties" in json_value:
-        return handle_properties(json_value)
+        result = handle_json_properties(json_value)
 
     if "elements" in json_value:
-        return handle_elements(json_value)
+        result = handle_json_elements(json_value)
 
-    return {}
+    return result
 
 
 # -----------------------------------------------------------------------------
@@ -203,16 +200,16 @@ DEFINITIONS = DATA.get("definitions", {})
 # Recurse through dictionary.
 
 for requested_json_key in GLOBAL_JSON_KEYS:
-    json_value = DEFINITIONS.get(requested_json_key)
+    initial_json_value = DEFINITIONS.get(requested_json_key)
 
     # Short-circuit when JSON key not found.
 
-    if json_value is None:
+    if initial_json_value is None:
         print(f"Could not find JSON key: {requested_json_key}")
         continue
 
-    result = recurse(json_value)
+    final_result = recurse_json(initial_json_value)
 
     output_file = f"{GLOBAL_OUTPUT_DIRECTORY}/{requested_json_key}.json"
     with open(output_file, "w", encoding="utf-8") as json_file:
-        json.dump(result, json_file, indent=4)
+        json.dump(final_result, json_file, indent=4)

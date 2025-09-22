@@ -76,7 +76,7 @@ dependencies-for-development: venv dependencies-for-development-osarch-specific 
 	@go install golang.org/x/tools/cmd/godoc@latest
 	$(activate-venv); \
 		python3 -m pip install --upgrade pip; \
-		python3 -m pip install --requirement development-requirements.txt
+		python3 -m pip install --group all
 
 
 .PHONY: dependencies
@@ -86,7 +86,7 @@ dependencies: venv
 	@go mod tidy
 	$(activate-venv); \
 		python3 -m pip install --upgrade pip; \
-		python3 -m pip install --requirement requirements.txt
+		python3 -m pip install -e .
 
 # -----------------------------------------------------------------------------
 # Setup
@@ -114,10 +114,11 @@ setup: \
 
 .PHONY: lint
 lint: \
+	pylint \
 	golangci-lint \
 	cspell \
 	analyze-RFC8927 \
-	pretty-print
+	pretty-print \
 
 # -----------------------------------------------------------------------------
 # Build
@@ -433,6 +434,12 @@ fix-wsl:
 pretty-print:
 	@./bin/pretty_print.py
 	diff -w senzingsdk-RFC8927-pretty.json senzingsdk-RFC8927.json
+
+
+.PHONY: pylint
+pylint:
+	$(activate-venv); \
+		pylint $(git ls-files '*.py')
 
 
 .PHONY: testdata-responses-generated

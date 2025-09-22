@@ -47,14 +47,14 @@ from python.typedef import (
 
 
 def path_to_testdata(filename: str) -> str:
+    """Determine the path to the test data."""
     current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath(
-        "{0}/testdata/responses_generated/{1}".format(current_path, filename)
-    )
+    result = os.path.abspath(f"{current_path}/testdata/responses_generated/{filename}")
     return result
 
 
 def file(filename: str) -> dict:
+    """Load JSON from file."""
     print(filename)
     absolute_file = path_to_testdata(filename)
     with open(
@@ -64,9 +64,7 @@ def file(filename: str) -> dict:
         return json.loads(input_file.read())
 
 
-def print_fmt(
-    response, value
-):  # pylint: disable=redefined-outer-name eval-used, unused-argument
+def print_fmt(response, value):  # pylint: disable=redefined-outer-name eval-used, unused-argument
     """
     Tricky code:
     The "response" passed in needs to be part of the "value" string to be evaluated.
@@ -81,6 +79,7 @@ def print_fmt(
 
 
 def mock_szengine_add_record_with_info() -> str:
+    """Mock call to sz_engine.add_record_with_info()"""
     with open(
         path_to_testdata("SzEngineAddRecordResponse-test-002.json"),
         encoding="utf-8",
@@ -89,6 +88,7 @@ def mock_szengine_add_record_with_info() -> str:
 
 
 def mock_szengine_delete_record_with_info() -> str:
+    """Mock call to sz_engine.delete_record_with_info()"""
     with open(
         path_to_testdata("SzEngineDeleteRecordResponse-test-002.json"),
         encoding="utf-8",
@@ -97,6 +97,7 @@ def mock_szengine_delete_record_with_info() -> str:
 
 
 def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> str:
+    """Mock call to sz_engine.get_virtual_entity_by_record_id()"""
     if flags:
         print(f"recordKeys Parameter: {record_keys}\n")
 
@@ -126,9 +127,7 @@ def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> st
 # Demonstrate creating input parameter and parsing output result.
 # -----------------------------------------------------------------------------
 
-print(
-    "--- Demonstrate creating input parameter and parsing output result ------------\n"
-)
+print("--- Demonstrate creating input parameter and parsing output result ------------\n")
 
 recordKeysDict = {
     "RECORDS": [
@@ -148,9 +147,7 @@ response = mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data
 
 # Parse response.
 
-virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
-    json.loads(response)
-)
+virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(json.loads(response))
 
 print(
     f"RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: {virtual_entity.resolved_entity.features['ID_KEY'][0].feat_desc}\n"
@@ -167,9 +164,7 @@ for address in addresses:
 # Demonstrate reconstructed JSON.
 # -----------------------------------------------------------------------------
 
-print(
-    "\n--- Demonstrate reconstructed JSON --------------------------------------------\n"
-)
+print("\n--- Demonstrate reconstructed JSON --------------------------------------------\n")
 
 json_dict = {
     "DATA_SOURCES": [
@@ -195,32 +190,24 @@ reconstructed_string = data_source_registry.to_json_data()
 # Compare original and reconstructed JSON.
 
 print(f"     Original JSON: {json_string}")
-print(
-    f"Reconstructed JSON: {reconstructed_string} - notice JSON keys have been sorted."
-)
+print(f"Reconstructed JSON: {reconstructed_string} - notice JSON keys have been sorted.")
 
 # -----------------------------------------------------------------------------
 # Show transformation from "from_json_data()" to "to_json_data"
 # -----------------------------------------------------------------------------
 
-print(
-    "\n---- Simple examples ----------------------------------------------------------\n"
-)
+print("\n---- Simple examples ----------------------------------------------------------\n")
 
 # SzEngine add_record_with_info -----------------------------------------------
 
-virtual_entity = SzEngineAddRecordResponse.from_json_data(
-    json.loads(mock_szengine_add_record_with_info())
-)
+virtual_entity = SzEngineAddRecordResponse.from_json_data(json.loads(mock_szengine_add_record_with_info()))
 print(
     f"SzEngineAddRecordResponse: DataSource: {virtual_entity.data_source}; RecordID: {virtual_entity.record_id}; Affected entity: {virtual_entity.affected_entities[0].entity_id}"
 )
 
 # SzEngine delete_record_with_info --------------------------------------------
 
-virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
-    json.loads(mock_szengine_delete_record_with_info())
-)
+virtual_entity = SzEngineDeleteRecordResponse.from_json_data(json.loads(mock_szengine_delete_record_with_info()))
 print(
     f"SzEngineDeleteRecordResponse: DataSource: {virtual_entity.data_source}; RecordID: {virtual_entity.record_id}; Affected entity: {virtual_entity.affected_entities[0].entity_id}"
 )
@@ -228,9 +215,7 @@ print(
 # SzEngine szengine_get_virtual_entity_by_record_id ------------------------------------
 
 virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
-    json.loads(
-        mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0)
-    )
+    json.loads(mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0))
 )
 print(
     f"SzEngineGetVirtualEntityByRecordIDResponse: Simple  description: {virtual_entity.resolved_entity.features['NAME'][0].feat_desc}"
@@ -240,33 +225,23 @@ feature_list = virtual_entity.resolved_entity.features["NAME"]
 for feature in feature_list:
     feat_desc_list = feature.feat_desc_values
     for feat_desc in feat_desc_list:
-        print(
-            f"SzEngineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}"
-        )
+        print(f"SzEngineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.feat_desc}")
 
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys
 # - Issue: No editor hints
-virtual_entity = json.loads(
-    mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0)
-)
-feature_list = (
-    virtual_entity.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
-)
+virtual_entity = json.loads(mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0))
+feature_list = virtual_entity.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")
     for feat_desc in feat_desc_list:
-        print(
-            f"SzEngineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.get('FEAT_DESC')}"
-        )
+        print(f"SzEngineGetVirtualEntityByRecordIDResponse: Feature description: {feat_desc.get('FEAT_DESC')}")
 
 # -----------------------------------------------------------------------------
 # test area
 # -----------------------------------------------------------------------------
 
-print(
-    "\n---- Test area ----------------------------------------------------------------\n"
-)
+print("\n---- Test area ----------------------------------------------------------------\n")
 
 virtual_entity = SzConfigRegisterDataSourceResponse.from_json_data(
     file("SzConfigRegisterDataSourceResponse-test-001.json")
@@ -274,9 +249,7 @@ virtual_entity = SzConfigRegisterDataSourceResponse.from_json_data(
 print_fmt(virtual_entity, "response.dsrc_id")
 
 
-virtual_entity = SzConfigExportResponse.from_json_data(
-    file("SzConfigExportResponse-test-001.json")
-)
+virtual_entity = SzConfigExportResponse.from_json_data(file("SzConfigExportResponse-test-001.json"))
 print_fmt(virtual_entity, "response.g2_config.cfg_dfbom[0].dfcall_id")
 
 
@@ -304,21 +277,15 @@ virtual_entity = SzDiagnosticGetRepositoryInfoResponse.from_json_data(
 print_fmt(virtual_entity, "response.data_stores[0].location")
 
 
-virtual_entity = SzDiagnosticGetFeatureResponse.from_json_data(
-    file("SzDiagnosticGetFeatureResponse-test-001.json")
-)
+virtual_entity = SzDiagnosticGetFeatureResponse.from_json_data(file("SzDiagnosticGetFeatureResponse-test-001.json"))
 print_fmt(virtual_entity, "response.lib_feat_id")
 
 
-virtual_entity = SzEngineAddRecordResponse.from_json_data(
-    file("SzEngineAddRecordResponse-test-002.json")
-)
+virtual_entity = SzEngineAddRecordResponse.from_json_data(file("SzEngineAddRecordResponse-test-002.json"))
 print_fmt(virtual_entity, "response.affected_entities[0].entity_id")
 
 
-virtual_entity = SzEngineDeleteRecordResponse.from_json_data(
-    file("SzEngineDeleteRecordResponse-test-002.json")
-)
+virtual_entity = SzEngineDeleteRecordResponse.from_json_data(file("SzEngineDeleteRecordResponse-test-002.json"))
 print_fmt(virtual_entity, "response.affected_entities[0].entity_id")
 
 
@@ -368,8 +335,6 @@ print_fmt(
     virtual_entity,
     "response.entities[0].resolved_entity.entity_id",
 )
-
-xxx = SzEngineProcessRedoRecordResponse
 
 
 virtual_entity = SzEngineGetEntityByEntityIDResponse.from_json_data({})

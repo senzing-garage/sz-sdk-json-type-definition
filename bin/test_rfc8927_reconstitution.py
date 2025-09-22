@@ -44,7 +44,7 @@ def is_equal(test_name, source, target):
     source_type = type(source)
     if source_type == builtins.dict:
         for key, value in source.items():
-            if not is_equal("{0}.{1}".format(test_name, key), value, target.get(key)):
+            if not is_equal(f"{test_name}.{key}", value, target.get(key)):
                 return False
     elif source_type == builtins.list:
         source_length = len(source)
@@ -53,14 +53,14 @@ def is_equal(test_name, source, target):
             return False
         for item_number in range(source_length):
             if not is_equal(
-                "{0}[{1}]".format(test_name, item_number),
+                f"{test_name}[{item_number}]",
                 source[item_number],
                 target[item_number],
             ):
                 return False
     else:
         if source != target:
-            logging.error("JSON key conflict: {0}".format(test_name))
+            logging.error("JSON key conflict: %s", test_name)
             result = False
     return result
 
@@ -73,15 +73,9 @@ def remove_empty_elements(an_object):
 
     source_type = type(an_object)
     if source_type == builtins.dict:
-        return {
-            k: v
-            for k, v in ((k, remove_empty_elements(v)) for k, v in an_object.items())
-            if not empty(v)
-        }
+        return {k: v for k, v in ((k, remove_empty_elements(v)) for k, v in an_object.items()) if not empty(v)}
     if source_type == builtins.list:
-        return [
-            v for v in (remove_empty_elements(v) for v in an_object) if not empty(v)
-        ]
+        return [v for v in (remove_empty_elements(v) for v in an_object) if not empty(v)]
     return an_object
 
 
@@ -95,9 +89,10 @@ logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
 
 # Prolog.
 
-logging.info("{0}".format("-" * 80))
-logging.info("--- {0} - Begin".format(os.path.basename(__file__)))
-logging.info("{0}".format("-" * 80))
+horizontal_rule = format("-" * 80)
+logging.info("%s", horizontal_rule)
+logging.info("--- %s - Begin", format(os.path.basename(__file__)))
+logging.info("%s", horizontal_rule)
 
 
 # Load testcase metadata.
@@ -118,7 +113,7 @@ for senzing_api_class, method_test_cases in response_testcases.items():
 
     if pythonClass not in globals():
         ERROR_COUNT += 1
-        logging.error("Incorrect pythonClass: {0}".format(pythonClass))
+        logging.error("Incorrect pythonClass: %s", pythonClass)
         continue
 
     # Run though test cases.
@@ -126,66 +121,50 @@ for senzing_api_class, method_test_cases in response_testcases.items():
     senzing_class = globals()[pythonClass]
     for testcase_name, testcase_dict in tests.items():
         TEST_COUNT += 1
-        canonical_testcase_name = "{0}.{1}".format(pythonClass, testcase_name)
+        CANONICAL_TESTCASE_NAME = f"{pythonClass}.{testcase_name}"
 
         # Test for similarity in key/values.
 
-        logging.info("Testcase: {0}".format(canonical_testcase_name))
+        logging.info("Testcase: %s", CANONICAL_TESTCASE_NAME)
         json_struct = senzing_class.from_json_data(testcase_dict)
         reconstructed_json_string = json.dumps(json_struct.to_json_data())
         reconstructed_testcase_dict = json.loads(reconstructed_json_string)
-        if not is_equal(
-            canonical_testcase_name, testcase_dict, reconstructed_testcase_dict
-        ):
+        if not is_equal(CANONICAL_TESTCASE_NAME, testcase_dict, reconstructed_testcase_dict):
             ERROR_COUNT += 1
 
         # Test for similarity in JSON string lengths.
 
-        original_json_string_sorted = json.dumps(
-            remove_empty_elements(testcase_dict), sort_keys=True
-        )
-        reconstructed_json_string_sorted = json.dumps(
-            remove_empty_elements(json_struct.to_json_data()), sort_keys=True
-        )
+        original_json_string_sorted = json.dumps(remove_empty_elements(testcase_dict), sort_keys=True)
+        reconstructed_json_string_sorted = json.dumps(remove_empty_elements(json_struct.to_json_data()), sort_keys=True)
         len_original = len(original_json_string_sorted)
         len_reconstructed = len(reconstructed_json_string_sorted)
         if len_original != len_reconstructed:
             ERROR_COUNT += 1
             logging.error(
-                "Lengths differ: Test: {0}; Original: {1}; Reconstructed: {2}".format(
-                    canonical_testcase_name, len_original, len_reconstructed
-                )
+                "Lengths differ: Test: %s; Original: %d; Reconstructed: %d",
+                CANONICAL_TESTCASE_NAME,
+                len_original,
+                len_reconstructed,
             )
 
         # Test for similarity in JSON strings.
 
         if original_json_string_sorted != reconstructed_json_string_sorted:
             for index in range(len_original):
-                if (
-                    original_json_string_sorted[index]
-                    != reconstructed_json_string_sorted[index]
-                ):
+                if original_json_string_sorted[index] != reconstructed_json_string_sorted[index]:
                     ERROR_COUNT += 1
                     logging.error(
-                        "Strings differ: Test: {0}; First difference position: {1}".format(
-                            canonical_testcase_name, index
-                        )
+                        "Strings differ: Test: %s; First difference position: %d", CANONICAL_TESTCASE_NAME, index
                     )
-                    logging.error(
-                        ">>>>>>      Original: {0}".format(original_json_string_sorted)
-                    )
-                    logging.error(
-                        ">>>>>> Reconstructed: {0}".format(
-                            reconstructed_json_string_sorted
-                        )
-                    )
+                    logging.error(">>>>>>      Original: %s", original_json_string_sorted)
+                    logging.error(">>>>>> Reconstructed: %s", reconstructed_json_string_sorted)
                     break
 
 # Epilog.
 
-logging.info("Tests: {0}; Errors: {1}".format(TEST_COUNT, ERROR_COUNT))
-logging.info("{0}".format("-" * 80))
-logging.info("--- {0} - End".format(os.path.basename(__file__)))
-logging.info("{0}".format("-" * 80))
+logging.info("Tests: %d; Errors: %d", TEST_COUNT, ERROR_COUNT)
+logging.info("%s", horizontal_rule)
+logging.info("--- %s - End", os.path.basename(__file__))
+logging.info("%s", horizontal_rule)
 if ERROR_COUNT > 0:
     sys.exit(1)

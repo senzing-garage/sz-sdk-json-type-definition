@@ -31,7 +31,7 @@ def recurse(prefix, an_object):
     """Recurse though the dictionary, beautifying as it goes."""
     for key, value in an_object.items():
         if isinstance(value, dict):
-            recurse("{0}.{1}".format(prefix, key), value)
+            recurse(f"{prefix}.{key}", value)
             # if key not in BLACK_LIST:
             #     if "metadata" not in value:
             #         value["metadata"] = {}

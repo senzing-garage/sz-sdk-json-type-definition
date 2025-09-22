@@ -2,12 +2,11 @@
 
 # pylint: disable=duplicate-code
 
-import json
-
 """
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
+import json
 
 VARIABLE_JSON_KEY = "user_defined_json_key"
 DEFINITIONS = {}
@@ -70,45 +69,34 @@ GLOBAL_JSON_KEYS = [
 # -----------------------------------------------------------------------------
 
 
-def recurse_json(level, key, value) -> str:
-
-    result = ""
-
-    if value.get("metadata", {}).get("pythonType"):
-        result += handle_json_python_type(
-            level, key, value.get("metadata", {}).get("description"), value
-        )
-    elif "type" in value:
-        result += handle_json_type(level, key, value)
-    elif "values" in value:
-        result += handle_json_values(level, key, value)
-    elif "ref" in value:
-        result += handle_json_ref(level, key, value)
-    elif "properties" in value:
-        result += handle_json_properties(level, key, value)
-    elif "elements" in value:
-        result += handle_json_elements(level, key, value)
-    elif "metadata" in value:
-        result += handle_json_metadata(level, key, value)
-
-    return result
+def handle_json_dict(level, key, description, json_key):
+    """Unwrap a dictionary."""
+    result = make_json_key(key, description, "{")
+    result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(json_key, {}))[:-1]
+    result += html_println(level, "},")
+    return html_println(level, result)
 
 
-def html_println(level, message) -> str:
-    # return f'\n<br/><span style="width: {50 * level}px; display: inline-block"></span>{message}'
-    return f"\n<br/>{INDENT * level}{message}"
+def handle_json_dict_data_type(level, key, description, data_type):
+    """Unwrap a dictionary."""
+    result = make_json_key(key, description, "{")
+    result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{data_type}"')
+    result += html_println(level, "},")
+    return html_println(level, result)
 
 
-def make_json_key(key, description, suffix) -> str:
-    result = suffix
-    if description and key:
-        result = f'"<a href="#" data-toggle="tooltip" data-placement="bottom" title="{description}">{key}</a>": {suffix}'
-    elif key:
-        result = f'"{key}": {suffix}'
-    return result
+def handle_json_dict_list(level, key, description, json_key):
+    """Unwrap a dictionary of keyed lists."""
+    result = make_json_key(key, description, "{")
+    result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": [')
+    result += recurse_json(level + 2, None, DEFINITIONS.get(json_key, {}))[:-1]
+    result += html_println(level + 1, "]")
+    result += html_println(level, "},")
+    return html_println(level, result)
 
 
 def handle_json_elements(level, key, value) -> str:
+    """Unwrap an RFC8927 'element'."""
     elements = value.get("elements", [])
     description = value.get("metadata", {}).get("description")
     result = html_println(level, make_json_key(key, description, "["))
@@ -118,6 +106,7 @@ def handle_json_elements(level, key, value) -> str:
 
 
 def handle_json_metadata(level, key, json_value) -> str:
+    """Unwrap an RFC8927 'metadata'."""
     result = ""
     metadata = json_value.get("metadata", {})
     python_type = metadata.get("pythonType")
@@ -128,80 +117,48 @@ def handle_json_metadata(level, key, json_value) -> str:
 
 
 def handle_json_properties(level, key, json_value) -> str:
+    """Unwrap an RFC8927 'properties'."""
     properties = json_value.get("properties", {})
     description = json_value.get("metadata", {}).get("description")
     result = html_println(level, make_json_key(key, description, "{"))
-    for key, value in properties.items():
-        result += recurse_json(level + 1, key, value)
+    for item_key, item_value in properties.items():
+        result += recurse_json(level + 1, item_key, item_value)
     result = result[:-1]
     result += html_println(level, "},")
     return result
 
 
-def handle_json_dict(level, key, description, json_key):
-    result = make_json_key(key, description, "{")
-    result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(json_key, {}))[
-        :-1
-    ]
-    result += html_println(level, "},")
-    return html_println(level, result)
-
-
-def handle_json_dict_list(level, key, description, json_key):
-    result = make_json_key(key, description, "{")
-    result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": [')
-    result += recurse_json(level + 2, None, DEFINITIONS.get(json_key, {}))[:-1]
-    result += html_println(level + 1, "]")
-    result += html_println(level, "},")
-    return html_println(level, result)
-
-
-def handle_json_dict_data_type(level, key, description, data_type):
-    result = make_json_key(key, description, "{")
-    result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{data_type}"')
-    result += html_println(level, "},")
-    return html_println(level, result)
-
-
 def handle_json_python_type(level, key, description, value) -> str:
+    """Unwrap based on custom datatype."""
+
     result = ""
-
     python_type = value.get("metadata", {}).get("pythonType")
-
     match python_type:
         case "Dict[str, List[FeatureScoreForAttribute]]":
-            return handle_json_dict_list(
-                level, key, description, "FeatureScoresForAttribute"
-            )
+            result = handle_json_dict_list(level, key, description, "FeatureScoresForAttribute")
         case "Dict[str, List[FeatureDescriptionValue]]":
-            return handle_json_dict_list(
-                level, key, description, "FeatureDescriptionValue"
-            )
+            result = handle_json_dict_list(level, key, description, "FeatureDescriptionValue")
         case "Dict[str, List[FeatureForAttribute]]":
-            return handle_json_dict_list(level, key, description, "FeatureForAttribute")
+            result = handle_json_dict_list(level, key, description, "FeatureForAttribute")
 
         case "Dict[str, List[FeatureForAttributes]]":
-            return handle_json_dict_list(
-                level, key, description, "FeatureForAttributes"
-            )
+            result = handle_json_dict_list(level, key, description, "FeatureForAttributes")
         case "Dict[str, List[FeatureForGetEntity]]":
-            return handle_json_dict_list(level, key, description, "FeatureForGetEntity")
+            result = handle_json_dict_list(level, key, description, "FeatureForGetEntity")
         case "Dict[str, List[MatchInfoForAttribute]]":
-            return handle_json_dict_list(
-                level, key, description, "MatchInfoForAttribute"
-            )
+            result = handle_json_dict_list(level, key, description, "MatchInfoForAttribute")
         case "Dict[str, int]":
-            return handle_json_dict_data_type(level, key, description, "int32")
+            result = handle_json_dict_data_type(level, key, description, "int32")
         case "Dict[str, object]":
-            return handle_json_dict_data_type(level, key, description, "object")
+            result = handle_json_dict_data_type(level, key, description, "object")
         case "Dict[str, str]":
-            return handle_json_dict_data_type(level, key, description, "string")
+            result = handle_json_dict_data_type(level, key, description, "string")
         case "object":
-            return html_println(level, f'"{key}": "object",')
+            result = html_println(level, f'"{key}": "object",')
         case "string":
-            return html_println(level, f'"{key}": "string",')
+            result = html_println(level, f'"{key}": "string",')
         case "int32":
-            return html_println(level, f'"{key}": "int32",')
+            result = html_println(level, f'"{key}": "int32",')
         case _:
             print(f"Error: Bad 'pythonType:' {value}")
             raise NotImplementedError
@@ -210,10 +167,12 @@ def handle_json_python_type(level, key, description, value) -> str:
 
 
 def handle_json_ref(level, key, value) -> str:
+    """Unwrap an RFC8927 'ref'."""
     return recurse_json(level, key, DEFINITIONS.get(value.get("ref")))
 
 
 def handle_json_type(level, key, value) -> str:
+    """Unwrap an RFC8927 'type'."""
     data_type = value.get("type")
     description = value.get("metadata", {}).get("description")
 
@@ -230,26 +189,63 @@ def handle_json_type(level, key, value) -> str:
 
 
 def handle_json_values(level, key, value) -> str:
-    type = value.get("values", {}).get("ref")
-    if not type:
-        type = value.get("values", {}).get("type")
+    """Unwrap an RFC8927 'value'."""
+    ref_type = value.get("values", {}).get("ref")
+    if not ref_type:
+        ref_type = value.get("values", {}).get("type")
     description = value.get("metadata", {}).get("description")
 
     result = make_json_key(key, description, "{")
-    if type in ["int32", "string"]:
-        result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{type}"')
-    elif type:
-        result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(type, {}))[
-            :-1
-        ]
+    if ref_type in ["int32", "string"]:
+        result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{ref_type}"')
+    elif ref_type:
+        result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(ref_type, {}))[:-1]
     else:
-        result += recurse_json(level + 1, VARIABLE_JSON_KEY, value.get("values", {}))[
-            :-1
-        ]
+        result += recurse_json(level + 1, VARIABLE_JSON_KEY, value.get("values", {}))[:-1]
 
     result += html_println(level, "},")
 
     return html_println(level, result)
+
+
+def html_println(level, message) -> str:
+    """Return a string that prepends an HTML newline to the message."""
+    # return f'\n<br/><span style="width: {50 * level}px; display: inline-block"></span>{message}'
+    return f"\n<br/>{INDENT * level}{message}"
+
+
+def make_json_key(key, description, suffix) -> str:
+    """Create a JSON key with or without an HTML anchor."""
+    result = suffix
+    if description and key:
+        result = (
+            f'"<a href="#" data-toggle="tooltip" data-placement="bottom" title="{description}">{key}</a>": {suffix}'
+        )
+    elif key:
+        result = f'"{key}": {suffix}'
+    return result
+
+
+def recurse_json(level, key, value) -> str:
+    """Do recursive descent through the JSON/dictionary."""
+
+    result = ""
+    if value.get("metadata", {}).get("pythonType"):
+        result += handle_json_python_type(level, key, value.get("metadata", {}).get("description"), value)
+    elif "type" in value:
+        result += handle_json_type(level, key, value)
+    elif "values" in value:
+        result += handle_json_values(level, key, value)
+    elif "ref" in value:
+        result += handle_json_ref(level, key, value)
+    elif "properties" in value:
+        result += handle_json_properties(level, key, value)
+    elif "elements" in value:
+        result += handle_json_elements(level, key, value)
+    elif "metadata" in value:
+        result += handle_json_metadata(level, key, value)
+
+    return result
 
 
 # -----------------------------------------------------------------------------
@@ -258,6 +254,7 @@ def handle_json_values(level, key, value) -> str:
 
 
 def make_html(title: str, input_dict: dict) -> str:
+    """Create an HTML string."""
 
     # HTML prefix.
 
@@ -317,15 +314,15 @@ DEFINITIONS = DATA.get("definitions", {})
 # Recurse through dictionary.
 
 for requested_json_key in GLOBAL_JSON_KEYS:
-    json_value = DEFINITIONS.get(requested_json_key)
+    initial_json_value = DEFINITIONS.get(requested_json_key)
 
     # Short-circuit when JSON key not found.
 
-    if json_value is None:
+    if initial_json_value is None:
         print(f"Could not find JSON key: {requested_json_key}")
         continue
 
-    html = make_html(requested_json_key, json_value)
+    html = make_html(requested_json_key, initial_json_value)
 
     output_file = f"{GLOBAL_OUTPUT_DIRECTORY}/{requested_json_key}.html"
     with open(output_file, "w", encoding="utf-8") as json_file:
