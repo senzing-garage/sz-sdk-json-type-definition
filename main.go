@@ -7,7 +7,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"path/filepath"
 
 	"github.com/senzing-garage/go-helpers/settings"
 	"github.com/senzing-garage/sz-sdk-go-core/szabstractfactory"
@@ -160,25 +159,14 @@ func panicOnError(err error) {
 	}
 }
 
-func getTestDirectoryPath() string {
-	return filepath.FromSlash("/tmp/sqlite")
-}
-
 func createSzAbstractFactory(ctx context.Context) senzing.SzAbstractFactory {
 	var result senzing.SzAbstractFactory
 
 	_ = ctx
 
-	testDirectoryPath := getTestDirectoryPath()
-	dbTargetPath, err := filepath.Abs(filepath.Join(testDirectoryPath, "G2C.db"))
-	panicOnError(err)
-
-	databaseURL := "sqlite3://na:na@nowhere/" + dbTargetPath
-
 	// Create Senzing engine configuration JSON.
 
-	configAttrMap := map[string]string{"databaseURL": databaseURL}
-	settings, err := settings.BuildSimpleSettingsUsingMap(configAttrMap)
+	settings, err := settings.BuildSimpleSettingsUsingEnvVars()
 	panicOnError(err)
 
 	result = &szabstractfactory.Szabstractfactory{

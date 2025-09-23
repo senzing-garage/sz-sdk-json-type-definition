@@ -167,6 +167,7 @@
     "java/target/**",
     "Makefile",
     "pyproject.toml",
+    "python/senzing_json.egg-info/**",
     "testdata/**"
   ]
 }

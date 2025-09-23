@@ -8,6 +8,9 @@ on:
     - cron: "15 7 * * *"
   workflow_dispatch:
 
+env:
+  SENZING_TOOLS_DATABASE_URL: sqlite3://na:na@nowhere/tmp/sqlite/G2C.db
+
 permissions:
   contents: read
 
