@@ -87,7 +87,7 @@ From this specification, code is generated for the following languages:
 [java]: java
 [JSON Type Definition]: https://jsontypedef.com/
 [main.go]: main.go
-[main.java]: main.java
+[Main.java]: Main.java
 [main.py]: main.py
 [main.ts]: main.ts
 [Go package reference]: https://pkg.go.dev/github.com/senzing-garage/sz-sdk-json-type-definition
