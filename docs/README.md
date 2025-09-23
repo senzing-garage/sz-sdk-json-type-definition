@@ -5,7 +5,7 @@
 
 |      | HTML | JSON |
 | ---- | ---- | ---- |
-| SzConfigExport     | [HTML](responses-html/SzConfigExportResponse.html) | [JSON](responses-json/SzConfigExportResponse.json) |
+| SzConfigExport     | [HTML](https://garage.senzing.com/sz-sdk-json-type-definition/responses-html/SzConfigExportResponse.html) | [JSON](responses-json/SzConfigExportResponse.json) |
 
 [HTML responses]: responses-html
 [JSON responses]: responses-json
