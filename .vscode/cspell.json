@@ -165,6 +165,7 @@
     "**/*.sum",
     "bearer.ignore",
     "csharp/obj/Debug/**",
+    "dist/**",
     "java/target/**",
     "Makefile",
     "pyproject.toml",

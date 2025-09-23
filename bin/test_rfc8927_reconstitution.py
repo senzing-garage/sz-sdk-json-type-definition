@@ -15,7 +15,7 @@ import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
-from python.typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
+from python.senzing_typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
 
 INPUT_FILE = "bin/response-testcases.json"
 

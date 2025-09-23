@@ -264,7 +264,7 @@ generate-java: clean-java
 .PHONY: generate-python
 generate-python: clean-python
 	jtd-codegen \
-		--python-out ./python/typedef \
+		--python-out ./python/senzing_typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
 
@@ -338,7 +338,7 @@ clean-java:
 
 .PHONY: clean-python
 clean-python:
-	@rm -rf $(MAKEFILE_DIRECTORY)/python/typedef/* || true
+	@rm -rf $(MAKEFILE_DIRECTORY)/python/senzing_typedef/* || true
 
 
 .PHONY: clean-ruby
@@ -358,6 +358,11 @@ clean-typescript:
 
 .PHONY: clean-generated
 clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
+
+
+.PHONY: restore
+restore:
+	git restore testdata/responses_senzing/*.jsonl
 
 # -----------------------------------------------------------------------------
 # Utility targets

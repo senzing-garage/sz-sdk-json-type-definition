@@ -8,7 +8,7 @@ import json
 import os
 import pathlib
 
-from python.typedef import (
+from python.senzing_typedef import (
     SzConfigExportResponse,
     SzConfigGetDataSourceRegistryResponse,
     SzConfigManagerGetConfigRegistryResponse,

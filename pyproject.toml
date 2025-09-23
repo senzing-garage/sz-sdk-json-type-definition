@@ -1,5 +1,6 @@
 [project]
-name = "senzing-json"
+name = "senzing-typedef"
+version = "0.2.11"
 authors = [{ name = "senzing", email = "support@senzing.com" }]
 description = "Helper functions for working with Senzing JSON"
 readme = "README.md"
@@ -18,8 +19,6 @@ license-files = [
   ".github/senzing-corporate-contributor-license-agreement.pdf",
   ".github/senzing-individual-contributor-license-agreement.pdf",
 ]
-version = "0.2.0"
-
 
 [project.urls]
 bugtracker = "https://github.com/senzing-garage/sz-sdk-json-type-definition/issues"
@@ -88,21 +87,7 @@ test = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["python"]  # list of folders that contain the packages (["."] by default)
-#include = ["bob"]  # package names should match these glob patterns (["*"] by default)
-#exclude = ["*"]  # exclude packages matching these glob patterns (empty by default)
-#namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
-
-#[tool.setuptools]
-#package-dir = { "" = "src" }
-#packages = ["typedef"]
-#packages = []
-
-#[tool.setuptools.packages.find]
-#where = ["src"]  # list of folders that contain the packages (["."] by default)
-#include = ["bob"]  # package names should match these glob patterns (["*"] by default)
-#exclude = ["my_package.tests*"]  # exclude packages matching these glob patterns (empty by default)
-#namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+where = ["python"]
 
 [tool.setuptools_scm]
 
