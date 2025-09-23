@@ -99,6 +99,70 @@ These are "one-time tasks" which may already have been completed.
 
     ```
 
+## Package
+
+1. Build the `wheel` file for distribution.
+   Example:
+
+    ```console
+    cd ${GIT_REPOSITORY_DIR}
+    make package
+
+    ```
+
+1. Activate virtual environment.
+
+    ```console
+    cd ${GIT_REPOSITORY_DIR}
+    source .venv/bin/activate
+
+    ```
+
+1. Verify that `senzing-core` is not installed.
+   Example:
+
+    ```console
+    python3 -m pip freeze | grep -e senzing-typedef
+
+    ```
+
+   Nothing is returned.
+
+1. Install directly from `wheel` file.
+   Example:
+
+    ```console
+    python3 -m pip install ${GIT_REPOSITORY_DIR}/dist/*.whl
+
+    ```
+
+1. Verify that `senzing-core` is installed.
+   Example:
+
+    ```console
+    python3 -m pip freeze | grep -e senzing-typedef
+
+    ```
+
+   Example return:
+
+    > senzing-typedef @ file:///home/senzing/senzing-garage.git/sz-sdk-json-type-definition/dist/senzing_typedef-0.2.0-py3-none-any.whl#sha256=ff40b60c764d867c0450f0370673b53b44cf8161e61cab012f2aa21c9db24e3e
+
+1. Uninstall the `senzing-core` python package.
+   Example:
+
+    ```console
+    python3 -m pip uninstall senzing-typedef
+
+    ```
+
+1. Deactivate virtual environment.
+
+    ```console
+    deactivate
+
+    ```
+
 ## References
 
 1. [JSON TypeDef]

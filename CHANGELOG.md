@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.11] - 2025-09-23
+
+### Added in 0.2.11
+
+- Add/Rename utility programs in `bin` directory.
+- Make HTML/JSON files in `docs` directory.
+- Tests which pull test data directly from SenzingSDK
+
+### Changed in 0.2.11
+
+- Update `senzingsdk-RFC8927.json` massively.
+- Change Python's `typedef` to `senzing-typedef`
+
 ## [0.2.10] - 2025-07-02
 
 ### Changed in 0.2.10
