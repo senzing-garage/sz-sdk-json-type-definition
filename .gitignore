@@ -128,7 +128,6 @@ env.bak/
 venv.bak/
 
 # venv
-bin/
 pyvenv.cfg
 
 # Spyder project settings
@@ -173,7 +172,17 @@ cython_debug/
 *.code-workspace
 .history
 
-senzingapi-RFC8927-pretty.json
+senzingsdk-RFC8927-pretty.json
 
 coverage.html
 coverage.out
+
+
+# Generated files from dotnet builds
+csharp/bin/
+csharp/obj/
+Senzing.Schema/bin/
+Senzing.Schema/obj/
+
+main.js
+node_modules/

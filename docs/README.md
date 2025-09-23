@@ -1,8 +1,7 @@
 # sz-sdk-json-type-definition
 
-Placeholder for [GitHub pages].
+- [HTML responses]
+- [JSON responses]
 
-See [GitHub page].
-
-[GitHub page]: https://garage.senzing.com/sz-sdk-json-type-definition
-[GitHub pages]: https://pages.github.com/
+[HTML responses]: responses-html
+[JSON responses]: responses-json

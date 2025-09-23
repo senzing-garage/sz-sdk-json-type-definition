@@ -4,7 +4,9 @@
 # Variables
 # -----------------------------------------------------------------------------
 
+LD_LIBRARY_PATH ?= /opt/senzing/er/lib
 PATH := $(MAKEFILE_DIRECTORY)/bin:/$(HOME)/go/bin:$(PATH)
+SENZING_TOOLS_DATABASE_URL ?= sqlite3://na:na@nowhere/tmp/sqlite/G2C.db
 
 # -----------------------------------------------------------------------------
 # OS specific targets
@@ -16,7 +18,7 @@ build-osarch-specific: linux/amd64
 
 .PHONY: clean-osarch-specific
 clean-osarch-specific:
-	@rm     $(MAKEFILE_DIRECTORY)/senzingapi-RFC8927-pretty.json || true
+	@rm     $(MAKEFILE_DIRECTORY)/senzingsdk-RFC8927-pretty.json || true
 	@rm -f  $(GOPATH)/bin/$(PROGRAM_NAME) || true
 	@rm -f  $(MAKEFILE_DIRECTORY)/.coverage || true
 	@rm -f  $(MAKEFILE_DIRECTORY)/cover.out || true
@@ -25,6 +27,7 @@ clean-osarch-specific:
 	@rm -fr $(MAKEFILE_DIRECTORY)/__pycache__ || true
 	@rm -fr $(MAKEFILE_DIRECTORY)/bin/__pycache__ || true
 	@rm -fr $(TARGET_DIRECTORY) || true
+	@rm -fr /tmp/sqlite || true
 	@pkill godoc || true
 
 
@@ -59,7 +62,8 @@ run-osarch-specific:
 
 .PHONY: setup-osarch-specific
 setup-osarch-specific:
-	$(info No setup required.)
+	@mkdir /tmp/sqlite
+	@cp testdata/sqlite/G2C.db /tmp/sqlite/G2C.db
 
 
 .PHONY: test-osarch-specific

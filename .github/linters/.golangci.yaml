@@ -107,6 +107,8 @@ linters:
     - wrapcheck
     - wsl_v5
     - zerologlint
+  disable:
+    - paralleltest
   exclusions:
     generated: lax
     presets:
@@ -131,8 +133,44 @@ linters:
     exhaustruct:
       exclude:
         - '.+/typedef\.VirtualEntity$'
-        - '.+/typedef\.FeatureForAttribute$'
+        - '.+/typedef\.FeatureForAttributes$'
         - '.+/typedef\.GetDataSourceRegistry$'
+        - '.+/typedef\.SzConfigExportResponse$'
+        - '.+/typedef\.SzConfigGetDataSourceRegistryResponse$'
+        - '.+/typedef\.SzConfigManagerGetConfigRegistryResponse$'
+        - '.+/typedef\.SzConfigRegisterDataSourceResponse$'
+        - '.+/typedef\.SzConfigUnregisterDataSourceResponse$'
+        - '.+/typedef\.SzDiagnosticCheckRepositoryPerformanceResponse$'
+        - '.+/typedef\.SzDiagnosticGetFeatureResponse$'
+        - '.+/typedef\.SzEngineDeleteRecordResponse$'
+        - '.+/typedef\.SzEngineFindInterestingEntitiesByEntityIDResponse$'
+        - '.+/typedef\.SzEngineFindInterestingEntitiesByRecordIDResponse$'
+        - '.+/typedef\.SzEngineFindNetworkByEntityIDResponse$'
+        - '.+/typedef\.SzEngineFindNetworkByRecordIDResponse$'
+        - '.+/typedef\.SzEngineFindPathByEntityIDResponse$'
+        - '.+/typedef\.SzEngineFindPathByRecordIDResponse$'
+        - '.+/typedef\.SzEngineGetEntityByEntityIDResponse$'
+        - '.+/typedef\.SzEngineGetEntityByRecordIDResponse$'
+        - '.+/typedef\.SzEngineGetRecordResponse$'
+        - '.+/typedef\.SzEngineGetRecordPreviewResponse$'
+        - '.+/typedef\.SzEngineGetVirtualEntityByRecordIDResponse$'
+        - '.+/typedef\.SzEngineHowEntityByEntityIDResponse$'
+        - '.+/typedef\.SzEngineGetRedoRecordResponse$'
+        - '.+/typedef\.SzEngineProcessRedoRecordResponse$'
+        - '.+/typedef\.SzEngineReevaluateEntityResponse$'
+        - '.+/typedef\.SzEngineReevaluateRecordResponse$'
+        - '.+/typedef\.SzEngineSearchByAttributesResponse$'
+        - '.+/typedef\.SzDiagnosticGetRepositoryInfoResponse$'
+        - '.+/typedef\.SzEngineGetStatsResponse$'
+        - '.+/typedef\.SzProductGetLicenseResponse$'
+        - '.+/typedef\.SzProductGetVersionResponse$'
+        - '.+/typedef\.SzEngineGetVirtualEntityByRecordIDResponse$'
+    funlen:
+      lines: 160
+      statements: 50
+    ireturn:
+      allow:
+        - senzing.SzAbstractFactory
 
 formatters:
   enable:

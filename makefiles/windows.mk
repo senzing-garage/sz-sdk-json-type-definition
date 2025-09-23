@@ -32,7 +32,7 @@ coverage-osarch-specific:
 
 
 .PHONY: dependencies-for-development-osarch-specific
-dependencies-for-development-osarch-specific: 
+dependencies-for-development-osarch-specific:
 
 
 .PHONY: documentation-osarch-specific

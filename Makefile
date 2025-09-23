@@ -23,10 +23,11 @@ GIT_REMOTE_URL := $(shell git config --get remote.origin.url)
 GIT_REPOSITORY_NAME := $(shell basename `git rev-parse --show-toplevel`)
 GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\-0//' -e 's/\-g.......//')
 GO_PACKAGE_NAME := $(shell echo $(GIT_REMOTE_URL) | sed -e 's|^git@github.com:|github.com/|' -e 's|\.git$$||' -e 's|Senzing|senzing|')
-PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
+# PATH := $(MAKEFILE_DIRECTORY)/bin:$(PATH)
 
 # Recursive assignment ('=')
 
+SHELL=/bin/bash
 GO_OSARCH = $(subst /, ,$@)
 GO_OS = $(word 1, $(GO_OSARCH))
 GO_ARCH = $(word 2, $(GO_OSARCH))
@@ -68,14 +69,14 @@ venv: venv-osarch-specific
 
 
 .PHONY: dependencies-for-development
-dependencies-for-development: venv dependencies-for-development-osarch-specific
+dependencies-for-development: venv dependencies-for-development-osarch-specific download-truthsets
 	@go install github.com/daixiang0/gci@latest
 	@go install github.com/gotesttools/gotestfmt/v2/cmd/gotestfmt@latest
 	@go install github.com/vladopajic/go-test-coverage/v2@latest
 	@go install golang.org/x/tools/cmd/godoc@latest
 	$(activate-venv); \
 		python3 -m pip install --upgrade pip; \
-		python3 -m pip install --requirement development-requirements.txt
+		python3 -m pip install --group all
 
 
 .PHONY: dependencies
@@ -85,21 +86,39 @@ dependencies: venv
 	@go mod tidy
 	$(activate-venv); \
 		python3 -m pip install --upgrade pip; \
-		python3 -m pip install --requirement requirements.txt
+		python3 -m pip install -e .
+
+# -----------------------------------------------------------------------------
+# Setup
+# -----------------------------------------------------------------------------
+
+.PHONY: version
+version: \
+	clean \
+	setup \
+	documentation
 
 # -----------------------------------------------------------------------------
 # Setup
 # -----------------------------------------------------------------------------
 
 .PHONY: setup
-setup: setup-osarch-specific generate
+setup: \
+	setup-osarch-specific \
+	load-database-with-truthsets \
+	generate
 
 # -----------------------------------------------------------------------------
 # Lint
 # -----------------------------------------------------------------------------
 
 .PHONY: lint
-lint: golangci-lint cspell
+lint: \
+	pylint \
+	golangci-lint \
+	cspell \
+	analyze-RFC8927 \
+	pretty-print
 
 # -----------------------------------------------------------------------------
 # Build
@@ -109,14 +128,41 @@ lint: golangci-lint cspell
 # Run
 # -----------------------------------------------------------------------------
 
+.PHONY: run-java
+run-java:
+	java -jar target/example-0.0.1.jar
+
 # -----------------------------------------------------------------------------
 # Test
 # -----------------------------------------------------------------------------
 
 .PHONY: test
-test: test-osarch-specific test-python
+test: \
+	test-go \
+	test-csharp \
+	test-java \
+	test-python \
+	test-typescript \
+	test-osarch-specific \
+	test-using-senzing
+
+
+.PHONY: test-csharp
+test-csharp:
+	@dotnet run --project csharp
+
+
+.PHONY: test-go
+test-go: load-database-with-truthsets
 	@go run main.go
 	@go test -v -p 1 ./...
+
+
+.PHONY: test-java
+test-java:
+	@mvn --file java/pom.xml install
+	@mvn --file pom.xml package
+	java -jar target/example-0.0.1.jar
 
 
 .PHONY: test-python
@@ -125,6 +171,12 @@ test-python:
 		./bin/test_rfc8927_reconstitution.py; \
 		./main.py; \
 		pytest test.py --verbose
+
+
+.PHONY: test-typescript
+test-typescript:
+	@tsc main.ts
+	@node main.js
 
 # -----------------------------------------------------------------------------
 # Coverage
@@ -138,40 +190,43 @@ coverage: coverage-osarch-specific
 # -----------------------------------------------------------------------------
 
 .PHONY: documentation
-documentation: documentation-osarch-specific
-
-# -----------------------------------------------------------------------------
-# Analyze
-# -----------------------------------------------------------------------------
-
-.PHONY: analyze
-analyze:
-	@./bin/analyze_rfc8927.py
-
-
-.PHONY: pretty-print
-pretty-print:
-	@./bin/pretty_print.py
+documentation: \
+	documentation-osarch-specific \
+	docs-responses-html \
+	docs-responses-json
 
 # -----------------------------------------------------------------------------
 # Generate code
 # -----------------------------------------------------------------------------
 
 .PHONY: generate
-generate: generate-code generate-tests
+generate: \
+	generate-code \
+	generate-tests
 
 
 .PHONY: generate-code
-generate-code: generate-csharp generate-go generate-java generate-python generate-ruby generate-rust generate-typescript
+generate-code: \
+	generate-csharp \
+	generate-go \
+	generate-java \
+	generate-python \
+	generate-ruby \
+	generate-rust \
+	generate-typescript \
+	go-typedef-generated-typedef-test-go
 
 
 .PHONY: generate-csharp
 generate-csharp: clean-csharp
 	jtd-codegen \
-		--csharp-system-text-namespace Senzing \
-		--csharp-system-text-out ./csharp \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--csharp-system-text-namespace Senzing.Schema \
+		--csharp-system-text-out ./csharp/Senzing.Schema \
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
+	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/*; do \
+		sed -i '2i #pragma warning disable CS8601, CS8618' "$$file"; \
+	done
 
 
 .PHONY: generate-go
@@ -179,70 +234,61 @@ generate-go: clean-go
 	jtd-codegen \
 		--go-out ./go/typedef \
 		--go-package typedef \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-java
 generate-java: clean-java
 	jtd-codegen \
-		--java-jackson-out ./java \
+		--java-jackson-out ./java/src/main/java/com/senzing/schema \
 		--java-jackson-package com.senzing.schema \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-python
 generate-python: clean-python
 	jtd-codegen \
 		--python-out ./python/typedef \
-		--root-name senzingapi \
-		senzingapi-RFC8927.json
+		--root-name senzingsdk \
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-ruby
 generate-ruby: clean-ruby
 	jtd-codegen \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		--ruby-module SenzingTypeDef \
 		--ruby-out ./ruby \
 		--ruby-sig-module SenzingSig \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-rust
 generate-rust: clean-rust
 	jtd-codegen \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		--rust-out ./rust \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 
 
 .PHONY: generate-typescript
 generate-typescript: clean-typescript
 	jtd-codegen \
-		--root-name senzingapi \
+		--root-name senzingsdk \
 		--typescript-out ./typescript \
-		senzingapi-RFC8927.json
+		senzingsdk-RFC8927.json
 
 # -----------------------------------------------------------------------------
 # Generate tests
 # -----------------------------------------------------------------------------
 
 .PHONY: generate-tests
-generate-tests: generate_typedef_test_go generate_testdata
-
-
-.PHONY: generate_typedef_test_go
-generate_typedef_test_go:
-	@rm ./go/typedef/generated_typedef_test.go || true
-	@./bin/generate_typedef_test_go.py
-
-
-.PHONY: generate_testdata
-generate_testdata:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/* || true
-	@./bin/generate_testdata.py
+generate-tests: \
+	go-typedef-generated-typedef-test-go \
+	testdata-responses-generated \
+	testdata-responses-senzing
 
 # -----------------------------------------------------------------------------
 # Clean
@@ -256,7 +302,8 @@ clean: clean-osarch-specific
 
 .PHONY: clean-csharp
 clean-csharp:
-	@rm $(MAKEFILE_DIRECTORY)/csharp/* || true
+	@dotnet clean $(MAKEFILE_DIRECTORY)/csharp
+	@rm $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/* || true
 
 
 .PHONY: clean-go
@@ -270,7 +317,9 @@ clean-go:
 
 .PHONY: clean-java
 clean-java:
-	@rm $(MAKEFILE_DIRECTORY)/java/* || true
+	@mvn --file java/pom.xml clean
+	@mvn --file pom.xml clean
+	@rm java/src/main/java/com/senzing/schema/*.java || true
 
 
 .PHONY: clean-python
@@ -323,6 +372,97 @@ update-pkg-cache:
 # Specific programs
 # -----------------------------------------------------------------------------
 
+.PHONY: analyze-RFC8927
+analyze-RFC8927:
+	$(activate-venv); \
+		./bin/analyze_rfc8927.py
+
+
+.PHONY: cspell
+cspell:
+	@cspell lint --dot .
+
+
+.PHONY: docs-responses-html
+docs-responses-html:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
+	$(activate-venv); \
+		./bin/make_docs_responses_html.py
+
+
+.PHONY: docs-responses-json
+docs-responses-json:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
+	$(activate-venv); \
+		./bin/make_docs_responses_json.py
+
+
+.PHONY: download-truthsets
+download-truthsets:
+	curl -X GET --output ./testdata/truthsets/customers.jsonl \
+		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/customers.jsonl
+	curl -X GET --output ./testdata/truthsets/reference.jsonl \
+		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/reference.jsonl
+	curl -X GET --output ./testdata/truthsets/watchlist.jsonl \
+		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
+
+
 .PHONY: golangci-lint
 golangci-lint:
 	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
+
+
+.PHONY: go-typedef-generated-typedef-test-go
+go-typedef-generated-typedef-test-go:
+	@rm ./go/typedef/generated_typedef_test.go || true
+	$(activate-venv); \
+		./bin/make_go_typedef_generated_typedef_test_go.py
+
+
+.PHONY: load-database-with-truthsets
+load-database-with-truthsets:
+	$(activate-venv); \
+		./bin/load_database_with_truthsets.py
+
+
+.PHONY: fix-wsl
+fix-wsl:
+	@wsl --fix ./...
+
+
+.PHONY: pretty-print
+pretty-print:
+	@./bin/pretty_print.py
+	diff -w senzingsdk-RFC8927-pretty.json senzingsdk-RFC8927.json
+
+
+.PHONY: pylint
+pylint:
+	@$(activate-venv); \
+		pylint $(shell git ls-files '*.py')
+
+
+.PHONY: testdata-responses-generated
+testdata-responses-generated:
+	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+	$(activate-venv); \
+		./bin/make_testdata_responses_generated.py
+
+
+.PHONY: testdata-responses-senzing
+testdata-responses-senzing:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
+	$(activate-venv); \
+		./bin/make_testdata_responses_senzing.py
+
+
+.PHONY: test-rfc8927-reconstitution
+test-rfc8927-reconstitution:
+	$(activate-venv); \
+		./bin/test_rfc8927_reconstitution.py
+
+
+.PHONY: test-using-senzing
+test-using-senzing:
+	$(activate-venv); \
+		./bin/test_using_senzing.py

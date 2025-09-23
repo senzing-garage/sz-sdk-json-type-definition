@@ -18,8 +18,8 @@ BLACK_LIST = [
     "optionalproperties",
     "type",
 ]
-INPUT_FILENAME = "./senzingapi-RFC8927.json"
-OUTPUT_FILENAME = "./senzingapi-RFC8927-pretty.json"
+INPUT_FILENAME = "./senzingsdk-RFC8927.json"
+OUTPUT_FILENAME = "./senzingsdk-RFC8927-pretty.json"
 
 
 # -----------------------------------------------------------------------------
@@ -31,7 +31,7 @@ def recurse(prefix, an_object):
     """Recurse though the dictionary, beautifying as it goes."""
     for key, value in an_object.items():
         if isinstance(value, dict):
-            recurse("{0}.{1}".format(prefix, key), value)
+            recurse(f"{prefix}.{key}", value)
             # if key not in BLACK_LIST:
             #     if "metadata" not in value:
             #         value["metadata"] = {}
@@ -53,7 +53,7 @@ with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
 
 # Recurse through dictionary.
 
-recurse("definitions", DATA.get("definitions"))
+# recurse("definitions", DATA.get("definitions"))
 
 # Write JSON to file.
 
