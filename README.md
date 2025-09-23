@@ -31,7 +31,7 @@ Examples:
 
 1. Python - [main.py]
 1. Go - [main.go]
-1. Java - [main.java]
+1. Java - [Main.java]
 1. Typescript - [main.ts]
 1. C-sharp [Program.cs]
 
