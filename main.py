@@ -129,21 +129,21 @@ def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> st
 
 print("--- Demonstrate creating input parameter and parsing output result ------------\n")
 
-recordKeysDict = {
+record_keys_dict = {
     "RECORDS": [
         {"DATA_SOURCE": "Unknown", "RECORD_ID": "Unknown"},
         {"DATA_SOURCE": "DATA_SOURCE_2", "RECORD_ID": "RECORD_ID_2"},
     ]
 }
 
-recordKeys = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(recordKeysDict)
+record_keys = SzEngineGetVirtualEntityByRecordIDRecordKeys.from_json_data(record_keys_dict)
 
-recordKeys.records[0].data_source = "DATA_SOURCE_1"
-recordKeys.records[0].record_id = "RECORD_ID_1"
+record_keys.records[0].data_source = "DATA_SOURCE_1"
+record_keys.records[0].record_id = "RECORD_ID_1"
 
 # Simulate calling Senzing SDK.
 
-response = mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 1)
+response = mock_szengine_get_virtual_entity_by_record_id(record_keys.to_json_data(), 1)
 
 # Parse response.
 
@@ -215,7 +215,7 @@ print(
 # SzEngine szengine_get_virtual_entity_by_record_id ------------------------------------
 
 virtual_entity = SzEngineGetVirtualEntityByRecordIDResponse.from_json_data(
-    json.loads(mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0))
+    json.loads(mock_szengine_get_virtual_entity_by_record_id(record_keys.to_json_data(), 0))
 )
 print(
     f"SzEngineGetVirtualEntityByRecordIDResponse: Simple  description: {virtual_entity.resolved_entity.features['NAME'][0].feat_desc}"
@@ -230,7 +230,7 @@ for feature in feature_list:
 # Compare the use of Python objects above with the following straight JSON parsing.
 # - Issue: No static checking can be done on JSON keys
 # - Issue: No editor hints
-virtual_entity = json.loads(mock_szengine_get_virtual_entity_by_record_id(recordKeys.to_json_data(), 0))
+virtual_entity = json.loads(mock_szengine_get_virtual_entity_by_record_id(record_keys.to_json_data(), 0))
 feature_list = virtual_entity.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
 for feature in feature_list:
     feat_desc_list = feature.get("FEAT_DESC_VALUES")
