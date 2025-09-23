@@ -16,7 +16,7 @@ the recommendation is not to use it yet.
 
 ## Synopsis
 
-The Senzing sz-sdk-json-type-definition uses [JSON Type Definition]
+The Senzing `sz-sdk-json-type-definition` uses [JSON Type Definition]
 to model the JSON that is returned from Senzing SDK calls.
 
 Code generated from this model improves compile-time type checking
@@ -57,8 +57,8 @@ From this specification, code is generated for the following languages:
         feature_list = result.get("RESOLVED_ENTITY", {}).get("FEATURES", {}).get("NAME", [])
         ```
 
-        1. Note that in this example the JSON keys and datatypes of the values must be known ahead of time.
-           Also, typos can cause errors.
+        1. Note that the JSON keys and datatypes of the values must be known ahead of time.
+           Also, this method is subject to typographical errors.
 
     1. Here's how to parse a Senzing JSON response **with** `senzing-json`:
 
