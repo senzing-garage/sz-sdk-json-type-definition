@@ -42,11 +42,11 @@ jobs:
           curl -X GET --location --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
           unzip jtd-codegen.zip
           chmod +x jtd-codegen
-          ls ./python/typedef
+          ls ./python/senzing_typedef
           mkdir /tmp/typedef
           ./jtd-codegen --python-out /tmp/typedef --root-name senzingsdk senzingsdk-RFC8927.json
           ls /tmp/typedef
-          diff ./python/typedef/__init__.py  /tmp/typedef/__init__.py
+          diff ./python/senzing_typedef/__init__.py  /tmp/typedef/__init__.py
 
   slack-notification:
     needs: [test-generated-files]

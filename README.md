@@ -92,7 +92,7 @@ From this specification, code is generated for the following languages:
 [main.ts]: main.ts
 [Go package reference]: https://pkg.go.dev/github.com/senzing-garage/sz-sdk-json-type-definition
 [Program.cs]: csharp/Program.cs
-[python]: python/typedef
+[python]: python/senzing_typedef
 [ruby]: ruby
 [rust]: rust
 [Senzing Garage]: https://github.com/senzing-garage
