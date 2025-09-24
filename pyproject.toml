@@ -1,6 +1,6 @@
 [project]
 name = "senzing-typedef"
-version = "0.2.12"
+version = "0.2.13"
 authors = [{ name = "senzing", email = "support@senzing.com" }]
 description = "Helper functions for working with Senzing JSON"
 readme = "README.md"
