@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.13] - 2025-09-24
+
+### Changed in 0.2.13
+
+- Fix issue with checksums
+
 ## [0.2.12] - 2025-09-24
 
 ### Changed in 0.2.12
