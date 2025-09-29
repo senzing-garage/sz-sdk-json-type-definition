@@ -402,6 +402,12 @@ cspell:
 	@cspell lint --dot .
 
 
+.PHONY: docs-json-key-descriptions
+docs-json-key-descriptions:
+	$(activate-venv); \
+		./bin/make_docs_json_key_descriptions.py
+
+
 .PHONY: docs-responses-html
 docs-responses-html:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
