@@ -3403,6 +3403,7 @@
             "properties": {
                 "DSRC_ID": {
                     "metadata": {
+                        "description": "The unique identifier of the datasource.",
                         "goType": "int64"
                     },
                     "type": "int32"
