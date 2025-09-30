@@ -1678,6 +1678,7 @@ type SzConfigManagerGetConfigRegistryResponse struct {
 }
 
 type SzConfigRegisterDataSourceResponse struct {
+	// The unique identifier of the datasource.
 	DsrcID int64 `json:"DSRC_ID"`
 }
 

@@ -3710,6 +3710,7 @@ module SenzingTypeDef
   end
 
   class SzConfigRegisterDataSourceResponse
+    # The unique identifier of the datasource.
     attr_accessor :dsrc_id
 
     def self.from_json_data(data)
