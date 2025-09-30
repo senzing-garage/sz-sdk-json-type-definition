@@ -15,6 +15,7 @@ public class SzConfigRegisterDataSourceResponse {
 
     /**
      * Getter for dsrcId.<p>
+     * The unique identifier of the datasource.
      */
     public Integer getDsrcId() {
         return dsrcId;
@@ -22,6 +23,7 @@ public class SzConfigRegisterDataSourceResponse {
 
     /**
      * Setter for dsrcId.<p>
+     * The unique identifier of the datasource.
      */
     public void setDsrcId(Integer dsrcId) {
         this.dsrcId = dsrcId;

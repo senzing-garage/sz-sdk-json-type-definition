@@ -3761,6 +3761,10 @@ class SzConfigManagerGetConfigRegistryResponse:
 @dataclass
 class SzConfigRegisterDataSourceResponse:
     dsrc_id: 'int'
+    """
+    The unique identifier of the datasource.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzConfigRegisterDataSourceResponse':

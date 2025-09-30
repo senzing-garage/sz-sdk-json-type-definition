@@ -1337,6 +1337,9 @@ export interface SzConfigManagerGetConfigRegistryResponse {
 }
 
 export interface SzConfigRegisterDataSourceResponse {
+  /**
+   * The unique identifier of the datasource.
+   */
   DSRC_ID: number;
 }
 

@@ -2466,6 +2466,7 @@ pub struct SzConfigManagerGetConfigRegistryResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzConfigRegisterDataSourceResponse {
+    /// The unique identifier of the datasource.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 }

@@ -7,6 +7,9 @@ namespace Senzing.Schema
 {
     public class SzConfigRegisterDataSourceResponse
     {
+        /// <summary>
+        /// The unique identifier of the datasource.
+        /// </summary>
         [JsonPropertyName("DSRC_ID")]
         public int DsrcId { get; set; }
     }
