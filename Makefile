@@ -234,11 +234,11 @@ generate-code: \
 .PHONY: generate-csharp
 generate-csharp: clean-csharp
 	jtd-codegen \
-		--csharp-system-text-namespace Senzing.Schema \
-		--csharp-system-text-out ./csharp/Senzing.Schema \
+		--csharp-system-text-namespace Senzing.Typedef \
+		--csharp-system-text-out ./csharp/Senzing.Typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
-	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/*; do \
+	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Typedef/*; do \
 		sed -i '2i #pragma warning disable CS8601, CS8618' "$$file"; \
 	done
 
@@ -255,8 +255,8 @@ generate-go: clean-go
 .PHONY: generate-java
 generate-java: clean-java
 	jtd-codegen \
-		--java-jackson-out ./java/src/main/java/com/senzing/schema \
-		--java-jackson-package com.senzing.schema \
+		--java-jackson-out ./java/src/main/java/com/senzing/typedef \
+		--java-jackson-package com.senzing.typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
 
@@ -273,7 +273,7 @@ generate-python: clean-python
 generate-ruby: clean-ruby
 	jtd-codegen \
 		--root-name senzingsdk \
-		--ruby-module SenzingTypeDef \
+		--ruby-module SenzingTypedef \
 		--ruby-out ./ruby \
 		--ruby-sig-module SenzingSig \
 		senzingsdk-RFC8927.json
@@ -317,7 +317,7 @@ clean: clean-osarch-specific
 .PHONY: clean-csharp
 clean-csharp:
 	@dotnet clean $(MAKEFILE_DIRECTORY)/csharp
-	@rm $(MAKEFILE_DIRECTORY)/csharp/Senzing.Schema/* || true
+	@rm $(MAKEFILE_DIRECTORY)/csharp/Senzing.Typedef/* || true
 
 
 .PHONY: clean-go
@@ -333,7 +333,7 @@ clean-go:
 clean-java:
 	@mvn --file java/pom.xml clean
 	@mvn --file pom.xml clean
-	@rm java/src/main/java/com/senzing/schema/*.java || true
+	@rm java/src/main/java/com/senzing/typedef/*.java || true
 
 
 .PHONY: clean-python
