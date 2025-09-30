@@ -9,7 +9,13 @@ and this project adheres to [Semantic Versioning].
 
 -
 
-## [0.2.134 - 2025-09-30
+## [0.2.15] - 2025-09-30
+
+### Changed in 0.2.15
+
+- Moved "schema" to "typedef"
+
+## [0.2.14] - 2025-09-30
 
 ### Changed in 0.2.14
 
