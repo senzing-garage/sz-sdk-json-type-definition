@@ -1,5 +1,9 @@
 #! /usr/bin/env python3
 
+"""
+Create docs/json_key_descriptions.json
+"""
+
 import json
 
 INPUT_FILENAME = "./senzingsdk-RFC8927.json"
@@ -8,6 +12,7 @@ JSON_KEYS = {}
 
 
 def add_description(key, description):
+    """Add description to JSON_KEYS dictionary."""
     if not description:
         return
     if key not in JSON_KEYS:
@@ -17,6 +22,7 @@ def add_description(key, description):
 
 
 def recurse(json_key, json_object):
+    """Use recursive descent"""
     match json_object:
         case dict():
             add_description(json_key, json_object.get("metadata", {}).get("description", None))

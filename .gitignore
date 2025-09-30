@@ -183,6 +183,12 @@ csharp/bin/
 csharp/obj/
 Senzing.Schema/bin/
 Senzing.Schema/obj/
+csharp/obj/csharp.csproj.nuget.dgspec.json
+csharp/obj/csharp.csproj.nuget.g.props
+csharp/obj/project.assets.json
+csharp/obj/project.nuget.cache
+
+
 
 main.js
 node_modules/
