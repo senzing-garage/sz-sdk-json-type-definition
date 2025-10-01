@@ -192,7 +192,8 @@ coverage: coverage-osarch-specific
 .PHONY: documentation
 documentation: \
 	docs-json-key-descriptions \
-	docs-labels_used \
+	docs-json-keys-used \
+	docs-labels-used \
 	docs-responses-html \
 	docs-responses-json
 
@@ -410,8 +411,14 @@ docs-json-key-descriptions:
 		./bin/make_docs_json_key_descriptions.py
 
 
-.PHONY: docs-labels_used
-docs-labels_used:
+.PHONY: docs-json-keys-used
+docs-json-keys-used:
+	$(activate-venv); \
+		./bin/make_docs_json_keys_used.py
+
+
+.PHONY: docs-labels-used
+docs-labels-used:
 	$(activate-venv); \
 		./bin/make_docs_labels_used.py
 
