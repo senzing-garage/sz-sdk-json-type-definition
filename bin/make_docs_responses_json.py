@@ -16,7 +16,6 @@ GLOBAL_JSON_KEYS = [
     "SzConfigGetDataSourceRegistryResponse",
     "SzConfigManagerGetConfigRegistryResponse",
     "SzConfigRegisterDataSourceResponse",
-    "SzConfigUnregisterDataSourceResponse",
     "SzDiagnosticCheckRepositoryPerformanceResponse",
     "SzDiagnosticGetFeatureResponse",
     "SzDiagnosticGetRepositoryInfoResponse",

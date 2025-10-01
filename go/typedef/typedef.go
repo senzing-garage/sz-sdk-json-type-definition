@@ -499,10 +499,13 @@ type CompatibilityVersion struct {
 }
 
 type Config struct {
+	// A user-provided description of the configuration.
 	ConfigComments string `json:"CONFIG_COMMENTS"`
 
+	// An internally-generated unique identifier of the configuration.
 	ConfigID int64 `json:"CONFIG_ID"`
 
+	// The timestamp of the original registration of the configuration.
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
@@ -515,6 +518,7 @@ type Confirmation struct {
 
 	CandidateFeatUsageType string `json:"CANDIDATE_FEAT_USAGE_TYPE"`
 
+	// Internal use.
 	FtypeCode string `json:"FTYPE_CODE"`
 
 	InboundFeatDesc string `json:"INBOUND_FEAT_DESC"`
@@ -553,10 +557,11 @@ type CurrResources struct {
 }
 
 type DataSource struct {
-	// The text representation of the datasource.
+	// The unique text identifier of the datasource. It should be UPPER_CASE ASCII
+	// without spaces. It will be used as a JSON key.
 	DsrcCode string `json:"DSRC_CODE"`
 
-	// The unique identifier of the datasource.
+	// The unique internal integer identifier of the datasource.
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
@@ -670,8 +675,10 @@ type ExpressedFeaturesCall struct {
 }
 
 type Feature struct {
+	// Internal use.
 	FelemCode string `json:"FELEM_CODE"`
 
+	// Internal use.
 	FelemValue string `json:"FELEM_VALUE"`
 }
 
@@ -685,6 +692,7 @@ type FeatureDescriptionValue struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
 	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
@@ -781,7 +789,8 @@ type Fixme struct {
 }
 
 type FocusRecord struct {
-	// A label identifying the provenance of the record.
+	// A label identifying the provenance of the record. FIXME: An example of
+	// differences.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -1278,10 +1287,13 @@ type RepairDiagnosis struct {
 }
 
 type Repository struct {
+	// Label for database repository.
 	ID string `json:"id"`
 
+	// Database connection information.
 	Location string `json:"location"`
 
+	// Type of database.
 	Type string `json:"type"`
 }
 
@@ -1670,37 +1682,41 @@ type SzConfigExportResponse struct {
 }
 
 type SzConfigGetDataSourceRegistryResponse struct {
+	// The list of registered data sources.
 	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
 type SzConfigManagerGetConfigRegistryResponse struct {
+	// The list of registered configurations.
 	Configs []Config `json:"CONFIGS"`
 }
 
 type SzConfigRegisterDataSourceResponse struct {
-	// The unique identifier of the datasource.
+	// The unique internal integer identifier of the datasource.
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
-type SzConfigUnregisterDataSourceResponse struct {
-	Fixme Fixme `json:"FIXME"`
-}
-
 type SzDiagnosticCheckRepositoryPerformanceResponse struct {
+	// The duration of the test in milliseconds.
 	InsertTime int64 `json:"insertTime"`
 
+	// The total number of records inserted within the insertTime.
 	NumRecordsInserted int64 `json:"numRecordsInserted"`
 }
 
 type SzDiagnosticGetFeatureResponse struct {
+	// Internal use.
 	Elements []Feature `json:"ELEMENTS"`
 
+	// Internal use.
 	FtypeCode string `json:"FTYPE_CODE"`
 
+	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 }
 
 type SzDiagnosticGetRepositoryInfoResponse struct {
+	// A list of database node connection metadata.
 	DataStores []Repository `json:"dataStores"`
 }
 

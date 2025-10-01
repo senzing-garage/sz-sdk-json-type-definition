@@ -18,6 +18,7 @@ public class SzDiagnosticCheckRepositoryPerformanceResponse {
 
     /**
      * Getter for insertTime.<p>
+     * The duration of the test in milliseconds.
      */
     public Integer getInsertTime() {
         return insertTime;
@@ -25,6 +26,7 @@ public class SzDiagnosticCheckRepositoryPerformanceResponse {
 
     /**
      * Setter for insertTime.<p>
+     * The duration of the test in milliseconds.
      */
     public void setInsertTime(Integer insertTime) {
         this.insertTime = insertTime;
@@ -32,6 +34,7 @@ public class SzDiagnosticCheckRepositoryPerformanceResponse {
 
     /**
      * Getter for numRecordsInserted.<p>
+     * The total number of records inserted within the insertTime.
      */
     public Integer getNumRecordsInserted() {
         return numRecordsInserted;
@@ -39,6 +42,7 @@ public class SzDiagnosticCheckRepositoryPerformanceResponse {
 
     /**
      * Setter for numRecordsInserted.<p>
+     * The total number of records inserted within the insertTime.
      */
     public void setNumRecordsInserted(Integer numRecordsInserted) {
         this.numRecordsInserted = numRecordsInserted;

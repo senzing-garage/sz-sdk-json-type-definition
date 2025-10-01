@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class SzConfigGetDataSourceRegistryResponse
     {
+        /// <summary>
+        /// The list of registered data sources.
+        /// </summary>
         [JsonPropertyName("DATA_SOURCES")]
         public IList<DataSource> DataSources { get; set; }
     }

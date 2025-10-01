@@ -18,7 +18,8 @@ public class FocusRecord {
 
     /**
      * Getter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * A label identifying the provenance of the record. FIXME: An example of
+     * differences.
      */
     public String getDataSource() {
         return dataSource;
@@ -26,7 +27,8 @@ public class FocusRecord {
 
     /**
      * Setter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * A label identifying the provenance of the record. FIXME: An example of
+     * differences.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;

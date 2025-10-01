@@ -334,8 +334,19 @@ export interface CompatibilityVersion {
 }
 
 export interface Config {
+  /**
+   * A user-provided description of the configuration.
+   */
   CONFIG_COMMENTS: string;
+
+  /**
+   * An internally-generated unique identifier of the configuration.
+   */
   CONFIG_ID: number;
+
+  /**
+   * The timestamp of the original registration of the configuration.
+   */
   SYS_CREATE_DT: string;
 }
 
@@ -344,6 +355,10 @@ export interface Confirmation {
   CANDIDATE_FEAT_DESC: string;
   CANDIDATE_FEAT_ID: number;
   CANDIDATE_FEAT_USAGE_TYPE: string;
+
+  /**
+   * Internal use.
+   */
   FTYPE_CODE: string;
   INBOUND_FEAT_DESC: string;
   INBOUND_FEAT_ID: number;
@@ -370,12 +385,13 @@ export interface CurrResources {
 
 export interface DataSource {
   /**
-   * The text representation of the datasource.
+   * The unique text identifier of the datasource. It should be UPPER_CASE ASCII
+   * without spaces. It will be used as a JSON key.
    */
   DSRC_CODE: string;
 
   /**
-   * The unique identifier of the datasource.
+   * The unique internal integer identifier of the datasource.
    */
   DSRC_ID: number;
 }
@@ -492,7 +508,14 @@ export interface ExpressedFeaturesCall {
 }
 
 export interface Feature {
+  /**
+   * Internal use.
+   */
   FELEM_CODE: string;
+
+  /**
+   * Internal use.
+   */
   FELEM_VALUE: string;
 }
 
@@ -505,6 +528,10 @@ export interface FeatureDescriptionValue {
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * Internal use.
+   */
   LIB_FEAT_ID: number;
   SCORING_CAP_REACHED: string;
   SUPPRESSED: string;
@@ -597,7 +624,8 @@ export interface Fixme {
 
 export interface FocusRecord {
   /**
-   * A label identifying the provenance of the record.
+   * A label identifying the provenance of the record. FIXME: An example of
+   * differences.
    */
   DATA_SOURCE: string;
 
@@ -1035,8 +1063,19 @@ export interface RepairDiagnosis {
 }
 
 export interface Repository {
+  /**
+   * Label for database repository.
+   */
   id: string;
+
+  /**
+   * Database connection information.
+   */
   location: string;
+
+  /**
+   * Type of database.
+   */
   type: string;
 }
 
@@ -1329,36 +1368,59 @@ export interface SzConfigExportResponse {
 }
 
 export interface SzConfigGetDataSourceRegistryResponse {
+  /**
+   * The list of registered data sources.
+   */
   DATA_SOURCES: DataSource[];
 }
 
 export interface SzConfigManagerGetConfigRegistryResponse {
+  /**
+   * The list of registered configurations.
+   */
   CONFIGS: Config[];
 }
 
 export interface SzConfigRegisterDataSourceResponse {
   /**
-   * The unique identifier of the datasource.
+   * The unique internal integer identifier of the datasource.
    */
   DSRC_ID: number;
 }
 
-export interface SzConfigUnregisterDataSourceResponse {
-  FIXME: Fixme;
-}
-
 export interface SzDiagnosticCheckRepositoryPerformanceResponse {
+  /**
+   * The duration of the test in milliseconds.
+   */
   insertTime: number;
+
+  /**
+   * The total number of records inserted within the insertTime.
+   */
   numRecordsInserted: number;
 }
 
 export interface SzDiagnosticGetFeatureResponse {
+  /**
+   * Internal use.
+   */
   ELEMENTS: Feature[];
+
+  /**
+   * Internal use.
+   */
   FTYPE_CODE: string;
+
+  /**
+   * Internal use.
+   */
   LIB_FEAT_ID: number;
 }
 
 export interface SzDiagnosticGetRepositoryInfoResponse {
+  /**
+   * A list of database node connection metadata.
+   */
   dataStores: Repository[];
 }
 

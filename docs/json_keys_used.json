@@ -667,7 +667,6 @@
         "SzEngineGetRecordResponse.FIRST_SEEN_DT"
     ],
     "FIXME": [
-        "SzConfigUnregisterDataSourceResponse.FIXME",
         "SzEngineExportCsvEntityReportCsvColumnList.FIXME",
         "SzEngineFetchNextResponse.FIXME",
         "SzEngineFindNetworkByEntityIdEntityIds.FIXME",

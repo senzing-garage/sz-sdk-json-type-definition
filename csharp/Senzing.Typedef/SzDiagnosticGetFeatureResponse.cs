@@ -8,12 +8,21 @@ namespace Senzing.Typedef
 {
     public class SzDiagnosticGetFeatureResponse
     {
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("ELEMENTS")]
         public IList<Feature> Elements { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
     }

@@ -19,6 +19,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("CANDIDATE_FEAT_USAGE_TYPE")]
         public string CandidateFeatUsageType { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 

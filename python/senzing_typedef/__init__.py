@@ -1114,8 +1114,20 @@ class CompatibilityVersion:
 @dataclass
 class Config:
     config_comments: 'str'
+    """
+    A user-provided description of the configuration.
+    """
+
     config_id: 'int'
+    """
+    An internally-generated unique identifier of the configuration.
+    """
+
     sys_create_dt: 'str'
+    """
+    The timestamp of the original registration of the configuration.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Config':
@@ -1139,6 +1151,10 @@ class Confirmation:
     candidate_feat_id: 'int'
     candidate_feat_usage_type: 'str'
     ftype_code: 'str'
+    """
+    Internal use.
+    """
+
     inbound_feat_desc: 'str'
     inbound_feat_id: 'int'
     inbound_feat_usage_type: 'str'
@@ -1232,12 +1248,13 @@ class CurrResources:
 class DataSource:
     dsrc_code: 'str'
     """
-    The text representation of the datasource.
+    The unique text identifier of the datasource. It should be UPPER_CASE ASCII
+    without spaces. It will be used as a JSON key.
     """
 
     dsrc_id: 'int'
     """
-    The unique identifier of the datasource.
+    The unique internal integer identifier of the datasource.
     """
 
 
@@ -1538,7 +1555,15 @@ class ExpressedFeaturesCall:
 @dataclass
 class Feature:
     felem_code: 'str'
+    """
+    Internal use.
+    """
+
     felem_value: 'str'
+    """
+    Internal use.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Feature':
@@ -1564,6 +1589,10 @@ class FeatureDescriptionValue:
     """
 
     lib_feat_id: 'int'
+    """
+    Internal use.
+    """
+
     scoring_cap_reached: 'str'
     suppressed: 'str'
     used_for_cand: 'str'
@@ -1813,7 +1842,8 @@ class Fixme:
 class FocusRecord:
     data_source: 'str'
     """
-    A label identifying the provenance of the record.
+    A label identifying the provenance of the record. FIXME: An example of
+    differences.
     """
 
     record_id: 'str'
@@ -2938,8 +2968,20 @@ class RepairDiagnosis:
 @dataclass
 class Repository:
     id: 'str'
+    """
+    Label for database repository.
+    """
+
     location: 'str'
+    """
+    Database connection information.
+    """
+
     type: 'str'
+    """
+    Type of database.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Repository':
@@ -3731,6 +3773,10 @@ class SzConfigExportResponse:
 @dataclass
 class SzConfigGetDataSourceRegistryResponse:
     data_sources: 'List[DataSource]'
+    """
+    The list of registered data sources.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzConfigGetDataSourceRegistryResponse':
@@ -3746,6 +3792,10 @@ class SzConfigGetDataSourceRegistryResponse:
 @dataclass
 class SzConfigManagerGetConfigRegistryResponse:
     configs: 'List[Config]'
+    """
+    The list of registered configurations.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzConfigManagerGetConfigRegistryResponse':
@@ -3762,7 +3812,7 @@ class SzConfigManagerGetConfigRegistryResponse:
 class SzConfigRegisterDataSourceResponse:
     dsrc_id: 'int'
     """
-    The unique identifier of the datasource.
+    The unique internal integer identifier of the datasource.
     """
 
 
@@ -3778,24 +3828,17 @@ class SzConfigRegisterDataSourceResponse:
         return data
 
 @dataclass
-class SzConfigUnregisterDataSourceResponse:
-    fixme: 'Fixme'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'SzConfigUnregisterDataSourceResponse':
-        return cls(
-            _from_json_data(Fixme, data.get("FIXME")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FIXME"] = _to_json_data(self.fixme)
-        return data
-
-@dataclass
 class SzDiagnosticCheckRepositoryPerformanceResponse:
     insert_time: 'int'
+    """
+    The duration of the test in milliseconds.
+    """
+
     num_records_inserted: 'int'
+    """
+    The total number of records inserted within the insertTime.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzDiagnosticCheckRepositoryPerformanceResponse':
@@ -3813,8 +3856,20 @@ class SzDiagnosticCheckRepositoryPerformanceResponse:
 @dataclass
 class SzDiagnosticGetFeatureResponse:
     elements: 'List[Feature]'
+    """
+    Internal use.
+    """
+
     ftype_code: 'str'
+    """
+    Internal use.
+    """
+
     lib_feat_id: 'int'
+    """
+    Internal use.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzDiagnosticGetFeatureResponse':
@@ -3834,6 +3889,10 @@ class SzDiagnosticGetFeatureResponse:
 @dataclass
 class SzDiagnosticGetRepositoryInfoResponse:
     data_stores: 'List[Repository]'
+    """
+    A list of database node connection metadata.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzDiagnosticGetRepositoryInfoResponse':

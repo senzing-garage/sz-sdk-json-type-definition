@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class SzDiagnosticGetRepositoryInfoResponse
     {
+        /// <summary>
+        /// A list of database node connection metadata.
+        /// </summary>
         [JsonPropertyName("dataStores")]
         public IList<Repository> DataStores { get; set; }
     }

@@ -1,13 +1,28 @@
 {
+    "CONFIGS": [
+        "The list of registered configurations."
+    ],
+    "CONFIG_COMMENTS": [
+        "A user-provided description of the configuration."
+    ],
+    "CONFIG_ID": [
+        "An internally-generated unique identifier of the configuration."
+    ],
     "DATA_SOURCE": [
         "A label identifying the provenance of the record. FIXME: An example of differences.",
         "A label identifying the provenance of the record."
     ],
+    "DATA_SOURCES": [
+        "The list of registered data sources."
+    ],
     "DSRC_CODE": [
-        "The text representation of the datasource."
+        "The unique text identifier of the datasource. It should be UPPER_CASE ASCII without spaces. It will be used as a JSON key."
     ],
     "DSRC_ID": [
-        "The unique identifier of the datasource."
+        "The unique internal integer identifier of the datasource."
+    ],
+    "ELEMENTS": [
+        "Internal use."
     ],
     "ENTITY_ID": [
         "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added."
@@ -24,6 +39,15 @@
     "FEAT_DESC_VALUES": [
         "Describes the attributes that make up the feature."
     ],
+    "FELEM_CODE": [
+        "Internal use."
+    ],
+    "FELEM_VALUE": [
+        "Internal use."
+    ],
+    "FTYPE_CODE": [
+        "Internal use."
+    ],
     "INTERNAL_ID": [
         "Internal identifier for the record."
     ],
@@ -35,6 +59,9 @@
     ],
     "IS_DISCLOSED": [
         "Indicates if this is a disclosed relationship."
+    ],
+    "LIB_FEAT_ID": [
+        "Internal use."
     ],
     "MATCH_KEY": [
         "Representation of matched source record features."
@@ -54,7 +81,28 @@
     "RECORD_SUMMARY": [
         "Overview of the source systems the records came from comprising this related entity."
     ],
+    "SYS_CREATE_DT": [
+        "The timestamp of the original registration of the configuration."
+    ],
     "USAGE_TYPE": [
         "Label to identify how some features are being used (can also change some features behavior)."
+    ],
+    "dataStores": [
+        "A list of database node connection metadata."
+    ],
+    "id": [
+        "Label for database repository."
+    ],
+    "insertTime": [
+        "The duration of the test in milliseconds."
+    ],
+    "location": [
+        "Database connection information."
+    ],
+    "numRecordsInserted": [
+        "The total number of records inserted within the insertTime."
+    ],
+    "type": [
+        "Type of database."
     ]
 }

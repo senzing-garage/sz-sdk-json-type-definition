@@ -1149,8 +1149,13 @@ module SenzingTypedef
   end
 
   class Config
+    # A user-provided description of the configuration.
     attr_accessor :config_comments
+
+    # An internally-generated unique identifier of the configuration.
     attr_accessor :config_id
+
+    # The timestamp of the original registration of the configuration.
     attr_accessor :sys_create_dt
 
     def self.from_json_data(data)
@@ -1175,6 +1180,8 @@ module SenzingTypedef
     attr_accessor :candidate_feat_desc
     attr_accessor :candidate_feat_id
     attr_accessor :candidate_feat_usage_type
+
+    # Internal use.
     attr_accessor :ftype_code
     attr_accessor :inbound_feat_desc
     attr_accessor :inbound_feat_id
@@ -1270,10 +1277,11 @@ module SenzingTypedef
   end
 
   class DataSource
-    # The text representation of the datasource.
+    # The unique text identifier of the datasource. It should be UPPER_CASE
+    # ASCII without spaces. It will be used as a JSON key.
     attr_accessor :dsrc_code
 
-    # The unique identifier of the datasource.
+    # The unique internal integer identifier of the datasource.
     attr_accessor :dsrc_id
 
     def self.from_json_data(data)
@@ -1559,7 +1567,10 @@ module SenzingTypedef
   end
 
   class Feature
+    # Internal use.
     attr_accessor :felem_code
+
+    # Internal use.
     attr_accessor :felem_value
 
     def self.from_json_data(data)
@@ -1584,6 +1595,8 @@ module SenzingTypedef
 
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
+
+    # Internal use.
     attr_accessor :lib_feat_id
     attr_accessor :scoring_cap_reached
     attr_accessor :suppressed
@@ -1829,7 +1842,8 @@ module SenzingTypedef
   end
 
   class FocusRecord
-    # A label identifying the provenance of the record.
+    # A label identifying the provenance of the record. FIXME: An example of
+    # differences.
     attr_accessor :data_source
 
     # The unique identifier within the set of records in the DATA_SOURCE.
@@ -2906,8 +2920,13 @@ module SenzingTypedef
   end
 
   class Repository
+    # Label for database repository.
     attr_accessor :id
+
+    # Database connection information.
     attr_accessor :location
+
+    # Type of database.
     attr_accessor :type
 
     def self.from_json_data(data)
@@ -3678,6 +3697,7 @@ module SenzingTypedef
   end
 
   class SzConfigGetDataSourceRegistryResponse
+    # The list of registered data sources.
     attr_accessor :data_sources
 
     def self.from_json_data(data)
@@ -3694,6 +3714,7 @@ module SenzingTypedef
   end
 
   class SzConfigManagerGetConfigRegistryResponse
+    # The list of registered configurations.
     attr_accessor :configs
 
     def self.from_json_data(data)
@@ -3710,7 +3731,7 @@ module SenzingTypedef
   end
 
   class SzConfigRegisterDataSourceResponse
-    # The unique identifier of the datasource.
+    # The unique internal integer identifier of the datasource.
     attr_accessor :dsrc_id
 
     def self.from_json_data(data)
@@ -3726,24 +3747,11 @@ module SenzingTypedef
     end
   end
 
-  class SzConfigUnregisterDataSourceResponse
-    attr_accessor :fixme
-
-    def self.from_json_data(data)
-      out = SzConfigUnregisterDataSourceResponse.new
-      out.fixme = SenzingTypedef::from_json_data(Fixme, data["FIXME"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["FIXME"] = SenzingTypedef::to_json_data(fixme)
-      data
-    end
-  end
-
   class SzDiagnosticCheckRepositoryPerformanceResponse
+    # The duration of the test in milliseconds.
     attr_accessor :insert_time
+
+    # The total number of records inserted within the insertTime.
     attr_accessor :num_records_inserted
 
     def self.from_json_data(data)
@@ -3762,8 +3770,13 @@ module SenzingTypedef
   end
 
   class SzDiagnosticGetFeatureResponse
+    # Internal use.
     attr_accessor :elements
+
+    # Internal use.
     attr_accessor :ftype_code
+
+    # Internal use.
     attr_accessor :lib_feat_id
 
     def self.from_json_data(data)
@@ -3784,6 +3797,7 @@ module SenzingTypedef
   end
 
   class SzDiagnosticGetRepositoryInfoResponse
+    # A list of database node connection metadata.
     attr_accessor :data_stores
 
     def self.from_json_data(data)

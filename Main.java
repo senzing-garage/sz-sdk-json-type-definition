@@ -7,7 +7,6 @@ import com.senzing.typedef.FeatureForAttributes;
 import com.senzing.typedef.RecordKey;
 import com.senzing.typedef.RecordKeys;
 import com.senzing.typedef.SzConfigGetDataSourceRegistryResponse;
-import com.senzing.typedef.SzEngineGetVirtualEntityByRecordIdRecordKeys;
 import com.senzing.typedef.SzEngineGetVirtualEntityByRecordIdResponse;
 import java.io.BufferedReader;
 import java.io.FileReader;

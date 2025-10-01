@@ -743,12 +743,15 @@ pub struct CompatibilityVersion {
 
 #[derive(Serialize, Deserialize)]
 pub struct Config {
+    /// A user-provided description of the configuration.
     #[serde(rename = "CONFIG_COMMENTS")]
     pub configComments: String,
 
+    /// An internally-generated unique identifier of the configuration.
     #[serde(rename = "CONFIG_ID")]
     pub configId: i32,
 
+    /// The timestamp of the original registration of the configuration.
     #[serde(rename = "SYS_CREATE_DT")]
     pub sysCreateDt: String,
 }
@@ -767,6 +770,7 @@ pub struct Confirmation {
     #[serde(rename = "CANDIDATE_FEAT_USAGE_TYPE")]
     pub candidateFeatUsageType: String,
 
+    /// Internal use.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
@@ -824,11 +828,12 @@ pub struct CurrResources {
 
 #[derive(Serialize, Deserialize)]
 pub struct DataSource {
-    /// The text representation of the datasource.
+    /// The unique text identifier of the datasource. It should be UPPER_CASE
+    /// ASCII without spaces. It will be used as a JSON key.
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
-    /// The unique identifier of the datasource.
+    /// The unique internal integer identifier of the datasource.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 }
@@ -993,9 +998,11 @@ pub struct ExpressedFeaturesCall {
 
 #[derive(Serialize, Deserialize)]
 pub struct Feature {
+    /// Internal use.
     #[serde(rename = "FELEM_CODE")]
     pub felemCode: String,
 
+    /// Internal use.
     #[serde(rename = "FELEM_VALUE")]
     pub felemValue: String,
 }
@@ -1015,6 +1022,7 @@ pub struct FeatureDescriptionValue {
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
+    /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
@@ -1153,7 +1161,8 @@ pub struct Fixme {
 
 #[derive(Serialize, Deserialize)]
 pub struct FocusRecord {
-    /// A label identifying the provenance of the record.
+    /// A label identifying the provenance of the record. FIXME: An example
+    /// of differences.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -1877,12 +1886,15 @@ pub struct RepairDiagnosis {
 
 #[derive(Serialize, Deserialize)]
 pub struct Repository {
+    /// Label for database repository.
     #[serde(rename = "id")]
     pub id: String,
 
+    /// Database connection information.
     #[serde(rename = "location")]
     pub location: String,
 
+    /// Type of database.
     #[serde(rename = "type")]
     pub type_: String,
 }
@@ -2454,52 +2466,54 @@ pub struct SzConfigExportResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzConfigGetDataSourceRegistryResponse {
+    /// The list of registered data sources.
     #[serde(rename = "DATA_SOURCES")]
     pub dataSources: Vec<DataSource>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzConfigManagerGetConfigRegistryResponse {
+    /// The list of registered configurations.
     #[serde(rename = "CONFIGS")]
     pub configs: Vec<Config>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzConfigRegisterDataSourceResponse {
-    /// The unique identifier of the datasource.
+    /// The unique internal integer identifier of the datasource.
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct SzConfigUnregisterDataSourceResponse {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct SzDiagnosticCheckRepositoryPerformanceResponse {
+    /// The duration of the test in milliseconds.
     #[serde(rename = "insertTime")]
     pub insertTime: i32,
 
+    /// The total number of records inserted within the insertTime.
     #[serde(rename = "numRecordsInserted")]
     pub numRecordsInserted: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzDiagnosticGetFeatureResponse {
+    /// Internal use.
     #[serde(rename = "ELEMENTS")]
     pub elements: Vec<Feature>,
 
+    /// Internal use.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
+    /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzDiagnosticGetRepositoryInfoResponse {
+    /// A list of database node connection metadata.
     #[serde(rename = "dataStores")]
     pub dataStores: Vec<Repository>,
 }

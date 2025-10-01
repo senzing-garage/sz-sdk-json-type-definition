@@ -8,13 +8,14 @@ namespace Senzing.Typedef
     public class DataSource
     {
         /// <summary>
-        /// The text representation of the datasource.
+        /// The unique text identifier of the datasource. It should be
+        /// UPPER_CASE ASCII without spaces. It will be used as a JSON key.
         /// </summary>
         [JsonPropertyName("DSRC_CODE")]
         public string DsrcCode { get; set; }
 
         /// <summary>
-        /// The unique identifier of the datasource.
+        /// The unique internal integer identifier of the datasource.
         /// </summary>
         [JsonPropertyName("DSRC_ID")]
         public int DsrcId { get; set; }

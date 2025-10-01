@@ -1048,15 +1048,22 @@
         "Config": {
             "properties": {
                 "CONFIG_COMMENTS": {
+                    "metadata": {
+                        "description": "A user-provided description of the configuration."
+                    },
                     "type": "string"
                 },
                 "CONFIG_ID": {
                     "metadata": {
+                        "description": "An internally-generated unique identifier of the configuration.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "SYS_CREATE_DT": {
+                    "metadata": {
+                        "description": "The timestamp of the original registration of the configuration."
+                    },
                     "type": "string"
                 }
             }
@@ -1079,6 +1086,9 @@
                     "type": "string"
                 },
                 "FTYPE_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "INBOUND_FEAT_DESC": {
@@ -1146,13 +1156,13 @@
             "properties": {
                 "DSRC_CODE": {
                     "metadata": {
-                        "description": "The text representation of the datasource."
+                        "description": "The unique text identifier of the datasource. It should be UPPER_CASE ASCII without spaces. It will be used as a JSON key."
                     },
                     "type": "string"
                 },
                 "DSRC_ID": {
                     "metadata": {
-                        "description": "The unique identifier of the datasource.",
+                        "description": "The unique internal integer identifier of the datasource.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1407,9 +1417,15 @@
         "Feature": {
             "properties": {
                 "FELEM_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "FELEM_VALUE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 }
             }
@@ -1438,6 +1454,7 @@
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
+                        "description": "Internal use.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2667,12 +2684,21 @@
         "Repository": {
             "properties": {
                 "id": {
+                    "metadata": {
+                        "description": "Label for database repository."
+                    },
                     "type": "string"
                 },
                 "location": {
+                    "metadata": {
+                        "description": "Database connection information."
+                    },
                     "type": "string"
                 },
                 "type": {
+                    "metadata": {
+                        "description": "Type of database."
+                    },
                     "type": "string"
                 }
             }
@@ -3397,7 +3423,7 @@
                         "ref": "DataSource"
                     },
                     "metadata": {
-                        "description": "..."
+                        "description": "The list of registered data sources."
                     }
                 }
             }
@@ -3407,6 +3433,9 @@
                 "CONFIGS": {
                     "elements": {
                         "ref": "Config"
+                    },
+                    "metadata": {
+                        "description": "The list of registered configurations."
                     }
                 }
             }
@@ -3415,17 +3444,10 @@
             "properties": {
                 "DSRC_ID": {
                     "metadata": {
-                        "description": "The unique identifier of the datasource.",
+                        "description": "The unique internal integer identifier of the datasource.",
                         "goType": "int64"
                     },
                     "type": "int32"
-                }
-            }
-        },
-        "SzConfigUnregisterDataSourceResponse": {
-            "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
                 }
             }
         },
@@ -3433,12 +3455,14 @@
             "properties": {
                 "insertTime": {
                     "metadata": {
+                        "description": "The duration of the test in milliseconds.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "numRecordsInserted": {
                     "metadata": {
+                        "description": "The total number of records inserted within the insertTime.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -3450,13 +3474,20 @@
                 "ELEMENTS": {
                     "elements": {
                         "ref": "Feature"
+                    },
+                    "metadata": {
+                        "description": "Internal use."
                     }
                 },
                 "FTYPE_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
+                        "description": "Internal use.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -3468,6 +3499,9 @@
                 "dataStores": {
                     "elements": {
                         "ref": "Repository"
+                    },
+                    "metadata": {
+                        "description": "A list of database node connection metadata."
                     }
                 }
             }

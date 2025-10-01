@@ -7,9 +7,15 @@ namespace Senzing.Typedef
 {
     public class SzDiagnosticCheckRepositoryPerformanceResponse
     {
+        /// <summary>
+        /// The duration of the test in milliseconds.
+        /// </summary>
         [JsonPropertyName("insertTime")]
         public int InsertTime { get; set; }
 
+        /// <summary>
+        /// The total number of records inserted within the insertTime.
+        /// </summary>
         [JsonPropertyName("numRecordsInserted")]
         public int NumRecordsInserted { get; set; }
     }

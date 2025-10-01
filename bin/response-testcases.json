@@ -10427,11 +10427,6 @@
             }
         }
     },
-    "SzConfigUnregisterDataSourceResponse": {
-        "tests": {
-            "test-000": {}
-        }
-    },
     "SzConfigManagerGetConfigRegistryResponse": {
         "tests": {
             "test-000": {},
