@@ -117,6 +117,7 @@ ignore_missing_imports = "true"
 [tool.pylint]
 ignored-argument-names = "args|kwargs"
 max-locals = 30
+min-similarity-lines = 10
 disable = [
   "eval-used",
   "f-string-without-interpolation",

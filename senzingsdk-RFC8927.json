@@ -3395,6 +3395,9 @@
                 "DATA_SOURCES": {
                     "elements": {
                         "ref": "DataSource"
+                    },
+                    "metadata": {
+                        "description": "..."
                     }
                 }
             }

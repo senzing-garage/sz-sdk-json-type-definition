@@ -62,8 +62,8 @@ with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
 
 # Process data.
 
-path = ""
-recurse(path, "", DATA)
+INITIAL_PATH = ""
+recurse(INITIAL_PATH, "", DATA)
 
 # Write output file.
 
