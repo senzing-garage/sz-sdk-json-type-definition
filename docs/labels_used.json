@@ -16,5 +16,8 @@
         "SzEngineProcessRedoRecordResponse.RECORD_ID",
         "SzEngineReevaluateEntityResponse.RECORD_ID",
         "SzEngineReevaluateRecordResponse.RECORD_ID"
+    ],
+    "RECORD_ID-BAD-EXAMPLE": [
+        "FocusRecord.DATA_SOURCE"
     ]
 }

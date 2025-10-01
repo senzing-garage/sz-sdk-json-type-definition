@@ -191,10 +191,12 @@ coverage: coverage-osarch-specific
 
 .PHONY: documentation
 documentation: \
-	documentation-osarch-specific \
+	docs-json-key-descriptions \
+	docs-labels_used \
 	docs-responses-html \
 	docs-responses-json
 
+# 	documentation-osarch-specific \
 
 # -----------------------------------------------------------------------------
 # Package

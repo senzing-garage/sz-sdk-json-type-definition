@@ -1,5 +1,6 @@
 {
     "DATA_SOURCE": [
+        "A label identifying the provenance of the record. FIXME: An example of differences.",
         "A label identifying the provenance of the record."
     ],
     "DSRC_CODE": [

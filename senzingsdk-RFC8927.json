@@ -1644,7 +1644,8 @@
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
-                        "description": "A label identifying the provenance of the record."
+                        "description": "A label identifying the provenance of the record. FIXME: An example of differences.",
+                        "label": "RECORD_ID-BAD-EXAMPLE"
                     },
                     "type": "string"
                 },
