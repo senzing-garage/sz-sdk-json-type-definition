@@ -27,7 +27,8 @@
                 "ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-                        "goType": "int64"
+                        "goType": "int64",
+                        "label": "ENTITY_ID"
                     },
                     "type": "int32"
                 }
@@ -46,7 +47,8 @@
                 },
                 "ATTR_ID": {
                     "metadata": {
-                        "goType": "int64"
+                        "goType": "int64",
+                        "label": "ENTITY_ID"
                     },
                     "type": "int32"
                 },
@@ -1287,7 +1289,8 @@
                 },
                 "MAX_ENTITY_ID": {
                     "metadata": {
-                        "goType": "int64"
+                        "goType": "int64",
+                        "label": "ENTITY_ID"
                     },
                     "type": "int32"
                 },
@@ -1647,7 +1650,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -2264,7 +2268,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 },
@@ -2388,7 +2393,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 },
@@ -2414,7 +2420,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -2993,7 +3000,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -3478,7 +3486,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -3502,7 +3511,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -3838,7 +3848,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 },
@@ -3912,7 +3923,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -3936,7 +3948,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }
@@ -3960,7 +3973,8 @@
                 },
                 "RECORD_ID": {
                     "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE."
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
                     },
                     "type": "string"
                 }

@@ -408,6 +408,12 @@ docs-json-key-descriptions:
 		./bin/make_docs_json_key_descriptions.py
 
 
+.PHONY: docs-labels_used
+docs-labels_used:
+	$(activate-venv); \
+		./bin/make_docs_labels_used.py
+
+
 .PHONY: docs-responses-html
 docs-responses-html:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
