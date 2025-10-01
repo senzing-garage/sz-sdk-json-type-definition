@@ -506,3 +506,8 @@ test-rfc8927-reconstitution:
 test-using-senzing:
 	$(activate-venv); \
 		./bin/test_using_senzing.py
+
+.PHONY: unused-json-keys
+unused-json-keys:
+	$(activate-venv); \
+		./bin/unused_json_keys.py
