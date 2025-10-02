@@ -1,12 +1,5 @@
 {
-    "SzConfigGetDataSourceRegistryResponse": {
-        "MJD_TEST_FIXME": "int32",
-        "DATA_SOURCES": [
-            {
-                "MJD_TEST_FIXME2": "string"
-            }
-        ]
-    },
+    "SzConfigGetDataSourceRegistryResponse": {},
     "SzEngineWhyRecordsResponse": {
         "ENTITIES": [
             {
