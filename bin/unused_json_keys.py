@@ -196,18 +196,101 @@ def recurse_json(json_value):
 # -----------------------------------------------------------------------------
 
 
-def remove_json(needles, haystack):
-    print(f">>>>> {needles}\n\n{haystack}\n\n\n")
+# def remove_keys(haystack, needles):
+#     """Remove keys from haystack that exist in needles."""
+#     return {k: v for k, v in haystack.items() if k not in needles}
+
+
+# def remove_keys_recursively(haystack, needles):
+#     """Remove keys from haystack that exist in needles."""
+#     result = {}
+#     for key, value in haystack.items():
+#         if key not in needles:
+#             if isinstance(value, dict):
+#                 result[key] = remove_keys_recursively(value, needles)
+#             else:
+#                 result[key] = value
+#     return result
+
+
+# def remove_json(needles, haystack):
+#     print(f">>>>> {needles}\n\n{haystack}\n\n\n")
+
+#     if isinstance(needles, dict):
+#         if isinstance(haystack, dict):
+#             for key, value in needles.items():
+#                 if key not in haystack:
+#                     return
+#                 haystack = remove_json(value, haystack.get(key))
+#         else:
+#             print(f">>>>> {needles}; {haystack}")
+
+#     return haystack
+
+
+# def remove_keys_recursive01(json_key, needles, haystack):
+#     """Remove keys from dict1 (and nested dicts) that exist in dict2"""
+#     result = None
+
+#     print(f">>>>>> Key: {json_key}; Haystack: {haystack}")
+
+#     if isinstance(needles, dict):
+#         print(f">>>>>>>>> dict: {needles}")
+
+#         result = {}
+#         for key, value in needles.items():
+#             new_haystack = None
+#             if isinstance(haystack, dict):
+#                 new_haystack = haystack.get(key)
+#             new_result = remove_keys_recursive(key, value, new_haystack)
+#             if new_result:
+#                 result[key] = new_result
+
+#     if isinstance(needles, list):
+#         print(f">>>>>>>>> list: {needles}")
+
+#         result = []
+#         new_haystack = None
+#         if isinstance(haystack, list):
+#             new_haystack = haystack[0]
+#         for value in needles:
+#             new_result = remove_keys_recursive("", value, new_haystack)
+#             if new_result:
+#                 result.append(new_result)
+
+#     print(f"<<<<<<<<< {result}")
+#     return result
+
+
+def remove_keys_recursive(needles, haystack):
+    """Remove keys from dict1 (and nested dicts) that exist in dict2"""
+    result = None
 
     if isinstance(needles, dict):
-        if not isinstance(full_json, dict):
-            return False
-        for key, value in subset_json.items():
-            if key not in full_json:
-                return False
-            if not is_json_subset(value, full_json[key]):
-                return False
-        return True
+
+        result = {}
+        if isinstance(haystack, dict):
+            for key, value in haystack.items():
+                if key in needles:
+                    new_result = remove_keys_recursive(needles.get(key), value)
+                    if new_result:
+                        result[key] = new_result
+                else:
+                    result[key] = value
+
+    if isinstance(needles, list):
+
+        result = []
+        new_haystack = None
+        if isinstance(haystack, list):
+            new_haystack = haystack[0]
+        for value in needles:
+            new_result = remove_keys_recursive(value, new_haystack)
+            if new_result:
+                if new_result not in result:
+                    result.append(new_result)
+
+    return result
 
 
 # -----------------------------------------------------------------------------
@@ -224,6 +307,7 @@ DEFINITIONS = DATA.get("definitions", {})
 # Go through test files.
 
 test_file_names = os.listdir(INPUT_DIRECTORY)
+# test_file_names = ["SzConfigGetDataSourceRegistryResponse.jsonl"]
 for test_file_name in test_file_names:
     requested_json_key = Path(test_file_name).stem
     initial_json_value = DEFINITIONS.get(requested_json_key)
@@ -234,13 +318,13 @@ for test_file_name in test_file_names:
         print(f"Could not find JSON key: {requested_json_key}")
         continue
 
-    final_result = recurse_json(initial_json_value)
+    residual_json = recurse_json(initial_json_value)
 
     with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
         for line in test_file:
-            remove_json(json.loads(line), final_result)
+            residual_json = remove_keys_recursive(json.loads(line), residual_json)
 
-    RESIDUAL[requested_json_key] = final_result
+    RESIDUAL[requested_json_key] = residual_json
 
 with open(OUTPUT_FILENAME, "w", encoding="utf-8") as json_file:
     json.dump(RESIDUAL, json_file, indent=4)
