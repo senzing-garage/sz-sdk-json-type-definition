@@ -2,29 +2,29 @@
     "definitions": {
         "AdditionalScores": {
             "properties": {
-                "FULL_SCORE": {
+                "XXX_FULL_SCORE": {
                     "type": "int32"
                 },
-                "GENERATION_MATCH": {
+                "XXX_GENERATION_MATCH": {
                     "type": "int32"
                 },
-                "GNR_FN": {
+                "XXX_GNR_FN": {
                     "type": "int32"
                 },
-                "GNR_GN": {
+                "XXX_GNR_GN": {
                     "type": "int32"
                 },
-                "GNR_ON": {
+                "XXX_GNR_ON": {
                     "type": "int32"
                 },
-                "GNR_SN": {
+                "XXX_GNR_SN": {
                     "type": "int32"
                 }
             }
         },
         "AffectedEntity": {
             "properties": {
-                "ENTITY_ID": {
+                "XXX_ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64",
@@ -36,60 +36,60 @@
         },
         "CFG_ATTR": {
             "properties": {
-                "ADVANCED": {
+                "XXX_ADVANCED": {
                     "type": "string"
                 },
-                "ATTR_CLASS": {
+                "XXX_ATTR_CLASS": {
                     "type": "string"
                 },
-                "ATTR_CODE": {
+                "XXX_ATTR_CODE": {
                     "type": "string"
                 },
-                "ATTR_ID": {
+                "XXX_ATTR_ID": {
                     "metadata": {
                         "goType": "int64",
                         "label": "ENTITY_ID"
                     },
                     "type": "int32"
                 },
-                "DEFAULT_VALUE": {
+                "XXX_DEFAULT_VALUE": {
                     "type": "string"
                 },
-                "FELEM_CODE": {
+                "XXX_FELEM_CODE": {
                     "type": "string"
                 },
-                "FELEM_REQ": {
+                "XXX_FELEM_REQ": {
                     "type": "string"
                 },
-                "FTYPE_CODE": {
+                "XXX_FTYPE_CODE": {
                     "type": "string"
                 },
-                "INTERNAL": {
+                "XXX_INTERNAL": {
                     "type": "string"
                 }
             }
         },
         "CFG_CFBOM": {
             "properties": {
-                "CFCALL_ID": {
+                "XXX_CFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -99,25 +99,25 @@
         },
         "CFG_CFCALL": {
             "properties": {
-                "CFCALL_ID": {
+                "XXX_CFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "CFUNC_ID": {
+                "XXX_CFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -127,58 +127,58 @@
         },
         "CFG_CFRTN": {
             "properties": {
-                "CFRTN_ID": {
+                "XXX_CFRTN_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "CFUNC_ID": {
+                "XXX_CFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "CFUNC_RTNVAL": {
+                "XXX_CFUNC_RTNVAL": {
                     "type": "string"
                 },
-                "CLOSE_SCORE": {
+                "XXX_CLOSE_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LIKELY_SCORE": {
+                "XXX_LIKELY_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "PLAUSIBLE_SCORE": {
+                "XXX_PLAUSIBLE_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SAME_SCORE": {
+                "XXX_SAME_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "UN_LIKELY_SCORE": {
+                "XXX_UN_LIKELY_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -188,59 +188,59 @@
         },
         "CFG_CFUNC": {
             "properties": {
-                "ANON_SUPPORT": {
+                "XXX_ANON_SUPPORT": {
                     "type": "string"
                 },
-                "CFUNC_CODE": {
+                "XXX_CFUNC_CODE": {
                     "type": "string"
                 },
-                "CFUNC_DESC": {
+                "XXX_CFUNC_DESC": {
                     "type": "string"
                 },
-                "CFUNC_ID": {
+                "XXX_CFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "CONNECT_STR": {
+                "XXX_CONNECT_STR": {
                     "type": "string"
                 },
-                "FUNC_LIB": {
+                "XXX_FUNC_LIB": {
                     "type": "string"
                 },
-                "FUNC_VER": {
+                "XXX_FUNC_VER": {
                     "type": "string"
                 },
-                "JAVA_CLASS_NAME": {
+                "XXX_JAVA_CLASS_NAME": {
                     "type": "string"
                 },
-                "LANGUAGE": {
+                "XXX_LANGUAGE": {
                     "type": "string"
                 }
             }
         },
         "CFG_DFBOM": {
             "properties": {
-                "DFCALL_ID": {
+                "XXX_DFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -250,25 +250,25 @@
         },
         "CFG_DFCALL": {
             "properties": {
-                "DFCALL_ID": {
+                "XXX_DFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "DFUNC_ID": {
+                "XXX_DFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -278,78 +278,78 @@
         },
         "CFG_DFUNC": {
             "properties": {
-                "ANON_SUPPORT": {
+                "XXX_ANON_SUPPORT": {
                     "type": "string"
                 },
-                "CONNECT_STR": {
+                "XXX_CONNECT_STR": {
                     "type": "string"
                 },
-                "DFUNC_CODE": {
+                "XXX_DFUNC_CODE": {
                     "type": "string"
                 },
-                "DFUNC_DESC": {
+                "XXX_DFUNC_DESC": {
                     "type": "string"
                 },
-                "DFUNC_ID": {
+                "XXX_DFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FUNC_LIB": {
+                "XXX_FUNC_LIB": {
                     "type": "string"
                 },
-                "FUNC_VER": {
+                "XXX_FUNC_VER": {
                     "type": "string"
                 },
-                "JAVA_CLASS_NAME": {
+                "XXX_JAVA_CLASS_NAME": {
                     "type": "string"
                 },
-                "LANGUAGE": {
+                "XXX_LANGUAGE": {
                     "type": "string"
                 }
             }
         },
         "CFG_DSRC": {
             "properties": {
-                "CONVERSATIONAL": {
+                "XXX_CONVERSATIONAL": {
                     "type": "string"
                 },
-                "DSRC_CODE": {
+                "XXX_DSRC_CODE": {
                     "type": "string"
                 },
-                "DSRC_DESC": {
+                "XXX_DSRC_DESC": {
                     "type": "string"
                 },
-                "DSRC_ID": {
+                "XXX_DSRC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "DSRC_RELY": {
+                "XXX_DSRC_RELY": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "RETENTION_LEVEL": {
+                "XXX_RETENTION_LEVEL": {
                     "type": "string"
                 }
             }
         },
         "CFG_DSRC_INTEREST": {
             "properties": {
-                "DSRC_ID": {
+                "XXX_DSRC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "INTEREST_FLAG": {
+                "XXX_INTEREST_FLAG": {
                     "type": "string"
                 },
-                "MAX_DEGREE": {
+                "XXX_MAX_DEGREE": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -359,72 +359,72 @@
         },
         "CFG_EBOM": {
             "properties": {
-                "ETYPE_ID": {
+                "XXX_ETYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "UTYPE_CODE": {
+                "XXX_UTYPE_CODE": {
                     "type": "string"
                 }
             }
         },
         "CFG_ECLASS": {
             "properties": {
-                "ECLASS_CODE": {
+                "XXX_ECLASS_CODE": {
                     "type": "string"
                 },
-                "ECLASS_DESC": {
+                "XXX_ECLASS_DESC": {
                     "type": "string"
                 },
-                "ECLASS_ID": {
+                "XXX_ECLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "RESOLVE": {
+                "XXX_RESOLVE": {
                     "type": "string"
                 }
             }
         },
         "CFG_EFBOM": {
             "properties": {
-                "EFCALL_ID": {
+                "XXX_EFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_REQ": {
+                "XXX_FELEM_REQ": {
                     "type": "string"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -434,142 +434,142 @@
         },
         "CFG_EFCALL": {
             "properties": {
-                "EFCALL_ID": {
+                "XXX_EFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EFEAT_FTYPE_ID": {
+                "XXX_EFEAT_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EFUNC_ID": {
+                "XXX_EFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "IS_VIRTUAL": {
+                "XXX_IS_VIRTUAL": {
                     "type": "string"
                 }
             }
         },
         "CFG_EFUNC": {
             "properties": {
-                "CONNECT_STR": {
+                "XXX_CONNECT_STR": {
                     "type": "string"
                 },
-                "EFUNC_CODE": {
+                "XXX_EFUNC_CODE": {
                     "type": "string"
                 },
-                "EFUNC_DESC": {
+                "XXX_EFUNC_DESC": {
                     "type": "string"
                 },
-                "EFUNC_ID": {
+                "XXX_EFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FUNC_LIB": {
+                "XXX_FUNC_LIB": {
                     "type": "string"
                 },
-                "FUNC_VER": {
+                "XXX_FUNC_VER": {
                     "type": "string"
                 },
-                "JAVA_CLASS_NAME": {
+                "XXX_JAVA_CLASS_NAME": {
                     "type": "string"
                 },
-                "LANGUAGE": {
+                "XXX_LANGUAGE": {
                     "type": "string"
                 }
             }
         },
         "CFG_ERFRAG": {
             "properties": {
-                "ERFRAG_CODE": {
+                "XXX_ERFRAG_CODE": {
                     "type": "string"
                 },
-                "ERFRAG_DEPENDS": {
+                "XXX_ERFRAG_DEPENDS": {
                     "type": "string"
                 },
-                "ERFRAG_DESC": {
+                "XXX_ERFRAG_DESC": {
                     "type": "string"
                 },
-                "ERFRAG_ID": {
+                "XXX_ERFRAG_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "ERFRAG_SOURCE": {
+                "XXX_ERFRAG_SOURCE": {
                     "type": "string"
                 }
             }
         },
         "CFG_ERRULE": {
             "properties": {
-                "DISQ_ERFRAG_CODE": {
+                "XXX_DISQ_ERFRAG_CODE": {
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "ERRULE_DESC": {
+                "XXX_ERRULE_DESC": {
                     "type": "string"
                 },
-                "ERRULE_ID": {
+                "XXX_ERRULE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "ERRULE_TIER": {
+                "XXX_ERRULE_TIER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "QUAL_ERFRAG_CODE": {
+                "XXX_QUAL_ERFRAG_CODE": {
                     "type": "string"
                 },
-                "REF_SCORE": {
+                "XXX_REF_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "RELATE": {
+                "XXX_RELATE": {
                     "type": "string"
                 },
-                "RESOLVE": {
+                "XXX_RESOLVE": {
                     "type": "string"
                 },
-                "RTYPE_ID": {
+                "XXX_RTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -579,19 +579,19 @@
         },
         "CFG_ETYPE": {
             "properties": {
-                "ECLASS_ID": {
+                "XXX_ECLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "ETYPE_CODE": {
+                "XXX_ETYPE_CODE": {
                     "type": "string"
                 },
-                "ETYPE_DESC": {
+                "XXX_ETYPE_DESC": {
                     "type": "string"
                 },
-                "ETYPE_ID": {
+                "XXX_ETYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -601,31 +601,31 @@
         },
         "CFG_FBOM": {
             "properties": {
-                "DERIVED": {
+                "XXX_DERIVED": {
                     "type": "string"
                 },
-                "DISPLAY_DELIM": {
+                "XXX_DISPLAY_DELIM": {
                     "type": "string"
                 },
-                "DISPLAY_LEVEL": {
+                "XXX_DISPLAY_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -635,41 +635,41 @@
         },
         "CFG_FBOVR": {
             "properties": {
-                "ECLASS_ID": {
+                "XXX_ECLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_EXCL": {
+                "XXX_FTYPE_EXCL": {
                     "type": "string"
                 },
-                "FTYPE_FREQ": {
+                "XXX_FTYPE_FREQ": {
                     "type": "string"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_STAB": {
+                "XXX_FTYPE_STAB": {
                     "type": "string"
                 },
-                "UTYPE_CODE": {
+                "XXX_UTYPE_CODE": {
                     "type": "string"
                 }
             }
         },
         "CFG_FCLASS": {
             "properties": {
-                "FCLASS_CODE": {
+                "XXX_FCLASS_CODE": {
                     "type": "string"
                 },
-                "FCLASS_DESC": {
+                "XXX_FCLASS_DESC": {
                     "type": "string"
                 },
-                "FCLASS_ID": {
+                "XXX_FCLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -679,80 +679,80 @@
         },
         "CFG_FELEM": {
             "properties": {
-                "DATA_TYPE": {
+                "XXX_DATA_TYPE": {
                     "type": "string"
                 },
-                "FELEM_CODE": {
+                "XXX_FELEM_CODE": {
                     "type": "string"
                 },
-                "FELEM_DESC": {
+                "XXX_FELEM_DESC": {
                     "type": "string"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "TOKENIZE": {
+                "XXX_TOKENIZE": {
                     "type": "string"
                 }
             }
         },
         "CFG_FTYPE": {
             "properties": {
-                "ANONYMIZE": {
+                "XXX_ANONYMIZE": {
                     "type": "string"
                 },
-                "DERIVATION": {
+                "XXX_DERIVATION": {
                     "type": "string"
                 },
-                "DERIVED": {
+                "XXX_DERIVED": {
                     "type": "string"
                 },
-                "FCLASS_ID": {
+                "XXX_FCLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_CODE": {
+                "XXX_FTYPE_CODE": {
                     "type": "string"
                 },
-                "FTYPE_DESC": {
+                "XXX_FTYPE_DESC": {
                     "type": "string"
                 },
-                "FTYPE_EXCL": {
+                "XXX_FTYPE_EXCL": {
                     "type": "string"
                 },
-                "FTYPE_FREQ": {
+                "XXX_FTYPE_FREQ": {
                     "type": "string"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_STAB": {
+                "XXX_FTYPE_STAB": {
                     "type": "string"
                 },
-                "PERSIST_HISTORY": {
+                "XXX_PERSIST_HISTORY": {
                     "type": "string"
                 },
-                "RTYPE_ID": {
+                "XXX_RTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SHOW_IN_MATCH_KEY": {
+                "XXX_SHOW_IN_MATCH_KEY": {
                     "type": "string"
                 },
-                "USED_FOR_CAND": {
+                "XXX_USED_FOR_CAND": {
                     "type": "string"
                 },
-                "VERSION": {
+                "XXX_VERSION": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -762,47 +762,47 @@
         },
         "CFG_GENERIC_THRESHOLD": {
             "properties": {
-                "BEHAVIOR": {
+                "XXX_BEHAVIOR": {
                     "type": "string"
                 },
-                "CANDIDATE_CAP": {
+                "XXX_CANDIDATE_CAP": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "GPLAN_ID": {
+                "XXX_GPLAN_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SCORING_CAP": {
+                "XXX_SCORING_CAP": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SEND_TO_REDO": {
+                "XXX_SEND_TO_REDO": {
                     "type": "string"
                 }
             }
         },
         "CFG_GPLAN": {
             "properties": {
-                "GPLAN_CODE": {
+                "XXX_GPLAN_CODE": {
                     "type": "string"
                 },
-                "GPLAN_DESC": {
+                "XXX_GPLAN_DESC": {
                     "type": "string"
                 },
-                "GPLAN_ID": {
+                "XXX_GPLAN_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -812,13 +812,13 @@
         },
         "CFG_LENS": {
             "properties": {
-                "LENS_CODE": {
+                "XXX_LENS_CODE": {
                     "type": "string"
                 },
-                "LENS_DESC": {
+                "XXX_LENS_DESC": {
                     "type": "string"
                 },
-                "LENS_ID": {
+                "XXX_LENS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -833,19 +833,19 @@
         },
         "CFG_RCLASS": {
             "properties": {
-                "IS_DISCLOSED": {
+                "XXX_IS_DISCLOSED": {
                     "metadata": {
                         "description": "Indicates if this is a disclosed relationship."
                     },
                     "type": "string"
                 },
-                "RCLASS_CODE": {
+                "XXX_RCLASS_CODE": {
                     "type": "string"
                 },
-                "RCLASS_DESC": {
+                "XXX_RCLASS_DESC": {
                     "type": "string"
                 },
-                "RCLASS_ID": {
+                "XXX_RCLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -855,28 +855,28 @@
         },
         "CFG_RTYPE": {
             "properties": {
-                "BREAK_RES": {
+                "XXX_BREAK_RES": {
                     "type": "string"
                 },
-                "RCLASS_ID": {
+                "XXX_RCLASS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "REL_STRENGTH": {
+                "XXX_REL_STRENGTH": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "RTYPE_CODE": {
+                "XXX_RTYPE_CODE": {
                     "type": "string"
                 },
-                "RTYPE_DESC": {
+                "XXX_RTYPE_DESC": {
                     "type": "string"
                 },
-                "RTYPE_ID": {
+                "XXX_RTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -886,31 +886,31 @@
         },
         "CFG_SFCALL": {
             "properties": {
-                "EXEC_ORDER": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SFCALL_ID": {
+                "XXX_SFCALL_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SFUNC_ID": {
+                "XXX_SFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -920,28 +920,28 @@
         },
         "CFG_SFUNC": {
             "properties": {
-                "CONNECT_STR": {
+                "XXX_CONNECT_STR": {
                     "type": "string"
                 },
-                "FUNC_LIB": {
+                "XXX_FUNC_LIB": {
                     "type": "string"
                 },
-                "FUNC_VER": {
+                "XXX_FUNC_VER": {
                     "type": "string"
                 },
-                "JAVA_CLASS_NAME": {
+                "XXX_JAVA_CLASS_NAME": {
                     "type": "string"
                 },
-                "LANGUAGE": {
+                "XXX_LANGUAGE": {
                     "type": "string"
                 },
-                "SFUNC_CODE": {
+                "XXX_SFUNC_CODE": {
                     "type": "string"
                 },
-                "SFUNC_DESC": {
+                "XXX_SFUNC_DESC": {
                     "type": "string"
                 },
-                "SFUNC_ID": {
+                "XXX_SFUNC_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -951,50 +951,50 @@
         },
         "CONFIG_BASE_VERSION": {
             "properties": {
-                "BUILD_DATE": {
+                "XXX_BUILD_DATE": {
                     "type": "string"
                 },
-                "BUILD_NUMBER": {
+                "XXX_BUILD_NUMBER": {
                     "type": "string"
                 },
-                "BUILD_VERSION": {
+                "XXX_BUILD_VERSION": {
                     "type": "string"
                 },
-                "COMPATIBILITY_VERSION": {
+                "XXX_COMPATIBILITY_VERSION": {
                     "ref": "CompatibilityVersion"
                 },
-                "PRODUCT_NAME": {
+                "XXX_PRODUCT_NAME": {
                     "type": "string"
                 },
-                "VERSION": {
+                "XXX_VERSION": {
                     "type": "string"
                 }
             }
         },
         "Caches": {
             "properties": {
-                "libFeatCacheHit": {
+                "XXX_libFeatCacheHit": {
                     "type": "int32"
                 },
-                "libFeatCacheMiss": {
+                "XXX_libFeatCacheMiss": {
                     "type": "int32"
                 },
-                "libFeatInsert": {
+                "XXX_libFeatInsert": {
                     "type": "int32"
                 },
-                "resFeatStatCacheHit": {
+                "XXX_resFeatStatCacheHit": {
                     "type": "int32"
                 },
-                "resFeatStatCacheMiss": {
+                "XXX_resFeatStatCacheMiss": {
                     "type": "int32"
                 },
-                "resFeatStatInsert": {
+                "XXX_resFeatStatInsert": {
                     "type": "int32"
                 },
-                "resFeatStatUpdateAttempt": {
+                "XXX_resFeatStatUpdateAttempt": {
                     "type": "int32"
                 },
-                "resFeatStatUpdateFail": {
+                "XXX_resFeatStatUpdateFail": {
                     "type": "int32"
                 }
             }
@@ -1008,19 +1008,19 @@
         },
         "CandidateKeysForSearchStatistic": {
             "properties": {
-                "FEATURE_TYPES": {
+                "XXX_FEATURE_TYPES": {
                     "elements": {
                         "ref": "FeatureType"
                     }
                 },
-                "SUMMARY": {
+                "XXX_SUMMARY": {
                     "ref": "Summary"
                 }
             }
         },
         "Candidates": {
             "properties": {
-                "candidateBuilders": {
+                "XXX_candidateBuilders": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -1028,7 +1028,7 @@
                         "type": "int32"
                     }
                 },
-                "suppressedCandidateBuilders": {
+                "XXX_suppressedCandidateBuilders": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -1040,27 +1040,27 @@
         },
         "CompatibilityVersion": {
             "properties": {
-                "CONFIG_VERSION": {
+                "XXX_CONFIG_VERSION": {
                     "type": "string"
                 }
             }
         },
         "Config": {
             "properties": {
-                "CONFIG_COMMENTS": {
+                "XXX_CONFIG_COMMENTS": {
                     "metadata": {
                         "description": "A user-provided description of the configuration."
                     },
                     "type": "string"
                 },
-                "CONFIG_ID": {
+                "XXX_CONFIG_ID": {
                     "metadata": {
                         "description": "An internally-generated unique identifier of the configuration.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SYS_CREATE_DT": {
+                "XXX_SYS_CREATE_DT": {
                     "metadata": {
                         "description": "The timestamp of the original registration of the configuration."
                     },
@@ -1070,84 +1070,84 @@
         },
         "Confirmation": {
             "properties": {
-                "ADDITIONAL_SCORES": {
+                "XXX_ADDITIONAL_SCORES": {
                     "ref": "AdditionalScores"
                 },
-                "CANDIDATE_FEAT_DESC": {
+                "XXX_CANDIDATE_FEAT_DESC": {
                     "type": "string"
                 },
-                "CANDIDATE_FEAT_ID": {
+                "XXX_CANDIDATE_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "CANDIDATE_FEAT_USAGE_TYPE": {
+                "XXX_CANDIDATE_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "FTYPE_CODE": {
+                "XXX_FTYPE_CODE": {
                     "metadata": {
                         "description": "Internal use."
                     },
                     "type": "string"
                 },
-                "INBOUND_FEAT_DESC": {
+                "XXX_INBOUND_FEAT_DESC": {
                     "type": "string"
                 },
-                "INBOUND_FEAT_ID": {
+                "XXX_INBOUND_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "INBOUND_FEAT_USAGE_TYPE": {
+                "XXX_INBOUND_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "SCORE": {
+                "XXX_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SCORE_BEHAVIOR": {
+                "XXX_SCORE_BEHAVIOR": {
                     "type": "string"
                 },
-                "SCORE_BUCKET": {
+                "XXX_SCORE_BUCKET": {
                     "type": "string"
                 },
-                "SOURCE": {
+                "XXX_SOURCE": {
                     "type": "string"
                 },
-                "TOKEN": {
+                "XXX_TOKEN": {
                     "type": "string"
                 }
             }
         },
         "Contention": {
             "properties": {
-                "feature": {
+                "XXX_feature": {
                     "ref": "Fixme"
                 },
-                "resEnt": {
+                "XXX_resEnt": {
                     "ref": "Fixme"
                 },
-                "valuelatch": {
+                "XXX_valuelatch": {
                     "ref": "Fixme"
                 }
             }
         },
         "CurrResources": {
             "properties": {
-                "activeThreads": {
+                "XXX_activeThreads": {
                     "type": "int32"
                 },
-                "availableMemory": {
+                "XXX_availableMemory": {
                     "type": "string"
                 },
-                "processMemory": {
+                "XXX_processMemory": {
                     "type": "string"
                 },
-                "workerThreads": {
+                "XXX_workerThreads": {
                     "type": "int32"
                 }
             }
@@ -1171,17 +1171,17 @@
         },
         "DisclosedRelationsForMatchInfo": {
             "properties": {
-                "REL_ANCHOR": {
+                "XXX_REL_ANCHOR": {
                     "elements": {
                         "ref": "RelAnchor"
                     }
                 },
-                "REL_LINK": {
+                "XXX_REL_LINK": {
                     "elements": {
                         "ref": "RelLink"
                     }
                 },
-                "REL_POINTER": {
+                "XXX_REL_POINTER": {
                     "elements": {
                         "ref": "RelPointer"
                     }
@@ -1190,37 +1190,37 @@
         },
         "DisclosedRelationsForMatchInfoForWhy": {
             "properties": {
-                "DOMAIN": {
+                "XXX_DOMAIN": {
                     "type": "string"
                 },
-                "FEAT_DESC": {
+                "XXX_FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "FEAT_ID": {
+                "XXX_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FEAT_USAGE_TYPE": {
+                "XXX_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "LINKED_FEAT_DESC": {
+                "XXX_LINKED_FEAT_DESC": {
                     "type": "string"
                 },
-                "LINKED_FEAT_ID": {
+                "XXX_LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LINKED_FEAT_TYPE": {
+                "XXX_LINKED_FEAT_TYPE": {
                     "type": "string"
                 },
-                "REL_ANCHOR": {
+                "XXX_REL_ANCHOR": {
                     "elements": {
                         "ref": "RelAnchor"
                     }
@@ -1251,7 +1251,7 @@
         },
         "Entity": {
             "properties": {
-                "RELATED_ENTITIES": {
+                "XXX_RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
@@ -1263,70 +1263,70 @@
         },
         "EntityForResolvedEntity": {
             "properties": {
-                "RELATED_ENTITIES": {
+                "XXX_RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
                 },
-                "RESOLVED_ENTITY": {
+                "XXX_RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
                 }
             }
         },
         "EntityForWhySearch": {
             "properties": {
-                "RELATED_ENTITIES": {
+                "XXX_RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
                 },
-                "RESOLVED_ENTITY": {
+                "XXX_RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
                 }
             }
         },
         "EntityNetworkLink": {
             "properties": {
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "IS_AMBIGUOUS": {
+                "XXX_IS_AMBIGUOUS": {
                     "metadata": {
                         "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "IS_DISCLOSED": {
+                "XXX_IS_DISCLOSED": {
                     "metadata": {
                         "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "MAX_ENTITY_ID": {
+                "XXX_MAX_ENTITY_ID": {
                     "metadata": {
                         "goType": "int64",
                         "label": "ENTITY_ID"
                     },
                     "type": "int32"
                 },
-                "MIN_ENTITY_ID": {
+                "XXX_MIN_ENTITY_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -1360,45 +1360,45 @@
         },
         "EntityPathLink": {
             "properties": {
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "IS_AMBIGUOUS": {
+                "XXX_IS_AMBIGUOUS": {
                     "metadata": {
                         "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "IS_DISCLOSED": {
+                "XXX_IS_DISCLOSED": {
                     "metadata": {
                         "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "MAX_ENTITY_ID": {
+                "XXX_MAX_ENTITY_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MIN_ENTITY_ID": {
+                "XXX_MIN_ENTITY_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -1418,12 +1418,12 @@
         },
         "ExpressedFeatures": {
             "properties": {
-                "calls": {
+                "XXX_calls": {
                     "elements": {
                         "ref": "ExpressedFeaturesCall"
                     }
                 },
-                "created": {
+                "XXX_created": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -1435,13 +1435,13 @@
         },
         "ExpressedFeaturesCall": {
             "properties": {
-                "EFCALL_ID": {
+                "XXX_EFCALL_ID": {
                     "type": "int32"
                 },
-                "EFUNC_CODE": {
+                "XXX_EFUNC_CODE": {
                     "type": "string"
                 },
-                "numCalls": {
+                "XXX_numCalls": {
                     "type": "int32"
                 }
             }
@@ -1464,15 +1464,15 @@
         },
         "FeatureDescriptionValue": {
             "properties": {
-                "ATTRIBUTES": {
+                "XXX_ATTRIBUTES": {
                     "values": {
                         "type": "string"
                     }
                 },
-                "CANDIDATE_CAP_REACHED": {
+                "XXX_CANDIDATE_CAP_REACHED": {
                     "type": "string"
                 },
-                "ENTITY_COUNT": {
+                "XXX_ENTITY_COUNT": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -1491,23 +1491,23 @@
                     },
                     "type": "int32"
                 },
-                "SCORING_CAP_REACHED": {
+                "XXX_SCORING_CAP_REACHED": {
                     "type": "string"
                 },
-                "SUPPRESSED": {
+                "XXX_SUPPRESSED": {
                     "type": "string"
                 },
-                "USED_FOR_CAND": {
+                "XXX_USED_FOR_CAND": {
                     "type": "string"
                 },
-                "USED_FOR_SCORING": {
+                "XXX_USED_FOR_SCORING": {
                     "type": "string"
                 }
             }
         },
         "FeatureForAttributes": {
             "properties": {
-                "ATTRIBUTES": {
+                "XXX_ATTRIBUTES": {
                     "ref": "SenzingEntitySpecification"
                 },
                 "FEAT_DESC": {
@@ -1540,18 +1540,18 @@
         },
         "FeatureForGetEntity": {
             "properties": {
-                "ATTRIBUTES": {
+                "XXX_ATTRIBUTES": {
                     "elements": {
                         "ref": "SenzingEntitySpecification"
                     }
                 },
-                "FEAT_DESC": {
+                "XXX_FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "FEAT_DESC_VALUES": {
+                "XXX_FEAT_DESC_VALUES": {
                     "elements": {
                         "ref": "FeatureDescriptionValue"
                     },
@@ -1559,13 +1559,13 @@
                         "description": "Describes the attributes that make up the feature."
                     }
                 },
-                "LIB_FEAT_ID": {
+                "XXX_LIB_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "USAGE_TYPE": {
+                "XXX_USAGE_TYPE": {
                     "metadata": {
                         "description": "Label to identify how some features are being used (can also change some features behavior)."
                     },
@@ -1575,13 +1575,13 @@
         },
         "FeatureID": {
             "properties": {
-                "LIB_FEAT_ID": {
+                "XXX_LIB_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "USAGE_TYPE": {
+                "XXX_USAGE_TYPE": {
                     "metadata": {
                         "description": "Label to identify how some features are being used (can also change some features behavior)."
                     },
@@ -1591,43 +1591,43 @@
         },
         "FeatureScoreForAttribute": {
             "properties": {
-                "ADDITIONAL_SCORES": {
+                "XXX_ADDITIONAL_SCORES": {
                     "ref": "AdditionalScores"
                 },
-                "CANDIDATE_FEAT_DESC": {
+                "XXX_CANDIDATE_FEAT_DESC": {
                     "type": "string"
                 },
-                "CANDIDATE_FEAT_ID": {
+                "XXX_CANDIDATE_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "CANDIDATE_FEAT_USAGE_TYPE": {
+                "XXX_CANDIDATE_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "INBOUND_FEAT_DESC": {
+                "XXX_INBOUND_FEAT_DESC": {
                     "type": "string"
                 },
-                "INBOUND_FEAT_ID": {
+                "XXX_INBOUND_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "INBOUND_FEAT_USAGE_TYPE": {
+                "XXX_INBOUND_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "SCORE": {
+                "XXX_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "SCORE_BEHAVIOR": {
+                "XXX_SCORE_BEHAVIOR": {
                     "type": "string"
                 },
-                "SCORE_BUCKET": {
+                "XXX_SCORE_BUCKET": {
                     "type": "string"
                 }
             }
@@ -1641,22 +1641,22 @@
         },
         "FeatureType": {
             "properties": {
-                "FOUND": {
+                "XXX_FOUND": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_CODE": {
+                "XXX_FTYPE_CODE": {
                     "type": "string"
                 },
-                "GENERIC": {
+                "XXX_GENERIC": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "NOT_FOUND": {
+                "XXX_NOT_FOUND": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -1666,13 +1666,13 @@
         },
         "FinalState": {
             "properties": {
-                "NEED_REEVALUATION": {
+                "XXX_NEED_REEVALUATION": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "VIRTUAL_ENTITIES": {
+                "XXX_VIRTUAL_ENTITIES": {
                     "elements": {
                         "ref": "VirtualEntitySynopsis"
                     }
@@ -1709,172 +1709,172 @@
         },
         "G2Config": {
             "properties": {
-                "CFG_ATTR": {
+                "XXX_CFG_ATTR": {
                     "elements": {
                         "ref": "CFG_ATTR"
                     }
                 },
-                "CFG_CFBOM": {
+                "XXX_CFG_CFBOM": {
                     "elements": {
                         "ref": "CFG_CFBOM"
                     }
                 },
-                "CFG_CFCALL": {
+                "XXX_CFG_CFCALL": {
                     "elements": {
                         "ref": "CFG_CFCALL"
                     }
                 },
-                "CFG_CFRTN": {
+                "XXX_CFG_CFRTN": {
                     "elements": {
                         "ref": "CFG_CFRTN"
                     }
                 },
-                "CFG_CFUNC": {
+                "XXX_CFG_CFUNC": {
                     "elements": {
                         "ref": "CFG_CFUNC"
                     }
                 },
-                "CFG_DFBOM": {
+                "XXX_CFG_DFBOM": {
                     "elements": {
                         "ref": "CFG_DFBOM"
                     }
                 },
-                "CFG_DFCALL": {
+                "XXX_CFG_DFCALL": {
                     "elements": {
                         "ref": "CFG_DFCALL"
                     }
                 },
-                "CFG_DFUNC": {
+                "XXX_CFG_DFUNC": {
                     "elements": {
                         "ref": "CFG_DFUNC"
                     }
                 },
-                "CFG_DSRC": {
+                "XXX_CFG_DSRC": {
                     "elements": {
                         "ref": "CFG_DSRC"
                     }
                 },
-                "CFG_DSRC_INTEREST": {
+                "XXX_CFG_DSRC_INTEREST": {
                     "elements": {
                         "ref": "CFG_DSRC_INTEREST"
                     }
                 },
-                "CFG_EBOM": {
+                "XXX_CFG_EBOM": {
                     "elements": {
                         "ref": "CFG_EBOM"
                     }
                 },
-                "CFG_ECLASS": {
+                "XXX_CFG_ECLASS": {
                     "elements": {
                         "ref": "CFG_ECLASS"
                     }
                 },
-                "CFG_EFBOM": {
+                "XXX_CFG_EFBOM": {
                     "elements": {
                         "ref": "CFG_EFBOM"
                     }
                 },
-                "CFG_EFCALL": {
+                "XXX_CFG_EFCALL": {
                     "elements": {
                         "ref": "CFG_EFCALL"
                     }
                 },
-                "CFG_EFUNC": {
+                "XXX_CFG_EFUNC": {
                     "elements": {
                         "ref": "CFG_EFUNC"
                     }
                 },
-                "CFG_ERFRAG": {
+                "XXX_CFG_ERFRAG": {
                     "elements": {
                         "ref": "CFG_ERFRAG"
                     }
                 },
-                "CFG_ERRULE": {
+                "XXX_CFG_ERRULE": {
                     "elements": {
                         "ref": "CFG_ERRULE"
                     }
                 },
-                "CFG_ETYPE": {
+                "XXX_CFG_ETYPE": {
                     "elements": {
                         "ref": "CFG_ETYPE"
                     }
                 },
-                "CFG_FBOM": {
+                "XXX_CFG_FBOM": {
                     "elements": {
                         "ref": "CFG_FBOM"
                     }
                 },
-                "CFG_FBOVR": {
+                "XXX_CFG_FBOVR": {
                     "elements": {
                         "ref": "CFG_FBOVR"
                     }
                 },
-                "CFG_FCLASS": {
+                "XXX_CFG_FCLASS": {
                     "elements": {
                         "ref": "CFG_FCLASS"
                     }
                 },
-                "CFG_FELEM": {
+                "XXX_CFG_FELEM": {
                     "elements": {
                         "ref": "CFG_FELEM"
                     }
                 },
-                "CFG_FTYPE": {
+                "XXX_CFG_FTYPE": {
                     "elements": {
                         "ref": "CFG_FTYPE"
                     }
                 },
-                "CFG_GENERIC_THRESHOLD": {
+                "XXX_CFG_GENERIC_THRESHOLD": {
                     "elements": {
                         "ref": "CFG_GENERIC_THRESHOLD"
                     }
                 },
-                "CFG_GPLAN": {
+                "XXX_CFG_GPLAN": {
                     "elements": {
                         "ref": "CFG_GPLAN"
                     }
                 },
-                "CFG_LENS": {
+                "XXX_CFG_LENS": {
                     "elements": {
                         "ref": "CFG_LENS"
                     }
                 },
-                "CFG_LENSRL": {
+                "XXX_CFG_LENSRL": {
                     "elements": {
                         "ref": "CFG_LENSRL"
                     }
                 },
-                "CFG_RCLASS": {
+                "XXX_CFG_RCLASS": {
                     "elements": {
                         "ref": "CFG_RCLASS"
                     }
                 },
-                "CFG_RTYPE": {
+                "XXX_CFG_RTYPE": {
                     "elements": {
                         "ref": "CFG_RTYPE"
                     }
                 },
-                "CFG_SFCALL": {
+                "XXX_CFG_SFCALL": {
                     "elements": {
                         "ref": "CFG_SFCALL"
                     }
                 },
-                "CFG_SFUNC": {
+                "XXX_CFG_SFUNC": {
                     "elements": {
                         "ref": "CFG_SFUNC"
                     }
                 },
-                "CONFIG_BASE_VERSION": {
+                "XXX_CONFIG_BASE_VERSION": {
                     "ref": "CONFIG_BASE_VERSION"
                 },
-                "SETTINGS": {
+                "XXX_SETTINGS": {
                     "properties": {
-                        "METAPHONE_VERSION": {
+                        "XXX_METAPHONE_VERSION": {
                             "type": "int32"
                         }
                     }
                 },
-                "SYS_OOM": {
+                "XXX_SYS_OOM": {
                     "elements": {
                         "ref": "SYS_OOM"
                     }
@@ -1883,10 +1883,10 @@
         },
         "HowResults": {
             "properties": {
-                "FINAL_STATE": {
+                "XXX_FINAL_STATE": {
                     "ref": "FinalState"
                 },
-                "RESOLUTION_STEPS": {
+                "XXX_RESOLUTION_STEPS": {
                     "elements": {
                         "ref": "ResolutionStep"
                     }
@@ -1895,28 +1895,28 @@
         },
         "InitResources": {
             "properties": {
-                "availableMemory": {
+                "XXX_availableMemory": {
                     "type": "string"
                 },
-                "logicalCores": {
+                "XXX_logicalCores": {
                     "type": "int32"
                 },
-                "physicalCores": {
+                "XXX_physicalCores": {
                     "type": "int32"
                 },
-                "totalMemory": {
+                "XXX_totalMemory": {
                     "type": "string"
                 }
             }
         },
         "InterestingEntities": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "InterestingEntity"
                     }
                 },
-                "NOTICES": {
+                "XXX_NOTICES": {
                     "elements": {
                         "ref": "Notice"
                     }
@@ -1925,25 +1925,25 @@
         },
         "InterestingEntity": {
             "properties": {
-                "DEGREES": {
+                "XXX_DEGREES": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "ENTITY_ID": {
+                "XXX_ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FLAGS": {
+                "XXX_FLAGS": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "SAMPLE_RECORDS": {
+                "XXX_SAMPLE_RECORDS": {
                     "elements": {
                         "ref": "SampleRecord"
                     }
@@ -1952,79 +1952,79 @@
         },
         "License": {
             "properties": {
-                "dsrLimit": {
+                "XXX_dsrLimit": {
                     "type": "string"
                 },
-                "status": {
+                "XXX_status": {
                     "type": "string"
                 },
-                "type": {
+                "XXX_type": {
                     "type": "string"
                 }
             }
         },
         "LockWaits": {
             "properties": {
-                "refreshLocks": {
+                "XXX_refreshLocks": {
                     "ref": "RefreshLocks"
                 }
             }
         },
         "MatchInfo": {
             "properties": {
-                "CANDIDATE_KEYS": {
+                "XXX_CANDIDATE_KEYS": {
                     "ref": "CandidateKeysForMatchInfo"
                 },
-                "DISCLOSED_RELATIONS": {
+                "XXX_DISCLOSED_RELATIONS": {
                     "ref": "DisclosedRelationsForMatchInfo"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "FEATURE_SCORES": {
+                "XXX_FEATURE_SCORES": {
                     "ref": "FeatureScores"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_KEY_DETAILS": {
+                "XXX_MATCH_KEY_DETAILS": {
                     "ref": "MatchKeyDetails"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "WHY_ERRULE_CODE": {
+                "XXX_WHY_ERRULE_CODE": {
                     "type": "string"
                 },
-                "WHY_KEY": {
+                "XXX_WHY_KEY": {
                     "type": "string"
                 }
             }
         },
         "MatchInfoForAttribute": {
             "properties": {
-                "FEAT_DESC": {
+                "XXX_FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "FEAT_ID": {
+                "XXX_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -2034,17 +2034,17 @@
         },
         "MatchInfoForWhy": {
             "properties": {
-                "CANDIDATE_KEYS": {
+                "XXX_CANDIDATE_KEYS": {
                     "values": {
                         "elements": {
                             "ref": "MatchInfoForAttribute"
                         }
                     }
                 },
-                "DISCLOSED_RELATIONS": {
+                "XXX_DISCLOSED_RELATIONS": {
                     "ref": "DisclosedRelationsForMatchInfoForWhy"
                 },
-                "FEATURE_SCORES": {
+                "XXX_FEATURE_SCORES": {
                     "ref": "FeatureScores"
                 },
                 "MATCH_LEVEL_CODE": {
@@ -2059,24 +2059,24 @@
                 "WHY_KEY": {
                     "type": "string"
                 },
-                "WHY_KEY_DETAILS": {
+                "XXX_WHY_KEY_DETAILS": {
                     "ref": "WhyKeyDetails"
                 }
             }
         },
         "MatchKeyDetails": {
             "properties": {
-                "CONFIRMATIONS": {
+                "XXX_CONFIRMATIONS": {
                     "elements": {
                         "ref": "Confirmation"
                     }
                 },
-                "DENIALS": {
+                "XXX_DENIALS": {
                     "elements": {
                         "ref": "Confirmation"
                     }
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
@@ -2086,14 +2086,14 @@
         },
         "MemberRecord": {
             "properties": {
-                "INTERNAL_ID": {
+                "XXX_INTERNAL_ID": {
                     "metadata": {
                         "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "Record"
                     }
@@ -2102,10 +2102,10 @@
         },
         "Notice": {
             "properties": {
-                "CODE": {
+                "XXX_CODE": {
                     "type": "string"
                 },
-                "DESCRIPTION": {
+                "XXX_DESCRIPTION": {
                     "type": "string"
                 }
             }
@@ -2120,215 +2120,215 @@
         },
         "ParamDetails": {
             "properties": {
-                "NAME": {
+                "XXX_NAME": {
                     "type": "string"
                 },
-                "VALUE": {
+                "XXX_VALUE": {
                     "ref": "Object"
                 }
             }
         },
         "Params": {
             "properties": {
-                "PARAM": {
+                "XXX_PARAM": {
                     "ref": "ParamDetails"
                 }
             }
         },
         "Processing": {
             "properties": {
-                "addedRecords": {
+                "XXX_addedRecords": {
                     "type": "int32"
                 },
-                "ambiguous": {
+                "XXX_ambiguous": {
                     "ref": "ProcessingAmbiguous"
                 },
-                "batchAddedRecords": {
+                "XXX_batchAddedRecords": {
                     "type": "int32"
                 },
-                "deletedRecords": {
+                "XXX_deletedRecords": {
                     "type": "int32"
                 },
-                "details": {
+                "XXX_details": {
                     "ref": "ProcessingDetails"
                 },
-                "reevaluations": {
+                "XXX_reevaluations": {
                     "type": "int32"
                 },
-                "repairedEntities": {
+                "XXX_repairedEntities": {
                     "type": "int32"
                 }
             }
         },
         "ProcessingAmbiguous": {
             "properties": {
-                "actualTest": {
+                "XXX_actualTest": {
                     "type": "int32"
                 },
-                "cachedTest": {
+                "XXX_cachedTest": {
                     "type": "int32"
                 }
             }
         },
         "ProcessingDetails": {
             "properties": {
-                "addedRecords": {
+                "XXX_addedRecords": {
                     "type": "int32"
                 },
-                "candidates": {
+                "XXX_candidates": {
                     "type": "int32"
                 },
-                "changeDeletes": {
+                "XXX_changeDeletes": {
                     "type": "int32"
                 },
-                "duration": {
+                "XXX_duration": {
                     "type": "int32"
                 },
-                "filteredObsFeat": {
+                "XXX_filteredObsFeat": {
                     "type": "int32"
                 },
-                "newObsEnt": {
+                "XXX_newObsEnt": {
                     "type": "int32"
                 },
-                "obsEntHashDiff": {
+                "XXX_obsEntHashDiff": {
                     "type": "int32"
                 },
-                "obsEntHashSame": {
+                "XXX_obsEntHashSame": {
                     "type": "int32"
                 },
-                "optimizedOut": {
+                "XXX_optimizedOut": {
                     "type": "int32"
                 },
-                "optimizedOutSkipped": {
+                "XXX_optimizedOutSkipped": {
                     "type": "int32"
                 },
-                "partiallyResolved": {
+                "XXX_partiallyResolved": {
                     "type": "int32"
                 },
-                "retries": {
+                "XXX_retries": {
                     "type": "int32"
                 }
             }
         },
         "Record": {
             "properties": {
-                "ADDRESS_DATA": {
+                "XXX_ADDRESS_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "ATTRIBUTE_DATA": {
+                "XXX_ATTRIBUTE_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "ENTITY_DATA": {
+                "XXX_ENTITY_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "ENTITY_DESC": {
+                "XXX_ENTITY_DESC": {
                     "type": "string"
                 },
-                "ENTITY_KEY": {
+                "XXX_ENTITY_KEY": {
                     "type": "string"
                 },
-                "ENTITY_TYPE": {
+                "XXX_ENTITY_TYPE": {
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "FEATURES": {
+                "XXX_FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         }
                     }
                 },
-                "FEATURE_IDS": {
+                "XXX_FEATURE_IDS": {
                     "elements": {
                         "ref": "FeatureID"
                     }
                 },
-                "FIRST_SEEN_DT": {
+                "XXX_FIRST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "IDENTIFIER_DATA": {
+                "XXX_IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "INTERNAL_ID": {
+                "XXX_INTERNAL_ID": {
                     "metadata": {
                         "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "JSON_DATA": {
+                "XXX_JSON_DATA": {
                     "values": {
                         "ref": "Object"
                     }
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "NAME_DATA": {
+                "XXX_NAME_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "OTHER_DATA": {
+                "XXX_OTHER_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "PHONE_DATA": {
+                "XXX_PHONE_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
                 },
-                "RELATIONSHIP_DATA": {
+                "XXX_RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "UNMAPPED_DATA": {
+                "XXX_UNMAPPED_DATA": {
                     "values": {
                         "ref": "Object"
                     }
@@ -2337,123 +2337,123 @@
         },
         "RecordForGetEntity": {
             "properties": {
-                "ADDRESS_DATA": {
+                "XXX_ADDRESS_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "ATTRIBUTE_DATA": {
+                "XXX_ATTRIBUTE_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "ENTITY_DATA": {
+                "XXX_ENTITY_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "ENTITY_DESC": {
+                "XXX_ENTITY_DESC": {
                     "type": "string"
                 },
-                "ENTITY_KEY": {
+                "XXX_ENTITY_KEY": {
                     "type": "string"
                 },
-                "ENTITY_TYPE": {
+                "XXX_ENTITY_TYPE": {
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "FEATURES": {
+                "XXX_FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         }
                     }
                 },
-                "FEATURE_IDS": {
+                "XXX_FEATURE_IDS": {
                     "elements": {
                         "ref": "FeatureID"
                     }
                 },
-                "FIRST_SEEN_DT": {
+                "XXX_FIRST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "IDENTIFIER_DATA": {
+                "XXX_IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "INTERNAL_ID": {
+                "XXX_INTERNAL_ID": {
                     "metadata": {
                         "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "JSON_DATA": {
+                "XXX_JSON_DATA": {
                     "values": {
                         "ref": "Object"
                     }
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "NAME_DATA": {
+                "XXX_NAME_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "OTHER_DATA": {
+                "XXX_OTHER_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "PHONE_DATA": {
+                "XXX_PHONE_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
                 },
-                "RELATIONSHIP_DATA": {
+                "XXX_RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "UNMAPPED_DATA": {
+                "XXX_UNMAPPED_DATA": {
                     "values": {
                         "ref": "Object"
                     }
@@ -2462,13 +2462,13 @@
         },
         "RecordKey": {
             "properties": {
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -2479,7 +2479,7 @@
         },
         "RecordKeys": {
             "properties": {
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -2497,10 +2497,10 @@
                     },
                     "type": "string"
                 },
-                "FIRST_SEEN_DT": {
+                "XXX_FIRST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
                 "RECORD_COUNT": {
@@ -2514,50 +2514,50 @@
         },
         "RefreshLocks": {
             "properties": {
-                "count": {
+                "XXX_count": {
                     "type": "int32"
                 },
-                "maxMS": {
+                "XXX_maxMS": {
                     "type": "int32"
                 },
-                "totalMS": {
+                "XXX_totalMS": {
                     "type": "int32"
                 }
             }
         },
         "RelAnchor": {
             "properties": {
-                "DOMAIN": {
+                "XXX_DOMAIN": {
                     "type": "string"
                 },
-                "FEAT_DESC": {
+                "XXX_FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "FEAT_ID": {
+                "XXX_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LINKED_FEAT_DESC": {
+                "XXX_LINKED_FEAT_DESC": {
                     "type": "string"
                 },
-                "LINKED_FEAT_ID": {
+                "XXX_LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LINKED_FEAT_TYPE": {
+                "XXX_LINKED_FEAT_TYPE": {
                     "type": "string"
                 },
-                "LINKED_FEAT_USAGE_TYPE": {
+                "XXX_LINKED_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "REL_POINTER": {
+                "XXX_REL_POINTER": {
                     "elements": {
                         "ref": "RelPointer"
                     }
@@ -2567,143 +2567,143 @@
         "RelatedRoles": {
             "properties": {
                 "FIXME": {
-                    "rel": "FIXME"
+                    "ref": "Fixme"
                 }
             }
         },
         "RelLink": {
             "properties": {
-                "DOMAIN": {
+                "XXX_DOMAIN": {
                     "type": "string"
                 },
-                "FEAT_DESC": {
+                "XXX_FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "FEAT_ID": {
+                "XXX_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FEAT_USAGE_TYPE": {
+                "XXX_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "LINKED_FEAT_DESC": {
+                "XXX_LINKED_FEAT_DESC": {
                     "type": "string"
                 },
-                "LINKED_FEAT_ID": {
+                "XXX_LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LINKED_FEAT_TYPE": {
+                "XXX_LINKED_FEAT_TYPE": {
                     "type": "string"
                 },
-                "LINKED_FEAT_USAGE_TYPE": {
+                "XXX_LINKED_FEAT_USAGE_TYPE": {
                     "type": "string"
                 }
             }
         },
         "RelPointer": {
             "properties": {
-                "DOMAIN": {
+                "XXX_DOMAIN": {
                     "type": "string"
                 },
-                "FEAT_DESC": {
+                "XXX_FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "FEAT_ID": {
+                "XXX_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FEAT_USAGE_TYPE": {
+                "XXX_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "LINKED_FEAT_DESC": {
+                "XXX_LINKED_FEAT_DESC": {
                     "type": "string"
                 },
-                "LINKED_FEAT_ID": {
+                "XXX_LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LINKED_FEAT_TYPE": {
+                "XXX_LINKED_FEAT_TYPE": {
                     "type": "string"
                 }
             }
         },
         "RelatedEntity": {
             "properties": {
-                "ENTITY_ID": {
+                "XXX_ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "ENTITY_NAME": {
+                "XXX_ENTITY_NAME": {
                     "metadata": {
                         "description": "A name this entity goes by. An entity could have multiple names."
                     },
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "IS_AMBIGUOUS": {
+                "XXX_IS_AMBIGUOUS": {
                     "metadata": {
                         "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "IS_DISCLOSED": {
+                "XXX_IS_DISCLOSED": {
                     "metadata": {
                         "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "Record"
                     }
                 },
-                "RECORD_SUMMARY": {
+                "XXX_RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummary"
                     },
@@ -2715,20 +2715,20 @@
         },
         "RepairDiagnosis": {
             "properties": {
-                "types": {
+                "XXX_types": {
                     "type": "int32"
                 }
             }
         },
         "Repository": {
             "properties": {
-                "id": {
+                "XXX_id": {
                     "metadata": {
                         "description": "Label for database repository."
                     },
                     "type": "string"
                 },
-                "location": {
+                "XXX_location": {
                     "metadata": {
                         "description": "Database connection information."
                     },
@@ -2744,7 +2744,7 @@
         },
         "Reresolve": {
             "properties": {
-                "newFeatureFTypes": {
+                "XXX_newFeatureFTypes": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -2752,57 +2752,57 @@
                         "type": "int32"
                     }
                 },
-                "suppressedCandidateBuildersForReresolve": {
+                "XXX_suppressedCandidateBuildersForReresolve": {
                     "ref": "Fixme"
                 },
-                "suppressedScoredFeatureTypeForReresolve": {
+                "XXX_suppressedScoredFeatureTypeForReresolve": {
                     "ref": "Fixme"
                 },
-                "triggers": {
+                "XXX_triggers": {
                     "ref": "ReresolveTriggers"
                 }
             }
         },
         "ReresolveTriggers": {
             "properties": {
-                "abortRetry": {
+                "XXX_abortRetry": {
                     "type": "int32"
                 },
-                "multipleResolvableCandidates": {
+                "XXX_multipleResolvableCandidates": {
                     "type": "int32"
                 },
-                "resolveNewFeatures": {
+                "XXX_resolveNewFeatures": {
                     "type": "int32"
                 },
-                "skipped": {
+                "XXX_skipped": {
                     "type": "int32"
                 },
-                "unresolveMovement": {
+                "XXX_unresolveMovement": {
                     "type": "int32"
                 }
             }
         },
         "ResolutionStep": {
             "properties": {
-                "INBOUND_VIRTUAL_ENTITY_ID": {
+                "XXX_INBOUND_VIRTUAL_ENTITY_ID": {
                     "type": "string"
                 },
-                "MATCH_INFO": {
+                "XXX_MATCH_INFO": {
                     "ref": "MatchInfo"
                 },
-                "RESULT_VIRTUAL_ENTITY_ID": {
+                "XXX_RESULT_VIRTUAL_ENTITY_ID": {
                     "type": "string"
                 },
-                "STEP": {
+                "XXX_STEP": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "VIRTUAL_ENTITY_1": {
+                "XXX_VIRTUAL_ENTITY_1": {
                     "ref": "VirtualEntitySynopsis"
                 },
-                "VIRTUAL_ENTITY_2": {
+                "XXX_VIRTUAL_ENTITY_2": {
                     "ref": "VirtualEntitySynopsis"
                 }
             }
@@ -2822,7 +2822,7 @@
                     },
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
@@ -2835,47 +2835,47 @@
                         }
                     }
                 },
-                "FEATURE_IDS": {
+                "XXX_FEATURE_IDS": {
                     "elements": {
                         "ref": "FeatureID"
                     }
                 },
-                "IS_AMBIGUOUS": {
+                "XXX_IS_AMBIGUOUS": {
                     "metadata": {
                         "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "IS_DISCLOSED": {
+                "XXX_IS_DISCLOSED": {
                     "metadata": {
                         "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "Record"
                     }
@@ -2888,7 +2888,7 @@
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     }
                 },
-                "RECORD_TYPES": {
+                "XXX_RECORD_TYPES": {
                     "elements": {
                         "type": "string"
                     }
@@ -2897,88 +2897,88 @@
         },
         "ResolvedEntityAndMatchInfo": {
             "properties": {
-                "ENTITY": {
+                "XXX_ENTITY": {
                     "ref": "EntityForResolvedEntity"
                 },
-                "MATCH_INFO": {
+                "XXX_MATCH_INFO": {
                     "ref": "MatchInfo"
                 }
             }
         },
         "ResolvedEntityForGetEntity": {
             "properties": {
-                "ENTITY_ID": {
+                "XXX_ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "ENTITY_NAME": {
+                "XXX_ENTITY_NAME": {
                     "metadata": {
                         "description": "A name this entity goes by. An entity could have multiple names."
                     },
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "FEATURES": {
+                "XXX_FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForGetEntity"
                         }
                     }
                 },
-                "FEATURE_IDS": {
+                "XXX_FEATURE_IDS": {
                     "elements": {
                         "ref": "FeatureID"
                     }
                 },
-                "IS_AMBIGUOUS": {
+                "XXX_IS_AMBIGUOUS": {
                     "metadata": {
                         "description": "Indicates if this is an ambiguous relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "IS_DISCLOSED": {
+                "XXX_IS_DISCLOSED": {
                     "metadata": {
                         "description": "Indicates if this is a disclosed relationship.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "RecordForGetEntity"
                     }
                 },
-                "RECORD_SUMMARY": {
+                "XXX_RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummary"
                     },
@@ -2986,7 +2986,7 @@
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     }
                 },
-                "RECORD_TYPES": {
+                "XXX_RECORD_TYPES": {
                     "elements": {
                         "type": "string"
                     }
@@ -2995,55 +2995,55 @@
         },
         "SYS_OOM": {
             "properties": {
-                "FELEM_ID": {
+                "XXX_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LENS_ID": {
+                "XXX_LENS_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LIB_FEAT_ID": {
+                "XXX_LIB_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "LIB_FELEM_ID": {
+                "XXX_LIB_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "NEXT_THRESH": {
+                "XXX_NEXT_THRESH": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "OOM_LEVEL": {
+                "XXX_OOM_LEVEL": {
                     "type": "string"
                 },
-                "OOM_TYPE": {
+                "XXX_OOM_TYPE": {
                     "type": "string"
                 },
-                "THRESH1_CNT": {
+                "XXX_THRESH1_CNT": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "THRESH1_OOM": {
+                "XXX_THRESH1_OOM": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -3053,18 +3053,18 @@
         },
         "SampleRecord": {
             "properties": {
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "FLAGS": {
+                "XXX_FLAGS": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -3075,20 +3075,20 @@
         },
         "SchemaVersion": {
             "properties": {
-                "ENGINE_SCHEMA_VERSION": {
+                "XXX_ENGINE_SCHEMA_VERSION": {
                     "type": "string"
                 },
-                "MAXIMUM_REQUIRED_SCHEMA_VERSION": {
+                "XXX_MAXIMUM_REQUIRED_SCHEMA_VERSION": {
                     "type": "string"
                 },
-                "MINIMUM_REQUIRED_SCHEMA_VERSION": {
+                "XXX_MINIMUM_REQUIRED_SCHEMA_VERSION": {
                     "type": "string"
                 }
             }
         },
         "Scoring": {
             "properties": {
-                "cacheHit": {
+                "XXX_cacheHit": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -3096,7 +3096,7 @@
                         "type": "int32"
                     }
                 },
-                "cacheMiss": {
+                "XXX_cacheMiss": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -3104,7 +3104,7 @@
                         "type": "int32"
                     }
                 },
-                "scoredPairs": {
+                "XXX_scoredPairs": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -3112,306 +3112,306 @@
                         "type": "int32"
                     }
                 },
-                "suppressedDisclosedRelationshipDomainCount": {
+                "XXX_suppressedDisclosedRelationshipDomainCount": {
                     "type": "int32"
                 },
-                "suppressedScoredFeatureType": {
+                "XXX_suppressedScoredFeatureType": {
                     "ref": "Fixme"
                 }
             }
         },
         "SearchRequest": {
             "properties": {
-                "FEATURES": {
+                "XXX_FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureDescriptionValue"
                         }
                     }
                 },
-                "JSON_DATA": {
+                "XXX_JSON_DATA": {
                     "type": "string"
                 },
-                "SEARCH_PROFILE": {
+                "XXX_SEARCH_PROFILE": {
                     "type": "string"
                 }
             }
         },
         "SearchStatistic": {
             "properties": {
-                "CANDIDATE_KEYS": {
+                "XXX_CANDIDATE_KEYS": {
                     "ref": "CandidateKeysForSearchStatistic"
                 }
             }
         },
         "SenzingEntitySpecification": {
             "properties": {
-                "ACCOUNT_DOMAIN": {
+                "XXX_ACCOUNT_DOMAIN": {
                     "type": "string"
                 },
-                "ACCOUNT_NUMBER": {
+                "XXX_ACCOUNT_NUMBER": {
                     "type": "string"
                 },
-                "ADDR_CITY": {
+                "XXX_ADDR_CITY": {
                     "type": "string"
                 },
-                "ADDR_COUNTRY": {
+                "XXX_ADDR_COUNTRY": {
                     "type": "string"
                 },
-                "ADDR_FROM_DATE": {
+                "XXX_ADDR_FROM_DATE": {
                     "type": "string"
                 },
-                "ADDR_FULL": {
+                "XXX_ADDR_FULL": {
                     "type": "string"
                 },
-                "ADDR_LINE1": {
+                "XXX_ADDR_LINE1": {
                     "type": "string"
                 },
-                "ADDR_LINE2": {
+                "XXX_ADDR_LINE2": {
                     "type": "string"
                 },
-                "ADDR_LINE3": {
+                "XXX_ADDR_LINE3": {
                     "type": "string"
                 },
-                "ADDR_LINE4": {
+                "XXX_ADDR_LINE4": {
                     "type": "string"
                 },
-                "ADDR_LINE5": {
+                "XXX_ADDR_LINE5": {
                     "type": "string"
                 },
-                "ADDR_LINE6": {
+                "XXX_ADDR_LINE6": {
                     "type": "string"
                 },
-                "ADDR_POSTAL_CODE": {
+                "XXX_ADDR_POSTAL_CODE": {
                     "type": "string"
                 },
-                "ADDR_STATE": {
+                "XXX_ADDR_STATE": {
                     "type": "string"
                 },
-                "ADDR_THRU_DATE": {
+                "XXX_ADDR_THRU_DATE": {
                     "type": "string"
                 },
-                "ADDR_TYPE": {
+                "XXX_ADDR_TYPE": {
                     "type": "string"
                 },
-                "CITIZENSHIP": {
+                "XXX_CITIZENSHIP": {
                     "type": "string"
                 },
-                "DATE_OF_BIRTH": {
+                "XXX_DATE_OF_BIRTH": {
                     "type": "string"
                 },
-                "DATE_OF_DEATH": {
+                "XXX_DATE_OF_DEATH": {
                     "type": "string"
                 },
-                "DRIVERS_LICENSE_NUMBER": {
+                "XXX_DRIVERS_LICENSE_NUMBER": {
                     "type": "string"
                 },
-                "DRIVERS_LICENSE_STATE": {
+                "XXX_DRIVERS_LICENSE_STATE": {
                     "type": "string"
                 },
-                "DUNS_NUMBER": {
+                "XXX_DUNS_NUMBER": {
                     "type": "string"
                 },
-                "EMAIL_ADDRESS": {
+                "XXX_EMAIL_ADDRESS": {
                     "type": "string"
                 },
-                "EMPLOYER": {
+                "XXX_EMPLOYER": {
                     "type": "string"
                 },
-                "EMPLOYER_NAME": {
+                "XXX_EMPLOYER_NAME": {
                     "type": "string"
                 },
-                "FACEBOOK": {
+                "XXX_FACEBOOK": {
                     "type": "string"
                 },
-                "GENDER": {
+                "XXX_GENDER": {
                     "type": "string"
                 },
-                "GROUP_ASSN_ID_NUMBER": {
+                "XXX_GROUP_ASSN_ID_NUMBER": {
                     "type": "string"
                 },
-                "GROUP_ASSN_ID_TYPE": {
+                "XXX_GROUP_ASSN_ID_TYPE": {
                     "type": "string"
                 },
-                "GROUP_ASSOCIATION_ORG_NAME": {
+                "XXX_GROUP_ASSOCIATION_ORG_NAME": {
                     "type": "string"
                 },
-                "GROUP_ASSOCIATION_TYPE": {
+                "XXX_GROUP_ASSOCIATION_TYPE": {
                     "type": "string"
                 },
-                "INSTAGRAM": {
+                "XXX_INSTAGRAM": {
                     "type": "string"
                 },
-                "LEI_NUMBER": {
+                "XXX_LEI_NUMBER": {
                     "type": "string"
                 },
-                "LINKEDIN": {
+                "XXX_LINKEDIN": {
                     "type": "string"
                 },
-                "NAME_FIRST": {
+                "XXX_NAME_FIRST": {
                     "type": "string"
                 },
-                "NAME_FULL": {
+                "XXX_NAME_FULL": {
                     "type": "string"
                 },
-                "NAME_LAST": {
+                "XXX_NAME_LAST": {
                     "type": "string"
                 },
-                "NAME_ORG": {
+                "XXX_NAME_ORG": {
                     "type": "string"
                 },
-                "NAME_PREFIX": {
+                "XXX_NAME_PREFIX": {
                     "type": "string"
                 },
-                "NAME_SUFFIX": {
+                "XXX_NAME_SUFFIX": {
                     "type": "string"
                 },
-                "NAME_TYPE": {
+                "XXX_NAME_TYPE": {
                     "type": "string"
                 },
-                "NATIONALITY": {
+                "XXX_NATIONALITY": {
                     "type": "string"
                 },
-                "NATIONAL_ID_COUNTRY": {
+                "XXX_NATIONAL_ID_COUNTRY": {
                     "type": "string"
                 },
-                "NATIONAL_ID_NUMBER": {
+                "XXX_NATIONAL_ID_NUMBER": {
                     "type": "string"
                 },
-                "NATIVE_NAME_FULL": {
+                "XXX_NATIVE_NAME_FULL": {
                     "type": "string"
                 },
-                "NPI_NUMBER": {
+                "XXX_NPI_NUMBER": {
                     "type": "string"
                 },
-                "OTHER_ID_COUNTRY": {
+                "XXX_OTHER_ID_COUNTRY": {
                     "type": "string"
                 },
-                "OTHER_ID_NUMBER": {
+                "XXX_OTHER_ID_NUMBER": {
                     "type": "string"
                 },
-                "OTHER_ID_TYPE": {
+                "XXX_OTHER_ID_TYPE": {
                     "type": "string"
                 },
-                "PASSPORT_COUNTRY": {
+                "XXX_PASSPORT_COUNTRY": {
                     "type": "string"
                 },
-                "PASSPORT_NUMBER": {
+                "XXX_PASSPORT_NUMBER": {
                     "type": "string"
                 },
-                "PHONE_FROM_DATE": {
+                "XXX_PHONE_FROM_DATE": {
                     "type": "string"
                 },
-                "PHONE_NUMBER": {
+                "XXX_PHONE_NUMBER": {
                     "type": "string"
                 },
-                "PHONE_THRU_DATE": {
+                "XXX_PHONE_THRU_DATE": {
                     "type": "string"
                 },
-                "PHONE_TYPE": {
+                "XXX_PHONE_TYPE": {
                     "type": "string"
                 },
-                "PLACE_OF_BIRTH": {
+                "XXX_PLACE_OF_BIRTH": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_FIRST": {
+                "XXX_PRIMARY_NAME_FIRST": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_FULL": {
+                "XXX_PRIMARY_NAME_FULL": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_LAST": {
+                "XXX_PRIMARY_NAME_LAST": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_MIDDLE": {
+                "XXX_PRIMARY_NAME_MIDDLE": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_ORG": {
+                "XXX_PRIMARY_NAME_ORG": {
                     "type": "string"
                 },
-                "RECORD_TYPE": {
+                "XXX_RECORD_TYPE": {
                     "type": "string"
                 },
-                "REGISTRATION_COUNTRY": {
+                "XXX_REGISTRATION_COUNTRY": {
                     "type": "string"
                 },
-                "REGISTRATION_DATE": {
+                "XXX_REGISTRATION_DATE": {
                     "type": "string"
                 },
-                "REL_ANCHOR_KEY": {
+                "XXX_REL_ANCHOR_KEY": {
                     "type": "string"
                 },
-                "REL_POINTER_KEY": {
+                "XXX_REL_POINTER_KEY": {
                     "type": "string"
                 },
-                "SECONDARY_NAME_ORG": {
+                "XXX_SECONDARY_NAME_ORG": {
                     "type": "string"
                 },
-                "SIGNAL": {
+                "XXX_SIGNAL": {
                     "type": "string"
                 },
-                "SKYPE": {
+                "XXX_SKYPE": {
                     "type": "string"
                 },
-                "SSN_NUMBER": {
+                "XXX_SSN_NUMBER": {
                     "type": "string"
                 },
-                "TANGO": {
+                "XXX_TANGO": {
                     "type": "string"
                 },
-                "TAX_ID_COUNTRY": {
+                "XXX_TAX_ID_COUNTRY": {
                     "type": "string"
                 },
-                "TAX_ID_NUMBER": {
+                "XXX_TAX_ID_NUMBER": {
                     "type": "string"
                 },
-                "TAX_ID_TYPE": {
+                "XXX_TAX_ID_TYPE": {
                     "type": "string"
                 },
-                "TELEGRAM": {
+                "XXX_TELEGRAM": {
                     "type": "string"
                 },
-                "TRUSTED_ID_NUMBER": {
+                "XXX_TRUSTED_ID_NUMBER": {
                     "type": "string"
                 },
-                "TRUSTED_ID_TYPE": {
+                "XXX_TRUSTED_ID_TYPE": {
                     "type": "string"
                 },
-                "TWITTER": {
+                "XXX_TWITTER": {
                     "type": "string"
                 },
-                "VIBER": {
+                "XXX_VIBER": {
                     "type": "string"
                 },
-                "WEBSITE_ADDRESS": {
+                "XXX_WEBSITE_ADDRESS": {
                     "type": "string"
                 },
-                "WECHAT": {
+                "XXX_WECHAT": {
                     "type": "string"
                 },
-                "WHATSAPP": {
+                "XXX_WHATSAPP": {
                     "type": "string"
                 },
-                "ZOOMROOM": {
+                "XXX_ZOOMROOM": {
                     "type": "string"
                 }
             }
         },
         "Summary": {
             "properties": {
-                "FOUND": {
+                "XXX_FOUND": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "GENERIC": {
+                "XXX_GENERIC": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "NOT_FOUND": {
+                "XXX_NOT_FOUND": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -3421,36 +3421,36 @@
         },
         "SystemLoad": {
             "properties": {
-                "cpuIdle": {
+                "XXX_cpuIdle": {
                     "type": "string"
                 },
-                "cpuSystem": {
+                "XXX_cpuSystem": {
                     "type": "string"
                 },
-                "cpuUser": {
+                "XXX_cpuUser": {
                     "type": "string"
                 },
-                "cpuWait": {
+                "XXX_cpuWait": {
                     "type": "string"
                 }
             }
         },
         "SystemResources": {
             "properties": {
-                "currResources": {
+                "XXX_currResources": {
                     "ref": "CurrResources"
                 },
-                "initResources": {
+                "XXX_initResources": {
                     "ref": "InitResources"
                 },
-                "systemLoad": {
+                "XXX_systemLoad": {
                     "ref": "SystemLoad"
                 }
             }
         },
         "SzConfigExportResponse": {
             "properties": {
-                "G2_CONFIG": {
+                "XXX_G2_CONFIG": {
                     "ref": "G2Config"
                 }
             }
@@ -3469,7 +3469,7 @@
         },
         "SzConfigManagerGetConfigRegistryResponse": {
             "properties": {
-                "CONFIGS": {
+                "XXX_CONFIGS": {
                     "elements": {
                         "ref": "Config"
                     },
@@ -3481,7 +3481,7 @@
         },
         "SzConfigRegisterDataSourceResponse": {
             "properties": {
-                "DSRC_ID": {
+                "XXX_DSRC_ID": {
                     "metadata": {
                         "description": "The unique internal integer identifier of the datasource.",
                         "goType": "int64"
@@ -3492,14 +3492,14 @@
         },
         "SzDiagnosticCheckRepositoryPerformanceResponse": {
             "properties": {
-                "insertTime": {
+                "XXX_insertTime": {
                     "metadata": {
                         "description": "The duration of the test in milliseconds.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "numRecordsInserted": {
+                "XXX_numRecordsInserted": {
                     "metadata": {
                         "description": "The total number of records inserted within the insertTime.",
                         "goType": "int64"
@@ -3535,7 +3535,7 @@
         },
         "SzDiagnosticGetRepositoryInfoResponse": {
             "properties": {
-                "dataStores": {
+                "XXX_dataStores": {
                     "elements": {
                         "ref": "Repository"
                     },
@@ -3547,21 +3547,21 @@
         },
         "SzEngineAddRecordResponse": {
             "properties": {
-                "AFFECTED_ENTITIES": {
+                "XXX_AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -3572,21 +3572,21 @@
         },
         "SzEngineDeleteRecordResponse": {
             "properties": {
-                "AFFECTED_ENTITIES": {
+                "XXX_AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -3597,69 +3597,69 @@
         },
         "SzEngineExportCsvEntityReportCsvColumnList": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineFetchNextResponse": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineFindInterestingEntitiesByEntityIdResponse": {
             "properties": {
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 }
             }
         },
         "SzEngineFindInterestingEntitiesByRecordIdResponse": {
             "properties": {
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 }
             }
         },
         "SzEngineFindNetworkByEntityIdEntityIds": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineFindNetworkByEntityIdResponse": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "ENTITY_NETWORK_LINKS": {
+                "XXX_ENTITY_NETWORK_LINKS": {
                     "elements": {
                         "ref": "EntityNetworkLink"
                     }
                 },
-                "ENTITY_PATHS": {
+                "XXX_ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
                     }
                 },
-                "ENTITY_PATH_LINKS": {
+                "XXX_ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
                     }
                 },
-                "MAX_ENTITY_LIMIT_REACHED": {
+                "XXX_MAX_ENTITY_LIMIT_REACHED": {
                     "type": "string"
                 }
             }
         },
         "SzEngineFindNetworkByRecordIdRecordKeys": {
             "properties": {
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -3671,58 +3671,58 @@
         },
         "SzEngineFindNetworkByRecordIdResponse": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "ENTITY_NETWORK_LINKS": {
+                "XXX_ENTITY_NETWORK_LINKS": {
                     "elements": {
                         "ref": "EntityNetworkLink"
                     }
                 },
-                "ENTITY_PATHS": {
+                "XXX_ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
                     }
                 },
-                "ENTITY_PATH_LINKS": {
+                "XXX_ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
                     }
                 },
-                "MAX_ENTITY_LIMIT_REACHED": {
+                "XXX_MAX_ENTITY_LIMIT_REACHED": {
                     "type": "string"
                 }
             }
         },
         "SzEngineFindPathByEntityIdAvoidEntityIds": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineFindPathByEntityIdRequiredDataSources": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineFindPathByEntityIdResponse": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "ENTITY_PATHS": {
+                "XXX_ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
                     }
                 },
-                "ENTITY_PATH_LINKS": {
+                "XXX_ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
                     }
@@ -3731,7 +3731,7 @@
         },
         "SzEngineFindPathByRecordIdAvoidRecordKeys": {
             "properties": {
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -3743,7 +3743,7 @@
         },
         "SzEngineFindPathByRecordIdRequiredDataSources": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
@@ -3760,7 +3760,7 @@
                         "ref": "EntityPath"
                     }
                 },
-                "ENTITY_PATH_LINKS": {
+                "XXX_ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
                     }
@@ -3769,48 +3769,48 @@
         },
         "SzEngineGetEntityByEntityIdResponse": {
             "properties": {
-                "RELATED_ENTITIES": {
+                "XXX_RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
                 },
-                "RESOLVED_ENTITY": {
+                "XXX_RESOLVED_ENTITY": {
                     "ref": "ResolvedEntityForGetEntity"
                 }
             }
         },
         "SzEngineGetEntityByRecordIdResponse": {
             "properties": {
-                "RELATED_ENTITIES": {
+                "XXX_RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
                 },
-                "RESOLVED_ENTITY": {
+                "XXX_RESOLVED_ENTITY": {
                     "ref": "ResolvedEntityForGetEntity"
                 }
             }
         },
         "SzEngineGetRecordPreviewResponse": {
             "properties": {
-                "FEATURES": {
+                "XXX_FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         }
                     }
                 },
-                "FEATURE_IDS": {
+                "XXX_FEATURE_IDS": {
                     "elements": {
                         "ref": "FeatureID"
                     }
                 },
-                "JSON_DATA": {
+                "XXX_JSON_DATA": {
                     "values": {
                         "ref": "Object"
                     }
                 },
-                "UNMAPPED_DATA": {
+                "XXX_UNMAPPED_DATA": {
                     "values": {
                         "ref": "Object"
                     }
@@ -3819,123 +3819,123 @@
         },
         "SzEngineGetRecordResponse": {
             "properties": {
-                "ADDRESS_DATA": {
+                "XXX_ADDRESS_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "ATTRIBUTE_DATA": {
+                "XXX_ATTRIBUTE_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "ENTITY_DATA": {
+                "XXX_ENTITY_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "ENTITY_DESC": {
+                "XXX_ENTITY_DESC": {
                     "type": "string"
                 },
-                "ENTITY_KEY": {
+                "XXX_ENTITY_KEY": {
                     "type": "string"
                 },
-                "ENTITY_TYPE": {
+                "XXX_ENTITY_TYPE": {
                     "type": "string"
                 },
-                "ERRULE_CODE": {
+                "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "FEATURES": {
+                "XXX_FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         }
                     }
                 },
-                "FEATURE_IDS": {
+                "XXX_FEATURE_IDS": {
                     "elements": {
                         "ref": "FeatureID"
                     }
                 },
-                "FIRST_SEEN_DT": {
+                "XXX_FIRST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "IDENTIFIER_DATA": {
+                "XXX_IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "INTERNAL_ID": {
+                "XXX_INTERNAL_ID": {
                     "metadata": {
                         "description": "Internal identifier for the record.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "JSON_DATA": {
+                "XXX_JSON_DATA": {
                     "values": {
                         "ref": "Object"
                     }
                 },
-                "LAST_SEEN_DT": {
+                "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "MATCH_KEY": {
+                "XXX_MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "MATCH_LEVEL": {
+                "XXX_MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "MATCH_LEVEL_CODE": {
+                "XXX_MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
                 },
-                "NAME_DATA": {
+                "XXX_NAME_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "OTHER_DATA": {
+                "XXX_OTHER_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "PHONE_DATA": {
+                "XXX_PHONE_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
                 },
-                "RELATIONSHIP_DATA": {
+                "XXX_RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "UNMAPPED_DATA": {
+                "XXX_UNMAPPED_DATA": {
                     "values": {
                         "ref": "Object"
                     }
@@ -3944,21 +3944,21 @@
         },
         "SzEngineGetRedoRecordResponse": {
             "properties": {
-                "UMF_PROC": {
+                "XXX_UMF_PROC": {
                     "ref": "UmfProc"
                 }
             }
         },
         "SzEngineGetStatsResponse": {
             "properties": {
-                "workload": {
+                "XXX_workload": {
                     "ref": "Workload"
                 }
             }
         },
         "SzEngineGetVirtualEntityByRecordIdRecordKeys": {
             "properties": {
-                "RECORDS": {
+                "XXX_RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -3970,35 +3970,35 @@
         },
         "SzEngineGetVirtualEntityByRecordIdResponse": {
             "properties": {
-                "RESOLVED_ENTITY": {
+                "XXX_RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
                 }
             }
         },
         "SzEngineHowEntityByEntityIdResponse": {
             "properties": {
-                "HOW_RESULTS": {
+                "XXX_HOW_RESULTS": {
                     "ref": "HowResults"
                 }
             }
         },
         "SzEngineProcessRedoRecordResponse": {
             "properties": {
-                "AFFECTED_ENTITIES": {
+                "XXX_AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -4012,21 +4012,21 @@
         },
         "SzEngineReevaluateEntityResponse": {
             "properties": {
-                "AFFECTED_ENTITIES": {
+                "XXX_AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -4037,21 +4037,21 @@
         },
         "SzEngineReevaluateRecordResponse": {
             "properties": {
-                "AFFECTED_ENTITIES": {
+                "XXX_AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "DATA_SOURCE": {
+                "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "INTERESTING_ENTITIES": {
+                "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
-                "RECORD_ID": {
+                "XXX_RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -4062,22 +4062,22 @@
         },
         "SzEngineSearchByAttributesAttributes": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineSearchByAttributesResponse": {
             "properties": {
-                "RESOLVED_ENTITIES": {
+                "XXX_RESOLVED_ENTITIES": {
                     "elements": {
                         "ref": "ResolvedEntityAndMatchInfo"
                     }
                 },
-                "SEARCH_REQUEST": {
+                "XXX_SEARCH_REQUEST": {
                     "ref": "SearchRequest"
                 },
-                "SEARCH_STATISTICS": {
+                "XXX_SEARCH_STATISTICS": {
                     "elements": {
                         "ref": "SearchStatistic"
                     }
@@ -4086,26 +4086,26 @@
         },
         "SzEngineSearchByAttributesSearchProfile": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineStreamExportJsonEntityReportResponse": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineWhyEntitiesResponse": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "WHY_RESULTS": {
+                "XXX_WHY_RESULTS": {
                     "elements": {
                         "ref": "WhyResult"
                     }
@@ -4114,12 +4114,12 @@
         },
         "SzEngineWhyRecordInEntityResponse": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "WHY_RESULTS": {
+                "XXX_WHY_RESULTS": {
                     "elements": {
                         "ref": "WhyResult"
                     }
@@ -4142,27 +4142,27 @@
         },
         "SzEngineWhySearchAttributes": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzEngineWhySearchResponse": {
             "properties": {
-                "ENTITIES": {
+                "XXX_ENTITIES": {
                     "elements": {
                         "ref": "EntityForWhySearch"
                     }
                 },
-                "SEARCH_REQUEST": {
+                "XXX_SEARCH_REQUEST": {
                     "ref": "SearchRequest"
                 },
-                "SEARCH_STATISTICS": {
+                "XXX_SEARCH_STATISTICS": {
                     "elements": {
                         "ref": "SearchStatistic"
                     }
                 },
-                "WHY_RESULTS": {
+                "XXX_WHY_RESULTS": {
                     "elements": {
                         "ref": "WhyResult"
                     }
@@ -4171,38 +4171,38 @@
         },
         "SzEngineWhySearchSearchProfile": {
             "properties": {
-                "FIXME": {
+                "XXX_FIXME": {
                     "ref": "Fixme"
                 }
             }
         },
         "SzProductGetLicenseResponse": {
             "properties": {
-                "advSearch": {
+                "XXX_advSearch": {
                     "type": "int32"
                 },
-                "billing": {
+                "XXX_billing": {
                     "type": "string"
                 },
-                "contract": {
+                "XXX_contract": {
                     "type": "string"
                 },
-                "customer": {
+                "XXX_customer": {
                     "type": "string"
                 },
-                "expireDate": {
+                "XXX_expireDate": {
                     "type": "string"
                 },
-                "issueDate": {
+                "XXX_issueDate": {
                     "type": "string"
                 },
-                "licenseLevel": {
+                "XXX_licenseLevel": {
                     "type": "string"
                 },
-                "licenseType": {
+                "XXX_licenseType": {
                     "type": "string"
                 },
-                "recordLimit": {
+                "XXX_recordLimit": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -4212,69 +4212,69 @@
         },
         "SzProductGetVersionResponse": {
             "properties": {
-                "BUILD_DATE": {
+                "XXX_BUILD_DATE": {
                     "type": "string"
                 },
-                "BUILD_NUMBER": {
+                "XXX_BUILD_NUMBER": {
                     "type": "string"
                 },
-                "BUILD_VERSION": {
+                "XXX_BUILD_VERSION": {
                     "type": "string"
                 },
-                "COMPATIBILITY_VERSION": {
+                "XXX_COMPATIBILITY_VERSION": {
                     "ref": "CompatibilityVersion"
                 },
-                "PRODUCT_NAME": {
+                "XXX_PRODUCT_NAME": {
                     "type": "string"
                 },
-                "SCHEMA_VERSION": {
+                "XXX_SCHEMA_VERSION": {
                     "ref": "SchemaVersion"
                 },
-                "VERSION": {
+                "XXX_VERSION": {
                     "type": "string"
                 }
             }
         },
         "ThreadState": {
             "properties": {
-                "active": {
+                "XXX_active": {
                     "type": "int32"
                 },
-                "dataLatchContention": {
+                "XXX_dataLatchContention": {
                     "type": "int32"
                 },
-                "governorContention": {
+                "XXX_governorContention": {
                     "type": "int32"
                 },
-                "idle": {
+                "XXX_idle": {
                     "type": "int32"
                 },
-                "loader": {
+                "XXX_loader": {
                     "type": "int32"
                 },
-                "obsEntContention": {
+                "XXX_obsEntContention": {
                     "type": "int32"
                 },
-                "resEntContention": {
+                "XXX_resEntContention": {
                     "type": "int32"
                 },
-                "resolver": {
+                "XXX_resolver": {
                     "type": "int32"
                 },
-                "scoring": {
+                "XXX_scoring": {
                     "type": "int32"
                 },
-                "sqlExecuting": {
+                "XXX_sqlExecuting": {
                     "type": "int32"
                 }
             }
         },
         "UmfProc": {
             "properties": {
-                "NAME": {
+                "XXX_NAME": {
                     "type": "string"
                 },
-                "PARAMS": {
+                "XXX_PARAMS": {
                     "elements": {
                         "ref": "Params"
                     }
@@ -4283,59 +4283,59 @@
         },
         "Unresolve": {
             "properties": {
-                "abortedUnresolve": {
+                "XXX_abortedUnresolve": {
                     "type": "int32"
                 },
-                "triggers": {
+                "XXX_triggers": {
                     "ref": "UnresolveTriggers"
                 },
-                "unresolveTest": {
+                "XXX_unresolveTest": {
                     "type": "int32"
                 }
             }
         },
         "UnresolveTriggers": {
             "properties": {
-                "ambiguousMultiResolve": {
+                "XXX_ambiguousMultiResolve": {
                     "type": "int32"
                 },
-                "ambiguousNoResolve": {
+                "XXX_ambiguousNoResolve": {
                     "type": "int32"
                 },
-                "extensiveResolve": {
+                "XXX_extensiveResolve": {
                     "type": "int32"
                 },
-                "normalResolve": {
+                "XXX_normalResolve": {
                     "type": "int32"
                 },
-                "relLink": {
+                "XXX_relLink": {
                     "type": "int32"
                 },
-                "update": {
+                "XXX_update": {
                     "type": "int32"
                 }
             }
         },
         "VirtualEntitySynopsis": {
             "properties": {
-                "MEMBER_RECORDS": {
+                "XXX_MEMBER_RECORDS": {
                     "elements": {
                         "ref": "MemberRecord"
                     }
                 },
-                "VIRTUAL_ENTITY_ID": {
+                "XXX_VIRTUAL_ENTITY_ID": {
                     "type": "string"
                 }
             }
         },
         "WhyKeyDetails": {
             "properties": {
-                "CONFIRMATIONS": {
+                "XXX_CONFIRMATIONS": {
                     "elements": {
                         "ref": "Confirmation"
                     }
                 },
-                "DENIALS": {
+                "XXX_DENIALS": {
                     "elements": {
                         "ref": "Confirmation"
                     }
@@ -4393,40 +4393,40 @@
         },
         "Workload": {
             "properties": {
-                "apiVersion": {
+                "XXX_apiVersion": {
                     "type": "string"
                 },
-                "caches": {
+                "XXX_caches": {
                     "ref": "Caches"
                 },
-                "candidates": {
+                "XXX_candidates": {
                     "ref": "Candidates"
                 },
-                "contention": {
+                "XXX_contention": {
                     "ref": "Contention"
                 },
-                "datetimestamp": {
+                "XXX_datetimestamp": {
                     "type": "string"
                 },
-                "expressedFeatures": {
+                "XXX_expressedFeatures": {
                     "ref": "ExpressedFeatures"
                 },
-                "genericDetect": {
+                "XXX_genericDetect": {
                     "ref": "Fixme"
                 },
-                "license": {
+                "XXX_license": {
                     "ref": "License"
                 },
-                "loadedRecords": {
+                "XXX_loadedRecords": {
                     "type": "int32"
                 },
-                "lockWaits": {
+                "XXX_lockWaits": {
                     "ref": "LockWaits"
                 },
-                "processing": {
+                "XXX_processing": {
                     "ref": "Processing"
                 },
-                "redoTriggers": {
+                "XXX_redoTriggers": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -4434,22 +4434,22 @@
                         "type": "int32"
                     }
                 },
-                "repairDiagnosis": {
+                "XXX_repairDiagnosis": {
                     "ref": "RepairDiagnosis"
                 },
-                "reresolve": {
+                "XXX_reresolve": {
                     "ref": "Reresolve"
                 },
-                "scoring": {
+                "XXX_scoring": {
                     "ref": "Scoring"
                 },
-                "systemResources": {
+                "XXX_systemResources": {
                     "ref": "SystemResources"
                 },
-                "threadState": {
+                "XXX_threadState": {
                     "ref": "ThreadState"
                 },
-                "unresolve": {
+                "XXX_unresolve": {
                     "ref": "Unresolve"
                 }
             }

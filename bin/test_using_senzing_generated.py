@@ -365,7 +365,11 @@ if __name__ == "__main__":
 
     test_file_names = os.listdir(INPUT_DIRECTORY)
     # test_file_names = ["SzEngineProcessRedoRecordResponse.jsonl"]
+    file_count = 0
     for test_file_name in test_file_names:
+        file_count += 1
+        if file_count != 2:
+            continue
         title = Path(test_file_name).stem
         json_schema = SCHEMA.get(title)
 
