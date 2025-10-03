@@ -186,20 +186,6 @@ test-typescript:
 coverage: coverage-osarch-specific
 
 # -----------------------------------------------------------------------------
-# Documentation
-# -----------------------------------------------------------------------------
-
-.PHONY: documentation
-documentation: \
-	docs-json-key-descriptions \
-	docs-json-keys-used \
-	docs-labels-used \
-	docs-responses-html \
-	docs-responses-json
-
-# 	documentation-osarch-specific \
-
-# -----------------------------------------------------------------------------
 # Package
 # -----------------------------------------------------------------------------
 
@@ -301,11 +287,82 @@ generate-typescript: clean-typescript
 # Generate tests
 # -----------------------------------------------------------------------------
 
+.PHONY: go-typedef-generated-typedef-test-go
+go-typedef-generated-typedef-test-go:
+	@rm ./go/typedef/generated_typedef_test.go || true
+	$(activate-venv); \
+		./bin/make_go_typedef_generated_typedef_test_go.py
+
+
+.PHONY: testdata-responses-generated
+testdata-responses-generated:
+	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+	$(activate-venv); \
+		./bin/make_testdata_responses_generated.py
+
+
+.PHONY: testdata-responses-senzing
+testdata-responses-senzing:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
+	$(activate-venv); \
+		./bin/make_testdata_responses_senzing.py
+
+
 .PHONY: generate-tests
 generate-tests: \
 	go-typedef-generated-typedef-test-go \
 	testdata-responses-generated \
 	testdata-responses-senzing
+
+# -----------------------------------------------------------------------------
+# Generate documentation
+# -----------------------------------------------------------------------------
+
+.PHONY: docs-json-key-descriptions
+docs-json-key-descriptions:
+	$(activate-venv); \
+		./bin/make_docs_json_key_descriptions.py
+
+
+.PHONY: docs-json-keys-used
+docs-json-keys-used:
+	$(activate-venv); \
+		./bin/make_docs_json_keys_used.py
+
+
+.PHONY: docs-labels-used
+docs-labels-used:
+	$(activate-venv); \
+		./bin/make_docs_labels_used.py
+
+
+.PHONY: docs-responses-html
+docs-responses-html: clean-docs-responses-html
+	$(activate-venv); \
+		./bin/make_docs_responses_html.py
+
+
+.PHONY: docs-responses-json
+docs-responses-json: clean-docs-responses-json
+	$(activate-venv); \
+		./bin/make_docs_responses_json.py
+
+
+.PHONY: unused-json-keys
+unused-json-keys:
+	$(activate-venv); \
+		./bin/unused_json_keys.py
+
+
+.PHONY: documentation
+documentation: \
+	docs-json-key-descriptions \
+	docs-json-keys-used \
+	docs-labels-used \
+	docs-responses-html \
+	docs-responses-json \
+	unused-json-keys
+# 	documentation-osarch-specific \
 
 # -----------------------------------------------------------------------------
 # Clean
@@ -321,6 +378,23 @@ clean: clean-osarch-specific
 clean-csharp:
 	@dotnet clean $(MAKEFILE_DIRECTORY)/csharp
 	@rm $(MAKEFILE_DIRECTORY)/csharp/Senzing.Typedef/* || true
+
+
+.PHONY: clean-docs-responses-html
+clean-docs-responses-html:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
+
+
+.PHONY: clean-docs-responses-json
+clean-docs-responses-json:
+	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
+
+
+.PHONY: clean-docs
+clean-docs: clean-docs-responses-html clean-docs-responses-json
+	@rm $(MAKEFILE_DIRECTORY)/docs/json_key_descriptions.json || true
+	@rm $(MAKEFILE_DIRECTORY)/docs/json_keys_used.json || true
+	@rm $(MAKEFILE_DIRECTORY)/docs/labels_used.json || true
 
 
 .PHONY: clean-go
@@ -354,13 +428,23 @@ clean-rust:
 	@rm $(MAKEFILE_DIRECTORY)/rust/* || true
 
 
+.PHONY: clean-testdata-responses-generated
+clean-testdata-responses-generated:
+	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+
+
+.PHONY: clean-testdata-responses-senzing
+clean-testdata-responses-senzing:
+	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/* || true
+
+
 .PHONY: clean-typescript
 clean-typescript:
 	@rm $(MAKEFILE_DIRECTORY)/typescript/* || true
 
 
 .PHONY: clean-generated
-clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript
+clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript clean-docs clean-testdata-responses-generated
 
 
 .PHONY: restore
@@ -405,38 +489,6 @@ cspell:
 	@cspell lint --dot .
 
 
-.PHONY: docs-json-key-descriptions
-docs-json-key-descriptions:
-	$(activate-venv); \
-		./bin/make_docs_json_key_descriptions.py
-
-
-.PHONY: docs-json-keys-used
-docs-json-keys-used:
-	$(activate-venv); \
-		./bin/make_docs_json_keys_used.py
-
-
-.PHONY: docs-labels-used
-docs-labels-used:
-	$(activate-venv); \
-		./bin/make_docs_labels_used.py
-
-
-.PHONY: docs-responses-html
-docs-responses-html:
-	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
-	$(activate-venv); \
-		./bin/make_docs_responses_html.py
-
-
-.PHONY: docs-responses-json
-docs-responses-json:
-	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
-	$(activate-venv); \
-		./bin/make_docs_responses_json.py
-
-
 .PHONY: download-truthsets
 download-truthsets:
 	curl -X GET --output ./testdata/truthsets/customers.jsonl \
@@ -450,13 +502,6 @@ download-truthsets:
 .PHONY: golangci-lint
 golangci-lint:
 	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
-
-
-.PHONY: go-typedef-generated-typedef-test-go
-go-typedef-generated-typedef-test-go:
-	@rm ./go/typedef/generated_typedef_test.go || true
-	$(activate-venv); \
-		./bin/make_go_typedef_generated_typedef_test_go.py
 
 
 .PHONY: load-database-with-truthsets
@@ -482,20 +527,6 @@ pylint:
 		pylint $(shell git ls-files '*.py')
 
 
-.PHONY: testdata-responses-generated
-testdata-responses-generated:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
-	$(activate-venv); \
-		./bin/make_testdata_responses_generated.py
-
-
-.PHONY: testdata-responses-senzing
-testdata-responses-senzing:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
-	$(activate-venv); \
-		./bin/make_testdata_responses_senzing.py
-
-
 .PHONY: test-rfc8927-reconstitution
 test-rfc8927-reconstitution:
 	$(activate-venv); \
@@ -507,7 +538,8 @@ test-using-senzing:
 	$(activate-venv); \
 		./bin/test_using_senzing.py
 
-.PHONY: unused-json-keys
-unused-json-keys:
+
+.PHONY: test-using-senzing-generated
+test-using-senzing-generated:
 	$(activate-venv); \
-		./bin/unused_json_keys.py
+		./bin/test_using_senzing_generated.py

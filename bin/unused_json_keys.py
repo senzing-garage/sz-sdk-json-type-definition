@@ -10,14 +10,13 @@ from pathlib import Path
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
-
 DEFINITIONS = {}
-OUTPUT_FILENAME = "./docs/unused_json_keys.json"
-INPUT_FILENAME = "./senzingsdk-RFC8927.json"
 INPUT_DIRECTORY = "./testdata/responses_senzing"
+INPUT_FILENAME = "./senzingsdk-RFC8927.json"
+OUTPUT_FILENAME = "./docs/unused_json_keys.json"
 RESIDUAL = {}
-
 VARIABLE_JSON_KEY = "user_defined_json_key"
+
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
     "SzConfigGetDataSourceRegistryResponse",
@@ -214,7 +213,6 @@ def recurse_json(json_value):
 
 
 # def remove_json(needles, haystack):
-#     print(f">>>>> {needles}\n\n{haystack}\n\n\n")
 
 #     if isinstance(needles, dict):
 #         if isinstance(haystack, dict):
@@ -222,9 +220,6 @@ def recurse_json(json_value):
 #                 if key not in haystack:
 #                     return
 #                 haystack = remove_json(value, haystack.get(key))
-#         else:
-#             print(f">>>>> {needles}; {haystack}")
-
 #     return haystack
 
 
@@ -232,11 +227,7 @@ def recurse_json(json_value):
 #     """Remove keys from dict1 (and nested dicts) that exist in dict2"""
 #     result = None
 
-#     print(f">>>>>> Key: {json_key}; Haystack: {haystack}")
-
 #     if isinstance(needles, dict):
-#         print(f">>>>>>>>> dict: {needles}")
-
 #         result = {}
 #         for key, value in needles.items():
 #             new_haystack = None
@@ -247,8 +238,6 @@ def recurse_json(json_value):
 #                 result[key] = new_result
 
 #     if isinstance(needles, list):
-#         print(f">>>>>>>>> list: {needles}")
-
 #         result = []
 #         new_haystack = None
 #         if isinstance(haystack, list):
@@ -257,17 +246,14 @@ def recurse_json(json_value):
 #             new_result = remove_keys_recursive("", value, new_haystack)
 #             if new_result:
 #                 result.append(new_result)
-
-#     print(f"<<<<<<<<< {result}")
 #     return result
 
 
-def remove_keys_recursive(needles, haystack):
+def remove_keys_recursiveX(needles, haystack):
     """Remove keys from dict1 (and nested dicts) that exist in dict2"""
     result = None
 
     if isinstance(needles, dict):
-
         result = {}
         if isinstance(haystack, dict):
             for key, value in haystack.items():
@@ -279,11 +265,46 @@ def remove_keys_recursive(needles, haystack):
                     result[key] = value
 
     if isinstance(needles, list):
-
         result = []
         new_haystack = None
         if isinstance(haystack, list):
             new_haystack = haystack[0]
+        for value in needles:
+            new_result = remove_keys_recursive(value, new_haystack)
+            if new_result:
+                if new_result not in result:
+                    result.append(new_result)
+
+    return result
+
+
+def remove_keys_recursive(needles, haystack):
+    """Remove keys from dict1 (and nested dicts) that exist in dict2"""
+    result = None
+
+    if isinstance(needles, dict):
+        result = {}
+        if isinstance(haystack, dict):
+            for key, value in haystack.items():
+                if key in needles:
+                    result_value = remove_keys_recursive(needles.get(key), value)
+                    if result_value:
+                        result[key] = result_value
+                elif key == VARIABLE_JSON_KEY:
+                    for needle_value in needles.values():
+                        value = remove_keys_recursive(needle_value, value)
+                    if value:
+                        result[key] = value
+                else:
+                    if value:
+                        result[key] = value
+
+    if isinstance(needles, list):
+        result = []
+        new_haystack = []
+        if isinstance(haystack, list):
+            if len(haystack) > 0:
+                new_haystack = haystack[0]
         for value in needles:
             new_result = remove_keys_recursive(value, new_haystack)
             if new_result:
@@ -306,8 +327,8 @@ DEFINITIONS = DATA.get("definitions", {})
 
 # Go through test files.
 
-test_file_names = os.listdir(INPUT_DIRECTORY)
-# test_file_names = ["SzConfigGetDataSourceRegistryResponse.jsonl"]
+# test_file_names = os.listdir(INPUT_DIRECTORY)
+test_file_names = ["SzEngineWhyRecordsResponse.jsonl"]
 for test_file_name in test_file_names:
     requested_json_key = Path(test_file_name).stem
     initial_json_value = DEFINITIONS.get(requested_json_key)
