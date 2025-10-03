@@ -1224,6 +1224,28 @@
                     "elements": {
                         "ref": "RelAnchor"
                     }
+                },
+                "REL_POINTER": {
+                    "elements": {
+                        "ref": "RelPointer"
+                    }
+                }
+            }
+        },
+        "DisclosedRelationsForWhyKeyDetails": {
+            "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "ENTITY_ROLES": {
+                    "elements": {
+                        "ref": "EntityRoles"
+                    }
+                },
+                "RELATED_ROLES": {
+                    "elements": {
+                        "ref": "RelatedRoles"
+                    }
                 }
             }
         },
@@ -1381,6 +1403,16 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                }
+            }
+        },
+        "EntityRoles": {
+            "properties": {
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "ROLE": {
+                    "type": "string"
                 }
             }
         },
@@ -2529,6 +2561,13 @@
                     "elements": {
                         "ref": "RelPointer"
                     }
+                }
+            }
+        },
+        "RelatedRoles": {
+            "properties": {
+                "FIXME": {
+                    "rel": "FIXME"
                 }
             }
         },
@@ -3965,6 +4004,9 @@
                         "label": "RECORD_ID"
                     },
                     "type": "string"
+                },
+                "UMF_PROC": {
+                    "ref": "UmfProc"
                 }
             }
         },
@@ -4296,6 +4338,11 @@
                 "DENIALS": {
                     "elements": {
                         "ref": "Confirmation"
+                    }
+                },
+                "DISCLOSED_RELATIONS": {
+                    "elements": {
+                        "ref": "DisclosedRelationsForWhyKeyDetails"
                     }
                 }
             }
