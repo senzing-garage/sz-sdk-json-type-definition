@@ -24,7 +24,7 @@
         },
         "AffectedEntity": {
             "properties": {
-                "XXX_ENTITY_ID": {
+                "ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64",
@@ -1285,12 +1285,12 @@
         },
         "EntityForResolvedEntity": {
             "properties": {
-                "XXX_RELATED_ENTITIES": {
+                "RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
                 },
-                "XXX_RESOLVED_ENTITY": {
+                "RESOLVED_ENTITY": {
                     "ref": "ResolvedEntity"
                 }
             }
@@ -1933,7 +1933,7 @@
         },
         "InterestingEntities": {
             "properties": {
-                "XXX_ENTITIES": {
+                "ENTITIES": {
                     "elements": {
                         "ref": "InterestingEntity"
                     }
@@ -1994,28 +1994,28 @@
         },
         "MatchInfo": {
             "properties": {
-                "XXX_CANDIDATE_KEYS": {
+                "CANDIDATE_KEYS": {
                     "ref": "CandidateKeysForMatchInfo"
                 },
                 "XXX_DISCLOSED_RELATIONS": {
                     "ref": "DisclosedRelationsForMatchInfo"
                 },
-                "XXX_ERRULE_CODE": {
+                "ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
                     },
                     "type": "string"
                 },
-                "XXX_FEATURE_SCORES": {
+                "FEATURE_SCORES": {
                     "ref": "FeatureScores"
                 },
-                "XXX_MATCH_KEY": {
+                "MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
                 },
-                "XXX_MATCH_KEY_DETAILS": {
+                "MATCH_KEY_DETAILS": {
                     "ref": "MatchKeyDetails"
                 },
                 "XXX_MATCH_LEVEL": {
@@ -2024,7 +2024,7 @@
                     },
                     "type": "int32"
                 },
-                "XXX_MATCH_LEVEL_CODE": {
+                "MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
@@ -2063,7 +2063,7 @@
                         }
                     }
                 },
-                "XXX_DISCLOSED_RELATIONS": {
+                "DISCLOSED_RELATIONS": {
                     "ref": "DisclosedRelationsForMatchInfoForWhy"
                 },
                 "FEATURE_SCORES": {
@@ -2088,7 +2088,7 @@
         },
         "MatchKeyDetails": {
             "properties": {
-                "XXX_CONFIRMATIONS": {
+                "CONFIRMATIONS": {
                     "elements": {
                         "ref": "Confirmation"
                     }
@@ -2139,23 +2139,6 @@
                 "pythonType": "object"
             },
             "type": "string"
-        },
-        "ParamDetails": {
-            "properties": {
-                "XXX_NAME": {
-                    "type": "string"
-                },
-                "XXX_VALUE": {
-                    "ref": "Object"
-                }
-            }
-        },
-        "Params": {
-            "properties": {
-                "XXX_PARAM": {
-                    "ref": "ParamDetails"
-                }
-            }
         },
         "Processing": {
             "properties": {
@@ -2632,34 +2615,34 @@
         },
         "RelPointer": {
             "properties": {
-                "XXX_DOMAIN": {
+                "DOMAIN": {
                     "type": "string"
                 },
-                "XXX_FEAT_DESC": {
+                "FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "XXX_FEAT_ID": {
+                "FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_FEAT_USAGE_TYPE": {
+                "FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_DESC": {
+                "LINKED_FEAT_DESC": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_ID": {
+                "LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_LINKED_FEAT_TYPE": {
+                "LINKED_FEAT_TYPE": {
                     "type": "string"
                 }
             }
@@ -2919,10 +2902,10 @@
         },
         "ResolvedEntityAndMatchInfo": {
             "properties": {
-                "XXX_ENTITY": {
+                "ENTITY": {
                     "ref": "EntityForResolvedEntity"
                 },
-                "XXX_MATCH_INFO": {
+                "MATCH_INFO": {
                     "ref": "MatchInfo"
                 }
             }
@@ -3481,7 +3464,7 @@
         },
         "SzConfigRegisterDataSourceResponse": {
             "properties": {
-                "XXX_DSRC_ID": {
+                "DSRC_ID": {
                     "metadata": {
                         "description": "The unique internal integer identifier of the datasource.",
                         "goType": "int64"
@@ -3492,14 +3475,14 @@
         },
         "SzDiagnosticCheckRepositoryPerformanceResponse": {
             "properties": {
-                "XXX_insertTime": {
+                "insertTime": {
                     "metadata": {
                         "description": "The duration of the test in milliseconds.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_numRecordsInserted": {
+                "numRecordsInserted": {
                     "metadata": {
                         "description": "The total number of records inserted within the insertTime.",
                         "goType": "int64"
@@ -3611,7 +3594,7 @@
         },
         "SzEngineFindInterestingEntitiesByEntityIdResponse": {
             "properties": {
-                "XXX_INTERESTING_ENTITIES": {
+                "INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 }
             }
@@ -3984,12 +3967,12 @@
         },
         "SzEngineProcessRedoRecordResponse": {
             "properties": {
-                "XXX_AFFECTED_ENTITIES": {
+                "AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "XXX_DATA_SOURCE": {
+                "DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
@@ -3998,7 +3981,7 @@
                 "XXX_INTERESTING_ENTITIES": {
                     "ref": "InterestingEntities"
                 },
-                "XXX_RECORD_ID": {
+                "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -4012,7 +3995,7 @@
         },
         "SzEngineReevaluateEntityResponse": {
             "properties": {
-                "XXX_AFFECTED_ENTITIES": {
+                "AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
@@ -4069,15 +4052,15 @@
         },
         "SzEngineSearchByAttributesResponse": {
             "properties": {
-                "XXX_RESOLVED_ENTITIES": {
+                "RESOLVED_ENTITIES": {
                     "elements": {
                         "ref": "ResolvedEntityAndMatchInfo"
                     }
                 },
-                "XXX_SEARCH_REQUEST": {
+                "SEARCH_REQUEST": {
                     "ref": "SearchRequest"
                 },
-                "XXX_SEARCH_STATISTICS": {
+                "SEARCH_STATISTICS": {
                     "elements": {
                         "ref": "SearchStatistic"
                     }
@@ -4100,12 +4083,12 @@
         },
         "SzEngineWhyEntitiesResponse": {
             "properties": {
-                "XXX_ENTITIES": {
+                "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "XXX_WHY_RESULTS": {
+                "WHY_RESULTS": {
                     "elements": {
                         "ref": "WhyResult"
                     }
@@ -4114,12 +4097,12 @@
         },
         "SzEngineWhyRecordInEntityResponse": {
             "properties": {
-                "XXX_ENTITIES": {
+                "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
                     }
                 },
-                "XXX_WHY_RESULTS": {
+                "WHY_RESULTS": {
                     "elements": {
                         "ref": "WhyResult"
                     }
@@ -4271,13 +4254,30 @@
         },
         "UmfProc": {
             "properties": {
-                "XXX_NAME": {
+                "NAME": {
                     "type": "string"
                 },
-                "XXX_PARAMS": {
+                "PARAMS": {
                     "elements": {
-                        "ref": "Params"
+                        "ref": "UmfProcParams"
                     }
+                }
+            }
+        },
+        "UmfProcParamDetails": {
+            "properties": {
+                "NAME": {
+                    "type": "string"
+                },
+                "VALUE": {
+                    "ref": "Object"
+                }
+            }
+        },
+        "UmfProcParams": {
+            "properties": {
+                "PARAM": {
+                    "ref": "UmfProcParamDetails"
                 }
             }
         },
@@ -4335,7 +4335,7 @@
                         "ref": "Confirmation"
                     }
                 },
-                "XXX_DENIALS": {
+                "DENIALS": {
                     "elements": {
                         "ref": "Confirmation"
                     }
