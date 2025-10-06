@@ -8,9 +8,6 @@ namespace Senzing.Typedef
 {
     public class WorkloadScoring
     {
-        [JsonPropertyName("XXX_suppressedScoredFeatureType")]
-        public Fixme XxxSuppressedScoredFeatureType { get; set; }
-
         [JsonPropertyName("cacheHit")]
         public IDictionary<string, int> CacheHit { get; set; }
 
@@ -22,5 +19,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("suppressedDisclosedRelationshipDomainCount")]
         public int SuppressedDisclosedRelationshipDomainCount { get; set; }
+
+        [JsonPropertyName("suppressedScoredFeatureType")]
+        public Fixme SuppressedScoredFeatureType { get; set; }
     }
 }

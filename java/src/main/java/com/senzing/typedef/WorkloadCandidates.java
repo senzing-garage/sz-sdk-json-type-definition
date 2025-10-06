@@ -8,27 +8,13 @@ import java.util.Map;
 
 @JsonSerialize
 public class WorkloadCandidates {
-    @JsonProperty("XXX_suppressedCandidateBuilders")
-    private Map<String, Integer> xxxSuppressedCandidateBuilders;
-
     @JsonProperty("candidateBuilders")
     private Map<String, Integer> candidateBuilders;
 
+    @JsonProperty("suppressedCandidateBuilders")
+    private Map<String, Integer> suppressedCandidateBuilders;
+
     public WorkloadCandidates() {
-    }
-
-    /**
-     * Getter for xxxSuppressedCandidateBuilders.<p>
-     */
-    public Map<String, Integer> getXxxSuppressedCandidateBuilders() {
-        return xxxSuppressedCandidateBuilders;
-    }
-
-    /**
-     * Setter for xxxSuppressedCandidateBuilders.<p>
-     */
-    public void setXxxSuppressedCandidateBuilders(Map<String, Integer> xxxSuppressedCandidateBuilders) {
-        this.xxxSuppressedCandidateBuilders = xxxSuppressedCandidateBuilders;
     }
 
     /**
@@ -43,5 +29,19 @@ public class WorkloadCandidates {
      */
     public void setCandidateBuilders(Map<String, Integer> candidateBuilders) {
         this.candidateBuilders = candidateBuilders;
+    }
+
+    /**
+     * Getter for suppressedCandidateBuilders.<p>
+     */
+    public Map<String, Integer> getSuppressedCandidateBuilders() {
+        return suppressedCandidateBuilders;
+    }
+
+    /**
+     * Setter for suppressedCandidateBuilders.<p>
+     */
+    public void setSuppressedCandidateBuilders(Map<String, Integer> suppressedCandidateBuilders) {
+        this.suppressedCandidateBuilders = suppressedCandidateBuilders;
     }
 }

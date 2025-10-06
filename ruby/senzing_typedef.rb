@@ -4426,18 +4426,18 @@ module SenzingTypedef
   end
 
   class Workload
-    attr_accessor :xxx_contention
-    attr_accessor :xxx_generic_detect
-    attr_accessor :xxx_redo_triggers
     attr_accessor :api_version
     attr_accessor :caches
     attr_accessor :candidates
+    attr_accessor :contention
     attr_accessor :datetimestamp
     attr_accessor :expressed_features
+    attr_accessor :generic_detect
     attr_accessor :license
     attr_accessor :loaded_records
     attr_accessor :lock_waits
     attr_accessor :processing
+    attr_accessor :redo_triggers
     attr_accessor :repair_diagnosis
     attr_accessor :reresolve
     attr_accessor :scoring
@@ -4447,18 +4447,18 @@ module SenzingTypedef
 
     def self.from_json_data(data)
       out = Workload.new
-      out.xxx_contention = SenzingTypedef::from_json_data(WorkloadContention, data["XXX_contention"])
-      out.xxx_generic_detect = SenzingTypedef::from_json_data(Fixme, data["XXX_genericDetect"])
-      out.xxx_redo_triggers = SenzingTypedef::from_json_data(Hash[String, Integer], data["XXX_redoTriggers"])
       out.api_version = SenzingTypedef::from_json_data(String, data["apiVersion"])
       out.caches = SenzingTypedef::from_json_data(WorkloadCaches, data["caches"])
       out.candidates = SenzingTypedef::from_json_data(WorkloadCandidates, data["candidates"])
+      out.contention = SenzingTypedef::from_json_data(WorkloadContention, data["contention"])
       out.datetimestamp = SenzingTypedef::from_json_data(String, data["datetimestamp"])
       out.expressed_features = SenzingTypedef::from_json_data(WorkloadExpressedFeatures, data["expressedFeatures"])
+      out.generic_detect = SenzingTypedef::from_json_data(Fixme, data["genericDetect"])
       out.license = SenzingTypedef::from_json_data(License, data["license"])
       out.loaded_records = SenzingTypedef::from_json_data(Integer, data["loadedRecords"])
       out.lock_waits = SenzingTypedef::from_json_data(WorkloadLockWaits, data["lockWaits"])
       out.processing = SenzingTypedef::from_json_data(WorkloadProcessing, data["processing"])
+      out.redo_triggers = SenzingTypedef::from_json_data(Hash[String, Integer], data["redoTriggers"])
       out.repair_diagnosis = SenzingTypedef::from_json_data(WorkloadRepairDiagnosis, data["repairDiagnosis"])
       out.reresolve = SenzingTypedef::from_json_data(WorkloadReresolve, data["reresolve"])
       out.scoring = SenzingTypedef::from_json_data(WorkloadScoring, data["scoring"])
@@ -4470,18 +4470,18 @@ module SenzingTypedef
 
     def to_json_data
       data = {}
-      data["XXX_contention"] = SenzingTypedef::to_json_data(xxx_contention)
-      data["XXX_genericDetect"] = SenzingTypedef::to_json_data(xxx_generic_detect)
-      data["XXX_redoTriggers"] = SenzingTypedef::to_json_data(xxx_redo_triggers)
       data["apiVersion"] = SenzingTypedef::to_json_data(api_version)
       data["caches"] = SenzingTypedef::to_json_data(caches)
       data["candidates"] = SenzingTypedef::to_json_data(candidates)
+      data["contention"] = SenzingTypedef::to_json_data(contention)
       data["datetimestamp"] = SenzingTypedef::to_json_data(datetimestamp)
       data["expressedFeatures"] = SenzingTypedef::to_json_data(expressed_features)
+      data["genericDetect"] = SenzingTypedef::to_json_data(generic_detect)
       data["license"] = SenzingTypedef::to_json_data(license)
       data["loadedRecords"] = SenzingTypedef::to_json_data(loaded_records)
       data["lockWaits"] = SenzingTypedef::to_json_data(lock_waits)
       data["processing"] = SenzingTypedef::to_json_data(processing)
+      data["redoTriggers"] = SenzingTypedef::to_json_data(redo_triggers)
       data["repairDiagnosis"] = SenzingTypedef::to_json_data(repair_diagnosis)
       data["reresolve"] = SenzingTypedef::to_json_data(reresolve)
       data["scoring"] = SenzingTypedef::to_json_data(scoring)
@@ -4530,42 +4530,42 @@ module SenzingTypedef
   end
 
   class WorkloadCandidates
-    attr_accessor :xxx_suppressed_candidate_builders
     attr_accessor :candidate_builders
+    attr_accessor :suppressed_candidate_builders
 
     def self.from_json_data(data)
       out = WorkloadCandidates.new
-      out.xxx_suppressed_candidate_builders = SenzingTypedef::from_json_data(Hash[String, Integer], data["XXX_suppressedCandidateBuilders"])
       out.candidate_builders = SenzingTypedef::from_json_data(Hash[String, Integer], data["candidateBuilders"])
+      out.suppressed_candidate_builders = SenzingTypedef::from_json_data(Hash[String, Integer], data["suppressedCandidateBuilders"])
       out
     end
 
     def to_json_data
       data = {}
-      data["XXX_suppressedCandidateBuilders"] = SenzingTypedef::to_json_data(xxx_suppressed_candidate_builders)
       data["candidateBuilders"] = SenzingTypedef::to_json_data(candidate_builders)
+      data["suppressedCandidateBuilders"] = SenzingTypedef::to_json_data(suppressed_candidate_builders)
       data
     end
   end
 
   class WorkloadContention
-    attr_accessor :xxx_feature
-    attr_accessor :xxx_res_ent
-    attr_accessor :xxx_valuelatch
+    attr_accessor :feature
+    attr_accessor :res_ent
+    attr_accessor :valuelatch
 
     def self.from_json_data(data)
       out = WorkloadContention.new
-      out.xxx_feature = SenzingTypedef::from_json_data(Fixme, data["XXX_feature"])
-      out.xxx_res_ent = SenzingTypedef::from_json_data(Fixme, data["XXX_resEnt"])
-      out.xxx_valuelatch = SenzingTypedef::from_json_data(Fixme, data["XXX_valuelatch"])
+      out.feature = SenzingTypedef::from_json_data(Fixme, data["feature"])
+      out.res_ent = SenzingTypedef::from_json_data(Fixme, data["resEnt"])
+      out.valuelatch = SenzingTypedef::from_json_data(Fixme, data["valuelatch"])
       out
     end
 
     def to_json_data
       data = {}
-      data["XXX_feature"] = SenzingTypedef::to_json_data(xxx_feature)
-      data["XXX_resEnt"] = SenzingTypedef::to_json_data(xxx_res_ent)
-      data["XXX_valuelatch"] = SenzingTypedef::to_json_data(xxx_valuelatch)
+      data["feature"] = SenzingTypedef::to_json_data(feature)
+      data["resEnt"] = SenzingTypedef::to_json_data(res_ent)
+      data["valuelatch"] = SenzingTypedef::to_json_data(valuelatch)
       data
     end
   end
@@ -4818,25 +4818,25 @@ module SenzingTypedef
   end
 
   class WorkloadReresolve
-    attr_accessor :xxx_new_feature_ftypes
-    attr_accessor :xxx_suppressed_candidate_builders_for_reresolve
-    attr_accessor :xxx_suppressed_scored_feature_type_for_reresolve
+    attr_accessor :new_feature_ftypes
+    attr_accessor :suppressed_candidate_builders_for_reresolve
+    attr_accessor :suppressed_scored_feature_type_for_reresolve
     attr_accessor :triggers
 
     def self.from_json_data(data)
       out = WorkloadReresolve.new
-      out.xxx_new_feature_ftypes = SenzingTypedef::from_json_data(Hash[String, Integer], data["XXX_newFeatureFTypes"])
-      out.xxx_suppressed_candidate_builders_for_reresolve = SenzingTypedef::from_json_data(Fixme, data["XXX_suppressedCandidateBuildersForReresolve"])
-      out.xxx_suppressed_scored_feature_type_for_reresolve = SenzingTypedef::from_json_data(Fixme, data["XXX_suppressedScoredFeatureTypeForReresolve"])
+      out.new_feature_ftypes = SenzingTypedef::from_json_data(Hash[String, Integer], data["newFeatureFTypes"])
+      out.suppressed_candidate_builders_for_reresolve = SenzingTypedef::from_json_data(Fixme, data["suppressedCandidateBuildersForReresolve"])
+      out.suppressed_scored_feature_type_for_reresolve = SenzingTypedef::from_json_data(Fixme, data["suppressedScoredFeatureTypeForReresolve"])
       out.triggers = SenzingTypedef::from_json_data(WorkloadReresolveTriggers, data["triggers"])
       out
     end
 
     def to_json_data
       data = {}
-      data["XXX_newFeatureFTypes"] = SenzingTypedef::to_json_data(xxx_new_feature_ftypes)
-      data["XXX_suppressedCandidateBuildersForReresolve"] = SenzingTypedef::to_json_data(xxx_suppressed_candidate_builders_for_reresolve)
-      data["XXX_suppressedScoredFeatureTypeForReresolve"] = SenzingTypedef::to_json_data(xxx_suppressed_scored_feature_type_for_reresolve)
+      data["newFeatureFTypes"] = SenzingTypedef::to_json_data(new_feature_ftypes)
+      data["suppressedCandidateBuildersForReresolve"] = SenzingTypedef::to_json_data(suppressed_candidate_builders_for_reresolve)
+      data["suppressedScoredFeatureTypeForReresolve"] = SenzingTypedef::to_json_data(suppressed_scored_feature_type_for_reresolve)
       data["triggers"] = SenzingTypedef::to_json_data(triggers)
       data
     end
@@ -4871,29 +4871,29 @@ module SenzingTypedef
   end
 
   class WorkloadScoring
-    attr_accessor :xxx_suppressed_scored_feature_type
     attr_accessor :cache_hit
     attr_accessor :cache_miss
     attr_accessor :scored_pairs
     attr_accessor :suppressed_disclosed_relationship_domain_count
+    attr_accessor :suppressed_scored_feature_type
 
     def self.from_json_data(data)
       out = WorkloadScoring.new
-      out.xxx_suppressed_scored_feature_type = SenzingTypedef::from_json_data(Fixme, data["XXX_suppressedScoredFeatureType"])
       out.cache_hit = SenzingTypedef::from_json_data(Hash[String, Integer], data["cacheHit"])
       out.cache_miss = SenzingTypedef::from_json_data(Hash[String, Integer], data["cacheMiss"])
       out.scored_pairs = SenzingTypedef::from_json_data(Hash[String, Integer], data["scoredPairs"])
       out.suppressed_disclosed_relationship_domain_count = SenzingTypedef::from_json_data(Integer, data["suppressedDisclosedRelationshipDomainCount"])
+      out.suppressed_scored_feature_type = SenzingTypedef::from_json_data(Fixme, data["suppressedScoredFeatureType"])
       out
     end
 
     def to_json_data
       data = {}
-      data["XXX_suppressedScoredFeatureType"] = SenzingTypedef::to_json_data(xxx_suppressed_scored_feature_type)
       data["cacheHit"] = SenzingTypedef::to_json_data(cache_hit)
       data["cacheMiss"] = SenzingTypedef::to_json_data(cache_miss)
       data["scoredPairs"] = SenzingTypedef::to_json_data(scored_pairs)
       data["suppressedDisclosedRelationshipDomainCount"] = SenzingTypedef::to_json_data(suppressed_disclosed_relationship_domain_count)
+      data["suppressedScoredFeatureType"] = SenzingTypedef::to_json_data(suppressed_scored_feature_type)
       data
     end
   end

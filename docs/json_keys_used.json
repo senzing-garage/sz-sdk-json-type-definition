@@ -1575,41 +1575,8 @@
     "XXX_ZOOMROOM": [
         "SenzingEntitySpecification.XXX_ZOOMROOM"
     ],
-    "XXX_contention": [
-        "Workload.XXX_contention"
-    ],
-    "XXX_feature": [
-        "WorkloadContention.XXX_feature"
-    ],
-    "XXX_genericDetect": [
-        "Workload.XXX_genericDetect"
-    ],
-    "XXX_newFeatureFTypes": [
-        "WorkloadReresolve.XXX_newFeatureFTypes"
-    ],
     "XXX_physicalCores": [
         "WorkloadInitResources.XXX_physicalCores"
-    ],
-    "XXX_redoTriggers": [
-        "Workload.XXX_redoTriggers"
-    ],
-    "XXX_resEnt": [
-        "WorkloadContention.XXX_resEnt"
-    ],
-    "XXX_suppressedCandidateBuilders": [
-        "WorkloadCandidates.XXX_suppressedCandidateBuilders"
-    ],
-    "XXX_suppressedCandidateBuildersForReresolve": [
-        "WorkloadReresolve.XXX_suppressedCandidateBuildersForReresolve"
-    ],
-    "XXX_suppressedScoredFeatureType": [
-        "WorkloadScoring.XXX_suppressedScoredFeatureType"
-    ],
-    "XXX_suppressedScoredFeatureTypeForReresolve": [
-        "WorkloadReresolve.XXX_suppressedScoredFeatureTypeForReresolve"
-    ],
-    "XXX_valuelatch": [
-        "WorkloadContention.XXX_valuelatch"
     ],
     "abortRetry": [
         "WorkloadReresolveTriggers.abortRetry"
@@ -1680,6 +1647,9 @@
     "changeDeletes": [
         "WorkloadProcessingDetails.changeDeletes"
     ],
+    "contention": [
+        "Workload.contention"
+    ],
     "contract": [
         "SzProductGetLicenseResponse.contract"
     ],
@@ -1737,8 +1707,14 @@
     "extensiveResolve": [
         "WorkloadUnresolveTriggers.extensiveResolve"
     ],
+    "feature": [
+        "WorkloadContention.feature"
+    ],
     "filteredObsFeat": [
         "WorkloadProcessingDetails.filteredObsFeat"
+    ],
+    "genericDetect": [
+        "Workload.genericDetect"
     ],
     "governorContention": [
         "WorkloadThreadState.governorContention"
@@ -1797,6 +1773,9 @@
     "multipleResolvableCandidates": [
         "WorkloadReresolveTriggers.multipleResolvableCandidates"
     ],
+    "newFeatureFTypes": [
+        "WorkloadReresolve.newFeatureFTypes"
+    ],
     "newObsEnt": [
         "WorkloadProcessingDetails.newObsEnt"
     ],
@@ -1836,6 +1815,9 @@
     "recordLimit": [
         "SzProductGetLicenseResponse.recordLimit"
     ],
+    "redoTriggers": [
+        "Workload.redoTriggers"
+    ],
     "reevaluations": [
         "WorkloadProcessing.reevaluations"
     ],
@@ -1853,6 +1835,9 @@
     ],
     "reresolve": [
         "Workload.reresolve"
+    ],
+    "resEnt": [
+        "WorkloadContention.resEnt"
     ],
     "resEntContention": [
         "WorkloadThreadState.resEntContention"
@@ -1897,8 +1882,20 @@
     "status": [
         "License.status"
     ],
+    "suppressedCandidateBuilders": [
+        "WorkloadCandidates.suppressedCandidateBuilders"
+    ],
+    "suppressedCandidateBuildersForReresolve": [
+        "WorkloadReresolve.suppressedCandidateBuildersForReresolve"
+    ],
     "suppressedDisclosedRelationshipDomainCount": [
         "WorkloadScoring.suppressedDisclosedRelationshipDomainCount"
+    ],
+    "suppressedScoredFeatureType": [
+        "WorkloadScoring.suppressedScoredFeatureType"
+    ],
+    "suppressedScoredFeatureTypeForReresolve": [
+        "WorkloadReresolve.suppressedScoredFeatureTypeForReresolve"
     ],
     "systemLoad": [
         "WorkloadSystemResources.systemLoad"
@@ -1937,6 +1934,9 @@
     ],
     "update": [
         "WorkloadUnresolveTriggers.update"
+    ],
+    "valuelatch": [
+        "WorkloadContention.valuelatch"
     ],
     "workerThreads": [
         "WorkloadCurrResources.workerThreads"

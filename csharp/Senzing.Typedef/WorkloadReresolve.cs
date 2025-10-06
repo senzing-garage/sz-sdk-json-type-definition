@@ -8,14 +8,14 @@ namespace Senzing.Typedef
 {
     public class WorkloadReresolve
     {
-        [JsonPropertyName("XXX_newFeatureFTypes")]
-        public IDictionary<string, int> XxxNewFeatureFtypes { get; set; }
+        [JsonPropertyName("newFeatureFTypes")]
+        public IDictionary<string, int> NewFeatureFtypes { get; set; }
 
-        [JsonPropertyName("XXX_suppressedCandidateBuildersForReresolve")]
-        public Fixme XxxSuppressedCandidateBuildersForReresolve { get; set; }
+        [JsonPropertyName("suppressedCandidateBuildersForReresolve")]
+        public Fixme SuppressedCandidateBuildersForReresolve { get; set; }
 
-        [JsonPropertyName("XXX_suppressedScoredFeatureTypeForReresolve")]
-        public Fixme XxxSuppressedScoredFeatureTypeForReresolve { get; set; }
+        [JsonPropertyName("suppressedScoredFeatureTypeForReresolve")]
+        public Fixme SuppressedScoredFeatureTypeForReresolve { get; set; }
 
         [JsonPropertyName("triggers")]
         public WorkloadReresolveTriggers Triggers { get; set; }

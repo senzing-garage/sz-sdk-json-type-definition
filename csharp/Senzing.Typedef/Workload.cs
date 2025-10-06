@@ -8,15 +8,6 @@ namespace Senzing.Typedef
 {
     public class Workload
     {
-        [JsonPropertyName("XXX_contention")]
-        public WorkloadContention XxxContention { get; set; }
-
-        [JsonPropertyName("XXX_genericDetect")]
-        public Fixme XxxGenericDetect { get; set; }
-
-        [JsonPropertyName("XXX_redoTriggers")]
-        public IDictionary<string, int> XxxRedoTriggers { get; set; }
-
         [JsonPropertyName("apiVersion")]
         public string ApiVersion { get; set; }
 
@@ -26,11 +17,17 @@ namespace Senzing.Typedef
         [JsonPropertyName("candidates")]
         public WorkloadCandidates Candidates { get; set; }
 
+        [JsonPropertyName("contention")]
+        public WorkloadContention Contention { get; set; }
+
         [JsonPropertyName("datetimestamp")]
         public string Datetimestamp { get; set; }
 
         [JsonPropertyName("expressedFeatures")]
         public WorkloadExpressedFeatures ExpressedFeatures { get; set; }
+
+        [JsonPropertyName("genericDetect")]
+        public Fixme GenericDetect { get; set; }
 
         [JsonPropertyName("license")]
         public License License { get; set; }
@@ -43,6 +40,9 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("processing")]
         public WorkloadProcessing Processing { get; set; }
+
+        [JsonPropertyName("redoTriggers")]
+        public IDictionary<string, int> RedoTriggers { get; set; }
 
         [JsonPropertyName("repairDiagnosis")]
         public WorkloadRepairDiagnosis RepairDiagnosis { get; set; }

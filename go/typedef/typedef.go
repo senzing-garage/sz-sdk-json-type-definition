@@ -1934,21 +1934,19 @@ type WhyResult struct {
 }
 
 type Workload struct {
-	XxxContention WorkloadContention `json:"XXX_contention"`
-
-	XxxGenericDetect Fixme `json:"XXX_genericDetect"`
-
-	XxxRedoTriggers map[string]int64 `json:"XXX_redoTriggers"`
-
 	APIVersion string `json:"apiVersion"`
 
 	Caches WorkloadCaches `json:"caches"`
 
 	Candidates WorkloadCandidates `json:"candidates"`
 
+	Contention WorkloadContention `json:"contention"`
+
 	Datetimestamp string `json:"datetimestamp"`
 
 	ExpressedFeatures WorkloadExpressedFeatures `json:"expressedFeatures"`
+
+	GenericDetect Fixme `json:"genericDetect"`
 
 	License License `json:"license"`
 
@@ -1957,6 +1955,8 @@ type Workload struct {
 	LockWaits WorkloadLockWaits `json:"lockWaits"`
 
 	Processing WorkloadProcessing `json:"processing"`
+
+	RedoTriggers map[string]int64 `json:"redoTriggers"`
 
 	RepairDiagnosis WorkloadRepairDiagnosis `json:"repairDiagnosis"`
 
@@ -1990,17 +1990,17 @@ type WorkloadCaches struct {
 }
 
 type WorkloadCandidates struct {
-	XxxSuppressedCandidateBuilders map[string]int64 `json:"XXX_suppressedCandidateBuilders"`
-
 	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
+
+	SuppressedCandidateBuilders map[string]int64 `json:"suppressedCandidateBuilders"`
 }
 
 type WorkloadContention struct {
-	XxxFeature Fixme `json:"XXX_feature"`
+	Feature Fixme `json:"feature"`
 
-	XxxResEnt Fixme `json:"XXX_resEnt"`
+	ResEnt Fixme `json:"resEnt"`
 
-	XxxValuelatch Fixme `json:"XXX_valuelatch"`
+	Valuelatch Fixme `json:"valuelatch"`
 }
 
 type WorkloadCurrResources struct {
@@ -2102,11 +2102,11 @@ type WorkloadRepairDiagnosis struct {
 }
 
 type WorkloadReresolve struct {
-	XxxNewFeatureFtypes map[string]int64 `json:"XXX_newFeatureFTypes"`
+	NewFeatureFtypes map[string]int64 `json:"newFeatureFTypes"`
 
-	XxxSuppressedCandidateBuildersForReresolve Fixme `json:"XXX_suppressedCandidateBuildersForReresolve"`
+	SuppressedCandidateBuildersForReresolve Fixme `json:"suppressedCandidateBuildersForReresolve"`
 
-	XxxSuppressedScoredFeatureTypeForReresolve Fixme `json:"XXX_suppressedScoredFeatureTypeForReresolve"`
+	SuppressedScoredFeatureTypeForReresolve Fixme `json:"suppressedScoredFeatureTypeForReresolve"`
 
 	Triggers WorkloadReresolveTriggers `json:"triggers"`
 }
@@ -2124,8 +2124,6 @@ type WorkloadReresolveTriggers struct {
 }
 
 type WorkloadScoring struct {
-	XxxSuppressedScoredFeatureType Fixme `json:"XXX_suppressedScoredFeatureType"`
-
 	CacheHit map[string]int64 `json:"cacheHit"`
 
 	CacheMiss map[string]int64 `json:"cacheMiss"`
@@ -2133,6 +2131,8 @@ type WorkloadScoring struct {
 	ScoredPairs map[string]int64 `json:"scoredPairs"`
 
 	SuppressedDisclosedRelationshipDomainCount int32 `json:"suppressedDisclosedRelationshipDomainCount"`
+
+	SuppressedScoredFeatureType Fixme `json:"suppressedScoredFeatureType"`
 }
 
 type WorkloadSystemLoad struct {

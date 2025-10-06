@@ -7,57 +7,57 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class WorkloadContention {
-    @JsonProperty("XXX_feature")
-    private Fixme xxxFeature;
+    @JsonProperty("feature")
+    private Fixme feature;
 
-    @JsonProperty("XXX_resEnt")
-    private Fixme xxxResEnt;
+    @JsonProperty("resEnt")
+    private Fixme resEnt;
 
-    @JsonProperty("XXX_valuelatch")
-    private Fixme xxxValuelatch;
+    @JsonProperty("valuelatch")
+    private Fixme valuelatch;
 
     public WorkloadContention() {
     }
 
     /**
-     * Getter for xxxFeature.<p>
+     * Getter for feature.<p>
      */
-    public Fixme getXxxFeature() {
-        return xxxFeature;
+    public Fixme getFeature() {
+        return feature;
     }
 
     /**
-     * Setter for xxxFeature.<p>
+     * Setter for feature.<p>
      */
-    public void setXxxFeature(Fixme xxxFeature) {
-        this.xxxFeature = xxxFeature;
+    public void setFeature(Fixme feature) {
+        this.feature = feature;
     }
 
     /**
-     * Getter for xxxResEnt.<p>
+     * Getter for resEnt.<p>
      */
-    public Fixme getXxxResEnt() {
-        return xxxResEnt;
+    public Fixme getResEnt() {
+        return resEnt;
     }
 
     /**
-     * Setter for xxxResEnt.<p>
+     * Setter for resEnt.<p>
      */
-    public void setXxxResEnt(Fixme xxxResEnt) {
-        this.xxxResEnt = xxxResEnt;
+    public void setResEnt(Fixme resEnt) {
+        this.resEnt = resEnt;
     }
 
     /**
-     * Getter for xxxValuelatch.<p>
+     * Getter for valuelatch.<p>
      */
-    public Fixme getXxxValuelatch() {
-        return xxxValuelatch;
+    public Fixme getValuelatch() {
+        return valuelatch;
     }
 
     /**
-     * Setter for xxxValuelatch.<p>
+     * Setter for valuelatch.<p>
      */
-    public void setXxxValuelatch(Fixme xxxValuelatch) {
-        this.xxxValuelatch = xxxValuelatch;
+    public void setValuelatch(Fixme valuelatch) {
+        this.valuelatch = valuelatch;
     }
 }

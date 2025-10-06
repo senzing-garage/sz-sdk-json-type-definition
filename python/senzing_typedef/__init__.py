@@ -4542,18 +4542,18 @@ class WhyResult:
 
 @dataclass
 class Workload:
-    xxx_contention: 'WorkloadContention'
-    xxx_generic_detect: 'Fixme'
-    xxx_redo_triggers: 'Dict[str, int]'
     api_version: 'str'
     caches: 'WorkloadCaches'
     candidates: 'WorkloadCandidates'
+    contention: 'WorkloadContention'
     datetimestamp: 'str'
     expressed_features: 'WorkloadExpressedFeatures'
+    generic_detect: 'Fixme'
     license: 'License'
     loaded_records: 'int'
     lock_waits: 'WorkloadLockWaits'
     processing: 'WorkloadProcessing'
+    redo_triggers: 'Dict[str, int]'
     repair_diagnosis: 'WorkloadRepairDiagnosis'
     reresolve: 'WorkloadReresolve'
     scoring: 'WorkloadScoring'
@@ -4564,18 +4564,18 @@ class Workload:
     @classmethod
     def from_json_data(cls, data: Any) -> 'Workload':
         return cls(
-            _from_json_data(WorkloadContention, data.get("XXX_contention")),
-            _from_json_data(Fixme, data.get("XXX_genericDetect")),
-            _from_json_data(Dict[str, int], data.get("XXX_redoTriggers")),
             _from_json_data(str, data.get("apiVersion")),
             _from_json_data(WorkloadCaches, data.get("caches")),
             _from_json_data(WorkloadCandidates, data.get("candidates")),
+            _from_json_data(WorkloadContention, data.get("contention")),
             _from_json_data(str, data.get("datetimestamp")),
             _from_json_data(WorkloadExpressedFeatures, data.get("expressedFeatures")),
+            _from_json_data(Fixme, data.get("genericDetect")),
             _from_json_data(License, data.get("license")),
             _from_json_data(int, data.get("loadedRecords")),
             _from_json_data(WorkloadLockWaits, data.get("lockWaits")),
             _from_json_data(WorkloadProcessing, data.get("processing")),
+            _from_json_data(Dict[str, int], data.get("redoTriggers")),
             _from_json_data(WorkloadRepairDiagnosis, data.get("repairDiagnosis")),
             _from_json_data(WorkloadReresolve, data.get("reresolve")),
             _from_json_data(WorkloadScoring, data.get("scoring")),
@@ -4586,18 +4586,18 @@ class Workload:
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["XXX_contention"] = _to_json_data(self.xxx_contention)
-        data["XXX_genericDetect"] = _to_json_data(self.xxx_generic_detect)
-        data["XXX_redoTriggers"] = _to_json_data(self.xxx_redo_triggers)
         data["apiVersion"] = _to_json_data(self.api_version)
         data["caches"] = _to_json_data(self.caches)
         data["candidates"] = _to_json_data(self.candidates)
+        data["contention"] = _to_json_data(self.contention)
         data["datetimestamp"] = _to_json_data(self.datetimestamp)
         data["expressedFeatures"] = _to_json_data(self.expressed_features)
+        data["genericDetect"] = _to_json_data(self.generic_detect)
         data["license"] = _to_json_data(self.license)
         data["loadedRecords"] = _to_json_data(self.loaded_records)
         data["lockWaits"] = _to_json_data(self.lock_waits)
         data["processing"] = _to_json_data(self.processing)
+        data["redoTriggers"] = _to_json_data(self.redo_triggers)
         data["repairDiagnosis"] = _to_json_data(self.repair_diagnosis)
         data["reresolve"] = _to_json_data(self.reresolve)
         data["scoring"] = _to_json_data(self.scoring)
@@ -4644,41 +4644,41 @@ class WorkloadCaches:
 
 @dataclass
 class WorkloadCandidates:
-    xxx_suppressed_candidate_builders: 'Dict[str, int]'
     candidate_builders: 'Dict[str, int]'
+    suppressed_candidate_builders: 'Dict[str, int]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadCandidates':
         return cls(
-            _from_json_data(Dict[str, int], data.get("XXX_suppressedCandidateBuilders")),
             _from_json_data(Dict[str, int], data.get("candidateBuilders")),
+            _from_json_data(Dict[str, int], data.get("suppressedCandidateBuilders")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["XXX_suppressedCandidateBuilders"] = _to_json_data(self.xxx_suppressed_candidate_builders)
         data["candidateBuilders"] = _to_json_data(self.candidate_builders)
+        data["suppressedCandidateBuilders"] = _to_json_data(self.suppressed_candidate_builders)
         return data
 
 @dataclass
 class WorkloadContention:
-    xxx_feature: 'Fixme'
-    xxx_res_ent: 'Fixme'
-    xxx_valuelatch: 'Fixme'
+    feature: 'Fixme'
+    res_ent: 'Fixme'
+    valuelatch: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadContention':
         return cls(
-            _from_json_data(Fixme, data.get("XXX_feature")),
-            _from_json_data(Fixme, data.get("XXX_resEnt")),
-            _from_json_data(Fixme, data.get("XXX_valuelatch")),
+            _from_json_data(Fixme, data.get("feature")),
+            _from_json_data(Fixme, data.get("resEnt")),
+            _from_json_data(Fixme, data.get("valuelatch")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["XXX_feature"] = _to_json_data(self.xxx_feature)
-        data["XXX_resEnt"] = _to_json_data(self.xxx_res_ent)
-        data["XXX_valuelatch"] = _to_json_data(self.xxx_valuelatch)
+        data["feature"] = _to_json_data(self.feature)
+        data["resEnt"] = _to_json_data(self.res_ent)
+        data["valuelatch"] = _to_json_data(self.valuelatch)
         return data
 
 @dataclass
@@ -4920,25 +4920,25 @@ class WorkloadRepairDiagnosis:
 
 @dataclass
 class WorkloadReresolve:
-    xxx_new_feature_ftypes: 'Dict[str, int]'
-    xxx_suppressed_candidate_builders_for_reresolve: 'Fixme'
-    xxx_suppressed_scored_feature_type_for_reresolve: 'Fixme'
+    new_feature_ftypes: 'Dict[str, int]'
+    suppressed_candidate_builders_for_reresolve: 'Fixme'
+    suppressed_scored_feature_type_for_reresolve: 'Fixme'
     triggers: 'WorkloadReresolveTriggers'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadReresolve':
         return cls(
-            _from_json_data(Dict[str, int], data.get("XXX_newFeatureFTypes")),
-            _from_json_data(Fixme, data.get("XXX_suppressedCandidateBuildersForReresolve")),
-            _from_json_data(Fixme, data.get("XXX_suppressedScoredFeatureTypeForReresolve")),
+            _from_json_data(Dict[str, int], data.get("newFeatureFTypes")),
+            _from_json_data(Fixme, data.get("suppressedCandidateBuildersForReresolve")),
+            _from_json_data(Fixme, data.get("suppressedScoredFeatureTypeForReresolve")),
             _from_json_data(WorkloadReresolveTriggers, data.get("triggers")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["XXX_newFeatureFTypes"] = _to_json_data(self.xxx_new_feature_ftypes)
-        data["XXX_suppressedCandidateBuildersForReresolve"] = _to_json_data(self.xxx_suppressed_candidate_builders_for_reresolve)
-        data["XXX_suppressedScoredFeatureTypeForReresolve"] = _to_json_data(self.xxx_suppressed_scored_feature_type_for_reresolve)
+        data["newFeatureFTypes"] = _to_json_data(self.new_feature_ftypes)
+        data["suppressedCandidateBuildersForReresolve"] = _to_json_data(self.suppressed_candidate_builders_for_reresolve)
+        data["suppressedScoredFeatureTypeForReresolve"] = _to_json_data(self.suppressed_scored_feature_type_for_reresolve)
         data["triggers"] = _to_json_data(self.triggers)
         return data
 
@@ -4971,29 +4971,29 @@ class WorkloadReresolveTriggers:
 
 @dataclass
 class WorkloadScoring:
-    xxx_suppressed_scored_feature_type: 'Fixme'
     cache_hit: 'Dict[str, int]'
     cache_miss: 'Dict[str, int]'
     scored_pairs: 'Dict[str, int]'
     suppressed_disclosed_relationship_domain_count: 'int'
+    suppressed_scored_feature_type: 'Fixme'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadScoring':
         return cls(
-            _from_json_data(Fixme, data.get("XXX_suppressedScoredFeatureType")),
             _from_json_data(Dict[str, int], data.get("cacheHit")),
             _from_json_data(Dict[str, int], data.get("cacheMiss")),
             _from_json_data(Dict[str, int], data.get("scoredPairs")),
             _from_json_data(int, data.get("suppressedDisclosedRelationshipDomainCount")),
+            _from_json_data(Fixme, data.get("suppressedScoredFeatureType")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["XXX_suppressedScoredFeatureType"] = _to_json_data(self.xxx_suppressed_scored_feature_type)
         data["cacheHit"] = _to_json_data(self.cache_hit)
         data["cacheMiss"] = _to_json_data(self.cache_miss)
         data["scoredPairs"] = _to_json_data(self.scored_pairs)
         data["suppressedDisclosedRelationshipDomainCount"] = _to_json_data(self.suppressed_disclosed_relationship_domain_count)
+        data["suppressedScoredFeatureType"] = _to_json_data(self.suppressed_scored_feature_type)
         return data
 
 @dataclass

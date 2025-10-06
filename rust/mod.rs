@@ -2828,15 +2828,6 @@ pub struct WhyResult {
 
 #[derive(Serialize, Deserialize)]
 pub struct Workload {
-    #[serde(rename = "XXX_contention")]
-    pub xxxContention: WorkloadContention,
-
-    #[serde(rename = "XXX_genericDetect")]
-    pub xxxGenericDetect: Fixme,
-
-    #[serde(rename = "XXX_redoTriggers")]
-    pub xxxRedoTriggers: HashMap<String, i32>,
-
     #[serde(rename = "apiVersion")]
     pub apiVersion: String,
 
@@ -2846,11 +2837,17 @@ pub struct Workload {
     #[serde(rename = "candidates")]
     pub candidates: WorkloadCandidates,
 
+    #[serde(rename = "contention")]
+    pub contention: WorkloadContention,
+
     #[serde(rename = "datetimestamp")]
     pub datetimestamp: String,
 
     #[serde(rename = "expressedFeatures")]
     pub expressedFeatures: WorkloadExpressedFeatures,
+
+    #[serde(rename = "genericDetect")]
+    pub genericDetect: Fixme,
 
     #[serde(rename = "license")]
     pub license: License,
@@ -2863,6 +2860,9 @@ pub struct Workload {
 
     #[serde(rename = "processing")]
     pub processing: WorkloadProcessing,
+
+    #[serde(rename = "redoTriggers")]
+    pub redoTriggers: HashMap<String, i32>,
 
     #[serde(rename = "repairDiagnosis")]
     pub repairDiagnosis: WorkloadRepairDiagnosis,
@@ -2912,23 +2912,23 @@ pub struct WorkloadCaches {
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadCandidates {
-    #[serde(rename = "XXX_suppressedCandidateBuilders")]
-    pub xxxSuppressedCandidateBuilders: HashMap<String, i32>,
-
     #[serde(rename = "candidateBuilders")]
     pub candidateBuilders: HashMap<String, i32>,
+
+    #[serde(rename = "suppressedCandidateBuilders")]
+    pub suppressedCandidateBuilders: HashMap<String, i32>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadContention {
-    #[serde(rename = "XXX_feature")]
-    pub xxxFeature: Fixme,
+    #[serde(rename = "feature")]
+    pub feature: Fixme,
 
-    #[serde(rename = "XXX_resEnt")]
-    pub xxxResEnt: Fixme,
+    #[serde(rename = "resEnt")]
+    pub resEnt: Fixme,
 
-    #[serde(rename = "XXX_valuelatch")]
-    pub xxxValuelatch: Fixme,
+    #[serde(rename = "valuelatch")]
+    pub valuelatch: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3080,14 +3080,14 @@ pub struct WorkloadRepairDiagnosis {
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadReresolve {
-    #[serde(rename = "XXX_newFeatureFTypes")]
-    pub xxxNewFeatureFtypes: HashMap<String, i32>,
+    #[serde(rename = "newFeatureFTypes")]
+    pub newFeatureFtypes: HashMap<String, i32>,
 
-    #[serde(rename = "XXX_suppressedCandidateBuildersForReresolve")]
-    pub xxxSuppressedCandidateBuildersForReresolve: Fixme,
+    #[serde(rename = "suppressedCandidateBuildersForReresolve")]
+    pub suppressedCandidateBuildersForReresolve: Fixme,
 
-    #[serde(rename = "XXX_suppressedScoredFeatureTypeForReresolve")]
-    pub xxxSuppressedScoredFeatureTypeForReresolve: Fixme,
+    #[serde(rename = "suppressedScoredFeatureTypeForReresolve")]
+    pub suppressedScoredFeatureTypeForReresolve: Fixme,
 
     #[serde(rename = "triggers")]
     pub triggers: WorkloadReresolveTriggers,
@@ -3113,9 +3113,6 @@ pub struct WorkloadReresolveTriggers {
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadScoring {
-    #[serde(rename = "XXX_suppressedScoredFeatureType")]
-    pub xxxSuppressedScoredFeatureType: Fixme,
-
     #[serde(rename = "cacheHit")]
     pub cacheHit: HashMap<String, i32>,
 
@@ -3127,6 +3124,9 @@ pub struct WorkloadScoring {
 
     #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
     pub suppressedDisclosedRelationshipDomainCount: i32,
+
+    #[serde(rename = "suppressedScoredFeatureType")]
+    pub suppressedScoredFeatureType: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]

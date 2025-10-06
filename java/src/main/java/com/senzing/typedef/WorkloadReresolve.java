@@ -8,14 +8,14 @@ import java.util.Map;
 
 @JsonSerialize
 public class WorkloadReresolve {
-    @JsonProperty("XXX_newFeatureFTypes")
-    private Map<String, Integer> xxxNewFeatureFtypes;
+    @JsonProperty("newFeatureFTypes")
+    private Map<String, Integer> newFeatureFtypes;
 
-    @JsonProperty("XXX_suppressedCandidateBuildersForReresolve")
-    private Fixme xxxSuppressedCandidateBuildersForReresolve;
+    @JsonProperty("suppressedCandidateBuildersForReresolve")
+    private Fixme suppressedCandidateBuildersForReresolve;
 
-    @JsonProperty("XXX_suppressedScoredFeatureTypeForReresolve")
-    private Fixme xxxSuppressedScoredFeatureTypeForReresolve;
+    @JsonProperty("suppressedScoredFeatureTypeForReresolve")
+    private Fixme suppressedScoredFeatureTypeForReresolve;
 
     @JsonProperty("triggers")
     private WorkloadReresolveTriggers triggers;
@@ -24,45 +24,45 @@ public class WorkloadReresolve {
     }
 
     /**
-     * Getter for xxxNewFeatureFtypes.<p>
+     * Getter for newFeatureFtypes.<p>
      */
-    public Map<String, Integer> getXxxNewFeatureFtypes() {
-        return xxxNewFeatureFtypes;
+    public Map<String, Integer> getNewFeatureFtypes() {
+        return newFeatureFtypes;
     }
 
     /**
-     * Setter for xxxNewFeatureFtypes.<p>
+     * Setter for newFeatureFtypes.<p>
      */
-    public void setXxxNewFeatureFtypes(Map<String, Integer> xxxNewFeatureFtypes) {
-        this.xxxNewFeatureFtypes = xxxNewFeatureFtypes;
+    public void setNewFeatureFtypes(Map<String, Integer> newFeatureFtypes) {
+        this.newFeatureFtypes = newFeatureFtypes;
     }
 
     /**
-     * Getter for xxxSuppressedCandidateBuildersForReresolve.<p>
+     * Getter for suppressedCandidateBuildersForReresolve.<p>
      */
-    public Fixme getXxxSuppressedCandidateBuildersForReresolve() {
-        return xxxSuppressedCandidateBuildersForReresolve;
+    public Fixme getSuppressedCandidateBuildersForReresolve() {
+        return suppressedCandidateBuildersForReresolve;
     }
 
     /**
-     * Setter for xxxSuppressedCandidateBuildersForReresolve.<p>
+     * Setter for suppressedCandidateBuildersForReresolve.<p>
      */
-    public void setXxxSuppressedCandidateBuildersForReresolve(Fixme xxxSuppressedCandidateBuildersForReresolve) {
-        this.xxxSuppressedCandidateBuildersForReresolve = xxxSuppressedCandidateBuildersForReresolve;
+    public void setSuppressedCandidateBuildersForReresolve(Fixme suppressedCandidateBuildersForReresolve) {
+        this.suppressedCandidateBuildersForReresolve = suppressedCandidateBuildersForReresolve;
     }
 
     /**
-     * Getter for xxxSuppressedScoredFeatureTypeForReresolve.<p>
+     * Getter for suppressedScoredFeatureTypeForReresolve.<p>
      */
-    public Fixme getXxxSuppressedScoredFeatureTypeForReresolve() {
-        return xxxSuppressedScoredFeatureTypeForReresolve;
+    public Fixme getSuppressedScoredFeatureTypeForReresolve() {
+        return suppressedScoredFeatureTypeForReresolve;
     }
 
     /**
-     * Setter for xxxSuppressedScoredFeatureTypeForReresolve.<p>
+     * Setter for suppressedScoredFeatureTypeForReresolve.<p>
      */
-    public void setXxxSuppressedScoredFeatureTypeForReresolve(Fixme xxxSuppressedScoredFeatureTypeForReresolve) {
-        this.xxxSuppressedScoredFeatureTypeForReresolve = xxxSuppressedScoredFeatureTypeForReresolve;
+    public void setSuppressedScoredFeatureTypeForReresolve(Fixme suppressedScoredFeatureTypeForReresolve) {
+        this.suppressedScoredFeatureTypeForReresolve = suppressedScoredFeatureTypeForReresolve;
     }
 
     /**

@@ -7,13 +7,13 @@ namespace Senzing.Typedef
 {
     public class WorkloadContention
     {
-        [JsonPropertyName("XXX_feature")]
-        public Fixme XxxFeature { get; set; }
+        [JsonPropertyName("feature")]
+        public Fixme Feature { get; set; }
 
-        [JsonPropertyName("XXX_resEnt")]
-        public Fixme XxxResEnt { get; set; }
+        [JsonPropertyName("resEnt")]
+        public Fixme ResEnt { get; set; }
 
-        [JsonPropertyName("XXX_valuelatch")]
-        public Fixme XxxValuelatch { get; set; }
+        [JsonPropertyName("valuelatch")]
+        public Fixme Valuelatch { get; set; }
     }
 }

@@ -8,9 +8,6 @@ import java.util.Map;
 
 @JsonSerialize
 public class WorkloadScoring {
-    @JsonProperty("XXX_suppressedScoredFeatureType")
-    private Fixme xxxSuppressedScoredFeatureType;
-
     @JsonProperty("cacheHit")
     private Map<String, Integer> cacheHit;
 
@@ -23,21 +20,10 @@ public class WorkloadScoring {
     @JsonProperty("suppressedDisclosedRelationshipDomainCount")
     private Integer suppressedDisclosedRelationshipDomainCount;
 
+    @JsonProperty("suppressedScoredFeatureType")
+    private Fixme suppressedScoredFeatureType;
+
     public WorkloadScoring() {
-    }
-
-    /**
-     * Getter for xxxSuppressedScoredFeatureType.<p>
-     */
-    public Fixme getXxxSuppressedScoredFeatureType() {
-        return xxxSuppressedScoredFeatureType;
-    }
-
-    /**
-     * Setter for xxxSuppressedScoredFeatureType.<p>
-     */
-    public void setXxxSuppressedScoredFeatureType(Fixme xxxSuppressedScoredFeatureType) {
-        this.xxxSuppressedScoredFeatureType = xxxSuppressedScoredFeatureType;
     }
 
     /**
@@ -94,5 +80,19 @@ public class WorkloadScoring {
      */
     public void setSuppressedDisclosedRelationshipDomainCount(Integer suppressedDisclosedRelationshipDomainCount) {
         this.suppressedDisclosedRelationshipDomainCount = suppressedDisclosedRelationshipDomainCount;
+    }
+
+    /**
+     * Getter for suppressedScoredFeatureType.<p>
+     */
+    public Fixme getSuppressedScoredFeatureType() {
+        return suppressedScoredFeatureType;
+    }
+
+    /**
+     * Setter for suppressedScoredFeatureType.<p>
+     */
+    public void setSuppressedScoredFeatureType(Fixme suppressedScoredFeatureType) {
+        this.suppressedScoredFeatureType = suppressedScoredFeatureType;
     }
 }

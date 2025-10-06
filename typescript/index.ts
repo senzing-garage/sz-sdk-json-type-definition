@@ -1659,18 +1659,18 @@ export interface WhyResult {
 }
 
 export interface Workload {
-  XXX_contention: WorkloadContention;
-  XXX_genericDetect: Fixme;
-  XXX_redoTriggers: { [key: string]: number };
   apiVersion: string;
   caches: WorkloadCaches;
   candidates: WorkloadCandidates;
+  contention: WorkloadContention;
   datetimestamp: string;
   expressedFeatures: WorkloadExpressedFeatures;
+  genericDetect: Fixme;
   license: License;
   loadedRecords: number;
   lockWaits: WorkloadLockWaits;
   processing: WorkloadProcessing;
+  redoTriggers: { [key: string]: number };
   repairDiagnosis: WorkloadRepairDiagnosis;
   reresolve: WorkloadReresolve;
   scoring: WorkloadScoring;
@@ -1691,14 +1691,14 @@ export interface WorkloadCaches {
 }
 
 export interface WorkloadCandidates {
-  XXX_suppressedCandidateBuilders: { [key: string]: number };
   candidateBuilders: { [key: string]: number };
+  suppressedCandidateBuilders: { [key: string]: number };
 }
 
 export interface WorkloadContention {
-  XXX_feature: Fixme;
-  XXX_resEnt: Fixme;
-  XXX_valuelatch: Fixme;
+  feature: Fixme;
+  resEnt: Fixme;
+  valuelatch: Fixme;
 }
 
 export interface WorkloadCurrResources {
@@ -1771,9 +1771,9 @@ export interface WorkloadRepairDiagnosis {
 }
 
 export interface WorkloadReresolve {
-  XXX_newFeatureFTypes: { [key: string]: number };
-  XXX_suppressedCandidateBuildersForReresolve: Fixme;
-  XXX_suppressedScoredFeatureTypeForReresolve: Fixme;
+  newFeatureFTypes: { [key: string]: number };
+  suppressedCandidateBuildersForReresolve: Fixme;
+  suppressedScoredFeatureTypeForReresolve: Fixme;
   triggers: WorkloadReresolveTriggers;
 }
 
@@ -1786,11 +1786,11 @@ export interface WorkloadReresolveTriggers {
 }
 
 export interface WorkloadScoring {
-  XXX_suppressedScoredFeatureType: Fixme;
   cacheHit: { [key: string]: number };
   cacheMiss: { [key: string]: number };
   scoredPairs: { [key: string]: number };
   suppressedDisclosedRelationshipDomainCount: number;
+  suppressedScoredFeatureType: Fixme;
 }
 
 export interface WorkloadSystemLoad {

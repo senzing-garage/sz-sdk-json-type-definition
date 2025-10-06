@@ -8,15 +8,6 @@ import java.util.Map;
 
 @JsonSerialize
 public class Workload {
-    @JsonProperty("XXX_contention")
-    private WorkloadContention xxxContention;
-
-    @JsonProperty("XXX_genericDetect")
-    private Fixme xxxGenericDetect;
-
-    @JsonProperty("XXX_redoTriggers")
-    private Map<String, Integer> xxxRedoTriggers;
-
     @JsonProperty("apiVersion")
     private String apiVersion;
 
@@ -26,11 +17,17 @@ public class Workload {
     @JsonProperty("candidates")
     private WorkloadCandidates candidates;
 
+    @JsonProperty("contention")
+    private WorkloadContention contention;
+
     @JsonProperty("datetimestamp")
     private String datetimestamp;
 
     @JsonProperty("expressedFeatures")
     private WorkloadExpressedFeatures expressedFeatures;
+
+    @JsonProperty("genericDetect")
+    private Fixme genericDetect;
 
     @JsonProperty("license")
     private License license;
@@ -43,6 +40,9 @@ public class Workload {
 
     @JsonProperty("processing")
     private WorkloadProcessing processing;
+
+    @JsonProperty("redoTriggers")
+    private Map<String, Integer> redoTriggers;
 
     @JsonProperty("repairDiagnosis")
     private WorkloadRepairDiagnosis repairDiagnosis;
@@ -63,48 +63,6 @@ public class Workload {
     private WorkloadUnresolve unresolve;
 
     public Workload() {
-    }
-
-    /**
-     * Getter for xxxContention.<p>
-     */
-    public WorkloadContention getXxxContention() {
-        return xxxContention;
-    }
-
-    /**
-     * Setter for xxxContention.<p>
-     */
-    public void setXxxContention(WorkloadContention xxxContention) {
-        this.xxxContention = xxxContention;
-    }
-
-    /**
-     * Getter for xxxGenericDetect.<p>
-     */
-    public Fixme getXxxGenericDetect() {
-        return xxxGenericDetect;
-    }
-
-    /**
-     * Setter for xxxGenericDetect.<p>
-     */
-    public void setXxxGenericDetect(Fixme xxxGenericDetect) {
-        this.xxxGenericDetect = xxxGenericDetect;
-    }
-
-    /**
-     * Getter for xxxRedoTriggers.<p>
-     */
-    public Map<String, Integer> getXxxRedoTriggers() {
-        return xxxRedoTriggers;
-    }
-
-    /**
-     * Setter for xxxRedoTriggers.<p>
-     */
-    public void setXxxRedoTriggers(Map<String, Integer> xxxRedoTriggers) {
-        this.xxxRedoTriggers = xxxRedoTriggers;
     }
 
     /**
@@ -150,6 +108,20 @@ public class Workload {
     }
 
     /**
+     * Getter for contention.<p>
+     */
+    public WorkloadContention getContention() {
+        return contention;
+    }
+
+    /**
+     * Setter for contention.<p>
+     */
+    public void setContention(WorkloadContention contention) {
+        this.contention = contention;
+    }
+
+    /**
      * Getter for datetimestamp.<p>
      */
     public String getDatetimestamp() {
@@ -175,6 +147,20 @@ public class Workload {
      */
     public void setExpressedFeatures(WorkloadExpressedFeatures expressedFeatures) {
         this.expressedFeatures = expressedFeatures;
+    }
+
+    /**
+     * Getter for genericDetect.<p>
+     */
+    public Fixme getGenericDetect() {
+        return genericDetect;
+    }
+
+    /**
+     * Setter for genericDetect.<p>
+     */
+    public void setGenericDetect(Fixme genericDetect) {
+        this.genericDetect = genericDetect;
     }
 
     /**
@@ -231,6 +217,20 @@ public class Workload {
      */
     public void setProcessing(WorkloadProcessing processing) {
         this.processing = processing;
+    }
+
+    /**
+     * Getter for redoTriggers.<p>
+     */
+    public Map<String, Integer> getRedoTriggers() {
+        return redoTriggers;
+    }
+
+    /**
+     * Setter for redoTriggers.<p>
+     */
+    public void setRedoTriggers(Map<String, Integer> redoTriggers) {
+        this.redoTriggers = redoTriggers;
     }
 
     /**
