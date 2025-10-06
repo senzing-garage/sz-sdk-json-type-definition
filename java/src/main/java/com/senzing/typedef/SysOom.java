@@ -7,20 +7,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SysOom {
-    @JsonProperty("FELEM_ID")
-    private Integer felemId;
-
     @JsonProperty("FTYPE_ID")
     private Integer ftypeId;
-
-    @JsonProperty("LENS_ID")
-    private Integer lensId;
-
-    @JsonProperty("LIB_FEAT_ID")
-    private Integer libFeatId;
-
-    @JsonProperty("LIB_FELEM_ID")
-    private Integer libFelemId;
 
     @JsonProperty("NEXT_THRESH")
     private Integer nextThresh;
@@ -37,21 +25,19 @@ public class SysOom {
     @JsonProperty("THRESH1_OOM")
     private Integer thresh1Oom;
 
+    @JsonProperty("XXX_FELEM_ID")
+    private Integer xxxFelemId;
+
+    @JsonProperty("XXX_LENS_ID")
+    private Integer xxxLensId;
+
+    @JsonProperty("XXX_LIB_FEAT_ID")
+    private Integer xxxLibFeatId;
+
+    @JsonProperty("XXX_LIB_FELEM_ID")
+    private Integer xxxLibFelemId;
+
     public SysOom() {
-    }
-
-    /**
-     * Getter for felemId.<p>
-     */
-    public Integer getFelemId() {
-        return felemId;
-    }
-
-    /**
-     * Setter for felemId.<p>
-     */
-    public void setFelemId(Integer felemId) {
-        this.felemId = felemId;
     }
 
     /**
@@ -66,48 +52,6 @@ public class SysOom {
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
-    }
-
-    /**
-     * Getter for lensId.<p>
-     */
-    public Integer getLensId() {
-        return lensId;
-    }
-
-    /**
-     * Setter for lensId.<p>
-     */
-    public void setLensId(Integer lensId) {
-        this.lensId = lensId;
-    }
-
-    /**
-     * Getter for libFeatId.<p>
-     */
-    public Integer getLibFeatId() {
-        return libFeatId;
-    }
-
-    /**
-     * Setter for libFeatId.<p>
-     */
-    public void setLibFeatId(Integer libFeatId) {
-        this.libFeatId = libFeatId;
-    }
-
-    /**
-     * Getter for libFelemId.<p>
-     */
-    public Integer getLibFelemId() {
-        return libFelemId;
-    }
-
-    /**
-     * Setter for libFelemId.<p>
-     */
-    public void setLibFelemId(Integer libFelemId) {
-        this.libFelemId = libFelemId;
     }
 
     /**
@@ -178,5 +122,61 @@ public class SysOom {
      */
     public void setThresh1Oom(Integer thresh1Oom) {
         this.thresh1Oom = thresh1Oom;
+    }
+
+    /**
+     * Getter for xxxFelemId.<p>
+     */
+    public Integer getXxxFelemId() {
+        return xxxFelemId;
+    }
+
+    /**
+     * Setter for xxxFelemId.<p>
+     */
+    public void setXxxFelemId(Integer xxxFelemId) {
+        this.xxxFelemId = xxxFelemId;
+    }
+
+    /**
+     * Getter for xxxLensId.<p>
+     */
+    public Integer getXxxLensId() {
+        return xxxLensId;
+    }
+
+    /**
+     * Setter for xxxLensId.<p>
+     */
+    public void setXxxLensId(Integer xxxLensId) {
+        this.xxxLensId = xxxLensId;
+    }
+
+    /**
+     * Getter for xxxLibFeatId.<p>
+     */
+    public Integer getXxxLibFeatId() {
+        return xxxLibFeatId;
+    }
+
+    /**
+     * Setter for xxxLibFeatId.<p>
+     */
+    public void setXxxLibFeatId(Integer xxxLibFeatId) {
+        this.xxxLibFeatId = xxxLibFeatId;
+    }
+
+    /**
+     * Getter for xxxLibFelemId.<p>
+     */
+    public Integer getXxxLibFelemId() {
+        return xxxLibFelemId;
+    }
+
+    /**
+     * Setter for xxxLibFelemId.<p>
+     */
+    public void setXxxLibFelemId(Integer xxxLibFelemId) {
+        this.xxxLibFelemId = xxxLibFelemId;
     }
 }

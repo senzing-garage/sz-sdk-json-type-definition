@@ -13,9 +13,6 @@ public class CfgRtype {
     @JsonProperty("RCLASS_ID")
     private Integer rclassId;
 
-    @JsonProperty("REL_STRENGTH")
-    private Integer relStrength;
-
     @JsonProperty("RTYPE_CODE")
     private String rtypeCode;
 
@@ -24,6 +21,9 @@ public class CfgRtype {
 
     @JsonProperty("RTYPE_ID")
     private Integer rtypeId;
+
+    @JsonProperty("XXX_REL_STRENGTH")
+    private Integer xxxRelStrength;
 
     public CfgRtype() {
     }
@@ -54,20 +54,6 @@ public class CfgRtype {
      */
     public void setRclassId(Integer rclassId) {
         this.rclassId = rclassId;
-    }
-
-    /**
-     * Getter for relStrength.<p>
-     */
-    public Integer getRelStrength() {
-        return relStrength;
-    }
-
-    /**
-     * Setter for relStrength.<p>
-     */
-    public void setRelStrength(Integer relStrength) {
-        this.relStrength = relStrength;
     }
 
     /**
@@ -110,5 +96,19 @@ public class CfgRtype {
      */
     public void setRtypeId(Integer rtypeId) {
         this.rtypeId = rtypeId;
+    }
+
+    /**
+     * Getter for xxxRelStrength.<p>
+     */
+    public Integer getXxxRelStrength() {
+        return xxxRelStrength;
+    }
+
+    /**
+     * Setter for xxxRelStrength.<p>
+     */
+    public void setXxxRelStrength(Integer xxxRelStrength) {
+        this.xxxRelStrength = xxxRelStrength;
     }
 }

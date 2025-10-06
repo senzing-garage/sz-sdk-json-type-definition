@@ -7,74 +7,74 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgEtype {
-    @JsonProperty("ECLASS_ID")
-    private Integer eclassId;
+    @JsonProperty("XXX_ECLASS_ID")
+    private Integer xxxEclassId;
 
-    @JsonProperty("ETYPE_CODE")
-    private String etypeCode;
+    @JsonProperty("XXX_ETYPE_CODE")
+    private String xxxEtypeCode;
 
-    @JsonProperty("ETYPE_DESC")
-    private String etypeDesc;
+    @JsonProperty("XXX_ETYPE_DESC")
+    private String xxxEtypeDesc;
 
-    @JsonProperty("ETYPE_ID")
-    private Integer etypeId;
+    @JsonProperty("XXX_ETYPE_ID")
+    private Integer xxxEtypeId;
 
     public CfgEtype() {
     }
 
     /**
-     * Getter for eclassId.<p>
+     * Getter for xxxEclassId.<p>
      */
-    public Integer getEclassId() {
-        return eclassId;
+    public Integer getXxxEclassId() {
+        return xxxEclassId;
     }
 
     /**
-     * Setter for eclassId.<p>
+     * Setter for xxxEclassId.<p>
      */
-    public void setEclassId(Integer eclassId) {
-        this.eclassId = eclassId;
+    public void setXxxEclassId(Integer xxxEclassId) {
+        this.xxxEclassId = xxxEclassId;
     }
 
     /**
-     * Getter for etypeCode.<p>
+     * Getter for xxxEtypeCode.<p>
      */
-    public String getEtypeCode() {
-        return etypeCode;
+    public String getXxxEtypeCode() {
+        return xxxEtypeCode;
     }
 
     /**
-     * Setter for etypeCode.<p>
+     * Setter for xxxEtypeCode.<p>
      */
-    public void setEtypeCode(String etypeCode) {
-        this.etypeCode = etypeCode;
+    public void setXxxEtypeCode(String xxxEtypeCode) {
+        this.xxxEtypeCode = xxxEtypeCode;
     }
 
     /**
-     * Getter for etypeDesc.<p>
+     * Getter for xxxEtypeDesc.<p>
      */
-    public String getEtypeDesc() {
-        return etypeDesc;
+    public String getXxxEtypeDesc() {
+        return xxxEtypeDesc;
     }
 
     /**
-     * Setter for etypeDesc.<p>
+     * Setter for xxxEtypeDesc.<p>
      */
-    public void setEtypeDesc(String etypeDesc) {
-        this.etypeDesc = etypeDesc;
+    public void setXxxEtypeDesc(String xxxEtypeDesc) {
+        this.xxxEtypeDesc = xxxEtypeDesc;
     }
 
     /**
-     * Getter for etypeId.<p>
+     * Getter for xxxEtypeId.<p>
      */
-    public Integer getEtypeId() {
-        return etypeId;
+    public Integer getXxxEtypeId() {
+        return xxxEtypeId;
     }
 
     /**
-     * Setter for etypeId.<p>
+     * Setter for xxxEtypeId.<p>
      */
-    public void setEtypeId(Integer etypeId) {
-        this.etypeId = etypeId;
+    public void setXxxEtypeId(Integer xxxEtypeId) {
+        this.xxxEtypeId = xxxEtypeId;
     }
 }

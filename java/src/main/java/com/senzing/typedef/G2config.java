@@ -41,9 +41,6 @@ public class G2config {
     @JsonProperty("CFG_EBOM")
     private List<CfgEbom> cfgEbom;
 
-    @JsonProperty("CFG_ECLASS")
-    private List<CfgEclass> cfgEclass;
-
     @JsonProperty("CFG_EFBOM")
     private List<CfgEfbom> cfgEfbom;
 
@@ -58,9 +55,6 @@ public class G2config {
 
     @JsonProperty("CFG_ERRULE")
     private List<CfgErrule> cfgErrule;
-
-    @JsonProperty("CFG_ETYPE")
-    private List<CfgEtype> cfgEtype;
 
     @JsonProperty("CFG_FBOM")
     private List<CfgFbom> cfgFbom;
@@ -83,12 +77,6 @@ public class G2config {
     @JsonProperty("CFG_GPLAN")
     private List<CfgGplan> cfgGplan;
 
-    @JsonProperty("CFG_LENS")
-    private List<CfgLens> cfgLens;
-
-    @JsonProperty("CFG_LENSRL")
-    private List<CfgLensrl> cfgLensrl;
-
     @JsonProperty("CFG_RCLASS")
     private List<CfgRclass> cfgRclass;
 
@@ -109,6 +97,18 @@ public class G2config {
 
     @JsonProperty("SYS_OOM")
     private List<SysOom> sysOom;
+
+    @JsonProperty("XXX_CFG_ECLASS")
+    private List<CfgEclass> xxxCfgEclass;
+
+    @JsonProperty("XXX_CFG_ETYPE")
+    private List<CfgEtype> xxxCfgEtype;
+
+    @JsonProperty("XXX_CFG_LENS")
+    private List<CfgLens> xxxCfgLens;
+
+    @JsonProperty("XXX_CFG_LENSRL")
+    private List<CfgLensrl> xxxCfgLensrl;
 
     public G2config() {
     }
@@ -268,20 +268,6 @@ public class G2config {
     }
 
     /**
-     * Getter for cfgEclass.<p>
-     */
-    public List<CfgEclass> getCfgEclass() {
-        return cfgEclass;
-    }
-
-    /**
-     * Setter for cfgEclass.<p>
-     */
-    public void setCfgEclass(List<CfgEclass> cfgEclass) {
-        this.cfgEclass = cfgEclass;
-    }
-
-    /**
      * Getter for cfgEfbom.<p>
      */
     public List<CfgEfbom> getCfgEfbom() {
@@ -349,20 +335,6 @@ public class G2config {
      */
     public void setCfgErrule(List<CfgErrule> cfgErrule) {
         this.cfgErrule = cfgErrule;
-    }
-
-    /**
-     * Getter for cfgEtype.<p>
-     */
-    public List<CfgEtype> getCfgEtype() {
-        return cfgEtype;
-    }
-
-    /**
-     * Setter for cfgEtype.<p>
-     */
-    public void setCfgEtype(List<CfgEtype> cfgEtype) {
-        this.cfgEtype = cfgEtype;
     }
 
     /**
@@ -464,34 +436,6 @@ public class G2config {
     }
 
     /**
-     * Getter for cfgLens.<p>
-     */
-    public List<CfgLens> getCfgLens() {
-        return cfgLens;
-    }
-
-    /**
-     * Setter for cfgLens.<p>
-     */
-    public void setCfgLens(List<CfgLens> cfgLens) {
-        this.cfgLens = cfgLens;
-    }
-
-    /**
-     * Getter for cfgLensrl.<p>
-     */
-    public List<CfgLensrl> getCfgLensrl() {
-        return cfgLensrl;
-    }
-
-    /**
-     * Setter for cfgLensrl.<p>
-     */
-    public void setCfgLensrl(List<CfgLensrl> cfgLensrl) {
-        this.cfgLensrl = cfgLensrl;
-    }
-
-    /**
      * Getter for cfgRclass.<p>
      */
     public List<CfgRclass> getCfgRclass() {
@@ -587,5 +531,61 @@ public class G2config {
      */
     public void setSysOom(List<SysOom> sysOom) {
         this.sysOom = sysOom;
+    }
+
+    /**
+     * Getter for xxxCfgEclass.<p>
+     */
+    public List<CfgEclass> getXxxCfgEclass() {
+        return xxxCfgEclass;
+    }
+
+    /**
+     * Setter for xxxCfgEclass.<p>
+     */
+    public void setXxxCfgEclass(List<CfgEclass> xxxCfgEclass) {
+        this.xxxCfgEclass = xxxCfgEclass;
+    }
+
+    /**
+     * Getter for xxxCfgEtype.<p>
+     */
+    public List<CfgEtype> getXxxCfgEtype() {
+        return xxxCfgEtype;
+    }
+
+    /**
+     * Setter for xxxCfgEtype.<p>
+     */
+    public void setXxxCfgEtype(List<CfgEtype> xxxCfgEtype) {
+        this.xxxCfgEtype = xxxCfgEtype;
+    }
+
+    /**
+     * Getter for xxxCfgLens.<p>
+     */
+    public List<CfgLens> getXxxCfgLens() {
+        return xxxCfgLens;
+    }
+
+    /**
+     * Setter for xxxCfgLens.<p>
+     */
+    public void setXxxCfgLens(List<CfgLens> xxxCfgLens) {
+        this.xxxCfgLens = xxxCfgLens;
+    }
+
+    /**
+     * Getter for xxxCfgLensrl.<p>
+     */
+    public List<CfgLensrl> getXxxCfgLensrl() {
+        return xxxCfgLensrl;
+    }
+
+    /**
+     * Setter for xxxCfgLensrl.<p>
+     */
+    public void setXxxCfgLensrl(List<CfgLensrl> xxxCfgLensrl) {
+        this.xxxCfgLensrl = xxxCfgLensrl;
     }
 }

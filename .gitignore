@@ -181,8 +181,8 @@ coverage.out
 # Generated files from dotnet builds
 csharp/bin/
 csharp/obj/
-Senzing.Schema/bin/
-Senzing.Schema/obj/
+Senzing.Typedef/bin/
+Senzing.Typedef/obj/
 csharp/obj/csharp.csproj.nuget.dgspec.json
 csharp/obj/csharp.csproj.nuget.g.props
 csharp/obj/project.assets.json

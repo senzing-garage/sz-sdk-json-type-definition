@@ -2,26 +2,26 @@
     "INTERESTING_ENTITIES": {
         "ENTITIES": [
             {
-                "DEGREES": "int32",
-                "ENTITY_ID": "int32",
-                "FLAGS": [
+                "XXX_DEGREES": "int32",
+                "XXX_ENTITY_ID": "int32",
+                "XXX_FLAGS": [
                     "string"
                 ],
-                "SAMPLE_RECORDS": [
+                "XXX_SAMPLE_RECORDS": [
                     {
-                        "DATA_SOURCE": "string",
-                        "FLAGS": [
+                        "XXX_DATA_SOURCE": "string",
+                        "XXX_FLAGS": [
                             "string"
                         ],
-                        "RECORD_ID": "string"
+                        "XXX_RECORD_ID": "string"
                     }
                 ]
             }
         ],
-        "NOTICES": [
+        "XXX_NOTICES": [
             {
-                "CODE": "string",
-                "DESCRIPTION": "string"
+                "XXX_CODE": "string",
+                "XXX_DESCRIPTION": "string"
             }
         ]
     }

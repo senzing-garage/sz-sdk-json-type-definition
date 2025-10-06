@@ -7,9 +7,6 @@ namespace Senzing.Typedef
 {
     public class CfgAttr
     {
-        [JsonPropertyName("ADVANCED")]
-        public string Advanced { get; set; }
-
         [JsonPropertyName("ATTR_CLASS")]
         public string AttrClass { get; set; }
 
@@ -33,5 +30,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("INTERNAL")]
         public string Internal { get; set; }
+
+        [JsonPropertyName("XXX_ADVANCED")]
+        public string XxxAdvanced { get; set; }
     }
 }

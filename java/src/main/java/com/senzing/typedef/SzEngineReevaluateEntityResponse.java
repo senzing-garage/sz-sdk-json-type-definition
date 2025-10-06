@@ -11,14 +11,14 @@ public class SzEngineReevaluateEntityResponse {
     @JsonProperty("AFFECTED_ENTITIES")
     private List<AffectedEntity> affectedEntities;
 
-    @JsonProperty("DATA_SOURCE")
-    private String dataSource;
+    @JsonProperty("XXX_DATA_SOURCE")
+    private String xxxDataSource;
 
-    @JsonProperty("INTERESTING_ENTITIES")
-    private InterestingEntities interestingEntities;
+    @JsonProperty("XXX_INTERESTING_ENTITIES")
+    private InterestingEntities xxxInterestingEntities;
 
-    @JsonProperty("RECORD_ID")
-    private String recordId;
+    @JsonProperty("XXX_RECORD_ID")
+    private String xxxRecordId;
 
     public SzEngineReevaluateEntityResponse() {
     }
@@ -38,48 +38,48 @@ public class SzEngineReevaluateEntityResponse {
     }
 
     /**
-     * Getter for dataSource.<p>
+     * Getter for xxxDataSource.<p>
      * A label identifying the provenance of the record.
      */
-    public String getDataSource() {
-        return dataSource;
+    public String getXxxDataSource() {
+        return xxxDataSource;
     }
 
     /**
-     * Setter for dataSource.<p>
+     * Setter for xxxDataSource.<p>
      * A label identifying the provenance of the record.
      */
-    public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
+    public void setXxxDataSource(String xxxDataSource) {
+        this.xxxDataSource = xxxDataSource;
     }
 
     /**
-     * Getter for interestingEntities.<p>
+     * Getter for xxxInterestingEntities.<p>
      */
-    public InterestingEntities getInterestingEntities() {
-        return interestingEntities;
+    public InterestingEntities getXxxInterestingEntities() {
+        return xxxInterestingEntities;
     }
 
     /**
-     * Setter for interestingEntities.<p>
+     * Setter for xxxInterestingEntities.<p>
      */
-    public void setInterestingEntities(InterestingEntities interestingEntities) {
-        this.interestingEntities = interestingEntities;
+    public void setXxxInterestingEntities(InterestingEntities xxxInterestingEntities) {
+        this.xxxInterestingEntities = xxxInterestingEntities;
     }
 
     /**
-     * Getter for recordId.<p>
+     * Getter for xxxRecordId.<p>
      * The unique identifier within the set of records in the DATA_SOURCE.
      */
-    public String getRecordId() {
-        return recordId;
+    public String getXxxRecordId() {
+        return xxxRecordId;
     }
 
     /**
-     * Setter for recordId.<p>
+     * Setter for xxxRecordId.<p>
      * The unique identifier within the set of records in the DATA_SOURCE.
      */
-    public void setRecordId(String recordId) {
-        this.recordId = recordId;
+    public void setXxxRecordId(String xxxRecordId) {
+        this.xxxRecordId = xxxRecordId;
     }
 }

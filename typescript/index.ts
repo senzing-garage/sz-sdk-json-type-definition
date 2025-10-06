@@ -20,7 +20,6 @@ export interface AffectedEntity {
 }
 
 export interface CfgAttr {
-  ADVANCED: string;
   ATTR_CLASS: string;
   ATTR_CODE: string;
   ATTR_ID: number;
@@ -29,6 +28,7 @@ export interface CfgAttr {
   FELEM_REQ: string;
   FTYPE_CODE: string;
   INTERNAL: string;
+  XXX_ADVANCED: string;
 }
 
 export interface CfgCfbom {
@@ -41,8 +41,8 @@ export interface CfgCfbom {
 export interface CfgCfcall {
   CFCALL_ID: number;
   CFUNC_ID: number;
-  EXEC_ORDER: number;
   FTYPE_ID: number;
+  XXX_EXEC_ORDER: number;
 }
 
 export interface CfgCfrtn {
@@ -64,10 +64,10 @@ export interface CfgCfunc {
   CFUNC_DESC: string;
   CFUNC_ID: number;
   CONNECT_STR: string;
-  FUNC_LIB: string;
-  FUNC_VER: string;
-  JAVA_CLASS_NAME: string;
-  LANGUAGE: string;
+  XXX_FUNC_LIB: string;
+  XXX_FUNC_VER: string;
+  XXX_JAVA_CLASS_NAME: string;
+  XXX_LANGUAGE: string;
 }
 
 export interface CfgDfbom {
@@ -80,8 +80,8 @@ export interface CfgDfbom {
 export interface CfgDfcall {
   DFCALL_ID: number;
   DFUNC_ID: number;
-  EXEC_ORDER: number;
   FTYPE_ID: number;
+  XXX_EXEC_ORDER: number;
 }
 
 export interface CfgDfunc {
@@ -90,39 +90,39 @@ export interface CfgDfunc {
   DFUNC_CODE: string;
   DFUNC_DESC: string;
   DFUNC_ID: number;
-  FUNC_LIB: string;
-  FUNC_VER: string;
-  JAVA_CLASS_NAME: string;
-  LANGUAGE: string;
+  XXX_FUNC_LIB: string;
+  XXX_FUNC_VER: string;
+  XXX_JAVA_CLASS_NAME: string;
+  XXX_LANGUAGE: string;
 }
 
 export interface CfgDsrc {
-  CONVERSATIONAL: string;
   DSRC_CODE: string;
   DSRC_DESC: string;
   DSRC_ID: number;
-  DSRC_RELY: number;
   RETENTION_LEVEL: string;
+  XXX_CONVERSATIONAL: string;
+  XXX_DSRC_RELY: number;
 }
 
 export interface CfgDsrcInterest {
-  DSRC_ID: number;
-  INTEREST_FLAG: string;
-  MAX_DEGREE: number;
+  XXX_DSRC_ID: number;
+  XXX_INTEREST_FLAG: string;
+  XXX_MAX_DEGREE: number;
 }
 
 export interface CfgEbom {
-  ETYPE_ID: number;
-  EXEC_ORDER: number;
-  FTYPE_ID: number;
-  UTYPE_CODE: string;
+  XXX_ETYPE_ID: number;
+  XXX_EXEC_ORDER: number;
+  XXX_FTYPE_ID: number;
+  XXX_UTYPE_CODE: string;
 }
 
 export interface CfgEclass {
-  ECLASS_CODE: string;
-  ECLASS_DESC: string;
-  ECLASS_ID: number;
-  RESOLVE: string;
+  XXX_ECLASS_CODE: string;
+  XXX_ECLASS_DESC: string;
+  XXX_ECLASS_ID: number;
+  XXX_RESOLVE: string;
 }
 
 export interface CfgEfbom {
@@ -148,10 +148,10 @@ export interface CfgEfunc {
   EFUNC_CODE: string;
   EFUNC_DESC: string;
   EFUNC_ID: number;
-  FUNC_LIB: string;
-  FUNC_VER: string;
-  JAVA_CLASS_NAME: string;
-  LANGUAGE: string;
+  XXX_FUNC_LIB: string;
+  XXX_FUNC_VER: string;
+  XXX_JAVA_CLASS_NAME: string;
+  XXX_LANGUAGE: string;
 }
 
 export interface CfgErfrag {
@@ -169,39 +169,39 @@ export interface CfgErrule {
    * Identifier of the entity resolution rule that was triggered.
    */
   ERRULE_CODE: string;
-  ERRULE_DESC: string;
   ERRULE_ID: number;
   ERRULE_TIER: number;
   QUAL_ERFRAG_CODE: string;
-  REF_SCORE: number;
   RELATE: string;
   RESOLVE: string;
   RTYPE_ID: number;
+  XXX_ERRULE_DESC: string;
+  XXX_REF_SCORE: number;
 }
 
 export interface CfgEtype {
-  ECLASS_ID: number;
-  ETYPE_CODE: string;
-  ETYPE_DESC: string;
-  ETYPE_ID: number;
+  XXX_ECLASS_ID: number;
+  XXX_ETYPE_CODE: string;
+  XXX_ETYPE_DESC: string;
+  XXX_ETYPE_ID: number;
 }
 
 export interface CfgFbom {
   DERIVED: string;
-  DISPLAY_DELIM: string;
   DISPLAY_LEVEL: number;
   EXEC_ORDER: number;
   FELEM_ID: number;
   FTYPE_ID: number;
+  XXX_DISPLAY_DELIM: string;
 }
 
 export interface CfgFbovr {
-  ECLASS_ID: number;
   FTYPE_EXCL: string;
   FTYPE_FREQ: string;
   FTYPE_ID: number;
   FTYPE_STAB: string;
   UTYPE_CODE: string;
+  XXX_ECLASS_ID: number;
 }
 
 export interface CfgFclass {
@@ -215,12 +215,11 @@ export interface CfgFelem {
   FELEM_CODE: string;
   FELEM_DESC: string;
   FELEM_ID: number;
-  TOKENIZE: string;
+  XXX_TOKENIZE: string;
 }
 
 export interface CfgFtype {
   ANONYMIZE: string;
-  DERIVATION: string;
   DERIVED: string;
   FCLASS_ID: number;
   FTYPE_CODE: string;
@@ -234,6 +233,7 @@ export interface CfgFtype {
   SHOW_IN_MATCH_KEY: string;
   USED_FOR_CAND: string;
   VERSION: number;
+  XXX_DERIVATION: string;
 }
 
 export interface CfgGenericThreshold {
@@ -252,9 +252,9 @@ export interface CfgGplan {
 }
 
 export interface CfgLens {
-  LENS_CODE: string;
-  LENS_DESC: string;
-  LENS_ID: number;
+  XXX_LENS_CODE: string;
+  XXX_LENS_DESC: string;
+  XXX_LENS_ID: number;
 }
 
 export type CfgLensrl = Fixme[];
@@ -272,10 +272,10 @@ export interface CfgRclass {
 export interface CfgRtype {
   BREAK_RES: string;
   RCLASS_ID: number;
-  REL_STRENGTH: number;
   RTYPE_CODE: string;
   RTYPE_DESC: string;
   RTYPE_ID: number;
+  XXX_REL_STRENGTH: number;
 }
 
 export interface CfgSfcall {
@@ -288,13 +288,13 @@ export interface CfgSfcall {
 
 export interface CfgSfunc {
   CONNECT_STR: string;
-  FUNC_LIB: string;
-  FUNC_VER: string;
-  JAVA_CLASS_NAME: string;
-  LANGUAGE: string;
   SFUNC_CODE: string;
   SFUNC_DESC: string;
   SFUNC_ID: number;
+  XXX_FUNC_LIB: string;
+  XXX_FUNC_VER: string;
+  XXX_JAVA_CLASS_NAME: string;
+  XXX_LANGUAGE: string;
 }
 
 export interface ConfigBaseVersion {
@@ -302,31 +302,21 @@ export interface ConfigBaseVersion {
   BUILD_NUMBER: string;
   BUILD_VERSION: string;
   COMPATIBILITY_VERSION: CompatibilityVersion;
-  PRODUCT_NAME: string;
   VERSION: string;
-}
-
-export interface Caches {
-  libFeatCacheHit: number;
-  libFeatCacheMiss: number;
-  libFeatInsert: number;
-  resFeatStatCacheHit: number;
-  resFeatStatCacheMiss: number;
-  resFeatStatInsert: number;
-  resFeatStatUpdateAttempt: number;
-  resFeatStatUpdateFail: number;
+  XXX_PRODUCT_NAME: string;
 }
 
 export type CandidateKeysForMatchInfo = { [key: string]: MatchInfoForAttribute[] };
 
 export interface CandidateKeysForSearchStatistic {
   FEATURE_TYPES: FeatureType[];
-  SUMMARY: Summary;
+  SUMMARY: CandidateKeysSummary;
 }
 
-export interface Candidates {
-  candidateBuilders: { [key: string]: number };
-  suppressedCandidateBuilders: { [key: string]: number };
+export interface CandidateKeysSummary {
+  FOUND: number;
+  GENERIC: number;
+  NOT_FOUND: number;
 }
 
 export interface CompatibilityVersion {
@@ -370,19 +360,6 @@ export interface Confirmation {
   TOKEN: string;
 }
 
-export interface Contention {
-  feature: Fixme;
-  resEnt: Fixme;
-  valuelatch: Fixme;
-}
-
-export interface CurrResources {
-  activeThreads: number;
-  availableMemory: string;
-  processMemory: string;
-  workerThreads: number;
-}
-
 export interface DataSource {
   /**
    * The unique text identifier of the datasource. It should be UPPER_CASE ASCII
@@ -397,24 +374,31 @@ export interface DataSource {
 }
 
 export interface DisclosedRelationsForMatchInfo {
-  REL_ANCHOR: RelAnchor[];
-  REL_LINK: RelLink[];
-  REL_POINTER: RelPointer[];
+  XXX_REL_ANCHOR: RelAnchor[];
+  XXX_REL_LINK: RelLink[];
+  XXX_REL_POINTER: RelPointer[];
 }
 
 export interface DisclosedRelationsForMatchInfoForWhy {
-  DOMAIN: string;
+  REL_POINTER: RelPointer[];
+  XXX_DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
-  FEAT_DESC: string;
-  FEAT_ID: number;
-  FEAT_USAGE_TYPE: string;
-  LINKED_FEAT_DESC: string;
-  LINKED_FEAT_ID: number;
-  LINKED_FEAT_TYPE: string;
-  REL_ANCHOR: RelAnchor[];
+  XXX_FEAT_DESC: string;
+  XXX_FEAT_ID: number;
+  XXX_FEAT_USAGE_TYPE: string;
+  XXX_LINKED_FEAT_DESC: string;
+  XXX_LINKED_FEAT_ID: number;
+  XXX_LINKED_FEAT_TYPE: string;
+  XXX_REL_ANCHOR: RelAnchor[];
+}
+
+export interface DisclosedRelationsForWhyKeyDetails {
+  DOMAIN: string;
+  ENTITY_ROLES: EntityRoles[];
+  RELATED_ROLES: RelatedRoles[];
 }
 
 export interface Entity {
@@ -428,8 +412,8 @@ export interface EntityForResolvedEntity {
 }
 
 export interface EntityForWhySearch {
-  RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
+  XXX_RELATED_ENTITIES: RelatedEntity[];
 }
 
 export interface EntityNetworkLink {
@@ -496,15 +480,9 @@ export interface EntityPathLink {
   MIN_ENTITY_ID: number;
 }
 
-export interface ExpressedFeatures {
-  calls: ExpressedFeaturesCall[];
-  created: { [key: string]: number };
-}
-
-export interface ExpressedFeaturesCall {
-  EFCALL_ID: number;
-  EFUNC_CODE: string;
-  numCalls: number;
+export interface EntityRoles {
+  FEAT_DESC: string;
+  ROLE: string;
 }
 
 export interface Feature {
@@ -534,9 +512,9 @@ export interface FeatureDescriptionValue {
    */
   LIB_FEAT_ID: number;
   SCORING_CAP_REACHED: string;
-  SUPPRESSED: string;
   USED_FOR_CAND: string;
   USED_FOR_SCORING: string;
+  XXX_SUPPRESSED: string;
 }
 
 export interface FeatureForAttributes {
@@ -561,8 +539,6 @@ export interface FeatureForAttributes {
 }
 
 export interface FeatureForGetEntity {
-  ATTRIBUTES: SenzingEntitySpecification[];
-
   /**
    * Describes the attributes that make up the feature.
    */
@@ -579,6 +555,7 @@ export interface FeatureForGetEntity {
    * features behavior).
    */
   USAGE_TYPE: string;
+  XXX_ATTRIBUTES: SenzingEntitySpecification[];
 }
 
 export interface FeatureId {
@@ -651,13 +628,11 @@ export interface G2config {
   CFG_DSRC: CfgDsrc[];
   CFG_DSRC_INTEREST: CfgDsrcInterest[];
   CFG_EBOM: CfgEbom[];
-  CFG_ECLASS: CfgEclass[];
   CFG_EFBOM: CfgEfbom[];
   CFG_EFCALL: CfgEfcall[];
   CFG_EFUNC: CfgEfunc[];
   CFG_ERFRAG: CfgErfrag[];
   CFG_ERRULE: CfgErrule[];
-  CFG_ETYPE: CfgEtype[];
   CFG_FBOM: CfgFbom[];
   CFG_FBOVR: CfgFbovr[];
   CFG_FCLASS: CfgFclass[];
@@ -665,8 +640,6 @@ export interface G2config {
   CFG_FTYPE: CfgFtype[];
   CFG_GENERIC_THRESHOLD: CfgGenericThreshold[];
   CFG_GPLAN: CfgGplan[];
-  CFG_LENS: CfgLens[];
-  CFG_LENSRL: CfgLensrl[];
   CFG_RCLASS: CfgRclass[];
   CFG_RTYPE: CfgRtype[];
   CFG_SFCALL: CfgSfcall[];
@@ -674,6 +647,10 @@ export interface G2config {
   CONFIG_BASE_VERSION: ConfigBaseVersion;
   SETTINGS: G2configSettings;
   SYS_OOM: SysOom[];
+  XXX_CFG_ECLASS: CfgEclass[];
+  XXX_CFG_ETYPE: CfgEtype[];
+  XXX_CFG_LENS: CfgLens[];
+  XXX_CFG_LENSRL: CfgLensrl[];
 }
 
 export interface HowResults {
@@ -681,28 +658,21 @@ export interface HowResults {
   RESOLUTION_STEPS: ResolutionStep[];
 }
 
-export interface InitResources {
-  availableMemory: string;
-  logicalCores: number;
-  physicalCores: number;
-  totalMemory: string;
-}
-
 export interface InterestingEntities {
   ENTITIES: InterestingEntity[];
-  NOTICES: Notice[];
+  XXX_NOTICES: Notice[];
 }
 
 export interface InterestingEntity {
-  DEGREES: number;
+  XXX_DEGREES: number;
 
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
    * entity. It may change when new information is added.
    */
-  ENTITY_ID: number;
-  FLAGS: string[];
-  SAMPLE_RECORDS: SampleRecord[];
+  XXX_ENTITY_ID: number;
+  XXX_FLAGS: string[];
+  XXX_SAMPLE_RECORDS: SampleRecord[];
 }
 
 export interface License {
@@ -711,13 +681,8 @@ export interface License {
   type: string;
 }
 
-export interface LockWaits {
-  refreshLocks: RefreshLocks;
-}
-
 export interface MatchInfo {
   CANDIDATE_KEYS: CandidateKeysForMatchInfo;
-  DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfo;
 
   /**
    * Identifier of the entity resolution rule that was triggered.
@@ -730,14 +695,15 @@ export interface MatchInfo {
    */
   MATCH_KEY: string;
   MATCH_KEY_DETAILS: MatchKeyDetails;
-  MATCH_LEVEL: number;
 
   /**
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  WHY_ERRULE_CODE: string;
-  WHY_KEY: string;
+  XXX_DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfo;
+  XXX_MATCH_LEVEL: number;
+  XXX_WHY_ERRULE_CODE: string;
+  XXX_WHY_KEY: string;
 }
 
 export interface MatchInfoForAttribute {
@@ -769,7 +735,7 @@ export interface MatchKeyDetails {
   /**
    * Identifier of the entity resolution rule that was triggered.
    */
-  ERRULE_CODE: string;
+  XXX_ERRULE_CODE: string;
 }
 
 export interface MemberRecord {
@@ -781,63 +747,17 @@ export interface MemberRecord {
 }
 
 export interface Notice {
-  CODE: string;
-  DESCRIPTION: string;
+  XXX_CODE: string;
+  XXX_DESCRIPTION: string;
 }
 
 export type Object = string;
 
-export interface ParamDetails {
-  NAME: string;
-  VALUE: Object;
-}
-
-export interface Params {
-  PARAM: ParamDetails;
-}
-
-export interface Processing {
-  addedRecords: number;
-  ambiguous: ProcessingAmbiguous;
-  batchAddedRecords: number;
-  deletedRecords: number;
-  details: ProcessingDetails;
-  reevaluations: number;
-  repairedEntities: number;
-}
-
-export interface ProcessingAmbiguous {
-  actualTest: number;
-  cachedTest: number;
-}
-
-export interface ProcessingDetails {
-  addedRecords: number;
-  candidates: number;
-  changeDeletes: number;
-  duration: number;
-  filteredObsFeat: number;
-  newObsEnt: number;
-  obsEntHashDiff: number;
-  obsEntHashSame: number;
-  optimizedOut: number;
-  optimizedOutSkipped: number;
-  partiallyResolved: number;
-  retries: number;
-}
-
 export interface Record {
-  ADDRESS_DATA: string[];
-  ATTRIBUTE_DATA: string[];
-
   /**
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  ENTITY_DATA: string[];
-  ENTITY_DESC: string;
-  ENTITY_KEY: string;
-  ENTITY_TYPE: string;
 
   /**
    * Identifier of the entity resolution rule that was triggered.
@@ -846,7 +766,6 @@ export interface Record {
   FEATURES: { [key: string]: FeatureForAttributes[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
-  IDENTIFIER_DATA: string[];
 
   /**
    * Internal identifier for the record.
@@ -859,36 +778,36 @@ export interface Record {
    * Representation of matched source record features.
    */
   MATCH_KEY: string;
-  MATCH_LEVEL: number;
 
   /**
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  NAME_DATA: string[];
-  OTHER_DATA: string[];
-  PHONE_DATA: string[];
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
-  RELATIONSHIP_DATA: string[];
   UNMAPPED_DATA: { [key: string]: Object };
+  XXX_ADDRESS_DATA: string[];
+  XXX_ATTRIBUTE_DATA: string[];
+  XXX_ENTITY_DATA: string[];
+  XXX_ENTITY_DESC: string;
+  XXX_ENTITY_KEY: string;
+  XXX_ENTITY_TYPE: string;
+  XXX_IDENTIFIER_DATA: string[];
+  XXX_MATCH_LEVEL: number;
+  XXX_NAME_DATA: string[];
+  XXX_OTHER_DATA: string[];
+  XXX_PHONE_DATA: string[];
+  XXX_RELATIONSHIP_DATA: string[];
 }
 
 export interface RecordForGetEntity {
-  ADDRESS_DATA: string[];
-  ATTRIBUTE_DATA: string[];
-
   /**
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  ENTITY_DATA: string[];
-  ENTITY_DESC: string;
-  ENTITY_KEY: string;
-  ENTITY_TYPE: string;
 
   /**
    * Identifier of the entity resolution rule that was triggered.
@@ -897,7 +816,6 @@ export interface RecordForGetEntity {
   FEATURES: { [key: string]: FeatureForAttributes[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
-  IDENTIFIER_DATA: string[];
 
   /**
    * Internal identifier for the record.
@@ -910,22 +828,29 @@ export interface RecordForGetEntity {
    * Representation of matched source record features.
    */
   MATCH_KEY: string;
-  MATCH_LEVEL: number;
 
   /**
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  NAME_DATA: string[];
-  OTHER_DATA: string[];
-  PHONE_DATA: string[];
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
-  RELATIONSHIP_DATA: string[];
   UNMAPPED_DATA: { [key: string]: Object };
+  XXX_ADDRESS_DATA: string[];
+  XXX_ATTRIBUTE_DATA: string[];
+  XXX_ENTITY_DATA: string[];
+  XXX_ENTITY_DESC: string;
+  XXX_ENTITY_KEY: string;
+  XXX_ENTITY_TYPE: string;
+  XXX_IDENTIFIER_DATA: string[];
+  XXX_MATCH_LEVEL: number;
+  XXX_NAME_DATA: string[];
+  XXX_OTHER_DATA: string[];
+  XXX_PHONE_DATA: string[];
+  XXX_RELATIONSHIP_DATA: string[];
 }
 
 export interface RecordKey {
@@ -944,7 +869,7 @@ export interface RecordKeys {
   /**
    * A list of (data source code, record id) pairs.
    */
-  RECORDS: RecordKey[];
+  XXX_RECORDS: RecordKey[];
 }
 
 export interface RecordSummary {
@@ -952,49 +877,43 @@ export interface RecordSummary {
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  FIRST_SEEN_DT: string;
-  LAST_SEEN_DT: string;
 
   /**
    * The number of records for the entity with the same data source code.
    */
   RECORD_COUNT: number;
-}
-
-export interface RefreshLocks {
-  count: number;
-  maxMS: number;
-  totalMS: number;
+  XXX_FIRST_SEEN_DT: string;
+  XXX_LAST_SEEN_DT: string;
 }
 
 export interface RelAnchor {
-  DOMAIN: string;
+  XXX_DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
-  FEAT_DESC: string;
-  FEAT_ID: number;
-  LINKED_FEAT_DESC: string;
-  LINKED_FEAT_ID: number;
-  LINKED_FEAT_TYPE: string;
-  LINKED_FEAT_USAGE_TYPE: string;
-  REL_POINTER: RelPointer[];
+  XXX_FEAT_DESC: string;
+  XXX_FEAT_ID: number;
+  XXX_LINKED_FEAT_DESC: string;
+  XXX_LINKED_FEAT_ID: number;
+  XXX_LINKED_FEAT_TYPE: string;
+  XXX_LINKED_FEAT_USAGE_TYPE: string;
+  XXX_REL_POINTER: RelPointer[];
 }
 
 export interface RelLink {
-  DOMAIN: string;
+  XXX_DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
-  FEAT_DESC: string;
-  FEAT_ID: number;
-  FEAT_USAGE_TYPE: string;
-  LINKED_FEAT_DESC: string;
-  LINKED_FEAT_ID: number;
-  LINKED_FEAT_TYPE: string;
-  LINKED_FEAT_USAGE_TYPE: string;
+  XXX_FEAT_DESC: string;
+  XXX_FEAT_ID: number;
+  XXX_FEAT_USAGE_TYPE: string;
+  XXX_LINKED_FEAT_DESC: string;
+  XXX_LINKED_FEAT_ID: number;
+  XXX_LINKED_FEAT_TYPE: string;
+  XXX_LINKED_FEAT_USAGE_TYPE: string;
 }
 
 export interface RelPointer {
@@ -1037,7 +956,6 @@ export interface RelatedEntity {
    * Indicates if this is a disclosed relationship.
    */
   IS_DISCLOSED: number;
-  LAST_SEEN_DT: string;
 
   /**
    * Representation of matched source record features.
@@ -1049,17 +967,18 @@ export interface RelatedEntity {
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
-  RECORDS: Record[];
 
   /**
    * Overview of the source systems the records came from comprising this
    * related entity.
    */
   RECORD_SUMMARY: RecordSummary[];
+  XXX_LAST_SEEN_DT: string;
+  XXX_RECORDS: Record[];
 }
 
-export interface RepairDiagnosis {
-  types: number;
+export interface RelatedRoles {
+  FIXME: Fixme;
 }
 
 export interface Repository {
@@ -1077,21 +996,6 @@ export interface Repository {
    * Type of database.
    */
   type: string;
-}
-
-export interface Reresolve {
-  newFeatureFTypes: { [key: string]: number };
-  suppressedCandidateBuildersForReresolve: Fixme;
-  suppressedScoredFeatureTypeForReresolve: Fixme;
-  triggers: ReresolveTriggers;
-}
-
-export interface ReresolveTriggers {
-  abortRetry: number;
-  multipleResolvableCandidates: number;
-  resolveNewFeatures: number;
-  skipped: number;
-  unresolveMovement: number;
 }
 
 export interface ResolutionStep {
@@ -1114,35 +1018,7 @@ export interface ResolvedEntity {
    * A name this entity goes by. An entity could have multiple names.
    */
   ENTITY_NAME: string;
-
-  /**
-   * Identifier of the entity resolution rule that was triggered.
-   */
-  ERRULE_CODE: string;
   FEATURES: { [key: string]: FeatureForAttributes[] };
-  FEATURE_IDS: FeatureId[];
-
-  /**
-   * Indicates if this is an ambiguous relationship.
-   */
-  IS_AMBIGUOUS: number;
-
-  /**
-   * Indicates if this is a disclosed relationship.
-   */
-  IS_DISCLOSED: number;
-  LAST_SEEN_DT: string;
-
-  /**
-   * Representation of matched source record features.
-   */
-  MATCH_KEY: string;
-  MATCH_LEVEL: number;
-
-  /**
-   * The type of match that occurred for the record.
-   */
-  MATCH_LEVEL_CODE: string;
   RECORDS: Record[];
 
   /**
@@ -1151,6 +1027,34 @@ export interface ResolvedEntity {
    */
   RECORD_SUMMARY: RecordSummary[];
   RECORD_TYPES: string[];
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
+  XXX_ERRULE_CODE: string;
+  XXX_FEATURE_IDS: FeatureId[];
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
+  XXX_IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
+  XXX_IS_DISCLOSED: number;
+  XXX_LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
+  XXX_MATCH_KEY: string;
+  XXX_MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
+  XXX_MATCH_LEVEL_CODE: string;
 }
 
 export interface ResolvedEntityAndMatchInfo {
@@ -1169,35 +1073,7 @@ export interface ResolvedEntityForGetEntity {
    * A name this entity goes by. An entity could have multiple names.
    */
   ENTITY_NAME: string;
-
-  /**
-   * Identifier of the entity resolution rule that was triggered.
-   */
-  ERRULE_CODE: string;
   FEATURES: { [key: string]: FeatureForGetEntity[] };
-  FEATURE_IDS: FeatureId[];
-
-  /**
-   * Indicates if this is an ambiguous relationship.
-   */
-  IS_AMBIGUOUS: number;
-
-  /**
-   * Indicates if this is a disclosed relationship.
-   */
-  IS_DISCLOSED: number;
-  LAST_SEEN_DT: string;
-
-  /**
-   * Representation of matched source record features.
-   */
-  MATCH_KEY: string;
-  MATCH_LEVEL: number;
-
-  /**
-   * The type of match that occurred for the record.
-   */
-  MATCH_LEVEL_CODE: string;
   RECORDS: RecordForGetEntity[];
 
   /**
@@ -1206,46 +1082,66 @@ export interface ResolvedEntityForGetEntity {
    */
   RECORD_SUMMARY: RecordSummary[];
   RECORD_TYPES: string[];
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
+  XXX_ERRULE_CODE: string;
+  XXX_FEATURE_IDS: FeatureId[];
+
+  /**
+   * Indicates if this is an ambiguous relationship.
+   */
+  XXX_IS_AMBIGUOUS: number;
+
+  /**
+   * Indicates if this is a disclosed relationship.
+   */
+  XXX_IS_DISCLOSED: number;
+  XXX_LAST_SEEN_DT: string;
+
+  /**
+   * Representation of matched source record features.
+   */
+  XXX_MATCH_KEY: string;
+  XXX_MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
+  XXX_MATCH_LEVEL_CODE: string;
 }
 
 export interface SysOom {
-  FELEM_ID: number;
   FTYPE_ID: number;
-  LENS_ID: number;
-  LIB_FEAT_ID: number;
-  LIB_FELEM_ID: number;
   NEXT_THRESH: number;
   OOM_LEVEL: string;
   OOM_TYPE: string;
   THRESH1_CNT: number;
   THRESH1_OOM: number;
+  XXX_FELEM_ID: number;
+  XXX_LENS_ID: number;
+  XXX_LIB_FEAT_ID: number;
+  XXX_LIB_FELEM_ID: number;
 }
 
 export interface SampleRecord {
   /**
    * A label identifying the provenance of the record.
    */
-  DATA_SOURCE: string;
-  FLAGS: string[];
+  XXX_DATA_SOURCE: string;
+  XXX_FLAGS: string[];
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
-  RECORD_ID: string;
+  XXX_RECORD_ID: string;
 }
 
 export interface SchemaVersion {
   ENGINE_SCHEMA_VERSION: string;
   MAXIMUM_REQUIRED_SCHEMA_VERSION: string;
   MINIMUM_REQUIRED_SCHEMA_VERSION: string;
-}
-
-export interface Scoring {
-  cacheHit: { [key: string]: number };
-  cacheMiss: { [key: string]: number };
-  scoredPairs: { [key: string]: number };
-  suppressedDisclosedRelationshipDomainCount: number;
-  suppressedScoredFeatureType: Fixme;
 }
 
 export interface SearchRequest {
@@ -1259,108 +1155,89 @@ export interface SearchStatistic {
 }
 
 export interface SenzingEntitySpecification {
-  ACCOUNT_DOMAIN: string;
-  ACCOUNT_NUMBER: string;
   ADDR_CITY: string;
   ADDR_COUNTRY: string;
-  ADDR_FROM_DATE: string;
   ADDR_FULL: string;
   ADDR_LINE1: string;
-  ADDR_LINE2: string;
-  ADDR_LINE3: string;
-  ADDR_LINE4: string;
-  ADDR_LINE5: string;
-  ADDR_LINE6: string;
   ADDR_POSTAL_CODE: string;
   ADDR_STATE: string;
-  ADDR_THRU_DATE: string;
-  ADDR_TYPE: string;
-  CITIZENSHIP: string;
   DATE_OF_BIRTH: string;
-  DATE_OF_DEATH: string;
   DRIVERS_LICENSE_NUMBER: string;
   DRIVERS_LICENSE_STATE: string;
-  DUNS_NUMBER: string;
   EMAIL_ADDRESS: string;
-  EMPLOYER: string;
   EMPLOYER_NAME: string;
-  FACEBOOK: string;
   GENDER: string;
-  GROUP_ASSN_ID_NUMBER: string;
-  GROUP_ASSN_ID_TYPE: string;
-  GROUP_ASSOCIATION_ORG_NAME: string;
-  GROUP_ASSOCIATION_TYPE: string;
-  INSTAGRAM: string;
-  LEI_NUMBER: string;
-  LINKEDIN: string;
-  NAME_FIRST: string;
   NAME_FULL: string;
-  NAME_LAST: string;
-  NAME_ORG: string;
-  NAME_PREFIX: string;
-  NAME_SUFFIX: string;
-  NAME_TYPE: string;
-  NATIONALITY: string;
   NATIONAL_ID_COUNTRY: string;
   NATIONAL_ID_NUMBER: string;
   NATIVE_NAME_FULL: string;
-  NPI_NUMBER: string;
-  OTHER_ID_COUNTRY: string;
-  OTHER_ID_NUMBER: string;
-  OTHER_ID_TYPE: string;
   PASSPORT_COUNTRY: string;
   PASSPORT_NUMBER: string;
-  PHONE_FROM_DATE: string;
   PHONE_NUMBER: string;
-  PHONE_THRU_DATE: string;
-  PHONE_TYPE: string;
-  PLACE_OF_BIRTH: string;
   PRIMARY_NAME_FIRST: string;
   PRIMARY_NAME_FULL: string;
   PRIMARY_NAME_LAST: string;
   PRIMARY_NAME_MIDDLE: string;
   PRIMARY_NAME_ORG: string;
   RECORD_TYPE: string;
-  REGISTRATION_COUNTRY: string;
-  REGISTRATION_DATE: string;
   REL_ANCHOR_KEY: string;
   REL_POINTER_KEY: string;
   SECONDARY_NAME_ORG: string;
-  SIGNAL: string;
-  SKYPE: string;
   SSN_NUMBER: string;
-  TANGO: string;
-  TAX_ID_COUNTRY: string;
-  TAX_ID_NUMBER: string;
-  TAX_ID_TYPE: string;
-  TELEGRAM: string;
-  TRUSTED_ID_NUMBER: string;
-  TRUSTED_ID_TYPE: string;
-  TWITTER: string;
-  VIBER: string;
-  WEBSITE_ADDRESS: string;
-  WECHAT: string;
-  WHATSAPP: string;
-  ZOOMROOM: string;
-}
-
-export interface Summary {
-  FOUND: number;
-  GENERIC: number;
-  NOT_FOUND: number;
-}
-
-export interface SystemLoad {
-  cpuIdle: string;
-  cpuSystem: string;
-  cpuUser: string;
-  cpuWait: string;
-}
-
-export interface SystemResources {
-  currResources: CurrResources;
-  initResources: InitResources;
-  systemLoad: SystemLoad;
+  XXX_ACCOUNT_DOMAIN: string;
+  XXX_ACCOUNT_NUMBER: string;
+  XXX_ADDR_FROM_DATE: string;
+  XXX_ADDR_LINE2: string;
+  XXX_ADDR_LINE3: string;
+  XXX_ADDR_LINE4: string;
+  XXX_ADDR_LINE5: string;
+  XXX_ADDR_LINE6: string;
+  XXX_ADDR_THRU_DATE: string;
+  XXX_ADDR_TYPE: string;
+  XXX_CITIZENSHIP: string;
+  XXX_DATE_OF_DEATH: string;
+  XXX_DUNS_NUMBER: string;
+  XXX_EMPLOYER: string;
+  XXX_FACEBOOK: string;
+  XXX_GROUP_ASSN_ID_NUMBER: string;
+  XXX_GROUP_ASSN_ID_TYPE: string;
+  XXX_GROUP_ASSOCIATION_ORG_NAME: string;
+  XXX_GROUP_ASSOCIATION_TYPE: string;
+  XXX_INSTAGRAM: string;
+  XXX_LEI_NUMBER: string;
+  XXX_LINKEDIN: string;
+  XXX_NAME_FIRST: string;
+  XXX_NAME_LAST: string;
+  XXX_NAME_ORG: string;
+  XXX_NAME_PREFIX: string;
+  XXX_NAME_SUFFIX: string;
+  XXX_NAME_TYPE: string;
+  XXX_NATIONALITY: string;
+  XXX_NPI_NUMBER: string;
+  XXX_OTHER_ID_COUNTRY: string;
+  XXX_OTHER_ID_NUMBER: string;
+  XXX_OTHER_ID_TYPE: string;
+  XXX_PHONE_FROM_DATE: string;
+  XXX_PHONE_THRU_DATE: string;
+  XXX_PHONE_TYPE: string;
+  XXX_PLACE_OF_BIRTH: string;
+  XXX_REGISTRATION_COUNTRY: string;
+  XXX_REGISTRATION_DATE: string;
+  XXX_SIGNAL: string;
+  XXX_SKYPE: string;
+  XXX_TANGO: string;
+  XXX_TAX_ID_COUNTRY: string;
+  XXX_TAX_ID_NUMBER: string;
+  XXX_TAX_ID_TYPE: string;
+  XXX_TELEGRAM: string;
+  XXX_TRUSTED_ID_NUMBER: string;
+  XXX_TRUSTED_ID_TYPE: string;
+  XXX_TWITTER: string;
+  XXX_VIBER: string;
+  XXX_WEBSITE_ADDRESS: string;
+  XXX_WECHAT: string;
+  XXX_WHATSAPP: string;
+  XXX_ZOOMROOM: string;
 }
 
 export interface SzConfigExportResponse {
@@ -1431,12 +1308,12 @@ export interface SzEngineAddRecordResponse {
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineDeleteRecordResponse {
@@ -1446,20 +1323,20 @@ export interface SzEngineDeleteRecordResponse {
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineExportCsvEntityReportCsvColumnList {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineFetchNextResponse {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
@@ -1471,7 +1348,7 @@ export interface SzEngineFindInterestingEntitiesByRecordIdResponse {
 }
 
 export interface SzEngineFindNetworkByEntityIdEntityIds {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineFindNetworkByEntityIdResponse {
@@ -1498,11 +1375,11 @@ export interface SzEngineFindNetworkByRecordIdResponse {
 }
 
 export interface SzEngineFindPathByEntityIdAvoidEntityIds {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineFindPathByEntityIdRequiredDataSources {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineFindPathByEntityIdResponse {
@@ -1519,7 +1396,7 @@ export interface SzEngineFindPathByRecordIdAvoidRecordKeys {
 }
 
 export interface SzEngineFindPathByRecordIdRequiredDataSources {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineFindPathByRecordIdResponse {
@@ -1546,54 +1423,53 @@ export interface SzEngineGetRecordPreviewResponse {
 }
 
 export interface SzEngineGetRecordResponse {
-  ADDRESS_DATA: string[];
-  ATTRIBUTE_DATA: string[];
-
   /**
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  ENTITY_DATA: string[];
-  ENTITY_DESC: string;
-  ENTITY_KEY: string;
-  ENTITY_TYPE: string;
-
-  /**
-   * Identifier of the entity resolution rule that was triggered.
-   */
-  ERRULE_CODE: string;
   FEATURES: { [key: string]: FeatureForAttributes[] };
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
-  IDENTIFIER_DATA: string[];
-
-  /**
-   * Internal identifier for the record.
-   */
-  INTERNAL_ID: number;
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
-
-  /**
-   * Representation of matched source record features.
-   */
-  MATCH_KEY: string;
-  MATCH_LEVEL: number;
-
-  /**
-   * The type of match that occurred for the record.
-   */
-  MATCH_LEVEL_CODE: string;
-  NAME_DATA: string[];
-  OTHER_DATA: string[];
-  PHONE_DATA: string[];
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
-  RELATIONSHIP_DATA: string[];
   UNMAPPED_DATA: { [key: string]: Object };
+  XXX_ADDRESS_DATA: string[];
+  XXX_ATTRIBUTE_DATA: string[];
+  XXX_ENTITY_DATA: string[];
+  XXX_ENTITY_DESC: string;
+  XXX_ENTITY_KEY: string;
+  XXX_ENTITY_TYPE: string;
+
+  /**
+   * Identifier of the entity resolution rule that was triggered.
+   */
+  XXX_ERRULE_CODE: string;
+  XXX_IDENTIFIER_DATA: string[];
+
+  /**
+   * Internal identifier for the record.
+   */
+  XXX_INTERNAL_ID: number;
+
+  /**
+   * Representation of matched source record features.
+   */
+  XXX_MATCH_KEY: string;
+  XXX_MATCH_LEVEL: number;
+
+  /**
+   * The type of match that occurred for the record.
+   */
+  XXX_MATCH_LEVEL_CODE: string;
+  XXX_NAME_DATA: string[];
+  XXX_OTHER_DATA: string[];
+  XXX_PHONE_DATA: string[];
+  XXX_RELATIONSHIP_DATA: string[];
 }
 
 export interface SzEngineGetRedoRecordResponse {
@@ -1626,12 +1502,13 @@ export interface SzEngineProcessRedoRecordResponse {
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+  UMF_PROC: UmfProc;
+  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineReevaluateEntityResponse {
@@ -1640,13 +1517,13 @@ export interface SzEngineReevaluateEntityResponse {
   /**
    * A label identifying the provenance of the record.
    */
-  DATA_SOURCE: string;
-  INTERESTING_ENTITIES: InterestingEntities;
+  XXX_DATA_SOURCE: string;
+  XXX_INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
-  RECORD_ID: string;
+  XXX_RECORD_ID: string;
 }
 
 export interface SzEngineReevaluateRecordResponse {
@@ -1656,16 +1533,16 @@ export interface SzEngineReevaluateRecordResponse {
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
-  INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineSearchByAttributesAttributes {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineSearchByAttributesResponse {
@@ -1675,11 +1552,11 @@ export interface SzEngineSearchByAttributesResponse {
 }
 
 export interface SzEngineSearchByAttributesSearchProfile {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineStreamExportJsonEntityReportResponse {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineWhyEntitiesResponse {
@@ -1698,7 +1575,7 @@ export interface SzEngineWhyRecordsResponse {
 }
 
 export interface SzEngineWhySearchAttributes {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzEngineWhySearchResponse {
@@ -1709,7 +1586,7 @@ export interface SzEngineWhySearchResponse {
 }
 
 export interface SzEngineWhySearchSearchProfile {
-  FIXME: Fixme;
+  XXX_FIXME: Fixme;
 }
 
 export interface SzProductGetLicenseResponse {
@@ -1734,37 +1611,18 @@ export interface SzProductGetVersionResponse {
   VERSION: string;
 }
 
-export interface ThreadState {
-  active: number;
-  dataLatchContention: number;
-  governorContention: number;
-  idle: number;
-  loader: number;
-  obsEntContention: number;
-  resEntContention: number;
-  resolver: number;
-  scoring: number;
-  sqlExecuting: number;
-}
-
 export interface UmfProc {
   NAME: string;
-  PARAMS: Params[];
+  PARAMS: UmfProcParams[];
 }
 
-export interface Unresolve {
-  abortedUnresolve: number;
-  triggers: UnresolveTriggers;
-  unresolveTest: number;
+export interface UmfProcParamDetails {
+  NAME: string;
+  VALUE: Object;
 }
 
-export interface UnresolveTriggers {
-  ambiguousMultiResolve: number;
-  ambiguousNoResolve: number;
-  extensiveResolve: number;
-  normalResolve: number;
-  relLink: number;
-  update: number;
+export interface UmfProcParams {
+  PARAM: UmfProcParamDetails;
 }
 
 export interface VirtualEntitySynopsis {
@@ -1775,6 +1633,7 @@ export interface VirtualEntitySynopsis {
 export interface WhyKeyDetails {
   CONFIRMATIONS: Confirmation[];
   DENIALS: Confirmation[];
+  DISCLOSED_RELATIONS: DisclosedRelationsForWhyKeyDetails[];
 }
 
 export interface WhyResult {
@@ -1800,22 +1659,177 @@ export interface WhyResult {
 }
 
 export interface Workload {
+  XXX_contention: WorkloadContention;
+  XXX_genericDetect: Fixme;
+  XXX_redoTriggers: { [key: string]: number };
   apiVersion: string;
-  caches: Caches;
-  candidates: Candidates;
-  contention: Contention;
+  caches: WorkloadCaches;
+  candidates: WorkloadCandidates;
   datetimestamp: string;
-  expressedFeatures: ExpressedFeatures;
-  genericDetect: Fixme;
+  expressedFeatures: WorkloadExpressedFeatures;
   license: License;
   loadedRecords: number;
-  lockWaits: LockWaits;
-  processing: Processing;
-  redoTriggers: { [key: string]: number };
-  repairDiagnosis: RepairDiagnosis;
-  reresolve: Reresolve;
-  scoring: Scoring;
-  systemResources: SystemResources;
-  threadState: ThreadState;
-  unresolve: Unresolve;
+  lockWaits: WorkloadLockWaits;
+  processing: WorkloadProcessing;
+  repairDiagnosis: WorkloadRepairDiagnosis;
+  reresolve: WorkloadReresolve;
+  scoring: WorkloadScoring;
+  systemResources: WorkloadSystemResources;
+  threadState: WorkloadThreadState;
+  unresolve: WorkloadUnresolve;
+}
+
+export interface WorkloadCaches {
+  libFeatCacheHit: number;
+  libFeatCacheMiss: number;
+  libFeatInsert: number;
+  resFeatStatCacheHit: number;
+  resFeatStatCacheMiss: number;
+  resFeatStatInsert: number;
+  resFeatStatUpdateAttempt: number;
+  resFeatStatUpdateFail: number;
+}
+
+export interface WorkloadCandidates {
+  XXX_suppressedCandidateBuilders: { [key: string]: number };
+  candidateBuilders: { [key: string]: number };
+}
+
+export interface WorkloadContention {
+  XXX_feature: Fixme;
+  XXX_resEnt: Fixme;
+  XXX_valuelatch: Fixme;
+}
+
+export interface WorkloadCurrResources {
+  activeThreads: number;
+  availableMemory: string;
+  processMemory: string;
+  workerThreads: number;
+}
+
+export interface WorkloadExpressedFeatures {
+  calls: WorkloadExpressedFeaturesCall[];
+  created: { [key: string]: number };
+}
+
+export interface WorkloadExpressedFeaturesCall {
+  EFCALL_ID: number;
+  EFUNC_CODE: string;
+  numCalls: number;
+}
+
+export interface WorkloadInitResources {
+  XXX_physicalCores: number;
+  availableMemory: string;
+  logicalCores: number;
+  totalMemory: string;
+}
+
+export interface WorkloadLockWaits {
+  refreshLocks: WorkloadRefreshLocks;
+}
+
+export interface WorkloadProcessing {
+  addedRecords: number;
+  ambiguous: WorkloadProcessingAmbiguous;
+  batchAddedRecords: number;
+  deletedRecords: number;
+  details: WorkloadProcessingDetails;
+  reevaluations: number;
+  repairedEntities: number;
+}
+
+export interface WorkloadProcessingAmbiguous {
+  actualTest: number;
+  cachedTest: number;
+}
+
+export interface WorkloadProcessingDetails {
+  addedRecords: number;
+  candidates: number;
+  changeDeletes: number;
+  duration: number;
+  filteredObsFeat: number;
+  newObsEnt: number;
+  obsEntHashDiff: number;
+  obsEntHashSame: number;
+  optimizedOut: number;
+  optimizedOutSkipped: number;
+  partiallyResolved: number;
+  retries: number;
+}
+
+export interface WorkloadRefreshLocks {
+  count: number;
+  maxMS: number;
+  totalMS: number;
+}
+
+export interface WorkloadRepairDiagnosis {
+  types: number;
+}
+
+export interface WorkloadReresolve {
+  XXX_newFeatureFTypes: { [key: string]: number };
+  XXX_suppressedCandidateBuildersForReresolve: Fixme;
+  XXX_suppressedScoredFeatureTypeForReresolve: Fixme;
+  triggers: WorkloadReresolveTriggers;
+}
+
+export interface WorkloadReresolveTriggers {
+  abortRetry: number;
+  multipleResolvableCandidates: number;
+  resolveNewFeatures: number;
+  skipped: number;
+  unresolveMovement: number;
+}
+
+export interface WorkloadScoring {
+  XXX_suppressedScoredFeatureType: Fixme;
+  cacheHit: { [key: string]: number };
+  cacheMiss: { [key: string]: number };
+  scoredPairs: { [key: string]: number };
+  suppressedDisclosedRelationshipDomainCount: number;
+}
+
+export interface WorkloadSystemLoad {
+  cpuIdle: string;
+  cpuSystem: string;
+  cpuUser: string;
+  cpuWait: string;
+}
+
+export interface WorkloadSystemResources {
+  currResources: WorkloadCurrResources;
+  initResources: WorkloadInitResources;
+  systemLoad: WorkloadSystemLoad;
+}
+
+export interface WorkloadThreadState {
+  active: number;
+  dataLatchContention: number;
+  governorContention: number;
+  idle: number;
+  loader: number;
+  obsEntContention: number;
+  resEntContention: number;
+  resolver: number;
+  scoring: number;
+  sqlExecuting: number;
+}
+
+export interface WorkloadUnresolve {
+  abortedUnresolve: number;
+  triggers: WorkloadUnresolveTriggers;
+  unresolveTest: number;
+}
+
+export interface WorkloadUnresolveTriggers {
+  ambiguousMultiResolve: number;
+  ambiguousNoResolve: number;
+  extensiveResolve: number;
+  normalResolve: number;
+  relLink: number;
+  update: number;
 }

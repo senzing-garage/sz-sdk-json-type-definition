@@ -7,16 +7,16 @@ namespace Senzing.Typedef
 {
     public class CfgEbom
     {
-        [JsonPropertyName("ETYPE_ID")]
-        public int EtypeId { get; set; }
+        [JsonPropertyName("XXX_ETYPE_ID")]
+        public int XxxEtypeId { get; set; }
 
-        [JsonPropertyName("EXEC_ORDER")]
-        public int ExecOrder { get; set; }
+        [JsonPropertyName("XXX_EXEC_ORDER")]
+        public int XxxExecOrder { get; set; }
 
-        [JsonPropertyName("FTYPE_ID")]
-        public int FtypeId { get; set; }
+        [JsonPropertyName("XXX_FTYPE_ID")]
+        public int XxxFtypeId { get; set; }
 
-        [JsonPropertyName("UTYPE_CODE")]
-        public string UtypeCode { get; set; }
+        [JsonPropertyName("XXX_UTYPE_CODE")]
+        public string XxxUtypeCode { get; set; }
     }
 }

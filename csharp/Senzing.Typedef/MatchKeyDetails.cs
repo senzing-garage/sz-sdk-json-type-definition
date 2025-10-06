@@ -17,7 +17,7 @@ namespace Senzing.Typedef
         /// <summary>
         /// Identifier of the entity resolution rule that was triggered.
         /// </summary>
-        [JsonPropertyName("ERRULE_CODE")]
-        public string ErruleCode { get; set; }
+        [JsonPropertyName("XXX_ERRULE_CODE")]
+        public string XxxErruleCode { get; set; }
     }
 }

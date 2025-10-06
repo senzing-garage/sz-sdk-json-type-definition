@@ -10,9 +10,6 @@ public class CfgFbom {
     @JsonProperty("DERIVED")
     private String derived;
 
-    @JsonProperty("DISPLAY_DELIM")
-    private String displayDelim;
-
     @JsonProperty("DISPLAY_LEVEL")
     private Integer displayLevel;
 
@@ -24,6 +21,9 @@ public class CfgFbom {
 
     @JsonProperty("FTYPE_ID")
     private Integer ftypeId;
+
+    @JsonProperty("XXX_DISPLAY_DELIM")
+    private String xxxDisplayDelim;
 
     public CfgFbom() {
     }
@@ -40,20 +40,6 @@ public class CfgFbom {
      */
     public void setDerived(String derived) {
         this.derived = derived;
-    }
-
-    /**
-     * Getter for displayDelim.<p>
-     */
-    public String getDisplayDelim() {
-        return displayDelim;
-    }
-
-    /**
-     * Setter for displayDelim.<p>
-     */
-    public void setDisplayDelim(String displayDelim) {
-        this.displayDelim = displayDelim;
     }
 
     /**
@@ -110,5 +96,19 @@ public class CfgFbom {
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
+    }
+
+    /**
+     * Getter for xxxDisplayDelim.<p>
+     */
+    public String getXxxDisplayDelim() {
+        return xxxDisplayDelim;
+    }
+
+    /**
+     * Setter for xxxDisplayDelim.<p>
+     */
+    public void setXxxDisplayDelim(String xxxDisplayDelim) {
+        this.xxxDisplayDelim = xxxDisplayDelim;
     }
 }

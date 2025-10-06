@@ -7,20 +7,11 @@ namespace Senzing.Typedef
 {
     public class SenzingEntitySpecification
     {
-        [JsonPropertyName("ACCOUNT_DOMAIN")]
-        public string AccountDomain { get; set; }
-
-        [JsonPropertyName("ACCOUNT_NUMBER")]
-        public string AccountNumber { get; set; }
-
         [JsonPropertyName("ADDR_CITY")]
         public string AddrCity { get; set; }
 
         [JsonPropertyName("ADDR_COUNTRY")]
         public string AddrCountry { get; set; }
-
-        [JsonPropertyName("ADDR_FROM_DATE")]
-        public string AddrFromDate { get; set; }
 
         [JsonPropertyName("ADDR_FULL")]
         public string AddrFull { get; set; }
@@ -28,41 +19,14 @@ namespace Senzing.Typedef
         [JsonPropertyName("ADDR_LINE1")]
         public string AddrLine1 { get; set; }
 
-        [JsonPropertyName("ADDR_LINE2")]
-        public string AddrLine2 { get; set; }
-
-        [JsonPropertyName("ADDR_LINE3")]
-        public string AddrLine3 { get; set; }
-
-        [JsonPropertyName("ADDR_LINE4")]
-        public string AddrLine4 { get; set; }
-
-        [JsonPropertyName("ADDR_LINE5")]
-        public string AddrLine5 { get; set; }
-
-        [JsonPropertyName("ADDR_LINE6")]
-        public string AddrLine6 { get; set; }
-
         [JsonPropertyName("ADDR_POSTAL_CODE")]
         public string AddrPostalCode { get; set; }
 
         [JsonPropertyName("ADDR_STATE")]
         public string AddrState { get; set; }
 
-        [JsonPropertyName("ADDR_THRU_DATE")]
-        public string AddrThruDate { get; set; }
-
-        [JsonPropertyName("ADDR_TYPE")]
-        public string AddrType { get; set; }
-
-        [JsonPropertyName("CITIZENSHIP")]
-        public string Citizenship { get; set; }
-
         [JsonPropertyName("DATE_OF_BIRTH")]
         public string DateOfBirth { get; set; }
-
-        [JsonPropertyName("DATE_OF_DEATH")]
-        public string DateOfDeath { get; set; }
 
         [JsonPropertyName("DRIVERS_LICENSE_NUMBER")]
         public string DriversLicenseNumber { get; set; }
@@ -70,68 +34,17 @@ namespace Senzing.Typedef
         [JsonPropertyName("DRIVERS_LICENSE_STATE")]
         public string DriversLicenseState { get; set; }
 
-        [JsonPropertyName("DUNS_NUMBER")]
-        public string DunsNumber { get; set; }
-
         [JsonPropertyName("EMAIL_ADDRESS")]
         public string EmailAddress { get; set; }
-
-        [JsonPropertyName("EMPLOYER")]
-        public string Employer { get; set; }
 
         [JsonPropertyName("EMPLOYER_NAME")]
         public string EmployerName { get; set; }
 
-        [JsonPropertyName("FACEBOOK")]
-        public string Facebook { get; set; }
-
         [JsonPropertyName("GENDER")]
         public string Gender { get; set; }
 
-        [JsonPropertyName("GROUP_ASSN_ID_NUMBER")]
-        public string GroupAssnIdNumber { get; set; }
-
-        [JsonPropertyName("GROUP_ASSN_ID_TYPE")]
-        public string GroupAssnIdType { get; set; }
-
-        [JsonPropertyName("GROUP_ASSOCIATION_ORG_NAME")]
-        public string GroupAssociationOrgName { get; set; }
-
-        [JsonPropertyName("GROUP_ASSOCIATION_TYPE")]
-        public string GroupAssociationType { get; set; }
-
-        [JsonPropertyName("INSTAGRAM")]
-        public string Instagram { get; set; }
-
-        [JsonPropertyName("LEI_NUMBER")]
-        public string LeiNumber { get; set; }
-
-        [JsonPropertyName("LINKEDIN")]
-        public string Linkedin { get; set; }
-
-        [JsonPropertyName("NAME_FIRST")]
-        public string NameFirst { get; set; }
-
         [JsonPropertyName("NAME_FULL")]
         public string NameFull { get; set; }
-
-        [JsonPropertyName("NAME_LAST")]
-        public string NameLast { get; set; }
-
-        [JsonPropertyName("NAME_ORG")]
-        public string NameOrg { get; set; }
-
-        [JsonPropertyName("NAME_PREFIX")]
-        public string NamePrefix { get; set; }
-
-        [JsonPropertyName("NAME_SUFFIX")]
-        public string NameSuffix { get; set; }
-
-        [JsonPropertyName("NAME_TYPE")]
-        public string NameType { get; set; }
-
-        [JsonPropertyName("NATIONALITY")]
-        public string Nationality { get; set; }
 
         [JsonPropertyName("NATIONAL_ID_COUNTRY")]
         public string NationalIdCountry { get; set; }
@@ -142,38 +55,14 @@ namespace Senzing.Typedef
         [JsonPropertyName("NATIVE_NAME_FULL")]
         public string NativeNameFull { get; set; }
 
-        [JsonPropertyName("NPI_NUMBER")]
-        public string NpiNumber { get; set; }
-
-        [JsonPropertyName("OTHER_ID_COUNTRY")]
-        public string OtherIdCountry { get; set; }
-
-        [JsonPropertyName("OTHER_ID_NUMBER")]
-        public string OtherIdNumber { get; set; }
-
-        [JsonPropertyName("OTHER_ID_TYPE")]
-        public string OtherIdType { get; set; }
-
         [JsonPropertyName("PASSPORT_COUNTRY")]
         public string PassportCountry { get; set; }
 
         [JsonPropertyName("PASSPORT_NUMBER")]
         public string PassportNumber { get; set; }
 
-        [JsonPropertyName("PHONE_FROM_DATE")]
-        public string PhoneFromDate { get; set; }
-
         [JsonPropertyName("PHONE_NUMBER")]
         public string PhoneNumber { get; set; }
-
-        [JsonPropertyName("PHONE_THRU_DATE")]
-        public string PhoneThruDate { get; set; }
-
-        [JsonPropertyName("PHONE_TYPE")]
-        public string PhoneType { get; set; }
-
-        [JsonPropertyName("PLACE_OF_BIRTH")]
-        public string PlaceOfBirth { get; set; }
 
         [JsonPropertyName("PRIMARY_NAME_FIRST")]
         public string PrimaryNameFirst { get; set; }
@@ -193,12 +82,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("RECORD_TYPE")]
         public string RecordType { get; set; }
 
-        [JsonPropertyName("REGISTRATION_COUNTRY")]
-        public string RegistrationCountry { get; set; }
-
-        [JsonPropertyName("REGISTRATION_DATE")]
-        public string RegistrationDate { get; set; }
-
         [JsonPropertyName("REL_ANCHOR_KEY")]
         public string RelAnchorKey { get; set; }
 
@@ -208,52 +91,169 @@ namespace Senzing.Typedef
         [JsonPropertyName("SECONDARY_NAME_ORG")]
         public string SecondaryNameOrg { get; set; }
 
-        [JsonPropertyName("SIGNAL")]
-        public string Signal { get; set; }
-
-        [JsonPropertyName("SKYPE")]
-        public string Skype { get; set; }
-
         [JsonPropertyName("SSN_NUMBER")]
         public string SsnNumber { get; set; }
 
-        [JsonPropertyName("TANGO")]
-        public string Tango { get; set; }
+        [JsonPropertyName("XXX_ACCOUNT_DOMAIN")]
+        public string XxxAccountDomain { get; set; }
 
-        [JsonPropertyName("TAX_ID_COUNTRY")]
-        public string TaxIdCountry { get; set; }
+        [JsonPropertyName("XXX_ACCOUNT_NUMBER")]
+        public string XxxAccountNumber { get; set; }
 
-        [JsonPropertyName("TAX_ID_NUMBER")]
-        public string TaxIdNumber { get; set; }
+        [JsonPropertyName("XXX_ADDR_FROM_DATE")]
+        public string XxxAddrFromDate { get; set; }
 
-        [JsonPropertyName("TAX_ID_TYPE")]
-        public string TaxIdType { get; set; }
+        [JsonPropertyName("XXX_ADDR_LINE2")]
+        public string XxxAddrLine2 { get; set; }
 
-        [JsonPropertyName("TELEGRAM")]
-        public string Telegram { get; set; }
+        [JsonPropertyName("XXX_ADDR_LINE3")]
+        public string XxxAddrLine3 { get; set; }
 
-        [JsonPropertyName("TRUSTED_ID_NUMBER")]
-        public string TrustedIdNumber { get; set; }
+        [JsonPropertyName("XXX_ADDR_LINE4")]
+        public string XxxAddrLine4 { get; set; }
 
-        [JsonPropertyName("TRUSTED_ID_TYPE")]
-        public string TrustedIdType { get; set; }
+        [JsonPropertyName("XXX_ADDR_LINE5")]
+        public string XxxAddrLine5 { get; set; }
 
-        [JsonPropertyName("TWITTER")]
-        public string Twitter { get; set; }
+        [JsonPropertyName("XXX_ADDR_LINE6")]
+        public string XxxAddrLine6 { get; set; }
 
-        [JsonPropertyName("VIBER")]
-        public string Viber { get; set; }
+        [JsonPropertyName("XXX_ADDR_THRU_DATE")]
+        public string XxxAddrThruDate { get; set; }
 
-        [JsonPropertyName("WEBSITE_ADDRESS")]
-        public string WebsiteAddress { get; set; }
+        [JsonPropertyName("XXX_ADDR_TYPE")]
+        public string XxxAddrType { get; set; }
 
-        [JsonPropertyName("WECHAT")]
-        public string Wechat { get; set; }
+        [JsonPropertyName("XXX_CITIZENSHIP")]
+        public string XxxCitizenship { get; set; }
 
-        [JsonPropertyName("WHATSAPP")]
-        public string Whatsapp { get; set; }
+        [JsonPropertyName("XXX_DATE_OF_DEATH")]
+        public string XxxDateOfDeath { get; set; }
 
-        [JsonPropertyName("ZOOMROOM")]
-        public string Zoomroom { get; set; }
+        [JsonPropertyName("XXX_DUNS_NUMBER")]
+        public string XxxDunsNumber { get; set; }
+
+        [JsonPropertyName("XXX_EMPLOYER")]
+        public string XxxEmployer { get; set; }
+
+        [JsonPropertyName("XXX_FACEBOOK")]
+        public string XxxFacebook { get; set; }
+
+        [JsonPropertyName("XXX_GROUP_ASSN_ID_NUMBER")]
+        public string XxxGroupAssnIdNumber { get; set; }
+
+        [JsonPropertyName("XXX_GROUP_ASSN_ID_TYPE")]
+        public string XxxGroupAssnIdType { get; set; }
+
+        [JsonPropertyName("XXX_GROUP_ASSOCIATION_ORG_NAME")]
+        public string XxxGroupAssociationOrgName { get; set; }
+
+        [JsonPropertyName("XXX_GROUP_ASSOCIATION_TYPE")]
+        public string XxxGroupAssociationType { get; set; }
+
+        [JsonPropertyName("XXX_INSTAGRAM")]
+        public string XxxInstagram { get; set; }
+
+        [JsonPropertyName("XXX_LEI_NUMBER")]
+        public string XxxLeiNumber { get; set; }
+
+        [JsonPropertyName("XXX_LINKEDIN")]
+        public string XxxLinkedin { get; set; }
+
+        [JsonPropertyName("XXX_NAME_FIRST")]
+        public string XxxNameFirst { get; set; }
+
+        [JsonPropertyName("XXX_NAME_LAST")]
+        public string XxxNameLast { get; set; }
+
+        [JsonPropertyName("XXX_NAME_ORG")]
+        public string XxxNameOrg { get; set; }
+
+        [JsonPropertyName("XXX_NAME_PREFIX")]
+        public string XxxNamePrefix { get; set; }
+
+        [JsonPropertyName("XXX_NAME_SUFFIX")]
+        public string XxxNameSuffix { get; set; }
+
+        [JsonPropertyName("XXX_NAME_TYPE")]
+        public string XxxNameType { get; set; }
+
+        [JsonPropertyName("XXX_NATIONALITY")]
+        public string XxxNationality { get; set; }
+
+        [JsonPropertyName("XXX_NPI_NUMBER")]
+        public string XxxNpiNumber { get; set; }
+
+        [JsonPropertyName("XXX_OTHER_ID_COUNTRY")]
+        public string XxxOtherIdCountry { get; set; }
+
+        [JsonPropertyName("XXX_OTHER_ID_NUMBER")]
+        public string XxxOtherIdNumber { get; set; }
+
+        [JsonPropertyName("XXX_OTHER_ID_TYPE")]
+        public string XxxOtherIdType { get; set; }
+
+        [JsonPropertyName("XXX_PHONE_FROM_DATE")]
+        public string XxxPhoneFromDate { get; set; }
+
+        [JsonPropertyName("XXX_PHONE_THRU_DATE")]
+        public string XxxPhoneThruDate { get; set; }
+
+        [JsonPropertyName("XXX_PHONE_TYPE")]
+        public string XxxPhoneType { get; set; }
+
+        [JsonPropertyName("XXX_PLACE_OF_BIRTH")]
+        public string XxxPlaceOfBirth { get; set; }
+
+        [JsonPropertyName("XXX_REGISTRATION_COUNTRY")]
+        public string XxxRegistrationCountry { get; set; }
+
+        [JsonPropertyName("XXX_REGISTRATION_DATE")]
+        public string XxxRegistrationDate { get; set; }
+
+        [JsonPropertyName("XXX_SIGNAL")]
+        public string XxxSignal { get; set; }
+
+        [JsonPropertyName("XXX_SKYPE")]
+        public string XxxSkype { get; set; }
+
+        [JsonPropertyName("XXX_TANGO")]
+        public string XxxTango { get; set; }
+
+        [JsonPropertyName("XXX_TAX_ID_COUNTRY")]
+        public string XxxTaxIdCountry { get; set; }
+
+        [JsonPropertyName("XXX_TAX_ID_NUMBER")]
+        public string XxxTaxIdNumber { get; set; }
+
+        [JsonPropertyName("XXX_TAX_ID_TYPE")]
+        public string XxxTaxIdType { get; set; }
+
+        [JsonPropertyName("XXX_TELEGRAM")]
+        public string XxxTelegram { get; set; }
+
+        [JsonPropertyName("XXX_TRUSTED_ID_NUMBER")]
+        public string XxxTrustedIdNumber { get; set; }
+
+        [JsonPropertyName("XXX_TRUSTED_ID_TYPE")]
+        public string XxxTrustedIdType { get; set; }
+
+        [JsonPropertyName("XXX_TWITTER")]
+        public string XxxTwitter { get; set; }
+
+        [JsonPropertyName("XXX_VIBER")]
+        public string XxxViber { get; set; }
+
+        [JsonPropertyName("XXX_WEBSITE_ADDRESS")]
+        public string XxxWebsiteAddress { get; set; }
+
+        [JsonPropertyName("XXX_WECHAT")]
+        public string XxxWechat { get; set; }
+
+        [JsonPropertyName("XXX_WHATSAPP")]
+        public string XxxWhatsapp { get; set; }
+
+        [JsonPropertyName("XXX_ZOOMROOM")]
+        public string XxxZoomroom { get; set; }
     }
 }

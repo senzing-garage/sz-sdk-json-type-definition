@@ -7,13 +7,13 @@ namespace Senzing.Typedef
 {
     public class CfgLens
     {
-        [JsonPropertyName("LENS_CODE")]
-        public string LensCode { get; set; }
+        [JsonPropertyName("XXX_LENS_CODE")]
+        public string XxxLensCode { get; set; }
 
-        [JsonPropertyName("LENS_DESC")]
-        public string LensDesc { get; set; }
+        [JsonPropertyName("XXX_LENS_DESC")]
+        public string XxxLensDesc { get; set; }
 
-        [JsonPropertyName("LENS_ID")]
-        public int LensId { get; set; }
+        [JsonPropertyName("XXX_LENS_ID")]
+        public int XxxLensId { get; set; }
     }
 }

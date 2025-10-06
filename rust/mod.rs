@@ -38,9 +38,6 @@ pub struct AffectedEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgAttr {
-    #[serde(rename = "ADVANCED")]
-    pub advanced: String,
-
     #[serde(rename = "ATTR_CLASS")]
     pub attrClass: String,
 
@@ -64,6 +61,9 @@ pub struct CfgAttr {
 
     #[serde(rename = "INTERNAL")]
     pub internal: String,
+
+    #[serde(rename = "XXX_ADVANCED")]
+    pub xxxAdvanced: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -89,11 +89,11 @@ pub struct CfgCfcall {
     #[serde(rename = "CFUNC_ID")]
     pub cfuncId: i32,
 
-    #[serde(rename = "EXEC_ORDER")]
-    pub execOrder: i32,
-
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
+
+    #[serde(rename = "XXX_EXEC_ORDER")]
+    pub xxxExecOrder: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -146,17 +146,17 @@ pub struct CfgCfunc {
     #[serde(rename = "CONNECT_STR")]
     pub connectStr: String,
 
-    #[serde(rename = "FUNC_LIB")]
-    pub funcLib: String,
+    #[serde(rename = "XXX_FUNC_LIB")]
+    pub xxxFuncLib: String,
 
-    #[serde(rename = "FUNC_VER")]
-    pub funcVer: String,
+    #[serde(rename = "XXX_FUNC_VER")]
+    pub xxxFuncVer: String,
 
-    #[serde(rename = "JAVA_CLASS_NAME")]
-    pub javaClassName: String,
+    #[serde(rename = "XXX_JAVA_CLASS_NAME")]
+    pub xxxJavaClassName: String,
 
-    #[serde(rename = "LANGUAGE")]
-    pub language: String,
+    #[serde(rename = "XXX_LANGUAGE")]
+    pub xxxLanguage: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -182,11 +182,11 @@ pub struct CfgDfcall {
     #[serde(rename = "DFUNC_ID")]
     pub dfuncId: i32,
 
-    #[serde(rename = "EXEC_ORDER")]
-    pub execOrder: i32,
-
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
+
+    #[serde(rename = "XXX_EXEC_ORDER")]
+    pub xxxExecOrder: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -206,24 +206,21 @@ pub struct CfgDfunc {
     #[serde(rename = "DFUNC_ID")]
     pub dfuncId: i32,
 
-    #[serde(rename = "FUNC_LIB")]
-    pub funcLib: String,
+    #[serde(rename = "XXX_FUNC_LIB")]
+    pub xxxFuncLib: String,
 
-    #[serde(rename = "FUNC_VER")]
-    pub funcVer: String,
+    #[serde(rename = "XXX_FUNC_VER")]
+    pub xxxFuncVer: String,
 
-    #[serde(rename = "JAVA_CLASS_NAME")]
-    pub javaClassName: String,
+    #[serde(rename = "XXX_JAVA_CLASS_NAME")]
+    pub xxxJavaClassName: String,
 
-    #[serde(rename = "LANGUAGE")]
-    pub language: String,
+    #[serde(rename = "XXX_LANGUAGE")]
+    pub xxxLanguage: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgDsrc {
-    #[serde(rename = "CONVERSATIONAL")]
-    pub conversational: String,
-
     #[serde(rename = "DSRC_CODE")]
     pub dsrcCode: String,
 
@@ -233,53 +230,56 @@ pub struct CfgDsrc {
     #[serde(rename = "DSRC_ID")]
     pub dsrcId: i32,
 
-    #[serde(rename = "DSRC_RELY")]
-    pub dsrcRely: i32,
-
     #[serde(rename = "RETENTION_LEVEL")]
     pub retentionLevel: String,
+
+    #[serde(rename = "XXX_CONVERSATIONAL")]
+    pub xxxConversational: String,
+
+    #[serde(rename = "XXX_DSRC_RELY")]
+    pub xxxDsrcRely: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgDsrcInterest {
-    #[serde(rename = "DSRC_ID")]
-    pub dsrcId: i32,
+    #[serde(rename = "XXX_DSRC_ID")]
+    pub xxxDsrcId: i32,
 
-    #[serde(rename = "INTEREST_FLAG")]
-    pub interestFlag: String,
+    #[serde(rename = "XXX_INTEREST_FLAG")]
+    pub xxxInterestFlag: String,
 
-    #[serde(rename = "MAX_DEGREE")]
-    pub maxDegree: i32,
+    #[serde(rename = "XXX_MAX_DEGREE")]
+    pub xxxMaxDegree: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgEbom {
-    #[serde(rename = "ETYPE_ID")]
-    pub etypeId: i32,
+    #[serde(rename = "XXX_ETYPE_ID")]
+    pub xxxEtypeId: i32,
 
-    #[serde(rename = "EXEC_ORDER")]
-    pub execOrder: i32,
+    #[serde(rename = "XXX_EXEC_ORDER")]
+    pub xxxExecOrder: i32,
 
-    #[serde(rename = "FTYPE_ID")]
-    pub ftypeId: i32,
+    #[serde(rename = "XXX_FTYPE_ID")]
+    pub xxxFtypeId: i32,
 
-    #[serde(rename = "UTYPE_CODE")]
-    pub utypeCode: String,
+    #[serde(rename = "XXX_UTYPE_CODE")]
+    pub xxxUtypeCode: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgEclass {
-    #[serde(rename = "ECLASS_CODE")]
-    pub eclassCode: String,
+    #[serde(rename = "XXX_ECLASS_CODE")]
+    pub xxxEclassCode: String,
 
-    #[serde(rename = "ECLASS_DESC")]
-    pub eclassDesc: String,
+    #[serde(rename = "XXX_ECLASS_DESC")]
+    pub xxxEclassDesc: String,
 
-    #[serde(rename = "ECLASS_ID")]
-    pub eclassId: i32,
+    #[serde(rename = "XXX_ECLASS_ID")]
+    pub xxxEclassId: i32,
 
-    #[serde(rename = "RESOLVE")]
-    pub resolve: String,
+    #[serde(rename = "XXX_RESOLVE")]
+    pub xxxResolve: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -338,17 +338,17 @@ pub struct CfgEfunc {
     #[serde(rename = "EFUNC_ID")]
     pub efuncId: i32,
 
-    #[serde(rename = "FUNC_LIB")]
-    pub funcLib: String,
+    #[serde(rename = "XXX_FUNC_LIB")]
+    pub xxxFuncLib: String,
 
-    #[serde(rename = "FUNC_VER")]
-    pub funcVer: String,
+    #[serde(rename = "XXX_FUNC_VER")]
+    pub xxxFuncVer: String,
 
-    #[serde(rename = "JAVA_CLASS_NAME")]
-    pub javaClassName: String,
+    #[serde(rename = "XXX_JAVA_CLASS_NAME")]
+    pub xxxJavaClassName: String,
 
-    #[serde(rename = "LANGUAGE")]
-    pub language: String,
+    #[serde(rename = "XXX_LANGUAGE")]
+    pub xxxLanguage: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -378,9 +378,6 @@ pub struct CfgErrule {
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    #[serde(rename = "ERRULE_DESC")]
-    pub erruleDesc: String,
-
     #[serde(rename = "ERRULE_ID")]
     pub erruleId: i32,
 
@@ -390,9 +387,6 @@ pub struct CfgErrule {
     #[serde(rename = "QUAL_ERFRAG_CODE")]
     pub qualErfragCode: String,
 
-    #[serde(rename = "REF_SCORE")]
-    pub refScore: i32,
-
     #[serde(rename = "RELATE")]
     pub relate: String,
 
@@ -401,30 +395,33 @@ pub struct CfgErrule {
 
     #[serde(rename = "RTYPE_ID")]
     pub rtypeId: i32,
+
+    #[serde(rename = "XXX_ERRULE_DESC")]
+    pub xxxErruleDesc: String,
+
+    #[serde(rename = "XXX_REF_SCORE")]
+    pub xxxRefScore: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgEtype {
-    #[serde(rename = "ECLASS_ID")]
-    pub eclassId: i32,
+    #[serde(rename = "XXX_ECLASS_ID")]
+    pub xxxEclassId: i32,
 
-    #[serde(rename = "ETYPE_CODE")]
-    pub etypeCode: String,
+    #[serde(rename = "XXX_ETYPE_CODE")]
+    pub xxxEtypeCode: String,
 
-    #[serde(rename = "ETYPE_DESC")]
-    pub etypeDesc: String,
+    #[serde(rename = "XXX_ETYPE_DESC")]
+    pub xxxEtypeDesc: String,
 
-    #[serde(rename = "ETYPE_ID")]
-    pub etypeId: i32,
+    #[serde(rename = "XXX_ETYPE_ID")]
+    pub xxxEtypeId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgFbom {
     #[serde(rename = "DERIVED")]
     pub derived: String,
-
-    #[serde(rename = "DISPLAY_DELIM")]
-    pub displayDelim: String,
 
     #[serde(rename = "DISPLAY_LEVEL")]
     pub displayLevel: i32,
@@ -437,13 +434,13 @@ pub struct CfgFbom {
 
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
+
+    #[serde(rename = "XXX_DISPLAY_DELIM")]
+    pub xxxDisplayDelim: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgFbovr {
-    #[serde(rename = "ECLASS_ID")]
-    pub eclassId: i32,
-
     #[serde(rename = "FTYPE_EXCL")]
     pub ftypeExcl: String,
 
@@ -458,6 +455,9 @@ pub struct CfgFbovr {
 
     #[serde(rename = "UTYPE_CODE")]
     pub utypeCode: String,
+
+    #[serde(rename = "XXX_ECLASS_ID")]
+    pub xxxEclassId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -486,17 +486,14 @@ pub struct CfgFelem {
     #[serde(rename = "FELEM_ID")]
     pub felemId: i32,
 
-    #[serde(rename = "TOKENIZE")]
-    pub tokenize: String,
+    #[serde(rename = "XXX_TOKENIZE")]
+    pub xxxTokenize: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgFtype {
     #[serde(rename = "ANONYMIZE")]
     pub anonymize: String,
-
-    #[serde(rename = "DERIVATION")]
-    pub derivation: String,
 
     #[serde(rename = "DERIVED")]
     pub derived: String,
@@ -536,6 +533,9 @@ pub struct CfgFtype {
 
     #[serde(rename = "VERSION")]
     pub version: i32,
+
+    #[serde(rename = "XXX_DERIVATION")]
+    pub xxxDerivation: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -573,14 +573,14 @@ pub struct CfgGplan {
 
 #[derive(Serialize, Deserialize)]
 pub struct CfgLens {
-    #[serde(rename = "LENS_CODE")]
-    pub lensCode: String,
+    #[serde(rename = "XXX_LENS_CODE")]
+    pub xxxLensCode: String,
 
-    #[serde(rename = "LENS_DESC")]
-    pub lensDesc: String,
+    #[serde(rename = "XXX_LENS_DESC")]
+    pub xxxLensDesc: String,
 
-    #[serde(rename = "LENS_ID")]
-    pub lensId: i32,
+    #[serde(rename = "XXX_LENS_ID")]
+    pub xxxLensId: i32,
 }
 
 pub type CfgLensrl = Vec<Fixme>;
@@ -609,9 +609,6 @@ pub struct CfgRtype {
     #[serde(rename = "RCLASS_ID")]
     pub rclassId: i32,
 
-    #[serde(rename = "REL_STRENGTH")]
-    pub relStrength: i32,
-
     #[serde(rename = "RTYPE_CODE")]
     pub rtypeCode: String,
 
@@ -620,6 +617,9 @@ pub struct CfgRtype {
 
     #[serde(rename = "RTYPE_ID")]
     pub rtypeId: i32,
+
+    #[serde(rename = "XXX_REL_STRENGTH")]
+    pub xxxRelStrength: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -645,18 +645,6 @@ pub struct CfgSfunc {
     #[serde(rename = "CONNECT_STR")]
     pub connectStr: String,
 
-    #[serde(rename = "FUNC_LIB")]
-    pub funcLib: String,
-
-    #[serde(rename = "FUNC_VER")]
-    pub funcVer: String,
-
-    #[serde(rename = "JAVA_CLASS_NAME")]
-    pub javaClassName: String,
-
-    #[serde(rename = "LANGUAGE")]
-    pub language: String,
-
     #[serde(rename = "SFUNC_CODE")]
     pub sfuncCode: String,
 
@@ -665,6 +653,18 @@ pub struct CfgSfunc {
 
     #[serde(rename = "SFUNC_ID")]
     pub sfuncId: i32,
+
+    #[serde(rename = "XXX_FUNC_LIB")]
+    pub xxxFuncLib: String,
+
+    #[serde(rename = "XXX_FUNC_VER")]
+    pub xxxFuncVer: String,
+
+    #[serde(rename = "XXX_JAVA_CLASS_NAME")]
+    pub xxxJavaClassName: String,
+
+    #[serde(rename = "XXX_LANGUAGE")]
+    pub xxxLanguage: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -681,38 +681,11 @@ pub struct ConfigBaseVersion {
     #[serde(rename = "COMPATIBILITY_VERSION")]
     pub compatibilityVersion: CompatibilityVersion,
 
-    #[serde(rename = "PRODUCT_NAME")]
-    pub productName: String,
-
     #[serde(rename = "VERSION")]
     pub version: String,
-}
 
-#[derive(Serialize, Deserialize)]
-pub struct Caches {
-    #[serde(rename = "libFeatCacheHit")]
-    pub libFeatCacheHit: i32,
-
-    #[serde(rename = "libFeatCacheMiss")]
-    pub libFeatCacheMiss: i32,
-
-    #[serde(rename = "libFeatInsert")]
-    pub libFeatInsert: i32,
-
-    #[serde(rename = "resFeatStatCacheHit")]
-    pub resFeatStatCacheHit: i32,
-
-    #[serde(rename = "resFeatStatCacheMiss")]
-    pub resFeatStatCacheMiss: i32,
-
-    #[serde(rename = "resFeatStatInsert")]
-    pub resFeatStatInsert: i32,
-
-    #[serde(rename = "resFeatStatUpdateAttempt")]
-    pub resFeatStatUpdateAttempt: i32,
-
-    #[serde(rename = "resFeatStatUpdateFail")]
-    pub resFeatStatUpdateFail: i32,
+    #[serde(rename = "XXX_PRODUCT_NAME")]
+    pub xxxProductName: String,
 }
 
 pub type CandidateKeysForMatchInfo = HashMap<String, Vec<MatchInfoForAttribute>>;
@@ -723,16 +696,19 @@ pub struct CandidateKeysForSearchStatistic {
     pub featureTypes: Vec<FeatureType>,
 
     #[serde(rename = "SUMMARY")]
-    pub summary: Summary,
+    pub summary: CandidateKeysSummary,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Candidates {
-    #[serde(rename = "candidateBuilders")]
-    pub candidateBuilders: HashMap<String, i32>,
+pub struct CandidateKeysSummary {
+    #[serde(rename = "FOUND")]
+    pub found: i32,
 
-    #[serde(rename = "suppressedCandidateBuilders")]
-    pub suppressedCandidateBuilders: HashMap<String, i32>,
+    #[serde(rename = "GENERIC")]
+    pub generic: i32,
+
+    #[serde(rename = "NOT_FOUND")]
+    pub notFound: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -800,33 +776,6 @@ pub struct Confirmation {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Contention {
-    #[serde(rename = "feature")]
-    pub feature: Fixme,
-
-    #[serde(rename = "resEnt")]
-    pub resEnt: Fixme,
-
-    #[serde(rename = "valuelatch")]
-    pub valuelatch: Fixme,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct CurrResources {
-    #[serde(rename = "activeThreads")]
-    pub activeThreads: i32,
-
-    #[serde(rename = "availableMemory")]
-    pub availableMemory: String,
-
-    #[serde(rename = "processMemory")]
-    pub processMemory: String,
-
-    #[serde(rename = "workerThreads")]
-    pub workerThreads: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct DataSource {
     /// The unique text identifier of the datasource. It should be UPPER_CASE
     /// ASCII without spaces. It will be used as a JSON key.
@@ -840,42 +789,57 @@ pub struct DataSource {
 
 #[derive(Serialize, Deserialize)]
 pub struct DisclosedRelationsForMatchInfo {
-    #[serde(rename = "REL_ANCHOR")]
-    pub relAnchor: Vec<RelAnchor>,
+    #[serde(rename = "XXX_REL_ANCHOR")]
+    pub xxxRelAnchor: Vec<RelAnchor>,
 
-    #[serde(rename = "REL_LINK")]
-    pub relLink: Vec<RelLink>,
+    #[serde(rename = "XXX_REL_LINK")]
+    pub xxxRelLink: Vec<RelLink>,
 
-    #[serde(rename = "REL_POINTER")]
-    pub relPointer: Vec<RelPointer>,
+    #[serde(rename = "XXX_REL_POINTER")]
+    pub xxxRelPointer: Vec<RelPointer>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DisclosedRelationsForMatchInfoForWhy {
+    #[serde(rename = "REL_POINTER")]
+    pub relPointer: Vec<RelPointer>,
+
+    #[serde(rename = "XXX_DOMAIN")]
+    pub xxxDomain: String,
+
+    /// Describes the attributes that make up the feature.
+    #[serde(rename = "XXX_FEAT_DESC")]
+    pub xxxFeatDesc: String,
+
+    #[serde(rename = "XXX_FEAT_ID")]
+    pub xxxFeatId: i32,
+
+    #[serde(rename = "XXX_FEAT_USAGE_TYPE")]
+    pub xxxFeatUsageType: String,
+
+    #[serde(rename = "XXX_LINKED_FEAT_DESC")]
+    pub xxxLinkedFeatDesc: String,
+
+    #[serde(rename = "XXX_LINKED_FEAT_ID")]
+    pub xxxLinkedFeatId: i32,
+
+    #[serde(rename = "XXX_LINKED_FEAT_TYPE")]
+    pub xxxLinkedFeatType: String,
+
+    #[serde(rename = "XXX_REL_ANCHOR")]
+    pub xxxRelAnchor: Vec<RelAnchor>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct DisclosedRelationsForWhyKeyDetails {
     #[serde(rename = "DOMAIN")]
     pub domain: String,
 
-    /// Describes the attributes that make up the feature.
-    #[serde(rename = "FEAT_DESC")]
-    pub featDesc: String,
+    #[serde(rename = "ENTITY_ROLES")]
+    pub entityRoles: Vec<EntityRoles>,
 
-    #[serde(rename = "FEAT_ID")]
-    pub featId: i32,
-
-    #[serde(rename = "FEAT_USAGE_TYPE")]
-    pub featUsageType: String,
-
-    #[serde(rename = "LINKED_FEAT_DESC")]
-    pub linkedFeatDesc: String,
-
-    #[serde(rename = "LINKED_FEAT_ID")]
-    pub linkedFeatId: i32,
-
-    #[serde(rename = "LINKED_FEAT_TYPE")]
-    pub linkedFeatType: String,
-
-    #[serde(rename = "REL_ANCHOR")]
-    pub relAnchor: Vec<RelAnchor>,
+    #[serde(rename = "RELATED_ROLES")]
+    pub relatedRoles: Vec<RelatedRoles>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -898,11 +862,11 @@ pub struct EntityForResolvedEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct EntityForWhySearch {
-    #[serde(rename = "RELATED_ENTITIES")]
-    pub relatedEntities: Vec<RelatedEntity>,
-
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
+
+    #[serde(rename = "XXX_RELATED_ENTITIES")]
+    pub xxxRelatedEntities: Vec<RelatedEntity>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -976,24 +940,12 @@ pub struct EntityPathLink {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct ExpressedFeatures {
-    #[serde(rename = "calls")]
-    pub calls: Vec<ExpressedFeaturesCall>,
+pub struct EntityRoles {
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
 
-    #[serde(rename = "created")]
-    pub created: HashMap<String, i32>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ExpressedFeaturesCall {
-    #[serde(rename = "EFCALL_ID")]
-    pub efcallId: i32,
-
-    #[serde(rename = "EFUNC_CODE")]
-    pub efuncCode: String,
-
-    #[serde(rename = "numCalls")]
-    pub numCalls: i32,
+    #[serde(rename = "ROLE")]
+    pub role: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1029,14 +981,14 @@ pub struct FeatureDescriptionValue {
     #[serde(rename = "SCORING_CAP_REACHED")]
     pub scoringCapReached: String,
 
-    #[serde(rename = "SUPPRESSED")]
-    pub suppressed: String,
-
     #[serde(rename = "USED_FOR_CAND")]
     pub usedForCand: String,
 
     #[serde(rename = "USED_FOR_SCORING")]
     pub usedForScoring: String,
+
+    #[serde(rename = "XXX_SUPPRESSED")]
+    pub xxxSuppressed: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1063,9 +1015,6 @@ pub struct FeatureForAttributes {
 
 #[derive(Serialize, Deserialize)]
 pub struct FeatureForGetEntity {
-    #[serde(rename = "ATTRIBUTES")]
-    pub attributes: Vec<SenzingEntitySpecification>,
-
     /// Describes the attributes that make up the feature.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
@@ -1081,6 +1030,9 @@ pub struct FeatureForGetEntity {
     /// features behavior).
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
+
+    #[serde(rename = "XXX_ATTRIBUTES")]
+    pub xxxAttributes: Vec<SenzingEntitySpecification>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1212,9 +1164,6 @@ pub struct G2config {
     #[serde(rename = "CFG_EBOM")]
     pub cfgEbom: Vec<CfgEbom>,
 
-    #[serde(rename = "CFG_ECLASS")]
-    pub cfgEclass: Vec<CfgEclass>,
-
     #[serde(rename = "CFG_EFBOM")]
     pub cfgEfbom: Vec<CfgEfbom>,
 
@@ -1229,9 +1178,6 @@ pub struct G2config {
 
     #[serde(rename = "CFG_ERRULE")]
     pub cfgErrule: Vec<CfgErrule>,
-
-    #[serde(rename = "CFG_ETYPE")]
-    pub cfgEtype: Vec<CfgEtype>,
 
     #[serde(rename = "CFG_FBOM")]
     pub cfgFbom: Vec<CfgFbom>,
@@ -1254,12 +1200,6 @@ pub struct G2config {
     #[serde(rename = "CFG_GPLAN")]
     pub cfgGplan: Vec<CfgGplan>,
 
-    #[serde(rename = "CFG_LENS")]
-    pub cfgLens: Vec<CfgLens>,
-
-    #[serde(rename = "CFG_LENSRL")]
-    pub cfgLensrl: Vec<CfgLensrl>,
-
     #[serde(rename = "CFG_RCLASS")]
     pub cfgRclass: Vec<CfgRclass>,
 
@@ -1280,6 +1220,18 @@ pub struct G2config {
 
     #[serde(rename = "SYS_OOM")]
     pub sysOom: Vec<SysOom>,
+
+    #[serde(rename = "XXX_CFG_ECLASS")]
+    pub xxxCfgEclass: Vec<CfgEclass>,
+
+    #[serde(rename = "XXX_CFG_ETYPE")]
+    pub xxxCfgEtype: Vec<CfgEtype>,
+
+    #[serde(rename = "XXX_CFG_LENS")]
+    pub xxxCfgLens: Vec<CfgLens>,
+
+    #[serde(rename = "XXX_CFG_LENSRL")]
+    pub xxxCfgLensrl: Vec<CfgLensrl>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1292,44 +1244,29 @@ pub struct HowResults {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct InitResources {
-    #[serde(rename = "availableMemory")]
-    pub availableMemory: String,
-
-    #[serde(rename = "logicalCores")]
-    pub logicalCores: i32,
-
-    #[serde(rename = "physicalCores")]
-    pub physicalCores: i32,
-
-    #[serde(rename = "totalMemory")]
-    pub totalMemory: String,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct InterestingEntities {
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<InterestingEntity>,
 
-    #[serde(rename = "NOTICES")]
-    pub notices: Vec<Notice>,
+    #[serde(rename = "XXX_NOTICES")]
+    pub xxxNotices: Vec<Notice>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct InterestingEntity {
-    #[serde(rename = "DEGREES")]
-    pub degrees: i32,
+    #[serde(rename = "XXX_DEGREES")]
+    pub xxxDegrees: i32,
 
     /// The ENTITY_ID is the Senzing-generated identifier for the discovered
     /// entity. It may change when new information is added.
-    #[serde(rename = "ENTITY_ID")]
-    pub entityId: i32,
+    #[serde(rename = "XXX_ENTITY_ID")]
+    pub xxxEntityId: i32,
 
-    #[serde(rename = "FLAGS")]
-    pub flags: Vec<String>,
+    #[serde(rename = "XXX_FLAGS")]
+    pub xxxFlags: Vec<String>,
 
-    #[serde(rename = "SAMPLE_RECORDS")]
-    pub sampleRecords: Vec<SampleRecord>,
+    #[serde(rename = "XXX_SAMPLE_RECORDS")]
+    pub xxxSampleRecords: Vec<SampleRecord>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1345,18 +1282,9 @@ pub struct License {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct LockWaits {
-    #[serde(rename = "refreshLocks")]
-    pub refreshLocks: RefreshLocks,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct MatchInfo {
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: CandidateKeysForMatchInfo,
-
-    #[serde(rename = "DISCLOSED_RELATIONS")]
-    pub disclosedRelations: DisclosedRelationsForMatchInfo,
 
     /// Identifier of the entity resolution rule that was triggered.
     #[serde(rename = "ERRULE_CODE")]
@@ -1372,18 +1300,21 @@ pub struct MatchInfo {
     #[serde(rename = "MATCH_KEY_DETAILS")]
     pub matchKeyDetails: MatchKeyDetails,
 
-    #[serde(rename = "MATCH_LEVEL")]
-    pub matchLevel: i32,
-
     /// The type of match that occurred for the record.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    #[serde(rename = "WHY_ERRULE_CODE")]
-    pub whyErruleCode: String,
+    #[serde(rename = "XXX_DISCLOSED_RELATIONS")]
+    pub xxxDisclosedRelations: DisclosedRelationsForMatchInfo,
 
-    #[serde(rename = "WHY_KEY")]
-    pub whyKey: String,
+    #[serde(rename = "XXX_MATCH_LEVEL")]
+    pub xxxMatchLevel: i32,
+
+    #[serde(rename = "XXX_WHY_ERRULE_CODE")]
+    pub xxxWhyErruleCode: String,
+
+    #[serde(rename = "XXX_WHY_KEY")]
+    pub xxxWhyKey: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1430,8 +1361,8 @@ pub struct MatchKeyDetails {
     pub denials: Vec<Confirmation>,
 
     /// Identifier of the entity resolution rule that was triggered.
-    #[serde(rename = "ERRULE_CODE")]
-    pub erruleCode: String,
+    #[serde(rename = "XXX_ERRULE_CODE")]
+    pub xxxErruleCode: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1446,125 +1377,20 @@ pub struct MemberRecord {
 
 #[derive(Serialize, Deserialize)]
 pub struct Notice {
-    #[serde(rename = "CODE")]
-    pub code: String,
+    #[serde(rename = "XXX_CODE")]
+    pub xxxCode: String,
 
-    #[serde(rename = "DESCRIPTION")]
-    pub description: String,
+    #[serde(rename = "XXX_DESCRIPTION")]
+    pub xxxDescription: String,
 }
 
 pub type Object = String;
 
 #[derive(Serialize, Deserialize)]
-pub struct ParamDetails {
-    #[serde(rename = "NAME")]
-    pub name: String,
-
-    #[serde(rename = "VALUE")]
-    pub value: Object,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct Params {
-    #[serde(rename = "PARAM")]
-    pub param: ParamDetails,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct Processing {
-    #[serde(rename = "addedRecords")]
-    pub addedRecords: i32,
-
-    #[serde(rename = "ambiguous")]
-    pub ambiguous: ProcessingAmbiguous,
-
-    #[serde(rename = "batchAddedRecords")]
-    pub batchAddedRecords: i32,
-
-    #[serde(rename = "deletedRecords")]
-    pub deletedRecords: i32,
-
-    #[serde(rename = "details")]
-    pub details: ProcessingDetails,
-
-    #[serde(rename = "reevaluations")]
-    pub reevaluations: i32,
-
-    #[serde(rename = "repairedEntities")]
-    pub repairedEntities: i32,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ProcessingAmbiguous {
-    #[serde(rename = "actualTest")]
-    pub actualTest: i32,
-
-    #[serde(rename = "cachedTest")]
-    pub cachedTest: i32,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ProcessingDetails {
-    #[serde(rename = "addedRecords")]
-    pub addedRecords: i32,
-
-    #[serde(rename = "candidates")]
-    pub candidates: i32,
-
-    #[serde(rename = "changeDeletes")]
-    pub changeDeletes: i32,
-
-    #[serde(rename = "duration")]
-    pub duration: i32,
-
-    #[serde(rename = "filteredObsFeat")]
-    pub filteredObsFeat: i32,
-
-    #[serde(rename = "newObsEnt")]
-    pub newObsEnt: i32,
-
-    #[serde(rename = "obsEntHashDiff")]
-    pub obsEntHashDiff: i32,
-
-    #[serde(rename = "obsEntHashSame")]
-    pub obsEntHashSame: i32,
-
-    #[serde(rename = "optimizedOut")]
-    pub optimizedOut: i32,
-
-    #[serde(rename = "optimizedOutSkipped")]
-    pub optimizedOutSkipped: i32,
-
-    #[serde(rename = "partiallyResolved")]
-    pub partiallyResolved: i32,
-
-    #[serde(rename = "retries")]
-    pub retries: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct Record {
-    #[serde(rename = "ADDRESS_DATA")]
-    pub addressData: Vec<String>,
-
-    #[serde(rename = "ATTRIBUTE_DATA")]
-    pub attributeData: Vec<String>,
-
     /// A label identifying the provenance of the record.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
-
-    #[serde(rename = "ENTITY_DATA")]
-    pub entityData: Vec<String>,
-
-    #[serde(rename = "ENTITY_DESC")]
-    pub entityDesc: String,
-
-    #[serde(rename = "ENTITY_KEY")]
-    pub entityKey: String,
-
-    #[serde(rename = "ENTITY_TYPE")]
-    pub entityType: String,
 
     /// Identifier of the entity resolution rule that was triggered.
     #[serde(rename = "ERRULE_CODE")]
@@ -1578,9 +1404,6 @@ pub struct Record {
 
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
-
-    #[serde(rename = "IDENTIFIER_DATA")]
-    pub identifierData: Vec<String>,
 
     /// Internal identifier for the record.
     #[serde(rename = "INTERNAL_ID")]
@@ -1596,56 +1419,59 @@ pub struct Record {
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    #[serde(rename = "MATCH_LEVEL")]
-    pub matchLevel: i32,
-
     /// The type of match that occurred for the record.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
-
-    #[serde(rename = "NAME_DATA")]
-    pub nameData: Vec<String>,
-
-    #[serde(rename = "OTHER_DATA")]
-    pub otherData: Vec<String>,
-
-    #[serde(rename = "PHONE_DATA")]
-    pub phoneData: Vec<String>,
 
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    #[serde(rename = "RELATIONSHIP_DATA")]
-    pub relationshipData: Vec<String>,
-
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
+
+    #[serde(rename = "XXX_ADDRESS_DATA")]
+    pub xxxAddressData: Vec<String>,
+
+    #[serde(rename = "XXX_ATTRIBUTE_DATA")]
+    pub xxxAttributeData: Vec<String>,
+
+    #[serde(rename = "XXX_ENTITY_DATA")]
+    pub xxxEntityData: Vec<String>,
+
+    #[serde(rename = "XXX_ENTITY_DESC")]
+    pub xxxEntityDesc: String,
+
+    #[serde(rename = "XXX_ENTITY_KEY")]
+    pub xxxEntityKey: String,
+
+    #[serde(rename = "XXX_ENTITY_TYPE")]
+    pub xxxEntityType: String,
+
+    #[serde(rename = "XXX_IDENTIFIER_DATA")]
+    pub xxxIdentifierData: Vec<String>,
+
+    #[serde(rename = "XXX_MATCH_LEVEL")]
+    pub xxxMatchLevel: i32,
+
+    #[serde(rename = "XXX_NAME_DATA")]
+    pub xxxNameData: Vec<String>,
+
+    #[serde(rename = "XXX_OTHER_DATA")]
+    pub xxxOtherData: Vec<String>,
+
+    #[serde(rename = "XXX_PHONE_DATA")]
+    pub xxxPhoneData: Vec<String>,
+
+    #[serde(rename = "XXX_RELATIONSHIP_DATA")]
+    pub xxxRelationshipData: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RecordForGetEntity {
-    #[serde(rename = "ADDRESS_DATA")]
-    pub addressData: Vec<String>,
-
-    #[serde(rename = "ATTRIBUTE_DATA")]
-    pub attributeData: Vec<String>,
-
     /// A label identifying the provenance of the record.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
-
-    #[serde(rename = "ENTITY_DATA")]
-    pub entityData: Vec<String>,
-
-    #[serde(rename = "ENTITY_DESC")]
-    pub entityDesc: String,
-
-    #[serde(rename = "ENTITY_KEY")]
-    pub entityKey: String,
-
-    #[serde(rename = "ENTITY_TYPE")]
-    pub entityType: String,
 
     /// Identifier of the entity resolution rule that was triggered.
     #[serde(rename = "ERRULE_CODE")]
@@ -1659,9 +1485,6 @@ pub struct RecordForGetEntity {
 
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
-
-    #[serde(rename = "IDENTIFIER_DATA")]
-    pub identifierData: Vec<String>,
 
     /// Internal identifier for the record.
     #[serde(rename = "INTERNAL_ID")]
@@ -1677,31 +1500,52 @@ pub struct RecordForGetEntity {
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
-    #[serde(rename = "MATCH_LEVEL")]
-    pub matchLevel: i32,
-
     /// The type of match that occurred for the record.
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
-
-    #[serde(rename = "NAME_DATA")]
-    pub nameData: Vec<String>,
-
-    #[serde(rename = "OTHER_DATA")]
-    pub otherData: Vec<String>,
-
-    #[serde(rename = "PHONE_DATA")]
-    pub phoneData: Vec<String>,
 
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    #[serde(rename = "RELATIONSHIP_DATA")]
-    pub relationshipData: Vec<String>,
-
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
+
+    #[serde(rename = "XXX_ADDRESS_DATA")]
+    pub xxxAddressData: Vec<String>,
+
+    #[serde(rename = "XXX_ATTRIBUTE_DATA")]
+    pub xxxAttributeData: Vec<String>,
+
+    #[serde(rename = "XXX_ENTITY_DATA")]
+    pub xxxEntityData: Vec<String>,
+
+    #[serde(rename = "XXX_ENTITY_DESC")]
+    pub xxxEntityDesc: String,
+
+    #[serde(rename = "XXX_ENTITY_KEY")]
+    pub xxxEntityKey: String,
+
+    #[serde(rename = "XXX_ENTITY_TYPE")]
+    pub xxxEntityType: String,
+
+    #[serde(rename = "XXX_IDENTIFIER_DATA")]
+    pub xxxIdentifierData: Vec<String>,
+
+    #[serde(rename = "XXX_MATCH_LEVEL")]
+    pub xxxMatchLevel: i32,
+
+    #[serde(rename = "XXX_NAME_DATA")]
+    pub xxxNameData: Vec<String>,
+
+    #[serde(rename = "XXX_OTHER_DATA")]
+    pub xxxOtherData: Vec<String>,
+
+    #[serde(rename = "XXX_PHONE_DATA")]
+    pub xxxPhoneData: Vec<String>,
+
+    #[serde(rename = "XXX_RELATIONSHIP_DATA")]
+    pub xxxRelationshipData: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1718,8 +1562,8 @@ pub struct RecordKey {
 #[derive(Serialize, Deserialize)]
 pub struct RecordKeys {
     /// A list of (data source code, record id) pairs.
-    #[serde(rename = "RECORDS")]
-    pub records: Vec<RecordKey>,
+    #[serde(rename = "XXX_RECORDS")]
+    pub xxxRecords: Vec<RecordKey>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1728,83 +1572,71 @@ pub struct RecordSummary {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    #[serde(rename = "FIRST_SEEN_DT")]
-    pub firstSeenDt: DateTime<FixedOffset>,
-
-    #[serde(rename = "LAST_SEEN_DT")]
-    pub lastSeenDt: DateTime<FixedOffset>,
-
     /// The number of records for the entity with the same data source code.
     #[serde(rename = "RECORD_COUNT")]
     pub recordCount: i32,
-}
 
-#[derive(Serialize, Deserialize)]
-pub struct RefreshLocks {
-    #[serde(rename = "count")]
-    pub count: i32,
+    #[serde(rename = "XXX_FIRST_SEEN_DT")]
+    pub xxxFirstSeenDt: DateTime<FixedOffset>,
 
-    #[serde(rename = "maxMS")]
-    pub maxMs: i32,
-
-    #[serde(rename = "totalMS")]
-    pub totalMs: i32,
+    #[serde(rename = "XXX_LAST_SEEN_DT")]
+    pub xxxLastSeenDt: DateTime<FixedOffset>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RelAnchor {
-    #[serde(rename = "DOMAIN")]
-    pub domain: String,
+    #[serde(rename = "XXX_DOMAIN")]
+    pub xxxDomain: String,
 
     /// Describes the attributes that make up the feature.
-    #[serde(rename = "FEAT_DESC")]
-    pub featDesc: String,
+    #[serde(rename = "XXX_FEAT_DESC")]
+    pub xxxFeatDesc: String,
 
-    #[serde(rename = "FEAT_ID")]
-    pub featId: i32,
+    #[serde(rename = "XXX_FEAT_ID")]
+    pub xxxFeatId: i32,
 
-    #[serde(rename = "LINKED_FEAT_DESC")]
-    pub linkedFeatDesc: String,
+    #[serde(rename = "XXX_LINKED_FEAT_DESC")]
+    pub xxxLinkedFeatDesc: String,
 
-    #[serde(rename = "LINKED_FEAT_ID")]
-    pub linkedFeatId: i32,
+    #[serde(rename = "XXX_LINKED_FEAT_ID")]
+    pub xxxLinkedFeatId: i32,
 
-    #[serde(rename = "LINKED_FEAT_TYPE")]
-    pub linkedFeatType: String,
+    #[serde(rename = "XXX_LINKED_FEAT_TYPE")]
+    pub xxxLinkedFeatType: String,
 
-    #[serde(rename = "LINKED_FEAT_USAGE_TYPE")]
-    pub linkedFeatUsageType: String,
+    #[serde(rename = "XXX_LINKED_FEAT_USAGE_TYPE")]
+    pub xxxLinkedFeatUsageType: String,
 
-    #[serde(rename = "REL_POINTER")]
-    pub relPointer: Vec<RelPointer>,
+    #[serde(rename = "XXX_REL_POINTER")]
+    pub xxxRelPointer: Vec<RelPointer>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RelLink {
-    #[serde(rename = "DOMAIN")]
-    pub domain: String,
+    #[serde(rename = "XXX_DOMAIN")]
+    pub xxxDomain: String,
 
     /// Describes the attributes that make up the feature.
-    #[serde(rename = "FEAT_DESC")]
-    pub featDesc: String,
+    #[serde(rename = "XXX_FEAT_DESC")]
+    pub xxxFeatDesc: String,
 
-    #[serde(rename = "FEAT_ID")]
-    pub featId: i32,
+    #[serde(rename = "XXX_FEAT_ID")]
+    pub xxxFeatId: i32,
 
-    #[serde(rename = "FEAT_USAGE_TYPE")]
-    pub featUsageType: String,
+    #[serde(rename = "XXX_FEAT_USAGE_TYPE")]
+    pub xxxFeatUsageType: String,
 
-    #[serde(rename = "LINKED_FEAT_DESC")]
-    pub linkedFeatDesc: String,
+    #[serde(rename = "XXX_LINKED_FEAT_DESC")]
+    pub xxxLinkedFeatDesc: String,
 
-    #[serde(rename = "LINKED_FEAT_ID")]
-    pub linkedFeatId: i32,
+    #[serde(rename = "XXX_LINKED_FEAT_ID")]
+    pub xxxLinkedFeatId: i32,
 
-    #[serde(rename = "LINKED_FEAT_TYPE")]
-    pub linkedFeatType: String,
+    #[serde(rename = "XXX_LINKED_FEAT_TYPE")]
+    pub xxxLinkedFeatType: String,
 
-    #[serde(rename = "LINKED_FEAT_USAGE_TYPE")]
-    pub linkedFeatUsageType: String,
+    #[serde(rename = "XXX_LINKED_FEAT_USAGE_TYPE")]
+    pub xxxLinkedFeatUsageType: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1855,9 +1687,6 @@ pub struct RelatedEntity {
     #[serde(rename = "IS_DISCLOSED")]
     pub isDisclosed: i32,
 
-    #[serde(rename = "LAST_SEEN_DT")]
-    pub lastSeenDt: DateTime<FixedOffset>,
-
     /// Representation of matched source record features.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
@@ -1869,19 +1698,22 @@ pub struct RelatedEntity {
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
-    #[serde(rename = "RECORDS")]
-    pub records: Vec<Record>,
-
     /// Overview of the source systems the records came from comprising this
     /// related entity.
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: Vec<RecordSummary>,
+
+    #[serde(rename = "XXX_LAST_SEEN_DT")]
+    pub xxxLastSeenDt: DateTime<FixedOffset>,
+
+    #[serde(rename = "XXX_RECORDS")]
+    pub xxxRecords: Vec<Record>,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct RepairDiagnosis {
-    #[serde(rename = "types")]
-    pub types: i32,
+pub struct RelatedRoles {
+    #[serde(rename = "FIXME")]
+    pub fixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1897,39 +1729,6 @@ pub struct Repository {
     /// Type of database.
     #[serde(rename = "type")]
     pub type_: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct Reresolve {
-    #[serde(rename = "newFeatureFTypes")]
-    pub newFeatureFtypes: HashMap<String, i32>,
-
-    #[serde(rename = "suppressedCandidateBuildersForReresolve")]
-    pub suppressedCandidateBuildersForReresolve: Fixme,
-
-    #[serde(rename = "suppressedScoredFeatureTypeForReresolve")]
-    pub suppressedScoredFeatureTypeForReresolve: Fixme,
-
-    #[serde(rename = "triggers")]
-    pub triggers: ReresolveTriggers,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct ReresolveTriggers {
-    #[serde(rename = "abortRetry")]
-    pub abortRetry: i32,
-
-    #[serde(rename = "multipleResolvableCandidates")]
-    pub multipleResolvableCandidates: i32,
-
-    #[serde(rename = "resolveNewFeatures")]
-    pub resolveNewFeatures: i32,
-
-    #[serde(rename = "skipped")]
-    pub skipped: i32,
-
-    #[serde(rename = "unresolveMovement")]
-    pub unresolveMovement: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1964,37 +1763,8 @@ pub struct ResolvedEntity {
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// Identifier of the entity resolution rule that was triggered.
-    #[serde(rename = "ERRULE_CODE")]
-    pub erruleCode: String,
-
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
-
-    #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: Vec<FeatureId>,
-
-    /// Indicates if this is an ambiguous relationship.
-    #[serde(rename = "IS_AMBIGUOUS")]
-    pub isAmbiguous: i32,
-
-    /// Indicates if this is a disclosed relationship.
-    #[serde(rename = "IS_DISCLOSED")]
-    pub isDisclosed: i32,
-
-    #[serde(rename = "LAST_SEEN_DT")]
-    pub lastSeenDt: DateTime<FixedOffset>,
-
-    /// Representation of matched source record features.
-    #[serde(rename = "MATCH_KEY")]
-    pub matchKey: String,
-
-    #[serde(rename = "MATCH_LEVEL")]
-    pub matchLevel: i32,
-
-    /// The type of match that occurred for the record.
-    #[serde(rename = "MATCH_LEVEL_CODE")]
-    pub matchLevelCode: String,
 
     #[serde(rename = "RECORDS")]
     pub records: Vec<Record>,
@@ -2006,6 +1776,35 @@ pub struct ResolvedEntity {
 
     #[serde(rename = "RECORD_TYPES")]
     pub recordTypes: Vec<String>,
+
+    /// Identifier of the entity resolution rule that was triggered.
+    #[serde(rename = "XXX_ERRULE_CODE")]
+    pub xxxErruleCode: String,
+
+    #[serde(rename = "XXX_FEATURE_IDS")]
+    pub xxxFeatureIds: Vec<FeatureId>,
+
+    /// Indicates if this is an ambiguous relationship.
+    #[serde(rename = "XXX_IS_AMBIGUOUS")]
+    pub xxxIsAmbiguous: i32,
+
+    /// Indicates if this is a disclosed relationship.
+    #[serde(rename = "XXX_IS_DISCLOSED")]
+    pub xxxIsDisclosed: i32,
+
+    #[serde(rename = "XXX_LAST_SEEN_DT")]
+    pub xxxLastSeenDt: DateTime<FixedOffset>,
+
+    /// Representation of matched source record features.
+    #[serde(rename = "XXX_MATCH_KEY")]
+    pub xxxMatchKey: String,
+
+    #[serde(rename = "XXX_MATCH_LEVEL")]
+    pub xxxMatchLevel: i32,
+
+    /// The type of match that occurred for the record.
+    #[serde(rename = "XXX_MATCH_LEVEL_CODE")]
+    pub xxxMatchLevelCode: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2028,37 +1827,8 @@ pub struct ResolvedEntityForGetEntity {
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// Identifier of the entity resolution rule that was triggered.
-    #[serde(rename = "ERRULE_CODE")]
-    pub erruleCode: String,
-
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForGetEntity>>,
-
-    #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: Vec<FeatureId>,
-
-    /// Indicates if this is an ambiguous relationship.
-    #[serde(rename = "IS_AMBIGUOUS")]
-    pub isAmbiguous: i32,
-
-    /// Indicates if this is a disclosed relationship.
-    #[serde(rename = "IS_DISCLOSED")]
-    pub isDisclosed: i32,
-
-    #[serde(rename = "LAST_SEEN_DT")]
-    pub lastSeenDt: DateTime<FixedOffset>,
-
-    /// Representation of matched source record features.
-    #[serde(rename = "MATCH_KEY")]
-    pub matchKey: String,
-
-    #[serde(rename = "MATCH_LEVEL")]
-    pub matchLevel: i32,
-
-    /// The type of match that occurred for the record.
-    #[serde(rename = "MATCH_LEVEL_CODE")]
-    pub matchLevelCode: String,
 
     #[serde(rename = "RECORDS")]
     pub records: Vec<RecordForGetEntity>,
@@ -2070,24 +1840,41 @@ pub struct ResolvedEntityForGetEntity {
 
     #[serde(rename = "RECORD_TYPES")]
     pub recordTypes: Vec<String>,
+
+    /// Identifier of the entity resolution rule that was triggered.
+    #[serde(rename = "XXX_ERRULE_CODE")]
+    pub xxxErruleCode: String,
+
+    #[serde(rename = "XXX_FEATURE_IDS")]
+    pub xxxFeatureIds: Vec<FeatureId>,
+
+    /// Indicates if this is an ambiguous relationship.
+    #[serde(rename = "XXX_IS_AMBIGUOUS")]
+    pub xxxIsAmbiguous: i32,
+
+    /// Indicates if this is a disclosed relationship.
+    #[serde(rename = "XXX_IS_DISCLOSED")]
+    pub xxxIsDisclosed: i32,
+
+    #[serde(rename = "XXX_LAST_SEEN_DT")]
+    pub xxxLastSeenDt: DateTime<FixedOffset>,
+
+    /// Representation of matched source record features.
+    #[serde(rename = "XXX_MATCH_KEY")]
+    pub xxxMatchKey: String,
+
+    #[serde(rename = "XXX_MATCH_LEVEL")]
+    pub xxxMatchLevel: i32,
+
+    /// The type of match that occurred for the record.
+    #[serde(rename = "XXX_MATCH_LEVEL_CODE")]
+    pub xxxMatchLevelCode: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SysOom {
-    #[serde(rename = "FELEM_ID")]
-    pub felemId: i32,
-
     #[serde(rename = "FTYPE_ID")]
     pub ftypeId: i32,
-
-    #[serde(rename = "LENS_ID")]
-    pub lensId: i32,
-
-    #[serde(rename = "LIB_FEAT_ID")]
-    pub libFeatId: i32,
-
-    #[serde(rename = "LIB_FELEM_ID")]
-    pub libFelemId: i32,
 
     #[serde(rename = "NEXT_THRESH")]
     pub nextThresh: i32,
@@ -2103,20 +1890,32 @@ pub struct SysOom {
 
     #[serde(rename = "THRESH1_OOM")]
     pub thresh1Oom: i32,
+
+    #[serde(rename = "XXX_FELEM_ID")]
+    pub xxxFelemId: i32,
+
+    #[serde(rename = "XXX_LENS_ID")]
+    pub xxxLensId: i32,
+
+    #[serde(rename = "XXX_LIB_FEAT_ID")]
+    pub xxxLibFeatId: i32,
+
+    #[serde(rename = "XXX_LIB_FELEM_ID")]
+    pub xxxLibFelemId: i32,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SampleRecord {
     /// A label identifying the provenance of the record.
-    #[serde(rename = "DATA_SOURCE")]
-    pub dataSource: String,
+    #[serde(rename = "XXX_DATA_SOURCE")]
+    pub xxxDataSource: String,
 
-    #[serde(rename = "FLAGS")]
-    pub flags: Vec<String>,
+    #[serde(rename = "XXX_FLAGS")]
+    pub xxxFlags: Vec<String>,
 
     /// The unique identifier within the set of records in the DATA_SOURCE.
-    #[serde(rename = "RECORD_ID")]
-    pub recordId: String,
+    #[serde(rename = "XXX_RECORD_ID")]
+    pub xxxRecordId: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2129,24 +1928,6 @@ pub struct SchemaVersion {
 
     #[serde(rename = "MINIMUM_REQUIRED_SCHEMA_VERSION")]
     pub minimumRequiredSchemaVersion: String,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct Scoring {
-    #[serde(rename = "cacheHit")]
-    pub cacheHit: HashMap<String, i32>,
-
-    #[serde(rename = "cacheMiss")]
-    pub cacheMiss: HashMap<String, i32>,
-
-    #[serde(rename = "scoredPairs")]
-    pub scoredPairs: HashMap<String, i32>,
-
-    #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
-    pub suppressedDisclosedRelationshipDomainCount: i32,
-
-    #[serde(rename = "suppressedScoredFeatureType")]
-    pub suppressedScoredFeatureType: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2169,20 +1950,11 @@ pub struct SearchStatistic {
 
 #[derive(Serialize, Deserialize)]
 pub struct SenzingEntitySpecification {
-    #[serde(rename = "ACCOUNT_DOMAIN")]
-    pub accountDomain: String,
-
-    #[serde(rename = "ACCOUNT_NUMBER")]
-    pub accountNumber: String,
-
     #[serde(rename = "ADDR_CITY")]
     pub addrCity: String,
 
     #[serde(rename = "ADDR_COUNTRY")]
     pub addrCountry: String,
-
-    #[serde(rename = "ADDR_FROM_DATE")]
-    pub addrFromDate: String,
 
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: String,
@@ -2190,41 +1962,14 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "ADDR_LINE1")]
     pub addrLine1: String,
 
-    #[serde(rename = "ADDR_LINE2")]
-    pub addrLine2: String,
-
-    #[serde(rename = "ADDR_LINE3")]
-    pub addrLine3: String,
-
-    #[serde(rename = "ADDR_LINE4")]
-    pub addrLine4: String,
-
-    #[serde(rename = "ADDR_LINE5")]
-    pub addrLine5: String,
-
-    #[serde(rename = "ADDR_LINE6")]
-    pub addrLine6: String,
-
     #[serde(rename = "ADDR_POSTAL_CODE")]
     pub addrPostalCode: String,
 
     #[serde(rename = "ADDR_STATE")]
     pub addrState: String,
 
-    #[serde(rename = "ADDR_THRU_DATE")]
-    pub addrThruDate: String,
-
-    #[serde(rename = "ADDR_TYPE")]
-    pub addrType: String,
-
-    #[serde(rename = "CITIZENSHIP")]
-    pub citizenship: String,
-
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: String,
-
-    #[serde(rename = "DATE_OF_DEATH")]
-    pub dateOfDeath: String,
 
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: String,
@@ -2232,68 +1977,17 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: String,
 
-    #[serde(rename = "DUNS_NUMBER")]
-    pub dunsNumber: String,
-
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: String,
-
-    #[serde(rename = "EMPLOYER")]
-    pub employer: String,
 
     #[serde(rename = "EMPLOYER_NAME")]
     pub employerName: String,
 
-    #[serde(rename = "FACEBOOK")]
-    pub facebook: String,
-
     #[serde(rename = "GENDER")]
     pub gender: String,
 
-    #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
-    pub groupAssnIdNumber: String,
-
-    #[serde(rename = "GROUP_ASSN_ID_TYPE")]
-    pub groupAssnIdType: String,
-
-    #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
-    pub groupAssociationOrgName: String,
-
-    #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
-    pub groupAssociationType: String,
-
-    #[serde(rename = "INSTAGRAM")]
-    pub instagram: String,
-
-    #[serde(rename = "LEI_NUMBER")]
-    pub leiNumber: String,
-
-    #[serde(rename = "LINKEDIN")]
-    pub linkedin: String,
-
-    #[serde(rename = "NAME_FIRST")]
-    pub nameFirst: String,
-
     #[serde(rename = "NAME_FULL")]
     pub nameFull: String,
-
-    #[serde(rename = "NAME_LAST")]
-    pub nameLast: String,
-
-    #[serde(rename = "NAME_ORG")]
-    pub nameOrg: String,
-
-    #[serde(rename = "NAME_PREFIX")]
-    pub namePrefix: String,
-
-    #[serde(rename = "NAME_SUFFIX")]
-    pub nameSuffix: String,
-
-    #[serde(rename = "NAME_TYPE")]
-    pub nameType: String,
-
-    #[serde(rename = "NATIONALITY")]
-    pub nationality: String,
 
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: String,
@@ -2304,38 +1998,14 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "NATIVE_NAME_FULL")]
     pub nativeNameFull: String,
 
-    #[serde(rename = "NPI_NUMBER")]
-    pub npiNumber: String,
-
-    #[serde(rename = "OTHER_ID_COUNTRY")]
-    pub otherIdCountry: String,
-
-    #[serde(rename = "OTHER_ID_NUMBER")]
-    pub otherIdNumber: String,
-
-    #[serde(rename = "OTHER_ID_TYPE")]
-    pub otherIdType: String,
-
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: String,
 
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: String,
 
-    #[serde(rename = "PHONE_FROM_DATE")]
-    pub phoneFromDate: String,
-
     #[serde(rename = "PHONE_NUMBER")]
     pub phoneNumber: String,
-
-    #[serde(rename = "PHONE_THRU_DATE")]
-    pub phoneThruDate: String,
-
-    #[serde(rename = "PHONE_TYPE")]
-    pub phoneType: String,
-
-    #[serde(rename = "PLACE_OF_BIRTH")]
-    pub placeOfBirth: String,
 
     #[serde(rename = "PRIMARY_NAME_FIRST")]
     pub primaryNameFirst: String,
@@ -2355,12 +2025,6 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: String,
 
-    #[serde(rename = "REGISTRATION_COUNTRY")]
-    pub registrationCountry: String,
-
-    #[serde(rename = "REGISTRATION_DATE")]
-    pub registrationDate: String,
-
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: String,
 
@@ -2370,92 +2034,170 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "SECONDARY_NAME_ORG")]
     pub secondaryNameOrg: String,
 
-    #[serde(rename = "SIGNAL")]
-    pub signal: String,
-
-    #[serde(rename = "SKYPE")]
-    pub skype: String,
-
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: String,
 
-    #[serde(rename = "TANGO")]
-    pub tango: String,
+    #[serde(rename = "XXX_ACCOUNT_DOMAIN")]
+    pub xxxAccountDomain: String,
 
-    #[serde(rename = "TAX_ID_COUNTRY")]
-    pub taxIdCountry: String,
+    #[serde(rename = "XXX_ACCOUNT_NUMBER")]
+    pub xxxAccountNumber: String,
 
-    #[serde(rename = "TAX_ID_NUMBER")]
-    pub taxIdNumber: String,
+    #[serde(rename = "XXX_ADDR_FROM_DATE")]
+    pub xxxAddrFromDate: String,
 
-    #[serde(rename = "TAX_ID_TYPE")]
-    pub taxIdType: String,
+    #[serde(rename = "XXX_ADDR_LINE2")]
+    pub xxxAddrLine2: String,
 
-    #[serde(rename = "TELEGRAM")]
-    pub telegram: String,
+    #[serde(rename = "XXX_ADDR_LINE3")]
+    pub xxxAddrLine3: String,
 
-    #[serde(rename = "TRUSTED_ID_NUMBER")]
-    pub trustedIdNumber: String,
+    #[serde(rename = "XXX_ADDR_LINE4")]
+    pub xxxAddrLine4: String,
 
-    #[serde(rename = "TRUSTED_ID_TYPE")]
-    pub trustedIdType: String,
+    #[serde(rename = "XXX_ADDR_LINE5")]
+    pub xxxAddrLine5: String,
 
-    #[serde(rename = "TWITTER")]
-    pub twitter: String,
+    #[serde(rename = "XXX_ADDR_LINE6")]
+    pub xxxAddrLine6: String,
 
-    #[serde(rename = "VIBER")]
-    pub viber: String,
+    #[serde(rename = "XXX_ADDR_THRU_DATE")]
+    pub xxxAddrThruDate: String,
 
-    #[serde(rename = "WEBSITE_ADDRESS")]
-    pub websiteAddress: String,
+    #[serde(rename = "XXX_ADDR_TYPE")]
+    pub xxxAddrType: String,
 
-    #[serde(rename = "WECHAT")]
-    pub wechat: String,
+    #[serde(rename = "XXX_CITIZENSHIP")]
+    pub xxxCitizenship: String,
 
-    #[serde(rename = "WHATSAPP")]
-    pub whatsapp: String,
+    #[serde(rename = "XXX_DATE_OF_DEATH")]
+    pub xxxDateOfDeath: String,
 
-    #[serde(rename = "ZOOMROOM")]
-    pub zoomroom: String,
-}
+    #[serde(rename = "XXX_DUNS_NUMBER")]
+    pub xxxDunsNumber: String,
 
-#[derive(Serialize, Deserialize)]
-pub struct Summary {
-    #[serde(rename = "FOUND")]
-    pub found: i32,
+    #[serde(rename = "XXX_EMPLOYER")]
+    pub xxxEmployer: String,
 
-    #[serde(rename = "GENERIC")]
-    pub generic: i32,
+    #[serde(rename = "XXX_FACEBOOK")]
+    pub xxxFacebook: String,
 
-    #[serde(rename = "NOT_FOUND")]
-    pub notFound: i32,
-}
+    #[serde(rename = "XXX_GROUP_ASSN_ID_NUMBER")]
+    pub xxxGroupAssnIdNumber: String,
 
-#[derive(Serialize, Deserialize)]
-pub struct SystemLoad {
-    #[serde(rename = "cpuIdle")]
-    pub cpuIdle: String,
+    #[serde(rename = "XXX_GROUP_ASSN_ID_TYPE")]
+    pub xxxGroupAssnIdType: String,
 
-    #[serde(rename = "cpuSystem")]
-    pub cpuSystem: String,
+    #[serde(rename = "XXX_GROUP_ASSOCIATION_ORG_NAME")]
+    pub xxxGroupAssociationOrgName: String,
 
-    #[serde(rename = "cpuUser")]
-    pub cpuUser: String,
+    #[serde(rename = "XXX_GROUP_ASSOCIATION_TYPE")]
+    pub xxxGroupAssociationType: String,
 
-    #[serde(rename = "cpuWait")]
-    pub cpuWait: String,
-}
+    #[serde(rename = "XXX_INSTAGRAM")]
+    pub xxxInstagram: String,
 
-#[derive(Serialize, Deserialize)]
-pub struct SystemResources {
-    #[serde(rename = "currResources")]
-    pub currResources: CurrResources,
+    #[serde(rename = "XXX_LEI_NUMBER")]
+    pub xxxLeiNumber: String,
 
-    #[serde(rename = "initResources")]
-    pub initResources: InitResources,
+    #[serde(rename = "XXX_LINKEDIN")]
+    pub xxxLinkedin: String,
 
-    #[serde(rename = "systemLoad")]
-    pub systemLoad: SystemLoad,
+    #[serde(rename = "XXX_NAME_FIRST")]
+    pub xxxNameFirst: String,
+
+    #[serde(rename = "XXX_NAME_LAST")]
+    pub xxxNameLast: String,
+
+    #[serde(rename = "XXX_NAME_ORG")]
+    pub xxxNameOrg: String,
+
+    #[serde(rename = "XXX_NAME_PREFIX")]
+    pub xxxNamePrefix: String,
+
+    #[serde(rename = "XXX_NAME_SUFFIX")]
+    pub xxxNameSuffix: String,
+
+    #[serde(rename = "XXX_NAME_TYPE")]
+    pub xxxNameType: String,
+
+    #[serde(rename = "XXX_NATIONALITY")]
+    pub xxxNationality: String,
+
+    #[serde(rename = "XXX_NPI_NUMBER")]
+    pub xxxNpiNumber: String,
+
+    #[serde(rename = "XXX_OTHER_ID_COUNTRY")]
+    pub xxxOtherIdCountry: String,
+
+    #[serde(rename = "XXX_OTHER_ID_NUMBER")]
+    pub xxxOtherIdNumber: String,
+
+    #[serde(rename = "XXX_OTHER_ID_TYPE")]
+    pub xxxOtherIdType: String,
+
+    #[serde(rename = "XXX_PHONE_FROM_DATE")]
+    pub xxxPhoneFromDate: String,
+
+    #[serde(rename = "XXX_PHONE_THRU_DATE")]
+    pub xxxPhoneThruDate: String,
+
+    #[serde(rename = "XXX_PHONE_TYPE")]
+    pub xxxPhoneType: String,
+
+    #[serde(rename = "XXX_PLACE_OF_BIRTH")]
+    pub xxxPlaceOfBirth: String,
+
+    #[serde(rename = "XXX_REGISTRATION_COUNTRY")]
+    pub xxxRegistrationCountry: String,
+
+    #[serde(rename = "XXX_REGISTRATION_DATE")]
+    pub xxxRegistrationDate: String,
+
+    #[serde(rename = "XXX_SIGNAL")]
+    pub xxxSignal: String,
+
+    #[serde(rename = "XXX_SKYPE")]
+    pub xxxSkype: String,
+
+    #[serde(rename = "XXX_TANGO")]
+    pub xxxTango: String,
+
+    #[serde(rename = "XXX_TAX_ID_COUNTRY")]
+    pub xxxTaxIdCountry: String,
+
+    #[serde(rename = "XXX_TAX_ID_NUMBER")]
+    pub xxxTaxIdNumber: String,
+
+    #[serde(rename = "XXX_TAX_ID_TYPE")]
+    pub xxxTaxIdType: String,
+
+    #[serde(rename = "XXX_TELEGRAM")]
+    pub xxxTelegram: String,
+
+    #[serde(rename = "XXX_TRUSTED_ID_NUMBER")]
+    pub xxxTrustedIdNumber: String,
+
+    #[serde(rename = "XXX_TRUSTED_ID_TYPE")]
+    pub xxxTrustedIdType: String,
+
+    #[serde(rename = "XXX_TWITTER")]
+    pub xxxTwitter: String,
+
+    #[serde(rename = "XXX_VIBER")]
+    pub xxxViber: String,
+
+    #[serde(rename = "XXX_WEBSITE_ADDRESS")]
+    pub xxxWebsiteAddress: String,
+
+    #[serde(rename = "XXX_WECHAT")]
+    pub xxxWechat: String,
+
+    #[serde(rename = "XXX_WHATSAPP")]
+    pub xxxWhatsapp: String,
+
+    #[serde(rename = "XXX_ZOOMROOM")]
+    pub xxxZoomroom: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2527,12 +2269,12 @@ pub struct SzEngineAddRecordResponse {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    #[serde(rename = "INTERESTING_ENTITIES")]
-    pub interestingEntities: InterestingEntities,
-
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
+
+    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
+    pub xxxInterestingEntities: InterestingEntities,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2544,24 +2286,24 @@ pub struct SzEngineDeleteRecordResponse {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    #[serde(rename = "INTERESTING_ENTITIES")]
-    pub interestingEntities: InterestingEntities,
-
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
+
+    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
+    pub xxxInterestingEntities: InterestingEntities,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineExportCsvEntityReportCsvColumnList {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFetchNextResponse {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2578,8 +2320,8 @@ pub struct SzEngineFindInterestingEntitiesByRecordIdResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindNetworkByEntityIdEntityIds {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2627,14 +2369,14 @@ pub struct SzEngineFindNetworkByRecordIdResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByEntityIdAvoidEntityIds {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByEntityIdRequiredDataSources {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2658,8 +2400,8 @@ pub struct SzEngineFindPathByRecordIdAvoidRecordKeys {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByRecordIdRequiredDataSources {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2709,31 +2451,9 @@ pub struct SzEngineGetRecordPreviewResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetRecordResponse {
-    #[serde(rename = "ADDRESS_DATA")]
-    pub addressData: Vec<String>,
-
-    #[serde(rename = "ATTRIBUTE_DATA")]
-    pub attributeData: Vec<String>,
-
     /// A label identifying the provenance of the record.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
-
-    #[serde(rename = "ENTITY_DATA")]
-    pub entityData: Vec<String>,
-
-    #[serde(rename = "ENTITY_DESC")]
-    pub entityDesc: String,
-
-    #[serde(rename = "ENTITY_KEY")]
-    pub entityKey: String,
-
-    #[serde(rename = "ENTITY_TYPE")]
-    pub entityType: String,
-
-    /// Identifier of the entity resolution rule that was triggered.
-    #[serde(rename = "ERRULE_CODE")]
-    pub erruleCode: String,
 
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
@@ -2744,48 +2464,70 @@ pub struct SzEngineGetRecordResponse {
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
 
-    #[serde(rename = "IDENTIFIER_DATA")]
-    pub identifierData: Vec<String>,
-
-    /// Internal identifier for the record.
-    #[serde(rename = "INTERNAL_ID")]
-    pub internalId: i32,
-
     #[serde(rename = "JSON_DATA")]
     pub jsonData: HashMap<String, Object>,
 
     #[serde(rename = "LAST_SEEN_DT")]
     pub lastSeenDt: DateTime<FixedOffset>,
 
-    /// Representation of matched source record features.
-    #[serde(rename = "MATCH_KEY")]
-    pub matchKey: String,
-
-    #[serde(rename = "MATCH_LEVEL")]
-    pub matchLevel: i32,
-
-    /// The type of match that occurred for the record.
-    #[serde(rename = "MATCH_LEVEL_CODE")]
-    pub matchLevelCode: String,
-
-    #[serde(rename = "NAME_DATA")]
-    pub nameData: Vec<String>,
-
-    #[serde(rename = "OTHER_DATA")]
-    pub otherData: Vec<String>,
-
-    #[serde(rename = "PHONE_DATA")]
-    pub phoneData: Vec<String>,
-
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    #[serde(rename = "RELATIONSHIP_DATA")]
-    pub relationshipData: Vec<String>,
-
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
+
+    #[serde(rename = "XXX_ADDRESS_DATA")]
+    pub xxxAddressData: Vec<String>,
+
+    #[serde(rename = "XXX_ATTRIBUTE_DATA")]
+    pub xxxAttributeData: Vec<String>,
+
+    #[serde(rename = "XXX_ENTITY_DATA")]
+    pub xxxEntityData: Vec<String>,
+
+    #[serde(rename = "XXX_ENTITY_DESC")]
+    pub xxxEntityDesc: String,
+
+    #[serde(rename = "XXX_ENTITY_KEY")]
+    pub xxxEntityKey: String,
+
+    #[serde(rename = "XXX_ENTITY_TYPE")]
+    pub xxxEntityType: String,
+
+    /// Identifier of the entity resolution rule that was triggered.
+    #[serde(rename = "XXX_ERRULE_CODE")]
+    pub xxxErruleCode: String,
+
+    #[serde(rename = "XXX_IDENTIFIER_DATA")]
+    pub xxxIdentifierData: Vec<String>,
+
+    /// Internal identifier for the record.
+    #[serde(rename = "XXX_INTERNAL_ID")]
+    pub xxxInternalId: i32,
+
+    /// Representation of matched source record features.
+    #[serde(rename = "XXX_MATCH_KEY")]
+    pub xxxMatchKey: String,
+
+    #[serde(rename = "XXX_MATCH_LEVEL")]
+    pub xxxMatchLevel: i32,
+
+    /// The type of match that occurred for the record.
+    #[serde(rename = "XXX_MATCH_LEVEL_CODE")]
+    pub xxxMatchLevelCode: String,
+
+    #[serde(rename = "XXX_NAME_DATA")]
+    pub xxxNameData: Vec<String>,
+
+    #[serde(rename = "XXX_OTHER_DATA")]
+    pub xxxOtherData: Vec<String>,
+
+    #[serde(rename = "XXX_PHONE_DATA")]
+    pub xxxPhoneData: Vec<String>,
+
+    #[serde(rename = "XXX_RELATIONSHIP_DATA")]
+    pub xxxRelationshipData: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2828,12 +2570,15 @@ pub struct SzEngineProcessRedoRecordResponse {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    #[serde(rename = "INTERESTING_ENTITIES")]
-    pub interestingEntities: InterestingEntities,
-
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
+
+    #[serde(rename = "UMF_PROC")]
+    pub umfProc: UmfProc,
+
+    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
+    pub xxxInterestingEntities: InterestingEntities,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2842,15 +2587,15 @@ pub struct SzEngineReevaluateEntityResponse {
     pub affectedEntities: Vec<AffectedEntity>,
 
     /// A label identifying the provenance of the record.
-    #[serde(rename = "DATA_SOURCE")]
-    pub dataSource: String,
+    #[serde(rename = "XXX_DATA_SOURCE")]
+    pub xxxDataSource: String,
 
-    #[serde(rename = "INTERESTING_ENTITIES")]
-    pub interestingEntities: InterestingEntities,
+    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
+    pub xxxInterestingEntities: InterestingEntities,
 
     /// The unique identifier within the set of records in the DATA_SOURCE.
-    #[serde(rename = "RECORD_ID")]
-    pub recordId: String,
+    #[serde(rename = "XXX_RECORD_ID")]
+    pub xxxRecordId: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2862,18 +2607,18 @@ pub struct SzEngineReevaluateRecordResponse {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    #[serde(rename = "INTERESTING_ENTITIES")]
-    pub interestingEntities: InterestingEntities,
-
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
+
+    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
+    pub xxxInterestingEntities: InterestingEntities,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineSearchByAttributesAttributes {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2890,14 +2635,14 @@ pub struct SzEngineSearchByAttributesResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineSearchByAttributesSearchProfile {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineStreamExportJsonEntityReportResponse {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2929,8 +2674,8 @@ pub struct SzEngineWhyRecordsResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhySearchAttributes {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2950,8 +2695,8 @@ pub struct SzEngineWhySearchResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhySearchSearchProfile {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "XXX_FIXME")]
+    pub xxxFixme: Fixme,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3009,78 +2754,27 @@ pub struct SzProductGetVersionResponse {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct ThreadState {
-    #[serde(rename = "active")]
-    pub active: i32,
-
-    #[serde(rename = "dataLatchContention")]
-    pub dataLatchContention: i32,
-
-    #[serde(rename = "governorContention")]
-    pub governorContention: i32,
-
-    #[serde(rename = "idle")]
-    pub idle: i32,
-
-    #[serde(rename = "loader")]
-    pub loader: i32,
-
-    #[serde(rename = "obsEntContention")]
-    pub obsEntContention: i32,
-
-    #[serde(rename = "resEntContention")]
-    pub resEntContention: i32,
-
-    #[serde(rename = "resolver")]
-    pub resolver: i32,
-
-    #[serde(rename = "scoring")]
-    pub scoring: i32,
-
-    #[serde(rename = "sqlExecuting")]
-    pub sqlExecuting: i32,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct UmfProc {
     #[serde(rename = "NAME")]
     pub name: String,
 
     #[serde(rename = "PARAMS")]
-    pub params: Vec<Params>,
+    pub params: Vec<UmfProcParams>,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct Unresolve {
-    #[serde(rename = "abortedUnresolve")]
-    pub abortedUnresolve: i32,
+pub struct UmfProcParamDetails {
+    #[serde(rename = "NAME")]
+    pub name: String,
 
-    #[serde(rename = "triggers")]
-    pub triggers: UnresolveTriggers,
-
-    #[serde(rename = "unresolveTest")]
-    pub unresolveTest: i32,
+    #[serde(rename = "VALUE")]
+    pub value: Object,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct UnresolveTriggers {
-    #[serde(rename = "ambiguousMultiResolve")]
-    pub ambiguousMultiResolve: i32,
-
-    #[serde(rename = "ambiguousNoResolve")]
-    pub ambiguousNoResolve: i32,
-
-    #[serde(rename = "extensiveResolve")]
-    pub extensiveResolve: i32,
-
-    #[serde(rename = "normalResolve")]
-    pub normalResolve: i32,
-
-    #[serde(rename = "relLink")]
-    pub relLink: i32,
-
-    #[serde(rename = "update")]
-    pub update: i32,
+pub struct UmfProcParams {
+    #[serde(rename = "PARAM")]
+    pub param: UmfProcParamDetails,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3099,6 +2793,9 @@ pub struct WhyKeyDetails {
 
     #[serde(rename = "DENIALS")]
     pub denials: Vec<Confirmation>,
+
+    #[serde(rename = "DISCLOSED_RELATIONS")]
+    pub disclosedRelations: Vec<DisclosedRelationsForWhyKeyDetails>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3131,26 +2828,29 @@ pub struct WhyResult {
 
 #[derive(Serialize, Deserialize)]
 pub struct Workload {
+    #[serde(rename = "XXX_contention")]
+    pub xxxContention: WorkloadContention,
+
+    #[serde(rename = "XXX_genericDetect")]
+    pub xxxGenericDetect: Fixme,
+
+    #[serde(rename = "XXX_redoTriggers")]
+    pub xxxRedoTriggers: HashMap<String, i32>,
+
     #[serde(rename = "apiVersion")]
     pub apiVersion: String,
 
     #[serde(rename = "caches")]
-    pub caches: Caches,
+    pub caches: WorkloadCaches,
 
     #[serde(rename = "candidates")]
-    pub candidates: Candidates,
-
-    #[serde(rename = "contention")]
-    pub contention: Contention,
+    pub candidates: WorkloadCandidates,
 
     #[serde(rename = "datetimestamp")]
     pub datetimestamp: String,
 
     #[serde(rename = "expressedFeatures")]
-    pub expressedFeatures: ExpressedFeatures,
-
-    #[serde(rename = "genericDetect")]
-    pub genericDetect: Fixme,
+    pub expressedFeatures: WorkloadExpressedFeatures,
 
     #[serde(rename = "license")]
     pub license: License,
@@ -3159,29 +2859,365 @@ pub struct Workload {
     pub loadedRecords: i32,
 
     #[serde(rename = "lockWaits")]
-    pub lockWaits: LockWaits,
+    pub lockWaits: WorkloadLockWaits,
 
     #[serde(rename = "processing")]
-    pub processing: Processing,
-
-    #[serde(rename = "redoTriggers")]
-    pub redoTriggers: HashMap<String, i32>,
+    pub processing: WorkloadProcessing,
 
     #[serde(rename = "repairDiagnosis")]
-    pub repairDiagnosis: RepairDiagnosis,
+    pub repairDiagnosis: WorkloadRepairDiagnosis,
 
     #[serde(rename = "reresolve")]
-    pub reresolve: Reresolve,
+    pub reresolve: WorkloadReresolve,
 
     #[serde(rename = "scoring")]
-    pub scoring: Scoring,
+    pub scoring: WorkloadScoring,
 
     #[serde(rename = "systemResources")]
-    pub systemResources: SystemResources,
+    pub systemResources: WorkloadSystemResources,
 
     #[serde(rename = "threadState")]
-    pub threadState: ThreadState,
+    pub threadState: WorkloadThreadState,
 
     #[serde(rename = "unresolve")]
-    pub unresolve: Unresolve,
+    pub unresolve: WorkloadUnresolve,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadCaches {
+    #[serde(rename = "libFeatCacheHit")]
+    pub libFeatCacheHit: i32,
+
+    #[serde(rename = "libFeatCacheMiss")]
+    pub libFeatCacheMiss: i32,
+
+    #[serde(rename = "libFeatInsert")]
+    pub libFeatInsert: i32,
+
+    #[serde(rename = "resFeatStatCacheHit")]
+    pub resFeatStatCacheHit: i32,
+
+    #[serde(rename = "resFeatStatCacheMiss")]
+    pub resFeatStatCacheMiss: i32,
+
+    #[serde(rename = "resFeatStatInsert")]
+    pub resFeatStatInsert: i32,
+
+    #[serde(rename = "resFeatStatUpdateAttempt")]
+    pub resFeatStatUpdateAttempt: i32,
+
+    #[serde(rename = "resFeatStatUpdateFail")]
+    pub resFeatStatUpdateFail: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadCandidates {
+    #[serde(rename = "XXX_suppressedCandidateBuilders")]
+    pub xxxSuppressedCandidateBuilders: HashMap<String, i32>,
+
+    #[serde(rename = "candidateBuilders")]
+    pub candidateBuilders: HashMap<String, i32>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadContention {
+    #[serde(rename = "XXX_feature")]
+    pub xxxFeature: Fixme,
+
+    #[serde(rename = "XXX_resEnt")]
+    pub xxxResEnt: Fixme,
+
+    #[serde(rename = "XXX_valuelatch")]
+    pub xxxValuelatch: Fixme,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadCurrResources {
+    #[serde(rename = "activeThreads")]
+    pub activeThreads: i32,
+
+    #[serde(rename = "availableMemory")]
+    pub availableMemory: String,
+
+    #[serde(rename = "processMemory")]
+    pub processMemory: String,
+
+    #[serde(rename = "workerThreads")]
+    pub workerThreads: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadExpressedFeatures {
+    #[serde(rename = "calls")]
+    pub calls: Vec<WorkloadExpressedFeaturesCall>,
+
+    #[serde(rename = "created")]
+    pub created: HashMap<String, i32>,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadExpressedFeaturesCall {
+    #[serde(rename = "EFCALL_ID")]
+    pub efcallId: i32,
+
+    #[serde(rename = "EFUNC_CODE")]
+    pub efuncCode: String,
+
+    #[serde(rename = "numCalls")]
+    pub numCalls: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadInitResources {
+    #[serde(rename = "XXX_physicalCores")]
+    pub xxxPhysicalCores: i32,
+
+    #[serde(rename = "availableMemory")]
+    pub availableMemory: String,
+
+    #[serde(rename = "logicalCores")]
+    pub logicalCores: i32,
+
+    #[serde(rename = "totalMemory")]
+    pub totalMemory: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadLockWaits {
+    #[serde(rename = "refreshLocks")]
+    pub refreshLocks: WorkloadRefreshLocks,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadProcessing {
+    #[serde(rename = "addedRecords")]
+    pub addedRecords: i32,
+
+    #[serde(rename = "ambiguous")]
+    pub ambiguous: WorkloadProcessingAmbiguous,
+
+    #[serde(rename = "batchAddedRecords")]
+    pub batchAddedRecords: i32,
+
+    #[serde(rename = "deletedRecords")]
+    pub deletedRecords: i32,
+
+    #[serde(rename = "details")]
+    pub details: WorkloadProcessingDetails,
+
+    #[serde(rename = "reevaluations")]
+    pub reevaluations: i32,
+
+    #[serde(rename = "repairedEntities")]
+    pub repairedEntities: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadProcessingAmbiguous {
+    #[serde(rename = "actualTest")]
+    pub actualTest: i32,
+
+    #[serde(rename = "cachedTest")]
+    pub cachedTest: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadProcessingDetails {
+    #[serde(rename = "addedRecords")]
+    pub addedRecords: i32,
+
+    #[serde(rename = "candidates")]
+    pub candidates: i32,
+
+    #[serde(rename = "changeDeletes")]
+    pub changeDeletes: i32,
+
+    #[serde(rename = "duration")]
+    pub duration: i32,
+
+    #[serde(rename = "filteredObsFeat")]
+    pub filteredObsFeat: i32,
+
+    #[serde(rename = "newObsEnt")]
+    pub newObsEnt: i32,
+
+    #[serde(rename = "obsEntHashDiff")]
+    pub obsEntHashDiff: i32,
+
+    #[serde(rename = "obsEntHashSame")]
+    pub obsEntHashSame: i32,
+
+    #[serde(rename = "optimizedOut")]
+    pub optimizedOut: i32,
+
+    #[serde(rename = "optimizedOutSkipped")]
+    pub optimizedOutSkipped: i32,
+
+    #[serde(rename = "partiallyResolved")]
+    pub partiallyResolved: i32,
+
+    #[serde(rename = "retries")]
+    pub retries: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadRefreshLocks {
+    #[serde(rename = "count")]
+    pub count: i32,
+
+    #[serde(rename = "maxMS")]
+    pub maxMs: i32,
+
+    #[serde(rename = "totalMS")]
+    pub totalMs: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadRepairDiagnosis {
+    #[serde(rename = "types")]
+    pub types: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadReresolve {
+    #[serde(rename = "XXX_newFeatureFTypes")]
+    pub xxxNewFeatureFtypes: HashMap<String, i32>,
+
+    #[serde(rename = "XXX_suppressedCandidateBuildersForReresolve")]
+    pub xxxSuppressedCandidateBuildersForReresolve: Fixme,
+
+    #[serde(rename = "XXX_suppressedScoredFeatureTypeForReresolve")]
+    pub xxxSuppressedScoredFeatureTypeForReresolve: Fixme,
+
+    #[serde(rename = "triggers")]
+    pub triggers: WorkloadReresolveTriggers,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadReresolveTriggers {
+    #[serde(rename = "abortRetry")]
+    pub abortRetry: i32,
+
+    #[serde(rename = "multipleResolvableCandidates")]
+    pub multipleResolvableCandidates: i32,
+
+    #[serde(rename = "resolveNewFeatures")]
+    pub resolveNewFeatures: i32,
+
+    #[serde(rename = "skipped")]
+    pub skipped: i32,
+
+    #[serde(rename = "unresolveMovement")]
+    pub unresolveMovement: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadScoring {
+    #[serde(rename = "XXX_suppressedScoredFeatureType")]
+    pub xxxSuppressedScoredFeatureType: Fixme,
+
+    #[serde(rename = "cacheHit")]
+    pub cacheHit: HashMap<String, i32>,
+
+    #[serde(rename = "cacheMiss")]
+    pub cacheMiss: HashMap<String, i32>,
+
+    #[serde(rename = "scoredPairs")]
+    pub scoredPairs: HashMap<String, i32>,
+
+    #[serde(rename = "suppressedDisclosedRelationshipDomainCount")]
+    pub suppressedDisclosedRelationshipDomainCount: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadSystemLoad {
+    #[serde(rename = "cpuIdle")]
+    pub cpuIdle: String,
+
+    #[serde(rename = "cpuSystem")]
+    pub cpuSystem: String,
+
+    #[serde(rename = "cpuUser")]
+    pub cpuUser: String,
+
+    #[serde(rename = "cpuWait")]
+    pub cpuWait: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadSystemResources {
+    #[serde(rename = "currResources")]
+    pub currResources: WorkloadCurrResources,
+
+    #[serde(rename = "initResources")]
+    pub initResources: WorkloadInitResources,
+
+    #[serde(rename = "systemLoad")]
+    pub systemLoad: WorkloadSystemLoad,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadThreadState {
+    #[serde(rename = "active")]
+    pub active: i32,
+
+    #[serde(rename = "dataLatchContention")]
+    pub dataLatchContention: i32,
+
+    #[serde(rename = "governorContention")]
+    pub governorContention: i32,
+
+    #[serde(rename = "idle")]
+    pub idle: i32,
+
+    #[serde(rename = "loader")]
+    pub loader: i32,
+
+    #[serde(rename = "obsEntContention")]
+    pub obsEntContention: i32,
+
+    #[serde(rename = "resEntContention")]
+    pub resEntContention: i32,
+
+    #[serde(rename = "resolver")]
+    pub resolver: i32,
+
+    #[serde(rename = "scoring")]
+    pub scoring: i32,
+
+    #[serde(rename = "sqlExecuting")]
+    pub sqlExecuting: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadUnresolve {
+    #[serde(rename = "abortedUnresolve")]
+    pub abortedUnresolve: i32,
+
+    #[serde(rename = "triggers")]
+    pub triggers: WorkloadUnresolveTriggers,
+
+    #[serde(rename = "unresolveTest")]
+    pub unresolveTest: i32,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadUnresolveTriggers {
+    #[serde(rename = "ambiguousMultiResolve")]
+    pub ambiguousMultiResolve: i32,
+
+    #[serde(rename = "ambiguousNoResolve")]
+    pub ambiguousNoResolve: i32,
+
+    #[serde(rename = "extensiveResolve")]
+    pub extensiveResolve: i32,
+
+    #[serde(rename = "normalResolve")]
+    pub normalResolve: i32,
+
+    #[serde(rename = "relLink")]
+    pub relLink: i32,
+
+    #[serde(rename = "update")]
+    pub update: i32,
 }

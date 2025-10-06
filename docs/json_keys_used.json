@@ -1,18 +1,7 @@
 {
-    "ACCOUNT_DOMAIN": [
-        "SenzingEntitySpecification.ACCOUNT_DOMAIN"
-    ],
-    "ACCOUNT_NUMBER": [
-        "SenzingEntitySpecification.ACCOUNT_NUMBER"
-    ],
     "ADDITIONAL_SCORES": [
         "Confirmation.ADDITIONAL_SCORES",
         "FeatureScoreForAttribute.ADDITIONAL_SCORES"
-    ],
-    "ADDRESS_DATA": [
-        "Record.ADDRESS_DATA",
-        "RecordForGetEntity.ADDRESS_DATA",
-        "SzEngineGetRecordResponse.ADDRESS_DATA"
     ],
     "ADDR_CITY": [
         "SenzingEntitySpecification.ADDR_CITY"
@@ -20,44 +9,17 @@
     "ADDR_COUNTRY": [
         "SenzingEntitySpecification.ADDR_COUNTRY"
     ],
-    "ADDR_FROM_DATE": [
-        "SenzingEntitySpecification.ADDR_FROM_DATE"
-    ],
     "ADDR_FULL": [
         "SenzingEntitySpecification.ADDR_FULL"
     ],
     "ADDR_LINE1": [
         "SenzingEntitySpecification.ADDR_LINE1"
     ],
-    "ADDR_LINE2": [
-        "SenzingEntitySpecification.ADDR_LINE2"
-    ],
-    "ADDR_LINE3": [
-        "SenzingEntitySpecification.ADDR_LINE3"
-    ],
-    "ADDR_LINE4": [
-        "SenzingEntitySpecification.ADDR_LINE4"
-    ],
-    "ADDR_LINE5": [
-        "SenzingEntitySpecification.ADDR_LINE5"
-    ],
-    "ADDR_LINE6": [
-        "SenzingEntitySpecification.ADDR_LINE6"
-    ],
     "ADDR_POSTAL_CODE": [
         "SenzingEntitySpecification.ADDR_POSTAL_CODE"
     ],
     "ADDR_STATE": [
         "SenzingEntitySpecification.ADDR_STATE"
-    ],
-    "ADDR_THRU_DATE": [
-        "SenzingEntitySpecification.ADDR_THRU_DATE"
-    ],
-    "ADDR_TYPE": [
-        "SenzingEntitySpecification.ADDR_TYPE"
-    ],
-    "ADVANCED": [
-        "CFG_ATTR.ADVANCED"
     ],
     "AFFECTED_ENTITIES": [
         "SzEngineAddRecordResponse.AFFECTED_ENTITIES",
@@ -75,13 +37,7 @@
     ],
     "ATTRIBUTES": [
         "FeatureDescriptionValue.ATTRIBUTES",
-        "FeatureForAttributes.ATTRIBUTES",
-        "FeatureForGetEntity.ATTRIBUTES"
-    ],
-    "ATTRIBUTE_DATA": [
-        "Record.ATTRIBUTE_DATA",
-        "RecordForGetEntity.ATTRIBUTE_DATA",
-        "SzEngineGetRecordResponse.ATTRIBUTE_DATA"
+        "FeatureForAttributes.ATTRIBUTES"
     ],
     "ATTR_CLASS": [
         "CFG_ATTR.ATTR_CLASS"
@@ -170,9 +126,6 @@
     "CFG_EBOM": [
         "G2Config.CFG_EBOM"
     ],
-    "CFG_ECLASS": [
-        "G2Config.CFG_ECLASS"
-    ],
     "CFG_EFBOM": [
         "G2Config.CFG_EFBOM"
     ],
@@ -187,9 +140,6 @@
     ],
     "CFG_ERRULE": [
         "G2Config.CFG_ERRULE"
-    ],
-    "CFG_ETYPE": [
-        "G2Config.CFG_ETYPE"
     ],
     "CFG_FBOM": [
         "G2Config.CFG_FBOM"
@@ -211,12 +161,6 @@
     ],
     "CFG_GPLAN": [
         "G2Config.CFG_GPLAN"
-    ],
-    "CFG_LENS": [
-        "G2Config.CFG_LENS"
-    ],
-    "CFG_LENSRL": [
-        "G2Config.CFG_LENSRL"
     ],
     "CFG_RCLASS": [
         "G2Config.CFG_RCLASS"
@@ -247,14 +191,8 @@
     "CFUNC_RTNVAL": [
         "CFG_CFRTN.CFUNC_RTNVAL"
     ],
-    "CITIZENSHIP": [
-        "SenzingEntitySpecification.CITIZENSHIP"
-    ],
     "CLOSE_SCORE": [
         "CFG_CFRTN.CLOSE_SCORE"
-    ],
-    "CODE": [
-        "Notice.CODE"
     ],
     "COMPATIBILITY_VERSION": [
         "CONFIG_BASE_VERSION.COMPATIBILITY_VERSION",
@@ -285,21 +223,16 @@
         "CFG_EFUNC.CONNECT_STR",
         "CFG_SFUNC.CONNECT_STR"
     ],
-    "CONVERSATIONAL": [
-        "CFG_DSRC.CONVERSATIONAL"
-    ],
     "DATA_SOURCE": [
         "FocusRecord.DATA_SOURCE",
         "Record.DATA_SOURCE",
         "RecordForGetEntity.DATA_SOURCE",
         "RecordKey.DATA_SOURCE",
         "RecordSummary.DATA_SOURCE",
-        "SampleRecord.DATA_SOURCE",
         "SzEngineAddRecordResponse.DATA_SOURCE",
         "SzEngineDeleteRecordResponse.DATA_SOURCE",
         "SzEngineGetRecordResponse.DATA_SOURCE",
         "SzEngineProcessRedoRecordResponse.DATA_SOURCE",
-        "SzEngineReevaluateEntityResponse.DATA_SOURCE",
         "SzEngineReevaluateRecordResponse.DATA_SOURCE"
     ],
     "DATA_SOURCES": [
@@ -311,28 +244,16 @@
     "DATE_OF_BIRTH": [
         "SenzingEntitySpecification.DATE_OF_BIRTH"
     ],
-    "DATE_OF_DEATH": [
-        "SenzingEntitySpecification.DATE_OF_DEATH"
-    ],
     "DEFAULT_VALUE": [
         "CFG_ATTR.DEFAULT_VALUE"
-    ],
-    "DEGREES": [
-        "InterestingEntity.DEGREES"
     ],
     "DENIALS": [
         "MatchKeyDetails.DENIALS",
         "WhyKeyDetails.DENIALS"
     ],
-    "DERIVATION": [
-        "CFG_FTYPE.DERIVATION"
-    ],
     "DERIVED": [
         "CFG_FBOM.DERIVED",
         "CFG_FTYPE.DERIVED"
-    ],
-    "DESCRIPTION": [
-        "Notice.DESCRIPTION"
     ],
     "DFCALL_ID": [
         "CFG_DFBOM.DFCALL_ID",
@@ -349,11 +270,8 @@
         "CFG_DFUNC.DFUNC_ID"
     ],
     "DISCLOSED_RELATIONS": [
-        "MatchInfo.DISCLOSED_RELATIONS",
-        "MatchInfoForWhy.DISCLOSED_RELATIONS"
-    ],
-    "DISPLAY_DELIM": [
-        "CFG_FBOM.DISPLAY_DELIM"
+        "MatchInfoForWhy.DISCLOSED_RELATIONS",
+        "WhyKeyDetails.DISCLOSED_RELATIONS"
     ],
     "DISPLAY_LEVEL": [
         "CFG_FBOM.DISPLAY_LEVEL"
@@ -362,9 +280,7 @@
         "CFG_ERRULE.DISQ_ERFRAG_CODE"
     ],
     "DOMAIN": [
-        "DisclosedRelationsForMatchInfoForWhy.DOMAIN",
-        "RelAnchor.DOMAIN",
-        "RelLink.DOMAIN",
+        "DisclosedRelationsForWhyKeyDetails.DOMAIN",
         "RelPointer.DOMAIN"
     ],
     "DRIVERS_LICENSE_NUMBER": [
@@ -382,38 +298,20 @@
     ],
     "DSRC_ID": [
         "CFG_DSRC.DSRC_ID",
-        "CFG_DSRC_INTEREST.DSRC_ID",
         "DataSource.DSRC_ID",
         "SzConfigRegisterDataSourceResponse.DSRC_ID"
-    ],
-    "DSRC_RELY": [
-        "CFG_DSRC.DSRC_RELY"
-    ],
-    "DUNS_NUMBER": [
-        "SenzingEntitySpecification.DUNS_NUMBER"
-    ],
-    "ECLASS_CODE": [
-        "CFG_ECLASS.ECLASS_CODE"
-    ],
-    "ECLASS_DESC": [
-        "CFG_ECLASS.ECLASS_DESC"
-    ],
-    "ECLASS_ID": [
-        "CFG_ECLASS.ECLASS_ID",
-        "CFG_ETYPE.ECLASS_ID",
-        "CFG_FBOVR.ECLASS_ID"
     ],
     "EFCALL_ID": [
         "CFG_EFBOM.EFCALL_ID",
         "CFG_EFCALL.EFCALL_ID",
-        "ExpressedFeaturesCall.EFCALL_ID"
+        "WorkloadExpressedFeaturesCall.EFCALL_ID"
     ],
     "EFEAT_FTYPE_ID": [
         "CFG_EFCALL.EFEAT_FTYPE_ID"
     ],
     "EFUNC_CODE": [
         "CFG_EFUNC.EFUNC_CODE",
-        "ExpressedFeaturesCall.EFUNC_CODE"
+        "WorkloadExpressedFeaturesCall.EFUNC_CODE"
     ],
     "EFUNC_DESC": [
         "CFG_EFUNC.EFUNC_DESC"
@@ -427,9 +325,6 @@
     ],
     "EMAIL_ADDRESS": [
         "SenzingEntitySpecification.EMAIL_ADDRESS"
-    ],
-    "EMPLOYER": [
-        "SenzingEntitySpecification.EMPLOYER"
     ],
     "EMPLOYER_NAME": [
         "SenzingEntitySpecification.EMPLOYER_NAME"
@@ -458,19 +353,8 @@
     "ENTITY_COUNT": [
         "FeatureDescriptionValue.ENTITY_COUNT"
     ],
-    "ENTITY_DATA": [
-        "Record.ENTITY_DATA",
-        "RecordForGetEntity.ENTITY_DATA",
-        "SzEngineGetRecordResponse.ENTITY_DATA"
-    ],
-    "ENTITY_DESC": [
-        "Record.ENTITY_DESC",
-        "RecordForGetEntity.ENTITY_DESC",
-        "SzEngineGetRecordResponse.ENTITY_DESC"
-    ],
     "ENTITY_ID": [
         "AffectedEntity.ENTITY_ID",
-        "InterestingEntity.ENTITY_ID",
         "RelatedEntity.ENTITY_ID",
         "ResolvedEntity.ENTITY_ID",
         "ResolvedEntityForGetEntity.ENTITY_ID",
@@ -478,11 +362,6 @@
     ],
     "ENTITY_ID_2": [
         "WhyResult.ENTITY_ID_2"
-    ],
-    "ENTITY_KEY": [
-        "Record.ENTITY_KEY",
-        "RecordForGetEntity.ENTITY_KEY",
-        "SzEngineGetRecordResponse.ENTITY_KEY"
     ],
     "ENTITY_NAME": [
         "RelatedEntity.ENTITY_NAME",
@@ -505,10 +384,8 @@
         "SzEngineFindPathByEntityIdResponse.ENTITY_PATH_LINKS",
         "SzEngineFindPathByRecordIdResponse.ENTITY_PATH_LINKS"
     ],
-    "ENTITY_TYPE": [
-        "Record.ENTITY_TYPE",
-        "RecordForGetEntity.ENTITY_TYPE",
-        "SzEngineGetRecordResponse.ENTITY_TYPE"
+    "ENTITY_ROLES": [
+        "DisclosedRelationsForWhyKeyDetails.ENTITY_ROLES"
     ],
     "ERFRAG_CODE": [
         "CFG_ERFRAG.ERFRAG_CODE"
@@ -530,16 +407,9 @@
         "EntityNetworkLink.ERRULE_CODE",
         "EntityPathLink.ERRULE_CODE",
         "MatchInfo.ERRULE_CODE",
-        "MatchKeyDetails.ERRULE_CODE",
         "Record.ERRULE_CODE",
         "RecordForGetEntity.ERRULE_CODE",
-        "RelatedEntity.ERRULE_CODE",
-        "ResolvedEntity.ERRULE_CODE",
-        "ResolvedEntityForGetEntity.ERRULE_CODE",
-        "SzEngineGetRecordResponse.ERRULE_CODE"
-    ],
-    "ERRULE_DESC": [
-        "CFG_ERRULE.ERRULE_DESC"
+        "RelatedEntity.ERRULE_CODE"
     ],
     "ERRULE_ID": [
         "CFG_ERRULE.ERRULE_ID"
@@ -547,30 +417,14 @@
     "ERRULE_TIER": [
         "CFG_ERRULE.ERRULE_TIER"
     ],
-    "ETYPE_CODE": [
-        "CFG_ETYPE.ETYPE_CODE"
-    ],
-    "ETYPE_DESC": [
-        "CFG_ETYPE.ETYPE_DESC"
-    ],
-    "ETYPE_ID": [
-        "CFG_EBOM.ETYPE_ID",
-        "CFG_ETYPE.ETYPE_ID"
-    ],
     "EXEC_ORDER": [
         "CFG_CFBOM.EXEC_ORDER",
-        "CFG_CFCALL.EXEC_ORDER",
         "CFG_CFRTN.EXEC_ORDER",
         "CFG_DFBOM.EXEC_ORDER",
-        "CFG_DFCALL.EXEC_ORDER",
-        "CFG_EBOM.EXEC_ORDER",
         "CFG_EFBOM.EXEC_ORDER",
         "CFG_EFCALL.EXEC_ORDER",
         "CFG_FBOM.EXEC_ORDER",
         "CFG_SFCALL.EXEC_ORDER"
-    ],
-    "FACEBOOK": [
-        "SenzingEntitySpecification.FACEBOOK"
     ],
     "FCLASS_CODE": [
         "CFG_FCLASS.FCLASS_CODE"
@@ -594,8 +448,6 @@
     "FEATURE_IDS": [
         "Record.FEATURE_IDS",
         "RecordForGetEntity.FEATURE_IDS",
-        "ResolvedEntity.FEATURE_IDS",
-        "ResolvedEntityForGetEntity.FEATURE_IDS",
         "SzEngineGetRecordPreviewResponse.FEATURE_IDS",
         "SzEngineGetRecordResponse.FEATURE_IDS"
     ],
@@ -607,13 +459,11 @@
         "CandidateKeysForSearchStatistic.FEATURE_TYPES"
     ],
     "FEAT_DESC": [
-        "DisclosedRelationsForMatchInfoForWhy.FEAT_DESC",
+        "EntityRoles.FEAT_DESC",
         "FeatureDescriptionValue.FEAT_DESC",
         "FeatureForAttributes.FEAT_DESC",
         "FeatureForGetEntity.FEAT_DESC",
         "MatchInfoForAttribute.FEAT_DESC",
-        "RelAnchor.FEAT_DESC",
-        "RelLink.FEAT_DESC",
         "RelPointer.FEAT_DESC"
     ],
     "FEAT_DESC_VALUES": [
@@ -621,15 +471,10 @@
         "FeatureForGetEntity.FEAT_DESC_VALUES"
     ],
     "FEAT_ID": [
-        "DisclosedRelationsForMatchInfoForWhy.FEAT_ID",
         "MatchInfoForAttribute.FEAT_ID",
-        "RelAnchor.FEAT_ID",
-        "RelLink.FEAT_ID",
         "RelPointer.FEAT_ID"
     ],
     "FEAT_USAGE_TYPE": [
-        "DisclosedRelationsForMatchInfoForWhy.FEAT_USAGE_TYPE",
-        "RelLink.FEAT_USAGE_TYPE",
         "RelPointer.FEAT_USAGE_TYPE"
     ],
     "FELEM_CODE": [
@@ -647,8 +492,7 @@
         "CFG_EFCALL.FELEM_ID",
         "CFG_FBOM.FELEM_ID",
         "CFG_FELEM.FELEM_ID",
-        "CFG_SFCALL.FELEM_ID",
-        "SYS_OOM.FELEM_ID"
+        "CFG_SFCALL.FELEM_ID"
     ],
     "FELEM_REQ": [
         "CFG_ATTR.FELEM_REQ",
@@ -663,28 +507,13 @@
     "FIRST_SEEN_DT": [
         "Record.FIRST_SEEN_DT",
         "RecordForGetEntity.FIRST_SEEN_DT",
-        "RecordSummary.FIRST_SEEN_DT",
         "SzEngineGetRecordResponse.FIRST_SEEN_DT"
     ],
     "FIXME": [
-        "SzEngineExportCsvEntityReportCsvColumnList.FIXME",
-        "SzEngineFetchNextResponse.FIXME",
-        "SzEngineFindNetworkByEntityIdEntityIds.FIXME",
-        "SzEngineFindPathByEntityIdAvoidEntityIds.FIXME",
-        "SzEngineFindPathByEntityIdRequiredDataSources.FIXME",
-        "SzEngineFindPathByRecordIdRequiredDataSources.FIXME",
-        "SzEngineSearchByAttributesAttributes.FIXME",
-        "SzEngineSearchByAttributesSearchProfile.FIXME",
-        "SzEngineStreamExportJsonEntityReportResponse.FIXME",
-        "SzEngineWhySearchAttributes.FIXME",
-        "SzEngineWhySearchSearchProfile.FIXME"
+        "RelatedRoles.FIXME"
     ],
     "FIXME_KEY": [
         "Fixme.FIXME_KEY"
-    ],
-    "FLAGS": [
-        "InterestingEntity.FLAGS",
-        "SampleRecord.FLAGS"
     ],
     "FOCUS_RECORDS": [
         "WhyResult.FOCUS_RECORDS"
@@ -693,8 +522,8 @@
         "WhyResult.FOCUS_RECORDS_2"
     ],
     "FOUND": [
-        "FeatureType.FOUND",
-        "Summary.FOUND"
+        "CandidateKeysSummary.FOUND",
+        "FeatureType.FOUND"
     ],
     "FTYPE_CODE": [
         "CFG_ATTR.FTYPE_CODE",
@@ -720,7 +549,6 @@
         "CFG_CFRTN.FTYPE_ID",
         "CFG_DFBOM.FTYPE_ID",
         "CFG_DFCALL.FTYPE_ID",
-        "CFG_EBOM.FTYPE_ID",
         "CFG_EFBOM.FTYPE_ID",
         "CFG_EFCALL.FTYPE_ID",
         "CFG_FBOM.FTYPE_ID",
@@ -737,18 +565,6 @@
     "FULL_SCORE": [
         "AdditionalScores.FULL_SCORE"
     ],
-    "FUNC_LIB": [
-        "CFG_CFUNC.FUNC_LIB",
-        "CFG_DFUNC.FUNC_LIB",
-        "CFG_EFUNC.FUNC_LIB",
-        "CFG_SFUNC.FUNC_LIB"
-    ],
-    "FUNC_VER": [
-        "CFG_CFUNC.FUNC_VER",
-        "CFG_DFUNC.FUNC_VER",
-        "CFG_EFUNC.FUNC_VER",
-        "CFG_SFUNC.FUNC_VER"
-    ],
     "G2_CONFIG": [
         "SzConfigExportResponse.G2_CONFIG"
     ],
@@ -759,8 +575,8 @@
         "AdditionalScores.GENERATION_MATCH"
     ],
     "GENERIC": [
-        "FeatureType.GENERIC",
-        "Summary.GENERIC"
+        "CandidateKeysSummary.GENERIC",
+        "FeatureType.GENERIC"
     ],
     "GNR_FN": [
         "AdditionalScores.GNR_FN"
@@ -784,25 +600,8 @@
         "CFG_GENERIC_THRESHOLD.GPLAN_ID",
         "CFG_GPLAN.GPLAN_ID"
     ],
-    "GROUP_ASSN_ID_NUMBER": [
-        "SenzingEntitySpecification.GROUP_ASSN_ID_NUMBER"
-    ],
-    "GROUP_ASSN_ID_TYPE": [
-        "SenzingEntitySpecification.GROUP_ASSN_ID_TYPE"
-    ],
-    "GROUP_ASSOCIATION_ORG_NAME": [
-        "SenzingEntitySpecification.GROUP_ASSOCIATION_ORG_NAME"
-    ],
-    "GROUP_ASSOCIATION_TYPE": [
-        "SenzingEntitySpecification.GROUP_ASSOCIATION_TYPE"
-    ],
     "HOW_RESULTS": [
         "SzEngineHowEntityByEntityIdResponse.HOW_RESULTS"
-    ],
-    "IDENTIFIER_DATA": [
-        "Record.IDENTIFIER_DATA",
-        "RecordForGetEntity.IDENTIFIER_DATA",
-        "SzEngineGetRecordResponse.IDENTIFIER_DATA"
     ],
     "INBOUND_FEAT_DESC": [
         "Confirmation.INBOUND_FEAT_DESC",
@@ -819,20 +618,9 @@
     "INBOUND_VIRTUAL_ENTITY_ID": [
         "ResolutionStep.INBOUND_VIRTUAL_ENTITY_ID"
     ],
-    "INSTAGRAM": [
-        "SenzingEntitySpecification.INSTAGRAM"
-    ],
     "INTERESTING_ENTITIES": [
-        "SzEngineAddRecordResponse.INTERESTING_ENTITIES",
-        "SzEngineDeleteRecordResponse.INTERESTING_ENTITIES",
         "SzEngineFindInterestingEntitiesByEntityIdResponse.INTERESTING_ENTITIES",
-        "SzEngineFindInterestingEntitiesByRecordIdResponse.INTERESTING_ENTITIES",
-        "SzEngineProcessRedoRecordResponse.INTERESTING_ENTITIES",
-        "SzEngineReevaluateEntityResponse.INTERESTING_ENTITIES",
-        "SzEngineReevaluateRecordResponse.INTERESTING_ENTITIES"
-    ],
-    "INTEREST_FLAG": [
-        "CFG_DSRC_INTEREST.INTEREST_FLAG"
+        "SzEngineFindInterestingEntitiesByRecordIdResponse.INTERESTING_ENTITIES"
     ],
     "INTERNAL": [
         "CFG_ATTR.INTERNAL"
@@ -841,7 +629,6 @@
         "MemberRecord.INTERNAL_ID",
         "Record.INTERNAL_ID",
         "RecordForGetEntity.INTERNAL_ID",
-        "SzEngineGetRecordResponse.INTERNAL_ID",
         "WhyResult.INTERNAL_ID"
     ],
     "INTERNAL_ID_2": [
@@ -850,26 +637,16 @@
     "IS_AMBIGUOUS": [
         "EntityNetworkLink.IS_AMBIGUOUS",
         "EntityPathLink.IS_AMBIGUOUS",
-        "RelatedEntity.IS_AMBIGUOUS",
-        "ResolvedEntity.IS_AMBIGUOUS",
-        "ResolvedEntityForGetEntity.IS_AMBIGUOUS"
+        "RelatedEntity.IS_AMBIGUOUS"
     ],
     "IS_DISCLOSED": [
         "CFG_RCLASS.IS_DISCLOSED",
         "EntityNetworkLink.IS_DISCLOSED",
         "EntityPathLink.IS_DISCLOSED",
-        "RelatedEntity.IS_DISCLOSED",
-        "ResolvedEntity.IS_DISCLOSED",
-        "ResolvedEntityForGetEntity.IS_DISCLOSED"
+        "RelatedEntity.IS_DISCLOSED"
     ],
     "IS_VIRTUAL": [
         "CFG_EFCALL.IS_VIRTUAL"
-    ],
-    "JAVA_CLASS_NAME": [
-        "CFG_CFUNC.JAVA_CLASS_NAME",
-        "CFG_DFUNC.JAVA_CLASS_NAME",
-        "CFG_EFUNC.JAVA_CLASS_NAME",
-        "CFG_SFUNC.JAVA_CLASS_NAME"
     ],
     "JSON_DATA": [
         "Record.JSON_DATA",
@@ -878,72 +655,29 @@
         "SzEngineGetRecordPreviewResponse.JSON_DATA",
         "SzEngineGetRecordResponse.JSON_DATA"
     ],
-    "LANGUAGE": [
-        "CFG_CFUNC.LANGUAGE",
-        "CFG_DFUNC.LANGUAGE",
-        "CFG_EFUNC.LANGUAGE",
-        "CFG_SFUNC.LANGUAGE"
-    ],
     "LAST_SEEN_DT": [
         "Record.LAST_SEEN_DT",
         "RecordForGetEntity.LAST_SEEN_DT",
-        "RecordSummary.LAST_SEEN_DT",
-        "RelatedEntity.LAST_SEEN_DT",
-        "ResolvedEntity.LAST_SEEN_DT",
-        "ResolvedEntityForGetEntity.LAST_SEEN_DT",
         "SzEngineGetRecordResponse.LAST_SEEN_DT"
-    ],
-    "LEI_NUMBER": [
-        "SenzingEntitySpecification.LEI_NUMBER"
-    ],
-    "LENS_CODE": [
-        "CFG_LENS.LENS_CODE"
-    ],
-    "LENS_DESC": [
-        "CFG_LENS.LENS_DESC"
-    ],
-    "LENS_ID": [
-        "CFG_LENS.LENS_ID",
-        "SYS_OOM.LENS_ID"
     ],
     "LIB_FEAT_ID": [
         "FeatureDescriptionValue.LIB_FEAT_ID",
         "FeatureForAttributes.LIB_FEAT_ID",
         "FeatureForGetEntity.LIB_FEAT_ID",
         "FeatureID.LIB_FEAT_ID",
-        "SYS_OOM.LIB_FEAT_ID",
         "SzDiagnosticGetFeatureResponse.LIB_FEAT_ID"
-    ],
-    "LIB_FELEM_ID": [
-        "SYS_OOM.LIB_FELEM_ID"
     ],
     "LIKELY_SCORE": [
         "CFG_CFRTN.LIKELY_SCORE"
     ],
-    "LINKEDIN": [
-        "SenzingEntitySpecification.LINKEDIN"
-    ],
     "LINKED_FEAT_DESC": [
-        "DisclosedRelationsForMatchInfoForWhy.LINKED_FEAT_DESC",
-        "RelAnchor.LINKED_FEAT_DESC",
-        "RelLink.LINKED_FEAT_DESC",
         "RelPointer.LINKED_FEAT_DESC"
     ],
     "LINKED_FEAT_ID": [
-        "DisclosedRelationsForMatchInfoForWhy.LINKED_FEAT_ID",
-        "RelAnchor.LINKED_FEAT_ID",
-        "RelLink.LINKED_FEAT_ID",
         "RelPointer.LINKED_FEAT_ID"
     ],
     "LINKED_FEAT_TYPE": [
-        "DisclosedRelationsForMatchInfoForWhy.LINKED_FEAT_TYPE",
-        "RelAnchor.LINKED_FEAT_TYPE",
-        "RelLink.LINKED_FEAT_TYPE",
         "RelPointer.LINKED_FEAT_TYPE"
-    ],
-    "LINKED_FEAT_USAGE_TYPE": [
-        "RelAnchor.LINKED_FEAT_USAGE_TYPE",
-        "RelLink.LINKED_FEAT_USAGE_TYPE"
     ],
     "MATCH_INFO": [
         "ResolutionStep.MATCH_INFO",
@@ -956,22 +690,13 @@
         "MatchInfo.MATCH_KEY",
         "Record.MATCH_KEY",
         "RecordForGetEntity.MATCH_KEY",
-        "RelatedEntity.MATCH_KEY",
-        "ResolvedEntity.MATCH_KEY",
-        "ResolvedEntityForGetEntity.MATCH_KEY",
-        "SzEngineGetRecordResponse.MATCH_KEY"
+        "RelatedEntity.MATCH_KEY"
     ],
     "MATCH_KEY_DETAILS": [
         "MatchInfo.MATCH_KEY_DETAILS"
     ],
     "MATCH_LEVEL": [
-        "MatchInfo.MATCH_LEVEL",
-        "Record.MATCH_LEVEL",
-        "RecordForGetEntity.MATCH_LEVEL",
-        "RelatedEntity.MATCH_LEVEL",
-        "ResolvedEntity.MATCH_LEVEL",
-        "ResolvedEntityForGetEntity.MATCH_LEVEL",
-        "SzEngineGetRecordResponse.MATCH_LEVEL"
+        "RelatedEntity.MATCH_LEVEL"
     ],
     "MATCH_LEVEL_CODE": [
         "EntityNetworkLink.MATCH_LEVEL_CODE",
@@ -980,16 +705,10 @@
         "MatchInfoForWhy.MATCH_LEVEL_CODE",
         "Record.MATCH_LEVEL_CODE",
         "RecordForGetEntity.MATCH_LEVEL_CODE",
-        "RelatedEntity.MATCH_LEVEL_CODE",
-        "ResolvedEntity.MATCH_LEVEL_CODE",
-        "ResolvedEntityForGetEntity.MATCH_LEVEL_CODE",
-        "SzEngineGetRecordResponse.MATCH_LEVEL_CODE"
+        "RelatedEntity.MATCH_LEVEL_CODE"
     ],
     "MAXIMUM_REQUIRED_SCHEMA_VERSION": [
         "SchemaVersion.MAXIMUM_REQUIRED_SCHEMA_VERSION"
-    ],
-    "MAX_DEGREE": [
-        "CFG_DSRC_INTEREST.MAX_DEGREE"
     ],
     "MAX_ENTITY_ID": [
         "EntityNetworkLink.MAX_ENTITY_ID",
@@ -1013,37 +732,11 @@
         "EntityPathLink.MIN_ENTITY_ID"
     ],
     "NAME": [
-        "ParamDetails.NAME",
-        "UmfProc.NAME"
-    ],
-    "NAME_DATA": [
-        "Record.NAME_DATA",
-        "RecordForGetEntity.NAME_DATA",
-        "SzEngineGetRecordResponse.NAME_DATA"
-    ],
-    "NAME_FIRST": [
-        "SenzingEntitySpecification.NAME_FIRST"
+        "UmfProc.NAME",
+        "UmfProcParamDetails.NAME"
     ],
     "NAME_FULL": [
         "SenzingEntitySpecification.NAME_FULL"
-    ],
-    "NAME_LAST": [
-        "SenzingEntitySpecification.NAME_LAST"
-    ],
-    "NAME_ORG": [
-        "SenzingEntitySpecification.NAME_ORG"
-    ],
-    "NAME_PREFIX": [
-        "SenzingEntitySpecification.NAME_PREFIX"
-    ],
-    "NAME_SUFFIX": [
-        "SenzingEntitySpecification.NAME_SUFFIX"
-    ],
-    "NAME_TYPE": [
-        "SenzingEntitySpecification.NAME_TYPE"
-    ],
-    "NATIONALITY": [
-        "SenzingEntitySpecification.NATIONALITY"
     ],
     "NATIONAL_ID_COUNTRY": [
         "SenzingEntitySpecification.NATIONAL_ID_COUNTRY"
@@ -1060,15 +753,9 @@
     "NEXT_THRESH": [
         "SYS_OOM.NEXT_THRESH"
     ],
-    "NOTICES": [
-        "InterestingEntities.NOTICES"
-    ],
     "NOT_FOUND": [
-        "FeatureType.NOT_FOUND",
-        "Summary.NOT_FOUND"
-    ],
-    "NPI_NUMBER": [
-        "SenzingEntitySpecification.NPI_NUMBER"
+        "CandidateKeysSummary.NOT_FOUND",
+        "FeatureType.NOT_FOUND"
     ],
     "OOM_LEVEL": [
         "SYS_OOM.OOM_LEVEL"
@@ -1076,22 +763,8 @@
     "OOM_TYPE": [
         "SYS_OOM.OOM_TYPE"
     ],
-    "OTHER_DATA": [
-        "Record.OTHER_DATA",
-        "RecordForGetEntity.OTHER_DATA",
-        "SzEngineGetRecordResponse.OTHER_DATA"
-    ],
-    "OTHER_ID_COUNTRY": [
-        "SenzingEntitySpecification.OTHER_ID_COUNTRY"
-    ],
-    "OTHER_ID_NUMBER": [
-        "SenzingEntitySpecification.OTHER_ID_NUMBER"
-    ],
-    "OTHER_ID_TYPE": [
-        "SenzingEntitySpecification.OTHER_ID_TYPE"
-    ],
     "PARAM": [
-        "Params.PARAM"
+        "UmfProcParams.PARAM"
     ],
     "PARAMS": [
         "UmfProc.PARAMS"
@@ -1105,25 +778,8 @@
     "PERSIST_HISTORY": [
         "CFG_FTYPE.PERSIST_HISTORY"
     ],
-    "PHONE_DATA": [
-        "Record.PHONE_DATA",
-        "RecordForGetEntity.PHONE_DATA",
-        "SzEngineGetRecordResponse.PHONE_DATA"
-    ],
-    "PHONE_FROM_DATE": [
-        "SenzingEntitySpecification.PHONE_FROM_DATE"
-    ],
     "PHONE_NUMBER": [
         "SenzingEntitySpecification.PHONE_NUMBER"
-    ],
-    "PHONE_THRU_DATE": [
-        "SenzingEntitySpecification.PHONE_THRU_DATE"
-    ],
-    "PHONE_TYPE": [
-        "SenzingEntitySpecification.PHONE_TYPE"
-    ],
-    "PLACE_OF_BIRTH": [
-        "SenzingEntitySpecification.PLACE_OF_BIRTH"
     ],
     "PLAUSIBLE_SCORE": [
         "CFG_CFRTN.PLAUSIBLE_SCORE"
@@ -1144,7 +800,6 @@
         "SenzingEntitySpecification.PRIMARY_NAME_ORG"
     ],
     "PRODUCT_NAME": [
-        "CONFIG_BASE_VERSION.PRODUCT_NAME",
         "SzProductGetVersionResponse.PRODUCT_NAME"
     ],
     "QUAL_ERFRAG_CODE": [
@@ -1162,8 +817,6 @@
     ],
     "RECORDS": [
         "MemberRecord.RECORDS",
-        "RecordKeys.RECORDS",
-        "RelatedEntity.RECORDS",
         "ResolvedEntity.RECORDS",
         "ResolvedEntityForGetEntity.RECORDS",
         "SzEngineFindNetworkByRecordIdRecordKeys.RECORDS",
@@ -1178,12 +831,10 @@
         "Record.RECORD_ID",
         "RecordForGetEntity.RECORD_ID",
         "RecordKey.RECORD_ID",
-        "SampleRecord.RECORD_ID",
         "SzEngineAddRecordResponse.RECORD_ID",
         "SzEngineDeleteRecordResponse.RECORD_ID",
         "SzEngineGetRecordResponse.RECORD_ID",
         "SzEngineProcessRedoRecordResponse.RECORD_ID",
-        "SzEngineReevaluateEntityResponse.RECORD_ID",
         "SzEngineReevaluateRecordResponse.RECORD_ID"
     ],
     "RECORD_SUMMARY": [
@@ -1198,55 +849,31 @@
         "ResolvedEntity.RECORD_TYPES",
         "ResolvedEntityForGetEntity.RECORD_TYPES"
     ],
-    "REF_SCORE": [
-        "CFG_ERRULE.REF_SCORE"
-    ],
-    "REGISTRATION_COUNTRY": [
-        "SenzingEntitySpecification.REGISTRATION_COUNTRY"
-    ],
-    "REGISTRATION_DATE": [
-        "SenzingEntitySpecification.REGISTRATION_DATE"
-    ],
     "RELATE": [
         "CFG_ERRULE.RELATE"
     ],
     "RELATED_ENTITIES": [
         "Entity.RELATED_ENTITIES",
         "EntityForResolvedEntity.RELATED_ENTITIES",
-        "EntityForWhySearch.RELATED_ENTITIES",
         "SzEngineGetEntityByEntityIdResponse.RELATED_ENTITIES",
         "SzEngineGetEntityByRecordIdResponse.RELATED_ENTITIES"
     ],
-    "RELATIONSHIP_DATA": [
-        "Record.RELATIONSHIP_DATA",
-        "RecordForGetEntity.RELATIONSHIP_DATA",
-        "SzEngineGetRecordResponse.RELATIONSHIP_DATA"
-    ],
-    "REL_ANCHOR": [
-        "DisclosedRelationsForMatchInfo.REL_ANCHOR",
-        "DisclosedRelationsForMatchInfoForWhy.REL_ANCHOR"
+    "RELATED_ROLES": [
+        "DisclosedRelationsForWhyKeyDetails.RELATED_ROLES"
     ],
     "REL_ANCHOR_KEY": [
         "SenzingEntitySpecification.REL_ANCHOR_KEY"
     ],
-    "REL_LINK": [
-        "DisclosedRelationsForMatchInfo.REL_LINK"
-    ],
     "REL_POINTER": [
-        "DisclosedRelationsForMatchInfo.REL_POINTER",
-        "RelAnchor.REL_POINTER"
+        "DisclosedRelationsForMatchInfoForWhy.REL_POINTER"
     ],
     "REL_POINTER_KEY": [
         "SenzingEntitySpecification.REL_POINTER_KEY"
-    ],
-    "REL_STRENGTH": [
-        "CFG_RTYPE.REL_STRENGTH"
     ],
     "RESOLUTION_STEPS": [
         "HowResults.RESOLUTION_STEPS"
     ],
     "RESOLVE": [
-        "CFG_ECLASS.RESOLVE",
         "CFG_ERRULE.RESOLVE"
     ],
     "RESOLVED_ENTITIES": [
@@ -1266,6 +893,9 @@
     "RETENTION_LEVEL": [
         "CFG_DSRC.RETENTION_LEVEL"
     ],
+    "ROLE": [
+        "EntityRoles.ROLE"
+    ],
     "RTYPE_CODE": [
         "CFG_RTYPE.RTYPE_CODE"
     ],
@@ -1279,9 +909,6 @@
     ],
     "SAME_SCORE": [
         "CFG_CFRTN.SAME_SCORE"
-    ],
-    "SAMPLE_RECORDS": [
-        "InterestingEntity.SAMPLE_RECORDS"
     ],
     "SCHEMA_VERSION": [
         "SzProductGetVersionResponse.SCHEMA_VERSION"
@@ -1340,12 +967,6 @@
     "SHOW_IN_MATCH_KEY": [
         "CFG_FTYPE.SHOW_IN_MATCH_KEY"
     ],
-    "SIGNAL": [
-        "SenzingEntitySpecification.SIGNAL"
-    ],
-    "SKYPE": [
-        "SenzingEntitySpecification.SKYPE"
-    ],
     "SOURCE": [
         "Confirmation.SOURCE"
     ],
@@ -1361,29 +982,11 @@
     "SUMMARY": [
         "CandidateKeysForSearchStatistic.SUMMARY"
     ],
-    "SUPPRESSED": [
-        "FeatureDescriptionValue.SUPPRESSED"
-    ],
     "SYS_CREATE_DT": [
         "Config.SYS_CREATE_DT"
     ],
     "SYS_OOM": [
         "G2Config.SYS_OOM"
-    ],
-    "TANGO": [
-        "SenzingEntitySpecification.TANGO"
-    ],
-    "TAX_ID_COUNTRY": [
-        "SenzingEntitySpecification.TAX_ID_COUNTRY"
-    ],
-    "TAX_ID_NUMBER": [
-        "SenzingEntitySpecification.TAX_ID_NUMBER"
-    ],
-    "TAX_ID_TYPE": [
-        "SenzingEntitySpecification.TAX_ID_TYPE"
-    ],
-    "TELEGRAM": [
-        "SenzingEntitySpecification.TELEGRAM"
     ],
     "THRESH1_CNT": [
         "SYS_OOM.THRESH1_CNT"
@@ -1394,20 +997,9 @@
     "TOKEN": [
         "Confirmation.TOKEN"
     ],
-    "TOKENIZE": [
-        "CFG_FELEM.TOKENIZE"
-    ],
-    "TRUSTED_ID_NUMBER": [
-        "SenzingEntitySpecification.TRUSTED_ID_NUMBER"
-    ],
-    "TRUSTED_ID_TYPE": [
-        "SenzingEntitySpecification.TRUSTED_ID_TYPE"
-    ],
-    "TWITTER": [
-        "SenzingEntitySpecification.TWITTER"
-    ],
     "UMF_PROC": [
-        "SzEngineGetRedoRecordResponse.UMF_PROC"
+        "SzEngineGetRedoRecordResponse.UMF_PROC",
+        "SzEngineProcessRedoRecordResponse.UMF_PROC"
     ],
     "UNMAPPED_DATA": [
         "Record.UNMAPPED_DATA",
@@ -1431,19 +1023,15 @@
         "FeatureDescriptionValue.USED_FOR_SCORING"
     ],
     "UTYPE_CODE": [
-        "CFG_EBOM.UTYPE_CODE",
         "CFG_FBOVR.UTYPE_CODE"
     ],
     "VALUE": [
-        "ParamDetails.VALUE"
+        "UmfProcParamDetails.VALUE"
     ],
     "VERSION": [
         "CFG_FTYPE.VERSION",
         "CONFIG_BASE_VERSION.VERSION",
         "SzProductGetVersionResponse.VERSION"
-    ],
-    "VIBER": [
-        "SenzingEntitySpecification.VIBER"
     ],
     "VIRTUAL_ENTITIES": [
         "FinalState.VIRTUAL_ENTITIES"
@@ -1457,21 +1045,10 @@
     "VIRTUAL_ENTITY_ID": [
         "VirtualEntitySynopsis.VIRTUAL_ENTITY_ID"
     ],
-    "WEBSITE_ADDRESS": [
-        "SenzingEntitySpecification.WEBSITE_ADDRESS"
-    ],
-    "WECHAT": [
-        "SenzingEntitySpecification.WECHAT"
-    ],
-    "WHATSAPP": [
-        "SenzingEntitySpecification.WHATSAPP"
-    ],
     "WHY_ERRULE_CODE": [
-        "MatchInfo.WHY_ERRULE_CODE",
         "MatchInfoForWhy.WHY_ERRULE_CODE"
     ],
     "WHY_KEY": [
-        "MatchInfo.WHY_KEY",
         "MatchInfoForWhy.WHY_KEY"
     ],
     "WHY_KEY_DETAILS": [
@@ -1483,110 +1060,655 @@
         "SzEngineWhyRecordsResponse.WHY_RESULTS",
         "SzEngineWhySearchResponse.WHY_RESULTS"
     ],
-    "ZOOMROOM": [
-        "SenzingEntitySpecification.ZOOMROOM"
+    "XXX_ACCOUNT_DOMAIN": [
+        "SenzingEntitySpecification.XXX_ACCOUNT_DOMAIN"
+    ],
+    "XXX_ACCOUNT_NUMBER": [
+        "SenzingEntitySpecification.XXX_ACCOUNT_NUMBER"
+    ],
+    "XXX_ADDRESS_DATA": [
+        "Record.XXX_ADDRESS_DATA",
+        "RecordForGetEntity.XXX_ADDRESS_DATA",
+        "SzEngineGetRecordResponse.XXX_ADDRESS_DATA"
+    ],
+    "XXX_ADDR_FROM_DATE": [
+        "SenzingEntitySpecification.XXX_ADDR_FROM_DATE"
+    ],
+    "XXX_ADDR_LINE2": [
+        "SenzingEntitySpecification.XXX_ADDR_LINE2"
+    ],
+    "XXX_ADDR_LINE3": [
+        "SenzingEntitySpecification.XXX_ADDR_LINE3"
+    ],
+    "XXX_ADDR_LINE4": [
+        "SenzingEntitySpecification.XXX_ADDR_LINE4"
+    ],
+    "XXX_ADDR_LINE5": [
+        "SenzingEntitySpecification.XXX_ADDR_LINE5"
+    ],
+    "XXX_ADDR_LINE6": [
+        "SenzingEntitySpecification.XXX_ADDR_LINE6"
+    ],
+    "XXX_ADDR_THRU_DATE": [
+        "SenzingEntitySpecification.XXX_ADDR_THRU_DATE"
+    ],
+    "XXX_ADDR_TYPE": [
+        "SenzingEntitySpecification.XXX_ADDR_TYPE"
+    ],
+    "XXX_ADVANCED": [
+        "CFG_ATTR.XXX_ADVANCED"
+    ],
+    "XXX_ATTRIBUTES": [
+        "FeatureForGetEntity.XXX_ATTRIBUTES"
+    ],
+    "XXX_ATTRIBUTE_DATA": [
+        "Record.XXX_ATTRIBUTE_DATA",
+        "RecordForGetEntity.XXX_ATTRIBUTE_DATA",
+        "SzEngineGetRecordResponse.XXX_ATTRIBUTE_DATA"
+    ],
+    "XXX_CFG_ECLASS": [
+        "G2Config.XXX_CFG_ECLASS"
+    ],
+    "XXX_CFG_ETYPE": [
+        "G2Config.XXX_CFG_ETYPE"
+    ],
+    "XXX_CFG_LENS": [
+        "G2Config.XXX_CFG_LENS"
+    ],
+    "XXX_CFG_LENSRL": [
+        "G2Config.XXX_CFG_LENSRL"
+    ],
+    "XXX_CITIZENSHIP": [
+        "SenzingEntitySpecification.XXX_CITIZENSHIP"
+    ],
+    "XXX_CODE": [
+        "Notice.XXX_CODE"
+    ],
+    "XXX_CONVERSATIONAL": [
+        "CFG_DSRC.XXX_CONVERSATIONAL"
+    ],
+    "XXX_DATA_SOURCE": [
+        "SampleRecord.XXX_DATA_SOURCE",
+        "SzEngineReevaluateEntityResponse.XXX_DATA_SOURCE"
+    ],
+    "XXX_DATE_OF_DEATH": [
+        "SenzingEntitySpecification.XXX_DATE_OF_DEATH"
+    ],
+    "XXX_DEGREES": [
+        "InterestingEntity.XXX_DEGREES"
+    ],
+    "XXX_DERIVATION": [
+        "CFG_FTYPE.XXX_DERIVATION"
+    ],
+    "XXX_DESCRIPTION": [
+        "Notice.XXX_DESCRIPTION"
+    ],
+    "XXX_DISCLOSED_RELATIONS": [
+        "MatchInfo.XXX_DISCLOSED_RELATIONS"
+    ],
+    "XXX_DISPLAY_DELIM": [
+        "CFG_FBOM.XXX_DISPLAY_DELIM"
+    ],
+    "XXX_DOMAIN": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_DOMAIN",
+        "RelAnchor.XXX_DOMAIN",
+        "RelLink.XXX_DOMAIN"
+    ],
+    "XXX_DSRC_ID": [
+        "CFG_DSRC_INTEREST.XXX_DSRC_ID"
+    ],
+    "XXX_DSRC_RELY": [
+        "CFG_DSRC.XXX_DSRC_RELY"
+    ],
+    "XXX_DUNS_NUMBER": [
+        "SenzingEntitySpecification.XXX_DUNS_NUMBER"
+    ],
+    "XXX_ECLASS_CODE": [
+        "CFG_ECLASS.XXX_ECLASS_CODE"
+    ],
+    "XXX_ECLASS_DESC": [
+        "CFG_ECLASS.XXX_ECLASS_DESC"
+    ],
+    "XXX_ECLASS_ID": [
+        "CFG_ECLASS.XXX_ECLASS_ID",
+        "CFG_ETYPE.XXX_ECLASS_ID",
+        "CFG_FBOVR.XXX_ECLASS_ID"
+    ],
+    "XXX_EMPLOYER": [
+        "SenzingEntitySpecification.XXX_EMPLOYER"
+    ],
+    "XXX_ENTITY_DATA": [
+        "Record.XXX_ENTITY_DATA",
+        "RecordForGetEntity.XXX_ENTITY_DATA",
+        "SzEngineGetRecordResponse.XXX_ENTITY_DATA"
+    ],
+    "XXX_ENTITY_DESC": [
+        "Record.XXX_ENTITY_DESC",
+        "RecordForGetEntity.XXX_ENTITY_DESC",
+        "SzEngineGetRecordResponse.XXX_ENTITY_DESC"
+    ],
+    "XXX_ENTITY_ID": [
+        "InterestingEntity.XXX_ENTITY_ID"
+    ],
+    "XXX_ENTITY_KEY": [
+        "Record.XXX_ENTITY_KEY",
+        "RecordForGetEntity.XXX_ENTITY_KEY",
+        "SzEngineGetRecordResponse.XXX_ENTITY_KEY"
+    ],
+    "XXX_ENTITY_TYPE": [
+        "Record.XXX_ENTITY_TYPE",
+        "RecordForGetEntity.XXX_ENTITY_TYPE",
+        "SzEngineGetRecordResponse.XXX_ENTITY_TYPE"
+    ],
+    "XXX_ERRULE_CODE": [
+        "MatchKeyDetails.XXX_ERRULE_CODE",
+        "ResolvedEntity.XXX_ERRULE_CODE",
+        "ResolvedEntityForGetEntity.XXX_ERRULE_CODE",
+        "SzEngineGetRecordResponse.XXX_ERRULE_CODE"
+    ],
+    "XXX_ERRULE_DESC": [
+        "CFG_ERRULE.XXX_ERRULE_DESC"
+    ],
+    "XXX_ETYPE_CODE": [
+        "CFG_ETYPE.XXX_ETYPE_CODE"
+    ],
+    "XXX_ETYPE_DESC": [
+        "CFG_ETYPE.XXX_ETYPE_DESC"
+    ],
+    "XXX_ETYPE_ID": [
+        "CFG_EBOM.XXX_ETYPE_ID",
+        "CFG_ETYPE.XXX_ETYPE_ID"
+    ],
+    "XXX_EXEC_ORDER": [
+        "CFG_CFCALL.XXX_EXEC_ORDER",
+        "CFG_DFCALL.XXX_EXEC_ORDER",
+        "CFG_EBOM.XXX_EXEC_ORDER"
+    ],
+    "XXX_FACEBOOK": [
+        "SenzingEntitySpecification.XXX_FACEBOOK"
+    ],
+    "XXX_FEATURE_IDS": [
+        "ResolvedEntity.XXX_FEATURE_IDS",
+        "ResolvedEntityForGetEntity.XXX_FEATURE_IDS"
+    ],
+    "XXX_FEAT_DESC": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_DESC",
+        "RelAnchor.XXX_FEAT_DESC",
+        "RelLink.XXX_FEAT_DESC"
+    ],
+    "XXX_FEAT_ID": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_ID",
+        "RelAnchor.XXX_FEAT_ID",
+        "RelLink.XXX_FEAT_ID"
+    ],
+    "XXX_FEAT_USAGE_TYPE": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_USAGE_TYPE",
+        "RelLink.XXX_FEAT_USAGE_TYPE"
+    ],
+    "XXX_FELEM_ID": [
+        "SYS_OOM.XXX_FELEM_ID"
+    ],
+    "XXX_FIRST_SEEN_DT": [
+        "RecordSummary.XXX_FIRST_SEEN_DT"
+    ],
+    "XXX_FIXME": [
+        "SzEngineExportCsvEntityReportCsvColumnList.XXX_FIXME",
+        "SzEngineFetchNextResponse.XXX_FIXME",
+        "SzEngineFindNetworkByEntityIdEntityIds.XXX_FIXME",
+        "SzEngineFindPathByEntityIdAvoidEntityIds.XXX_FIXME",
+        "SzEngineFindPathByEntityIdRequiredDataSources.XXX_FIXME",
+        "SzEngineFindPathByRecordIdRequiredDataSources.XXX_FIXME",
+        "SzEngineSearchByAttributesAttributes.XXX_FIXME",
+        "SzEngineSearchByAttributesSearchProfile.XXX_FIXME",
+        "SzEngineStreamExportJsonEntityReportResponse.XXX_FIXME",
+        "SzEngineWhySearchAttributes.XXX_FIXME",
+        "SzEngineWhySearchSearchProfile.XXX_FIXME"
+    ],
+    "XXX_FLAGS": [
+        "InterestingEntity.XXX_FLAGS",
+        "SampleRecord.XXX_FLAGS"
+    ],
+    "XXX_FTYPE_ID": [
+        "CFG_EBOM.XXX_FTYPE_ID"
+    ],
+    "XXX_FUNC_LIB": [
+        "CFG_CFUNC.XXX_FUNC_LIB",
+        "CFG_DFUNC.XXX_FUNC_LIB",
+        "CFG_EFUNC.XXX_FUNC_LIB",
+        "CFG_SFUNC.XXX_FUNC_LIB"
+    ],
+    "XXX_FUNC_VER": [
+        "CFG_CFUNC.XXX_FUNC_VER",
+        "CFG_DFUNC.XXX_FUNC_VER",
+        "CFG_EFUNC.XXX_FUNC_VER",
+        "CFG_SFUNC.XXX_FUNC_VER"
+    ],
+    "XXX_GROUP_ASSN_ID_NUMBER": [
+        "SenzingEntitySpecification.XXX_GROUP_ASSN_ID_NUMBER"
+    ],
+    "XXX_GROUP_ASSN_ID_TYPE": [
+        "SenzingEntitySpecification.XXX_GROUP_ASSN_ID_TYPE"
+    ],
+    "XXX_GROUP_ASSOCIATION_ORG_NAME": [
+        "SenzingEntitySpecification.XXX_GROUP_ASSOCIATION_ORG_NAME"
+    ],
+    "XXX_GROUP_ASSOCIATION_TYPE": [
+        "SenzingEntitySpecification.XXX_GROUP_ASSOCIATION_TYPE"
+    ],
+    "XXX_IDENTIFIER_DATA": [
+        "Record.XXX_IDENTIFIER_DATA",
+        "RecordForGetEntity.XXX_IDENTIFIER_DATA",
+        "SzEngineGetRecordResponse.XXX_IDENTIFIER_DATA"
+    ],
+    "XXX_INSTAGRAM": [
+        "SenzingEntitySpecification.XXX_INSTAGRAM"
+    ],
+    "XXX_INTERESTING_ENTITIES": [
+        "SzEngineAddRecordResponse.XXX_INTERESTING_ENTITIES",
+        "SzEngineDeleteRecordResponse.XXX_INTERESTING_ENTITIES",
+        "SzEngineProcessRedoRecordResponse.XXX_INTERESTING_ENTITIES",
+        "SzEngineReevaluateEntityResponse.XXX_INTERESTING_ENTITIES",
+        "SzEngineReevaluateRecordResponse.XXX_INTERESTING_ENTITIES"
+    ],
+    "XXX_INTEREST_FLAG": [
+        "CFG_DSRC_INTEREST.XXX_INTEREST_FLAG"
+    ],
+    "XXX_INTERNAL_ID": [
+        "SzEngineGetRecordResponse.XXX_INTERNAL_ID"
+    ],
+    "XXX_IS_AMBIGUOUS": [
+        "ResolvedEntity.XXX_IS_AMBIGUOUS",
+        "ResolvedEntityForGetEntity.XXX_IS_AMBIGUOUS"
+    ],
+    "XXX_IS_DISCLOSED": [
+        "ResolvedEntity.XXX_IS_DISCLOSED",
+        "ResolvedEntityForGetEntity.XXX_IS_DISCLOSED"
+    ],
+    "XXX_JAVA_CLASS_NAME": [
+        "CFG_CFUNC.XXX_JAVA_CLASS_NAME",
+        "CFG_DFUNC.XXX_JAVA_CLASS_NAME",
+        "CFG_EFUNC.XXX_JAVA_CLASS_NAME",
+        "CFG_SFUNC.XXX_JAVA_CLASS_NAME"
+    ],
+    "XXX_LANGUAGE": [
+        "CFG_CFUNC.XXX_LANGUAGE",
+        "CFG_DFUNC.XXX_LANGUAGE",
+        "CFG_EFUNC.XXX_LANGUAGE",
+        "CFG_SFUNC.XXX_LANGUAGE"
+    ],
+    "XXX_LAST_SEEN_DT": [
+        "RecordSummary.XXX_LAST_SEEN_DT",
+        "RelatedEntity.XXX_LAST_SEEN_DT",
+        "ResolvedEntity.XXX_LAST_SEEN_DT",
+        "ResolvedEntityForGetEntity.XXX_LAST_SEEN_DT"
+    ],
+    "XXX_LEI_NUMBER": [
+        "SenzingEntitySpecification.XXX_LEI_NUMBER"
+    ],
+    "XXX_LENS_CODE": [
+        "CFG_LENS.XXX_LENS_CODE"
+    ],
+    "XXX_LENS_DESC": [
+        "CFG_LENS.XXX_LENS_DESC"
+    ],
+    "XXX_LENS_ID": [
+        "CFG_LENS.XXX_LENS_ID",
+        "SYS_OOM.XXX_LENS_ID"
+    ],
+    "XXX_LIB_FEAT_ID": [
+        "SYS_OOM.XXX_LIB_FEAT_ID"
+    ],
+    "XXX_LIB_FELEM_ID": [
+        "SYS_OOM.XXX_LIB_FELEM_ID"
+    ],
+    "XXX_LINKEDIN": [
+        "SenzingEntitySpecification.XXX_LINKEDIN"
+    ],
+    "XXX_LINKED_FEAT_DESC": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_DESC",
+        "RelAnchor.XXX_LINKED_FEAT_DESC",
+        "RelLink.XXX_LINKED_FEAT_DESC"
+    ],
+    "XXX_LINKED_FEAT_ID": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_ID",
+        "RelAnchor.XXX_LINKED_FEAT_ID",
+        "RelLink.XXX_LINKED_FEAT_ID"
+    ],
+    "XXX_LINKED_FEAT_TYPE": [
+        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_TYPE",
+        "RelAnchor.XXX_LINKED_FEAT_TYPE",
+        "RelLink.XXX_LINKED_FEAT_TYPE"
+    ],
+    "XXX_LINKED_FEAT_USAGE_TYPE": [
+        "RelAnchor.XXX_LINKED_FEAT_USAGE_TYPE",
+        "RelLink.XXX_LINKED_FEAT_USAGE_TYPE"
+    ],
+    "XXX_MATCH_KEY": [
+        "ResolvedEntity.XXX_MATCH_KEY",
+        "ResolvedEntityForGetEntity.XXX_MATCH_KEY",
+        "SzEngineGetRecordResponse.XXX_MATCH_KEY"
+    ],
+    "XXX_MATCH_LEVEL": [
+        "MatchInfo.XXX_MATCH_LEVEL",
+        "Record.XXX_MATCH_LEVEL",
+        "RecordForGetEntity.XXX_MATCH_LEVEL",
+        "ResolvedEntity.XXX_MATCH_LEVEL",
+        "ResolvedEntityForGetEntity.XXX_MATCH_LEVEL",
+        "SzEngineGetRecordResponse.XXX_MATCH_LEVEL"
+    ],
+    "XXX_MATCH_LEVEL_CODE": [
+        "ResolvedEntity.XXX_MATCH_LEVEL_CODE",
+        "ResolvedEntityForGetEntity.XXX_MATCH_LEVEL_CODE",
+        "SzEngineGetRecordResponse.XXX_MATCH_LEVEL_CODE"
+    ],
+    "XXX_MAX_DEGREE": [
+        "CFG_DSRC_INTEREST.XXX_MAX_DEGREE"
+    ],
+    "XXX_NAME_DATA": [
+        "Record.XXX_NAME_DATA",
+        "RecordForGetEntity.XXX_NAME_DATA",
+        "SzEngineGetRecordResponse.XXX_NAME_DATA"
+    ],
+    "XXX_NAME_FIRST": [
+        "SenzingEntitySpecification.XXX_NAME_FIRST"
+    ],
+    "XXX_NAME_LAST": [
+        "SenzingEntitySpecification.XXX_NAME_LAST"
+    ],
+    "XXX_NAME_ORG": [
+        "SenzingEntitySpecification.XXX_NAME_ORG"
+    ],
+    "XXX_NAME_PREFIX": [
+        "SenzingEntitySpecification.XXX_NAME_PREFIX"
+    ],
+    "XXX_NAME_SUFFIX": [
+        "SenzingEntitySpecification.XXX_NAME_SUFFIX"
+    ],
+    "XXX_NAME_TYPE": [
+        "SenzingEntitySpecification.XXX_NAME_TYPE"
+    ],
+    "XXX_NATIONALITY": [
+        "SenzingEntitySpecification.XXX_NATIONALITY"
+    ],
+    "XXX_NOTICES": [
+        "InterestingEntities.XXX_NOTICES"
+    ],
+    "XXX_NPI_NUMBER": [
+        "SenzingEntitySpecification.XXX_NPI_NUMBER"
+    ],
+    "XXX_OTHER_DATA": [
+        "Record.XXX_OTHER_DATA",
+        "RecordForGetEntity.XXX_OTHER_DATA",
+        "SzEngineGetRecordResponse.XXX_OTHER_DATA"
+    ],
+    "XXX_OTHER_ID_COUNTRY": [
+        "SenzingEntitySpecification.XXX_OTHER_ID_COUNTRY"
+    ],
+    "XXX_OTHER_ID_NUMBER": [
+        "SenzingEntitySpecification.XXX_OTHER_ID_NUMBER"
+    ],
+    "XXX_OTHER_ID_TYPE": [
+        "SenzingEntitySpecification.XXX_OTHER_ID_TYPE"
+    ],
+    "XXX_PHONE_DATA": [
+        "Record.XXX_PHONE_DATA",
+        "RecordForGetEntity.XXX_PHONE_DATA",
+        "SzEngineGetRecordResponse.XXX_PHONE_DATA"
+    ],
+    "XXX_PHONE_FROM_DATE": [
+        "SenzingEntitySpecification.XXX_PHONE_FROM_DATE"
+    ],
+    "XXX_PHONE_THRU_DATE": [
+        "SenzingEntitySpecification.XXX_PHONE_THRU_DATE"
+    ],
+    "XXX_PHONE_TYPE": [
+        "SenzingEntitySpecification.XXX_PHONE_TYPE"
+    ],
+    "XXX_PLACE_OF_BIRTH": [
+        "SenzingEntitySpecification.XXX_PLACE_OF_BIRTH"
+    ],
+    "XXX_PRODUCT_NAME": [
+        "CONFIG_BASE_VERSION.XXX_PRODUCT_NAME"
+    ],
+    "XXX_RECORDS": [
+        "RecordKeys.XXX_RECORDS",
+        "RelatedEntity.XXX_RECORDS"
+    ],
+    "XXX_RECORD_ID": [
+        "SampleRecord.XXX_RECORD_ID",
+        "SzEngineReevaluateEntityResponse.XXX_RECORD_ID"
+    ],
+    "XXX_REF_SCORE": [
+        "CFG_ERRULE.XXX_REF_SCORE"
+    ],
+    "XXX_REGISTRATION_COUNTRY": [
+        "SenzingEntitySpecification.XXX_REGISTRATION_COUNTRY"
+    ],
+    "XXX_REGISTRATION_DATE": [
+        "SenzingEntitySpecification.XXX_REGISTRATION_DATE"
+    ],
+    "XXX_RELATED_ENTITIES": [
+        "EntityForWhySearch.XXX_RELATED_ENTITIES"
+    ],
+    "XXX_RELATIONSHIP_DATA": [
+        "Record.XXX_RELATIONSHIP_DATA",
+        "RecordForGetEntity.XXX_RELATIONSHIP_DATA",
+        "SzEngineGetRecordResponse.XXX_RELATIONSHIP_DATA"
+    ],
+    "XXX_REL_ANCHOR": [
+        "DisclosedRelationsForMatchInfo.XXX_REL_ANCHOR",
+        "DisclosedRelationsForMatchInfoForWhy.XXX_REL_ANCHOR"
+    ],
+    "XXX_REL_LINK": [
+        "DisclosedRelationsForMatchInfo.XXX_REL_LINK"
+    ],
+    "XXX_REL_POINTER": [
+        "DisclosedRelationsForMatchInfo.XXX_REL_POINTER",
+        "RelAnchor.XXX_REL_POINTER"
+    ],
+    "XXX_REL_STRENGTH": [
+        "CFG_RTYPE.XXX_REL_STRENGTH"
+    ],
+    "XXX_RESOLVE": [
+        "CFG_ECLASS.XXX_RESOLVE"
+    ],
+    "XXX_SAMPLE_RECORDS": [
+        "InterestingEntity.XXX_SAMPLE_RECORDS"
+    ],
+    "XXX_SIGNAL": [
+        "SenzingEntitySpecification.XXX_SIGNAL"
+    ],
+    "XXX_SKYPE": [
+        "SenzingEntitySpecification.XXX_SKYPE"
+    ],
+    "XXX_SUPPRESSED": [
+        "FeatureDescriptionValue.XXX_SUPPRESSED"
+    ],
+    "XXX_TANGO": [
+        "SenzingEntitySpecification.XXX_TANGO"
+    ],
+    "XXX_TAX_ID_COUNTRY": [
+        "SenzingEntitySpecification.XXX_TAX_ID_COUNTRY"
+    ],
+    "XXX_TAX_ID_NUMBER": [
+        "SenzingEntitySpecification.XXX_TAX_ID_NUMBER"
+    ],
+    "XXX_TAX_ID_TYPE": [
+        "SenzingEntitySpecification.XXX_TAX_ID_TYPE"
+    ],
+    "XXX_TELEGRAM": [
+        "SenzingEntitySpecification.XXX_TELEGRAM"
+    ],
+    "XXX_TOKENIZE": [
+        "CFG_FELEM.XXX_TOKENIZE"
+    ],
+    "XXX_TRUSTED_ID_NUMBER": [
+        "SenzingEntitySpecification.XXX_TRUSTED_ID_NUMBER"
+    ],
+    "XXX_TRUSTED_ID_TYPE": [
+        "SenzingEntitySpecification.XXX_TRUSTED_ID_TYPE"
+    ],
+    "XXX_TWITTER": [
+        "SenzingEntitySpecification.XXX_TWITTER"
+    ],
+    "XXX_UTYPE_CODE": [
+        "CFG_EBOM.XXX_UTYPE_CODE"
+    ],
+    "XXX_VIBER": [
+        "SenzingEntitySpecification.XXX_VIBER"
+    ],
+    "XXX_WEBSITE_ADDRESS": [
+        "SenzingEntitySpecification.XXX_WEBSITE_ADDRESS"
+    ],
+    "XXX_WECHAT": [
+        "SenzingEntitySpecification.XXX_WECHAT"
+    ],
+    "XXX_WHATSAPP": [
+        "SenzingEntitySpecification.XXX_WHATSAPP"
+    ],
+    "XXX_WHY_ERRULE_CODE": [
+        "MatchInfo.XXX_WHY_ERRULE_CODE"
+    ],
+    "XXX_WHY_KEY": [
+        "MatchInfo.XXX_WHY_KEY"
+    ],
+    "XXX_ZOOMROOM": [
+        "SenzingEntitySpecification.XXX_ZOOMROOM"
+    ],
+    "XXX_contention": [
+        "Workload.XXX_contention"
+    ],
+    "XXX_feature": [
+        "WorkloadContention.XXX_feature"
+    ],
+    "XXX_genericDetect": [
+        "Workload.XXX_genericDetect"
+    ],
+    "XXX_newFeatureFTypes": [
+        "WorkloadReresolve.XXX_newFeatureFTypes"
+    ],
+    "XXX_physicalCores": [
+        "WorkloadInitResources.XXX_physicalCores"
+    ],
+    "XXX_redoTriggers": [
+        "Workload.XXX_redoTriggers"
+    ],
+    "XXX_resEnt": [
+        "WorkloadContention.XXX_resEnt"
+    ],
+    "XXX_suppressedCandidateBuilders": [
+        "WorkloadCandidates.XXX_suppressedCandidateBuilders"
+    ],
+    "XXX_suppressedCandidateBuildersForReresolve": [
+        "WorkloadReresolve.XXX_suppressedCandidateBuildersForReresolve"
+    ],
+    "XXX_suppressedScoredFeatureType": [
+        "WorkloadScoring.XXX_suppressedScoredFeatureType"
+    ],
+    "XXX_suppressedScoredFeatureTypeForReresolve": [
+        "WorkloadReresolve.XXX_suppressedScoredFeatureTypeForReresolve"
+    ],
+    "XXX_valuelatch": [
+        "WorkloadContention.XXX_valuelatch"
     ],
     "abortRetry": [
-        "ReresolveTriggers.abortRetry"
+        "WorkloadReresolveTriggers.abortRetry"
     ],
     "abortedUnresolve": [
-        "Unresolve.abortedUnresolve"
+        "WorkloadUnresolve.abortedUnresolve"
     ],
     "active": [
-        "ThreadState.active"
+        "WorkloadThreadState.active"
     ],
     "activeThreads": [
-        "CurrResources.activeThreads"
+        "WorkloadCurrResources.activeThreads"
     ],
     "actualTest": [
-        "ProcessingAmbiguous.actualTest"
+        "WorkloadProcessingAmbiguous.actualTest"
     ],
     "addedRecords": [
-        "Processing.addedRecords",
-        "ProcessingDetails.addedRecords"
+        "WorkloadProcessing.addedRecords",
+        "WorkloadProcessingDetails.addedRecords"
     ],
     "advSearch": [
         "SzProductGetLicenseResponse.advSearch"
     ],
     "ambiguous": [
-        "Processing.ambiguous"
+        "WorkloadProcessing.ambiguous"
     ],
     "ambiguousMultiResolve": [
-        "UnresolveTriggers.ambiguousMultiResolve"
+        "WorkloadUnresolveTriggers.ambiguousMultiResolve"
     ],
     "ambiguousNoResolve": [
-        "UnresolveTriggers.ambiguousNoResolve"
+        "WorkloadUnresolveTriggers.ambiguousNoResolve"
     ],
     "apiVersion": [
         "Workload.apiVersion"
     ],
     "availableMemory": [
-        "CurrResources.availableMemory",
-        "InitResources.availableMemory"
+        "WorkloadCurrResources.availableMemory",
+        "WorkloadInitResources.availableMemory"
     ],
     "batchAddedRecords": [
-        "Processing.batchAddedRecords"
+        "WorkloadProcessing.batchAddedRecords"
     ],
     "billing": [
         "SzProductGetLicenseResponse.billing"
     ],
     "cacheHit": [
-        "Scoring.cacheHit"
+        "WorkloadScoring.cacheHit"
     ],
     "cacheMiss": [
-        "Scoring.cacheMiss"
+        "WorkloadScoring.cacheMiss"
     ],
     "cachedTest": [
-        "ProcessingAmbiguous.cachedTest"
+        "WorkloadProcessingAmbiguous.cachedTest"
     ],
     "caches": [
         "Workload.caches"
     ],
     "calls": [
-        "ExpressedFeatures.calls"
+        "WorkloadExpressedFeatures.calls"
     ],
     "candidateBuilders": [
-        "Candidates.candidateBuilders"
+        "WorkloadCandidates.candidateBuilders"
     ],
     "candidates": [
-        "ProcessingDetails.candidates",
-        "Workload.candidates"
+        "Workload.candidates",
+        "WorkloadProcessingDetails.candidates"
     ],
     "changeDeletes": [
-        "ProcessingDetails.changeDeletes"
-    ],
-    "contention": [
-        "Workload.contention"
+        "WorkloadProcessingDetails.changeDeletes"
     ],
     "contract": [
         "SzProductGetLicenseResponse.contract"
     ],
     "count": [
-        "RefreshLocks.count"
+        "WorkloadRefreshLocks.count"
     ],
     "cpuIdle": [
-        "SystemLoad.cpuIdle"
+        "WorkloadSystemLoad.cpuIdle"
     ],
     "cpuSystem": [
-        "SystemLoad.cpuSystem"
+        "WorkloadSystemLoad.cpuSystem"
     ],
     "cpuUser": [
-        "SystemLoad.cpuUser"
+        "WorkloadSystemLoad.cpuUser"
     ],
     "cpuWait": [
-        "SystemLoad.cpuWait"
+        "WorkloadSystemLoad.cpuWait"
     ],
     "created": [
-        "ExpressedFeatures.created"
+        "WorkloadExpressedFeatures.created"
     ],
     "currResources": [
-        "SystemResources.currResources"
+        "WorkloadSystemResources.currResources"
     ],
     "customer": [
         "SzProductGetLicenseResponse.customer"
     ],
     "dataLatchContention": [
-        "ThreadState.dataLatchContention"
+        "WorkloadThreadState.dataLatchContention"
     ],
     "dataStores": [
         "SzDiagnosticGetRepositoryInfoResponse.dataStores"
@@ -1595,16 +1717,16 @@
         "Workload.datetimestamp"
     ],
     "deletedRecords": [
-        "Processing.deletedRecords"
+        "WorkloadProcessing.deletedRecords"
     ],
     "details": [
-        "Processing.details"
+        "WorkloadProcessing.details"
     ],
     "dsrLimit": [
         "License.dsrLimit"
     ],
     "duration": [
-        "ProcessingDetails.duration"
+        "WorkloadProcessingDetails.duration"
     ],
     "expireDate": [
         "SzProductGetLicenseResponse.expireDate"
@@ -1613,28 +1735,22 @@
         "Workload.expressedFeatures"
     ],
     "extensiveResolve": [
-        "UnresolveTriggers.extensiveResolve"
-    ],
-    "feature": [
-        "Contention.feature"
+        "WorkloadUnresolveTriggers.extensiveResolve"
     ],
     "filteredObsFeat": [
-        "ProcessingDetails.filteredObsFeat"
-    ],
-    "genericDetect": [
-        "Workload.genericDetect"
+        "WorkloadProcessingDetails.filteredObsFeat"
     ],
     "governorContention": [
-        "ThreadState.governorContention"
+        "WorkloadThreadState.governorContention"
     ],
     "id": [
         "Repository.id"
     ],
     "idle": [
-        "ThreadState.idle"
+        "WorkloadThreadState.idle"
     ],
     "initResources": [
-        "SystemResources.initResources"
+        "WorkloadSystemResources.initResources"
     ],
     "insertTime": [
         "SzDiagnosticCheckRepositoryPerformanceResponse.insertTime"
@@ -1643,13 +1759,13 @@
         "SzProductGetLicenseResponse.issueDate"
     ],
     "libFeatCacheHit": [
-        "Caches.libFeatCacheHit"
+        "WorkloadCaches.libFeatCacheHit"
     ],
     "libFeatCacheMiss": [
-        "Caches.libFeatCacheMiss"
+        "WorkloadCaches.libFeatCacheMiss"
     ],
     "libFeatInsert": [
-        "Caches.libFeatInsert"
+        "WorkloadCaches.libFeatInsert"
     ],
     "license": [
         "Workload.license"
@@ -1664,7 +1780,7 @@
         "Workload.loadedRecords"
     ],
     "loader": [
-        "ThreadState.loader"
+        "WorkloadThreadState.loader"
     ],
     "location": [
         "Repository.location"
@@ -1673,52 +1789,46 @@
         "Workload.lockWaits"
     ],
     "logicalCores": [
-        "InitResources.logicalCores"
+        "WorkloadInitResources.logicalCores"
     ],
     "maxMS": [
-        "RefreshLocks.maxMS"
+        "WorkloadRefreshLocks.maxMS"
     ],
     "multipleResolvableCandidates": [
-        "ReresolveTriggers.multipleResolvableCandidates"
-    ],
-    "newFeatureFTypes": [
-        "Reresolve.newFeatureFTypes"
+        "WorkloadReresolveTriggers.multipleResolvableCandidates"
     ],
     "newObsEnt": [
-        "ProcessingDetails.newObsEnt"
+        "WorkloadProcessingDetails.newObsEnt"
     ],
     "normalResolve": [
-        "UnresolveTriggers.normalResolve"
+        "WorkloadUnresolveTriggers.normalResolve"
     ],
     "numCalls": [
-        "ExpressedFeaturesCall.numCalls"
+        "WorkloadExpressedFeaturesCall.numCalls"
     ],
     "numRecordsInserted": [
         "SzDiagnosticCheckRepositoryPerformanceResponse.numRecordsInserted"
     ],
     "obsEntContention": [
-        "ThreadState.obsEntContention"
+        "WorkloadThreadState.obsEntContention"
     ],
     "obsEntHashDiff": [
-        "ProcessingDetails.obsEntHashDiff"
+        "WorkloadProcessingDetails.obsEntHashDiff"
     ],
     "obsEntHashSame": [
-        "ProcessingDetails.obsEntHashSame"
+        "WorkloadProcessingDetails.obsEntHashSame"
     ],
     "optimizedOut": [
-        "ProcessingDetails.optimizedOut"
+        "WorkloadProcessingDetails.optimizedOut"
     ],
     "optimizedOutSkipped": [
-        "ProcessingDetails.optimizedOutSkipped"
+        "WorkloadProcessingDetails.optimizedOutSkipped"
     ],
     "partiallyResolved": [
-        "ProcessingDetails.partiallyResolved"
-    ],
-    "physicalCores": [
-        "InitResources.physicalCores"
+        "WorkloadProcessingDetails.partiallyResolved"
     ],
     "processMemory": [
-        "CurrResources.processMemory"
+        "WorkloadCurrResources.processMemory"
     ],
     "processing": [
         "Workload.processing"
@@ -1726,90 +1836,72 @@
     "recordLimit": [
         "SzProductGetLicenseResponse.recordLimit"
     ],
-    "redoTriggers": [
-        "Workload.redoTriggers"
-    ],
     "reevaluations": [
-        "Processing.reevaluations"
+        "WorkloadProcessing.reevaluations"
     ],
     "refreshLocks": [
-        "LockWaits.refreshLocks"
+        "WorkloadLockWaits.refreshLocks"
     ],
     "relLink": [
-        "UnresolveTriggers.relLink"
+        "WorkloadUnresolveTriggers.relLink"
     ],
     "repairDiagnosis": [
         "Workload.repairDiagnosis"
     ],
     "repairedEntities": [
-        "Processing.repairedEntities"
+        "WorkloadProcessing.repairedEntities"
     ],
     "reresolve": [
         "Workload.reresolve"
     ],
-    "resEnt": [
-        "Contention.resEnt"
-    ],
     "resEntContention": [
-        "ThreadState.resEntContention"
+        "WorkloadThreadState.resEntContention"
     ],
     "resFeatStatCacheHit": [
-        "Caches.resFeatStatCacheHit"
+        "WorkloadCaches.resFeatStatCacheHit"
     ],
     "resFeatStatCacheMiss": [
-        "Caches.resFeatStatCacheMiss"
+        "WorkloadCaches.resFeatStatCacheMiss"
     ],
     "resFeatStatInsert": [
-        "Caches.resFeatStatInsert"
+        "WorkloadCaches.resFeatStatInsert"
     ],
     "resFeatStatUpdateAttempt": [
-        "Caches.resFeatStatUpdateAttempt"
+        "WorkloadCaches.resFeatStatUpdateAttempt"
     ],
     "resFeatStatUpdateFail": [
-        "Caches.resFeatStatUpdateFail"
+        "WorkloadCaches.resFeatStatUpdateFail"
     ],
     "resolveNewFeatures": [
-        "ReresolveTriggers.resolveNewFeatures"
+        "WorkloadReresolveTriggers.resolveNewFeatures"
     ],
     "resolver": [
-        "ThreadState.resolver"
+        "WorkloadThreadState.resolver"
     ],
     "retries": [
-        "ProcessingDetails.retries"
+        "WorkloadProcessingDetails.retries"
     ],
     "scoredPairs": [
-        "Scoring.scoredPairs"
+        "WorkloadScoring.scoredPairs"
     ],
     "scoring": [
-        "ThreadState.scoring",
-        "Workload.scoring"
+        "Workload.scoring",
+        "WorkloadThreadState.scoring"
     ],
     "skipped": [
-        "ReresolveTriggers.skipped"
+        "WorkloadReresolveTriggers.skipped"
     ],
     "sqlExecuting": [
-        "ThreadState.sqlExecuting"
+        "WorkloadThreadState.sqlExecuting"
     ],
     "status": [
         "License.status"
     ],
-    "suppressedCandidateBuilders": [
-        "Candidates.suppressedCandidateBuilders"
-    ],
-    "suppressedCandidateBuildersForReresolve": [
-        "Reresolve.suppressedCandidateBuildersForReresolve"
-    ],
     "suppressedDisclosedRelationshipDomainCount": [
-        "Scoring.suppressedDisclosedRelationshipDomainCount"
-    ],
-    "suppressedScoredFeatureType": [
-        "Scoring.suppressedScoredFeatureType"
-    ],
-    "suppressedScoredFeatureTypeForReresolve": [
-        "Reresolve.suppressedScoredFeatureTypeForReresolve"
+        "WorkloadScoring.suppressedDisclosedRelationshipDomainCount"
     ],
     "systemLoad": [
-        "SystemResources.systemLoad"
+        "WorkloadSystemResources.systemLoad"
     ],
     "systemResources": [
         "Workload.systemResources"
@@ -1818,39 +1910,36 @@
         "Workload.threadState"
     ],
     "totalMS": [
-        "RefreshLocks.totalMS"
+        "WorkloadRefreshLocks.totalMS"
     ],
     "totalMemory": [
-        "InitResources.totalMemory"
+        "WorkloadInitResources.totalMemory"
     ],
     "triggers": [
-        "Reresolve.triggers",
-        "Unresolve.triggers"
+        "WorkloadReresolve.triggers",
+        "WorkloadUnresolve.triggers"
     ],
     "type": [
         "License.type",
         "Repository.type"
     ],
     "types": [
-        "RepairDiagnosis.types"
+        "WorkloadRepairDiagnosis.types"
     ],
     "unresolve": [
         "Workload.unresolve"
     ],
     "unresolveMovement": [
-        "ReresolveTriggers.unresolveMovement"
+        "WorkloadReresolveTriggers.unresolveMovement"
     ],
     "unresolveTest": [
-        "Unresolve.unresolveTest"
+        "WorkloadUnresolve.unresolveTest"
     ],
     "update": [
-        "UnresolveTriggers.update"
-    ],
-    "valuelatch": [
-        "Contention.valuelatch"
+        "WorkloadUnresolveTriggers.update"
     ],
     "workerThreads": [
-        "CurrResources.workerThreads"
+        "WorkloadCurrResources.workerThreads"
     ],
     "workload": [
         "SzEngineGetStatsResponse.workload"

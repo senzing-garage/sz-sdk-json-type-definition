@@ -7,74 +7,74 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgEbom {
-    @JsonProperty("ETYPE_ID")
-    private Integer etypeId;
+    @JsonProperty("XXX_ETYPE_ID")
+    private Integer xxxEtypeId;
 
-    @JsonProperty("EXEC_ORDER")
-    private Integer execOrder;
+    @JsonProperty("XXX_EXEC_ORDER")
+    private Integer xxxExecOrder;
 
-    @JsonProperty("FTYPE_ID")
-    private Integer ftypeId;
+    @JsonProperty("XXX_FTYPE_ID")
+    private Integer xxxFtypeId;
 
-    @JsonProperty("UTYPE_CODE")
-    private String utypeCode;
+    @JsonProperty("XXX_UTYPE_CODE")
+    private String xxxUtypeCode;
 
     public CfgEbom() {
     }
 
     /**
-     * Getter for etypeId.<p>
+     * Getter for xxxEtypeId.<p>
      */
-    public Integer getEtypeId() {
-        return etypeId;
+    public Integer getXxxEtypeId() {
+        return xxxEtypeId;
     }
 
     /**
-     * Setter for etypeId.<p>
+     * Setter for xxxEtypeId.<p>
      */
-    public void setEtypeId(Integer etypeId) {
-        this.etypeId = etypeId;
+    public void setXxxEtypeId(Integer xxxEtypeId) {
+        this.xxxEtypeId = xxxEtypeId;
     }
 
     /**
-     * Getter for execOrder.<p>
+     * Getter for xxxExecOrder.<p>
      */
-    public Integer getExecOrder() {
-        return execOrder;
+    public Integer getXxxExecOrder() {
+        return xxxExecOrder;
     }
 
     /**
-     * Setter for execOrder.<p>
+     * Setter for xxxExecOrder.<p>
      */
-    public void setExecOrder(Integer execOrder) {
-        this.execOrder = execOrder;
+    public void setXxxExecOrder(Integer xxxExecOrder) {
+        this.xxxExecOrder = xxxExecOrder;
     }
 
     /**
-     * Getter for ftypeId.<p>
+     * Getter for xxxFtypeId.<p>
      */
-    public Integer getFtypeId() {
-        return ftypeId;
+    public Integer getXxxFtypeId() {
+        return xxxFtypeId;
     }
 
     /**
-     * Setter for ftypeId.<p>
+     * Setter for xxxFtypeId.<p>
      */
-    public void setFtypeId(Integer ftypeId) {
-        this.ftypeId = ftypeId;
+    public void setXxxFtypeId(Integer xxxFtypeId) {
+        this.xxxFtypeId = xxxFtypeId;
     }
 
     /**
-     * Getter for utypeCode.<p>
+     * Getter for xxxUtypeCode.<p>
      */
-    public String getUtypeCode() {
-        return utypeCode;
+    public String getXxxUtypeCode() {
+        return xxxUtypeCode;
     }
 
     /**
-     * Setter for utypeCode.<p>
+     * Setter for xxxUtypeCode.<p>
      */
-    public void setUtypeCode(String utypeCode) {
-        this.utypeCode = utypeCode;
+    public void setXxxUtypeCode(String xxxUtypeCode) {
+        this.xxxUtypeCode = xxxUtypeCode;
     }
 }

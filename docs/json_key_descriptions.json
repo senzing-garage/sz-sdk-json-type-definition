@@ -87,6 +87,39 @@
     "USAGE_TYPE": [
         "Label to identify how some features are being used (can also change some features behavior)."
     ],
+    "XXX_DATA_SOURCE": [
+        "A label identifying the provenance of the record."
+    ],
+    "XXX_ENTITY_ID": [
+        "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added."
+    ],
+    "XXX_ERRULE_CODE": [
+        "Identifier of the entity resolution rule that was triggered."
+    ],
+    "XXX_FEAT_DESC": [
+        "Describes the attributes that make up the feature."
+    ],
+    "XXX_INTERNAL_ID": [
+        "Internal identifier for the record."
+    ],
+    "XXX_IS_AMBIGUOUS": [
+        "Indicates if this is an ambiguous relationship."
+    ],
+    "XXX_IS_DISCLOSED": [
+        "Indicates if this is a disclosed relationship."
+    ],
+    "XXX_MATCH_KEY": [
+        "Representation of matched source record features."
+    ],
+    "XXX_MATCH_LEVEL_CODE": [
+        "The type of match that occurred for the record."
+    ],
+    "XXX_RECORDS": [
+        "A list of (data source code, record id) pairs."
+    ],
+    "XXX_RECORD_ID": [
+        "The unique identifier within the set of records in the DATA_SOURCE."
+    ],
     "dataStores": [
         "A list of database node connection metadata."
     ],

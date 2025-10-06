@@ -34,33 +34,8 @@
                 }
             }
         },
-        "CandidateKeysSummary": {
-            "properties": {
-                "FOUND": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "GENERIC": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "NOT_FOUND": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                }
-            }
-        },
         "CFG_ATTR": {
             "properties": {
-                "XXX_ADVANCED": {
-                    "type": "string"
-                },
                 "ATTR_CLASS": {
                     "type": "string"
                 },
@@ -87,6 +62,9 @@
                     "type": "string"
                 },
                 "INTERNAL": {
+                    "type": "string"
+                },
+                "XXX_ADVANCED": {
                     "type": "string"
                 }
             }
@@ -133,13 +111,13 @@
                     },
                     "type": "int32"
                 },
-                "XXX_EXEC_ORDER": {
+                "FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -284,13 +262,13 @@
                     },
                     "type": "int32"
                 },
-                "XXX_EXEC_ORDER": {
+                "FTYPE_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "FTYPE_ID": {
+                "XXX_EXEC_ORDER": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -334,9 +312,6 @@
         },
         "CFG_DSRC": {
             "properties": {
-                "XXX_CONVERSATIONAL": {
-                    "type": "string"
-                },
                 "DSRC_CODE": {
                     "type": "string"
                 },
@@ -349,14 +324,17 @@
                     },
                     "type": "int32"
                 },
+                "RETENTION_LEVEL": {
+                    "type": "string"
+                },
+                "XXX_CONVERSATIONAL": {
+                    "type": "string"
+                },
                 "XXX_DSRC_RELY": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
-                },
-                "RETENTION_LEVEL": {
-                    "type": "string"
                 }
             }
         },
@@ -561,9 +539,6 @@
                     },
                     "type": "string"
                 },
-                "XXX_ERRULE_DESC": {
-                    "type": "string"
-                },
                 "ERRULE_ID": {
                     "metadata": {
                         "goType": "int64"
@@ -579,12 +554,6 @@
                 "QUAL_ERFRAG_CODE": {
                     "type": "string"
                 },
-                "XXX_REF_SCORE": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "RELATE": {
                     "type": "string"
                 },
@@ -592,6 +561,15 @@
                     "type": "string"
                 },
                 "RTYPE_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "XXX_ERRULE_DESC": {
+                    "type": "string"
+                },
+                "XXX_REF_SCORE": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -626,9 +604,6 @@
                 "DERIVED": {
                     "type": "string"
                 },
-                "XXX_DISPLAY_DELIM": {
-                    "type": "string"
-                },
                 "DISPLAY_LEVEL": {
                     "metadata": {
                         "goType": "int64"
@@ -652,17 +627,14 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                },
+                "XXX_DISPLAY_DELIM": {
+                    "type": "string"
                 }
             }
         },
         "CFG_FBOVR": {
             "properties": {
-                "XXX_ECLASS_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "FTYPE_EXCL": {
                     "type": "string"
                 },
@@ -680,6 +652,12 @@
                 },
                 "UTYPE_CODE": {
                     "type": "string"
+                },
+                "XXX_ECLASS_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
@@ -724,9 +702,6 @@
         "CFG_FTYPE": {
             "properties": {
                 "ANONYMIZE": {
-                    "type": "string"
-                },
-                "XXX_DERIVATION": {
                     "type": "string"
                 },
                 "DERIVED": {
@@ -779,6 +754,9 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                },
+                "XXX_DERIVATION": {
+                    "type": "string"
                 }
             }
         },
@@ -886,12 +864,6 @@
                     },
                     "type": "int32"
                 },
-                "XXX_REL_STRENGTH": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "RTYPE_CODE": {
                     "type": "string"
                 },
@@ -899,6 +871,12 @@
                     "type": "string"
                 },
                 "RTYPE_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "XXX_REL_STRENGTH": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -945,18 +923,6 @@
                 "CONNECT_STR": {
                     "type": "string"
                 },
-                "XXX_FUNC_LIB": {
-                    "type": "string"
-                },
-                "XXX_FUNC_VER": {
-                    "type": "string"
-                },
-                "XXX_JAVA_CLASS_NAME": {
-                    "type": "string"
-                },
-                "XXX_LANGUAGE": {
-                    "type": "string"
-                },
                 "SFUNC_CODE": {
                     "type": "string"
                 },
@@ -968,6 +934,18 @@
                         "goType": "int64"
                     },
                     "type": "int32"
+                },
+                "XXX_FUNC_LIB": {
+                    "type": "string"
+                },
+                "XXX_FUNC_VER": {
+                    "type": "string"
+                },
+                "XXX_JAVA_CLASS_NAME": {
+                    "type": "string"
+                },
+                "XXX_LANGUAGE": {
+                    "type": "string"
                 }
             }
         },
@@ -985,39 +963,11 @@
                 "COMPATIBILITY_VERSION": {
                     "ref": "CompatibilityVersion"
                 },
-                "XXX_PRODUCT_NAME": {
-                    "type": "string"
-                },
                 "VERSION": {
                     "type": "string"
-                }
-            }
-        },
-        "WorkloadCaches": {
-            "properties": {
-                "libFeatCacheHit": {
-                    "type": "int32"
                 },
-                "libFeatCacheMiss": {
-                    "type": "int32"
-                },
-                "libFeatInsert": {
-                    "type": "int32"
-                },
-                "resFeatStatCacheHit": {
-                    "type": "int32"
-                },
-                "resFeatStatCacheMiss": {
-                    "type": "int32"
-                },
-                "resFeatStatInsert": {
-                    "type": "int32"
-                },
-                "resFeatStatUpdateAttempt": {
-                    "type": "int32"
-                },
-                "resFeatStatUpdateFail": {
-                    "type": "int32"
+                "XXX_PRODUCT_NAME": {
+                    "type": "string"
                 }
             }
         },
@@ -1040,23 +990,25 @@
                 }
             }
         },
-        "WorkloadCandidates": {
+        "CandidateKeysSummary": {
             "properties": {
-                "candidateBuilders": {
+                "FOUND": {
                     "metadata": {
-                        "goType": "map[string]int64"
+                        "goType": "int64"
                     },
-                    "values": {
-                        "type": "int32"
-                    }
+                    "type": "int32"
                 },
-                "XXX_suppressedCandidateBuilders": {
+                "GENERIC": {
                     "metadata": {
-                        "goType": "map[string]int64"
+                        "goType": "int64"
                     },
-                    "values": {
-                        "type": "int32"
-                    }
+                    "type": "int32"
+                },
+                "NOT_FOUND": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 }
             }
         },
@@ -1145,35 +1097,6 @@
                 }
             }
         },
-        "WorkloadContention": {
-            "properties": {
-                "XXX_feature": {
-                    "ref": "Fixme"
-                },
-                "XXX_resEnt": {
-                    "ref": "Fixme"
-                },
-                "XXX_valuelatch": {
-                    "ref": "Fixme"
-                }
-            }
-        },
-        "WorkloadCurrResources": {
-            "properties": {
-                "activeThreads": {
-                    "type": "int32"
-                },
-                "availableMemory": {
-                    "type": "string"
-                },
-                "processMemory": {
-                    "type": "string"
-                },
-                "workerThreads": {
-                    "type": "int32"
-                }
-            }
-        },
         "DataSource": {
             "properties": {
                 "DSRC_CODE": {
@@ -1212,6 +1135,11 @@
         },
         "DisclosedRelationsForMatchInfoForWhy": {
             "properties": {
+                "REL_POINTER": {
+                    "elements": {
+                        "ref": "RelPointer"
+                    }
+                },
                 "XXX_DOMAIN": {
                     "type": "string"
                 },
@@ -1245,11 +1173,6 @@
                 "XXX_REL_ANCHOR": {
                     "elements": {
                         "ref": "RelAnchor"
-                    }
-                },
-                "REL_POINTER": {
-                    "elements": {
-                        "ref": "RelPointer"
                     }
                 }
             }
@@ -1297,13 +1220,13 @@
         },
         "EntityForWhySearch": {
             "properties": {
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
+                },
                 "XXX_RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
-                },
-                "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
                 }
             }
         },
@@ -1438,36 +1361,6 @@
                 }
             }
         },
-        "WorkloadExpressedFeatures": {
-            "properties": {
-                "calls": {
-                    "elements": {
-                        "ref": "WorkloadExpressedFeaturesCall"
-                    }
-                },
-                "created": {
-                    "metadata": {
-                        "goType": "map[string]int64"
-                    },
-                    "values": {
-                        "type": "int32"
-                    }
-                }
-            }
-        },
-        "WorkloadExpressedFeaturesCall": {
-            "properties": {
-                "EFCALL_ID": {
-                    "type": "int32"
-                },
-                "EFUNC_CODE": {
-                    "type": "string"
-                },
-                "numCalls": {
-                    "type": "int32"
-                }
-            }
-        },
         "Feature": {
             "properties": {
                 "FELEM_CODE": {
@@ -1516,13 +1409,13 @@
                 "SCORING_CAP_REACHED": {
                     "type": "string"
                 },
-                "XXX_SUPPRESSED": {
-                    "type": "string"
-                },
                 "USED_FOR_CAND": {
                     "type": "string"
                 },
                 "USED_FOR_SCORING": {
+                    "type": "string"
+                },
+                "XXX_SUPPRESSED": {
                     "type": "string"
                 }
             }
@@ -1562,11 +1455,6 @@
         },
         "FeatureForGetEntity": {
             "properties": {
-                "XXX_ATTRIBUTES": {
-                    "elements": {
-                        "ref": "SenzingEntitySpecification"
-                    }
-                },
                 "FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
@@ -1592,6 +1480,11 @@
                         "description": "Label to identify how some features are being used (can also change some features behavior)."
                     },
                     "type": "string"
+                },
+                "XXX_ATTRIBUTES": {
+                    "elements": {
+                        "ref": "SenzingEntitySpecification"
+                    }
                 }
             }
         },
@@ -1786,11 +1679,6 @@
                         "ref": "CFG_EBOM"
                     }
                 },
-                "XXX_CFG_ECLASS": {
-                    "elements": {
-                        "ref": "CFG_ECLASS"
-                    }
-                },
                 "CFG_EFBOM": {
                     "elements": {
                         "ref": "CFG_EFBOM"
@@ -1814,11 +1702,6 @@
                 "CFG_ERRULE": {
                     "elements": {
                         "ref": "CFG_ERRULE"
-                    }
-                },
-                "XXX_CFG_ETYPE": {
-                    "elements": {
-                        "ref": "CFG_ETYPE"
                     }
                 },
                 "CFG_FBOM": {
@@ -1856,16 +1739,6 @@
                         "ref": "CFG_GPLAN"
                     }
                 },
-                "XXX_CFG_LENS": {
-                    "elements": {
-                        "ref": "CFG_LENS"
-                    }
-                },
-                "XXX_CFG_LENSRL": {
-                    "elements": {
-                        "ref": "CFG_LENSRL"
-                    }
-                },
                 "CFG_RCLASS": {
                     "elements": {
                         "ref": "CFG_RCLASS"
@@ -1900,6 +1773,26 @@
                     "elements": {
                         "ref": "SYS_OOM"
                     }
+                },
+                "XXX_CFG_ECLASS": {
+                    "elements": {
+                        "ref": "CFG_ECLASS"
+                    }
+                },
+                "XXX_CFG_ETYPE": {
+                    "elements": {
+                        "ref": "CFG_ETYPE"
+                    }
+                },
+                "XXX_CFG_LENS": {
+                    "elements": {
+                        "ref": "CFG_LENS"
+                    }
+                },
+                "XXX_CFG_LENSRL": {
+                    "elements": {
+                        "ref": "CFG_LENSRL"
+                    }
                 }
             }
         },
@@ -1912,22 +1805,6 @@
                     "elements": {
                         "ref": "ResolutionStep"
                     }
-                }
-            }
-        },
-        "WorkloadInitResources": {
-            "properties": {
-                "availableMemory": {
-                    "type": "string"
-                },
-                "logicalCores": {
-                    "type": "int32"
-                },
-                "XXX_physicalCores": {
-                    "type": "int32"
-                },
-                "totalMemory": {
-                    "type": "string"
                 }
             }
         },
@@ -1985,20 +1862,10 @@
                 }
             }
         },
-        "WorkloadLockWaits": {
-            "properties": {
-                "refreshLocks": {
-                    "ref": "WorkloadRefreshLocks"
-                }
-            }
-        },
         "MatchInfo": {
             "properties": {
                 "CANDIDATE_KEYS": {
                     "ref": "CandidateKeysForMatchInfo"
-                },
-                "XXX_DISCLOSED_RELATIONS": {
-                    "ref": "DisclosedRelationsForMatchInfo"
                 },
                 "ERRULE_CODE": {
                     "metadata": {
@@ -2018,17 +1885,20 @@
                 "MATCH_KEY_DETAILS": {
                     "ref": "MatchKeyDetails"
                 },
-                "XXX_MATCH_LEVEL": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
+                },
+                "XXX_DISCLOSED_RELATIONS": {
+                    "ref": "DisclosedRelationsForMatchInfo"
+                },
+                "XXX_MATCH_LEVEL": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
                 "XXX_WHY_ERRULE_CODE": {
                     "type": "string"
@@ -2140,111 +2010,12 @@
             },
             "type": "string"
         },
-        "WorkloadProcessing": {
-            "properties": {
-                "addedRecords": {
-                    "type": "int32"
-                },
-                "ambiguous": {
-                    "ref": "WorkloadProcessingAmbiguous"
-                },
-                "batchAddedRecords": {
-                    "type": "int32"
-                },
-                "deletedRecords": {
-                    "type": "int32"
-                },
-                "details": {
-                    "ref": "WorkloadProcessingDetails"
-                },
-                "reevaluations": {
-                    "type": "int32"
-                },
-                "repairedEntities": {
-                    "type": "int32"
-                }
-            }
-        },
-        "WorkloadProcessingAmbiguous": {
-            "properties": {
-                "actualTest": {
-                    "type": "int32"
-                },
-                "cachedTest": {
-                    "type": "int32"
-                }
-            }
-        },
-        "WorkloadProcessingDetails": {
-            "properties": {
-                "addedRecords": {
-                    "type": "int32"
-                },
-                "candidates": {
-                    "type": "int32"
-                },
-                "changeDeletes": {
-                    "type": "int32"
-                },
-                "duration": {
-                    "type": "int32"
-                },
-                "filteredObsFeat": {
-                    "type": "int32"
-                },
-                "newObsEnt": {
-                    "type": "int32"
-                },
-                "obsEntHashDiff": {
-                    "type": "int32"
-                },
-                "obsEntHashSame": {
-                    "type": "int32"
-                },
-                "optimizedOut": {
-                    "type": "int32"
-                },
-                "optimizedOutSkipped": {
-                    "type": "int32"
-                },
-                "partiallyResolved": {
-                    "type": "int32"
-                },
-                "retries": {
-                    "type": "int32"
-                }
-            }
-        },
         "Record": {
             "properties": {
-                "XXX_ADDRESS_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
-                "XXX_ATTRIBUTE_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
                 "DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
-                    "type": "string"
-                },
-                "XXX_ENTITY_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
-                "XXX_ENTITY_DESC": {
-                    "type": "string"
-                },
-                "XXX_ENTITY_KEY": {
-                    "type": "string"
-                },
-                "XXX_ENTITY_TYPE": {
                     "type": "string"
                 },
                 "ERRULE_CODE": {
@@ -2268,11 +2039,6 @@
                 "FIRST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "XXX_IDENTIFIER_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
                 "INTERNAL_ID": {
                     "metadata": {
                         "description": "Internal identifier for the record.",
@@ -2294,17 +2060,58 @@
                     },
                     "type": "string"
                 },
-                "XXX_MATCH_LEVEL": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
+                },
+                "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
+                    },
+                    "type": "string"
+                },
+                "UNMAPPED_DATA": {
+                    "values": {
+                        "ref": "Object"
+                    }
+                },
+                "XXX_ADDRESS_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ATTRIBUTE_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ENTITY_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ENTITY_DESC": {
+                    "type": "string"
+                },
+                "XXX_ENTITY_KEY": {
+                    "type": "string"
+                },
+                "XXX_ENTITY_TYPE": {
+                    "type": "string"
+                },
+                "XXX_IDENTIFIER_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_MATCH_LEVEL": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
                 "XXX_NAME_DATA": {
                     "elements": {
@@ -2321,55 +2128,19 @@
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
-                    "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
-                        "label": "RECORD_ID"
-                    },
-                    "type": "string"
-                },
                 "XXX_RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
-                    }
-                },
-                "UNMAPPED_DATA": {
-                    "values": {
-                        "ref": "Object"
                     }
                 }
             }
         },
         "RecordForGetEntity": {
             "properties": {
-                "XXX_ADDRESS_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
-                "XXX_ATTRIBUTE_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
                 "DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
-                    "type": "string"
-                },
-                "XXX_ENTITY_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
-                "XXX_ENTITY_DESC": {
-                    "type": "string"
-                },
-                "XXX_ENTITY_KEY": {
-                    "type": "string"
-                },
-                "XXX_ENTITY_TYPE": {
                     "type": "string"
                 },
                 "ERRULE_CODE": {
@@ -2393,11 +2164,6 @@
                 "FIRST_SEEN_DT": {
                     "type": "timestamp"
                 },
-                "XXX_IDENTIFIER_DATA": {
-                    "elements": {
-                        "type": "string"
-                    }
-                },
                 "INTERNAL_ID": {
                     "metadata": {
                         "description": "Internal identifier for the record.",
@@ -2419,17 +2185,58 @@
                     },
                     "type": "string"
                 },
-                "XXX_MATCH_LEVEL": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
+                },
+                "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
+                    },
+                    "type": "string"
+                },
+                "UNMAPPED_DATA": {
+                    "values": {
+                        "ref": "Object"
+                    }
+                },
+                "XXX_ADDRESS_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ATTRIBUTE_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ENTITY_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ENTITY_DESC": {
+                    "type": "string"
+                },
+                "XXX_ENTITY_KEY": {
+                    "type": "string"
+                },
+                "XXX_ENTITY_TYPE": {
+                    "type": "string"
+                },
+                "XXX_IDENTIFIER_DATA": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_MATCH_LEVEL": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
                 },
                 "XXX_NAME_DATA": {
                     "elements": {
@@ -2446,34 +2253,22 @@
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
-                    "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
-                        "label": "RECORD_ID"
-                    },
-                    "type": "string"
-                },
                 "XXX_RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
-                    }
-                },
-                "UNMAPPED_DATA": {
-                    "values": {
-                        "ref": "Object"
                     }
                 }
             }
         },
         "RecordKey": {
             "properties": {
-                "XXX_DATA_SOURCE": {
+                "DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "XXX_RECORD_ID": {
+                "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -2502,31 +2297,18 @@
                     },
                     "type": "string"
                 },
-                "XXX_FIRST_SEEN_DT": {
-                    "type": "timestamp"
-                },
-                "XXX_LAST_SEEN_DT": {
-                    "type": "timestamp"
-                },
                 "RECORD_COUNT": {
                     "metadata": {
                         "description": "The number of records for the entity with the same data source code.",
                         "goType": "int64"
                     },
                     "type": "int32"
-                }
-            }
-        },
-        "WorkloadRefreshLocks": {
-            "properties": {
-                "count": {
-                    "type": "int32"
                 },
-                "maxMS": {
-                    "type": "int32"
+                "XXX_FIRST_SEEN_DT": {
+                    "type": "timestamp"
                 },
-                "totalMS": {
-                    "type": "int32"
+                "XXX_LAST_SEEN_DT": {
+                    "type": "timestamp"
                 }
             }
         },
@@ -2566,13 +2348,6 @@
                     "elements": {
                         "ref": "RelPointer"
                     }
-                }
-            }
-        },
-        "RelatedRoles": {
-            "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
                 }
             }
         },
@@ -2682,9 +2457,6 @@
                     },
                     "type": "int32"
                 },
-                "XXX_LAST_SEEN_DT": {
-                    "type": "timestamp"
-                },
                 "MATCH_KEY": {
                     "metadata": {
                         "description": "Representation of matched source record features."
@@ -2703,11 +2475,6 @@
                     },
                     "type": "string"
                 },
-                "XXX_RECORDS": {
-                    "elements": {
-                        "ref": "Record"
-                    }
-                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummary"
@@ -2715,13 +2482,21 @@
                     "metadata": {
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     }
+                },
+                "XXX_LAST_SEEN_DT": {
+                    "type": "timestamp"
+                },
+                "XXX_RECORDS": {
+                    "elements": {
+                        "ref": "Record"
+                    }
                 }
             }
         },
-        "WorkloadRepairDiagnosis": {
+        "RelatedRoles": {
             "properties": {
-                "types": {
-                    "type": "int32"
+                "FIXME": {
+                    "ref": "Fixme"
                 }
             }
         },
@@ -2744,46 +2519,6 @@
                         "description": "Type of database."
                     },
                     "type": "string"
-                }
-            }
-        },
-        "WorkloadReresolve": {
-            "properties": {
-                "XXX_newFeatureFTypes": {
-                    "metadata": {
-                        "goType": "map[string]int64"
-                    },
-                    "values": {
-                        "type": "int32"
-                    }
-                },
-                "XXX_suppressedCandidateBuildersForReresolve": {
-                    "ref": "Fixme"
-                },
-                "XXX_suppressedScoredFeatureTypeForReresolve": {
-                    "ref": "Fixme"
-                },
-                "triggers": {
-                    "ref": "WorkloadReresolveTriggers"
-                }
-            }
-        },
-        "WorkloadReresolveTriggers": {
-            "properties": {
-                "abortRetry": {
-                    "type": "int32"
-                },
-                "multipleResolvableCandidates": {
-                    "type": "int32"
-                },
-                "resolveNewFeatures": {
-                    "type": "int32"
-                },
-                "skipped": {
-                    "type": "int32"
-                },
-                "unresolveMovement": {
-                    "type": "int32"
                 }
             }
         },
@@ -2827,18 +2562,36 @@
                     },
                     "type": "string"
                 },
-                "XXX_ERRULE_CODE": {
-                    "metadata": {
-                        "description": "Identifier of the entity resolution rule that was triggered."
-                    },
-                    "type": "string"
-                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         }
                     }
+                },
+                "RECORDS": {
+                    "elements": {
+                        "ref": "Record"
+                    }
+                },
+                "RECORD_SUMMARY": {
+                    "elements": {
+                        "ref": "RecordSummary"
+                    },
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
+                    }
+                },
+                "RECORD_TYPES": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
+                    "type": "string"
                 },
                 "XXX_FEATURE_IDS": {
                     "elements": {
@@ -2879,24 +2632,6 @@
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
-                },
-                "RECORDS": {
-                    "elements": {
-                        "ref": "Record"
-                    }
-                },
-                "RECORD_SUMMARY": {
-                    "elements": {
-                        "ref": "RecordSummary"
-                    },
-                    "metadata": {
-                        "description": "Overview of the source systems the records came from comprising this related entity."
-                    }
-                },
-                "RECORD_TYPES": {
-                    "elements": {
-                        "type": "string"
-                    }
                 }
             }
         },
@@ -2925,18 +2660,36 @@
                     },
                     "type": "string"
                 },
-                "XXX_ERRULE_CODE": {
-                    "metadata": {
-                        "description": "Identifier of the entity resolution rule that was triggered."
-                    },
-                    "type": "string"
-                },
                 "FEATURES": {
                     "values": {
                         "elements": {
                             "ref": "FeatureForGetEntity"
                         }
                     }
+                },
+                "RECORDS": {
+                    "elements": {
+                        "ref": "RecordForGetEntity"
+                    }
+                },
+                "RECORD_SUMMARY": {
+                    "elements": {
+                        "ref": "RecordSummary"
+                    },
+                    "metadata": {
+                        "description": "Overview of the source systems the records came from comprising this related entity."
+                    }
+                },
+                "RECORD_TYPES": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
+                "XXX_ERRULE_CODE": {
+                    "metadata": {
+                        "description": "Identifier of the entity resolution rule that was triggered."
+                    },
+                    "type": "string"
                 },
                 "XXX_FEATURE_IDS": {
                     "elements": {
@@ -2977,54 +2730,12 @@
                         "description": "The type of match that occurred for the record."
                     },
                     "type": "string"
-                },
-                "RECORDS": {
-                    "elements": {
-                        "ref": "RecordForGetEntity"
-                    }
-                },
-                "RECORD_SUMMARY": {
-                    "elements": {
-                        "ref": "RecordSummary"
-                    },
-                    "metadata": {
-                        "description": "Overview of the source systems the records came from comprising this related entity."
-                    }
-                },
-                "RECORD_TYPES": {
-                    "elements": {
-                        "type": "string"
-                    }
                 }
             }
         },
         "SYS_OOM": {
             "properties": {
-                "XXX_FELEM_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
                 "FTYPE_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_LENS_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_LIB_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_LIB_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -3049,6 +2760,30 @@
                     "type": "int32"
                 },
                 "THRESH1_OOM": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "XXX_FELEM_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "XXX_LENS_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "XXX_LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "XXX_LIB_FELEM_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
@@ -3091,40 +2826,6 @@
                 }
             }
         },
-        "WorkloadScoring": {
-            "properties": {
-                "cacheHit": {
-                    "metadata": {
-                        "goType": "map[string]int64"
-                    },
-                    "values": {
-                        "type": "int32"
-                    }
-                },
-                "cacheMiss": {
-                    "metadata": {
-                        "goType": "map[string]int64"
-                    },
-                    "values": {
-                        "type": "int32"
-                    }
-                },
-                "scoredPairs": {
-                    "metadata": {
-                        "goType": "map[string]int64"
-                    },
-                    "values": {
-                        "type": "int32"
-                    }
-                },
-                "suppressedDisclosedRelationshipDomainCount": {
-                    "type": "int32"
-                },
-                "XXX_suppressedScoredFeatureType": {
-                    "ref": "Fixme"
-                }
-            }
-        },
         "SearchRequest": {
             "properties": {
                 "FEATURES": {
@@ -3151,25 +2852,100 @@
         },
         "SenzingEntitySpecification": {
             "properties": {
-                "XXX_ACCOUNT_DOMAIN": {
-                    "type": "string"
-                },
-                "XXX_ACCOUNT_NUMBER": {
-                    "type": "string"
-                },
                 "ADDR_CITY": {
                     "type": "string"
                 },
                 "ADDR_COUNTRY": {
                     "type": "string"
                 },
-                "XXX_ADDR_FROM_DATE": {
-                    "type": "string"
-                },
                 "ADDR_FULL": {
                     "type": "string"
                 },
                 "ADDR_LINE1": {
+                    "type": "string"
+                },
+                "ADDR_POSTAL_CODE": {
+                    "type": "string"
+                },
+                "ADDR_STATE": {
+                    "type": "string"
+                },
+                "DATE_OF_BIRTH": {
+                    "type": "string"
+                },
+                "DRIVERS_LICENSE_NUMBER": {
+                    "type": "string"
+                },
+                "DRIVERS_LICENSE_STATE": {
+                    "type": "string"
+                },
+                "EMAIL_ADDRESS": {
+                    "type": "string"
+                },
+                "EMPLOYER_NAME": {
+                    "type": "string"
+                },
+                "GENDER": {
+                    "type": "string"
+                },
+                "NAME_FULL": {
+                    "type": "string"
+                },
+                "NATIONAL_ID_COUNTRY": {
+                    "type": "string"
+                },
+                "NATIONAL_ID_NUMBER": {
+                    "type": "string"
+                },
+                "NATIVE_NAME_FULL": {
+                    "type": "string"
+                },
+                "PASSPORT_COUNTRY": {
+                    "type": "string"
+                },
+                "PASSPORT_NUMBER": {
+                    "type": "string"
+                },
+                "PHONE_NUMBER": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_FIRST": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_FULL": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_LAST": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_MIDDLE": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_ORG": {
+                    "type": "string"
+                },
+                "RECORD_TYPE": {
+                    "type": "string"
+                },
+                "REL_ANCHOR_KEY": {
+                    "type": "string"
+                },
+                "REL_POINTER_KEY": {
+                    "type": "string"
+                },
+                "SECONDARY_NAME_ORG": {
+                    "type": "string"
+                },
+                "SSN_NUMBER": {
+                    "type": "string"
+                },
+                "XXX_ACCOUNT_DOMAIN": {
+                    "type": "string"
+                },
+                "XXX_ACCOUNT_NUMBER": {
+                    "type": "string"
+                },
+                "XXX_ADDR_FROM_DATE": {
                     "type": "string"
                 },
                 "XXX_ADDR_LINE2": {
@@ -3187,12 +2963,6 @@
                 "XXX_ADDR_LINE6": {
                     "type": "string"
                 },
-                "ADDR_POSTAL_CODE": {
-                    "type": "string"
-                },
-                "ADDR_STATE": {
-                    "type": "string"
-                },
                 "XXX_ADDR_THRU_DATE": {
                     "type": "string"
                 },
@@ -3202,34 +2972,16 @@
                 "XXX_CITIZENSHIP": {
                     "type": "string"
                 },
-                "DATE_OF_BIRTH": {
-                    "type": "string"
-                },
                 "XXX_DATE_OF_DEATH": {
-                    "type": "string"
-                },
-                "DRIVERS_LICENSE_NUMBER": {
-                    "type": "string"
-                },
-                "DRIVERS_LICENSE_STATE": {
                     "type": "string"
                 },
                 "XXX_DUNS_NUMBER": {
                     "type": "string"
                 },
-                "EMAIL_ADDRESS": {
-                    "type": "string"
-                },
                 "XXX_EMPLOYER": {
                     "type": "string"
                 },
-                "EMPLOYER_NAME": {
-                    "type": "string"
-                },
                 "XXX_FACEBOOK": {
-                    "type": "string"
-                },
-                "GENDER": {
                     "type": "string"
                 },
                 "XXX_GROUP_ASSN_ID_NUMBER": {
@@ -3256,9 +3008,6 @@
                 "XXX_NAME_FIRST": {
                     "type": "string"
                 },
-                "NAME_FULL": {
-                    "type": "string"
-                },
                 "XXX_NAME_LAST": {
                     "type": "string"
                 },
@@ -3277,15 +3026,6 @@
                 "XXX_NATIONALITY": {
                     "type": "string"
                 },
-                "NATIONAL_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "NATIONAL_ID_NUMBER": {
-                    "type": "string"
-                },
-                "NATIVE_NAME_FULL": {
-                    "type": "string"
-                },
                 "XXX_NPI_NUMBER": {
                     "type": "string"
                 },
@@ -3298,16 +3038,7 @@
                 "XXX_OTHER_ID_TYPE": {
                     "type": "string"
                 },
-                "PASSPORT_COUNTRY": {
-                    "type": "string"
-                },
-                "PASSPORT_NUMBER": {
-                    "type": "string"
-                },
                 "XXX_PHONE_FROM_DATE": {
-                    "type": "string"
-                },
-                "PHONE_NUMBER": {
                     "type": "string"
                 },
                 "XXX_PHONE_THRU_DATE": {
@@ -3319,46 +3050,16 @@
                 "XXX_PLACE_OF_BIRTH": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_FIRST": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_FULL": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_ORG": {
-                    "type": "string"
-                },
-                "RECORD_TYPE": {
-                    "type": "string"
-                },
                 "XXX_REGISTRATION_COUNTRY": {
                     "type": "string"
                 },
                 "XXX_REGISTRATION_DATE": {
                     "type": "string"
                 },
-                "REL_ANCHOR_KEY": {
-                    "type": "string"
-                },
-                "REL_POINTER_KEY": {
-                    "type": "string"
-                },
-                "SECONDARY_NAME_ORG": {
-                    "type": "string"
-                },
                 "XXX_SIGNAL": {
                     "type": "string"
                 },
                 "XXX_SKYPE": {
-                    "type": "string"
-                },
-                "SSN_NUMBER": {
                     "type": "string"
                 },
                 "XXX_TANGO": {
@@ -3399,35 +3100,6 @@
                 },
                 "XXX_ZOOMROOM": {
                     "type": "string"
-                }
-            }
-        },
-        "WorkloadSystemLoad": {
-            "properties": {
-                "cpuIdle": {
-                    "type": "string"
-                },
-                "cpuSystem": {
-                    "type": "string"
-                },
-                "cpuUser": {
-                    "type": "string"
-                },
-                "cpuWait": {
-                    "type": "string"
-                }
-            }
-        },
-        "WorkloadSystemResources": {
-            "properties": {
-                "currResources": {
-                    "ref": "WorkloadCurrResources"
-                },
-                "initResources": {
-                    "ref": "WorkloadInitResources"
-                },
-                "systemLoad": {
-                    "ref": "WorkloadSystemLoad"
                 }
             }
         },
@@ -3530,26 +3202,26 @@
         },
         "SzEngineAddRecordResponse": {
             "properties": {
-                "XXX_AFFECTED_ENTITIES": {
+                "AFFECTED_ENTITIES": {
                     "elements": {
                         "ref": "AffectedEntity"
                     }
                 },
-                "XXX_DATA_SOURCE": {
+                "DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "XXX_INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
-                },
-                "XXX_RECORD_ID": {
+                "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
+                },
+                "XXX_INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
                 }
             }
         },
@@ -3566,15 +3238,15 @@
                     },
                     "type": "string"
                 },
-                "XXX_INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
-                },
                 "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
+                },
+                "XXX_INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
                 }
             }
         },
@@ -3642,7 +3314,7 @@
         },
         "SzEngineFindNetworkByRecordIdRecordKeys": {
             "properties": {
-                "XXX_RECORDS": {
+                "RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -3714,7 +3386,7 @@
         },
         "SzEngineFindPathByRecordIdAvoidRecordKeys": {
             "properties": {
-                "XXX_RECORDS": {
+                "RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -3802,6 +3474,47 @@
         },
         "SzEngineGetRecordResponse": {
             "properties": {
+                "DATA_SOURCE": {
+                    "metadata": {
+                        "description": "A label identifying the provenance of the record."
+                    },
+                    "type": "string"
+                },
+                "FEATURES": {
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureForAttributes"
+                        }
+                    }
+                },
+                "FEATURE_IDS": {
+                    "elements": {
+                        "ref": "FeatureID"
+                    }
+                },
+                "FIRST_SEEN_DT": {
+                    "type": "timestamp"
+                },
+                "JSON_DATA": {
+                    "values": {
+                        "ref": "Object"
+                    }
+                },
+                "LAST_SEEN_DT": {
+                    "type": "timestamp"
+                },
+                "RECORD_ID": {
+                    "metadata": {
+                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+                        "label": "RECORD_ID"
+                    },
+                    "type": "string"
+                },
+                "UNMAPPED_DATA": {
+                    "values": {
+                        "ref": "Object"
+                    }
+                },
                 "XXX_ADDRESS_DATA": {
                     "elements": {
                         "type": "string"
@@ -3811,12 +3524,6 @@
                     "elements": {
                         "type": "string"
                     }
-                },
-                "DATA_SOURCE": {
-                    "metadata": {
-                        "description": "A label identifying the provenance of the record."
-                    },
-                    "type": "string"
                 },
                 "XXX_ENTITY_DATA": {
                     "elements": {
@@ -3838,21 +3545,6 @@
                     },
                     "type": "string"
                 },
-                "FEATURES": {
-                    "values": {
-                        "elements": {
-                            "ref": "FeatureForAttributes"
-                        }
-                    }
-                },
-                "FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
-                    }
-                },
-                "FIRST_SEEN_DT": {
-                    "type": "timestamp"
-                },
                 "XXX_IDENTIFIER_DATA": {
                     "elements": {
                         "type": "string"
@@ -3864,14 +3556,6 @@
                         "goType": "int64"
                     },
                     "type": "int32"
-                },
-                "JSON_DATA": {
-                    "values": {
-                        "ref": "Object"
-                    }
-                },
-                "LAST_SEEN_DT": {
-                    "type": "timestamp"
                 },
                 "XXX_MATCH_KEY": {
                     "metadata": {
@@ -3906,21 +3590,9 @@
                         "type": "string"
                     }
                 },
-                "RECORD_ID": {
-                    "metadata": {
-                        "description": "The unique identifier within the set of records in the DATA_SOURCE.",
-                        "label": "RECORD_ID"
-                    },
-                    "type": "string"
-                },
                 "XXX_RELATIONSHIP_DATA": {
                     "elements": {
                         "type": "string"
-                    }
-                },
-                "UNMAPPED_DATA": {
-                    "values": {
-                        "ref": "Object"
                     }
                 }
             }
@@ -3941,7 +3613,7 @@
         },
         "SzEngineGetVirtualEntityByRecordIdRecordKeys": {
             "properties": {
-                "XXX_RECORDS": {
+                "RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -3978,9 +3650,6 @@
                     },
                     "type": "string"
                 },
-                "XXX_INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
-                },
                 "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
@@ -3990,6 +3659,9 @@
                 },
                 "UMF_PROC": {
                     "ref": "UmfProc"
+                },
+                "XXX_INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
                 }
             }
         },
@@ -4031,15 +3703,15 @@
                     },
                     "type": "string"
                 },
-                "XXX_INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
-                },
                 "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
+                },
+                "XXX_INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
                 }
             }
         },
@@ -4218,40 +3890,6 @@
                 }
             }
         },
-        "WorkloadThreadState": {
-            "properties": {
-                "active": {
-                    "type": "int32"
-                },
-                "dataLatchContention": {
-                    "type": "int32"
-                },
-                "governorContention": {
-                    "type": "int32"
-                },
-                "idle": {
-                    "type": "int32"
-                },
-                "loader": {
-                    "type": "int32"
-                },
-                "obsEntContention": {
-                    "type": "int32"
-                },
-                "resEntContention": {
-                    "type": "int32"
-                },
-                "resolver": {
-                    "type": "int32"
-                },
-                "scoring": {
-                    "type": "int32"
-                },
-                "sqlExecuting": {
-                    "type": "int32"
-                }
-            }
-        },
         "UmfProc": {
             "properties": {
                 "NAME": {
@@ -4278,41 +3916,6 @@
             "properties": {
                 "PARAM": {
                     "ref": "UmfProcParamDetails"
-                }
-            }
-        },
-        "WorkloadUnresolve": {
-            "properties": {
-                "abortedUnresolve": {
-                    "type": "int32"
-                },
-                "triggers": {
-                    "ref": "WorkloadUnresolveTriggers"
-                },
-                "unresolveTest": {
-                    "type": "int32"
-                }
-            }
-        },
-        "WorkloadUnresolveTriggers": {
-            "properties": {
-                "ambiguousMultiResolve": {
-                    "type": "int32"
-                },
-                "ambiguousNoResolve": {
-                    "type": "int32"
-                },
-                "extensiveResolve": {
-                    "type": "int32"
-                },
-                "normalResolve": {
-                    "type": "int32"
-                },
-                "relLink": {
-                    "type": "int32"
-                },
-                "update": {
-                    "type": "int32"
                 }
             }
         },
@@ -4393,6 +3996,20 @@
         },
         "Workload": {
             "properties": {
+                "XXX_contention": {
+                    "ref": "WorkloadContention"
+                },
+                "XXX_genericDetect": {
+                    "ref": "Fixme"
+                },
+                "XXX_redoTriggers": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                },
                 "apiVersion": {
                     "type": "string"
                 },
@@ -4402,17 +4019,11 @@
                 "candidates": {
                     "ref": "WorkloadCandidates"
                 },
-                "XXX_contention": {
-                    "ref": "WorkloadContention"
-                },
                 "datetimestamp": {
                     "type": "string"
                 },
                 "expressedFeatures": {
                     "ref": "WorkloadExpressedFeatures"
-                },
-                "XXX_genericDetect": {
-                    "ref": "Fixme"
                 },
                 "license": {
                     "ref": "License"
@@ -4425,14 +4036,6 @@
                 },
                 "processing": {
                     "ref": "WorkloadProcessing"
-                },
-                "XXX_redoTriggers": {
-                    "metadata": {
-                        "goType": "map[string]int64"
-                    },
-                    "values": {
-                        "type": "int32"
-                    }
                 },
                 "repairDiagnosis": {
                     "ref": "WorkloadRepairDiagnosis"
@@ -4451,6 +4054,403 @@
                 },
                 "unresolve": {
                     "ref": "WorkloadUnresolve"
+                }
+            }
+        },
+        "WorkloadCaches": {
+            "properties": {
+                "libFeatCacheHit": {
+                    "type": "int32"
+                },
+                "libFeatCacheMiss": {
+                    "type": "int32"
+                },
+                "libFeatInsert": {
+                    "type": "int32"
+                },
+                "resFeatStatCacheHit": {
+                    "type": "int32"
+                },
+                "resFeatStatCacheMiss": {
+                    "type": "int32"
+                },
+                "resFeatStatInsert": {
+                    "type": "int32"
+                },
+                "resFeatStatUpdateAttempt": {
+                    "type": "int32"
+                },
+                "resFeatStatUpdateFail": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadCandidates": {
+            "properties": {
+                "XXX_suppressedCandidateBuilders": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                },
+                "candidateBuilders": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                }
+            }
+        },
+        "WorkloadContention": {
+            "properties": {
+                "XXX_feature": {
+                    "ref": "Fixme"
+                },
+                "XXX_resEnt": {
+                    "ref": "Fixme"
+                },
+                "XXX_valuelatch": {
+                    "ref": "Fixme"
+                }
+            }
+        },
+        "WorkloadCurrResources": {
+            "properties": {
+                "activeThreads": {
+                    "type": "int32"
+                },
+                "availableMemory": {
+                    "type": "string"
+                },
+                "processMemory": {
+                    "type": "string"
+                },
+                "workerThreads": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadExpressedFeatures": {
+            "properties": {
+                "calls": {
+                    "elements": {
+                        "ref": "WorkloadExpressedFeaturesCall"
+                    }
+                },
+                "created": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                }
+            }
+        },
+        "WorkloadExpressedFeaturesCall": {
+            "properties": {
+                "EFCALL_ID": {
+                    "type": "int32"
+                },
+                "EFUNC_CODE": {
+                    "type": "string"
+                },
+                "numCalls": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadInitResources": {
+            "properties": {
+                "XXX_physicalCores": {
+                    "type": "int32"
+                },
+                "availableMemory": {
+                    "type": "string"
+                },
+                "logicalCores": {
+                    "type": "int32"
+                },
+                "totalMemory": {
+                    "type": "string"
+                }
+            }
+        },
+        "WorkloadLockWaits": {
+            "properties": {
+                "refreshLocks": {
+                    "ref": "WorkloadRefreshLocks"
+                }
+            }
+        },
+        "WorkloadProcessing": {
+            "properties": {
+                "addedRecords": {
+                    "type": "int32"
+                },
+                "ambiguous": {
+                    "ref": "WorkloadProcessingAmbiguous"
+                },
+                "batchAddedRecords": {
+                    "type": "int32"
+                },
+                "deletedRecords": {
+                    "type": "int32"
+                },
+                "details": {
+                    "ref": "WorkloadProcessingDetails"
+                },
+                "reevaluations": {
+                    "type": "int32"
+                },
+                "repairedEntities": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadProcessingAmbiguous": {
+            "properties": {
+                "actualTest": {
+                    "type": "int32"
+                },
+                "cachedTest": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadProcessingDetails": {
+            "properties": {
+                "addedRecords": {
+                    "type": "int32"
+                },
+                "candidates": {
+                    "type": "int32"
+                },
+                "changeDeletes": {
+                    "type": "int32"
+                },
+                "duration": {
+                    "type": "int32"
+                },
+                "filteredObsFeat": {
+                    "type": "int32"
+                },
+                "newObsEnt": {
+                    "type": "int32"
+                },
+                "obsEntHashDiff": {
+                    "type": "int32"
+                },
+                "obsEntHashSame": {
+                    "type": "int32"
+                },
+                "optimizedOut": {
+                    "type": "int32"
+                },
+                "optimizedOutSkipped": {
+                    "type": "int32"
+                },
+                "partiallyResolved": {
+                    "type": "int32"
+                },
+                "retries": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadRefreshLocks": {
+            "properties": {
+                "count": {
+                    "type": "int32"
+                },
+                "maxMS": {
+                    "type": "int32"
+                },
+                "totalMS": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadRepairDiagnosis": {
+            "properties": {
+                "types": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadReresolve": {
+            "properties": {
+                "XXX_newFeatureFTypes": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                },
+                "XXX_suppressedCandidateBuildersForReresolve": {
+                    "ref": "Fixme"
+                },
+                "XXX_suppressedScoredFeatureTypeForReresolve": {
+                    "ref": "Fixme"
+                },
+                "triggers": {
+                    "ref": "WorkloadReresolveTriggers"
+                }
+            }
+        },
+        "WorkloadReresolveTriggers": {
+            "properties": {
+                "abortRetry": {
+                    "type": "int32"
+                },
+                "multipleResolvableCandidates": {
+                    "type": "int32"
+                },
+                "resolveNewFeatures": {
+                    "type": "int32"
+                },
+                "skipped": {
+                    "type": "int32"
+                },
+                "unresolveMovement": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadScoring": {
+            "properties": {
+                "XXX_suppressedScoredFeatureType": {
+                    "ref": "Fixme"
+                },
+                "cacheHit": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                },
+                "cacheMiss": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                },
+                "scoredPairs": {
+                    "metadata": {
+                        "goType": "map[string]int64"
+                    },
+                    "values": {
+                        "type": "int32"
+                    }
+                },
+                "suppressedDisclosedRelationshipDomainCount": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadSystemLoad": {
+            "properties": {
+                "cpuIdle": {
+                    "type": "string"
+                },
+                "cpuSystem": {
+                    "type": "string"
+                },
+                "cpuUser": {
+                    "type": "string"
+                },
+                "cpuWait": {
+                    "type": "string"
+                }
+            }
+        },
+        "WorkloadSystemResources": {
+            "properties": {
+                "currResources": {
+                    "ref": "WorkloadCurrResources"
+                },
+                "initResources": {
+                    "ref": "WorkloadInitResources"
+                },
+                "systemLoad": {
+                    "ref": "WorkloadSystemLoad"
+                }
+            }
+        },
+        "WorkloadThreadState": {
+            "properties": {
+                "active": {
+                    "type": "int32"
+                },
+                "dataLatchContention": {
+                    "type": "int32"
+                },
+                "governorContention": {
+                    "type": "int32"
+                },
+                "idle": {
+                    "type": "int32"
+                },
+                "loader": {
+                    "type": "int32"
+                },
+                "obsEntContention": {
+                    "type": "int32"
+                },
+                "resEntContention": {
+                    "type": "int32"
+                },
+                "resolver": {
+                    "type": "int32"
+                },
+                "scoring": {
+                    "type": "int32"
+                },
+                "sqlExecuting": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadUnresolve": {
+            "properties": {
+                "abortedUnresolve": {
+                    "type": "int32"
+                },
+                "triggers": {
+                    "ref": "WorkloadUnresolveTriggers"
+                },
+                "unresolveTest": {
+                    "type": "int32"
+                }
+            }
+        },
+        "WorkloadUnresolveTriggers": {
+            "properties": {
+                "ambiguousMultiResolve": {
+                    "type": "int32"
+                },
+                "ambiguousNoResolve": {
+                    "type": "int32"
+                },
+                "extensiveResolve": {
+                    "type": "int32"
+                },
+                "normalResolve": {
+                    "type": "int32"
+                },
+                "relLink": {
+                    "type": "int32"
+                },
+                "update": {
+                    "type": "int32"
                 }
             }
         }

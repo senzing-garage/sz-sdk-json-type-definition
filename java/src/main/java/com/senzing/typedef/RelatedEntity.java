@@ -24,9 +24,6 @@ public class RelatedEntity {
     @JsonProperty("IS_DISCLOSED")
     private Integer isDisclosed;
 
-    @JsonProperty("LAST_SEEN_DT")
-    private OffsetDateTime lastSeenDt;
-
     @JsonProperty("MATCH_KEY")
     private String matchKey;
 
@@ -36,11 +33,14 @@ public class RelatedEntity {
     @JsonProperty("MATCH_LEVEL_CODE")
     private String matchLevelCode;
 
-    @JsonProperty("RECORDS")
-    private List<Record> records;
-
     @JsonProperty("RECORD_SUMMARY")
     private List<RecordSummary> recordSummary;
+
+    @JsonProperty("XXX_LAST_SEEN_DT")
+    private OffsetDateTime xxxLastSeenDt;
+
+    @JsonProperty("XXX_RECORDS")
+    private List<Record> xxxRecords;
 
     public RelatedEntity() {
     }
@@ -128,20 +128,6 @@ public class RelatedEntity {
     }
 
     /**
-     * Getter for lastSeenDt.<p>
-     */
-    public OffsetDateTime getLastSeenDt() {
-        return lastSeenDt;
-    }
-
-    /**
-     * Setter for lastSeenDt.<p>
-     */
-    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
-        this.lastSeenDt = lastSeenDt;
-    }
-
-    /**
      * Getter for matchKey.<p>
      * Representation of matched source record features.
      */
@@ -188,20 +174,6 @@ public class RelatedEntity {
     }
 
     /**
-     * Getter for records.<p>
-     */
-    public List<Record> getRecords() {
-        return records;
-    }
-
-    /**
-     * Setter for records.<p>
-     */
-    public void setRecords(List<Record> records) {
-        this.records = records;
-    }
-
-    /**
      * Getter for recordSummary.<p>
      * Overview of the source systems the records came from comprising this
      * related entity.
@@ -217,5 +189,33 @@ public class RelatedEntity {
      */
     public void setRecordSummary(List<RecordSummary> recordSummary) {
         this.recordSummary = recordSummary;
+    }
+
+    /**
+     * Getter for xxxLastSeenDt.<p>
+     */
+    public OffsetDateTime getXxxLastSeenDt() {
+        return xxxLastSeenDt;
+    }
+
+    /**
+     * Setter for xxxLastSeenDt.<p>
+     */
+    public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
+        this.xxxLastSeenDt = xxxLastSeenDt;
+    }
+
+    /**
+     * Getter for xxxRecords.<p>
+     */
+    public List<Record> getXxxRecords() {
+        return xxxRecords;
+    }
+
+    /**
+     * Setter for xxxRecords.<p>
+     */
+    public void setXxxRecords(List<Record> xxxRecords) {
+        this.xxxRecords = xxxRecords;
     }
 }

@@ -361,8 +361,8 @@ documentation: \
 	docs-labels-used \
 	docs-responses-html \
 	docs-responses-json \
-	unused-json-keys
-# 	documentation-osarch-specific \
+	unused-json-keys \
+	documentation-osarch-specific
 
 # -----------------------------------------------------------------------------
 # Clean

@@ -10,9 +10,6 @@ public class CfgFtype {
     @JsonProperty("ANONYMIZE")
     private String anonymize;
 
-    @JsonProperty("DERIVATION")
-    private String derivation;
-
     @JsonProperty("DERIVED")
     private String derived;
 
@@ -52,6 +49,9 @@ public class CfgFtype {
     @JsonProperty("VERSION")
     private Integer version;
 
+    @JsonProperty("XXX_DERIVATION")
+    private String xxxDerivation;
+
     public CfgFtype() {
     }
 
@@ -67,20 +67,6 @@ public class CfgFtype {
      */
     public void setAnonymize(String anonymize) {
         this.anonymize = anonymize;
-    }
-
-    /**
-     * Getter for derivation.<p>
-     */
-    public String getDerivation() {
-        return derivation;
-    }
-
-    /**
-     * Setter for derivation.<p>
-     */
-    public void setDerivation(String derivation) {
-        this.derivation = derivation;
     }
 
     /**
@@ -263,5 +249,19 @@ public class CfgFtype {
      */
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    /**
+     * Getter for xxxDerivation.<p>
+     */
+    public String getXxxDerivation() {
+        return xxxDerivation;
+    }
+
+    /**
+     * Setter for xxxDerivation.<p>
+     */
+    public void setXxxDerivation(String xxxDerivation) {
+        this.xxxDerivation = xxxDerivation;
     }
 }

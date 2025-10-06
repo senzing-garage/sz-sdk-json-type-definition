@@ -7,9 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgFbovr {
-    @JsonProperty("ECLASS_ID")
-    private Integer eclassId;
-
     @JsonProperty("FTYPE_EXCL")
     private String ftypeExcl;
 
@@ -25,21 +22,10 @@ public class CfgFbovr {
     @JsonProperty("UTYPE_CODE")
     private String utypeCode;
 
+    @JsonProperty("XXX_ECLASS_ID")
+    private Integer xxxEclassId;
+
     public CfgFbovr() {
-    }
-
-    /**
-     * Getter for eclassId.<p>
-     */
-    public Integer getEclassId() {
-        return eclassId;
-    }
-
-    /**
-     * Setter for eclassId.<p>
-     */
-    public void setEclassId(Integer eclassId) {
-        this.eclassId = eclassId;
     }
 
     /**
@@ -110,5 +96,19 @@ public class CfgFbovr {
      */
     public void setUtypeCode(String utypeCode) {
         this.utypeCode = utypeCode;
+    }
+
+    /**
+     * Getter for xxxEclassId.<p>
+     */
+    public Integer getXxxEclassId() {
+        return xxxEclassId;
+    }
+
+    /**
+     * Setter for xxxEclassId.<p>
+     */
+    public void setXxxEclassId(Integer xxxEclassId) {
+        this.xxxEclassId = xxxEclassId;
     }
 }

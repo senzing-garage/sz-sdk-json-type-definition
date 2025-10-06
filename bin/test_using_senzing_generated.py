@@ -376,11 +376,11 @@ if __name__ == "__main__":
             continue
 
         with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
-            line_count = 0
+            LINE_COUNT = 0
             for line in test_file:
-                line_count += 1
-                test_name = f"{title}.{line_count}"
-                compare_to_schema(test_name, title, json_schema, json.loads(line))
+                LINE_COUNT += 1
+                TEST_NAME = f"{title}.{LINE_COUNT}"
+                compare_to_schema(TEST_NAME, title, json_schema, json.loads(line))
 
     # Epilog.
 

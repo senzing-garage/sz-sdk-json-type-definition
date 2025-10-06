@@ -7,9 +7,6 @@ namespace Senzing.Typedef
 {
     public class CfgFbovr
     {
-        [JsonPropertyName("ECLASS_ID")]
-        public int EclassId { get; set; }
-
         [JsonPropertyName("FTYPE_EXCL")]
         public string FtypeExcl { get; set; }
 
@@ -24,5 +21,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("UTYPE_CODE")]
         public string UtypeCode { get; set; }
+
+        [JsonPropertyName("XXX_ECLASS_ID")]
+        public int XxxEclassId { get; set; }
     }
 }

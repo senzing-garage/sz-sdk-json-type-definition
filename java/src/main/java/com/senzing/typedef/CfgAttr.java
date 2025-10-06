@@ -7,9 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgAttr {
-    @JsonProperty("ADVANCED")
-    private String advanced;
-
     @JsonProperty("ATTR_CLASS")
     private String attrClass;
 
@@ -34,21 +31,10 @@ public class CfgAttr {
     @JsonProperty("INTERNAL")
     private String internal;
 
+    @JsonProperty("XXX_ADVANCED")
+    private String xxxAdvanced;
+
     public CfgAttr() {
-    }
-
-    /**
-     * Getter for advanced.<p>
-     */
-    public String getAdvanced() {
-        return advanced;
-    }
-
-    /**
-     * Setter for advanced.<p>
-     */
-    public void setAdvanced(String advanced) {
-        this.advanced = advanced;
     }
 
     /**
@@ -161,5 +147,19 @@ public class CfgAttr {
      */
     public void setInternal(String internal) {
         this.internal = internal;
+    }
+
+    /**
+     * Getter for xxxAdvanced.<p>
+     */
+    public String getXxxAdvanced() {
+        return xxxAdvanced;
+    }
+
+    /**
+     * Setter for xxxAdvanced.<p>
+     */
+    public void setXxxAdvanced(String xxxAdvanced) {
+        this.xxxAdvanced = xxxAdvanced;
     }
 }

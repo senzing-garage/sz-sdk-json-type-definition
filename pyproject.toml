@@ -119,6 +119,7 @@ ignored-argument-names = "args|kwargs"
 max-locals = 30
 min-similarity-lines = 10
 disable = [
+  "broad-exception-caught",
   "eval-used",
   "f-string-without-interpolation",
   "global-statement",

@@ -1,5 +1,22 @@
 {
     "workload": {
+        "XXX_contention": {
+            "XXX_feature": {
+                "FIXME_KEY": "string"
+            },
+            "XXX_resEnt": {
+                "FIXME_KEY": "string"
+            },
+            "XXX_valuelatch": {
+                "FIXME_KEY": "string"
+            }
+        },
+        "XXX_genericDetect": {
+            "FIXME_KEY": "string"
+        },
+        "XXX_redoTriggers": {
+            "user_defined_json_key": "int32"
+        },
         "apiVersion": "string",
         "caches": {
             "libFeatCacheHit": "int32",
@@ -12,22 +29,11 @@
             "resFeatStatUpdateFail": "int32"
         },
         "candidates": {
+            "XXX_suppressedCandidateBuilders": {
+                "user_defined_json_key": "int32"
+            },
             "candidateBuilders": {
                 "user_defined_json_key": "int32"
-            },
-            "suppressedCandidateBuilders": {
-                "user_defined_json_key": "int32"
-            }
-        },
-        "contention": {
-            "feature": {
-                "FIXME_KEY": "string"
-            },
-            "resEnt": {
-                "FIXME_KEY": "string"
-            },
-            "valuelatch": {
-                "FIXME_KEY": "string"
             }
         },
         "datetimestamp": "string",
@@ -42,9 +48,6 @@
             "created": {
                 "user_defined_json_key": "int32"
             }
-        },
-        "genericDetect": {
-            "FIXME_KEY": "string"
         },
         "license": {
             "dsrLimit": "string",
@@ -84,20 +87,17 @@
             "reevaluations": "int32",
             "repairedEntities": "int32"
         },
-        "redoTriggers": {
-            "user_defined_json_key": "int32"
-        },
         "repairDiagnosis": {
             "types": "int32"
         },
         "reresolve": {
-            "newFeatureFTypes": {
+            "XXX_newFeatureFTypes": {
                 "user_defined_json_key": "int32"
             },
-            "suppressedCandidateBuildersForReresolve": {
+            "XXX_suppressedCandidateBuildersForReresolve": {
                 "FIXME_KEY": "string"
             },
-            "suppressedScoredFeatureTypeForReresolve": {
+            "XXX_suppressedScoredFeatureTypeForReresolve": {
                 "FIXME_KEY": "string"
             },
             "triggers": {
@@ -109,6 +109,9 @@
             }
         },
         "scoring": {
+            "XXX_suppressedScoredFeatureType": {
+                "FIXME_KEY": "string"
+            },
             "cacheHit": {
                 "user_defined_json_key": "int32"
             },
@@ -118,10 +121,7 @@
             "scoredPairs": {
                 "user_defined_json_key": "int32"
             },
-            "suppressedDisclosedRelationshipDomainCount": "int32",
-            "suppressedScoredFeatureType": {
-                "FIXME_KEY": "string"
-            }
+            "suppressedDisclosedRelationshipDomainCount": "int32"
         },
         "systemResources": {
             "currResources": {
@@ -131,9 +131,9 @@
                 "workerThreads": "int32"
             },
             "initResources": {
+                "XXX_physicalCores": "int32",
                 "availableMemory": "string",
                 "logicalCores": "int32",
-                "physicalCores": "int32",
                 "totalMemory": "string"
             },
             "systemLoad": {

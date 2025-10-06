@@ -7,9 +7,6 @@ namespace Senzing.Typedef
 {
     public class CfgDsrc
     {
-        [JsonPropertyName("CONVERSATIONAL")]
-        public string Conversational { get; set; }
-
         [JsonPropertyName("DSRC_CODE")]
         public string DsrcCode { get; set; }
 
@@ -19,10 +16,13 @@ namespace Senzing.Typedef
         [JsonPropertyName("DSRC_ID")]
         public int DsrcId { get; set; }
 
-        [JsonPropertyName("DSRC_RELY")]
-        public int DsrcRely { get; set; }
-
         [JsonPropertyName("RETENTION_LEVEL")]
         public string RetentionLevel { get; set; }
+
+        [JsonPropertyName("XXX_CONVERSATIONAL")]
+        public string XxxConversational { get; set; }
+
+        [JsonPropertyName("XXX_DSRC_RELY")]
+        public int XxxDsrcRely { get; set; }
     }
 }

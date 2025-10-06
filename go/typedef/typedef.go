@@ -27,8 +27,6 @@ type AffectedEntity struct {
 }
 
 type CfgAttr struct {
-	Advanced string `json:"ADVANCED"`
-
 	AttrClass string `json:"ATTR_CLASS"`
 
 	AttrCode string `json:"ATTR_CODE"`
@@ -44,6 +42,8 @@ type CfgAttr struct {
 	FtypeCode string `json:"FTYPE_CODE"`
 
 	Internal string `json:"INTERNAL"`
+
+	XxxAdvanced string `json:"XXX_ADVANCED"`
 }
 
 type CfgCfbom struct {
@@ -61,9 +61,9 @@ type CfgCfcall struct {
 
 	CfuncID int64 `json:"CFUNC_ID"`
 
-	ExecOrder int64 `json:"EXEC_ORDER"`
-
 	FtypeID int64 `json:"FTYPE_ID"`
+
+	XxxExecOrder int64 `json:"XXX_EXEC_ORDER"`
 }
 
 type CfgCfrtn struct {
@@ -99,13 +99,13 @@ type CfgCfunc struct {
 
 	ConnectStr string `json:"CONNECT_STR"`
 
-	FuncLib string `json:"FUNC_LIB"`
+	XxxFuncLib string `json:"XXX_FUNC_LIB"`
 
-	FuncVer string `json:"FUNC_VER"`
+	XxxFuncVer string `json:"XXX_FUNC_VER"`
 
-	JavaClassName string `json:"JAVA_CLASS_NAME"`
+	XxxJavaClassName string `json:"XXX_JAVA_CLASS_NAME"`
 
-	Language string `json:"LANGUAGE"`
+	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
 type CfgDfbom struct {
@@ -123,9 +123,9 @@ type CfgDfcall struct {
 
 	DfuncID int64 `json:"DFUNC_ID"`
 
-	ExecOrder int64 `json:"EXEC_ORDER"`
-
 	FtypeID int64 `json:"FTYPE_ID"`
+
+	XxxExecOrder int64 `json:"XXX_EXEC_ORDER"`
 }
 
 type CfgDfunc struct {
@@ -139,55 +139,55 @@ type CfgDfunc struct {
 
 	DfuncID int64 `json:"DFUNC_ID"`
 
-	FuncLib string `json:"FUNC_LIB"`
+	XxxFuncLib string `json:"XXX_FUNC_LIB"`
 
-	FuncVer string `json:"FUNC_VER"`
+	XxxFuncVer string `json:"XXX_FUNC_VER"`
 
-	JavaClassName string `json:"JAVA_CLASS_NAME"`
+	XxxJavaClassName string `json:"XXX_JAVA_CLASS_NAME"`
 
-	Language string `json:"LANGUAGE"`
+	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
 type CfgDsrc struct {
-	Conversational string `json:"CONVERSATIONAL"`
-
 	DsrcCode string `json:"DSRC_CODE"`
 
 	DsrcDesc string `json:"DSRC_DESC"`
 
 	DsrcID int64 `json:"DSRC_ID"`
 
-	DsrcRely int64 `json:"DSRC_RELY"`
-
 	RetentionLevel string `json:"RETENTION_LEVEL"`
+
+	XxxConversational string `json:"XXX_CONVERSATIONAL"`
+
+	XxxDsrcRely int64 `json:"XXX_DSRC_RELY"`
 }
 
 type CfgDsrcInterest struct {
-	DsrcID int64 `json:"DSRC_ID"`
+	XxxDsrcID int64 `json:"XXX_DSRC_ID"`
 
-	InterestFlag string `json:"INTEREST_FLAG"`
+	XxxInterestFlag string `json:"XXX_INTEREST_FLAG"`
 
-	MaxDegree int64 `json:"MAX_DEGREE"`
+	XxxMaxDegree int64 `json:"XXX_MAX_DEGREE"`
 }
 
 type CfgEbom struct {
-	EtypeID int64 `json:"ETYPE_ID"`
+	XxxEtypeID int64 `json:"XXX_ETYPE_ID"`
 
-	ExecOrder int64 `json:"EXEC_ORDER"`
+	XxxExecOrder int64 `json:"XXX_EXEC_ORDER"`
 
-	FtypeID int64 `json:"FTYPE_ID"`
+	XxxFtypeID int64 `json:"XXX_FTYPE_ID"`
 
-	UtypeCode string `json:"UTYPE_CODE"`
+	XxxUtypeCode string `json:"XXX_UTYPE_CODE"`
 }
 
 type CfgEclass struct {
-	EclassCode string `json:"ECLASS_CODE"`
+	XxxEclassCode string `json:"XXX_ECLASS_CODE"`
 
-	EclassDesc string `json:"ECLASS_DESC"`
+	XxxEclassDesc string `json:"XXX_ECLASS_DESC"`
 
-	EclassID int64 `json:"ECLASS_ID"`
+	XxxEclassID int64 `json:"XXX_ECLASS_ID"`
 
-	Resolve string `json:"RESOLVE"`
+	XxxResolve string `json:"XXX_RESOLVE"`
 }
 
 type CfgEfbom struct {
@@ -227,13 +227,13 @@ type CfgEfunc struct {
 
 	EfuncID int64 `json:"EFUNC_ID"`
 
-	FuncLib string `json:"FUNC_LIB"`
+	XxxFuncLib string `json:"XXX_FUNC_LIB"`
 
-	FuncVer string `json:"FUNC_VER"`
+	XxxFuncVer string `json:"XXX_FUNC_VER"`
 
-	JavaClassName string `json:"JAVA_CLASS_NAME"`
+	XxxJavaClassName string `json:"XXX_JAVA_CLASS_NAME"`
 
-	Language string `json:"LANGUAGE"`
+	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
 type CfgErfrag struct {
@@ -254,37 +254,35 @@ type CfgErrule struct {
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	ErruleDesc string `json:"ERRULE_DESC"`
-
 	ErruleID int64 `json:"ERRULE_ID"`
 
 	ErruleTier int64 `json:"ERRULE_TIER"`
 
 	QualErfragCode string `json:"QUAL_ERFRAG_CODE"`
 
-	RefScore int64 `json:"REF_SCORE"`
-
 	Relate string `json:"RELATE"`
 
 	Resolve string `json:"RESOLVE"`
 
 	RtypeID int64 `json:"RTYPE_ID"`
+
+	XxxErruleDesc string `json:"XXX_ERRULE_DESC"`
+
+	XxxRefScore int64 `json:"XXX_REF_SCORE"`
 }
 
 type CfgEtype struct {
-	EclassID int64 `json:"ECLASS_ID"`
+	XxxEclassID int64 `json:"XXX_ECLASS_ID"`
 
-	EtypeCode string `json:"ETYPE_CODE"`
+	XxxEtypeCode string `json:"XXX_ETYPE_CODE"`
 
-	EtypeDesc string `json:"ETYPE_DESC"`
+	XxxEtypeDesc string `json:"XXX_ETYPE_DESC"`
 
-	EtypeID int64 `json:"ETYPE_ID"`
+	XxxEtypeID int64 `json:"XXX_ETYPE_ID"`
 }
 
 type CfgFbom struct {
 	Derived string `json:"DERIVED"`
-
-	DisplayDelim string `json:"DISPLAY_DELIM"`
 
 	DisplayLevel int64 `json:"DISPLAY_LEVEL"`
 
@@ -293,11 +291,11 @@ type CfgFbom struct {
 	FelemID int64 `json:"FELEM_ID"`
 
 	FtypeID int64 `json:"FTYPE_ID"`
+
+	XxxDisplayDelim string `json:"XXX_DISPLAY_DELIM"`
 }
 
 type CfgFbovr struct {
-	EclassID int64 `json:"ECLASS_ID"`
-
 	FtypeExcl string `json:"FTYPE_EXCL"`
 
 	FtypeFreq string `json:"FTYPE_FREQ"`
@@ -307,6 +305,8 @@ type CfgFbovr struct {
 	FtypeStab string `json:"FTYPE_STAB"`
 
 	UtypeCode string `json:"UTYPE_CODE"`
+
+	XxxEclassID int64 `json:"XXX_ECLASS_ID"`
 }
 
 type CfgFclass struct {
@@ -326,13 +326,11 @@ type CfgFelem struct {
 
 	FelemID int64 `json:"FELEM_ID"`
 
-	Tokenize string `json:"TOKENIZE"`
+	XxxTokenize string `json:"XXX_TOKENIZE"`
 }
 
 type CfgFtype struct {
 	Anonymize string `json:"ANONYMIZE"`
-
-	Derivation string `json:"DERIVATION"`
 
 	Derived string `json:"DERIVED"`
 
@@ -359,6 +357,8 @@ type CfgFtype struct {
 	UsedForCand string `json:"USED_FOR_CAND"`
 
 	Version int64 `json:"VERSION"`
+
+	XxxDerivation string `json:"XXX_DERIVATION"`
 }
 
 type CfgGenericThreshold struct {
@@ -384,11 +384,11 @@ type CfgGplan struct {
 }
 
 type CfgLens struct {
-	LensCode string `json:"LENS_CODE"`
+	XxxLensCode string `json:"XXX_LENS_CODE"`
 
-	LensDesc string `json:"LENS_DESC"`
+	XxxLensDesc string `json:"XXX_LENS_DESC"`
 
-	LensID int64 `json:"LENS_ID"`
+	XxxLensID int64 `json:"XXX_LENS_ID"`
 }
 
 type CfgLensrl = []Fixme
@@ -409,13 +409,13 @@ type CfgRtype struct {
 
 	RclassID int64 `json:"RCLASS_ID"`
 
-	RelStrength int64 `json:"REL_STRENGTH"`
-
 	RtypeCode string `json:"RTYPE_CODE"`
 
 	RtypeDesc string `json:"RTYPE_DESC"`
 
 	RtypeID int64 `json:"RTYPE_ID"`
+
+	XxxRelStrength int64 `json:"XXX_REL_STRENGTH"`
 }
 
 type CfgSfcall struct {
@@ -433,19 +433,19 @@ type CfgSfcall struct {
 type CfgSfunc struct {
 	ConnectStr string `json:"CONNECT_STR"`
 
-	FuncLib string `json:"FUNC_LIB"`
-
-	FuncVer string `json:"FUNC_VER"`
-
-	JavaClassName string `json:"JAVA_CLASS_NAME"`
-
-	Language string `json:"LANGUAGE"`
-
 	SfuncCode string `json:"SFUNC_CODE"`
 
 	SfuncDesc string `json:"SFUNC_DESC"`
 
 	SfuncID int64 `json:"SFUNC_ID"`
+
+	XxxFuncLib string `json:"XXX_FUNC_LIB"`
+
+	XxxFuncVer string `json:"XXX_FUNC_VER"`
+
+	XxxJavaClassName string `json:"XXX_JAVA_CLASS_NAME"`
+
+	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
 type ConfigBaseVersion struct {
@@ -457,27 +457,9 @@ type ConfigBaseVersion struct {
 
 	CompatibilityVersion CompatibilityVersion `json:"COMPATIBILITY_VERSION"`
 
-	ProductName string `json:"PRODUCT_NAME"`
-
 	Version string `json:"VERSION"`
-}
 
-type Caches struct {
-	LibFeatCacheHit int32 `json:"libFeatCacheHit"`
-
-	LibFeatCacheMiss int32 `json:"libFeatCacheMiss"`
-
-	LibFeatInsert int32 `json:"libFeatInsert"`
-
-	ResFeatStatCacheHit int32 `json:"resFeatStatCacheHit"`
-
-	ResFeatStatCacheMiss int32 `json:"resFeatStatCacheMiss"`
-
-	ResFeatStatInsert int32 `json:"resFeatStatInsert"`
-
-	ResFeatStatUpdateAttempt int32 `json:"resFeatStatUpdateAttempt"`
-
-	ResFeatStatUpdateFail int32 `json:"resFeatStatUpdateFail"`
+	XxxProductName string `json:"XXX_PRODUCT_NAME"`
 }
 
 type CandidateKeysForMatchInfo = map[string][]MatchInfoForAttribute
@@ -485,13 +467,15 @@ type CandidateKeysForMatchInfo = map[string][]MatchInfoForAttribute
 type CandidateKeysForSearchStatistic struct {
 	FeatureTypes []FeatureType `json:"FEATURE_TYPES"`
 
-	Summary Summary `json:"SUMMARY"`
+	Summary CandidateKeysSummary `json:"SUMMARY"`
 }
 
-type Candidates struct {
-	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
+type CandidateKeysSummary struct {
+	Found int64 `json:"FOUND"`
 
-	SuppressedCandidateBuilders map[string]int64 `json:"suppressedCandidateBuilders"`
+	Generic int64 `json:"GENERIC"`
+
+	NotFound int64 `json:"NOT_FOUND"`
 }
 
 type CompatibilityVersion struct {
@@ -538,24 +522,6 @@ type Confirmation struct {
 	Token string `json:"TOKEN"`
 }
 
-type Contention struct {
-	Feature Fixme `json:"feature"`
-
-	ResEnt Fixme `json:"resEnt"`
-
-	Valuelatch Fixme `json:"valuelatch"`
-}
-
-type CurrResources struct {
-	ActiveThreads int32 `json:"activeThreads"`
-
-	AvailableMemory string `json:"availableMemory"`
-
-	ProcessMemory string `json:"processMemory"`
-
-	WorkerThreads int32 `json:"workerThreads"`
-}
-
 type DataSource struct {
 	// The unique text identifier of the datasource. It should be UPPER_CASE ASCII
 	// without spaces. It will be used as a JSON key.
@@ -566,30 +532,40 @@ type DataSource struct {
 }
 
 type DisclosedRelationsForMatchInfo struct {
-	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+	XxxRelAnchor []RelAnchor `json:"XXX_REL_ANCHOR"`
 
-	RelLink []RelLink `json:"REL_LINK"`
+	XxxRelLink []RelLink `json:"XXX_REL_LINK"`
 
-	RelPointer []RelPointer `json:"REL_POINTER"`
+	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
 type DisclosedRelationsForMatchInfoForWhy struct {
-	Domain string `json:"DOMAIN"`
+	RelPointer []RelPointer `json:"REL_POINTER"`
+
+	XxxDomain string `json:"XXX_DOMAIN"`
 
 	// Describes the attributes that make up the feature.
-	FeatDesc string `json:"FEAT_DESC"`
+	XxxFeatDesc string `json:"XXX_FEAT_DESC"`
 
-	FeatID int64 `json:"FEAT_ID"`
+	XxxFeatID int64 `json:"XXX_FEAT_ID"`
 
-	FeatUsageType string `json:"FEAT_USAGE_TYPE"`
+	XxxFeatUsageType string `json:"XXX_FEAT_USAGE_TYPE"`
 
-	LinkedFeatDesc string `json:"LINKED_FEAT_DESC"`
+	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
 
-	LinkedFeatID int64 `json:"LINKED_FEAT_ID"`
+	XxxLinkedFeatID int64 `json:"XXX_LINKED_FEAT_ID"`
 
-	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
+	XxxLinkedFeatType string `json:"XXX_LINKED_FEAT_TYPE"`
 
-	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+	XxxRelAnchor []RelAnchor `json:"XXX_REL_ANCHOR"`
+}
+
+type DisclosedRelationsForWhyKeyDetails struct {
+	Domain string `json:"DOMAIN"`
+
+	EntityRoles []EntityRoles `json:"ENTITY_ROLES"`
+
+	RelatedRoles []RelatedRoles `json:"RELATED_ROLES"`
 }
 
 type Entity struct {
@@ -605,9 +581,9 @@ type EntityForResolvedEntity struct {
 }
 
 type EntityForWhySearch struct {
-	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
-
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+
+	XxxRelatedEntities []RelatedEntity `json:"XXX_RELATED_ENTITIES"`
 }
 
 type EntityNetworkLink struct {
@@ -660,18 +636,10 @@ type EntityPathLink struct {
 	MinEntityID int64 `json:"MIN_ENTITY_ID"`
 }
 
-type ExpressedFeatures struct {
-	Calls []ExpressedFeaturesCall `json:"calls"`
+type EntityRoles struct {
+	FeatDesc string `json:"FEAT_DESC"`
 
-	Created map[string]int64 `json:"created"`
-}
-
-type ExpressedFeaturesCall struct {
-	EfcallID int32 `json:"EFCALL_ID"`
-
-	EfuncCode string `json:"EFUNC_CODE"`
-
-	NumCalls int32 `json:"numCalls"`
+	Role string `json:"ROLE"`
 }
 
 type Feature struct {
@@ -697,11 +665,11 @@ type FeatureDescriptionValue struct {
 
 	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
 
-	Suppressed string `json:"SUPPRESSED"`
-
 	UsedForCand string `json:"USED_FOR_CAND"`
 
 	UsedForScoring string `json:"USED_FOR_SCORING"`
+
+	XxxSuppressed string `json:"XXX_SUPPRESSED"`
 }
 
 type FeatureForAttributes struct {
@@ -721,8 +689,6 @@ type FeatureForAttributes struct {
 }
 
 type FeatureForGetEntity struct {
-	Attributes []SenzingEntitySpecification `json:"ATTRIBUTES"`
-
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
@@ -734,6 +700,8 @@ type FeatureForGetEntity struct {
 	// Label to identify how some features are being used (can also change some
 	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
+
+	XxxAttributes []SenzingEntitySpecification `json:"XXX_ATTRIBUTES"`
 }
 
 type FeatureID struct {
@@ -824,8 +792,6 @@ type G2config struct {
 
 	CfgEbom []CfgEbom `json:"CFG_EBOM"`
 
-	CfgEclass []CfgEclass `json:"CFG_ECLASS"`
-
 	CfgEfbom []CfgEfbom `json:"CFG_EFBOM"`
 
 	CfgEfcall []CfgEfcall `json:"CFG_EFCALL"`
@@ -835,8 +801,6 @@ type G2config struct {
 	CfgErfrag []CfgErfrag `json:"CFG_ERFRAG"`
 
 	CfgErrule []CfgErrule `json:"CFG_ERRULE"`
-
-	CfgEtype []CfgEtype `json:"CFG_ETYPE"`
 
 	CfgFbom []CfgFbom `json:"CFG_FBOM"`
 
@@ -852,10 +816,6 @@ type G2config struct {
 
 	CfgGplan []CfgGplan `json:"CFG_GPLAN"`
 
-	CfgLens []CfgLens `json:"CFG_LENS"`
-
-	CfgLensrl []CfgLensrl `json:"CFG_LENSRL"`
-
 	CfgRclass []CfgRclass `json:"CFG_RCLASS"`
 
 	CfgRtype []CfgRtype `json:"CFG_RTYPE"`
@@ -869,6 +829,14 @@ type G2config struct {
 	Settings G2configSettings `json:"SETTINGS"`
 
 	SysOom []SysOom `json:"SYS_OOM"`
+
+	XxxCfgEclass []CfgEclass `json:"XXX_CFG_ECLASS"`
+
+	XxxCfgEtype []CfgEtype `json:"XXX_CFG_ETYPE"`
+
+	XxxCfgLens []CfgLens `json:"XXX_CFG_LENS"`
+
+	XxxCfgLensrl []CfgLensrl `json:"XXX_CFG_LENSRL"`
 }
 
 type HowResults struct {
@@ -877,32 +845,22 @@ type HowResults struct {
 	ResolutionSteps []ResolutionStep `json:"RESOLUTION_STEPS"`
 }
 
-type InitResources struct {
-	AvailableMemory string `json:"availableMemory"`
-
-	LogicalCores int32 `json:"logicalCores"`
-
-	PhysicalCores int32 `json:"physicalCores"`
-
-	TotalMemory string `json:"totalMemory"`
-}
-
 type InterestingEntities struct {
 	Entities []InterestingEntity `json:"ENTITIES"`
 
-	Notices []Notice `json:"NOTICES"`
+	XxxNotices []Notice `json:"XXX_NOTICES"`
 }
 
 type InterestingEntity struct {
-	Degrees int64 `json:"DEGREES"`
+	XxxDegrees int64 `json:"XXX_DEGREES"`
 
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
-	EntityID int64 `json:"ENTITY_ID"`
+	XxxEntityID int64 `json:"XXX_ENTITY_ID"`
 
-	Flags []string `json:"FLAGS"`
+	XxxFlags []string `json:"XXX_FLAGS"`
 
-	SampleRecords []SampleRecord `json:"SAMPLE_RECORDS"`
+	XxxSampleRecords []SampleRecord `json:"XXX_SAMPLE_RECORDS"`
 }
 
 type License struct {
@@ -913,14 +871,8 @@ type License struct {
 	Type string `json:"type"`
 }
 
-type LockWaits struct {
-	RefreshLocks RefreshLocks `json:"refreshLocks"`
-}
-
 type MatchInfo struct {
 	CandidateKeys CandidateKeysForMatchInfo `json:"CANDIDATE_KEYS"`
-
-	DisclosedRelations DisclosedRelationsForMatchInfo `json:"DISCLOSED_RELATIONS"`
 
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -932,14 +884,16 @@ type MatchInfo struct {
 
 	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
 
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
-	WhyErruleCode string `json:"WHY_ERRULE_CODE"`
+	XxxDisclosedRelations DisclosedRelationsForMatchInfo `json:"XXX_DISCLOSED_RELATIONS"`
 
-	WhyKey string `json:"WHY_KEY"`
+	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
+
+	XxxWhyErruleCode string `json:"XXX_WHY_ERRULE_CODE"`
+
+	XxxWhyKey string `json:"XXX_WHY_KEY"`
 }
 
 type MatchInfoForAttribute struct {
@@ -972,7 +926,7 @@ type MatchKeyDetails struct {
 	Denials []Confirmation `json:"DENIALS"`
 
 	// Identifier of the entity resolution rule that was triggered.
-	ErruleCode string `json:"ERRULE_CODE"`
+	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
 }
 
 type MemberRecord struct {
@@ -983,86 +937,16 @@ type MemberRecord struct {
 }
 
 type Notice struct {
-	Code string `json:"CODE"`
+	XxxCode string `json:"XXX_CODE"`
 
-	Description string `json:"DESCRIPTION"`
+	XxxDescription string `json:"XXX_DESCRIPTION"`
 }
 
 type Object = any
 
-type ParamDetails struct {
-	Name string `json:"NAME"`
-
-	Value Object `json:"VALUE"`
-}
-
-type Params struct {
-	Param ParamDetails `json:"PARAM"`
-}
-
-type Processing struct {
-	AddedRecords int32 `json:"addedRecords"`
-
-	Ambiguous ProcessingAmbiguous `json:"ambiguous"`
-
-	BatchAddedRecords int32 `json:"batchAddedRecords"`
-
-	DeletedRecords int32 `json:"deletedRecords"`
-
-	Details ProcessingDetails `json:"details"`
-
-	Reevaluations int32 `json:"reevaluations"`
-
-	RepairedEntities int32 `json:"repairedEntities"`
-}
-
-type ProcessingAmbiguous struct {
-	ActualTest int32 `json:"actualTest"`
-
-	CachedTest int32 `json:"cachedTest"`
-}
-
-type ProcessingDetails struct {
-	AddedRecords int32 `json:"addedRecords"`
-
-	Candidates int32 `json:"candidates"`
-
-	ChangeDeletes int32 `json:"changeDeletes"`
-
-	Duration int32 `json:"duration"`
-
-	FilteredObsFeat int32 `json:"filteredObsFeat"`
-
-	NewObsEnt int32 `json:"newObsEnt"`
-
-	ObsEntHashDiff int32 `json:"obsEntHashDiff"`
-
-	ObsEntHashSame int32 `json:"obsEntHashSame"`
-
-	OptimizedOut int32 `json:"optimizedOut"`
-
-	OptimizedOutSkipped int32 `json:"optimizedOutSkipped"`
-
-	PartiallyResolved int32 `json:"partiallyResolved"`
-
-	Retries int32 `json:"retries"`
-}
-
 type Record struct {
-	AddressData []string `json:"ADDRESS_DATA"`
-
-	AttributeData []string `json:"ATTRIBUTE_DATA"`
-
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
-
-	EntityData []string `json:"ENTITY_DATA"`
-
-	EntityDesc string `json:"ENTITY_DESC"`
-
-	EntityKey string `json:"ENTITY_KEY"`
-
-	EntityType string `json:"ENTITY_TYPE"`
 
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -1072,8 +956,6 @@ type Record struct {
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
-
-	IdentifierData []string `json:"IDENTIFIER_DATA"`
 
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
@@ -1085,40 +967,42 @@ type Record struct {
 	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
-
-	NameData []string `json:"NAME_DATA"`
-
-	OtherData []string `json:"OTHER_DATA"`
-
-	PhoneData []string `json:"PHONE_DATA"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
-	RelationshipData []string `json:"RELATIONSHIP_DATA"`
-
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
+
+	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
+
+	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
+
+	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
+
+	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
+
+	XxxEntityKey string `json:"XXX_ENTITY_KEY"`
+
+	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
+
+	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
+
+	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
+
+	XxxNameData []string `json:"XXX_NAME_DATA"`
+
+	XxxOtherData []string `json:"XXX_OTHER_DATA"`
+
+	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
+
+	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
 type RecordForGetEntity struct {
-	AddressData []string `json:"ADDRESS_DATA"`
-
-	AttributeData []string `json:"ATTRIBUTE_DATA"`
-
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
-
-	EntityData []string `json:"ENTITY_DATA"`
-
-	EntityDesc string `json:"ENTITY_DESC"`
-
-	EntityKey string `json:"ENTITY_KEY"`
-
-	EntityType string `json:"ENTITY_TYPE"`
 
 	// Identifier of the entity resolution rule that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -1128,8 +1012,6 @@ type RecordForGetEntity struct {
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
-
-	IdentifierData []string `json:"IDENTIFIER_DATA"`
 
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
@@ -1141,23 +1023,37 @@ type RecordForGetEntity struct {
 	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
-
-	NameData []string `json:"NAME_DATA"`
-
-	OtherData []string `json:"OTHER_DATA"`
-
-	PhoneData []string `json:"PHONE_DATA"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
-	RelationshipData []string `json:"RELATIONSHIP_DATA"`
-
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
+
+	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
+
+	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
+
+	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
+
+	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
+
+	XxxEntityKey string `json:"XXX_ENTITY_KEY"`
+
+	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
+
+	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
+
+	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
+
+	XxxNameData []string `json:"XXX_NAME_DATA"`
+
+	XxxOtherData []string `json:"XXX_OTHER_DATA"`
+
+	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
+
+	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
 type RecordKey struct {
@@ -1170,65 +1066,57 @@ type RecordKey struct {
 
 type RecordKeys struct {
 	// A list of (data source code, record id) pairs.
-	Records []RecordKey `json:"RECORDS"`
+	XxxRecords []RecordKey `json:"XXX_RECORDS"`
 }
 
 type RecordSummary struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
-	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
-
-	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
-
 	// The number of records for the entity with the same data source code.
 	RecordCount int64 `json:"RECORD_COUNT"`
-}
 
-type RefreshLocks struct {
-	Count int32 `json:"count"`
+	XxxFirstSeenDt time.Time `json:"XXX_FIRST_SEEN_DT"`
 
-	MaxMs int32 `json:"maxMS"`
-
-	TotalMs int32 `json:"totalMS"`
+	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
 }
 
 type RelAnchor struct {
-	Domain string `json:"DOMAIN"`
+	XxxDomain string `json:"XXX_DOMAIN"`
 
 	// Describes the attributes that make up the feature.
-	FeatDesc string `json:"FEAT_DESC"`
+	XxxFeatDesc string `json:"XXX_FEAT_DESC"`
 
-	FeatID int64 `json:"FEAT_ID"`
+	XxxFeatID int64 `json:"XXX_FEAT_ID"`
 
-	LinkedFeatDesc string `json:"LINKED_FEAT_DESC"`
+	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
 
-	LinkedFeatID int64 `json:"LINKED_FEAT_ID"`
+	XxxLinkedFeatID int64 `json:"XXX_LINKED_FEAT_ID"`
 
-	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
+	XxxLinkedFeatType string `json:"XXX_LINKED_FEAT_TYPE"`
 
-	LinkedFeatUsageType string `json:"LINKED_FEAT_USAGE_TYPE"`
+	XxxLinkedFeatUsageType string `json:"XXX_LINKED_FEAT_USAGE_TYPE"`
 
-	RelPointer []RelPointer `json:"REL_POINTER"`
+	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
 type RelLink struct {
-	Domain string `json:"DOMAIN"`
+	XxxDomain string `json:"XXX_DOMAIN"`
 
 	// Describes the attributes that make up the feature.
-	FeatDesc string `json:"FEAT_DESC"`
+	XxxFeatDesc string `json:"XXX_FEAT_DESC"`
 
-	FeatID int64 `json:"FEAT_ID"`
+	XxxFeatID int64 `json:"XXX_FEAT_ID"`
 
-	FeatUsageType string `json:"FEAT_USAGE_TYPE"`
+	XxxFeatUsageType string `json:"XXX_FEAT_USAGE_TYPE"`
 
-	LinkedFeatDesc string `json:"LINKED_FEAT_DESC"`
+	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
 
-	LinkedFeatID int64 `json:"LINKED_FEAT_ID"`
+	XxxLinkedFeatID int64 `json:"XXX_LINKED_FEAT_ID"`
 
-	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
+	XxxLinkedFeatType string `json:"XXX_LINKED_FEAT_TYPE"`
 
-	LinkedFeatUsageType string `json:"LINKED_FEAT_USAGE_TYPE"`
+	XxxLinkedFeatUsageType string `json:"XXX_LINKED_FEAT_USAGE_TYPE"`
 }
 
 type RelPointer struct {
@@ -1265,8 +1153,6 @@ type RelatedEntity struct {
 	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
-	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
-
 	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
@@ -1275,15 +1161,17 @@ type RelatedEntity struct {
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
-	Records []Record `json:"RECORDS"`
-
 	// Overview of the source systems the records came from comprising this related
 	// entity.
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
+
+	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
+
+	XxxRecords []Record `json:"XXX_RECORDS"`
 }
 
-type RepairDiagnosis struct {
-	Types int32 `json:"types"`
+type RelatedRoles struct {
+	Fixme Fixme `json:"FIXME"`
 }
 
 type Repository struct {
@@ -1295,28 +1183,6 @@ type Repository struct {
 
 	// Type of database.
 	Type string `json:"type"`
-}
-
-type Reresolve struct {
-	NewFeatureFtypes map[string]int64 `json:"newFeatureFTypes"`
-
-	SuppressedCandidateBuildersForReresolve Fixme `json:"suppressedCandidateBuildersForReresolve"`
-
-	SuppressedScoredFeatureTypeForReresolve Fixme `json:"suppressedScoredFeatureTypeForReresolve"`
-
-	Triggers ReresolveTriggers `json:"triggers"`
-}
-
-type ReresolveTriggers struct {
-	AbortRetry int32 `json:"abortRetry"`
-
-	MultipleResolvableCandidates int32 `json:"multipleResolvableCandidates"`
-
-	ResolveNewFeatures int32 `json:"resolveNewFeatures"`
-
-	Skipped int32 `json:"skipped"`
-
-	UnresolveMovement int32 `json:"unresolveMovement"`
 }
 
 type ResolutionStep struct {
@@ -1341,28 +1207,7 @@ type ResolvedEntity struct {
 	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
-	// Identifier of the entity resolution rule that was triggered.
-	ErruleCode string `json:"ERRULE_CODE"`
-
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
-
-	FeatureIds []FeatureID `json:"FEATURE_IDS"`
-
-	// Indicates if this is an ambiguous relationship.
-	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
-
-	// Indicates if this is a disclosed relationship.
-	IsDisclosed int64 `json:"IS_DISCLOSED"`
-
-	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
-
-	// Representation of matched source record features.
-	MatchKey string `json:"MATCH_KEY"`
-
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	// The type of match that occurred for the record.
-	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	Records []Record `json:"RECORDS"`
 
@@ -1371,6 +1216,27 @@ type ResolvedEntity struct {
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
 	RecordTypes []string `json:"RECORD_TYPES"`
+
+	// Identifier of the entity resolution rule that was triggered.
+	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
+
+	XxxFeatureIds []FeatureID `json:"XXX_FEATURE_IDS"`
+
+	// Indicates if this is an ambiguous relationship.
+	XxxIsAmbiguous int64 `json:"XXX_IS_AMBIGUOUS"`
+
+	// Indicates if this is a disclosed relationship.
+	XxxIsDisclosed int64 `json:"XXX_IS_DISCLOSED"`
+
+	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
+
+	// Representation of matched source record features.
+	XxxMatchKey string `json:"XXX_MATCH_KEY"`
+
+	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
+
+	// The type of match that occurred for the record.
+	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
 }
 
 type ResolvedEntityAndMatchInfo struct {
@@ -1387,28 +1253,7 @@ type ResolvedEntityForGetEntity struct {
 	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
-	// Identifier of the entity resolution rule that was triggered.
-	ErruleCode string `json:"ERRULE_CODE"`
-
 	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
-
-	FeatureIds []FeatureID `json:"FEATURE_IDS"`
-
-	// Indicates if this is an ambiguous relationship.
-	IsAmbiguous int64 `json:"IS_AMBIGUOUS"`
-
-	// Indicates if this is a disclosed relationship.
-	IsDisclosed int64 `json:"IS_DISCLOSED"`
-
-	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
-
-	// Representation of matched source record features.
-	MatchKey string `json:"MATCH_KEY"`
-
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	// The type of match that occurred for the record.
-	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	Records []RecordForGetEntity `json:"RECORDS"`
 
@@ -1417,18 +1262,31 @@ type ResolvedEntityForGetEntity struct {
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
 	RecordTypes []string `json:"RECORD_TYPES"`
+
+	// Identifier of the entity resolution rule that was triggered.
+	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
+
+	XxxFeatureIds []FeatureID `json:"XXX_FEATURE_IDS"`
+
+	// Indicates if this is an ambiguous relationship.
+	XxxIsAmbiguous int64 `json:"XXX_IS_AMBIGUOUS"`
+
+	// Indicates if this is a disclosed relationship.
+	XxxIsDisclosed int64 `json:"XXX_IS_DISCLOSED"`
+
+	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
+
+	// Representation of matched source record features.
+	XxxMatchKey string `json:"XXX_MATCH_KEY"`
+
+	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
+
+	// The type of match that occurred for the record.
+	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
 }
 
 type SysOom struct {
-	FelemID int64 `json:"FELEM_ID"`
-
 	FtypeID int64 `json:"FTYPE_ID"`
-
-	LensID int64 `json:"LENS_ID"`
-
-	LibFeatID int64 `json:"LIB_FEAT_ID"`
-
-	LibFelemID int64 `json:"LIB_FELEM_ID"`
 
 	NextThresh int64 `json:"NEXT_THRESH"`
 
@@ -1439,16 +1297,24 @@ type SysOom struct {
 	Thresh1Cnt int64 `json:"THRESH1_CNT"`
 
 	Thresh1Oom int64 `json:"THRESH1_OOM"`
+
+	XxxFelemID int64 `json:"XXX_FELEM_ID"`
+
+	XxxLensID int64 `json:"XXX_LENS_ID"`
+
+	XxxLibFeatID int64 `json:"XXX_LIB_FEAT_ID"`
+
+	XxxLibFelemID int64 `json:"XXX_LIB_FELEM_ID"`
 }
 
 type SampleRecord struct {
 	// A label identifying the provenance of the record.
-	DataSource string `json:"DATA_SOURCE"`
+	XxxDataSource string `json:"XXX_DATA_SOURCE"`
 
-	Flags []string `json:"FLAGS"`
+	XxxFlags []string `json:"XXX_FLAGS"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
-	RecordID string `json:"RECORD_ID"`
+	XxxRecordID string `json:"XXX_RECORD_ID"`
 }
 
 type SchemaVersion struct {
@@ -1457,18 +1323,6 @@ type SchemaVersion struct {
 	MaximumRequiredSchemaVersion string `json:"MAXIMUM_REQUIRED_SCHEMA_VERSION"`
 
 	MinimumRequiredSchemaVersion string `json:"MINIMUM_REQUIRED_SCHEMA_VERSION"`
-}
-
-type Scoring struct {
-	CacheHit map[string]int64 `json:"cacheHit"`
-
-	CacheMiss map[string]int64 `json:"cacheMiss"`
-
-	ScoredPairs map[string]int64 `json:"scoredPairs"`
-
-	SuppressedDisclosedRelationshipDomainCount int32 `json:"suppressedDisclosedRelationshipDomainCount"`
-
-	SuppressedScoredFeatureType Fixme `json:"suppressedScoredFeatureType"`
 }
 
 type SearchRequest struct {
@@ -1484,89 +1338,31 @@ type SearchStatistic struct {
 }
 
 type SenzingEntitySpecification struct {
-	AccountDomain string `json:"ACCOUNT_DOMAIN"`
-
-	AccountNumber string `json:"ACCOUNT_NUMBER"`
-
 	AddrCity string `json:"ADDR_CITY"`
 
 	AddrCountry string `json:"ADDR_COUNTRY"`
-
-	AddrFromDate string `json:"ADDR_FROM_DATE"`
 
 	AddrFull string `json:"ADDR_FULL"`
 
 	AddrLine1 string `json:"ADDR_LINE1"`
 
-	AddrLine2 string `json:"ADDR_LINE2"`
-
-	AddrLine3 string `json:"ADDR_LINE3"`
-
-	AddrLine4 string `json:"ADDR_LINE4"`
-
-	AddrLine5 string `json:"ADDR_LINE5"`
-
-	AddrLine6 string `json:"ADDR_LINE6"`
-
 	AddrPostalCode string `json:"ADDR_POSTAL_CODE"`
 
 	AddrState string `json:"ADDR_STATE"`
 
-	AddrThruDate string `json:"ADDR_THRU_DATE"`
-
-	AddrType string `json:"ADDR_TYPE"`
-
-	Citizenship string `json:"CITIZENSHIP"`
-
 	DateOfBirth string `json:"DATE_OF_BIRTH"`
-
-	DateOfDeath string `json:"DATE_OF_DEATH"`
 
 	DriversLicenseNumber string `json:"DRIVERS_LICENSE_NUMBER"`
 
 	DriversLicenseState string `json:"DRIVERS_LICENSE_STATE"`
 
-	DunsNumber string `json:"DUNS_NUMBER"`
-
 	EmailAddress string `json:"EMAIL_ADDRESS"`
-
-	Employer string `json:"EMPLOYER"`
 
 	EmployerName string `json:"EMPLOYER_NAME"`
 
-	Facebook string `json:"FACEBOOK"`
-
 	Gender string `json:"GENDER"`
 
-	GroupAssnIDNumber string `json:"GROUP_ASSN_ID_NUMBER"`
-
-	GroupAssnIDType string `json:"GROUP_ASSN_ID_TYPE"`
-
-	GroupAssociationOrgName string `json:"GROUP_ASSOCIATION_ORG_NAME"`
-
-	GroupAssociationType string `json:"GROUP_ASSOCIATION_TYPE"`
-
-	Instagram string `json:"INSTAGRAM"`
-
-	LeiNumber string `json:"LEI_NUMBER"`
-
-	Linkedin string `json:"LINKEDIN"`
-
-	NameFirst string `json:"NAME_FIRST"`
-
 	NameFull string `json:"NAME_FULL"`
-
-	NameLast string `json:"NAME_LAST"`
-
-	NameOrg string `json:"NAME_ORG"`
-
-	NamePrefix string `json:"NAME_PREFIX"`
-
-	NameSuffix string `json:"NAME_SUFFIX"`
-
-	NameType string `json:"NAME_TYPE"`
-
-	Nationality string `json:"NATIONALITY"`
 
 	NationalIDCountry string `json:"NATIONAL_ID_COUNTRY"`
 
@@ -1574,27 +1370,11 @@ type SenzingEntitySpecification struct {
 
 	NativeNameFull string `json:"NATIVE_NAME_FULL"`
 
-	NpiNumber string `json:"NPI_NUMBER"`
-
-	OtherIDCountry string `json:"OTHER_ID_COUNTRY"`
-
-	OtherIDNumber string `json:"OTHER_ID_NUMBER"`
-
-	OtherIDType string `json:"OTHER_ID_TYPE"`
-
 	PassportCountry string `json:"PASSPORT_COUNTRY"`
 
 	PassportNumber string `json:"PASSPORT_NUMBER"`
 
-	PhoneFromDate string `json:"PHONE_FROM_DATE"`
-
 	PhoneNumber string `json:"PHONE_NUMBER"`
-
-	PhoneThruDate string `json:"PHONE_THRU_DATE"`
-
-	PhoneType string `json:"PHONE_TYPE"`
-
-	PlaceOfBirth string `json:"PLACE_OF_BIRTH"`
 
 	PrimaryNameFirst string `json:"PRIMARY_NAME_FIRST"`
 
@@ -1608,73 +1388,121 @@ type SenzingEntitySpecification struct {
 
 	RecordType string `json:"RECORD_TYPE"`
 
-	RegistrationCountry string `json:"REGISTRATION_COUNTRY"`
-
-	RegistrationDate string `json:"REGISTRATION_DATE"`
-
 	RelAnchorKey string `json:"REL_ANCHOR_KEY"`
 
 	RelPointerKey string `json:"REL_POINTER_KEY"`
 
 	SecondaryNameOrg string `json:"SECONDARY_NAME_ORG"`
 
-	Signal string `json:"SIGNAL"`
-
-	Skype string `json:"SKYPE"`
-
 	SsnNumber string `json:"SSN_NUMBER"`
 
-	Tango string `json:"TANGO"`
+	XxxAccountDomain string `json:"XXX_ACCOUNT_DOMAIN"`
 
-	TaxIDCountry string `json:"TAX_ID_COUNTRY"`
+	XxxAccountNumber string `json:"XXX_ACCOUNT_NUMBER"`
 
-	TaxIDNumber string `json:"TAX_ID_NUMBER"`
+	XxxAddrFromDate string `json:"XXX_ADDR_FROM_DATE"`
 
-	TaxIDType string `json:"TAX_ID_TYPE"`
+	XxxAddrLine2 string `json:"XXX_ADDR_LINE2"`
 
-	Telegram string `json:"TELEGRAM"`
+	XxxAddrLine3 string `json:"XXX_ADDR_LINE3"`
 
-	TrustedIDNumber string `json:"TRUSTED_ID_NUMBER"`
+	XxxAddrLine4 string `json:"XXX_ADDR_LINE4"`
 
-	TrustedIDType string `json:"TRUSTED_ID_TYPE"`
+	XxxAddrLine5 string `json:"XXX_ADDR_LINE5"`
 
-	Twitter string `json:"TWITTER"`
+	XxxAddrLine6 string `json:"XXX_ADDR_LINE6"`
 
-	Viber string `json:"VIBER"`
+	XxxAddrThruDate string `json:"XXX_ADDR_THRU_DATE"`
 
-	WebsiteAddress string `json:"WEBSITE_ADDRESS"`
+	XxxAddrType string `json:"XXX_ADDR_TYPE"`
 
-	Wechat string `json:"WECHAT"`
+	XxxCitizenship string `json:"XXX_CITIZENSHIP"`
 
-	Whatsapp string `json:"WHATSAPP"`
+	XxxDateOfDeath string `json:"XXX_DATE_OF_DEATH"`
 
-	Zoomroom string `json:"ZOOMROOM"`
-}
+	XxxDunsNumber string `json:"XXX_DUNS_NUMBER"`
 
-type Summary struct {
-	Found int64 `json:"FOUND"`
+	XxxEmployer string `json:"XXX_EMPLOYER"`
 
-	Generic int64 `json:"GENERIC"`
+	XxxFacebook string `json:"XXX_FACEBOOK"`
 
-	NotFound int64 `json:"NOT_FOUND"`
-}
+	XxxGroupAssnIDNumber string `json:"XXX_GROUP_ASSN_ID_NUMBER"`
 
-type SystemLoad struct {
-	CPUIdle string `json:"cpuIdle"`
+	XxxGroupAssnIDType string `json:"XXX_GROUP_ASSN_ID_TYPE"`
 
-	CPUSystem string `json:"cpuSystem"`
+	XxxGroupAssociationOrgName string `json:"XXX_GROUP_ASSOCIATION_ORG_NAME"`
 
-	CPUUser string `json:"cpuUser"`
+	XxxGroupAssociationType string `json:"XXX_GROUP_ASSOCIATION_TYPE"`
 
-	CPUWait string `json:"cpuWait"`
-}
+	XxxInstagram string `json:"XXX_INSTAGRAM"`
 
-type SystemResources struct {
-	CurrResources CurrResources `json:"currResources"`
+	XxxLeiNumber string `json:"XXX_LEI_NUMBER"`
 
-	InitResources InitResources `json:"initResources"`
+	XxxLinkedin string `json:"XXX_LINKEDIN"`
 
-	SystemLoad SystemLoad `json:"systemLoad"`
+	XxxNameFirst string `json:"XXX_NAME_FIRST"`
+
+	XxxNameLast string `json:"XXX_NAME_LAST"`
+
+	XxxNameOrg string `json:"XXX_NAME_ORG"`
+
+	XxxNamePrefix string `json:"XXX_NAME_PREFIX"`
+
+	XxxNameSuffix string `json:"XXX_NAME_SUFFIX"`
+
+	XxxNameType string `json:"XXX_NAME_TYPE"`
+
+	XxxNationality string `json:"XXX_NATIONALITY"`
+
+	XxxNpiNumber string `json:"XXX_NPI_NUMBER"`
+
+	XxxOtherIDCountry string `json:"XXX_OTHER_ID_COUNTRY"`
+
+	XxxOtherIDNumber string `json:"XXX_OTHER_ID_NUMBER"`
+
+	XxxOtherIDType string `json:"XXX_OTHER_ID_TYPE"`
+
+	XxxPhoneFromDate string `json:"XXX_PHONE_FROM_DATE"`
+
+	XxxPhoneThruDate string `json:"XXX_PHONE_THRU_DATE"`
+
+	XxxPhoneType string `json:"XXX_PHONE_TYPE"`
+
+	XxxPlaceOfBirth string `json:"XXX_PLACE_OF_BIRTH"`
+
+	XxxRegistrationCountry string `json:"XXX_REGISTRATION_COUNTRY"`
+
+	XxxRegistrationDate string `json:"XXX_REGISTRATION_DATE"`
+
+	XxxSignal string `json:"XXX_SIGNAL"`
+
+	XxxSkype string `json:"XXX_SKYPE"`
+
+	XxxTango string `json:"XXX_TANGO"`
+
+	XxxTaxIDCountry string `json:"XXX_TAX_ID_COUNTRY"`
+
+	XxxTaxIDNumber string `json:"XXX_TAX_ID_NUMBER"`
+
+	XxxTaxIDType string `json:"XXX_TAX_ID_TYPE"`
+
+	XxxTelegram string `json:"XXX_TELEGRAM"`
+
+	XxxTrustedIDNumber string `json:"XXX_TRUSTED_ID_NUMBER"`
+
+	XxxTrustedIDType string `json:"XXX_TRUSTED_ID_TYPE"`
+
+	XxxTwitter string `json:"XXX_TWITTER"`
+
+	XxxViber string `json:"XXX_VIBER"`
+
+	XxxWebsiteAddress string `json:"XXX_WEBSITE_ADDRESS"`
+
+	XxxWechat string `json:"XXX_WECHAT"`
+
+	XxxWhatsapp string `json:"XXX_WHATSAPP"`
+
+	XxxZoomroom string `json:"XXX_ZOOMROOM"`
 }
 
 type SzConfigExportResponse struct {
@@ -1726,10 +1554,10 @@ type SzEngineAddRecordResponse struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
-
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
+
+	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 }
 
 type SzEngineDeleteRecordResponse struct {
@@ -1738,18 +1566,18 @@ type SzEngineDeleteRecordResponse struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
-
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
+
+	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 }
 
 type SzEngineExportCsvEntityReportCsvColumnList struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineFetchNextResponse struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineFindInterestingEntitiesByEntityIDResponse struct {
@@ -1761,7 +1589,7 @@ type SzEngineFindInterestingEntitiesByRecordIDResponse struct {
 }
 
 type SzEngineFindNetworkByEntityIDEntityIds struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineFindNetworkByEntityIDResponse struct {
@@ -1794,11 +1622,11 @@ type SzEngineFindNetworkByRecordIDResponse struct {
 }
 
 type SzEngineFindPathByEntityIDAvoidEntityIds struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineFindPathByEntityIDRequiredDataSources struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineFindPathByEntityIDResponse struct {
@@ -1815,7 +1643,7 @@ type SzEngineFindPathByRecordIDAvoidRecordKeys struct {
 }
 
 type SzEngineFindPathByRecordIDRequiredDataSources struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineFindPathByRecordIDResponse struct {
@@ -1849,23 +1677,8 @@ type SzEngineGetRecordPreviewResponse struct {
 }
 
 type SzEngineGetRecordResponse struct {
-	AddressData []string `json:"ADDRESS_DATA"`
-
-	AttributeData []string `json:"ATTRIBUTE_DATA"`
-
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
-
-	EntityData []string `json:"ENTITY_DATA"`
-
-	EntityDesc string `json:"ENTITY_DESC"`
-
-	EntityKey string `json:"ENTITY_KEY"`
-
-	EntityType string `json:"ENTITY_TYPE"`
-
-	// Identifier of the entity resolution rule that was triggered.
-	ErruleCode string `json:"ERRULE_CODE"`
 
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
@@ -1873,35 +1686,50 @@ type SzEngineGetRecordResponse struct {
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
-	IdentifierData []string `json:"IDENTIFIER_DATA"`
-
-	// Internal identifier for the record.
-	InternalID int64 `json:"INTERNAL_ID"`
-
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
 
-	// Representation of matched source record features.
-	MatchKey string `json:"MATCH_KEY"`
-
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	// The type of match that occurred for the record.
-	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
-
-	NameData []string `json:"NAME_DATA"`
-
-	OtherData []string `json:"OTHER_DATA"`
-
-	PhoneData []string `json:"PHONE_DATA"`
-
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
-	RelationshipData []string `json:"RELATIONSHIP_DATA"`
-
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
+
+	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
+
+	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
+
+	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
+
+	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
+
+	XxxEntityKey string `json:"XXX_ENTITY_KEY"`
+
+	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
+
+	// Identifier of the entity resolution rule that was triggered.
+	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
+
+	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
+
+	// Internal identifier for the record.
+	XxxInternalID int64 `json:"XXX_INTERNAL_ID"`
+
+	// Representation of matched source record features.
+	XxxMatchKey string `json:"XXX_MATCH_KEY"`
+
+	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
+
+	// The type of match that occurred for the record.
+	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
+
+	XxxNameData []string `json:"XXX_NAME_DATA"`
+
+	XxxOtherData []string `json:"XXX_OTHER_DATA"`
+
+	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
+
+	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
 type SzEngineGetRedoRecordResponse struct {
@@ -1931,22 +1759,24 @@ type SzEngineProcessRedoRecordResponse struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
-
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
+
+	UmfProc UmfProc `json:"UMF_PROC"`
+
+	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 }
 
 type SzEngineReevaluateEntityResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	// A label identifying the provenance of the record.
-	DataSource string `json:"DATA_SOURCE"`
+	XxxDataSource string `json:"XXX_DATA_SOURCE"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
-	RecordID string `json:"RECORD_ID"`
+	XxxRecordID string `json:"XXX_RECORD_ID"`
 }
 
 type SzEngineReevaluateRecordResponse struct {
@@ -1955,14 +1785,14 @@ type SzEngineReevaluateRecordResponse struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
-	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
-
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
+
+	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 }
 
 type SzEngineSearchByAttributesAttributes struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineSearchByAttributesResponse struct {
@@ -1974,11 +1804,11 @@ type SzEngineSearchByAttributesResponse struct {
 }
 
 type SzEngineSearchByAttributesSearchProfile struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineStreamExportJSONEntityReportResponse struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineWhyEntitiesResponse struct {
@@ -2000,7 +1830,7 @@ type SzEngineWhyRecordsResponse struct {
 }
 
 type SzEngineWhySearchAttributes struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzEngineWhySearchResponse struct {
@@ -2014,7 +1844,7 @@ type SzEngineWhySearchResponse struct {
 }
 
 type SzEngineWhySearchSearchProfile struct {
-	Fixme Fixme `json:"FIXME"`
+	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
 type SzProductGetLicenseResponse struct {
@@ -2053,54 +1883,20 @@ type SzProductGetVersionResponse struct {
 	Version string `json:"VERSION"`
 }
 
-type ThreadState struct {
-	Active int32 `json:"active"`
-
-	DataLatchContention int32 `json:"dataLatchContention"`
-
-	GovernorContention int32 `json:"governorContention"`
-
-	Idle int32 `json:"idle"`
-
-	Loader int32 `json:"loader"`
-
-	ObsEntContention int32 `json:"obsEntContention"`
-
-	ResEntContention int32 `json:"resEntContention"`
-
-	Resolver int32 `json:"resolver"`
-
-	Scoring int32 `json:"scoring"`
-
-	SQLExecuting int32 `json:"sqlExecuting"`
-}
-
 type UmfProc struct {
 	Name string `json:"NAME"`
 
-	Params []Params `json:"PARAMS"`
+	Params []UmfProcParams `json:"PARAMS"`
 }
 
-type Unresolve struct {
-	AbortedUnresolve int32 `json:"abortedUnresolve"`
+type UmfProcParamDetails struct {
+	Name string `json:"NAME"`
 
-	Triggers UnresolveTriggers `json:"triggers"`
-
-	UnresolveTest int32 `json:"unresolveTest"`
+	Value Object `json:"VALUE"`
 }
 
-type UnresolveTriggers struct {
-	AmbiguousMultiResolve int32 `json:"ambiguousMultiResolve"`
-
-	AmbiguousNoResolve int32 `json:"ambiguousNoResolve"`
-
-	ExtensiveResolve int32 `json:"extensiveResolve"`
-
-	NormalResolve int32 `json:"normalResolve"`
-
-	RelLink int32 `json:"relLink"`
-
-	Update int32 `json:"update"`
+type UmfProcParams struct {
+	Param UmfProcParamDetails `json:"PARAM"`
 }
 
 type VirtualEntitySynopsis struct {
@@ -2113,6 +1909,8 @@ type WhyKeyDetails struct {
 	Confirmations []Confirmation `json:"CONFIRMATIONS"`
 
 	Denials []Confirmation `json:"DENIALS"`
+
+	DisclosedRelations []DisclosedRelationsForWhyKeyDetails `json:"DISCLOSED_RELATIONS"`
 }
 
 type WhyResult struct {
@@ -2136,39 +1934,265 @@ type WhyResult struct {
 }
 
 type Workload struct {
+	XxxContention WorkloadContention `json:"XXX_contention"`
+
+	XxxGenericDetect Fixme `json:"XXX_genericDetect"`
+
+	XxxRedoTriggers map[string]int64 `json:"XXX_redoTriggers"`
+
 	APIVersion string `json:"apiVersion"`
 
-	Caches Caches `json:"caches"`
+	Caches WorkloadCaches `json:"caches"`
 
-	Candidates Candidates `json:"candidates"`
-
-	Contention Contention `json:"contention"`
+	Candidates WorkloadCandidates `json:"candidates"`
 
 	Datetimestamp string `json:"datetimestamp"`
 
-	ExpressedFeatures ExpressedFeatures `json:"expressedFeatures"`
-
-	GenericDetect Fixme `json:"genericDetect"`
+	ExpressedFeatures WorkloadExpressedFeatures `json:"expressedFeatures"`
 
 	License License `json:"license"`
 
 	LoadedRecords int32 `json:"loadedRecords"`
 
-	LockWaits LockWaits `json:"lockWaits"`
+	LockWaits WorkloadLockWaits `json:"lockWaits"`
 
-	Processing Processing `json:"processing"`
+	Processing WorkloadProcessing `json:"processing"`
 
-	RedoTriggers map[string]int64 `json:"redoTriggers"`
+	RepairDiagnosis WorkloadRepairDiagnosis `json:"repairDiagnosis"`
 
-	RepairDiagnosis RepairDiagnosis `json:"repairDiagnosis"`
+	Reresolve WorkloadReresolve `json:"reresolve"`
 
-	Reresolve Reresolve `json:"reresolve"`
+	Scoring WorkloadScoring `json:"scoring"`
 
-	Scoring Scoring `json:"scoring"`
+	SystemResources WorkloadSystemResources `json:"systemResources"`
 
-	SystemResources SystemResources `json:"systemResources"`
+	ThreadState WorkloadThreadState `json:"threadState"`
 
-	ThreadState ThreadState `json:"threadState"`
+	Unresolve WorkloadUnresolve `json:"unresolve"`
+}
 
-	Unresolve Unresolve `json:"unresolve"`
+type WorkloadCaches struct {
+	LibFeatCacheHit int32 `json:"libFeatCacheHit"`
+
+	LibFeatCacheMiss int32 `json:"libFeatCacheMiss"`
+
+	LibFeatInsert int32 `json:"libFeatInsert"`
+
+	ResFeatStatCacheHit int32 `json:"resFeatStatCacheHit"`
+
+	ResFeatStatCacheMiss int32 `json:"resFeatStatCacheMiss"`
+
+	ResFeatStatInsert int32 `json:"resFeatStatInsert"`
+
+	ResFeatStatUpdateAttempt int32 `json:"resFeatStatUpdateAttempt"`
+
+	ResFeatStatUpdateFail int32 `json:"resFeatStatUpdateFail"`
+}
+
+type WorkloadCandidates struct {
+	XxxSuppressedCandidateBuilders map[string]int64 `json:"XXX_suppressedCandidateBuilders"`
+
+	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
+}
+
+type WorkloadContention struct {
+	XxxFeature Fixme `json:"XXX_feature"`
+
+	XxxResEnt Fixme `json:"XXX_resEnt"`
+
+	XxxValuelatch Fixme `json:"XXX_valuelatch"`
+}
+
+type WorkloadCurrResources struct {
+	ActiveThreads int32 `json:"activeThreads"`
+
+	AvailableMemory string `json:"availableMemory"`
+
+	ProcessMemory string `json:"processMemory"`
+
+	WorkerThreads int32 `json:"workerThreads"`
+}
+
+type WorkloadExpressedFeatures struct {
+	Calls []WorkloadExpressedFeaturesCall `json:"calls"`
+
+	Created map[string]int64 `json:"created"`
+}
+
+type WorkloadExpressedFeaturesCall struct {
+	EfcallID int32 `json:"EFCALL_ID"`
+
+	EfuncCode string `json:"EFUNC_CODE"`
+
+	NumCalls int32 `json:"numCalls"`
+}
+
+type WorkloadInitResources struct {
+	XxxPhysicalCores int32 `json:"XXX_physicalCores"`
+
+	AvailableMemory string `json:"availableMemory"`
+
+	LogicalCores int32 `json:"logicalCores"`
+
+	TotalMemory string `json:"totalMemory"`
+}
+
+type WorkloadLockWaits struct {
+	RefreshLocks WorkloadRefreshLocks `json:"refreshLocks"`
+}
+
+type WorkloadProcessing struct {
+	AddedRecords int32 `json:"addedRecords"`
+
+	Ambiguous WorkloadProcessingAmbiguous `json:"ambiguous"`
+
+	BatchAddedRecords int32 `json:"batchAddedRecords"`
+
+	DeletedRecords int32 `json:"deletedRecords"`
+
+	Details WorkloadProcessingDetails `json:"details"`
+
+	Reevaluations int32 `json:"reevaluations"`
+
+	RepairedEntities int32 `json:"repairedEntities"`
+}
+
+type WorkloadProcessingAmbiguous struct {
+	ActualTest int32 `json:"actualTest"`
+
+	CachedTest int32 `json:"cachedTest"`
+}
+
+type WorkloadProcessingDetails struct {
+	AddedRecords int32 `json:"addedRecords"`
+
+	Candidates int32 `json:"candidates"`
+
+	ChangeDeletes int32 `json:"changeDeletes"`
+
+	Duration int32 `json:"duration"`
+
+	FilteredObsFeat int32 `json:"filteredObsFeat"`
+
+	NewObsEnt int32 `json:"newObsEnt"`
+
+	ObsEntHashDiff int32 `json:"obsEntHashDiff"`
+
+	ObsEntHashSame int32 `json:"obsEntHashSame"`
+
+	OptimizedOut int32 `json:"optimizedOut"`
+
+	OptimizedOutSkipped int32 `json:"optimizedOutSkipped"`
+
+	PartiallyResolved int32 `json:"partiallyResolved"`
+
+	Retries int32 `json:"retries"`
+}
+
+type WorkloadRefreshLocks struct {
+	Count int32 `json:"count"`
+
+	MaxMs int32 `json:"maxMS"`
+
+	TotalMs int32 `json:"totalMS"`
+}
+
+type WorkloadRepairDiagnosis struct {
+	Types int32 `json:"types"`
+}
+
+type WorkloadReresolve struct {
+	XxxNewFeatureFtypes map[string]int64 `json:"XXX_newFeatureFTypes"`
+
+	XxxSuppressedCandidateBuildersForReresolve Fixme `json:"XXX_suppressedCandidateBuildersForReresolve"`
+
+	XxxSuppressedScoredFeatureTypeForReresolve Fixme `json:"XXX_suppressedScoredFeatureTypeForReresolve"`
+
+	Triggers WorkloadReresolveTriggers `json:"triggers"`
+}
+
+type WorkloadReresolveTriggers struct {
+	AbortRetry int32 `json:"abortRetry"`
+
+	MultipleResolvableCandidates int32 `json:"multipleResolvableCandidates"`
+
+	ResolveNewFeatures int32 `json:"resolveNewFeatures"`
+
+	Skipped int32 `json:"skipped"`
+
+	UnresolveMovement int32 `json:"unresolveMovement"`
+}
+
+type WorkloadScoring struct {
+	XxxSuppressedScoredFeatureType Fixme `json:"XXX_suppressedScoredFeatureType"`
+
+	CacheHit map[string]int64 `json:"cacheHit"`
+
+	CacheMiss map[string]int64 `json:"cacheMiss"`
+
+	ScoredPairs map[string]int64 `json:"scoredPairs"`
+
+	SuppressedDisclosedRelationshipDomainCount int32 `json:"suppressedDisclosedRelationshipDomainCount"`
+}
+
+type WorkloadSystemLoad struct {
+	CPUIdle string `json:"cpuIdle"`
+
+	CPUSystem string `json:"cpuSystem"`
+
+	CPUUser string `json:"cpuUser"`
+
+	CPUWait string `json:"cpuWait"`
+}
+
+type WorkloadSystemResources struct {
+	CurrResources WorkloadCurrResources `json:"currResources"`
+
+	InitResources WorkloadInitResources `json:"initResources"`
+
+	SystemLoad WorkloadSystemLoad `json:"systemLoad"`
+}
+
+type WorkloadThreadState struct {
+	Active int32 `json:"active"`
+
+	DataLatchContention int32 `json:"dataLatchContention"`
+
+	GovernorContention int32 `json:"governorContention"`
+
+	Idle int32 `json:"idle"`
+
+	Loader int32 `json:"loader"`
+
+	ObsEntContention int32 `json:"obsEntContention"`
+
+	ResEntContention int32 `json:"resEntContention"`
+
+	Resolver int32 `json:"resolver"`
+
+	Scoring int32 `json:"scoring"`
+
+	SQLExecuting int32 `json:"sqlExecuting"`
+}
+
+type WorkloadUnresolve struct {
+	AbortedUnresolve int32 `json:"abortedUnresolve"`
+
+	Triggers WorkloadUnresolveTriggers `json:"triggers"`
+
+	UnresolveTest int32 `json:"unresolveTest"`
+}
+
+type WorkloadUnresolveTriggers struct {
+	AmbiguousMultiResolve int32 `json:"ambiguousMultiResolve"`
+
+	AmbiguousNoResolve int32 `json:"ambiguousNoResolve"`
+
+	ExtensiveResolve int32 `json:"extensiveResolve"`
+
+	NormalResolve int32 `json:"normalResolve"`
+
+	RelLink int32 `json:"relLink"`
+
+	Update int32 `json:"update"`
 }

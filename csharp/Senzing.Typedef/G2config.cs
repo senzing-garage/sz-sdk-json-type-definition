@@ -41,9 +41,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("CFG_EBOM")]
         public IList<CfgEbom> CfgEbom { get; set; }
 
-        [JsonPropertyName("CFG_ECLASS")]
-        public IList<CfgEclass> CfgEclass { get; set; }
-
         [JsonPropertyName("CFG_EFBOM")]
         public IList<CfgEfbom> CfgEfbom { get; set; }
 
@@ -58,9 +55,6 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("CFG_ERRULE")]
         public IList<CfgErrule> CfgErrule { get; set; }
-
-        [JsonPropertyName("CFG_ETYPE")]
-        public IList<CfgEtype> CfgEtype { get; set; }
 
         [JsonPropertyName("CFG_FBOM")]
         public IList<CfgFbom> CfgFbom { get; set; }
@@ -83,12 +77,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("CFG_GPLAN")]
         public IList<CfgGplan> CfgGplan { get; set; }
 
-        [JsonPropertyName("CFG_LENS")]
-        public IList<CfgLens> CfgLens { get; set; }
-
-        [JsonPropertyName("CFG_LENSRL")]
-        public IList<CfgLensrl> CfgLensrl { get; set; }
-
         [JsonPropertyName("CFG_RCLASS")]
         public IList<CfgRclass> CfgRclass { get; set; }
 
@@ -109,5 +97,17 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("SYS_OOM")]
         public IList<SysOom> SysOom { get; set; }
+
+        [JsonPropertyName("XXX_CFG_ECLASS")]
+        public IList<CfgEclass> XxxCfgEclass { get; set; }
+
+        [JsonPropertyName("XXX_CFG_ETYPE")]
+        public IList<CfgEtype> XxxCfgEtype { get; set; }
+
+        [JsonPropertyName("XXX_CFG_LENS")]
+        public IList<CfgLens> XxxCfgLens { get; set; }
+
+        [JsonPropertyName("XXX_CFG_LENSRL")]
+        public IList<CfgLensrl> XxxCfgLensrl { get; set; }
     }
 }

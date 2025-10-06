@@ -1,14 +1,15 @@
 #! /usr/bin/env python3
 
+"""
+Work-in-progress: Determine what JSON keys are not used.
+For more information, visit https://jsontypedef.com/docs/python-codegen/
+"""
+
 # pylint: disable=duplicate-code
 
 import json
 import os
 from pathlib import Path
-
-"""
-For more information, visit https://jsontypedef.com/docs/python-codegen/
-"""
 
 DEFINITIONS = {}
 INPUT_DIRECTORY = "./testdata/responses_senzing"
@@ -249,33 +250,33 @@ def recurse_json(json_value):
 #     return result
 
 
-def remove_keys_recursiveX(needles, haystack):
-    """Remove keys from dict1 (and nested dicts) that exist in dict2"""
-    result = None
+# def remove_keys_recursiveX(needles, haystack):
+#     """Remove keys from dict1 (and nested dicts) that exist in dict2"""
+#     result = None
 
-    if isinstance(needles, dict):
-        result = {}
-        if isinstance(haystack, dict):
-            for key, value in haystack.items():
-                if key in needles:
-                    new_result = remove_keys_recursive(needles.get(key), value)
-                    if new_result:
-                        result[key] = new_result
-                else:
-                    result[key] = value
+#     if isinstance(needles, dict):
+#         result = {}
+#         if isinstance(haystack, dict):
+#             for key, value in haystack.items():
+#                 if key in needles:
+#                     new_result = remove_keys_recursive(needles.get(key), value)
+#                     if new_result:
+#                         result[key] = new_result
+#                 else:
+#                     result[key] = value
 
-    if isinstance(needles, list):
-        result = []
-        new_haystack = None
-        if isinstance(haystack, list):
-            new_haystack = haystack[0]
-        for value in needles:
-            new_result = remove_keys_recursive(value, new_haystack)
-            if new_result:
-                if new_result not in result:
-                    result.append(new_result)
+#     if isinstance(needles, list):
+#         result = []
+#         new_haystack = None
+#         if isinstance(haystack, list):
+#             new_haystack = haystack[0]
+#         for value in needles:
+#             new_result = remove_keys_recursive(value, new_haystack)
+#             if new_result:
+#                 if new_result not in result:
+#                     result.append(new_result)
 
-    return result
+#     return result
 
 
 def remove_keys_recursive(needles, haystack):

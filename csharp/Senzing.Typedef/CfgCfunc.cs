@@ -22,16 +22,16 @@ namespace Senzing.Typedef
         [JsonPropertyName("CONNECT_STR")]
         public string ConnectStr { get; set; }
 
-        [JsonPropertyName("FUNC_LIB")]
-        public string FuncLib { get; set; }
+        [JsonPropertyName("XXX_FUNC_LIB")]
+        public string XxxFuncLib { get; set; }
 
-        [JsonPropertyName("FUNC_VER")]
-        public string FuncVer { get; set; }
+        [JsonPropertyName("XXX_FUNC_VER")]
+        public string XxxFuncVer { get; set; }
 
-        [JsonPropertyName("JAVA_CLASS_NAME")]
-        public string JavaClassName { get; set; }
+        [JsonPropertyName("XXX_JAVA_CLASS_NAME")]
+        public string XxxJavaClassName { get; set; }
 
-        [JsonPropertyName("LANGUAGE")]
-        public string Language { get; set; }
+        [JsonPropertyName("XXX_LANGUAGE")]
+        public string XxxLanguage { get; set; }
     }
 }

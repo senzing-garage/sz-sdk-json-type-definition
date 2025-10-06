@@ -10,29 +10,8 @@ import java.util.Map;
 
 @JsonSerialize
 public class SzEngineGetRecordResponse {
-    @JsonProperty("ADDRESS_DATA")
-    private List<String> addressData;
-
-    @JsonProperty("ATTRIBUTE_DATA")
-    private List<String> attributeData;
-
     @JsonProperty("DATA_SOURCE")
     private String dataSource;
-
-    @JsonProperty("ENTITY_DATA")
-    private List<String> entityData;
-
-    @JsonProperty("ENTITY_DESC")
-    private String entityDesc;
-
-    @JsonProperty("ENTITY_KEY")
-    private String entityKey;
-
-    @JsonProperty("ENTITY_TYPE")
-    private String entityType;
-
-    @JsonProperty("ERRULE_CODE")
-    private String erruleCode;
 
     @JsonProperty("FEATURES")
     private Map<String, List<FeatureForAttributes>> features;
@@ -43,74 +22,67 @@ public class SzEngineGetRecordResponse {
     @JsonProperty("FIRST_SEEN_DT")
     private OffsetDateTime firstSeenDt;
 
-    @JsonProperty("IDENTIFIER_DATA")
-    private List<String> identifierData;
-
-    @JsonProperty("INTERNAL_ID")
-    private Integer internalId;
-
     @JsonProperty("JSON_DATA")
     private Map<String, Object> jsonData;
 
     @JsonProperty("LAST_SEEN_DT")
     private OffsetDateTime lastSeenDt;
 
-    @JsonProperty("MATCH_KEY")
-    private String matchKey;
-
-    @JsonProperty("MATCH_LEVEL")
-    private Integer matchLevel;
-
-    @JsonProperty("MATCH_LEVEL_CODE")
-    private String matchLevelCode;
-
-    @JsonProperty("NAME_DATA")
-    private List<String> nameData;
-
-    @JsonProperty("OTHER_DATA")
-    private List<String> otherData;
-
-    @JsonProperty("PHONE_DATA")
-    private List<String> phoneData;
-
     @JsonProperty("RECORD_ID")
     private String recordId;
-
-    @JsonProperty("RELATIONSHIP_DATA")
-    private List<String> relationshipData;
 
     @JsonProperty("UNMAPPED_DATA")
     private Map<String, Object> unmappedData;
 
+    @JsonProperty("XXX_ADDRESS_DATA")
+    private List<String> xxxAddressData;
+
+    @JsonProperty("XXX_ATTRIBUTE_DATA")
+    private List<String> xxxAttributeData;
+
+    @JsonProperty("XXX_ENTITY_DATA")
+    private List<String> xxxEntityData;
+
+    @JsonProperty("XXX_ENTITY_DESC")
+    private String xxxEntityDesc;
+
+    @JsonProperty("XXX_ENTITY_KEY")
+    private String xxxEntityKey;
+
+    @JsonProperty("XXX_ENTITY_TYPE")
+    private String xxxEntityType;
+
+    @JsonProperty("XXX_ERRULE_CODE")
+    private String xxxErruleCode;
+
+    @JsonProperty("XXX_IDENTIFIER_DATA")
+    private List<String> xxxIdentifierData;
+
+    @JsonProperty("XXX_INTERNAL_ID")
+    private Integer xxxInternalId;
+
+    @JsonProperty("XXX_MATCH_KEY")
+    private String xxxMatchKey;
+
+    @JsonProperty("XXX_MATCH_LEVEL")
+    private Integer xxxMatchLevel;
+
+    @JsonProperty("XXX_MATCH_LEVEL_CODE")
+    private String xxxMatchLevelCode;
+
+    @JsonProperty("XXX_NAME_DATA")
+    private List<String> xxxNameData;
+
+    @JsonProperty("XXX_OTHER_DATA")
+    private List<String> xxxOtherData;
+
+    @JsonProperty("XXX_PHONE_DATA")
+    private List<String> xxxPhoneData;
+
+    @JsonProperty("XXX_RELATIONSHIP_DATA")
+    private List<String> xxxRelationshipData;
+
     public SzEngineGetRecordResponse() {
-    }
-
-    /**
-     * Getter for addressData.<p>
-     */
-    public List<String> getAddressData() {
-        return addressData;
-    }
-
-    /**
-     * Setter for addressData.<p>
-     */
-    public void setAddressData(List<String> addressData) {
-        this.addressData = addressData;
-    }
-
-    /**
-     * Getter for attributeData.<p>
-     */
-    public List<String> getAttributeData() {
-        return attributeData;
-    }
-
-    /**
-     * Setter for attributeData.<p>
-     */
-    public void setAttributeData(List<String> attributeData) {
-        this.attributeData = attributeData;
     }
 
     /**
@@ -127,78 +99,6 @@ public class SzEngineGetRecordResponse {
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
-    }
-
-    /**
-     * Getter for entityData.<p>
-     */
-    public List<String> getEntityData() {
-        return entityData;
-    }
-
-    /**
-     * Setter for entityData.<p>
-     */
-    public void setEntityData(List<String> entityData) {
-        this.entityData = entityData;
-    }
-
-    /**
-     * Getter for entityDesc.<p>
-     */
-    public String getEntityDesc() {
-        return entityDesc;
-    }
-
-    /**
-     * Setter for entityDesc.<p>
-     */
-    public void setEntityDesc(String entityDesc) {
-        this.entityDesc = entityDesc;
-    }
-
-    /**
-     * Getter for entityKey.<p>
-     */
-    public String getEntityKey() {
-        return entityKey;
-    }
-
-    /**
-     * Setter for entityKey.<p>
-     */
-    public void setEntityKey(String entityKey) {
-        this.entityKey = entityKey;
-    }
-
-    /**
-     * Getter for entityType.<p>
-     */
-    public String getEntityType() {
-        return entityType;
-    }
-
-    /**
-     * Setter for entityType.<p>
-     */
-    public void setEntityType(String entityType) {
-        this.entityType = entityType;
-    }
-
-    /**
-     * Getter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
-     */
-    public String getErruleCode() {
-        return erruleCode;
-    }
-
-    /**
-     * Setter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
-     */
-    public void setErruleCode(String erruleCode) {
-        this.erruleCode = erruleCode;
     }
 
     /**
@@ -244,36 +144,6 @@ public class SzEngineGetRecordResponse {
     }
 
     /**
-     * Getter for identifierData.<p>
-     */
-    public List<String> getIdentifierData() {
-        return identifierData;
-    }
-
-    /**
-     * Setter for identifierData.<p>
-     */
-    public void setIdentifierData(List<String> identifierData) {
-        this.identifierData = identifierData;
-    }
-
-    /**
-     * Getter for internalId.<p>
-     * Internal identifier for the record.
-     */
-    public Integer getInternalId() {
-        return internalId;
-    }
-
-    /**
-     * Setter for internalId.<p>
-     * Internal identifier for the record.
-     */
-    public void setInternalId(Integer internalId) {
-        this.internalId = internalId;
-    }
-
-    /**
      * Getter for jsonData.<p>
      */
     public Map<String, Object> getJsonData() {
@@ -302,94 +172,6 @@ public class SzEngineGetRecordResponse {
     }
 
     /**
-     * Getter for matchKey.<p>
-     * Representation of matched source record features.
-     */
-    public String getMatchKey() {
-        return matchKey;
-    }
-
-    /**
-     * Setter for matchKey.<p>
-     * Representation of matched source record features.
-     */
-    public void setMatchKey(String matchKey) {
-        this.matchKey = matchKey;
-    }
-
-    /**
-     * Getter for matchLevel.<p>
-     */
-    public Integer getMatchLevel() {
-        return matchLevel;
-    }
-
-    /**
-     * Setter for matchLevel.<p>
-     */
-    public void setMatchLevel(Integer matchLevel) {
-        this.matchLevel = matchLevel;
-    }
-
-    /**
-     * Getter for matchLevelCode.<p>
-     * The type of match that occurred for the record.
-     */
-    public String getMatchLevelCode() {
-        return matchLevelCode;
-    }
-
-    /**
-     * Setter for matchLevelCode.<p>
-     * The type of match that occurred for the record.
-     */
-    public void setMatchLevelCode(String matchLevelCode) {
-        this.matchLevelCode = matchLevelCode;
-    }
-
-    /**
-     * Getter for nameData.<p>
-     */
-    public List<String> getNameData() {
-        return nameData;
-    }
-
-    /**
-     * Setter for nameData.<p>
-     */
-    public void setNameData(List<String> nameData) {
-        this.nameData = nameData;
-    }
-
-    /**
-     * Getter for otherData.<p>
-     */
-    public List<String> getOtherData() {
-        return otherData;
-    }
-
-    /**
-     * Setter for otherData.<p>
-     */
-    public void setOtherData(List<String> otherData) {
-        this.otherData = otherData;
-    }
-
-    /**
-     * Getter for phoneData.<p>
-     */
-    public List<String> getPhoneData() {
-        return phoneData;
-    }
-
-    /**
-     * Setter for phoneData.<p>
-     */
-    public void setPhoneData(List<String> phoneData) {
-        this.phoneData = phoneData;
-    }
-
-    /**
      * Getter for recordId.<p>
      * The unique identifier within the set of records in the DATA_SOURCE.
      */
@@ -406,20 +188,6 @@ public class SzEngineGetRecordResponse {
     }
 
     /**
-     * Getter for relationshipData.<p>
-     */
-    public List<String> getRelationshipData() {
-        return relationshipData;
-    }
-
-    /**
-     * Setter for relationshipData.<p>
-     */
-    public void setRelationshipData(List<String> relationshipData) {
-        this.relationshipData = relationshipData;
-    }
-
-    /**
      * Getter for unmappedData.<p>
      */
     public Map<String, Object> getUnmappedData() {
@@ -431,5 +199,237 @@ public class SzEngineGetRecordResponse {
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;
+    }
+
+    /**
+     * Getter for xxxAddressData.<p>
+     */
+    public List<String> getXxxAddressData() {
+        return xxxAddressData;
+    }
+
+    /**
+     * Setter for xxxAddressData.<p>
+     */
+    public void setXxxAddressData(List<String> xxxAddressData) {
+        this.xxxAddressData = xxxAddressData;
+    }
+
+    /**
+     * Getter for xxxAttributeData.<p>
+     */
+    public List<String> getXxxAttributeData() {
+        return xxxAttributeData;
+    }
+
+    /**
+     * Setter for xxxAttributeData.<p>
+     */
+    public void setXxxAttributeData(List<String> xxxAttributeData) {
+        this.xxxAttributeData = xxxAttributeData;
+    }
+
+    /**
+     * Getter for xxxEntityData.<p>
+     */
+    public List<String> getXxxEntityData() {
+        return xxxEntityData;
+    }
+
+    /**
+     * Setter for xxxEntityData.<p>
+     */
+    public void setXxxEntityData(List<String> xxxEntityData) {
+        this.xxxEntityData = xxxEntityData;
+    }
+
+    /**
+     * Getter for xxxEntityDesc.<p>
+     */
+    public String getXxxEntityDesc() {
+        return xxxEntityDesc;
+    }
+
+    /**
+     * Setter for xxxEntityDesc.<p>
+     */
+    public void setXxxEntityDesc(String xxxEntityDesc) {
+        this.xxxEntityDesc = xxxEntityDesc;
+    }
+
+    /**
+     * Getter for xxxEntityKey.<p>
+     */
+    public String getXxxEntityKey() {
+        return xxxEntityKey;
+    }
+
+    /**
+     * Setter for xxxEntityKey.<p>
+     */
+    public void setXxxEntityKey(String xxxEntityKey) {
+        this.xxxEntityKey = xxxEntityKey;
+    }
+
+    /**
+     * Getter for xxxEntityType.<p>
+     */
+    public String getXxxEntityType() {
+        return xxxEntityType;
+    }
+
+    /**
+     * Setter for xxxEntityType.<p>
+     */
+    public void setXxxEntityType(String xxxEntityType) {
+        this.xxxEntityType = xxxEntityType;
+    }
+
+    /**
+     * Getter for xxxErruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
+     */
+    public String getXxxErruleCode() {
+        return xxxErruleCode;
+    }
+
+    /**
+     * Setter for xxxErruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
+     */
+    public void setXxxErruleCode(String xxxErruleCode) {
+        this.xxxErruleCode = xxxErruleCode;
+    }
+
+    /**
+     * Getter for xxxIdentifierData.<p>
+     */
+    public List<String> getXxxIdentifierData() {
+        return xxxIdentifierData;
+    }
+
+    /**
+     * Setter for xxxIdentifierData.<p>
+     */
+    public void setXxxIdentifierData(List<String> xxxIdentifierData) {
+        this.xxxIdentifierData = xxxIdentifierData;
+    }
+
+    /**
+     * Getter for xxxInternalId.<p>
+     * Internal identifier for the record.
+     */
+    public Integer getXxxInternalId() {
+        return xxxInternalId;
+    }
+
+    /**
+     * Setter for xxxInternalId.<p>
+     * Internal identifier for the record.
+     */
+    public void setXxxInternalId(Integer xxxInternalId) {
+        this.xxxInternalId = xxxInternalId;
+    }
+
+    /**
+     * Getter for xxxMatchKey.<p>
+     * Representation of matched source record features.
+     */
+    public String getXxxMatchKey() {
+        return xxxMatchKey;
+    }
+
+    /**
+     * Setter for xxxMatchKey.<p>
+     * Representation of matched source record features.
+     */
+    public void setXxxMatchKey(String xxxMatchKey) {
+        this.xxxMatchKey = xxxMatchKey;
+    }
+
+    /**
+     * Getter for xxxMatchLevel.<p>
+     */
+    public Integer getXxxMatchLevel() {
+        return xxxMatchLevel;
+    }
+
+    /**
+     * Setter for xxxMatchLevel.<p>
+     */
+    public void setXxxMatchLevel(Integer xxxMatchLevel) {
+        this.xxxMatchLevel = xxxMatchLevel;
+    }
+
+    /**
+     * Getter for xxxMatchLevelCode.<p>
+     * The type of match that occurred for the record.
+     */
+    public String getXxxMatchLevelCode() {
+        return xxxMatchLevelCode;
+    }
+
+    /**
+     * Setter for xxxMatchLevelCode.<p>
+     * The type of match that occurred for the record.
+     */
+    public void setXxxMatchLevelCode(String xxxMatchLevelCode) {
+        this.xxxMatchLevelCode = xxxMatchLevelCode;
+    }
+
+    /**
+     * Getter for xxxNameData.<p>
+     */
+    public List<String> getXxxNameData() {
+        return xxxNameData;
+    }
+
+    /**
+     * Setter for xxxNameData.<p>
+     */
+    public void setXxxNameData(List<String> xxxNameData) {
+        this.xxxNameData = xxxNameData;
+    }
+
+    /**
+     * Getter for xxxOtherData.<p>
+     */
+    public List<String> getXxxOtherData() {
+        return xxxOtherData;
+    }
+
+    /**
+     * Setter for xxxOtherData.<p>
+     */
+    public void setXxxOtherData(List<String> xxxOtherData) {
+        this.xxxOtherData = xxxOtherData;
+    }
+
+    /**
+     * Getter for xxxPhoneData.<p>
+     */
+    public List<String> getXxxPhoneData() {
+        return xxxPhoneData;
+    }
+
+    /**
+     * Setter for xxxPhoneData.<p>
+     */
+    public void setXxxPhoneData(List<String> xxxPhoneData) {
+        this.xxxPhoneData = xxxPhoneData;
+    }
+
+    /**
+     * Getter for xxxRelationshipData.<p>
+     */
+    public List<String> getXxxRelationshipData() {
+        return xxxRelationshipData;
+    }
+
+    /**
+     * Setter for xxxRelationshipData.<p>
+     */
+    public void setXxxRelationshipData(List<String> xxxRelationshipData) {
+        this.xxxRelationshipData = xxxRelationshipData;
     }
 }

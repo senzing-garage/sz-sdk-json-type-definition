@@ -7,23 +7,23 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SzEngineExportCsvEntityReportCsvColumnList {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("XXX_FIXME")
+    private Fixme xxxFixme;
 
     public SzEngineExportCsvEntityReportCsvColumnList() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for xxxFixme.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public Fixme getXxxFixme() {
+        return xxxFixme;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for xxxFixme.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setXxxFixme(Fixme xxxFixme) {
+        this.xxxFixme = xxxFixme;
     }
 }

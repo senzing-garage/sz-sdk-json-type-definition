@@ -8,25 +8,25 @@ import java.util.List;
 
 @JsonSerialize
 public class RecordKeys {
-    @JsonProperty("RECORDS")
-    private List<RecordKey> records;
+    @JsonProperty("XXX_RECORDS")
+    private List<RecordKey> xxxRecords;
 
     public RecordKeys() {
     }
 
     /**
-     * Getter for records.<p>
+     * Getter for xxxRecords.<p>
      * A list of (data source code, record id) pairs.
      */
-    public List<RecordKey> getRecords() {
-        return records;
+    public List<RecordKey> getXxxRecords() {
+        return xxxRecords;
     }
 
     /**
-     * Setter for records.<p>
+     * Setter for xxxRecords.<p>
      * A list of (data source code, record id) pairs.
      */
-    public void setRecords(List<RecordKey> records) {
-        this.records = records;
+    public void setXxxRecords(List<RecordKey> xxxRecords) {
+        this.xxxRecords = xxxRecords;
     }
 }

@@ -7,13 +7,13 @@ namespace Senzing.Typedef
 {
     public class CfgDsrcInterest
     {
-        [JsonPropertyName("DSRC_ID")]
-        public int DsrcId { get; set; }
+        [JsonPropertyName("XXX_DSRC_ID")]
+        public int XxxDsrcId { get; set; }
 
-        [JsonPropertyName("INTEREST_FLAG")]
-        public string InterestFlag { get; set; }
+        [JsonPropertyName("XXX_INTEREST_FLAG")]
+        public string XxxInterestFlag { get; set; }
 
-        [JsonPropertyName("MAX_DEGREE")]
-        public int MaxDegree { get; set; }
+        [JsonPropertyName("XXX_MAX_DEGREE")]
+        public int XxxMaxDegree { get; set; }
     }
 }

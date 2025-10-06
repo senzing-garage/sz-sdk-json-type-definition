@@ -7,20 +7,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SenzingEntitySpecification {
-    @JsonProperty("ACCOUNT_DOMAIN")
-    private String accountDomain;
-
-    @JsonProperty("ACCOUNT_NUMBER")
-    private String accountNumber;
-
     @JsonProperty("ADDR_CITY")
     private String addrCity;
 
     @JsonProperty("ADDR_COUNTRY")
     private String addrCountry;
-
-    @JsonProperty("ADDR_FROM_DATE")
-    private String addrFromDate;
 
     @JsonProperty("ADDR_FULL")
     private String addrFull;
@@ -28,41 +19,14 @@ public class SenzingEntitySpecification {
     @JsonProperty("ADDR_LINE1")
     private String addrLine1;
 
-    @JsonProperty("ADDR_LINE2")
-    private String addrLine2;
-
-    @JsonProperty("ADDR_LINE3")
-    private String addrLine3;
-
-    @JsonProperty("ADDR_LINE4")
-    private String addrLine4;
-
-    @JsonProperty("ADDR_LINE5")
-    private String addrLine5;
-
-    @JsonProperty("ADDR_LINE6")
-    private String addrLine6;
-
     @JsonProperty("ADDR_POSTAL_CODE")
     private String addrPostalCode;
 
     @JsonProperty("ADDR_STATE")
     private String addrState;
 
-    @JsonProperty("ADDR_THRU_DATE")
-    private String addrThruDate;
-
-    @JsonProperty("ADDR_TYPE")
-    private String addrType;
-
-    @JsonProperty("CITIZENSHIP")
-    private String citizenship;
-
     @JsonProperty("DATE_OF_BIRTH")
     private String dateOfBirth;
-
-    @JsonProperty("DATE_OF_DEATH")
-    private String dateOfDeath;
 
     @JsonProperty("DRIVERS_LICENSE_NUMBER")
     private String driversLicenseNumber;
@@ -70,68 +34,17 @@ public class SenzingEntitySpecification {
     @JsonProperty("DRIVERS_LICENSE_STATE")
     private String driversLicenseState;
 
-    @JsonProperty("DUNS_NUMBER")
-    private String dunsNumber;
-
     @JsonProperty("EMAIL_ADDRESS")
     private String emailAddress;
-
-    @JsonProperty("EMPLOYER")
-    private String employer;
 
     @JsonProperty("EMPLOYER_NAME")
     private String employerName;
 
-    @JsonProperty("FACEBOOK")
-    private String facebook;
-
     @JsonProperty("GENDER")
     private String gender;
 
-    @JsonProperty("GROUP_ASSN_ID_NUMBER")
-    private String groupAssnIdNumber;
-
-    @JsonProperty("GROUP_ASSN_ID_TYPE")
-    private String groupAssnIdType;
-
-    @JsonProperty("GROUP_ASSOCIATION_ORG_NAME")
-    private String groupAssociationOrgName;
-
-    @JsonProperty("GROUP_ASSOCIATION_TYPE")
-    private String groupAssociationType;
-
-    @JsonProperty("INSTAGRAM")
-    private String instagram;
-
-    @JsonProperty("LEI_NUMBER")
-    private String leiNumber;
-
-    @JsonProperty("LINKEDIN")
-    private String linkedin;
-
-    @JsonProperty("NAME_FIRST")
-    private String nameFirst;
-
     @JsonProperty("NAME_FULL")
     private String nameFull;
-
-    @JsonProperty("NAME_LAST")
-    private String nameLast;
-
-    @JsonProperty("NAME_ORG")
-    private String nameOrg;
-
-    @JsonProperty("NAME_PREFIX")
-    private String namePrefix;
-
-    @JsonProperty("NAME_SUFFIX")
-    private String nameSuffix;
-
-    @JsonProperty("NAME_TYPE")
-    private String nameType;
-
-    @JsonProperty("NATIONALITY")
-    private String nationality;
 
     @JsonProperty("NATIONAL_ID_COUNTRY")
     private String nationalIdCountry;
@@ -142,38 +55,14 @@ public class SenzingEntitySpecification {
     @JsonProperty("NATIVE_NAME_FULL")
     private String nativeNameFull;
 
-    @JsonProperty("NPI_NUMBER")
-    private String npiNumber;
-
-    @JsonProperty("OTHER_ID_COUNTRY")
-    private String otherIdCountry;
-
-    @JsonProperty("OTHER_ID_NUMBER")
-    private String otherIdNumber;
-
-    @JsonProperty("OTHER_ID_TYPE")
-    private String otherIdType;
-
     @JsonProperty("PASSPORT_COUNTRY")
     private String passportCountry;
 
     @JsonProperty("PASSPORT_NUMBER")
     private String passportNumber;
 
-    @JsonProperty("PHONE_FROM_DATE")
-    private String phoneFromDate;
-
     @JsonProperty("PHONE_NUMBER")
     private String phoneNumber;
-
-    @JsonProperty("PHONE_THRU_DATE")
-    private String phoneThruDate;
-
-    @JsonProperty("PHONE_TYPE")
-    private String phoneType;
-
-    @JsonProperty("PLACE_OF_BIRTH")
-    private String placeOfBirth;
 
     @JsonProperty("PRIMARY_NAME_FIRST")
     private String primaryNameFirst;
@@ -193,12 +82,6 @@ public class SenzingEntitySpecification {
     @JsonProperty("RECORD_TYPE")
     private String recordType;
 
-    @JsonProperty("REGISTRATION_COUNTRY")
-    private String registrationCountry;
-
-    @JsonProperty("REGISTRATION_DATE")
-    private String registrationDate;
-
     @JsonProperty("REL_ANCHOR_KEY")
     private String relAnchorKey;
 
@@ -208,83 +91,172 @@ public class SenzingEntitySpecification {
     @JsonProperty("SECONDARY_NAME_ORG")
     private String secondaryNameOrg;
 
-    @JsonProperty("SIGNAL")
-    private String signal;
-
-    @JsonProperty("SKYPE")
-    private String skype;
-
     @JsonProperty("SSN_NUMBER")
     private String ssnNumber;
 
-    @JsonProperty("TANGO")
-    private String tango;
+    @JsonProperty("XXX_ACCOUNT_DOMAIN")
+    private String xxxAccountDomain;
 
-    @JsonProperty("TAX_ID_COUNTRY")
-    private String taxIdCountry;
+    @JsonProperty("XXX_ACCOUNT_NUMBER")
+    private String xxxAccountNumber;
 
-    @JsonProperty("TAX_ID_NUMBER")
-    private String taxIdNumber;
+    @JsonProperty("XXX_ADDR_FROM_DATE")
+    private String xxxAddrFromDate;
 
-    @JsonProperty("TAX_ID_TYPE")
-    private String taxIdType;
+    @JsonProperty("XXX_ADDR_LINE2")
+    private String xxxAddrLine2;
 
-    @JsonProperty("TELEGRAM")
-    private String telegram;
+    @JsonProperty("XXX_ADDR_LINE3")
+    private String xxxAddrLine3;
 
-    @JsonProperty("TRUSTED_ID_NUMBER")
-    private String trustedIdNumber;
+    @JsonProperty("XXX_ADDR_LINE4")
+    private String xxxAddrLine4;
 
-    @JsonProperty("TRUSTED_ID_TYPE")
-    private String trustedIdType;
+    @JsonProperty("XXX_ADDR_LINE5")
+    private String xxxAddrLine5;
 
-    @JsonProperty("TWITTER")
-    private String twitter;
+    @JsonProperty("XXX_ADDR_LINE6")
+    private String xxxAddrLine6;
 
-    @JsonProperty("VIBER")
-    private String viber;
+    @JsonProperty("XXX_ADDR_THRU_DATE")
+    private String xxxAddrThruDate;
 
-    @JsonProperty("WEBSITE_ADDRESS")
-    private String websiteAddress;
+    @JsonProperty("XXX_ADDR_TYPE")
+    private String xxxAddrType;
 
-    @JsonProperty("WECHAT")
-    private String wechat;
+    @JsonProperty("XXX_CITIZENSHIP")
+    private String xxxCitizenship;
 
-    @JsonProperty("WHATSAPP")
-    private String whatsapp;
+    @JsonProperty("XXX_DATE_OF_DEATH")
+    private String xxxDateOfDeath;
 
-    @JsonProperty("ZOOMROOM")
-    private String zoomroom;
+    @JsonProperty("XXX_DUNS_NUMBER")
+    private String xxxDunsNumber;
+
+    @JsonProperty("XXX_EMPLOYER")
+    private String xxxEmployer;
+
+    @JsonProperty("XXX_FACEBOOK")
+    private String xxxFacebook;
+
+    @JsonProperty("XXX_GROUP_ASSN_ID_NUMBER")
+    private String xxxGroupAssnIdNumber;
+
+    @JsonProperty("XXX_GROUP_ASSN_ID_TYPE")
+    private String xxxGroupAssnIdType;
+
+    @JsonProperty("XXX_GROUP_ASSOCIATION_ORG_NAME")
+    private String xxxGroupAssociationOrgName;
+
+    @JsonProperty("XXX_GROUP_ASSOCIATION_TYPE")
+    private String xxxGroupAssociationType;
+
+    @JsonProperty("XXX_INSTAGRAM")
+    private String xxxInstagram;
+
+    @JsonProperty("XXX_LEI_NUMBER")
+    private String xxxLeiNumber;
+
+    @JsonProperty("XXX_LINKEDIN")
+    private String xxxLinkedin;
+
+    @JsonProperty("XXX_NAME_FIRST")
+    private String xxxNameFirst;
+
+    @JsonProperty("XXX_NAME_LAST")
+    private String xxxNameLast;
+
+    @JsonProperty("XXX_NAME_ORG")
+    private String xxxNameOrg;
+
+    @JsonProperty("XXX_NAME_PREFIX")
+    private String xxxNamePrefix;
+
+    @JsonProperty("XXX_NAME_SUFFIX")
+    private String xxxNameSuffix;
+
+    @JsonProperty("XXX_NAME_TYPE")
+    private String xxxNameType;
+
+    @JsonProperty("XXX_NATIONALITY")
+    private String xxxNationality;
+
+    @JsonProperty("XXX_NPI_NUMBER")
+    private String xxxNpiNumber;
+
+    @JsonProperty("XXX_OTHER_ID_COUNTRY")
+    private String xxxOtherIdCountry;
+
+    @JsonProperty("XXX_OTHER_ID_NUMBER")
+    private String xxxOtherIdNumber;
+
+    @JsonProperty("XXX_OTHER_ID_TYPE")
+    private String xxxOtherIdType;
+
+    @JsonProperty("XXX_PHONE_FROM_DATE")
+    private String xxxPhoneFromDate;
+
+    @JsonProperty("XXX_PHONE_THRU_DATE")
+    private String xxxPhoneThruDate;
+
+    @JsonProperty("XXX_PHONE_TYPE")
+    private String xxxPhoneType;
+
+    @JsonProperty("XXX_PLACE_OF_BIRTH")
+    private String xxxPlaceOfBirth;
+
+    @JsonProperty("XXX_REGISTRATION_COUNTRY")
+    private String xxxRegistrationCountry;
+
+    @JsonProperty("XXX_REGISTRATION_DATE")
+    private String xxxRegistrationDate;
+
+    @JsonProperty("XXX_SIGNAL")
+    private String xxxSignal;
+
+    @JsonProperty("XXX_SKYPE")
+    private String xxxSkype;
+
+    @JsonProperty("XXX_TANGO")
+    private String xxxTango;
+
+    @JsonProperty("XXX_TAX_ID_COUNTRY")
+    private String xxxTaxIdCountry;
+
+    @JsonProperty("XXX_TAX_ID_NUMBER")
+    private String xxxTaxIdNumber;
+
+    @JsonProperty("XXX_TAX_ID_TYPE")
+    private String xxxTaxIdType;
+
+    @JsonProperty("XXX_TELEGRAM")
+    private String xxxTelegram;
+
+    @JsonProperty("XXX_TRUSTED_ID_NUMBER")
+    private String xxxTrustedIdNumber;
+
+    @JsonProperty("XXX_TRUSTED_ID_TYPE")
+    private String xxxTrustedIdType;
+
+    @JsonProperty("XXX_TWITTER")
+    private String xxxTwitter;
+
+    @JsonProperty("XXX_VIBER")
+    private String xxxViber;
+
+    @JsonProperty("XXX_WEBSITE_ADDRESS")
+    private String xxxWebsiteAddress;
+
+    @JsonProperty("XXX_WECHAT")
+    private String xxxWechat;
+
+    @JsonProperty("XXX_WHATSAPP")
+    private String xxxWhatsapp;
+
+    @JsonProperty("XXX_ZOOMROOM")
+    private String xxxZoomroom;
 
     public SenzingEntitySpecification() {
-    }
-
-    /**
-     * Getter for accountDomain.<p>
-     */
-    public String getAccountDomain() {
-        return accountDomain;
-    }
-
-    /**
-     * Setter for accountDomain.<p>
-     */
-    public void setAccountDomain(String accountDomain) {
-        this.accountDomain = accountDomain;
-    }
-
-    /**
-     * Getter for accountNumber.<p>
-     */
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    /**
-     * Setter for accountNumber.<p>
-     */
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
     }
 
     /**
@@ -316,20 +288,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for addrFromDate.<p>
-     */
-    public String getAddrFromDate() {
-        return addrFromDate;
-    }
-
-    /**
-     * Setter for addrFromDate.<p>
-     */
-    public void setAddrFromDate(String addrFromDate) {
-        this.addrFromDate = addrFromDate;
-    }
-
-    /**
      * Getter for addrFull.<p>
      */
     public String getAddrFull() {
@@ -355,76 +313,6 @@ public class SenzingEntitySpecification {
      */
     public void setAddrLine1(String addrLine1) {
         this.addrLine1 = addrLine1;
-    }
-
-    /**
-     * Getter for addrLine2.<p>
-     */
-    public String getAddrLine2() {
-        return addrLine2;
-    }
-
-    /**
-     * Setter for addrLine2.<p>
-     */
-    public void setAddrLine2(String addrLine2) {
-        this.addrLine2 = addrLine2;
-    }
-
-    /**
-     * Getter for addrLine3.<p>
-     */
-    public String getAddrLine3() {
-        return addrLine3;
-    }
-
-    /**
-     * Setter for addrLine3.<p>
-     */
-    public void setAddrLine3(String addrLine3) {
-        this.addrLine3 = addrLine3;
-    }
-
-    /**
-     * Getter for addrLine4.<p>
-     */
-    public String getAddrLine4() {
-        return addrLine4;
-    }
-
-    /**
-     * Setter for addrLine4.<p>
-     */
-    public void setAddrLine4(String addrLine4) {
-        this.addrLine4 = addrLine4;
-    }
-
-    /**
-     * Getter for addrLine5.<p>
-     */
-    public String getAddrLine5() {
-        return addrLine5;
-    }
-
-    /**
-     * Setter for addrLine5.<p>
-     */
-    public void setAddrLine5(String addrLine5) {
-        this.addrLine5 = addrLine5;
-    }
-
-    /**
-     * Getter for addrLine6.<p>
-     */
-    public String getAddrLine6() {
-        return addrLine6;
-    }
-
-    /**
-     * Setter for addrLine6.<p>
-     */
-    public void setAddrLine6(String addrLine6) {
-        this.addrLine6 = addrLine6;
     }
 
     /**
@@ -456,48 +344,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for addrThruDate.<p>
-     */
-    public String getAddrThruDate() {
-        return addrThruDate;
-    }
-
-    /**
-     * Setter for addrThruDate.<p>
-     */
-    public void setAddrThruDate(String addrThruDate) {
-        this.addrThruDate = addrThruDate;
-    }
-
-    /**
-     * Getter for addrType.<p>
-     */
-    public String getAddrType() {
-        return addrType;
-    }
-
-    /**
-     * Setter for addrType.<p>
-     */
-    public void setAddrType(String addrType) {
-        this.addrType = addrType;
-    }
-
-    /**
-     * Getter for citizenship.<p>
-     */
-    public String getCitizenship() {
-        return citizenship;
-    }
-
-    /**
-     * Setter for citizenship.<p>
-     */
-    public void setCitizenship(String citizenship) {
-        this.citizenship = citizenship;
-    }
-
-    /**
      * Getter for dateOfBirth.<p>
      */
     public String getDateOfBirth() {
@@ -509,20 +355,6 @@ public class SenzingEntitySpecification {
      */
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-    /**
-     * Getter for dateOfDeath.<p>
-     */
-    public String getDateOfDeath() {
-        return dateOfDeath;
-    }
-
-    /**
-     * Setter for dateOfDeath.<p>
-     */
-    public void setDateOfDeath(String dateOfDeath) {
-        this.dateOfDeath = dateOfDeath;
     }
 
     /**
@@ -554,20 +386,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for dunsNumber.<p>
-     */
-    public String getDunsNumber() {
-        return dunsNumber;
-    }
-
-    /**
-     * Setter for dunsNumber.<p>
-     */
-    public void setDunsNumber(String dunsNumber) {
-        this.dunsNumber = dunsNumber;
-    }
-
-    /**
      * Getter for emailAddress.<p>
      */
     public String getEmailAddress() {
@@ -579,20 +397,6 @@ public class SenzingEntitySpecification {
      */
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
-    }
-
-    /**
-     * Getter for employer.<p>
-     */
-    public String getEmployer() {
-        return employer;
-    }
-
-    /**
-     * Setter for employer.<p>
-     */
-    public void setEmployer(String employer) {
-        this.employer = employer;
     }
 
     /**
@@ -610,20 +414,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for facebook.<p>
-     */
-    public String getFacebook() {
-        return facebook;
-    }
-
-    /**
-     * Setter for facebook.<p>
-     */
-    public void setFacebook(String facebook) {
-        this.facebook = facebook;
-    }
-
-    /**
      * Getter for gender.<p>
      */
     public String getGender() {
@@ -638,118 +428,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for groupAssnIdNumber.<p>
-     */
-    public String getGroupAssnIdNumber() {
-        return groupAssnIdNumber;
-    }
-
-    /**
-     * Setter for groupAssnIdNumber.<p>
-     */
-    public void setGroupAssnIdNumber(String groupAssnIdNumber) {
-        this.groupAssnIdNumber = groupAssnIdNumber;
-    }
-
-    /**
-     * Getter for groupAssnIdType.<p>
-     */
-    public String getGroupAssnIdType() {
-        return groupAssnIdType;
-    }
-
-    /**
-     * Setter for groupAssnIdType.<p>
-     */
-    public void setGroupAssnIdType(String groupAssnIdType) {
-        this.groupAssnIdType = groupAssnIdType;
-    }
-
-    /**
-     * Getter for groupAssociationOrgName.<p>
-     */
-    public String getGroupAssociationOrgName() {
-        return groupAssociationOrgName;
-    }
-
-    /**
-     * Setter for groupAssociationOrgName.<p>
-     */
-    public void setGroupAssociationOrgName(String groupAssociationOrgName) {
-        this.groupAssociationOrgName = groupAssociationOrgName;
-    }
-
-    /**
-     * Getter for groupAssociationType.<p>
-     */
-    public String getGroupAssociationType() {
-        return groupAssociationType;
-    }
-
-    /**
-     * Setter for groupAssociationType.<p>
-     */
-    public void setGroupAssociationType(String groupAssociationType) {
-        this.groupAssociationType = groupAssociationType;
-    }
-
-    /**
-     * Getter for instagram.<p>
-     */
-    public String getInstagram() {
-        return instagram;
-    }
-
-    /**
-     * Setter for instagram.<p>
-     */
-    public void setInstagram(String instagram) {
-        this.instagram = instagram;
-    }
-
-    /**
-     * Getter for leiNumber.<p>
-     */
-    public String getLeiNumber() {
-        return leiNumber;
-    }
-
-    /**
-     * Setter for leiNumber.<p>
-     */
-    public void setLeiNumber(String leiNumber) {
-        this.leiNumber = leiNumber;
-    }
-
-    /**
-     * Getter for linkedin.<p>
-     */
-    public String getLinkedin() {
-        return linkedin;
-    }
-
-    /**
-     * Setter for linkedin.<p>
-     */
-    public void setLinkedin(String linkedin) {
-        this.linkedin = linkedin;
-    }
-
-    /**
-     * Getter for nameFirst.<p>
-     */
-    public String getNameFirst() {
-        return nameFirst;
-    }
-
-    /**
-     * Setter for nameFirst.<p>
-     */
-    public void setNameFirst(String nameFirst) {
-        this.nameFirst = nameFirst;
-    }
-
-    /**
      * Getter for nameFull.<p>
      */
     public String getNameFull() {
@@ -761,90 +439,6 @@ public class SenzingEntitySpecification {
      */
     public void setNameFull(String nameFull) {
         this.nameFull = nameFull;
-    }
-
-    /**
-     * Getter for nameLast.<p>
-     */
-    public String getNameLast() {
-        return nameLast;
-    }
-
-    /**
-     * Setter for nameLast.<p>
-     */
-    public void setNameLast(String nameLast) {
-        this.nameLast = nameLast;
-    }
-
-    /**
-     * Getter for nameOrg.<p>
-     */
-    public String getNameOrg() {
-        return nameOrg;
-    }
-
-    /**
-     * Setter for nameOrg.<p>
-     */
-    public void setNameOrg(String nameOrg) {
-        this.nameOrg = nameOrg;
-    }
-
-    /**
-     * Getter for namePrefix.<p>
-     */
-    public String getNamePrefix() {
-        return namePrefix;
-    }
-
-    /**
-     * Setter for namePrefix.<p>
-     */
-    public void setNamePrefix(String namePrefix) {
-        this.namePrefix = namePrefix;
-    }
-
-    /**
-     * Getter for nameSuffix.<p>
-     */
-    public String getNameSuffix() {
-        return nameSuffix;
-    }
-
-    /**
-     * Setter for nameSuffix.<p>
-     */
-    public void setNameSuffix(String nameSuffix) {
-        this.nameSuffix = nameSuffix;
-    }
-
-    /**
-     * Getter for nameType.<p>
-     */
-    public String getNameType() {
-        return nameType;
-    }
-
-    /**
-     * Setter for nameType.<p>
-     */
-    public void setNameType(String nameType) {
-        this.nameType = nameType;
-    }
-
-    /**
-     * Getter for nationality.<p>
-     */
-    public String getNationality() {
-        return nationality;
-    }
-
-    /**
-     * Setter for nationality.<p>
-     */
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
     }
 
     /**
@@ -890,62 +484,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for npiNumber.<p>
-     */
-    public String getNpiNumber() {
-        return npiNumber;
-    }
-
-    /**
-     * Setter for npiNumber.<p>
-     */
-    public void setNpiNumber(String npiNumber) {
-        this.npiNumber = npiNumber;
-    }
-
-    /**
-     * Getter for otherIdCountry.<p>
-     */
-    public String getOtherIdCountry() {
-        return otherIdCountry;
-    }
-
-    /**
-     * Setter for otherIdCountry.<p>
-     */
-    public void setOtherIdCountry(String otherIdCountry) {
-        this.otherIdCountry = otherIdCountry;
-    }
-
-    /**
-     * Getter for otherIdNumber.<p>
-     */
-    public String getOtherIdNumber() {
-        return otherIdNumber;
-    }
-
-    /**
-     * Setter for otherIdNumber.<p>
-     */
-    public void setOtherIdNumber(String otherIdNumber) {
-        this.otherIdNumber = otherIdNumber;
-    }
-
-    /**
-     * Getter for otherIdType.<p>
-     */
-    public String getOtherIdType() {
-        return otherIdType;
-    }
-
-    /**
-     * Setter for otherIdType.<p>
-     */
-    public void setOtherIdType(String otherIdType) {
-        this.otherIdType = otherIdType;
-    }
-
-    /**
      * Getter for passportCountry.<p>
      */
     public String getPassportCountry() {
@@ -974,20 +512,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for phoneFromDate.<p>
-     */
-    public String getPhoneFromDate() {
-        return phoneFromDate;
-    }
-
-    /**
-     * Setter for phoneFromDate.<p>
-     */
-    public void setPhoneFromDate(String phoneFromDate) {
-        this.phoneFromDate = phoneFromDate;
-    }
-
-    /**
      * Getter for phoneNumber.<p>
      */
     public String getPhoneNumber() {
@@ -999,48 +523,6 @@ public class SenzingEntitySpecification {
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    /**
-     * Getter for phoneThruDate.<p>
-     */
-    public String getPhoneThruDate() {
-        return phoneThruDate;
-    }
-
-    /**
-     * Setter for phoneThruDate.<p>
-     */
-    public void setPhoneThruDate(String phoneThruDate) {
-        this.phoneThruDate = phoneThruDate;
-    }
-
-    /**
-     * Getter for phoneType.<p>
-     */
-    public String getPhoneType() {
-        return phoneType;
-    }
-
-    /**
-     * Setter for phoneType.<p>
-     */
-    public void setPhoneType(String phoneType) {
-        this.phoneType = phoneType;
-    }
-
-    /**
-     * Getter for placeOfBirth.<p>
-     */
-    public String getPlaceOfBirth() {
-        return placeOfBirth;
-    }
-
-    /**
-     * Setter for placeOfBirth.<p>
-     */
-    public void setPlaceOfBirth(String placeOfBirth) {
-        this.placeOfBirth = placeOfBirth;
     }
 
     /**
@@ -1128,34 +610,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for registrationCountry.<p>
-     */
-    public String getRegistrationCountry() {
-        return registrationCountry;
-    }
-
-    /**
-     * Setter for registrationCountry.<p>
-     */
-    public void setRegistrationCountry(String registrationCountry) {
-        this.registrationCountry = registrationCountry;
-    }
-
-    /**
-     * Getter for registrationDate.<p>
-     */
-    public String getRegistrationDate() {
-        return registrationDate;
-    }
-
-    /**
-     * Setter for registrationDate.<p>
-     */
-    public void setRegistrationDate(String registrationDate) {
-        this.registrationDate = registrationDate;
-    }
-
-    /**
      * Getter for relAnchorKey.<p>
      */
     public String getRelAnchorKey() {
@@ -1198,34 +652,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for signal.<p>
-     */
-    public String getSignal() {
-        return signal;
-    }
-
-    /**
-     * Setter for signal.<p>
-     */
-    public void setSignal(String signal) {
-        this.signal = signal;
-    }
-
-    /**
-     * Getter for skype.<p>
-     */
-    public String getSkype() {
-        return skype;
-    }
-
-    /**
-     * Setter for skype.<p>
-     */
-    public void setSkype(String skype) {
-        this.skype = skype;
-    }
-
-    /**
      * Getter for ssnNumber.<p>
      */
     public String getSsnNumber() {
@@ -1240,184 +666,758 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for tango.<p>
+     * Getter for xxxAccountDomain.<p>
      */
-    public String getTango() {
-        return tango;
+    public String getXxxAccountDomain() {
+        return xxxAccountDomain;
     }
 
     /**
-     * Setter for tango.<p>
+     * Setter for xxxAccountDomain.<p>
      */
-    public void setTango(String tango) {
-        this.tango = tango;
+    public void setXxxAccountDomain(String xxxAccountDomain) {
+        this.xxxAccountDomain = xxxAccountDomain;
     }
 
     /**
-     * Getter for taxIdCountry.<p>
+     * Getter for xxxAccountNumber.<p>
      */
-    public String getTaxIdCountry() {
-        return taxIdCountry;
+    public String getXxxAccountNumber() {
+        return xxxAccountNumber;
     }
 
     /**
-     * Setter for taxIdCountry.<p>
+     * Setter for xxxAccountNumber.<p>
      */
-    public void setTaxIdCountry(String taxIdCountry) {
-        this.taxIdCountry = taxIdCountry;
+    public void setXxxAccountNumber(String xxxAccountNumber) {
+        this.xxxAccountNumber = xxxAccountNumber;
     }
 
     /**
-     * Getter for taxIdNumber.<p>
+     * Getter for xxxAddrFromDate.<p>
      */
-    public String getTaxIdNumber() {
-        return taxIdNumber;
+    public String getXxxAddrFromDate() {
+        return xxxAddrFromDate;
     }
 
     /**
-     * Setter for taxIdNumber.<p>
+     * Setter for xxxAddrFromDate.<p>
      */
-    public void setTaxIdNumber(String taxIdNumber) {
-        this.taxIdNumber = taxIdNumber;
+    public void setXxxAddrFromDate(String xxxAddrFromDate) {
+        this.xxxAddrFromDate = xxxAddrFromDate;
     }
 
     /**
-     * Getter for taxIdType.<p>
+     * Getter for xxxAddrLine2.<p>
      */
-    public String getTaxIdType() {
-        return taxIdType;
+    public String getXxxAddrLine2() {
+        return xxxAddrLine2;
     }
 
     /**
-     * Setter for taxIdType.<p>
+     * Setter for xxxAddrLine2.<p>
      */
-    public void setTaxIdType(String taxIdType) {
-        this.taxIdType = taxIdType;
+    public void setXxxAddrLine2(String xxxAddrLine2) {
+        this.xxxAddrLine2 = xxxAddrLine2;
     }
 
     /**
-     * Getter for telegram.<p>
+     * Getter for xxxAddrLine3.<p>
      */
-    public String getTelegram() {
-        return telegram;
+    public String getXxxAddrLine3() {
+        return xxxAddrLine3;
     }
 
     /**
-     * Setter for telegram.<p>
+     * Setter for xxxAddrLine3.<p>
      */
-    public void setTelegram(String telegram) {
-        this.telegram = telegram;
+    public void setXxxAddrLine3(String xxxAddrLine3) {
+        this.xxxAddrLine3 = xxxAddrLine3;
     }
 
     /**
-     * Getter for trustedIdNumber.<p>
+     * Getter for xxxAddrLine4.<p>
      */
-    public String getTrustedIdNumber() {
-        return trustedIdNumber;
+    public String getXxxAddrLine4() {
+        return xxxAddrLine4;
     }
 
     /**
-     * Setter for trustedIdNumber.<p>
+     * Setter for xxxAddrLine4.<p>
      */
-    public void setTrustedIdNumber(String trustedIdNumber) {
-        this.trustedIdNumber = trustedIdNumber;
+    public void setXxxAddrLine4(String xxxAddrLine4) {
+        this.xxxAddrLine4 = xxxAddrLine4;
     }
 
     /**
-     * Getter for trustedIdType.<p>
+     * Getter for xxxAddrLine5.<p>
      */
-    public String getTrustedIdType() {
-        return trustedIdType;
+    public String getXxxAddrLine5() {
+        return xxxAddrLine5;
     }
 
     /**
-     * Setter for trustedIdType.<p>
+     * Setter for xxxAddrLine5.<p>
      */
-    public void setTrustedIdType(String trustedIdType) {
-        this.trustedIdType = trustedIdType;
+    public void setXxxAddrLine5(String xxxAddrLine5) {
+        this.xxxAddrLine5 = xxxAddrLine5;
     }
 
     /**
-     * Getter for twitter.<p>
+     * Getter for xxxAddrLine6.<p>
      */
-    public String getTwitter() {
-        return twitter;
+    public String getXxxAddrLine6() {
+        return xxxAddrLine6;
     }
 
     /**
-     * Setter for twitter.<p>
+     * Setter for xxxAddrLine6.<p>
      */
-    public void setTwitter(String twitter) {
-        this.twitter = twitter;
+    public void setXxxAddrLine6(String xxxAddrLine6) {
+        this.xxxAddrLine6 = xxxAddrLine6;
     }
 
     /**
-     * Getter for viber.<p>
+     * Getter for xxxAddrThruDate.<p>
      */
-    public String getViber() {
-        return viber;
+    public String getXxxAddrThruDate() {
+        return xxxAddrThruDate;
     }
 
     /**
-     * Setter for viber.<p>
+     * Setter for xxxAddrThruDate.<p>
      */
-    public void setViber(String viber) {
-        this.viber = viber;
+    public void setXxxAddrThruDate(String xxxAddrThruDate) {
+        this.xxxAddrThruDate = xxxAddrThruDate;
     }
 
     /**
-     * Getter for websiteAddress.<p>
+     * Getter for xxxAddrType.<p>
      */
-    public String getWebsiteAddress() {
-        return websiteAddress;
+    public String getXxxAddrType() {
+        return xxxAddrType;
     }
 
     /**
-     * Setter for websiteAddress.<p>
+     * Setter for xxxAddrType.<p>
      */
-    public void setWebsiteAddress(String websiteAddress) {
-        this.websiteAddress = websiteAddress;
+    public void setXxxAddrType(String xxxAddrType) {
+        this.xxxAddrType = xxxAddrType;
     }
 
     /**
-     * Getter for wechat.<p>
+     * Getter for xxxCitizenship.<p>
      */
-    public String getWechat() {
-        return wechat;
+    public String getXxxCitizenship() {
+        return xxxCitizenship;
     }
 
     /**
-     * Setter for wechat.<p>
+     * Setter for xxxCitizenship.<p>
      */
-    public void setWechat(String wechat) {
-        this.wechat = wechat;
+    public void setXxxCitizenship(String xxxCitizenship) {
+        this.xxxCitizenship = xxxCitizenship;
     }
 
     /**
-     * Getter for whatsapp.<p>
+     * Getter for xxxDateOfDeath.<p>
      */
-    public String getWhatsapp() {
-        return whatsapp;
+    public String getXxxDateOfDeath() {
+        return xxxDateOfDeath;
     }
 
     /**
-     * Setter for whatsapp.<p>
+     * Setter for xxxDateOfDeath.<p>
      */
-    public void setWhatsapp(String whatsapp) {
-        this.whatsapp = whatsapp;
+    public void setXxxDateOfDeath(String xxxDateOfDeath) {
+        this.xxxDateOfDeath = xxxDateOfDeath;
     }
 
     /**
-     * Getter for zoomroom.<p>
+     * Getter for xxxDunsNumber.<p>
      */
-    public String getZoomroom() {
-        return zoomroom;
+    public String getXxxDunsNumber() {
+        return xxxDunsNumber;
     }
 
     /**
-     * Setter for zoomroom.<p>
+     * Setter for xxxDunsNumber.<p>
      */
-    public void setZoomroom(String zoomroom) {
-        this.zoomroom = zoomroom;
+    public void setXxxDunsNumber(String xxxDunsNumber) {
+        this.xxxDunsNumber = xxxDunsNumber;
+    }
+
+    /**
+     * Getter for xxxEmployer.<p>
+     */
+    public String getXxxEmployer() {
+        return xxxEmployer;
+    }
+
+    /**
+     * Setter for xxxEmployer.<p>
+     */
+    public void setXxxEmployer(String xxxEmployer) {
+        this.xxxEmployer = xxxEmployer;
+    }
+
+    /**
+     * Getter for xxxFacebook.<p>
+     */
+    public String getXxxFacebook() {
+        return xxxFacebook;
+    }
+
+    /**
+     * Setter for xxxFacebook.<p>
+     */
+    public void setXxxFacebook(String xxxFacebook) {
+        this.xxxFacebook = xxxFacebook;
+    }
+
+    /**
+     * Getter for xxxGroupAssnIdNumber.<p>
+     */
+    public String getXxxGroupAssnIdNumber() {
+        return xxxGroupAssnIdNumber;
+    }
+
+    /**
+     * Setter for xxxGroupAssnIdNumber.<p>
+     */
+    public void setXxxGroupAssnIdNumber(String xxxGroupAssnIdNumber) {
+        this.xxxGroupAssnIdNumber = xxxGroupAssnIdNumber;
+    }
+
+    /**
+     * Getter for xxxGroupAssnIdType.<p>
+     */
+    public String getXxxGroupAssnIdType() {
+        return xxxGroupAssnIdType;
+    }
+
+    /**
+     * Setter for xxxGroupAssnIdType.<p>
+     */
+    public void setXxxGroupAssnIdType(String xxxGroupAssnIdType) {
+        this.xxxGroupAssnIdType = xxxGroupAssnIdType;
+    }
+
+    /**
+     * Getter for xxxGroupAssociationOrgName.<p>
+     */
+    public String getXxxGroupAssociationOrgName() {
+        return xxxGroupAssociationOrgName;
+    }
+
+    /**
+     * Setter for xxxGroupAssociationOrgName.<p>
+     */
+    public void setXxxGroupAssociationOrgName(String xxxGroupAssociationOrgName) {
+        this.xxxGroupAssociationOrgName = xxxGroupAssociationOrgName;
+    }
+
+    /**
+     * Getter for xxxGroupAssociationType.<p>
+     */
+    public String getXxxGroupAssociationType() {
+        return xxxGroupAssociationType;
+    }
+
+    /**
+     * Setter for xxxGroupAssociationType.<p>
+     */
+    public void setXxxGroupAssociationType(String xxxGroupAssociationType) {
+        this.xxxGroupAssociationType = xxxGroupAssociationType;
+    }
+
+    /**
+     * Getter for xxxInstagram.<p>
+     */
+    public String getXxxInstagram() {
+        return xxxInstagram;
+    }
+
+    /**
+     * Setter for xxxInstagram.<p>
+     */
+    public void setXxxInstagram(String xxxInstagram) {
+        this.xxxInstagram = xxxInstagram;
+    }
+
+    /**
+     * Getter for xxxLeiNumber.<p>
+     */
+    public String getXxxLeiNumber() {
+        return xxxLeiNumber;
+    }
+
+    /**
+     * Setter for xxxLeiNumber.<p>
+     */
+    public void setXxxLeiNumber(String xxxLeiNumber) {
+        this.xxxLeiNumber = xxxLeiNumber;
+    }
+
+    /**
+     * Getter for xxxLinkedin.<p>
+     */
+    public String getXxxLinkedin() {
+        return xxxLinkedin;
+    }
+
+    /**
+     * Setter for xxxLinkedin.<p>
+     */
+    public void setXxxLinkedin(String xxxLinkedin) {
+        this.xxxLinkedin = xxxLinkedin;
+    }
+
+    /**
+     * Getter for xxxNameFirst.<p>
+     */
+    public String getXxxNameFirst() {
+        return xxxNameFirst;
+    }
+
+    /**
+     * Setter for xxxNameFirst.<p>
+     */
+    public void setXxxNameFirst(String xxxNameFirst) {
+        this.xxxNameFirst = xxxNameFirst;
+    }
+
+    /**
+     * Getter for xxxNameLast.<p>
+     */
+    public String getXxxNameLast() {
+        return xxxNameLast;
+    }
+
+    /**
+     * Setter for xxxNameLast.<p>
+     */
+    public void setXxxNameLast(String xxxNameLast) {
+        this.xxxNameLast = xxxNameLast;
+    }
+
+    /**
+     * Getter for xxxNameOrg.<p>
+     */
+    public String getXxxNameOrg() {
+        return xxxNameOrg;
+    }
+
+    /**
+     * Setter for xxxNameOrg.<p>
+     */
+    public void setXxxNameOrg(String xxxNameOrg) {
+        this.xxxNameOrg = xxxNameOrg;
+    }
+
+    /**
+     * Getter for xxxNamePrefix.<p>
+     */
+    public String getXxxNamePrefix() {
+        return xxxNamePrefix;
+    }
+
+    /**
+     * Setter for xxxNamePrefix.<p>
+     */
+    public void setXxxNamePrefix(String xxxNamePrefix) {
+        this.xxxNamePrefix = xxxNamePrefix;
+    }
+
+    /**
+     * Getter for xxxNameSuffix.<p>
+     */
+    public String getXxxNameSuffix() {
+        return xxxNameSuffix;
+    }
+
+    /**
+     * Setter for xxxNameSuffix.<p>
+     */
+    public void setXxxNameSuffix(String xxxNameSuffix) {
+        this.xxxNameSuffix = xxxNameSuffix;
+    }
+
+    /**
+     * Getter for xxxNameType.<p>
+     */
+    public String getXxxNameType() {
+        return xxxNameType;
+    }
+
+    /**
+     * Setter for xxxNameType.<p>
+     */
+    public void setXxxNameType(String xxxNameType) {
+        this.xxxNameType = xxxNameType;
+    }
+
+    /**
+     * Getter for xxxNationality.<p>
+     */
+    public String getXxxNationality() {
+        return xxxNationality;
+    }
+
+    /**
+     * Setter for xxxNationality.<p>
+     */
+    public void setXxxNationality(String xxxNationality) {
+        this.xxxNationality = xxxNationality;
+    }
+
+    /**
+     * Getter for xxxNpiNumber.<p>
+     */
+    public String getXxxNpiNumber() {
+        return xxxNpiNumber;
+    }
+
+    /**
+     * Setter for xxxNpiNumber.<p>
+     */
+    public void setXxxNpiNumber(String xxxNpiNumber) {
+        this.xxxNpiNumber = xxxNpiNumber;
+    }
+
+    /**
+     * Getter for xxxOtherIdCountry.<p>
+     */
+    public String getXxxOtherIdCountry() {
+        return xxxOtherIdCountry;
+    }
+
+    /**
+     * Setter for xxxOtherIdCountry.<p>
+     */
+    public void setXxxOtherIdCountry(String xxxOtherIdCountry) {
+        this.xxxOtherIdCountry = xxxOtherIdCountry;
+    }
+
+    /**
+     * Getter for xxxOtherIdNumber.<p>
+     */
+    public String getXxxOtherIdNumber() {
+        return xxxOtherIdNumber;
+    }
+
+    /**
+     * Setter for xxxOtherIdNumber.<p>
+     */
+    public void setXxxOtherIdNumber(String xxxOtherIdNumber) {
+        this.xxxOtherIdNumber = xxxOtherIdNumber;
+    }
+
+    /**
+     * Getter for xxxOtherIdType.<p>
+     */
+    public String getXxxOtherIdType() {
+        return xxxOtherIdType;
+    }
+
+    /**
+     * Setter for xxxOtherIdType.<p>
+     */
+    public void setXxxOtherIdType(String xxxOtherIdType) {
+        this.xxxOtherIdType = xxxOtherIdType;
+    }
+
+    /**
+     * Getter for xxxPhoneFromDate.<p>
+     */
+    public String getXxxPhoneFromDate() {
+        return xxxPhoneFromDate;
+    }
+
+    /**
+     * Setter for xxxPhoneFromDate.<p>
+     */
+    public void setXxxPhoneFromDate(String xxxPhoneFromDate) {
+        this.xxxPhoneFromDate = xxxPhoneFromDate;
+    }
+
+    /**
+     * Getter for xxxPhoneThruDate.<p>
+     */
+    public String getXxxPhoneThruDate() {
+        return xxxPhoneThruDate;
+    }
+
+    /**
+     * Setter for xxxPhoneThruDate.<p>
+     */
+    public void setXxxPhoneThruDate(String xxxPhoneThruDate) {
+        this.xxxPhoneThruDate = xxxPhoneThruDate;
+    }
+
+    /**
+     * Getter for xxxPhoneType.<p>
+     */
+    public String getXxxPhoneType() {
+        return xxxPhoneType;
+    }
+
+    /**
+     * Setter for xxxPhoneType.<p>
+     */
+    public void setXxxPhoneType(String xxxPhoneType) {
+        this.xxxPhoneType = xxxPhoneType;
+    }
+
+    /**
+     * Getter for xxxPlaceOfBirth.<p>
+     */
+    public String getXxxPlaceOfBirth() {
+        return xxxPlaceOfBirth;
+    }
+
+    /**
+     * Setter for xxxPlaceOfBirth.<p>
+     */
+    public void setXxxPlaceOfBirth(String xxxPlaceOfBirth) {
+        this.xxxPlaceOfBirth = xxxPlaceOfBirth;
+    }
+
+    /**
+     * Getter for xxxRegistrationCountry.<p>
+     */
+    public String getXxxRegistrationCountry() {
+        return xxxRegistrationCountry;
+    }
+
+    /**
+     * Setter for xxxRegistrationCountry.<p>
+     */
+    public void setXxxRegistrationCountry(String xxxRegistrationCountry) {
+        this.xxxRegistrationCountry = xxxRegistrationCountry;
+    }
+
+    /**
+     * Getter for xxxRegistrationDate.<p>
+     */
+    public String getXxxRegistrationDate() {
+        return xxxRegistrationDate;
+    }
+
+    /**
+     * Setter for xxxRegistrationDate.<p>
+     */
+    public void setXxxRegistrationDate(String xxxRegistrationDate) {
+        this.xxxRegistrationDate = xxxRegistrationDate;
+    }
+
+    /**
+     * Getter for xxxSignal.<p>
+     */
+    public String getXxxSignal() {
+        return xxxSignal;
+    }
+
+    /**
+     * Setter for xxxSignal.<p>
+     */
+    public void setXxxSignal(String xxxSignal) {
+        this.xxxSignal = xxxSignal;
+    }
+
+    /**
+     * Getter for xxxSkype.<p>
+     */
+    public String getXxxSkype() {
+        return xxxSkype;
+    }
+
+    /**
+     * Setter for xxxSkype.<p>
+     */
+    public void setXxxSkype(String xxxSkype) {
+        this.xxxSkype = xxxSkype;
+    }
+
+    /**
+     * Getter for xxxTango.<p>
+     */
+    public String getXxxTango() {
+        return xxxTango;
+    }
+
+    /**
+     * Setter for xxxTango.<p>
+     */
+    public void setXxxTango(String xxxTango) {
+        this.xxxTango = xxxTango;
+    }
+
+    /**
+     * Getter for xxxTaxIdCountry.<p>
+     */
+    public String getXxxTaxIdCountry() {
+        return xxxTaxIdCountry;
+    }
+
+    /**
+     * Setter for xxxTaxIdCountry.<p>
+     */
+    public void setXxxTaxIdCountry(String xxxTaxIdCountry) {
+        this.xxxTaxIdCountry = xxxTaxIdCountry;
+    }
+
+    /**
+     * Getter for xxxTaxIdNumber.<p>
+     */
+    public String getXxxTaxIdNumber() {
+        return xxxTaxIdNumber;
+    }
+
+    /**
+     * Setter for xxxTaxIdNumber.<p>
+     */
+    public void setXxxTaxIdNumber(String xxxTaxIdNumber) {
+        this.xxxTaxIdNumber = xxxTaxIdNumber;
+    }
+
+    /**
+     * Getter for xxxTaxIdType.<p>
+     */
+    public String getXxxTaxIdType() {
+        return xxxTaxIdType;
+    }
+
+    /**
+     * Setter for xxxTaxIdType.<p>
+     */
+    public void setXxxTaxIdType(String xxxTaxIdType) {
+        this.xxxTaxIdType = xxxTaxIdType;
+    }
+
+    /**
+     * Getter for xxxTelegram.<p>
+     */
+    public String getXxxTelegram() {
+        return xxxTelegram;
+    }
+
+    /**
+     * Setter for xxxTelegram.<p>
+     */
+    public void setXxxTelegram(String xxxTelegram) {
+        this.xxxTelegram = xxxTelegram;
+    }
+
+    /**
+     * Getter for xxxTrustedIdNumber.<p>
+     */
+    public String getXxxTrustedIdNumber() {
+        return xxxTrustedIdNumber;
+    }
+
+    /**
+     * Setter for xxxTrustedIdNumber.<p>
+     */
+    public void setXxxTrustedIdNumber(String xxxTrustedIdNumber) {
+        this.xxxTrustedIdNumber = xxxTrustedIdNumber;
+    }
+
+    /**
+     * Getter for xxxTrustedIdType.<p>
+     */
+    public String getXxxTrustedIdType() {
+        return xxxTrustedIdType;
+    }
+
+    /**
+     * Setter for xxxTrustedIdType.<p>
+     */
+    public void setXxxTrustedIdType(String xxxTrustedIdType) {
+        this.xxxTrustedIdType = xxxTrustedIdType;
+    }
+
+    /**
+     * Getter for xxxTwitter.<p>
+     */
+    public String getXxxTwitter() {
+        return xxxTwitter;
+    }
+
+    /**
+     * Setter for xxxTwitter.<p>
+     */
+    public void setXxxTwitter(String xxxTwitter) {
+        this.xxxTwitter = xxxTwitter;
+    }
+
+    /**
+     * Getter for xxxViber.<p>
+     */
+    public String getXxxViber() {
+        return xxxViber;
+    }
+
+    /**
+     * Setter for xxxViber.<p>
+     */
+    public void setXxxViber(String xxxViber) {
+        this.xxxViber = xxxViber;
+    }
+
+    /**
+     * Getter for xxxWebsiteAddress.<p>
+     */
+    public String getXxxWebsiteAddress() {
+        return xxxWebsiteAddress;
+    }
+
+    /**
+     * Setter for xxxWebsiteAddress.<p>
+     */
+    public void setXxxWebsiteAddress(String xxxWebsiteAddress) {
+        this.xxxWebsiteAddress = xxxWebsiteAddress;
+    }
+
+    /**
+     * Getter for xxxWechat.<p>
+     */
+    public String getXxxWechat() {
+        return xxxWechat;
+    }
+
+    /**
+     * Setter for xxxWechat.<p>
+     */
+    public void setXxxWechat(String xxxWechat) {
+        this.xxxWechat = xxxWechat;
+    }
+
+    /**
+     * Getter for xxxWhatsapp.<p>
+     */
+    public String getXxxWhatsapp() {
+        return xxxWhatsapp;
+    }
+
+    /**
+     * Setter for xxxWhatsapp.<p>
+     */
+    public void setXxxWhatsapp(String xxxWhatsapp) {
+        this.xxxWhatsapp = xxxWhatsapp;
+    }
+
+    /**
+     * Getter for xxxZoomroom.<p>
+     */
+    public String getXxxZoomroom() {
+        return xxxZoomroom;
+    }
+
+    /**
+     * Setter for xxxZoomroom.<p>
+     */
+    public void setXxxZoomroom(String xxxZoomroom) {
+        this.xxxZoomroom = xxxZoomroom;
     }
 }

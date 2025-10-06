@@ -16,9 +16,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
-        [JsonPropertyName("ERRULE_DESC")]
-        public string ErruleDesc { get; set; }
-
         [JsonPropertyName("ERRULE_ID")]
         public int ErruleId { get; set; }
 
@@ -28,9 +25,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("QUAL_ERFRAG_CODE")]
         public string QualErfragCode { get; set; }
 
-        [JsonPropertyName("REF_SCORE")]
-        public int RefScore { get; set; }
-
         [JsonPropertyName("RELATE")]
         public string Relate { get; set; }
 
@@ -39,5 +33,11 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("RTYPE_ID")]
         public int RtypeId { get; set; }
+
+        [JsonPropertyName("XXX_ERRULE_DESC")]
+        public string XxxErruleDesc { get; set; }
+
+        [JsonPropertyName("XXX_REF_SCORE")]
+        public int XxxRefScore { get; set; }
     }
 }

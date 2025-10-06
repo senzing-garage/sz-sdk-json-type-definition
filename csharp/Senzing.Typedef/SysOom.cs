@@ -7,20 +7,8 @@ namespace Senzing.Typedef
 {
     public class SysOom
     {
-        [JsonPropertyName("FELEM_ID")]
-        public int FelemId { get; set; }
-
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
-
-        [JsonPropertyName("LENS_ID")]
-        public int LensId { get; set; }
-
-        [JsonPropertyName("LIB_FEAT_ID")]
-        public int LibFeatId { get; set; }
-
-        [JsonPropertyName("LIB_FELEM_ID")]
-        public int LibFelemId { get; set; }
 
         [JsonPropertyName("NEXT_THRESH")]
         public int NextThresh { get; set; }
@@ -36,5 +24,17 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("THRESH1_OOM")]
         public int Thresh1Oom { get; set; }
+
+        [JsonPropertyName("XXX_FELEM_ID")]
+        public int XxxFelemId { get; set; }
+
+        [JsonPropertyName("XXX_LENS_ID")]
+        public int XxxLensId { get; set; }
+
+        [JsonPropertyName("XXX_LIB_FEAT_ID")]
+        public int XxxLibFeatId { get; set; }
+
+        [JsonPropertyName("XXX_LIB_FELEM_ID")]
+        public int XxxLibFelemId { get; set; }
     }
 }

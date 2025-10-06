@@ -22,47 +22,8 @@ namespace Senzing.Typedef
         [JsonPropertyName("ENTITY_NAME")]
         public string EntityName { get; set; }
 
-        /// <summary>
-        /// Identifier of the entity resolution rule that was triggered.
-        /// </summary>
-        [JsonPropertyName("ERRULE_CODE")]
-        public string ErruleCode { get; set; }
-
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
-
-        [JsonPropertyName("FEATURE_IDS")]
-        public IList<FeatureId> FeatureIds { get; set; }
-
-        /// <summary>
-        /// Indicates if this is an ambiguous relationship.
-        /// </summary>
-        [JsonPropertyName("IS_AMBIGUOUS")]
-        public int IsAmbiguous { get; set; }
-
-        /// <summary>
-        /// Indicates if this is a disclosed relationship.
-        /// </summary>
-        [JsonPropertyName("IS_DISCLOSED")]
-        public int IsDisclosed { get; set; }
-
-        [JsonPropertyName("LAST_SEEN_DT")]
-        public DateTimeOffset LastSeenDt { get; set; }
-
-        /// <summary>
-        /// Representation of matched source record features.
-        /// </summary>
-        [JsonPropertyName("MATCH_KEY")]
-        public string MatchKey { get; set; }
-
-        [JsonPropertyName("MATCH_LEVEL")]
-        public int MatchLevel { get; set; }
-
-        /// <summary>
-        /// The type of match that occurred for the record.
-        /// </summary>
-        [JsonPropertyName("MATCH_LEVEL_CODE")]
-        public string MatchLevelCode { get; set; }
 
         [JsonPropertyName("RECORDS")]
         public IList<Record> Records { get; set; }
@@ -76,5 +37,44 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("RECORD_TYPES")]
         public IList<string> RecordTypes { get; set; }
+
+        /// <summary>
+        /// Identifier of the entity resolution rule that was triggered.
+        /// </summary>
+        [JsonPropertyName("XXX_ERRULE_CODE")]
+        public string XxxErruleCode { get; set; }
+
+        [JsonPropertyName("XXX_FEATURE_IDS")]
+        public IList<FeatureId> XxxFeatureIds { get; set; }
+
+        /// <summary>
+        /// Indicates if this is an ambiguous relationship.
+        /// </summary>
+        [JsonPropertyName("XXX_IS_AMBIGUOUS")]
+        public int XxxIsAmbiguous { get; set; }
+
+        /// <summary>
+        /// Indicates if this is a disclosed relationship.
+        /// </summary>
+        [JsonPropertyName("XXX_IS_DISCLOSED")]
+        public int XxxIsDisclosed { get; set; }
+
+        [JsonPropertyName("XXX_LAST_SEEN_DT")]
+        public DateTimeOffset XxxLastSeenDt { get; set; }
+
+        /// <summary>
+        /// Representation of matched source record features.
+        /// </summary>
+        [JsonPropertyName("XXX_MATCH_KEY")]
+        public string XxxMatchKey { get; set; }
+
+        [JsonPropertyName("XXX_MATCH_LEVEL")]
+        public int XxxMatchLevel { get; set; }
+
+        /// <summary>
+        /// The type of match that occurred for the record.
+        /// </summary>
+        [JsonPropertyName("XXX_MATCH_LEVEL_CODE")]
+        public string XxxMatchLevelCode { get; set; }
     }
 }

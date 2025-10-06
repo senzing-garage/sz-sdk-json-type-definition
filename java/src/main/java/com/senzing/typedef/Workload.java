@@ -8,26 +8,29 @@ import java.util.Map;
 
 @JsonSerialize
 public class Workload {
+    @JsonProperty("XXX_contention")
+    private WorkloadContention xxxContention;
+
+    @JsonProperty("XXX_genericDetect")
+    private Fixme xxxGenericDetect;
+
+    @JsonProperty("XXX_redoTriggers")
+    private Map<String, Integer> xxxRedoTriggers;
+
     @JsonProperty("apiVersion")
     private String apiVersion;
 
     @JsonProperty("caches")
-    private Caches caches;
+    private WorkloadCaches caches;
 
     @JsonProperty("candidates")
-    private Candidates candidates;
-
-    @JsonProperty("contention")
-    private Contention contention;
+    private WorkloadCandidates candidates;
 
     @JsonProperty("datetimestamp")
     private String datetimestamp;
 
     @JsonProperty("expressedFeatures")
-    private ExpressedFeatures expressedFeatures;
-
-    @JsonProperty("genericDetect")
-    private Fixme genericDetect;
+    private WorkloadExpressedFeatures expressedFeatures;
 
     @JsonProperty("license")
     private License license;
@@ -36,33 +39,72 @@ public class Workload {
     private Integer loadedRecords;
 
     @JsonProperty("lockWaits")
-    private LockWaits lockWaits;
+    private WorkloadLockWaits lockWaits;
 
     @JsonProperty("processing")
-    private Processing processing;
-
-    @JsonProperty("redoTriggers")
-    private Map<String, Integer> redoTriggers;
+    private WorkloadProcessing processing;
 
     @JsonProperty("repairDiagnosis")
-    private RepairDiagnosis repairDiagnosis;
+    private WorkloadRepairDiagnosis repairDiagnosis;
 
     @JsonProperty("reresolve")
-    private Reresolve reresolve;
+    private WorkloadReresolve reresolve;
 
     @JsonProperty("scoring")
-    private Scoring scoring;
+    private WorkloadScoring scoring;
 
     @JsonProperty("systemResources")
-    private SystemResources systemResources;
+    private WorkloadSystemResources systemResources;
 
     @JsonProperty("threadState")
-    private ThreadState threadState;
+    private WorkloadThreadState threadState;
 
     @JsonProperty("unresolve")
-    private Unresolve unresolve;
+    private WorkloadUnresolve unresolve;
 
     public Workload() {
+    }
+
+    /**
+     * Getter for xxxContention.<p>
+     */
+    public WorkloadContention getXxxContention() {
+        return xxxContention;
+    }
+
+    /**
+     * Setter for xxxContention.<p>
+     */
+    public void setXxxContention(WorkloadContention xxxContention) {
+        this.xxxContention = xxxContention;
+    }
+
+    /**
+     * Getter for xxxGenericDetect.<p>
+     */
+    public Fixme getXxxGenericDetect() {
+        return xxxGenericDetect;
+    }
+
+    /**
+     * Setter for xxxGenericDetect.<p>
+     */
+    public void setXxxGenericDetect(Fixme xxxGenericDetect) {
+        this.xxxGenericDetect = xxxGenericDetect;
+    }
+
+    /**
+     * Getter for xxxRedoTriggers.<p>
+     */
+    public Map<String, Integer> getXxxRedoTriggers() {
+        return xxxRedoTriggers;
+    }
+
+    /**
+     * Setter for xxxRedoTriggers.<p>
+     */
+    public void setXxxRedoTriggers(Map<String, Integer> xxxRedoTriggers) {
+        this.xxxRedoTriggers = xxxRedoTriggers;
     }
 
     /**
@@ -82,43 +124,29 @@ public class Workload {
     /**
      * Getter for caches.<p>
      */
-    public Caches getCaches() {
+    public WorkloadCaches getCaches() {
         return caches;
     }
 
     /**
      * Setter for caches.<p>
      */
-    public void setCaches(Caches caches) {
+    public void setCaches(WorkloadCaches caches) {
         this.caches = caches;
     }
 
     /**
      * Getter for candidates.<p>
      */
-    public Candidates getCandidates() {
+    public WorkloadCandidates getCandidates() {
         return candidates;
     }
 
     /**
      * Setter for candidates.<p>
      */
-    public void setCandidates(Candidates candidates) {
+    public void setCandidates(WorkloadCandidates candidates) {
         this.candidates = candidates;
-    }
-
-    /**
-     * Getter for contention.<p>
-     */
-    public Contention getContention() {
-        return contention;
-    }
-
-    /**
-     * Setter for contention.<p>
-     */
-    public void setContention(Contention contention) {
-        this.contention = contention;
     }
 
     /**
@@ -138,29 +166,15 @@ public class Workload {
     /**
      * Getter for expressedFeatures.<p>
      */
-    public ExpressedFeatures getExpressedFeatures() {
+    public WorkloadExpressedFeatures getExpressedFeatures() {
         return expressedFeatures;
     }
 
     /**
      * Setter for expressedFeatures.<p>
      */
-    public void setExpressedFeatures(ExpressedFeatures expressedFeatures) {
+    public void setExpressedFeatures(WorkloadExpressedFeatures expressedFeatures) {
         this.expressedFeatures = expressedFeatures;
-    }
-
-    /**
-     * Getter for genericDetect.<p>
-     */
-    public Fixme getGenericDetect() {
-        return genericDetect;
-    }
-
-    /**
-     * Setter for genericDetect.<p>
-     */
-    public void setGenericDetect(Fixme genericDetect) {
-        this.genericDetect = genericDetect;
     }
 
     /**
@@ -194,126 +208,112 @@ public class Workload {
     /**
      * Getter for lockWaits.<p>
      */
-    public LockWaits getLockWaits() {
+    public WorkloadLockWaits getLockWaits() {
         return lockWaits;
     }
 
     /**
      * Setter for lockWaits.<p>
      */
-    public void setLockWaits(LockWaits lockWaits) {
+    public void setLockWaits(WorkloadLockWaits lockWaits) {
         this.lockWaits = lockWaits;
     }
 
     /**
      * Getter for processing.<p>
      */
-    public Processing getProcessing() {
+    public WorkloadProcessing getProcessing() {
         return processing;
     }
 
     /**
      * Setter for processing.<p>
      */
-    public void setProcessing(Processing processing) {
+    public void setProcessing(WorkloadProcessing processing) {
         this.processing = processing;
-    }
-
-    /**
-     * Getter for redoTriggers.<p>
-     */
-    public Map<String, Integer> getRedoTriggers() {
-        return redoTriggers;
-    }
-
-    /**
-     * Setter for redoTriggers.<p>
-     */
-    public void setRedoTriggers(Map<String, Integer> redoTriggers) {
-        this.redoTriggers = redoTriggers;
     }
 
     /**
      * Getter for repairDiagnosis.<p>
      */
-    public RepairDiagnosis getRepairDiagnosis() {
+    public WorkloadRepairDiagnosis getRepairDiagnosis() {
         return repairDiagnosis;
     }
 
     /**
      * Setter for repairDiagnosis.<p>
      */
-    public void setRepairDiagnosis(RepairDiagnosis repairDiagnosis) {
+    public void setRepairDiagnosis(WorkloadRepairDiagnosis repairDiagnosis) {
         this.repairDiagnosis = repairDiagnosis;
     }
 
     /**
      * Getter for reresolve.<p>
      */
-    public Reresolve getReresolve() {
+    public WorkloadReresolve getReresolve() {
         return reresolve;
     }
 
     /**
      * Setter for reresolve.<p>
      */
-    public void setReresolve(Reresolve reresolve) {
+    public void setReresolve(WorkloadReresolve reresolve) {
         this.reresolve = reresolve;
     }
 
     /**
      * Getter for scoring.<p>
      */
-    public Scoring getScoring() {
+    public WorkloadScoring getScoring() {
         return scoring;
     }
 
     /**
      * Setter for scoring.<p>
      */
-    public void setScoring(Scoring scoring) {
+    public void setScoring(WorkloadScoring scoring) {
         this.scoring = scoring;
     }
 
     /**
      * Getter for systemResources.<p>
      */
-    public SystemResources getSystemResources() {
+    public WorkloadSystemResources getSystemResources() {
         return systemResources;
     }
 
     /**
      * Setter for systemResources.<p>
      */
-    public void setSystemResources(SystemResources systemResources) {
+    public void setSystemResources(WorkloadSystemResources systemResources) {
         this.systemResources = systemResources;
     }
 
     /**
      * Getter for threadState.<p>
      */
-    public ThreadState getThreadState() {
+    public WorkloadThreadState getThreadState() {
         return threadState;
     }
 
     /**
      * Setter for threadState.<p>
      */
-    public void setThreadState(ThreadState threadState) {
+    public void setThreadState(WorkloadThreadState threadState) {
         this.threadState = threadState;
     }
 
     /**
      * Getter for unresolve.<p>
      */
-    public Unresolve getUnresolve() {
+    public WorkloadUnresolve getUnresolve() {
         return unresolve;
     }
 
     /**
      * Setter for unresolve.<p>
      */
-    public void setUnresolve(Unresolve unresolve) {
+    public void setUnresolve(WorkloadUnresolve unresolve) {
         this.unresolve = unresolve;
     }
 }
