@@ -368,7 +368,7 @@ if __name__ == "__main__":
     file_count = 0
     for test_file_name in test_file_names:
         file_count += 1
-        if file_count != 5:
+        if file_count != 9:
             continue
         title = Path(test_file_name).stem
         json_schema = SCHEMA.get(title)
