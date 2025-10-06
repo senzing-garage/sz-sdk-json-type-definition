@@ -993,7 +993,7 @@
                 }
             }
         },
-        "Caches": {
+        "WorkloadCaches": {
             "properties": {
                 "libFeatCacheHit": {
                     "type": "int32"
@@ -1040,7 +1040,7 @@
                 }
             }
         },
-        "Candidates": {
+        "WorkloadCandidates": {
             "properties": {
                 "candidateBuilders": {
                     "metadata": {
@@ -1145,7 +1145,7 @@
                 }
             }
         },
-        "Contention": {
+        "WorkloadContention": {
             "properties": {
                 "XXX_feature": {
                     "ref": "Fixme"
@@ -1158,7 +1158,7 @@
                 }
             }
         },
-        "CurrResources": {
+        "WorkloadCurrResources": {
             "properties": {
                 "activeThreads": {
                     "type": "int32"
@@ -1438,11 +1438,11 @@
                 }
             }
         },
-        "ExpressedFeatures": {
+        "WorkloadExpressedFeatures": {
             "properties": {
                 "calls": {
                     "elements": {
-                        "ref": "ExpressedFeaturesCall"
+                        "ref": "WorkloadExpressedFeaturesCall"
                     }
                 },
                 "created": {
@@ -1455,7 +1455,7 @@
                 }
             }
         },
-        "ExpressedFeaturesCall": {
+        "WorkloadExpressedFeaturesCall": {
             "properties": {
                 "EFCALL_ID": {
                     "type": "int32"
@@ -1915,7 +1915,7 @@
                 }
             }
         },
-        "InitResources": {
+        "WorkloadInitResources": {
             "properties": {
                 "availableMemory": {
                     "type": "string"
@@ -1985,10 +1985,10 @@
                 }
             }
         },
-        "LockWaits": {
+        "WorkloadLockWaits": {
             "properties": {
                 "refreshLocks": {
-                    "ref": "RefreshLocks"
+                    "ref": "WorkloadRefreshLocks"
                 }
             }
         },
@@ -2140,13 +2140,13 @@
             },
             "type": "string"
         },
-        "Processing": {
+        "WorkloadProcessing": {
             "properties": {
                 "addedRecords": {
                     "type": "int32"
                 },
                 "ambiguous": {
-                    "ref": "ProcessingAmbiguous"
+                    "ref": "WorkloadProcessingAmbiguous"
                 },
                 "batchAddedRecords": {
                     "type": "int32"
@@ -2155,7 +2155,7 @@
                     "type": "int32"
                 },
                 "details": {
-                    "ref": "ProcessingDetails"
+                    "ref": "WorkloadProcessingDetails"
                 },
                 "reevaluations": {
                     "type": "int32"
@@ -2165,7 +2165,7 @@
                 }
             }
         },
-        "ProcessingAmbiguous": {
+        "WorkloadProcessingAmbiguous": {
             "properties": {
                 "actualTest": {
                     "type": "int32"
@@ -2175,7 +2175,7 @@
                 }
             }
         },
-        "ProcessingDetails": {
+        "WorkloadProcessingDetails": {
             "properties": {
                 "addedRecords": {
                     "type": "int32"
@@ -2517,7 +2517,7 @@
                 }
             }
         },
-        "RefreshLocks": {
+        "WorkloadRefreshLocks": {
             "properties": {
                 "count": {
                     "type": "int32"
@@ -2718,7 +2718,7 @@
                 }
             }
         },
-        "RepairDiagnosis": {
+        "WorkloadRepairDiagnosis": {
             "properties": {
                 "types": {
                     "type": "int32"
@@ -2747,7 +2747,7 @@
                 }
             }
         },
-        "Reresolve": {
+        "WorkloadReresolve": {
             "properties": {
                 "XXX_newFeatureFTypes": {
                     "metadata": {
@@ -2764,11 +2764,11 @@
                     "ref": "Fixme"
                 },
                 "triggers": {
-                    "ref": "ReresolveTriggers"
+                    "ref": "WorkloadReresolveTriggers"
                 }
             }
         },
-        "ReresolveTriggers": {
+        "WorkloadReresolveTriggers": {
             "properties": {
                 "abortRetry": {
                     "type": "int32"
@@ -3091,7 +3091,7 @@
                 }
             }
         },
-        "Scoring": {
+        "WorkloadScoring": {
             "properties": {
                 "cacheHit": {
                     "metadata": {
@@ -3402,7 +3402,7 @@
                 }
             }
         },
-        "SystemLoad": {
+        "WorkloadSystemLoad": {
             "properties": {
                 "cpuIdle": {
                     "type": "string"
@@ -3418,16 +3418,16 @@
                 }
             }
         },
-        "SystemResources": {
+        "WorkloadSystemResources": {
             "properties": {
                 "currResources": {
-                    "ref": "CurrResources"
+                    "ref": "WorkloadCurrResources"
                 },
                 "initResources": {
-                    "ref": "InitResources"
+                    "ref": "WorkloadInitResources"
                 },
                 "systemLoad": {
-                    "ref": "SystemLoad"
+                    "ref": "WorkloadSystemLoad"
                 }
             }
         },
@@ -4218,7 +4218,7 @@
                 }
             }
         },
-        "ThreadState": {
+        "WorkloadThreadState": {
             "properties": {
                 "active": {
                     "type": "int32"
@@ -4281,20 +4281,20 @@
                 }
             }
         },
-        "Unresolve": {
+        "WorkloadUnresolve": {
             "properties": {
                 "abortedUnresolve": {
                     "type": "int32"
                 },
                 "triggers": {
-                    "ref": "UnresolveTriggers"
+                    "ref": "WorkloadUnresolveTriggers"
                 },
                 "unresolveTest": {
                     "type": "int32"
                 }
             }
         },
-        "UnresolveTriggers": {
+        "WorkloadUnresolveTriggers": {
             "properties": {
                 "ambiguousMultiResolve": {
                     "type": "int32"
@@ -4397,19 +4397,19 @@
                     "type": "string"
                 },
                 "caches": {
-                    "ref": "Caches"
+                    "ref": "WorkloadCaches"
                 },
                 "candidates": {
-                    "ref": "Candidates"
+                    "ref": "WorkloadCandidates"
                 },
                 "XXX_contention": {
-                    "ref": "Contention"
+                    "ref": "WorkloadContention"
                 },
                 "datetimestamp": {
                     "type": "string"
                 },
                 "expressedFeatures": {
-                    "ref": "ExpressedFeatures"
+                    "ref": "WorkloadExpressedFeatures"
                 },
                 "XXX_genericDetect": {
                     "ref": "Fixme"
@@ -4421,10 +4421,10 @@
                     "type": "int32"
                 },
                 "lockWaits": {
-                    "ref": "LockWaits"
+                    "ref": "WorkloadLockWaits"
                 },
                 "processing": {
-                    "ref": "Processing"
+                    "ref": "WorkloadProcessing"
                 },
                 "XXX_redoTriggers": {
                     "metadata": {
@@ -4435,22 +4435,22 @@
                     }
                 },
                 "repairDiagnosis": {
-                    "ref": "RepairDiagnosis"
+                    "ref": "WorkloadRepairDiagnosis"
                 },
                 "reresolve": {
-                    "ref": "Reresolve"
+                    "ref": "WorkloadReresolve"
                 },
                 "scoring": {
-                    "ref": "Scoring"
+                    "ref": "WorkloadScoring"
                 },
                 "systemResources": {
-                    "ref": "SystemResources"
+                    "ref": "WorkloadSystemResources"
                 },
                 "threadState": {
-                    "ref": "ThreadState"
+                    "ref": "WorkloadThreadState"
                 },
                 "unresolve": {
-                    "ref": "Unresolve"
+                    "ref": "WorkloadUnresolve"
                 }
             }
         }
