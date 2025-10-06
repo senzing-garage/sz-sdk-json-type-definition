@@ -973,28 +973,28 @@
         },
         "Caches": {
             "properties": {
-                "XXX_libFeatCacheHit": {
+                "libFeatCacheHit": {
                     "type": "int32"
                 },
-                "XXX_libFeatCacheMiss": {
+                "libFeatCacheMiss": {
                     "type": "int32"
                 },
-                "XXX_libFeatInsert": {
+                "libFeatInsert": {
                     "type": "int32"
                 },
-                "XXX_resFeatStatCacheHit": {
+                "resFeatStatCacheHit": {
                     "type": "int32"
                 },
-                "XXX_resFeatStatCacheMiss": {
+                "resFeatStatCacheMiss": {
                     "type": "int32"
                 },
-                "XXX_resFeatStatInsert": {
+                "resFeatStatInsert": {
                     "type": "int32"
                 },
-                "XXX_resFeatStatUpdateAttempt": {
+                "resFeatStatUpdateAttempt": {
                     "type": "int32"
                 },
-                "XXX_resFeatStatUpdateFail": {
+                "resFeatStatUpdateFail": {
                     "type": "int32"
                 }
             }
@@ -1020,7 +1020,7 @@
         },
         "Candidates": {
             "properties": {
-                "XXX_candidateBuilders": {
+                "candidateBuilders": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -1040,27 +1040,27 @@
         },
         "CompatibilityVersion": {
             "properties": {
-                "XXX_CONFIG_VERSION": {
+                "CONFIG_VERSION": {
                     "type": "string"
                 }
             }
         },
         "Config": {
             "properties": {
-                "XXX_CONFIG_COMMENTS": {
+                "CONFIG_COMMENTS": {
                     "metadata": {
                         "description": "A user-provided description of the configuration."
                     },
                     "type": "string"
                 },
-                "XXX_CONFIG_ID": {
+                "CONFIG_ID": {
                     "metadata": {
                         "description": "An internally-generated unique identifier of the configuration.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_SYS_CREATE_DT": {
+                "SYS_CREATE_DT": {
                     "metadata": {
                         "description": "The timestamp of the original registration of the configuration."
                     },
@@ -1138,16 +1138,16 @@
         },
         "CurrResources": {
             "properties": {
-                "XXX_activeThreads": {
+                "activeThreads": {
                     "type": "int32"
                 },
-                "XXX_availableMemory": {
+                "availableMemory": {
                     "type": "string"
                 },
-                "XXX_processMemory": {
+                "processMemory": {
                     "type": "string"
                 },
-                "XXX_workerThreads": {
+                "workerThreads": {
                     "type": "int32"
                 }
             }
@@ -1418,12 +1418,12 @@
         },
         "ExpressedFeatures": {
             "properties": {
-                "XXX_calls": {
+                "calls": {
                     "elements": {
                         "ref": "ExpressedFeaturesCall"
                     }
                 },
-                "XXX_created": {
+                "created": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -1435,13 +1435,13 @@
         },
         "ExpressedFeaturesCall": {
             "properties": {
-                "XXX_EFCALL_ID": {
+                "EFCALL_ID": {
                     "type": "int32"
                 },
-                "XXX_EFUNC_CODE": {
+                "EFUNC_CODE": {
                     "type": "string"
                 },
-                "XXX_numCalls": {
+                "numCalls": {
                     "type": "int32"
                 }
             }
@@ -1895,16 +1895,16 @@
         },
         "InitResources": {
             "properties": {
-                "XXX_availableMemory": {
+                "availableMemory": {
                     "type": "string"
                 },
-                "XXX_logicalCores": {
+                "logicalCores": {
                     "type": "int32"
                 },
                 "XXX_physicalCores": {
                     "type": "int32"
                 },
-                "XXX_totalMemory": {
+                "totalMemory": {
                     "type": "string"
                 }
             }
@@ -1952,20 +1952,20 @@
         },
         "License": {
             "properties": {
-                "XXX_dsrLimit": {
+                "dsrLimit": {
                     "type": "string"
                 },
-                "XXX_status": {
+                "status": {
                     "type": "string"
                 },
-                "XXX_type": {
+                "type": {
                     "type": "string"
                 }
             }
         },
         "LockWaits": {
             "properties": {
-                "XXX_refreshLocks": {
+                "refreshLocks": {
                     "ref": "RefreshLocks"
                 }
             }
@@ -2137,75 +2137,75 @@
         },
         "Processing": {
             "properties": {
-                "XXX_addedRecords": {
+                "addedRecords": {
                     "type": "int32"
                 },
-                "XXX_ambiguous": {
+                "ambiguous": {
                     "ref": "ProcessingAmbiguous"
                 },
-                "XXX_batchAddedRecords": {
+                "batchAddedRecords": {
                     "type": "int32"
                 },
-                "XXX_deletedRecords": {
+                "deletedRecords": {
                     "type": "int32"
                 },
-                "XXX_details": {
+                "details": {
                     "ref": "ProcessingDetails"
                 },
-                "XXX_reevaluations": {
+                "reevaluations": {
                     "type": "int32"
                 },
-                "XXX_repairedEntities": {
+                "repairedEntities": {
                     "type": "int32"
                 }
             }
         },
         "ProcessingAmbiguous": {
             "properties": {
-                "XXX_actualTest": {
+                "actualTest": {
                     "type": "int32"
                 },
-                "XXX_cachedTest": {
+                "cachedTest": {
                     "type": "int32"
                 }
             }
         },
         "ProcessingDetails": {
             "properties": {
-                "XXX_addedRecords": {
+                "addedRecords": {
                     "type": "int32"
                 },
-                "XXX_candidates": {
+                "candidates": {
                     "type": "int32"
                 },
-                "XXX_changeDeletes": {
+                "changeDeletes": {
                     "type": "int32"
                 },
-                "XXX_duration": {
+                "duration": {
                     "type": "int32"
                 },
-                "XXX_filteredObsFeat": {
+                "filteredObsFeat": {
                     "type": "int32"
                 },
-                "XXX_newObsEnt": {
+                "newObsEnt": {
                     "type": "int32"
                 },
-                "XXX_obsEntHashDiff": {
+                "obsEntHashDiff": {
                     "type": "int32"
                 },
-                "XXX_obsEntHashSame": {
+                "obsEntHashSame": {
                     "type": "int32"
                 },
-                "XXX_optimizedOut": {
+                "optimizedOut": {
                     "type": "int32"
                 },
-                "XXX_optimizedOutSkipped": {
+                "optimizedOutSkipped": {
                     "type": "int32"
                 },
-                "XXX_partiallyResolved": {
+                "partiallyResolved": {
                     "type": "int32"
                 },
-                "XXX_retries": {
+                "retries": {
                     "type": "int32"
                 }
             }
@@ -2514,13 +2514,13 @@
         },
         "RefreshLocks": {
             "properties": {
-                "XXX_count": {
+                "count": {
                     "type": "int32"
                 },
-                "XXX_maxMS": {
+                "maxMS": {
                     "type": "int32"
                 },
-                "XXX_totalMS": {
+                "totalMS": {
                     "type": "int32"
                 }
             }
@@ -2715,7 +2715,7 @@
         },
         "RepairDiagnosis": {
             "properties": {
-                "XXX_types": {
+                "types": {
                     "type": "int32"
                 }
             }
@@ -2758,26 +2758,26 @@
                 "XXX_suppressedScoredFeatureTypeForReresolve": {
                     "ref": "Fixme"
                 },
-                "XXX_triggers": {
+                "triggers": {
                     "ref": "ReresolveTriggers"
                 }
             }
         },
         "ReresolveTriggers": {
             "properties": {
-                "XXX_abortRetry": {
+                "abortRetry": {
                     "type": "int32"
                 },
-                "XXX_multipleResolvableCandidates": {
+                "multipleResolvableCandidates": {
                     "type": "int32"
                 },
-                "XXX_resolveNewFeatures": {
+                "resolveNewFeatures": {
                     "type": "int32"
                 },
-                "XXX_skipped": {
+                "skipped": {
                     "type": "int32"
                 },
-                "XXX_unresolveMovement": {
+                "unresolveMovement": {
                     "type": "int32"
                 }
             }
@@ -3075,20 +3075,20 @@
         },
         "SchemaVersion": {
             "properties": {
-                "XXX_ENGINE_SCHEMA_VERSION": {
+                "ENGINE_SCHEMA_VERSION": {
                     "type": "string"
                 },
-                "XXX_MAXIMUM_REQUIRED_SCHEMA_VERSION": {
+                "MAXIMUM_REQUIRED_SCHEMA_VERSION": {
                     "type": "string"
                 },
-                "XXX_MINIMUM_REQUIRED_SCHEMA_VERSION": {
+                "MINIMUM_REQUIRED_SCHEMA_VERSION": {
                     "type": "string"
                 }
             }
         },
         "Scoring": {
             "properties": {
-                "XXX_cacheHit": {
+                "cacheHit": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -3096,7 +3096,7 @@
                         "type": "int32"
                     }
                 },
-                "XXX_cacheMiss": {
+                "cacheMiss": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -3104,7 +3104,7 @@
                         "type": "int32"
                     }
                 },
-                "XXX_scoredPairs": {
+                "scoredPairs": {
                     "metadata": {
                         "goType": "map[string]int64"
                     },
@@ -3112,7 +3112,7 @@
                         "type": "int32"
                     }
                 },
-                "XXX_suppressedDisclosedRelationshipDomainCount": {
+                "suppressedDisclosedRelationshipDomainCount": {
                     "type": "int32"
                 },
                 "XXX_suppressedScoredFeatureType": {
@@ -3421,29 +3421,29 @@
         },
         "SystemLoad": {
             "properties": {
-                "XXX_cpuIdle": {
+                "cpuIdle": {
                     "type": "string"
                 },
-                "XXX_cpuSystem": {
+                "cpuSystem": {
                     "type": "string"
                 },
-                "XXX_cpuUser": {
+                "cpuUser": {
                     "type": "string"
                 },
-                "XXX_cpuWait": {
+                "cpuWait": {
                     "type": "string"
                 }
             }
         },
         "SystemResources": {
             "properties": {
-                "XXX_currResources": {
+                "currResources": {
                     "ref": "CurrResources"
                 },
-                "XXX_initResources": {
+                "initResources": {
                     "ref": "InitResources"
                 },
-                "XXX_systemLoad": {
+                "systemLoad": {
                     "ref": "SystemLoad"
                 }
             }
@@ -3469,7 +3469,7 @@
         },
         "SzConfigManagerGetConfigRegistryResponse": {
             "properties": {
-                "XXX_CONFIGS": {
+                "CONFIGS": {
                     "elements": {
                         "ref": "Config"
                     },
@@ -3951,7 +3951,7 @@
         },
         "SzEngineGetStatsResponse": {
             "properties": {
-                "XXX_workload": {
+                "workload": {
                     "ref": "Workload"
                 }
             }
@@ -4212,59 +4212,59 @@
         },
         "SzProductGetVersionResponse": {
             "properties": {
-                "XXX_BUILD_DATE": {
+                "BUILD_DATE": {
                     "type": "string"
                 },
-                "XXX_BUILD_NUMBER": {
+                "BUILD_NUMBER": {
                     "type": "string"
                 },
-                "XXX_BUILD_VERSION": {
+                "BUILD_VERSION": {
                     "type": "string"
                 },
-                "XXX_COMPATIBILITY_VERSION": {
+                "COMPATIBILITY_VERSION": {
                     "ref": "CompatibilityVersion"
                 },
-                "XXX_PRODUCT_NAME": {
+                "PRODUCT_NAME": {
                     "type": "string"
                 },
-                "XXX_SCHEMA_VERSION": {
+                "SCHEMA_VERSION": {
                     "ref": "SchemaVersion"
                 },
-                "XXX_VERSION": {
+                "VERSION": {
                     "type": "string"
                 }
             }
         },
         "ThreadState": {
             "properties": {
-                "XXX_active": {
+                "active": {
                     "type": "int32"
                 },
-                "XXX_dataLatchContention": {
+                "dataLatchContention": {
                     "type": "int32"
                 },
-                "XXX_governorContention": {
+                "governorContention": {
                     "type": "int32"
                 },
-                "XXX_idle": {
+                "idle": {
                     "type": "int32"
                 },
-                "XXX_loader": {
+                "loader": {
                     "type": "int32"
                 },
-                "XXX_obsEntContention": {
+                "obsEntContention": {
                     "type": "int32"
                 },
-                "XXX_resEntContention": {
+                "resEntContention": {
                     "type": "int32"
                 },
-                "XXX_resolver": {
+                "resolver": {
                     "type": "int32"
                 },
-                "XXX_scoring": {
+                "scoring": {
                     "type": "int32"
                 },
-                "XXX_sqlExecuting": {
+                "sqlExecuting": {
                     "type": "int32"
                 }
             }
@@ -4283,35 +4283,35 @@
         },
         "Unresolve": {
             "properties": {
-                "XXX_abortedUnresolve": {
+                "abortedUnresolve": {
                     "type": "int32"
                 },
-                "XXX_triggers": {
+                "triggers": {
                     "ref": "UnresolveTriggers"
                 },
-                "XXX_unresolveTest": {
+                "unresolveTest": {
                     "type": "int32"
                 }
             }
         },
         "UnresolveTriggers": {
             "properties": {
-                "XXX_ambiguousMultiResolve": {
+                "ambiguousMultiResolve": {
                     "type": "int32"
                 },
-                "XXX_ambiguousNoResolve": {
+                "ambiguousNoResolve": {
                     "type": "int32"
                 },
-                "XXX_extensiveResolve": {
+                "extensiveResolve": {
                     "type": "int32"
                 },
-                "XXX_normalResolve": {
+                "normalResolve": {
                     "type": "int32"
                 },
-                "XXX_relLink": {
+                "relLink": {
                     "type": "int32"
                 },
-                "XXX_update": {
+                "update": {
                     "type": "int32"
                 }
             }
@@ -4393,37 +4393,37 @@
         },
         "Workload": {
             "properties": {
-                "XXX_apiVersion": {
+                "apiVersion": {
                     "type": "string"
                 },
-                "XXX_caches": {
+                "caches": {
                     "ref": "Caches"
                 },
-                "XXX_candidates": {
+                "candidates": {
                     "ref": "Candidates"
                 },
                 "XXX_contention": {
                     "ref": "Contention"
                 },
-                "XXX_datetimestamp": {
+                "datetimestamp": {
                     "type": "string"
                 },
-                "XXX_expressedFeatures": {
+                "expressedFeatures": {
                     "ref": "ExpressedFeatures"
                 },
                 "XXX_genericDetect": {
                     "ref": "Fixme"
                 },
-                "XXX_license": {
+                "license": {
                     "ref": "License"
                 },
-                "XXX_loadedRecords": {
+                "loadedRecords": {
                     "type": "int32"
                 },
-                "XXX_lockWaits": {
+                "lockWaits": {
                     "ref": "LockWaits"
                 },
-                "XXX_processing": {
+                "processing": {
                     "ref": "Processing"
                 },
                 "XXX_redoTriggers": {
@@ -4434,22 +4434,22 @@
                         "type": "int32"
                     }
                 },
-                "XXX_repairDiagnosis": {
+                "repairDiagnosis": {
                     "ref": "RepairDiagnosis"
                 },
-                "XXX_reresolve": {
+                "reresolve": {
                     "ref": "Reresolve"
                 },
-                "XXX_scoring": {
+                "scoring": {
                     "ref": "Scoring"
                 },
-                "XXX_systemResources": {
+                "systemResources": {
                     "ref": "SystemResources"
                 },
-                "XXX_threadState": {
+                "threadState": {
                     "ref": "ThreadState"
                 },
-                "XXX_unresolve": {
+                "unresolve": {
                     "ref": "Unresolve"
                 }
             }
