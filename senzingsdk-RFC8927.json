@@ -1849,19 +1849,6 @@
                 }
             }
         },
-        "License": {
-            "properties": {
-                "dsrLimit": {
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                },
-                "type": {
-                    "type": "string"
-                }
-            }
-        },
         "MatchInfo": {
             "properties": {
                 "CANDIDATE_KEYS": {
@@ -2279,7 +2266,7 @@
         },
         "RecordKeys": {
             "properties": {
-                "XXX_RECORDS": {
+                "RECORDS": {
                     "elements": {
                         "ref": "RecordKey"
                     },
@@ -2852,6 +2839,12 @@
         },
         "SenzingEntitySpecification": {
             "properties": {
+                "ACCOUNT_DOMAIN": {
+                    "type": "string"
+                },
+                "ACCOUNT_NUMBER": {
+                    "type": "string"
+                },
                 "ADDR_CITY": {
                     "type": "string"
                 },
@@ -2864,13 +2857,37 @@
                 "ADDR_LINE1": {
                     "type": "string"
                 },
+                "ADDR_LINE2": {
+                    "type": "string"
+                },
+                "ADDR_LINE3": {
+                    "type": "string"
+                },
+                "ADDR_LINE4": {
+                    "type": "string"
+                },
+                "ADDR_LINE5": {
+                    "type": "string"
+                },
+                "ADDR_LINE6": {
+                    "type": "string"
+                },
                 "ADDR_POSTAL_CODE": {
                     "type": "string"
                 },
                 "ADDR_STATE": {
                     "type": "string"
                 },
+                "ADDR_TYPE": {
+                    "type": "string"
+                },
+                "CITIZENSHIP": {
+                    "type": "string"
+                },
                 "DATE_OF_BIRTH": {
+                    "type": "string"
+                },
+                "DATE_OF_DEATH": {
                     "type": "string"
                 },
                 "DRIVERS_LICENSE_NUMBER": {
@@ -2879,16 +2896,67 @@
                 "DRIVERS_LICENSE_STATE": {
                     "type": "string"
                 },
+                "DUNS_NUMBER": {
+                    "type": "string"
+                },
                 "EMAIL_ADDRESS": {
                     "type": "string"
                 },
-                "EMPLOYER_NAME": {
+                "EMPLOYER": {
+                    "type": "string"
+                },
+                "FACEBOOK": {
                     "type": "string"
                 },
                 "GENDER": {
                     "type": "string"
                 },
+                "GROUP_ASSN_ID_NUMBER": {
+                    "type": "string"
+                },
+                "GROUP_ASSN_ID_TYPE": {
+                    "type": "string"
+                },
+                "GROUP_ASSOCIATION_ORG_NAME": {
+                    "type": "string"
+                },
+                "GROUP_ASSOCIATION_TYPE": {
+                    "type": "string"
+                },
+                "INSTAGRAM": {
+                    "type": "string"
+                },
+                "LEI_NUMBER": {
+                    "type": "string"
+                },
+                "LINKEDIN": {
+                    "type": "string"
+                },
+                "NAME_FIRST": {
+                    "type": "string"
+                },
                 "NAME_FULL": {
+                    "type": "string"
+                },
+                "NAME_LAST": {
+                    "type": "string"
+                },
+                "NAME_MIDDLE": {
+                    "type": "string"
+                },
+                "NAME_ORG": {
+                    "type": "string"
+                },
+                "NAME_PREFIX": {
+                    "type": "string"
+                },
+                "NAME_SUFFIX": {
+                    "type": "string"
+                },
+                "NAME_TYPE": {
+                    "type": "string"
+                },
+                "NATIONALITY": {
                     "type": "string"
                 },
                 "NATIONAL_ID_COUNTRY": {
@@ -2897,7 +2965,19 @@
                 "NATIONAL_ID_NUMBER": {
                     "type": "string"
                 },
-                "NATIVE_NAME_FULL": {
+                "NATIONAL_ID_TYPE": {
+                    "type": "string"
+                },
+                "NPI_NUMBER": {
+                    "type": "string"
+                },
+                "OTHER_ID_COUNTRY": {
+                    "type": "string"
+                },
+                "OTHER_ID_NUMBER": {
+                    "type": "string"
+                },
+                "OTHER_ID_TYPE": {
                     "type": "string"
                 },
                 "PASSPORT_COUNTRY": {
@@ -2909,133 +2989,91 @@
                 "PHONE_NUMBER": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_FIRST": {
+                "PHONE_TYPE": {
                     "type": "string"
                 },
-                "PRIMARY_NAME_FULL": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_LAST": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_MIDDLE": {
-                    "type": "string"
-                },
-                "PRIMARY_NAME_ORG": {
+                "PLACE_OF_BIRTH": {
                     "type": "string"
                 },
                 "RECORD_TYPE": {
                     "type": "string"
                 },
+                "REGISTRATION_COUNTRY": {
+                    "type": "string"
+                },
+                "REGISTRATION_DATE": {
+                    "type": "string"
+                },
+                "REL_ANCHOR_DOMAIN": {
+                    "type": "string"
+                },
                 "REL_ANCHOR_KEY": {
+                    "type": "string"
+                },
+                "REL_POINTER_DOMAIN": {
                     "type": "string"
                 },
                 "REL_POINTER_KEY": {
                     "type": "string"
                 },
-                "SECONDARY_NAME_ORG": {
+                "REL_POINTER_ROLE": {
+                    "type": "string"
+                },
+                "SIGNAL": {
+                    "type": "string"
+                },
+                "SKYPE": {
                     "type": "string"
                 },
                 "SSN_NUMBER": {
                     "type": "string"
                 },
-                "XXX_ACCOUNT_DOMAIN": {
+                "TANGO": {
                     "type": "string"
                 },
-                "XXX_ACCOUNT_NUMBER": {
+                "TAX_ID_COUNTRY": {
+                    "type": "string"
+                },
+                "TAX_ID_NUMBER": {
+                    "type": "string"
+                },
+                "TAX_ID_TYPE": {
+                    "type": "string"
+                },
+                "TELEGRAM": {
+                    "type": "string"
+                },
+                "TRUSTED_ID_NUMBER": {
+                    "type": "string"
+                },
+                "TRUSTED_ID_TYPE": {
+                    "type": "string"
+                },
+                "TWITTER": {
+                    "type": "string"
+                },
+                "VIBER": {
+                    "type": "string"
+                },
+                "WEBSITE_ADDRESS": {
+                    "type": "string"
+                },
+                "WECHAT": {
+                    "type": "string"
+                },
+                "WHATSAPP": {
                     "type": "string"
                 },
                 "XXX_ADDR_FROM_DATE": {
                     "type": "string"
                 },
-                "XXX_ADDR_LINE2": {
-                    "type": "string"
-                },
-                "XXX_ADDR_LINE3": {
-                    "type": "string"
-                },
-                "XXX_ADDR_LINE4": {
-                    "type": "string"
-                },
-                "XXX_ADDR_LINE5": {
-                    "type": "string"
-                },
-                "XXX_ADDR_LINE6": {
-                    "type": "string"
-                },
                 "XXX_ADDR_THRU_DATE": {
                     "type": "string"
                 },
-                "XXX_ADDR_TYPE": {
+                "XXX_EMPLOYER_NAME": {
                     "type": "string"
                 },
-                "XXX_CITIZENSHIP": {
-                    "type": "string"
-                },
-                "XXX_DATE_OF_DEATH": {
-                    "type": "string"
-                },
-                "XXX_DUNS_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_EMPLOYER": {
-                    "type": "string"
-                },
-                "XXX_FACEBOOK": {
-                    "type": "string"
-                },
-                "XXX_GROUP_ASSN_ID_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_GROUP_ASSN_ID_TYPE": {
-                    "type": "string"
-                },
-                "XXX_GROUP_ASSOCIATION_ORG_NAME": {
-                    "type": "string"
-                },
-                "XXX_GROUP_ASSOCIATION_TYPE": {
-                    "type": "string"
-                },
-                "XXX_INSTAGRAM": {
-                    "type": "string"
-                },
-                "XXX_LEI_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_LINKEDIN": {
-                    "type": "string"
-                },
-                "XXX_NAME_FIRST": {
-                    "type": "string"
-                },
-                "XXX_NAME_LAST": {
-                    "type": "string"
-                },
-                "XXX_NAME_ORG": {
-                    "type": "string"
-                },
-                "XXX_NAME_PREFIX": {
-                    "type": "string"
-                },
-                "XXX_NAME_SUFFIX": {
-                    "type": "string"
-                },
-                "XXX_NAME_TYPE": {
-                    "type": "string"
-                },
-                "XXX_NATIONALITY": {
-                    "type": "string"
-                },
-                "XXX_NPI_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_OTHER_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "XXX_OTHER_ID_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_OTHER_ID_TYPE": {
+                "XXX_NATIVE_NAME_FULL": {
                     "type": "string"
                 },
                 "XXX_PHONE_FROM_DATE": {
@@ -3044,61 +3082,25 @@
                 "XXX_PHONE_THRU_DATE": {
                     "type": "string"
                 },
-                "XXX_PHONE_TYPE": {
+                "XXX_PRIMARY_NAME_FIRST": {
                     "type": "string"
                 },
-                "XXX_PLACE_OF_BIRTH": {
+                "XXX_PRIMARY_NAME_FULL": {
                     "type": "string"
                 },
-                "XXX_REGISTRATION_COUNTRY": {
+                "XXX_PRIMARY_NAME_LAST": {
                     "type": "string"
                 },
-                "XXX_REGISTRATION_DATE": {
+                "XXX_PRIMARY_NAME_MIDDLE": {
                     "type": "string"
                 },
-                "XXX_SIGNAL": {
+                "XXX_PRIMARY_NAME_ORG": {
                     "type": "string"
                 },
-                "XXX_SKYPE": {
+                "XXX_SECONDARY_NAME_ORG": {
                     "type": "string"
                 },
-                "XXX_TANGO": {
-                    "type": "string"
-                },
-                "XXX_TAX_ID_COUNTRY": {
-                    "type": "string"
-                },
-                "XXX_TAX_ID_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_TAX_ID_TYPE": {
-                    "type": "string"
-                },
-                "XXX_TELEGRAM": {
-                    "type": "string"
-                },
-                "XXX_TRUSTED_ID_NUMBER": {
-                    "type": "string"
-                },
-                "XXX_TRUSTED_ID_TYPE": {
-                    "type": "string"
-                },
-                "XXX_TWITTER": {
-                    "type": "string"
-                },
-                "XXX_VIBER": {
-                    "type": "string"
-                },
-                "XXX_WEBSITE_ADDRESS": {
-                    "type": "string"
-                },
-                "XXX_WECHAT": {
-                    "type": "string"
-                },
-                "XXX_WHATSAPP": {
-                    "type": "string"
-                },
-                "XXX_ZOOMROOM": {
+                "ZOOMROOM": {
                     "type": "string"
                 }
             }
@@ -4018,7 +4020,7 @@
                     "ref": "Fixme"
                 },
                 "license": {
-                    "ref": "License"
+                    "ref": "WorkloadLicense"
                 },
                 "loadedRecords": {
                     "type": "int32"
@@ -4176,6 +4178,19 @@
                     "type": "int32"
                 },
                 "totalMemory": {
+                    "type": "string"
+                }
+            }
+        },
+        "WorkloadLicense": {
+            "properties": {
+                "dsrLimit": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "type": {
                     "type": "string"
                 }
             }
