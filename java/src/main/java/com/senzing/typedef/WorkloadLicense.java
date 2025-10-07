@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class License {
+public class WorkloadLicense {
     @JsonProperty("dsrLimit")
     private String dsrLimit;
 
@@ -16,7 +16,7 @@ public class License {
     @JsonProperty("type")
     private String type;
 
-    public License() {
+    public WorkloadLicense() {
     }
 
     /**

@@ -30,7 +30,7 @@ public class Workload {
     private Fixme genericDetect;
 
     @JsonProperty("license")
-    private License license;
+    private WorkloadLicense license;
 
     @JsonProperty("loadedRecords")
     private Integer loadedRecords;
@@ -166,14 +166,14 @@ public class Workload {
     /**
      * Getter for license.<p>
      */
-    public License getLicense() {
+    public WorkloadLicense getLicense() {
         return license;
     }
 
     /**
      * Setter for license.<p>
      */
-    public void setLicense(License license) {
+    public void setLicense(WorkloadLicense license) {
         this.license = license;
     }
 

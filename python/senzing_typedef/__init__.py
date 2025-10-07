@@ -1985,27 +1985,6 @@ class InterestingEntity:
         return data
 
 @dataclass
-class License:
-    dsr_limit: 'str'
-    status: 'str'
-    type: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'License':
-        return cls(
-            _from_json_data(str, data.get("dsrLimit")),
-            _from_json_data(str, data.get("status")),
-            _from_json_data(str, data.get("type")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["dsrLimit"] = _to_json_data(self.dsr_limit)
-        data["status"] = _to_json_data(self.status)
-        data["type"] = _to_json_data(self.type)
-        return data
-
-@dataclass
 class MatchInfo:
     candidate_keys: 'CandidateKeysForMatchInfo'
     errule_code: 'str'
@@ -2438,7 +2417,7 @@ class RecordKey:
 
 @dataclass
 class RecordKeys:
-    xxx_records: 'List[RecordKey]'
+    records: 'List[RecordKey]'
     """
     A list of (data source code, record id) pairs.
     """
@@ -2447,12 +2426,12 @@ class RecordKeys:
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordKeys':
         return cls(
-            _from_json_data(List[RecordKey], data.get("XXX_RECORDS")),
+            _from_json_data(List[RecordKey], data.get("RECORDS")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
-        data["XXX_RECORDS"] = _to_json_data(self.xxx_records)
+        data["RECORDS"] = _to_json_data(self.records)
         return data
 
 @dataclass
@@ -3085,263 +3064,680 @@ class SearchStatistic:
 
 @dataclass
 class SenzingEntitySpecification:
+    account_domain: 'str'
+    """
+    Domain/system for the account number. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    account_number: 'str'
+    """
+    Account number (e.g., bank, card). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
     addr_city: 'str'
+    """
+    City/locality. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     addr_country: 'str'
+    """
+    Country code. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     addr_full: 'str'
+    """
+    Single-field address when parsed components are unavailable.
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     addr_line1: 'str'
+    """
+    First address line (street, number). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    addr_line2: 'str'
+    """
+    Second address line (apt/suite). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    addr_line3: 'str'
+    """
+    Third address line (optional). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    addr_line4: 'str'
+    """
+    Fourth address line (optional). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    addr_line5: 'str'
+    """
+    Fifth address line (optional). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    addr_line6: 'str'
+    """
+    Sixth address line (optional). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
     addr_postal_code: 'str'
+    """
+    Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     addr_state: 'str'
+    """
+    State/province/region code. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    addr_type: 'str'
+    """
+    Optional; include when provided by the source. Common values: HOME, MAILING
+    (persons); BUSINESS (organizations). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    citizenship: 'str'
+    """
+    Country of citizenship (code or label) as provided by the
+    source. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     date_of_birth: 'str'
+    """
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    date_of_death: 'str'
+    """
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     drivers_license_number: 'str'
+    """
+    Driver's license number. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
     drivers_license_state: 'str'
+    """
+    Issuing state/province/country. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    duns_number: 'str'
+    """
+    Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
     email_address: 'str'
-    employer_name: 'str'
+    """
+    Email address. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    employer: 'str'
+    """
+    This is the name of the organization the person is employed
+    by. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    facebook: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
     gender: 'str'
+    """
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    group_assn_id_number: 'str'
+    """
+    The identifier the entity is associated with. An attribute in the Senzing
+    Entity Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    group_assn_id_type: 'str'
+    """
+    The type of group identifier an entity is associated with.
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    group_association_org_name: 'str'
+    """
+    Name of the associated organization; use the official or standardized
+    name. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    group_association_type: 'str'
+    """
+    Specific group/role within the organization; use precise categories (e.g.,
+    OWNER_EXEC, BOARD_MEMBER) to improve resolution. An attribute in the Senzing
+    Entity Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    instagram: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    lei_number: 'str'
+    """
+    Legal Entity Identifier. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    linkedin: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    name_first: 'str'
+    """
+    Person given name. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     name_full: 'str'
+    """
+    Single-field name when type (person vs org) is unknown or only a full
+    name is provided. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    name_last: 'str'
+    """
+    Person surname. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    name_middle: 'str'
+    """
+    Person middle name/initial. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    name_org: 'str'
+    """
+    Organization name. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    name_prefix: 'str'
+    """
+    Person title. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    name_suffix: 'str'
+    """
+    Person suffix. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    name_type: 'str'
+    """
+    Optional include when the source provides it. Common values: PRIMARY,
+    AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    nationality: 'str'
+    """
+    Country of nationality (code or label) as provided by the
+    source. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     national_id_country: 'str'
+    """
+    Issuing country. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     national_id_number: 'str'
-    native_name_full: 'str'
+    """
+    National identifier value. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    national_id_type: 'str'
+    """
+    Use the type label from the source; standardize across
+    sources. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    npi_number: 'str'
+    """
+    US healthcare provider identifier. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    other_id_country: 'str'
+    """
+    Optional as country often not known or issued by an organization.
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    other_id_number: 'str'
+    """
+    Identification number. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    other_id_type: 'str'
+    """
+    Standardized source type. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
     passport_country: 'str'
+    """
+    Issuing country. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     passport_number: 'str'
+    """
+    Passport number. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     phone_number: 'str'
-    primary_name_first: 'str'
-    primary_name_full: 'str'
-    primary_name_last: 'str'
-    primary_name_middle: 'str'
-    primary_name_org: 'str'
+    """
+    Telephone number. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    phone_type: 'str'
+    """
+    Optional; include when provided by the source. Common values: MOBILE, HOME,
+    WORK, FAX. MOBILE carries extra weight. An attribute in the Senzing Entity
+    Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    place_of_birth: 'str'
+    """
+    Place of birth; may be a city/region or a country code/label as provided
+    by the source. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     record_type: 'str'
+    """
+    Include when known to prevent cross-type resolution; omit if unknown.
+    Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+    icon/shape in graphs. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    registration_country: 'str'
+    """
+    Country of registration (code or label) as provided by the
+    source. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    registration_date: 'str'
+    """
+    Organization registration/incorporation date. An attribute in the Senzing
+    Entity Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    rel_anchor_domain: 'str'
+    """
+    This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+    dashes) for the data source or source field that is contributing the
+    relationship. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     rel_anchor_key: 'str'
+    """
+    This key should be a unique value for the record within the
+    REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+    here. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    rel_pointer_domain: 'str'
+    """
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
     rel_pointer_key: 'str'
-    secondary_name_org: 'str'
+    """
+    An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    rel_pointer_role: 'str'
+    """
+    This is the role the pointer record has to the anchor record. Such
+    as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+    BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for
+    display and filtering. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    signal: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    skype: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
     ssn_number: 'str'
-    xxx_account_domain: 'str'
-    xxx_account_number: 'str'
+    """
+    US Social Security Number; partial accepted. An attribute in the Senzing
+    Entity Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    tango: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    tax_id_country: 'str'
+    """
+    Issuing country. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    tax_id_number: 'str'
+    """
+    Tax identification number. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    tax_id_type: 'str'
+    """
+    Use the type label from the source; standardize across
+    sources. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    telegram: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    trusted_id_number: 'str'
+    """
+    The identifier value shared by records that must resolve
+    together. An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    trusted_id_type: 'str'
+    """
+    Short code for the identifier domain/system (e.g., STEWARD,
+    MASTER_ID). An attribute in the Senzing Entity Specification. See
+    https://www.senzing.com/docs/entity_specification
+    """
+
+    twitter: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    viber: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    website_address: 'str'
+    """
+    Website or domain; typically for organizations. An attribute in the Senzing
+    Entity Specification. See https://www.senzing.com/docs/entity_specification
+    """
+
+    wechat: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
+    whatsapp: 'str'
+    """
+    Social medial user name. An attribute in the Senzing Entity Specification.
+    See https://www.senzing.com/docs/entity_specification
+    """
+
     xxx_addr_from_date: 'str'
-    xxx_addr_line2: 'str'
-    xxx_addr_line3: 'str'
-    xxx_addr_line4: 'str'
-    xxx_addr_line5: 'str'
-    xxx_addr_line6: 'str'
     xxx_addr_thru_date: 'str'
-    xxx_addr_type: 'str'
-    xxx_citizenship: 'str'
-    xxx_date_of_death: 'str'
-    xxx_duns_number: 'str'
-    xxx_employer: 'str'
-    xxx_facebook: 'str'
-    xxx_group_assn_id_number: 'str'
-    xxx_group_assn_id_type: 'str'
-    xxx_group_association_org_name: 'str'
-    xxx_group_association_type: 'str'
-    xxx_instagram: 'str'
-    xxx_lei_number: 'str'
-    xxx_linkedin: 'str'
-    xxx_name_first: 'str'
-    xxx_name_last: 'str'
-    xxx_name_org: 'str'
-    xxx_name_prefix: 'str'
-    xxx_name_suffix: 'str'
-    xxx_name_type: 'str'
-    xxx_nationality: 'str'
-    xxx_npi_number: 'str'
-    xxx_other_id_country: 'str'
-    xxx_other_id_number: 'str'
-    xxx_other_id_type: 'str'
+    xxx_employer_name: 'str'
+    xxx_native_name_full: 'str'
     xxx_phone_from_date: 'str'
     xxx_phone_thru_date: 'str'
-    xxx_phone_type: 'str'
-    xxx_place_of_birth: 'str'
-    xxx_registration_country: 'str'
-    xxx_registration_date: 'str'
-    xxx_signal: 'str'
-    xxx_skype: 'str'
-    xxx_tango: 'str'
-    xxx_tax_id_country: 'str'
-    xxx_tax_id_number: 'str'
-    xxx_tax_id_type: 'str'
-    xxx_telegram: 'str'
-    xxx_trusted_id_number: 'str'
-    xxx_trusted_id_type: 'str'
-    xxx_twitter: 'str'
-    xxx_viber: 'str'
-    xxx_website_address: 'str'
-    xxx_wechat: 'str'
-    xxx_whatsapp: 'str'
-    xxx_zoomroom: 'str'
+    xxx_primary_name_first: 'str'
+    xxx_primary_name_full: 'str'
+    xxx_primary_name_last: 'str'
+    xxx_primary_name_middle: 'str'
+    xxx_primary_name_org: 'str'
+    xxx_secondary_name_org: 'str'
+    zoomroom: 'str'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SenzingEntitySpecification':
         return cls(
+            _from_json_data(str, data.get("ACCOUNT_DOMAIN")),
+            _from_json_data(str, data.get("ACCOUNT_NUMBER")),
             _from_json_data(str, data.get("ADDR_CITY")),
             _from_json_data(str, data.get("ADDR_COUNTRY")),
             _from_json_data(str, data.get("ADDR_FULL")),
             _from_json_data(str, data.get("ADDR_LINE1")),
+            _from_json_data(str, data.get("ADDR_LINE2")),
+            _from_json_data(str, data.get("ADDR_LINE3")),
+            _from_json_data(str, data.get("ADDR_LINE4")),
+            _from_json_data(str, data.get("ADDR_LINE5")),
+            _from_json_data(str, data.get("ADDR_LINE6")),
             _from_json_data(str, data.get("ADDR_POSTAL_CODE")),
             _from_json_data(str, data.get("ADDR_STATE")),
+            _from_json_data(str, data.get("ADDR_TYPE")),
+            _from_json_data(str, data.get("CITIZENSHIP")),
             _from_json_data(str, data.get("DATE_OF_BIRTH")),
+            _from_json_data(str, data.get("DATE_OF_DEATH")),
             _from_json_data(str, data.get("DRIVERS_LICENSE_NUMBER")),
             _from_json_data(str, data.get("DRIVERS_LICENSE_STATE")),
+            _from_json_data(str, data.get("DUNS_NUMBER")),
             _from_json_data(str, data.get("EMAIL_ADDRESS")),
-            _from_json_data(str, data.get("EMPLOYER_NAME")),
+            _from_json_data(str, data.get("EMPLOYER")),
+            _from_json_data(str, data.get("FACEBOOK")),
             _from_json_data(str, data.get("GENDER")),
+            _from_json_data(str, data.get("GROUP_ASSN_ID_NUMBER")),
+            _from_json_data(str, data.get("GROUP_ASSN_ID_TYPE")),
+            _from_json_data(str, data.get("GROUP_ASSOCIATION_ORG_NAME")),
+            _from_json_data(str, data.get("GROUP_ASSOCIATION_TYPE")),
+            _from_json_data(str, data.get("INSTAGRAM")),
+            _from_json_data(str, data.get("LEI_NUMBER")),
+            _from_json_data(str, data.get("LINKEDIN")),
+            _from_json_data(str, data.get("NAME_FIRST")),
             _from_json_data(str, data.get("NAME_FULL")),
+            _from_json_data(str, data.get("NAME_LAST")),
+            _from_json_data(str, data.get("NAME_MIDDLE")),
+            _from_json_data(str, data.get("NAME_ORG")),
+            _from_json_data(str, data.get("NAME_PREFIX")),
+            _from_json_data(str, data.get("NAME_SUFFIX")),
+            _from_json_data(str, data.get("NAME_TYPE")),
+            _from_json_data(str, data.get("NATIONALITY")),
             _from_json_data(str, data.get("NATIONAL_ID_COUNTRY")),
             _from_json_data(str, data.get("NATIONAL_ID_NUMBER")),
-            _from_json_data(str, data.get("NATIVE_NAME_FULL")),
+            _from_json_data(str, data.get("NATIONAL_ID_TYPE")),
+            _from_json_data(str, data.get("NPI_NUMBER")),
+            _from_json_data(str, data.get("OTHER_ID_COUNTRY")),
+            _from_json_data(str, data.get("OTHER_ID_NUMBER")),
+            _from_json_data(str, data.get("OTHER_ID_TYPE")),
             _from_json_data(str, data.get("PASSPORT_COUNTRY")),
             _from_json_data(str, data.get("PASSPORT_NUMBER")),
             _from_json_data(str, data.get("PHONE_NUMBER")),
-            _from_json_data(str, data.get("PRIMARY_NAME_FIRST")),
-            _from_json_data(str, data.get("PRIMARY_NAME_FULL")),
-            _from_json_data(str, data.get("PRIMARY_NAME_LAST")),
-            _from_json_data(str, data.get("PRIMARY_NAME_MIDDLE")),
-            _from_json_data(str, data.get("PRIMARY_NAME_ORG")),
+            _from_json_data(str, data.get("PHONE_TYPE")),
+            _from_json_data(str, data.get("PLACE_OF_BIRTH")),
             _from_json_data(str, data.get("RECORD_TYPE")),
+            _from_json_data(str, data.get("REGISTRATION_COUNTRY")),
+            _from_json_data(str, data.get("REGISTRATION_DATE")),
+            _from_json_data(str, data.get("REL_ANCHOR_DOMAIN")),
             _from_json_data(str, data.get("REL_ANCHOR_KEY")),
+            _from_json_data(str, data.get("REL_POINTER_DOMAIN")),
             _from_json_data(str, data.get("REL_POINTER_KEY")),
-            _from_json_data(str, data.get("SECONDARY_NAME_ORG")),
+            _from_json_data(str, data.get("REL_POINTER_ROLE")),
+            _from_json_data(str, data.get("SIGNAL")),
+            _from_json_data(str, data.get("SKYPE")),
             _from_json_data(str, data.get("SSN_NUMBER")),
-            _from_json_data(str, data.get("XXX_ACCOUNT_DOMAIN")),
-            _from_json_data(str, data.get("XXX_ACCOUNT_NUMBER")),
+            _from_json_data(str, data.get("TANGO")),
+            _from_json_data(str, data.get("TAX_ID_COUNTRY")),
+            _from_json_data(str, data.get("TAX_ID_NUMBER")),
+            _from_json_data(str, data.get("TAX_ID_TYPE")),
+            _from_json_data(str, data.get("TELEGRAM")),
+            _from_json_data(str, data.get("TRUSTED_ID_NUMBER")),
+            _from_json_data(str, data.get("TRUSTED_ID_TYPE")),
+            _from_json_data(str, data.get("TWITTER")),
+            _from_json_data(str, data.get("VIBER")),
+            _from_json_data(str, data.get("WEBSITE_ADDRESS")),
+            _from_json_data(str, data.get("WECHAT")),
+            _from_json_data(str, data.get("WHATSAPP")),
             _from_json_data(str, data.get("XXX_ADDR_FROM_DATE")),
-            _from_json_data(str, data.get("XXX_ADDR_LINE2")),
-            _from_json_data(str, data.get("XXX_ADDR_LINE3")),
-            _from_json_data(str, data.get("XXX_ADDR_LINE4")),
-            _from_json_data(str, data.get("XXX_ADDR_LINE5")),
-            _from_json_data(str, data.get("XXX_ADDR_LINE6")),
             _from_json_data(str, data.get("XXX_ADDR_THRU_DATE")),
-            _from_json_data(str, data.get("XXX_ADDR_TYPE")),
-            _from_json_data(str, data.get("XXX_CITIZENSHIP")),
-            _from_json_data(str, data.get("XXX_DATE_OF_DEATH")),
-            _from_json_data(str, data.get("XXX_DUNS_NUMBER")),
-            _from_json_data(str, data.get("XXX_EMPLOYER")),
-            _from_json_data(str, data.get("XXX_FACEBOOK")),
-            _from_json_data(str, data.get("XXX_GROUP_ASSN_ID_NUMBER")),
-            _from_json_data(str, data.get("XXX_GROUP_ASSN_ID_TYPE")),
-            _from_json_data(str, data.get("XXX_GROUP_ASSOCIATION_ORG_NAME")),
-            _from_json_data(str, data.get("XXX_GROUP_ASSOCIATION_TYPE")),
-            _from_json_data(str, data.get("XXX_INSTAGRAM")),
-            _from_json_data(str, data.get("XXX_LEI_NUMBER")),
-            _from_json_data(str, data.get("XXX_LINKEDIN")),
-            _from_json_data(str, data.get("XXX_NAME_FIRST")),
-            _from_json_data(str, data.get("XXX_NAME_LAST")),
-            _from_json_data(str, data.get("XXX_NAME_ORG")),
-            _from_json_data(str, data.get("XXX_NAME_PREFIX")),
-            _from_json_data(str, data.get("XXX_NAME_SUFFIX")),
-            _from_json_data(str, data.get("XXX_NAME_TYPE")),
-            _from_json_data(str, data.get("XXX_NATIONALITY")),
-            _from_json_data(str, data.get("XXX_NPI_NUMBER")),
-            _from_json_data(str, data.get("XXX_OTHER_ID_COUNTRY")),
-            _from_json_data(str, data.get("XXX_OTHER_ID_NUMBER")),
-            _from_json_data(str, data.get("XXX_OTHER_ID_TYPE")),
+            _from_json_data(str, data.get("XXX_EMPLOYER_NAME")),
+            _from_json_data(str, data.get("XXX_NATIVE_NAME_FULL")),
             _from_json_data(str, data.get("XXX_PHONE_FROM_DATE")),
             _from_json_data(str, data.get("XXX_PHONE_THRU_DATE")),
-            _from_json_data(str, data.get("XXX_PHONE_TYPE")),
-            _from_json_data(str, data.get("XXX_PLACE_OF_BIRTH")),
-            _from_json_data(str, data.get("XXX_REGISTRATION_COUNTRY")),
-            _from_json_data(str, data.get("XXX_REGISTRATION_DATE")),
-            _from_json_data(str, data.get("XXX_SIGNAL")),
-            _from_json_data(str, data.get("XXX_SKYPE")),
-            _from_json_data(str, data.get("XXX_TANGO")),
-            _from_json_data(str, data.get("XXX_TAX_ID_COUNTRY")),
-            _from_json_data(str, data.get("XXX_TAX_ID_NUMBER")),
-            _from_json_data(str, data.get("XXX_TAX_ID_TYPE")),
-            _from_json_data(str, data.get("XXX_TELEGRAM")),
-            _from_json_data(str, data.get("XXX_TRUSTED_ID_NUMBER")),
-            _from_json_data(str, data.get("XXX_TRUSTED_ID_TYPE")),
-            _from_json_data(str, data.get("XXX_TWITTER")),
-            _from_json_data(str, data.get("XXX_VIBER")),
-            _from_json_data(str, data.get("XXX_WEBSITE_ADDRESS")),
-            _from_json_data(str, data.get("XXX_WECHAT")),
-            _from_json_data(str, data.get("XXX_WHATSAPP")),
-            _from_json_data(str, data.get("XXX_ZOOMROOM")),
+            _from_json_data(str, data.get("XXX_PRIMARY_NAME_FIRST")),
+            _from_json_data(str, data.get("XXX_PRIMARY_NAME_FULL")),
+            _from_json_data(str, data.get("XXX_PRIMARY_NAME_LAST")),
+            _from_json_data(str, data.get("XXX_PRIMARY_NAME_MIDDLE")),
+            _from_json_data(str, data.get("XXX_PRIMARY_NAME_ORG")),
+            _from_json_data(str, data.get("XXX_SECONDARY_NAME_ORG")),
+            _from_json_data(str, data.get("ZOOMROOM")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["ACCOUNT_DOMAIN"] = _to_json_data(self.account_domain)
+        data["ACCOUNT_NUMBER"] = _to_json_data(self.account_number)
         data["ADDR_CITY"] = _to_json_data(self.addr_city)
         data["ADDR_COUNTRY"] = _to_json_data(self.addr_country)
         data["ADDR_FULL"] = _to_json_data(self.addr_full)
         data["ADDR_LINE1"] = _to_json_data(self.addr_line1)
+        data["ADDR_LINE2"] = _to_json_data(self.addr_line2)
+        data["ADDR_LINE3"] = _to_json_data(self.addr_line3)
+        data["ADDR_LINE4"] = _to_json_data(self.addr_line4)
+        data["ADDR_LINE5"] = _to_json_data(self.addr_line5)
+        data["ADDR_LINE6"] = _to_json_data(self.addr_line6)
         data["ADDR_POSTAL_CODE"] = _to_json_data(self.addr_postal_code)
         data["ADDR_STATE"] = _to_json_data(self.addr_state)
+        data["ADDR_TYPE"] = _to_json_data(self.addr_type)
+        data["CITIZENSHIP"] = _to_json_data(self.citizenship)
         data["DATE_OF_BIRTH"] = _to_json_data(self.date_of_birth)
+        data["DATE_OF_DEATH"] = _to_json_data(self.date_of_death)
         data["DRIVERS_LICENSE_NUMBER"] = _to_json_data(self.drivers_license_number)
         data["DRIVERS_LICENSE_STATE"] = _to_json_data(self.drivers_license_state)
+        data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
         data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
-        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
+        data["EMPLOYER"] = _to_json_data(self.employer)
+        data["FACEBOOK"] = _to_json_data(self.facebook)
         data["GENDER"] = _to_json_data(self.gender)
+        data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
+        data["GROUP_ASSN_ID_TYPE"] = _to_json_data(self.group_assn_id_type)
+        data["GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.group_association_org_name)
+        data["GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.group_association_type)
+        data["INSTAGRAM"] = _to_json_data(self.instagram)
+        data["LEI_NUMBER"] = _to_json_data(self.lei_number)
+        data["LINKEDIN"] = _to_json_data(self.linkedin)
+        data["NAME_FIRST"] = _to_json_data(self.name_first)
         data["NAME_FULL"] = _to_json_data(self.name_full)
+        data["NAME_LAST"] = _to_json_data(self.name_last)
+        data["NAME_MIDDLE"] = _to_json_data(self.name_middle)
+        data["NAME_ORG"] = _to_json_data(self.name_org)
+        data["NAME_PREFIX"] = _to_json_data(self.name_prefix)
+        data["NAME_SUFFIX"] = _to_json_data(self.name_suffix)
+        data["NAME_TYPE"] = _to_json_data(self.name_type)
+        data["NATIONALITY"] = _to_json_data(self.nationality)
         data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
         data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
-        data["NATIVE_NAME_FULL"] = _to_json_data(self.native_name_full)
+        data["NATIONAL_ID_TYPE"] = _to_json_data(self.national_id_type)
+        data["NPI_NUMBER"] = _to_json_data(self.npi_number)
+        data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
+        data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
+        data["OTHER_ID_TYPE"] = _to_json_data(self.other_id_type)
         data["PASSPORT_COUNTRY"] = _to_json_data(self.passport_country)
         data["PASSPORT_NUMBER"] = _to_json_data(self.passport_number)
         data["PHONE_NUMBER"] = _to_json_data(self.phone_number)
-        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
-        data["PRIMARY_NAME_FULL"] = _to_json_data(self.primary_name_full)
-        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
-        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
-        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
+        data["PHONE_TYPE"] = _to_json_data(self.phone_type)
+        data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
         data["RECORD_TYPE"] = _to_json_data(self.record_type)
+        data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
+        data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
+        data["REL_ANCHOR_DOMAIN"] = _to_json_data(self.rel_anchor_domain)
         data["REL_ANCHOR_KEY"] = _to_json_data(self.rel_anchor_key)
+        data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
         data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
-        data["SECONDARY_NAME_ORG"] = _to_json_data(self.secondary_name_org)
+        data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
+        data["SIGNAL"] = _to_json_data(self.signal)
+        data["SKYPE"] = _to_json_data(self.skype)
         data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
-        data["XXX_ACCOUNT_DOMAIN"] = _to_json_data(self.xxx_account_domain)
-        data["XXX_ACCOUNT_NUMBER"] = _to_json_data(self.xxx_account_number)
+        data["TANGO"] = _to_json_data(self.tango)
+        data["TAX_ID_COUNTRY"] = _to_json_data(self.tax_id_country)
+        data["TAX_ID_NUMBER"] = _to_json_data(self.tax_id_number)
+        data["TAX_ID_TYPE"] = _to_json_data(self.tax_id_type)
+        data["TELEGRAM"] = _to_json_data(self.telegram)
+        data["TRUSTED_ID_NUMBER"] = _to_json_data(self.trusted_id_number)
+        data["TRUSTED_ID_TYPE"] = _to_json_data(self.trusted_id_type)
+        data["TWITTER"] = _to_json_data(self.twitter)
+        data["VIBER"] = _to_json_data(self.viber)
+        data["WEBSITE_ADDRESS"] = _to_json_data(self.website_address)
+        data["WECHAT"] = _to_json_data(self.wechat)
+        data["WHATSAPP"] = _to_json_data(self.whatsapp)
         data["XXX_ADDR_FROM_DATE"] = _to_json_data(self.xxx_addr_from_date)
-        data["XXX_ADDR_LINE2"] = _to_json_data(self.xxx_addr_line2)
-        data["XXX_ADDR_LINE3"] = _to_json_data(self.xxx_addr_line3)
-        data["XXX_ADDR_LINE4"] = _to_json_data(self.xxx_addr_line4)
-        data["XXX_ADDR_LINE5"] = _to_json_data(self.xxx_addr_line5)
-        data["XXX_ADDR_LINE6"] = _to_json_data(self.xxx_addr_line6)
         data["XXX_ADDR_THRU_DATE"] = _to_json_data(self.xxx_addr_thru_date)
-        data["XXX_ADDR_TYPE"] = _to_json_data(self.xxx_addr_type)
-        data["XXX_CITIZENSHIP"] = _to_json_data(self.xxx_citizenship)
-        data["XXX_DATE_OF_DEATH"] = _to_json_data(self.xxx_date_of_death)
-        data["XXX_DUNS_NUMBER"] = _to_json_data(self.xxx_duns_number)
-        data["XXX_EMPLOYER"] = _to_json_data(self.xxx_employer)
-        data["XXX_FACEBOOK"] = _to_json_data(self.xxx_facebook)
-        data["XXX_GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.xxx_group_assn_id_number)
-        data["XXX_GROUP_ASSN_ID_TYPE"] = _to_json_data(self.xxx_group_assn_id_type)
-        data["XXX_GROUP_ASSOCIATION_ORG_NAME"] = _to_json_data(self.xxx_group_association_org_name)
-        data["XXX_GROUP_ASSOCIATION_TYPE"] = _to_json_data(self.xxx_group_association_type)
-        data["XXX_INSTAGRAM"] = _to_json_data(self.xxx_instagram)
-        data["XXX_LEI_NUMBER"] = _to_json_data(self.xxx_lei_number)
-        data["XXX_LINKEDIN"] = _to_json_data(self.xxx_linkedin)
-        data["XXX_NAME_FIRST"] = _to_json_data(self.xxx_name_first)
-        data["XXX_NAME_LAST"] = _to_json_data(self.xxx_name_last)
-        data["XXX_NAME_ORG"] = _to_json_data(self.xxx_name_org)
-        data["XXX_NAME_PREFIX"] = _to_json_data(self.xxx_name_prefix)
-        data["XXX_NAME_SUFFIX"] = _to_json_data(self.xxx_name_suffix)
-        data["XXX_NAME_TYPE"] = _to_json_data(self.xxx_name_type)
-        data["XXX_NATIONALITY"] = _to_json_data(self.xxx_nationality)
-        data["XXX_NPI_NUMBER"] = _to_json_data(self.xxx_npi_number)
-        data["XXX_OTHER_ID_COUNTRY"] = _to_json_data(self.xxx_other_id_country)
-        data["XXX_OTHER_ID_NUMBER"] = _to_json_data(self.xxx_other_id_number)
-        data["XXX_OTHER_ID_TYPE"] = _to_json_data(self.xxx_other_id_type)
+        data["XXX_EMPLOYER_NAME"] = _to_json_data(self.xxx_employer_name)
+        data["XXX_NATIVE_NAME_FULL"] = _to_json_data(self.xxx_native_name_full)
         data["XXX_PHONE_FROM_DATE"] = _to_json_data(self.xxx_phone_from_date)
         data["XXX_PHONE_THRU_DATE"] = _to_json_data(self.xxx_phone_thru_date)
-        data["XXX_PHONE_TYPE"] = _to_json_data(self.xxx_phone_type)
-        data["XXX_PLACE_OF_BIRTH"] = _to_json_data(self.xxx_place_of_birth)
-        data["XXX_REGISTRATION_COUNTRY"] = _to_json_data(self.xxx_registration_country)
-        data["XXX_REGISTRATION_DATE"] = _to_json_data(self.xxx_registration_date)
-        data["XXX_SIGNAL"] = _to_json_data(self.xxx_signal)
-        data["XXX_SKYPE"] = _to_json_data(self.xxx_skype)
-        data["XXX_TANGO"] = _to_json_data(self.xxx_tango)
-        data["XXX_TAX_ID_COUNTRY"] = _to_json_data(self.xxx_tax_id_country)
-        data["XXX_TAX_ID_NUMBER"] = _to_json_data(self.xxx_tax_id_number)
-        data["XXX_TAX_ID_TYPE"] = _to_json_data(self.xxx_tax_id_type)
-        data["XXX_TELEGRAM"] = _to_json_data(self.xxx_telegram)
-        data["XXX_TRUSTED_ID_NUMBER"] = _to_json_data(self.xxx_trusted_id_number)
-        data["XXX_TRUSTED_ID_TYPE"] = _to_json_data(self.xxx_trusted_id_type)
-        data["XXX_TWITTER"] = _to_json_data(self.xxx_twitter)
-        data["XXX_VIBER"] = _to_json_data(self.xxx_viber)
-        data["XXX_WEBSITE_ADDRESS"] = _to_json_data(self.xxx_website_address)
-        data["XXX_WECHAT"] = _to_json_data(self.xxx_wechat)
-        data["XXX_WHATSAPP"] = _to_json_data(self.xxx_whatsapp)
-        data["XXX_ZOOMROOM"] = _to_json_data(self.xxx_zoomroom)
+        data["XXX_PRIMARY_NAME_FIRST"] = _to_json_data(self.xxx_primary_name_first)
+        data["XXX_PRIMARY_NAME_FULL"] = _to_json_data(self.xxx_primary_name_full)
+        data["XXX_PRIMARY_NAME_LAST"] = _to_json_data(self.xxx_primary_name_last)
+        data["XXX_PRIMARY_NAME_MIDDLE"] = _to_json_data(self.xxx_primary_name_middle)
+        data["XXX_PRIMARY_NAME_ORG"] = _to_json_data(self.xxx_primary_name_org)
+        data["XXX_SECONDARY_NAME_ORG"] = _to_json_data(self.xxx_secondary_name_org)
+        data["ZOOMROOM"] = _to_json_data(self.zoomroom)
         return data
 
 @dataclass
@@ -4549,7 +4945,7 @@ class Workload:
     datetimestamp: 'str'
     expressed_features: 'WorkloadExpressedFeatures'
     generic_detect: 'Fixme'
-    license: 'License'
+    license: 'WorkloadLicense'
     loaded_records: 'int'
     lock_waits: 'WorkloadLockWaits'
     processing: 'WorkloadProcessing'
@@ -4571,7 +4967,7 @@ class Workload:
             _from_json_data(str, data.get("datetimestamp")),
             _from_json_data(WorkloadExpressedFeatures, data.get("expressedFeatures")),
             _from_json_data(Fixme, data.get("genericDetect")),
-            _from_json_data(License, data.get("license")),
+            _from_json_data(WorkloadLicense, data.get("license")),
             _from_json_data(int, data.get("loadedRecords")),
             _from_json_data(WorkloadLockWaits, data.get("lockWaits")),
             _from_json_data(WorkloadProcessing, data.get("processing")),
@@ -4766,6 +5162,27 @@ class WorkloadInitResources:
         data["availableMemory"] = _to_json_data(self.available_memory)
         data["logicalCores"] = _to_json_data(self.logical_cores)
         data["totalMemory"] = _to_json_data(self.total_memory)
+        return data
+
+@dataclass
+class WorkloadLicense:
+    dsr_limit: 'str'
+    status: 'str'
+    type: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'WorkloadLicense':
+        return cls(
+            _from_json_data(str, data.get("dsrLimit")),
+            _from_json_data(str, data.get("status")),
+            _from_json_data(str, data.get("type")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["dsrLimit"] = _to_json_data(self.dsr_limit)
+        data["status"] = _to_json_data(self.status)
+        data["type"] = _to_json_data(self.type)
         return data
 
 @dataclass

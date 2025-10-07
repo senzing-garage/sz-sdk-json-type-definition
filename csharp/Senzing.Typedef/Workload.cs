@@ -30,7 +30,7 @@ namespace Senzing.Typedef
         public Fixme GenericDetect { get; set; }
 
         [JsonPropertyName("license")]
-        public License License { get; set; }
+        public WorkloadLicense License { get; set; }
 
         [JsonPropertyName("loadedRecords")]
         public int LoadedRecords { get; set; }

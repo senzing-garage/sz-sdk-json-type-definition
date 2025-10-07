@@ -863,14 +863,6 @@ type InterestingEntity struct {
 	XxxSampleRecords []SampleRecord `json:"XXX_SAMPLE_RECORDS"`
 }
 
-type License struct {
-	DsrLimit string `json:"dsrLimit"`
-
-	Status string `json:"status"`
-
-	Type string `json:"type"`
-}
-
 type MatchInfo struct {
 	CandidateKeys CandidateKeysForMatchInfo `json:"CANDIDATE_KEYS"`
 
@@ -1066,7 +1058,7 @@ type RecordKey struct {
 
 type RecordKeys struct {
 	// A list of (data source code, record id) pairs.
-	XxxRecords []RecordKey `json:"XXX_RECORDS"`
+	Records []RecordKey `json:"RECORDS"`
 }
 
 type RecordSummary struct {
@@ -1338,171 +1330,358 @@ type SearchStatistic struct {
 }
 
 type SenzingEntitySpecification struct {
+	// Domain/system for the account number. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AccountDomain string `json:"ACCOUNT_DOMAIN"`
+
+	// Account number (e.g., bank, card). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AccountNumber string `json:"ACCOUNT_NUMBER"`
+
+	// City/locality. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	AddrCity string `json:"ADDR_CITY"`
 
+	// Country code. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	AddrCountry string `json:"ADDR_COUNTRY"`
 
+	// Single-field address when parsed components are unavailable.
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	AddrFull string `json:"ADDR_FULL"`
 
+	// First address line (street, number). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
 	AddrLine1 string `json:"ADDR_LINE1"`
 
+	// Second address line (apt/suite). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AddrLine2 string `json:"ADDR_LINE2"`
+
+	// Third address line (optional). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AddrLine3 string `json:"ADDR_LINE3"`
+
+	// Fourth address line (optional). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AddrLine4 string `json:"ADDR_LINE4"`
+
+	// Fifth address line (optional). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AddrLine5 string `json:"ADDR_LINE5"`
+
+	// Sixth address line (optional). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AddrLine6 string `json:"ADDR_LINE6"`
+
+	// Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	AddrPostalCode string `json:"ADDR_POSTAL_CODE"`
 
+	// State/province/region code. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
 	AddrState string `json:"ADDR_STATE"`
 
+	// Optional; include when provided by the source. Common values: HOME, MAILING
+	// (persons); BUSINESS (organizations). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	AddrType string `json:"ADDR_TYPE"`
+
+	// Country of citizenship (code or label) as provided by the
+	// source. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	Citizenship string `json:"CITIZENSHIP"`
+
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	DateOfBirth string `json:"DATE_OF_BIRTH"`
 
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	DateOfDeath string `json:"DATE_OF_DEATH"`
+
+	// Driver's license number. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
 	DriversLicenseNumber string `json:"DRIVERS_LICENSE_NUMBER"`
 
+	// Issuing state/province/country. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
 	DriversLicenseState string `json:"DRIVERS_LICENSE_STATE"`
 
+	// Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	DunsNumber string `json:"DUNS_NUMBER"`
+
+	// Email address. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	EmailAddress string `json:"EMAIL_ADDRESS"`
 
-	EmployerName string `json:"EMPLOYER_NAME"`
+	// This is the name of the organization the person is employed
+	// by. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	Employer string `json:"EMPLOYER"`
 
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Facebook string `json:"FACEBOOK"`
+
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	Gender string `json:"GENDER"`
 
+	// The identifier the entity is associated with. An attribute in the Senzing
+	// Entity Specification. See https://www.senzing.com/docs/entity_specification
+	GroupAssnIDNumber string `json:"GROUP_ASSN_ID_NUMBER"`
+
+	// The type of group identifier an entity is associated with.
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	GroupAssnIDType string `json:"GROUP_ASSN_ID_TYPE"`
+
+	// Name of the associated organization; use the official or standardized
+	// name. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	GroupAssociationOrgName string `json:"GROUP_ASSOCIATION_ORG_NAME"`
+
+	// Specific group/role within the organization; use precise categories (e.g.,
+	// OWNER_EXEC, BOARD_MEMBER) to improve resolution. An attribute in the Senzing
+	// Entity Specification. See https://www.senzing.com/docs/entity_specification
+	GroupAssociationType string `json:"GROUP_ASSOCIATION_TYPE"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Instagram string `json:"INSTAGRAM"`
+
+	// Legal Entity Identifier. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	LeiNumber string `json:"LEI_NUMBER"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Linkedin string `json:"LINKEDIN"`
+
+	// Person given name. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	NameFirst string `json:"NAME_FIRST"`
+
+	// Single-field name when type (person vs org) is unknown or only a full
+	// name is provided. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	NameFull string `json:"NAME_FULL"`
 
+	// Person surname. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	NameLast string `json:"NAME_LAST"`
+
+	// Person middle name/initial. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	NameMiddle string `json:"NAME_MIDDLE"`
+
+	// Organization name. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	NameOrg string `json:"NAME_ORG"`
+
+	// Person title. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	NamePrefix string `json:"NAME_PREFIX"`
+
+	// Person suffix. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	NameSuffix string `json:"NAME_SUFFIX"`
+
+	// Optional include when the source provides it. Common values: PRIMARY,
+	// AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	NameType string `json:"NAME_TYPE"`
+
+	// Country of nationality (code or label) as provided by the
+	// source. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	Nationality string `json:"NATIONALITY"`
+
+	// Issuing country. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	NationalIDCountry string `json:"NATIONAL_ID_COUNTRY"`
 
+	// National identifier value. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
 	NationalIDNumber string `json:"NATIONAL_ID_NUMBER"`
 
-	NativeNameFull string `json:"NATIVE_NAME_FULL"`
+	// Use the type label from the source; standardize across
+	// sources. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	NationalIDType string `json:"NATIONAL_ID_TYPE"`
 
+	// US healthcare provider identifier. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	NpiNumber string `json:"NPI_NUMBER"`
+
+	// Optional as country often not known or issued by an organization.
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	OtherIDCountry string `json:"OTHER_ID_COUNTRY"`
+
+	// Identification number. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	OtherIDNumber string `json:"OTHER_ID_NUMBER"`
+
+	// Standardized source type. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	OtherIDType string `json:"OTHER_ID_TYPE"`
+
+	// Issuing country. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	PassportCountry string `json:"PASSPORT_COUNTRY"`
 
+	// Passport number. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	PassportNumber string `json:"PASSPORT_NUMBER"`
 
+	// Telephone number. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	PhoneNumber string `json:"PHONE_NUMBER"`
 
-	PrimaryNameFirst string `json:"PRIMARY_NAME_FIRST"`
+	// Optional; include when provided by the source. Common values: MOBILE, HOME,
+	// WORK, FAX. MOBILE carries extra weight. An attribute in the Senzing Entity
+	// Specification. See https://www.senzing.com/docs/entity_specification
+	PhoneType string `json:"PHONE_TYPE"`
 
-	PrimaryNameFull string `json:"PRIMARY_NAME_FULL"`
+	// Place of birth; may be a city/region or a country code/label as provided
+	// by the source. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	PlaceOfBirth string `json:"PLACE_OF_BIRTH"`
 
-	PrimaryNameLast string `json:"PRIMARY_NAME_LAST"`
-
-	PrimaryNameMiddle string `json:"PRIMARY_NAME_MIDDLE"`
-
-	PrimaryNameOrg string `json:"PRIMARY_NAME_ORG"`
-
+	// Include when known to prevent cross-type resolution; omit if unknown.
+	// Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+	// icon/shape in graphs. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	RecordType string `json:"RECORD_TYPE"`
 
+	// Country of registration (code or label) as provided by the
+	// source. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	RegistrationCountry string `json:"REGISTRATION_COUNTRY"`
+
+	// Organization registration/incorporation date. An attribute in the Senzing
+	// Entity Specification. See https://www.senzing.com/docs/entity_specification
+	RegistrationDate string `json:"REGISTRATION_DATE"`
+
+	// This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+	// dashes) for the data source or source field that is contributing the
+	// relationship. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	RelAnchorDomain string `json:"REL_ANCHOR_DOMAIN"`
+
+	// This key should be a unique value for the record within the
+	// REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+	// here. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	RelAnchorKey string `json:"REL_ANCHOR_KEY"`
 
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	RelPointerDomain string `json:"REL_POINTER_DOMAIN"`
+
+	// An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
 	RelPointerKey string `json:"REL_POINTER_KEY"`
 
-	SecondaryNameOrg string `json:"SECONDARY_NAME_ORG"`
+	// This is the role the pointer record has to the anchor record. Such
+	// as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+	// BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for
+	// display and filtering. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	RelPointerRole string `json:"REL_POINTER_ROLE"`
 
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Signal string `json:"SIGNAL"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Skype string `json:"SKYPE"`
+
+	// US Social Security Number; partial accepted. An attribute in the Senzing
+	// Entity Specification. See https://www.senzing.com/docs/entity_specification
 	SsnNumber string `json:"SSN_NUMBER"`
 
-	XxxAccountDomain string `json:"XXX_ACCOUNT_DOMAIN"`
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Tango string `json:"TANGO"`
 
-	XxxAccountNumber string `json:"XXX_ACCOUNT_NUMBER"`
+	// Issuing country. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	TaxIDCountry string `json:"TAX_ID_COUNTRY"`
+
+	// Tax identification number. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	TaxIDNumber string `json:"TAX_ID_NUMBER"`
+
+	// Use the type label from the source; standardize across
+	// sources. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	TaxIDType string `json:"TAX_ID_TYPE"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Telegram string `json:"TELEGRAM"`
+
+	// The identifier value shared by records that must resolve
+	// together. An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	TrustedIDNumber string `json:"TRUSTED_ID_NUMBER"`
+
+	// Short code for the identifier domain/system (e.g., STEWARD,
+	// MASTER_ID). An attribute in the Senzing Entity Specification. See
+	// https://www.senzing.com/docs/entity_specification
+	TrustedIDType string `json:"TRUSTED_ID_TYPE"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Twitter string `json:"TWITTER"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Viber string `json:"VIBER"`
+
+	// Website or domain; typically for organizations. An attribute in the Senzing
+	// Entity Specification. See https://www.senzing.com/docs/entity_specification
+	WebsiteAddress string `json:"WEBSITE_ADDRESS"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Wechat string `json:"WECHAT"`
+
+	// Social medial user name. An attribute in the Senzing Entity Specification.
+	// See https://www.senzing.com/docs/entity_specification
+	Whatsapp string `json:"WHATSAPP"`
 
 	XxxAddrFromDate string `json:"XXX_ADDR_FROM_DATE"`
 
-	XxxAddrLine2 string `json:"XXX_ADDR_LINE2"`
-
-	XxxAddrLine3 string `json:"XXX_ADDR_LINE3"`
-
-	XxxAddrLine4 string `json:"XXX_ADDR_LINE4"`
-
-	XxxAddrLine5 string `json:"XXX_ADDR_LINE5"`
-
-	XxxAddrLine6 string `json:"XXX_ADDR_LINE6"`
-
 	XxxAddrThruDate string `json:"XXX_ADDR_THRU_DATE"`
 
-	XxxAddrType string `json:"XXX_ADDR_TYPE"`
+	XxxEmployerName string `json:"XXX_EMPLOYER_NAME"`
 
-	XxxCitizenship string `json:"XXX_CITIZENSHIP"`
-
-	XxxDateOfDeath string `json:"XXX_DATE_OF_DEATH"`
-
-	XxxDunsNumber string `json:"XXX_DUNS_NUMBER"`
-
-	XxxEmployer string `json:"XXX_EMPLOYER"`
-
-	XxxFacebook string `json:"XXX_FACEBOOK"`
-
-	XxxGroupAssnIDNumber string `json:"XXX_GROUP_ASSN_ID_NUMBER"`
-
-	XxxGroupAssnIDType string `json:"XXX_GROUP_ASSN_ID_TYPE"`
-
-	XxxGroupAssociationOrgName string `json:"XXX_GROUP_ASSOCIATION_ORG_NAME"`
-
-	XxxGroupAssociationType string `json:"XXX_GROUP_ASSOCIATION_TYPE"`
-
-	XxxInstagram string `json:"XXX_INSTAGRAM"`
-
-	XxxLeiNumber string `json:"XXX_LEI_NUMBER"`
-
-	XxxLinkedin string `json:"XXX_LINKEDIN"`
-
-	XxxNameFirst string `json:"XXX_NAME_FIRST"`
-
-	XxxNameLast string `json:"XXX_NAME_LAST"`
-
-	XxxNameOrg string `json:"XXX_NAME_ORG"`
-
-	XxxNamePrefix string `json:"XXX_NAME_PREFIX"`
-
-	XxxNameSuffix string `json:"XXX_NAME_SUFFIX"`
-
-	XxxNameType string `json:"XXX_NAME_TYPE"`
-
-	XxxNationality string `json:"XXX_NATIONALITY"`
-
-	XxxNpiNumber string `json:"XXX_NPI_NUMBER"`
-
-	XxxOtherIDCountry string `json:"XXX_OTHER_ID_COUNTRY"`
-
-	XxxOtherIDNumber string `json:"XXX_OTHER_ID_NUMBER"`
-
-	XxxOtherIDType string `json:"XXX_OTHER_ID_TYPE"`
+	XxxNativeNameFull string `json:"XXX_NATIVE_NAME_FULL"`
 
 	XxxPhoneFromDate string `json:"XXX_PHONE_FROM_DATE"`
 
 	XxxPhoneThruDate string `json:"XXX_PHONE_THRU_DATE"`
 
-	XxxPhoneType string `json:"XXX_PHONE_TYPE"`
+	XxxPrimaryNameFirst string `json:"XXX_PRIMARY_NAME_FIRST"`
 
-	XxxPlaceOfBirth string `json:"XXX_PLACE_OF_BIRTH"`
+	XxxPrimaryNameFull string `json:"XXX_PRIMARY_NAME_FULL"`
 
-	XxxRegistrationCountry string `json:"XXX_REGISTRATION_COUNTRY"`
+	XxxPrimaryNameLast string `json:"XXX_PRIMARY_NAME_LAST"`
 
-	XxxRegistrationDate string `json:"XXX_REGISTRATION_DATE"`
+	XxxPrimaryNameMiddle string `json:"XXX_PRIMARY_NAME_MIDDLE"`
 
-	XxxSignal string `json:"XXX_SIGNAL"`
+	XxxPrimaryNameOrg string `json:"XXX_PRIMARY_NAME_ORG"`
 
-	XxxSkype string `json:"XXX_SKYPE"`
+	XxxSecondaryNameOrg string `json:"XXX_SECONDARY_NAME_ORG"`
 
-	XxxTango string `json:"XXX_TANGO"`
-
-	XxxTaxIDCountry string `json:"XXX_TAX_ID_COUNTRY"`
-
-	XxxTaxIDNumber string `json:"XXX_TAX_ID_NUMBER"`
-
-	XxxTaxIDType string `json:"XXX_TAX_ID_TYPE"`
-
-	XxxTelegram string `json:"XXX_TELEGRAM"`
-
-	XxxTrustedIDNumber string `json:"XXX_TRUSTED_ID_NUMBER"`
-
-	XxxTrustedIDType string `json:"XXX_TRUSTED_ID_TYPE"`
-
-	XxxTwitter string `json:"XXX_TWITTER"`
-
-	XxxViber string `json:"XXX_VIBER"`
-
-	XxxWebsiteAddress string `json:"XXX_WEBSITE_ADDRESS"`
-
-	XxxWechat string `json:"XXX_WECHAT"`
-
-	XxxWhatsapp string `json:"XXX_WHATSAPP"`
-
-	XxxZoomroom string `json:"XXX_ZOOMROOM"`
+	Zoomroom string `json:"ZOOMROOM"`
 }
 
 type SzConfigExportResponse struct {
@@ -1948,7 +2127,7 @@ type Workload struct {
 
 	GenericDetect Fixme `json:"genericDetect"`
 
-	License License `json:"license"`
+	License WorkloadLicense `json:"license"`
 
 	LoadedRecords int32 `json:"loadedRecords"`
 
@@ -2035,6 +2214,14 @@ type WorkloadInitResources struct {
 	LogicalCores int32 `json:"logicalCores"`
 
 	TotalMemory string `json:"totalMemory"`
+}
+
+type WorkloadLicense struct {
+	DsrLimit string `json:"dsrLimit"`
+
+	Status string `json:"status"`
+
+	Type string `json:"type"`
 }
 
 type WorkloadLockWaits struct {

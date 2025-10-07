@@ -7,6 +7,12 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class SenzingEntitySpecification {
+    @JsonProperty("ACCOUNT_DOMAIN")
+    private String accountDomain;
+
+    @JsonProperty("ACCOUNT_NUMBER")
+    private String accountNumber;
+
     @JsonProperty("ADDR_CITY")
     private String addrCity;
 
@@ -19,14 +25,38 @@ public class SenzingEntitySpecification {
     @JsonProperty("ADDR_LINE1")
     private String addrLine1;
 
+    @JsonProperty("ADDR_LINE2")
+    private String addrLine2;
+
+    @JsonProperty("ADDR_LINE3")
+    private String addrLine3;
+
+    @JsonProperty("ADDR_LINE4")
+    private String addrLine4;
+
+    @JsonProperty("ADDR_LINE5")
+    private String addrLine5;
+
+    @JsonProperty("ADDR_LINE6")
+    private String addrLine6;
+
     @JsonProperty("ADDR_POSTAL_CODE")
     private String addrPostalCode;
 
     @JsonProperty("ADDR_STATE")
     private String addrState;
 
+    @JsonProperty("ADDR_TYPE")
+    private String addrType;
+
+    @JsonProperty("CITIZENSHIP")
+    private String citizenship;
+
     @JsonProperty("DATE_OF_BIRTH")
     private String dateOfBirth;
+
+    @JsonProperty("DATE_OF_DEATH")
+    private String dateOfDeath;
 
     @JsonProperty("DRIVERS_LICENSE_NUMBER")
     private String driversLicenseNumber;
@@ -34,17 +64,68 @@ public class SenzingEntitySpecification {
     @JsonProperty("DRIVERS_LICENSE_STATE")
     private String driversLicenseState;
 
+    @JsonProperty("DUNS_NUMBER")
+    private String dunsNumber;
+
     @JsonProperty("EMAIL_ADDRESS")
     private String emailAddress;
 
-    @JsonProperty("EMPLOYER_NAME")
-    private String employerName;
+    @JsonProperty("EMPLOYER")
+    private String employer;
+
+    @JsonProperty("FACEBOOK")
+    private String facebook;
 
     @JsonProperty("GENDER")
     private String gender;
 
+    @JsonProperty("GROUP_ASSN_ID_NUMBER")
+    private String groupAssnIdNumber;
+
+    @JsonProperty("GROUP_ASSN_ID_TYPE")
+    private String groupAssnIdType;
+
+    @JsonProperty("GROUP_ASSOCIATION_ORG_NAME")
+    private String groupAssociationOrgName;
+
+    @JsonProperty("GROUP_ASSOCIATION_TYPE")
+    private String groupAssociationType;
+
+    @JsonProperty("INSTAGRAM")
+    private String instagram;
+
+    @JsonProperty("LEI_NUMBER")
+    private String leiNumber;
+
+    @JsonProperty("LINKEDIN")
+    private String linkedin;
+
+    @JsonProperty("NAME_FIRST")
+    private String nameFirst;
+
     @JsonProperty("NAME_FULL")
     private String nameFull;
+
+    @JsonProperty("NAME_LAST")
+    private String nameLast;
+
+    @JsonProperty("NAME_MIDDLE")
+    private String nameMiddle;
+
+    @JsonProperty("NAME_ORG")
+    private String nameOrg;
+
+    @JsonProperty("NAME_PREFIX")
+    private String namePrefix;
+
+    @JsonProperty("NAME_SUFFIX")
+    private String nameSuffix;
+
+    @JsonProperty("NAME_TYPE")
+    private String nameType;
+
+    @JsonProperty("NATIONALITY")
+    private String nationality;
 
     @JsonProperty("NATIONAL_ID_COUNTRY")
     private String nationalIdCountry;
@@ -52,8 +133,20 @@ public class SenzingEntitySpecification {
     @JsonProperty("NATIONAL_ID_NUMBER")
     private String nationalIdNumber;
 
-    @JsonProperty("NATIVE_NAME_FULL")
-    private String nativeNameFull;
+    @JsonProperty("NATIONAL_ID_TYPE")
+    private String nationalIdType;
+
+    @JsonProperty("NPI_NUMBER")
+    private String npiNumber;
+
+    @JsonProperty("OTHER_ID_COUNTRY")
+    private String otherIdCountry;
+
+    @JsonProperty("OTHER_ID_NUMBER")
+    private String otherIdNumber;
+
+    @JsonProperty("OTHER_ID_TYPE")
+    private String otherIdType;
 
     @JsonProperty("PASSPORT_COUNTRY")
     private String passportCountry;
@@ -64,134 +157,92 @@ public class SenzingEntitySpecification {
     @JsonProperty("PHONE_NUMBER")
     private String phoneNumber;
 
-    @JsonProperty("PRIMARY_NAME_FIRST")
-    private String primaryNameFirst;
+    @JsonProperty("PHONE_TYPE")
+    private String phoneType;
 
-    @JsonProperty("PRIMARY_NAME_FULL")
-    private String primaryNameFull;
-
-    @JsonProperty("PRIMARY_NAME_LAST")
-    private String primaryNameLast;
-
-    @JsonProperty("PRIMARY_NAME_MIDDLE")
-    private String primaryNameMiddle;
-
-    @JsonProperty("PRIMARY_NAME_ORG")
-    private String primaryNameOrg;
+    @JsonProperty("PLACE_OF_BIRTH")
+    private String placeOfBirth;
 
     @JsonProperty("RECORD_TYPE")
     private String recordType;
 
+    @JsonProperty("REGISTRATION_COUNTRY")
+    private String registrationCountry;
+
+    @JsonProperty("REGISTRATION_DATE")
+    private String registrationDate;
+
+    @JsonProperty("REL_ANCHOR_DOMAIN")
+    private String relAnchorDomain;
+
     @JsonProperty("REL_ANCHOR_KEY")
     private String relAnchorKey;
+
+    @JsonProperty("REL_POINTER_DOMAIN")
+    private String relPointerDomain;
 
     @JsonProperty("REL_POINTER_KEY")
     private String relPointerKey;
 
-    @JsonProperty("SECONDARY_NAME_ORG")
-    private String secondaryNameOrg;
+    @JsonProperty("REL_POINTER_ROLE")
+    private String relPointerRole;
+
+    @JsonProperty("SIGNAL")
+    private String signal;
+
+    @JsonProperty("SKYPE")
+    private String skype;
 
     @JsonProperty("SSN_NUMBER")
     private String ssnNumber;
 
-    @JsonProperty("XXX_ACCOUNT_DOMAIN")
-    private String xxxAccountDomain;
+    @JsonProperty("TANGO")
+    private String tango;
 
-    @JsonProperty("XXX_ACCOUNT_NUMBER")
-    private String xxxAccountNumber;
+    @JsonProperty("TAX_ID_COUNTRY")
+    private String taxIdCountry;
+
+    @JsonProperty("TAX_ID_NUMBER")
+    private String taxIdNumber;
+
+    @JsonProperty("TAX_ID_TYPE")
+    private String taxIdType;
+
+    @JsonProperty("TELEGRAM")
+    private String telegram;
+
+    @JsonProperty("TRUSTED_ID_NUMBER")
+    private String trustedIdNumber;
+
+    @JsonProperty("TRUSTED_ID_TYPE")
+    private String trustedIdType;
+
+    @JsonProperty("TWITTER")
+    private String twitter;
+
+    @JsonProperty("VIBER")
+    private String viber;
+
+    @JsonProperty("WEBSITE_ADDRESS")
+    private String websiteAddress;
+
+    @JsonProperty("WECHAT")
+    private String wechat;
+
+    @JsonProperty("WHATSAPP")
+    private String whatsapp;
 
     @JsonProperty("XXX_ADDR_FROM_DATE")
     private String xxxAddrFromDate;
 
-    @JsonProperty("XXX_ADDR_LINE2")
-    private String xxxAddrLine2;
-
-    @JsonProperty("XXX_ADDR_LINE3")
-    private String xxxAddrLine3;
-
-    @JsonProperty("XXX_ADDR_LINE4")
-    private String xxxAddrLine4;
-
-    @JsonProperty("XXX_ADDR_LINE5")
-    private String xxxAddrLine5;
-
-    @JsonProperty("XXX_ADDR_LINE6")
-    private String xxxAddrLine6;
-
     @JsonProperty("XXX_ADDR_THRU_DATE")
     private String xxxAddrThruDate;
 
-    @JsonProperty("XXX_ADDR_TYPE")
-    private String xxxAddrType;
+    @JsonProperty("XXX_EMPLOYER_NAME")
+    private String xxxEmployerName;
 
-    @JsonProperty("XXX_CITIZENSHIP")
-    private String xxxCitizenship;
-
-    @JsonProperty("XXX_DATE_OF_DEATH")
-    private String xxxDateOfDeath;
-
-    @JsonProperty("XXX_DUNS_NUMBER")
-    private String xxxDunsNumber;
-
-    @JsonProperty("XXX_EMPLOYER")
-    private String xxxEmployer;
-
-    @JsonProperty("XXX_FACEBOOK")
-    private String xxxFacebook;
-
-    @JsonProperty("XXX_GROUP_ASSN_ID_NUMBER")
-    private String xxxGroupAssnIdNumber;
-
-    @JsonProperty("XXX_GROUP_ASSN_ID_TYPE")
-    private String xxxGroupAssnIdType;
-
-    @JsonProperty("XXX_GROUP_ASSOCIATION_ORG_NAME")
-    private String xxxGroupAssociationOrgName;
-
-    @JsonProperty("XXX_GROUP_ASSOCIATION_TYPE")
-    private String xxxGroupAssociationType;
-
-    @JsonProperty("XXX_INSTAGRAM")
-    private String xxxInstagram;
-
-    @JsonProperty("XXX_LEI_NUMBER")
-    private String xxxLeiNumber;
-
-    @JsonProperty("XXX_LINKEDIN")
-    private String xxxLinkedin;
-
-    @JsonProperty("XXX_NAME_FIRST")
-    private String xxxNameFirst;
-
-    @JsonProperty("XXX_NAME_LAST")
-    private String xxxNameLast;
-
-    @JsonProperty("XXX_NAME_ORG")
-    private String xxxNameOrg;
-
-    @JsonProperty("XXX_NAME_PREFIX")
-    private String xxxNamePrefix;
-
-    @JsonProperty("XXX_NAME_SUFFIX")
-    private String xxxNameSuffix;
-
-    @JsonProperty("XXX_NAME_TYPE")
-    private String xxxNameType;
-
-    @JsonProperty("XXX_NATIONALITY")
-    private String xxxNationality;
-
-    @JsonProperty("XXX_NPI_NUMBER")
-    private String xxxNpiNumber;
-
-    @JsonProperty("XXX_OTHER_ID_COUNTRY")
-    private String xxxOtherIdCountry;
-
-    @JsonProperty("XXX_OTHER_ID_NUMBER")
-    private String xxxOtherIdNumber;
-
-    @JsonProperty("XXX_OTHER_ID_TYPE")
-    private String xxxOtherIdType;
+    @JsonProperty("XXX_NATIVE_NAME_FULL")
+    private String xxxNativeNameFull;
 
     @JsonProperty("XXX_PHONE_FROM_DATE")
     private String xxxPhoneFromDate;
@@ -199,68 +250,70 @@ public class SenzingEntitySpecification {
     @JsonProperty("XXX_PHONE_THRU_DATE")
     private String xxxPhoneThruDate;
 
-    @JsonProperty("XXX_PHONE_TYPE")
-    private String xxxPhoneType;
+    @JsonProperty("XXX_PRIMARY_NAME_FIRST")
+    private String xxxPrimaryNameFirst;
 
-    @JsonProperty("XXX_PLACE_OF_BIRTH")
-    private String xxxPlaceOfBirth;
+    @JsonProperty("XXX_PRIMARY_NAME_FULL")
+    private String xxxPrimaryNameFull;
 
-    @JsonProperty("XXX_REGISTRATION_COUNTRY")
-    private String xxxRegistrationCountry;
+    @JsonProperty("XXX_PRIMARY_NAME_LAST")
+    private String xxxPrimaryNameLast;
 
-    @JsonProperty("XXX_REGISTRATION_DATE")
-    private String xxxRegistrationDate;
+    @JsonProperty("XXX_PRIMARY_NAME_MIDDLE")
+    private String xxxPrimaryNameMiddle;
 
-    @JsonProperty("XXX_SIGNAL")
-    private String xxxSignal;
+    @JsonProperty("XXX_PRIMARY_NAME_ORG")
+    private String xxxPrimaryNameOrg;
 
-    @JsonProperty("XXX_SKYPE")
-    private String xxxSkype;
+    @JsonProperty("XXX_SECONDARY_NAME_ORG")
+    private String xxxSecondaryNameOrg;
 
-    @JsonProperty("XXX_TANGO")
-    private String xxxTango;
-
-    @JsonProperty("XXX_TAX_ID_COUNTRY")
-    private String xxxTaxIdCountry;
-
-    @JsonProperty("XXX_TAX_ID_NUMBER")
-    private String xxxTaxIdNumber;
-
-    @JsonProperty("XXX_TAX_ID_TYPE")
-    private String xxxTaxIdType;
-
-    @JsonProperty("XXX_TELEGRAM")
-    private String xxxTelegram;
-
-    @JsonProperty("XXX_TRUSTED_ID_NUMBER")
-    private String xxxTrustedIdNumber;
-
-    @JsonProperty("XXX_TRUSTED_ID_TYPE")
-    private String xxxTrustedIdType;
-
-    @JsonProperty("XXX_TWITTER")
-    private String xxxTwitter;
-
-    @JsonProperty("XXX_VIBER")
-    private String xxxViber;
-
-    @JsonProperty("XXX_WEBSITE_ADDRESS")
-    private String xxxWebsiteAddress;
-
-    @JsonProperty("XXX_WECHAT")
-    private String xxxWechat;
-
-    @JsonProperty("XXX_WHATSAPP")
-    private String xxxWhatsapp;
-
-    @JsonProperty("XXX_ZOOMROOM")
-    private String xxxZoomroom;
+    @JsonProperty("ZOOMROOM")
+    private String zoomroom;
 
     public SenzingEntitySpecification() {
     }
 
     /**
+     * Getter for accountDomain.<p>
+     * Domain/system for the account number. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAccountDomain() {
+        return accountDomain;
+    }
+
+    /**
+     * Setter for accountDomain.<p>
+     * Domain/system for the account number. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAccountDomain(String accountDomain) {
+        this.accountDomain = accountDomain;
+    }
+
+    /**
+     * Getter for accountNumber.<p>
+     * Account number (e.g., bank, card). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    /**
+     * Setter for accountNumber.<p>
+     * Account number (e.g., bank, card). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    /**
      * Getter for addrCity.<p>
+     * City/locality. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getAddrCity() {
         return addrCity;
@@ -268,6 +321,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for addrCity.<p>
+     * City/locality. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setAddrCity(String addrCity) {
         this.addrCity = addrCity;
@@ -275,6 +330,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for addrCountry.<p>
+     * Country code. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getAddrCountry() {
         return addrCountry;
@@ -282,6 +339,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for addrCountry.<p>
+     * Country code. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setAddrCountry(String addrCountry) {
         this.addrCountry = addrCountry;
@@ -289,6 +348,9 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for addrFull.<p>
+     * Single-field address when parsed components are unavailable.
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getAddrFull() {
         return addrFull;
@@ -296,6 +358,9 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for addrFull.<p>
+     * Single-field address when parsed components are unavailable.
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setAddrFull(String addrFull) {
         this.addrFull = addrFull;
@@ -303,6 +368,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for addrLine1.<p>
+     * First address line (street, number). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public String getAddrLine1() {
         return addrLine1;
@@ -310,13 +377,107 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for addrLine1.<p>
+     * First address line (street, number). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public void setAddrLine1(String addrLine1) {
         this.addrLine1 = addrLine1;
     }
 
     /**
+     * Getter for addrLine2.<p>
+     * Second address line (apt/suite). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAddrLine2() {
+        return addrLine2;
+    }
+
+    /**
+     * Setter for addrLine2.<p>
+     * Second address line (apt/suite). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAddrLine2(String addrLine2) {
+        this.addrLine2 = addrLine2;
+    }
+
+    /**
+     * Getter for addrLine3.<p>
+     * Third address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAddrLine3() {
+        return addrLine3;
+    }
+
+    /**
+     * Setter for addrLine3.<p>
+     * Third address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAddrLine3(String addrLine3) {
+        this.addrLine3 = addrLine3;
+    }
+
+    /**
+     * Getter for addrLine4.<p>
+     * Fourth address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAddrLine4() {
+        return addrLine4;
+    }
+
+    /**
+     * Setter for addrLine4.<p>
+     * Fourth address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAddrLine4(String addrLine4) {
+        this.addrLine4 = addrLine4;
+    }
+
+    /**
+     * Getter for addrLine5.<p>
+     * Fifth address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAddrLine5() {
+        return addrLine5;
+    }
+
+    /**
+     * Setter for addrLine5.<p>
+     * Fifth address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAddrLine5(String addrLine5) {
+        this.addrLine5 = addrLine5;
+    }
+
+    /**
+     * Getter for addrLine6.<p>
+     * Sixth address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getAddrLine6() {
+        return addrLine6;
+    }
+
+    /**
+     * Setter for addrLine6.<p>
+     * Sixth address line (optional). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setAddrLine6(String addrLine6) {
+        this.addrLine6 = addrLine6;
+    }
+
+    /**
      * Getter for addrPostalCode.<p>
+     * Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getAddrPostalCode() {
         return addrPostalCode;
@@ -324,6 +485,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for addrPostalCode.<p>
+     * Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setAddrPostalCode(String addrPostalCode) {
         this.addrPostalCode = addrPostalCode;
@@ -331,6 +494,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for addrState.<p>
+     * State/province/region code. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public String getAddrState() {
         return addrState;
@@ -338,13 +503,59 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for addrState.<p>
+     * State/province/region code. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public void setAddrState(String addrState) {
         this.addrState = addrState;
     }
 
     /**
+     * Getter for addrType.<p>
+     * Optional; include when provided by the source. Common
+     * values: HOME, MAILING (persons); BUSINESS (organizations).
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getAddrType() {
+        return addrType;
+    }
+
+    /**
+     * Setter for addrType.<p>
+     * Optional; include when provided by the source. Common
+     * values: HOME, MAILING (persons); BUSINESS (organizations).
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setAddrType(String addrType) {
+        this.addrType = addrType;
+    }
+
+    /**
+     * Getter for citizenship.<p>
+     * Country of citizenship (code or label) as provided by the
+     * source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getCitizenship() {
+        return citizenship;
+    }
+
+    /**
+     * Setter for citizenship.<p>
+     * Country of citizenship (code or label) as provided by the
+     * source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setCitizenship(String citizenship) {
+        this.citizenship = citizenship;
+    }
+
+    /**
      * Getter for dateOfBirth.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -352,13 +563,35 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for dateOfBirth.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
     /**
+     * Getter for dateOfDeath.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getDateOfDeath() {
+        return dateOfDeath;
+    }
+
+    /**
+     * Setter for dateOfDeath.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setDateOfDeath(String dateOfDeath) {
+        this.dateOfDeath = dateOfDeath;
+    }
+
+    /**
      * Getter for driversLicenseNumber.<p>
+     * Driver's license number. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public String getDriversLicenseNumber() {
         return driversLicenseNumber;
@@ -366,6 +599,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for driversLicenseNumber.<p>
+     * Driver's license number. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public void setDriversLicenseNumber(String driversLicenseNumber) {
         this.driversLicenseNumber = driversLicenseNumber;
@@ -373,6 +608,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for driversLicenseState.<p>
+     * Issuing state/province/country. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public String getDriversLicenseState() {
         return driversLicenseState;
@@ -380,13 +617,35 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for driversLicenseState.<p>
+     * Issuing state/province/country. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public void setDriversLicenseState(String driversLicenseState) {
         this.driversLicenseState = driversLicenseState;
     }
 
     /**
+     * Getter for dunsNumber.<p>
+     * Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getDunsNumber() {
+        return dunsNumber;
+    }
+
+    /**
+     * Setter for dunsNumber.<p>
+     * Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setDunsNumber(String dunsNumber) {
+        this.dunsNumber = dunsNumber;
+    }
+
+    /**
      * Getter for emailAddress.<p>
+     * Email address. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getEmailAddress() {
         return emailAddress;
@@ -394,27 +653,55 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for emailAddress.<p>
+     * Email address. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
 
     /**
-     * Getter for employerName.<p>
+     * Getter for employer.<p>
+     * This is the name of the organization the person is employed
+     * by. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public String getEmployerName() {
-        return employerName;
+    public String getEmployer() {
+        return employer;
     }
 
     /**
-     * Setter for employerName.<p>
+     * Setter for employer.<p>
+     * This is the name of the organization the person is employed
+     * by. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public void setEmployerName(String employerName) {
-        this.employerName = employerName;
+    public void setEmployer(String employer) {
+        this.employer = employer;
+    }
+
+    /**
+     * Getter for facebook.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getFacebook() {
+        return facebook;
+    }
+
+    /**
+     * Setter for facebook.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
     }
 
     /**
      * Getter for gender.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getGender() {
         return gender;
@@ -422,13 +709,172 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for gender.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setGender(String gender) {
         this.gender = gender;
     }
 
     /**
+     * Getter for groupAssnIdNumber.<p>
+     * The identifier the entity is associated with. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getGroupAssnIdNumber() {
+        return groupAssnIdNumber;
+    }
+
+    /**
+     * Setter for groupAssnIdNumber.<p>
+     * The identifier the entity is associated with. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setGroupAssnIdNumber(String groupAssnIdNumber) {
+        this.groupAssnIdNumber = groupAssnIdNumber;
+    }
+
+    /**
+     * Getter for groupAssnIdType.<p>
+     * The type of group identifier an entity is associated with.
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getGroupAssnIdType() {
+        return groupAssnIdType;
+    }
+
+    /**
+     * Setter for groupAssnIdType.<p>
+     * The type of group identifier an entity is associated with.
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setGroupAssnIdType(String groupAssnIdType) {
+        this.groupAssnIdType = groupAssnIdType;
+    }
+
+    /**
+     * Getter for groupAssociationOrgName.<p>
+     * Name of the associated organization; use the official or standardized
+     * name. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getGroupAssociationOrgName() {
+        return groupAssociationOrgName;
+    }
+
+    /**
+     * Setter for groupAssociationOrgName.<p>
+     * Name of the associated organization; use the official or standardized
+     * name. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setGroupAssociationOrgName(String groupAssociationOrgName) {
+        this.groupAssociationOrgName = groupAssociationOrgName;
+    }
+
+    /**
+     * Getter for groupAssociationType.<p>
+     * Specific group/role within the organization; use precise
+     * categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve
+     * resolution. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getGroupAssociationType() {
+        return groupAssociationType;
+    }
+
+    /**
+     * Setter for groupAssociationType.<p>
+     * Specific group/role within the organization; use precise
+     * categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve
+     * resolution. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setGroupAssociationType(String groupAssociationType) {
+        this.groupAssociationType = groupAssociationType;
+    }
+
+    /**
+     * Getter for instagram.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getInstagram() {
+        return instagram;
+    }
+
+    /**
+     * Setter for instagram.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
+    /**
+     * Getter for leiNumber.<p>
+     * Legal Entity Identifier. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getLeiNumber() {
+        return leiNumber;
+    }
+
+    /**
+     * Setter for leiNumber.<p>
+     * Legal Entity Identifier. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setLeiNumber(String leiNumber) {
+        this.leiNumber = leiNumber;
+    }
+
+    /**
+     * Getter for linkedin.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    /**
+     * Setter for linkedin.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    /**
+     * Getter for nameFirst.<p>
+     * Person given name. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getNameFirst() {
+        return nameFirst;
+    }
+
+    /**
+     * Setter for nameFirst.<p>
+     * Person given name. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setNameFirst(String nameFirst) {
+        this.nameFirst = nameFirst;
+    }
+
+    /**
      * Getter for nameFull.<p>
+     * Single-field name when type (person vs org) is unknown or only a full
+     * name is provided. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getNameFull() {
         return nameFull;
@@ -436,13 +882,148 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for nameFull.<p>
+     * Single-field name when type (person vs org) is unknown or only a full
+     * name is provided. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setNameFull(String nameFull) {
         this.nameFull = nameFull;
     }
 
     /**
+     * Getter for nameLast.<p>
+     * Person surname. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getNameLast() {
+        return nameLast;
+    }
+
+    /**
+     * Setter for nameLast.<p>
+     * Person surname. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setNameLast(String nameLast) {
+        this.nameLast = nameLast;
+    }
+
+    /**
+     * Getter for nameMiddle.<p>
+     * Person middle name/initial. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getNameMiddle() {
+        return nameMiddle;
+    }
+
+    /**
+     * Setter for nameMiddle.<p>
+     * Person middle name/initial. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setNameMiddle(String nameMiddle) {
+        this.nameMiddle = nameMiddle;
+    }
+
+    /**
+     * Getter for nameOrg.<p>
+     * Organization name. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getNameOrg() {
+        return nameOrg;
+    }
+
+    /**
+     * Setter for nameOrg.<p>
+     * Organization name. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setNameOrg(String nameOrg) {
+        this.nameOrg = nameOrg;
+    }
+
+    /**
+     * Getter for namePrefix.<p>
+     * Person title. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getNamePrefix() {
+        return namePrefix;
+    }
+
+    /**
+     * Setter for namePrefix.<p>
+     * Person title. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setNamePrefix(String namePrefix) {
+        this.namePrefix = namePrefix;
+    }
+
+    /**
+     * Getter for nameSuffix.<p>
+     * Person suffix. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getNameSuffix() {
+        return nameSuffix;
+    }
+
+    /**
+     * Setter for nameSuffix.<p>
+     * Person suffix. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setNameSuffix(String nameSuffix) {
+        this.nameSuffix = nameSuffix;
+    }
+
+    /**
+     * Getter for nameType.<p>
+     * Optional include when the source provides it. Common values: PRIMARY,
+     * AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getNameType() {
+        return nameType;
+    }
+
+    /**
+     * Setter for nameType.<p>
+     * Optional include when the source provides it. Common values: PRIMARY,
+     * AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setNameType(String nameType) {
+        this.nameType = nameType;
+    }
+
+    /**
+     * Getter for nationality.<p>
+     * Country of nationality (code or label) as provided by the
+     * source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getNationality() {
+        return nationality;
+    }
+
+    /**
+     * Setter for nationality.<p>
+     * Country of nationality (code or label) as provided by the
+     * source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    /**
      * Getter for nationalIdCountry.<p>
+     * Issuing country. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getNationalIdCountry() {
         return nationalIdCountry;
@@ -450,6 +1031,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for nationalIdCountry.<p>
+     * Issuing country. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setNationalIdCountry(String nationalIdCountry) {
         this.nationalIdCountry = nationalIdCountry;
@@ -457,6 +1040,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for nationalIdNumber.<p>
+     * National identifier value. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public String getNationalIdNumber() {
         return nationalIdNumber;
@@ -464,27 +1049,111 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for nationalIdNumber.<p>
+     * National identifier value. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public void setNationalIdNumber(String nationalIdNumber) {
         this.nationalIdNumber = nationalIdNumber;
     }
 
     /**
-     * Getter for nativeNameFull.<p>
+     * Getter for nationalIdType.<p>
+     * Use the type label from the source; standardize across
+     * sources. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public String getNativeNameFull() {
-        return nativeNameFull;
+    public String getNationalIdType() {
+        return nationalIdType;
     }
 
     /**
-     * Setter for nativeNameFull.<p>
+     * Setter for nationalIdType.<p>
+     * Use the type label from the source; standardize across
+     * sources. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public void setNativeNameFull(String nativeNameFull) {
-        this.nativeNameFull = nativeNameFull;
+    public void setNationalIdType(String nationalIdType) {
+        this.nationalIdType = nationalIdType;
+    }
+
+    /**
+     * Getter for npiNumber.<p>
+     * US healthcare provider identifier. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getNpiNumber() {
+        return npiNumber;
+    }
+
+    /**
+     * Setter for npiNumber.<p>
+     * US healthcare provider identifier. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setNpiNumber(String npiNumber) {
+        this.npiNumber = npiNumber;
+    }
+
+    /**
+     * Getter for otherIdCountry.<p>
+     * Optional as country often not known or issued by an organization.
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getOtherIdCountry() {
+        return otherIdCountry;
+    }
+
+    /**
+     * Setter for otherIdCountry.<p>
+     * Optional as country often not known or issued by an organization.
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setOtherIdCountry(String otherIdCountry) {
+        this.otherIdCountry = otherIdCountry;
+    }
+
+    /**
+     * Getter for otherIdNumber.<p>
+     * Identification number. An attribute in the Senzing Entity Specification.
+     * See https://www.senzing.com/docs/entity_specification
+     */
+    public String getOtherIdNumber() {
+        return otherIdNumber;
+    }
+
+    /**
+     * Setter for otherIdNumber.<p>
+     * Identification number. An attribute in the Senzing Entity Specification.
+     * See https://www.senzing.com/docs/entity_specification
+     */
+    public void setOtherIdNumber(String otherIdNumber) {
+        this.otherIdNumber = otherIdNumber;
+    }
+
+    /**
+     * Getter for otherIdType.<p>
+     * Standardized source type. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getOtherIdType() {
+        return otherIdType;
+    }
+
+    /**
+     * Setter for otherIdType.<p>
+     * Standardized source type. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setOtherIdType(String otherIdType) {
+        this.otherIdType = otherIdType;
     }
 
     /**
      * Getter for passportCountry.<p>
+     * Issuing country. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getPassportCountry() {
         return passportCountry;
@@ -492,6 +1161,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for passportCountry.<p>
+     * Issuing country. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setPassportCountry(String passportCountry) {
         this.passportCountry = passportCountry;
@@ -499,6 +1170,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for passportNumber.<p>
+     * Passport number. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getPassportNumber() {
         return passportNumber;
@@ -506,6 +1179,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for passportNumber.<p>
+     * Passport number. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
@@ -513,6 +1188,8 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for phoneNumber.<p>
+     * Telephone number. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -520,83 +1197,61 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for phoneNumber.<p>
+     * Telephone number. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     /**
-     * Getter for primaryNameFirst.<p>
+     * Getter for phoneType.<p>
+     * Optional; include when provided by the source. Common
+     * values: MOBILE, HOME, WORK, FAX. MOBILE carries extra
+     * weight. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public String getPrimaryNameFirst() {
-        return primaryNameFirst;
+    public String getPhoneType() {
+        return phoneType;
     }
 
     /**
-     * Setter for primaryNameFirst.<p>
+     * Setter for phoneType.<p>
+     * Optional; include when provided by the source. Common
+     * values: MOBILE, HOME, WORK, FAX. MOBILE carries extra
+     * weight. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public void setPrimaryNameFirst(String primaryNameFirst) {
-        this.primaryNameFirst = primaryNameFirst;
+    public void setPhoneType(String phoneType) {
+        this.phoneType = phoneType;
     }
 
     /**
-     * Getter for primaryNameFull.<p>
+     * Getter for placeOfBirth.<p>
+     * Place of birth; may be a city/region or a country code/label as provided
+     * by the source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public String getPrimaryNameFull() {
-        return primaryNameFull;
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
     }
 
     /**
-     * Setter for primaryNameFull.<p>
+     * Setter for placeOfBirth.<p>
+     * Place of birth; may be a city/region or a country code/label as provided
+     * by the source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public void setPrimaryNameFull(String primaryNameFull) {
-        this.primaryNameFull = primaryNameFull;
-    }
-
-    /**
-     * Getter for primaryNameLast.<p>
-     */
-    public String getPrimaryNameLast() {
-        return primaryNameLast;
-    }
-
-    /**
-     * Setter for primaryNameLast.<p>
-     */
-    public void setPrimaryNameLast(String primaryNameLast) {
-        this.primaryNameLast = primaryNameLast;
-    }
-
-    /**
-     * Getter for primaryNameMiddle.<p>
-     */
-    public String getPrimaryNameMiddle() {
-        return primaryNameMiddle;
-    }
-
-    /**
-     * Setter for primaryNameMiddle.<p>
-     */
-    public void setPrimaryNameMiddle(String primaryNameMiddle) {
-        this.primaryNameMiddle = primaryNameMiddle;
-    }
-
-    /**
-     * Getter for primaryNameOrg.<p>
-     */
-    public String getPrimaryNameOrg() {
-        return primaryNameOrg;
-    }
-
-    /**
-     * Setter for primaryNameOrg.<p>
-     */
-    public void setPrimaryNameOrg(String primaryNameOrg) {
-        this.primaryNameOrg = primaryNameOrg;
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
     }
 
     /**
      * Getter for recordType.<p>
+     * Include when known to prevent cross-type resolution; omit if unknown.
+     * Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+     * icon/shape in graphs. An attribute in the Senzing Entity Specification.
+     * See https://www.senzing.com/docs/entity_specification
      */
     public String getRecordType() {
         return recordType;
@@ -604,13 +1259,83 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for recordType.<p>
+     * Include when known to prevent cross-type resolution; omit if unknown.
+     * Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+     * icon/shape in graphs. An attribute in the Senzing Entity Specification.
+     * See https://www.senzing.com/docs/entity_specification
      */
     public void setRecordType(String recordType) {
         this.recordType = recordType;
     }
 
     /**
+     * Getter for registrationCountry.<p>
+     * Country of registration (code or label) as provided by the
+     * source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getRegistrationCountry() {
+        return registrationCountry;
+    }
+
+    /**
+     * Setter for registrationCountry.<p>
+     * Country of registration (code or label) as provided by the
+     * source. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setRegistrationCountry(String registrationCountry) {
+        this.registrationCountry = registrationCountry;
+    }
+
+    /**
+     * Getter for registrationDate.<p>
+     * Organization registration/incorporation date. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getRegistrationDate() {
+        return registrationDate;
+    }
+
+    /**
+     * Setter for registrationDate.<p>
+     * Organization registration/incorporation date. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setRegistrationDate(String registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    /**
+     * Getter for relAnchorDomain.<p>
+     * This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+     * dashes) for the data source or source field that is contributing the
+     * relationship. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getRelAnchorDomain() {
+        return relAnchorDomain;
+    }
+
+    /**
+     * Setter for relAnchorDomain.<p>
+     * This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+     * dashes) for the data source or source field that is contributing the
+     * relationship. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setRelAnchorDomain(String relAnchorDomain) {
+        this.relAnchorDomain = relAnchorDomain;
+    }
+
+    /**
      * Getter for relAnchorKey.<p>
+     * This key should be a unique value for the record within the
+     * REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+     * here. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getRelAnchorKey() {
         return relAnchorKey;
@@ -618,13 +1343,37 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for relAnchorKey.<p>
+     * This key should be a unique value for the record within the
+     * REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+     * here. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setRelAnchorKey(String relAnchorKey) {
         this.relAnchorKey = relAnchorKey;
     }
 
     /**
+     * Getter for relPointerDomain.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getRelPointerDomain() {
+        return relPointerDomain;
+    }
+
+    /**
+     * Setter for relPointerDomain.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setRelPointerDomain(String relPointerDomain) {
+        this.relPointerDomain = relPointerDomain;
+    }
+
+    /**
      * Getter for relPointerKey.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getRelPointerKey() {
         return relPointerKey;
@@ -632,27 +1381,78 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for relPointerKey.<p>
+     * An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setRelPointerKey(String relPointerKey) {
         this.relPointerKey = relPointerKey;
     }
 
     /**
-     * Getter for secondaryNameOrg.<p>
+     * Getter for relPointerRole.<p>
+     * This is the role the pointer record has to the anchor record. Such
+     * as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+     * BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role
+     * codes for display and filtering. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
-    public String getSecondaryNameOrg() {
-        return secondaryNameOrg;
+    public String getRelPointerRole() {
+        return relPointerRole;
     }
 
     /**
-     * Setter for secondaryNameOrg.<p>
+     * Setter for relPointerRole.<p>
+     * This is the role the pointer record has to the anchor record. Such
+     * as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+     * BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role
+     * codes for display and filtering. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
-    public void setSecondaryNameOrg(String secondaryNameOrg) {
-        this.secondaryNameOrg = secondaryNameOrg;
+    public void setRelPointerRole(String relPointerRole) {
+        this.relPointerRole = relPointerRole;
+    }
+
+    /**
+     * Getter for signal.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getSignal() {
+        return signal;
+    }
+
+    /**
+     * Setter for signal.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setSignal(String signal) {
+        this.signal = signal;
+    }
+
+    /**
+     * Getter for skype.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getSkype() {
+        return skype;
+    }
+
+    /**
+     * Setter for skype.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setSkype(String skype) {
+        this.skype = skype;
     }
 
     /**
      * Getter for ssnNumber.<p>
+     * US Social Security Number; partial accepted. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public String getSsnNumber() {
         return ssnNumber;
@@ -660,37 +1460,236 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for ssnNumber.<p>
+     * US Social Security Number; partial accepted. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
     public void setSsnNumber(String ssnNumber) {
         this.ssnNumber = ssnNumber;
     }
 
     /**
-     * Getter for xxxAccountDomain.<p>
+     * Getter for tango.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
-    public String getXxxAccountDomain() {
-        return xxxAccountDomain;
+    public String getTango() {
+        return tango;
     }
 
     /**
-     * Setter for xxxAccountDomain.<p>
+     * Setter for tango.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
      */
-    public void setXxxAccountDomain(String xxxAccountDomain) {
-        this.xxxAccountDomain = xxxAccountDomain;
+    public void setTango(String tango) {
+        this.tango = tango;
     }
 
     /**
-     * Getter for xxxAccountNumber.<p>
+     * Getter for taxIdCountry.<p>
+     * Issuing country. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public String getXxxAccountNumber() {
-        return xxxAccountNumber;
+    public String getTaxIdCountry() {
+        return taxIdCountry;
     }
 
     /**
-     * Setter for xxxAccountNumber.<p>
+     * Setter for taxIdCountry.<p>
+     * Issuing country. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
      */
-    public void setXxxAccountNumber(String xxxAccountNumber) {
-        this.xxxAccountNumber = xxxAccountNumber;
+    public void setTaxIdCountry(String taxIdCountry) {
+        this.taxIdCountry = taxIdCountry;
+    }
+
+    /**
+     * Getter for taxIdNumber.<p>
+     * Tax identification number. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getTaxIdNumber() {
+        return taxIdNumber;
+    }
+
+    /**
+     * Setter for taxIdNumber.<p>
+     * Tax identification number. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setTaxIdNumber(String taxIdNumber) {
+        this.taxIdNumber = taxIdNumber;
+    }
+
+    /**
+     * Getter for taxIdType.<p>
+     * Use the type label from the source; standardize across
+     * sources. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getTaxIdType() {
+        return taxIdType;
+    }
+
+    /**
+     * Setter for taxIdType.<p>
+     * Use the type label from the source; standardize across
+     * sources. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setTaxIdType(String taxIdType) {
+        this.taxIdType = taxIdType;
+    }
+
+    /**
+     * Getter for telegram.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getTelegram() {
+        return telegram;
+    }
+
+    /**
+     * Setter for telegram.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setTelegram(String telegram) {
+        this.telegram = telegram;
+    }
+
+    /**
+     * Getter for trustedIdNumber.<p>
+     * The identifier value shared by records that must resolve
+     * together. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getTrustedIdNumber() {
+        return trustedIdNumber;
+    }
+
+    /**
+     * Setter for trustedIdNumber.<p>
+     * The identifier value shared by records that must resolve
+     * together. An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setTrustedIdNumber(String trustedIdNumber) {
+        this.trustedIdNumber = trustedIdNumber;
+    }
+
+    /**
+     * Getter for trustedIdType.<p>
+     * Short code for the identifier domain/system (e.g., STEWARD,
+     * MASTER_ID). An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getTrustedIdType() {
+        return trustedIdType;
+    }
+
+    /**
+     * Setter for trustedIdType.<p>
+     * Short code for the identifier domain/system (e.g., STEWARD,
+     * MASTER_ID). An attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setTrustedIdType(String trustedIdType) {
+        this.trustedIdType = trustedIdType;
+    }
+
+    /**
+     * Getter for twitter.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getTwitter() {
+        return twitter;
+    }
+
+    /**
+     * Setter for twitter.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    /**
+     * Getter for viber.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getViber() {
+        return viber;
+    }
+
+    /**
+     * Setter for viber.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setViber(String viber) {
+        this.viber = viber;
+    }
+
+    /**
+     * Getter for websiteAddress.<p>
+     * Website or domain; typically for organizations. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public String getWebsiteAddress() {
+        return websiteAddress;
+    }
+
+    /**
+     * Setter for websiteAddress.<p>
+     * Website or domain; typically for organizations. An
+     * attribute in the Senzing Entity Specification. See
+     * https://www.senzing.com/docs/entity_specification
+     */
+    public void setWebsiteAddress(String websiteAddress) {
+        this.websiteAddress = websiteAddress;
+    }
+
+    /**
+     * Getter for wechat.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getWechat() {
+        return wechat;
+    }
+
+    /**
+     * Setter for wechat.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setWechat(String wechat) {
+        this.wechat = wechat;
+    }
+
+    /**
+     * Getter for whatsapp.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public String getWhatsapp() {
+        return whatsapp;
+    }
+
+    /**
+     * Setter for whatsapp.<p>
+     * Social medial user name. An attribute in the Senzing Entity
+     * Specification. See https://www.senzing.com/docs/entity_specification
+     */
+    public void setWhatsapp(String whatsapp) {
+        this.whatsapp = whatsapp;
     }
 
     /**
@@ -708,76 +1707,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for xxxAddrLine2.<p>
-     */
-    public String getXxxAddrLine2() {
-        return xxxAddrLine2;
-    }
-
-    /**
-     * Setter for xxxAddrLine2.<p>
-     */
-    public void setXxxAddrLine2(String xxxAddrLine2) {
-        this.xxxAddrLine2 = xxxAddrLine2;
-    }
-
-    /**
-     * Getter for xxxAddrLine3.<p>
-     */
-    public String getXxxAddrLine3() {
-        return xxxAddrLine3;
-    }
-
-    /**
-     * Setter for xxxAddrLine3.<p>
-     */
-    public void setXxxAddrLine3(String xxxAddrLine3) {
-        this.xxxAddrLine3 = xxxAddrLine3;
-    }
-
-    /**
-     * Getter for xxxAddrLine4.<p>
-     */
-    public String getXxxAddrLine4() {
-        return xxxAddrLine4;
-    }
-
-    /**
-     * Setter for xxxAddrLine4.<p>
-     */
-    public void setXxxAddrLine4(String xxxAddrLine4) {
-        this.xxxAddrLine4 = xxxAddrLine4;
-    }
-
-    /**
-     * Getter for xxxAddrLine5.<p>
-     */
-    public String getXxxAddrLine5() {
-        return xxxAddrLine5;
-    }
-
-    /**
-     * Setter for xxxAddrLine5.<p>
-     */
-    public void setXxxAddrLine5(String xxxAddrLine5) {
-        this.xxxAddrLine5 = xxxAddrLine5;
-    }
-
-    /**
-     * Getter for xxxAddrLine6.<p>
-     */
-    public String getXxxAddrLine6() {
-        return xxxAddrLine6;
-    }
-
-    /**
-     * Setter for xxxAddrLine6.<p>
-     */
-    public void setXxxAddrLine6(String xxxAddrLine6) {
-        this.xxxAddrLine6 = xxxAddrLine6;
-    }
-
-    /**
      * Getter for xxxAddrThruDate.<p>
      */
     public String getXxxAddrThruDate() {
@@ -792,339 +1721,31 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for xxxAddrType.<p>
+     * Getter for xxxEmployerName.<p>
      */
-    public String getXxxAddrType() {
-        return xxxAddrType;
+    public String getXxxEmployerName() {
+        return xxxEmployerName;
     }
 
     /**
-     * Setter for xxxAddrType.<p>
+     * Setter for xxxEmployerName.<p>
      */
-    public void setXxxAddrType(String xxxAddrType) {
-        this.xxxAddrType = xxxAddrType;
+    public void setXxxEmployerName(String xxxEmployerName) {
+        this.xxxEmployerName = xxxEmployerName;
     }
 
     /**
-     * Getter for xxxCitizenship.<p>
+     * Getter for xxxNativeNameFull.<p>
      */
-    public String getXxxCitizenship() {
-        return xxxCitizenship;
+    public String getXxxNativeNameFull() {
+        return xxxNativeNameFull;
     }
 
     /**
-     * Setter for xxxCitizenship.<p>
+     * Setter for xxxNativeNameFull.<p>
      */
-    public void setXxxCitizenship(String xxxCitizenship) {
-        this.xxxCitizenship = xxxCitizenship;
-    }
-
-    /**
-     * Getter for xxxDateOfDeath.<p>
-     */
-    public String getXxxDateOfDeath() {
-        return xxxDateOfDeath;
-    }
-
-    /**
-     * Setter for xxxDateOfDeath.<p>
-     */
-    public void setXxxDateOfDeath(String xxxDateOfDeath) {
-        this.xxxDateOfDeath = xxxDateOfDeath;
-    }
-
-    /**
-     * Getter for xxxDunsNumber.<p>
-     */
-    public String getXxxDunsNumber() {
-        return xxxDunsNumber;
-    }
-
-    /**
-     * Setter for xxxDunsNumber.<p>
-     */
-    public void setXxxDunsNumber(String xxxDunsNumber) {
-        this.xxxDunsNumber = xxxDunsNumber;
-    }
-
-    /**
-     * Getter for xxxEmployer.<p>
-     */
-    public String getXxxEmployer() {
-        return xxxEmployer;
-    }
-
-    /**
-     * Setter for xxxEmployer.<p>
-     */
-    public void setXxxEmployer(String xxxEmployer) {
-        this.xxxEmployer = xxxEmployer;
-    }
-
-    /**
-     * Getter for xxxFacebook.<p>
-     */
-    public String getXxxFacebook() {
-        return xxxFacebook;
-    }
-
-    /**
-     * Setter for xxxFacebook.<p>
-     */
-    public void setXxxFacebook(String xxxFacebook) {
-        this.xxxFacebook = xxxFacebook;
-    }
-
-    /**
-     * Getter for xxxGroupAssnIdNumber.<p>
-     */
-    public String getXxxGroupAssnIdNumber() {
-        return xxxGroupAssnIdNumber;
-    }
-
-    /**
-     * Setter for xxxGroupAssnIdNumber.<p>
-     */
-    public void setXxxGroupAssnIdNumber(String xxxGroupAssnIdNumber) {
-        this.xxxGroupAssnIdNumber = xxxGroupAssnIdNumber;
-    }
-
-    /**
-     * Getter for xxxGroupAssnIdType.<p>
-     */
-    public String getXxxGroupAssnIdType() {
-        return xxxGroupAssnIdType;
-    }
-
-    /**
-     * Setter for xxxGroupAssnIdType.<p>
-     */
-    public void setXxxGroupAssnIdType(String xxxGroupAssnIdType) {
-        this.xxxGroupAssnIdType = xxxGroupAssnIdType;
-    }
-
-    /**
-     * Getter for xxxGroupAssociationOrgName.<p>
-     */
-    public String getXxxGroupAssociationOrgName() {
-        return xxxGroupAssociationOrgName;
-    }
-
-    /**
-     * Setter for xxxGroupAssociationOrgName.<p>
-     */
-    public void setXxxGroupAssociationOrgName(String xxxGroupAssociationOrgName) {
-        this.xxxGroupAssociationOrgName = xxxGroupAssociationOrgName;
-    }
-
-    /**
-     * Getter for xxxGroupAssociationType.<p>
-     */
-    public String getXxxGroupAssociationType() {
-        return xxxGroupAssociationType;
-    }
-
-    /**
-     * Setter for xxxGroupAssociationType.<p>
-     */
-    public void setXxxGroupAssociationType(String xxxGroupAssociationType) {
-        this.xxxGroupAssociationType = xxxGroupAssociationType;
-    }
-
-    /**
-     * Getter for xxxInstagram.<p>
-     */
-    public String getXxxInstagram() {
-        return xxxInstagram;
-    }
-
-    /**
-     * Setter for xxxInstagram.<p>
-     */
-    public void setXxxInstagram(String xxxInstagram) {
-        this.xxxInstagram = xxxInstagram;
-    }
-
-    /**
-     * Getter for xxxLeiNumber.<p>
-     */
-    public String getXxxLeiNumber() {
-        return xxxLeiNumber;
-    }
-
-    /**
-     * Setter for xxxLeiNumber.<p>
-     */
-    public void setXxxLeiNumber(String xxxLeiNumber) {
-        this.xxxLeiNumber = xxxLeiNumber;
-    }
-
-    /**
-     * Getter for xxxLinkedin.<p>
-     */
-    public String getXxxLinkedin() {
-        return xxxLinkedin;
-    }
-
-    /**
-     * Setter for xxxLinkedin.<p>
-     */
-    public void setXxxLinkedin(String xxxLinkedin) {
-        this.xxxLinkedin = xxxLinkedin;
-    }
-
-    /**
-     * Getter for xxxNameFirst.<p>
-     */
-    public String getXxxNameFirst() {
-        return xxxNameFirst;
-    }
-
-    /**
-     * Setter for xxxNameFirst.<p>
-     */
-    public void setXxxNameFirst(String xxxNameFirst) {
-        this.xxxNameFirst = xxxNameFirst;
-    }
-
-    /**
-     * Getter for xxxNameLast.<p>
-     */
-    public String getXxxNameLast() {
-        return xxxNameLast;
-    }
-
-    /**
-     * Setter for xxxNameLast.<p>
-     */
-    public void setXxxNameLast(String xxxNameLast) {
-        this.xxxNameLast = xxxNameLast;
-    }
-
-    /**
-     * Getter for xxxNameOrg.<p>
-     */
-    public String getXxxNameOrg() {
-        return xxxNameOrg;
-    }
-
-    /**
-     * Setter for xxxNameOrg.<p>
-     */
-    public void setXxxNameOrg(String xxxNameOrg) {
-        this.xxxNameOrg = xxxNameOrg;
-    }
-
-    /**
-     * Getter for xxxNamePrefix.<p>
-     */
-    public String getXxxNamePrefix() {
-        return xxxNamePrefix;
-    }
-
-    /**
-     * Setter for xxxNamePrefix.<p>
-     */
-    public void setXxxNamePrefix(String xxxNamePrefix) {
-        this.xxxNamePrefix = xxxNamePrefix;
-    }
-
-    /**
-     * Getter for xxxNameSuffix.<p>
-     */
-    public String getXxxNameSuffix() {
-        return xxxNameSuffix;
-    }
-
-    /**
-     * Setter for xxxNameSuffix.<p>
-     */
-    public void setXxxNameSuffix(String xxxNameSuffix) {
-        this.xxxNameSuffix = xxxNameSuffix;
-    }
-
-    /**
-     * Getter for xxxNameType.<p>
-     */
-    public String getXxxNameType() {
-        return xxxNameType;
-    }
-
-    /**
-     * Setter for xxxNameType.<p>
-     */
-    public void setXxxNameType(String xxxNameType) {
-        this.xxxNameType = xxxNameType;
-    }
-
-    /**
-     * Getter for xxxNationality.<p>
-     */
-    public String getXxxNationality() {
-        return xxxNationality;
-    }
-
-    /**
-     * Setter for xxxNationality.<p>
-     */
-    public void setXxxNationality(String xxxNationality) {
-        this.xxxNationality = xxxNationality;
-    }
-
-    /**
-     * Getter for xxxNpiNumber.<p>
-     */
-    public String getXxxNpiNumber() {
-        return xxxNpiNumber;
-    }
-
-    /**
-     * Setter for xxxNpiNumber.<p>
-     */
-    public void setXxxNpiNumber(String xxxNpiNumber) {
-        this.xxxNpiNumber = xxxNpiNumber;
-    }
-
-    /**
-     * Getter for xxxOtherIdCountry.<p>
-     */
-    public String getXxxOtherIdCountry() {
-        return xxxOtherIdCountry;
-    }
-
-    /**
-     * Setter for xxxOtherIdCountry.<p>
-     */
-    public void setXxxOtherIdCountry(String xxxOtherIdCountry) {
-        this.xxxOtherIdCountry = xxxOtherIdCountry;
-    }
-
-    /**
-     * Getter for xxxOtherIdNumber.<p>
-     */
-    public String getXxxOtherIdNumber() {
-        return xxxOtherIdNumber;
-    }
-
-    /**
-     * Setter for xxxOtherIdNumber.<p>
-     */
-    public void setXxxOtherIdNumber(String xxxOtherIdNumber) {
-        this.xxxOtherIdNumber = xxxOtherIdNumber;
-    }
-
-    /**
-     * Getter for xxxOtherIdType.<p>
-     */
-    public String getXxxOtherIdType() {
-        return xxxOtherIdType;
-    }
-
-    /**
-     * Setter for xxxOtherIdType.<p>
-     */
-    public void setXxxOtherIdType(String xxxOtherIdType) {
-        this.xxxOtherIdType = xxxOtherIdType;
+    public void setXxxNativeNameFull(String xxxNativeNameFull) {
+        this.xxxNativeNameFull = xxxNativeNameFull;
     }
 
     /**
@@ -1156,268 +1777,100 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for xxxPhoneType.<p>
+     * Getter for xxxPrimaryNameFirst.<p>
      */
-    public String getXxxPhoneType() {
-        return xxxPhoneType;
+    public String getXxxPrimaryNameFirst() {
+        return xxxPrimaryNameFirst;
     }
 
     /**
-     * Setter for xxxPhoneType.<p>
+     * Setter for xxxPrimaryNameFirst.<p>
      */
-    public void setXxxPhoneType(String xxxPhoneType) {
-        this.xxxPhoneType = xxxPhoneType;
+    public void setXxxPrimaryNameFirst(String xxxPrimaryNameFirst) {
+        this.xxxPrimaryNameFirst = xxxPrimaryNameFirst;
     }
 
     /**
-     * Getter for xxxPlaceOfBirth.<p>
+     * Getter for xxxPrimaryNameFull.<p>
      */
-    public String getXxxPlaceOfBirth() {
-        return xxxPlaceOfBirth;
+    public String getXxxPrimaryNameFull() {
+        return xxxPrimaryNameFull;
     }
 
     /**
-     * Setter for xxxPlaceOfBirth.<p>
+     * Setter for xxxPrimaryNameFull.<p>
      */
-    public void setXxxPlaceOfBirth(String xxxPlaceOfBirth) {
-        this.xxxPlaceOfBirth = xxxPlaceOfBirth;
+    public void setXxxPrimaryNameFull(String xxxPrimaryNameFull) {
+        this.xxxPrimaryNameFull = xxxPrimaryNameFull;
     }
 
     /**
-     * Getter for xxxRegistrationCountry.<p>
+     * Getter for xxxPrimaryNameLast.<p>
      */
-    public String getXxxRegistrationCountry() {
-        return xxxRegistrationCountry;
+    public String getXxxPrimaryNameLast() {
+        return xxxPrimaryNameLast;
     }
 
     /**
-     * Setter for xxxRegistrationCountry.<p>
+     * Setter for xxxPrimaryNameLast.<p>
      */
-    public void setXxxRegistrationCountry(String xxxRegistrationCountry) {
-        this.xxxRegistrationCountry = xxxRegistrationCountry;
+    public void setXxxPrimaryNameLast(String xxxPrimaryNameLast) {
+        this.xxxPrimaryNameLast = xxxPrimaryNameLast;
     }
 
     /**
-     * Getter for xxxRegistrationDate.<p>
+     * Getter for xxxPrimaryNameMiddle.<p>
      */
-    public String getXxxRegistrationDate() {
-        return xxxRegistrationDate;
+    public String getXxxPrimaryNameMiddle() {
+        return xxxPrimaryNameMiddle;
     }
 
     /**
-     * Setter for xxxRegistrationDate.<p>
+     * Setter for xxxPrimaryNameMiddle.<p>
      */
-    public void setXxxRegistrationDate(String xxxRegistrationDate) {
-        this.xxxRegistrationDate = xxxRegistrationDate;
+    public void setXxxPrimaryNameMiddle(String xxxPrimaryNameMiddle) {
+        this.xxxPrimaryNameMiddle = xxxPrimaryNameMiddle;
     }
 
     /**
-     * Getter for xxxSignal.<p>
+     * Getter for xxxPrimaryNameOrg.<p>
      */
-    public String getXxxSignal() {
-        return xxxSignal;
+    public String getXxxPrimaryNameOrg() {
+        return xxxPrimaryNameOrg;
     }
 
     /**
-     * Setter for xxxSignal.<p>
+     * Setter for xxxPrimaryNameOrg.<p>
      */
-    public void setXxxSignal(String xxxSignal) {
-        this.xxxSignal = xxxSignal;
+    public void setXxxPrimaryNameOrg(String xxxPrimaryNameOrg) {
+        this.xxxPrimaryNameOrg = xxxPrimaryNameOrg;
     }
 
     /**
-     * Getter for xxxSkype.<p>
+     * Getter for xxxSecondaryNameOrg.<p>
      */
-    public String getXxxSkype() {
-        return xxxSkype;
+    public String getXxxSecondaryNameOrg() {
+        return xxxSecondaryNameOrg;
     }
 
     /**
-     * Setter for xxxSkype.<p>
+     * Setter for xxxSecondaryNameOrg.<p>
      */
-    public void setXxxSkype(String xxxSkype) {
-        this.xxxSkype = xxxSkype;
+    public void setXxxSecondaryNameOrg(String xxxSecondaryNameOrg) {
+        this.xxxSecondaryNameOrg = xxxSecondaryNameOrg;
     }
 
     /**
-     * Getter for xxxTango.<p>
+     * Getter for zoomroom.<p>
      */
-    public String getXxxTango() {
-        return xxxTango;
+    public String getZoomroom() {
+        return zoomroom;
     }
 
     /**
-     * Setter for xxxTango.<p>
+     * Setter for zoomroom.<p>
      */
-    public void setXxxTango(String xxxTango) {
-        this.xxxTango = xxxTango;
-    }
-
-    /**
-     * Getter for xxxTaxIdCountry.<p>
-     */
-    public String getXxxTaxIdCountry() {
-        return xxxTaxIdCountry;
-    }
-
-    /**
-     * Setter for xxxTaxIdCountry.<p>
-     */
-    public void setXxxTaxIdCountry(String xxxTaxIdCountry) {
-        this.xxxTaxIdCountry = xxxTaxIdCountry;
-    }
-
-    /**
-     * Getter for xxxTaxIdNumber.<p>
-     */
-    public String getXxxTaxIdNumber() {
-        return xxxTaxIdNumber;
-    }
-
-    /**
-     * Setter for xxxTaxIdNumber.<p>
-     */
-    public void setXxxTaxIdNumber(String xxxTaxIdNumber) {
-        this.xxxTaxIdNumber = xxxTaxIdNumber;
-    }
-
-    /**
-     * Getter for xxxTaxIdType.<p>
-     */
-    public String getXxxTaxIdType() {
-        return xxxTaxIdType;
-    }
-
-    /**
-     * Setter for xxxTaxIdType.<p>
-     */
-    public void setXxxTaxIdType(String xxxTaxIdType) {
-        this.xxxTaxIdType = xxxTaxIdType;
-    }
-
-    /**
-     * Getter for xxxTelegram.<p>
-     */
-    public String getXxxTelegram() {
-        return xxxTelegram;
-    }
-
-    /**
-     * Setter for xxxTelegram.<p>
-     */
-    public void setXxxTelegram(String xxxTelegram) {
-        this.xxxTelegram = xxxTelegram;
-    }
-
-    /**
-     * Getter for xxxTrustedIdNumber.<p>
-     */
-    public String getXxxTrustedIdNumber() {
-        return xxxTrustedIdNumber;
-    }
-
-    /**
-     * Setter for xxxTrustedIdNumber.<p>
-     */
-    public void setXxxTrustedIdNumber(String xxxTrustedIdNumber) {
-        this.xxxTrustedIdNumber = xxxTrustedIdNumber;
-    }
-
-    /**
-     * Getter for xxxTrustedIdType.<p>
-     */
-    public String getXxxTrustedIdType() {
-        return xxxTrustedIdType;
-    }
-
-    /**
-     * Setter for xxxTrustedIdType.<p>
-     */
-    public void setXxxTrustedIdType(String xxxTrustedIdType) {
-        this.xxxTrustedIdType = xxxTrustedIdType;
-    }
-
-    /**
-     * Getter for xxxTwitter.<p>
-     */
-    public String getXxxTwitter() {
-        return xxxTwitter;
-    }
-
-    /**
-     * Setter for xxxTwitter.<p>
-     */
-    public void setXxxTwitter(String xxxTwitter) {
-        this.xxxTwitter = xxxTwitter;
-    }
-
-    /**
-     * Getter for xxxViber.<p>
-     */
-    public String getXxxViber() {
-        return xxxViber;
-    }
-
-    /**
-     * Setter for xxxViber.<p>
-     */
-    public void setXxxViber(String xxxViber) {
-        this.xxxViber = xxxViber;
-    }
-
-    /**
-     * Getter for xxxWebsiteAddress.<p>
-     */
-    public String getXxxWebsiteAddress() {
-        return xxxWebsiteAddress;
-    }
-
-    /**
-     * Setter for xxxWebsiteAddress.<p>
-     */
-    public void setXxxWebsiteAddress(String xxxWebsiteAddress) {
-        this.xxxWebsiteAddress = xxxWebsiteAddress;
-    }
-
-    /**
-     * Getter for xxxWechat.<p>
-     */
-    public String getXxxWechat() {
-        return xxxWechat;
-    }
-
-    /**
-     * Setter for xxxWechat.<p>
-     */
-    public void setXxxWechat(String xxxWechat) {
-        this.xxxWechat = xxxWechat;
-    }
-
-    /**
-     * Getter for xxxWhatsapp.<p>
-     */
-    public String getXxxWhatsapp() {
-        return xxxWhatsapp;
-    }
-
-    /**
-     * Setter for xxxWhatsapp.<p>
-     */
-    public void setXxxWhatsapp(String xxxWhatsapp) {
-        this.xxxWhatsapp = xxxWhatsapp;
-    }
-
-    /**
-     * Getter for xxxZoomroom.<p>
-     */
-    public String getXxxZoomroom() {
-        return xxxZoomroom;
-    }
-
-    /**
-     * Setter for xxxZoomroom.<p>
-     */
-    public void setXxxZoomroom(String xxxZoomroom) {
-        this.xxxZoomroom = xxxZoomroom;
+    public void setZoomroom(String zoomroom) {
+        this.zoomroom = zoomroom;
     }
 }

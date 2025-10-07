@@ -1982,28 +1982,6 @@ module SenzingTypedef
     end
   end
 
-  class License
-    attr_accessor :dsr_limit
-    attr_accessor :status
-    attr_accessor :type
-
-    def self.from_json_data(data)
-      out = License.new
-      out.dsr_limit = SenzingTypedef::from_json_data(String, data["dsrLimit"])
-      out.status = SenzingTypedef::from_json_data(String, data["status"])
-      out.type = SenzingTypedef::from_json_data(String, data["type"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["dsrLimit"] = SenzingTypedef::to_json_data(dsr_limit)
-      data["status"] = SenzingTypedef::to_json_data(status)
-      data["type"] = SenzingTypedef::to_json_data(type)
-      data
-    end
-  end
-
   class MatchInfo
     attr_accessor :candidate_keys
 
@@ -2402,17 +2380,17 @@ module SenzingTypedef
 
   class RecordKeys
     # A list of (data source code, record id) pairs.
-    attr_accessor :xxx_records
+    attr_accessor :records
 
     def self.from_json_data(data)
       out = RecordKeys.new
-      out.xxx_records = SenzingTypedef::from_json_data(Array[RecordKey], data["XXX_RECORDS"])
+      out.records = SenzingTypedef::from_json_data(Array[RecordKey], data["RECORDS"])
       out
     end
 
     def to_json_data
       data = {}
-      data["XXX_RECORDS"] = SenzingTypedef::to_json_data(xxx_records)
+      data["RECORDS"] = SenzingTypedef::to_json_data(records)
       data
     end
   end
@@ -2988,263 +2966,536 @@ module SenzingTypedef
   end
 
   class SenzingEntitySpecification
+    # Domain/system for the account number. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :account_domain
+
+    # Account number (e.g., bank, card). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :account_number
+
+    # City/locality. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :addr_city
+
+    # Country code. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :addr_country
+
+    # Single-field address when parsed components are unavailable.
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :addr_full
+
+    # First address line (street, number). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
     attr_accessor :addr_line1
+
+    # Second address line (apt/suite). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :addr_line2
+
+    # Third address line (optional). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :addr_line3
+
+    # Fourth address line (optional). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :addr_line4
+
+    # Fifth address line (optional). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :addr_line5
+
+    # Sixth address line (optional). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :addr_line6
+
+    # Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :addr_postal_code
+
+    # State/province/region code. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
     attr_accessor :addr_state
+
+    # Optional; include when provided by the source. Common
+    # values: HOME, MAILING (persons); BUSINESS (organizations).
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :addr_type
+
+    # Country of citizenship (code or label) as provided by the
+    # source. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :citizenship
+
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :date_of_birth
+
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :date_of_death
+
+    # Driver's license number. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
     attr_accessor :drivers_license_number
+
+    # Issuing state/province/country. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
     attr_accessor :drivers_license_state
+
+    # Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :duns_number
+
+    # Email address. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :email_address
-    attr_accessor :employer_name
+
+    # This is the name of the organization the person is employed
+    # by. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :employer
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :facebook
+
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :gender
+
+    # The identifier the entity is associated with. An
+    # attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :group_assn_id_number
+
+    # The type of group identifier an entity is associated with.
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :group_assn_id_type
+
+    # Name of the associated organization; use the official or standardized
+    # name. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :group_association_org_name
+
+    # Specific group/role within the organization; use precise
+    # categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve
+    # resolution. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :group_association_type
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :instagram
+
+    # Legal Entity Identifier. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :lei_number
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :linkedin
+
+    # Person given name. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_first
+
+    # Single-field name when type (person vs org) is unknown or only a full
+    # name is provided. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :name_full
+
+    # Person surname. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_last
+
+    # Person middle name/initial. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_middle
+
+    # Organization name. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_org
+
+    # Person title. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_prefix
+
+    # Person suffix. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_suffix
+
+    # Optional include when the source provides it. Common values: PRIMARY,
+    # AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :name_type
+
+    # Country of nationality (code or label) as provided by the
+    # source. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :nationality
+
+    # Issuing country. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :national_id_country
+
+    # National identifier value. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
     attr_accessor :national_id_number
-    attr_accessor :native_name_full
+
+    # Use the type label from the source; standardize across
+    # sources. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :national_id_type
+
+    # US healthcare provider identifier. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :npi_number
+
+    # Optional as country often not known or issued by an organization.
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :other_id_country
+
+    # Identification number. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :other_id_number
+
+    # Standardized source type. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :other_id_type
+
+    # Issuing country. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :passport_country
+
+    # Passport number. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :passport_number
+
+    # Telephone number. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :phone_number
-    attr_accessor :primary_name_first
-    attr_accessor :primary_name_full
-    attr_accessor :primary_name_last
-    attr_accessor :primary_name_middle
-    attr_accessor :primary_name_org
+
+    # Optional; include when provided by the source. Common
+    # values: MOBILE, HOME, WORK, FAX. MOBILE carries extra
+    # weight. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :phone_type
+
+    # Place of birth; may be a city/region or a country code/label as provided
+    # by the source. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :place_of_birth
+
+    # Include when known to prevent cross-type resolution; omit if unknown.
+    # Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+    # icon/shape in graphs. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
     attr_accessor :record_type
+
+    # Country of registration (code or label) as provided by the
+    # source. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :registration_country
+
+    # Organization registration/incorporation date. An
+    # attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :registration_date
+
+    # This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+    # dashes) for the data source or source field that is contributing the
+    # relationship. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :rel_anchor_domain
+
+    # This key should be a unique value for the record within the
+    # REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+    # here. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :rel_anchor_key
+
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :rel_pointer_domain
+
+    # An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :rel_pointer_key
-    attr_accessor :secondary_name_org
+
+    # This is the role the pointer record has to the anchor record. Such
+    # as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+    # BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role
+    # codes for display and filtering. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :rel_pointer_role
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :signal
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :skype
+
+    # US Social Security Number; partial accepted. An
+    # attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
     attr_accessor :ssn_number
-    attr_accessor :xxx_account_domain
-    attr_accessor :xxx_account_number
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :tango
+
+    # Issuing country. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :tax_id_country
+
+    # Tax identification number. An attribute in the Senzing Entity
+    # Specification. See https://www.senzing.com/docs/entity_specification
+    attr_accessor :tax_id_number
+
+    # Use the type label from the source; standardize across
+    # sources. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :tax_id_type
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :telegram
+
+    # The identifier value shared by records that must resolve
+    # together. An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :trusted_id_number
+
+    # Short code for the identifier domain/system (e.g., STEWARD,
+    # MASTER_ID). An attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :trusted_id_type
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :twitter
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :viber
+
+    # Website or domain; typically for organizations. An
+    # attribute in the Senzing Entity Specification. See
+    # https://www.senzing.com/docs/entity_specification
+    attr_accessor :website_address
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :wechat
+
+    # Social medial user name. An attribute in the Senzing Entity Specification.
+    # See https://www.senzing.com/docs/entity_specification
+    attr_accessor :whatsapp
     attr_accessor :xxx_addr_from_date
-    attr_accessor :xxx_addr_line2
-    attr_accessor :xxx_addr_line3
-    attr_accessor :xxx_addr_line4
-    attr_accessor :xxx_addr_line5
-    attr_accessor :xxx_addr_line6
     attr_accessor :xxx_addr_thru_date
-    attr_accessor :xxx_addr_type
-    attr_accessor :xxx_citizenship
-    attr_accessor :xxx_date_of_death
-    attr_accessor :xxx_duns_number
-    attr_accessor :xxx_employer
-    attr_accessor :xxx_facebook
-    attr_accessor :xxx_group_assn_id_number
-    attr_accessor :xxx_group_assn_id_type
-    attr_accessor :xxx_group_association_org_name
-    attr_accessor :xxx_group_association_type
-    attr_accessor :xxx_instagram
-    attr_accessor :xxx_lei_number
-    attr_accessor :xxx_linkedin
-    attr_accessor :xxx_name_first
-    attr_accessor :xxx_name_last
-    attr_accessor :xxx_name_org
-    attr_accessor :xxx_name_prefix
-    attr_accessor :xxx_name_suffix
-    attr_accessor :xxx_name_type
-    attr_accessor :xxx_nationality
-    attr_accessor :xxx_npi_number
-    attr_accessor :xxx_other_id_country
-    attr_accessor :xxx_other_id_number
-    attr_accessor :xxx_other_id_type
+    attr_accessor :xxx_employer_name
+    attr_accessor :xxx_native_name_full
     attr_accessor :xxx_phone_from_date
     attr_accessor :xxx_phone_thru_date
-    attr_accessor :xxx_phone_type
-    attr_accessor :xxx_place_of_birth
-    attr_accessor :xxx_registration_country
-    attr_accessor :xxx_registration_date
-    attr_accessor :xxx_signal
-    attr_accessor :xxx_skype
-    attr_accessor :xxx_tango
-    attr_accessor :xxx_tax_id_country
-    attr_accessor :xxx_tax_id_number
-    attr_accessor :xxx_tax_id_type
-    attr_accessor :xxx_telegram
-    attr_accessor :xxx_trusted_id_number
-    attr_accessor :xxx_trusted_id_type
-    attr_accessor :xxx_twitter
-    attr_accessor :xxx_viber
-    attr_accessor :xxx_website_address
-    attr_accessor :xxx_wechat
-    attr_accessor :xxx_whatsapp
-    attr_accessor :xxx_zoomroom
+    attr_accessor :xxx_primary_name_first
+    attr_accessor :xxx_primary_name_full
+    attr_accessor :xxx_primary_name_last
+    attr_accessor :xxx_primary_name_middle
+    attr_accessor :xxx_primary_name_org
+    attr_accessor :xxx_secondary_name_org
+    attr_accessor :zoomroom
 
     def self.from_json_data(data)
       out = SenzingEntitySpecification.new
+      out.account_domain = SenzingTypedef::from_json_data(String, data["ACCOUNT_DOMAIN"])
+      out.account_number = SenzingTypedef::from_json_data(String, data["ACCOUNT_NUMBER"])
       out.addr_city = SenzingTypedef::from_json_data(String, data["ADDR_CITY"])
       out.addr_country = SenzingTypedef::from_json_data(String, data["ADDR_COUNTRY"])
       out.addr_full = SenzingTypedef::from_json_data(String, data["ADDR_FULL"])
       out.addr_line1 = SenzingTypedef::from_json_data(String, data["ADDR_LINE1"])
+      out.addr_line2 = SenzingTypedef::from_json_data(String, data["ADDR_LINE2"])
+      out.addr_line3 = SenzingTypedef::from_json_data(String, data["ADDR_LINE3"])
+      out.addr_line4 = SenzingTypedef::from_json_data(String, data["ADDR_LINE4"])
+      out.addr_line5 = SenzingTypedef::from_json_data(String, data["ADDR_LINE5"])
+      out.addr_line6 = SenzingTypedef::from_json_data(String, data["ADDR_LINE6"])
       out.addr_postal_code = SenzingTypedef::from_json_data(String, data["ADDR_POSTAL_CODE"])
       out.addr_state = SenzingTypedef::from_json_data(String, data["ADDR_STATE"])
+      out.addr_type = SenzingTypedef::from_json_data(String, data["ADDR_TYPE"])
+      out.citizenship = SenzingTypedef::from_json_data(String, data["CITIZENSHIP"])
       out.date_of_birth = SenzingTypedef::from_json_data(String, data["DATE_OF_BIRTH"])
+      out.date_of_death = SenzingTypedef::from_json_data(String, data["DATE_OF_DEATH"])
       out.drivers_license_number = SenzingTypedef::from_json_data(String, data["DRIVERS_LICENSE_NUMBER"])
       out.drivers_license_state = SenzingTypedef::from_json_data(String, data["DRIVERS_LICENSE_STATE"])
+      out.duns_number = SenzingTypedef::from_json_data(String, data["DUNS_NUMBER"])
       out.email_address = SenzingTypedef::from_json_data(String, data["EMAIL_ADDRESS"])
-      out.employer_name = SenzingTypedef::from_json_data(String, data["EMPLOYER_NAME"])
+      out.employer = SenzingTypedef::from_json_data(String, data["EMPLOYER"])
+      out.facebook = SenzingTypedef::from_json_data(String, data["FACEBOOK"])
       out.gender = SenzingTypedef::from_json_data(String, data["GENDER"])
+      out.group_assn_id_number = SenzingTypedef::from_json_data(String, data["GROUP_ASSN_ID_NUMBER"])
+      out.group_assn_id_type = SenzingTypedef::from_json_data(String, data["GROUP_ASSN_ID_TYPE"])
+      out.group_association_org_name = SenzingTypedef::from_json_data(String, data["GROUP_ASSOCIATION_ORG_NAME"])
+      out.group_association_type = SenzingTypedef::from_json_data(String, data["GROUP_ASSOCIATION_TYPE"])
+      out.instagram = SenzingTypedef::from_json_data(String, data["INSTAGRAM"])
+      out.lei_number = SenzingTypedef::from_json_data(String, data["LEI_NUMBER"])
+      out.linkedin = SenzingTypedef::from_json_data(String, data["LINKEDIN"])
+      out.name_first = SenzingTypedef::from_json_data(String, data["NAME_FIRST"])
       out.name_full = SenzingTypedef::from_json_data(String, data["NAME_FULL"])
+      out.name_last = SenzingTypedef::from_json_data(String, data["NAME_LAST"])
+      out.name_middle = SenzingTypedef::from_json_data(String, data["NAME_MIDDLE"])
+      out.name_org = SenzingTypedef::from_json_data(String, data["NAME_ORG"])
+      out.name_prefix = SenzingTypedef::from_json_data(String, data["NAME_PREFIX"])
+      out.name_suffix = SenzingTypedef::from_json_data(String, data["NAME_SUFFIX"])
+      out.name_type = SenzingTypedef::from_json_data(String, data["NAME_TYPE"])
+      out.nationality = SenzingTypedef::from_json_data(String, data["NATIONALITY"])
       out.national_id_country = SenzingTypedef::from_json_data(String, data["NATIONAL_ID_COUNTRY"])
       out.national_id_number = SenzingTypedef::from_json_data(String, data["NATIONAL_ID_NUMBER"])
-      out.native_name_full = SenzingTypedef::from_json_data(String, data["NATIVE_NAME_FULL"])
+      out.national_id_type = SenzingTypedef::from_json_data(String, data["NATIONAL_ID_TYPE"])
+      out.npi_number = SenzingTypedef::from_json_data(String, data["NPI_NUMBER"])
+      out.other_id_country = SenzingTypedef::from_json_data(String, data["OTHER_ID_COUNTRY"])
+      out.other_id_number = SenzingTypedef::from_json_data(String, data["OTHER_ID_NUMBER"])
+      out.other_id_type = SenzingTypedef::from_json_data(String, data["OTHER_ID_TYPE"])
       out.passport_country = SenzingTypedef::from_json_data(String, data["PASSPORT_COUNTRY"])
       out.passport_number = SenzingTypedef::from_json_data(String, data["PASSPORT_NUMBER"])
       out.phone_number = SenzingTypedef::from_json_data(String, data["PHONE_NUMBER"])
-      out.primary_name_first = SenzingTypedef::from_json_data(String, data["PRIMARY_NAME_FIRST"])
-      out.primary_name_full = SenzingTypedef::from_json_data(String, data["PRIMARY_NAME_FULL"])
-      out.primary_name_last = SenzingTypedef::from_json_data(String, data["PRIMARY_NAME_LAST"])
-      out.primary_name_middle = SenzingTypedef::from_json_data(String, data["PRIMARY_NAME_MIDDLE"])
-      out.primary_name_org = SenzingTypedef::from_json_data(String, data["PRIMARY_NAME_ORG"])
+      out.phone_type = SenzingTypedef::from_json_data(String, data["PHONE_TYPE"])
+      out.place_of_birth = SenzingTypedef::from_json_data(String, data["PLACE_OF_BIRTH"])
       out.record_type = SenzingTypedef::from_json_data(String, data["RECORD_TYPE"])
+      out.registration_country = SenzingTypedef::from_json_data(String, data["REGISTRATION_COUNTRY"])
+      out.registration_date = SenzingTypedef::from_json_data(String, data["REGISTRATION_DATE"])
+      out.rel_anchor_domain = SenzingTypedef::from_json_data(String, data["REL_ANCHOR_DOMAIN"])
       out.rel_anchor_key = SenzingTypedef::from_json_data(String, data["REL_ANCHOR_KEY"])
+      out.rel_pointer_domain = SenzingTypedef::from_json_data(String, data["REL_POINTER_DOMAIN"])
       out.rel_pointer_key = SenzingTypedef::from_json_data(String, data["REL_POINTER_KEY"])
-      out.secondary_name_org = SenzingTypedef::from_json_data(String, data["SECONDARY_NAME_ORG"])
+      out.rel_pointer_role = SenzingTypedef::from_json_data(String, data["REL_POINTER_ROLE"])
+      out.signal = SenzingTypedef::from_json_data(String, data["SIGNAL"])
+      out.skype = SenzingTypedef::from_json_data(String, data["SKYPE"])
       out.ssn_number = SenzingTypedef::from_json_data(String, data["SSN_NUMBER"])
-      out.xxx_account_domain = SenzingTypedef::from_json_data(String, data["XXX_ACCOUNT_DOMAIN"])
-      out.xxx_account_number = SenzingTypedef::from_json_data(String, data["XXX_ACCOUNT_NUMBER"])
+      out.tango = SenzingTypedef::from_json_data(String, data["TANGO"])
+      out.tax_id_country = SenzingTypedef::from_json_data(String, data["TAX_ID_COUNTRY"])
+      out.tax_id_number = SenzingTypedef::from_json_data(String, data["TAX_ID_NUMBER"])
+      out.tax_id_type = SenzingTypedef::from_json_data(String, data["TAX_ID_TYPE"])
+      out.telegram = SenzingTypedef::from_json_data(String, data["TELEGRAM"])
+      out.trusted_id_number = SenzingTypedef::from_json_data(String, data["TRUSTED_ID_NUMBER"])
+      out.trusted_id_type = SenzingTypedef::from_json_data(String, data["TRUSTED_ID_TYPE"])
+      out.twitter = SenzingTypedef::from_json_data(String, data["TWITTER"])
+      out.viber = SenzingTypedef::from_json_data(String, data["VIBER"])
+      out.website_address = SenzingTypedef::from_json_data(String, data["WEBSITE_ADDRESS"])
+      out.wechat = SenzingTypedef::from_json_data(String, data["WECHAT"])
+      out.whatsapp = SenzingTypedef::from_json_data(String, data["WHATSAPP"])
       out.xxx_addr_from_date = SenzingTypedef::from_json_data(String, data["XXX_ADDR_FROM_DATE"])
-      out.xxx_addr_line2 = SenzingTypedef::from_json_data(String, data["XXX_ADDR_LINE2"])
-      out.xxx_addr_line3 = SenzingTypedef::from_json_data(String, data["XXX_ADDR_LINE3"])
-      out.xxx_addr_line4 = SenzingTypedef::from_json_data(String, data["XXX_ADDR_LINE4"])
-      out.xxx_addr_line5 = SenzingTypedef::from_json_data(String, data["XXX_ADDR_LINE5"])
-      out.xxx_addr_line6 = SenzingTypedef::from_json_data(String, data["XXX_ADDR_LINE6"])
       out.xxx_addr_thru_date = SenzingTypedef::from_json_data(String, data["XXX_ADDR_THRU_DATE"])
-      out.xxx_addr_type = SenzingTypedef::from_json_data(String, data["XXX_ADDR_TYPE"])
-      out.xxx_citizenship = SenzingTypedef::from_json_data(String, data["XXX_CITIZENSHIP"])
-      out.xxx_date_of_death = SenzingTypedef::from_json_data(String, data["XXX_DATE_OF_DEATH"])
-      out.xxx_duns_number = SenzingTypedef::from_json_data(String, data["XXX_DUNS_NUMBER"])
-      out.xxx_employer = SenzingTypedef::from_json_data(String, data["XXX_EMPLOYER"])
-      out.xxx_facebook = SenzingTypedef::from_json_data(String, data["XXX_FACEBOOK"])
-      out.xxx_group_assn_id_number = SenzingTypedef::from_json_data(String, data["XXX_GROUP_ASSN_ID_NUMBER"])
-      out.xxx_group_assn_id_type = SenzingTypedef::from_json_data(String, data["XXX_GROUP_ASSN_ID_TYPE"])
-      out.xxx_group_association_org_name = SenzingTypedef::from_json_data(String, data["XXX_GROUP_ASSOCIATION_ORG_NAME"])
-      out.xxx_group_association_type = SenzingTypedef::from_json_data(String, data["XXX_GROUP_ASSOCIATION_TYPE"])
-      out.xxx_instagram = SenzingTypedef::from_json_data(String, data["XXX_INSTAGRAM"])
-      out.xxx_lei_number = SenzingTypedef::from_json_data(String, data["XXX_LEI_NUMBER"])
-      out.xxx_linkedin = SenzingTypedef::from_json_data(String, data["XXX_LINKEDIN"])
-      out.xxx_name_first = SenzingTypedef::from_json_data(String, data["XXX_NAME_FIRST"])
-      out.xxx_name_last = SenzingTypedef::from_json_data(String, data["XXX_NAME_LAST"])
-      out.xxx_name_org = SenzingTypedef::from_json_data(String, data["XXX_NAME_ORG"])
-      out.xxx_name_prefix = SenzingTypedef::from_json_data(String, data["XXX_NAME_PREFIX"])
-      out.xxx_name_suffix = SenzingTypedef::from_json_data(String, data["XXX_NAME_SUFFIX"])
-      out.xxx_name_type = SenzingTypedef::from_json_data(String, data["XXX_NAME_TYPE"])
-      out.xxx_nationality = SenzingTypedef::from_json_data(String, data["XXX_NATIONALITY"])
-      out.xxx_npi_number = SenzingTypedef::from_json_data(String, data["XXX_NPI_NUMBER"])
-      out.xxx_other_id_country = SenzingTypedef::from_json_data(String, data["XXX_OTHER_ID_COUNTRY"])
-      out.xxx_other_id_number = SenzingTypedef::from_json_data(String, data["XXX_OTHER_ID_NUMBER"])
-      out.xxx_other_id_type = SenzingTypedef::from_json_data(String, data["XXX_OTHER_ID_TYPE"])
+      out.xxx_employer_name = SenzingTypedef::from_json_data(String, data["XXX_EMPLOYER_NAME"])
+      out.xxx_native_name_full = SenzingTypedef::from_json_data(String, data["XXX_NATIVE_NAME_FULL"])
       out.xxx_phone_from_date = SenzingTypedef::from_json_data(String, data["XXX_PHONE_FROM_DATE"])
       out.xxx_phone_thru_date = SenzingTypedef::from_json_data(String, data["XXX_PHONE_THRU_DATE"])
-      out.xxx_phone_type = SenzingTypedef::from_json_data(String, data["XXX_PHONE_TYPE"])
-      out.xxx_place_of_birth = SenzingTypedef::from_json_data(String, data["XXX_PLACE_OF_BIRTH"])
-      out.xxx_registration_country = SenzingTypedef::from_json_data(String, data["XXX_REGISTRATION_COUNTRY"])
-      out.xxx_registration_date = SenzingTypedef::from_json_data(String, data["XXX_REGISTRATION_DATE"])
-      out.xxx_signal = SenzingTypedef::from_json_data(String, data["XXX_SIGNAL"])
-      out.xxx_skype = SenzingTypedef::from_json_data(String, data["XXX_SKYPE"])
-      out.xxx_tango = SenzingTypedef::from_json_data(String, data["XXX_TANGO"])
-      out.xxx_tax_id_country = SenzingTypedef::from_json_data(String, data["XXX_TAX_ID_COUNTRY"])
-      out.xxx_tax_id_number = SenzingTypedef::from_json_data(String, data["XXX_TAX_ID_NUMBER"])
-      out.xxx_tax_id_type = SenzingTypedef::from_json_data(String, data["XXX_TAX_ID_TYPE"])
-      out.xxx_telegram = SenzingTypedef::from_json_data(String, data["XXX_TELEGRAM"])
-      out.xxx_trusted_id_number = SenzingTypedef::from_json_data(String, data["XXX_TRUSTED_ID_NUMBER"])
-      out.xxx_trusted_id_type = SenzingTypedef::from_json_data(String, data["XXX_TRUSTED_ID_TYPE"])
-      out.xxx_twitter = SenzingTypedef::from_json_data(String, data["XXX_TWITTER"])
-      out.xxx_viber = SenzingTypedef::from_json_data(String, data["XXX_VIBER"])
-      out.xxx_website_address = SenzingTypedef::from_json_data(String, data["XXX_WEBSITE_ADDRESS"])
-      out.xxx_wechat = SenzingTypedef::from_json_data(String, data["XXX_WECHAT"])
-      out.xxx_whatsapp = SenzingTypedef::from_json_data(String, data["XXX_WHATSAPP"])
-      out.xxx_zoomroom = SenzingTypedef::from_json_data(String, data["XXX_ZOOMROOM"])
+      out.xxx_primary_name_first = SenzingTypedef::from_json_data(String, data["XXX_PRIMARY_NAME_FIRST"])
+      out.xxx_primary_name_full = SenzingTypedef::from_json_data(String, data["XXX_PRIMARY_NAME_FULL"])
+      out.xxx_primary_name_last = SenzingTypedef::from_json_data(String, data["XXX_PRIMARY_NAME_LAST"])
+      out.xxx_primary_name_middle = SenzingTypedef::from_json_data(String, data["XXX_PRIMARY_NAME_MIDDLE"])
+      out.xxx_primary_name_org = SenzingTypedef::from_json_data(String, data["XXX_PRIMARY_NAME_ORG"])
+      out.xxx_secondary_name_org = SenzingTypedef::from_json_data(String, data["XXX_SECONDARY_NAME_ORG"])
+      out.zoomroom = SenzingTypedef::from_json_data(String, data["ZOOMROOM"])
       out
     end
 
     def to_json_data
       data = {}
+      data["ACCOUNT_DOMAIN"] = SenzingTypedef::to_json_data(account_domain)
+      data["ACCOUNT_NUMBER"] = SenzingTypedef::to_json_data(account_number)
       data["ADDR_CITY"] = SenzingTypedef::to_json_data(addr_city)
       data["ADDR_COUNTRY"] = SenzingTypedef::to_json_data(addr_country)
       data["ADDR_FULL"] = SenzingTypedef::to_json_data(addr_full)
       data["ADDR_LINE1"] = SenzingTypedef::to_json_data(addr_line1)
+      data["ADDR_LINE2"] = SenzingTypedef::to_json_data(addr_line2)
+      data["ADDR_LINE3"] = SenzingTypedef::to_json_data(addr_line3)
+      data["ADDR_LINE4"] = SenzingTypedef::to_json_data(addr_line4)
+      data["ADDR_LINE5"] = SenzingTypedef::to_json_data(addr_line5)
+      data["ADDR_LINE6"] = SenzingTypedef::to_json_data(addr_line6)
       data["ADDR_POSTAL_CODE"] = SenzingTypedef::to_json_data(addr_postal_code)
       data["ADDR_STATE"] = SenzingTypedef::to_json_data(addr_state)
+      data["ADDR_TYPE"] = SenzingTypedef::to_json_data(addr_type)
+      data["CITIZENSHIP"] = SenzingTypedef::to_json_data(citizenship)
       data["DATE_OF_BIRTH"] = SenzingTypedef::to_json_data(date_of_birth)
+      data["DATE_OF_DEATH"] = SenzingTypedef::to_json_data(date_of_death)
       data["DRIVERS_LICENSE_NUMBER"] = SenzingTypedef::to_json_data(drivers_license_number)
       data["DRIVERS_LICENSE_STATE"] = SenzingTypedef::to_json_data(drivers_license_state)
+      data["DUNS_NUMBER"] = SenzingTypedef::to_json_data(duns_number)
       data["EMAIL_ADDRESS"] = SenzingTypedef::to_json_data(email_address)
-      data["EMPLOYER_NAME"] = SenzingTypedef::to_json_data(employer_name)
+      data["EMPLOYER"] = SenzingTypedef::to_json_data(employer)
+      data["FACEBOOK"] = SenzingTypedef::to_json_data(facebook)
       data["GENDER"] = SenzingTypedef::to_json_data(gender)
+      data["GROUP_ASSN_ID_NUMBER"] = SenzingTypedef::to_json_data(group_assn_id_number)
+      data["GROUP_ASSN_ID_TYPE"] = SenzingTypedef::to_json_data(group_assn_id_type)
+      data["GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypedef::to_json_data(group_association_org_name)
+      data["GROUP_ASSOCIATION_TYPE"] = SenzingTypedef::to_json_data(group_association_type)
+      data["INSTAGRAM"] = SenzingTypedef::to_json_data(instagram)
+      data["LEI_NUMBER"] = SenzingTypedef::to_json_data(lei_number)
+      data["LINKEDIN"] = SenzingTypedef::to_json_data(linkedin)
+      data["NAME_FIRST"] = SenzingTypedef::to_json_data(name_first)
       data["NAME_FULL"] = SenzingTypedef::to_json_data(name_full)
+      data["NAME_LAST"] = SenzingTypedef::to_json_data(name_last)
+      data["NAME_MIDDLE"] = SenzingTypedef::to_json_data(name_middle)
+      data["NAME_ORG"] = SenzingTypedef::to_json_data(name_org)
+      data["NAME_PREFIX"] = SenzingTypedef::to_json_data(name_prefix)
+      data["NAME_SUFFIX"] = SenzingTypedef::to_json_data(name_suffix)
+      data["NAME_TYPE"] = SenzingTypedef::to_json_data(name_type)
+      data["NATIONALITY"] = SenzingTypedef::to_json_data(nationality)
       data["NATIONAL_ID_COUNTRY"] = SenzingTypedef::to_json_data(national_id_country)
       data["NATIONAL_ID_NUMBER"] = SenzingTypedef::to_json_data(national_id_number)
-      data["NATIVE_NAME_FULL"] = SenzingTypedef::to_json_data(native_name_full)
+      data["NATIONAL_ID_TYPE"] = SenzingTypedef::to_json_data(national_id_type)
+      data["NPI_NUMBER"] = SenzingTypedef::to_json_data(npi_number)
+      data["OTHER_ID_COUNTRY"] = SenzingTypedef::to_json_data(other_id_country)
+      data["OTHER_ID_NUMBER"] = SenzingTypedef::to_json_data(other_id_number)
+      data["OTHER_ID_TYPE"] = SenzingTypedef::to_json_data(other_id_type)
       data["PASSPORT_COUNTRY"] = SenzingTypedef::to_json_data(passport_country)
       data["PASSPORT_NUMBER"] = SenzingTypedef::to_json_data(passport_number)
       data["PHONE_NUMBER"] = SenzingTypedef::to_json_data(phone_number)
-      data["PRIMARY_NAME_FIRST"] = SenzingTypedef::to_json_data(primary_name_first)
-      data["PRIMARY_NAME_FULL"] = SenzingTypedef::to_json_data(primary_name_full)
-      data["PRIMARY_NAME_LAST"] = SenzingTypedef::to_json_data(primary_name_last)
-      data["PRIMARY_NAME_MIDDLE"] = SenzingTypedef::to_json_data(primary_name_middle)
-      data["PRIMARY_NAME_ORG"] = SenzingTypedef::to_json_data(primary_name_org)
+      data["PHONE_TYPE"] = SenzingTypedef::to_json_data(phone_type)
+      data["PLACE_OF_BIRTH"] = SenzingTypedef::to_json_data(place_of_birth)
       data["RECORD_TYPE"] = SenzingTypedef::to_json_data(record_type)
+      data["REGISTRATION_COUNTRY"] = SenzingTypedef::to_json_data(registration_country)
+      data["REGISTRATION_DATE"] = SenzingTypedef::to_json_data(registration_date)
+      data["REL_ANCHOR_DOMAIN"] = SenzingTypedef::to_json_data(rel_anchor_domain)
       data["REL_ANCHOR_KEY"] = SenzingTypedef::to_json_data(rel_anchor_key)
+      data["REL_POINTER_DOMAIN"] = SenzingTypedef::to_json_data(rel_pointer_domain)
       data["REL_POINTER_KEY"] = SenzingTypedef::to_json_data(rel_pointer_key)
-      data["SECONDARY_NAME_ORG"] = SenzingTypedef::to_json_data(secondary_name_org)
+      data["REL_POINTER_ROLE"] = SenzingTypedef::to_json_data(rel_pointer_role)
+      data["SIGNAL"] = SenzingTypedef::to_json_data(signal)
+      data["SKYPE"] = SenzingTypedef::to_json_data(skype)
       data["SSN_NUMBER"] = SenzingTypedef::to_json_data(ssn_number)
-      data["XXX_ACCOUNT_DOMAIN"] = SenzingTypedef::to_json_data(xxx_account_domain)
-      data["XXX_ACCOUNT_NUMBER"] = SenzingTypedef::to_json_data(xxx_account_number)
+      data["TANGO"] = SenzingTypedef::to_json_data(tango)
+      data["TAX_ID_COUNTRY"] = SenzingTypedef::to_json_data(tax_id_country)
+      data["TAX_ID_NUMBER"] = SenzingTypedef::to_json_data(tax_id_number)
+      data["TAX_ID_TYPE"] = SenzingTypedef::to_json_data(tax_id_type)
+      data["TELEGRAM"] = SenzingTypedef::to_json_data(telegram)
+      data["TRUSTED_ID_NUMBER"] = SenzingTypedef::to_json_data(trusted_id_number)
+      data["TRUSTED_ID_TYPE"] = SenzingTypedef::to_json_data(trusted_id_type)
+      data["TWITTER"] = SenzingTypedef::to_json_data(twitter)
+      data["VIBER"] = SenzingTypedef::to_json_data(viber)
+      data["WEBSITE_ADDRESS"] = SenzingTypedef::to_json_data(website_address)
+      data["WECHAT"] = SenzingTypedef::to_json_data(wechat)
+      data["WHATSAPP"] = SenzingTypedef::to_json_data(whatsapp)
       data["XXX_ADDR_FROM_DATE"] = SenzingTypedef::to_json_data(xxx_addr_from_date)
-      data["XXX_ADDR_LINE2"] = SenzingTypedef::to_json_data(xxx_addr_line2)
-      data["XXX_ADDR_LINE3"] = SenzingTypedef::to_json_data(xxx_addr_line3)
-      data["XXX_ADDR_LINE4"] = SenzingTypedef::to_json_data(xxx_addr_line4)
-      data["XXX_ADDR_LINE5"] = SenzingTypedef::to_json_data(xxx_addr_line5)
-      data["XXX_ADDR_LINE6"] = SenzingTypedef::to_json_data(xxx_addr_line6)
       data["XXX_ADDR_THRU_DATE"] = SenzingTypedef::to_json_data(xxx_addr_thru_date)
-      data["XXX_ADDR_TYPE"] = SenzingTypedef::to_json_data(xxx_addr_type)
-      data["XXX_CITIZENSHIP"] = SenzingTypedef::to_json_data(xxx_citizenship)
-      data["XXX_DATE_OF_DEATH"] = SenzingTypedef::to_json_data(xxx_date_of_death)
-      data["XXX_DUNS_NUMBER"] = SenzingTypedef::to_json_data(xxx_duns_number)
-      data["XXX_EMPLOYER"] = SenzingTypedef::to_json_data(xxx_employer)
-      data["XXX_FACEBOOK"] = SenzingTypedef::to_json_data(xxx_facebook)
-      data["XXX_GROUP_ASSN_ID_NUMBER"] = SenzingTypedef::to_json_data(xxx_group_assn_id_number)
-      data["XXX_GROUP_ASSN_ID_TYPE"] = SenzingTypedef::to_json_data(xxx_group_assn_id_type)
-      data["XXX_GROUP_ASSOCIATION_ORG_NAME"] = SenzingTypedef::to_json_data(xxx_group_association_org_name)
-      data["XXX_GROUP_ASSOCIATION_TYPE"] = SenzingTypedef::to_json_data(xxx_group_association_type)
-      data["XXX_INSTAGRAM"] = SenzingTypedef::to_json_data(xxx_instagram)
-      data["XXX_LEI_NUMBER"] = SenzingTypedef::to_json_data(xxx_lei_number)
-      data["XXX_LINKEDIN"] = SenzingTypedef::to_json_data(xxx_linkedin)
-      data["XXX_NAME_FIRST"] = SenzingTypedef::to_json_data(xxx_name_first)
-      data["XXX_NAME_LAST"] = SenzingTypedef::to_json_data(xxx_name_last)
-      data["XXX_NAME_ORG"] = SenzingTypedef::to_json_data(xxx_name_org)
-      data["XXX_NAME_PREFIX"] = SenzingTypedef::to_json_data(xxx_name_prefix)
-      data["XXX_NAME_SUFFIX"] = SenzingTypedef::to_json_data(xxx_name_suffix)
-      data["XXX_NAME_TYPE"] = SenzingTypedef::to_json_data(xxx_name_type)
-      data["XXX_NATIONALITY"] = SenzingTypedef::to_json_data(xxx_nationality)
-      data["XXX_NPI_NUMBER"] = SenzingTypedef::to_json_data(xxx_npi_number)
-      data["XXX_OTHER_ID_COUNTRY"] = SenzingTypedef::to_json_data(xxx_other_id_country)
-      data["XXX_OTHER_ID_NUMBER"] = SenzingTypedef::to_json_data(xxx_other_id_number)
-      data["XXX_OTHER_ID_TYPE"] = SenzingTypedef::to_json_data(xxx_other_id_type)
+      data["XXX_EMPLOYER_NAME"] = SenzingTypedef::to_json_data(xxx_employer_name)
+      data["XXX_NATIVE_NAME_FULL"] = SenzingTypedef::to_json_data(xxx_native_name_full)
       data["XXX_PHONE_FROM_DATE"] = SenzingTypedef::to_json_data(xxx_phone_from_date)
       data["XXX_PHONE_THRU_DATE"] = SenzingTypedef::to_json_data(xxx_phone_thru_date)
-      data["XXX_PHONE_TYPE"] = SenzingTypedef::to_json_data(xxx_phone_type)
-      data["XXX_PLACE_OF_BIRTH"] = SenzingTypedef::to_json_data(xxx_place_of_birth)
-      data["XXX_REGISTRATION_COUNTRY"] = SenzingTypedef::to_json_data(xxx_registration_country)
-      data["XXX_REGISTRATION_DATE"] = SenzingTypedef::to_json_data(xxx_registration_date)
-      data["XXX_SIGNAL"] = SenzingTypedef::to_json_data(xxx_signal)
-      data["XXX_SKYPE"] = SenzingTypedef::to_json_data(xxx_skype)
-      data["XXX_TANGO"] = SenzingTypedef::to_json_data(xxx_tango)
-      data["XXX_TAX_ID_COUNTRY"] = SenzingTypedef::to_json_data(xxx_tax_id_country)
-      data["XXX_TAX_ID_NUMBER"] = SenzingTypedef::to_json_data(xxx_tax_id_number)
-      data["XXX_TAX_ID_TYPE"] = SenzingTypedef::to_json_data(xxx_tax_id_type)
-      data["XXX_TELEGRAM"] = SenzingTypedef::to_json_data(xxx_telegram)
-      data["XXX_TRUSTED_ID_NUMBER"] = SenzingTypedef::to_json_data(xxx_trusted_id_number)
-      data["XXX_TRUSTED_ID_TYPE"] = SenzingTypedef::to_json_data(xxx_trusted_id_type)
-      data["XXX_TWITTER"] = SenzingTypedef::to_json_data(xxx_twitter)
-      data["XXX_VIBER"] = SenzingTypedef::to_json_data(xxx_viber)
-      data["XXX_WEBSITE_ADDRESS"] = SenzingTypedef::to_json_data(xxx_website_address)
-      data["XXX_WECHAT"] = SenzingTypedef::to_json_data(xxx_wechat)
-      data["XXX_WHATSAPP"] = SenzingTypedef::to_json_data(xxx_whatsapp)
-      data["XXX_ZOOMROOM"] = SenzingTypedef::to_json_data(xxx_zoomroom)
+      data["XXX_PRIMARY_NAME_FIRST"] = SenzingTypedef::to_json_data(xxx_primary_name_first)
+      data["XXX_PRIMARY_NAME_FULL"] = SenzingTypedef::to_json_data(xxx_primary_name_full)
+      data["XXX_PRIMARY_NAME_LAST"] = SenzingTypedef::to_json_data(xxx_primary_name_last)
+      data["XXX_PRIMARY_NAME_MIDDLE"] = SenzingTypedef::to_json_data(xxx_primary_name_middle)
+      data["XXX_PRIMARY_NAME_ORG"] = SenzingTypedef::to_json_data(xxx_primary_name_org)
+      data["XXX_SECONDARY_NAME_ORG"] = SenzingTypedef::to_json_data(xxx_secondary_name_org)
+      data["ZOOMROOM"] = SenzingTypedef::to_json_data(zoomroom)
       data
     end
   end
@@ -4454,7 +4705,7 @@ module SenzingTypedef
       out.datetimestamp = SenzingTypedef::from_json_data(String, data["datetimestamp"])
       out.expressed_features = SenzingTypedef::from_json_data(WorkloadExpressedFeatures, data["expressedFeatures"])
       out.generic_detect = SenzingTypedef::from_json_data(Fixme, data["genericDetect"])
-      out.license = SenzingTypedef::from_json_data(License, data["license"])
+      out.license = SenzingTypedef::from_json_data(WorkloadLicense, data["license"])
       out.loaded_records = SenzingTypedef::from_json_data(Integer, data["loadedRecords"])
       out.lock_waits = SenzingTypedef::from_json_data(WorkloadLockWaits, data["lockWaits"])
       out.processing = SenzingTypedef::from_json_data(WorkloadProcessing, data["processing"])
@@ -4657,6 +4908,28 @@ module SenzingTypedef
       data["availableMemory"] = SenzingTypedef::to_json_data(available_memory)
       data["logicalCores"] = SenzingTypedef::to_json_data(logical_cores)
       data["totalMemory"] = SenzingTypedef::to_json_data(total_memory)
+      data
+    end
+  end
+
+  class WorkloadLicense
+    attr_accessor :dsr_limit
+    attr_accessor :status
+    attr_accessor :type
+
+    def self.from_json_data(data)
+      out = WorkloadLicense.new
+      out.dsr_limit = SenzingTypedef::from_json_data(String, data["dsrLimit"])
+      out.status = SenzingTypedef::from_json_data(String, data["status"])
+      out.type = SenzingTypedef::from_json_data(String, data["type"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["dsrLimit"] = SenzingTypedef::to_json_data(dsr_limit)
+      data["status"] = SenzingTypedef::to_json_data(status)
+      data["type"] = SenzingTypedef::to_json_data(type)
       data
     end
   end

@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.16] - 2025-10-07
+
+### Changed in 0.2.16
+
+- Renamed classes
+
 ## [0.2.15] - 2025-09-30
 
 ### Changed in 0.2.15

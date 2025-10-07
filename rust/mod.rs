@@ -1270,18 +1270,6 @@ pub struct InterestingEntity {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct License {
-    #[serde(rename = "dsrLimit")]
-    pub dsrLimit: String,
-
-    #[serde(rename = "status")]
-    pub status: String,
-
-    #[serde(rename = "type")]
-    pub type_: String,
-}
-
-#[derive(Serialize, Deserialize)]
 pub struct MatchInfo {
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: CandidateKeysForMatchInfo,
@@ -1562,8 +1550,8 @@ pub struct RecordKey {
 #[derive(Serialize, Deserialize)]
 pub struct RecordKeys {
     /// A list of (data source code, record id) pairs.
-    #[serde(rename = "XXX_RECORDS")]
-    pub xxxRecords: Vec<RecordKey>,
+    #[serde(rename = "RECORDS")]
+    pub records: Vec<RecordKey>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1950,191 +1938,426 @@ pub struct SearchStatistic {
 
 #[derive(Serialize, Deserialize)]
 pub struct SenzingEntitySpecification {
+    /// Domain/system for the account number. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ACCOUNT_DOMAIN")]
+    pub accountDomain: String,
+
+    /// Account number (e.g., bank, card). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ACCOUNT_NUMBER")]
+    pub accountNumber: String,
+
+    /// City/locality. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "ADDR_CITY")]
     pub addrCity: String,
 
+    /// Country code. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "ADDR_COUNTRY")]
     pub addrCountry: String,
 
+    /// Single-field address when parsed components are unavailable.
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "ADDR_FULL")]
     pub addrFull: String,
 
+    /// First address line (street, number). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "ADDR_LINE1")]
     pub addrLine1: String,
 
+    /// Second address line (apt/suite). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ADDR_LINE2")]
+    pub addrLine2: String,
+
+    /// Third address line (optional). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ADDR_LINE3")]
+    pub addrLine3: String,
+
+    /// Fourth address line (optional). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ADDR_LINE4")]
+    pub addrLine4: String,
+
+    /// Fifth address line (optional). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ADDR_LINE5")]
+    pub addrLine5: String,
+
+    /// Sixth address line (optional). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ADDR_LINE6")]
+    pub addrLine6: String,
+
+    /// Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "ADDR_POSTAL_CODE")]
     pub addrPostalCode: String,
 
+    /// State/province/region code. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "ADDR_STATE")]
     pub addrState: String,
 
+    /// Optional; include when provided by the source. Common
+    /// values: HOME, MAILING (persons); BUSINESS (organizations).
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "ADDR_TYPE")]
+    pub addrType: String,
+
+    /// Country of citizenship (code or label) as provided by the
+    /// source. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "CITIZENSHIP")]
+    pub citizenship: String,
+
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "DATE_OF_BIRTH")]
     pub dateOfBirth: String,
 
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "DATE_OF_DEATH")]
+    pub dateOfDeath: String,
+
+    /// Driver's license number. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "DRIVERS_LICENSE_NUMBER")]
     pub driversLicenseNumber: String,
 
+    /// Issuing state/province/country. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: String,
 
+    /// Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "DUNS_NUMBER")]
+    pub dunsNumber: String,
+
+    /// Email address. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "EMAIL_ADDRESS")]
     pub emailAddress: String,
 
-    #[serde(rename = "EMPLOYER_NAME")]
-    pub employerName: String,
+    /// This is the name of the organization the person is employed
+    /// by. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "EMPLOYER")]
+    pub employer: String,
 
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "FACEBOOK")]
+    pub facebook: String,
+
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "GENDER")]
     pub gender: String,
 
+    /// The identifier the entity is associated with. An
+    /// attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "GROUP_ASSN_ID_NUMBER")]
+    pub groupAssnIdNumber: String,
+
+    /// The type of group identifier an entity is associated with.
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "GROUP_ASSN_ID_TYPE")]
+    pub groupAssnIdType: String,
+
+    /// Name of the associated organization; use the official or standardized
+    /// name. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "GROUP_ASSOCIATION_ORG_NAME")]
+    pub groupAssociationOrgName: String,
+
+    /// Specific group/role within the organization; use precise
+    /// categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve
+    /// resolution. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "GROUP_ASSOCIATION_TYPE")]
+    pub groupAssociationType: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "INSTAGRAM")]
+    pub instagram: String,
+
+    /// Legal Entity Identifier. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "LEI_NUMBER")]
+    pub leiNumber: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "LINKEDIN")]
+    pub linkedin: String,
+
+    /// Person given name. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_FIRST")]
+    pub nameFirst: String,
+
+    /// Single-field name when type (person vs org) is unknown or only a full
+    /// name is provided. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "NAME_FULL")]
     pub nameFull: String,
 
+    /// Person surname. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_LAST")]
+    pub nameLast: String,
+
+    /// Person middle name/initial. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_MIDDLE")]
+    pub nameMiddle: String,
+
+    /// Organization name. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_ORG")]
+    pub nameOrg: String,
+
+    /// Person title. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_PREFIX")]
+    pub namePrefix: String,
+
+    /// Person suffix. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_SUFFIX")]
+    pub nameSuffix: String,
+
+    /// Optional include when the source provides it. Common values: PRIMARY,
+    /// AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NAME_TYPE")]
+    pub nameType: String,
+
+    /// Country of nationality (code or label) as provided by the
+    /// source. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NATIONALITY")]
+    pub nationality: String,
+
+    /// Issuing country. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "NATIONAL_ID_COUNTRY")]
     pub nationalIdCountry: String,
 
+    /// National identifier value. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "NATIONAL_ID_NUMBER")]
     pub nationalIdNumber: String,
 
-    #[serde(rename = "NATIVE_NAME_FULL")]
-    pub nativeNameFull: String,
+    /// Use the type label from the source; standardize across
+    /// sources. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NATIONAL_ID_TYPE")]
+    pub nationalIdType: String,
 
+    /// US healthcare provider identifier. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "NPI_NUMBER")]
+    pub npiNumber: String,
+
+    /// Optional as country often not known or issued by an organization.
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "OTHER_ID_COUNTRY")]
+    pub otherIdCountry: String,
+
+    /// Identification number. An attribute in the Senzing Entity Specification.
+    /// See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "OTHER_ID_NUMBER")]
+    pub otherIdNumber: String,
+
+    /// Standardized source type. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "OTHER_ID_TYPE")]
+    pub otherIdType: String,
+
+    /// Issuing country. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "PASSPORT_COUNTRY")]
     pub passportCountry: String,
 
+    /// Passport number. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "PASSPORT_NUMBER")]
     pub passportNumber: String,
 
+    /// Telephone number. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "PHONE_NUMBER")]
     pub phoneNumber: String,
 
-    #[serde(rename = "PRIMARY_NAME_FIRST")]
-    pub primaryNameFirst: String,
+    /// Optional; include when provided by the source. Common
+    /// values: MOBILE, HOME, WORK, FAX. MOBILE carries extra
+    /// weight. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "PHONE_TYPE")]
+    pub phoneType: String,
 
-    #[serde(rename = "PRIMARY_NAME_FULL")]
-    pub primaryNameFull: String,
+    /// Place of birth; may be a city/region or a country code/label as provided
+    /// by the source. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "PLACE_OF_BIRTH")]
+    pub placeOfBirth: String,
 
-    #[serde(rename = "PRIMARY_NAME_LAST")]
-    pub primaryNameLast: String,
-
-    #[serde(rename = "PRIMARY_NAME_MIDDLE")]
-    pub primaryNameMiddle: String,
-
-    #[serde(rename = "PRIMARY_NAME_ORG")]
-    pub primaryNameOrg: String,
-
+    /// Include when known to prevent cross-type resolution; omit if unknown.
+    /// Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+    /// icon/shape in graphs. An attribute in the Senzing Entity Specification.
+    /// See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "RECORD_TYPE")]
     pub recordType: String,
 
+    /// Country of registration (code or label) as provided by the
+    /// source. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "REGISTRATION_COUNTRY")]
+    pub registrationCountry: String,
+
+    /// Organization registration/incorporation date. An
+    /// attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "REGISTRATION_DATE")]
+    pub registrationDate: String,
+
+    /// This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+    /// dashes) for the data source or source field that is contributing the
+    /// relationship. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "REL_ANCHOR_DOMAIN")]
+    pub relAnchorDomain: String,
+
+    /// This key should be a unique value for the record within the
+    /// REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+    /// here. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "REL_ANCHOR_KEY")]
     pub relAnchorKey: String,
 
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "REL_POINTER_DOMAIN")]
+    pub relPointerDomain: String,
+
+    /// An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "REL_POINTER_KEY")]
     pub relPointerKey: String,
 
-    #[serde(rename = "SECONDARY_NAME_ORG")]
-    pub secondaryNameOrg: String,
+    /// This is the role the pointer record has to the anchor record. Such
+    /// as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+    /// BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role
+    /// codes for display and filtering. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "REL_POINTER_ROLE")]
+    pub relPointerRole: String,
 
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "SIGNAL")]
+    pub signal: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "SKYPE")]
+    pub skype: String,
+
+    /// US Social Security Number; partial accepted. An
+    /// attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "SSN_NUMBER")]
     pub ssnNumber: String,
 
-    #[serde(rename = "XXX_ACCOUNT_DOMAIN")]
-    pub xxxAccountDomain: String,
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TANGO")]
+    pub tango: String,
 
-    #[serde(rename = "XXX_ACCOUNT_NUMBER")]
-    pub xxxAccountNumber: String,
+    /// Issuing country. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TAX_ID_COUNTRY")]
+    pub taxIdCountry: String,
+
+    /// Tax identification number. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TAX_ID_NUMBER")]
+    pub taxIdNumber: String,
+
+    /// Use the type label from the source; standardize across
+    /// sources. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TAX_ID_TYPE")]
+    pub taxIdType: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TELEGRAM")]
+    pub telegram: String,
+
+    /// The identifier value shared by records that must resolve
+    /// together. An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TRUSTED_ID_NUMBER")]
+    pub trustedIdNumber: String,
+
+    /// Short code for the identifier domain/system (e.g., STEWARD,
+    /// MASTER_ID). An attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TRUSTED_ID_TYPE")]
+    pub trustedIdType: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "TWITTER")]
+    pub twitter: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "VIBER")]
+    pub viber: String,
+
+    /// Website or domain; typically for organizations. An
+    /// attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "WEBSITE_ADDRESS")]
+    pub websiteAddress: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "WECHAT")]
+    pub wechat: String,
+
+    /// Social medial user name. An attribute in the Senzing Entity
+    /// Specification. See https://www.senzing.com/docs/entity_specification
+    #[serde(rename = "WHATSAPP")]
+    pub whatsapp: String,
 
     #[serde(rename = "XXX_ADDR_FROM_DATE")]
     pub xxxAddrFromDate: String,
 
-    #[serde(rename = "XXX_ADDR_LINE2")]
-    pub xxxAddrLine2: String,
-
-    #[serde(rename = "XXX_ADDR_LINE3")]
-    pub xxxAddrLine3: String,
-
-    #[serde(rename = "XXX_ADDR_LINE4")]
-    pub xxxAddrLine4: String,
-
-    #[serde(rename = "XXX_ADDR_LINE5")]
-    pub xxxAddrLine5: String,
-
-    #[serde(rename = "XXX_ADDR_LINE6")]
-    pub xxxAddrLine6: String,
-
     #[serde(rename = "XXX_ADDR_THRU_DATE")]
     pub xxxAddrThruDate: String,
 
-    #[serde(rename = "XXX_ADDR_TYPE")]
-    pub xxxAddrType: String,
+    #[serde(rename = "XXX_EMPLOYER_NAME")]
+    pub xxxEmployerName: String,
 
-    #[serde(rename = "XXX_CITIZENSHIP")]
-    pub xxxCitizenship: String,
-
-    #[serde(rename = "XXX_DATE_OF_DEATH")]
-    pub xxxDateOfDeath: String,
-
-    #[serde(rename = "XXX_DUNS_NUMBER")]
-    pub xxxDunsNumber: String,
-
-    #[serde(rename = "XXX_EMPLOYER")]
-    pub xxxEmployer: String,
-
-    #[serde(rename = "XXX_FACEBOOK")]
-    pub xxxFacebook: String,
-
-    #[serde(rename = "XXX_GROUP_ASSN_ID_NUMBER")]
-    pub xxxGroupAssnIdNumber: String,
-
-    #[serde(rename = "XXX_GROUP_ASSN_ID_TYPE")]
-    pub xxxGroupAssnIdType: String,
-
-    #[serde(rename = "XXX_GROUP_ASSOCIATION_ORG_NAME")]
-    pub xxxGroupAssociationOrgName: String,
-
-    #[serde(rename = "XXX_GROUP_ASSOCIATION_TYPE")]
-    pub xxxGroupAssociationType: String,
-
-    #[serde(rename = "XXX_INSTAGRAM")]
-    pub xxxInstagram: String,
-
-    #[serde(rename = "XXX_LEI_NUMBER")]
-    pub xxxLeiNumber: String,
-
-    #[serde(rename = "XXX_LINKEDIN")]
-    pub xxxLinkedin: String,
-
-    #[serde(rename = "XXX_NAME_FIRST")]
-    pub xxxNameFirst: String,
-
-    #[serde(rename = "XXX_NAME_LAST")]
-    pub xxxNameLast: String,
-
-    #[serde(rename = "XXX_NAME_ORG")]
-    pub xxxNameOrg: String,
-
-    #[serde(rename = "XXX_NAME_PREFIX")]
-    pub xxxNamePrefix: String,
-
-    #[serde(rename = "XXX_NAME_SUFFIX")]
-    pub xxxNameSuffix: String,
-
-    #[serde(rename = "XXX_NAME_TYPE")]
-    pub xxxNameType: String,
-
-    #[serde(rename = "XXX_NATIONALITY")]
-    pub xxxNationality: String,
-
-    #[serde(rename = "XXX_NPI_NUMBER")]
-    pub xxxNpiNumber: String,
-
-    #[serde(rename = "XXX_OTHER_ID_COUNTRY")]
-    pub xxxOtherIdCountry: String,
-
-    #[serde(rename = "XXX_OTHER_ID_NUMBER")]
-    pub xxxOtherIdNumber: String,
-
-    #[serde(rename = "XXX_OTHER_ID_TYPE")]
-    pub xxxOtherIdType: String,
+    #[serde(rename = "XXX_NATIVE_NAME_FULL")]
+    pub xxxNativeNameFull: String,
 
     #[serde(rename = "XXX_PHONE_FROM_DATE")]
     pub xxxPhoneFromDate: String,
@@ -2142,62 +2365,26 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "XXX_PHONE_THRU_DATE")]
     pub xxxPhoneThruDate: String,
 
-    #[serde(rename = "XXX_PHONE_TYPE")]
-    pub xxxPhoneType: String,
+    #[serde(rename = "XXX_PRIMARY_NAME_FIRST")]
+    pub xxxPrimaryNameFirst: String,
 
-    #[serde(rename = "XXX_PLACE_OF_BIRTH")]
-    pub xxxPlaceOfBirth: String,
+    #[serde(rename = "XXX_PRIMARY_NAME_FULL")]
+    pub xxxPrimaryNameFull: String,
 
-    #[serde(rename = "XXX_REGISTRATION_COUNTRY")]
-    pub xxxRegistrationCountry: String,
+    #[serde(rename = "XXX_PRIMARY_NAME_LAST")]
+    pub xxxPrimaryNameLast: String,
 
-    #[serde(rename = "XXX_REGISTRATION_DATE")]
-    pub xxxRegistrationDate: String,
+    #[serde(rename = "XXX_PRIMARY_NAME_MIDDLE")]
+    pub xxxPrimaryNameMiddle: String,
 
-    #[serde(rename = "XXX_SIGNAL")]
-    pub xxxSignal: String,
+    #[serde(rename = "XXX_PRIMARY_NAME_ORG")]
+    pub xxxPrimaryNameOrg: String,
 
-    #[serde(rename = "XXX_SKYPE")]
-    pub xxxSkype: String,
+    #[serde(rename = "XXX_SECONDARY_NAME_ORG")]
+    pub xxxSecondaryNameOrg: String,
 
-    #[serde(rename = "XXX_TANGO")]
-    pub xxxTango: String,
-
-    #[serde(rename = "XXX_TAX_ID_COUNTRY")]
-    pub xxxTaxIdCountry: String,
-
-    #[serde(rename = "XXX_TAX_ID_NUMBER")]
-    pub xxxTaxIdNumber: String,
-
-    #[serde(rename = "XXX_TAX_ID_TYPE")]
-    pub xxxTaxIdType: String,
-
-    #[serde(rename = "XXX_TELEGRAM")]
-    pub xxxTelegram: String,
-
-    #[serde(rename = "XXX_TRUSTED_ID_NUMBER")]
-    pub xxxTrustedIdNumber: String,
-
-    #[serde(rename = "XXX_TRUSTED_ID_TYPE")]
-    pub xxxTrustedIdType: String,
-
-    #[serde(rename = "XXX_TWITTER")]
-    pub xxxTwitter: String,
-
-    #[serde(rename = "XXX_VIBER")]
-    pub xxxViber: String,
-
-    #[serde(rename = "XXX_WEBSITE_ADDRESS")]
-    pub xxxWebsiteAddress: String,
-
-    #[serde(rename = "XXX_WECHAT")]
-    pub xxxWechat: String,
-
-    #[serde(rename = "XXX_WHATSAPP")]
-    pub xxxWhatsapp: String,
-
-    #[serde(rename = "XXX_ZOOMROOM")]
-    pub xxxZoomroom: String,
+    #[serde(rename = "ZOOMROOM")]
+    pub zoomroom: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2850,7 +3037,7 @@ pub struct Workload {
     pub genericDetect: Fixme,
 
     #[serde(rename = "license")]
-    pub license: License,
+    pub license: WorkloadLicense,
 
     #[serde(rename = "loadedRecords")]
     pub loadedRecords: i32,
@@ -2980,6 +3167,18 @@ pub struct WorkloadInitResources {
 
     #[serde(rename = "totalMemory")]
     pub totalMemory: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadLicense {
+    #[serde(rename = "dsrLimit")]
+    pub dsrLimit: String,
+
+    #[serde(rename = "status")]
+    pub status: String,
+
+    #[serde(rename = "type")]
+    pub type_: String,
 }
 
 #[derive(Serialize, Deserialize)]

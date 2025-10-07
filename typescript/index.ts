@@ -675,12 +675,6 @@ export interface InterestingEntity {
   XXX_SAMPLE_RECORDS: SampleRecord[];
 }
 
-export interface License {
-  dsrLimit: string;
-  status: string;
-  type: string;
-}
-
 export interface MatchInfo {
   CANDIDATE_KEYS: CandidateKeysForMatchInfo;
 
@@ -869,7 +863,7 @@ export interface RecordKeys {
   /**
    * A list of (data source code, record id) pairs.
    */
-  XXX_RECORDS: RecordKey[];
+  RECORDS: RecordKey[];
 }
 
 export interface RecordSummary {
@@ -1155,89 +1149,496 @@ export interface SearchStatistic {
 }
 
 export interface SenzingEntitySpecification {
+  /**
+   * Domain/system for the account number. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ACCOUNT_DOMAIN: string;
+
+  /**
+   * Account number (e.g., bank, card). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ACCOUNT_NUMBER: string;
+
+  /**
+   * City/locality. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   ADDR_CITY: string;
+
+  /**
+   * Country code. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   ADDR_COUNTRY: string;
+
+  /**
+   * Single-field address when parsed components are unavailable.
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   ADDR_FULL: string;
+
+  /**
+   * First address line (street, number). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
   ADDR_LINE1: string;
+
+  /**
+   * Second address line (apt/suite). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ADDR_LINE2: string;
+
+  /**
+   * Third address line (optional). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ADDR_LINE3: string;
+
+  /**
+   * Fourth address line (optional). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ADDR_LINE4: string;
+
+  /**
+   * Fifth address line (optional). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ADDR_LINE5: string;
+
+  /**
+   * Sixth address line (optional). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ADDR_LINE6: string;
+
+  /**
+   * Postal/ZIP code. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   ADDR_POSTAL_CODE: string;
+
+  /**
+   * State/province/region code. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
   ADDR_STATE: string;
+
+  /**
+   * Optional; include when provided by the source. Common values: HOME, MAILING
+   * (persons); BUSINESS (organizations). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  ADDR_TYPE: string;
+
+  /**
+   * Country of citizenship (code or label) as provided by the
+   * source. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  CITIZENSHIP: string;
+
+  /**
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   DATE_OF_BIRTH: string;
+
+  /**
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  DATE_OF_DEATH: string;
+
+  /**
+   * Driver's license number. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
   DRIVERS_LICENSE_NUMBER: string;
+
+  /**
+   * Issuing state/province/country. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
   DRIVERS_LICENSE_STATE: string;
+
+  /**
+   * Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  DUNS_NUMBER: string;
+
+  /**
+   * Email address. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   EMAIL_ADDRESS: string;
-  EMPLOYER_NAME: string;
+
+  /**
+   * This is the name of the organization the person is employed
+   * by. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  EMPLOYER: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  FACEBOOK: string;
+
+  /**
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   GENDER: string;
+
+  /**
+   * The identifier the entity is associated with. An attribute in the Senzing
+   * Entity Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  GROUP_ASSN_ID_NUMBER: string;
+
+  /**
+   * The type of group identifier an entity is associated with.
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  GROUP_ASSN_ID_TYPE: string;
+
+  /**
+   * Name of the associated organization; use the official or standardized
+   * name. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  GROUP_ASSOCIATION_ORG_NAME: string;
+
+  /**
+   * Specific group/role within the organization; use precise
+   * categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve
+   * resolution. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  GROUP_ASSOCIATION_TYPE: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  INSTAGRAM: string;
+
+  /**
+   * Legal Entity Identifier. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  LEI_NUMBER: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  LINKEDIN: string;
+
+  /**
+   * Person given name. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NAME_FIRST: string;
+
+  /**
+   * Single-field name when type (person vs org) is unknown or only a full
+   * name is provided. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   NAME_FULL: string;
+
+  /**
+   * Person surname. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NAME_LAST: string;
+
+  /**
+   * Person middle name/initial. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  NAME_MIDDLE: string;
+
+  /**
+   * Organization name. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NAME_ORG: string;
+
+  /**
+   * Person title. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NAME_PREFIX: string;
+
+  /**
+   * Person suffix. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NAME_SUFFIX: string;
+
+  /**
+   * Optional include when the source provides it. Common values: PRIMARY,
+   * AKA (persons), DBA (organizations). An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  NAME_TYPE: string;
+
+  /**
+   * Country of nationality (code or label) as provided by the
+   * source. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NATIONALITY: string;
+
+  /**
+   * Issuing country. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   NATIONAL_ID_COUNTRY: string;
+
+  /**
+   * National identifier value. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
   NATIONAL_ID_NUMBER: string;
-  NATIVE_NAME_FULL: string;
+
+  /**
+   * Use the type label from the source; standardize across
+   * sources. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  NATIONAL_ID_TYPE: string;
+
+  /**
+   * US healthcare provider identifier. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  NPI_NUMBER: string;
+
+  /**
+   * Optional as country often not known or issued by an organization.
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  OTHER_ID_COUNTRY: string;
+
+  /**
+   * Identification number. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  OTHER_ID_NUMBER: string;
+
+  /**
+   * Standardized source type. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  OTHER_ID_TYPE: string;
+
+  /**
+   * Issuing country. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   PASSPORT_COUNTRY: string;
+
+  /**
+   * Passport number. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   PASSPORT_NUMBER: string;
+
+  /**
+   * Telephone number. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   PHONE_NUMBER: string;
-  PRIMARY_NAME_FIRST: string;
-  PRIMARY_NAME_FULL: string;
-  PRIMARY_NAME_LAST: string;
-  PRIMARY_NAME_MIDDLE: string;
-  PRIMARY_NAME_ORG: string;
+
+  /**
+   * Optional; include when provided by the source. Common values: MOBILE, HOME,
+   * WORK, FAX. MOBILE carries extra weight. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  PHONE_TYPE: string;
+
+  /**
+   * Place of birth; may be a city/region or a country code/label as provided
+   * by the source. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  PLACE_OF_BIRTH: string;
+
+  /**
+   * Include when known to prevent cross-type resolution; omit if unknown.
+   * Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
+   * icon/shape in graphs. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   RECORD_TYPE: string;
+
+  /**
+   * Country of registration (code or label) as provided by the
+   * source. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  REGISTRATION_COUNTRY: string;
+
+  /**
+   * Organization registration/incorporation date. An attribute in the Senzing
+   * Entity Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  REGISTRATION_DATE: string;
+
+  /**
+   * This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
+   * dashes) for the data source or source field that is contributing the
+   * relationship. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  REL_ANCHOR_DOMAIN: string;
+
+  /**
+   * This key should be a unique value for the record within the
+   * REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID
+   * here. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   REL_ANCHOR_KEY: string;
+
+  /**
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  REL_POINTER_DOMAIN: string;
+
+  /**
+   * An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
   REL_POINTER_KEY: string;
-  SECONDARY_NAME_ORG: string;
+
+  /**
+   * This is the role the pointer record has to the anchor record. Such
+   * as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF,
+   * BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for
+   * display and filtering. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  REL_POINTER_ROLE: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  SIGNAL: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  SKYPE: string;
+
+  /**
+   * US Social Security Number; partial accepted. An attribute in the Senzing
+   * Entity Specification. See https://www.senzing.com/docs/entity_specification
+   */
   SSN_NUMBER: string;
-  XXX_ACCOUNT_DOMAIN: string;
-  XXX_ACCOUNT_NUMBER: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  TANGO: string;
+
+  /**
+   * Issuing country. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  TAX_ID_COUNTRY: string;
+
+  /**
+   * Tax identification number. An attribute in the Senzing Entity
+   * Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  TAX_ID_NUMBER: string;
+
+  /**
+   * Use the type label from the source; standardize across
+   * sources. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  TAX_ID_TYPE: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  TELEGRAM: string;
+
+  /**
+   * The identifier value shared by records that must resolve
+   * together. An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  TRUSTED_ID_NUMBER: string;
+
+  /**
+   * Short code for the identifier domain/system (e.g., STEWARD,
+   * MASTER_ID). An attribute in the Senzing Entity Specification. See
+   * https://www.senzing.com/docs/entity_specification
+   */
+  TRUSTED_ID_TYPE: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  TWITTER: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  VIBER: string;
+
+  /**
+   * Website or domain; typically for organizations. An attribute in the Senzing
+   * Entity Specification. See https://www.senzing.com/docs/entity_specification
+   */
+  WEBSITE_ADDRESS: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  WECHAT: string;
+
+  /**
+   * Social medial user name. An attribute in the Senzing Entity Specification.
+   * See https://www.senzing.com/docs/entity_specification
+   */
+  WHATSAPP: string;
   XXX_ADDR_FROM_DATE: string;
-  XXX_ADDR_LINE2: string;
-  XXX_ADDR_LINE3: string;
-  XXX_ADDR_LINE4: string;
-  XXX_ADDR_LINE5: string;
-  XXX_ADDR_LINE6: string;
   XXX_ADDR_THRU_DATE: string;
-  XXX_ADDR_TYPE: string;
-  XXX_CITIZENSHIP: string;
-  XXX_DATE_OF_DEATH: string;
-  XXX_DUNS_NUMBER: string;
-  XXX_EMPLOYER: string;
-  XXX_FACEBOOK: string;
-  XXX_GROUP_ASSN_ID_NUMBER: string;
-  XXX_GROUP_ASSN_ID_TYPE: string;
-  XXX_GROUP_ASSOCIATION_ORG_NAME: string;
-  XXX_GROUP_ASSOCIATION_TYPE: string;
-  XXX_INSTAGRAM: string;
-  XXX_LEI_NUMBER: string;
-  XXX_LINKEDIN: string;
-  XXX_NAME_FIRST: string;
-  XXX_NAME_LAST: string;
-  XXX_NAME_ORG: string;
-  XXX_NAME_PREFIX: string;
-  XXX_NAME_SUFFIX: string;
-  XXX_NAME_TYPE: string;
-  XXX_NATIONALITY: string;
-  XXX_NPI_NUMBER: string;
-  XXX_OTHER_ID_COUNTRY: string;
-  XXX_OTHER_ID_NUMBER: string;
-  XXX_OTHER_ID_TYPE: string;
+  XXX_EMPLOYER_NAME: string;
+  XXX_NATIVE_NAME_FULL: string;
   XXX_PHONE_FROM_DATE: string;
   XXX_PHONE_THRU_DATE: string;
-  XXX_PHONE_TYPE: string;
-  XXX_PLACE_OF_BIRTH: string;
-  XXX_REGISTRATION_COUNTRY: string;
-  XXX_REGISTRATION_DATE: string;
-  XXX_SIGNAL: string;
-  XXX_SKYPE: string;
-  XXX_TANGO: string;
-  XXX_TAX_ID_COUNTRY: string;
-  XXX_TAX_ID_NUMBER: string;
-  XXX_TAX_ID_TYPE: string;
-  XXX_TELEGRAM: string;
-  XXX_TRUSTED_ID_NUMBER: string;
-  XXX_TRUSTED_ID_TYPE: string;
-  XXX_TWITTER: string;
-  XXX_VIBER: string;
-  XXX_WEBSITE_ADDRESS: string;
-  XXX_WECHAT: string;
-  XXX_WHATSAPP: string;
-  XXX_ZOOMROOM: string;
+  XXX_PRIMARY_NAME_FIRST: string;
+  XXX_PRIMARY_NAME_FULL: string;
+  XXX_PRIMARY_NAME_LAST: string;
+  XXX_PRIMARY_NAME_MIDDLE: string;
+  XXX_PRIMARY_NAME_ORG: string;
+  XXX_SECONDARY_NAME_ORG: string;
+  ZOOMROOM: string;
 }
 
 export interface SzConfigExportResponse {
@@ -1666,7 +2067,7 @@ export interface Workload {
   datetimestamp: string;
   expressedFeatures: WorkloadExpressedFeatures;
   genericDetect: Fixme;
-  license: License;
+  license: WorkloadLicense;
   loadedRecords: number;
   lockWaits: WorkloadLockWaits;
   processing: WorkloadProcessing;
@@ -1724,6 +2125,12 @@ export interface WorkloadInitResources {
   availableMemory: string;
   logicalCores: number;
   totalMemory: string;
+}
+
+export interface WorkloadLicense {
+  dsrLimit: string;
+  status: string;
+  type: string;
 }
 
 export interface WorkloadLockWaits {

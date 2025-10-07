@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
-    public class License
+    public class WorkloadLicense
     {
         [JsonPropertyName("dsrLimit")]
         public string DsrLimit { get; set; }

@@ -11,7 +11,7 @@ namespace Senzing.Typedef
         /// <summary>
         /// A list of (data source code, record id) pairs.
         /// </summary>
-        [JsonPropertyName("XXX_RECORDS")]
-        public IList<RecordKey> XxxRecords { get; set; }
+        [JsonPropertyName("RECORDS")]
+        public IList<RecordKey> Records { get; set; }
     }
 }
