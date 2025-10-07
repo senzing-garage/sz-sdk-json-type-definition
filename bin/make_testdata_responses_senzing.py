@@ -27,6 +27,7 @@ LOADED_ENTITY_IDS = []
 LOADED_RECORD_KEYS = []
 SCHEMA = {}
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
+TH4_DIRECTORY = "./testdata/responses_th4"
 
 FLAGS = [
     SzEngineFlags.SZ_WITH_INFO,  # 1
@@ -1068,6 +1069,27 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
 
 
 # -----------------------------------------------------------------------------
+# Add TH4 responses
+# -----------------------------------------------------------------------------
+
+
+def add_th4_responses():
+    """Write response to a file."""
+    current_path = pathlib.Path(__file__).parent.resolve()
+    source_dir = os.path.abspath(f"{current_path}/../testdata/responses_th4")
+    target_dir = os.path.abspath(f"{current_path}/../testdata/responses_senzing")
+
+    th4_file_names = os.listdir(source_dir)
+    for th4_file_name in th4_file_names:
+
+        with open(f"{source_dir}/{th4_file_name}", "r", encoding="utf-8") as source_file:
+            source_lines = source_file.read()
+
+        with open(f"{target_dir}/{th4_file_name}", "a", encoding="utf-8") as target_file:
+            target_file.write(source_lines)
+
+
+# -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
 
@@ -1320,6 +1342,10 @@ if __name__ == "__main__":
     # Delete test data.
 
     delete_records(the_sz_abstract_factory)
+
+    # Add responses_th4.
+
+    add_th4_responses()
 
     # Epilog.
 

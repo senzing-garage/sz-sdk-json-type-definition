@@ -296,15 +296,13 @@ go-typedef-generated-typedef-test-go:
 
 
 .PHONY: testdata-responses-generated
-testdata-responses-generated:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+testdata-responses-generated: clean-testdata-responses-generated
 	$(activate-venv); \
 		./bin/make_testdata_responses_generated.py
 
 
 .PHONY: testdata-responses-senzing
-testdata-responses-senzing:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
+testdata-responses-senzing: clean-testdata-responses-senzing
 	$(activate-venv); \
 		./bin/make_testdata_responses_senzing.py
 
@@ -436,7 +434,7 @@ clean-testdata-responses-generated:
 
 .PHONY: clean-testdata-responses-senzing
 clean-testdata-responses-senzing:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/* || true
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
 
 
 .PHONY: clean-typescript
