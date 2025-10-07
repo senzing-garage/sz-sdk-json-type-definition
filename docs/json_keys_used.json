@@ -362,6 +362,9 @@
     "EMPLOYER": [
         "SenzingEntitySpecification.EMPLOYER"
     ],
+    "EMPLOYER_NAME": [
+        "SenzingEntitySpecification.EMPLOYER_NAME"
+    ],
     "END_ENTITY_ID": [
         "EntityPath.END_ENTITY_ID"
     ],
@@ -828,6 +831,9 @@
     "NATIONAL_ID_TYPE": [
         "SenzingEntitySpecification.NATIONAL_ID_TYPE"
     ],
+    "NATIVE_NAME_FULL": [
+        "SenzingEntitySpecification.NATIVE_NAME_FULL"
+    ],
     "NEED_REEVALUATION": [
         "FinalState.NEED_REEVALUATION"
     ],
@@ -882,6 +888,21 @@
     ],
     "PLAUSIBLE_SCORE": [
         "CFG_CFRTN.PLAUSIBLE_SCORE"
+    ],
+    "PRIMARY_NAME_FIRST": [
+        "SenzingEntitySpecification.PRIMARY_NAME_FIRST"
+    ],
+    "PRIMARY_NAME_FULL": [
+        "SenzingEntitySpecification.PRIMARY_NAME_FULL"
+    ],
+    "PRIMARY_NAME_LAST": [
+        "SenzingEntitySpecification.PRIMARY_NAME_LAST"
+    ],
+    "PRIMARY_NAME_MIDDLE": [
+        "SenzingEntitySpecification.PRIMARY_NAME_MIDDLE"
+    ],
+    "PRIMARY_NAME_ORG": [
+        "SenzingEntitySpecification.PRIMARY_NAME_ORG"
     ],
     "PRODUCT_NAME": [
         "SzProductGetVersionResponse.PRODUCT_NAME"
@@ -1041,6 +1062,9 @@
     "SEARCH_STATISTICS": [
         "SzEngineSearchByAttributesResponse.SEARCH_STATISTICS",
         "SzEngineWhySearchResponse.SEARCH_STATISTICS"
+    ],
+    "SECONDARY_NAME_ORG": [
+        "SenzingEntitySpecification.SECONDARY_NAME_ORG"
     ],
     "SEND_TO_REDO": [
         "CFG_GENERIC_THRESHOLD.SEND_TO_REDO"
@@ -1280,9 +1304,6 @@
         "CFG_ETYPE.XXX_ECLASS_ID",
         "CFG_FBOVR.XXX_ECLASS_ID"
     ],
-    "XXX_EMPLOYER_NAME": [
-        "SenzingEntitySpecification.XXX_EMPLOYER_NAME"
-    ],
     "XXX_ENTITY_DATA": [
         "Record.XXX_ENTITY_DATA",
         "RecordForGetEntity.XXX_ENTITY_DATA",
@@ -1491,9 +1512,6 @@
         "RecordForGetEntity.XXX_NAME_DATA",
         "SzEngineGetRecordResponse.XXX_NAME_DATA"
     ],
-    "XXX_NATIVE_NAME_FULL": [
-        "SenzingEntitySpecification.XXX_NATIVE_NAME_FULL"
-    ],
     "XXX_NOTICES": [
         "InterestingEntities.XXX_NOTICES"
     ],
@@ -1512,21 +1530,6 @@
     ],
     "XXX_PHONE_THRU_DATE": [
         "SenzingEntitySpecification.XXX_PHONE_THRU_DATE"
-    ],
-    "XXX_PRIMARY_NAME_FIRST": [
-        "SenzingEntitySpecification.XXX_PRIMARY_NAME_FIRST"
-    ],
-    "XXX_PRIMARY_NAME_FULL": [
-        "SenzingEntitySpecification.XXX_PRIMARY_NAME_FULL"
-    ],
-    "XXX_PRIMARY_NAME_LAST": [
-        "SenzingEntitySpecification.XXX_PRIMARY_NAME_LAST"
-    ],
-    "XXX_PRIMARY_NAME_MIDDLE": [
-        "SenzingEntitySpecification.XXX_PRIMARY_NAME_MIDDLE"
-    ],
-    "XXX_PRIMARY_NAME_ORG": [
-        "SenzingEntitySpecification.XXX_PRIMARY_NAME_ORG"
     ],
     "XXX_PRODUCT_NAME": [
         "CONFIG_BASE_VERSION.XXX_PRODUCT_NAME"
@@ -1568,9 +1571,6 @@
     ],
     "XXX_SAMPLE_RECORDS": [
         "InterestingEntity.XXX_SAMPLE_RECORDS"
-    ],
-    "XXX_SECONDARY_NAME_ORG": [
-        "SenzingEntitySpecification.XXX_SECONDARY_NAME_ORG"
     ],
     "XXX_SUPPRESSED": [
         "FeatureDescriptionValue.XXX_SUPPRESSED"

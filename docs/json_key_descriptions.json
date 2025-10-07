@@ -79,7 +79,7 @@
         "The unique internal integer identifier of the datasource."
     ],
     "DUNS_NUMBER": [
-        "Dun & Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+        "Dun and Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "ELEMENTS": [
         "Internal use."

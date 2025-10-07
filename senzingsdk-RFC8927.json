@@ -2955,7 +2955,7 @@
                 },
                 "DUNS_NUMBER": {
                     "metadata": {
-                        "description": "Dun & Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                        "description": "Dun and Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
                     },
                     "type": "string"
                 },
@@ -2969,6 +2969,9 @@
                     "metadata": {
                         "description": "This is the name of the organization the person is employed by. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
                     },
+                    "type": "string"
+                },
+                "EMPLOYER_NAME": {
                     "type": "string"
                 },
                 "FACEBOOK": {
@@ -3097,6 +3100,9 @@
                     },
                     "type": "string"
                 },
+                "NATIVE_NAME_FULL": {
+                    "type": "string"
+                },
                 "NPI_NUMBER": {
                     "metadata": {
                         "description": "US healthcare provider identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -3151,6 +3157,21 @@
                     },
                     "type": "string"
                 },
+                "PRIMARY_NAME_FIRST": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_FULL": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_LAST": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_MIDDLE": {
+                    "type": "string"
+                },
+                "PRIMARY_NAME_ORG": {
+                    "type": "string"
+                },
                 "RECORD_TYPE": {
                     "metadata": {
                         "description": "Include when known to prevent cross-type resolution; omit if unknown. Use standardized kinds (PERSON, ORGANIZATION). Often used to determine icon/shape in graphs. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -3197,6 +3218,9 @@
                     "metadata": {
                         "description": "This is the role the pointer record has to the anchor record. Such as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF, BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for display and filtering. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
                     },
+                    "type": "string"
+                },
+                "SECONDARY_NAME_ORG": {
                     "type": "string"
                 },
                 "SIGNAL": {
@@ -3295,34 +3319,10 @@
                 "XXX_ADDR_THRU_DATE": {
                     "type": "string"
                 },
-                "XXX_EMPLOYER_NAME": {
-                    "type": "string"
-                },
-                "XXX_NATIVE_NAME_FULL": {
-                    "type": "string"
-                },
                 "XXX_PHONE_FROM_DATE": {
                     "type": "string"
                 },
                 "XXX_PHONE_THRU_DATE": {
-                    "type": "string"
-                },
-                "XXX_PRIMARY_NAME_FIRST": {
-                    "type": "string"
-                },
-                "XXX_PRIMARY_NAME_FULL": {
-                    "type": "string"
-                },
-                "XXX_PRIMARY_NAME_LAST": {
-                    "type": "string"
-                },
-                "XXX_PRIMARY_NAME_MIDDLE": {
-                    "type": "string"
-                },
-                "XXX_PRIMARY_NAME_ORG": {
-                    "type": "string"
-                },
-                "XXX_SECONDARY_NAME_ORG": {
                     "type": "string"
                 },
                 "ZOOMROOM": {

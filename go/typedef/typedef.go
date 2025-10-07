@@ -1409,7 +1409,7 @@ type SenzingEntitySpecification struct {
 	// Specification. See https://www.senzing.com/docs/entity_specification
 	DriversLicenseState string `json:"DRIVERS_LICENSE_STATE"`
 
-	// Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+	// Dun and Bradstreet company identifier. An attribute in the Senzing Entity
 	// Specification. See https://www.senzing.com/docs/entity_specification
 	DunsNumber string `json:"DUNS_NUMBER"`
 
@@ -1421,6 +1421,8 @@ type SenzingEntitySpecification struct {
 	// by. An attribute in the Senzing Entity Specification. See
 	// https://www.senzing.com/docs/entity_specification
 	Employer string `json:"EMPLOYER"`
+
+	EmployerName string `json:"EMPLOYER_NAME"`
 
 	// Social medial user name. An attribute in the Senzing Entity Specification.
 	// See https://www.senzing.com/docs/entity_specification
@@ -1513,6 +1515,8 @@ type SenzingEntitySpecification struct {
 	// https://www.senzing.com/docs/entity_specification
 	NationalIDType string `json:"NATIONAL_ID_TYPE"`
 
+	NativeNameFull string `json:"NATIVE_NAME_FULL"`
+
 	// US healthcare provider identifier. An attribute in the Senzing Entity
 	// Specification. See https://www.senzing.com/docs/entity_specification
 	NpiNumber string `json:"NPI_NUMBER"`
@@ -1551,6 +1555,16 @@ type SenzingEntitySpecification struct {
 	// by the source. An attribute in the Senzing Entity Specification. See
 	// https://www.senzing.com/docs/entity_specification
 	PlaceOfBirth string `json:"PLACE_OF_BIRTH"`
+
+	PrimaryNameFirst string `json:"PRIMARY_NAME_FIRST"`
+
+	PrimaryNameFull string `json:"PRIMARY_NAME_FULL"`
+
+	PrimaryNameLast string `json:"PRIMARY_NAME_LAST"`
+
+	PrimaryNameMiddle string `json:"PRIMARY_NAME_MIDDLE"`
+
+	PrimaryNameOrg string `json:"PRIMARY_NAME_ORG"`
 
 	// Include when known to prevent cross-type resolution; omit if unknown.
 	// Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
@@ -1593,6 +1607,8 @@ type SenzingEntitySpecification struct {
 	// display and filtering. An attribute in the Senzing Entity Specification. See
 	// https://www.senzing.com/docs/entity_specification
 	RelPointerRole string `json:"REL_POINTER_ROLE"`
+
+	SecondaryNameOrg string `json:"SECONDARY_NAME_ORG"`
 
 	// Social medial user name. An attribute in the Senzing Entity Specification.
 	// See https://www.senzing.com/docs/entity_specification
@@ -1661,25 +1677,9 @@ type SenzingEntitySpecification struct {
 
 	XxxAddrThruDate string `json:"XXX_ADDR_THRU_DATE"`
 
-	XxxEmployerName string `json:"XXX_EMPLOYER_NAME"`
-
-	XxxNativeNameFull string `json:"XXX_NATIVE_NAME_FULL"`
-
 	XxxPhoneFromDate string `json:"XXX_PHONE_FROM_DATE"`
 
 	XxxPhoneThruDate string `json:"XXX_PHONE_THRU_DATE"`
-
-	XxxPrimaryNameFirst string `json:"XXX_PRIMARY_NAME_FIRST"`
-
-	XxxPrimaryNameFull string `json:"XXX_PRIMARY_NAME_FULL"`
-
-	XxxPrimaryNameLast string `json:"XXX_PRIMARY_NAME_LAST"`
-
-	XxxPrimaryNameMiddle string `json:"XXX_PRIMARY_NAME_MIDDLE"`
-
-	XxxPrimaryNameOrg string `json:"XXX_PRIMARY_NAME_ORG"`
-
-	XxxSecondaryNameOrg string `json:"XXX_SECONDARY_NAME_ORG"`
 
 	Zoomroom string `json:"ZOOMROOM"`
 }

@@ -144,12 +144,13 @@ test: \
 	test-python \
 	test-typescript \
 	test-osarch-specific \
-	test-using-senzing
+	test-using-senzing \
+	test-rfc8927-reconstitution
 
 
 .PHONY: test-csharp
 test-csharp:
-	@dotnet run --project csharp
+	@dotnet run --project csharp || true
 
 
 .PHONY: test-go

@@ -29,6 +29,7 @@
                                     "DUNS_NUMBER": "string",
                                     "EMAIL_ADDRESS": "string",
                                     "EMPLOYER": "string",
+                                    "EMPLOYER_NAME": "string",
                                     "FACEBOOK": "string",
                                     "GENDER": "string",
                                     "GROUP_ASSN_ID_NUMBER": "string",
@@ -50,6 +51,7 @@
                                     "NATIONAL_ID_COUNTRY": "string",
                                     "NATIONAL_ID_NUMBER": "string",
                                     "NATIONAL_ID_TYPE": "string",
+                                    "NATIVE_NAME_FULL": "string",
                                     "NPI_NUMBER": "string",
                                     "OTHER_ID_COUNTRY": "string",
                                     "OTHER_ID_NUMBER": "string",
@@ -59,6 +61,11 @@
                                     "PHONE_NUMBER": "string",
                                     "PHONE_TYPE": "string",
                                     "PLACE_OF_BIRTH": "string",
+                                    "PRIMARY_NAME_FIRST": "string",
+                                    "PRIMARY_NAME_FULL": "string",
+                                    "PRIMARY_NAME_LAST": "string",
+                                    "PRIMARY_NAME_MIDDLE": "string",
+                                    "PRIMARY_NAME_ORG": "string",
                                     "RECORD_TYPE": "string",
                                     "REGISTRATION_COUNTRY": "string",
                                     "REGISTRATION_DATE": "string",
@@ -67,6 +74,7 @@
                                     "REL_POINTER_DOMAIN": "string",
                                     "REL_POINTER_KEY": "string",
                                     "REL_POINTER_ROLE": "string",
+                                    "SECONDARY_NAME_ORG": "string",
                                     "SIGNAL": "string",
                                     "SKYPE": "string",
                                     "SSN_NUMBER": "string",
@@ -84,16 +92,8 @@
                                     "WHATSAPP": "string",
                                     "XXX_ADDR_FROM_DATE": "string",
                                     "XXX_ADDR_THRU_DATE": "string",
-                                    "XXX_EMPLOYER_NAME": "string",
-                                    "XXX_NATIVE_NAME_FULL": "string",
                                     "XXX_PHONE_FROM_DATE": "string",
                                     "XXX_PHONE_THRU_DATE": "string",
-                                    "XXX_PRIMARY_NAME_FIRST": "string",
-                                    "XXX_PRIMARY_NAME_FULL": "string",
-                                    "XXX_PRIMARY_NAME_LAST": "string",
-                                    "XXX_PRIMARY_NAME_MIDDLE": "string",
-                                    "XXX_PRIMARY_NAME_ORG": "string",
-                                    "XXX_SECONDARY_NAME_ORG": "string",
                                     "ZOOMROOM": "string"
                                 },
                                 "FEAT_DESC_VALUES": [
@@ -132,6 +132,7 @@
                                             "DATE_OF_DEATH": "string",
                                             "DUNS_NUMBER": "string",
                                             "EMPLOYER": "string",
+                                            "EMPLOYER_NAME": "string",
                                             "FACEBOOK": "string",
                                             "GROUP_ASSN_ID_NUMBER": "string",
                                             "GROUP_ASSN_ID_TYPE": "string",
@@ -156,6 +157,9 @@
                                             "OTHER_ID_TYPE": "string",
                                             "PHONE_TYPE": "string",
                                             "PLACE_OF_BIRTH": "string",
+                                            "PRIMARY_NAME_FULL": "string",
+                                            "PRIMARY_NAME_MIDDLE": "string",
+                                            "PRIMARY_NAME_ORG": "string",
                                             "REGISTRATION_COUNTRY": "string",
                                             "REGISTRATION_DATE": "string",
                                             "REL_ANCHOR_DOMAIN": "string",
@@ -163,6 +167,7 @@
                                             "REL_POINTER_DOMAIN": "string",
                                             "REL_POINTER_KEY": "string",
                                             "REL_POINTER_ROLE": "string",
+                                            "SECONDARY_NAME_ORG": "string",
                                             "SIGNAL": "string",
                                             "SKYPE": "string",
                                             "TANGO": "string",
@@ -179,16 +184,8 @@
                                             "WHATSAPP": "string",
                                             "XXX_ADDR_FROM_DATE": "string",
                                             "XXX_ADDR_THRU_DATE": "string",
-                                            "XXX_EMPLOYER_NAME": "string",
-                                            "XXX_NATIVE_NAME_FULL": "string",
                                             "XXX_PHONE_FROM_DATE": "string",
                                             "XXX_PHONE_THRU_DATE": "string",
-                                            "XXX_PRIMARY_NAME_FIRST": "string",
-                                            "XXX_PRIMARY_NAME_FULL": "string",
-                                            "XXX_PRIMARY_NAME_LAST": "string",
-                                            "XXX_PRIMARY_NAME_MIDDLE": "string",
-                                            "XXX_PRIMARY_NAME_ORG": "string",
-                                            "XXX_SECONDARY_NAME_ORG": "string",
                                             "ZOOMROOM": "string"
                                         },
                                         "FEAT_DESC_VALUES": [
@@ -312,24 +309,28 @@
                         ]
                     },
                     "WHY_KEY_DETAILS": {
-                        "CONFIRMATIONS": [
-                            {
-                                "ADDITIONAL_SCORES": {
-                                    "FULL_SCORE": "int32"
-                                }
-                            }
-                        ],
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {
+                                    "FULL_SCORE": "int32",
                                     "GENERATION_MATCH": "int32",
                                     "GNR_FN": "int32",
                                     "GNR_GN": "int32",
                                     "GNR_ON": "int32",
                                     "GNR_SN": "int32"
                                 },
+                                "CANDIDATE_FEAT_DESC": "string",
+                                "CANDIDATE_FEAT_ID": "int32",
                                 "CANDIDATE_FEAT_USAGE_TYPE": "string",
-                                "INBOUND_FEAT_USAGE_TYPE": "string"
+                                "FTYPE_CODE": "string",
+                                "INBOUND_FEAT_DESC": "string",
+                                "INBOUND_FEAT_ID": "int32",
+                                "INBOUND_FEAT_USAGE_TYPE": "string",
+                                "SCORE": "int32",
+                                "SCORE_BEHAVIOR": "string",
+                                "SCORE_BUCKET": "string",
+                                "SOURCE": "string",
+                                "TOKEN": "string"
                             }
                         ],
                         "DISCLOSED_RELATIONS": [

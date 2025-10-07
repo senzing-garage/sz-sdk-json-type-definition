@@ -3183,7 +3183,7 @@ class SenzingEntitySpecification:
 
     duns_number: 'str'
     """
-    Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+    Dun and Bradstreet company identifier. An attribute in the Senzing Entity
     Specification. See https://www.senzing.com/docs/entity_specification
     """
 
@@ -3200,6 +3200,7 @@ class SenzingEntitySpecification:
     https://www.senzing.com/docs/entity_specification
     """
 
+    employer_name: 'str'
     facebook: 'str'
     """
     Social medial user name. An attribute in the Senzing Entity Specification.
@@ -3333,6 +3334,7 @@ class SenzingEntitySpecification:
     https://www.senzing.com/docs/entity_specification
     """
 
+    native_name_full: 'str'
     npi_number: 'str'
     """
     US healthcare provider identifier. An attribute in the Senzing Entity
@@ -3390,6 +3392,11 @@ class SenzingEntitySpecification:
     https://www.senzing.com/docs/entity_specification
     """
 
+    primary_name_first: 'str'
+    primary_name_full: 'str'
+    primary_name_last: 'str'
+    primary_name_middle: 'str'
+    primary_name_org: 'str'
     record_type: 'str'
     """
     Include when known to prevent cross-type resolution; omit if unknown.
@@ -3448,6 +3455,7 @@ class SenzingEntitySpecification:
     https://www.senzing.com/docs/entity_specification
     """
 
+    secondary_name_org: 'str'
     signal: 'str'
     """
     Social medial user name. An attribute in the Senzing Entity Specification.
@@ -3543,16 +3551,8 @@ class SenzingEntitySpecification:
 
     xxx_addr_from_date: 'str'
     xxx_addr_thru_date: 'str'
-    xxx_employer_name: 'str'
-    xxx_native_name_full: 'str'
     xxx_phone_from_date: 'str'
     xxx_phone_thru_date: 'str'
-    xxx_primary_name_first: 'str'
-    xxx_primary_name_full: 'str'
-    xxx_primary_name_last: 'str'
-    xxx_primary_name_middle: 'str'
-    xxx_primary_name_org: 'str'
-    xxx_secondary_name_org: 'str'
     zoomroom: 'str'
 
     @classmethod
@@ -3580,6 +3580,7 @@ class SenzingEntitySpecification:
             _from_json_data(str, data.get("DUNS_NUMBER")),
             _from_json_data(str, data.get("EMAIL_ADDRESS")),
             _from_json_data(str, data.get("EMPLOYER")),
+            _from_json_data(str, data.get("EMPLOYER_NAME")),
             _from_json_data(str, data.get("FACEBOOK")),
             _from_json_data(str, data.get("GENDER")),
             _from_json_data(str, data.get("GROUP_ASSN_ID_NUMBER")),
@@ -3601,6 +3602,7 @@ class SenzingEntitySpecification:
             _from_json_data(str, data.get("NATIONAL_ID_COUNTRY")),
             _from_json_data(str, data.get("NATIONAL_ID_NUMBER")),
             _from_json_data(str, data.get("NATIONAL_ID_TYPE")),
+            _from_json_data(str, data.get("NATIVE_NAME_FULL")),
             _from_json_data(str, data.get("NPI_NUMBER")),
             _from_json_data(str, data.get("OTHER_ID_COUNTRY")),
             _from_json_data(str, data.get("OTHER_ID_NUMBER")),
@@ -3610,6 +3612,11 @@ class SenzingEntitySpecification:
             _from_json_data(str, data.get("PHONE_NUMBER")),
             _from_json_data(str, data.get("PHONE_TYPE")),
             _from_json_data(str, data.get("PLACE_OF_BIRTH")),
+            _from_json_data(str, data.get("PRIMARY_NAME_FIRST")),
+            _from_json_data(str, data.get("PRIMARY_NAME_FULL")),
+            _from_json_data(str, data.get("PRIMARY_NAME_LAST")),
+            _from_json_data(str, data.get("PRIMARY_NAME_MIDDLE")),
+            _from_json_data(str, data.get("PRIMARY_NAME_ORG")),
             _from_json_data(str, data.get("RECORD_TYPE")),
             _from_json_data(str, data.get("REGISTRATION_COUNTRY")),
             _from_json_data(str, data.get("REGISTRATION_DATE")),
@@ -3618,6 +3625,7 @@ class SenzingEntitySpecification:
             _from_json_data(str, data.get("REL_POINTER_DOMAIN")),
             _from_json_data(str, data.get("REL_POINTER_KEY")),
             _from_json_data(str, data.get("REL_POINTER_ROLE")),
+            _from_json_data(str, data.get("SECONDARY_NAME_ORG")),
             _from_json_data(str, data.get("SIGNAL")),
             _from_json_data(str, data.get("SKYPE")),
             _from_json_data(str, data.get("SSN_NUMBER")),
@@ -3635,16 +3643,8 @@ class SenzingEntitySpecification:
             _from_json_data(str, data.get("WHATSAPP")),
             _from_json_data(str, data.get("XXX_ADDR_FROM_DATE")),
             _from_json_data(str, data.get("XXX_ADDR_THRU_DATE")),
-            _from_json_data(str, data.get("XXX_EMPLOYER_NAME")),
-            _from_json_data(str, data.get("XXX_NATIVE_NAME_FULL")),
             _from_json_data(str, data.get("XXX_PHONE_FROM_DATE")),
             _from_json_data(str, data.get("XXX_PHONE_THRU_DATE")),
-            _from_json_data(str, data.get("XXX_PRIMARY_NAME_FIRST")),
-            _from_json_data(str, data.get("XXX_PRIMARY_NAME_FULL")),
-            _from_json_data(str, data.get("XXX_PRIMARY_NAME_LAST")),
-            _from_json_data(str, data.get("XXX_PRIMARY_NAME_MIDDLE")),
-            _from_json_data(str, data.get("XXX_PRIMARY_NAME_ORG")),
-            _from_json_data(str, data.get("XXX_SECONDARY_NAME_ORG")),
             _from_json_data(str, data.get("ZOOMROOM")),
         )
 
@@ -3672,6 +3672,7 @@ class SenzingEntitySpecification:
         data["DUNS_NUMBER"] = _to_json_data(self.duns_number)
         data["EMAIL_ADDRESS"] = _to_json_data(self.email_address)
         data["EMPLOYER"] = _to_json_data(self.employer)
+        data["EMPLOYER_NAME"] = _to_json_data(self.employer_name)
         data["FACEBOOK"] = _to_json_data(self.facebook)
         data["GENDER"] = _to_json_data(self.gender)
         data["GROUP_ASSN_ID_NUMBER"] = _to_json_data(self.group_assn_id_number)
@@ -3693,6 +3694,7 @@ class SenzingEntitySpecification:
         data["NATIONAL_ID_COUNTRY"] = _to_json_data(self.national_id_country)
         data["NATIONAL_ID_NUMBER"] = _to_json_data(self.national_id_number)
         data["NATIONAL_ID_TYPE"] = _to_json_data(self.national_id_type)
+        data["NATIVE_NAME_FULL"] = _to_json_data(self.native_name_full)
         data["NPI_NUMBER"] = _to_json_data(self.npi_number)
         data["OTHER_ID_COUNTRY"] = _to_json_data(self.other_id_country)
         data["OTHER_ID_NUMBER"] = _to_json_data(self.other_id_number)
@@ -3702,6 +3704,11 @@ class SenzingEntitySpecification:
         data["PHONE_NUMBER"] = _to_json_data(self.phone_number)
         data["PHONE_TYPE"] = _to_json_data(self.phone_type)
         data["PLACE_OF_BIRTH"] = _to_json_data(self.place_of_birth)
+        data["PRIMARY_NAME_FIRST"] = _to_json_data(self.primary_name_first)
+        data["PRIMARY_NAME_FULL"] = _to_json_data(self.primary_name_full)
+        data["PRIMARY_NAME_LAST"] = _to_json_data(self.primary_name_last)
+        data["PRIMARY_NAME_MIDDLE"] = _to_json_data(self.primary_name_middle)
+        data["PRIMARY_NAME_ORG"] = _to_json_data(self.primary_name_org)
         data["RECORD_TYPE"] = _to_json_data(self.record_type)
         data["REGISTRATION_COUNTRY"] = _to_json_data(self.registration_country)
         data["REGISTRATION_DATE"] = _to_json_data(self.registration_date)
@@ -3710,6 +3717,7 @@ class SenzingEntitySpecification:
         data["REL_POINTER_DOMAIN"] = _to_json_data(self.rel_pointer_domain)
         data["REL_POINTER_KEY"] = _to_json_data(self.rel_pointer_key)
         data["REL_POINTER_ROLE"] = _to_json_data(self.rel_pointer_role)
+        data["SECONDARY_NAME_ORG"] = _to_json_data(self.secondary_name_org)
         data["SIGNAL"] = _to_json_data(self.signal)
         data["SKYPE"] = _to_json_data(self.skype)
         data["SSN_NUMBER"] = _to_json_data(self.ssn_number)
@@ -3727,16 +3735,8 @@ class SenzingEntitySpecification:
         data["WHATSAPP"] = _to_json_data(self.whatsapp)
         data["XXX_ADDR_FROM_DATE"] = _to_json_data(self.xxx_addr_from_date)
         data["XXX_ADDR_THRU_DATE"] = _to_json_data(self.xxx_addr_thru_date)
-        data["XXX_EMPLOYER_NAME"] = _to_json_data(self.xxx_employer_name)
-        data["XXX_NATIVE_NAME_FULL"] = _to_json_data(self.xxx_native_name_full)
         data["XXX_PHONE_FROM_DATE"] = _to_json_data(self.xxx_phone_from_date)
         data["XXX_PHONE_THRU_DATE"] = _to_json_data(self.xxx_phone_thru_date)
-        data["XXX_PRIMARY_NAME_FIRST"] = _to_json_data(self.xxx_primary_name_first)
-        data["XXX_PRIMARY_NAME_FULL"] = _to_json_data(self.xxx_primary_name_full)
-        data["XXX_PRIMARY_NAME_LAST"] = _to_json_data(self.xxx_primary_name_last)
-        data["XXX_PRIMARY_NAME_MIDDLE"] = _to_json_data(self.xxx_primary_name_middle)
-        data["XXX_PRIMARY_NAME_ORG"] = _to_json_data(self.xxx_primary_name_org)
-        data["XXX_SECONDARY_NAME_ORG"] = _to_json_data(self.xxx_secondary_name_org)
         data["ZOOMROOM"] = _to_json_data(self.zoomroom)
         return data
 

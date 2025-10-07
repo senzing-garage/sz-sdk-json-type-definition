@@ -2037,8 +2037,9 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "DRIVERS_LICENSE_STATE")]
     pub driversLicenseState: String,
 
-    /// Dun & Bradstreet company identifier. An attribute in the Senzing Entity
-    /// Specification. See https://www.senzing.com/docs/entity_specification
+    /// Dun and Bradstreet company identifier. An
+    /// attribute in the Senzing Entity Specification. See
+    /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "DUNS_NUMBER")]
     pub dunsNumber: String,
 
@@ -2052,6 +2053,9 @@ pub struct SenzingEntitySpecification {
     /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "EMPLOYER")]
     pub employer: String,
+
+    #[serde(rename = "EMPLOYER_NAME")]
+    pub employerName: String,
 
     /// Social medial user name. An attribute in the Senzing Entity
     /// Specification. See https://www.senzing.com/docs/entity_specification
@@ -2167,6 +2171,9 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "NATIONAL_ID_TYPE")]
     pub nationalIdType: String,
 
+    #[serde(rename = "NATIVE_NAME_FULL")]
+    pub nativeNameFull: String,
+
     /// US healthcare provider identifier. An attribute in the Senzing Entity
     /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "NPI_NUMBER")]
@@ -2215,6 +2222,21 @@ pub struct SenzingEntitySpecification {
     /// https://www.senzing.com/docs/entity_specification
     #[serde(rename = "PLACE_OF_BIRTH")]
     pub placeOfBirth: String,
+
+    #[serde(rename = "PRIMARY_NAME_FIRST")]
+    pub primaryNameFirst: String,
+
+    #[serde(rename = "PRIMARY_NAME_FULL")]
+    pub primaryNameFull: String,
+
+    #[serde(rename = "PRIMARY_NAME_LAST")]
+    pub primaryNameLast: String,
+
+    #[serde(rename = "PRIMARY_NAME_MIDDLE")]
+    pub primaryNameMiddle: String,
+
+    #[serde(rename = "PRIMARY_NAME_ORG")]
+    pub primaryNameOrg: String,
 
     /// Include when known to prevent cross-type resolution; omit if unknown.
     /// Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
@@ -2266,6 +2288,9 @@ pub struct SenzingEntitySpecification {
     /// Specification. See https://www.senzing.com/docs/entity_specification
     #[serde(rename = "REL_POINTER_ROLE")]
     pub relPointerRole: String,
+
+    #[serde(rename = "SECONDARY_NAME_ORG")]
+    pub secondaryNameOrg: String,
 
     /// Social medial user name. An attribute in the Senzing Entity
     /// Specification. See https://www.senzing.com/docs/entity_specification
@@ -2353,35 +2378,11 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "XXX_ADDR_THRU_DATE")]
     pub xxxAddrThruDate: String,
 
-    #[serde(rename = "XXX_EMPLOYER_NAME")]
-    pub xxxEmployerName: String,
-
-    #[serde(rename = "XXX_NATIVE_NAME_FULL")]
-    pub xxxNativeNameFull: String,
-
     #[serde(rename = "XXX_PHONE_FROM_DATE")]
     pub xxxPhoneFromDate: String,
 
     #[serde(rename = "XXX_PHONE_THRU_DATE")]
     pub xxxPhoneThruDate: String,
-
-    #[serde(rename = "XXX_PRIMARY_NAME_FIRST")]
-    pub xxxPrimaryNameFirst: String,
-
-    #[serde(rename = "XXX_PRIMARY_NAME_FULL")]
-    pub xxxPrimaryNameFull: String,
-
-    #[serde(rename = "XXX_PRIMARY_NAME_LAST")]
-    pub xxxPrimaryNameLast: String,
-
-    #[serde(rename = "XXX_PRIMARY_NAME_MIDDLE")]
-    pub xxxPrimaryNameMiddle: String,
-
-    #[serde(rename = "XXX_PRIMARY_NAME_ORG")]
-    pub xxxPrimaryNameOrg: String,
-
-    #[serde(rename = "XXX_SECONDARY_NAME_ORG")]
-    pub xxxSecondaryNameOrg: String,
 
     #[serde(rename = "ZOOMROOM")]
     pub zoomroom: String,

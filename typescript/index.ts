@@ -1267,7 +1267,7 @@ export interface SenzingEntitySpecification {
   DRIVERS_LICENSE_STATE: string;
 
   /**
-   * Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+   * Dun and Bradstreet company identifier. An attribute in the Senzing Entity
    * Specification. See https://www.senzing.com/docs/entity_specification
    */
   DUNS_NUMBER: string;
@@ -1284,6 +1284,7 @@ export interface SenzingEntitySpecification {
    * https://www.senzing.com/docs/entity_specification
    */
   EMPLOYER: string;
+  EMPLOYER_NAME: string;
 
   /**
    * Social medial user name. An attribute in the Senzing Entity Specification.
@@ -1418,6 +1419,7 @@ export interface SenzingEntitySpecification {
    * https://www.senzing.com/docs/entity_specification
    */
   NATIONAL_ID_TYPE: string;
+  NATIVE_NAME_FULL: string;
 
   /**
    * US healthcare provider identifier. An attribute in the Senzing Entity
@@ -1475,6 +1477,11 @@ export interface SenzingEntitySpecification {
    * https://www.senzing.com/docs/entity_specification
    */
   PLACE_OF_BIRTH: string;
+  PRIMARY_NAME_FIRST: string;
+  PRIMARY_NAME_FULL: string;
+  PRIMARY_NAME_LAST: string;
+  PRIMARY_NAME_MIDDLE: string;
+  PRIMARY_NAME_ORG: string;
 
   /**
    * Include when known to prevent cross-type resolution; omit if unknown.
@@ -1533,6 +1540,7 @@ export interface SenzingEntitySpecification {
    * See https://www.senzing.com/docs/entity_specification
    */
   REL_POINTER_ROLE: string;
+  SECONDARY_NAME_ORG: string;
 
   /**
    * Social medial user name. An attribute in the Senzing Entity Specification.
@@ -1628,16 +1636,8 @@ export interface SenzingEntitySpecification {
   WHATSAPP: string;
   XXX_ADDR_FROM_DATE: string;
   XXX_ADDR_THRU_DATE: string;
-  XXX_EMPLOYER_NAME: string;
-  XXX_NATIVE_NAME_FULL: string;
   XXX_PHONE_FROM_DATE: string;
   XXX_PHONE_THRU_DATE: string;
-  XXX_PRIMARY_NAME_FIRST: string;
-  XXX_PRIMARY_NAME_FULL: string;
-  XXX_PRIMARY_NAME_LAST: string;
-  XXX_PRIMARY_NAME_MIDDLE: string;
-  XXX_PRIMARY_NAME_ORG: string;
-  XXX_SECONDARY_NAME_ORG: string;
   ZOOMROOM: string;
 }
 

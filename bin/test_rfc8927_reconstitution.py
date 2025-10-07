@@ -127,7 +127,7 @@ if __name__ == "__main__":
     logging.info("%s", horizontal_rule)
 
     test_file_names = os.listdir(INPUT_DIRECTORY)
-    # test_file_names = ["SzEngineProcessRedoRecordResponse.jsonl"]
+    # test_file_names = ["SzEngineWhyRecordsResponse.jsonl"]
     for test_file_name in test_file_names:
         senzing_api_class = Path(test_file_name).stem
 

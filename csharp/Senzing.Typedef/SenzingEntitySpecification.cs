@@ -148,8 +148,8 @@ namespace Senzing.Typedef
         public string DriversLicenseState { get; set; }
 
         /// <summary>
-        /// Dun & Bradstreet company identifier. An attribute
-        /// in the Senzing Entity Specification. See
+        /// Dun and Bradstreet company identifier. An
+        /// attribute in the Senzing Entity Specification. See
         /// https://www.senzing.com/docs/entity_specification
         /// </summary>
         [JsonPropertyName("DUNS_NUMBER")]
@@ -169,6 +169,9 @@ namespace Senzing.Typedef
         /// </summary>
         [JsonPropertyName("EMPLOYER")]
         public string Employer { get; set; }
+
+        [JsonPropertyName("EMPLOYER_NAME")]
+        public string EmployerName { get; set; }
 
         /// <summary>
         /// Social medial user name. An attribute in the Senzing Entity
@@ -327,6 +330,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("NATIONAL_ID_TYPE")]
         public string NationalIdType { get; set; }
 
+        [JsonPropertyName("NATIVE_NAME_FULL")]
+        public string NativeNameFull { get; set; }
+
         /// <summary>
         /// US healthcare provider identifier. An attribute
         /// in the Senzing Entity Specification. See
@@ -394,6 +400,21 @@ namespace Senzing.Typedef
         /// </summary>
         [JsonPropertyName("PLACE_OF_BIRTH")]
         public string PlaceOfBirth { get; set; }
+
+        [JsonPropertyName("PRIMARY_NAME_FIRST")]
+        public string PrimaryNameFirst { get; set; }
+
+        [JsonPropertyName("PRIMARY_NAME_FULL")]
+        public string PrimaryNameFull { get; set; }
+
+        [JsonPropertyName("PRIMARY_NAME_LAST")]
+        public string PrimaryNameLast { get; set; }
+
+        [JsonPropertyName("PRIMARY_NAME_MIDDLE")]
+        public string PrimaryNameMiddle { get; set; }
+
+        [JsonPropertyName("PRIMARY_NAME_ORG")]
+        public string PrimaryNameOrg { get; set; }
 
         /// <summary>
         /// Include when known to prevent cross-type resolution;
@@ -463,6 +484,9 @@ namespace Senzing.Typedef
         /// </summary>
         [JsonPropertyName("REL_POINTER_ROLE")]
         public string RelPointerRole { get; set; }
+
+        [JsonPropertyName("SECONDARY_NAME_ORG")]
+        public string SecondaryNameOrg { get; set; }
 
         /// <summary>
         /// Social medial user name. An attribute in the Senzing Entity
@@ -580,35 +604,11 @@ namespace Senzing.Typedef
         [JsonPropertyName("XXX_ADDR_THRU_DATE")]
         public string XxxAddrThruDate { get; set; }
 
-        [JsonPropertyName("XXX_EMPLOYER_NAME")]
-        public string XxxEmployerName { get; set; }
-
-        [JsonPropertyName("XXX_NATIVE_NAME_FULL")]
-        public string XxxNativeNameFull { get; set; }
-
         [JsonPropertyName("XXX_PHONE_FROM_DATE")]
         public string XxxPhoneFromDate { get; set; }
 
         [JsonPropertyName("XXX_PHONE_THRU_DATE")]
         public string XxxPhoneThruDate { get; set; }
-
-        [JsonPropertyName("XXX_PRIMARY_NAME_FIRST")]
-        public string XxxPrimaryNameFirst { get; set; }
-
-        [JsonPropertyName("XXX_PRIMARY_NAME_FULL")]
-        public string XxxPrimaryNameFull { get; set; }
-
-        [JsonPropertyName("XXX_PRIMARY_NAME_LAST")]
-        public string XxxPrimaryNameLast { get; set; }
-
-        [JsonPropertyName("XXX_PRIMARY_NAME_MIDDLE")]
-        public string XxxPrimaryNameMiddle { get; set; }
-
-        [JsonPropertyName("XXX_PRIMARY_NAME_ORG")]
-        public string XxxPrimaryNameOrg { get; set; }
-
-        [JsonPropertyName("XXX_SECONDARY_NAME_ORG")]
-        public string XxxSecondaryNameOrg { get; set; }
 
         [JsonPropertyName("ZOOMROOM")]
         public string Zoomroom { get; set; }

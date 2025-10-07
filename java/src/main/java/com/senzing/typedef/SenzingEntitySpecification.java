@@ -73,6 +73,9 @@ public class SenzingEntitySpecification {
     @JsonProperty("EMPLOYER")
     private String employer;
 
+    @JsonProperty("EMPLOYER_NAME")
+    private String employerName;
+
     @JsonProperty("FACEBOOK")
     private String facebook;
 
@@ -136,6 +139,9 @@ public class SenzingEntitySpecification {
     @JsonProperty("NATIONAL_ID_TYPE")
     private String nationalIdType;
 
+    @JsonProperty("NATIVE_NAME_FULL")
+    private String nativeNameFull;
+
     @JsonProperty("NPI_NUMBER")
     private String npiNumber;
 
@@ -163,6 +169,21 @@ public class SenzingEntitySpecification {
     @JsonProperty("PLACE_OF_BIRTH")
     private String placeOfBirth;
 
+    @JsonProperty("PRIMARY_NAME_FIRST")
+    private String primaryNameFirst;
+
+    @JsonProperty("PRIMARY_NAME_FULL")
+    private String primaryNameFull;
+
+    @JsonProperty("PRIMARY_NAME_LAST")
+    private String primaryNameLast;
+
+    @JsonProperty("PRIMARY_NAME_MIDDLE")
+    private String primaryNameMiddle;
+
+    @JsonProperty("PRIMARY_NAME_ORG")
+    private String primaryNameOrg;
+
     @JsonProperty("RECORD_TYPE")
     private String recordType;
 
@@ -186,6 +207,9 @@ public class SenzingEntitySpecification {
 
     @JsonProperty("REL_POINTER_ROLE")
     private String relPointerRole;
+
+    @JsonProperty("SECONDARY_NAME_ORG")
+    private String secondaryNameOrg;
 
     @JsonProperty("SIGNAL")
     private String signal;
@@ -238,35 +262,11 @@ public class SenzingEntitySpecification {
     @JsonProperty("XXX_ADDR_THRU_DATE")
     private String xxxAddrThruDate;
 
-    @JsonProperty("XXX_EMPLOYER_NAME")
-    private String xxxEmployerName;
-
-    @JsonProperty("XXX_NATIVE_NAME_FULL")
-    private String xxxNativeNameFull;
-
     @JsonProperty("XXX_PHONE_FROM_DATE")
     private String xxxPhoneFromDate;
 
     @JsonProperty("XXX_PHONE_THRU_DATE")
     private String xxxPhoneThruDate;
-
-    @JsonProperty("XXX_PRIMARY_NAME_FIRST")
-    private String xxxPrimaryNameFirst;
-
-    @JsonProperty("XXX_PRIMARY_NAME_FULL")
-    private String xxxPrimaryNameFull;
-
-    @JsonProperty("XXX_PRIMARY_NAME_LAST")
-    private String xxxPrimaryNameLast;
-
-    @JsonProperty("XXX_PRIMARY_NAME_MIDDLE")
-    private String xxxPrimaryNameMiddle;
-
-    @JsonProperty("XXX_PRIMARY_NAME_ORG")
-    private String xxxPrimaryNameOrg;
-
-    @JsonProperty("XXX_SECONDARY_NAME_ORG")
-    private String xxxSecondaryNameOrg;
 
     @JsonProperty("ZOOMROOM")
     private String zoomroom;
@@ -626,7 +626,7 @@ public class SenzingEntitySpecification {
 
     /**
      * Getter for dunsNumber.<p>
-     * Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+     * Dun and Bradstreet company identifier. An attribute in the Senzing Entity
      * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public String getDunsNumber() {
@@ -635,7 +635,7 @@ public class SenzingEntitySpecification {
 
     /**
      * Setter for dunsNumber.<p>
-     * Dun & Bradstreet company identifier. An attribute in the Senzing Entity
+     * Dun and Bradstreet company identifier. An attribute in the Senzing Entity
      * Specification. See https://www.senzing.com/docs/entity_specification
      */
     public void setDunsNumber(String dunsNumber) {
@@ -678,6 +678,20 @@ public class SenzingEntitySpecification {
      */
     public void setEmployer(String employer) {
         this.employer = employer;
+    }
+
+    /**
+     * Getter for employerName.<p>
+     */
+    public String getEmployerName() {
+        return employerName;
+    }
+
+    /**
+     * Setter for employerName.<p>
+     */
+    public void setEmployerName(String employerName) {
+        this.employerName = employerName;
     }
 
     /**
@@ -1077,6 +1091,20 @@ public class SenzingEntitySpecification {
     }
 
     /**
+     * Getter for nativeNameFull.<p>
+     */
+    public String getNativeNameFull() {
+        return nativeNameFull;
+    }
+
+    /**
+     * Setter for nativeNameFull.<p>
+     */
+    public void setNativeNameFull(String nativeNameFull) {
+        this.nativeNameFull = nativeNameFull;
+    }
+
+    /**
      * Getter for npiNumber.<p>
      * US healthcare provider identifier. An attribute in the Senzing Entity
      * Specification. See https://www.senzing.com/docs/entity_specification
@@ -1247,6 +1275,76 @@ public class SenzingEntitySpecification {
     }
 
     /**
+     * Getter for primaryNameFirst.<p>
+     */
+    public String getPrimaryNameFirst() {
+        return primaryNameFirst;
+    }
+
+    /**
+     * Setter for primaryNameFirst.<p>
+     */
+    public void setPrimaryNameFirst(String primaryNameFirst) {
+        this.primaryNameFirst = primaryNameFirst;
+    }
+
+    /**
+     * Getter for primaryNameFull.<p>
+     */
+    public String getPrimaryNameFull() {
+        return primaryNameFull;
+    }
+
+    /**
+     * Setter for primaryNameFull.<p>
+     */
+    public void setPrimaryNameFull(String primaryNameFull) {
+        this.primaryNameFull = primaryNameFull;
+    }
+
+    /**
+     * Getter for primaryNameLast.<p>
+     */
+    public String getPrimaryNameLast() {
+        return primaryNameLast;
+    }
+
+    /**
+     * Setter for primaryNameLast.<p>
+     */
+    public void setPrimaryNameLast(String primaryNameLast) {
+        this.primaryNameLast = primaryNameLast;
+    }
+
+    /**
+     * Getter for primaryNameMiddle.<p>
+     */
+    public String getPrimaryNameMiddle() {
+        return primaryNameMiddle;
+    }
+
+    /**
+     * Setter for primaryNameMiddle.<p>
+     */
+    public void setPrimaryNameMiddle(String primaryNameMiddle) {
+        this.primaryNameMiddle = primaryNameMiddle;
+    }
+
+    /**
+     * Getter for primaryNameOrg.<p>
+     */
+    public String getPrimaryNameOrg() {
+        return primaryNameOrg;
+    }
+
+    /**
+     * Setter for primaryNameOrg.<p>
+     */
+    public void setPrimaryNameOrg(String primaryNameOrg) {
+        this.primaryNameOrg = primaryNameOrg;
+    }
+
+    /**
      * Getter for recordType.<p>
      * Include when known to prevent cross-type resolution; omit if unknown.
      * Use standardized kinds (PERSON, ORGANIZATION). Often used to determine
@@ -1410,6 +1508,20 @@ public class SenzingEntitySpecification {
      */
     public void setRelPointerRole(String relPointerRole) {
         this.relPointerRole = relPointerRole;
+    }
+
+    /**
+     * Getter for secondaryNameOrg.<p>
+     */
+    public String getSecondaryNameOrg() {
+        return secondaryNameOrg;
+    }
+
+    /**
+     * Setter for secondaryNameOrg.<p>
+     */
+    public void setSecondaryNameOrg(String secondaryNameOrg) {
+        this.secondaryNameOrg = secondaryNameOrg;
     }
 
     /**
@@ -1721,34 +1833,6 @@ public class SenzingEntitySpecification {
     }
 
     /**
-     * Getter for xxxEmployerName.<p>
-     */
-    public String getXxxEmployerName() {
-        return xxxEmployerName;
-    }
-
-    /**
-     * Setter for xxxEmployerName.<p>
-     */
-    public void setXxxEmployerName(String xxxEmployerName) {
-        this.xxxEmployerName = xxxEmployerName;
-    }
-
-    /**
-     * Getter for xxxNativeNameFull.<p>
-     */
-    public String getXxxNativeNameFull() {
-        return xxxNativeNameFull;
-    }
-
-    /**
-     * Setter for xxxNativeNameFull.<p>
-     */
-    public void setXxxNativeNameFull(String xxxNativeNameFull) {
-        this.xxxNativeNameFull = xxxNativeNameFull;
-    }
-
-    /**
      * Getter for xxxPhoneFromDate.<p>
      */
     public String getXxxPhoneFromDate() {
@@ -1774,90 +1858,6 @@ public class SenzingEntitySpecification {
      */
     public void setXxxPhoneThruDate(String xxxPhoneThruDate) {
         this.xxxPhoneThruDate = xxxPhoneThruDate;
-    }
-
-    /**
-     * Getter for xxxPrimaryNameFirst.<p>
-     */
-    public String getXxxPrimaryNameFirst() {
-        return xxxPrimaryNameFirst;
-    }
-
-    /**
-     * Setter for xxxPrimaryNameFirst.<p>
-     */
-    public void setXxxPrimaryNameFirst(String xxxPrimaryNameFirst) {
-        this.xxxPrimaryNameFirst = xxxPrimaryNameFirst;
-    }
-
-    /**
-     * Getter for xxxPrimaryNameFull.<p>
-     */
-    public String getXxxPrimaryNameFull() {
-        return xxxPrimaryNameFull;
-    }
-
-    /**
-     * Setter for xxxPrimaryNameFull.<p>
-     */
-    public void setXxxPrimaryNameFull(String xxxPrimaryNameFull) {
-        this.xxxPrimaryNameFull = xxxPrimaryNameFull;
-    }
-
-    /**
-     * Getter for xxxPrimaryNameLast.<p>
-     */
-    public String getXxxPrimaryNameLast() {
-        return xxxPrimaryNameLast;
-    }
-
-    /**
-     * Setter for xxxPrimaryNameLast.<p>
-     */
-    public void setXxxPrimaryNameLast(String xxxPrimaryNameLast) {
-        this.xxxPrimaryNameLast = xxxPrimaryNameLast;
-    }
-
-    /**
-     * Getter for xxxPrimaryNameMiddle.<p>
-     */
-    public String getXxxPrimaryNameMiddle() {
-        return xxxPrimaryNameMiddle;
-    }
-
-    /**
-     * Setter for xxxPrimaryNameMiddle.<p>
-     */
-    public void setXxxPrimaryNameMiddle(String xxxPrimaryNameMiddle) {
-        this.xxxPrimaryNameMiddle = xxxPrimaryNameMiddle;
-    }
-
-    /**
-     * Getter for xxxPrimaryNameOrg.<p>
-     */
-    public String getXxxPrimaryNameOrg() {
-        return xxxPrimaryNameOrg;
-    }
-
-    /**
-     * Setter for xxxPrimaryNameOrg.<p>
-     */
-    public void setXxxPrimaryNameOrg(String xxxPrimaryNameOrg) {
-        this.xxxPrimaryNameOrg = xxxPrimaryNameOrg;
-    }
-
-    /**
-     * Getter for xxxSecondaryNameOrg.<p>
-     */
-    public String getXxxSecondaryNameOrg() {
-        return xxxSecondaryNameOrg;
-    }
-
-    /**
-     * Setter for xxxSecondaryNameOrg.<p>
-     */
-    public void setXxxSecondaryNameOrg(String xxxSecondaryNameOrg) {
-        this.xxxSecondaryNameOrg = xxxSecondaryNameOrg;
     }
 
     /**
