@@ -19,7 +19,7 @@ namespace Senzing.Typedef
         [JsonPropertyName("FELEM_ID")]
         public int FelemId { get; set; }
 
-        [JsonPropertyName("TOKENIZE")]
-        public string Tokenize { get; set; }
+        [JsonPropertyName("XXX_TOKENIZE")]
+        public string XxxTokenize { get; set; }
     }
 }

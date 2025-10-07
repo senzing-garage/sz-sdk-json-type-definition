@@ -10,18 +10,6 @@ public class CfgSfunc {
     @JsonProperty("CONNECT_STR")
     private String connectStr;
 
-    @JsonProperty("FUNC_LIB")
-    private String funcLib;
-
-    @JsonProperty("FUNC_VER")
-    private String funcVer;
-
-    @JsonProperty("JAVA_CLASS_NAME")
-    private String javaClassName;
-
-    @JsonProperty("LANGUAGE")
-    private String language;
-
     @JsonProperty("SFUNC_CODE")
     private String sfuncCode;
 
@@ -30,6 +18,18 @@ public class CfgSfunc {
 
     @JsonProperty("SFUNC_ID")
     private Integer sfuncId;
+
+    @JsonProperty("XXX_FUNC_LIB")
+    private String xxxFuncLib;
+
+    @JsonProperty("XXX_FUNC_VER")
+    private String xxxFuncVer;
+
+    @JsonProperty("XXX_JAVA_CLASS_NAME")
+    private String xxxJavaClassName;
+
+    @JsonProperty("XXX_LANGUAGE")
+    private String xxxLanguage;
 
     public CfgSfunc() {
     }
@@ -46,62 +46,6 @@ public class CfgSfunc {
      */
     public void setConnectStr(String connectStr) {
         this.connectStr = connectStr;
-    }
-
-    /**
-     * Getter for funcLib.<p>
-     */
-    public String getFuncLib() {
-        return funcLib;
-    }
-
-    /**
-     * Setter for funcLib.<p>
-     */
-    public void setFuncLib(String funcLib) {
-        this.funcLib = funcLib;
-    }
-
-    /**
-     * Getter for funcVer.<p>
-     */
-    public String getFuncVer() {
-        return funcVer;
-    }
-
-    /**
-     * Setter for funcVer.<p>
-     */
-    public void setFuncVer(String funcVer) {
-        this.funcVer = funcVer;
-    }
-
-    /**
-     * Getter for javaClassName.<p>
-     */
-    public String getJavaClassName() {
-        return javaClassName;
-    }
-
-    /**
-     * Setter for javaClassName.<p>
-     */
-    public void setJavaClassName(String javaClassName) {
-        this.javaClassName = javaClassName;
-    }
-
-    /**
-     * Getter for language.<p>
-     */
-    public String getLanguage() {
-        return language;
-    }
-
-    /**
-     * Setter for language.<p>
-     */
-    public void setLanguage(String language) {
-        this.language = language;
     }
 
     /**
@@ -144,5 +88,61 @@ public class CfgSfunc {
      */
     public void setSfuncId(Integer sfuncId) {
         this.sfuncId = sfuncId;
+    }
+
+    /**
+     * Getter for xxxFuncLib.<p>
+     */
+    public String getXxxFuncLib() {
+        return xxxFuncLib;
+    }
+
+    /**
+     * Setter for xxxFuncLib.<p>
+     */
+    public void setXxxFuncLib(String xxxFuncLib) {
+        this.xxxFuncLib = xxxFuncLib;
+    }
+
+    /**
+     * Getter for xxxFuncVer.<p>
+     */
+    public String getXxxFuncVer() {
+        return xxxFuncVer;
+    }
+
+    /**
+     * Setter for xxxFuncVer.<p>
+     */
+    public void setXxxFuncVer(String xxxFuncVer) {
+        this.xxxFuncVer = xxxFuncVer;
+    }
+
+    /**
+     * Getter for xxxJavaClassName.<p>
+     */
+    public String getXxxJavaClassName() {
+        return xxxJavaClassName;
+    }
+
+    /**
+     * Setter for xxxJavaClassName.<p>
+     */
+    public void setXxxJavaClassName(String xxxJavaClassName) {
+        this.xxxJavaClassName = xxxJavaClassName;
+    }
+
+    /**
+     * Getter for xxxLanguage.<p>
+     */
+    public String getXxxLanguage() {
+        return xxxLanguage;
+    }
+
+    /**
+     * Setter for xxxLanguage.<p>
+     */
+    public void setXxxLanguage(String xxxLanguage) {
+        this.xxxLanguage = xxxLanguage;
     }
 }

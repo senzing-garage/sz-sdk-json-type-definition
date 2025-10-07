@@ -18,10 +18,13 @@ BLACK_LIST = [
     "description",
     "elements",
     "goType",
+    "label",
     "metadata",
-    "properties",
     "optionalproperties",
+    "properties",
+    "ref",
     "type",
+    "values",
 ]
 USED_KEYS = [
     "RecordKeys",

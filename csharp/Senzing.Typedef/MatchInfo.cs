@@ -10,9 +10,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("CANDIDATE_KEYS")]
         public CandidateKeysForMatchInfo CandidateKeys { get; set; }
 
-        [JsonPropertyName("DISCLOSED_RELATIONS")]
-        public DisclosedRelationsForMatchInfo DisclosedRelations { get; set; }
-
         /// <summary>
         /// Identifier of the entity resolution rule that was triggered.
         /// </summary>
@@ -31,19 +28,22 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_KEY_DETAILS")]
         public MatchKeyDetails MatchKeyDetails { get; set; }
 
-        [JsonPropertyName("MATCH_LEVEL")]
-        public int MatchLevel { get; set; }
-
         /// <summary>
         /// The type of match that occurred for the record.
         /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 
-        [JsonPropertyName("WHY_ERRULE_CODE")]
-        public string WhyErruleCode { get; set; }
+        [JsonPropertyName("XXX_DISCLOSED_RELATIONS")]
+        public DisclosedRelationsForMatchInfo XxxDisclosedRelations { get; set; }
 
-        [JsonPropertyName("WHY_KEY")]
-        public string WhyKey { get; set; }
+        [JsonPropertyName("XXX_MATCH_LEVEL")]
+        public int XxxMatchLevel { get; set; }
+
+        [JsonPropertyName("XXX_WHY_ERRULE_CODE")]
+        public string XxxWhyErruleCode { get; set; }
+
+        [JsonPropertyName("XXX_WHY_KEY")]
+        public string XxxWhyKey { get; set; }
     }
 }

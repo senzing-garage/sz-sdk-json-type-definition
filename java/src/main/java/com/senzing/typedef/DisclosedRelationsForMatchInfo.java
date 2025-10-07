@@ -8,57 +8,57 @@ import java.util.List;
 
 @JsonSerialize
 public class DisclosedRelationsForMatchInfo {
-    @JsonProperty("REL_ANCHOR")
-    private List<RelAnchor> relAnchor;
+    @JsonProperty("XXX_REL_ANCHOR")
+    private List<RelAnchor> xxxRelAnchor;
 
-    @JsonProperty("REL_LINK")
-    private List<RelLink> relLink;
+    @JsonProperty("XXX_REL_LINK")
+    private List<RelLink> xxxRelLink;
 
-    @JsonProperty("REL_POINTER")
-    private List<RelPointer> relPointer;
+    @JsonProperty("XXX_REL_POINTER")
+    private List<RelPointer> xxxRelPointer;
 
     public DisclosedRelationsForMatchInfo() {
     }
 
     /**
-     * Getter for relAnchor.<p>
+     * Getter for xxxRelAnchor.<p>
      */
-    public List<RelAnchor> getRelAnchor() {
-        return relAnchor;
+    public List<RelAnchor> getXxxRelAnchor() {
+        return xxxRelAnchor;
     }
 
     /**
-     * Setter for relAnchor.<p>
+     * Setter for xxxRelAnchor.<p>
      */
-    public void setRelAnchor(List<RelAnchor> relAnchor) {
-        this.relAnchor = relAnchor;
+    public void setXxxRelAnchor(List<RelAnchor> xxxRelAnchor) {
+        this.xxxRelAnchor = xxxRelAnchor;
     }
 
     /**
-     * Getter for relLink.<p>
+     * Getter for xxxRelLink.<p>
      */
-    public List<RelLink> getRelLink() {
-        return relLink;
+    public List<RelLink> getXxxRelLink() {
+        return xxxRelLink;
     }
 
     /**
-     * Setter for relLink.<p>
+     * Setter for xxxRelLink.<p>
      */
-    public void setRelLink(List<RelLink> relLink) {
-        this.relLink = relLink;
+    public void setXxxRelLink(List<RelLink> xxxRelLink) {
+        this.xxxRelLink = xxxRelLink;
     }
 
     /**
-     * Getter for relPointer.<p>
+     * Getter for xxxRelPointer.<p>
      */
-    public List<RelPointer> getRelPointer() {
-        return relPointer;
+    public List<RelPointer> getXxxRelPointer() {
+        return xxxRelPointer;
     }
 
     /**
-     * Setter for relPointer.<p>
+     * Setter for xxxRelPointer.<p>
      */
-    public void setRelPointer(List<RelPointer> relPointer) {
-        this.relPointer = relPointer;
+    public void setXxxRelPointer(List<RelPointer> xxxRelPointer) {
+        this.xxxRelPointer = xxxRelPointer;
     }
 }

@@ -10,9 +10,6 @@ public class MatchInfo {
     @JsonProperty("CANDIDATE_KEYS")
     private CandidateKeysForMatchInfo candidateKeys;
 
-    @JsonProperty("DISCLOSED_RELATIONS")
-    private DisclosedRelationsForMatchInfo disclosedRelations;
-
     @JsonProperty("ERRULE_CODE")
     private String erruleCode;
 
@@ -25,17 +22,20 @@ public class MatchInfo {
     @JsonProperty("MATCH_KEY_DETAILS")
     private MatchKeyDetails matchKeyDetails;
 
-    @JsonProperty("MATCH_LEVEL")
-    private Integer matchLevel;
-
     @JsonProperty("MATCH_LEVEL_CODE")
     private String matchLevelCode;
 
-    @JsonProperty("WHY_ERRULE_CODE")
-    private String whyErruleCode;
+    @JsonProperty("XXX_DISCLOSED_RELATIONS")
+    private DisclosedRelationsForMatchInfo xxxDisclosedRelations;
 
-    @JsonProperty("WHY_KEY")
-    private String whyKey;
+    @JsonProperty("XXX_MATCH_LEVEL")
+    private Integer xxxMatchLevel;
+
+    @JsonProperty("XXX_WHY_ERRULE_CODE")
+    private String xxxWhyErruleCode;
+
+    @JsonProperty("XXX_WHY_KEY")
+    private String xxxWhyKey;
 
     public MatchInfo() {
     }
@@ -52,20 +52,6 @@ public class MatchInfo {
      */
     public void setCandidateKeys(CandidateKeysForMatchInfo candidateKeys) {
         this.candidateKeys = candidateKeys;
-    }
-
-    /**
-     * Getter for disclosedRelations.<p>
-     */
-    public DisclosedRelationsForMatchInfo getDisclosedRelations() {
-        return disclosedRelations;
-    }
-
-    /**
-     * Setter for disclosedRelations.<p>
-     */
-    public void setDisclosedRelations(DisclosedRelationsForMatchInfo disclosedRelations) {
-        this.disclosedRelations = disclosedRelations;
     }
 
     /**
@@ -129,20 +115,6 @@ public class MatchInfo {
     }
 
     /**
-     * Getter for matchLevel.<p>
-     */
-    public Integer getMatchLevel() {
-        return matchLevel;
-    }
-
-    /**
-     * Setter for matchLevel.<p>
-     */
-    public void setMatchLevel(Integer matchLevel) {
-        this.matchLevel = matchLevel;
-    }
-
-    /**
      * Getter for matchLevelCode.<p>
      * The type of match that occurred for the record.
      */
@@ -159,30 +131,58 @@ public class MatchInfo {
     }
 
     /**
-     * Getter for whyErruleCode.<p>
+     * Getter for xxxDisclosedRelations.<p>
      */
-    public String getWhyErruleCode() {
-        return whyErruleCode;
+    public DisclosedRelationsForMatchInfo getXxxDisclosedRelations() {
+        return xxxDisclosedRelations;
     }
 
     /**
-     * Setter for whyErruleCode.<p>
+     * Setter for xxxDisclosedRelations.<p>
      */
-    public void setWhyErruleCode(String whyErruleCode) {
-        this.whyErruleCode = whyErruleCode;
+    public void setXxxDisclosedRelations(DisclosedRelationsForMatchInfo xxxDisclosedRelations) {
+        this.xxxDisclosedRelations = xxxDisclosedRelations;
     }
 
     /**
-     * Getter for whyKey.<p>
+     * Getter for xxxMatchLevel.<p>
      */
-    public String getWhyKey() {
-        return whyKey;
+    public Integer getXxxMatchLevel() {
+        return xxxMatchLevel;
     }
 
     /**
-     * Setter for whyKey.<p>
+     * Setter for xxxMatchLevel.<p>
      */
-    public void setWhyKey(String whyKey) {
-        this.whyKey = whyKey;
+    public void setXxxMatchLevel(Integer xxxMatchLevel) {
+        this.xxxMatchLevel = xxxMatchLevel;
+    }
+
+    /**
+     * Getter for xxxWhyErruleCode.<p>
+     */
+    public String getXxxWhyErruleCode() {
+        return xxxWhyErruleCode;
+    }
+
+    /**
+     * Setter for xxxWhyErruleCode.<p>
+     */
+    public void setXxxWhyErruleCode(String xxxWhyErruleCode) {
+        this.xxxWhyErruleCode = xxxWhyErruleCode;
+    }
+
+    /**
+     * Getter for xxxWhyKey.<p>
+     */
+    public String getXxxWhyKey() {
+        return xxxWhyKey;
+    }
+
+    /**
+     * Setter for xxxWhyKey.<p>
+     */
+    public void setXxxWhyKey(String xxxWhyKey) {
+        this.xxxWhyKey = xxxWhyKey;
     }
 }

@@ -21,6 +21,7 @@ public class Repository {
 
     /**
      * Getter for id.<p>
+     * Label for database repository.
      */
     public String getId() {
         return id;
@@ -28,6 +29,7 @@ public class Repository {
 
     /**
      * Setter for id.<p>
+     * Label for database repository.
      */
     public void setId(String id) {
         this.id = id;
@@ -35,6 +37,7 @@ public class Repository {
 
     /**
      * Getter for location.<p>
+     * Database connection information.
      */
     public String getLocation() {
         return location;
@@ -42,6 +45,7 @@ public class Repository {
 
     /**
      * Setter for location.<p>
+     * Database connection information.
      */
     public void setLocation(String location) {
         this.location = location;
@@ -49,6 +53,7 @@ public class Repository {
 
     /**
      * Getter for type.<p>
+     * Type of database.
      */
     public String getType() {
         return type;
@@ -56,6 +61,7 @@ public class Repository {
 
     /**
      * Setter for type.<p>
+     * Type of database.
      */
     public void setType(String type) {
         this.type = type;

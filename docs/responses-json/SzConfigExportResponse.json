@@ -2,7 +2,6 @@
     "G2_CONFIG": {
         "CFG_ATTR": [
             {
-                "ADVANCED": "string",
                 "ATTR_CLASS": "string",
                 "ATTR_CODE": "string",
                 "ATTR_ID": "int32",
@@ -10,7 +9,8 @@
                 "FELEM_CODE": "string",
                 "FELEM_REQ": "string",
                 "FTYPE_CODE": "string",
-                "INTERNAL": "string"
+                "INTERNAL": "string",
+                "XXX_ADVANCED": "string"
             }
         ],
         "CFG_CFBOM": [
@@ -25,8 +25,8 @@
             {
                 "CFCALL_ID": "int32",
                 "CFUNC_ID": "int32",
-                "EXEC_ORDER": "int32",
-                "FTYPE_ID": "int32"
+                "FTYPE_ID": "int32",
+                "XXX_EXEC_ORDER": "int32"
             }
         ],
         "CFG_CFRTN": [
@@ -50,10 +50,10 @@
                 "CFUNC_DESC": "string",
                 "CFUNC_ID": "int32",
                 "CONNECT_STR": "string",
-                "FUNC_LIB": "string",
-                "FUNC_VER": "string",
-                "JAVA_CLASS_NAME": "string",
-                "LANGUAGE": "string"
+                "XXX_FUNC_LIB": "string",
+                "XXX_FUNC_VER": "string",
+                "XXX_JAVA_CLASS_NAME": "string",
+                "XXX_LANGUAGE": "string"
             }
         ],
         "CFG_DFBOM": [
@@ -68,8 +68,8 @@
             {
                 "DFCALL_ID": "int32",
                 "DFUNC_ID": "int32",
-                "EXEC_ORDER": "int32",
-                "FTYPE_ID": "int32"
+                "FTYPE_ID": "int32",
+                "XXX_EXEC_ORDER": "int32"
             }
         ],
         "CFG_DFUNC": [
@@ -79,43 +79,35 @@
                 "DFUNC_CODE": "string",
                 "DFUNC_DESC": "string",
                 "DFUNC_ID": "int32",
-                "FUNC_LIB": "string",
-                "FUNC_VER": "string",
-                "JAVA_CLASS_NAME": "string",
-                "LANGUAGE": "string"
+                "XXX_FUNC_LIB": "string",
+                "XXX_FUNC_VER": "string",
+                "XXX_JAVA_CLASS_NAME": "string",
+                "XXX_LANGUAGE": "string"
             }
         ],
         "CFG_DSRC": [
             {
-                "CONVERSATIONAL": "string",
                 "DSRC_CODE": "string",
                 "DSRC_DESC": "string",
                 "DSRC_ID": "int32",
-                "DSRC_RELY": "int32",
-                "RETENTION_LEVEL": "string"
+                "RETENTION_LEVEL": "string",
+                "XXX_CONVERSATIONAL": "string",
+                "XXX_DSRC_RELY": "int32"
             }
         ],
         "CFG_DSRC_INTEREST": [
             {
-                "DSRC_ID": "int32",
-                "INTEREST_FLAG": "string",
-                "MAX_DEGREE": "int32"
+                "XXX_DSRC_ID": "int32",
+                "XXX_INTEREST_FLAG": "string",
+                "XXX_MAX_DEGREE": "int32"
             }
         ],
         "CFG_EBOM": [
             {
-                "ETYPE_ID": "int32",
-                "EXEC_ORDER": "int32",
-                "FTYPE_ID": "int32",
-                "UTYPE_CODE": "string"
-            }
-        ],
-        "CFG_ECLASS": [
-            {
-                "ECLASS_CODE": "string",
-                "ECLASS_DESC": "string",
-                "ECLASS_ID": "int32",
-                "RESOLVE": "string"
+                "XXX_ETYPE_ID": "int32",
+                "XXX_EXEC_ORDER": "int32",
+                "XXX_FTYPE_ID": "int32",
+                "XXX_UTYPE_CODE": "string"
             }
         ],
         "CFG_EFBOM": [
@@ -144,10 +136,10 @@
                 "EFUNC_CODE": "string",
                 "EFUNC_DESC": "string",
                 "EFUNC_ID": "int32",
-                "FUNC_LIB": "string",
-                "FUNC_VER": "string",
-                "JAVA_CLASS_NAME": "string",
-                "LANGUAGE": "string"
+                "XXX_FUNC_LIB": "string",
+                "XXX_FUNC_VER": "string",
+                "XXX_JAVA_CLASS_NAME": "string",
+                "XXX_LANGUAGE": "string"
             }
         ],
         "CFG_ERFRAG": [
@@ -163,42 +155,34 @@
             {
                 "DISQ_ERFRAG_CODE": "string",
                 "ERRULE_CODE": "string",
-                "ERRULE_DESC": "string",
                 "ERRULE_ID": "int32",
                 "ERRULE_TIER": "int32",
                 "QUAL_ERFRAG_CODE": "string",
-                "REF_SCORE": "int32",
                 "RELATE": "string",
                 "RESOLVE": "string",
-                "RTYPE_ID": "int32"
-            }
-        ],
-        "CFG_ETYPE": [
-            {
-                "ECLASS_ID": "int32",
-                "ETYPE_CODE": "string",
-                "ETYPE_DESC": "string",
-                "ETYPE_ID": "int32"
+                "RTYPE_ID": "int32",
+                "XXX_ERRULE_DESC": "string",
+                "XXX_REF_SCORE": "int32"
             }
         ],
         "CFG_FBOM": [
             {
                 "DERIVED": "string",
-                "DISPLAY_DELIM": "string",
                 "DISPLAY_LEVEL": "int32",
                 "EXEC_ORDER": "int32",
                 "FELEM_ID": "int32",
-                "FTYPE_ID": "int32"
+                "FTYPE_ID": "int32",
+                "XXX_DISPLAY_DELIM": "string"
             }
         ],
         "CFG_FBOVR": [
             {
-                "ECLASS_ID": "int32",
                 "FTYPE_EXCL": "string",
                 "FTYPE_FREQ": "string",
                 "FTYPE_ID": "int32",
                 "FTYPE_STAB": "string",
-                "UTYPE_CODE": "string"
+                "UTYPE_CODE": "string",
+                "XXX_ECLASS_ID": "int32"
             }
         ],
         "CFG_FCLASS": [
@@ -214,13 +198,12 @@
                 "FELEM_CODE": "string",
                 "FELEM_DESC": "string",
                 "FELEM_ID": "int32",
-                "TOKENIZE": "string"
+                "XXX_TOKENIZE": "string"
             }
         ],
         "CFG_FTYPE": [
             {
                 "ANONYMIZE": "string",
-                "DERIVATION": "string",
                 "DERIVED": "string",
                 "FCLASS_ID": "int32",
                 "FTYPE_CODE": "string",
@@ -233,7 +216,8 @@
                 "RTYPE_ID": "int32",
                 "SHOW_IN_MATCH_KEY": "string",
                 "USED_FOR_CAND": "string",
-                "VERSION": "int32"
+                "VERSION": "int32",
+                "XXX_DERIVATION": "string"
             }
         ],
         "CFG_GENERIC_THRESHOLD": [
@@ -253,20 +237,6 @@
                 "GPLAN_ID": "int32"
             }
         ],
-        "CFG_LENS": [
-            {
-                "LENS_CODE": "string",
-                "LENS_DESC": "string",
-                "LENS_ID": "int32"
-            }
-        ],
-        "CFG_LENSRL": [
-            [
-                {
-                    "FIXME_KEY": "string"
-                }
-            ]
-        ],
         "CFG_RCLASS": [
             {
                 "IS_DISCLOSED": "string",
@@ -279,10 +249,10 @@
             {
                 "BREAK_RES": "string",
                 "RCLASS_ID": "int32",
-                "REL_STRENGTH": "int32",
                 "RTYPE_CODE": "string",
                 "RTYPE_DESC": "string",
-                "RTYPE_ID": "int32"
+                "RTYPE_ID": "int32",
+                "XXX_REL_STRENGTH": "int32"
             }
         ],
         "CFG_SFCALL": [
@@ -297,13 +267,13 @@
         "CFG_SFUNC": [
             {
                 "CONNECT_STR": "string",
-                "FUNC_LIB": "string",
-                "FUNC_VER": "string",
-                "JAVA_CLASS_NAME": "string",
-                "LANGUAGE": "string",
                 "SFUNC_CODE": "string",
                 "SFUNC_DESC": "string",
-                "SFUNC_ID": "int32"
+                "SFUNC_ID": "int32",
+                "XXX_FUNC_LIB": "string",
+                "XXX_FUNC_VER": "string",
+                "XXX_JAVA_CLASS_NAME": "string",
+                "XXX_LANGUAGE": "string"
             }
         ],
         "CONFIG_BASE_VERSION": {
@@ -313,25 +283,55 @@
             "COMPATIBILITY_VERSION": {
                 "CONFIG_VERSION": "string"
             },
-            "PRODUCT_NAME": "string",
-            "VERSION": "string"
+            "VERSION": "string",
+            "XXX_PRODUCT_NAME": "string"
         },
         "SETTINGS": {
             "METAPHONE_VERSION": "int32"
         },
         "SYS_OOM": [
             {
-                "FELEM_ID": "int32",
                 "FTYPE_ID": "int32",
-                "LENS_ID": "int32",
-                "LIB_FEAT_ID": "int32",
-                "LIB_FELEM_ID": "int32",
                 "NEXT_THRESH": "int32",
                 "OOM_LEVEL": "string",
                 "OOM_TYPE": "string",
                 "THRESH1_CNT": "int32",
-                "THRESH1_OOM": "int32"
+                "THRESH1_OOM": "int32",
+                "XXX_FELEM_ID": "int32",
+                "XXX_LENS_ID": "int32",
+                "XXX_LIB_FEAT_ID": "int32",
+                "XXX_LIB_FELEM_ID": "int32"
             }
+        ],
+        "XXX_CFG_ECLASS": [
+            {
+                "XXX_ECLASS_CODE": "string",
+                "XXX_ECLASS_DESC": "string",
+                "XXX_ECLASS_ID": "int32",
+                "XXX_RESOLVE": "string"
+            }
+        ],
+        "XXX_CFG_ETYPE": [
+            {
+                "XXX_ECLASS_ID": "int32",
+                "XXX_ETYPE_CODE": "string",
+                "XXX_ETYPE_DESC": "string",
+                "XXX_ETYPE_ID": "int32"
+            }
+        ],
+        "XXX_CFG_LENS": [
+            {
+                "XXX_LENS_CODE": "string",
+                "XXX_LENS_DESC": "string",
+                "XXX_LENS_ID": "int32"
+            }
+        ],
+        "XXX_CFG_LENSRL": [
+            [
+                {
+                    "FIXME_KEY": "string"
+                }
+            ]
         ]
     }
 }

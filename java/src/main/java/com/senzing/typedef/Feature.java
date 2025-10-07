@@ -18,6 +18,7 @@ public class Feature {
 
     /**
      * Getter for felemCode.<p>
+     * Internal use.
      */
     public String getFelemCode() {
         return felemCode;
@@ -25,6 +26,7 @@ public class Feature {
 
     /**
      * Setter for felemCode.<p>
+     * Internal use.
      */
     public void setFelemCode(String felemCode) {
         this.felemCode = felemCode;
@@ -32,6 +34,7 @@ public class Feature {
 
     /**
      * Getter for felemValue.<p>
+     * Internal use.
      */
     public String getFelemValue() {
         return felemValue;
@@ -39,6 +42,7 @@ public class Feature {
 
     /**
      * Setter for felemValue.<p>
+     * Internal use.
      */
     public void setFelemValue(String felemValue) {
         this.felemValue = felemValue;

@@ -139,7 +139,6 @@ linters:
         - '.+/typedef\.SzConfigGetDataSourceRegistryResponse$'
         - '.+/typedef\.SzConfigManagerGetConfigRegistryResponse$'
         - '.+/typedef\.SzConfigRegisterDataSourceResponse$'
-        - '.+/typedef\.SzConfigUnregisterDataSourceResponse$'
         - '.+/typedef\.SzDiagnosticCheckRepositoryPerformanceResponse$'
         - '.+/typedef\.SzDiagnosticGetFeatureResponse$'
         - '.+/typedef\.SzEngineDeleteRecordResponse$'

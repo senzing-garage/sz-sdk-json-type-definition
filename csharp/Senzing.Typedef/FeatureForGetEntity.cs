@@ -8,9 +8,6 @@ namespace Senzing.Typedef
 {
     public class FeatureForGetEntity
     {
-        [JsonPropertyName("ATTRIBUTES")]
-        public IList<SenzingEntitySpecification> Attributes { get; set; }
-
         /// <summary>
         /// Describes the attributes that make up the feature.
         /// </summary>
@@ -32,5 +29,8 @@ namespace Senzing.Typedef
         /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
+
+        [JsonPropertyName("XXX_ATTRIBUTES")]
+        public IList<SenzingEntitySpecification> XxxAttributes { get; set; }
     }
 }

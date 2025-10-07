@@ -9,29 +9,11 @@ namespace Senzing.Typedef
 {
     public class Record
     {
-        [JsonPropertyName("ADDRESS_DATA")]
-        public IList<string> AddressData { get; set; }
-
-        [JsonPropertyName("ATTRIBUTE_DATA")]
-        public IList<string> AttributeData { get; set; }
-
         /// <summary>
         /// A label identifying the provenance of the record.
         /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
-
-        [JsonPropertyName("ENTITY_DATA")]
-        public IList<string> EntityData { get; set; }
-
-        [JsonPropertyName("ENTITY_DESC")]
-        public string EntityDesc { get; set; }
-
-        [JsonPropertyName("ENTITY_KEY")]
-        public string EntityKey { get; set; }
-
-        [JsonPropertyName("ENTITY_TYPE")]
-        public string EntityType { get; set; }
 
         /// <summary>
         /// Identifier of the entity resolution rule that was triggered.
@@ -47,9 +29,6 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("FIRST_SEEN_DT")]
         public DateTimeOffset FirstSeenDt { get; set; }
-
-        [JsonPropertyName("IDENTIFIER_DATA")]
-        public IList<string> IdentifierData { get; set; }
 
         /// <summary>
         /// Internal identifier for the record.
@@ -69,23 +48,11 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
-        [JsonPropertyName("MATCH_LEVEL")]
-        public int MatchLevel { get; set; }
-
         /// <summary>
         /// The type of match that occurred for the record.
         /// </summary>
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
-
-        [JsonPropertyName("NAME_DATA")]
-        public IList<string> NameData { get; set; }
-
-        [JsonPropertyName("OTHER_DATA")]
-        public IList<string> OtherData { get; set; }
-
-        [JsonPropertyName("PHONE_DATA")]
-        public IList<string> PhoneData { get; set; }
 
         /// <summary>
         /// The unique identifier within the set of records in the DATA_SOURCE.
@@ -93,10 +60,43 @@ namespace Senzing.Typedef
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }
 
-        [JsonPropertyName("RELATIONSHIP_DATA")]
-        public IList<string> RelationshipData { get; set; }
-
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }
+
+        [JsonPropertyName("XXX_ADDRESS_DATA")]
+        public IList<string> XxxAddressData { get; set; }
+
+        [JsonPropertyName("XXX_ATTRIBUTE_DATA")]
+        public IList<string> XxxAttributeData { get; set; }
+
+        [JsonPropertyName("XXX_ENTITY_DATA")]
+        public IList<string> XxxEntityData { get; set; }
+
+        [JsonPropertyName("XXX_ENTITY_DESC")]
+        public string XxxEntityDesc { get; set; }
+
+        [JsonPropertyName("XXX_ENTITY_KEY")]
+        public string XxxEntityKey { get; set; }
+
+        [JsonPropertyName("XXX_ENTITY_TYPE")]
+        public string XxxEntityType { get; set; }
+
+        [JsonPropertyName("XXX_IDENTIFIER_DATA")]
+        public IList<string> XxxIdentifierData { get; set; }
+
+        [JsonPropertyName("XXX_MATCH_LEVEL")]
+        public int XxxMatchLevel { get; set; }
+
+        [JsonPropertyName("XXX_NAME_DATA")]
+        public IList<string> XxxNameData { get; set; }
+
+        [JsonPropertyName("XXX_OTHER_DATA")]
+        public IList<string> XxxOtherData { get; set; }
+
+        [JsonPropertyName("XXX_PHONE_DATA")]
+        public IList<string> XxxPhoneData { get; set; }
+
+        [JsonPropertyName("XXX_RELATIONSHIP_DATA")]
+        public IList<string> XxxRelationshipData { get; set; }
     }
 }

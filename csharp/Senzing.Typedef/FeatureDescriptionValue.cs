@@ -23,19 +23,22 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
         [JsonPropertyName("SCORING_CAP_REACHED")]
         public string ScoringCapReached { get; set; }
 
-        [JsonPropertyName("SUPPRESSED")]
-        public string Suppressed { get; set; }
-
         [JsonPropertyName("USED_FOR_CAND")]
         public string UsedForCand { get; set; }
 
         [JsonPropertyName("USED_FOR_SCORING")]
         public string UsedForScoring { get; set; }
+
+        [JsonPropertyName("XXX_SUPPRESSED")]
+        public string XxxSuppressed { get; set; }
     }
 }

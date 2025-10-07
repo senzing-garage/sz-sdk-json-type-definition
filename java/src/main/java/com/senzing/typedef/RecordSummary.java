@@ -11,14 +11,14 @@ public class RecordSummary {
     @JsonProperty("DATA_SOURCE")
     private String dataSource;
 
-    @JsonProperty("FIRST_SEEN_DT")
-    private OffsetDateTime firstSeenDt;
-
-    @JsonProperty("LAST_SEEN_DT")
-    private OffsetDateTime lastSeenDt;
-
     @JsonProperty("RECORD_COUNT")
     private Integer recordCount;
+
+    @JsonProperty("XXX_FIRST_SEEN_DT")
+    private OffsetDateTime xxxFirstSeenDt;
+
+    @JsonProperty("XXX_LAST_SEEN_DT")
+    private OffsetDateTime xxxLastSeenDt;
 
     public RecordSummary() {
     }
@@ -40,34 +40,6 @@ public class RecordSummary {
     }
 
     /**
-     * Getter for firstSeenDt.<p>
-     */
-    public OffsetDateTime getFirstSeenDt() {
-        return firstSeenDt;
-    }
-
-    /**
-     * Setter for firstSeenDt.<p>
-     */
-    public void setFirstSeenDt(OffsetDateTime firstSeenDt) {
-        this.firstSeenDt = firstSeenDt;
-    }
-
-    /**
-     * Getter for lastSeenDt.<p>
-     */
-    public OffsetDateTime getLastSeenDt() {
-        return lastSeenDt;
-    }
-
-    /**
-     * Setter for lastSeenDt.<p>
-     */
-    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
-        this.lastSeenDt = lastSeenDt;
-    }
-
-    /**
      * Getter for recordCount.<p>
      * The number of records for the entity with the same data source code.
      */
@@ -81,5 +53,33 @@ public class RecordSummary {
      */
     public void setRecordCount(Integer recordCount) {
         this.recordCount = recordCount;
+    }
+
+    /**
+     * Getter for xxxFirstSeenDt.<p>
+     */
+    public OffsetDateTime getXxxFirstSeenDt() {
+        return xxxFirstSeenDt;
+    }
+
+    /**
+     * Setter for xxxFirstSeenDt.<p>
+     */
+    public void setXxxFirstSeenDt(OffsetDateTime xxxFirstSeenDt) {
+        this.xxxFirstSeenDt = xxxFirstSeenDt;
+    }
+
+    /**
+     * Getter for xxxLastSeenDt.<p>
+     */
+    public OffsetDateTime getXxxLastSeenDt() {
+        return xxxLastSeenDt;
+    }
+
+    /**
+     * Setter for xxxLastSeenDt.<p>
+     */
+    public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
+        this.xxxLastSeenDt = xxxLastSeenDt;
     }
 }

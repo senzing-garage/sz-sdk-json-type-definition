@@ -12,54 +12,54 @@ namespace Senzing.Typedef
         public string ApiVersion { get; set; }
 
         [JsonPropertyName("caches")]
-        public Caches Caches { get; set; }
+        public WorkloadCaches Caches { get; set; }
 
         [JsonPropertyName("candidates")]
-        public Candidates Candidates { get; set; }
+        public WorkloadCandidates Candidates { get; set; }
 
         [JsonPropertyName("contention")]
-        public Contention Contention { get; set; }
+        public WorkloadContention Contention { get; set; }
 
         [JsonPropertyName("datetimestamp")]
         public string Datetimestamp { get; set; }
 
         [JsonPropertyName("expressedFeatures")]
-        public ExpressedFeatures ExpressedFeatures { get; set; }
+        public WorkloadExpressedFeatures ExpressedFeatures { get; set; }
 
         [JsonPropertyName("genericDetect")]
         public Fixme GenericDetect { get; set; }
 
         [JsonPropertyName("license")]
-        public License License { get; set; }
+        public WorkloadLicense License { get; set; }
 
         [JsonPropertyName("loadedRecords")]
         public int LoadedRecords { get; set; }
 
         [JsonPropertyName("lockWaits")]
-        public LockWaits LockWaits { get; set; }
+        public WorkloadLockWaits LockWaits { get; set; }
 
         [JsonPropertyName("processing")]
-        public Processing Processing { get; set; }
+        public WorkloadProcessing Processing { get; set; }
 
         [JsonPropertyName("redoTriggers")]
         public IDictionary<string, int> RedoTriggers { get; set; }
 
         [JsonPropertyName("repairDiagnosis")]
-        public RepairDiagnosis RepairDiagnosis { get; set; }
+        public WorkloadRepairDiagnosis RepairDiagnosis { get; set; }
 
         [JsonPropertyName("reresolve")]
-        public Reresolve Reresolve { get; set; }
+        public WorkloadReresolve Reresolve { get; set; }
 
         [JsonPropertyName("scoring")]
-        public Scoring Scoring { get; set; }
+        public WorkloadScoring Scoring { get; set; }
 
         [JsonPropertyName("systemResources")]
-        public SystemResources SystemResources { get; set; }
+        public WorkloadSystemResources SystemResources { get; set; }
 
         [JsonPropertyName("threadState")]
-        public ThreadState ThreadState { get; set; }
+        public WorkloadThreadState ThreadState { get; set; }
 
         [JsonPropertyName("unresolve")]
-        public Unresolve Unresolve { get; set; }
+        public WorkloadUnresolve Unresolve { get; set; }
     }
 }

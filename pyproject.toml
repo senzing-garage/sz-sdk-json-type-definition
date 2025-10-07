@@ -1,6 +1,6 @@
 [project]
 name = "senzing-typedef"
-version = "0.2.13"
+version = "0.2.16"
 authors = [{ name = "senzing", email = "support@senzing.com" }]
 description = "Helper functions for working with Senzing JSON"
 readme = "README.md"
@@ -117,7 +117,9 @@ ignore_missing_imports = "true"
 [tool.pylint]
 ignored-argument-names = "args|kwargs"
 max-locals = 30
+min-similarity-lines = 10
 disable = [
+  "broad-exception-caught",
   "eval-used",
   "f-string-without-interpolation",
   "global-statement",

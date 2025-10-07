@@ -7,7 +7,7 @@ namespace Senzing.Typedef
 {
     public class SzEngineFindNetworkByEntityIdEntityIds
     {
-        [JsonPropertyName("FIXME")]
-        public Fixme Fixme { get; set; }
+        [JsonPropertyName("XXX_FIXME")]
+        public Fixme XxxFixme { get; set; }
     }
 }

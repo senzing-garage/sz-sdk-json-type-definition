@@ -21,6 +21,7 @@ public class Config {
 
     /**
      * Getter for configComments.<p>
+     * A user-provided description of the configuration.
      */
     public String getConfigComments() {
         return configComments;
@@ -28,6 +29,7 @@ public class Config {
 
     /**
      * Setter for configComments.<p>
+     * A user-provided description of the configuration.
      */
     public void setConfigComments(String configComments) {
         this.configComments = configComments;
@@ -35,6 +37,7 @@ public class Config {
 
     /**
      * Getter for configId.<p>
+     * An internally-generated unique identifier of the configuration.
      */
     public Integer getConfigId() {
         return configId;
@@ -42,6 +45,7 @@ public class Config {
 
     /**
      * Setter for configId.<p>
+     * An internally-generated unique identifier of the configuration.
      */
     public void setConfigId(Integer configId) {
         this.configId = configId;
@@ -49,6 +53,7 @@ public class Config {
 
     /**
      * Getter for sysCreateDt.<p>
+     * The timestamp of the original registration of the configuration.
      */
     public String getSysCreateDt() {
         return sysCreateDt;
@@ -56,6 +61,7 @@ public class Config {
 
     /**
      * Setter for sysCreateDt.<p>
+     * The timestamp of the original registration of the configuration.
      */
     public void setSysCreateDt(String sysCreateDt) {
         this.sysCreateDt = sysCreateDt;

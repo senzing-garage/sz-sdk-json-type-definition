@@ -12,7 +12,7 @@ public class CandidateKeysForSearchStatistic {
     private List<FeatureType> featureTypes;
 
     @JsonProperty("SUMMARY")
-    private Summary summary;
+    private CandidateKeysSummary summary;
 
     public CandidateKeysForSearchStatistic() {
     }
@@ -34,14 +34,14 @@ public class CandidateKeysForSearchStatistic {
     /**
      * Getter for summary.<p>
      */
-    public Summary getSummary() {
+    public CandidateKeysSummary getSummary() {
         return summary;
     }
 
     /**
      * Setter for summary.<p>
      */
-    public void setSummary(Summary summary) {
+    public void setSummary(CandidateKeysSummary summary) {
         this.summary = summary;
     }
 }

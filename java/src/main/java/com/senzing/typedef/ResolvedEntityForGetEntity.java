@@ -16,32 +16,8 @@ public class ResolvedEntityForGetEntity {
     @JsonProperty("ENTITY_NAME")
     private String entityName;
 
-    @JsonProperty("ERRULE_CODE")
-    private String erruleCode;
-
     @JsonProperty("FEATURES")
     private Map<String, List<FeatureForGetEntity>> features;
-
-    @JsonProperty("FEATURE_IDS")
-    private List<FeatureId> featureIds;
-
-    @JsonProperty("IS_AMBIGUOUS")
-    private Integer isAmbiguous;
-
-    @JsonProperty("IS_DISCLOSED")
-    private Integer isDisclosed;
-
-    @JsonProperty("LAST_SEEN_DT")
-    private OffsetDateTime lastSeenDt;
-
-    @JsonProperty("MATCH_KEY")
-    private String matchKey;
-
-    @JsonProperty("MATCH_LEVEL")
-    private Integer matchLevel;
-
-    @JsonProperty("MATCH_LEVEL_CODE")
-    private String matchLevelCode;
 
     @JsonProperty("RECORDS")
     private List<RecordForGetEntity> records;
@@ -51,6 +27,30 @@ public class ResolvedEntityForGetEntity {
 
     @JsonProperty("RECORD_TYPES")
     private List<String> recordTypes;
+
+    @JsonProperty("XXX_ERRULE_CODE")
+    private String xxxErruleCode;
+
+    @JsonProperty("XXX_FEATURE_IDS")
+    private List<FeatureId> xxxFeatureIds;
+
+    @JsonProperty("XXX_IS_AMBIGUOUS")
+    private Integer xxxIsAmbiguous;
+
+    @JsonProperty("XXX_IS_DISCLOSED")
+    private Integer xxxIsDisclosed;
+
+    @JsonProperty("XXX_LAST_SEEN_DT")
+    private OffsetDateTime xxxLastSeenDt;
+
+    @JsonProperty("XXX_MATCH_KEY")
+    private String xxxMatchKey;
+
+    @JsonProperty("XXX_MATCH_LEVEL")
+    private Integer xxxMatchLevel;
+
+    @JsonProperty("XXX_MATCH_LEVEL_CODE")
+    private String xxxMatchLevelCode;
 
     public ResolvedEntityForGetEntity() {
     }
@@ -90,22 +90,6 @@ public class ResolvedEntityForGetEntity {
     }
 
     /**
-     * Getter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
-     */
-    public String getErruleCode() {
-        return erruleCode;
-    }
-
-    /**
-     * Setter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
-     */
-    public void setErruleCode(String erruleCode) {
-        this.erruleCode = erruleCode;
-    }
-
-    /**
      * Getter for features.<p>
      */
     public Map<String, List<FeatureForGetEntity>> getFeatures() {
@@ -117,112 +101,6 @@ public class ResolvedEntityForGetEntity {
      */
     public void setFeatures(Map<String, List<FeatureForGetEntity>> features) {
         this.features = features;
-    }
-
-    /**
-     * Getter for featureIds.<p>
-     */
-    public List<FeatureId> getFeatureIds() {
-        return featureIds;
-    }
-
-    /**
-     * Setter for featureIds.<p>
-     */
-    public void setFeatureIds(List<FeatureId> featureIds) {
-        this.featureIds = featureIds;
-    }
-
-    /**
-     * Getter for isAmbiguous.<p>
-     * Indicates if this is an ambiguous relationship.
-     */
-    public Integer getIsAmbiguous() {
-        return isAmbiguous;
-    }
-
-    /**
-     * Setter for isAmbiguous.<p>
-     * Indicates if this is an ambiguous relationship.
-     */
-    public void setIsAmbiguous(Integer isAmbiguous) {
-        this.isAmbiguous = isAmbiguous;
-    }
-
-    /**
-     * Getter for isDisclosed.<p>
-     * Indicates if this is a disclosed relationship.
-     */
-    public Integer getIsDisclosed() {
-        return isDisclosed;
-    }
-
-    /**
-     * Setter for isDisclosed.<p>
-     * Indicates if this is a disclosed relationship.
-     */
-    public void setIsDisclosed(Integer isDisclosed) {
-        this.isDisclosed = isDisclosed;
-    }
-
-    /**
-     * Getter for lastSeenDt.<p>
-     */
-    public OffsetDateTime getLastSeenDt() {
-        return lastSeenDt;
-    }
-
-    /**
-     * Setter for lastSeenDt.<p>
-     */
-    public void setLastSeenDt(OffsetDateTime lastSeenDt) {
-        this.lastSeenDt = lastSeenDt;
-    }
-
-    /**
-     * Getter for matchKey.<p>
-     * Representation of matched source record features.
-     */
-    public String getMatchKey() {
-        return matchKey;
-    }
-
-    /**
-     * Setter for matchKey.<p>
-     * Representation of matched source record features.
-     */
-    public void setMatchKey(String matchKey) {
-        this.matchKey = matchKey;
-    }
-
-    /**
-     * Getter for matchLevel.<p>
-     */
-    public Integer getMatchLevel() {
-        return matchLevel;
-    }
-
-    /**
-     * Setter for matchLevel.<p>
-     */
-    public void setMatchLevel(Integer matchLevel) {
-        this.matchLevel = matchLevel;
-    }
-
-    /**
-     * Getter for matchLevelCode.<p>
-     * The type of match that occurred for the record.
-     */
-    public String getMatchLevelCode() {
-        return matchLevelCode;
-    }
-
-    /**
-     * Setter for matchLevelCode.<p>
-     * The type of match that occurred for the record.
-     */
-    public void setMatchLevelCode(String matchLevelCode) {
-        this.matchLevelCode = matchLevelCode;
     }
 
     /**
@@ -269,5 +147,127 @@ public class ResolvedEntityForGetEntity {
      */
     public void setRecordTypes(List<String> recordTypes) {
         this.recordTypes = recordTypes;
+    }
+
+    /**
+     * Getter for xxxErruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
+     */
+    public String getXxxErruleCode() {
+        return xxxErruleCode;
+    }
+
+    /**
+     * Setter for xxxErruleCode.<p>
+     * Identifier of the entity resolution rule that was triggered.
+     */
+    public void setXxxErruleCode(String xxxErruleCode) {
+        this.xxxErruleCode = xxxErruleCode;
+    }
+
+    /**
+     * Getter for xxxFeatureIds.<p>
+     */
+    public List<FeatureId> getXxxFeatureIds() {
+        return xxxFeatureIds;
+    }
+
+    /**
+     * Setter for xxxFeatureIds.<p>
+     */
+    public void setXxxFeatureIds(List<FeatureId> xxxFeatureIds) {
+        this.xxxFeatureIds = xxxFeatureIds;
+    }
+
+    /**
+     * Getter for xxxIsAmbiguous.<p>
+     * Indicates if this is an ambiguous relationship.
+     */
+    public Integer getXxxIsAmbiguous() {
+        return xxxIsAmbiguous;
+    }
+
+    /**
+     * Setter for xxxIsAmbiguous.<p>
+     * Indicates if this is an ambiguous relationship.
+     */
+    public void setXxxIsAmbiguous(Integer xxxIsAmbiguous) {
+        this.xxxIsAmbiguous = xxxIsAmbiguous;
+    }
+
+    /**
+     * Getter for xxxIsDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
+     */
+    public Integer getXxxIsDisclosed() {
+        return xxxIsDisclosed;
+    }
+
+    /**
+     * Setter for xxxIsDisclosed.<p>
+     * Indicates if this is a disclosed relationship.
+     */
+    public void setXxxIsDisclosed(Integer xxxIsDisclosed) {
+        this.xxxIsDisclosed = xxxIsDisclosed;
+    }
+
+    /**
+     * Getter for xxxLastSeenDt.<p>
+     */
+    public OffsetDateTime getXxxLastSeenDt() {
+        return xxxLastSeenDt;
+    }
+
+    /**
+     * Setter for xxxLastSeenDt.<p>
+     */
+    public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
+        this.xxxLastSeenDt = xxxLastSeenDt;
+    }
+
+    /**
+     * Getter for xxxMatchKey.<p>
+     * Representation of matched source record features.
+     */
+    public String getXxxMatchKey() {
+        return xxxMatchKey;
+    }
+
+    /**
+     * Setter for xxxMatchKey.<p>
+     * Representation of matched source record features.
+     */
+    public void setXxxMatchKey(String xxxMatchKey) {
+        this.xxxMatchKey = xxxMatchKey;
+    }
+
+    /**
+     * Getter for xxxMatchLevel.<p>
+     */
+    public Integer getXxxMatchLevel() {
+        return xxxMatchLevel;
+    }
+
+    /**
+     * Setter for xxxMatchLevel.<p>
+     */
+    public void setXxxMatchLevel(Integer xxxMatchLevel) {
+        this.xxxMatchLevel = xxxMatchLevel;
+    }
+
+    /**
+     * Getter for xxxMatchLevelCode.<p>
+     * The type of match that occurred for the record.
+     */
+    public String getXxxMatchLevelCode() {
+        return xxxMatchLevelCode;
+    }
+
+    /**
+     * Setter for xxxMatchLevelCode.<p>
+     * The type of match that occurred for the record.
+     */
+    public void setXxxMatchLevelCode(String xxxMatchLevelCode) {
+        this.xxxMatchLevelCode = xxxMatchLevelCode;
     }
 }

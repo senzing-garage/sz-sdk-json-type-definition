@@ -8,7 +8,7 @@ namespace Senzing.Typedef
     public class SzConfigRegisterDataSourceResponse
     {
         /// <summary>
-        /// The unique identifier of the datasource.
+        /// The unique internal integer identifier of the datasource.
         /// </summary>
         [JsonPropertyName("DSRC_ID")]
         public int DsrcId { get; set; }

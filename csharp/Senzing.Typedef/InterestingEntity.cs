@@ -8,20 +8,20 @@ namespace Senzing.Typedef
 {
     public class InterestingEntity
     {
-        [JsonPropertyName("DEGREES")]
-        public int Degrees { get; set; }
+        [JsonPropertyName("XXX_DEGREES")]
+        public int XxxDegrees { get; set; }
 
         /// <summary>
         /// The ENTITY_ID is the Senzing-generated identifier for the discovered
         /// entity. It may change when new information is added.
         /// </summary>
-        [JsonPropertyName("ENTITY_ID")]
-        public int EntityId { get; set; }
+        [JsonPropertyName("XXX_ENTITY_ID")]
+        public int XxxEntityId { get; set; }
 
-        [JsonPropertyName("FLAGS")]
-        public IList<string> Flags { get; set; }
+        [JsonPropertyName("XXX_FLAGS")]
+        public IList<string> XxxFlags { get; set; }
 
-        [JsonPropertyName("SAMPLE_RECORDS")]
-        public IList<SampleRecord> SampleRecords { get; set; }
+        [JsonPropertyName("XXX_SAMPLE_RECORDS")]
+        public IList<SampleRecord> XxxSampleRecords { get; set; }
     }
 }

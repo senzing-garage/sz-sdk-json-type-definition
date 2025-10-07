@@ -13,9 +13,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("RCLASS_ID")]
         public int RclassId { get; set; }
 
-        [JsonPropertyName("REL_STRENGTH")]
-        public int RelStrength { get; set; }
-
         [JsonPropertyName("RTYPE_CODE")]
         public string RtypeCode { get; set; }
 
@@ -24,5 +21,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("RTYPE_ID")]
         public int RtypeId { get; set; }
+
+        [JsonPropertyName("XXX_REL_STRENGTH")]
+        public int XxxRelStrength { get; set; }
     }
 }

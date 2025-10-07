@@ -22,6 +22,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Getter for elements.<p>
+     * Internal use.
      */
     public List<Feature> getElements() {
         return elements;
@@ -29,6 +30,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Setter for elements.<p>
+     * Internal use.
      */
     public void setElements(List<Feature> elements) {
         this.elements = elements;
@@ -36,6 +38,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Getter for ftypeCode.<p>
+     * Internal use.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -43,6 +46,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Setter for ftypeCode.<p>
+     * Internal use.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -50,6 +54,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Getter for libFeatId.<p>
+     * Internal use.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -57,6 +62,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Setter for libFeatId.<p>
+     * Internal use.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;

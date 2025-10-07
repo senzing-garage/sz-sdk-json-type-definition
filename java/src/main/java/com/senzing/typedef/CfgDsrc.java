@@ -7,9 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgDsrc {
-    @JsonProperty("CONVERSATIONAL")
-    private String conversational;
-
     @JsonProperty("DSRC_CODE")
     private String dsrcCode;
 
@@ -19,27 +16,16 @@ public class CfgDsrc {
     @JsonProperty("DSRC_ID")
     private Integer dsrcId;
 
-    @JsonProperty("DSRC_RELY")
-    private Integer dsrcRely;
-
     @JsonProperty("RETENTION_LEVEL")
     private String retentionLevel;
 
+    @JsonProperty("XXX_CONVERSATIONAL")
+    private String xxxConversational;
+
+    @JsonProperty("XXX_DSRC_RELY")
+    private Integer xxxDsrcRely;
+
     public CfgDsrc() {
-    }
-
-    /**
-     * Getter for conversational.<p>
-     */
-    public String getConversational() {
-        return conversational;
-    }
-
-    /**
-     * Setter for conversational.<p>
-     */
-    public void setConversational(String conversational) {
-        this.conversational = conversational;
     }
 
     /**
@@ -85,20 +71,6 @@ public class CfgDsrc {
     }
 
     /**
-     * Getter for dsrcRely.<p>
-     */
-    public Integer getDsrcRely() {
-        return dsrcRely;
-    }
-
-    /**
-     * Setter for dsrcRely.<p>
-     */
-    public void setDsrcRely(Integer dsrcRely) {
-        this.dsrcRely = dsrcRely;
-    }
-
-    /**
      * Getter for retentionLevel.<p>
      */
     public String getRetentionLevel() {
@@ -110,5 +82,33 @@ public class CfgDsrc {
      */
     public void setRetentionLevel(String retentionLevel) {
         this.retentionLevel = retentionLevel;
+    }
+
+    /**
+     * Getter for xxxConversational.<p>
+     */
+    public String getXxxConversational() {
+        return xxxConversational;
+    }
+
+    /**
+     * Setter for xxxConversational.<p>
+     */
+    public void setXxxConversational(String xxxConversational) {
+        this.xxxConversational = xxxConversational;
+    }
+
+    /**
+     * Getter for xxxDsrcRely.<p>
+     */
+    public Integer getXxxDsrcRely() {
+        return xxxDsrcRely;
+    }
+
+    /**
+     * Setter for xxxDsrcRely.<p>
+     */
+    public void setXxxDsrcRely(Integer xxxDsrcRely) {
+        this.xxxDsrcRely = xxxDsrcRely;
     }
 }

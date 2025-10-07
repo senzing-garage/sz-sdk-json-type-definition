@@ -7,57 +7,57 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgDsrcInterest {
-    @JsonProperty("DSRC_ID")
-    private Integer dsrcId;
+    @JsonProperty("XXX_DSRC_ID")
+    private Integer xxxDsrcId;
 
-    @JsonProperty("INTEREST_FLAG")
-    private String interestFlag;
+    @JsonProperty("XXX_INTEREST_FLAG")
+    private String xxxInterestFlag;
 
-    @JsonProperty("MAX_DEGREE")
-    private Integer maxDegree;
+    @JsonProperty("XXX_MAX_DEGREE")
+    private Integer xxxMaxDegree;
 
     public CfgDsrcInterest() {
     }
 
     /**
-     * Getter for dsrcId.<p>
+     * Getter for xxxDsrcId.<p>
      */
-    public Integer getDsrcId() {
-        return dsrcId;
+    public Integer getXxxDsrcId() {
+        return xxxDsrcId;
     }
 
     /**
-     * Setter for dsrcId.<p>
+     * Setter for xxxDsrcId.<p>
      */
-    public void setDsrcId(Integer dsrcId) {
-        this.dsrcId = dsrcId;
+    public void setXxxDsrcId(Integer xxxDsrcId) {
+        this.xxxDsrcId = xxxDsrcId;
     }
 
     /**
-     * Getter for interestFlag.<p>
+     * Getter for xxxInterestFlag.<p>
      */
-    public String getInterestFlag() {
-        return interestFlag;
+    public String getXxxInterestFlag() {
+        return xxxInterestFlag;
     }
 
     /**
-     * Setter for interestFlag.<p>
+     * Setter for xxxInterestFlag.<p>
      */
-    public void setInterestFlag(String interestFlag) {
-        this.interestFlag = interestFlag;
+    public void setXxxInterestFlag(String xxxInterestFlag) {
+        this.xxxInterestFlag = xxxInterestFlag;
     }
 
     /**
-     * Getter for maxDegree.<p>
+     * Getter for xxxMaxDegree.<p>
      */
-    public Integer getMaxDegree() {
-        return maxDegree;
+    public Integer getXxxMaxDegree() {
+        return xxxMaxDegree;
     }
 
     /**
-     * Setter for maxDegree.<p>
+     * Setter for xxxMaxDegree.<p>
      */
-    public void setMaxDegree(Integer maxDegree) {
-        this.maxDegree = maxDegree;
+    public void setXxxMaxDegree(Integer xxxMaxDegree) {
+        this.xxxMaxDegree = xxxMaxDegree;
     }
 }

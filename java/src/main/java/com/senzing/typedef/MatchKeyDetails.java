@@ -14,8 +14,8 @@ public class MatchKeyDetails {
     @JsonProperty("DENIALS")
     private List<Confirmation> denials;
 
-    @JsonProperty("ERRULE_CODE")
-    private String erruleCode;
+    @JsonProperty("XXX_ERRULE_CODE")
+    private String xxxErruleCode;
 
     public MatchKeyDetails() {
     }
@@ -49,18 +49,18 @@ public class MatchKeyDetails {
     }
 
     /**
-     * Getter for erruleCode.<p>
+     * Getter for xxxErruleCode.<p>
      * Identifier of the entity resolution rule that was triggered.
      */
-    public String getErruleCode() {
-        return erruleCode;
+    public String getXxxErruleCode() {
+        return xxxErruleCode;
     }
 
     /**
-     * Setter for erruleCode.<p>
+     * Setter for xxxErruleCode.<p>
      * Identifier of the entity resolution rule that was triggered.
      */
-    public void setErruleCode(String erruleCode) {
-        this.erruleCode = erruleCode;
+    public void setXxxErruleCode(String xxxErruleCode) {
+        this.xxxErruleCode = xxxErruleCode;
     }
 }

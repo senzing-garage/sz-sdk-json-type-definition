@@ -131,9 +131,9 @@
                 "workerThreads": "int32"
             },
             "initResources": {
+                "XXX_physicalCores": "int32",
                 "availableMemory": "string",
                 "logicalCores": "int32",
-                "physicalCores": "int32",
                 "totalMemory": "string"
             },
             "systemLoad": {

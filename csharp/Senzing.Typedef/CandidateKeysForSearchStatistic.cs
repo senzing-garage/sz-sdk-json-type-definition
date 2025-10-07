@@ -12,6 +12,6 @@ namespace Senzing.Typedef
         public IList<FeatureType> FeatureTypes { get; set; }
 
         [JsonPropertyName("SUMMARY")]
-        public Summary Summary { get; set; }
+        public CandidateKeysSummary Summary { get; set; }
     }
 }

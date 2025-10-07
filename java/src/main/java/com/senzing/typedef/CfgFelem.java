@@ -19,8 +19,8 @@ public class CfgFelem {
     @JsonProperty("FELEM_ID")
     private Integer felemId;
 
-    @JsonProperty("TOKENIZE")
-    private String tokenize;
+    @JsonProperty("XXX_TOKENIZE")
+    private String xxxTokenize;
 
     public CfgFelem() {
     }
@@ -82,16 +82,16 @@ public class CfgFelem {
     }
 
     /**
-     * Getter for tokenize.<p>
+     * Getter for xxxTokenize.<p>
      */
-    public String getTokenize() {
-        return tokenize;
+    public String getXxxTokenize() {
+        return xxxTokenize;
     }
 
     /**
-     * Setter for tokenize.<p>
+     * Setter for xxxTokenize.<p>
      */
-    public void setTokenize(String tokenize) {
-        this.tokenize = tokenize;
+    public void setXxxTokenize(String xxxTokenize) {
+        this.xxxTokenize = xxxTokenize;
     }
 }

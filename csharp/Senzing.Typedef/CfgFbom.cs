@@ -10,9 +10,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("DERIVED")]
         public string Derived { get; set; }
 
-        [JsonPropertyName("DISPLAY_DELIM")]
-        public string DisplayDelim { get; set; }
-
         [JsonPropertyName("DISPLAY_LEVEL")]
         public int DisplayLevel { get; set; }
 
@@ -24,5 +21,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
+
+        [JsonPropertyName("XXX_DISPLAY_DELIM")]
+        public string XxxDisplayDelim { get; set; }
     }
 }

@@ -7,12 +7,21 @@ namespace Senzing.Typedef
 {
     public class Config
     {
+        /// <summary>
+        /// A user-provided description of the configuration.
+        /// </summary>
         [JsonPropertyName("CONFIG_COMMENTS")]
         public string ConfigComments { get; set; }
 
+        /// <summary>
+        /// An internally-generated unique identifier of the configuration.
+        /// </summary>
         [JsonPropertyName("CONFIG_ID")]
         public int ConfigId { get; set; }
 
+        /// <summary>
+        /// The timestamp of the original registration of the configuration.
+        /// </summary>
         [JsonPropertyName("SYS_CREATE_DT")]
         public string SysCreateDt { get; set; }
     }

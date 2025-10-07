@@ -7,57 +7,57 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgLens {
-    @JsonProperty("LENS_CODE")
-    private String lensCode;
+    @JsonProperty("XXX_LENS_CODE")
+    private String xxxLensCode;
 
-    @JsonProperty("LENS_DESC")
-    private String lensDesc;
+    @JsonProperty("XXX_LENS_DESC")
+    private String xxxLensDesc;
 
-    @JsonProperty("LENS_ID")
-    private Integer lensId;
+    @JsonProperty("XXX_LENS_ID")
+    private Integer xxxLensId;
 
     public CfgLens() {
     }
 
     /**
-     * Getter for lensCode.<p>
+     * Getter for xxxLensCode.<p>
      */
-    public String getLensCode() {
-        return lensCode;
+    public String getXxxLensCode() {
+        return xxxLensCode;
     }
 
     /**
-     * Setter for lensCode.<p>
+     * Setter for xxxLensCode.<p>
      */
-    public void setLensCode(String lensCode) {
-        this.lensCode = lensCode;
+    public void setXxxLensCode(String xxxLensCode) {
+        this.xxxLensCode = xxxLensCode;
     }
 
     /**
-     * Getter for lensDesc.<p>
+     * Getter for xxxLensDesc.<p>
      */
-    public String getLensDesc() {
-        return lensDesc;
+    public String getXxxLensDesc() {
+        return xxxLensDesc;
     }
 
     /**
-     * Setter for lensDesc.<p>
+     * Setter for xxxLensDesc.<p>
      */
-    public void setLensDesc(String lensDesc) {
-        this.lensDesc = lensDesc;
+    public void setXxxLensDesc(String xxxLensDesc) {
+        this.xxxLensDesc = xxxLensDesc;
     }
 
     /**
-     * Getter for lensId.<p>
+     * Getter for xxxLensId.<p>
      */
-    public Integer getLensId() {
-        return lensId;
+    public Integer getXxxLensId() {
+        return xxxLensId;
     }
 
     /**
-     * Setter for lensId.<p>
+     * Setter for xxxLensId.<p>
      */
-    public void setLensId(Integer lensId) {
-        this.lensId = lensId;
+    public void setXxxLensId(Integer xxxLensId) {
+        this.xxxLensId = xxxLensId;
     }
 }

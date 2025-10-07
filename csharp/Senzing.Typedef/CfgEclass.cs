@@ -7,16 +7,16 @@ namespace Senzing.Typedef
 {
     public class CfgEclass
     {
-        [JsonPropertyName("ECLASS_CODE")]
-        public string EclassCode { get; set; }
+        [JsonPropertyName("XXX_ECLASS_CODE")]
+        public string XxxEclassCode { get; set; }
 
-        [JsonPropertyName("ECLASS_DESC")]
-        public string EclassDesc { get; set; }
+        [JsonPropertyName("XXX_ECLASS_DESC")]
+        public string XxxEclassDesc { get; set; }
 
-        [JsonPropertyName("ECLASS_ID")]
-        public int EclassId { get; set; }
+        [JsonPropertyName("XXX_ECLASS_ID")]
+        public int XxxEclassId { get; set; }
 
-        [JsonPropertyName("RESOLVE")]
-        public string Resolve { get; set; }
+        [JsonPropertyName("XXX_RESOLVE")]
+        public string XxxResolve { get; set; }
     }
 }

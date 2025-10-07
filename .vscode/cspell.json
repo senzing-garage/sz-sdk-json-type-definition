@@ -169,11 +169,13 @@
     "**/*.sum",
     "bearer.ignore",
     "csharp/obj/Debug/**",
+    "csharp/obj/project.nuget.cache",
     "dist/**",
     "java/target/**",
     "Makefile",
     "pyproject.toml",
     "python/senzing_json.egg-info/**",
+    "python/senzing_typedef.egg-info/**",
     "testdata/**"
   ]
 }

@@ -13,11 +13,11 @@ public class CfgDfcall {
     @JsonProperty("DFUNC_ID")
     private Integer dfuncId;
 
-    @JsonProperty("EXEC_ORDER")
-    private Integer execOrder;
-
     @JsonProperty("FTYPE_ID")
     private Integer ftypeId;
+
+    @JsonProperty("XXX_EXEC_ORDER")
+    private Integer xxxExecOrder;
 
     public CfgDfcall() {
     }
@@ -51,20 +51,6 @@ public class CfgDfcall {
     }
 
     /**
-     * Getter for execOrder.<p>
-     */
-    public Integer getExecOrder() {
-        return execOrder;
-    }
-
-    /**
-     * Setter for execOrder.<p>
-     */
-    public void setExecOrder(Integer execOrder) {
-        this.execOrder = execOrder;
-    }
-
-    /**
      * Getter for ftypeId.<p>
      */
     public Integer getFtypeId() {
@@ -76,5 +62,19 @@ public class CfgDfcall {
      */
     public void setFtypeId(Integer ftypeId) {
         this.ftypeId = ftypeId;
+    }
+
+    /**
+     * Getter for xxxExecOrder.<p>
+     */
+    public Integer getXxxExecOrder() {
+        return xxxExecOrder;
+    }
+
+    /**
+     * Setter for xxxExecOrder.<p>
+     */
+    public void setXxxExecOrder(Integer xxxExecOrder) {
+        this.xxxExecOrder = xxxExecOrder;
     }
 }

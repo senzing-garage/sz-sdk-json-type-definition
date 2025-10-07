@@ -14,16 +14,16 @@ namespace Senzing.Typedef
         /// <summary>
         /// A label identifying the provenance of the record.
         /// </summary>
-        [JsonPropertyName("DATA_SOURCE")]
-        public string DataSource { get; set; }
+        [JsonPropertyName("XXX_DATA_SOURCE")]
+        public string XxxDataSource { get; set; }
 
-        [JsonPropertyName("INTERESTING_ENTITIES")]
-        public InterestingEntities InterestingEntities { get; set; }
+        [JsonPropertyName("XXX_INTERESTING_ENTITIES")]
+        public InterestingEntities XxxInterestingEntities { get; set; }
 
         /// <summary>
         /// The unique identifier within the set of records in the DATA_SOURCE.
         /// </summary>
-        [JsonPropertyName("RECORD_ID")]
-        public string RecordId { get; set; }
+        [JsonPropertyName("XXX_RECORD_ID")]
+        public string XxxRecordId { get; set; }
     }
 }

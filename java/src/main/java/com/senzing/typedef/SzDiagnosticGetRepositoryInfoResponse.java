@@ -16,6 +16,7 @@ public class SzDiagnosticGetRepositoryInfoResponse {
 
     /**
      * Getter for dataStores.<p>
+     * A list of database node connection metadata.
      */
     public List<Repository> getDataStores() {
         return dataStores;
@@ -23,6 +24,7 @@ public class SzDiagnosticGetRepositoryInfoResponse {
 
     /**
      * Setter for dataStores.<p>
+     * A list of database node connection metadata.
      */
     public void setDataStores(List<Repository> dataStores) {
         this.dataStores = dataStores;

@@ -19,11 +19,11 @@ public class ConfigBaseVersion {
     @JsonProperty("COMPATIBILITY_VERSION")
     private CompatibilityVersion compatibilityVersion;
 
-    @JsonProperty("PRODUCT_NAME")
-    private String productName;
-
     @JsonProperty("VERSION")
     private String version;
+
+    @JsonProperty("XXX_PRODUCT_NAME")
+    private String xxxProductName;
 
     public ConfigBaseVersion() {
     }
@@ -85,20 +85,6 @@ public class ConfigBaseVersion {
     }
 
     /**
-     * Getter for productName.<p>
-     */
-    public String getProductName() {
-        return productName;
-    }
-
-    /**
-     * Setter for productName.<p>
-     */
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    /**
      * Getter for version.<p>
      */
     public String getVersion() {
@@ -110,5 +96,19 @@ public class ConfigBaseVersion {
      */
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    /**
+     * Getter for xxxProductName.<p>
+     */
+    public String getXxxProductName() {
+        return xxxProductName;
+    }
+
+    /**
+     * Setter for xxxProductName.<p>
+     */
+    public void setXxxProductName(String xxxProductName) {
+        this.xxxProductName = xxxProductName;
     }
 }

@@ -10,9 +10,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("ANONYMIZE")]
         public string Anonymize { get; set; }
 
-        [JsonPropertyName("DERIVATION")]
-        public string Derivation { get; set; }
-
         [JsonPropertyName("DERIVED")]
         public string Derived { get; set; }
 
@@ -51,5 +48,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("VERSION")]
         public int Version_ { get; set; }
+
+        [JsonPropertyName("XXX_DERIVATION")]
+        public string XxxDerivation { get; set; }
     }
 }

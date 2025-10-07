@@ -14,16 +14,16 @@ namespace Senzing.Typedef
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
-        [JsonPropertyName("FIRST_SEEN_DT")]
-        public DateTimeOffset FirstSeenDt { get; set; }
-
-        [JsonPropertyName("LAST_SEEN_DT")]
-        public DateTimeOffset LastSeenDt { get; set; }
-
         /// <summary>
         /// The number of records for the entity with the same data source code.
         /// </summary>
         [JsonPropertyName("RECORD_COUNT")]
         public int RecordCount { get; set; }
+
+        [JsonPropertyName("XXX_FIRST_SEEN_DT")]
+        public DateTimeOffset XxxFirstSeenDt { get; set; }
+
+        [JsonPropertyName("XXX_LAST_SEEN_DT")]
+        public DateTimeOffset XxxLastSeenDt { get; set; }
     }
 }

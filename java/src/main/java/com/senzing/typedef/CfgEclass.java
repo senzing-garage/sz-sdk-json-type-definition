@@ -7,74 +7,74 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class CfgEclass {
-    @JsonProperty("ECLASS_CODE")
-    private String eclassCode;
+    @JsonProperty("XXX_ECLASS_CODE")
+    private String xxxEclassCode;
 
-    @JsonProperty("ECLASS_DESC")
-    private String eclassDesc;
+    @JsonProperty("XXX_ECLASS_DESC")
+    private String xxxEclassDesc;
 
-    @JsonProperty("ECLASS_ID")
-    private Integer eclassId;
+    @JsonProperty("XXX_ECLASS_ID")
+    private Integer xxxEclassId;
 
-    @JsonProperty("RESOLVE")
-    private String resolve;
+    @JsonProperty("XXX_RESOLVE")
+    private String xxxResolve;
 
     public CfgEclass() {
     }
 
     /**
-     * Getter for eclassCode.<p>
+     * Getter for xxxEclassCode.<p>
      */
-    public String getEclassCode() {
-        return eclassCode;
+    public String getXxxEclassCode() {
+        return xxxEclassCode;
     }
 
     /**
-     * Setter for eclassCode.<p>
+     * Setter for xxxEclassCode.<p>
      */
-    public void setEclassCode(String eclassCode) {
-        this.eclassCode = eclassCode;
+    public void setXxxEclassCode(String xxxEclassCode) {
+        this.xxxEclassCode = xxxEclassCode;
     }
 
     /**
-     * Getter for eclassDesc.<p>
+     * Getter for xxxEclassDesc.<p>
      */
-    public String getEclassDesc() {
-        return eclassDesc;
+    public String getXxxEclassDesc() {
+        return xxxEclassDesc;
     }
 
     /**
-     * Setter for eclassDesc.<p>
+     * Setter for xxxEclassDesc.<p>
      */
-    public void setEclassDesc(String eclassDesc) {
-        this.eclassDesc = eclassDesc;
+    public void setXxxEclassDesc(String xxxEclassDesc) {
+        this.xxxEclassDesc = xxxEclassDesc;
     }
 
     /**
-     * Getter for eclassId.<p>
+     * Getter for xxxEclassId.<p>
      */
-    public Integer getEclassId() {
-        return eclassId;
+    public Integer getXxxEclassId() {
+        return xxxEclassId;
     }
 
     /**
-     * Setter for eclassId.<p>
+     * Setter for xxxEclassId.<p>
      */
-    public void setEclassId(Integer eclassId) {
-        this.eclassId = eclassId;
+    public void setXxxEclassId(Integer xxxEclassId) {
+        this.xxxEclassId = xxxEclassId;
     }
 
     /**
-     * Getter for resolve.<p>
+     * Getter for xxxResolve.<p>
      */
-    public String getResolve() {
-        return resolve;
+    public String getXxxResolve() {
+        return xxxResolve;
     }
 
     /**
-     * Setter for resolve.<p>
+     * Setter for xxxResolve.<p>
      */
-    public void setResolve(String resolve) {
-        this.resolve = resolve;
+    public void setXxxResolve(String xxxResolve) {
+        this.xxxResolve = xxxResolve;
     }
 }

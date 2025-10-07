@@ -13,10 +13,10 @@ namespace Senzing.Typedef
         [JsonPropertyName("DFUNC_ID")]
         public int DfuncId { get; set; }
 
-        [JsonPropertyName("EXEC_ORDER")]
-        public int ExecOrder { get; set; }
-
         [JsonPropertyName("FTYPE_ID")]
         public int FtypeId { get; set; }
+
+        [JsonPropertyName("XXX_EXEC_ORDER")]
+        public int XxxExecOrder { get; set; }
     }
 }

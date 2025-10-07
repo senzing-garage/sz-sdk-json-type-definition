@@ -8,13 +8,13 @@ namespace Senzing.Typedef
 {
     public class DisclosedRelationsForMatchInfo
     {
-        [JsonPropertyName("REL_ANCHOR")]
-        public IList<RelAnchor> RelAnchor { get; set; }
+        [JsonPropertyName("XXX_REL_ANCHOR")]
+        public IList<RelAnchor> XxxRelAnchor { get; set; }
 
-        [JsonPropertyName("REL_LINK")]
-        public IList<RelLink> RelLink { get; set; }
+        [JsonPropertyName("XXX_REL_LINK")]
+        public IList<RelLink> XxxRelLink { get; set; }
 
-        [JsonPropertyName("REL_POINTER")]
-        public IList<RelPointer> RelPointer { get; set; }
+        [JsonPropertyName("XXX_REL_POINTER")]
+        public IList<RelPointer> XxxRelPointer { get; set; }
     }
 }

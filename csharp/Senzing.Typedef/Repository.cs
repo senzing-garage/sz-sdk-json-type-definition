@@ -7,12 +7,21 @@ namespace Senzing.Typedef
 {
     public class Repository
     {
+        /// <summary>
+        /// Label for database repository.
+        /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        /// <summary>
+        /// Database connection information.
+        /// </summary>
         [JsonPropertyName("location")]
         public string Location { get; set; }
 
+        /// <summary>
+        /// Type of database.
+        /// </summary>
         [JsonPropertyName("type")]
         public string Type_ { get; set; }
     }

@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Senzing.Schema;
+using Senzing.Typedef;
 using System.Text.Json;
 
 

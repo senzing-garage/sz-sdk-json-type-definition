@@ -12,6 +12,6 @@ namespace Senzing.Typedef
         public string Name { get; set; }
 
         [JsonPropertyName("PARAMS")]
-        public IList<Params> Params { get; set; }
+        public IList<UmfProcParams> Params { get; set; }
     }
 }

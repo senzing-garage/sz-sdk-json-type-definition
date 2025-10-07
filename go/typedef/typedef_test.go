@@ -56,10 +56,7 @@ func TestSz(test *testing.T) {
 			name:      "SzConfigRegisterDataSourceResponse*.jsonl",
 			theStruct: typedef.SzConfigRegisterDataSourceResponse{},
 		},
-		{
-			name:      "SzConfigUnregisterDataSourceResponse*.jsonl",
-			theStruct: typedef.SzConfigUnregisterDataSourceResponse{},
-		},
+
 		{
 			name:      "SzDiagnosticCheckRepositoryPerformanceResponse*.jsonl",
 			theStruct: typedef.SzDiagnosticCheckRepositoryPerformanceResponse{},

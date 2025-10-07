@@ -7,9 +7,15 @@ namespace Senzing.Typedef
 {
     public class Feature
     {
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FELEM_CODE")]
         public string FelemCode { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FELEM_VALUE")]
         public string FelemValue { get; set; }
     }

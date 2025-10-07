@@ -15,12 +15,12 @@ require (
 	github.com/senzing-garage/go-logging v1.5.3 // indirect
 	github.com/senzing-garage/go-messaging v1.5.3 // indirect
 	github.com/senzing-garage/go-observing v0.3.6 // indirect
-	golang.org/x/exp v0.0.0-20250911091902-df9299821621 // indirect
+	golang.org/x/exp v0.0.0-20251002181428-27f1f14c8bb9 // indirect
 	golang.org/x/net v0.44.0 // indirect
 	golang.org/x/sys v0.36.0 // indirect
 	golang.org/x/text v0.29.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250929231259-57b25ae835d4 // indirect
-	google.golang.org/grpc v1.75.1 // indirect
-	google.golang.org/protobuf v1.36.9 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251006185510-65f7160b3a87 // indirect
+	google.golang.org/grpc v1.76.0 // indirect
+	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

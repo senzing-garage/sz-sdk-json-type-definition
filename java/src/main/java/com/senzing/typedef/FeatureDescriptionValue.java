@@ -26,14 +26,14 @@ public class FeatureDescriptionValue {
     @JsonProperty("SCORING_CAP_REACHED")
     private String scoringCapReached;
 
-    @JsonProperty("SUPPRESSED")
-    private String suppressed;
-
     @JsonProperty("USED_FOR_CAND")
     private String usedForCand;
 
     @JsonProperty("USED_FOR_SCORING")
     private String usedForScoring;
+
+    @JsonProperty("XXX_SUPPRESSED")
+    private String xxxSuppressed;
 
     public FeatureDescriptionValue() {
     }
@@ -98,6 +98,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for libFeatId.<p>
+     * Internal use.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -105,6 +106,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for libFeatId.<p>
+     * Internal use.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;
@@ -122,20 +124,6 @@ public class FeatureDescriptionValue {
      */
     public void setScoringCapReached(String scoringCapReached) {
         this.scoringCapReached = scoringCapReached;
-    }
-
-    /**
-     * Getter for suppressed.<p>
-     */
-    public String getSuppressed() {
-        return suppressed;
-    }
-
-    /**
-     * Setter for suppressed.<p>
-     */
-    public void setSuppressed(String suppressed) {
-        this.suppressed = suppressed;
     }
 
     /**
@@ -164,5 +152,19 @@ public class FeatureDescriptionValue {
      */
     public void setUsedForScoring(String usedForScoring) {
         this.usedForScoring = usedForScoring;
+    }
+
+    /**
+     * Getter for xxxSuppressed.<p>
+     */
+    public String getXxxSuppressed() {
+        return xxxSuppressed;
+    }
+
+    /**
+     * Setter for xxxSuppressed.<p>
+     */
+    public void setXxxSuppressed(String xxxSuppressed) {
+        this.xxxSuppressed = xxxSuppressed;
     }
 }

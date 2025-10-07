@@ -13,9 +13,6 @@ public class CfgErrule {
     @JsonProperty("ERRULE_CODE")
     private String erruleCode;
 
-    @JsonProperty("ERRULE_DESC")
-    private String erruleDesc;
-
     @JsonProperty("ERRULE_ID")
     private Integer erruleId;
 
@@ -25,9 +22,6 @@ public class CfgErrule {
     @JsonProperty("QUAL_ERFRAG_CODE")
     private String qualErfragCode;
 
-    @JsonProperty("REF_SCORE")
-    private Integer refScore;
-
     @JsonProperty("RELATE")
     private String relate;
 
@@ -36,6 +30,12 @@ public class CfgErrule {
 
     @JsonProperty("RTYPE_ID")
     private Integer rtypeId;
+
+    @JsonProperty("XXX_ERRULE_DESC")
+    private String xxxErruleDesc;
+
+    @JsonProperty("XXX_REF_SCORE")
+    private Integer xxxRefScore;
 
     public CfgErrule() {
     }
@@ -68,20 +68,6 @@ public class CfgErrule {
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
-    }
-
-    /**
-     * Getter for erruleDesc.<p>
-     */
-    public String getErruleDesc() {
-        return erruleDesc;
-    }
-
-    /**
-     * Setter for erruleDesc.<p>
-     */
-    public void setErruleDesc(String erruleDesc) {
-        this.erruleDesc = erruleDesc;
     }
 
     /**
@@ -127,20 +113,6 @@ public class CfgErrule {
     }
 
     /**
-     * Getter for refScore.<p>
-     */
-    public Integer getRefScore() {
-        return refScore;
-    }
-
-    /**
-     * Setter for refScore.<p>
-     */
-    public void setRefScore(Integer refScore) {
-        this.refScore = refScore;
-    }
-
-    /**
      * Getter for relate.<p>
      */
     public String getRelate() {
@@ -180,5 +152,33 @@ public class CfgErrule {
      */
     public void setRtypeId(Integer rtypeId) {
         this.rtypeId = rtypeId;
+    }
+
+    /**
+     * Getter for xxxErruleDesc.<p>
+     */
+    public String getXxxErruleDesc() {
+        return xxxErruleDesc;
+    }
+
+    /**
+     * Setter for xxxErruleDesc.<p>
+     */
+    public void setXxxErruleDesc(String xxxErruleDesc) {
+        this.xxxErruleDesc = xxxErruleDesc;
+    }
+
+    /**
+     * Getter for xxxRefScore.<p>
+     */
+    public Integer getXxxRefScore() {
+        return xxxRefScore;
+    }
+
+    /**
+     * Setter for xxxRefScore.<p>
+     */
+    public void setXxxRefScore(Integer xxxRefScore) {
+        this.xxxRefScore = xxxRefScore;
     }
 }

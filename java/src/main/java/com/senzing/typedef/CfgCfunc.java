@@ -22,17 +22,17 @@ public class CfgCfunc {
     @JsonProperty("CONNECT_STR")
     private String connectStr;
 
-    @JsonProperty("FUNC_LIB")
-    private String funcLib;
+    @JsonProperty("XXX_FUNC_LIB")
+    private String xxxFuncLib;
 
-    @JsonProperty("FUNC_VER")
-    private String funcVer;
+    @JsonProperty("XXX_FUNC_VER")
+    private String xxxFuncVer;
 
-    @JsonProperty("JAVA_CLASS_NAME")
-    private String javaClassName;
+    @JsonProperty("XXX_JAVA_CLASS_NAME")
+    private String xxxJavaClassName;
 
-    @JsonProperty("LANGUAGE")
-    private String language;
+    @JsonProperty("XXX_LANGUAGE")
+    private String xxxLanguage;
 
     public CfgCfunc() {
     }
@@ -108,58 +108,58 @@ public class CfgCfunc {
     }
 
     /**
-     * Getter for funcLib.<p>
+     * Getter for xxxFuncLib.<p>
      */
-    public String getFuncLib() {
-        return funcLib;
+    public String getXxxFuncLib() {
+        return xxxFuncLib;
     }
 
     /**
-     * Setter for funcLib.<p>
+     * Setter for xxxFuncLib.<p>
      */
-    public void setFuncLib(String funcLib) {
-        this.funcLib = funcLib;
+    public void setXxxFuncLib(String xxxFuncLib) {
+        this.xxxFuncLib = xxxFuncLib;
     }
 
     /**
-     * Getter for funcVer.<p>
+     * Getter for xxxFuncVer.<p>
      */
-    public String getFuncVer() {
-        return funcVer;
+    public String getXxxFuncVer() {
+        return xxxFuncVer;
     }
 
     /**
-     * Setter for funcVer.<p>
+     * Setter for xxxFuncVer.<p>
      */
-    public void setFuncVer(String funcVer) {
-        this.funcVer = funcVer;
+    public void setXxxFuncVer(String xxxFuncVer) {
+        this.xxxFuncVer = xxxFuncVer;
     }
 
     /**
-     * Getter for javaClassName.<p>
+     * Getter for xxxJavaClassName.<p>
      */
-    public String getJavaClassName() {
-        return javaClassName;
+    public String getXxxJavaClassName() {
+        return xxxJavaClassName;
     }
 
     /**
-     * Setter for javaClassName.<p>
+     * Setter for xxxJavaClassName.<p>
      */
-    public void setJavaClassName(String javaClassName) {
-        this.javaClassName = javaClassName;
+    public void setXxxJavaClassName(String xxxJavaClassName) {
+        this.xxxJavaClassName = xxxJavaClassName;
     }
 
     /**
-     * Getter for language.<p>
+     * Getter for xxxLanguage.<p>
      */
-    public String getLanguage() {
-        return language;
+    public String getXxxLanguage() {
+        return xxxLanguage;
     }
 
     /**
-     * Setter for language.<p>
+     * Setter for xxxLanguage.<p>
      */
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setXxxLanguage(String xxxLanguage) {
+        this.xxxLanguage = xxxLanguage;
     }
 }

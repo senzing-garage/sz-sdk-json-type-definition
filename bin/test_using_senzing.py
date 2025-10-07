@@ -111,7 +111,6 @@ GLOBAL_JSON_KEYS = [
     "SzConfigGetDataSourceRegistryResponse",
     "SzConfigManagerGetConfigRegistryResponse",
     "SzConfigRegisterDataSourceResponse",
-    "SzConfigUnregisterDataSourceResponse",
     "SzDiagnosticCheckRepositoryPerformanceResponse",
     "SzDiagnosticGetFeatureResponse",
     "SzDiagnosticGetRepositoryInfoResponse",
@@ -1025,10 +1024,6 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
         {
             "testcase": 'sz_config.register_data_source("A_DATASOURCE_NAME")',
             "response": "SzConfigRegisterDataSourceResponse",
-        },
-        {
-            "testcase": 'sz_config.unregister_data_source("A_DATASOURCE_NAME")',
-            "response": "SzConfigUnregisterDataSourceResponse",
         },
         {
             "testcase": "sz_config_manager.get_config_registry()",

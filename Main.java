@@ -2,13 +2,12 @@
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.senzing.schema.DataSource;
-import com.senzing.schema.FeatureForAttributes;
-import com.senzing.schema.RecordKey;
-import com.senzing.schema.RecordKeys;
-import com.senzing.schema.SzConfigGetDataSourceRegistryResponse;
-import com.senzing.schema.SzEngineGetVirtualEntityByRecordIdRecordKeys;
-import com.senzing.schema.SzEngineGetVirtualEntityByRecordIdResponse;
+import com.senzing.typedef.DataSource;
+import com.senzing.typedef.FeatureForAttributes;
+import com.senzing.typedef.RecordKey;
+import com.senzing.typedef.RecordKeys;
+import com.senzing.typedef.SzConfigGetDataSourceRegistryResponse;
+import com.senzing.typedef.SzEngineGetVirtualEntityByRecordIdResponse;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -66,6 +65,8 @@ class Main {
             throw e;
         }
 
+        // Integer example = virtualEntity.getResolvedEntity().getEntityId();
+
         System.out.printf("RESOLVED_ENTITY.FEATURES['ID_KEY'][0].FEAT_DESC: %s\n\n",
                 virtualEntity.getResolvedEntity().getFeatures().get("ID_KEY").get(0).getFeatDesc());
 
@@ -117,7 +118,8 @@ class Main {
         }
 
         Path currentPath = Paths.get("").toAbsolutePath();
-        String filePath = currentPath + "/testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
+        String filePath = currentPath
+                + "/testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {

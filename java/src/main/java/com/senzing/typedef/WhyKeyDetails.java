@@ -14,6 +14,9 @@ public class WhyKeyDetails {
     @JsonProperty("DENIALS")
     private List<Confirmation> denials;
 
+    @JsonProperty("DISCLOSED_RELATIONS")
+    private List<DisclosedRelationsForWhyKeyDetails> disclosedRelations;
+
     public WhyKeyDetails() {
     }
 
@@ -43,5 +46,19 @@ public class WhyKeyDetails {
      */
     public void setDenials(List<Confirmation> denials) {
         this.denials = denials;
+    }
+
+    /**
+     * Getter for disclosedRelations.<p>
+     */
+    public List<DisclosedRelationsForWhyKeyDetails> getDisclosedRelations() {
+        return disclosedRelations;
+    }
+
+    /**
+     * Setter for disclosedRelations.<p>
+     */
+    public void setDisclosedRelations(List<DisclosedRelationsForWhyKeyDetails> disclosedRelations) {
+        this.disclosedRelations = disclosedRelations;
     }
 }

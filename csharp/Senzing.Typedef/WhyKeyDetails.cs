@@ -13,5 +13,8 @@ namespace Senzing.Typedef
 
         [JsonPropertyName("DENIALS")]
         public IList<Confirmation> Denials { get; set; }
+
+        [JsonPropertyName("DISCLOSED_RELATIONS")]
+        public IList<DisclosedRelationsForWhyKeyDetails> DisclosedRelations { get; set; }
     }
 }

@@ -19,10 +19,10 @@ namespace Senzing.Typedef
         [JsonPropertyName("COMPATIBILITY_VERSION")]
         public CompatibilityVersion CompatibilityVersion { get; set; }
 
-        [JsonPropertyName("PRODUCT_NAME")]
-        public string ProductName { get; set; }
-
         [JsonPropertyName("VERSION")]
         public string Version_ { get; set; }
+
+        [JsonPropertyName("XXX_PRODUCT_NAME")]
+        public string XxxProductName { get; set; }
     }
 }
