@@ -2840,228 +2840,453 @@
         "SenzingEntitySpecification": {
             "properties": {
                 "ACCOUNT_DOMAIN": {
+                    "metadata": {
+                        "description": "Domain/system for the account number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ACCOUNT_NUMBER": {
+                    "metadata": {
+                        "description": "Account number (e.g., bank, card). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_CITY": {
+                    "metadata": {
+                        "description": "City/locality. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_COUNTRY": {
+                    "metadata": {
+                        "description": "Country code. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_FULL": {
+                    "metadata": {
+                        "description": "Single-field address when parsed components are unavailable. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_LINE1": {
+                    "metadata": {
+                        "description": "First address line (street, number). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_LINE2": {
+                    "metadata": {
+                        "description": "Second address line (apt/suite). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_LINE3": {
+                    "metadata": {
+                        "description": "Third address line (optional). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_LINE4": {
+                    "metadata": {
+                        "description": "Fourth address line (optional). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_LINE5": {
+                    "metadata": {
+                        "description": "Fifth address line (optional). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_LINE6": {
+                    "metadata": {
+                        "description": "Sixth address line (optional). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_POSTAL_CODE": {
+                    "metadata": {
+                        "description": "Postal/ZIP code. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_STATE": {
+                    "metadata": {
+                        "description": "State/province/region code. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "ADDR_TYPE": {
+                    "metadata": {
+                        "description": "Optional; include when provided by the source. Common values: HOME, MAILING (persons); BUSINESS (organizations). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "CITIZENSHIP": {
+                    "metadata": {
+                        "description": "Country of citizenship (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "DATE_OF_BIRTH": {
+                    "metadata": {
+                        "description": "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "DATE_OF_DEATH": {
+                    "metadata": {
+                        "description": "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "DRIVERS_LICENSE_NUMBER": {
+                    "metadata": {
+                        "description": "Driver's license number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "DRIVERS_LICENSE_STATE": {
+                    "metadata": {
+                        "description": "Issuing state/province/country. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "DUNS_NUMBER": {
+                    "metadata": {
+                        "description": "Dun & Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "EMAIL_ADDRESS": {
+                    "metadata": {
+                        "description": "Email address. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "EMPLOYER": {
+                    "metadata": {
+                        "description": "This is the name of the organization the person is employed by. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "FACEBOOK": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "GENDER": {
+                    "metadata": {
+                        "description": "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "GROUP_ASSN_ID_NUMBER": {
+                    "metadata": {
+                        "description": "The identifier the entity is associated with. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "GROUP_ASSN_ID_TYPE": {
+                    "metadata": {
+                        "description": "The type of group identifier an entity is associated with. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "GROUP_ASSOCIATION_ORG_NAME": {
+                    "metadata": {
+                        "description": "Name of the associated organization; use the official or standardized name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "GROUP_ASSOCIATION_TYPE": {
+                    "metadata": {
+                        "description": "Specific group/role within the organization; use precise categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve resolution. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "INSTAGRAM": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "LEI_NUMBER": {
+                    "metadata": {
+                        "description": "Legal Entity Identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "LINKEDIN": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_FIRST": {
+                    "metadata": {
+                        "description": "Person given name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_FULL": {
+                    "metadata": {
+                        "description": "Single-field name when type (person vs org) is unknown or only a full name is provided. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_LAST": {
+                    "metadata": {
+                        "description": "Person surname. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_MIDDLE": {
+                    "metadata": {
+                        "description": "Person middle name/initial. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_ORG": {
+                    "metadata": {
+                        "description": "Organization name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_PREFIX": {
+                    "metadata": {
+                        "description": "Person title. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_SUFFIX": {
+                    "metadata": {
+                        "description": "Person suffix. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NAME_TYPE": {
+                    "metadata": {
+                        "description": "Optional include when the source provides it. Common values: PRIMARY, AKA (persons), DBA (organizations). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NATIONALITY": {
+                    "metadata": {
+                        "description": "Country of nationality (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NATIONAL_ID_COUNTRY": {
+                    "metadata": {
+                        "description": "Issuing country. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NATIONAL_ID_NUMBER": {
+                    "metadata": {
+                        "description": "National identifier value. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NATIONAL_ID_TYPE": {
+                    "metadata": {
+                        "description": "Use the type label from the source; standardize across sources. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "NPI_NUMBER": {
+                    "metadata": {
+                        "description": "US healthcare provider identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "OTHER_ID_COUNTRY": {
+                    "metadata": {
+                        "description": "Optional as country often not known or issued by an organization. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "OTHER_ID_NUMBER": {
+                    "metadata": {
+                        "description": "Identification number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "OTHER_ID_TYPE": {
+                    "metadata": {
+                        "description": "Standardized source type. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "PASSPORT_COUNTRY": {
+                    "metadata": {
+                        "description": "Issuing country. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "PASSPORT_NUMBER": {
+                    "metadata": {
+                        "description": "Passport number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "PHONE_NUMBER": {
+                    "metadata": {
+                        "description": "Telephone number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "PHONE_TYPE": {
+                    "metadata": {
+                        "description": "Optional; include when provided by the source. Common values: MOBILE, HOME, WORK, FAX. MOBILE carries extra weight. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "PLACE_OF_BIRTH": {
+                    "metadata": {
+                        "description": "Place of birth; may be a city/region or a country code/label as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "RECORD_TYPE": {
+                    "metadata": {
+                        "description": "Include when known to prevent cross-type resolution; omit if unknown. Use standardized kinds (PERSON, ORGANIZATION). Often used to determine icon/shape in graphs. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REGISTRATION_COUNTRY": {
+                    "metadata": {
+                        "description": "Country of registration (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REGISTRATION_DATE": {
+                    "metadata": {
+                        "description": "Organization registration/incorporation date. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REL_ANCHOR_DOMAIN": {
+                    "metadata": {
+                        "description": "This code helps keep the REL_ANCHOR_KEY unique. This is a code (without dashes) for the data source or source field that is contributing the relationship. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REL_ANCHOR_KEY": {
+                    "metadata": {
+                        "description": "This key should be a unique value for the record within the REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID here. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REL_POINTER_DOMAIN": {
+                    "metadata": {
+                        "description": "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REL_POINTER_KEY": {
+                    "metadata": {
+                        "description": "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "REL_POINTER_ROLE": {
+                    "metadata": {
+                        "description": "This is the role the pointer record has to the anchor record. Such as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF, BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for display and filtering. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "SIGNAL": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "SKYPE": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "SSN_NUMBER": {
+                    "metadata": {
+                        "description": "US Social Security Number; partial accepted. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TANGO": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TAX_ID_COUNTRY": {
+                    "metadata": {
+                        "description": "Issuing country. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TAX_ID_NUMBER": {
+                    "metadata": {
+                        "description": "Tax identification number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TAX_ID_TYPE": {
+                    "metadata": {
+                        "description": "Use the type label from the source; standardize across sources. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TELEGRAM": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TRUSTED_ID_NUMBER": {
+                    "metadata": {
+                        "description": "The identifier value shared by records that must resolve together. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TRUSTED_ID_TYPE": {
+                    "metadata": {
+                        "description": "Short code for the identifier domain/system (e.g., STEWARD, MASTER_ID). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "TWITTER": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "VIBER": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "WEBSITE_ADDRESS": {
+                    "metadata": {
+                        "description": "Website or domain; typically for organizations. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "WECHAT": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "WHATSAPP": {
+                    "metadata": {
+                        "description": "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+                    },
                     "type": "string"
                 },
                 "XXX_ADDR_FROM_DATE": {
