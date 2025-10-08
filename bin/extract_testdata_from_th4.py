@@ -9,7 +9,10 @@ logger = logging.getLogger(__name__)
 
 FAILED_TYPES = []
 INPUT_DIRECTORY = "/home/senzing/github.com/jaeadams/MichaelTemp"
-OUTPUT_DIRECTORY = "/home/senzing/senzing-json"
+
+# current_path = pathlib.Path(__file__).parent.resolve()
+# OUTPUT_DIRECTORY = os.path.abspath(f"{current_path}/../testdata/responses_th4")
+OUTPUT_DIRECTORY = "/home/senzing/senzing-garage.git/sz-sdk-json-type-definition/testdata/responses_th4"
 
 TYPE_TO_FILENAME_MAP = {
     "SZ_FIND_INTERESTING_ENTITIES_BY_ENTITY_ID": "SzEngineFindInterestingEntitiesByEntityIdResponse.jsonl",
@@ -156,6 +159,9 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
 
 def recurse_directory(directory):
     """Recurse through directories to process all of the appropriate files."""
+
+    logger.warning(f">>> Directory {directory}")
+
     for root, dirs, files in os.walk(directory):
         for dir in dirs:
             recurse_directory(dir)
@@ -180,6 +186,9 @@ def stringify_json(candidate_json):
 
 
 if __name__ == "__main__":
+
+    logger.warning(f">>>>>>>>>>> INPUT_DIRECTORY: {INPUT_DIRECTORY}")
+
     recurse_directory(INPUT_DIRECTORY)
     normalize_files(OUTPUT_DIRECTORY)
     if FAILED_TYPES:
