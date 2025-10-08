@@ -60,6 +60,7 @@ def normalize_files(directory):
     """Deduplicate and sort JSON lines."""
     for root, _, files in os.walk(directory):
         for file in files:
+            logger.info(f"Deduping {file}")
             remove_duplicate_lines(f"{root}/{file}")
 
 
@@ -112,10 +113,8 @@ def publish(type, json_string):
             FAILED_TYPES.append(type)
         return
 
-    logger.info(f"Writing {type} >>> {json_string}")
-
     with open(f"{OUTPUT_DIRECTORY}/{filename}", "a", encoding="utf-8") as target_file:
-        target_file.write(f"{json_string}\n")
+        target_file.write(f"\n{json_string}")
 
 
 def remove_duplicate_lines(input_filepath, output_filepath=None):
@@ -130,8 +129,15 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
     unique_lines = set()
     try:
         with open(input_filepath, "r") as infile:
+            line_count = 0
             for line in infile:
-                unique_lines.add(line)  # Add each line to the set (duplicates are ignored)
+                line_count += 1
+                logger.info(f"Line: {line_count}")
+                logger.warning(f">>>> {line}")
+                line = line.strip()
+                if len(line) > 0:
+                    line_as_dict = json.loads(line)
+                    unique_lines.add(json.dumps(line_as_dict, sort_keys=True))
     except FileNotFoundError:
         print(f"Error: Input file '{input_filepath}' not found.")
         return
@@ -141,8 +147,8 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
 
     try:
         with open(output_filepath, "w") as outfile:
-            for line in sorted(list(unique_lines)):  # Sort for consistent output, then write
-                outfile.write(line)
+            for line in sorted(list(unique_lines)):
+                outfile.write(f"{line}\n")
         logger.info(f"Duplicates removed. Unique lines written to '{output_filepath}'.")
     except IOError:
         logger.error(f"Error: Could not write to output file '{output_filepath}'.")
@@ -176,3 +182,6 @@ def stringify_json(candidate_json):
 if __name__ == "__main__":
     recurse_directory(INPUT_DIRECTORY)
     normalize_files(OUTPUT_DIRECTORY)
+    if FAILED_TYPES:
+        logger.warning(f"Failed types: {FAILED_TYPES}")
+    logger.info("Done.")
