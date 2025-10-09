@@ -14,6 +14,12 @@ public class MatchKeyDetails {
     @JsonProperty("DENIALS")
     private List<Confirmation> denials;
 
+    @JsonProperty("DISCLOSED_RELATIONS")
+    private List<DisclosedRelationsForMatchInfo> disclosedRelations;
+
+    @JsonProperty("REL_LINKS")
+    private List<RelLink> relLinks;
+
     @JsonProperty("XXX_ERRULE_CODE")
     private String xxxErruleCode;
 
@@ -46,6 +52,34 @@ public class MatchKeyDetails {
      */
     public void setDenials(List<Confirmation> denials) {
         this.denials = denials;
+    }
+
+    /**
+     * Getter for disclosedRelations.<p>
+     */
+    public List<DisclosedRelationsForMatchInfo> getDisclosedRelations() {
+        return disclosedRelations;
+    }
+
+    /**
+     * Setter for disclosedRelations.<p>
+     */
+    public void setDisclosedRelations(List<DisclosedRelationsForMatchInfo> disclosedRelations) {
+        this.disclosedRelations = disclosedRelations;
+    }
+
+    /**
+     * Getter for relLinks.<p>
+     */
+    public List<RelLink> getRelLinks() {
+        return relLinks;
+    }
+
+    /**
+     * Setter for relLinks.<p>
+     */
+    public void setRelLinks(List<RelLink> relLinks) {
+        this.relLinks = relLinks;
     }
 
     /**

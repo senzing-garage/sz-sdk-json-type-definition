@@ -46,6 +46,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
+        [JsonPropertyName("MATCH_KEY_DETAILS")]
+        public MatchKeyDetails MatchKeyDetails { get; set; }
+
         [JsonPropertyName("MATCH_LEVEL")]
         public int MatchLevel { get; set; }
 
@@ -55,6 +58,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 
+        [JsonPropertyName("RECORDS")]
+        public IList<Record> Records { get; set; }
+
         /// <summary>
         /// Overview of the source systems the records came from comprising this
         /// related entity.
@@ -62,10 +68,10 @@ namespace Senzing.Typedef
         [JsonPropertyName("RECORD_SUMMARY")]
         public IList<RecordSummary> RecordSummary { get; set; }
 
+        [JsonPropertyName("RECORD_TYPES")]
+        public IList<string> RecordTypes { get; set; }
+
         [JsonPropertyName("XXX_LAST_SEEN_DT")]
         public DateTimeOffset XxxLastSeenDt { get; set; }
-
-        [JsonPropertyName("XXX_RECORDS")]
-        public IList<Record> XxxRecords { get; set; }
     }
 }

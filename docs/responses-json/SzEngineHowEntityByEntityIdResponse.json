@@ -77,6 +77,8 @@
                                                     "RECORD_TYPE": "string",
                                                     "REGISTRATION_COUNTRY": "string",
                                                     "REGISTRATION_DATE": "string",
+                                                    "RELATIONSHIP_KEY": "string",
+                                                    "RELATIONSHIP_TYPE": "string",
                                                     "REL_ANCHOR_DOMAIN": "string",
                                                     "REL_ANCHOR_KEY": "string",
                                                     "REL_POINTER_DOMAIN": "string",
@@ -104,6 +106,8 @@
                                                     "XXX_PHONE_THRU_DATE": "string",
                                                     "ZOOMROOM": "string"
                                                 },
+                                                "CANDIDATE_CAP_REACHED": "string",
+                                                "ENTITY_COUNT": "int32",
                                                 "FEAT_DESC": "string",
                                                 "FEAT_DESC_VALUES": [
                                                     {
@@ -113,15 +117,30 @@
                                                         "CANDIDATE_CAP_REACHED": "string",
                                                         "ENTITY_COUNT": "int32",
                                                         "FEAT_DESC": "string",
+                                                        "FEAT_DESC_VALUES": [
+                                                            {
+                                                                "CANDIDATE_CAP_REACHED": "string",
+                                                                "ENTITY_COUNT": "int32",
+                                                                "FEAT_DESC": "string",
+                                                                "LIB_FEAT_ID": "int32",
+                                                                "SCORING_CAP_REACHED": "string",
+                                                                "SUPPRESSED": "string",
+                                                                "USED_FOR_CAND": "string",
+                                                                "USED_FOR_SCORING": "string"
+                                                            }
+                                                        ],
                                                         "LIB_FEAT_ID": "int32",
                                                         "SCORING_CAP_REACHED": "string",
+                                                        "SUPPRESSED": "string",
                                                         "USED_FOR_CAND": "string",
-                                                        "USED_FOR_SCORING": "string",
-                                                        "XXX_SUPPRESSED": "string"
+                                                        "USED_FOR_SCORING": "string"
                                                     }
                                                 ],
                                                 "LIB_FEAT_ID": "int32",
-                                                "USAGE_TYPE": "string"
+                                                "SCORING_CAP_REACHED": "string",
+                                                "USAGE_TYPE": "string",
+                                                "USED_FOR_CAND": "string",
+                                                "USED_FOR_SCORING": "string"
                                             }
                                         ]
                                     },
@@ -241,6 +260,70 @@
                                 "TOKEN": "string"
                             }
                         ],
+                        "DISCLOSED_RELATIONS": [
+                            {
+                                "DOMAIN": "string",
+                                "ENTITY_ROLES": [
+                                    {
+                                        "FEAT_DESC": "string",
+                                        "ROLE": "string"
+                                    }
+                                ],
+                                "RELATED_ROLES": [
+                                    {
+                                        "FEAT_DESC": "string",
+                                        "ROLE": "string"
+                                    }
+                                ],
+                                "REL_LINK": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FTYPE_CODE": "string",
+                                        "REL_TYPE": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string",
+                                        "LINKED_FEAT_USAGE_TYPE": "string"
+                                    }
+                                ],
+                                "XXX_REL_ANCHOR": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string",
+                                        "LINKED_FEAT_USAGE_TYPE": "string",
+                                        "XXX_REL_POINTER": [
+                                            {
+                                                "DOMAIN": "string",
+                                                "FEAT_DESC": "string",
+                                                "FEAT_ID": "int32",
+                                                "FEAT_USAGE_TYPE": "string",
+                                                "LINKED_FEAT_DESC": "string",
+                                                "LINKED_FEAT_ID": "int32",
+                                                "LINKED_FEAT_TYPE": "string"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "XXX_REL_POINTER": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string"
+                                    }
+                                ]
+                            }
+                        ],
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {
@@ -265,19 +348,60 @@
                                 "TOKEN": "string"
                             }
                         ],
+                        "REL_LINKS": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FTYPE_CODE": "string",
+                                "REL_TYPE": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string"
+                            }
+                        ],
                         "XXX_ERRULE_CODE": "string"
                     },
                     "MATCH_LEVEL_CODE": "string",
                     "XXX_DISCLOSED_RELATIONS": {
+                        "DOMAIN": "string",
+                        "ENTITY_ROLES": [
+                            {
+                                "FEAT_DESC": "string",
+                                "ROLE": "string"
+                            }
+                        ],
+                        "RELATED_ROLES": [
+                            {
+                                "FEAT_DESC": "string",
+                                "ROLE": "string"
+                            }
+                        ],
+                        "REL_LINK": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FTYPE_CODE": "string",
+                                "REL_TYPE": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string"
+                            }
+                        ],
                         "XXX_REL_ANCHOR": [
                             {
-                                "XXX_DOMAIN": "string",
-                                "XXX_FEAT_DESC": "string",
-                                "XXX_FEAT_ID": "int32",
-                                "XXX_LINKED_FEAT_DESC": "string",
-                                "XXX_LINKED_FEAT_ID": "int32",
-                                "XXX_LINKED_FEAT_TYPE": "string",
-                                "XXX_LINKED_FEAT_USAGE_TYPE": "string",
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string",
                                 "XXX_REL_POINTER": [
                                     {
                                         "DOMAIN": "string",
@@ -289,18 +413,6 @@
                                         "LINKED_FEAT_TYPE": "string"
                                     }
                                 ]
-                            }
-                        ],
-                        "XXX_REL_LINK": [
-                            {
-                                "XXX_DOMAIN": "string",
-                                "XXX_FEAT_DESC": "string",
-                                "XXX_FEAT_ID": "int32",
-                                "XXX_FEAT_USAGE_TYPE": "string",
-                                "XXX_LINKED_FEAT_DESC": "string",
-                                "XXX_LINKED_FEAT_ID": "int32",
-                                "XXX_LINKED_FEAT_TYPE": "string",
-                                "XXX_LINKED_FEAT_USAGE_TYPE": "string"
                             }
                         ],
                         "XXX_REL_POINTER": [
@@ -395,6 +507,8 @@
                                                     "RECORD_TYPE": "string",
                                                     "REGISTRATION_COUNTRY": "string",
                                                     "REGISTRATION_DATE": "string",
+                                                    "RELATIONSHIP_KEY": "string",
+                                                    "RELATIONSHIP_TYPE": "string",
                                                     "REL_ANCHOR_DOMAIN": "string",
                                                     "REL_ANCHOR_KEY": "string",
                                                     "REL_POINTER_DOMAIN": "string",
@@ -422,6 +536,8 @@
                                                     "XXX_PHONE_THRU_DATE": "string",
                                                     "ZOOMROOM": "string"
                                                 },
+                                                "CANDIDATE_CAP_REACHED": "string",
+                                                "ENTITY_COUNT": "int32",
                                                 "FEAT_DESC": "string",
                                                 "FEAT_DESC_VALUES": [
                                                     {
@@ -431,15 +547,30 @@
                                                         "CANDIDATE_CAP_REACHED": "string",
                                                         "ENTITY_COUNT": "int32",
                                                         "FEAT_DESC": "string",
+                                                        "FEAT_DESC_VALUES": [
+                                                            {
+                                                                "CANDIDATE_CAP_REACHED": "string",
+                                                                "ENTITY_COUNT": "int32",
+                                                                "FEAT_DESC": "string",
+                                                                "LIB_FEAT_ID": "int32",
+                                                                "SCORING_CAP_REACHED": "string",
+                                                                "SUPPRESSED": "string",
+                                                                "USED_FOR_CAND": "string",
+                                                                "USED_FOR_SCORING": "string"
+                                                            }
+                                                        ],
                                                         "LIB_FEAT_ID": "int32",
                                                         "SCORING_CAP_REACHED": "string",
+                                                        "SUPPRESSED": "string",
                                                         "USED_FOR_CAND": "string",
-                                                        "USED_FOR_SCORING": "string",
-                                                        "XXX_SUPPRESSED": "string"
+                                                        "USED_FOR_SCORING": "string"
                                                     }
                                                 ],
                                                 "LIB_FEAT_ID": "int32",
-                                                "USAGE_TYPE": "string"
+                                                "SCORING_CAP_REACHED": "string",
+                                                "USAGE_TYPE": "string",
+                                                "USED_FOR_CAND": "string",
+                                                "USED_FOR_SCORING": "string"
                                             }
                                         ]
                                     },
@@ -569,6 +700,8 @@
                                                     "RECORD_TYPE": "string",
                                                     "REGISTRATION_COUNTRY": "string",
                                                     "REGISTRATION_DATE": "string",
+                                                    "RELATIONSHIP_KEY": "string",
+                                                    "RELATIONSHIP_TYPE": "string",
                                                     "REL_ANCHOR_DOMAIN": "string",
                                                     "REL_ANCHOR_KEY": "string",
                                                     "REL_POINTER_DOMAIN": "string",
@@ -596,6 +729,8 @@
                                                     "XXX_PHONE_THRU_DATE": "string",
                                                     "ZOOMROOM": "string"
                                                 },
+                                                "CANDIDATE_CAP_REACHED": "string",
+                                                "ENTITY_COUNT": "int32",
                                                 "FEAT_DESC": "string",
                                                 "FEAT_DESC_VALUES": [
                                                     {
@@ -605,15 +740,30 @@
                                                         "CANDIDATE_CAP_REACHED": "string",
                                                         "ENTITY_COUNT": "int32",
                                                         "FEAT_DESC": "string",
+                                                        "FEAT_DESC_VALUES": [
+                                                            {
+                                                                "CANDIDATE_CAP_REACHED": "string",
+                                                                "ENTITY_COUNT": "int32",
+                                                                "FEAT_DESC": "string",
+                                                                "LIB_FEAT_ID": "int32",
+                                                                "SCORING_CAP_REACHED": "string",
+                                                                "SUPPRESSED": "string",
+                                                                "USED_FOR_CAND": "string",
+                                                                "USED_FOR_SCORING": "string"
+                                                            }
+                                                        ],
                                                         "LIB_FEAT_ID": "int32",
                                                         "SCORING_CAP_REACHED": "string",
+                                                        "SUPPRESSED": "string",
                                                         "USED_FOR_CAND": "string",
-                                                        "USED_FOR_SCORING": "string",
-                                                        "XXX_SUPPRESSED": "string"
+                                                        "USED_FOR_SCORING": "string"
                                                     }
                                                 ],
                                                 "LIB_FEAT_ID": "int32",
-                                                "USAGE_TYPE": "string"
+                                                "SCORING_CAP_REACHED": "string",
+                                                "USAGE_TYPE": "string",
+                                                "USED_FOR_CAND": "string",
+                                                "USED_FOR_SCORING": "string"
                                             }
                                         ]
                                     },

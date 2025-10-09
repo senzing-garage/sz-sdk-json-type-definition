@@ -7,144 +7,178 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class RelLink {
-    @JsonProperty("XXX_DOMAIN")
-    private String xxxDomain;
+    @JsonProperty("DOMAIN")
+    private String domain;
 
-    @JsonProperty("XXX_FEAT_DESC")
-    private String xxxFeatDesc;
+    @JsonProperty("FEAT_DESC")
+    private String featDesc;
 
-    @JsonProperty("XXX_FEAT_ID")
-    private Integer xxxFeatId;
+    @JsonProperty("FEAT_ID")
+    private Integer featId;
 
-    @JsonProperty("XXX_FEAT_USAGE_TYPE")
-    private String xxxFeatUsageType;
+    @JsonProperty("FEAT_USAGE_TYPE")
+    private String featUsageType;
 
-    @JsonProperty("XXX_LINKED_FEAT_DESC")
-    private String xxxLinkedFeatDesc;
+    @JsonProperty("FTYPE_CODE")
+    private String ftypeCode;
 
-    @JsonProperty("XXX_LINKED_FEAT_ID")
-    private Integer xxxLinkedFeatId;
+    @JsonProperty("LINKED_FEAT_DESC")
+    private String linkedFeatDesc;
 
-    @JsonProperty("XXX_LINKED_FEAT_TYPE")
-    private String xxxLinkedFeatType;
+    @JsonProperty("LINKED_FEAT_ID")
+    private Integer linkedFeatId;
 
-    @JsonProperty("XXX_LINKED_FEAT_USAGE_TYPE")
-    private String xxxLinkedFeatUsageType;
+    @JsonProperty("LINKED_FEAT_TYPE")
+    private String linkedFeatType;
+
+    @JsonProperty("LINKED_FEAT_USAGE_TYPE")
+    private String linkedFeatUsageType;
+
+    @JsonProperty("REL_TYPE")
+    private String relType;
 
     public RelLink() {
     }
 
     /**
-     * Getter for xxxDomain.<p>
+     * Getter for domain.<p>
      */
-    public String getXxxDomain() {
-        return xxxDomain;
+    public String getDomain() {
+        return domain;
     }
 
     /**
-     * Setter for xxxDomain.<p>
+     * Setter for domain.<p>
      */
-    public void setXxxDomain(String xxxDomain) {
-        this.xxxDomain = xxxDomain;
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     /**
-     * Getter for xxxFeatDesc.<p>
+     * Getter for featDesc.<p>
      * Describes the attributes that make up the feature.
      */
-    public String getXxxFeatDesc() {
-        return xxxFeatDesc;
+    public String getFeatDesc() {
+        return featDesc;
     }
 
     /**
-     * Setter for xxxFeatDesc.<p>
+     * Setter for featDesc.<p>
      * Describes the attributes that make up the feature.
      */
-    public void setXxxFeatDesc(String xxxFeatDesc) {
-        this.xxxFeatDesc = xxxFeatDesc;
+    public void setFeatDesc(String featDesc) {
+        this.featDesc = featDesc;
     }
 
     /**
-     * Getter for xxxFeatId.<p>
+     * Getter for featId.<p>
      */
-    public Integer getXxxFeatId() {
-        return xxxFeatId;
+    public Integer getFeatId() {
+        return featId;
     }
 
     /**
-     * Setter for xxxFeatId.<p>
+     * Setter for featId.<p>
      */
-    public void setXxxFeatId(Integer xxxFeatId) {
-        this.xxxFeatId = xxxFeatId;
+    public void setFeatId(Integer featId) {
+        this.featId = featId;
     }
 
     /**
-     * Getter for xxxFeatUsageType.<p>
+     * Getter for featUsageType.<p>
      */
-    public String getXxxFeatUsageType() {
-        return xxxFeatUsageType;
+    public String getFeatUsageType() {
+        return featUsageType;
     }
 
     /**
-     * Setter for xxxFeatUsageType.<p>
+     * Setter for featUsageType.<p>
      */
-    public void setXxxFeatUsageType(String xxxFeatUsageType) {
-        this.xxxFeatUsageType = xxxFeatUsageType;
+    public void setFeatUsageType(String featUsageType) {
+        this.featUsageType = featUsageType;
     }
 
     /**
-     * Getter for xxxLinkedFeatDesc.<p>
+     * Getter for ftypeCode.<p>
      */
-    public String getXxxLinkedFeatDesc() {
-        return xxxLinkedFeatDesc;
+    public String getFtypeCode() {
+        return ftypeCode;
     }
 
     /**
-     * Setter for xxxLinkedFeatDesc.<p>
+     * Setter for ftypeCode.<p>
      */
-    public void setXxxLinkedFeatDesc(String xxxLinkedFeatDesc) {
-        this.xxxLinkedFeatDesc = xxxLinkedFeatDesc;
+    public void setFtypeCode(String ftypeCode) {
+        this.ftypeCode = ftypeCode;
     }
 
     /**
-     * Getter for xxxLinkedFeatId.<p>
+     * Getter for linkedFeatDesc.<p>
      */
-    public Integer getXxxLinkedFeatId() {
-        return xxxLinkedFeatId;
+    public String getLinkedFeatDesc() {
+        return linkedFeatDesc;
     }
 
     /**
-     * Setter for xxxLinkedFeatId.<p>
+     * Setter for linkedFeatDesc.<p>
      */
-    public void setXxxLinkedFeatId(Integer xxxLinkedFeatId) {
-        this.xxxLinkedFeatId = xxxLinkedFeatId;
+    public void setLinkedFeatDesc(String linkedFeatDesc) {
+        this.linkedFeatDesc = linkedFeatDesc;
     }
 
     /**
-     * Getter for xxxLinkedFeatType.<p>
+     * Getter for linkedFeatId.<p>
      */
-    public String getXxxLinkedFeatType() {
-        return xxxLinkedFeatType;
+    public Integer getLinkedFeatId() {
+        return linkedFeatId;
     }
 
     /**
-     * Setter for xxxLinkedFeatType.<p>
+     * Setter for linkedFeatId.<p>
      */
-    public void setXxxLinkedFeatType(String xxxLinkedFeatType) {
-        this.xxxLinkedFeatType = xxxLinkedFeatType;
+    public void setLinkedFeatId(Integer linkedFeatId) {
+        this.linkedFeatId = linkedFeatId;
     }
 
     /**
-     * Getter for xxxLinkedFeatUsageType.<p>
+     * Getter for linkedFeatType.<p>
      */
-    public String getXxxLinkedFeatUsageType() {
-        return xxxLinkedFeatUsageType;
+    public String getLinkedFeatType() {
+        return linkedFeatType;
     }
 
     /**
-     * Setter for xxxLinkedFeatUsageType.<p>
+     * Setter for linkedFeatType.<p>
      */
-    public void setXxxLinkedFeatUsageType(String xxxLinkedFeatUsageType) {
-        this.xxxLinkedFeatUsageType = xxxLinkedFeatUsageType;
+    public void setLinkedFeatType(String linkedFeatType) {
+        this.linkedFeatType = linkedFeatType;
+    }
+
+    /**
+     * Getter for linkedFeatUsageType.<p>
+     */
+    public String getLinkedFeatUsageType() {
+        return linkedFeatUsageType;
+    }
+
+    /**
+     * Setter for linkedFeatUsageType.<p>
+     */
+    public void setLinkedFeatUsageType(String linkedFeatUsageType) {
+        this.linkedFeatUsageType = linkedFeatUsageType;
+    }
+
+    /**
+     * Getter for relType.<p>
+     */
+    public String getRelType() {
+        return relType;
+    }
+
+    /**
+     * Setter for relType.<p>
+     */
+    public void setRelType(String relType) {
+        this.relType = relType;
     }
 }

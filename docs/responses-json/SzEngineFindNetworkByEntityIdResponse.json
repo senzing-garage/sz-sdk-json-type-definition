@@ -9,6 +9,135 @@
                     "IS_AMBIGUOUS": "int32",
                     "IS_DISCLOSED": "int32",
                     "MATCH_KEY": "string",
+                    "MATCH_KEY_DETAILS": {
+                        "CONFIRMATIONS": [
+                            {
+                                "ADDITIONAL_SCORES": {
+                                    "FULL_SCORE": "int32",
+                                    "GENERATION_MATCH": "int32",
+                                    "GNR_FN": "int32",
+                                    "GNR_GN": "int32",
+                                    "GNR_ON": "int32",
+                                    "GNR_SN": "int32"
+                                },
+                                "CANDIDATE_FEAT_DESC": "string",
+                                "CANDIDATE_FEAT_ID": "int32",
+                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                                "FTYPE_CODE": "string",
+                                "INBOUND_FEAT_DESC": "string",
+                                "INBOUND_FEAT_ID": "int32",
+                                "INBOUND_FEAT_USAGE_TYPE": "string",
+                                "SCORE": "int32",
+                                "SCORE_BEHAVIOR": "string",
+                                "SCORE_BUCKET": "string",
+                                "SOURCE": "string",
+                                "TOKEN": "string"
+                            }
+                        ],
+                        "DISCLOSED_RELATIONS": [
+                            {
+                                "DOMAIN": "string",
+                                "ENTITY_ROLES": [
+                                    {
+                                        "FEAT_DESC": "string",
+                                        "ROLE": "string"
+                                    }
+                                ],
+                                "RELATED_ROLES": [
+                                    {
+                                        "FEAT_DESC": "string",
+                                        "ROLE": "string"
+                                    }
+                                ],
+                                "REL_LINK": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FTYPE_CODE": "string",
+                                        "REL_TYPE": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string",
+                                        "LINKED_FEAT_USAGE_TYPE": "string"
+                                    }
+                                ],
+                                "XXX_REL_ANCHOR": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string",
+                                        "LINKED_FEAT_USAGE_TYPE": "string",
+                                        "XXX_REL_POINTER": [
+                                            {
+                                                "DOMAIN": "string",
+                                                "FEAT_DESC": "string",
+                                                "FEAT_ID": "int32",
+                                                "FEAT_USAGE_TYPE": "string",
+                                                "LINKED_FEAT_DESC": "string",
+                                                "LINKED_FEAT_ID": "int32",
+                                                "LINKED_FEAT_TYPE": "string"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "XXX_REL_POINTER": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string"
+                                    }
+                                ]
+                            }
+                        ],
+                        "DENIALS": [
+                            {
+                                "ADDITIONAL_SCORES": {
+                                    "FULL_SCORE": "int32",
+                                    "GENERATION_MATCH": "int32",
+                                    "GNR_FN": "int32",
+                                    "GNR_GN": "int32",
+                                    "GNR_ON": "int32",
+                                    "GNR_SN": "int32"
+                                },
+                                "CANDIDATE_FEAT_DESC": "string",
+                                "CANDIDATE_FEAT_ID": "int32",
+                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                                "FTYPE_CODE": "string",
+                                "INBOUND_FEAT_DESC": "string",
+                                "INBOUND_FEAT_ID": "int32",
+                                "INBOUND_FEAT_USAGE_TYPE": "string",
+                                "SCORE": "int32",
+                                "SCORE_BEHAVIOR": "string",
+                                "SCORE_BUCKET": "string",
+                                "SOURCE": "string",
+                                "TOKEN": "string"
+                            }
+                        ],
+                        "REL_LINKS": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FTYPE_CODE": "string",
+                                "REL_TYPE": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string"
+                            }
+                        ],
+                        "XXX_ERRULE_CODE": "string"
+                    },
                     "MATCH_LEVEL": "int32",
                     "MATCH_LEVEL_CODE": "string",
                     "RECORD_SUMMARY": [
@@ -19,8 +148,7 @@
                             "XXX_LAST_SEEN_DT": "timestamp"
                         }
                     ],
-                    "XXX_LAST_SEEN_DT": "timestamp",
-                    "XXX_RECORDS": [
+                    "RECORDS": [
                         {
                             "DATA_SOURCE": "string",
                             "ERRULE_CODE": "string",
@@ -90,6 +218,8 @@
                                             "RECORD_TYPE": "string",
                                             "REGISTRATION_COUNTRY": "string",
                                             "REGISTRATION_DATE": "string",
+                                            "RELATIONSHIP_KEY": "string",
+                                            "RELATIONSHIP_TYPE": "string",
                                             "REL_ANCHOR_DOMAIN": "string",
                                             "REL_ANCHOR_KEY": "string",
                                             "REL_POINTER_DOMAIN": "string",
@@ -117,6 +247,8 @@
                                             "XXX_PHONE_THRU_DATE": "string",
                                             "ZOOMROOM": "string"
                                         },
+                                        "CANDIDATE_CAP_REACHED": "string",
+                                        "ENTITY_COUNT": "int32",
                                         "FEAT_DESC": "string",
                                         "FEAT_DESC_VALUES": [
                                             {
@@ -126,15 +258,30 @@
                                                 "CANDIDATE_CAP_REACHED": "string",
                                                 "ENTITY_COUNT": "int32",
                                                 "FEAT_DESC": "string",
+                                                "FEAT_DESC_VALUES": [
+                                                    {
+                                                        "CANDIDATE_CAP_REACHED": "string",
+                                                        "ENTITY_COUNT": "int32",
+                                                        "FEAT_DESC": "string",
+                                                        "LIB_FEAT_ID": "int32",
+                                                        "SCORING_CAP_REACHED": "string",
+                                                        "SUPPRESSED": "string",
+                                                        "USED_FOR_CAND": "string",
+                                                        "USED_FOR_SCORING": "string"
+                                                    }
+                                                ],
                                                 "LIB_FEAT_ID": "int32",
                                                 "SCORING_CAP_REACHED": "string",
+                                                "SUPPRESSED": "string",
                                                 "USED_FOR_CAND": "string",
-                                                "USED_FOR_SCORING": "string",
-                                                "XXX_SUPPRESSED": "string"
+                                                "USED_FOR_SCORING": "string"
                                             }
                                         ],
                                         "LIB_FEAT_ID": "int32",
-                                        "USAGE_TYPE": "string"
+                                        "SCORING_CAP_REACHED": "string",
+                                        "USAGE_TYPE": "string",
+                                        "USED_FOR_CAND": "string",
+                                        "USED_FOR_SCORING": "string"
                                     }
                                 ]
                             },
@@ -185,7 +332,11 @@
                                 "string"
                             ]
                         }
-                    ]
+                    ],
+                    "RECORD_TYPES": [
+                        "string"
+                    ],
+                    "XXX_LAST_SEEN_DT": "timestamp"
                 }
             ],
             "RESOLVED_ENTITY": {
@@ -257,6 +408,8 @@
                                 "RECORD_TYPE": "string",
                                 "REGISTRATION_COUNTRY": "string",
                                 "REGISTRATION_DATE": "string",
+                                "RELATIONSHIP_KEY": "string",
+                                "RELATIONSHIP_TYPE": "string",
                                 "REL_ANCHOR_DOMAIN": "string",
                                 "REL_ANCHOR_KEY": "string",
                                 "REL_POINTER_DOMAIN": "string",
@@ -284,6 +437,8 @@
                                 "XXX_PHONE_THRU_DATE": "string",
                                 "ZOOMROOM": "string"
                             },
+                            "CANDIDATE_CAP_REACHED": "string",
+                            "ENTITY_COUNT": "int32",
                             "FEAT_DESC": "string",
                             "FEAT_DESC_VALUES": [
                                 {
@@ -293,15 +448,30 @@
                                     "CANDIDATE_CAP_REACHED": "string",
                                     "ENTITY_COUNT": "int32",
                                     "FEAT_DESC": "string",
+                                    "FEAT_DESC_VALUES": [
+                                        {
+                                            "CANDIDATE_CAP_REACHED": "string",
+                                            "ENTITY_COUNT": "int32",
+                                            "FEAT_DESC": "string",
+                                            "LIB_FEAT_ID": "int32",
+                                            "SCORING_CAP_REACHED": "string",
+                                            "SUPPRESSED": "string",
+                                            "USED_FOR_CAND": "string",
+                                            "USED_FOR_SCORING": "string"
+                                        }
+                                    ],
                                     "LIB_FEAT_ID": "int32",
                                     "SCORING_CAP_REACHED": "string",
+                                    "SUPPRESSED": "string",
                                     "USED_FOR_CAND": "string",
-                                    "USED_FOR_SCORING": "string",
-                                    "XXX_SUPPRESSED": "string"
+                                    "USED_FOR_SCORING": "string"
                                 }
                             ],
                             "LIB_FEAT_ID": "int32",
-                            "USAGE_TYPE": "string"
+                            "SCORING_CAP_REACHED": "string",
+                            "USAGE_TYPE": "string",
+                            "USED_FOR_CAND": "string",
+                            "USED_FOR_SCORING": "string"
                         }
                     ]
                 },
@@ -375,6 +545,8 @@
                                         "RECORD_TYPE": "string",
                                         "REGISTRATION_COUNTRY": "string",
                                         "REGISTRATION_DATE": "string",
+                                        "RELATIONSHIP_KEY": "string",
+                                        "RELATIONSHIP_TYPE": "string",
                                         "REL_ANCHOR_DOMAIN": "string",
                                         "REL_ANCHOR_KEY": "string",
                                         "REL_POINTER_DOMAIN": "string",
@@ -402,6 +574,8 @@
                                         "XXX_PHONE_THRU_DATE": "string",
                                         "ZOOMROOM": "string"
                                     },
+                                    "CANDIDATE_CAP_REACHED": "string",
+                                    "ENTITY_COUNT": "int32",
                                     "FEAT_DESC": "string",
                                     "FEAT_DESC_VALUES": [
                                         {
@@ -411,15 +585,30 @@
                                             "CANDIDATE_CAP_REACHED": "string",
                                             "ENTITY_COUNT": "int32",
                                             "FEAT_DESC": "string",
+                                            "FEAT_DESC_VALUES": [
+                                                {
+                                                    "CANDIDATE_CAP_REACHED": "string",
+                                                    "ENTITY_COUNT": "int32",
+                                                    "FEAT_DESC": "string",
+                                                    "LIB_FEAT_ID": "int32",
+                                                    "SCORING_CAP_REACHED": "string",
+                                                    "SUPPRESSED": "string",
+                                                    "USED_FOR_CAND": "string",
+                                                    "USED_FOR_SCORING": "string"
+                                                }
+                                            ],
                                             "LIB_FEAT_ID": "int32",
                                             "SCORING_CAP_REACHED": "string",
+                                            "SUPPRESSED": "string",
                                             "USED_FOR_CAND": "string",
-                                            "USED_FOR_SCORING": "string",
-                                            "XXX_SUPPRESSED": "string"
+                                            "USED_FOR_SCORING": "string"
                                         }
                                     ],
                                     "LIB_FEAT_ID": "int32",
-                                    "USAGE_TYPE": "string"
+                                    "SCORING_CAP_REACHED": "string",
+                                    "USAGE_TYPE": "string",
+                                    "USED_FOR_CAND": "string",
+                                    "USED_FOR_SCORING": "string"
                                 }
                             ]
                         },
@@ -504,6 +693,135 @@
             "IS_AMBIGUOUS": "int32",
             "IS_DISCLOSED": "int32",
             "MATCH_KEY": "string",
+            "MATCH_KEY_DETAILS": {
+                "CONFIRMATIONS": [
+                    {
+                        "ADDITIONAL_SCORES": {
+                            "FULL_SCORE": "int32",
+                            "GENERATION_MATCH": "int32",
+                            "GNR_FN": "int32",
+                            "GNR_GN": "int32",
+                            "GNR_ON": "int32",
+                            "GNR_SN": "int32"
+                        },
+                        "CANDIDATE_FEAT_DESC": "string",
+                        "CANDIDATE_FEAT_ID": "int32",
+                        "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                        "FTYPE_CODE": "string",
+                        "INBOUND_FEAT_DESC": "string",
+                        "INBOUND_FEAT_ID": "int32",
+                        "INBOUND_FEAT_USAGE_TYPE": "string",
+                        "SCORE": "int32",
+                        "SCORE_BEHAVIOR": "string",
+                        "SCORE_BUCKET": "string",
+                        "SOURCE": "string",
+                        "TOKEN": "string"
+                    }
+                ],
+                "DISCLOSED_RELATIONS": [
+                    {
+                        "DOMAIN": "string",
+                        "ENTITY_ROLES": [
+                            {
+                                "FEAT_DESC": "string",
+                                "ROLE": "string"
+                            }
+                        ],
+                        "RELATED_ROLES": [
+                            {
+                                "FEAT_DESC": "string",
+                                "ROLE": "string"
+                            }
+                        ],
+                        "REL_LINK": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FTYPE_CODE": "string",
+                                "REL_TYPE": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string"
+                            }
+                        ],
+                        "XXX_REL_ANCHOR": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string",
+                                "XXX_REL_POINTER": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string"
+                                    }
+                                ]
+                            }
+                        ],
+                        "XXX_REL_POINTER": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string"
+                            }
+                        ]
+                    }
+                ],
+                "DENIALS": [
+                    {
+                        "ADDITIONAL_SCORES": {
+                            "FULL_SCORE": "int32",
+                            "GENERATION_MATCH": "int32",
+                            "GNR_FN": "int32",
+                            "GNR_GN": "int32",
+                            "GNR_ON": "int32",
+                            "GNR_SN": "int32"
+                        },
+                        "CANDIDATE_FEAT_DESC": "string",
+                        "CANDIDATE_FEAT_ID": "int32",
+                        "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                        "FTYPE_CODE": "string",
+                        "INBOUND_FEAT_DESC": "string",
+                        "INBOUND_FEAT_ID": "int32",
+                        "INBOUND_FEAT_USAGE_TYPE": "string",
+                        "SCORE": "int32",
+                        "SCORE_BEHAVIOR": "string",
+                        "SCORE_BUCKET": "string",
+                        "SOURCE": "string",
+                        "TOKEN": "string"
+                    }
+                ],
+                "REL_LINKS": [
+                    {
+                        "DOMAIN": "string",
+                        "FEAT_DESC": "string",
+                        "FTYPE_CODE": "string",
+                        "REL_TYPE": "string",
+                        "FEAT_ID": "int32",
+                        "FEAT_USAGE_TYPE": "string",
+                        "LINKED_FEAT_DESC": "string",
+                        "LINKED_FEAT_ID": "int32",
+                        "LINKED_FEAT_TYPE": "string",
+                        "LINKED_FEAT_USAGE_TYPE": "string"
+                    }
+                ],
+                "XXX_ERRULE_CODE": "string"
+            },
             "MATCH_LEVEL_CODE": "string",
             "MAX_ENTITY_ID": "int32",
             "MIN_ENTITY_ID": "int32"
@@ -524,10 +842,318 @@
             "IS_AMBIGUOUS": "int32",
             "IS_DISCLOSED": "int32",
             "MATCH_KEY": "string",
+            "MATCH_KEY_DETAILS": {
+                "CONFIRMATIONS": [
+                    {
+                        "ADDITIONAL_SCORES": {
+                            "FULL_SCORE": "int32",
+                            "GENERATION_MATCH": "int32",
+                            "GNR_FN": "int32",
+                            "GNR_GN": "int32",
+                            "GNR_ON": "int32",
+                            "GNR_SN": "int32"
+                        },
+                        "CANDIDATE_FEAT_DESC": "string",
+                        "CANDIDATE_FEAT_ID": "int32",
+                        "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                        "FTYPE_CODE": "string",
+                        "INBOUND_FEAT_DESC": "string",
+                        "INBOUND_FEAT_ID": "int32",
+                        "INBOUND_FEAT_USAGE_TYPE": "string",
+                        "SCORE": "int32",
+                        "SCORE_BEHAVIOR": "string",
+                        "SCORE_BUCKET": "string",
+                        "SOURCE": "string",
+                        "TOKEN": "string"
+                    }
+                ],
+                "DISCLOSED_RELATIONS": [
+                    {
+                        "DOMAIN": "string",
+                        "ENTITY_ROLES": [
+                            {
+                                "FEAT_DESC": "string",
+                                "ROLE": "string"
+                            }
+                        ],
+                        "RELATED_ROLES": [
+                            {
+                                "FEAT_DESC": "string",
+                                "ROLE": "string"
+                            }
+                        ],
+                        "REL_LINK": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FTYPE_CODE": "string",
+                                "REL_TYPE": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string"
+                            }
+                        ],
+                        "XXX_REL_ANCHOR": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string",
+                                "XXX_REL_POINTER": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string"
+                                    }
+                                ]
+                            }
+                        ],
+                        "XXX_REL_POINTER": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string"
+                            }
+                        ]
+                    }
+                ],
+                "DENIALS": [
+                    {
+                        "ADDITIONAL_SCORES": {
+                            "FULL_SCORE": "int32",
+                            "GENERATION_MATCH": "int32",
+                            "GNR_FN": "int32",
+                            "GNR_GN": "int32",
+                            "GNR_ON": "int32",
+                            "GNR_SN": "int32"
+                        },
+                        "CANDIDATE_FEAT_DESC": "string",
+                        "CANDIDATE_FEAT_ID": "int32",
+                        "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                        "FTYPE_CODE": "string",
+                        "INBOUND_FEAT_DESC": "string",
+                        "INBOUND_FEAT_ID": "int32",
+                        "INBOUND_FEAT_USAGE_TYPE": "string",
+                        "SCORE": "int32",
+                        "SCORE_BEHAVIOR": "string",
+                        "SCORE_BUCKET": "string",
+                        "SOURCE": "string",
+                        "TOKEN": "string"
+                    }
+                ],
+                "REL_LINKS": [
+                    {
+                        "DOMAIN": "string",
+                        "FEAT_DESC": "string",
+                        "FTYPE_CODE": "string",
+                        "REL_TYPE": "string",
+                        "FEAT_ID": "int32",
+                        "FEAT_USAGE_TYPE": "string",
+                        "LINKED_FEAT_DESC": "string",
+                        "LINKED_FEAT_ID": "int32",
+                        "LINKED_FEAT_TYPE": "string",
+                        "LINKED_FEAT_USAGE_TYPE": "string"
+                    }
+                ],
+                "XXX_ERRULE_CODE": "string"
+            },
             "MATCH_LEVEL_CODE": "string",
             "MAX_ENTITY_ID": "int32",
             "MIN_ENTITY_ID": "int32"
         }
     ],
-    "MAX_ENTITY_LIMIT_REACHED": "string"
+    "MAX_ENTITY_LIMIT_REACHED": "string",
+    "WHY_RESULTS": [
+        {
+            "ENTITY_ID": "int32",
+            "ENTITY_ID_2": "int32",
+            "FOCUS_RECORDS": [
+                {
+                    "DATA_SOURCE": "string",
+                    "RECORD_ID": "string"
+                }
+            ],
+            "FOCUS_RECORDS_2": [
+                {
+                    "DATA_SOURCE": "string",
+                    "RECORD_ID": "string"
+                }
+            ],
+            "INTERNAL_ID": "int32",
+            "INTERNAL_ID_2": "int32",
+            "MATCH_INFO": {
+                "CANDIDATE_KEYS": {
+                    "user_defined_json_key": [
+                        {
+                            "FEAT_DESC": "string",
+                            "FEAT_ID": "int32"
+                        }
+                    ]
+                },
+                "DISCLOSED_RELATIONS": {
+                    "REL_POINTER": [
+                        {
+                            "DOMAIN": "string",
+                            "FEAT_DESC": "string",
+                            "FEAT_ID": "int32",
+                            "FEAT_USAGE_TYPE": "string",
+                            "LINKED_FEAT_DESC": "string",
+                            "LINKED_FEAT_ID": "int32",
+                            "LINKED_FEAT_TYPE": "string"
+                        }
+                    ],
+                    "REL_LINK": [
+                        {
+                            "DOMAIN": "string",
+                            "FEAT_DESC": "string",
+                            "FTYPE_CODE": "string",
+                            "REL_TYPE": "string",
+                            "FEAT_ID": "int32",
+                            "FEAT_USAGE_TYPE": "string",
+                            "LINKED_FEAT_DESC": "string",
+                            "LINKED_FEAT_ID": "int32",
+                            "LINKED_FEAT_TYPE": "string",
+                            "LINKED_FEAT_USAGE_TYPE": "string"
+                        }
+                    ],
+                    "DOMAIN": "string",
+                    "XXX_FEAT_DESC": "string",
+                    "FEAT_ID": "int32",
+                    "FEAT_USAGE_TYPE": "string",
+                    "XXX_LINKED_FEAT_DESC": "string",
+                    "LINKED_FEAT_ID": "int32",
+                    "LINKED_FEAT_TYPE": "string",
+                    "REL_ANCHOR": [
+                        {
+                            "DOMAIN": "string",
+                            "FEAT_DESC": "string",
+                            "FEAT_ID": "int32",
+                            "LINKED_FEAT_DESC": "string",
+                            "LINKED_FEAT_ID": "int32",
+                            "LINKED_FEAT_TYPE": "string",
+                            "LINKED_FEAT_USAGE_TYPE": "string",
+                            "XXX_REL_POINTER": [
+                                {
+                                    "DOMAIN": "string",
+                                    "FEAT_DESC": "string",
+                                    "FEAT_ID": "int32",
+                                    "FEAT_USAGE_TYPE": "string",
+                                    "LINKED_FEAT_DESC": "string",
+                                    "LINKED_FEAT_ID": "int32",
+                                    "LINKED_FEAT_TYPE": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "FEATURE_SCORES": {
+                    "user_defined_json_key": [
+                        {
+                            "ADDITIONAL_SCORES": {
+                                "FULL_SCORE": "int32",
+                                "GENERATION_MATCH": "int32",
+                                "GNR_FN": "int32",
+                                "GNR_GN": "int32",
+                                "GNR_ON": "int32",
+                                "GNR_SN": "int32"
+                            },
+                            "CANDIDATE_FEAT_DESC": "string",
+                            "CANDIDATE_FEAT_ID": "int32",
+                            "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                            "INBOUND_FEAT_DESC": "string",
+                            "INBOUND_FEAT_ID": "int32",
+                            "INBOUND_FEAT_USAGE_TYPE": "string",
+                            "SCORE": "int32",
+                            "SCORE_BEHAVIOR": "string",
+                            "SCORE_BUCKET": "string"
+                        }
+                    ]
+                },
+                "MATCH_LEVEL_CODE": "string",
+                "WHY_ERRULE_CODE": "string",
+                "WHY_KEY": "string",
+                "WHY_KEY_DETAILS": {
+                    "CONFIRMATIONS": [
+                        {
+                            "ADDITIONAL_SCORES": {
+                                "FULL_SCORE": "int32",
+                                "GENERATION_MATCH": "int32",
+                                "GNR_FN": "int32",
+                                "GNR_GN": "int32",
+                                "GNR_ON": "int32",
+                                "GNR_SN": "int32"
+                            },
+                            "CANDIDATE_FEAT_DESC": "string",
+                            "CANDIDATE_FEAT_ID": "int32",
+                            "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                            "FTYPE_CODE": "string",
+                            "INBOUND_FEAT_DESC": "string",
+                            "INBOUND_FEAT_ID": "int32",
+                            "INBOUND_FEAT_USAGE_TYPE": "string",
+                            "SCORE": "int32",
+                            "SCORE_BEHAVIOR": "string",
+                            "SCORE_BUCKET": "string",
+                            "SOURCE": "string",
+                            "TOKEN": "string"
+                        }
+                    ],
+                    "DENIALS": [
+                        {
+                            "ADDITIONAL_SCORES": {
+                                "FULL_SCORE": "int32",
+                                "GENERATION_MATCH": "int32",
+                                "GNR_FN": "int32",
+                                "GNR_GN": "int32",
+                                "GNR_ON": "int32",
+                                "GNR_SN": "int32"
+                            },
+                            "CANDIDATE_FEAT_DESC": "string",
+                            "CANDIDATE_FEAT_ID": "int32",
+                            "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                            "FTYPE_CODE": "string",
+                            "INBOUND_FEAT_DESC": "string",
+                            "INBOUND_FEAT_ID": "int32",
+                            "INBOUND_FEAT_USAGE_TYPE": "string",
+                            "SCORE": "int32",
+                            "SCORE_BEHAVIOR": "string",
+                            "SCORE_BUCKET": "string",
+                            "SOURCE": "string",
+                            "TOKEN": "string"
+                        }
+                    ],
+                    "DISCLOSED_RELATIONS": [
+                        {
+                            "DOMAIN": "string",
+                            "ENTITY_ROLES": [
+                                {
+                                    "FEAT_DESC": "string",
+                                    "ROLE": "string"
+                                }
+                            ],
+                            "RELATED_ROLES": [
+                                {
+                                    "FEAT_DESC": "string",
+                                    "ROLE": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
 }

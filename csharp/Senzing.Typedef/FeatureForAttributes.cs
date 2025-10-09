@@ -11,6 +11,12 @@ namespace Senzing.Typedef
         [JsonPropertyName("ATTRIBUTES")]
         public SenzingEntitySpecification Attributes { get; set; }
 
+        [JsonPropertyName("CANDIDATE_CAP_REACHED")]
+        public string CandidateCapReached { get; set; }
+
+        [JsonPropertyName("ENTITY_COUNT")]
+        public int EntityCount { get; set; }
+
         /// <summary>
         /// Describes the attributes that make up the feature.
         /// </summary>
@@ -26,11 +32,20 @@ namespace Senzing.Typedef
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 
+        [JsonPropertyName("SCORING_CAP_REACHED")]
+        public string ScoringCapReached { get; set; }
+
         /// <summary>
         /// Label to identify how some features are being used (can also change
         /// some features behavior).
         /// </summary>
         [JsonPropertyName("USAGE_TYPE")]
         public string UsageType { get; set; }
+
+        [JsonPropertyName("USED_FOR_CAND")]
+        public string UsedForCand { get; set; }
+
+        [JsonPropertyName("USED_FOR_SCORING")]
+        public string UsedForScoring { get; set; }
     }
 }

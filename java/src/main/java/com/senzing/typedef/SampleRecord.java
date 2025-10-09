@@ -8,61 +8,61 @@ import java.util.List;
 
 @JsonSerialize
 public class SampleRecord {
-    @JsonProperty("XXX_DATA_SOURCE")
-    private String xxxDataSource;
+    @JsonProperty("DATA_SOURCE")
+    private String dataSource;
 
-    @JsonProperty("XXX_FLAGS")
-    private List<String> xxxFlags;
+    @JsonProperty("FLAGS")
+    private List<String> flags;
 
-    @JsonProperty("XXX_RECORD_ID")
-    private String xxxRecordId;
+    @JsonProperty("RECORD_ID")
+    private String recordId;
 
     public SampleRecord() {
     }
 
     /**
-     * Getter for xxxDataSource.<p>
+     * Getter for dataSource.<p>
      * A label identifying the provenance of the record.
      */
-    public String getXxxDataSource() {
-        return xxxDataSource;
+    public String getDataSource() {
+        return dataSource;
     }
 
     /**
-     * Setter for xxxDataSource.<p>
+     * Setter for dataSource.<p>
      * A label identifying the provenance of the record.
      */
-    public void setXxxDataSource(String xxxDataSource) {
-        this.xxxDataSource = xxxDataSource;
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
     }
 
     /**
-     * Getter for xxxFlags.<p>
+     * Getter for flags.<p>
      */
-    public List<String> getXxxFlags() {
-        return xxxFlags;
+    public List<String> getFlags() {
+        return flags;
     }
 
     /**
-     * Setter for xxxFlags.<p>
+     * Setter for flags.<p>
      */
-    public void setXxxFlags(List<String> xxxFlags) {
-        this.xxxFlags = xxxFlags;
+    public void setFlags(List<String> flags) {
+        this.flags = flags;
     }
 
     /**
-     * Getter for xxxRecordId.<p>
+     * Getter for recordId.<p>
      * The unique identifier within the set of records in the DATA_SOURCE.
      */
-    public String getXxxRecordId() {
-        return xxxRecordId;
+    public String getRecordId() {
+        return recordId;
     }
 
     /**
-     * Setter for xxxRecordId.<p>
+     * Setter for recordId.<p>
      * The unique identifier within the set of records in the DATA_SOURCE.
      */
-    public void setXxxRecordId(String xxxRecordId) {
-        this.xxxRecordId = xxxRecordId;
+    public void setRecordId(String recordId) {
+        this.recordId = recordId;
     }
 }

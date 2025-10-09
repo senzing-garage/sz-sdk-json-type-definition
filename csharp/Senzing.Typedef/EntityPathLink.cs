@@ -31,6 +31,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
+        [JsonPropertyName("MATCH_KEY_DETAILS")]
+        public MatchKeyDetails MatchKeyDetails { get; set; }
+
         /// <summary>
         /// The type of match that occurred for the record.
         /// </summary>

@@ -295,23 +295,35 @@ go-typedef-generated-typedef-test-go:
 		./bin/make_go_typedef_generated_typedef_test_go.py
 
 
-.PHONY: testdata-responses-generated
-testdata-responses-generated: clean-testdata-responses-generated
+.PHONY: testdata-responses
+testdata-responses: clean-testdata-responses
 	$(activate-venv); \
-		./bin/make_testdata_responses_generated.py
+		./bin/make_testdata_responses.py
 
 
-.PHONY: testdata-responses-senzing
-testdata-responses-senzing: clean-testdata-responses-senzing
+# .PHONY: testdata-responses-generated
+# testdata-responses-generated: clean-testdata-responses-generated
+# 	$(activate-venv); \
+# 		./bin/make_testdata_responses_generated.py
+
+
+.PHONY: testdata-responses-th4
+testdata-responses-th4: clean-testdata-responses-th4
 	$(activate-venv); \
-		./bin/make_testdata_responses_senzing.py
+		./bin/make_testdata_responses_th4.py
+
+
+.PHONY: testdata-responses-truthsets
+testdata-responses-truthsets: clean-testdata-responses-truthsets
+	$(activate-venv); \
+		./bin/make_testdata_responses_truthsets.py
 
 
 .PHONY: generate-tests
 generate-tests: \
 	go-typedef-generated-typedef-test-go \
 	testdata-responses-generated \
-	testdata-responses-senzing
+	testdata-responses-truthsets
 
 # -----------------------------------------------------------------------------
 # Generate documentation
@@ -427,14 +439,19 @@ clean-rust:
 	@rm $(MAKEFILE_DIRECTORY)/rust/* || true
 
 
-.PHONY: clean-testdata-responses-generated
-clean-testdata-responses-generated:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+.PHONY: clean-testdata-responses
+clean-testdata-responses:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses/ -type f -name "*.json" -delete
 
 
-.PHONY: clean-testdata-responses-senzing
-clean-testdata-responses-senzing:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
+.PHONY: clean-testdata-responses-th4
+clean-testdata-responses-th4:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_th4/ -type f -name "*.json" -delete
+
+
+.PHONY: clean-testdata-responses-truthsets
+clean-testdata-responses-truthsets:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_truthsets/ -type f -name "*.json" -delete
 
 
 .PHONY: clean-typescript
@@ -498,10 +515,7 @@ download-truthsets:
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
 
 
-.PHONY: make-testdata-responses-th4
-make-testdata-responses-th4:
-	$(activate-venv); \
-		./bin/make_testdata_responses_th4.py
+
 
 
 .PHONY: golangci-lint
@@ -544,7 +558,7 @@ test-using-senzing:
 		./bin/test_using_senzing.py
 
 
-.PHONY: test-using-senzing-generated
-test-using-senzing-generated:
+.PHONY: test-using-testdata-responses
+test-using-testdata-responses:
 	$(activate-venv); \
-		./bin/test_using_senzing_generated.py
+		./bin/test_using_testdata_responses.py

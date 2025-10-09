@@ -94,7 +94,9 @@
         "CFG_GENERIC_THRESHOLD.CANDIDATE_CAP"
     ],
     "CANDIDATE_CAP_REACHED": [
-        "FeatureDescriptionValue.CANDIDATE_CAP_REACHED"
+        "FeatureDescriptionValue.CANDIDATE_CAP_REACHED",
+        "FeatureDescriptionValueDetails.CANDIDATE_CAP_REACHED",
+        "FeatureForAttributes.CANDIDATE_CAP_REACHED"
     ],
     "CANDIDATE_FEAT_DESC": [
         "Confirmation.CANDIDATE_FEAT_DESC",
@@ -221,6 +223,9 @@
     "CLOSE_SCORE": [
         "CFG_CFRTN.CLOSE_SCORE"
     ],
+    "CODE": [
+        "Notice.CODE"
+    ],
     "COMPATIBILITY_VERSION": [
         "CONFIG_BASE_VERSION.COMPATIBILITY_VERSION",
         "SzProductGetVersionResponse.COMPATIBILITY_VERSION"
@@ -256,6 +261,7 @@
         "RecordForGetEntity.DATA_SOURCE",
         "RecordKey.DATA_SOURCE",
         "RecordSummary.DATA_SOURCE",
+        "SampleRecord.DATA_SOURCE",
         "SzEngineAddRecordResponse.DATA_SOURCE",
         "SzEngineDeleteRecordResponse.DATA_SOURCE",
         "SzEngineGetRecordResponse.DATA_SOURCE",
@@ -277,6 +283,9 @@
     "DEFAULT_VALUE": [
         "CFG_ATTR.DEFAULT_VALUE"
     ],
+    "DEGREES": [
+        "InterestingEntity.DEGREES"
+    ],
     "DENIALS": [
         "MatchKeyDetails.DENIALS",
         "WhyKeyDetails.DENIALS"
@@ -284,6 +293,9 @@
     "DERIVED": [
         "CFG_FBOM.DERIVED",
         "CFG_FTYPE.DERIVED"
+    ],
+    "DESCRIPTION": [
+        "Notice.DESCRIPTION"
     ],
     "DFCALL_ID": [
         "CFG_DFBOM.DFCALL_ID",
@@ -301,6 +313,7 @@
     ],
     "DISCLOSED_RELATIONS": [
         "MatchInfoForWhy.DISCLOSED_RELATIONS",
+        "MatchKeyDetails.DISCLOSED_RELATIONS",
         "WhyKeyDetails.DISCLOSED_RELATIONS"
     ],
     "DISPLAY_LEVEL": [
@@ -310,7 +323,11 @@
         "CFG_ERRULE.DISQ_ERFRAG_CODE"
     ],
     "DOMAIN": [
+        "DisclosedRelationsForMatchInfo.DOMAIN",
+        "DisclosedRelationsForMatchInfoForWhy.DOMAIN",
         "DisclosedRelationsForWhyKeyDetails.DOMAIN",
+        "RelAnchor.DOMAIN",
+        "RelLink.DOMAIN",
         "RelPointer.DOMAIN"
     ],
     "DRIVERS_LICENSE_NUMBER": [
@@ -387,10 +404,13 @@
         "ResolvedEntityAndMatchInfo.ENTITY"
     ],
     "ENTITY_COUNT": [
-        "FeatureDescriptionValue.ENTITY_COUNT"
+        "FeatureDescriptionValue.ENTITY_COUNT",
+        "FeatureDescriptionValueDetails.ENTITY_COUNT",
+        "FeatureForAttributes.ENTITY_COUNT"
     ],
     "ENTITY_ID": [
         "AffectedEntity.ENTITY_ID",
+        "InterestingEntity.ENTITY_ID",
         "RelatedEntity.ENTITY_ID",
         "ResolvedEntity.ENTITY_ID",
         "ResolvedEntityForGetEntity.ENTITY_ID",
@@ -421,6 +441,7 @@
         "SzEngineFindPathByRecordIdResponse.ENTITY_PATH_LINKS"
     ],
     "ENTITY_ROLES": [
+        "DisclosedRelationsForMatchInfo.ENTITY_ROLES",
         "DisclosedRelationsForWhyKeyDetails.ENTITY_ROLES"
     ],
     "ERFRAG_CODE": [
@@ -480,9 +501,25 @@
         "RecordForGetEntity.FEATURES",
         "ResolvedEntity.FEATURES",
         "ResolvedEntityForGetEntity.FEATURES",
+        "SearchEntity.FEATURES",
         "SearchRequest.FEATURES",
         "SzEngineGetRecordPreviewResponse.FEATURES",
         "SzEngineGetRecordResponse.FEATURES"
+    ],
+    "FEATURES_ADDED": [
+        "SearchEntitySummary.FEATURES_ADDED"
+    ],
+    "FEATURES_IGNORED": [
+        "SearchEntitySummary.FEATURES_IGNORED"
+    ],
+    "FEATURES_MJD": [
+        "ResolvedEntityAndMatchInfo.FEATURES_MJD"
+    ],
+    "FEATURES_SEARCHED": [
+        "SearchEntitySummary.FEATURES_SEARCHED"
+    ],
+    "FEATURES_SUBMITTED": [
+        "SearchEntitySummary.FEATURES_SUBMITTED"
     ],
     "FEATURE_IDS": [
         "Record.FEATURE_IDS",
@@ -500,20 +537,30 @@
     "FEAT_DESC": [
         "EntityRoles.FEAT_DESC",
         "FeatureDescriptionValue.FEAT_DESC",
+        "FeatureDescriptionValueDetails.FEAT_DESC",
         "FeatureForAttributes.FEAT_DESC",
         "FeatureForGetEntity.FEAT_DESC",
         "MatchInfoForAttribute.FEAT_DESC",
-        "RelPointer.FEAT_DESC"
+        "RelAnchor.FEAT_DESC",
+        "RelLink.FEAT_DESC",
+        "RelPointer.FEAT_DESC",
+        "RelatedRoles.FEAT_DESC"
     ],
     "FEAT_DESC_VALUES": [
+        "FeatureDescriptionValue.FEAT_DESC_VALUES",
         "FeatureForAttributes.FEAT_DESC_VALUES",
         "FeatureForGetEntity.FEAT_DESC_VALUES"
     ],
     "FEAT_ID": [
+        "DisclosedRelationsForMatchInfoForWhy.FEAT_ID",
         "MatchInfoForAttribute.FEAT_ID",
+        "RelAnchor.FEAT_ID",
+        "RelLink.FEAT_ID",
         "RelPointer.FEAT_ID"
     ],
     "FEAT_USAGE_TYPE": [
+        "DisclosedRelationsForMatchInfoForWhy.FEAT_USAGE_TYPE",
+        "RelLink.FEAT_USAGE_TYPE",
         "RelPointer.FEAT_USAGE_TYPE"
     ],
     "FELEM_CODE": [
@@ -548,11 +595,12 @@
         "RecordForGetEntity.FIRST_SEEN_DT",
         "SzEngineGetRecordResponse.FIRST_SEEN_DT"
     ],
-    "FIXME": [
-        "RelatedRoles.FIXME"
-    ],
     "FIXME_KEY": [
         "Fixme.FIXME_KEY"
+    ],
+    "FLAGS": [
+        "InterestingEntity.FLAGS",
+        "SampleRecord.FLAGS"
     ],
     "FOCUS_RECORDS": [
         "WhyResult.FOCUS_RECORDS"
@@ -569,6 +617,7 @@
         "CFG_FTYPE.FTYPE_CODE",
         "Confirmation.FTYPE_CODE",
         "FeatureType.FTYPE_CODE",
+        "RelLink.FTYPE_CODE",
         "SzDiagnosticGetFeatureResponse.FTYPE_CODE"
     ],
     "FTYPE_DESC": [
@@ -673,8 +722,10 @@
         "SenzingEntitySpecification.INSTAGRAM"
     ],
     "INTERESTING_ENTITIES": [
+        "SzEngineAddRecordResponse.INTERESTING_ENTITIES",
         "SzEngineFindInterestingEntitiesByEntityIdResponse.INTERESTING_ENTITIES",
-        "SzEngineFindInterestingEntitiesByRecordIdResponse.INTERESTING_ENTITIES"
+        "SzEngineFindInterestingEntitiesByRecordIdResponse.INTERESTING_ENTITIES",
+        "SzEngineReevaluateEntityResponse.INTERESTING_ENTITIES"
     ],
     "INTERNAL": [
         "CFG_ATTR.INTERNAL"
@@ -719,6 +770,7 @@
     ],
     "LIB_FEAT_ID": [
         "FeatureDescriptionValue.LIB_FEAT_ID",
+        "FeatureDescriptionValueDetails.LIB_FEAT_ID",
         "FeatureForAttributes.LIB_FEAT_ID",
         "FeatureForGetEntity.LIB_FEAT_ID",
         "FeatureID.LIB_FEAT_ID",
@@ -731,13 +783,25 @@
         "SenzingEntitySpecification.LINKEDIN"
     ],
     "LINKED_FEAT_DESC": [
+        "RelAnchor.LINKED_FEAT_DESC",
+        "RelLink.LINKED_FEAT_DESC",
         "RelPointer.LINKED_FEAT_DESC"
     ],
     "LINKED_FEAT_ID": [
+        "DisclosedRelationsForMatchInfoForWhy.LINKED_FEAT_ID",
+        "RelAnchor.LINKED_FEAT_ID",
+        "RelLink.LINKED_FEAT_ID",
         "RelPointer.LINKED_FEAT_ID"
     ],
     "LINKED_FEAT_TYPE": [
+        "DisclosedRelationsForMatchInfoForWhy.LINKED_FEAT_TYPE",
+        "RelAnchor.LINKED_FEAT_TYPE",
+        "RelLink.LINKED_FEAT_TYPE",
         "RelPointer.LINKED_FEAT_TYPE"
+    ],
+    "LINKED_FEAT_USAGE_TYPE": [
+        "RelAnchor.LINKED_FEAT_USAGE_TYPE",
+        "RelLink.LINKED_FEAT_USAGE_TYPE"
     ],
     "MATCH_INFO": [
         "ResolutionStep.MATCH_INFO",
@@ -753,7 +817,10 @@
         "RelatedEntity.MATCH_KEY"
     ],
     "MATCH_KEY_DETAILS": [
-        "MatchInfo.MATCH_KEY_DETAILS"
+        "EntityNetworkLink.MATCH_KEY_DETAILS",
+        "EntityPathLink.MATCH_KEY_DETAILS",
+        "MatchInfo.MATCH_KEY_DETAILS",
+        "RelatedEntity.MATCH_KEY_DETAILS"
     ],
     "MATCH_LEVEL": [
         "RelatedEntity.MATCH_LEVEL"
@@ -840,6 +907,9 @@
     "NEXT_THRESH": [
         "SYS_OOM.NEXT_THRESH"
     ],
+    "NOTICES": [
+        "InterestingEntities.NOTICES"
+    ],
     "NOT_FOUND": [
         "CandidateKeysSummary.NOT_FOUND",
         "FeatureType.NOT_FOUND"
@@ -923,6 +993,7 @@
     "RECORDS": [
         "MemberRecord.RECORDS",
         "RecordKeys.RECORDS",
+        "RelatedEntity.RECORDS",
         "ResolvedEntity.RECORDS",
         "ResolvedEntityForGetEntity.RECORDS",
         "SzEngineFindNetworkByRecordIdRecordKeys.RECORDS",
@@ -937,6 +1008,7 @@
         "Record.RECORD_ID",
         "RecordForGetEntity.RECORD_ID",
         "RecordKey.RECORD_ID",
+        "SampleRecord.RECORD_ID",
         "SzEngineAddRecordResponse.RECORD_ID",
         "SzEngineDeleteRecordResponse.RECORD_ID",
         "SzEngineGetRecordResponse.RECORD_ID",
@@ -952,6 +1024,7 @@
         "SenzingEntitySpecification.RECORD_TYPE"
     ],
     "RECORD_TYPES": [
+        "RelatedEntity.RECORD_TYPES",
         "ResolvedEntity.RECORD_TYPES",
         "ResolvedEntityForGetEntity.RECORD_TYPES"
     ],
@@ -970,14 +1043,34 @@
         "SzEngineGetEntityByEntityIdResponse.RELATED_ENTITIES",
         "SzEngineGetEntityByRecordIdResponse.RELATED_ENTITIES"
     ],
+    "RELATED_ENTITIES_MJD": [
+        "SzEngineSearchByAttributesResponse.RELATED_ENTITIES_MJD"
+    ],
     "RELATED_ROLES": [
+        "DisclosedRelationsForMatchInfo.RELATED_ROLES",
         "DisclosedRelationsForWhyKeyDetails.RELATED_ROLES"
+    ],
+    "RELATIONSHIP_KEY": [
+        "SenzingEntitySpecification.RELATIONSHIP_KEY"
+    ],
+    "RELATIONSHIP_TYPE": [
+        "SenzingEntitySpecification.RELATIONSHIP_TYPE"
+    ],
+    "REL_ANCHOR": [
+        "DisclosedRelationsForMatchInfoForWhy.REL_ANCHOR"
     ],
     "REL_ANCHOR_DOMAIN": [
         "SenzingEntitySpecification.REL_ANCHOR_DOMAIN"
     ],
     "REL_ANCHOR_KEY": [
         "SenzingEntitySpecification.REL_ANCHOR_KEY"
+    ],
+    "REL_LINK": [
+        "DisclosedRelationsForMatchInfo.REL_LINK",
+        "DisclosedRelationsForMatchInfoForWhy.REL_LINK"
+    ],
+    "REL_LINKS": [
+        "MatchKeyDetails.REL_LINKS"
     ],
     "REL_POINTER": [
         "DisclosedRelationsForMatchInfoForWhy.REL_POINTER"
@@ -990,6 +1083,9 @@
     ],
     "REL_POINTER_ROLE": [
         "SenzingEntitySpecification.REL_POINTER_ROLE"
+    ],
+    "REL_TYPE": [
+        "RelLink.REL_TYPE"
     ],
     "RESOLUTION_STEPS": [
         "HowResults.RESOLUTION_STEPS"
@@ -1015,7 +1111,8 @@
         "CFG_DSRC.RETENTION_LEVEL"
     ],
     "ROLE": [
-        "EntityRoles.ROLE"
+        "EntityRoles.ROLE",
+        "RelatedRoles.ROLE"
     ],
     "RTYPE_CODE": [
         "CFG_RTYPE.RTYPE_CODE"
@@ -1030,6 +1127,9 @@
     ],
     "SAME_SCORE": [
         "CFG_CFRTN.SAME_SCORE"
+    ],
+    "SAMPLE_RECORDS": [
+        "InterestingEntity.SAMPLE_RECORDS"
     ],
     "SCHEMA_VERSION": [
         "SzProductGetVersionResponse.SCHEMA_VERSION"
@@ -1050,7 +1150,12 @@
         "CFG_GENERIC_THRESHOLD.SCORING_CAP"
     ],
     "SCORING_CAP_REACHED": [
-        "FeatureDescriptionValue.SCORING_CAP_REACHED"
+        "FeatureDescriptionValue.SCORING_CAP_REACHED",
+        "FeatureDescriptionValueDetails.SCORING_CAP_REACHED",
+        "FeatureForAttributes.SCORING_CAP_REACHED"
+    ],
+    "SEARCH_ENTITY": [
+        "SzEngineSearchByAttributesResponse.SEARCH_ENTITY"
     ],
     "SEARCH_PROFILE": [
         "SearchRequest.SEARCH_PROFILE"
@@ -1107,7 +1212,12 @@
         "ResolutionStep.STEP"
     ],
     "SUMMARY": [
-        "CandidateKeysForSearchStatistic.SUMMARY"
+        "CandidateKeysForSearchStatistic.SUMMARY",
+        "SearchEntity.SUMMARY"
+    ],
+    "SUPPRESSED": [
+        "FeatureDescriptionValue.SUPPRESSED",
+        "FeatureDescriptionValueDetails.SUPPRESSED"
     ],
     "SYS_CREATE_DT": [
         "Config.SYS_CREATE_DT"
@@ -1168,10 +1278,14 @@
     ],
     "USED_FOR_CAND": [
         "CFG_FTYPE.USED_FOR_CAND",
-        "FeatureDescriptionValue.USED_FOR_CAND"
+        "FeatureDescriptionValue.USED_FOR_CAND",
+        "FeatureDescriptionValueDetails.USED_FOR_CAND",
+        "FeatureForAttributes.USED_FOR_CAND"
     ],
     "USED_FOR_SCORING": [
-        "FeatureDescriptionValue.USED_FOR_SCORING"
+        "FeatureDescriptionValue.USED_FOR_SCORING",
+        "FeatureDescriptionValueDetails.USED_FOR_SCORING",
+        "FeatureForAttributes.USED_FOR_SCORING"
     ],
     "UTYPE_CODE": [
         "CFG_FBOVR.UTYPE_CODE"
@@ -1218,6 +1332,8 @@
         "MatchInfoForWhy.WHY_KEY_DETAILS"
     ],
     "WHY_RESULTS": [
+        "SzEngineFindNetworkByEntityIdResponse.WHY_RESULTS",
+        "SzEngineFindNetworkByRecordIdResponse.WHY_RESULTS",
         "SzEngineWhyEntitiesResponse.WHY_RESULTS",
         "SzEngineWhyRecordInEntityResponse.WHY_RESULTS",
         "SzEngineWhyRecordsResponse.WHY_RESULTS",
@@ -1257,35 +1373,20 @@
     "XXX_CFG_LENSRL": [
         "G2Config.XXX_CFG_LENSRL"
     ],
-    "XXX_CODE": [
-        "Notice.XXX_CODE"
-    ],
     "XXX_CONVERSATIONAL": [
         "CFG_DSRC.XXX_CONVERSATIONAL"
     ],
     "XXX_DATA_SOURCE": [
-        "SampleRecord.XXX_DATA_SOURCE",
         "SzEngineReevaluateEntityResponse.XXX_DATA_SOURCE"
-    ],
-    "XXX_DEGREES": [
-        "InterestingEntity.XXX_DEGREES"
     ],
     "XXX_DERIVATION": [
         "CFG_FTYPE.XXX_DERIVATION"
-    ],
-    "XXX_DESCRIPTION": [
-        "Notice.XXX_DESCRIPTION"
     ],
     "XXX_DISCLOSED_RELATIONS": [
         "MatchInfo.XXX_DISCLOSED_RELATIONS"
     ],
     "XXX_DISPLAY_DELIM": [
         "CFG_FBOM.XXX_DISPLAY_DELIM"
-    ],
-    "XXX_DOMAIN": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_DOMAIN",
-        "RelAnchor.XXX_DOMAIN",
-        "RelLink.XXX_DOMAIN"
     ],
     "XXX_DSRC_ID": [
         "CFG_DSRC_INTEREST.XXX_DSRC_ID"
@@ -1313,9 +1414,6 @@
         "Record.XXX_ENTITY_DESC",
         "RecordForGetEntity.XXX_ENTITY_DESC",
         "SzEngineGetRecordResponse.XXX_ENTITY_DESC"
-    ],
-    "XXX_ENTITY_ID": [
-        "InterestingEntity.XXX_ENTITY_ID"
     ],
     "XXX_ENTITY_KEY": [
         "Record.XXX_ENTITY_KEY",
@@ -1356,18 +1454,7 @@
         "ResolvedEntityForGetEntity.XXX_FEATURE_IDS"
     ],
     "XXX_FEAT_DESC": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_DESC",
-        "RelAnchor.XXX_FEAT_DESC",
-        "RelLink.XXX_FEAT_DESC"
-    ],
-    "XXX_FEAT_ID": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_ID",
-        "RelAnchor.XXX_FEAT_ID",
-        "RelLink.XXX_FEAT_ID"
-    ],
-    "XXX_FEAT_USAGE_TYPE": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_USAGE_TYPE",
-        "RelLink.XXX_FEAT_USAGE_TYPE"
+        "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_DESC"
     ],
     "XXX_FELEM_ID": [
         "SYS_OOM.XXX_FELEM_ID"
@@ -1387,10 +1474,6 @@
         "SzEngineStreamExportJsonEntityReportResponse.XXX_FIXME",
         "SzEngineWhySearchAttributes.XXX_FIXME",
         "SzEngineWhySearchSearchProfile.XXX_FIXME"
-    ],
-    "XXX_FLAGS": [
-        "InterestingEntity.XXX_FLAGS",
-        "SampleRecord.XXX_FLAGS"
     ],
     "XXX_FTYPE_ID": [
         "CFG_EBOM.XXX_FTYPE_ID"
@@ -1413,10 +1496,8 @@
         "SzEngineGetRecordResponse.XXX_IDENTIFIER_DATA"
     ],
     "XXX_INTERESTING_ENTITIES": [
-        "SzEngineAddRecordResponse.XXX_INTERESTING_ENTITIES",
         "SzEngineDeleteRecordResponse.XXX_INTERESTING_ENTITIES",
         "SzEngineProcessRedoRecordResponse.XXX_INTERESTING_ENTITIES",
-        "SzEngineReevaluateEntityResponse.XXX_INTERESTING_ENTITIES",
         "SzEngineReevaluateRecordResponse.XXX_INTERESTING_ENTITIES"
     ],
     "XXX_INTEREST_FLAG": [
@@ -1468,23 +1549,7 @@
         "SYS_OOM.XXX_LIB_FELEM_ID"
     ],
     "XXX_LINKED_FEAT_DESC": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_DESC",
-        "RelAnchor.XXX_LINKED_FEAT_DESC",
-        "RelLink.XXX_LINKED_FEAT_DESC"
-    ],
-    "XXX_LINKED_FEAT_ID": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_ID",
-        "RelAnchor.XXX_LINKED_FEAT_ID",
-        "RelLink.XXX_LINKED_FEAT_ID"
-    ],
-    "XXX_LINKED_FEAT_TYPE": [
-        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_TYPE",
-        "RelAnchor.XXX_LINKED_FEAT_TYPE",
-        "RelLink.XXX_LINKED_FEAT_TYPE"
-    ],
-    "XXX_LINKED_FEAT_USAGE_TYPE": [
-        "RelAnchor.XXX_LINKED_FEAT_USAGE_TYPE",
-        "RelLink.XXX_LINKED_FEAT_USAGE_TYPE"
+        "DisclosedRelationsForMatchInfoForWhy.XXX_LINKED_FEAT_DESC"
     ],
     "XXX_MATCH_KEY": [
         "ResolvedEntity.XXX_MATCH_KEY",
@@ -1512,9 +1577,6 @@
         "RecordForGetEntity.XXX_NAME_DATA",
         "SzEngineGetRecordResponse.XXX_NAME_DATA"
     ],
-    "XXX_NOTICES": [
-        "InterestingEntities.XXX_NOTICES"
-    ],
     "XXX_OTHER_DATA": [
         "Record.XXX_OTHER_DATA",
         "RecordForGetEntity.XXX_OTHER_DATA",
@@ -1534,11 +1596,7 @@
     "XXX_PRODUCT_NAME": [
         "CONFIG_BASE_VERSION.XXX_PRODUCT_NAME"
     ],
-    "XXX_RECORDS": [
-        "RelatedEntity.XXX_RECORDS"
-    ],
     "XXX_RECORD_ID": [
-        "SampleRecord.XXX_RECORD_ID",
         "SzEngineReevaluateEntityResponse.XXX_RECORD_ID"
     ],
     "XXX_REF_SCORE": [
@@ -1553,11 +1611,7 @@
         "SzEngineGetRecordResponse.XXX_RELATIONSHIP_DATA"
     ],
     "XXX_REL_ANCHOR": [
-        "DisclosedRelationsForMatchInfo.XXX_REL_ANCHOR",
-        "DisclosedRelationsForMatchInfoForWhy.XXX_REL_ANCHOR"
-    ],
-    "XXX_REL_LINK": [
-        "DisclosedRelationsForMatchInfo.XXX_REL_LINK"
+        "DisclosedRelationsForMatchInfo.XXX_REL_ANCHOR"
     ],
     "XXX_REL_POINTER": [
         "DisclosedRelationsForMatchInfo.XXX_REL_POINTER",
@@ -1568,12 +1622,6 @@
     ],
     "XXX_RESOLVE": [
         "CFG_ECLASS.XXX_RESOLVE"
-    ],
-    "XXX_SAMPLE_RECORDS": [
-        "InterestingEntity.XXX_SAMPLE_RECORDS"
-    ],
-    "XXX_SUPPRESSED": [
-        "FeatureDescriptionValue.XXX_SUPPRESSED"
     ],
     "XXX_TOKENIZE": [
         "CFG_FELEM.XXX_TOKENIZE"

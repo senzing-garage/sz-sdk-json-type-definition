@@ -14,6 +14,12 @@ namespace Senzing.Typedef
         [JsonPropertyName("DENIALS")]
         public IList<Confirmation> Denials { get; set; }
 
+        [JsonPropertyName("DISCLOSED_RELATIONS")]
+        public IList<DisclosedRelationsForMatchInfo> DisclosedRelations { get; set; }
+
+        [JsonPropertyName("REL_LINKS")]
+        public IList<RelLink> RelLinks { get; set; }
+
         /// <summary>
         /// Identifier of the entity resolution rule that was triggered.
         /// </summary>

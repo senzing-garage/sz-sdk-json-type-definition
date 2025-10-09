@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""Create contents of testdata/responses_th4 directory."""
+
 import json
 import logging
 import os
@@ -9,10 +11,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 FAILED_TYPES = []
-INPUT_DIRECTORY = "/home/senzing/github.com/jaeadams/MichaelTemp"
-
-current_path = pathlib.Path(__file__).parent.resolve()
-OUTPUT_DIRECTORY = os.path.abspath(f"{current_path}/../testdata/responses_th4")
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/th4_tests")
+OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_th4")
 
 TYPE_TO_FILENAME_MAP = {
     "SZ_FIND_INTERESTING_ENTITIES_BY_ENTITY_ID": "SzEngineFindInterestingEntitiesByEntityIdResponse.jsonl",
@@ -82,18 +83,18 @@ def process_file(filename):
         with open(filename, "r", encoding="utf-8") as input_file:
             data = json.load(input_file)
     except Exception:
-        logger.info(f"Could not read {filename}")
+        logger.info("Could not read '%s'.", filename)
         return
 
     # Determine if it's a testcase file.
 
     if "TEST_STEPS" not in data:
-        logger.info(f"TEST_STEPS not in {filename}")
+        logger.info("TEST_STEPS not in '%s'.", filename)
         return
 
     # Process file
 
-    logger.info(f"Processing {filename}")
+    logger.info("Processing '%s'.", filename)
 
     for test_step in data.get("TEST_STEPS", []):
         for validation in test_step.get("VALIDATION", []):
@@ -102,17 +103,17 @@ def process_file(filename):
             publish(validation_type, response)
 
 
-def publish(type, json_string):
+def publish(test_type, json_string):
     """Write the json_string to a file determined by `type`."""
 
     if not json_string:
         return
 
-    filename = TYPE_TO_FILENAME_MAP.get(type)
+    filename = TYPE_TO_FILENAME_MAP.get(test_type)
 
     if not filename:
-        if type not in FAILED_TYPES:
-            FAILED_TYPES.append(type)
+        if test_type not in FAILED_TYPES:
+            FAILED_TYPES.append(test_type)
         return
 
     with open(f"{OUTPUT_DIRECTORY}/{filename}", "a", encoding="utf-8") as target_file:
@@ -130,34 +131,34 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
     """
     unique_lines = set()
     try:
-        with open(input_filepath, "r") as infile:
+        with open(input_filepath, "r", encoding="utf-8") as infile:
             for line in infile:
                 line = line.strip()
                 if len(line) > 0:
                     line_as_dict = json.loads(line)
                     unique_lines.add(json.dumps(line_as_dict, sort_keys=True))
     except FileNotFoundError:
-        logger.warning(f"Error: Input file '{input_filepath}' not found.")
+        logger.warning("Error: Input file '%s' not found.", input_filepath)
         return
 
     if output_filepath is None:
         output_filepath = input_filepath
 
     try:
-        with open(output_filepath, "w") as outfile:
+        with open(output_filepath, "w", encoding="utf-8") as outfile:
             for line in sorted(list(unique_lines)):
                 outfile.write(f"{line}\n")
-        logger.info(f"Duplicates removed in '{output_filepath}'.")
+        logger.info("Duplicates removed in '%s'.", output_filepath)
     except IOError:
-        logger.error(f"Error: Could not write to output file '{output_filepath}'.")
+        logger.error("Error: Could not write to output file '%s'.", output_filepath)
 
 
 def recurse_directory(directory):
     """Recurse through directories to process all of the appropriate files."""
 
-    for root, dirs, files in os.walk(directory):
-        for dir in dirs:
-            recurse_directory(f"{root}/{dir}")
+    for root, subdirectories, files in os.walk(directory):
+        for subdirectory in subdirectories:
+            recurse_directory(f"{root}/{subdirectory}")
 
         for file in files:
             process_file(f"{root}/{file}")
@@ -174,13 +175,18 @@ def stringify_json(candidate_json):
             as_dict = json.loads(candidate_json)
             return json.dumps(as_dict, sort_keys=True)
         except Exception:
-            logger.warning(f'Unable to create a dictionary from "{candidate_json}"')
+            logger.warning("Unable to create a dictionary from '%s'.", candidate_json)
     return None
 
 
 if __name__ == "__main__":
+
+    logger.info("Begin %s", os.path.basename(__file__))
+
     recurse_directory(INPUT_DIRECTORY)
     normalize_files(OUTPUT_DIRECTORY)
     if FAILED_TYPES:
-        logger.warning(f"These types not processed: {FAILED_TYPES}")
+        logger.warning(f"These types not processed: %s", FAILED_TYPES)
     logger.info("Done.")
+
+    logger.info("End   %s", os.path.basename(__file__))

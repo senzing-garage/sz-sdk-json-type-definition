@@ -374,25 +374,29 @@ export interface DataSource {
 }
 
 export interface DisclosedRelationsForMatchInfo {
+  DOMAIN: string;
+  ENTITY_ROLES: EntityRoles[];
+  RELATED_ROLES: RelatedRoles[];
+  REL_LINK: RelLink[];
   XXX_REL_ANCHOR: RelAnchor[];
-  XXX_REL_LINK: RelLink[];
   XXX_REL_POINTER: RelPointer[];
 }
 
 export interface DisclosedRelationsForMatchInfoForWhy {
+  DOMAIN: string;
+  FEAT_ID: number;
+  FEAT_USAGE_TYPE: string;
+  LINKED_FEAT_ID: number;
+  LINKED_FEAT_TYPE: string;
+  REL_ANCHOR: RelAnchor[];
+  REL_LINK: RelLink[];
   REL_POINTER: RelPointer[];
-  XXX_DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
   XXX_FEAT_DESC: string;
-  XXX_FEAT_ID: number;
-  XXX_FEAT_USAGE_TYPE: string;
   XXX_LINKED_FEAT_DESC: string;
-  XXX_LINKED_FEAT_ID: number;
-  XXX_LINKED_FEAT_TYPE: string;
-  XXX_REL_ANCHOR: RelAnchor[];
 }
 
 export interface DisclosedRelationsForWhyKeyDetails {
@@ -436,6 +440,7 @@ export interface EntityNetworkLink {
    * Representation of matched source record features.
    */
   MATCH_KEY: string;
+  MATCH_KEY_DETAILS: MatchKeyDetails;
 
   /**
    * The type of match that occurred for the record.
@@ -471,6 +476,7 @@ export interface EntityPathLink {
    * Representation of matched source record features.
    */
   MATCH_KEY: string;
+  MATCH_KEY_DETAILS: MatchKeyDetails;
 
   /**
    * The type of match that occurred for the record.
@@ -506,19 +512,37 @@ export interface FeatureDescriptionValue {
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+  FEAT_DESC_VALUES: FeatureDescriptionValueDetails[];
 
   /**
    * Internal use.
    */
   LIB_FEAT_ID: number;
   SCORING_CAP_REACHED: string;
+  SUPPRESSED: string;
   USED_FOR_CAND: string;
   USED_FOR_SCORING: string;
-  XXX_SUPPRESSED: string;
+}
+
+export interface FeatureDescriptionValueDetails {
+  CANDIDATE_CAP_REACHED: string;
+  ENTITY_COUNT: number;
+
+  /**
+   * Describes the attributes that make up the feature.
+   */
+  FEAT_DESC: string;
+  LIB_FEAT_ID: number;
+  SCORING_CAP_REACHED: string;
+  SUPPRESSED: string;
+  USED_FOR_CAND: string;
+  USED_FOR_SCORING: string;
 }
 
 export interface FeatureForAttributes {
   ATTRIBUTES: SenzingEntitySpecification;
+  CANDIDATE_CAP_REACHED: string;
+  ENTITY_COUNT: number;
 
   /**
    * Describes the attributes that make up the feature.
@@ -530,12 +554,15 @@ export interface FeatureForAttributes {
    */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
   LIB_FEAT_ID: number;
+  SCORING_CAP_REACHED: string;
 
   /**
    * Label to identify how some features are being used (can also change some
    * features behavior).
    */
   USAGE_TYPE: string;
+  USED_FOR_CAND: string;
+  USED_FOR_SCORING: string;
 }
 
 export interface FeatureForGetEntity {
@@ -660,19 +687,19 @@ export interface HowResults {
 
 export interface InterestingEntities {
   ENTITIES: InterestingEntity[];
-  XXX_NOTICES: Notice[];
+  NOTICES: Notice[];
 }
 
 export interface InterestingEntity {
-  XXX_DEGREES: number;
+  DEGREES: number;
 
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
    * entity. It may change when new information is added.
    */
-  XXX_ENTITY_ID: number;
-  XXX_FLAGS: string[];
-  XXX_SAMPLE_RECORDS: SampleRecord[];
+  ENTITY_ID: number;
+  FLAGS: string[];
+  SAMPLE_RECORDS: SampleRecord[];
 }
 
 export interface MatchInfo {
@@ -725,6 +752,8 @@ export interface MatchInfoForWhy {
 export interface MatchKeyDetails {
   CONFIRMATIONS: Confirmation[];
   DENIALS: Confirmation[];
+  DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfo[];
+  REL_LINKS: RelLink[];
 
   /**
    * Identifier of the entity resolution rule that was triggered.
@@ -741,8 +770,8 @@ export interface MemberRecord {
 }
 
 export interface Notice {
-  XXX_CODE: string;
-  XXX_DESCRIPTION: string;
+  CODE: string;
+  DESCRIPTION: string;
 }
 
 export type Object = string;
@@ -881,33 +910,35 @@ export interface RecordSummary {
 }
 
 export interface RelAnchor {
-  XXX_DOMAIN: string;
+  DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
-  XXX_FEAT_DESC: string;
-  XXX_FEAT_ID: number;
-  XXX_LINKED_FEAT_DESC: string;
-  XXX_LINKED_FEAT_ID: number;
-  XXX_LINKED_FEAT_TYPE: string;
-  XXX_LINKED_FEAT_USAGE_TYPE: string;
+  FEAT_DESC: string;
+  FEAT_ID: number;
+  LINKED_FEAT_DESC: string;
+  LINKED_FEAT_ID: number;
+  LINKED_FEAT_TYPE: string;
+  LINKED_FEAT_USAGE_TYPE: string;
   XXX_REL_POINTER: RelPointer[];
 }
 
 export interface RelLink {
-  XXX_DOMAIN: string;
+  DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
-  XXX_FEAT_DESC: string;
-  XXX_FEAT_ID: number;
-  XXX_FEAT_USAGE_TYPE: string;
-  XXX_LINKED_FEAT_DESC: string;
-  XXX_LINKED_FEAT_ID: number;
-  XXX_LINKED_FEAT_TYPE: string;
-  XXX_LINKED_FEAT_USAGE_TYPE: string;
+  FEAT_DESC: string;
+  FEAT_ID: number;
+  FEAT_USAGE_TYPE: string;
+  FTYPE_CODE: string;
+  LINKED_FEAT_DESC: string;
+  LINKED_FEAT_ID: number;
+  LINKED_FEAT_TYPE: string;
+  LINKED_FEAT_USAGE_TYPE: string;
+  REL_TYPE: string;
 }
 
 export interface RelPointer {
@@ -955,24 +986,27 @@ export interface RelatedEntity {
    * Representation of matched source record features.
    */
   MATCH_KEY: string;
+  MATCH_KEY_DETAILS: MatchKeyDetails;
   MATCH_LEVEL: number;
 
   /**
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
+  RECORDS: Record[];
 
   /**
    * Overview of the source systems the records came from comprising this
    * related entity.
    */
   RECORD_SUMMARY: RecordSummary[];
+  RECORD_TYPES: string[];
   XXX_LAST_SEEN_DT: string;
-  XXX_RECORDS: Record[];
 }
 
 export interface RelatedRoles {
-  FIXME: Fixme;
+  FEAT_DESC: string;
+  ROLE: string;
 }
 
 export interface Repository {
@@ -1053,6 +1087,7 @@ export interface ResolvedEntity {
 
 export interface ResolvedEntityAndMatchInfo {
   ENTITY: EntityForResolvedEntity;
+  FEATURES_MJD: EntityForResolvedEntity;
   MATCH_INFO: MatchInfo;
 }
 
@@ -1123,19 +1158,31 @@ export interface SampleRecord {
   /**
    * A label identifying the provenance of the record.
    */
-  XXX_DATA_SOURCE: string;
-  XXX_FLAGS: string[];
+  DATA_SOURCE: string;
+  FLAGS: string[];
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
-  XXX_RECORD_ID: string;
+  RECORD_ID: string;
 }
 
 export interface SchemaVersion {
   ENGINE_SCHEMA_VERSION: string;
   MAXIMUM_REQUIRED_SCHEMA_VERSION: string;
   MINIMUM_REQUIRED_SCHEMA_VERSION: string;
+}
+
+export interface SearchEntity {
+  FEATURES: { [key: string]: FeatureDescriptionValue[] };
+  SUMMARY: SearchEntitySummary;
+}
+
+export interface SearchEntitySummary {
+  FEATURES_ADDED: number;
+  FEATURES_IGNORED: number;
+  FEATURES_SEARCHED: number;
+  FEATURES_SUBMITTED: number;
 }
 
 export interface SearchRequest {
@@ -1503,6 +1550,8 @@ export interface SenzingEntitySpecification {
    * Entity Specification. See https://www.senzing.com/docs/entity_specification
    */
   REGISTRATION_DATE: string;
+  RELATIONSHIP_KEY: string;
+  RELATIONSHIP_TYPE: string;
 
   /**
    * This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
@@ -1709,12 +1758,12 @@ export interface SzEngineAddRecordResponse {
    * A label identifying the provenance of the record.
    */
   DATA_SOURCE: string;
+  INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
-  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineDeleteRecordResponse {
@@ -1758,6 +1807,7 @@ export interface SzEngineFindNetworkByEntityIdResponse {
   ENTITY_PATHS: EntityPath[];
   ENTITY_PATH_LINKS: EntityPathLink[];
   MAX_ENTITY_LIMIT_REACHED: string;
+  WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineFindNetworkByRecordIdRecordKeys {
@@ -1773,6 +1823,7 @@ export interface SzEngineFindNetworkByRecordIdResponse {
   ENTITY_PATHS: EntityPath[];
   ENTITY_PATH_LINKS: EntityPathLink[];
   MAX_ENTITY_LIMIT_REACHED: string;
+  WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineFindPathByEntityIdAvoidEntityIds {
@@ -1914,12 +1965,12 @@ export interface SzEngineProcessRedoRecordResponse {
 
 export interface SzEngineReevaluateEntityResponse {
   AFFECTED_ENTITIES: AffectedEntity[];
+  INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * A label identifying the provenance of the record.
    */
   XXX_DATA_SOURCE: string;
-  XXX_INTERESTING_ENTITIES: InterestingEntities;
 
   /**
    * The unique identifier within the set of records in the DATA_SOURCE.
@@ -1947,7 +1998,9 @@ export interface SzEngineSearchByAttributesAttributes {
 }
 
 export interface SzEngineSearchByAttributesResponse {
+  RELATED_ENTITIES_MJD: RelatedEntity[];
   RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
+  SEARCH_ENTITY: SearchEntity;
   SEARCH_REQUEST: SearchRequest;
   SEARCH_STATISTICS: SearchStatistic[];
 }

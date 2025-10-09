@@ -7,40 +7,40 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class Notice {
-    @JsonProperty("XXX_CODE")
-    private String xxxCode;
+    @JsonProperty("CODE")
+    private String code;
 
-    @JsonProperty("XXX_DESCRIPTION")
-    private String xxxDescription;
+    @JsonProperty("DESCRIPTION")
+    private String description;
 
     public Notice() {
     }
 
     /**
-     * Getter for xxxCode.<p>
+     * Getter for code.<p>
      */
-    public String getXxxCode() {
-        return xxxCode;
+    public String getCode() {
+        return code;
     }
 
     /**
-     * Setter for xxxCode.<p>
+     * Setter for code.<p>
      */
-    public void setXxxCode(String xxxCode) {
-        this.xxxCode = xxxCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     /**
-     * Getter for xxxDescription.<p>
+     * Getter for description.<p>
      */
-    public String getXxxDescription() {
-        return xxxDescription;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * Setter for xxxDescription.<p>
+     * Setter for description.<p>
      */
-    public void setXxxDescription(String xxxDescription) {
-        this.xxxDescription = xxxDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

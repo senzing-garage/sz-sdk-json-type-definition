@@ -9,7 +9,7 @@
         "Record.RECORD_ID",
         "RecordForGetEntity.RECORD_ID",
         "RecordKey.RECORD_ID",
-        "SampleRecord.XXX_RECORD_ID",
+        "SampleRecord.RECORD_ID",
         "SzEngineAddRecordResponse.RECORD_ID",
         "SzEngineDeleteRecordResponse.RECORD_ID",
         "SzEngineGetRecordResponse.RECORD_ID",

@@ -7,7 +7,10 @@ namespace Senzing.Typedef
 {
     public class RelatedRoles
     {
-        [JsonPropertyName("FIXME")]
-        public Fixme Fixme { get; set; }
+        [JsonPropertyName("FEAT_DESC")]
+        public string FeatDesc { get; set; }
+
+        [JsonPropertyName("ROLE")]
+        public string Role { get; set; }
     }
 }
