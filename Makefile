@@ -498,10 +498,10 @@ download-truthsets:
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
 
 
-.PHONY: extract-testdata-from-th4
-extract-testdata-from-th4:
+.PHONY: make-testdata-responses-th4
+make-testdata-responses-th4:
 	$(activate-venv); \
-		./bin/extract_testdata_from_th4.py
+		./bin/make_testdata_responses_th4.py
 
 
 .PHONY: golangci-lint
