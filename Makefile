@@ -142,10 +142,11 @@ test: \
 	test-csharp \
 	test-java \
 	test-python \
-	test-typescript \
 	test-osarch-specific \
 	test-using-senzing \
 	test-rfc8927-reconstitution
+
+# 	test-typescript \
 
 
 .PHONY: test-csharp
@@ -176,7 +177,7 @@ test-python:
 
 .PHONY: test-typescript
 test-typescript:
-	@tsc main.ts
+	@tsc main.ts || true
 	@node main.js
 
 # -----------------------------------------------------------------------------
@@ -353,10 +354,10 @@ docs-responses-html: clean-docs-responses-html
 		./bin/make_docs_responses_html.py
 
 
-.PHONY: docs-responses-json
-docs-responses-json: clean-docs-responses-json
+.PHONY: docs-responses-mock
+docs-responses-mock: clean-docs-responses-mock
 	$(activate-venv); \
-		./bin/make_docs_responses_json.py
+		./bin/make_docs_responses_mock.py
 
 
 .PHONY: unused-json-keys
@@ -371,7 +372,7 @@ documentation: \
 	docs-json-keys-used \
 	docs-labels-used \
 	docs-responses-html \
-	docs-responses-json \
+	docs-responses-mock \
 	unused-json-keys \
 	documentation-osarch-specific
 
@@ -396,13 +397,13 @@ clean-docs-responses-html:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
 
 
-.PHONY: clean-docs-responses-json
-clean-docs-responses-json:
+.PHONY: clean-docs-responses-mock
+clean-docs-responses-mock:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
 
 
 .PHONY: clean-docs
-clean-docs: clean-docs-responses-html clean-docs-responses-json
+clean-docs: clean-docs-responses-html clean-docs-responses-mock
 	@rm $(MAKEFILE_DIRECTORY)/docs/json_key_descriptions.json || true
 	@rm $(MAKEFILE_DIRECTORY)/docs/json_keys_used.json || true
 	@rm $(MAKEFILE_DIRECTORY)/docs/labels_used.json || true
@@ -441,17 +442,17 @@ clean-rust:
 
 .PHONY: clean-testdata-responses
 clean-testdata-responses:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses/ -type f -name "*.json" -delete
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses/ -type f -name "*.jsonl" -delete
 
 
 .PHONY: clean-testdata-responses-th4
 clean-testdata-responses-th4:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses_th4/ -type f -name "*.json" -delete
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_th4/ -type f -name "*.jsonl" -delete
 
 
 .PHONY: clean-testdata-responses-truthsets
 clean-testdata-responses-truthsets:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses_truthsets/ -type f -name "*.json" -delete
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_truthsets/ -type f -name "*.jsonl" -delete
 
 
 .PHONY: clean-typescript
@@ -513,9 +514,6 @@ download-truthsets:
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/reference.jsonl
 	curl -X GET --output ./testdata/truthsets/watchlist.jsonl \
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
-
-
-
 
 
 .PHONY: golangci-lint

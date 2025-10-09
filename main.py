@@ -49,7 +49,7 @@ from python.senzing_typedef import (
 def path_to_testdata(filename: str) -> str:
     """Determine the path to the test data."""
     current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath(f"{current_path}/testdata/responses_generated/{filename}")
+    result = os.path.abspath(f"{current_path}/testdata/responses_mock/{filename}")
     return result
 
 
