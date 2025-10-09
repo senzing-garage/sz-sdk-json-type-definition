@@ -106,7 +106,6 @@ These instructions create the contents of the `testdata/responses_th4` directory
 1. Extract TH4 testcases to a directory.
 1. In `bin/make_testdata_responses_th4.py`,
     1. Modify `INPUT_DIRECTORY` to point to the extracted TH4 testcase directory.
-    1. Modify `OUTPUT_DIRECTORY` to point to the `testdata/responses_th4` directory.
 1. Run `make make-testdata-responses-th4` to update files in the `testdata/responses_th4` directory.
    Example:
 

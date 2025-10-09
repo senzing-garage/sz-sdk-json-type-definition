@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+import pathlib
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -10,9 +11,8 @@ logger = logging.getLogger(__name__)
 FAILED_TYPES = []
 INPUT_DIRECTORY = "/home/senzing/github.com/jaeadams/MichaelTemp"
 
-# current_path = pathlib.Path(__file__).parent.resolve()
-# OUTPUT_DIRECTORY = os.path.abspath(f"{current_path}/../testdata/responses_th4")
-OUTPUT_DIRECTORY = "/home/senzing/senzing-garage.git/sz-sdk-json-type-definition/testdata/responses_th4"
+current_path = pathlib.Path(__file__).parent.resolve()
+OUTPUT_DIRECTORY = os.path.abspath(f"{current_path}/../testdata/responses_th4")
 
 TYPE_TO_FILENAME_MAP = {
     "SZ_FIND_INTERESTING_ENTITIES_BY_ENTITY_ID": "SzEngineFindInterestingEntitiesByEntityIdResponse.jsonl",
@@ -63,7 +63,6 @@ def normalize_files(directory):
     """Deduplicate and sort JSON lines."""
     for root, _, files in os.walk(directory):
         for file in files:
-            logger.info(f"Deduping {file}")
             remove_duplicate_lines(f"{root}/{file}")
 
 
@@ -132,17 +131,13 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
     unique_lines = set()
     try:
         with open(input_filepath, "r") as infile:
-            line_count = 0
             for line in infile:
-                line_count += 1
-                logger.info(f"Line: {line_count}")
-                logger.warning(f">>>> {line}")
                 line = line.strip()
                 if len(line) > 0:
                     line_as_dict = json.loads(line)
                     unique_lines.add(json.dumps(line_as_dict, sort_keys=True))
     except FileNotFoundError:
-        print(f"Error: Input file '{input_filepath}' not found.")
+        logger.warning(f"Error: Input file '{input_filepath}' not found.")
         return
 
     if output_filepath is None:
@@ -152,7 +147,7 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
         with open(output_filepath, "w") as outfile:
             for line in sorted(list(unique_lines)):
                 outfile.write(f"{line}\n")
-        logger.info(f"Duplicates removed. Unique lines written to '{output_filepath}'.")
+        logger.info(f"Duplicates removed in '{output_filepath}'.")
     except IOError:
         logger.error(f"Error: Could not write to output file '{output_filepath}'.")
 
@@ -160,11 +155,9 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
 def recurse_directory(directory):
     """Recurse through directories to process all of the appropriate files."""
 
-    logger.warning(f">>> Directory {directory}")
-
     for root, dirs, files in os.walk(directory):
         for dir in dirs:
-            recurse_directory(dir)
+            recurse_directory(f"{root}/{dir}")
 
         for file in files:
             process_file(f"{root}/{file}")
@@ -186,11 +179,8 @@ def stringify_json(candidate_json):
 
 
 if __name__ == "__main__":
-
-    logger.warning(f">>>>>>>>>>> INPUT_DIRECTORY: {INPUT_DIRECTORY}")
-
     recurse_directory(INPUT_DIRECTORY)
     normalize_files(OUTPUT_DIRECTORY)
     if FAILED_TYPES:
-        logger.warning(f"Failed types: {FAILED_TYPES}")
+        logger.warning(f"These types not processed: {FAILED_TYPES}")
     logger.info("Done.")
