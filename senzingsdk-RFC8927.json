@@ -1148,23 +1148,7 @@
         },
         "DisclosedRelationsForMatchInfoForWhy": {
             "properties": {
-                "REL_POINTER": {
-                    "elements": {
-                        "ref": "RelPointer"
-                    }
-                },
-                "REL_LINK": {
-                    "elements": {
-                        "ref": "RelLink"
-                    }
-                },
                 "DOMAIN": {
-                    "type": "string"
-                },
-                "XXX_FEAT_DESC": {
-                    "metadata": {
-                        "description": "Describes the attributes that make up the feature."
-                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
@@ -1174,9 +1158,6 @@
                     "type": "int32"
                 },
                 "FEAT_USAGE_TYPE": {
-                    "type": "string"
-                },
-                "XXX_LINKED_FEAT_DESC": {
                     "type": "string"
                 },
                 "LINKED_FEAT_ID": {
@@ -1192,6 +1173,25 @@
                     "elements": {
                         "ref": "RelAnchor"
                     }
+                },
+                "REL_LINK": {
+                    "elements": {
+                        "ref": "RelLink"
+                    }
+                },
+                "REL_POINTER": {
+                    "elements": {
+                        "ref": "RelPointer"
+                    }
+                },
+                "XXX_FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
+                    "type": "string"
+                },
+                "XXX_LINKED_FEAT_DESC": {
+                    "type": "string"
                 }
             }
         },
@@ -1238,13 +1238,13 @@
         },
         "EntityForWhySearch": {
             "properties": {
-                "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
-                },
                 "RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
+                },
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
                 }
             }
         },
@@ -2028,14 +2028,14 @@
                         "ref": "Confirmation"
                     }
                 },
-                "DISCLOSED_RELATIONS": {
-                    "elements": {
-                        "ref": "DisclosedRelationsForMatchInfo"
-                    }
-                },
                 "DENIALS": {
                     "elements": {
                         "ref": "Confirmation"
+                    }
+                },
+                "DISCLOSED_RELATIONS": {
+                    "elements": {
+                        "ref": "DisclosedRelationsForMatchInfo"
                     }
                 },
                 "REL_LINKS": {
@@ -2437,12 +2437,6 @@
                     },
                     "type": "string"
                 },
-                "FTYPE_CODE": {
-                    "type": "string"
-                },
-                "REL_TYPE": {
-                    "type": "string"
-                },
                 "FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
@@ -2450,6 +2444,9 @@
                     "type": "int32"
                 },
                 "FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "FTYPE_CODE": {
                     "type": "string"
                 },
                 "LINKED_FEAT_DESC": {
@@ -2465,6 +2462,9 @@
                     "type": "string"
                 },
                 "LINKED_FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "REL_TYPE": {
                     "type": "string"
                 }
             }
@@ -2559,17 +2559,17 @@
                     },
                     "type": "string"
                 },
+                "RECORDS": {
+                    "elements": {
+                        "ref": "Record"
+                    }
+                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummary"
                     },
                     "metadata": {
                         "description": "Overview of the source systems the records came from comprising this related entity."
-                    }
-                },
-                "RECORDS": {
-                    "elements": {
-                        "ref": "Record"
                     }
                 },
                 "RECORD_TYPES": {
@@ -4053,14 +4053,14 @@
                         "ref": "AffectedEntity"
                     }
                 },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
                 "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
-                },
-                "INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
                 },
                 "XXX_RECORD_ID": {
                     "metadata": {

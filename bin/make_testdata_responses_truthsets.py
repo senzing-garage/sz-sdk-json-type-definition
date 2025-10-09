@@ -247,7 +247,7 @@ def handle_json_python_type(python_type):
         case "object":
             result = "object"
         case _:
-            logger.error(f"Error: Bad 'pythonType:' {python_type}")
+            logger.error(f"Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -337,7 +337,7 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
                 compare_to_schema(test_name, title, json_schema, json.loads(response))
                 test_count += 1
     if not test_count:
-        logger.info(0, f"No tests performed for {title}")
+        output(0, f"No tests performed for {title}")
 
 
 def register_datasources(sz_abstract_factory: SzAbstractFactory):
@@ -1191,7 +1191,7 @@ def create_sz_abstract_factory() -> SzAbstractFactory:
     try:
         sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
     except SzError as err:
-        logger.error(f"\nERROR: {err}\n")
+        logger.error("%s", err)
 
     return sz_abstract_factory
 
@@ -1266,6 +1266,7 @@ def normalize_files(directory):
         for file in files:
             remove_duplicate_lines(f"{root}/{file}")
 
+
 def output(indentation, message):
     """Create an indented message."""
     print(f"{'    ' * indentation}{message}")
@@ -1297,11 +1298,10 @@ def process_rfc8927():
         # Short-circuit when JSON key not found.
 
         if json_value is None:
-            logger.warning(f"Could not find JSON key: {requested_json_key}")
+            logger.warning("Could not find JSON key: %s", requested_json_key)
             continue
 
         SCHEMA[requested_json_key] = recurse_json(json_value)
-
 
 
 def remove_duplicate_lines(input_filepath, output_filepath=None):
@@ -1382,9 +1382,7 @@ if __name__ == "__main__":
 
     delete_records(the_sz_abstract_factory)
 
-
     normalize_files(OUTPUT_DIRECTORY)
-
 
     # Add responses_th4.
 
