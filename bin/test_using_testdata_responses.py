@@ -12,6 +12,8 @@ import os
 import sys
 from pathlib import Path
 
+# Logging.
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
@@ -368,6 +370,8 @@ def process_rfc8927():
 
 
 if __name__ == "__main__":
+
+    # Prolog.
 
     logger.info("Begin %s", os.path.basename(__file__))
 

@@ -144,6 +144,7 @@ test: \
 	test-python \
 	test-osarch-specific \
 	test-using-senzing \
+	test-using-testdata-responses \
 	test-rfc8927-reconstitution
 
 # 	test-typescript \
@@ -170,7 +171,6 @@ test-java:
 .PHONY: test-python
 test-python:
 	$(activate-venv); \
-		./bin/test_rfc8927_reconstitution.py; \
 		./main.py; \
 		pytest test.py --verbose
 

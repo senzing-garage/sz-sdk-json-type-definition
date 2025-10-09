@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: analysing the code with test_rfcC8927_reconstitution.py
+      - name: Analyze the code with test_rfcC8927_reconstitution.py
         run: ./bin/test_rfc8927_reconstitution.py
 
   slack-notification:

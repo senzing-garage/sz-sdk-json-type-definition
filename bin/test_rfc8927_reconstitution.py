@@ -120,15 +120,17 @@ if __name__ == "__main__":
 
     # Prolog.
 
-    horizontal_rule = format("-" * 80)
-    logger.info("%s", horizontal_rule)
-    logger.info("--- %s - Begin", format(os.path.basename(__file__)))
-    logger.info("%s", horizontal_rule)
+    logger.info("Begin %s", os.path.basename(__file__))
+
+    # Loop through INPUT_DIRECTORY.
 
     test_file_names = os.listdir(INPUT_DIRECTORY)
     # test_file_names = ["SzEngineWhySearchResponse.jsonl"]
     for test_file_name in test_file_names:
         logger.info("Testfile: %s", test_file_name)
+
+        # Get appropriate Python class based on file name.
+
         senzing_api_class = Path(test_file_name).stem
 
         if senzing_api_class not in globals():
@@ -140,6 +142,8 @@ if __name__ == "__main__":
                 continue
 
         senzing_class = globals()[senzing_api_class]
+
+        # Process lines in the file.
 
         with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
             LINE_COUNT = 0
@@ -190,8 +194,7 @@ if __name__ == "__main__":
     # Epilog.
 
     logger.info("Tests: %d; Errors: %d", TEST_COUNT, ERROR_COUNT)
-    logger.info("%s", horizontal_rule)
-    logger.info("--- %s - End", os.path.basename(__file__))
-    logger.info("%s", horizontal_rule)
+    logger.info("End   %s", os.path.basename(__file__))
+
     if ERROR_COUNT > 0:
         sys.exit(1)

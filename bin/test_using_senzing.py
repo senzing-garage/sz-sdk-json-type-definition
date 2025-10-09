@@ -7,6 +7,7 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
+import logging
 import os
 import pathlib
 import random
@@ -14,6 +15,11 @@ import sys
 
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
+
+# Logging.
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 # Global variables.
 
@@ -1444,6 +1450,10 @@ def test_this(test_name, title, response):
 
 if __name__ == "__main__":
 
+    # Prolog.
+
+    logger.info("Begin %s", os.path.basename(__file__))
+
     # Process RFC8927 file to create SCHEMA.
 
     process_rfc8927()
@@ -1467,6 +1477,8 @@ if __name__ == "__main__":
     delete_records(the_sz_abstract_factory)
 
     # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))
 
     if ERROR_COUNT > 0:
         sys.exit(1)
