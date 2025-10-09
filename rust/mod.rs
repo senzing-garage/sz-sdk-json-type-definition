@@ -874,11 +874,11 @@ pub struct EntityForResolvedEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct EntityForWhySearch {
+    #[serde(rename = "RELATED_ENTITIES")]
+    pub relatedEntities: Vec<RelatedEntity>,
+
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
-
-    #[serde(rename = "XXX_RELATED_ENTITIES")]
-    pub xxxRelatedEntities: Vec<RelatedEntity>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -3000,6 +3000,9 @@ pub struct SzEngineWhySearchAttributes {
 pub struct SzEngineWhySearchResponse {
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<EntityForWhySearch>,
+
+    #[serde(rename = "SEARCH_ENTITY")]
+    pub searchEntity: SearchEntity,
 
     #[serde(rename = "SEARCH_REQUEST")]
     pub searchRequest: SearchRequest,

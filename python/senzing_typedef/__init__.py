@@ -1328,20 +1328,20 @@ class EntityForResolvedEntity:
 
 @dataclass
 class EntityForWhySearch:
+    related_entities: 'List[RelatedEntity]'
     resolved_entity: 'ResolvedEntity'
-    xxx_related_entities: 'List[RelatedEntity]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EntityForWhySearch':
         return cls(
+            _from_json_data(List[RelatedEntity], data.get("RELATED_ENTITIES")),
             _from_json_data(ResolvedEntity, data.get("RESOLVED_ENTITY")),
-            _from_json_data(List[RelatedEntity], data.get("XXX_RELATED_ENTITIES")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["RELATED_ENTITIES"] = _to_json_data(self.related_entities)
         data["RESOLVED_ENTITY"] = _to_json_data(self.resolved_entity)
-        data["XXX_RELATED_ENTITIES"] = _to_json_data(self.xxx_related_entities)
         return data
 
 @dataclass
@@ -4852,6 +4852,7 @@ class SzEngineWhySearchAttributes:
 @dataclass
 class SzEngineWhySearchResponse:
     entities: 'List[EntityForWhySearch]'
+    search_entity: 'SearchEntity'
     search_request: 'SearchRequest'
     search_statistics: 'List[SearchStatistic]'
     why_results: 'List[WhyResult]'
@@ -4860,6 +4861,7 @@ class SzEngineWhySearchResponse:
     def from_json_data(cls, data: Any) -> 'SzEngineWhySearchResponse':
         return cls(
             _from_json_data(List[EntityForWhySearch], data.get("ENTITIES")),
+            _from_json_data(SearchEntity, data.get("SEARCH_ENTITY")),
             _from_json_data(SearchRequest, data.get("SEARCH_REQUEST")),
             _from_json_data(List[SearchStatistic], data.get("SEARCH_STATISTICS")),
             _from_json_data(List[WhyResult], data.get("WHY_RESULTS")),
@@ -4868,6 +4870,7 @@ class SzEngineWhySearchResponse:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["ENTITIES"] = _to_json_data(self.entities)
+        data["SEARCH_ENTITY"] = _to_json_data(self.search_entity)
         data["SEARCH_REQUEST"] = _to_json_data(self.search_request)
         data["SEARCH_STATISTICS"] = _to_json_data(self.search_statistics)
         data["WHY_RESULTS"] = _to_json_data(self.why_results)

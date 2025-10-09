@@ -1355,20 +1355,20 @@ module SenzingTypedef
   end
 
   class EntityForWhySearch
+    attr_accessor :related_entities
     attr_accessor :resolved_entity
-    attr_accessor :xxx_related_entities
 
     def self.from_json_data(data)
       out = EntityForWhySearch.new
+      out.related_entities = SenzingTypedef::from_json_data(Array[RelatedEntity], data["RELATED_ENTITIES"])
       out.resolved_entity = SenzingTypedef::from_json_data(ResolvedEntity, data["RESOLVED_ENTITY"])
-      out.xxx_related_entities = SenzingTypedef::from_json_data(Array[RelatedEntity], data["XXX_RELATED_ENTITIES"])
       out
     end
 
     def to_json_data
       data = {}
+      data["RELATED_ENTITIES"] = SenzingTypedef::to_json_data(related_entities)
       data["RESOLVED_ENTITY"] = SenzingTypedef::to_json_data(resolved_entity)
-      data["XXX_RELATED_ENTITIES"] = SenzingTypedef::to_json_data(xxx_related_entities)
       data
     end
   end
@@ -4589,6 +4589,7 @@ module SenzingTypedef
 
   class SzEngineWhySearchResponse
     attr_accessor :entities
+    attr_accessor :search_entity
     attr_accessor :search_request
     attr_accessor :search_statistics
     attr_accessor :why_results
@@ -4596,6 +4597,7 @@ module SenzingTypedef
     def self.from_json_data(data)
       out = SzEngineWhySearchResponse.new
       out.entities = SenzingTypedef::from_json_data(Array[EntityForWhySearch], data["ENTITIES"])
+      out.search_entity = SenzingTypedef::from_json_data(SearchEntity, data["SEARCH_ENTITY"])
       out.search_request = SenzingTypedef::from_json_data(SearchRequest, data["SEARCH_REQUEST"])
       out.search_statistics = SenzingTypedef::from_json_data(Array[SearchStatistic], data["SEARCH_STATISTICS"])
       out.why_results = SenzingTypedef::from_json_data(Array[WhyResult], data["WHY_RESULTS"])
@@ -4605,6 +4607,7 @@ module SenzingTypedef
     def to_json_data
       data = {}
       data["ENTITIES"] = SenzingTypedef::to_json_data(entities)
+      data["SEARCH_ENTITY"] = SenzingTypedef::to_json_data(search_entity)
       data["SEARCH_REQUEST"] = SenzingTypedef::to_json_data(search_request)
       data["SEARCH_STATISTICS"] = SenzingTypedef::to_json_data(search_statistics)
       data["WHY_RESULTS"] = SenzingTypedef::to_json_data(why_results)

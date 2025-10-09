@@ -589,9 +589,9 @@ type EntityForResolvedEntity struct {
 }
 
 type EntityForWhySearch struct {
-	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
-	XxxRelatedEntities []RelatedEntity `json:"XXX_RELATED_ENTITIES"`
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
 type EntityNetworkLink struct {
@@ -2101,6 +2101,8 @@ type SzEngineWhySearchAttributes struct {
 
 type SzEngineWhySearchResponse struct {
 	Entities []EntityForWhySearch `json:"ENTITIES"`
+
+	SearchEntity SearchEntity `json:"SEARCH_ENTITY"`
 
 	SearchRequest SearchRequest `json:"SEARCH_REQUEST"`
 

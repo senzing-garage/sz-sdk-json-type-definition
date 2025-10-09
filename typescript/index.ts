@@ -416,8 +416,8 @@ export interface EntityForResolvedEntity {
 }
 
 export interface EntityForWhySearch {
+  RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
-  XXX_RELATED_ENTITIES: RelatedEntity[];
 }
 
 export interface EntityNetworkLink {
@@ -2034,6 +2034,7 @@ export interface SzEngineWhySearchAttributes {
 
 export interface SzEngineWhySearchResponse {
   ENTITIES: EntityForWhySearch[];
+  SEARCH_ENTITY: SearchEntity;
   SEARCH_REQUEST: SearchRequest;
   SEARCH_STATISTICS: SearchStatistic[];
   WHY_RESULTS: WhyResult[];
