@@ -57,7 +57,7 @@ jobs:
         run: |
           mkdir -p /tmp/java/src/main/java/com/senzing/typedef
           ./jtd-codegen --java-jackson-out /tmp/java/src/main/java/com/senzing/typedef --java-jackson-package com.senzing.typedef --root-name senzingsdk senzingsdk-RFC8927.json
-          diff -r ./java  /tmp/java
+          diff -r ./java/src  /tmp/java/src
 
       - name: Verify generated Python code is up-to-date.
         run: |
