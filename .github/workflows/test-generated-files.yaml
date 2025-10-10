@@ -45,7 +45,7 @@ jobs:
           mkdir -p /tmp/csharp/Senzing.Typedef
           ./jtd-codegen --csharp-system-text-namespace Senzing.Typedef --csharp-system-text-out /tmp/csharp/Senzing.Typedef --root-name senzingsdk senzingsdk-RFC8927.json
           for file in /tmp/csharp/Senzing.Typedef/*; do sed -i '2i #pragma warning disable CS8601, CS8618' "$file"; done
-          diff -r ./csharp/Senzing.Typedef  /tmp/csharp/Senzing.Typedef
+          diff --recursive ./csharp/Senzing.Typedef  /tmp/csharp/Senzing.Typedef
 
       - name: Verify generated Go code is up-to-date.
         run: |
@@ -57,31 +57,31 @@ jobs:
         run: |
           mkdir -p /tmp/java/src/main/java/com/senzing/typedef
           ./jtd-codegen --java-jackson-out /tmp/java/src/main/java/com/senzing/typedef --java-jackson-package com.senzing.typedef --root-name senzingsdk senzingsdk-RFC8927.json
-          diff -r ./java/src  /tmp/java/src
+          diff --recursive ./java/src  /tmp/java/src
 
       - name: Verify generated Python code is up-to-date.
         run: |
           mkdir -p /tmp/python/senzing_typedef
           ./jtd-codegen --python-out /tmp/python/senzing_typedef --root-name senzingsdk senzingsdk-RFC8927.json
-          diff -r ./python  /tmp/python
+          diff --recursive ./python  /tmp/python
 
       - name: Verify generated Ruby code is up-to-date.
         run: |
           mkdir -p /tmp/ruby
           ./jtd-codegen --root-name senzingsdk --ruby-module SenzingTypedef --ruby-out /tmp/ruby --ruby-sig-module SenzingSig senzingsdk-RFC8927.json
-          diff -r ./ruby  /tmp/ruby
+          diff --recursive ./ruby  /tmp/ruby
 
       - name: Verify generated Rust code is up-to-date.
         run: |
           mkdir -p /tmp/rust
           ./jtd-codegen --root-name senzingsdk --rust-out /tmp/rust senzingsdk-RFC8927.json
-          diff -r ./rust  /tmp/rust
+          diff --recursive ./rust  /tmp/rust
 
       - name: Verify generated Typescript code is up-to-date.
         run: |
           mkdir -p /tmp/typescript
           ./jtd-codegen --root-name senzingsdk --typescript-out /tmp/typescript senzingsdk-RFC8927.json
-          diff -r ./typescript  /tmp/typescript
+          diff --recursive ./typescript  /tmp/typescript
 
   slack-notification:
     needs: [test-generated-files]

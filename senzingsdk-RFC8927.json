@@ -11,6 +11,9 @@
                 "GNR_FN": {
                     "type": "int32"
                 },
+                "MJD": {
+                    "type": "int32"
+                },
                 "GNR_GN": {
                     "type": "int32"
                 },
