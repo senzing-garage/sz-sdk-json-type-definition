@@ -23,6 +23,10 @@ logger = logging.getLogger(__name__)
 
 # Global variables.
 
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/truthsets")
+OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_truthsets")
+
 DEBUG = 0
 DEFINITIONS = {}
 ERROR_COUNT = 0
@@ -32,11 +36,6 @@ LOADED_ENTITY_IDS = []
 LOADED_RECORD_KEYS = []
 SCHEMA = {}
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
-
-CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
-# TH4_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_th4")
-INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/truthsets")
-OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_truthsets")
 
 
 FLAGS = [
@@ -401,7 +400,7 @@ def compare_find_interesting_entities_by_entity_id(
     """Compare find_interesting_entities_by_entity_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindInterestingEntitiesByEntityIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
     for entity_id in LOADED_ENTITY_IDS:
         flag_count = 0
         for flag in FLAGS:
@@ -418,7 +417,7 @@ def compare_find_interesting_entities_by_record_id(
     """Compare find_interesting_entities_by_record_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindInterestingEntitiesByRecordIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
         record_id = record.get("record_id", "")
@@ -440,7 +439,7 @@ def compare_find_network_by_entity_id(sz_abstract_factory: SzAbstractFactory):
     """Compare find_network_by_entity_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindNetworkByEntityIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
     max_degrees = 5
     build_out_degrees = 5
     build_out_max_entities = 5
@@ -476,7 +475,7 @@ def compare_find_network_by_record_id(sz_abstract_factory: SzAbstractFactory):
     """Compare find_network_by_record_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindNetworkByRecordIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
     max_degrees = 5
     build_out_degrees = 5
     build_out_max_entities = 5
@@ -524,7 +523,7 @@ def compare_find_path_by_entity_id(sz_abstract_factory: SzAbstractFactory):
     """Compare find_path_by_entity_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindPathByEntityIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
     max_degrees = 5
     avoid_entity_ids = None
     required_data_sources = None
@@ -551,7 +550,7 @@ def compare_find_path_by_record_id(sz_abstract_factory: SzAbstractFactory):
     """Compare find_path_by_record_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineFindPathByRecordIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
     max_degrees = 5
     avoid_record_keys = None
     required_data_sources = None
@@ -587,7 +586,7 @@ def compare_get_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
     """Compare get_entity_by_entity_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineGetEntityByEntityIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for entity_id in LOADED_ENTITY_IDS:
         flag_count = 0
@@ -603,7 +602,7 @@ def compare_get_entity_by_record_id(sz_abstract_factory: SzAbstractFactory):
     """Compare get_entity_by_record_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineGetEntityByRecordIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
@@ -628,7 +627,7 @@ def compare_get_feature(sz_abstract_factory: SzAbstractFactory):
     sz_diagnostic = sz_abstract_factory.create_diagnostic()
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzDiagnosticGetFeatureResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     # Extract feature IDs.
 
@@ -665,7 +664,7 @@ def compare_get_record(sz_abstract_factory: SzAbstractFactory):
     """Compare get_record."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineGetRecordResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
@@ -689,7 +688,7 @@ def compare_get_record_preview(sz_abstract_factory: SzAbstractFactory):
     """Compare get_record_preview."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineGetRecordPreviewResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record_dict in LOADED_RECORD_KEYS:
 
@@ -722,7 +721,7 @@ def compare_get_virtual_entity_by_record_id(sz_abstract_factory: SzAbstractFacto
     """Compare get_virtual_entity_by_record_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineGetVirtualEntityByRecordIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
@@ -760,7 +759,7 @@ def compare_how_entity_by_entity_id(sz_abstract_factory: SzAbstractFactory):
     """Compare how_entity_by_entity_id."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineHowEntityByEntityIdResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for entity_id in LOADED_ENTITY_IDS:
         flag_count = 0
@@ -784,7 +783,7 @@ def compare_redo(sz_abstract_factory: SzAbstractFactory):
     # Get all redo records.
 
     title = "SzEngineGetRedoRecordResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     redo_records = []
     redo_record_count = 0
@@ -820,7 +819,7 @@ def compare_reevaluate_entity(sz_abstract_factory: SzAbstractFactory):
     """Compare reevaluate_entity."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineReevaluateEntityResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for entity_id in LOADED_ENTITY_IDS:
         flag_count = 0
@@ -839,7 +838,7 @@ def compare_reevaluate_record(sz_abstract_factory: SzAbstractFactory):
     """Compare reevaluate_record."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineReevaluateRecordResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
@@ -865,7 +864,7 @@ def compare_search_by_attributes(sz_abstract_factory: SzAbstractFactory):
     """Compare search_by_attributes."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineSearchByAttributesResponse"
-    test_cases = []
+    test_cases = ["{}"]
     search_profile = ""
 
     search_record_count = 0
@@ -949,7 +948,7 @@ def compare_static_method_signatures(sz_abstract_factory: SzAbstractFactory):
 
     for testcase in testcases:
         response = eval(testcase.get("testcase", ""))
-        output_file(f"{testcase.get('response')}", [response])
+        output_file(f"{testcase.get('response')}", ["{}", response])
 
 
 # -----------------------------------------------------------------------------
@@ -961,7 +960,7 @@ def compare_why_entities(sz_abstract_factory: SzAbstractFactory):
     """Compare why_entities."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineWhyEntitiesResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for entity_id in LOADED_ENTITY_IDS:
         entity_id_2 = LOADED_ENTITY_IDS[random.randint(0, FLAGS_LEN - 1)]
@@ -983,7 +982,7 @@ def compare_why_record_in_entity(sz_abstract_factory: SzAbstractFactory):
     """Compare why_record_in_entity."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineWhyRecordInEntityResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record in LOADED_RECORD_KEYS:
         data_source = record.get("data_source", "")
@@ -1006,7 +1005,7 @@ def compare_why_records(sz_abstract_factory: SzAbstractFactory):
     """Compare why_records."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineWhyRecordsResponse"
-    test_cases = []
+    test_cases = ["{}"]
 
     for record in LOADED_RECORD_KEYS:
 
@@ -1039,7 +1038,7 @@ def compare_why_search(sz_abstract_factory: SzAbstractFactory):
     """Compare why_search."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineWhySearchResponse"
-    test_cases = []
+    test_cases = ["{}"]
     search_profile = ""
 
     for entity_id in LOADED_ENTITY_IDS:
@@ -1065,7 +1064,7 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
     """Compare delete_record."""
     sz_engine = sz_abstract_factory.create_engine()
     title = "SzEngineDeleteRecordResponse"
-    test_cases = []
+    test_cases = ["{}"]
     record_count = 0
     for record in LOADED_RECORD_KEYS:
         record_count += 1
@@ -1075,26 +1074,6 @@ def delete_records(sz_abstract_factory: SzAbstractFactory):
         if response not in test_cases:
             test_cases.append(response)
     output_file(title, test_cases)
-
-
-# -----------------------------------------------------------------------------
-# Add TH4 responses
-# -----------------------------------------------------------------------------
-
-
-# def add_th4_responses():
-#     """Write response to a file."""
-#     source_dir = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_th4")
-#     target_dir = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_senzing")
-
-#     th4_file_names = os.listdir(source_dir)
-#     for th4_file_name in th4_file_names:
-
-#         with open(f"{source_dir}/{th4_file_name}", "r", encoding="utf-8") as source_file:
-#             source_lines = source_file.read()
-
-#         with open(f"{target_dir}/{th4_file_name}", "a", encoding="utf-8") as target_file:
-#             target_file.write(source_lines)
 
 
 # -----------------------------------------------------------------------------
@@ -1332,7 +1311,7 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
         with open(output_filepath, "w", encoding="utf-8") as outfile:
             for line in sorted(list(unique_lines)):
                 outfile.write(f"{line}\n")
-        logger.info("Duplicates removed in '%s'.", output_filepath)
+        logger.debug("Duplicates removed in '%s'.", output_filepath)
     except IOError:
         logger.error("Error: Could not write to output file '%s'.", output_filepath)
 
@@ -1360,6 +1339,8 @@ def test_this(test_name, title, response):
 
 if __name__ == "__main__":
 
+    logger.info("Begin %s", os.path.basename(__file__))
+
     # Process RFC8927 file to create SCHEMA.
 
     process_rfc8927()
@@ -1384,11 +1365,9 @@ if __name__ == "__main__":
 
     normalize_files(OUTPUT_DIRECTORY)
 
-    # Add responses_th4.
-
-    # add_th4_responses()
-
     # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))
 
     if ERROR_COUNT > 0:
         sys.exit(1)

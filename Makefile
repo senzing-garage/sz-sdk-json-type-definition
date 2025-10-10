@@ -501,6 +501,13 @@ analyze-RFC8927:
 		./bin/analyze_rfc8927.py
 
 
+.PHONY: black
+black:
+	$(info ${\n})
+	$(info --- black ----------------------------------------------------------------------)
+	@$(activate-venv); black $(shell git ls-files '*.py' ':!:docs/source/*')
+
+
 .PHONY: cspell
 cspell:
 	@cspell lint --dot .
