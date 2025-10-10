@@ -302,12 +302,6 @@ testdata-responses: clean-testdata-responses
 		./bin/make_testdata_responses.py
 
 
-# .PHONY: testdata-responses-generated
-# testdata-responses-generated: clean-testdata-responses-generated
-# 	$(activate-venv); \
-# 		./bin/make_testdata_responses_generated.py
-
-
 .PHONY: testdata-responses-th4
 testdata-responses-th4: clean-testdata-responses-th4
 	$(activate-venv); \
@@ -323,8 +317,8 @@ testdata-responses-truthsets: clean-testdata-responses-truthsets
 .PHONY: generate-tests
 generate-tests: \
 	go-typedef-generated-typedef-test-go \
-	testdata-responses-generated \
-	testdata-responses-truthsets
+	testdata-responses-truthsets \
+	testdata-responses
 
 # -----------------------------------------------------------------------------
 # Generate documentation
@@ -354,10 +348,10 @@ docs-responses-html: clean-docs-responses-html
 		./bin/make_docs_responses_html.py
 
 
-.PHONY: docs-responses-mock
-docs-responses-mock: clean-docs-responses-mock
+.PHONY: docs-responses-json
+docs-responses-json: clean-docs-responses-json
 	$(activate-venv); \
-		./bin/make_docs_responses_mock.py
+		./bin/make_docs_responses_json.py
 
 
 .PHONY: unused-json-keys
@@ -372,7 +366,7 @@ documentation: \
 	docs-json-keys-used \
 	docs-labels-used \
 	docs-responses-html \
-	docs-responses-mock \
+	docs-responses-json \
 	unused-json-keys \
 	documentation-osarch-specific
 
@@ -397,13 +391,13 @@ clean-docs-responses-html:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-html/* || true
 
 
-.PHONY: clean-docs-responses-mock
-clean-docs-responses-mock:
+.PHONY: clean-docs-responses-json
+clean-docs-responses-json:
 	@rm $(MAKEFILE_DIRECTORY)/docs/responses-json/* || true
 
 
 .PHONY: clean-docs
-clean-docs: clean-docs-responses-html clean-docs-responses-mock
+clean-docs: clean-docs-responses-html clean-docs-responses-json
 	@rm $(MAKEFILE_DIRECTORY)/docs/json_key_descriptions.json || true
 	@rm $(MAKEFILE_DIRECTORY)/docs/json_keys_used.json || true
 	@rm $(MAKEFILE_DIRECTORY)/docs/labels_used.json || true
@@ -461,7 +455,7 @@ clean-typescript:
 
 
 .PHONY: clean-generated
-clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript clean-docs clean-testdata-responses-generated
+clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript clean-docs
 
 
 .PHONY: restore

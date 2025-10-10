@@ -20,12 +20,12 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: set up Python ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}.
         uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Verify TruthSets
+      - name: Verify TruthSets.
         run: |
           mkdir -p /tmp/truthsets
           curl -X GET --output /tmp/truthsets/customers.jsonl  https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/customers.jsonl
@@ -33,19 +33,28 @@ jobs:
           curl -X GET --output /tmp/truthsets/watchlist.jsonl  https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
           diff --recursive ./testdata/truthsets /tmp/truthsets
 
-      - name: Install jtd-codegen
+      - name: Install jtd-codegen.
         run: |
           curl -X GET --location --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
           unzip jtd-codegen.zip
           chmod +x jtd-codegen
+          jtd-codegen --version
 
-      - name: Verify generated python code is up-to-date
+      - name: Verify generated Python code is up-to-date.
         run: |
           ls -la ./python/senzing_typedef
           mkdir -p /tmp/python/senzing_typedef
           ./jtd-codegen --python-out /tmp/python/senzing_typedef --root-name senzingsdk senzingsdk-RFC8927.json
           ls -la /tmp/python/senzing_typedef
           diff ./python/senzing_typedef/__init__.py  /tmp/python/senzing_typedef/__init__.py
+
+      - name: Verify generated Java code is up-to-date.
+        run: |
+          ls -la ./java/src/main/java/com/senzing/typedef
+          mkdir -p /tmp/java/src/main/java/com/senzing/typedef
+          ./jtd-codegen --java-jackson-out /tmp/java/src/main/java/com/senzing/typedef --java-jackson-package com.senzing.typedef --root-name senzingsdk senzingsdk-RFC8927.json
+          ls -la /tmp/java/src/main/java/com/senzing/typedef
+          diff -r ./java/src/main/java/com/senzing/typedef  /tmp/java/src/main/java/com/senzing/typedef
 
   slack-notification:
     needs: [test-generated-files]

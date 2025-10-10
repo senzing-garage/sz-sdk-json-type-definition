@@ -1040,6 +1040,7 @@
     "RELATED_ENTITIES": [
         "Entity.RELATED_ENTITIES",
         "EntityForResolvedEntity.RELATED_ENTITIES",
+        "EntityForWhySearch.RELATED_ENTITIES",
         "SzEngineGetEntityByEntityIdResponse.RELATED_ENTITIES",
         "SzEngineGetEntityByRecordIdResponse.RELATED_ENTITIES"
     ],
@@ -1155,7 +1156,8 @@
         "FeatureForAttributes.SCORING_CAP_REACHED"
     ],
     "SEARCH_ENTITY": [
-        "SzEngineSearchByAttributesResponse.SEARCH_ENTITY"
+        "SzEngineSearchByAttributesResponse.SEARCH_ENTITY",
+        "SzEngineWhySearchResponse.SEARCH_ENTITY"
     ],
     "SEARCH_PROFILE": [
         "SearchRequest.SEARCH_PROFILE"
@@ -1601,9 +1603,6 @@
     ],
     "XXX_REF_SCORE": [
         "CFG_ERRULE.XXX_REF_SCORE"
-    ],
-    "XXX_RELATED_ENTITIES": [
-        "EntityForWhySearch.XXX_RELATED_ENTITIES"
     ],
     "XXX_RELATIONSHIP_DATA": [
         "Record.XXX_RELATIONSHIP_DATA",

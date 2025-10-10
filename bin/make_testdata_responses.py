@@ -22,7 +22,6 @@ CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
 TESTDATA_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata")
 OUTPUT_DIRECTORY = f"{TESTDATA_DIRECTORY}/responses"
 
-
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
@@ -81,7 +80,6 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
-
 
 if __name__ == "__main__":
 

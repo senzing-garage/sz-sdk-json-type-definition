@@ -4,7 +4,6 @@
             "ENTITY_ID": "int32"
         }
     ],
-    "XXX_DATA_SOURCE": "string",
     "INTERESTING_ENTITIES": {
         "ENTITIES": [
             {
@@ -31,5 +30,6 @@
             }
         ]
     },
+    "XXX_DATA_SOURCE": "string",
     "XXX_RECORD_ID": "string"
 }

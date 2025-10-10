@@ -32,6 +32,30 @@
                         "TOKEN": "string"
                     }
                 ],
+                "DENIALS": [
+                    {
+                        "ADDITIONAL_SCORES": {
+                            "FULL_SCORE": "int32",
+                            "GENERATION_MATCH": "int32",
+                            "GNR_FN": "int32",
+                            "GNR_GN": "int32",
+                            "GNR_ON": "int32",
+                            "GNR_SN": "int32"
+                        },
+                        "CANDIDATE_FEAT_DESC": "string",
+                        "CANDIDATE_FEAT_ID": "int32",
+                        "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                        "FTYPE_CODE": "string",
+                        "INBOUND_FEAT_DESC": "string",
+                        "INBOUND_FEAT_ID": "int32",
+                        "INBOUND_FEAT_USAGE_TYPE": "string",
+                        "SCORE": "int32",
+                        "SCORE_BEHAVIOR": "string",
+                        "SCORE_BUCKET": "string",
+                        "SOURCE": "string",
+                        "TOKEN": "string"
+                    }
+                ],
                 "DISCLOSED_RELATIONS": [
                     {
                         "DOMAIN": "string",
@@ -51,14 +75,14 @@
                             {
                                 "DOMAIN": "string",
                                 "FEAT_DESC": "string",
-                                "FTYPE_CODE": "string",
-                                "REL_TYPE": "string",
                                 "FEAT_ID": "int32",
                                 "FEAT_USAGE_TYPE": "string",
+                                "FTYPE_CODE": "string",
                                 "LINKED_FEAT_DESC": "string",
                                 "LINKED_FEAT_ID": "int32",
                                 "LINKED_FEAT_TYPE": "string",
-                                "LINKED_FEAT_USAGE_TYPE": "string"
+                                "LINKED_FEAT_USAGE_TYPE": "string",
+                                "REL_TYPE": "string"
                             }
                         ],
                         "XXX_REL_ANCHOR": [
@@ -96,56 +120,24 @@
                         ]
                     }
                 ],
-                "DENIALS": [
-                    {
-                        "ADDITIONAL_SCORES": {
-                            "FULL_SCORE": "int32",
-                            "GENERATION_MATCH": "int32",
-                            "GNR_FN": "int32",
-                            "GNR_GN": "int32",
-                            "GNR_ON": "int32",
-                            "GNR_SN": "int32"
-                        },
-                        "CANDIDATE_FEAT_DESC": "string",
-                        "CANDIDATE_FEAT_ID": "int32",
-                        "CANDIDATE_FEAT_USAGE_TYPE": "string",
-                        "FTYPE_CODE": "string",
-                        "INBOUND_FEAT_DESC": "string",
-                        "INBOUND_FEAT_ID": "int32",
-                        "INBOUND_FEAT_USAGE_TYPE": "string",
-                        "SCORE": "int32",
-                        "SCORE_BEHAVIOR": "string",
-                        "SCORE_BUCKET": "string",
-                        "SOURCE": "string",
-                        "TOKEN": "string"
-                    }
-                ],
                 "REL_LINKS": [
                     {
                         "DOMAIN": "string",
                         "FEAT_DESC": "string",
-                        "FTYPE_CODE": "string",
-                        "REL_TYPE": "string",
                         "FEAT_ID": "int32",
                         "FEAT_USAGE_TYPE": "string",
+                        "FTYPE_CODE": "string",
                         "LINKED_FEAT_DESC": "string",
                         "LINKED_FEAT_ID": "int32",
                         "LINKED_FEAT_TYPE": "string",
-                        "LINKED_FEAT_USAGE_TYPE": "string"
+                        "LINKED_FEAT_USAGE_TYPE": "string",
+                        "REL_TYPE": "string"
                     }
                 ],
                 "XXX_ERRULE_CODE": "string"
             },
             "MATCH_LEVEL": "int32",
             "MATCH_LEVEL_CODE": "string",
-            "RECORD_SUMMARY": [
-                {
-                    "DATA_SOURCE": "string",
-                    "RECORD_COUNT": "int32",
-                    "XXX_FIRST_SEEN_DT": "timestamp",
-                    "XXX_LAST_SEEN_DT": "timestamp"
-                }
-            ],
             "RECORDS": [
                 {
                     "DATA_SOURCE": "string",
@@ -329,6 +321,14 @@
                     "XXX_RELATIONSHIP_DATA": [
                         "string"
                     ]
+                }
+            ],
+            "RECORD_SUMMARY": [
+                {
+                    "DATA_SOURCE": "string",
+                    "RECORD_COUNT": "int32",
+                    "XXX_FIRST_SEEN_DT": "timestamp",
+                    "XXX_LAST_SEEN_DT": "timestamp"
                 }
             ],
             "RECORD_TYPES": [
