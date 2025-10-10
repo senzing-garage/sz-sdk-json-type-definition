@@ -25,6 +25,7 @@ logger = logging.getLogger(__name__)
 
 CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
 INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/truthsets")
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_truthsets")
 
 DEBUG = 0
@@ -36,7 +37,6 @@ LOADED_ENTITY_IDS = []
 LOADED_RECORD_KEYS = []
 SCHEMA = {}
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
-
 
 FLAGS = [
     SzEngineFlags.SZ_WITH_INFO,  # 1
@@ -246,7 +246,7 @@ def handle_json_python_type(python_type):
         case "object":
             result = "object"
         case _:
-            logger.error(f"Error: Bad 'pythonType:' %s", python_type)
+            logger.error("Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -314,8 +314,7 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
 
     test_count = 0
     for filename in filenames:
-        file_path = f"{INPUT_DIRECTORY}/{filename}"
-        with open(file_path, "r", encoding="utf-8") as input_file:
+        with open(os.path.join(INPUT_DIRECTORY, filename), "r", encoding="utf-8") as input_file:
             for line in input_file:
                 line_as_dict = json.loads(line)
                 data_source = line_as_dict.get("DATA_SOURCE")
@@ -1243,7 +1242,7 @@ def normalize_files(directory):
     """Deduplicate and sort JSON lines."""
     for root, _, files in os.walk(directory):
         for file in files:
-            remove_duplicate_lines(f"{root}/{file}")
+            remove_duplicate_lines(os.path.join(root, file))
 
 
 def output(indentation, message):
@@ -1253,7 +1252,7 @@ def output(indentation, message):
 
 def output_file(filename, response):
     """Write response to a file."""
-    with open(f"{OUTPUT_DIRECTORY}/{filename}.jsonl", "w", encoding="utf-8") as file:
+    with open(os.path.join(OUTPUT_DIRECTORY, f"{filename}.jsonl"), "w", encoding="utf-8") as file:
         for line in response:
             file.write(f"{line}\n")
 
@@ -1263,8 +1262,7 @@ def process_rfc8927():
     # global DEFINITIONS, SCHEMA
     global DEFINITIONS
 
-    input_filename = "./senzingsdk-RFC8927.json"
-    with open(input_filename, "r", encoding="utf-8") as input_file:
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
         rfc8927 = json.load(input_file)
 
     DEFINITIONS = rfc8927.get("definitions", {})
@@ -1338,6 +1336,8 @@ def test_this(test_name, title, response):
 
 
 if __name__ == "__main__":
+
+    # Prolog.
 
     logger.info("Begin %s", os.path.basename(__file__))
 

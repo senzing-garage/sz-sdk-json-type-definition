@@ -144,7 +144,7 @@ def handle_json_python_type(python_type):
         case "string":
             result = "string"
         case _:
-            print(f"Error: Bad 'pythonType:' {python_type}")
+            logger.error("Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -333,8 +333,9 @@ def remove_keys_recursive(needles, haystack):
 
 if __name__ == "__main__":
 
-    logger.info("Begin %s", os.path.basename(__file__))
+    # Prolog.
 
+    logger.info("Begin %s", os.path.basename(__file__))
     logger.warning("This program is being deprecated.")
 
     # Read JSON from file.
@@ -355,7 +356,7 @@ if __name__ == "__main__":
         # Short-circuit when JSON key not found.
 
         if initial_json_value is None:
-            print(f"Could not find JSON key: {requested_json_key}")
+            logger.info("Could not find JSON key: %s", requested_json_key)
             continue
 
         residual_json = recurse_json(initial_json_value)
@@ -368,5 +369,7 @@ if __name__ == "__main__":
 
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as json_file:
         json.dump(RESIDUAL, json_file, indent=4)
+
+    # Epilog.
 
     logger.info("End   %s", os.path.basename(__file__))

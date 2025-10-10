@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-
 # pylint: disable=duplicate-code
 
 """
@@ -31,9 +30,9 @@ def append_files(source_directory, target_directory):
     """Append contents from source_directory into the files of the target_directory."""
     filenames = os.listdir(source_directory)
     for filename in filenames:
-        with open(f"{source_directory}/{filename}", "r", encoding="utf-8") as source_file:
+        with open(os.path.join(source_directory, filename), "r", encoding="utf-8") as source_file:
             source_lines = source_file.read()
-        with open(f"{target_directory}/{filename}", "a", encoding="utf-8") as target_file:
+        with open(os.path.join(target_directory, filename), "a", encoding="utf-8") as target_file:
             target_file.write(source_lines)
 
 
@@ -41,7 +40,7 @@ def normalize_files(directory):
     """Deduplicate and sort JSON lines."""
     for root, _, files in os.walk(directory):
         for file in files:
-            remove_duplicate_lines(f"{root}/{file}")
+            remove_duplicate_lines(os.path.join(root, file))
 
 
 def remove_duplicate_lines(input_filepath, output_filepath=None):
@@ -83,12 +82,18 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
 
 if __name__ == "__main__":
 
+    # Prolog.
+
     logger.info("Begin %s", os.path.basename(__file__))
+
+    # Process data.
 
     DIRECTORIES = ["responses_static", "responses_truthsets", "responses_th4"]
     for DIRECTORY in DIRECTORIES:
-        append_files(f"{TESTDATA_DIRECTORY}/{DIRECTORY}", OUTPUT_DIRECTORY)
+        append_files(os.path.join(TESTDATA_DIRECTORY, DIRECTORY), OUTPUT_DIRECTORY)
 
     normalize_files(OUTPUT_DIRECTORY)
+
+    # Epilog.
 
     logger.info("End   %s", os.path.basename(__file__))

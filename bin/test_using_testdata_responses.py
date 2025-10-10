@@ -9,8 +9,8 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 import json
 import logging
 import os
+import pathlib
 import sys
-from pathlib import Path
 
 # Logging.
 
@@ -19,6 +19,10 @@ logger = logging.getLogger(__name__)
 
 # Global variables.
 
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses")
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+
 DEBUG = 0
 DEFINITIONS = {}
 ERROR_COUNT = 0
@@ -26,7 +30,6 @@ HR_START = ">" * 80
 HR_STOP = "<" * 80
 SCHEMA = {}
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
-INPUT_DIRECTORY = "./testdata/responses"
 
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
@@ -143,7 +146,7 @@ def handle_json_python_type(python_type):
         case "string":
             return "string"
         case _:
-            print(f"Error: Bad 'pythonType:' {python_type}")
+            logger.error("Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -209,7 +212,8 @@ def compare_to_schema(test_name, json_path, schema, fragment):
     """Compare a JSON fragment to the schema."""
     global ERROR_COUNT
 
-    debug(2, f"{HR_START}\nSchema for {json_path}:\n{json.dumps(schema)}\n{HR_STOP}\n")
+    logger.debug("Schema for %s", json_path)
+    logger.debug("%s", json.dumps(schema))
 
     if isinstance(fragment, list):
         if not isinstance(schema, list):
@@ -287,8 +291,8 @@ def compare_to_schema(test_name, json_path, schema, fragment):
 
 def debug(level, message):
     """If appropriate, print debug statement."""
-    if DEBUG >= level:
-        print(message)
+    _ = level
+    logger.debug(message)
 
 
 def error_message(test_name, json_path, message, schema, fragment):
@@ -344,8 +348,7 @@ def process_rfc8927():
     # global DEFINITIONS, SCHEMA
     global DEFINITIONS
 
-    input_filename = "./senzingsdk-RFC8927.json"
-    with open(input_filename, "r", encoding="utf-8") as input_file:
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
         rfc8927 = json.load(input_file)
 
     DEFINITIONS = rfc8927.get("definitions", {})
@@ -358,7 +361,7 @@ def process_rfc8927():
         # Short-circuit when JSON key not found.
 
         if json_value is None:
-            print(f"Could not find JSON key: {requested_json_key}")
+            logger.info("Could not find JSON key: %s", requested_json_key)
             continue
 
         SCHEMA[requested_json_key] = recurse_json(json_value)
@@ -382,13 +385,13 @@ if __name__ == "__main__":
     test_file_names = os.listdir(INPUT_DIRECTORY)
     # test_file_names = ["SzEngineProcessRedoRecordResponse.jsonl"]
     for test_file_name in test_file_names:
-        title = Path(test_file_name).stem
+        title = pathlib.Path(test_file_name).stem
         json_schema = SCHEMA.get(title)
 
         # Short-circuit when JSON key not found.
 
         if json_schema is None:
-            print(f"Could not find JSON key: {title}")
+            logger.info("Could not find JSON key: %s", title)
             continue
 
         with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:

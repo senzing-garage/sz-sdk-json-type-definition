@@ -8,21 +8,21 @@ import builtins
 import json
 import logging
 import os
+import pathlib
 import sys
 from pathlib import Path
+
+# Logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-# Tricky code:  Need to import all python.typedef.* for the "not in globals()" test
-# pylint: disable=unused-wildcard-import
+# Global variables.
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-from python import senzing_typedef  # pylint: disable=wrong-import-position
-from python.senzing_typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+TESTDATA_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata")
+INPUT_DIRECTORY = f"{TESTDATA_DIRECTORY}/responses"
 
-INPUT_DIRECTORY = "./testdata/responses"
 DEBUG = False
 ERROR_COUNT = 0
 TEST_COUNT = 0
@@ -39,6 +39,14 @@ PYTHON_CLASS_MAP = {
     "SzEngineGetVirtualEntityByRecordIdResponse": "SzEngineGetVirtualEntityByRecordIDResponse",
     "SzEngineHowEntityByEntityIdResponse": "SzEngineHowEntityByEntityIDResponse",
 }
+
+# Tricky code:  Need to import all python.typedef.* for the "not in globals()" test
+# pylint: disable=unused-wildcard-import
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+from python import senzing_typedef  # pylint: disable=wrong-import-position
+from python.senzing_typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
 
 # -----------------------------------------------------------------------------
 # --- Monkey patch
@@ -65,8 +73,7 @@ def is_equal(test_name, source, target):
 
     result = True
 
-    if DEBUG:
-        print(test_name)
+    logger.debug("%s", test_name)
 
     if target is None:
         if source is None:
@@ -188,8 +195,8 @@ if __name__ == "__main__":
                         if original_json_string_sorted[index] != reconstructed_json_string_sorted[index]:
                             ERROR_COUNT += 1
                             logger.error("Strings differ: Test: %s; First difference position: %d", TEST_NAME, index)
-                            logger.error(">>>>>>      Original: %s", original_json_string_sorted)
-                            logger.error(">>>>>> Reconstructed: %s", reconstructed_json_string_sorted)
+                            logger.error("            Original: %s", original_json_string_sorted)
+                            logger.error("       Reconstructed: %s", reconstructed_json_string_sorted)
                             break
 
     # Epilog.

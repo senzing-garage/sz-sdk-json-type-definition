@@ -460,7 +460,8 @@ clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-
 
 .PHONY: restore
 restore:
-	git restore testdata/responses_senzing/*.jsonl
+	git restore testdata/responses_truthsets/*.jsonl
+	git restore testdata/responses/*.jsonl
 
 # -----------------------------------------------------------------------------
 # Utility targets
@@ -551,7 +552,7 @@ test-rfc8927-reconstitution:
 		./bin/test_rfc8927_reconstitution.py
 
 
-.PHONY: test-using-senzing
+.PHONY: test_using_senzing.py
 test-using-senzing:
 	$(activate-venv); \
 		./bin/test_using_senzing.py

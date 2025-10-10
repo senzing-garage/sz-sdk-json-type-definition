@@ -7,13 +7,18 @@ import logging
 import os
 import pathlib
 
+# Logging
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-FAILED_TYPES = []
+# Global variables.
+
 CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
 INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/th4_tests")
 OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_th4")
+
+FAILED_TYPES = []
 
 TYPE_TO_FILENAME_MAP = {
     "SZ_FIND_INTERESTING_ENTITIES_BY_ENTITY_ID": "SzEngineFindInterestingEntitiesByEntityIdResponse.jsonl",
@@ -59,12 +64,16 @@ TYPE_TO_FILENAME_MAP = {
     "SZDIAGNOSTIC_GET_FEATURE": "SzDiagnosticGetFeatureResponse.jsonl",
 }
 
+# -----------------------------------------------------------------------------
+# --- Functions
+# -----------------------------------------------------------------------------
+
 
 def normalize_files(directory):
     """Deduplicate and sort JSON lines."""
     for root, _, files in os.walk(directory):
         for file in files:
-            remove_duplicate_lines(f"{root}/{file}")
+            remove_duplicate_lines(os.path.join(root, file))
 
 
 def process_file(filename):
@@ -116,7 +125,7 @@ def publish(test_type, json_string):
             FAILED_TYPES.append(test_type)
         return
 
-    with open(f"{OUTPUT_DIRECTORY}/{filename}", "a", encoding="utf-8") as target_file:
+    with open(os.path.join(OUTPUT_DIRECTORY, filename), "a", encoding="utf-8") as target_file:
         target_file.write(f"\n{json_string}")
 
 
@@ -158,10 +167,10 @@ def recurse_directory(directory):
 
     for root, subdirectories, files in os.walk(directory):
         for subdirectory in subdirectories:
-            recurse_directory(f"{root}/{subdirectory}")
+            recurse_directory(os.path.join(root, subdirectory))
 
         for file in files:
-            process_file(f"{root}/{file}")
+            process_file(os.path.join(root, file))
 
 
 def stringify_json(candidate_json):
@@ -179,14 +188,24 @@ def stringify_json(candidate_json):
     return None
 
 
+# -----------------------------------------------------------------------------
+# Main
+# -----------------------------------------------------------------------------
+
 if __name__ == "__main__":
 
+    # Prolog.
+
     logger.info("Begin %s", os.path.basename(__file__))
+
+    # Process data.
 
     recurse_directory(INPUT_DIRECTORY)
     normalize_files(OUTPUT_DIRECTORY)
     if FAILED_TYPES:
-        logger.warning(f"These types not processed: %s", FAILED_TYPES)
+        logger.warning("These types not processed: %s", FAILED_TYPES)
     logger.info("Done.")
+
+    # Epilog.
 
     logger.info("End   %s", os.path.basename(__file__))

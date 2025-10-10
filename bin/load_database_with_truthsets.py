@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-
 # pylint: disable=duplicate-code
 
 """
@@ -7,15 +6,26 @@ load_database_with_truthsets.py
 
 Load the truth-set data in ../testdata/truthsets/ into a
 SQLite database at /tmp/sqlite/G2C.db
-
 """
 
 import json
+import logging
 import os
 import pathlib
 
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+TRUTHSETS_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/truthsets")
 
 # -----------------------------------------------------------------------------
 # Add records.
@@ -34,10 +44,8 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
         "watchlist.jsonl",
     ]
 
-    current_path = pathlib.Path(__file__).parent.resolve()
     for filename in filenames:
-        file_path = os.path.abspath(f"{current_path}/../testdata/truthsets/{filename}")
-        with open(file_path, "r", encoding="utf-8") as input_file:
+        with open(os.path.join(TRUTHSETS_DIRECTORY, filename), "r", encoding="utf-8") as input_file:
             for line in input_file:
                 line_as_dict = json.loads(line)
                 data_source = line_as_dict.get("DATA_SOURCE")
@@ -60,7 +68,7 @@ def create_sz_abstract_factory() -> SzAbstractFactory:
     try:
         sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
     except SzError as err:
-        print(f"\nERROR: {err}\n")
+        logger.error("%s", err)
 
     return sz_abstract_factory
 
@@ -88,6 +96,17 @@ def register_datasources(sz_abstract_factory: SzAbstractFactory):
 # -----------------------------------------------------------------------------
 
 if __name__ == "__main__":
+
+    # Prolog.
+
+    logger.info("Begin %s", os.path.basename(__file__))
+
+    # Process data.
+
     the_sz_abstract_factory = create_sz_abstract_factory()
     register_datasources(the_sz_abstract_factory)
     add_records(the_sz_abstract_factory)
+
+    # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))
