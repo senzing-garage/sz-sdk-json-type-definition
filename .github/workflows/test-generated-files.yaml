@@ -38,7 +38,7 @@ jobs:
           curl -X GET --location --output jtd-codegen.zip https://github.com/jsontypedef/json-typedef-codegen/releases/download/v0.4.1/x86_64-unknown-linux-musl.zip
           unzip jtd-codegen.zip
           chmod +x jtd-codegen
-          jtd-codegen --version
+          ./jtd-codegen --version
 
       - name: Verify generated Python code is up-to-date.
         run: |
