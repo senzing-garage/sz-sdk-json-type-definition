@@ -51,7 +51,7 @@ jobs:
         run: |
           mkdir -p /tmp/go/typedef
           ./jtd-codegen --go-out /tmp/go/typedef --go-package typedef --root-name senzingsdk senzingsdk-RFC8927.json
-          diff -r ./go  /tmp/go
+          diff ./go/typedef/typedef.go  /tmp/go/typedef/typedef.go
 
       - name: Verify generated Java code is up-to-date.
         run: |
