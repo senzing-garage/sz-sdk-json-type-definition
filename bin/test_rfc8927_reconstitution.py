@@ -127,7 +127,7 @@ if __name__ == "__main__":
     test_file_names = os.listdir(INPUT_DIRECTORY)
     # test_file_names = ["SzEngineWhySearchResponse.jsonl"]
     for test_file_name in test_file_names:
-        logger.info("Testfile: %s", test_file_name)
+        logger.info("Testfile: %s/%s", INPUT_DIRECTORY, test_file_name)
 
         # Get appropriate Python class based on file name.
 
@@ -149,6 +149,7 @@ if __name__ == "__main__":
             LINE_COUNT = 0
             for line in test_file:
                 LINE_COUNT += 1
+                logger.debug("Line number: %d", LINE_COUNT)
                 TEST_COUNT += 1
                 LINE_ERRORS = ERROR_COUNT
                 TEST_NAME = f"{senzing_api_class}.{LINE_COUNT}"
