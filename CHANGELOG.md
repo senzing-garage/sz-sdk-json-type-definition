@@ -93,11 +93,11 @@ and this project adheres to [Semantic Versioning].
 ### Added in 0.2.6
 
 - Improved the "unknown" responses:
-    - SzEngineFetchNextResponse
-    - SzEngineGetRedoRecordResponse
-    - SzEngineGetStatsResponse
-    - SzEngineStreamExportJsonEntityReportResponse
-    - SzEngineWhyRecordInEntityResponse
+  - SzEngineFetchNextResponse
+  - SzEngineGetRedoRecordResponse
+  - SzEngineGetStatsResponse
+  - SzEngineStreamExportJsonEntityReportResponse
+  - SzEngineWhyRecordInEntityResponse
 
 ## [0.2.5] - 2024-05-10
 
