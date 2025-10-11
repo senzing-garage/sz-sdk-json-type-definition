@@ -1,20 +1,31 @@
 #! /usr/bin/env python3
 
+# pylint: disable=duplicate-code
+
 """
 Work-in-progress: Determine what JSON keys are not used.
 For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
-# pylint: disable=duplicate-code
-
 import json
+import logging
 import os
-from pathlib import Path
+import pathlib
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+TESTDATA_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata")
+INPUT_DIRECTORY = f"{TESTDATA_DIRECTORY}/responses"
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+OUTPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../docs/unused_json_keys.json")
 
 DEFINITIONS = {}
-INPUT_DIRECTORY = "./testdata/responses_senzing"
-INPUT_FILENAME = "./senzingsdk-RFC8927.json"
-OUTPUT_FILENAME = "./docs/unused_json_keys.json"
 RESIDUAL = {}
 VARIABLE_JSON_KEY = "user_defined_json_key"
 
@@ -133,7 +144,7 @@ def handle_json_python_type(python_type):
         case "string":
             result = "string"
         case _:
-            print(f"Error: Bad 'pythonType:' {python_type}")
+            logger.error("Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -319,34 +330,46 @@ def remove_keys_recursive(needles, haystack):
 # --- Main
 # -----------------------------------------------------------------------------
 
-# Read JSON from file.
 
-with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
-    DATA = json.load(input_file)
+if __name__ == "__main__":
 
-DEFINITIONS = DATA.get("definitions", {})
+    # Prolog.
 
-# Go through test files.
+    logger.info("Begin %s", os.path.basename(__file__))
+    logger.warning("This program is being deprecated.")
 
-# test_file_names = os.listdir(INPUT_DIRECTORY)
-test_file_names = ["SzEngineWhyRecordsResponse.jsonl"]
-for test_file_name in test_file_names:
-    requested_json_key = Path(test_file_name).stem
-    initial_json_value = DEFINITIONS.get(requested_json_key)
+    # Read JSON from file.
 
-    # Short-circuit when JSON key not found.
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
+        DATA = json.load(input_file)
 
-    if initial_json_value is None:
-        print(f"Could not find JSON key: {requested_json_key}")
-        continue
+    DEFINITIONS = DATA.get("definitions", {})
 
-    residual_json = recurse_json(initial_json_value)
+    # Go through test files.
 
-    with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
-        for line in test_file:
-            residual_json = remove_keys_recursive(json.loads(line), residual_json)
+    # test_file_names = os.listdir(INPUT_DIRECTORY)
+    test_file_names = ["SzEngineWhyRecordsResponse.jsonl"]
+    for test_file_name in test_file_names:
+        requested_json_key = pathlib.Path(test_file_name).stem
+        initial_json_value = DEFINITIONS.get(requested_json_key)
 
-    RESIDUAL[requested_json_key] = residual_json
+        # Short-circuit when JSON key not found.
 
-with open(OUTPUT_FILENAME, "w", encoding="utf-8") as json_file:
-    json.dump(RESIDUAL, json_file, indent=4)
+        if initial_json_value is None:
+            logger.info("Could not find JSON key: %s", requested_json_key)
+            continue
+
+        residual_json = recurse_json(initial_json_value)
+
+        with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
+            for line in test_file:
+                residual_json = remove_keys_recursive(json.loads(line), residual_json)
+
+        RESIDUAL[requested_json_key] = residual_json
+
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as json_file:
+        json.dump(RESIDUAL, json_file, indent=4)
+
+    # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))

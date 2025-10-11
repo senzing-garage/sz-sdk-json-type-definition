@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-
 # pylint: disable=duplicate-code
 
 """
@@ -7,6 +6,19 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
+import logging
+import os
+import pathlib
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 
 GLOBAL_KEYS = {}
 GLOBAL_KEY_COUNT = {}
@@ -30,6 +42,10 @@ USED_KEYS = [
     "RecordKeys",
 ]
 EXCLUDE_LIST = []
+
+# -----------------------------------------------------------------------------
+# --- Functions
+# -----------------------------------------------------------------------------
 
 
 def add_to_key_count(key_to_add):
@@ -112,104 +128,110 @@ def search_list(search_term):
 # --- Main
 # -----------------------------------------------------------------------------
 
-# Read JSON from file.
+if __name__ == "__main__":
 
-INPUT_FILENAME = "./senzingsdk-RFC8927.json"
-with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
-    DATA = json.load(input_file)
+    # Prolog.
 
-# Recurse through dictionary.
+    logger.info("Begin %s", os.path.basename(__file__))
 
-recurse("definitions", DATA.get("definitions"))
+    # Read JSON from file.
 
-# Print "out of order" messages.
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
+        DATA = json.load(input_file)
 
-print("-" * 80)
-print("\nTEST 1: Verify that the JSON keys are in sorted order.\n")
-if len(GLOBAL_OUT_OF_ORDER) > 0:
-    for message in GLOBAL_OUT_OF_ORDER:
-        print(message)
-else:
-    print("Everything is sorted properly.")
+    # Recurse through dictionary.
 
-# Print missing JSON keys.
+    recurse("definitions", DATA.get("definitions"))
 
+    # Print "out of order" messages.
 
-# Print result of test for similar lists.
+    logger.info("-" * 80)
+    logger.info("TEST 1: Verify that the JSON keys are in sorted order.")
+    if len(GLOBAL_OUT_OF_ORDER) > 0:
+        for message in GLOBAL_OUT_OF_ORDER:
+            logger.info(message)
+    else:
+        logger.info("Everything is sorted properly.")
 
-print("")
-print("-" * 80)
-print("\nTEST 2: Detect lists containing same properties.\n")
+    # Print missing JSON keys.
 
-for key, value in GLOBAL_KEYS.items():
-    EXCLUDE_LIST.append(key)
-    results = search_list(key)
-    if len(results) > 0:
-        print(f"\n{key}:")
-        for result in results:
-            print(f"  - {result}")
+    # Print result of test for similar lists.
 
-# Print JSON key count results.
+    logger.info("")
+    logger.info("-" * 80)
+    logger.info("TEST 2: Detect lists containing same properties.")
 
-print("")
-print("-" * 80)
-print("\nTEST 3: Count occurrence of JSON keys")
-print("\nCOUNT  KEY")
-print("-----  -----------------------------")
-SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)
-for key, value in SORTED_KEY_COUNTS:
-    if value > 1:
-        print(f"{value:5d}  {key}")
+    for key, value in GLOBAL_KEYS.items():
+        EXCLUDE_LIST.append(key)
+        results = search_list(key)
+        if len(results) > 0:
+            logger.info("%s", key)
+            for result in results:
+                logger.info("  - %s", result)
 
-# Print type/ref variances.
+    # Print JSON key count results.
 
-print("")
-print("-" * 80)
-print("\nTEST 4: Check for JSON keys having different types\n")
-SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
-for key, value in SORTED_GLOBAL_KEY_TYPE.items():
-    if len(value) > 1:
-        print(f"{key:30s}  {sorted(value)}")
+    logger.info("")
+    logger.info("-" * 80)
+    logger.info("TEST 3: Count occurrence of JSON keys")
+    logger.info("COUNT  KEY")
+    logger.info("-----  -----------------------------")
+    SORTED_KEY_COUNTS = sorted(GLOBAL_KEY_COUNT.items(), key=lambda x: x[1], reverse=True)
+    for key, value in SORTED_KEY_COUNTS:
+        if value > 1:
+            logger.info("%5d  %s", value, key)
 
-# Print missing JSON keys that have a ref:
+    # Print type/ref variances.
 
-print("")
-print("-" * 80)
-print("\nTEST 5: Refs without JSON keys.\n")
+    logger.info("")
+    logger.info("-" * 80)
+    logger.info("TEST 4: Check for JSON keys having different types")
+    SORTED_GLOBAL_KEY_TYPE = dict(sorted(GLOBAL_KEY_TYPE.items()))
+    for key, value in SORTED_GLOBAL_KEY_TYPE.items():
+        if len(value) > 1:
+            logger.info("%30s  %s", key, sorted(value))
 
-MISSING_REF_COUNT = 0
-for value in GLOBAL_REFS:
-    if value not in GLOBAL_JSON_KEYS:
-        MISSING_REF_COUNT += 1
-        print("Missing:", value)
-if MISSING_REF_COUNT == 0:
-    print("No missing JSON keys")
+    # Print missing JSON keys that have a ref:
 
-# Print result of test for similar lists.
-# Must be done last as it mutates GLOBAL_KEYS
+    logger.info("")
+    logger.info("-" * 80)
+    logger.info("TEST 5: Refs without JSON keys.")
 
-print("")
-print("-" * 80)
-print("\nTEST 6: Detect JSON keys not used.\n")
+    MISSING_REF_COUNT = 0
+    for value in GLOBAL_REFS:
+        if value not in GLOBAL_JSON_KEYS:
+            MISSING_REF_COUNT += 1
+            logger.info("Missing: %s", value)
+    if MISSING_REF_COUNT == 0:
+        logger.info("No missing JSON keys")
 
-definitions = GLOBAL_KEYS.pop("definitions")
-for key, values in GLOBAL_KEYS.items():
-    for value in values:
+    # Print result of test for similar lists.
+    # Must be done last as it mutates GLOBAL_KEYS
+
+    logger.info("")
+    logger.info("-" * 80)
+    logger.info("TEST 6: Detect JSON keys not used.")
+
+    definitions = GLOBAL_KEYS.pop("definitions")
+    for key, values in GLOBAL_KEYS.items():
+        for value in values:
+            if value in definitions:
+                definitions.remove(value)
+    for value in GLOBAL_REFS:
         if value in definitions:
             definitions.remove(value)
-for value in GLOBAL_REFS:
-    if value in definitions:
-        definitions.remove(value)
-USED_KEY_COUNT = 0
-for definition in definitions:
-    if definition[0:8] not in ["SzConfig", "SzEngine", "SzDiagno", "SzProduc"]:
-        if definition not in USED_KEYS:
-            USED_KEY_COUNT += 1
-            print(definition)
-if USED_KEY_COUNT == 0:
-    print("All keys used")
+    USED_KEY_COUNT = 0
+    for definition in definitions:
+        if definition[0:8] not in ["SzConfig", "SzEngine", "SzDiagno", "SzProduc"]:
+            if definition not in USED_KEYS:
+                USED_KEY_COUNT += 1
+                logger.info(definition)
+    if USED_KEY_COUNT == 0:
+        logger.info("All keys used")
 
-# Epilog.
+    # Epilog.
 
-print("")
-print("-" * 80)
+    logger.info("")
+    logger.info("-" * 80)
+
+    logger.info("End   %s", os.path.basename(__file__))

@@ -442,6 +442,12 @@ namespace Senzing.Typedef
         [JsonPropertyName("REGISTRATION_DATE")]
         public string RegistrationDate { get; set; }
 
+        [JsonPropertyName("RELATIONSHIP_KEY")]
+        public string RelationshipKey { get; set; }
+
+        [JsonPropertyName("RELATIONSHIP_TYPE")]
+        public string RelationshipType { get; set; }
+
         /// <summary>
         /// This code helps keep the REL_ANCHOR_KEY unique. This is a code
         /// (without dashes) for the data source or source field that is

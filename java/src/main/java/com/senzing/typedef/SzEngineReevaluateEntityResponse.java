@@ -11,11 +11,11 @@ public class SzEngineReevaluateEntityResponse {
     @JsonProperty("AFFECTED_ENTITIES")
     private List<AffectedEntity> affectedEntities;
 
+    @JsonProperty("INTERESTING_ENTITIES")
+    private InterestingEntities interestingEntities;
+
     @JsonProperty("XXX_DATA_SOURCE")
     private String xxxDataSource;
-
-    @JsonProperty("XXX_INTERESTING_ENTITIES")
-    private InterestingEntities xxxInterestingEntities;
 
     @JsonProperty("XXX_RECORD_ID")
     private String xxxRecordId;
@@ -38,6 +38,20 @@ public class SzEngineReevaluateEntityResponse {
     }
 
     /**
+     * Getter for interestingEntities.<p>
+     */
+    public InterestingEntities getInterestingEntities() {
+        return interestingEntities;
+    }
+
+    /**
+     * Setter for interestingEntities.<p>
+     */
+    public void setInterestingEntities(InterestingEntities interestingEntities) {
+        this.interestingEntities = interestingEntities;
+    }
+
+    /**
      * Getter for xxxDataSource.<p>
      * A label identifying the provenance of the record.
      */
@@ -51,20 +65,6 @@ public class SzEngineReevaluateEntityResponse {
      */
     public void setXxxDataSource(String xxxDataSource) {
         this.xxxDataSource = xxxDataSource;
-    }
-
-    /**
-     * Getter for xxxInterestingEntities.<p>
-     */
-    public InterestingEntities getXxxInterestingEntities() {
-        return xxxInterestingEntities;
-    }
-
-    /**
-     * Setter for xxxInterestingEntities.<p>
-     */
-    public void setXxxInterestingEntities(InterestingEntities xxxInterestingEntities) {
-        this.xxxInterestingEntities = xxxInterestingEntities;
     }
 
     /**

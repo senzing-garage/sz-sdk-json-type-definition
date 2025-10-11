@@ -4,6 +4,7 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 import java.util.Map;
 
 @JsonSerialize
@@ -20,20 +21,23 @@ public class FeatureDescriptionValue {
     @JsonProperty("FEAT_DESC")
     private String featDesc;
 
+    @JsonProperty("FEAT_DESC_VALUES")
+    private List<FeatureDescriptionValueDetails> featDescValues;
+
     @JsonProperty("LIB_FEAT_ID")
     private Integer libFeatId;
 
     @JsonProperty("SCORING_CAP_REACHED")
     private String scoringCapReached;
 
+    @JsonProperty("SUPPRESSED")
+    private String suppressed;
+
     @JsonProperty("USED_FOR_CAND")
     private String usedForCand;
 
     @JsonProperty("USED_FOR_SCORING")
     private String usedForScoring;
-
-    @JsonProperty("XXX_SUPPRESSED")
-    private String xxxSuppressed;
 
     public FeatureDescriptionValue() {
     }
@@ -97,6 +101,20 @@ public class FeatureDescriptionValue {
     }
 
     /**
+     * Getter for featDescValues.<p>
+     */
+    public List<FeatureDescriptionValueDetails> getFeatDescValues() {
+        return featDescValues;
+    }
+
+    /**
+     * Setter for featDescValues.<p>
+     */
+    public void setFeatDescValues(List<FeatureDescriptionValueDetails> featDescValues) {
+        this.featDescValues = featDescValues;
+    }
+
+    /**
      * Getter for libFeatId.<p>
      * Internal use.
      */
@@ -127,6 +145,20 @@ public class FeatureDescriptionValue {
     }
 
     /**
+     * Getter for suppressed.<p>
+     */
+    public String getSuppressed() {
+        return suppressed;
+    }
+
+    /**
+     * Setter for suppressed.<p>
+     */
+    public void setSuppressed(String suppressed) {
+        this.suppressed = suppressed;
+    }
+
+    /**
      * Getter for usedForCand.<p>
      */
     public String getUsedForCand() {
@@ -152,19 +184,5 @@ public class FeatureDescriptionValue {
      */
     public void setUsedForScoring(String usedForScoring) {
         this.usedForScoring = usedForScoring;
-    }
-
-    /**
-     * Getter for xxxSuppressed.<p>
-     */
-    public String getXxxSuppressed() {
-        return xxxSuppressed;
-    }
-
-    /**
-     * Setter for xxxSuppressed.<p>
-     */
-    public void setXxxSuppressed(String xxxSuppressed) {
-        this.xxxSuppressed = xxxSuppressed;
     }
 }

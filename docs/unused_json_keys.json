@@ -69,6 +69,8 @@
                                     "RECORD_TYPE": "string",
                                     "REGISTRATION_COUNTRY": "string",
                                     "REGISTRATION_DATE": "string",
+                                    "RELATIONSHIP_KEY": "string",
+                                    "RELATIONSHIP_TYPE": "string",
                                     "REL_ANCHOR_DOMAIN": "string",
                                     "REL_ANCHOR_KEY": "string",
                                     "REL_POINTER_DOMAIN": "string",
@@ -96,6 +98,8 @@
                                     "XXX_PHONE_THRU_DATE": "string",
                                     "ZOOMROOM": "string"
                                 },
+                                "CANDIDATE_CAP_REACHED": "string",
+                                "ENTITY_COUNT": "int32",
                                 "FEAT_DESC_VALUES": [
                                     {
                                         "ATTRIBUTES": {
@@ -103,12 +107,27 @@
                                         },
                                         "CANDIDATE_CAP_REACHED": "string",
                                         "ENTITY_COUNT": "int32",
+                                        "FEAT_DESC_VALUES": [
+                                            {
+                                                "CANDIDATE_CAP_REACHED": "string",
+                                                "ENTITY_COUNT": "int32",
+                                                "FEAT_DESC": "string",
+                                                "LIB_FEAT_ID": "int32",
+                                                "SCORING_CAP_REACHED": "string",
+                                                "SUPPRESSED": "string",
+                                                "USED_FOR_CAND": "string",
+                                                "USED_FOR_SCORING": "string"
+                                            }
+                                        ],
                                         "SCORING_CAP_REACHED": "string",
+                                        "SUPPRESSED": "string",
                                         "USED_FOR_CAND": "string",
-                                        "USED_FOR_SCORING": "string",
-                                        "XXX_SUPPRESSED": "string"
+                                        "USED_FOR_SCORING": "string"
                                     }
-                                ]
+                                ],
+                                "SCORING_CAP_REACHED": "string",
+                                "USED_FOR_CAND": "string",
+                                "USED_FOR_SCORING": "string"
                             }
                         ]
                     },
@@ -162,6 +181,8 @@
                                             "PRIMARY_NAME_ORG": "string",
                                             "REGISTRATION_COUNTRY": "string",
                                             "REGISTRATION_DATE": "string",
+                                            "RELATIONSHIP_KEY": "string",
+                                            "RELATIONSHIP_TYPE": "string",
                                             "REL_ANCHOR_DOMAIN": "string",
                                             "REL_ANCHOR_KEY": "string",
                                             "REL_POINTER_DOMAIN": "string",
@@ -188,6 +209,8 @@
                                             "XXX_PHONE_THRU_DATE": "string",
                                             "ZOOMROOM": "string"
                                         },
+                                        "CANDIDATE_CAP_REACHED": "string",
+                                        "ENTITY_COUNT": "int32",
                                         "FEAT_DESC_VALUES": [
                                             {
                                                 "ATTRIBUTES": {
@@ -196,13 +219,28 @@
                                                 "CANDIDATE_CAP_REACHED": "string",
                                                 "ENTITY_COUNT": "int32",
                                                 "FEAT_DESC": "string",
+                                                "FEAT_DESC_VALUES": [
+                                                    {
+                                                        "CANDIDATE_CAP_REACHED": "string",
+                                                        "ENTITY_COUNT": "int32",
+                                                        "FEAT_DESC": "string",
+                                                        "LIB_FEAT_ID": "int32",
+                                                        "SCORING_CAP_REACHED": "string",
+                                                        "SUPPRESSED": "string",
+                                                        "USED_FOR_CAND": "string",
+                                                        "USED_FOR_SCORING": "string"
+                                                    }
+                                                ],
                                                 "LIB_FEAT_ID": "int32",
                                                 "SCORING_CAP_REACHED": "string",
+                                                "SUPPRESSED": "string",
                                                 "USED_FOR_CAND": "string",
-                                                "USED_FOR_SCORING": "string",
-                                                "XXX_SUPPRESSED": "string"
+                                                "USED_FOR_SCORING": "string"
                                             }
-                                        ]
+                                        ],
+                                        "SCORING_CAP_REACHED": "string",
+                                        "USED_FOR_CAND": "string",
+                                        "USED_FOR_SCORING": "string"
                                     }
                                 ]
                             },
@@ -267,33 +305,13 @@
             {
                 "MATCH_INFO": {
                     "DISCLOSED_RELATIONS": {
-                        "REL_POINTER": [
+                        "DOMAIN": "string",
+                        "FEAT_ID": "int32",
+                        "FEAT_USAGE_TYPE": "string",
+                        "LINKED_FEAT_ID": "int32",
+                        "LINKED_FEAT_TYPE": "string",
+                        "REL_ANCHOR": [
                             {
-                                "DOMAIN": "string",
-                                "FEAT_DESC": "string",
-                                "FEAT_ID": "int32",
-                                "FEAT_USAGE_TYPE": "string",
-                                "LINKED_FEAT_DESC": "string",
-                                "LINKED_FEAT_ID": "int32",
-                                "LINKED_FEAT_TYPE": "string"
-                            }
-                        ],
-                        "XXX_DOMAIN": "string",
-                        "XXX_FEAT_DESC": "string",
-                        "XXX_FEAT_ID": "int32",
-                        "XXX_FEAT_USAGE_TYPE": "string",
-                        "XXX_LINKED_FEAT_DESC": "string",
-                        "XXX_LINKED_FEAT_ID": "int32",
-                        "XXX_LINKED_FEAT_TYPE": "string",
-                        "XXX_REL_ANCHOR": [
-                            {
-                                "XXX_DOMAIN": "string",
-                                "XXX_FEAT_DESC": "string",
-                                "XXX_FEAT_ID": "int32",
-                                "XXX_LINKED_FEAT_DESC": "string",
-                                "XXX_LINKED_FEAT_ID": "int32",
-                                "XXX_LINKED_FEAT_TYPE": "string",
-                                "XXX_LINKED_FEAT_USAGE_TYPE": "string",
                                 "XXX_REL_POINTER": [
                                     {
                                         "DOMAIN": "string",
@@ -306,31 +324,30 @@
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "REL_LINK": [
+                            {
+                                "FEAT_USAGE_TYPE": "string",
+                                "FTYPE_CODE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string",
+                                "REL_TYPE": "string"
+                            }
+                        ],
+                        "XXX_FEAT_DESC": "string",
+                        "XXX_LINKED_FEAT_DESC": "string"
                     },
                     "WHY_KEY_DETAILS": {
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {
-                                    "FULL_SCORE": "int32",
                                     "GENERATION_MATCH": "int32",
                                     "GNR_FN": "int32",
                                     "GNR_GN": "int32",
                                     "GNR_ON": "int32",
                                     "GNR_SN": "int32"
                                 },
-                                "CANDIDATE_FEAT_DESC": "string",
-                                "CANDIDATE_FEAT_ID": "int32",
                                 "CANDIDATE_FEAT_USAGE_TYPE": "string",
-                                "FTYPE_CODE": "string",
-                                "INBOUND_FEAT_DESC": "string",
-                                "INBOUND_FEAT_ID": "int32",
-                                "INBOUND_FEAT_USAGE_TYPE": "string",
-                                "SCORE": "int32",
-                                "SCORE_BEHAVIOR": "string",
-                                "SCORE_BUCKET": "string",
-                                "SOURCE": "string",
-                                "TOKEN": "string"
+                                "INBOUND_FEAT_USAGE_TYPE": "string"
                             }
                         ],
                         "DISCLOSED_RELATIONS": [
@@ -344,9 +361,8 @@
                                 ],
                                 "RELATED_ROLES": [
                                     {
-                                        "FIXME": {
-                                            "FIXME_KEY": "string"
-                                        }
+                                        "FEAT_DESC": "string",
+                                        "ROLE": "string"
                                     }
                                 ]
                             }

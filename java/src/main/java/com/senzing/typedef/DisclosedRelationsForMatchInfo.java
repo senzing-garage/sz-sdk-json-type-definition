@@ -8,16 +8,81 @@ import java.util.List;
 
 @JsonSerialize
 public class DisclosedRelationsForMatchInfo {
+    @JsonProperty("DOMAIN")
+    private String domain;
+
+    @JsonProperty("ENTITY_ROLES")
+    private List<EntityRoles> entityRoles;
+
+    @JsonProperty("RELATED_ROLES")
+    private List<RelatedRoles> relatedRoles;
+
+    @JsonProperty("REL_LINK")
+    private List<RelLink> relLink;
+
     @JsonProperty("XXX_REL_ANCHOR")
     private List<RelAnchor> xxxRelAnchor;
-
-    @JsonProperty("XXX_REL_LINK")
-    private List<RelLink> xxxRelLink;
 
     @JsonProperty("XXX_REL_POINTER")
     private List<RelPointer> xxxRelPointer;
 
     public DisclosedRelationsForMatchInfo() {
+    }
+
+    /**
+     * Getter for domain.<p>
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    /**
+     * Setter for domain.<p>
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * Getter for entityRoles.<p>
+     */
+    public List<EntityRoles> getEntityRoles() {
+        return entityRoles;
+    }
+
+    /**
+     * Setter for entityRoles.<p>
+     */
+    public void setEntityRoles(List<EntityRoles> entityRoles) {
+        this.entityRoles = entityRoles;
+    }
+
+    /**
+     * Getter for relatedRoles.<p>
+     */
+    public List<RelatedRoles> getRelatedRoles() {
+        return relatedRoles;
+    }
+
+    /**
+     * Setter for relatedRoles.<p>
+     */
+    public void setRelatedRoles(List<RelatedRoles> relatedRoles) {
+        this.relatedRoles = relatedRoles;
+    }
+
+    /**
+     * Getter for relLink.<p>
+     */
+    public List<RelLink> getRelLink() {
+        return relLink;
+    }
+
+    /**
+     * Setter for relLink.<p>
+     */
+    public void setRelLink(List<RelLink> relLink) {
+        this.relLink = relLink;
     }
 
     /**
@@ -32,20 +97,6 @@ public class DisclosedRelationsForMatchInfo {
      */
     public void setXxxRelAnchor(List<RelAnchor> xxxRelAnchor) {
         this.xxxRelAnchor = xxxRelAnchor;
-    }
-
-    /**
-     * Getter for xxxRelLink.<p>
-     */
-    public List<RelLink> getXxxRelLink() {
-        return xxxRelLink;
-    }
-
-    /**
-     * Setter for xxxRelLink.<p>
-     */
-    public void setXxxRelLink(List<RelLink> xxxRelLink) {
-        this.xxxRelLink = xxxRelLink;
     }
 
     /**

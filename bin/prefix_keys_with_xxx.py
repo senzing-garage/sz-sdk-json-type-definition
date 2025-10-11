@@ -3,7 +3,18 @@
 """Read JSON from STDIN and prefix every JSON key with 'XXX_'"""
 
 import json
+import logging
+import os
 import sys
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# -----------------------------------------------------------------------------
+# --- Functions
+# -----------------------------------------------------------------------------
 
 
 def prefix_keys(obj, prefix="XXX_"):
@@ -15,7 +26,16 @@ def prefix_keys(obj, prefix="XXX_"):
     return obj
 
 
+# -----------------------------------------------------------------------------
+# Main
+# -----------------------------------------------------------------------------
+
 if __name__ == "__main__":
+
+    # Prolog.
+
+    logger.info("Begin %s", os.path.basename(__file__))
+
     try:
         # Read JSON from stdin
         input_data = json.load(sys.stdin)
@@ -33,3 +53,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
+
+    # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))

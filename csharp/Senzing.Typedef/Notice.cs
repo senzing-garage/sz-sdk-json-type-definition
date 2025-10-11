@@ -7,10 +7,10 @@ namespace Senzing.Typedef
 {
     public class Notice
     {
-        [JsonPropertyName("XXX_CODE")]
-        public string XxxCode { get; set; }
+        [JsonPropertyName("CODE")]
+        public string Code { get; set; }
 
-        [JsonPropertyName("XXX_DESCRIPTION")]
-        public string XxxDescription { get; set; }
+        [JsonPropertyName("DESCRIPTION")]
+        public string Description { get; set; }
     }
 }

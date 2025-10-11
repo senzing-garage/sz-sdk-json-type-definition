@@ -193,6 +193,12 @@ public class SenzingEntitySpecification {
     @JsonProperty("REGISTRATION_DATE")
     private String registrationDate;
 
+    @JsonProperty("RELATIONSHIP_KEY")
+    private String relationshipKey;
+
+    @JsonProperty("RELATIONSHIP_TYPE")
+    private String relationshipType;
+
     @JsonProperty("REL_ANCHOR_DOMAIN")
     private String relAnchorDomain;
 
@@ -1404,6 +1410,34 @@ public class SenzingEntitySpecification {
      */
     public void setRegistrationDate(String registrationDate) {
         this.registrationDate = registrationDate;
+    }
+
+    /**
+     * Getter for relationshipKey.<p>
+     */
+    public String getRelationshipKey() {
+        return relationshipKey;
+    }
+
+    /**
+     * Setter for relationshipKey.<p>
+     */
+    public void setRelationshipKey(String relationshipKey) {
+        this.relationshipKey = relationshipKey;
+    }
+
+    /**
+     * Getter for relationshipType.<p>
+     */
+    public String getRelationshipType() {
+        return relationshipType;
+    }
+
+    /**
+     * Setter for relationshipType.<p>
+     */
+    public void setRelationshipType(String relationshipType) {
+        this.relationshipType = relationshipType;
     }
 
     /**

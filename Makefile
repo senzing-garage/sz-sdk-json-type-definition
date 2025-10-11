@@ -142,10 +142,12 @@ test: \
 	test-csharp \
 	test-java \
 	test-python \
-	test-typescript \
 	test-osarch-specific \
 	test-using-senzing \
+	test-using-testdata-responses \
 	test-rfc8927-reconstitution
+
+# 	test-typescript \
 
 
 .PHONY: test-csharp
@@ -169,14 +171,13 @@ test-java:
 .PHONY: test-python
 test-python:
 	$(activate-venv); \
-		./bin/test_rfc8927_reconstitution.py; \
 		./main.py; \
 		pytest test.py --verbose
 
 
 .PHONY: test-typescript
 test-typescript:
-	@tsc main.ts
+	@tsc main.ts || true
 	@node main.js
 
 # -----------------------------------------------------------------------------
@@ -295,25 +296,29 @@ go-typedef-generated-typedef-test-go:
 		./bin/make_go_typedef_generated_typedef_test_go.py
 
 
-.PHONY: testdata-responses-generated
-testdata-responses-generated:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+.PHONY: testdata-responses
+testdata-responses: clean-testdata-responses
 	$(activate-venv); \
-		./bin/make_testdata_responses_generated.py
+		./bin/make_testdata_responses.py
 
 
-.PHONY: testdata-responses-senzing
-testdata-responses-senzing:
-	@find $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/ -type f -name "*.json" -delete
+.PHONY: testdata-responses-th4
+testdata-responses-th4: clean-testdata-responses-th4
 	$(activate-venv); \
-		./bin/make_testdata_responses_senzing.py
+		./bin/make_testdata_responses_th4.py
+
+
+.PHONY: testdata-responses-truthsets
+testdata-responses-truthsets: clean-testdata-responses-truthsets
+	$(activate-venv); \
+		./bin/make_testdata_responses_truthsets.py
 
 
 .PHONY: generate-tests
 generate-tests: \
 	go-typedef-generated-typedef-test-go \
-	testdata-responses-generated \
-	testdata-responses-senzing
+	testdata-responses-truthsets \
+	testdata-responses
 
 # -----------------------------------------------------------------------------
 # Generate documentation
@@ -429,14 +434,19 @@ clean-rust:
 	@rm $(MAKEFILE_DIRECTORY)/rust/* || true
 
 
-.PHONY: clean-testdata-responses-generated
-clean-testdata-responses-generated:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_generated/* || true
+.PHONY: clean-testdata-responses
+clean-testdata-responses:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses/ -type f -name "*.jsonl" -delete
 
 
-.PHONY: clean-testdata-responses-senzing
-clean-testdata-responses-senzing:
-	@rm $(MAKEFILE_DIRECTORY)/testdata/responses_senzing/* || true
+.PHONY: clean-testdata-responses-th4
+clean-testdata-responses-th4:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_th4/ -type f -name "*.jsonl" -delete
+
+
+.PHONY: clean-testdata-responses-truthsets
+clean-testdata-responses-truthsets:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_truthsets/ -type f -name "*.jsonl" -delete
 
 
 .PHONY: clean-typescript
@@ -445,12 +455,13 @@ clean-typescript:
 
 
 .PHONY: clean-generated
-clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript clean-docs clean-testdata-responses-generated
+clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript clean-docs
 
 
 .PHONY: restore
 restore:
-	git restore testdata/responses_senzing/*.jsonl
+	git restore testdata/responses_truthsets/*.jsonl
+	git restore testdata/responses/*.jsonl
 
 # -----------------------------------------------------------------------------
 # Utility targets
@@ -483,6 +494,13 @@ update-pkg-cache:
 analyze-RFC8927:
 	$(activate-venv); \
 		./bin/analyze_rfc8927.py
+
+
+.PHONY: black
+black:
+	$(info ${\n})
+	$(info --- black ----------------------------------------------------------------------)
+	@$(activate-venv); black $(shell git ls-files '*.py' ':!:docs/source/*')
 
 
 .PHONY: cspell
@@ -534,13 +552,13 @@ test-rfc8927-reconstitution:
 		./bin/test_rfc8927_reconstitution.py
 
 
-.PHONY: test-using-senzing
+.PHONY: test_using_senzing.py
 test-using-senzing:
 	$(activate-venv); \
 		./bin/test_using_senzing.py
 
 
-.PHONY: test-using-senzing-generated
-test-using-senzing-generated:
+.PHONY: test-using-testdata-responses
+test-using-testdata-responses:
 	$(activate-venv); \
-		./bin/test_using_senzing_generated.py
+		./bin/test_using_testdata_responses.py

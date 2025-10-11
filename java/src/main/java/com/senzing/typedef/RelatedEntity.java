@@ -27,20 +27,26 @@ public class RelatedEntity {
     @JsonProperty("MATCH_KEY")
     private String matchKey;
 
+    @JsonProperty("MATCH_KEY_DETAILS")
+    private MatchKeyDetails matchKeyDetails;
+
     @JsonProperty("MATCH_LEVEL")
     private Integer matchLevel;
 
     @JsonProperty("MATCH_LEVEL_CODE")
     private String matchLevelCode;
 
+    @JsonProperty("RECORDS")
+    private List<Record> records;
+
     @JsonProperty("RECORD_SUMMARY")
     private List<RecordSummary> recordSummary;
 
+    @JsonProperty("RECORD_TYPES")
+    private List<String> recordTypes;
+
     @JsonProperty("XXX_LAST_SEEN_DT")
     private OffsetDateTime xxxLastSeenDt;
-
-    @JsonProperty("XXX_RECORDS")
-    private List<Record> xxxRecords;
 
     public RelatedEntity() {
     }
@@ -144,6 +150,20 @@ public class RelatedEntity {
     }
 
     /**
+     * Getter for matchKeyDetails.<p>
+     */
+    public MatchKeyDetails getMatchKeyDetails() {
+        return matchKeyDetails;
+    }
+
+    /**
+     * Setter for matchKeyDetails.<p>
+     */
+    public void setMatchKeyDetails(MatchKeyDetails matchKeyDetails) {
+        this.matchKeyDetails = matchKeyDetails;
+    }
+
+    /**
      * Getter for matchLevel.<p>
      */
     public Integer getMatchLevel() {
@@ -174,6 +194,20 @@ public class RelatedEntity {
     }
 
     /**
+     * Getter for records.<p>
+     */
+    public List<Record> getRecords() {
+        return records;
+    }
+
+    /**
+     * Setter for records.<p>
+     */
+    public void setRecords(List<Record> records) {
+        this.records = records;
+    }
+
+    /**
      * Getter for recordSummary.<p>
      * Overview of the source systems the records came from comprising this
      * related entity.
@@ -192,6 +226,20 @@ public class RelatedEntity {
     }
 
     /**
+     * Getter for recordTypes.<p>
+     */
+    public List<String> getRecordTypes() {
+        return recordTypes;
+    }
+
+    /**
+     * Setter for recordTypes.<p>
+     */
+    public void setRecordTypes(List<String> recordTypes) {
+        this.recordTypes = recordTypes;
+    }
+
+    /**
      * Getter for xxxLastSeenDt.<p>
      */
     public OffsetDateTime getXxxLastSeenDt() {
@@ -203,19 +251,5 @@ public class RelatedEntity {
      */
     public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
         this.xxxLastSeenDt = xxxLastSeenDt;
-    }
-
-    /**
-     * Getter for xxxRecords.<p>
-     */
-    public List<Record> getXxxRecords() {
-        return xxxRecords;
-    }
-
-    /**
-     * Setter for xxxRecords.<p>
-     */
-    public void setXxxRecords(List<Record> xxxRecords) {
-        this.xxxRecords = xxxRecords;
     }
 }

@@ -8,8 +8,14 @@ import java.util.List;
 
 @JsonSerialize
 public class SzEngineSearchByAttributesResponse {
+    @JsonProperty("RELATED_ENTITIES_MJD")
+    private List<RelatedEntity> relatedEntitiesMjd;
+
     @JsonProperty("RESOLVED_ENTITIES")
     private List<ResolvedEntityAndMatchInfo> resolvedEntities;
+
+    @JsonProperty("SEARCH_ENTITY")
+    private SearchEntity searchEntity;
 
     @JsonProperty("SEARCH_REQUEST")
     private SearchRequest searchRequest;
@@ -18,6 +24,20 @@ public class SzEngineSearchByAttributesResponse {
     private List<SearchStatistic> searchStatistics;
 
     public SzEngineSearchByAttributesResponse() {
+    }
+
+    /**
+     * Getter for relatedEntitiesMjd.<p>
+     */
+    public List<RelatedEntity> getRelatedEntitiesMjd() {
+        return relatedEntitiesMjd;
+    }
+
+    /**
+     * Setter for relatedEntitiesMjd.<p>
+     */
+    public void setRelatedEntitiesMjd(List<RelatedEntity> relatedEntitiesMjd) {
+        this.relatedEntitiesMjd = relatedEntitiesMjd;
     }
 
     /**
@@ -32,6 +52,20 @@ public class SzEngineSearchByAttributesResponse {
      */
     public void setResolvedEntities(List<ResolvedEntityAndMatchInfo> resolvedEntities) {
         this.resolvedEntities = resolvedEntities;
+    }
+
+    /**
+     * Getter for searchEntity.<p>
+     */
+    public SearchEntity getSearchEntity() {
+        return searchEntity;
+    }
+
+    /**
+     * Setter for searchEntity.<p>
+     */
+    public void setSearchEntity(SearchEntity searchEntity) {
+        this.searchEntity = searchEntity;
     }
 
     /**

@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-
 # pylint: disable=duplicate-code
 
 """
@@ -7,12 +6,25 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
+import logging
+import os
+import pathlib
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../docs/responses-html")
 
 VARIABLE_JSON_KEY = "user_defined_json_key"
 DEFINITIONS = {}
 INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
-GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-html"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
     "SzConfigGetDataSourceRegistryResponse",
@@ -159,7 +171,7 @@ def handle_json_python_type(level, key, description, value) -> str:
         case "int32":
             result = html_println(level, f'"{key}": "int32",')
         case _:
-            print(f"Error: Bad 'pythonType:' {value}")
+            logger.error("Error: Bad 'pythonType:' %s", value)
             raise NotImplementedError
 
     return result
@@ -291,6 +303,8 @@ def make_html(title: str, input_dict: dict) -> str:
     result += """
 <br/>&nbsp;
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
 """
@@ -302,27 +316,36 @@ def make_html(title: str, input_dict: dict) -> str:
 # --- Main
 # -----------------------------------------------------------------------------
 
-# Read JSON from file.
 
-INPUT_FILENAME = "./senzingsdk-RFC8927.json"
-with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
-    DATA = json.load(input_file)
+if __name__ == "__main__":
 
-DEFINITIONS = DATA.get("definitions", {})
+    # Prolog.
 
-# Recurse through dictionary.
+    logger.info("Begin %s", os.path.basename(__file__))
 
-for requested_json_key in GLOBAL_JSON_KEYS:
-    initial_json_value = DEFINITIONS.get(requested_json_key)
+    # Read JSON from file.
 
-    # Short-circuit when JSON key not found.
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
+        DATA = json.load(input_file)
 
-    if initial_json_value is None:
-        print(f"Could not find JSON key: {requested_json_key}")
-        continue
+    DEFINITIONS = DATA.get("definitions", {})
 
-    html = make_html(requested_json_key, initial_json_value)
+    # Recurse through dictionary.
 
-    output_file = f"{GLOBAL_OUTPUT_DIRECTORY}/{requested_json_key}.html"
-    with open(output_file, "w", encoding="utf-8") as json_file:
-        json_file.write(html)
+    for requested_json_key in GLOBAL_JSON_KEYS:
+        initial_json_value = DEFINITIONS.get(requested_json_key)
+
+        # Short-circuit when JSON key not found.
+
+        if initial_json_value is None:
+            logger.info("Could not find JSON key: %s", requested_json_key)
+            continue
+
+        html = make_html(requested_json_key, initial_json_value)
+
+        with open(os.path.join(OUTPUT_DIRECTORY, f"{requested_json_key}.html"), "w", encoding="utf-8") as json_file:
+            json_file.write(html)
+
+    # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))

@@ -76,5 +76,5 @@ console.log(`Reconstructed JSON: ${reconstructedString}\n`,);
 
 function mockSzEngineGetVirtualEntityByRecordID(recordKeys: string): string {
     console.log(`recordKeys Parameters ${recordKeys}\n`)
-    return fs.readFileSync('./testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json', 'utf-8');
+    return fs.readFileSync('./testdata/responses_mock/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json', 'utf-8');
 }

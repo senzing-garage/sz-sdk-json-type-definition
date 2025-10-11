@@ -315,9 +315,6 @@
     "XXX_DATA_SOURCE": [
         "A label identifying the provenance of the record."
     ],
-    "XXX_ENTITY_ID": [
-        "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added."
-    ],
     "XXX_ERRULE_CODE": [
         "Identifier of the entity resolution rule that was triggered."
     ],

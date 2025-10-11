@@ -789,11 +789,20 @@ pub struct DataSource {
 
 #[derive(Serialize, Deserialize)]
 pub struct DisclosedRelationsForMatchInfo {
+    #[serde(rename = "DOMAIN")]
+    pub domain: String,
+
+    #[serde(rename = "ENTITY_ROLES")]
+    pub entityRoles: Vec<EntityRoles>,
+
+    #[serde(rename = "RELATED_ROLES")]
+    pub relatedRoles: Vec<RelatedRoles>,
+
+    #[serde(rename = "REL_LINK")]
+    pub relLink: Vec<RelLink>,
+
     #[serde(rename = "XXX_REL_ANCHOR")]
     pub xxxRelAnchor: Vec<RelAnchor>,
-
-    #[serde(rename = "XXX_REL_LINK")]
-    pub xxxRelLink: Vec<RelLink>,
 
     #[serde(rename = "XXX_REL_POINTER")]
     pub xxxRelPointer: Vec<RelPointer>,
@@ -801,33 +810,36 @@ pub struct DisclosedRelationsForMatchInfo {
 
 #[derive(Serialize, Deserialize)]
 pub struct DisclosedRelationsForMatchInfoForWhy {
+    #[serde(rename = "DOMAIN")]
+    pub domain: String,
+
+    #[serde(rename = "FEAT_ID")]
+    pub featId: i32,
+
+    #[serde(rename = "FEAT_USAGE_TYPE")]
+    pub featUsageType: String,
+
+    #[serde(rename = "LINKED_FEAT_ID")]
+    pub linkedFeatId: i32,
+
+    #[serde(rename = "LINKED_FEAT_TYPE")]
+    pub linkedFeatType: String,
+
+    #[serde(rename = "REL_ANCHOR")]
+    pub relAnchor: Vec<RelAnchor>,
+
+    #[serde(rename = "REL_LINK")]
+    pub relLink: Vec<RelLink>,
+
     #[serde(rename = "REL_POINTER")]
     pub relPointer: Vec<RelPointer>,
-
-    #[serde(rename = "XXX_DOMAIN")]
-    pub xxxDomain: String,
 
     /// Describes the attributes that make up the feature.
     #[serde(rename = "XXX_FEAT_DESC")]
     pub xxxFeatDesc: String,
 
-    #[serde(rename = "XXX_FEAT_ID")]
-    pub xxxFeatId: i32,
-
-    #[serde(rename = "XXX_FEAT_USAGE_TYPE")]
-    pub xxxFeatUsageType: String,
-
     #[serde(rename = "XXX_LINKED_FEAT_DESC")]
     pub xxxLinkedFeatDesc: String,
-
-    #[serde(rename = "XXX_LINKED_FEAT_ID")]
-    pub xxxLinkedFeatId: i32,
-
-    #[serde(rename = "XXX_LINKED_FEAT_TYPE")]
-    pub xxxLinkedFeatType: String,
-
-    #[serde(rename = "XXX_REL_ANCHOR")]
-    pub xxxRelAnchor: Vec<RelAnchor>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -862,11 +874,11 @@ pub struct EntityForResolvedEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct EntityForWhySearch {
+    #[serde(rename = "RELATED_ENTITIES")]
+    pub relatedEntities: Vec<RelatedEntity>,
+
     #[serde(rename = "RESOLVED_ENTITY")]
     pub resolvedEntity: ResolvedEntity,
-
-    #[serde(rename = "XXX_RELATED_ENTITIES")]
-    pub xxxRelatedEntities: Vec<RelatedEntity>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -886,6 +898,9 @@ pub struct EntityNetworkLink {
     /// Representation of matched source record features.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
+
+    #[serde(rename = "MATCH_KEY_DETAILS")]
+    pub matchKeyDetails: MatchKeyDetails,
 
     /// The type of match that occurred for the record.
     #[serde(rename = "MATCH_LEVEL_CODE")]
@@ -927,6 +942,9 @@ pub struct EntityPathLink {
     /// Representation of matched source record features.
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
+
+    #[serde(rename = "MATCH_KEY_DETAILS")]
+    pub matchKeyDetails: MatchKeyDetails,
 
     /// The type of match that occurred for the record.
     #[serde(rename = "MATCH_LEVEL_CODE")]
@@ -974,6 +992,9 @@ pub struct FeatureDescriptionValue {
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
+    #[serde(rename = "FEAT_DESC_VALUES")]
+    pub featDescValues: Vec<FeatureDescriptionValueDetails>,
+
     /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
@@ -981,20 +1002,54 @@ pub struct FeatureDescriptionValue {
     #[serde(rename = "SCORING_CAP_REACHED")]
     pub scoringCapReached: String,
 
+    #[serde(rename = "SUPPRESSED")]
+    pub suppressed: String,
+
     #[serde(rename = "USED_FOR_CAND")]
     pub usedForCand: String,
 
     #[serde(rename = "USED_FOR_SCORING")]
     pub usedForScoring: String,
+}
 
-    #[serde(rename = "XXX_SUPPRESSED")]
-    pub xxxSuppressed: String,
+#[derive(Serialize, Deserialize)]
+pub struct FeatureDescriptionValueDetails {
+    #[serde(rename = "CANDIDATE_CAP_REACHED")]
+    pub candidateCapReached: String,
+
+    #[serde(rename = "ENTITY_COUNT")]
+    pub entityCount: i32,
+
+    /// Describes the attributes that make up the feature.
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "LIB_FEAT_ID")]
+    pub libFeatId: i32,
+
+    #[serde(rename = "SCORING_CAP_REACHED")]
+    pub scoringCapReached: String,
+
+    #[serde(rename = "SUPPRESSED")]
+    pub suppressed: String,
+
+    #[serde(rename = "USED_FOR_CAND")]
+    pub usedForCand: String,
+
+    #[serde(rename = "USED_FOR_SCORING")]
+    pub usedForScoring: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct FeatureForAttributes {
     #[serde(rename = "ATTRIBUTES")]
     pub attributes: SenzingEntitySpecification,
+
+    #[serde(rename = "CANDIDATE_CAP_REACHED")]
+    pub candidateCapReached: String,
+
+    #[serde(rename = "ENTITY_COUNT")]
+    pub entityCount: i32,
 
     /// Describes the attributes that make up the feature.
     #[serde(rename = "FEAT_DESC")]
@@ -1007,10 +1062,19 @@ pub struct FeatureForAttributes {
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
+    #[serde(rename = "SCORING_CAP_REACHED")]
+    pub scoringCapReached: String,
+
     /// Label to identify how some features are being used (can also change some
     /// features behavior).
     #[serde(rename = "USAGE_TYPE")]
     pub usageType: String,
+
+    #[serde(rename = "USED_FOR_CAND")]
+    pub usedForCand: String,
+
+    #[serde(rename = "USED_FOR_SCORING")]
+    pub usedForScoring: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1248,25 +1312,25 @@ pub struct InterestingEntities {
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<InterestingEntity>,
 
-    #[serde(rename = "XXX_NOTICES")]
-    pub xxxNotices: Vec<Notice>,
+    #[serde(rename = "NOTICES")]
+    pub notices: Vec<Notice>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct InterestingEntity {
-    #[serde(rename = "XXX_DEGREES")]
-    pub xxxDegrees: i32,
+    #[serde(rename = "DEGREES")]
+    pub degrees: i32,
 
     /// The ENTITY_ID is the Senzing-generated identifier for the discovered
     /// entity. It may change when new information is added.
-    #[serde(rename = "XXX_ENTITY_ID")]
-    pub xxxEntityId: i32,
+    #[serde(rename = "ENTITY_ID")]
+    pub entityId: i32,
 
-    #[serde(rename = "XXX_FLAGS")]
-    pub xxxFlags: Vec<String>,
+    #[serde(rename = "FLAGS")]
+    pub flags: Vec<String>,
 
-    #[serde(rename = "XXX_SAMPLE_RECORDS")]
-    pub xxxSampleRecords: Vec<SampleRecord>,
+    #[serde(rename = "SAMPLE_RECORDS")]
+    pub sampleRecords: Vec<SampleRecord>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1348,6 +1412,12 @@ pub struct MatchKeyDetails {
     #[serde(rename = "DENIALS")]
     pub denials: Vec<Confirmation>,
 
+    #[serde(rename = "DISCLOSED_RELATIONS")]
+    pub disclosedRelations: Vec<DisclosedRelationsForMatchInfo>,
+
+    #[serde(rename = "REL_LINKS")]
+    pub relLinks: Vec<RelLink>,
+
     /// Identifier of the entity resolution rule that was triggered.
     #[serde(rename = "XXX_ERRULE_CODE")]
     pub xxxErruleCode: String,
@@ -1365,11 +1435,11 @@ pub struct MemberRecord {
 
 #[derive(Serialize, Deserialize)]
 pub struct Notice {
-    #[serde(rename = "XXX_CODE")]
-    pub xxxCode: String,
+    #[serde(rename = "CODE")]
+    pub code: String,
 
-    #[serde(rename = "XXX_DESCRIPTION")]
-    pub xxxDescription: String,
+    #[serde(rename = "DESCRIPTION")]
+    pub description: String,
 }
 
 pub type Object = String;
@@ -1573,27 +1643,27 @@ pub struct RecordSummary {
 
 #[derive(Serialize, Deserialize)]
 pub struct RelAnchor {
-    #[serde(rename = "XXX_DOMAIN")]
-    pub xxxDomain: String,
+    #[serde(rename = "DOMAIN")]
+    pub domain: String,
 
     /// Describes the attributes that make up the feature.
-    #[serde(rename = "XXX_FEAT_DESC")]
-    pub xxxFeatDesc: String,
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
 
-    #[serde(rename = "XXX_FEAT_ID")]
-    pub xxxFeatId: i32,
+    #[serde(rename = "FEAT_ID")]
+    pub featId: i32,
 
-    #[serde(rename = "XXX_LINKED_FEAT_DESC")]
-    pub xxxLinkedFeatDesc: String,
+    #[serde(rename = "LINKED_FEAT_DESC")]
+    pub linkedFeatDesc: String,
 
-    #[serde(rename = "XXX_LINKED_FEAT_ID")]
-    pub xxxLinkedFeatId: i32,
+    #[serde(rename = "LINKED_FEAT_ID")]
+    pub linkedFeatId: i32,
 
-    #[serde(rename = "XXX_LINKED_FEAT_TYPE")]
-    pub xxxLinkedFeatType: String,
+    #[serde(rename = "LINKED_FEAT_TYPE")]
+    pub linkedFeatType: String,
 
-    #[serde(rename = "XXX_LINKED_FEAT_USAGE_TYPE")]
-    pub xxxLinkedFeatUsageType: String,
+    #[serde(rename = "LINKED_FEAT_USAGE_TYPE")]
+    pub linkedFeatUsageType: String,
 
     #[serde(rename = "XXX_REL_POINTER")]
     pub xxxRelPointer: Vec<RelPointer>,
@@ -1601,30 +1671,36 @@ pub struct RelAnchor {
 
 #[derive(Serialize, Deserialize)]
 pub struct RelLink {
-    #[serde(rename = "XXX_DOMAIN")]
-    pub xxxDomain: String,
+    #[serde(rename = "DOMAIN")]
+    pub domain: String,
 
     /// Describes the attributes that make up the feature.
-    #[serde(rename = "XXX_FEAT_DESC")]
-    pub xxxFeatDesc: String,
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
 
-    #[serde(rename = "XXX_FEAT_ID")]
-    pub xxxFeatId: i32,
+    #[serde(rename = "FEAT_ID")]
+    pub featId: i32,
 
-    #[serde(rename = "XXX_FEAT_USAGE_TYPE")]
-    pub xxxFeatUsageType: String,
+    #[serde(rename = "FEAT_USAGE_TYPE")]
+    pub featUsageType: String,
 
-    #[serde(rename = "XXX_LINKED_FEAT_DESC")]
-    pub xxxLinkedFeatDesc: String,
+    #[serde(rename = "FTYPE_CODE")]
+    pub ftypeCode: String,
 
-    #[serde(rename = "XXX_LINKED_FEAT_ID")]
-    pub xxxLinkedFeatId: i32,
+    #[serde(rename = "LINKED_FEAT_DESC")]
+    pub linkedFeatDesc: String,
 
-    #[serde(rename = "XXX_LINKED_FEAT_TYPE")]
-    pub xxxLinkedFeatType: String,
+    #[serde(rename = "LINKED_FEAT_ID")]
+    pub linkedFeatId: i32,
 
-    #[serde(rename = "XXX_LINKED_FEAT_USAGE_TYPE")]
-    pub xxxLinkedFeatUsageType: String,
+    #[serde(rename = "LINKED_FEAT_TYPE")]
+    pub linkedFeatType: String,
+
+    #[serde(rename = "LINKED_FEAT_USAGE_TYPE")]
+    pub linkedFeatUsageType: String,
+
+    #[serde(rename = "REL_TYPE")]
+    pub relType: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1679,6 +1755,9 @@ pub struct RelatedEntity {
     #[serde(rename = "MATCH_KEY")]
     pub matchKey: String,
 
+    #[serde(rename = "MATCH_KEY_DETAILS")]
+    pub matchKeyDetails: MatchKeyDetails,
+
     #[serde(rename = "MATCH_LEVEL")]
     pub matchLevel: i32,
 
@@ -1686,22 +1765,28 @@ pub struct RelatedEntity {
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
+    #[serde(rename = "RECORDS")]
+    pub records: Vec<Record>,
+
     /// Overview of the source systems the records came from comprising this
     /// related entity.
     #[serde(rename = "RECORD_SUMMARY")]
     pub recordSummary: Vec<RecordSummary>,
 
+    #[serde(rename = "RECORD_TYPES")]
+    pub recordTypes: Vec<String>,
+
     #[serde(rename = "XXX_LAST_SEEN_DT")]
     pub xxxLastSeenDt: DateTime<FixedOffset>,
-
-    #[serde(rename = "XXX_RECORDS")]
-    pub xxxRecords: Vec<Record>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RelatedRoles {
-    #[serde(rename = "FIXME")]
-    pub fixme: Fixme,
+    #[serde(rename = "FEAT_DESC")]
+    pub featDesc: String,
+
+    #[serde(rename = "ROLE")]
+    pub role: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1800,6 +1885,9 @@ pub struct ResolvedEntityAndMatchInfo {
     #[serde(rename = "ENTITY")]
     pub entity: EntityForResolvedEntity,
 
+    #[serde(rename = "FEATURES_MJD")]
+    pub featuresMjd: EntityForResolvedEntity,
+
     #[serde(rename = "MATCH_INFO")]
     pub matchInfo: MatchInfo,
 }
@@ -1895,15 +1983,15 @@ pub struct SysOom {
 #[derive(Serialize, Deserialize)]
 pub struct SampleRecord {
     /// A label identifying the provenance of the record.
-    #[serde(rename = "XXX_DATA_SOURCE")]
-    pub xxxDataSource: String,
+    #[serde(rename = "DATA_SOURCE")]
+    pub dataSource: String,
 
-    #[serde(rename = "XXX_FLAGS")]
-    pub xxxFlags: Vec<String>,
+    #[serde(rename = "FLAGS")]
+    pub flags: Vec<String>,
 
     /// The unique identifier within the set of records in the DATA_SOURCE.
-    #[serde(rename = "XXX_RECORD_ID")]
-    pub xxxRecordId: String,
+    #[serde(rename = "RECORD_ID")]
+    pub recordId: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -1916,6 +2004,30 @@ pub struct SchemaVersion {
 
     #[serde(rename = "MINIMUM_REQUIRED_SCHEMA_VERSION")]
     pub minimumRequiredSchemaVersion: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct SearchEntity {
+    #[serde(rename = "FEATURES")]
+    pub features: HashMap<String, Vec<FeatureDescriptionValue>>,
+
+    #[serde(rename = "SUMMARY")]
+    pub summary: SearchEntitySummary,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct SearchEntitySummary {
+    #[serde(rename = "FEATURES_ADDED")]
+    pub featuresAdded: i32,
+
+    #[serde(rename = "FEATURES_IGNORED")]
+    pub featuresIgnored: i32,
+
+    #[serde(rename = "FEATURES_SEARCHED")]
+    pub featuresSearched: i32,
+
+    #[serde(rename = "FEATURES_SUBMITTED")]
+    pub featuresSubmitted: i32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2257,6 +2369,12 @@ pub struct SenzingEntitySpecification {
     #[serde(rename = "REGISTRATION_DATE")]
     pub registrationDate: String,
 
+    #[serde(rename = "RELATIONSHIP_KEY")]
+    pub relationshipKey: String,
+
+    #[serde(rename = "RELATIONSHIP_TYPE")]
+    pub relationshipType: String,
+
     /// This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
     /// dashes) for the data source or source field that is contributing the
     /// relationship. An attribute in the Senzing Entity Specification. See
@@ -2457,12 +2575,12 @@ pub struct SzEngineAddRecordResponse {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
+    #[serde(rename = "INTERESTING_ENTITIES")]
+    pub interestingEntities: InterestingEntities,
+
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
-
-    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
-    pub xxxInterestingEntities: InterestingEntities,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2528,6 +2646,9 @@ pub struct SzEngineFindNetworkByEntityIdResponse {
 
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
+
+    #[serde(rename = "WHY_RESULTS")]
+    pub whyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2553,6 +2674,9 @@ pub struct SzEngineFindNetworkByRecordIdResponse {
 
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
+
+    #[serde(rename = "WHY_RESULTS")]
+    pub whyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2774,12 +2898,12 @@ pub struct SzEngineReevaluateEntityResponse {
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
+    #[serde(rename = "INTERESTING_ENTITIES")]
+    pub interestingEntities: InterestingEntities,
+
     /// A label identifying the provenance of the record.
     #[serde(rename = "XXX_DATA_SOURCE")]
     pub xxxDataSource: String,
-
-    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
-    pub xxxInterestingEntities: InterestingEntities,
 
     /// The unique identifier within the set of records in the DATA_SOURCE.
     #[serde(rename = "XXX_RECORD_ID")]
@@ -2811,8 +2935,14 @@ pub struct SzEngineSearchByAttributesAttributes {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineSearchByAttributesResponse {
+    #[serde(rename = "RELATED_ENTITIES_MJD")]
+    pub relatedEntitiesMjd: Vec<RelatedEntity>,
+
     #[serde(rename = "RESOLVED_ENTITIES")]
     pub resolvedEntities: Vec<ResolvedEntityAndMatchInfo>,
+
+    #[serde(rename = "SEARCH_ENTITY")]
+    pub searchEntity: SearchEntity,
 
     #[serde(rename = "SEARCH_REQUEST")]
     pub searchRequest: SearchRequest,
@@ -2870,6 +3000,9 @@ pub struct SzEngineWhySearchAttributes {
 pub struct SzEngineWhySearchResponse {
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<EntityForWhySearch>,
+
+    #[serde(rename = "SEARCH_ENTITY")]
+    pub searchEntity: SearchEntity,
 
     #[serde(rename = "SEARCH_REQUEST")]
     pub searchRequest: SearchRequest,

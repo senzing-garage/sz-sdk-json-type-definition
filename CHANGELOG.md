@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning].
 
 -
 
+## [0.2.17] - 2025-10-10
+
+### Changed in 0.2.17
+
+- Internal refactoring
+
 ## [0.2.16] - 2025-10-07
 
 ### Changed in 0.2.16
@@ -135,7 +141,7 @@ and this project adheres to [Semantic Versioning].
 ### Changed in 0.2.1
 
 - Added unit testing
-- 0.2.x is for Senzing version 3.x.  The 0.3.x is for 4.x
+- 0.2.x is for Senzing version 3.x. The 0.3.x is for 4.x
 
 ## [0.2.0] - 2023-12-29
 

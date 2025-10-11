@@ -10,6 +10,9 @@ public class ResolvedEntityAndMatchInfo {
     @JsonProperty("ENTITY")
     private EntityForResolvedEntity entity;
 
+    @JsonProperty("FEATURES_MJD")
+    private EntityForResolvedEntity featuresMjd;
+
     @JsonProperty("MATCH_INFO")
     private MatchInfo matchInfo;
 
@@ -28,6 +31,20 @@ public class ResolvedEntityAndMatchInfo {
      */
     public void setEntity(EntityForResolvedEntity entity) {
         this.entity = entity;
+    }
+
+    /**
+     * Getter for featuresMjd.<p>
+     */
+    public EntityForResolvedEntity getFeaturesMjd() {
+        return featuresMjd;
+    }
+
+    /**
+     * Setter for featuresMjd.<p>
+     */
+    public void setFeaturesMjd(EntityForResolvedEntity featuresMjd) {
+        this.featuresMjd = featuresMjd;
     }
 
     /**

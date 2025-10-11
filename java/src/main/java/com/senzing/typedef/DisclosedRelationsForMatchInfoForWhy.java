@@ -8,34 +8,135 @@ import java.util.List;
 
 @JsonSerialize
 public class DisclosedRelationsForMatchInfoForWhy {
+    @JsonProperty("DOMAIN")
+    private String domain;
+
+    @JsonProperty("FEAT_ID")
+    private Integer featId;
+
+    @JsonProperty("FEAT_USAGE_TYPE")
+    private String featUsageType;
+
+    @JsonProperty("LINKED_FEAT_ID")
+    private Integer linkedFeatId;
+
+    @JsonProperty("LINKED_FEAT_TYPE")
+    private String linkedFeatType;
+
+    @JsonProperty("REL_ANCHOR")
+    private List<RelAnchor> relAnchor;
+
+    @JsonProperty("REL_LINK")
+    private List<RelLink> relLink;
+
     @JsonProperty("REL_POINTER")
     private List<RelPointer> relPointer;
-
-    @JsonProperty("XXX_DOMAIN")
-    private String xxxDomain;
 
     @JsonProperty("XXX_FEAT_DESC")
     private String xxxFeatDesc;
 
-    @JsonProperty("XXX_FEAT_ID")
-    private Integer xxxFeatId;
-
-    @JsonProperty("XXX_FEAT_USAGE_TYPE")
-    private String xxxFeatUsageType;
-
     @JsonProperty("XXX_LINKED_FEAT_DESC")
     private String xxxLinkedFeatDesc;
 
-    @JsonProperty("XXX_LINKED_FEAT_ID")
-    private Integer xxxLinkedFeatId;
-
-    @JsonProperty("XXX_LINKED_FEAT_TYPE")
-    private String xxxLinkedFeatType;
-
-    @JsonProperty("XXX_REL_ANCHOR")
-    private List<RelAnchor> xxxRelAnchor;
-
     public DisclosedRelationsForMatchInfoForWhy() {
+    }
+
+    /**
+     * Getter for domain.<p>
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    /**
+     * Setter for domain.<p>
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * Getter for featId.<p>
+     */
+    public Integer getFeatId() {
+        return featId;
+    }
+
+    /**
+     * Setter for featId.<p>
+     */
+    public void setFeatId(Integer featId) {
+        this.featId = featId;
+    }
+
+    /**
+     * Getter for featUsageType.<p>
+     */
+    public String getFeatUsageType() {
+        return featUsageType;
+    }
+
+    /**
+     * Setter for featUsageType.<p>
+     */
+    public void setFeatUsageType(String featUsageType) {
+        this.featUsageType = featUsageType;
+    }
+
+    /**
+     * Getter for linkedFeatId.<p>
+     */
+    public Integer getLinkedFeatId() {
+        return linkedFeatId;
+    }
+
+    /**
+     * Setter for linkedFeatId.<p>
+     */
+    public void setLinkedFeatId(Integer linkedFeatId) {
+        this.linkedFeatId = linkedFeatId;
+    }
+
+    /**
+     * Getter for linkedFeatType.<p>
+     */
+    public String getLinkedFeatType() {
+        return linkedFeatType;
+    }
+
+    /**
+     * Setter for linkedFeatType.<p>
+     */
+    public void setLinkedFeatType(String linkedFeatType) {
+        this.linkedFeatType = linkedFeatType;
+    }
+
+    /**
+     * Getter for relAnchor.<p>
+     */
+    public List<RelAnchor> getRelAnchor() {
+        return relAnchor;
+    }
+
+    /**
+     * Setter for relAnchor.<p>
+     */
+    public void setRelAnchor(List<RelAnchor> relAnchor) {
+        this.relAnchor = relAnchor;
+    }
+
+    /**
+     * Getter for relLink.<p>
+     */
+    public List<RelLink> getRelLink() {
+        return relLink;
+    }
+
+    /**
+     * Setter for relLink.<p>
+     */
+    public void setRelLink(List<RelLink> relLink) {
+        this.relLink = relLink;
     }
 
     /**
@@ -50,20 +151,6 @@ public class DisclosedRelationsForMatchInfoForWhy {
      */
     public void setRelPointer(List<RelPointer> relPointer) {
         this.relPointer = relPointer;
-    }
-
-    /**
-     * Getter for xxxDomain.<p>
-     */
-    public String getXxxDomain() {
-        return xxxDomain;
-    }
-
-    /**
-     * Setter for xxxDomain.<p>
-     */
-    public void setXxxDomain(String xxxDomain) {
-        this.xxxDomain = xxxDomain;
     }
 
     /**
@@ -83,34 +170,6 @@ public class DisclosedRelationsForMatchInfoForWhy {
     }
 
     /**
-     * Getter for xxxFeatId.<p>
-     */
-    public Integer getXxxFeatId() {
-        return xxxFeatId;
-    }
-
-    /**
-     * Setter for xxxFeatId.<p>
-     */
-    public void setXxxFeatId(Integer xxxFeatId) {
-        this.xxxFeatId = xxxFeatId;
-    }
-
-    /**
-     * Getter for xxxFeatUsageType.<p>
-     */
-    public String getXxxFeatUsageType() {
-        return xxxFeatUsageType;
-    }
-
-    /**
-     * Setter for xxxFeatUsageType.<p>
-     */
-    public void setXxxFeatUsageType(String xxxFeatUsageType) {
-        this.xxxFeatUsageType = xxxFeatUsageType;
-    }
-
-    /**
      * Getter for xxxLinkedFeatDesc.<p>
      */
     public String getXxxLinkedFeatDesc() {
@@ -122,47 +181,5 @@ public class DisclosedRelationsForMatchInfoForWhy {
      */
     public void setXxxLinkedFeatDesc(String xxxLinkedFeatDesc) {
         this.xxxLinkedFeatDesc = xxxLinkedFeatDesc;
-    }
-
-    /**
-     * Getter for xxxLinkedFeatId.<p>
-     */
-    public Integer getXxxLinkedFeatId() {
-        return xxxLinkedFeatId;
-    }
-
-    /**
-     * Setter for xxxLinkedFeatId.<p>
-     */
-    public void setXxxLinkedFeatId(Integer xxxLinkedFeatId) {
-        this.xxxLinkedFeatId = xxxLinkedFeatId;
-    }
-
-    /**
-     * Getter for xxxLinkedFeatType.<p>
-     */
-    public String getXxxLinkedFeatType() {
-        return xxxLinkedFeatType;
-    }
-
-    /**
-     * Setter for xxxLinkedFeatType.<p>
-     */
-    public void setXxxLinkedFeatType(String xxxLinkedFeatType) {
-        this.xxxLinkedFeatType = xxxLinkedFeatType;
-    }
-
-    /**
-     * Getter for xxxRelAnchor.<p>
-     */
-    public List<RelAnchor> getXxxRelAnchor() {
-        return xxxRelAnchor;
-    }
-
-    /**
-     * Setter for xxxRelAnchor.<p>
-     */
-    public void setXxxRelAnchor(List<RelAnchor> xxxRelAnchor) {
-        this.xxxRelAnchor = xxxRelAnchor;
     }
 }

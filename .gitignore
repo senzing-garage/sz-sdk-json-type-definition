@@ -192,3 +192,5 @@ csharp/obj/project.nuget.cache
 
 main.js
 node_modules/
+
+testdata/th4_tests

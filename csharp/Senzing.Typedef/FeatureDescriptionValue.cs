@@ -23,6 +23,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        [JsonPropertyName("FEAT_DESC_VALUES")]
+        public IList<FeatureDescriptionValueDetails> FeatDescValues { get; set; }
+
         /// <summary>
         /// Internal use.
         /// </summary>
@@ -32,13 +35,13 @@ namespace Senzing.Typedef
         [JsonPropertyName("SCORING_CAP_REACHED")]
         public string ScoringCapReached { get; set; }
 
+        [JsonPropertyName("SUPPRESSED")]
+        public string Suppressed { get; set; }
+
         [JsonPropertyName("USED_FOR_CAND")]
         public string UsedForCand { get; set; }
 
         [JsonPropertyName("USED_FOR_SCORING")]
         public string UsedForScoring { get; set; }
-
-        [JsonPropertyName("XXX_SUPPRESSED")]
-        public string XxxSuppressed { get; set; }
     }
 }

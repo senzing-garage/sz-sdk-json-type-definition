@@ -11,6 +11,12 @@ public class FeatureForAttributes {
     @JsonProperty("ATTRIBUTES")
     private SenzingEntitySpecification attributes;
 
+    @JsonProperty("CANDIDATE_CAP_REACHED")
+    private String candidateCapReached;
+
+    @JsonProperty("ENTITY_COUNT")
+    private Integer entityCount;
+
     @JsonProperty("FEAT_DESC")
     private String featDesc;
 
@@ -20,8 +26,17 @@ public class FeatureForAttributes {
     @JsonProperty("LIB_FEAT_ID")
     private Integer libFeatId;
 
+    @JsonProperty("SCORING_CAP_REACHED")
+    private String scoringCapReached;
+
     @JsonProperty("USAGE_TYPE")
     private String usageType;
+
+    @JsonProperty("USED_FOR_CAND")
+    private String usedForCand;
+
+    @JsonProperty("USED_FOR_SCORING")
+    private String usedForScoring;
 
     public FeatureForAttributes() {
     }
@@ -38,6 +53,34 @@ public class FeatureForAttributes {
      */
     public void setAttributes(SenzingEntitySpecification attributes) {
         this.attributes = attributes;
+    }
+
+    /**
+     * Getter for candidateCapReached.<p>
+     */
+    public String getCandidateCapReached() {
+        return candidateCapReached;
+    }
+
+    /**
+     * Setter for candidateCapReached.<p>
+     */
+    public void setCandidateCapReached(String candidateCapReached) {
+        this.candidateCapReached = candidateCapReached;
+    }
+
+    /**
+     * Getter for entityCount.<p>
+     */
+    public Integer getEntityCount() {
+        return entityCount;
+    }
+
+    /**
+     * Setter for entityCount.<p>
+     */
+    public void setEntityCount(Integer entityCount) {
+        this.entityCount = entityCount;
     }
 
     /**
@@ -87,6 +130,20 @@ public class FeatureForAttributes {
     }
 
     /**
+     * Getter for scoringCapReached.<p>
+     */
+    public String getScoringCapReached() {
+        return scoringCapReached;
+    }
+
+    /**
+     * Setter for scoringCapReached.<p>
+     */
+    public void setScoringCapReached(String scoringCapReached) {
+        this.scoringCapReached = scoringCapReached;
+    }
+
+    /**
      * Getter for usageType.<p>
      * Label to identify how some features are being used (can also change some
      * features behavior).
@@ -102,5 +159,33 @@ public class FeatureForAttributes {
      */
     public void setUsageType(String usageType) {
         this.usageType = usageType;
+    }
+
+    /**
+     * Getter for usedForCand.<p>
+     */
+    public String getUsedForCand() {
+        return usedForCand;
+    }
+
+    /**
+     * Setter for usedForCand.<p>
+     */
+    public void setUsedForCand(String usedForCand) {
+        this.usedForCand = usedForCand;
+    }
+
+    /**
+     * Getter for usedForScoring.<p>
+     */
+    public String getUsedForScoring() {
+        return usedForScoring;
+    }
+
+    /**
+     * Setter for usedForScoring.<p>
+     */
+    public void setUsedForScoring(String usedForScoring) {
+        this.usedForScoring = usedForScoring;
     }
 }

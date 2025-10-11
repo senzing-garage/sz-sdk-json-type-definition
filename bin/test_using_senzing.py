@@ -7,6 +7,7 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
+import logging
 import os
 import pathlib
 import random
@@ -15,12 +16,21 @@ import sys
 from senzing import SzAbstractFactory, SzEngineFlags, SzError
 from senzing_core import SzAbstractFactoryCore
 
+# Logging.
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
 # Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../docs/json-responses")
+TRUTHSETS_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/truthsets")
 
 DEBUG = 0
 DEFINITIONS = {}
 ERROR_COUNT = 0
-GLOBAL_OUTPUT_DIRECTORY = "./docs/json-responses"
 HR_START = ">" * 80
 HR_STOP = "<" * 80
 LOADED_ENTITY_IDS = []
@@ -238,7 +248,7 @@ def handle_json_python_type(python_type):
         case "string":
             return "string"
         case _:
-            print(f"Error: Bad 'pythonType:' {python_type}")
+            logger.error("Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -335,11 +345,9 @@ def add_records(sz_abstract_factory: SzAbstractFactory):
         "watchlist.jsonl",
     ]
 
-    current_path = pathlib.Path(__file__).parent.resolve()
     test_count = 0
     for filename in filenames:
-        file_path = os.path.abspath(f"{current_path}/../testdata/truthsets/{filename}")
-        with open(file_path, "r", encoding="utf-8") as input_file:
+        with open(os.path.join(TRUTHSETS_DIRECTORY, filename), "r", encoding="utf-8") as input_file:
             for line in input_file:
                 line_as_dict = json.loads(line)
                 data_source = line_as_dict.get("DATA_SOURCE")
@@ -1314,7 +1322,7 @@ def create_sz_abstract_factory() -> SzAbstractFactory:
     try:
         sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
     except SzError as err:
-        print(f"\nERROR: {err}\n")
+        logger.error("%s", err)
 
     return sz_abstract_factory
 
@@ -1389,20 +1397,12 @@ def output(indentation, message):
     print(f"{'    ' * indentation}{message}")
 
 
-def path_to_testdata(filename: str) -> str:
-    """Determine the path to the test data."""
-    current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath(f"{current_path}/testdata/{filename}")
-    return result
-
-
 def process_rfc8927():
     """Process the RFC8927 JSON."""
     # global DEFINITIONS, SCHEMA
     global DEFINITIONS
 
-    input_filename = "./senzingsdk-RFC8927.json"
-    with open(input_filename, "r", encoding="utf-8") as input_file:
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
         rfc8927 = json.load(input_file)
 
     DEFINITIONS = rfc8927.get("definitions", {})
@@ -1415,7 +1415,7 @@ def process_rfc8927():
         # Short-circuit when JSON key not found.
 
         if json_value is None:
-            print(f"Could not find JSON key: {requested_json_key}")
+            logger.info("Could not find JSON key: %s", requested_json_key)
             continue
 
         SCHEMA[requested_json_key] = recurse_json(json_value)
@@ -1444,6 +1444,10 @@ def test_this(test_name, title, response):
 
 if __name__ == "__main__":
 
+    # Prolog.
+
+    logger.info("Begin %s", os.path.basename(__file__))
+
     # Process RFC8927 file to create SCHEMA.
 
     process_rfc8927()
@@ -1467,6 +1471,8 @@ if __name__ == "__main__":
     delete_records(the_sz_abstract_factory)
 
     # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))
 
     if ERROR_COUNT > 0:
         sys.exit(1)

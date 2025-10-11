@@ -8,18 +8,21 @@ import builtins
 import json
 import logging
 import os
+import pathlib
 import sys
 from pathlib import Path
 
-# Tricky code:  Need to import all python.typedef.* for the "not in globals()" test
-# pylint: disable=unused-wildcard-import
+# Logging
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-from python import senzing_typedef  # pylint: disable=wrong-import-position
-from python.senzing_typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
-INPUT_DIRECTORY = "./testdata/responses_senzing"
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+TESTDATA_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata")
+INPUT_DIRECTORY = f"{TESTDATA_DIRECTORY}/responses"
+
 DEBUG = False
 ERROR_COUNT = 0
 TEST_COUNT = 0
@@ -36,6 +39,14 @@ PYTHON_CLASS_MAP = {
     "SzEngineGetVirtualEntityByRecordIdResponse": "SzEngineGetVirtualEntityByRecordIDResponse",
     "SzEngineHowEntityByEntityIdResponse": "SzEngineHowEntityByEntityIDResponse",
 }
+
+# Tricky code:  Need to import all python.typedef.* for the "not in globals()" test
+# pylint: disable=unused-wildcard-import
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+from python import senzing_typedef  # pylint: disable=wrong-import-position
+from python.senzing_typedef import *  # pylint: disable=wrong-import-position disable=wildcard-import
 
 # -----------------------------------------------------------------------------
 # --- Monkey patch
@@ -62,8 +73,7 @@ def is_equal(test_name, source, target):
 
     result = True
 
-    if DEBUG:
-        print(test_name)
+    logger.debug("%s", test_name)
 
     if target is None:
         if source is None:
@@ -89,7 +99,7 @@ def is_equal(test_name, source, target):
                 return False
     else:
         if source != target:
-            logging.error("JSON key conflict: %s", test_name)
+            logger.error("JSON key conflict: %s", test_name)
             result = False
     return result
 
@@ -115,20 +125,19 @@ def remove_empty_elements(an_object):
 
 if __name__ == "__main__":
 
-    # Set up logging.
-
-    logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
-
     # Prolog.
 
-    horizontal_rule = format("-" * 80)
-    logging.info("%s", horizontal_rule)
-    logging.info("--- %s - Begin", format(os.path.basename(__file__)))
-    logging.info("%s", horizontal_rule)
+    logger.info("Begin %s", os.path.basename(__file__))
+
+    # Loop through INPUT_DIRECTORY.
 
     test_file_names = os.listdir(INPUT_DIRECTORY)
-    # test_file_names = ["SzEngineWhyRecordsResponse.jsonl"]
+    # test_file_names = ["SzEngineWhySearchResponse.jsonl"]
     for test_file_name in test_file_names:
+        logger.info("Testfile: %s/%s", INPUT_DIRECTORY, test_file_name)
+
+        # Get appropriate Python class based on file name.
+
         senzing_api_class = Path(test_file_name).stem
 
         if senzing_api_class not in globals():
@@ -136,15 +145,18 @@ if __name__ == "__main__":
                 senzing_api_class = PYTHON_CLASS_MAP.get(senzing_api_class)
             else:
                 ERROR_COUNT += 1
-                logging.error("Incorrect pythonClass: %s", senzing_api_class)
+                logger.error("Incorrect pythonClass: %s", senzing_api_class)
                 continue
 
         senzing_class = globals()[senzing_api_class]
+
+        # Process lines in the file.
 
         with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
             LINE_COUNT = 0
             for line in test_file:
                 LINE_COUNT += 1
+                logger.debug("Line number: %d", LINE_COUNT)
                 TEST_COUNT += 1
                 LINE_ERRORS = ERROR_COUNT
                 TEST_NAME = f"{senzing_api_class}.{LINE_COUNT}"
@@ -157,7 +169,7 @@ if __name__ == "__main__":
                 reconstructed_testcase_dict = json.loads(reconstructed_json_string)
                 if not is_equal(TEST_NAME, line_as_dict, reconstructed_testcase_dict):
                     ERROR_COUNT += 1
-                    logging.error("Not equal Test: %s", TEST_NAME)
+                    logger.error("Not equal Test: %s", TEST_NAME)
 
                 # Test for similarity in JSON string lengths.
 
@@ -169,7 +181,7 @@ if __name__ == "__main__":
                 len_reconstructed = len(reconstructed_json_string_sorted)
                 if len_original != len_reconstructed:
                     ERROR_COUNT += 1
-                    logging.error(
+                    logger.error(
                         "Lengths differ: Test: %s; Original: %d; Reconstructed: %d",
                         TEST_NAME,
                         len_original,
@@ -182,16 +194,15 @@ if __name__ == "__main__":
                     for index in range(len_original):
                         if original_json_string_sorted[index] != reconstructed_json_string_sorted[index]:
                             ERROR_COUNT += 1
-                            logging.error("Strings differ: Test: %s; First difference position: %d", TEST_NAME, index)
-                            logging.error(">>>>>>      Original: %s", original_json_string_sorted)
-                            logging.error(">>>>>> Reconstructed: %s", reconstructed_json_string_sorted)
+                            logger.error("Strings differ: Test: %s; First difference position: %d", TEST_NAME, index)
+                            logger.error("            Original: %s", original_json_string_sorted)
+                            logger.error("       Reconstructed: %s", reconstructed_json_string_sorted)
                             break
 
     # Epilog.
 
-    logging.info("Tests: %d; Errors: %d", TEST_COUNT, ERROR_COUNT)
-    logging.info("%s", horizontal_rule)
-    logging.info("--- %s - End", os.path.basename(__file__))
-    logging.info("%s", horizontal_rule)
+    logger.info("Tests: %d; Errors: %d", TEST_COUNT, ERROR_COUNT)
+    logger.info("End   %s", os.path.basename(__file__))
+
     if ERROR_COUNT > 0:
         sys.exit(1)

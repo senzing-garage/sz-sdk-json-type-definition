@@ -106,7 +106,7 @@ namespace Bob
             }
 
             string currentPath = Directory.GetCurrentDirectory();
-            string filePath = currentPath + "/testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
+            string filePath = currentPath + "/testdata/responses_mock/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
 
             string result = "";
             StreamReader file = new StreamReader(filePath);
