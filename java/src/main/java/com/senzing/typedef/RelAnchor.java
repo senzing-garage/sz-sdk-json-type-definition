@@ -8,26 +8,26 @@ import java.util.List;
 
 @JsonSerialize
 public class RelAnchor {
-    @JsonProperty("XXX_DOMAIN")
-    private String xxxDomain;
+    @JsonProperty("DOMAIN")
+    private String domain;
 
-    @JsonProperty("XXX_FEAT_DESC")
-    private String xxxFeatDesc;
+    @JsonProperty("FEAT_DESC")
+    private String featDesc;
 
-    @JsonProperty("XXX_FEAT_ID")
-    private Integer xxxFeatId;
+    @JsonProperty("FEAT_ID")
+    private Integer featId;
 
-    @JsonProperty("XXX_LINKED_FEAT_DESC")
-    private String xxxLinkedFeatDesc;
+    @JsonProperty("LINKED_FEAT_DESC")
+    private String linkedFeatDesc;
 
-    @JsonProperty("XXX_LINKED_FEAT_ID")
-    private Integer xxxLinkedFeatId;
+    @JsonProperty("LINKED_FEAT_ID")
+    private Integer linkedFeatId;
 
-    @JsonProperty("XXX_LINKED_FEAT_TYPE")
-    private String xxxLinkedFeatType;
+    @JsonProperty("LINKED_FEAT_TYPE")
+    private String linkedFeatType;
 
-    @JsonProperty("XXX_LINKED_FEAT_USAGE_TYPE")
-    private String xxxLinkedFeatUsageType;
+    @JsonProperty("LINKED_FEAT_USAGE_TYPE")
+    private String linkedFeatUsageType;
 
     @JsonProperty("XXX_REL_POINTER")
     private List<RelPointer> xxxRelPointer;
@@ -36,103 +36,103 @@ public class RelAnchor {
     }
 
     /**
-     * Getter for xxxDomain.<p>
+     * Getter for domain.<p>
      */
-    public String getXxxDomain() {
-        return xxxDomain;
+    public String getDomain() {
+        return domain;
     }
 
     /**
-     * Setter for xxxDomain.<p>
+     * Setter for domain.<p>
      */
-    public void setXxxDomain(String xxxDomain) {
-        this.xxxDomain = xxxDomain;
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     /**
-     * Getter for xxxFeatDesc.<p>
+     * Getter for featDesc.<p>
      * Describes the attributes that make up the feature.
      */
-    public String getXxxFeatDesc() {
-        return xxxFeatDesc;
+    public String getFeatDesc() {
+        return featDesc;
     }
 
     /**
-     * Setter for xxxFeatDesc.<p>
+     * Setter for featDesc.<p>
      * Describes the attributes that make up the feature.
      */
-    public void setXxxFeatDesc(String xxxFeatDesc) {
-        this.xxxFeatDesc = xxxFeatDesc;
+    public void setFeatDesc(String featDesc) {
+        this.featDesc = featDesc;
     }
 
     /**
-     * Getter for xxxFeatId.<p>
+     * Getter for featId.<p>
      */
-    public Integer getXxxFeatId() {
-        return xxxFeatId;
+    public Integer getFeatId() {
+        return featId;
     }
 
     /**
-     * Setter for xxxFeatId.<p>
+     * Setter for featId.<p>
      */
-    public void setXxxFeatId(Integer xxxFeatId) {
-        this.xxxFeatId = xxxFeatId;
+    public void setFeatId(Integer featId) {
+        this.featId = featId;
     }
 
     /**
-     * Getter for xxxLinkedFeatDesc.<p>
+     * Getter for linkedFeatDesc.<p>
      */
-    public String getXxxLinkedFeatDesc() {
-        return xxxLinkedFeatDesc;
+    public String getLinkedFeatDesc() {
+        return linkedFeatDesc;
     }
 
     /**
-     * Setter for xxxLinkedFeatDesc.<p>
+     * Setter for linkedFeatDesc.<p>
      */
-    public void setXxxLinkedFeatDesc(String xxxLinkedFeatDesc) {
-        this.xxxLinkedFeatDesc = xxxLinkedFeatDesc;
+    public void setLinkedFeatDesc(String linkedFeatDesc) {
+        this.linkedFeatDesc = linkedFeatDesc;
     }
 
     /**
-     * Getter for xxxLinkedFeatId.<p>
+     * Getter for linkedFeatId.<p>
      */
-    public Integer getXxxLinkedFeatId() {
-        return xxxLinkedFeatId;
+    public Integer getLinkedFeatId() {
+        return linkedFeatId;
     }
 
     /**
-     * Setter for xxxLinkedFeatId.<p>
+     * Setter for linkedFeatId.<p>
      */
-    public void setXxxLinkedFeatId(Integer xxxLinkedFeatId) {
-        this.xxxLinkedFeatId = xxxLinkedFeatId;
+    public void setLinkedFeatId(Integer linkedFeatId) {
+        this.linkedFeatId = linkedFeatId;
     }
 
     /**
-     * Getter for xxxLinkedFeatType.<p>
+     * Getter for linkedFeatType.<p>
      */
-    public String getXxxLinkedFeatType() {
-        return xxxLinkedFeatType;
+    public String getLinkedFeatType() {
+        return linkedFeatType;
     }
 
     /**
-     * Setter for xxxLinkedFeatType.<p>
+     * Setter for linkedFeatType.<p>
      */
-    public void setXxxLinkedFeatType(String xxxLinkedFeatType) {
-        this.xxxLinkedFeatType = xxxLinkedFeatType;
+    public void setLinkedFeatType(String linkedFeatType) {
+        this.linkedFeatType = linkedFeatType;
     }
 
     /**
-     * Getter for xxxLinkedFeatUsageType.<p>
+     * Getter for linkedFeatUsageType.<p>
      */
-    public String getXxxLinkedFeatUsageType() {
-        return xxxLinkedFeatUsageType;
+    public String getLinkedFeatUsageType() {
+        return linkedFeatUsageType;
     }
 
     /**
-     * Setter for xxxLinkedFeatUsageType.<p>
+     * Setter for linkedFeatUsageType.<p>
      */
-    public void setXxxLinkedFeatUsageType(String xxxLinkedFeatUsageType) {
-        this.xxxLinkedFeatUsageType = xxxLinkedFeatUsageType;
+    public void setLinkedFeatUsageType(String linkedFeatUsageType) {
+        this.linkedFeatUsageType = linkedFeatUsageType;
     }
 
     /**

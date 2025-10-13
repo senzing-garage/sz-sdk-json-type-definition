@@ -1116,14 +1116,27 @@
         },
         "DisclosedRelationsForMatchInfo": {
             "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "ENTITY_ROLES": {
+                    "elements": {
+                        "ref": "EntityRoles"
+                    }
+                },
+                "RELATED_ROLES": {
+                    "elements": {
+                        "ref": "RelatedRoles"
+                    }
+                },
+                "REL_LINK": {
+                    "elements": {
+                        "ref": "RelLink"
+                    }
+                },
                 "XXX_REL_ANCHOR": {
                     "elements": {
                         "ref": "RelAnchor"
-                    }
-                },
-                "XXX_REL_LINK": {
-                    "elements": {
-                        "ref": "RelLink"
                     }
                 },
                 "XXX_REL_POINTER": {
@@ -1135,13 +1148,41 @@
         },
         "DisclosedRelationsForMatchInfoForWhy": {
             "properties": {
+                "DOMAIN": {
+                    "type": "string"
+                },
+                "FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "LINKED_FEAT_TYPE": {
+                    "type": "string"
+                },
+                "REL_ANCHOR": {
+                    "elements": {
+                        "ref": "RelAnchor"
+                    }
+                },
+                "REL_LINK": {
+                    "elements": {
+                        "ref": "RelLink"
+                    }
+                },
                 "REL_POINTER": {
                     "elements": {
                         "ref": "RelPointer"
                     }
-                },
-                "XXX_DOMAIN": {
-                    "type": "string"
                 },
                 "XXX_FEAT_DESC": {
                     "metadata": {
@@ -1149,31 +1190,8 @@
                     },
                     "type": "string"
                 },
-                "XXX_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_FEAT_USAGE_TYPE": {
-                    "type": "string"
-                },
                 "XXX_LINKED_FEAT_DESC": {
                     "type": "string"
-                },
-                "XXX_LINKED_FEAT_ID": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_LINKED_FEAT_TYPE": {
-                    "type": "string"
-                },
-                "XXX_REL_ANCHOR": {
-                    "elements": {
-                        "ref": "RelAnchor"
-                    }
                 }
             }
         },
@@ -1220,13 +1238,13 @@
         },
         "EntityForWhySearch": {
             "properties": {
-                "RESOLVED_ENTITY": {
-                    "ref": "ResolvedEntity"
-                },
-                "XXX_RELATED_ENTITIES": {
+                "RELATED_ENTITIES": {
                     "elements": {
                         "ref": "RelatedEntity"
                     }
+                },
+                "RESOLVED_ENTITY": {
+                    "ref": "ResolvedEntity"
                 }
             }
         },
@@ -1257,6 +1275,9 @@
                         "description": "Representation of matched source record features."
                     },
                     "type": "string"
+                },
+                "MATCH_KEY_DETAILS": {
+                    "ref": "MatchKeyDetails"
                 },
                 "MATCH_LEVEL_CODE": {
                     "metadata": {
@@ -1331,6 +1352,9 @@
                     },
                     "type": "string"
                 },
+                "MATCH_KEY_DETAILS": {
+                    "ref": "MatchKeyDetails"
+                },
                 "MATCH_LEVEL_CODE": {
                     "metadata": {
                         "description": "The type of match that occurred for the record."
@@ -1399,6 +1423,11 @@
                     },
                     "type": "string"
                 },
+                "FEAT_DESC_VALUES": {
+                    "elements": {
+                        "ref": "FeatureDescriptionValueDetails"
+                    }
+                },
                 "LIB_FEAT_ID": {
                     "metadata": {
                         "description": "Internal use.",
@@ -1409,13 +1438,47 @@
                 "SCORING_CAP_REACHED": {
                     "type": "string"
                 },
+                "SUPPRESSED": {
+                    "type": "string"
+                },
                 "USED_FOR_CAND": {
                     "type": "string"
                 },
                 "USED_FOR_SCORING": {
                     "type": "string"
+                }
+            }
+        },
+        "FeatureDescriptionValueDetails": {
+            "properties": {
+                "CANDIDATE_CAP_REACHED": {
+                    "type": "string"
                 },
-                "XXX_SUPPRESSED": {
+                "ENTITY_COUNT": {
+                    "type": "int32"
+                },
+                "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
+                    "type": "string"
+                },
+                "LIB_FEAT_ID": {
+                    "metadata": {
+                        "goType": "int64"
+                    },
+                    "type": "int32"
+                },
+                "SCORING_CAP_REACHED": {
+                    "type": "string"
+                },
+                "SUPPRESSED": {
+                    "type": "string"
+                },
+                "USED_FOR_CAND": {
+                    "type": "string"
+                },
+                "USED_FOR_SCORING": {
                     "type": "string"
                 }
             }
@@ -1424,6 +1487,12 @@
             "properties": {
                 "ATTRIBUTES": {
                     "ref": "SenzingEntitySpecification"
+                },
+                "CANDIDATE_CAP_REACHED": {
+                    "type": "string"
+                },
+                "ENTITY_COUNT": {
+                    "type": "int32"
                 },
                 "FEAT_DESC": {
                     "metadata": {
@@ -1445,10 +1514,19 @@
                     },
                     "type": "int32"
                 },
+                "SCORING_CAP_REACHED": {
+                    "type": "string"
+                },
                 "USAGE_TYPE": {
                     "metadata": {
                         "description": "Label to identify how some features are being used (can also change some features behavior)."
                     },
+                    "type": "string"
+                },
+                "USED_FOR_CAND": {
+                    "type": "string"
+                },
+                "USED_FOR_SCORING": {
                     "type": "string"
                 }
             }
@@ -1815,7 +1893,7 @@
                         "ref": "InterestingEntity"
                     }
                 },
-                "XXX_NOTICES": {
+                "NOTICES": {
                     "elements": {
                         "ref": "Notice"
                     }
@@ -1824,25 +1902,25 @@
         },
         "InterestingEntity": {
             "properties": {
-                "XXX_DEGREES": {
+                "DEGREES": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_ENTITY_ID": {
+                "ENTITY_ID": {
                     "metadata": {
                         "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_FLAGS": {
+                "FLAGS": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "XXX_SAMPLE_RECORDS": {
+                "SAMPLE_RECORDS": {
                     "elements": {
                         "ref": "SampleRecord"
                     }
@@ -1955,6 +2033,16 @@
                         "ref": "Confirmation"
                     }
                 },
+                "DISCLOSED_RELATIONS": {
+                    "elements": {
+                        "ref": "DisclosedRelationsForMatchInfo"
+                    }
+                },
+                "REL_LINKS": {
+                    "elements": {
+                        "ref": "RelLink"
+                    }
+                },
                 "XXX_ERRULE_CODE": {
                     "metadata": {
                         "description": "Identifier of the entity resolution rule that was triggered."
@@ -1981,10 +2069,10 @@
         },
         "Notice": {
             "properties": {
-                "XXX_CODE": {
+                "CODE": {
                     "type": "string"
                 },
-                "XXX_DESCRIPTION": {
+                "DESCRIPTION": {
                     "type": "string"
                 }
             }
@@ -2301,34 +2389,34 @@
         },
         "RelAnchor": {
             "properties": {
-                "XXX_DOMAIN": {
+                "DOMAIN": {
                     "type": "string"
                 },
-                "XXX_FEAT_DESC": {
+                "FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "XXX_FEAT_ID": {
+                "FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_LINKED_FEAT_DESC": {
+                "LINKED_FEAT_DESC": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_ID": {
+                "LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_LINKED_FEAT_TYPE": {
+                "LINKED_FEAT_TYPE": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_USAGE_TYPE": {
+                "LINKED_FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
                 "XXX_REL_POINTER": {
@@ -2340,37 +2428,43 @@
         },
         "RelLink": {
             "properties": {
-                "XXX_DOMAIN": {
+                "DOMAIN": {
                     "type": "string"
                 },
-                "XXX_FEAT_DESC": {
+                "FEAT_DESC": {
                     "metadata": {
                         "description": "Describes the attributes that make up the feature."
                     },
                     "type": "string"
                 },
-                "XXX_FEAT_ID": {
+                "FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_FEAT_USAGE_TYPE": {
+                "FEAT_USAGE_TYPE": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_DESC": {
+                "FTYPE_CODE": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_ID": {
+                "LINKED_FEAT_DESC": {
+                    "type": "string"
+                },
+                "LINKED_FEAT_ID": {
                     "metadata": {
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
-                "XXX_LINKED_FEAT_TYPE": {
+                "LINKED_FEAT_TYPE": {
                     "type": "string"
                 },
-                "XXX_LINKED_FEAT_USAGE_TYPE": {
+                "LINKED_FEAT_USAGE_TYPE": {
+                    "type": "string"
+                },
+                "REL_TYPE": {
                     "type": "string"
                 }
             }
@@ -2450,6 +2544,9 @@
                     },
                     "type": "string"
                 },
+                "MATCH_KEY_DETAILS": {
+                    "ref": "MatchKeyDetails"
+                },
                 "MATCH_LEVEL": {
                     "metadata": {
                         "goType": "int64"
@@ -2462,6 +2559,11 @@
                     },
                     "type": "string"
                 },
+                "RECORDS": {
+                    "elements": {
+                        "ref": "Record"
+                    }
+                },
                 "RECORD_SUMMARY": {
                     "elements": {
                         "ref": "RecordSummary"
@@ -2470,20 +2572,23 @@
                         "description": "Overview of the source systems the records came from comprising this related entity."
                     }
                 },
+                "RECORD_TYPES": {
+                    "elements": {
+                        "type": "string"
+                    }
+                },
                 "XXX_LAST_SEEN_DT": {
                     "type": "timestamp"
-                },
-                "XXX_RECORDS": {
-                    "elements": {
-                        "ref": "Record"
-                    }
                 }
             }
         },
         "RelatedRoles": {
             "properties": {
-                "FIXME": {
-                    "ref": "Fixme"
+                "FEAT_DESC": {
+                    "type": "string"
+                },
+                "ROLE": {
+                    "type": "string"
                 }
             }
         },
@@ -2625,6 +2730,9 @@
         "ResolvedEntityAndMatchInfo": {
             "properties": {
                 "ENTITY": {
+                    "ref": "EntityForResolvedEntity"
+                },
+                "FEATURES_MJD": {
                     "ref": "EntityForResolvedEntity"
                 },
                 "MATCH_INFO": {
@@ -2780,18 +2888,18 @@
         },
         "SampleRecord": {
             "properties": {
-                "XXX_DATA_SOURCE": {
+                "DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
                 },
-                "XXX_FLAGS": {
+                "FLAGS": {
                     "elements": {
                         "type": "string"
                     }
                 },
-                "XXX_RECORD_ID": {
+                "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
@@ -2810,6 +2918,36 @@
                 },
                 "MINIMUM_REQUIRED_SCHEMA_VERSION": {
                     "type": "string"
+                }
+            }
+        },
+        "SearchEntity": {
+            "properties": {
+                "FEATURES": {
+                    "values": {
+                        "elements": {
+                            "ref": "FeatureDescriptionValue"
+                        }
+                    }
+                },
+                "SUMMARY": {
+                    "ref": "SearchEntitySummary"
+                }
+            }
+        },
+        "SearchEntitySummary": {
+            "properties": {
+                "FEATURES_ADDED": {
+                    "type": "int32"
+                },
+                "FEATURES_IGNORED": {
+                    "type": "int32"
+                },
+                "FEATURES_SEARCHED": {
+                    "type": "int32"
+                },
+                "FEATURES_SUBMITTED": {
+                    "type": "int32"
                 }
             }
         },
@@ -3190,6 +3328,12 @@
                     },
                     "type": "string"
                 },
+                "RELATIONSHIP_KEY": {
+                    "type": "string"
+                },
+                "RELATIONSHIP_TYPE": {
+                    "type": "string"
+                },
                 "REL_ANCHOR_DOMAIN": {
                     "metadata": {
                         "description": "This code helps keep the REL_ANCHOR_KEY unique. This is a code (without dashes) for the data source or source field that is contributing the relationship. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -3440,15 +3584,15 @@
                     },
                     "type": "string"
                 },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
                 "RECORD_ID": {
                     "metadata": {
                         "description": "The unique identifier within the set of records in the DATA_SOURCE.",
                         "label": "RECORD_ID"
                     },
                     "type": "string"
-                },
-                "XXX_INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
                 }
             }
         },
@@ -3536,6 +3680,11 @@
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
                     "type": "string"
+                },
+                "WHY_RESULTS": {
+                    "elements": {
+                        "ref": "WhyResult"
+                    }
                 }
             }
         },
@@ -3575,6 +3724,11 @@
                 },
                 "MAX_ENTITY_LIMIT_REACHED": {
                     "type": "string"
+                },
+                "WHY_RESULTS": {
+                    "elements": {
+                        "ref": "WhyResult"
+                    }
                 }
             }
         },
@@ -3899,14 +4053,14 @@
                         "ref": "AffectedEntity"
                     }
                 },
+                "INTERESTING_ENTITIES": {
+                    "ref": "InterestingEntities"
+                },
                 "XXX_DATA_SOURCE": {
                     "metadata": {
                         "description": "A label identifying the provenance of the record."
                     },
                     "type": "string"
-                },
-                "XXX_INTERESTING_ENTITIES": {
-                    "ref": "InterestingEntities"
                 },
                 "XXX_RECORD_ID": {
                     "metadata": {
@@ -3951,10 +4105,18 @@
         },
         "SzEngineSearchByAttributesResponse": {
             "properties": {
+                "RELATED_ENTITIES_MJD": {
+                    "elements": {
+                        "ref": "RelatedEntity"
+                    }
+                },
                 "RESOLVED_ENTITIES": {
                     "elements": {
                         "ref": "ResolvedEntityAndMatchInfo"
                     }
+                },
+                "SEARCH_ENTITY": {
+                    "ref": "SearchEntity"
                 },
                 "SEARCH_REQUEST": {
                     "ref": "SearchRequest"
@@ -4035,6 +4197,9 @@
                     "elements": {
                         "ref": "EntityForWhySearch"
                     }
+                },
+                "SEARCH_ENTITY": {
+                    "ref": "SearchEntity"
                 },
                 "SEARCH_REQUEST": {
                     "ref": "SearchRequest"

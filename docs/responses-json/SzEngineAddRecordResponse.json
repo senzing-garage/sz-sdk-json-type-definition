@@ -5,31 +5,31 @@
         }
     ],
     "DATA_SOURCE": "string",
-    "RECORD_ID": "string",
-    "XXX_INTERESTING_ENTITIES": {
+    "INTERESTING_ENTITIES": {
         "ENTITIES": [
             {
-                "XXX_DEGREES": "int32",
-                "XXX_ENTITY_ID": "int32",
-                "XXX_FLAGS": [
+                "DEGREES": "int32",
+                "ENTITY_ID": "int32",
+                "FLAGS": [
                     "string"
                 ],
-                "XXX_SAMPLE_RECORDS": [
+                "SAMPLE_RECORDS": [
                     {
-                        "XXX_DATA_SOURCE": "string",
-                        "XXX_FLAGS": [
+                        "DATA_SOURCE": "string",
+                        "FLAGS": [
                             "string"
                         ],
-                        "XXX_RECORD_ID": "string"
+                        "RECORD_ID": "string"
                     }
                 ]
             }
         ],
-        "XXX_NOTICES": [
+        "NOTICES": [
             {
-                "XXX_CODE": "string",
-                "XXX_DESCRIPTION": "string"
+                "CODE": "string",
+                "DESCRIPTION": "string"
             }
         ]
-    }
+    },
+    "RECORD_ID": "string"
 }

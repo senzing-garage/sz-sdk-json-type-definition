@@ -7,31 +7,37 @@ namespace Senzing.Typedef
 {
     public class RelLink
     {
-        [JsonPropertyName("XXX_DOMAIN")]
-        public string XxxDomain { get; set; }
+        [JsonPropertyName("DOMAIN")]
+        public string Domain { get; set; }
 
         /// <summary>
         /// Describes the attributes that make up the feature.
         /// </summary>
-        [JsonPropertyName("XXX_FEAT_DESC")]
-        public string XxxFeatDesc { get; set; }
+        [JsonPropertyName("FEAT_DESC")]
+        public string FeatDesc { get; set; }
 
-        [JsonPropertyName("XXX_FEAT_ID")]
-        public int XxxFeatId { get; set; }
+        [JsonPropertyName("FEAT_ID")]
+        public int FeatId { get; set; }
 
-        [JsonPropertyName("XXX_FEAT_USAGE_TYPE")]
-        public string XxxFeatUsageType { get; set; }
+        [JsonPropertyName("FEAT_USAGE_TYPE")]
+        public string FeatUsageType { get; set; }
 
-        [JsonPropertyName("XXX_LINKED_FEAT_DESC")]
-        public string XxxLinkedFeatDesc { get; set; }
+        [JsonPropertyName("FTYPE_CODE")]
+        public string FtypeCode { get; set; }
 
-        [JsonPropertyName("XXX_LINKED_FEAT_ID")]
-        public int XxxLinkedFeatId { get; set; }
+        [JsonPropertyName("LINKED_FEAT_DESC")]
+        public string LinkedFeatDesc { get; set; }
 
-        [JsonPropertyName("XXX_LINKED_FEAT_TYPE")]
-        public string XxxLinkedFeatType { get; set; }
+        [JsonPropertyName("LINKED_FEAT_ID")]
+        public int LinkedFeatId { get; set; }
 
-        [JsonPropertyName("XXX_LINKED_FEAT_USAGE_TYPE")]
-        public string XxxLinkedFeatUsageType { get; set; }
+        [JsonPropertyName("LINKED_FEAT_TYPE")]
+        public string LinkedFeatType { get; set; }
+
+        [JsonPropertyName("LINKED_FEAT_USAGE_TYPE")]
+        public string LinkedFeatUsageType { get; set; }
+
+        [JsonPropertyName("REL_TYPE")]
+        public string RelType { get; set; }
     }
 }

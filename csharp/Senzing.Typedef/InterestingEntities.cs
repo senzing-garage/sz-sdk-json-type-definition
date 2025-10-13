@@ -11,7 +11,7 @@ namespace Senzing.Typedef
         [JsonPropertyName("ENTITIES")]
         public IList<InterestingEntity> Entities { get; set; }
 
-        [JsonPropertyName("XXX_NOTICES")]
-        public IList<Notice> XxxNotices { get; set; }
+        [JsonPropertyName("NOTICES")]
+        public IList<Notice> Notices { get; set; }
     }
 }

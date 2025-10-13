@@ -532,32 +532,40 @@ type DataSource struct {
 }
 
 type DisclosedRelationsForMatchInfo struct {
-	XxxRelAnchor []RelAnchor `json:"XXX_REL_ANCHOR"`
+	Domain string `json:"DOMAIN"`
 
-	XxxRelLink []RelLink `json:"XXX_REL_LINK"`
+	EntityRoles []EntityRoles `json:"ENTITY_ROLES"`
+
+	RelatedRoles []RelatedRoles `json:"RELATED_ROLES"`
+
+	RelLink []RelLink `json:"REL_LINK"`
+
+	XxxRelAnchor []RelAnchor `json:"XXX_REL_ANCHOR"`
 
 	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
 type DisclosedRelationsForMatchInfoForWhy struct {
-	RelPointer []RelPointer `json:"REL_POINTER"`
+	Domain string `json:"DOMAIN"`
 
-	XxxDomain string `json:"XXX_DOMAIN"`
+	FeatID int64 `json:"FEAT_ID"`
+
+	FeatUsageType string `json:"FEAT_USAGE_TYPE"`
+
+	LinkedFeatID int64 `json:"LINKED_FEAT_ID"`
+
+	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
+
+	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+
+	RelLink []RelLink `json:"REL_LINK"`
+
+	RelPointer []RelPointer `json:"REL_POINTER"`
 
 	// Describes the attributes that make up the feature.
 	XxxFeatDesc string `json:"XXX_FEAT_DESC"`
 
-	XxxFeatID int64 `json:"XXX_FEAT_ID"`
-
-	XxxFeatUsageType string `json:"XXX_FEAT_USAGE_TYPE"`
-
 	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
-
-	XxxLinkedFeatID int64 `json:"XXX_LINKED_FEAT_ID"`
-
-	XxxLinkedFeatType string `json:"XXX_LINKED_FEAT_TYPE"`
-
-	XxxRelAnchor []RelAnchor `json:"XXX_REL_ANCHOR"`
 }
 
 type DisclosedRelationsForWhyKeyDetails struct {
@@ -581,9 +589,9 @@ type EntityForResolvedEntity struct {
 }
 
 type EntityForWhySearch struct {
-	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
+	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
-	XxxRelatedEntities []RelatedEntity `json:"XXX_RELATED_ENTITIES"`
+	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
 type EntityNetworkLink struct {
@@ -598,6 +606,8 @@ type EntityNetworkLink struct {
 
 	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
+
+	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
 
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
@@ -627,6 +637,8 @@ type EntityPathLink struct {
 
 	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
+
+	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
 
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
@@ -660,20 +672,45 @@ type FeatureDescriptionValue struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	FeatDescValues []FeatureDescriptionValueDetails `json:"FEAT_DESC_VALUES"`
+
 	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
 	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
 
+	Suppressed string `json:"SUPPRESSED"`
+
 	UsedForCand string `json:"USED_FOR_CAND"`
 
 	UsedForScoring string `json:"USED_FOR_SCORING"`
+}
 
-	XxxSuppressed string `json:"XXX_SUPPRESSED"`
+type FeatureDescriptionValueDetails struct {
+	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
+
+	EntityCount int32 `json:"ENTITY_COUNT"`
+
+	// Describes the attributes that make up the feature.
+	FeatDesc string `json:"FEAT_DESC"`
+
+	LibFeatID int64 `json:"LIB_FEAT_ID"`
+
+	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
+
+	Suppressed string `json:"SUPPRESSED"`
+
+	UsedForCand string `json:"USED_FOR_CAND"`
+
+	UsedForScoring string `json:"USED_FOR_SCORING"`
 }
 
 type FeatureForAttributes struct {
 	Attributes SenzingEntitySpecification `json:"ATTRIBUTES"`
+
+	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
+
+	EntityCount int32 `json:"ENTITY_COUNT"`
 
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
@@ -683,9 +720,15 @@ type FeatureForAttributes struct {
 
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
+	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
+
 	// Label to identify how some features are being used (can also change some
 	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
+
+	UsedForCand string `json:"USED_FOR_CAND"`
+
+	UsedForScoring string `json:"USED_FOR_SCORING"`
 }
 
 type FeatureForGetEntity struct {
@@ -848,19 +891,19 @@ type HowResults struct {
 type InterestingEntities struct {
 	Entities []InterestingEntity `json:"ENTITIES"`
 
-	XxxNotices []Notice `json:"XXX_NOTICES"`
+	Notices []Notice `json:"NOTICES"`
 }
 
 type InterestingEntity struct {
-	XxxDegrees int64 `json:"XXX_DEGREES"`
+	Degrees int64 `json:"DEGREES"`
 
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
-	XxxEntityID int64 `json:"XXX_ENTITY_ID"`
+	EntityID int64 `json:"ENTITY_ID"`
 
-	XxxFlags []string `json:"XXX_FLAGS"`
+	Flags []string `json:"FLAGS"`
 
-	XxxSampleRecords []SampleRecord `json:"XXX_SAMPLE_RECORDS"`
+	SampleRecords []SampleRecord `json:"SAMPLE_RECORDS"`
 }
 
 type MatchInfo struct {
@@ -917,6 +960,10 @@ type MatchKeyDetails struct {
 
 	Denials []Confirmation `json:"DENIALS"`
 
+	DisclosedRelations []DisclosedRelationsForMatchInfo `json:"DISCLOSED_RELATIONS"`
+
+	RelLinks []RelLink `json:"REL_LINKS"`
+
 	// Identifier of the entity resolution rule that was triggered.
 	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
 }
@@ -929,9 +976,9 @@ type MemberRecord struct {
 }
 
 type Notice struct {
-	XxxCode string `json:"XXX_CODE"`
+	Code string `json:"CODE"`
 
-	XxxDescription string `json:"XXX_DESCRIPTION"`
+	Description string `json:"DESCRIPTION"`
 }
 
 type Object = any
@@ -1074,41 +1121,45 @@ type RecordSummary struct {
 }
 
 type RelAnchor struct {
-	XxxDomain string `json:"XXX_DOMAIN"`
+	Domain string `json:"DOMAIN"`
 
 	// Describes the attributes that make up the feature.
-	XxxFeatDesc string `json:"XXX_FEAT_DESC"`
+	FeatDesc string `json:"FEAT_DESC"`
 
-	XxxFeatID int64 `json:"XXX_FEAT_ID"`
+	FeatID int64 `json:"FEAT_ID"`
 
-	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
+	LinkedFeatDesc string `json:"LINKED_FEAT_DESC"`
 
-	XxxLinkedFeatID int64 `json:"XXX_LINKED_FEAT_ID"`
+	LinkedFeatID int64 `json:"LINKED_FEAT_ID"`
 
-	XxxLinkedFeatType string `json:"XXX_LINKED_FEAT_TYPE"`
+	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
 
-	XxxLinkedFeatUsageType string `json:"XXX_LINKED_FEAT_USAGE_TYPE"`
+	LinkedFeatUsageType string `json:"LINKED_FEAT_USAGE_TYPE"`
 
 	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
 type RelLink struct {
-	XxxDomain string `json:"XXX_DOMAIN"`
+	Domain string `json:"DOMAIN"`
 
 	// Describes the attributes that make up the feature.
-	XxxFeatDesc string `json:"XXX_FEAT_DESC"`
+	FeatDesc string `json:"FEAT_DESC"`
 
-	XxxFeatID int64 `json:"XXX_FEAT_ID"`
+	FeatID int64 `json:"FEAT_ID"`
 
-	XxxFeatUsageType string `json:"XXX_FEAT_USAGE_TYPE"`
+	FeatUsageType string `json:"FEAT_USAGE_TYPE"`
 
-	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
+	FtypeCode string `json:"FTYPE_CODE"`
 
-	XxxLinkedFeatID int64 `json:"XXX_LINKED_FEAT_ID"`
+	LinkedFeatDesc string `json:"LINKED_FEAT_DESC"`
 
-	XxxLinkedFeatType string `json:"XXX_LINKED_FEAT_TYPE"`
+	LinkedFeatID int64 `json:"LINKED_FEAT_ID"`
 
-	XxxLinkedFeatUsageType string `json:"XXX_LINKED_FEAT_USAGE_TYPE"`
+	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
+
+	LinkedFeatUsageType string `json:"LINKED_FEAT_USAGE_TYPE"`
+
+	RelType string `json:"REL_TYPE"`
 }
 
 type RelPointer struct {
@@ -1148,22 +1199,28 @@ type RelatedEntity struct {
 	// Representation of matched source record features.
 	MatchKey string `json:"MATCH_KEY"`
 
+	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
+
 	MatchLevel int64 `json:"MATCH_LEVEL"`
 
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
+	Records []Record `json:"RECORDS"`
+
 	// Overview of the source systems the records came from comprising this related
 	// entity.
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
-	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
+	RecordTypes []string `json:"RECORD_TYPES"`
 
-	XxxRecords []Record `json:"XXX_RECORDS"`
+	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
 }
 
 type RelatedRoles struct {
-	Fixme Fixme `json:"FIXME"`
+	FeatDesc string `json:"FEAT_DESC"`
+
+	Role string `json:"ROLE"`
 }
 
 type Repository struct {
@@ -1234,6 +1291,8 @@ type ResolvedEntity struct {
 type ResolvedEntityAndMatchInfo struct {
 	Entity EntityForResolvedEntity `json:"ENTITY"`
 
+	FeaturesMjd EntityForResolvedEntity `json:"FEATURES_MJD"`
+
 	MatchInfo MatchInfo `json:"MATCH_INFO"`
 }
 
@@ -1301,12 +1360,12 @@ type SysOom struct {
 
 type SampleRecord struct {
 	// A label identifying the provenance of the record.
-	XxxDataSource string `json:"XXX_DATA_SOURCE"`
+	DataSource string `json:"DATA_SOURCE"`
 
-	XxxFlags []string `json:"XXX_FLAGS"`
+	Flags []string `json:"FLAGS"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
-	XxxRecordID string `json:"XXX_RECORD_ID"`
+	RecordID string `json:"RECORD_ID"`
 }
 
 type SchemaVersion struct {
@@ -1315,6 +1374,22 @@ type SchemaVersion struct {
 	MaximumRequiredSchemaVersion string `json:"MAXIMUM_REQUIRED_SCHEMA_VERSION"`
 
 	MinimumRequiredSchemaVersion string `json:"MINIMUM_REQUIRED_SCHEMA_VERSION"`
+}
+
+type SearchEntity struct {
+	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
+
+	Summary SearchEntitySummary `json:"SUMMARY"`
+}
+
+type SearchEntitySummary struct {
+	FeaturesAdded int32 `json:"FEATURES_ADDED"`
+
+	FeaturesIgnored int32 `json:"FEATURES_IGNORED"`
+
+	FeaturesSearched int32 `json:"FEATURES_SEARCHED"`
+
+	FeaturesSubmitted int32 `json:"FEATURES_SUBMITTED"`
 }
 
 type SearchRequest struct {
@@ -1581,6 +1656,10 @@ type SenzingEntitySpecification struct {
 	// Entity Specification. See https://www.senzing.com/docs/entity_specification
 	RegistrationDate string `json:"REGISTRATION_DATE"`
 
+	RelationshipKey string `json:"RELATIONSHIP_KEY"`
+
+	RelationshipType string `json:"RELATIONSHIP_TYPE"`
+
 	// This code helps keep the REL_ANCHOR_KEY unique. This is a code (without
 	// dashes) for the data source or source field that is contributing the
 	// relationship. An attribute in the Senzing Entity Specification. See
@@ -1733,10 +1812,10 @@ type SzEngineAddRecordResponse struct {
 	// A label identifying the provenance of the record.
 	DataSource string `json:"DATA_SOURCE"`
 
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
-
-	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 }
 
 type SzEngineDeleteRecordResponse struct {
@@ -1781,6 +1860,8 @@ type SzEngineFindNetworkByEntityIDResponse struct {
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
 	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
+
+	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineFindNetworkByRecordIDRecordKeys struct {
@@ -1798,6 +1879,8 @@ type SzEngineFindNetworkByRecordIDResponse struct {
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
 	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
+
+	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineFindPathByEntityIDAvoidEntityIds struct {
@@ -1949,10 +2032,10 @@ type SzEngineProcessRedoRecordResponse struct {
 type SzEngineReevaluateEntityResponse struct {
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
+
 	// A label identifying the provenance of the record.
 	XxxDataSource string `json:"XXX_DATA_SOURCE"`
-
-	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	XxxRecordID string `json:"XXX_RECORD_ID"`
@@ -1975,7 +2058,11 @@ type SzEngineSearchByAttributesAttributes struct {
 }
 
 type SzEngineSearchByAttributesResponse struct {
+	RelatedEntitiesMjd []RelatedEntity `json:"RELATED_ENTITIES_MJD"`
+
 	ResolvedEntities []ResolvedEntityAndMatchInfo `json:"RESOLVED_ENTITIES"`
+
+	SearchEntity SearchEntity `json:"SEARCH_ENTITY"`
 
 	SearchRequest SearchRequest `json:"SEARCH_REQUEST"`
 
@@ -2014,6 +2101,8 @@ type SzEngineWhySearchAttributes struct {
 
 type SzEngineWhySearchResponse struct {
 	Entities []EntityForWhySearch `json:"ENTITIES"`
+
+	SearchEntity SearchEntity `json:"SEARCH_ENTITY"`
 
 	SearchRequest SearchRequest `json:"SEARCH_REQUEST"`
 

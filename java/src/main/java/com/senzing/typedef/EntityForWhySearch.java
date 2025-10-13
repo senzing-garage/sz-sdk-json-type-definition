@@ -8,13 +8,27 @@ import java.util.List;
 
 @JsonSerialize
 public class EntityForWhySearch {
+    @JsonProperty("RELATED_ENTITIES")
+    private List<RelatedEntity> relatedEntities;
+
     @JsonProperty("RESOLVED_ENTITY")
     private ResolvedEntity resolvedEntity;
 
-    @JsonProperty("XXX_RELATED_ENTITIES")
-    private List<RelatedEntity> xxxRelatedEntities;
-
     public EntityForWhySearch() {
+    }
+
+    /**
+     * Getter for relatedEntities.<p>
+     */
+    public List<RelatedEntity> getRelatedEntities() {
+        return relatedEntities;
+    }
+
+    /**
+     * Setter for relatedEntities.<p>
+     */
+    public void setRelatedEntities(List<RelatedEntity> relatedEntities) {
+        this.relatedEntities = relatedEntities;
     }
 
     /**
@@ -29,19 +43,5 @@ public class EntityForWhySearch {
      */
     public void setResolvedEntity(ResolvedEntity resolvedEntity) {
         this.resolvedEntity = resolvedEntity;
-    }
-
-    /**
-     * Getter for xxxRelatedEntities.<p>
-     */
-    public List<RelatedEntity> getXxxRelatedEntities() {
-        return xxxRelatedEntities;
-    }
-
-    /**
-     * Setter for xxxRelatedEntities.<p>
-     */
-    public void setXxxRelatedEntities(List<RelatedEntity> xxxRelatedEntities) {
-        this.xxxRelatedEntities = xxxRelatedEntities;
     }
 }

@@ -10,6 +10,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("ENTITY")]
         public EntityForResolvedEntity Entity { get; set; }
 
+        [JsonPropertyName("FEATURES_MJD")]
+        public EntityForResolvedEntity FeaturesMjd { get; set; }
+
         [JsonPropertyName("MATCH_INFO")]
         public MatchInfo MatchInfo { get; set; }
     }

@@ -7,9 +7,22 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
+import logging
+import os
+import pathlib
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../docs/responses-json")
 
 DEFINITIONS = {}
-GLOBAL_OUTPUT_DIRECTORY = "./docs/responses-json"
 VARIABLE_JSON_KEY = "user_defined_json_key"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",
@@ -60,6 +73,7 @@ GLOBAL_JSON_KEYS = [
     "SzProductGetLicenseResponse",
     "SzProductGetVersionResponse",
 ]
+
 
 # -----------------------------------------------------------------------------
 # Functions to process RFC8927.json file and create SCHEMA variable.
@@ -126,7 +140,7 @@ def handle_json_python_type(python_type):
         case "string":
             result = "string"
         case _:
-            print(f"Error: Bad 'pythonType:' {python_type}")
+            logger.error("Error: Bad 'pythonType:' %s", python_type)
             raise NotImplementedError
     return result
 
@@ -188,27 +202,36 @@ def recurse_json(json_value):
 # --- Main
 # -----------------------------------------------------------------------------
 
-# Read JSON from file.
 
-INPUT_FILENAME = "./senzingsdk-RFC8927.json"
-with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
-    DATA = json.load(input_file)
+if __name__ == "__main__":
 
-DEFINITIONS = DATA.get("definitions", {})
+    # Prolog.
 
-# Recurse through dictionary.
+    logger.info("Begin %s", os.path.basename(__file__))
 
-for requested_json_key in GLOBAL_JSON_KEYS:
-    initial_json_value = DEFINITIONS.get(requested_json_key)
+    # Read JSON from file.
 
-    # Short-circuit when JSON key not found.
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
+        DATA = json.load(input_file)
 
-    if initial_json_value is None:
-        print(f"Could not find JSON key: {requested_json_key}")
-        continue
+    DEFINITIONS = DATA.get("definitions", {})
 
-    final_result = recurse_json(initial_json_value)
+    # Recurse through dictionary.
 
-    output_file = f"{GLOBAL_OUTPUT_DIRECTORY}/{requested_json_key}.json"
-    with open(output_file, "w", encoding="utf-8") as json_file:
-        json.dump(final_result, json_file, indent=4)
+    for requested_json_key in GLOBAL_JSON_KEYS:
+        initial_json_value = DEFINITIONS.get(requested_json_key)
+
+        # Short-circuit when JSON key not found.
+
+        if initial_json_value is None:
+            logger.info("Could not find JSON key: %s", requested_json_key)
+            continue
+
+        final_result = recurse_json(initial_json_value)
+
+        with open(os.path.join(OUTPUT_DIRECTORY, f"{requested_json_key}.json"), "w", encoding="utf-8") as json_file:
+            json.dump(final_result, json_file, indent=4)
+
+    # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))

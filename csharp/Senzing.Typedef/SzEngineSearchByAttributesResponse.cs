@@ -8,8 +8,14 @@ namespace Senzing.Typedef
 {
     public class SzEngineSearchByAttributesResponse
     {
+        [JsonPropertyName("RELATED_ENTITIES_MJD")]
+        public IList<RelatedEntity> RelatedEntitiesMjd { get; set; }
+
         [JsonPropertyName("RESOLVED_ENTITIES")]
         public IList<ResolvedEntityAndMatchInfo> ResolvedEntities { get; set; }
+
+        [JsonPropertyName("SEARCH_ENTITY")]
+        public SearchEntity SearchEntity { get; set; }
 
         [JsonPropertyName("SEARCH_REQUEST")]
         public SearchRequest SearchRequest { get; set; }

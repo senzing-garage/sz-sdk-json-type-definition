@@ -11,14 +11,14 @@ namespace Senzing.Typedef
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public IList<AffectedEntity> AffectedEntities { get; set; }
 
+        [JsonPropertyName("INTERESTING_ENTITIES")]
+        public InterestingEntities InterestingEntities { get; set; }
+
         /// <summary>
         /// A label identifying the provenance of the record.
         /// </summary>
         [JsonPropertyName("XXX_DATA_SOURCE")]
         public string XxxDataSource { get; set; }
-
-        [JsonPropertyName("XXX_INTERESTING_ENTITIES")]
-        public InterestingEntities XxxInterestingEntities { get; set; }
 
         /// <summary>
         /// The unique identifier within the set of records in the DATA_SOURCE.

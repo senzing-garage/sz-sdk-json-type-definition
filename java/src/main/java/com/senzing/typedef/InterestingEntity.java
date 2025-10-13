@@ -8,78 +8,78 @@ import java.util.List;
 
 @JsonSerialize
 public class InterestingEntity {
-    @JsonProperty("XXX_DEGREES")
-    private Integer xxxDegrees;
+    @JsonProperty("DEGREES")
+    private Integer degrees;
 
-    @JsonProperty("XXX_ENTITY_ID")
-    private Integer xxxEntityId;
+    @JsonProperty("ENTITY_ID")
+    private Integer entityId;
 
-    @JsonProperty("XXX_FLAGS")
-    private List<String> xxxFlags;
+    @JsonProperty("FLAGS")
+    private List<String> flags;
 
-    @JsonProperty("XXX_SAMPLE_RECORDS")
-    private List<SampleRecord> xxxSampleRecords;
+    @JsonProperty("SAMPLE_RECORDS")
+    private List<SampleRecord> sampleRecords;
 
     public InterestingEntity() {
     }
 
     /**
-     * Getter for xxxDegrees.<p>
+     * Getter for degrees.<p>
      */
-    public Integer getXxxDegrees() {
-        return xxxDegrees;
+    public Integer getDegrees() {
+        return degrees;
     }
 
     /**
-     * Setter for xxxDegrees.<p>
+     * Setter for degrees.<p>
      */
-    public void setXxxDegrees(Integer xxxDegrees) {
-        this.xxxDegrees = xxxDegrees;
+    public void setDegrees(Integer degrees) {
+        this.degrees = degrees;
     }
 
     /**
-     * Getter for xxxEntityId.<p>
+     * Getter for entityId.<p>
      * The ENTITY_ID is the Senzing-generated identifier for the discovered
      * entity. It may change when new information is added.
      */
-    public Integer getXxxEntityId() {
-        return xxxEntityId;
+    public Integer getEntityId() {
+        return entityId;
     }
 
     /**
-     * Setter for xxxEntityId.<p>
+     * Setter for entityId.<p>
      * The ENTITY_ID is the Senzing-generated identifier for the discovered
      * entity. It may change when new information is added.
      */
-    public void setXxxEntityId(Integer xxxEntityId) {
-        this.xxxEntityId = xxxEntityId;
+    public void setEntityId(Integer entityId) {
+        this.entityId = entityId;
     }
 
     /**
-     * Getter for xxxFlags.<p>
+     * Getter for flags.<p>
      */
-    public List<String> getXxxFlags() {
-        return xxxFlags;
+    public List<String> getFlags() {
+        return flags;
     }
 
     /**
-     * Setter for xxxFlags.<p>
+     * Setter for flags.<p>
      */
-    public void setXxxFlags(List<String> xxxFlags) {
-        this.xxxFlags = xxxFlags;
+    public void setFlags(List<String> flags) {
+        this.flags = flags;
     }
 
     /**
-     * Getter for xxxSampleRecords.<p>
+     * Getter for sampleRecords.<p>
      */
-    public List<SampleRecord> getXxxSampleRecords() {
-        return xxxSampleRecords;
+    public List<SampleRecord> getSampleRecords() {
+        return sampleRecords;
     }
 
     /**
-     * Setter for xxxSampleRecords.<p>
+     * Setter for sampleRecords.<p>
      */
-    public void setXxxSampleRecords(List<SampleRecord> xxxSampleRecords) {
-        this.xxxSampleRecords = xxxSampleRecords;
+    public void setSampleRecords(List<SampleRecord> sampleRecords) {
+        this.sampleRecords = sampleRecords;
     }
 }

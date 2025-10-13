@@ -11,6 +11,9 @@ public class SzEngineWhySearchResponse {
     @JsonProperty("ENTITIES")
     private List<EntityForWhySearch> entities;
 
+    @JsonProperty("SEARCH_ENTITY")
+    private SearchEntity searchEntity;
+
     @JsonProperty("SEARCH_REQUEST")
     private SearchRequest searchRequest;
 
@@ -35,6 +38,20 @@ public class SzEngineWhySearchResponse {
      */
     public void setEntities(List<EntityForWhySearch> entities) {
         this.entities = entities;
+    }
+
+    /**
+     * Getter for searchEntity.<p>
+     */
+    public SearchEntity getSearchEntity() {
+        return searchEntity;
+    }
+
+    /**
+     * Setter for searchEntity.<p>
+     */
+    public void setSearchEntity(SearchEntity searchEntity) {
+        this.searchEntity = searchEntity;
     }
 
     /**

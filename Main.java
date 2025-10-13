@@ -119,7 +119,7 @@ class Main {
 
         Path currentPath = Paths.get("").toAbsolutePath();
         String filePath = currentPath
-                + "/testdata/responses_generated/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
+                + "/testdata/responses_mock/SzEngineGetVirtualEntityByRecordIdResponse-test-015.json";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {

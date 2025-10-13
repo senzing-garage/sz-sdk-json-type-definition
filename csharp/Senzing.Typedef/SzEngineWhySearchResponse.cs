@@ -11,6 +11,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("ENTITIES")]
         public IList<EntityForWhySearch> Entities { get; set; }
 
+        [JsonPropertyName("SEARCH_ENTITY")]
+        public SearchEntity SearchEntity { get; set; }
+
         [JsonPropertyName("SEARCH_REQUEST")]
         public SearchRequest SearchRequest { get; set; }
 

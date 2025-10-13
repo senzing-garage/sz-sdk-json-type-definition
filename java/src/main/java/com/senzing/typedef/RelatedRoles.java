@@ -7,23 +7,40 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class RelatedRoles {
-    @JsonProperty("FIXME")
-    private Fixme fixme;
+    @JsonProperty("FEAT_DESC")
+    private String featDesc;
+
+    @JsonProperty("ROLE")
+    private String role;
 
     public RelatedRoles() {
     }
 
     /**
-     * Getter for fixme.<p>
+     * Getter for featDesc.<p>
      */
-    public Fixme getFixme() {
-        return fixme;
+    public String getFeatDesc() {
+        return featDesc;
     }
 
     /**
-     * Setter for fixme.<p>
+     * Setter for featDesc.<p>
      */
-    public void setFixme(Fixme fixme) {
-        this.fixme = fixme;
+    public void setFeatDesc(String featDesc) {
+        this.featDesc = featDesc;
+    }
+
+    /**
+     * Getter for role.<p>
+     */
+    public String getRole() {
+        return role;
+    }
+
+    /**
+     * Setter for role.<p>
+     */
+    public void setRole(String role) {
+        this.role = role;
     }
 }

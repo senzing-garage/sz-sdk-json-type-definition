@@ -66,6 +66,8 @@
                     "RECORD_TYPE": "string",
                     "REGISTRATION_COUNTRY": "string",
                     "REGISTRATION_DATE": "string",
+                    "RELATIONSHIP_KEY": "string",
+                    "RELATIONSHIP_TYPE": "string",
                     "REL_ANCHOR_DOMAIN": "string",
                     "REL_ANCHOR_KEY": "string",
                     "REL_POINTER_DOMAIN": "string",
@@ -93,6 +95,8 @@
                     "XXX_PHONE_THRU_DATE": "string",
                     "ZOOMROOM": "string"
                 },
+                "CANDIDATE_CAP_REACHED": "string",
+                "ENTITY_COUNT": "int32",
                 "FEAT_DESC": "string",
                 "FEAT_DESC_VALUES": [
                     {
@@ -102,15 +106,30 @@
                         "CANDIDATE_CAP_REACHED": "string",
                         "ENTITY_COUNT": "int32",
                         "FEAT_DESC": "string",
+                        "FEAT_DESC_VALUES": [
+                            {
+                                "CANDIDATE_CAP_REACHED": "string",
+                                "ENTITY_COUNT": "int32",
+                                "FEAT_DESC": "string",
+                                "LIB_FEAT_ID": "int32",
+                                "SCORING_CAP_REACHED": "string",
+                                "SUPPRESSED": "string",
+                                "USED_FOR_CAND": "string",
+                                "USED_FOR_SCORING": "string"
+                            }
+                        ],
                         "LIB_FEAT_ID": "int32",
                         "SCORING_CAP_REACHED": "string",
+                        "SUPPRESSED": "string",
                         "USED_FOR_CAND": "string",
-                        "USED_FOR_SCORING": "string",
-                        "XXX_SUPPRESSED": "string"
+                        "USED_FOR_SCORING": "string"
                     }
                 ],
                 "LIB_FEAT_ID": "int32",
-                "USAGE_TYPE": "string"
+                "SCORING_CAP_REACHED": "string",
+                "USAGE_TYPE": "string",
+                "USED_FOR_CAND": "string",
+                "USED_FOR_SCORING": "string"
             }
         ]
     },

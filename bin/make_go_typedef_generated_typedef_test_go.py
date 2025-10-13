@@ -10,11 +10,24 @@ import argparse
 import json
 import logging
 import os
+import pathlib
 import re
 from datetime import datetime, timezone
 
-INPUT_FILE = "bin/response-testcases.json"
-OUTPUT_FILE = "go/typedef/generated_typedef_test.go"
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
+
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../bin/response-testcases.json")
+OUTPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../go/typedef/generated_typedef_test.go")
+
+# -----------------------------------------------------------------------------
+# --- Functions
+# -----------------------------------------------------------------------------
 
 
 def spaces_not_tabs():
@@ -99,53 +112,46 @@ def canonical_testcase_name(raw_testcase_name):
 # --- Main
 # -----------------------------------------------------------------------------
 
-# Set up logging.
+if __name__ == "__main__":
 
-logging.basicConfig(format="%(asctime)s %(message)s", level=logging.INFO)
+    # Prolog.
 
-# Prolog.
+    logger.info("Begin %s", os.path.basename(__file__))
 
-horizontal_rule = format("-" * 80)
-logging.info("%s", horizontal_rule)
-logging.info("--- %s - Begin", format(os.path.basename(__file__)))
-logging.info("%s", horizontal_rule)
+    # Command line options.
 
-# Command line options.
+    parser = argparse.ArgumentParser(prog="generate_go_typef_test.py")
+    parser.add_argument(
+        "--output",
+        help=f"Output file. Default: {OUTPUT_FILENAME}",
+        default=OUTPUT_FILENAME,
+    )
+    args = parser.parse_args()
+    OUTPUT_FILENAME = args.output
 
-parser = argparse.ArgumentParser(prog="generate_go_typef_test.py")
-parser.add_argument(
-    "--output",
-    help=f"Output file. Default: {OUTPUT_FILE}",
-    default=OUTPUT_FILE,
-)
-args = parser.parse_args()
-OUTPUT_FILE = args.output
+    # Load testcase metadata.
 
-# Load testcase metadata.
+    with open(INPUT_FILENAME, encoding="utf-8") as input_file:
+        response_testcases = json.load(input_file)
 
-with open(INPUT_FILE, encoding="utf-8") as input_file:
-    response_testcases = json.load(input_file)
+    # Write testcase file.
 
-# Write testcase file.
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as file:
+        file.write(OUTPUT_HEADER)
+        for senzing_api_class, senzing_api_class_data in response_testcases.items():
+            metadata = senzing_api_class_data.get("metadata", {})
+            if metadata.get("goSkip", False):
+                continue
+            tests = senzing_api_class_data.get("tests", {})
+            go_api_class = metadata.get("goClass", senzing_api_class)
+            for testcase_name, testcase_json in tests.items():
+                file.write(f"func Test{go_api_class}{canonical_testcase_name(testcase_name)}(test *testing.T) {{")
+                file.write(
+                    TEST_FUNCTION_TEMPLATE.format(json=canonical_json(testcase_json), struct=go_api_class, parens="{}")
+                )
+                file.write("}\n\n")
+        file.write(OUTPUT_FOOTER)
 
-with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
-    file.write(OUTPUT_HEADER)
-    for senzing_api_class, senzing_api_class_data in response_testcases.items():
-        metadata = senzing_api_class_data.get("metadata", {})
-        if metadata.get("goSkip", False):
-            continue
-        tests = senzing_api_class_data.get("tests", {})
-        go_api_class = metadata.get("goClass", senzing_api_class)
-        for testcase_name, testcase_json in tests.items():
-            file.write(f"func Test{go_api_class}{canonical_testcase_name(testcase_name)}(test *testing.T) {{")
-            file.write(
-                TEST_FUNCTION_TEMPLATE.format(json=canonical_json(testcase_json), struct=go_api_class, parens="{}")
-            )
-            file.write("}\n\n")
-    file.write(OUTPUT_FOOTER)
+    # Epilog.
 
-# Epilog.
-
-logging.info("%s", horizontal_rule)
-logging.info("--- %s - End", os.path.basename(__file__))
-logging.info("%s", horizontal_rule)
+    logger.info("End   %s", os.path.basename(__file__))

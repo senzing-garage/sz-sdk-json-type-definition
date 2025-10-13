@@ -5,6 +5,7 @@ For more information, visit https://jsontypedef.com/docs/python-codegen/
 """
 
 import json
+import logging
 import os
 import pathlib
 
@@ -41,6 +42,11 @@ from python.senzing_typedef import (
     SzProductGetVersionResponse,
 )
 
+# Logging.
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
 # -----------------------------------------------------------------------------
 # Utility functions
 # -----------------------------------------------------------------------------
@@ -49,7 +55,7 @@ from python.senzing_typedef import (
 def path_to_testdata(filename: str) -> str:
     """Determine the path to the test data."""
     current_path = pathlib.Path(__file__).parent.resolve()
-    result = os.path.abspath(f"{current_path}/testdata/responses_generated/{filename}")
+    result = os.path.abspath(f"{current_path}/testdata/responses_mock/{filename}")
     return result
 
 
@@ -111,6 +117,11 @@ def mock_szengine_get_virtual_entity_by_record_id(record_keys, flags: int) -> st
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
+
+
+# Prolog.
+
+logger.info("Begin %s", os.path.basename(__file__))
 
 # testDict = {}
 
@@ -369,3 +380,7 @@ virtual_entity = SzProductGetVersionResponse.from_json_data({})
 
 # response = SzEngineGetEntityByEntityIDResponse.from_json_data({})
 # x = response.resolved_entity.entity_id
+
+# Epilog.
+
+logger.info("End   %s", os.path.basename(__file__))

@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-
 # pylint: disable=duplicate-code
 
 """
@@ -7,6 +6,16 @@ Pretty print the JSON.
 """
 
 import json
+import logging
+import os
+import pathlib
+
+# Logging
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
+
+# Global variables.
 
 BLACK_LIST = [
     "description",
@@ -18,9 +27,10 @@ BLACK_LIST = [
     "optionalproperties",
     "type",
 ]
-INPUT_FILENAME = "./senzingsdk-RFC8927.json"
-OUTPUT_FILENAME = "./senzingsdk-RFC8927-pretty.json"
 
+CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
+INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
+OUTPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927-pretty.json")
 
 # -----------------------------------------------------------------------------
 # --- Helpers
@@ -46,16 +56,26 @@ def recurse(prefix, an_object):
 # --- Main
 # -----------------------------------------------------------------------------
 
-# Read JSON from file.
+if __name__ == "__main__":
 
-with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
-    DATA = json.load(input_file)
+    # Prolog.
 
-# Recurse through dictionary.
+    logger.info("Begin %s", os.path.basename(__file__))
 
-# recurse("definitions", DATA.get("definitions"))
+    # Read JSON from file.
 
-# Write JSON to file.
+    with open(INPUT_FILENAME, "r", encoding="utf-8") as input_file:
+        DATA = json.load(input_file)
 
-with open(OUTPUT_FILENAME, "w", encoding="utf-8") as output_file:
-    json.dump(DATA, output_file, indent=4, sort_keys=True)
+    # Recurse through dictionary.
+
+    # recurse("definitions", DATA.get("definitions"))
+
+    # Write JSON to file.
+
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as output_file:
+        json.dump(DATA, output_file, indent=4, sort_keys=True)
+
+    # Epilog.
+
+    logger.info("End   %s", os.path.basename(__file__))
