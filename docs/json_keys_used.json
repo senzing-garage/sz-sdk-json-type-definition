@@ -723,6 +723,7 @@
     ],
     "INTERESTING_ENTITIES": [
         "SzEngineAddRecordResponse.INTERESTING_ENTITIES",
+        "SzEngineDeleteRecordResponse.INTERESTING_ENTITIES",
         "SzEngineFindInterestingEntitiesByEntityIdResponse.INTERESTING_ENTITIES",
         "SzEngineFindInterestingEntitiesByRecordIdResponse.INTERESTING_ENTITIES",
         "SzEngineReevaluateEntityResponse.INTERESTING_ENTITIES"
@@ -1334,7 +1335,6 @@
         "MatchInfoForWhy.WHY_KEY_DETAILS"
     ],
     "WHY_RESULTS": [
-        "SzEngineFindNetworkByEntityIdResponse.WHY_RESULTS",
         "SzEngineFindNetworkByRecordIdResponse.WHY_RESULTS",
         "SzEngineWhyEntitiesResponse.WHY_RESULTS",
         "SzEngineWhyRecordInEntityResponse.WHY_RESULTS",
@@ -1498,7 +1498,6 @@
         "SzEngineGetRecordResponse.XXX_IDENTIFIER_DATA"
     ],
     "XXX_INTERESTING_ENTITIES": [
-        "SzEngineDeleteRecordResponse.XXX_INTERESTING_ENTITIES",
         "SzEngineProcessRedoRecordResponse.XXX_INTERESTING_ENTITIES",
         "SzEngineReevaluateRecordResponse.XXX_INTERESTING_ENTITIES"
     ],
@@ -1633,6 +1632,9 @@
     ],
     "XXX_WHY_KEY": [
         "MatchInfo.XXX_WHY_KEY"
+    ],
+    "XXX_WHY_RESULTS": [
+        "SzEngineFindNetworkByEntityIdResponse.XXX_WHY_RESULTS"
     ],
     "XXX_physicalCores": [
         "WorkloadInitResources.XXX_physicalCores"

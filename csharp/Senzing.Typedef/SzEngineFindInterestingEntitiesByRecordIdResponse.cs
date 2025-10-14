@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// Internal use.
+    /// </summary>
     public class SzEngineFindInterestingEntitiesByRecordIdResponse
     {
         [JsonPropertyName("INTERESTING_ENTITIES")]

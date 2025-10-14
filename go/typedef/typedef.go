@@ -800,8 +800,7 @@ type Fixme struct {
 }
 
 type FocusRecord struct {
-	// A label identifying the provenance of the record. FIXME: An example of
-	// differences.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -984,7 +983,7 @@ type Notice struct {
 type Object = any
 
 type Record struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// Identifier of the entity resolution rule that was triggered.
@@ -1040,7 +1039,7 @@ type Record struct {
 }
 
 type RecordForGetEntity struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// Identifier of the entity resolution rule that was triggered.
@@ -1096,7 +1095,7 @@ type RecordForGetEntity struct {
 }
 
 type RecordKey struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -1109,7 +1108,7 @@ type RecordKeys struct {
 }
 
 type RecordSummary struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The number of records for the entity with the same data source code.
@@ -1359,7 +1358,7 @@ type SysOom struct {
 }
 
 type SampleRecord struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	Flags []string `json:"FLAGS"`
@@ -1807,27 +1806,31 @@ type SzDiagnosticGetRepositoryInfoResponse struct {
 }
 
 type SzEngineAddRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
+	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
-	// The unique identifier within the set of records in the DATA_SOURCE.
+	// The unique identifier within the DATA_SOURCE of the newly added record.
 	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineDeleteRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
-	// The unique identifier within the set of records in the DATA_SOURCE.
-	RecordID string `json:"RECORD_ID"`
+	// Internal use.
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
-	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
+	// The unique identifier within the DATA_SOURCE of the deleted record.
+	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineExportCsvEntityReportCsvColumnList struct {
@@ -1835,13 +1838,16 @@ type SzEngineExportCsvEntityReportCsvColumnList struct {
 }
 
 type SzEngineFetchNextResponse struct {
+	// A small portion of the output initiated by an Export call.
 	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
+// Internal use.
 type SzEngineFindInterestingEntitiesByEntityIDResponse struct {
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 }
 
+// Internal use.
 type SzEngineFindInterestingEntitiesByRecordIDResponse struct {
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 }
@@ -1850,18 +1856,24 @@ type SzEngineFindNetworkByEntityIDEntityIds struct {
 	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
+// A network of relationships among entities.
 type SzEngineFindNetworkByEntityIDResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// Relationship details for all pairs of entities in the network.
 	EntityNetworkLinks []EntityNetworkLink `json:"ENTITY_NETWORK_LINKS"`
 
+	// Best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
+	// Relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
+	// Indicates that the build-out has been truncated.
 	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
 
-	WhyResults []WhyResult `json:"WHY_RESULTS"`
+	XxxWhyResults []WhyResult `json:"XXX_WHY_RESULTS"`
 }
 
 type SzEngineFindNetworkByRecordIDRecordKeys struct {
@@ -1869,6 +1881,7 @@ type SzEngineFindNetworkByRecordIDRecordKeys struct {
 	Records []RecordKey `json:"RECORDS"`
 }
 
+// A network of relationships among entities.
 type SzEngineFindNetworkByRecordIDResponse struct {
 	Entities []Entity `json:"ENTITIES"`
 
@@ -1939,7 +1952,7 @@ type SzEngineGetRecordPreviewResponse struct {
 }
 
 type SzEngineGetRecordResponse struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
@@ -2016,9 +2029,10 @@ type SzEngineHowEntityByEntityIDResponse struct {
 }
 
 type SzEngineProcessRedoRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -2030,6 +2044,7 @@ type SzEngineProcessRedoRecordResponse struct {
 }
 
 type SzEngineReevaluateEntityResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
@@ -2042,9 +2057,10 @@ type SzEngineReevaluateEntityResponse struct {
 }
 
 type SzEngineReevaluateRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.

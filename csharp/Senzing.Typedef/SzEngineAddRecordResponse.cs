@@ -8,20 +8,27 @@ namespace Senzing.Typedef
 {
     public class SzEngineAddRecordResponse
     {
+        /// <summary>
+        /// Entities that were affected as a result of the operation.
+        /// </summary>
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public IList<AffectedEntity> AffectedEntities { get; set; }
 
         /// <summary>
-        /// A label identifying the provenance of the record.
+        /// Short, stable identifier naming the source system.
         /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("INTERESTING_ENTITIES")]
         public InterestingEntities InterestingEntities { get; set; }
 
         /// <summary>
-        /// The unique identifier within the set of records in the DATA_SOURCE.
+        /// The unique identifier within the DATA_SOURCE of the newly added
+        /// record.
         /// </summary>
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }

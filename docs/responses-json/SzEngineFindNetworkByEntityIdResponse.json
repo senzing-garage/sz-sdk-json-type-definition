@@ -977,7 +977,7 @@
         }
     ],
     "MAX_ENTITY_LIMIT_REACHED": "string",
-    "WHY_RESULTS": [
+    "XXX_WHY_RESULTS": [
         {
             "ENTITY_ID": "int32",
             "ENTITY_ID_2": "int32",

@@ -8,8 +8,7 @@ namespace Senzing.Typedef
     public class FocusRecord
     {
         /// <summary>
-        /// A label identifying the provenance of the record. FIXME: An example
-        /// of differences.
+        /// Short, stable identifier naming the source system.
         /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }

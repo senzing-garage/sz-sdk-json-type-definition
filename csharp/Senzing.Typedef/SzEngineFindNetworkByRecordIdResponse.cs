@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// A network of relationships among entities.
+    /// </summary>
     public class SzEngineFindNetworkByRecordIdResponse
     {
         [JsonPropertyName("ENTITIES")]

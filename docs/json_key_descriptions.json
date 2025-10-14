@@ -41,6 +41,9 @@
     "ADDR_TYPE": [
         "Optional; include when provided by the source. Common values: HOME, MAILING (persons); BUSINESS (organizations). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "AFFECTED_ENTITIES": [
+        "Entities that were affected as a result of the operation."
+    ],
     "CITIZENSHIP": [
         "Country of citizenship (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -54,8 +57,7 @@
         "An internally-generated unique identifier of the configuration."
     ],
     "DATA_SOURCE": [
-        "A label identifying the provenance of the record. FIXME: An example of differences.",
-        "A label identifying the provenance of the record."
+        "Short, stable identifier naming the source system."
     ],
     "DATA_SOURCES": [
         "The list of registered data sources."
@@ -90,11 +92,23 @@
     "EMPLOYER": [
         "This is the name of the organization the person is employed by. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "ENTITIES": [
+        "List of entity information."
+    ],
     "ENTITY_ID": [
         "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added."
     ],
     "ENTITY_NAME": [
         "A name this entity goes by. An entity could have multiple names."
+    ],
+    "ENTITY_NETWORK_LINKS": [
+        "Relationship details for all pairs of entities in the network."
+    ],
+    "ENTITY_PATHS": [
+        "Best path between all pairs of requested entities."
+    ],
+    "ENTITY_PATH_LINKS": [
+        "Relationship details for all links from ENTITY_PATHS."
     ],
     "ERRULE_CODE": [
         "Identifier of the entity resolution rule that was triggered."
@@ -135,6 +149,9 @@
     "INSTAGRAM": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "INTERESTING_ENTITIES": [
+        "Internal use."
+    ],
     "INTERNAL_ID": [
         "Internal identifier for the record."
     ],
@@ -161,6 +178,9 @@
     ],
     "MATCH_LEVEL_CODE": [
         "The type of match that occurred for the record."
+    ],
+    "MAX_ENTITY_LIMIT_REACHED": [
+        "Indicates that the build-out has been truncated."
     ],
     "NAME_FIRST": [
         "Person given name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -232,7 +252,9 @@
         "The number of records for the entity with the same data source code."
     ],
     "RECORD_ID": [
-        "The unique identifier within the set of records in the DATA_SOURCE."
+        "The unique identifier within the set of records in the DATA_SOURCE.",
+        "The unique identifier within the DATA_SOURCE of the newly added record.",
+        "The unique identifier within the DATA_SOURCE of the deleted record."
     ],
     "RECORD_SUMMARY": [
         "Overview of the source systems the records came from comprising this related entity."
@@ -272,6 +294,18 @@
     ],
     "SYS_CREATE_DT": [
         "The timestamp of the original registration of the configuration."
+    ],
+    "SzEngineFindInterestingEntitiesByEntityIdResponse": [
+        "Internal use."
+    ],
+    "SzEngineFindInterestingEntitiesByRecordIdResponse": [
+        "Internal use."
+    ],
+    "SzEngineFindNetworkByEntityIdResponse": [
+        "A network of relationships among entities."
+    ],
+    "SzEngineFindNetworkByRecordIdResponse": [
+        "A network of relationships among entities."
     ],
     "TANGO": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -320,6 +354,9 @@
     ],
     "XXX_FEAT_DESC": [
         "Describes the attributes that make up the feature."
+    ],
+    "XXX_FIXME": [
+        "A small portion of the output initiated by an Export call."
     ],
     "XXX_INTERNAL_ID": [
         "Internal identifier for the record."

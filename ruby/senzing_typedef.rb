@@ -1838,8 +1838,7 @@ module SenzingTypedef
   end
 
   class FocusRecord
-    # A label identifying the provenance of the record. FIXME: An example of
-    # differences.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # The unique identifier within the set of records in the DATA_SOURCE.
@@ -2246,7 +2245,7 @@ module SenzingTypedef
   end
 
   class Record
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # Identifier of the entity resolution rule that was triggered.
@@ -2342,7 +2341,7 @@ module SenzingTypedef
   end
 
   class RecordForGetEntity
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # Identifier of the entity resolution rule that was triggered.
@@ -2438,7 +2437,7 @@ module SenzingTypedef
   end
 
   class RecordKey
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # The unique identifier within the set of records in the DATA_SOURCE.
@@ -2477,7 +2476,7 @@ module SenzingTypedef
   end
 
   class RecordSummary
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # The number of records for the entity with the same data source code.
@@ -2980,7 +2979,7 @@ module SenzingTypedef
   end
 
   class SampleRecord
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
     attr_accessor :flags
 
@@ -3783,13 +3782,16 @@ module SenzingTypedef
   end
 
   class SzEngineAddRecordResponse
+    # Entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
+
+    # Internal use.
     attr_accessor :interesting_entities
 
-    # The unique identifier within the set of records in the DATA_SOURCE.
+    # The unique identifier within the DATA_SOURCE of the newly added record.
     attr_accessor :record_id
 
     def self.from_json_data(data)
@@ -3812,21 +3814,24 @@ module SenzingTypedef
   end
 
   class SzEngineDeleteRecordResponse
+    # Entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
-    # The unique identifier within the set of records in the DATA_SOURCE.
+    # Internal use.
+    attr_accessor :interesting_entities
+
+    # The unique identifier within the DATA_SOURCE of the deleted record.
     attr_accessor :record_id
-    attr_accessor :xxx_interesting_entities
 
     def self.from_json_data(data)
       out = SzEngineDeleteRecordResponse.new
       out.affected_entities = SenzingTypedef::from_json_data(Array[AffectedEntity], data["AFFECTED_ENTITIES"])
       out.data_source = SenzingTypedef::from_json_data(String, data["DATA_SOURCE"])
+      out.interesting_entities = SenzingTypedef::from_json_data(InterestingEntities, data["INTERESTING_ENTITIES"])
       out.record_id = SenzingTypedef::from_json_data(String, data["RECORD_ID"])
-      out.xxx_interesting_entities = SenzingTypedef::from_json_data(InterestingEntities, data["XXX_INTERESTING_ENTITIES"])
       out
     end
 
@@ -3834,8 +3839,8 @@ module SenzingTypedef
       data = {}
       data["AFFECTED_ENTITIES"] = SenzingTypedef::to_json_data(affected_entities)
       data["DATA_SOURCE"] = SenzingTypedef::to_json_data(data_source)
+      data["INTERESTING_ENTITIES"] = SenzingTypedef::to_json_data(interesting_entities)
       data["RECORD_ID"] = SenzingTypedef::to_json_data(record_id)
-      data["XXX_INTERESTING_ENTITIES"] = SenzingTypedef::to_json_data(xxx_interesting_entities)
       data
     end
   end
@@ -3857,6 +3862,7 @@ module SenzingTypedef
   end
 
   class SzEngineFetchNextResponse
+    # A small portion of the output initiated by an Export call.
     attr_accessor :xxx_fixme
 
     def self.from_json_data(data)
@@ -3872,6 +3878,7 @@ module SenzingTypedef
     end
   end
 
+  # Internal use.
   class SzEngineFindInterestingEntitiesByEntityIDResponse
     attr_accessor :interesting_entities
 
@@ -3888,6 +3895,7 @@ module SenzingTypedef
     end
   end
 
+  # Internal use.
   class SzEngineFindInterestingEntitiesByRecordIDResponse
     attr_accessor :interesting_entities
 
@@ -3920,13 +3928,23 @@ module SenzingTypedef
     end
   end
 
+  # A network of relationships among entities.
   class SzEngineFindNetworkByEntityIDResponse
+    # List of entity information.
     attr_accessor :entities
+
+    # Relationship details for all pairs of entities in the network.
     attr_accessor :entity_network_links
+
+    # Best path between all pairs of requested entities.
     attr_accessor :entity_paths
+
+    # Relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
+
+    # Indicates that the build-out has been truncated.
     attr_accessor :max_entity_limit_reached
-    attr_accessor :why_results
+    attr_accessor :xxx_why_results
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByEntityIDResponse.new
@@ -3935,7 +3953,7 @@ module SenzingTypedef
       out.entity_paths = SenzingTypedef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out.entity_path_links = SenzingTypedef::from_json_data(Array[EntityPathLink], data["ENTITY_PATH_LINKS"])
       out.max_entity_limit_reached = SenzingTypedef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
-      out.why_results = SenzingTypedef::from_json_data(Array[WhyResult], data["WHY_RESULTS"])
+      out.xxx_why_results = SenzingTypedef::from_json_data(Array[WhyResult], data["XXX_WHY_RESULTS"])
       out
     end
 
@@ -3946,7 +3964,7 @@ module SenzingTypedef
       data["ENTITY_PATHS"] = SenzingTypedef::to_json_data(entity_paths)
       data["ENTITY_PATH_LINKS"] = SenzingTypedef::to_json_data(entity_path_links)
       data["MAX_ENTITY_LIMIT_REACHED"] = SenzingTypedef::to_json_data(max_entity_limit_reached)
-      data["WHY_RESULTS"] = SenzingTypedef::to_json_data(why_results)
+      data["XXX_WHY_RESULTS"] = SenzingTypedef::to_json_data(xxx_why_results)
       data
     end
   end
@@ -3968,6 +3986,7 @@ module SenzingTypedef
     end
   end
 
+  # A network of relationships among entities.
   class SzEngineFindNetworkByRecordIDResponse
     attr_accessor :entities
     attr_accessor :entity_network_links
@@ -4172,7 +4191,7 @@ module SenzingTypedef
   end
 
   class SzEngineGetRecordResponse
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
     attr_accessor :features
     attr_accessor :feature_ids
@@ -4349,9 +4368,10 @@ module SenzingTypedef
   end
 
   class SzEngineProcessRedoRecordResponse
+    # Entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # The unique identifier within the set of records in the DATA_SOURCE.
@@ -4381,6 +4401,7 @@ module SenzingTypedef
   end
 
   class SzEngineReevaluateEntityResponse
+    # Entities that were affected as a result of the operation.
     attr_accessor :affected_entities
     attr_accessor :interesting_entities
 
@@ -4410,9 +4431,10 @@ module SenzingTypedef
   end
 
   class SzEngineReevaluateRecordResponse
+    # Entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
-    # A label identifying the provenance of the record.
+    # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
     # The unique identifier within the set of records in the DATA_SOURCE.

@@ -14,17 +14,18 @@ public class SzEngineDeleteRecordResponse {
     @JsonProperty("DATA_SOURCE")
     private String dataSource;
 
+    @JsonProperty("INTERESTING_ENTITIES")
+    private InterestingEntities interestingEntities;
+
     @JsonProperty("RECORD_ID")
     private String recordId;
-
-    @JsonProperty("XXX_INTERESTING_ENTITIES")
-    private InterestingEntities xxxInterestingEntities;
 
     public SzEngineDeleteRecordResponse() {
     }
 
     /**
      * Getter for affectedEntities.<p>
+     * Entities that were affected as a result of the operation.
      */
     public List<AffectedEntity> getAffectedEntities() {
         return affectedEntities;
@@ -32,6 +33,7 @@ public class SzEngineDeleteRecordResponse {
 
     /**
      * Setter for affectedEntities.<p>
+     * Entities that were affected as a result of the operation.
      */
     public void setAffectedEntities(List<AffectedEntity> affectedEntities) {
         this.affectedEntities = affectedEntities;
@@ -39,7 +41,7 @@ public class SzEngineDeleteRecordResponse {
 
     /**
      * Getter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public String getDataSource() {
         return dataSource;
@@ -47,15 +49,31 @@ public class SzEngineDeleteRecordResponse {
 
     /**
      * Setter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
     }
 
     /**
+     * Getter for interestingEntities.<p>
+     * Internal use.
+     */
+    public InterestingEntities getInterestingEntities() {
+        return interestingEntities;
+    }
+
+    /**
+     * Setter for interestingEntities.<p>
+     * Internal use.
+     */
+    public void setInterestingEntities(InterestingEntities interestingEntities) {
+        this.interestingEntities = interestingEntities;
+    }
+
+    /**
      * Getter for recordId.<p>
-     * The unique identifier within the set of records in the DATA_SOURCE.
+     * The unique identifier within the DATA_SOURCE of the deleted record.
      */
     public String getRecordId() {
         return recordId;
@@ -63,23 +81,9 @@ public class SzEngineDeleteRecordResponse {
 
     /**
      * Setter for recordId.<p>
-     * The unique identifier within the set of records in the DATA_SOURCE.
+     * The unique identifier within the DATA_SOURCE of the deleted record.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;
-    }
-
-    /**
-     * Getter for xxxInterestingEntities.<p>
-     */
-    public InterestingEntities getXxxInterestingEntities() {
-        return xxxInterestingEntities;
-    }
-
-    /**
-     * Setter for xxxInterestingEntities.<p>
-     */
-    public void setXxxInterestingEntities(InterestingEntities xxxInterestingEntities) {
-        this.xxxInterestingEntities = xxxInterestingEntities;
     }
 }

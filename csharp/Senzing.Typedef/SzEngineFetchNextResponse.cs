@@ -7,6 +7,9 @@ namespace Senzing.Typedef
 {
     public class SzEngineFetchNextResponse
     {
+        /// <summary>
+        /// A small portion of the output initiated by an Export call.
+        /// </summary>
         [JsonPropertyName("XXX_FIXME")]
         public Fixme XxxFixme { get; set; }
     }

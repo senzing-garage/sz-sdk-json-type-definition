@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * Internal use.
+ */
 @JsonSerialize
 public class SzEngineFindInterestingEntitiesByRecordIdResponse {
     @JsonProperty("INTERESTING_ENTITIES")

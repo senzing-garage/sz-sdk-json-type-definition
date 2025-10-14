@@ -1177,8 +1177,7 @@ pub struct Fixme {
 
 #[derive(Serialize, Deserialize)]
 pub struct FocusRecord {
-    /// A label identifying the provenance of the record. FIXME: An example
-    /// of differences.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -1446,7 +1445,7 @@ pub type Object = String;
 
 #[derive(Serialize, Deserialize)]
 pub struct Record {
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -1527,7 +1526,7 @@ pub struct Record {
 
 #[derive(Serialize, Deserialize)]
 pub struct RecordForGetEntity {
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -1608,7 +1607,7 @@ pub struct RecordForGetEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct RecordKey {
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -1626,7 +1625,7 @@ pub struct RecordKeys {
 
 #[derive(Serialize, Deserialize)]
 pub struct RecordSummary {
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -1982,7 +1981,7 @@ pub struct SysOom {
 
 #[derive(Serialize, Deserialize)]
 pub struct SampleRecord {
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -2568,36 +2567,40 @@ pub struct SzDiagnosticGetRepositoryInfoResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineAddRecordResponse {
+    /// Entities that were affected as a result of the operation.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
+    /// Internal use.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 
-    /// The unique identifier within the set of records in the DATA_SOURCE.
+    /// The unique identifier within the DATA_SOURCE of the newly added record.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineDeleteRecordResponse {
+    /// Entities that were affected as a result of the operation.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// The unique identifier within the set of records in the DATA_SOURCE.
+    /// Internal use.
+    #[serde(rename = "INTERESTING_ENTITIES")]
+    pub interestingEntities: InterestingEntities,
+
+    /// The unique identifier within the DATA_SOURCE of the deleted record.
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
-
-    #[serde(rename = "XXX_INTERESTING_ENTITIES")]
-    pub xxxInterestingEntities: InterestingEntities,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2608,16 +2611,19 @@ pub struct SzEngineExportCsvEntityReportCsvColumnList {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFetchNextResponse {
+    /// A small portion of the output initiated by an Export call.
     #[serde(rename = "XXX_FIXME")]
     pub xxxFixme: Fixme,
 }
 
+/// Internal use.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindInterestingEntitiesByEntityIdResponse {
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 }
 
+/// Internal use.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindInterestingEntitiesByRecordIdResponse {
     #[serde(rename = "INTERESTING_ENTITIES")]
@@ -2630,25 +2636,31 @@ pub struct SzEngineFindNetworkByEntityIdEntityIds {
     pub xxxFixme: Fixme,
 }
 
+/// A network of relationships among entities.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindNetworkByEntityIdResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
+    /// Relationship details for all pairs of entities in the network.
     #[serde(rename = "ENTITY_NETWORK_LINKS")]
     pub entityNetworkLinks: Vec<EntityNetworkLink>,
 
+    /// Best path between all pairs of requested entities.
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: Vec<EntityPath>,
 
+    /// Relationship details for all links from ENTITY_PATHS.
     #[serde(rename = "ENTITY_PATH_LINKS")]
     pub entityPathLinks: Vec<EntityPathLink>,
 
+    /// Indicates that the build-out has been truncated.
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
 
-    #[serde(rename = "WHY_RESULTS")]
-    pub whyResults: Vec<WhyResult>,
+    #[serde(rename = "XXX_WHY_RESULTS")]
+    pub xxxWhyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2658,6 +2670,7 @@ pub struct SzEngineFindNetworkByRecordIdRecordKeys {
     pub records: Vec<RecordKey>,
 }
 
+/// A network of relationships among entities.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindNetworkByRecordIdResponse {
     #[serde(rename = "ENTITIES")]
@@ -2763,7 +2776,7 @@ pub struct SzEngineGetRecordPreviewResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetRecordResponse {
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -2875,10 +2888,11 @@ pub struct SzEngineHowEntityByEntityIdResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineProcessRedoRecordResponse {
+    /// Entities that were affected as a result of the operation.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
@@ -2895,6 +2909,7 @@ pub struct SzEngineProcessRedoRecordResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineReevaluateEntityResponse {
+    /// Entities that were affected as a result of the operation.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
@@ -2912,10 +2927,11 @@ pub struct SzEngineReevaluateEntityResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineReevaluateRecordResponse {
+    /// Entities that were affected as a result of the operation.
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
-    /// A label identifying the provenance of the record.
+    /// Short, stable identifier naming the source system.
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 

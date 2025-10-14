@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
+/**
+ * A network of relationships among entities.
+ */
 @JsonSerialize
 public class SzEngineFindNetworkByRecordIdResponse {
     @JsonProperty("ENTITIES")

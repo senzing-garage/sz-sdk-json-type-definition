@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
+/**
+ * A network of relationships among entities.
+ */
 @JsonSerialize
 public class SzEngineFindNetworkByEntityIdResponse {
     @JsonProperty("ENTITIES")
@@ -23,14 +26,15 @@ public class SzEngineFindNetworkByEntityIdResponse {
     @JsonProperty("MAX_ENTITY_LIMIT_REACHED")
     private String maxEntityLimitReached;
 
-    @JsonProperty("WHY_RESULTS")
-    private List<WhyResult> whyResults;
+    @JsonProperty("XXX_WHY_RESULTS")
+    private List<WhyResult> xxxWhyResults;
 
     public SzEngineFindNetworkByEntityIdResponse() {
     }
 
     /**
      * Getter for entities.<p>
+     * List of entity information.
      */
     public List<Entity> getEntities() {
         return entities;
@@ -38,6 +42,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Setter for entities.<p>
+     * List of entity information.
      */
     public void setEntities(List<Entity> entities) {
         this.entities = entities;
@@ -45,6 +50,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Getter for entityNetworkLinks.<p>
+     * Relationship details for all pairs of entities in the network.
      */
     public List<EntityNetworkLink> getEntityNetworkLinks() {
         return entityNetworkLinks;
@@ -52,6 +58,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Setter for entityNetworkLinks.<p>
+     * Relationship details for all pairs of entities in the network.
      */
     public void setEntityNetworkLinks(List<EntityNetworkLink> entityNetworkLinks) {
         this.entityNetworkLinks = entityNetworkLinks;
@@ -59,6 +66,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Getter for entityPaths.<p>
+     * Best path between all pairs of requested entities.
      */
     public List<EntityPath> getEntityPaths() {
         return entityPaths;
@@ -66,6 +74,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Setter for entityPaths.<p>
+     * Best path between all pairs of requested entities.
      */
     public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
@@ -73,6 +82,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Getter for entityPathLinks.<p>
+     * Relationship details for all links from ENTITY_PATHS.
      */
     public List<EntityPathLink> getEntityPathLinks() {
         return entityPathLinks;
@@ -80,6 +90,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Setter for entityPathLinks.<p>
+     * Relationship details for all links from ENTITY_PATHS.
      */
     public void setEntityPathLinks(List<EntityPathLink> entityPathLinks) {
         this.entityPathLinks = entityPathLinks;
@@ -87,6 +98,7 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Getter for maxEntityLimitReached.<p>
+     * Indicates that the build-out has been truncated.
      */
     public String getMaxEntityLimitReached() {
         return maxEntityLimitReached;
@@ -94,22 +106,23 @@ public class SzEngineFindNetworkByEntityIdResponse {
 
     /**
      * Setter for maxEntityLimitReached.<p>
+     * Indicates that the build-out has been truncated.
      */
     public void setMaxEntityLimitReached(String maxEntityLimitReached) {
         this.maxEntityLimitReached = maxEntityLimitReached;
     }
 
     /**
-     * Getter for whyResults.<p>
+     * Getter for xxxWhyResults.<p>
      */
-    public List<WhyResult> getWhyResults() {
-        return whyResults;
+    public List<WhyResult> getXxxWhyResults() {
+        return xxxWhyResults;
     }
 
     /**
-     * Setter for whyResults.<p>
+     * Setter for xxxWhyResults.<p>
      */
-    public void setWhyResults(List<WhyResult> whyResults) {
-        this.whyResults = whyResults;
+    public void setXxxWhyResults(List<WhyResult> xxxWhyResults) {
+        this.xxxWhyResults = xxxWhyResults;
     }
 }

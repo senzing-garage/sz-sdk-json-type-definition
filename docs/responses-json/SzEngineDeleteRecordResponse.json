@@ -6,7 +6,7 @@
     ],
     "DATA_SOURCE": "string",
     "RECORD_ID": "string",
-    "XXX_INTERESTING_ENTITIES": {
+    "INTERESTING_ENTITIES": {
         "ENTITIES": [
             {
                 "DEGREES": "int32",

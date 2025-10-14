@@ -628,8 +628,7 @@ export interface Fixme {
 
 export interface FocusRecord {
   /**
-   * A label identifying the provenance of the record. FIXME: An example of
-   * differences.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -778,7 +777,7 @@ export type Object = string;
 
 export interface Record {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -828,7 +827,7 @@ export interface Record {
 
 export interface RecordForGetEntity {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -878,7 +877,7 @@ export interface RecordForGetEntity {
 
 export interface RecordKey {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -897,7 +896,7 @@ export interface RecordKeys {
 
 export interface RecordSummary {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -1156,7 +1155,7 @@ export interface SysOom {
 
 export interface SampleRecord {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
   FLAGS: string[];
@@ -1752,33 +1751,47 @@ export interface SzDiagnosticGetRepositoryInfoResponse {
 }
 
 export interface SzEngineAddRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
+
+  /**
+   * Internal use.
+   */
   INTERESTING_ENTITIES: InterestingEntities;
 
   /**
-   * The unique identifier within the set of records in the DATA_SOURCE.
+   * The unique identifier within the DATA_SOURCE of the newly added record.
    */
   RECORD_ID: string;
 }
 
 export interface SzEngineDeleteRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
   /**
-   * The unique identifier within the set of records in the DATA_SOURCE.
+   * Internal use.
+   */
+  INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the DATA_SOURCE of the deleted record.
    */
   RECORD_ID: string;
-  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineExportCsvEntityReportCsvColumnList {
@@ -1786,13 +1799,22 @@ export interface SzEngineExportCsvEntityReportCsvColumnList {
 }
 
 export interface SzEngineFetchNextResponse {
+  /**
+   * A small portion of the output initiated by an Export call.
+   */
   XXX_FIXME: Fixme;
 }
 
+/**
+ * Internal use.
+ */
 export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
   INTERESTING_ENTITIES: InterestingEntities;
 }
 
+/**
+ * Internal use.
+ */
 export interface SzEngineFindInterestingEntitiesByRecordIdResponse {
   INTERESTING_ENTITIES: InterestingEntities;
 }
@@ -1801,13 +1823,35 @@ export interface SzEngineFindNetworkByEntityIdEntityIds {
   XXX_FIXME: Fixme;
 }
 
+/**
+ * A network of relationships among entities.
+ */
 export interface SzEngineFindNetworkByEntityIdResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
+
+  /**
+   * Relationship details for all pairs of entities in the network.
+   */
   ENTITY_NETWORK_LINKS: EntityNetworkLink[];
+
+  /**
+   * Best path between all pairs of requested entities.
+   */
   ENTITY_PATHS: EntityPath[];
+
+  /**
+   * Relationship details for all links from ENTITY_PATHS.
+   */
   ENTITY_PATH_LINKS: EntityPathLink[];
+
+  /**
+   * Indicates that the build-out has been truncated.
+   */
   MAX_ENTITY_LIMIT_REACHED: string;
-  WHY_RESULTS: WhyResult[];
+  XXX_WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineFindNetworkByRecordIdRecordKeys {
@@ -1817,6 +1861,9 @@ export interface SzEngineFindNetworkByRecordIdRecordKeys {
   RECORDS: RecordKey[];
 }
 
+/**
+ * A network of relationships among entities.
+ */
 export interface SzEngineFindNetworkByRecordIdResponse {
   ENTITIES: Entity[];
   ENTITY_NETWORK_LINKS: EntityNetworkLink[];
@@ -1876,7 +1923,7 @@ export interface SzEngineGetRecordPreviewResponse {
 
 export interface SzEngineGetRecordResponse {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
   FEATURES: { [key: string]: FeatureForAttributes[] };
@@ -1948,10 +1995,13 @@ export interface SzEngineHowEntityByEntityIdResponse {
 }
 
 export interface SzEngineProcessRedoRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -1964,6 +2014,9 @@ export interface SzEngineProcessRedoRecordResponse {
 }
 
 export interface SzEngineReevaluateEntityResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
   INTERESTING_ENTITIES: InterestingEntities;
 
@@ -1979,10 +2032,13 @@ export interface SzEngineReevaluateEntityResponse {
 }
 
 export interface SzEngineReevaluateRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 

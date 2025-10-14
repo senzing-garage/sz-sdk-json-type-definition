@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class SzEngineReevaluateEntityResponse
     {
+        /// <summary>
+        /// Entities that were affected as a result of the operation.
+        /// </summary>
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public IList<AffectedEntity> AffectedEntities { get; set; }
 

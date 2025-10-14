@@ -87,7 +87,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public String getDataSource() {
         return dataSource;
@@ -95,7 +95,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;

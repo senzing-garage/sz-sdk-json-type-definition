@@ -337,6 +337,13 @@
                         "XXX_LINKED_FEAT_DESC": "string"
                     },
                     "WHY_KEY_DETAILS": {
+                        "CONFIRMATIONS": [
+                            {
+                                "ADDITIONAL_SCORES": {
+                                    "FULL_SCORE": "int32"
+                                }
+                            }
+                        ],
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {
