@@ -22,7 +22,7 @@ CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
 INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../docs/responses-json")
 
-DEFINITIONS = {}
+DEFINITIONS = {}  # pylint: disable=C0103
 VARIABLE_JSON_KEY = "user_defined_json_key"
 GLOBAL_JSON_KEYS = [
     "SzConfigExportResponse",

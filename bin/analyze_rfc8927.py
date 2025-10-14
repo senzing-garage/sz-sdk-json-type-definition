@@ -23,7 +23,7 @@ INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 GLOBAL_KEYS = {}
 GLOBAL_KEY_COUNT = {}
 GLOBAL_KEY_TYPE = {}
-GLOBAL_OUT_OF_ORDER = []
+GLOBAL_OUT_OF_ORDER = []  # pylint: disable=C0103
 GLOBAL_REFS = []
 GLOBAL_JSON_KEYS = []
 BLACK_LIST = [
@@ -197,7 +197,7 @@ if __name__ == "__main__":
     logger.info("-" * 80)
     logger.info("TEST 5: Refs without JSON keys.")
 
-    MISSING_REF_COUNT = 0
+    MISSING_REF_COUNT = 0  # pylint: disable=C0103
     for value in GLOBAL_REFS:
         if value not in GLOBAL_JSON_KEYS:
             MISSING_REF_COUNT += 1
@@ -220,7 +220,7 @@ if __name__ == "__main__":
     for value in GLOBAL_REFS:
         if value in definitions:
             definitions.remove(value)
-    USED_KEY_COUNT = 0
+    USED_KEY_COUNT = 0  # pylint: disable=C0103
     for definition in definitions:
         if definition[0:8] not in ["SzConfig", "SzEngine", "SzDiagno", "SzProduc"]:
             if definition not in USED_KEYS:

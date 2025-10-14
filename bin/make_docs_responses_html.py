@@ -22,7 +22,7 @@ INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../docs/responses-html")
 
 VARIABLE_JSON_KEY = "user_defined_json_key"
-DEFINITIONS = {}
+DEFINITIONS = {}  # pylint: disable=C0103
 INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
 GLOBAL_JSON_KEYS = [

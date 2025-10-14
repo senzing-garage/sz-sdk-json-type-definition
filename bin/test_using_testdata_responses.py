@@ -24,8 +24,8 @@ INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses")
 INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 
 DEBUG = 0
-DEFINITIONS = {}
-ERROR_COUNT = 0
+DEFINITIONS = {}  # pylint: disable=C0103
+ERROR_COUNT = 0  # pylint: disable=C0103
 HR_START = ">" * 80
 HR_STOP = "<" * 80
 SCHEMA = {}
@@ -395,10 +395,10 @@ if __name__ == "__main__":
             continue
 
         with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
-            LINE_COUNT = 0
+            LINE_COUNT = 0  # pylint: disable=C0103
             for line in test_file:
                 LINE_COUNT += 1
-                TEST_NAME = f"{title}.{LINE_COUNT}"
+                TEST_NAME = f"{title}.{LINE_COUNT}"  # pylint: disable=C0103
                 compare_to_schema(TEST_NAME, title, json_schema, json.loads(line))
 
     # Epilog.

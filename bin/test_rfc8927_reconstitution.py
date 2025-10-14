@@ -24,8 +24,8 @@ TESTDATA_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata")
 INPUT_DIRECTORY = f"{TESTDATA_DIRECTORY}/responses"
 
 DEBUG = False
-ERROR_COUNT = 0
-TEST_COUNT = 0
+ERROR_COUNT = 0  # pylint: disable=C0103
+TEST_COUNT = 0  # pylint: disable=C0103
 
 PYTHON_CLASS_MAP = {
     "SzEngineFindInterestingEntitiesByEntityIdResponse": "SzEngineFindInterestingEntitiesByEntityIDResponse",
@@ -153,13 +153,13 @@ if __name__ == "__main__":
         # Process lines in the file.
 
         with open(os.path.join(INPUT_DIRECTORY, test_file_name), "r", encoding="utf-8") as test_file:
-            LINE_COUNT = 0
+            LINE_COUNT = 0  # pylint: disable=C0103
             for line in test_file:
                 LINE_COUNT += 1
                 logger.debug("Line number: %d", LINE_COUNT)
                 TEST_COUNT += 1
-                LINE_ERRORS = ERROR_COUNT
-                TEST_NAME = f"{senzing_api_class}.{LINE_COUNT}"
+                LINE_ERRORS = ERROR_COUNT  # pylint: disable=C0103
+                TEST_NAME = f"{senzing_api_class}.{LINE_COUNT}"  # pylint: disable=C0103
                 line_as_dict = json.loads(line)
 
                 # Test for similarity in key/values.
