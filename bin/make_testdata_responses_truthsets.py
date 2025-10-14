@@ -28,12 +28,12 @@ INPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/truthsets")
 INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_truthsets")
 
-DEBUG = 0
-DEFINITIONS = {}
-ERROR_COUNT = 0
+DEBUG = 0  # pylint: disable=C0103
+DEFINITIONS = {}  # pylint: disable=C0103
+ERROR_COUNT = 0  # pylint: disable=C0103
 HR_START = ">" * 80
 HR_STOP = "<" * 80
-LOADED_ENTITY_IDS = []
+LOADED_ENTITY_IDS = []  # pylint: disable=C0103
 LOADED_RECORD_KEYS = []
 SCHEMA = {}
 VARIABLE_JSON_KEY = "<user_defined_json_key>"
@@ -1353,7 +1353,7 @@ if __name__ == "__main__":
 
     register_datasources(the_sz_abstract_factory)
     add_records(the_sz_abstract_factory)
-    LOADED_ENTITY_IDS = get_entity_ids(the_sz_abstract_factory)
+    LOADED_ENTITY_IDS = get_entity_ids(the_sz_abstract_factory)  # pylint: disable=C0103
 
     # Make comparisons.
 

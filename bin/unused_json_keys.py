@@ -25,7 +25,7 @@ INPUT_DIRECTORY = f"{TESTDATA_DIRECTORY}/responses"
 INPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../senzingsdk-RFC8927.json")
 OUTPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../docs/unused_json_keys.json")
 
-DEFINITIONS = {}
+DEFINITIONS = {}  # pylint: disable=C0103
 RESIDUAL = {}
 VARIABLE_JSON_KEY = "user_defined_json_key"
 
