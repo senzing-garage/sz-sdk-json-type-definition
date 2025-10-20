@@ -38,6 +38,7 @@ public class FeatureType {
 
     /**
      * Getter for ftypeCode.<p>
+     * Internal use.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -45,6 +46,7 @@ public class FeatureType {
 
     /**
      * Setter for ftypeCode.<p>
+     * Internal use.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;

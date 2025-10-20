@@ -100,6 +100,7 @@ public class RelLink {
 
     /**
      * Getter for ftypeCode.<p>
+     * Internal use.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -107,6 +108,7 @@ public class RelLink {
 
     /**
      * Setter for ftypeCode.<p>
+     * Internal use.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;

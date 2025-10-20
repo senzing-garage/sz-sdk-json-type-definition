@@ -20,6 +20,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC_VALUES")]
         public IList<FeatureDescriptionValue> FeatDescValues { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 

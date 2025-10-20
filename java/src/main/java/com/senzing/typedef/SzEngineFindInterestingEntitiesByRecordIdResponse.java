@@ -18,6 +18,7 @@ public class SzEngineFindInterestingEntitiesByRecordIdResponse {
 
     /**
      * Getter for interestingEntities.<p>
+     * Internal use.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -25,6 +26,7 @@ public class SzEngineFindInterestingEntitiesByRecordIdResponse {
 
     /**
      * Setter for interestingEntities.<p>
+     * Internal use.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;

@@ -41,6 +41,7 @@ public class SzEngineReevaluateEntityResponse {
 
     /**
      * Getter for interestingEntities.<p>
+     * Internal use.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -48,6 +49,7 @@ public class SzEngineReevaluateEntityResponse {
 
     /**
      * Setter for interestingEntities.<p>
+     * Internal use.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;

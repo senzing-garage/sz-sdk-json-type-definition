@@ -356,7 +356,8 @@
         "Describes the attributes that make up the feature."
     ],
     "XXX_FIXME": [
-        "A small portion of the output initiated by an Export call."
+        "A small portion of the output initiated by an Export call.",
+        ""
     ],
     "XXX_INTERNAL_ID": [
         "Internal identifier for the record."
@@ -392,6 +393,7 @@
         "The total number of records inserted within the insertTime."
     ],
     "type": [
-        "Type of database."
+        "Type of database.",
+        ""
     ]
 }

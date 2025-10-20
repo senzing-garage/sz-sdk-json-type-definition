@@ -75,6 +75,8 @@ module SenzingTypedef
     attr_accessor :default_value
     attr_accessor :felem_code
     attr_accessor :felem_req
+
+    # Internal use.
     attr_accessor :ftype_code
     attr_accessor :internal
     attr_accessor :xxx_advanced
@@ -747,6 +749,8 @@ module SenzingTypedef
     attr_accessor :anonymize
     attr_accessor :derived
     attr_accessor :fclass_id
+
+    # Internal use.
     attr_accessor :ftype_code
     attr_accessor :ftype_desc
     attr_accessor :ftype_excl
@@ -1421,6 +1425,8 @@ module SenzingTypedef
 
   class EntityPath
     attr_accessor :end_entity_id
+
+    # List of entity information.
     attr_accessor :entities
     attr_accessor :start_entity_id
 
@@ -1488,6 +1494,7 @@ module SenzingTypedef
   end
 
   class EntityRoles
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :role
 
@@ -1581,6 +1588,8 @@ module SenzingTypedef
 
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
+
+    # Internal use.
     attr_accessor :lib_feat_id
     attr_accessor :scoring_cap_reached
     attr_accessor :suppressed
@@ -1624,6 +1633,8 @@ module SenzingTypedef
 
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc_values
+
+    # Internal use.
     attr_accessor :lib_feat_id
     attr_accessor :scoring_cap_reached
 
@@ -1670,6 +1681,8 @@ module SenzingTypedef
 
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc_values
+
+    # Internal use.
     attr_accessor :lib_feat_id
 
     # Label to identify how some features are being used (can also change some
@@ -1699,6 +1712,7 @@ module SenzingTypedef
   end
 
   class FeatureID
+    # Internal use.
     attr_accessor :lib_feat_id
 
     # Label to identify how some features are being used (can also change some
@@ -1779,6 +1793,8 @@ module SenzingTypedef
 
   class FeatureType
     attr_accessor :found
+
+    # Internal use.
     attr_accessor :ftype_code
     attr_accessor :generic
     attr_accessor :not_found
@@ -2010,6 +2026,7 @@ module SenzingTypedef
   end
 
   class InterestingEntities
+    # List of entity information.
     attr_accessor :entities
     attr_accessor :notices
 
@@ -2194,6 +2211,8 @@ module SenzingTypedef
   class MemberRecord
     # Internal identifier for the record.
     attr_accessor :internal_id
+
+    # A list of (data source code, record id) pairs.
     attr_accessor :records
 
     def self.from_json_data(data)
@@ -2549,6 +2568,8 @@ module SenzingTypedef
     attr_accessor :feat_desc
     attr_accessor :feat_id
     attr_accessor :feat_usage_type
+
+    # Internal use.
     attr_accessor :ftype_code
     attr_accessor :linked_feat_desc
     attr_accessor :linked_feat_id
@@ -2647,6 +2668,8 @@ module SenzingTypedef
 
     # The type of match that occurred for the record.
     attr_accessor :match_level_code
+
+    # A list of (data source code, record id) pairs.
     attr_accessor :records
 
     # Overview of the source systems the records came from comprising this
@@ -2693,6 +2716,7 @@ module SenzingTypedef
   end
 
   class RelatedRoles
+    # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
     attr_accessor :role
 
@@ -2777,6 +2801,8 @@ module SenzingTypedef
     # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
     attr_accessor :features
+
+    # A list of (data source code, record id) pairs.
     attr_accessor :records
 
     # Overview of the source systems the records came from comprising this
@@ -2871,6 +2897,8 @@ module SenzingTypedef
     # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
     attr_accessor :features
+
+    # A list of (data source code, record id) pairs.
     attr_accessor :records
 
     # Overview of the source systems the records came from comprising this
@@ -3880,6 +3908,7 @@ module SenzingTypedef
 
   # Internal use.
   class SzEngineFindInterestingEntitiesByEntityIDResponse
+    # Internal use.
     attr_accessor :interesting_entities
 
     def self.from_json_data(data)
@@ -3897,6 +3926,7 @@ module SenzingTypedef
 
   # Internal use.
   class SzEngineFindInterestingEntitiesByRecordIDResponse
+    # Internal use.
     attr_accessor :interesting_entities
 
     def self.from_json_data(data)
@@ -3944,7 +3974,6 @@ module SenzingTypedef
 
     # Indicates that the build-out has been truncated.
     attr_accessor :max_entity_limit_reached
-    attr_accessor :xxx_why_results
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByEntityIDResponse.new
@@ -3953,7 +3982,6 @@ module SenzingTypedef
       out.entity_paths = SenzingTypedef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out.entity_path_links = SenzingTypedef::from_json_data(Array[EntityPathLink], data["ENTITY_PATH_LINKS"])
       out.max_entity_limit_reached = SenzingTypedef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
-      out.xxx_why_results = SenzingTypedef::from_json_data(Array[WhyResult], data["XXX_WHY_RESULTS"])
       out
     end
 
@@ -3964,7 +3992,6 @@ module SenzingTypedef
       data["ENTITY_PATHS"] = SenzingTypedef::to_json_data(entity_paths)
       data["ENTITY_PATH_LINKS"] = SenzingTypedef::to_json_data(entity_path_links)
       data["MAX_ENTITY_LIMIT_REACHED"] = SenzingTypedef::to_json_data(max_entity_limit_reached)
-      data["XXX_WHY_RESULTS"] = SenzingTypedef::to_json_data(xxx_why_results)
       data
     end
   end
@@ -3988,12 +4015,20 @@ module SenzingTypedef
 
   # A network of relationships among entities.
   class SzEngineFindNetworkByRecordIDResponse
+    # List of entity information.
     attr_accessor :entities
+
+    # Relationship details for all pairs of entities in the network.
     attr_accessor :entity_network_links
+
+    # Best path between all pairs of requested entities.
     attr_accessor :entity_paths
+
+    # Relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
+
+    # Indicates that the build-out has been truncated.
     attr_accessor :max_entity_limit_reached
-    attr_accessor :why_results
 
     def self.from_json_data(data)
       out = SzEngineFindNetworkByRecordIDResponse.new
@@ -4002,7 +4037,6 @@ module SenzingTypedef
       out.entity_paths = SenzingTypedef::from_json_data(Array[EntityPath], data["ENTITY_PATHS"])
       out.entity_path_links = SenzingTypedef::from_json_data(Array[EntityPathLink], data["ENTITY_PATH_LINKS"])
       out.max_entity_limit_reached = SenzingTypedef::from_json_data(String, data["MAX_ENTITY_LIMIT_REACHED"])
-      out.why_results = SenzingTypedef::from_json_data(Array[WhyResult], data["WHY_RESULTS"])
       out
     end
 
@@ -4013,7 +4047,6 @@ module SenzingTypedef
       data["ENTITY_PATHS"] = SenzingTypedef::to_json_data(entity_paths)
       data["ENTITY_PATH_LINKS"] = SenzingTypedef::to_json_data(entity_path_links)
       data["MAX_ENTITY_LIMIT_REACHED"] = SenzingTypedef::to_json_data(max_entity_limit_reached)
-      data["WHY_RESULTS"] = SenzingTypedef::to_json_data(why_results)
       data
     end
   end
@@ -4051,8 +4084,13 @@ module SenzingTypedef
   end
 
   class SzEngineFindPathByEntityIDResponse
+    # List of entity information.
     attr_accessor :entities
+
+    # Best path between all pairs of requested entities.
     attr_accessor :entity_paths
+
+    # Relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
 
     def self.from_json_data(data)
@@ -4106,8 +4144,13 @@ module SenzingTypedef
   end
 
   class SzEngineFindPathByRecordIDResponse
+    # List of entity information.
     attr_accessor :entities
+
+    # Best path between all pairs of requested entities.
     attr_accessor :entity_paths
+
+    # Relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
 
     def self.from_json_data(data)
@@ -4403,6 +4446,8 @@ module SenzingTypedef
   class SzEngineReevaluateEntityResponse
     # Entities that were affected as a result of the operation.
     attr_accessor :affected_entities
+
+    # Internal use.
     attr_accessor :interesting_entities
 
     # A label identifying the provenance of the record.
@@ -4537,6 +4582,7 @@ module SenzingTypedef
   end
 
   class SzEngineWhyEntitiesResponse
+    # List of entity information.
     attr_accessor :entities
     attr_accessor :why_results
 
@@ -4556,6 +4602,7 @@ module SenzingTypedef
   end
 
   class SzEngineWhyRecordInEntityResponse
+    # List of entity information.
     attr_accessor :entities
     attr_accessor :why_results
 
@@ -4575,6 +4622,7 @@ module SenzingTypedef
   end
 
   class SzEngineWhyRecordsResponse
+    # List of entity information.
     attr_accessor :entities
     attr_accessor :why_results
 
@@ -4610,6 +4658,7 @@ module SenzingTypedef
   end
 
   class SzEngineWhySearchResponse
+    # List of entity information.
     attr_accessor :entities
     attr_accessor :search_entity
     attr_accessor :search_request

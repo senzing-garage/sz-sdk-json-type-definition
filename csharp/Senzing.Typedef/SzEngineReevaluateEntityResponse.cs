@@ -14,6 +14,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public IList<AffectedEntity> AffectedEntities { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("INTERESTING_ENTITIES")]
         public InterestingEntities InterestingEntities { get; set; }
 

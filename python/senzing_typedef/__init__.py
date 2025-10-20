@@ -76,6 +76,10 @@ class CfgAttr:
     felem_code: 'str'
     felem_req: 'str'
     ftype_code: 'str'
+    """
+    Internal use.
+    """
+
     internal: 'str'
     xxx_advanced: 'str'
 
@@ -728,6 +732,10 @@ class CfgFtype:
     derived: 'str'
     fclass_id: 'int'
     ftype_code: 'str'
+    """
+    Internal use.
+    """
+
     ftype_desc: 'str'
     ftype_excl: 'str'
     ftype_freq: 'str'
@@ -1404,6 +1412,10 @@ class EntityNetworkLink:
 class EntityPath:
     end_entity_id: 'int'
     entities: 'List[int]'
+    """
+    List of entity information.
+    """
+
     start_entity_id: 'int'
 
     @classmethod
@@ -1480,6 +1492,10 @@ class EntityPathLink:
 @dataclass
 class EntityRoles:
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     role: 'str'
 
     @classmethod
@@ -1581,6 +1597,10 @@ class FeatureDescriptionValueDetails:
     """
 
     lib_feat_id: 'int'
+    """
+    Internal use.
+    """
+
     scoring_cap_reached: 'str'
     suppressed: 'str'
     used_for_cand: 'str'
@@ -1627,6 +1647,10 @@ class FeatureForAttributes:
     """
 
     lib_feat_id: 'int'
+    """
+    Internal use.
+    """
+
     scoring_cap_reached: 'str'
     usage_type: 'str'
     """
@@ -1679,6 +1703,10 @@ class FeatureForGetEntity:
     """
 
     lib_feat_id: 'int'
+    """
+    Internal use.
+    """
+
     usage_type: 'str'
     """
     Label to identify how some features are being used (can also change some
@@ -1709,6 +1737,10 @@ class FeatureForGetEntity:
 @dataclass
 class FeatureID:
     lib_feat_id: 'int'
+    """
+    Internal use.
+    """
+
     usage_type: 'str'
     """
     Label to identify how some features are being used (can also change some
@@ -1786,6 +1818,10 @@ class FeatureScores:
 class FeatureType:
     found: 'int'
     ftype_code: 'str'
+    """
+    Internal use.
+    """
+
     generic: 'int'
     not_found: 'int'
 
@@ -2015,6 +2051,10 @@ class HowResults:
 @dataclass
 class InterestingEntities:
     entities: 'List[InterestingEntity]'
+    """
+    List of entity information.
+    """
+
     notices: 'List[Notice]'
 
     @classmethod
@@ -2211,6 +2251,10 @@ class MemberRecord:
     """
 
     records: 'List[Record]'
+    """
+    A list of (data source code, record id) pairs.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MemberRecord':
@@ -2598,6 +2642,10 @@ class RelLink:
     feat_id: 'int'
     feat_usage_type: 'str'
     ftype_code: 'str'
+    """
+    Internal use.
+    """
+
     linked_feat_desc: 'str'
     linked_feat_id: 'int'
     linked_feat_type: 'str'
@@ -2711,6 +2759,10 @@ class RelatedEntity:
     """
 
     records: 'List[Record]'
+    """
+    A list of (data source code, record id) pairs.
+    """
+
     record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
@@ -2758,6 +2810,10 @@ class RelatedEntity:
 @dataclass
 class RelatedRoles:
     feat_desc: 'str'
+    """
+    Describes the attributes that make up the feature.
+    """
+
     role: 'str'
 
     @classmethod
@@ -2851,6 +2907,10 @@ class ResolvedEntity:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     records: 'List[Record]'
+    """
+    A list of (data source code, record id) pairs.
+    """
+
     record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
@@ -2960,6 +3020,10 @@ class ResolvedEntityForGetEntity:
 
     features: 'Dict[str, List[FeatureForGetEntity]]'
     records: 'List[RecordForGetEntity]'
+    """
+    A list of (data source code, record id) pairs.
+    """
+
     record_summary: 'List[RecordSummary]'
     """
     Overview of the source systems the records came from comprising this related
@@ -4158,6 +4222,10 @@ class SzEngineFindInterestingEntitiesByEntityIDResponse:
     """
 
     interesting_entities: 'InterestingEntities'
+    """
+    Internal use.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindInterestingEntitiesByEntityIDResponse':
@@ -4177,6 +4245,10 @@ class SzEngineFindInterestingEntitiesByRecordIDResponse:
     """
 
     interesting_entities: 'InterestingEntities'
+    """
+    Internal use.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindInterestingEntitiesByRecordIDResponse':
@@ -4235,7 +4307,6 @@ class SzEngineFindNetworkByEntityIDResponse:
     Indicates that the build-out has been truncated.
     """
 
-    xxx_why_results: 'List[WhyResult]'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByEntityIDResponse':
@@ -4245,7 +4316,6 @@ class SzEngineFindNetworkByEntityIDResponse:
             _from_json_data(List[EntityPath], data.get("ENTITY_PATHS")),
             _from_json_data(List[EntityPathLink], data.get("ENTITY_PATH_LINKS")),
             _from_json_data(str, data.get("MAX_ENTITY_LIMIT_REACHED")),
-            _from_json_data(List[WhyResult], data.get("XXX_WHY_RESULTS")),
         )
 
     def to_json_data(self) -> Any:
@@ -4255,7 +4325,6 @@ class SzEngineFindNetworkByEntityIDResponse:
         data["ENTITY_PATHS"] = _to_json_data(self.entity_paths)
         data["ENTITY_PATH_LINKS"] = _to_json_data(self.entity_path_links)
         data["MAX_ENTITY_LIMIT_REACHED"] = _to_json_data(self.max_entity_limit_reached)
-        data["XXX_WHY_RESULTS"] = _to_json_data(self.xxx_why_results)
         return data
 
 @dataclass
@@ -4284,11 +4353,30 @@ class SzEngineFindNetworkByRecordIDResponse:
     """
 
     entities: 'List[Entity]'
+    """
+    List of entity information.
+    """
+
     entity_network_links: 'List[EntityNetworkLink]'
+    """
+    Relationship details for all pairs of entities in the network.
+    """
+
     entity_paths: 'List[EntityPath]'
+    """
+    Best path between all pairs of requested entities.
+    """
+
     entity_path_links: 'List[EntityPathLink]'
+    """
+    Relationship details for all links from ENTITY_PATHS.
+    """
+
     max_entity_limit_reached: 'str'
-    why_results: 'List[WhyResult]'
+    """
+    Indicates that the build-out has been truncated.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindNetworkByRecordIDResponse':
@@ -4298,7 +4386,6 @@ class SzEngineFindNetworkByRecordIDResponse:
             _from_json_data(List[EntityPath], data.get("ENTITY_PATHS")),
             _from_json_data(List[EntityPathLink], data.get("ENTITY_PATH_LINKS")),
             _from_json_data(str, data.get("MAX_ENTITY_LIMIT_REACHED")),
-            _from_json_data(List[WhyResult], data.get("WHY_RESULTS")),
         )
 
     def to_json_data(self) -> Any:
@@ -4308,7 +4395,6 @@ class SzEngineFindNetworkByRecordIDResponse:
         data["ENTITY_PATHS"] = _to_json_data(self.entity_paths)
         data["ENTITY_PATH_LINKS"] = _to_json_data(self.entity_path_links)
         data["MAX_ENTITY_LIMIT_REACHED"] = _to_json_data(self.max_entity_limit_reached)
-        data["WHY_RESULTS"] = _to_json_data(self.why_results)
         return data
 
 @dataclass
@@ -4344,8 +4430,20 @@ class SzEngineFindPathByEntityIDRequiredDataSources:
 @dataclass
 class SzEngineFindPathByEntityIDResponse:
     entities: 'List[Entity]'
+    """
+    List of entity information.
+    """
+
     entity_paths: 'List[EntityPath]'
+    """
+    Best path between all pairs of requested entities.
+    """
+
     entity_path_links: 'List[EntityPathLink]'
+    """
+    Relationship details for all links from ENTITY_PATHS.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindPathByEntityIDResponse':
@@ -4399,8 +4497,20 @@ class SzEngineFindPathByRecordIDRequiredDataSources:
 @dataclass
 class SzEngineFindPathByRecordIDResponse:
     entities: 'List[Entity]'
+    """
+    List of entity information.
+    """
+
     entity_paths: 'List[EntityPath]'
+    """
+    Best path between all pairs of requested entities.
+    """
+
     entity_path_links: 'List[EntityPathLink]'
+    """
+    Relationship details for all links from ENTITY_PATHS.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineFindPathByRecordIDResponse':
@@ -4711,6 +4821,10 @@ class SzEngineReevaluateEntityResponse:
     """
 
     interesting_entities: 'InterestingEntities'
+    """
+    Internal use.
+    """
+
     xxx_data_source: 'str'
     """
     A label identifying the provenance of the record.
@@ -4850,6 +4964,10 @@ class SzEngineStreamExportJSONEntityReportResponse:
 @dataclass
 class SzEngineWhyEntitiesResponse:
     entities: 'List[Entity]'
+    """
+    List of entity information.
+    """
+
     why_results: 'List[WhyResult]'
 
     @classmethod
@@ -4868,6 +4986,10 @@ class SzEngineWhyEntitiesResponse:
 @dataclass
 class SzEngineWhyRecordInEntityResponse:
     entities: 'List[Entity]'
+    """
+    List of entity information.
+    """
+
     why_results: 'List[WhyResult]'
 
     @classmethod
@@ -4886,6 +5008,10 @@ class SzEngineWhyRecordInEntityResponse:
 @dataclass
 class SzEngineWhyRecordsResponse:
     entities: 'List[Entity]'
+    """
+    List of entity information.
+    """
+
     why_results: 'List[WhyResult]'
 
     @classmethod
@@ -4919,6 +5045,10 @@ class SzEngineWhySearchAttributes:
 @dataclass
 class SzEngineWhySearchResponse:
     entities: 'List[EntityForWhySearch]'
+    """
+    List of entity information.
+    """
+
     search_entity: 'SearchEntity'
     search_request: 'SearchRequest'
     search_statistics: 'List[SearchStatistic]'

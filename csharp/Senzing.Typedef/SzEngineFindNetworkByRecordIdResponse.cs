@@ -11,22 +11,34 @@ namespace Senzing.Typedef
     /// </summary>
     public class SzEngineFindNetworkByRecordIdResponse
     {
+        /// <summary>
+        /// List of entity information.
+        /// </summary>
         [JsonPropertyName("ENTITIES")]
         public IList<Entity> Entities { get; set; }
 
+        /// <summary>
+        /// Relationship details for all pairs of entities in the network.
+        /// </summary>
         [JsonPropertyName("ENTITY_NETWORK_LINKS")]
         public IList<EntityNetworkLink> EntityNetworkLinks { get; set; }
 
+        /// <summary>
+        /// Best path between all pairs of requested entities.
+        /// </summary>
         [JsonPropertyName("ENTITY_PATHS")]
         public IList<EntityPath> EntityPaths { get; set; }
 
+        /// <summary>
+        /// Relationship details for all links from ENTITY_PATHS.
+        /// </summary>
         [JsonPropertyName("ENTITY_PATH_LINKS")]
         public IList<EntityPathLink> EntityPathLinks { get; set; }
 
+        /// <summary>
+        /// Indicates that the build-out has been truncated.
+        /// </summary>
         [JsonPropertyName("MAX_ENTITY_LIMIT_REACHED")]
         public string MaxEntityLimitReached { get; set; }
-
-        [JsonPropertyName("WHY_RESULTS")]
-        public IList<WhyResult> WhyResults { get; set; }
     }
 }

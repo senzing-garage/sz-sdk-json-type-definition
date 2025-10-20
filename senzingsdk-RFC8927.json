@@ -59,6 +59,9 @@
                     "type": "string"
                 },
                 "FTYPE_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "INTERNAL": {
@@ -714,6 +717,9 @@
                     "type": "int32"
                 },
                 "FTYPE_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "FTYPE_DESC": {
@@ -1314,6 +1320,9 @@
                             "goType": "int64"
                         },
                         "type": "int32"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "START_ENTITY_ID": {
@@ -1378,6 +1387,9 @@
         "EntityRoles": {
             "properties": {
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "ROLE": {
@@ -1465,6 +1477,7 @@
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
+                        "description": "Internal use.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1510,6 +1523,7 @@
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
+                        "description": "Internal use.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1549,6 +1563,7 @@
                 },
                 "LIB_FEAT_ID": {
                     "metadata": {
+                        "description": "Internal use.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1570,6 +1585,7 @@
             "properties": {
                 "LIB_FEAT_ID": {
                     "metadata": {
+                        "description": "Internal use.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -1641,6 +1657,9 @@
                     "type": "int32"
                 },
                 "FTYPE_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "GENERIC": {
@@ -1890,6 +1909,9 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "InterestingEntity"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "NOTICES": {
@@ -2062,6 +2084,9 @@
                 "RECORDS": {
                     "elements": {
                         "ref": "Record"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
                     }
                 }
             }
@@ -2446,6 +2471,9 @@
                     "type": "string"
                 },
                 "FTYPE_CODE": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_DESC": {
@@ -2561,6 +2589,9 @@
                 "RECORDS": {
                     "elements": {
                         "ref": "Record"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
                     }
                 },
                 "RECORD_SUMMARY": {
@@ -2584,6 +2615,9 @@
         "RelatedRoles": {
             "properties": {
                 "FEAT_DESC": {
+                    "metadata": {
+                        "description": "Describes the attributes that make up the feature."
+                    },
                     "type": "string"
                 },
                 "ROLE": {
@@ -2663,6 +2697,9 @@
                 "RECORDS": {
                     "elements": {
                         "ref": "Record"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
                     }
                 },
                 "RECORD_SUMMARY": {
@@ -2764,6 +2801,9 @@
                 "RECORDS": {
                     "elements": {
                         "ref": "RecordForGetEntity"
+                    },
+                    "metadata": {
+                        "description": "A list of (data source code, record id) pairs."
                     }
                 },
                 "RECORD_SUMMARY": {
@@ -3655,6 +3695,9 @@
             },
             "properties": {
                 "INTERESTING_ENTITIES": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "ref": "InterestingEntities"
                 }
             }
@@ -3665,6 +3708,9 @@
             },
             "properties": {
                 "INTERESTING_ENTITIES": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "ref": "InterestingEntities"
                 }
             }
@@ -3797,16 +3843,25 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
+                    },
+                    "metadata": {
+                        "description": "Best path between all pairs of requested entities."
                     }
                 },
                 "ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
+                    },
+                    "metadata": {
+                        "description": "Relationship details for all links from ENTITY_PATHS."
                     }
                 }
             }
@@ -3835,16 +3890,25 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "ENTITY_PATHS": {
                     "elements": {
                         "ref": "EntityPath"
+                    },
+                    "metadata": {
+                        "description": "Best path between all pairs of requested entities."
                     }
                 },
                 "ENTITY_PATH_LINKS": {
                     "elements": {
                         "ref": "EntityPathLink"
+                    },
+                    "metadata": {
+                        "description": "Relationship details for all links from ENTITY_PATHS."
                     }
                 }
             }
@@ -4106,6 +4170,9 @@
                     }
                 },
                 "INTERESTING_ENTITIES": {
+                    "metadata": {
+                        "description": "Internal use."
+                    },
                     "ref": "InterestingEntities"
                 },
                 "XXX_DATA_SOURCE": {
@@ -4202,6 +4269,9 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "WHY_RESULTS": {
@@ -4216,6 +4286,9 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "WHY_RESULTS": {
@@ -4230,6 +4303,9 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "Entity"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "WHY_RESULTS": {
@@ -4251,6 +4327,9 @@
                 "ENTITIES": {
                     "elements": {
                         "ref": "EntityForWhySearch"
+                    },
+                    "metadata": {
+                        "description": "List of entity information."
                     }
                 },
                 "SEARCH_ENTITY": {

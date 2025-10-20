@@ -10,6 +10,9 @@ namespace Senzing.Typedef
     /// </summary>
     public class SzEngineFindInterestingEntitiesByRecordIdResponse
     {
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("INTERESTING_ENTITIES")]
         public InterestingEntities InterestingEntities { get; set; }
     }

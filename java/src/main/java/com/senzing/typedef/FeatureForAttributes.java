@@ -117,6 +117,7 @@ public class FeatureForAttributes {
 
     /**
      * Getter for libFeatId.<p>
+     * Internal use.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -124,6 +125,7 @@ public class FeatureForAttributes {
 
     /**
      * Setter for libFeatId.<p>
+     * Internal use.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;

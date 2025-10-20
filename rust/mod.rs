@@ -56,6 +56,7 @@ pub struct CfgAttr {
     #[serde(rename = "FELEM_REQ")]
     pub felemReq: String,
 
+    /// Internal use.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
@@ -501,6 +502,7 @@ pub struct CfgFtype {
     #[serde(rename = "FCLASS_ID")]
     pub fclassId: i32,
 
+    /// Internal use.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
@@ -918,6 +920,7 @@ pub struct EntityPath {
     #[serde(rename = "END_ENTITY_ID")]
     pub endEntityId: i32,
 
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<i32>,
 
@@ -959,6 +962,7 @@ pub struct EntityPathLink {
 
 #[derive(Serialize, Deserialize)]
 pub struct EntityRoles {
+    /// Describes the attributes that make up the feature.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
@@ -1024,6 +1028,7 @@ pub struct FeatureDescriptionValueDetails {
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
+    /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
@@ -1059,6 +1064,7 @@ pub struct FeatureForAttributes {
     #[serde(rename = "FEAT_DESC_VALUES")]
     pub featDescValues: Vec<FeatureDescriptionValue>,
 
+    /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
@@ -1087,6 +1093,7 @@ pub struct FeatureForGetEntity {
     #[serde(rename = "FEAT_DESC_VALUES")]
     pub featDescValues: Vec<FeatureDescriptionValue>,
 
+    /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
@@ -1101,6 +1108,7 @@ pub struct FeatureForGetEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct FeatureId {
+    /// Internal use.
     #[serde(rename = "LIB_FEAT_ID")]
     pub libFeatId: i32,
 
@@ -1150,6 +1158,7 @@ pub struct FeatureType {
     #[serde(rename = "FOUND")]
     pub found: i32,
 
+    /// Internal use.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
@@ -1308,6 +1317,7 @@ pub struct HowResults {
 
 #[derive(Serialize, Deserialize)]
 pub struct InterestingEntities {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<InterestingEntity>,
 
@@ -1428,6 +1438,7 @@ pub struct MemberRecord {
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
 
+    /// A list of (data source code, record id) pairs.
     #[serde(rename = "RECORDS")]
     pub records: Vec<Record>,
 }
@@ -1683,6 +1694,7 @@ pub struct RelLink {
     #[serde(rename = "FEAT_USAGE_TYPE")]
     pub featUsageType: String,
 
+    /// Internal use.
     #[serde(rename = "FTYPE_CODE")]
     pub ftypeCode: String,
 
@@ -1764,6 +1776,7 @@ pub struct RelatedEntity {
     #[serde(rename = "MATCH_LEVEL_CODE")]
     pub matchLevelCode: String,
 
+    /// A list of (data source code, record id) pairs.
     #[serde(rename = "RECORDS")]
     pub records: Vec<Record>,
 
@@ -1781,6 +1794,7 @@ pub struct RelatedEntity {
 
 #[derive(Serialize, Deserialize)]
 pub struct RelatedRoles {
+    /// Describes the attributes that make up the feature.
     #[serde(rename = "FEAT_DESC")]
     pub featDesc: String,
 
@@ -1838,6 +1852,7 @@ pub struct ResolvedEntity {
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
 
+    /// A list of (data source code, record id) pairs.
     #[serde(rename = "RECORDS")]
     pub records: Vec<Record>,
 
@@ -1905,6 +1920,7 @@ pub struct ResolvedEntityForGetEntity {
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForGetEntity>>,
 
+    /// A list of (data source code, record id) pairs.
     #[serde(rename = "RECORDS")]
     pub records: Vec<RecordForGetEntity>,
 
@@ -2619,6 +2635,7 @@ pub struct SzEngineFetchNextResponse {
 /// Internal use.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindInterestingEntitiesByEntityIdResponse {
+    /// Internal use.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 }
@@ -2626,6 +2643,7 @@ pub struct SzEngineFindInterestingEntitiesByEntityIdResponse {
 /// Internal use.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindInterestingEntitiesByRecordIdResponse {
+    /// Internal use.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 }
@@ -2658,9 +2676,6 @@ pub struct SzEngineFindNetworkByEntityIdResponse {
     /// Indicates that the build-out has been truncated.
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
-
-    #[serde(rename = "XXX_WHY_RESULTS")]
-    pub xxxWhyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2673,23 +2688,25 @@ pub struct SzEngineFindNetworkByRecordIdRecordKeys {
 /// A network of relationships among entities.
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindNetworkByRecordIdResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
+    /// Relationship details for all pairs of entities in the network.
     #[serde(rename = "ENTITY_NETWORK_LINKS")]
     pub entityNetworkLinks: Vec<EntityNetworkLink>,
 
+    /// Best path between all pairs of requested entities.
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: Vec<EntityPath>,
 
+    /// Relationship details for all links from ENTITY_PATHS.
     #[serde(rename = "ENTITY_PATH_LINKS")]
     pub entityPathLinks: Vec<EntityPathLink>,
 
+    /// Indicates that the build-out has been truncated.
     #[serde(rename = "MAX_ENTITY_LIMIT_REACHED")]
     pub maxEntityLimitReached: String,
-
-    #[serde(rename = "WHY_RESULTS")]
-    pub whyResults: Vec<WhyResult>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -2706,12 +2723,15 @@ pub struct SzEngineFindPathByEntityIdRequiredDataSources {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByEntityIdResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
+    /// Best path between all pairs of requested entities.
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: Vec<EntityPath>,
 
+    /// Relationship details for all links from ENTITY_PATHS.
     #[serde(rename = "ENTITY_PATH_LINKS")]
     pub entityPathLinks: Vec<EntityPathLink>,
 }
@@ -2731,12 +2751,15 @@ pub struct SzEngineFindPathByRecordIdRequiredDataSources {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineFindPathByRecordIdResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
+    /// Best path between all pairs of requested entities.
     #[serde(rename = "ENTITY_PATHS")]
     pub entityPaths: Vec<EntityPath>,
 
+    /// Relationship details for all links from ENTITY_PATHS.
     #[serde(rename = "ENTITY_PATH_LINKS")]
     pub entityPathLinks: Vec<EntityPathLink>,
 }
@@ -2913,6 +2936,7 @@ pub struct SzEngineReevaluateEntityResponse {
     #[serde(rename = "AFFECTED_ENTITIES")]
     pub affectedEntities: Vec<AffectedEntity>,
 
+    /// Internal use.
     #[serde(rename = "INTERESTING_ENTITIES")]
     pub interestingEntities: InterestingEntities,
 
@@ -2981,6 +3005,7 @@ pub struct SzEngineStreamExportJsonEntityReportResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhyEntitiesResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
@@ -2990,6 +3015,7 @@ pub struct SzEngineWhyEntitiesResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhyRecordInEntityResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
@@ -2999,6 +3025,7 @@ pub struct SzEngineWhyRecordInEntityResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhyRecordsResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<Entity>,
 
@@ -3014,6 +3041,7 @@ pub struct SzEngineWhySearchAttributes {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineWhySearchResponse {
+    /// List of entity information.
     #[serde(rename = "ENTITIES")]
     pub entities: Vec<EntityForWhySearch>,
 

@@ -40,8 +40,5 @@ namespace Senzing.Typedef
         /// </summary>
         [JsonPropertyName("MAX_ENTITY_LIMIT_REACHED")]
         public string MaxEntityLimitReached { get; set; }
-
-        [JsonPropertyName("XXX_WHY_RESULTS")]
-        public IList<WhyResult> XxxWhyResults { get; set; }
     }
 }

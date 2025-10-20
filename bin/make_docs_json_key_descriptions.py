@@ -29,12 +29,20 @@ OUTPUT_FILENAME = os.path.abspath(f"{CURRENT_PATH}/../docs/json_key_descriptions
 
 def add_description(key, description):
     """Add description to JSON_KEYS dictionary."""
-    if not description:
+    if (not description) and (key not in JSON_KEYS):
         return
     if key not in JSON_KEYS:
         JSON_KEYS[key] = []
-    if description not in JSON_KEYS[key]:
-        JSON_KEYS[key].append(description)
+    normalized_description = as_string(description)
+    if normalized_description not in JSON_KEYS[key]:
+        JSON_KEYS[key].append(normalized_description)
+
+
+def as_string(candidate):
+    """Change None to string."""
+    if not candidate:
+        return ""
+    return candidate
 
 
 def recurse(json_key, json_object):

@@ -5,7 +5,6 @@
         }
     ],
     "DATA_SOURCE": "string",
-    "RECORD_ID": "string",
     "INTERESTING_ENTITIES": {
         "ENTITIES": [
             {
@@ -31,5 +30,6 @@
                 "DESCRIPTION": "string"
             }
         ]
-    }
+    },
+    "RECORD_ID": "string"
 }

@@ -26,9 +26,6 @@ public class SzEngineFindNetworkByEntityIdResponse {
     @JsonProperty("MAX_ENTITY_LIMIT_REACHED")
     private String maxEntityLimitReached;
 
-    @JsonProperty("XXX_WHY_RESULTS")
-    private List<WhyResult> xxxWhyResults;
-
     public SzEngineFindNetworkByEntityIdResponse() {
     }
 
@@ -110,19 +107,5 @@ public class SzEngineFindNetworkByEntityIdResponse {
      */
     public void setMaxEntityLimitReached(String maxEntityLimitReached) {
         this.maxEntityLimitReached = maxEntityLimitReached;
-    }
-
-    /**
-     * Getter for xxxWhyResults.<p>
-     */
-    public List<WhyResult> getXxxWhyResults() {
-        return xxxWhyResults;
-    }
-
-    /**
-     * Setter for xxxWhyResults.<p>
-     */
-    public void setXxxWhyResults(List<WhyResult> xxxWhyResults) {
-        this.xxxWhyResults = xxxWhyResults;
     }
 }

@@ -19,6 +19,7 @@ public class SzEngineWhyRecordInEntityResponse {
 
     /**
      * Getter for entities.<p>
+     * List of entity information.
      */
     public List<Entity> getEntities() {
         return entities;
@@ -26,6 +27,7 @@ public class SzEngineWhyRecordInEntityResponse {
 
     /**
      * Setter for entities.<p>
+     * List of entity information.
      */
     public void setEntities(List<Entity> entities) {
         this.entities = entities;

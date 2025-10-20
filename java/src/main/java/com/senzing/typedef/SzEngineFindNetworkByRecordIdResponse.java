@@ -26,14 +26,12 @@ public class SzEngineFindNetworkByRecordIdResponse {
     @JsonProperty("MAX_ENTITY_LIMIT_REACHED")
     private String maxEntityLimitReached;
 
-    @JsonProperty("WHY_RESULTS")
-    private List<WhyResult> whyResults;
-
     public SzEngineFindNetworkByRecordIdResponse() {
     }
 
     /**
      * Getter for entities.<p>
+     * List of entity information.
      */
     public List<Entity> getEntities() {
         return entities;
@@ -41,6 +39,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entities.<p>
+     * List of entity information.
      */
     public void setEntities(List<Entity> entities) {
         this.entities = entities;
@@ -48,6 +47,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entityNetworkLinks.<p>
+     * Relationship details for all pairs of entities in the network.
      */
     public List<EntityNetworkLink> getEntityNetworkLinks() {
         return entityNetworkLinks;
@@ -55,6 +55,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entityNetworkLinks.<p>
+     * Relationship details for all pairs of entities in the network.
      */
     public void setEntityNetworkLinks(List<EntityNetworkLink> entityNetworkLinks) {
         this.entityNetworkLinks = entityNetworkLinks;
@@ -62,6 +63,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entityPaths.<p>
+     * Best path between all pairs of requested entities.
      */
     public List<EntityPath> getEntityPaths() {
         return entityPaths;
@@ -69,6 +71,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entityPaths.<p>
+     * Best path between all pairs of requested entities.
      */
     public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
@@ -76,6 +79,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entityPathLinks.<p>
+     * Relationship details for all links from ENTITY_PATHS.
      */
     public List<EntityPathLink> getEntityPathLinks() {
         return entityPathLinks;
@@ -83,6 +87,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entityPathLinks.<p>
+     * Relationship details for all links from ENTITY_PATHS.
      */
     public void setEntityPathLinks(List<EntityPathLink> entityPathLinks) {
         this.entityPathLinks = entityPathLinks;
@@ -90,6 +95,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for maxEntityLimitReached.<p>
+     * Indicates that the build-out has been truncated.
      */
     public String getMaxEntityLimitReached() {
         return maxEntityLimitReached;
@@ -97,22 +103,9 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for maxEntityLimitReached.<p>
+     * Indicates that the build-out has been truncated.
      */
     public void setMaxEntityLimitReached(String maxEntityLimitReached) {
         this.maxEntityLimitReached = maxEntityLimitReached;
-    }
-
-    /**
-     * Getter for whyResults.<p>
-     */
-    public List<WhyResult> getWhyResults() {
-        return whyResults;
-    }
-
-    /**
-     * Setter for whyResults.<p>
-     */
-    public void setWhyResults(List<WhyResult> whyResults) {
-        this.whyResults = whyResults;
     }
 }
