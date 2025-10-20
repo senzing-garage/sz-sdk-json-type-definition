@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SampleRecord
     {
         /// <summary>
-        /// A label identifying the provenance of the record.
+        /// Short, stable identifier naming the source system.
         /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }

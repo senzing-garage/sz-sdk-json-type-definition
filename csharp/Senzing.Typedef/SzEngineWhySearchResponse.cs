@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class SzEngineWhySearchResponse
     {
+        /// <summary>
+        /// List of entity information.
+        /// </summary>
         [JsonPropertyName("ENTITIES")]
         public IList<EntityForWhySearch> Entities { get; set; }
 

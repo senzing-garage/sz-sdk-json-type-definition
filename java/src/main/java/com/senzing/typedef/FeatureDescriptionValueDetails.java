@@ -80,6 +80,7 @@ public class FeatureDescriptionValueDetails {
 
     /**
      * Getter for libFeatId.<p>
+     * Internal use.
      */
     public Integer getLibFeatId() {
         return libFeatId;
@@ -87,6 +88,7 @@ public class FeatureDescriptionValueDetails {
 
     /**
      * Setter for libFeatId.<p>
+     * Internal use.
      */
     public void setLibFeatId(Integer libFeatId) {
         this.libFeatId = libFeatId;

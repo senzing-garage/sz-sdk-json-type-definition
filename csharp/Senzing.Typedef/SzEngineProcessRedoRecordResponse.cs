@@ -8,11 +8,14 @@ namespace Senzing.Typedef
 {
     public class SzEngineProcessRedoRecordResponse
     {
+        /// <summary>
+        /// Entities that were affected as a result of the operation.
+        /// </summary>
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public IList<AffectedEntity> AffectedEntities { get; set; }
 
         /// <summary>
-        /// A label identifying the provenance of the record.
+        /// Short, stable identifier naming the source system.
         /// </summary>
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }

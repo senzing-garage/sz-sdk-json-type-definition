@@ -35,6 +35,7 @@ public class MemberRecord {
 
     /**
      * Getter for records.<p>
+     * A list of (data source code, record id) pairs.
      */
     public List<Record> getRecords() {
         return records;
@@ -42,6 +43,7 @@ public class MemberRecord {
 
     /**
      * Setter for records.<p>
+     * A list of (data source code, record id) pairs.
      */
     public void setRecords(List<Record> records) {
         this.records = records;

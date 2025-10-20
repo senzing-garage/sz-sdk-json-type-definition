@@ -16,6 +16,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FCLASS_ID")]
         public int FclassId { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 

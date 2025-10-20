@@ -25,6 +25,7 @@ public class SzEngineReevaluateRecordResponse {
 
     /**
      * Getter for affectedEntities.<p>
+     * Entities that were affected as a result of the operation.
      */
     public List<AffectedEntity> getAffectedEntities() {
         return affectedEntities;
@@ -32,6 +33,7 @@ public class SzEngineReevaluateRecordResponse {
 
     /**
      * Setter for affectedEntities.<p>
+     * Entities that were affected as a result of the operation.
      */
     public void setAffectedEntities(List<AffectedEntity> affectedEntities) {
         this.affectedEntities = affectedEntities;
@@ -39,7 +41,7 @@ public class SzEngineReevaluateRecordResponse {
 
     /**
      * Getter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public String getDataSource() {
         return dataSource;
@@ -47,7 +49,7 @@ public class SzEngineReevaluateRecordResponse {
 
     /**
      * Setter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;

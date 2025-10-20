@@ -15,6 +15,7 @@ public class SzEngineFetchNextResponse {
 
     /**
      * Getter for xxxFixme.<p>
+     * A small portion of the output initiated by an Export call.
      */
     public Fixme getXxxFixme() {
         return xxxFixme;
@@ -22,6 +23,7 @@ public class SzEngineFetchNextResponse {
 
     /**
      * Setter for xxxFixme.<p>
+     * A small portion of the output initiated by an Export call.
      */
     public void setXxxFixme(Fixme xxxFixme) {
         this.xxxFixme = xxxFixme;

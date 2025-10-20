@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * Internal use.
+ */
 @JsonSerialize
 public class SzEngineFindInterestingEntitiesByEntityIdResponse {
     @JsonProperty("INTERESTING_ENTITIES")
@@ -15,6 +18,7 @@ public class SzEngineFindInterestingEntitiesByEntityIdResponse {
 
     /**
      * Getter for interestingEntities.<p>
+     * Internal use.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -22,6 +26,7 @@ public class SzEngineFindInterestingEntitiesByEntityIdResponse {
 
     /**
      * Setter for interestingEntities.<p>
+     * Internal use.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;

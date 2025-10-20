@@ -105,6 +105,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for records.<p>
+     * A list of (data source code, record id) pairs.
      */
     public List<RecordForGetEntity> getRecords() {
         return records;
@@ -112,6 +113,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for records.<p>
+     * A list of (data source code, record id) pairs.
      */
     public void setRecords(List<RecordForGetEntity> records) {
         this.records = records;

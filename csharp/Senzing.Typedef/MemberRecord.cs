@@ -14,6 +14,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("INTERNAL_ID")]
         public int InternalId { get; set; }
 
+        /// <summary>
+        /// A list of (data source code, record id) pairs.
+        /// </summary>
         [JsonPropertyName("RECORDS")]
         public IList<Record> Records { get; set; }
     }

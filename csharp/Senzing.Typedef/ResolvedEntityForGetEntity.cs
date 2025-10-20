@@ -25,6 +25,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForGetEntity>> Features { get; set; }
 
+        /// <summary>
+        /// A list of (data source code, record id) pairs.
+        /// </summary>
         [JsonPropertyName("RECORDS")]
         public IList<RecordForGetEntity> Records { get; set; }
 

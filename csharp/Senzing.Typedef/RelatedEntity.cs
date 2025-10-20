@@ -58,6 +58,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_LEVEL_CODE")]
         public string MatchLevelCode { get; set; }
 
+        /// <summary>
+        /// A list of (data source code, record id) pairs.
+        /// </summary>
         [JsonPropertyName("RECORDS")]
         public IList<Record> Records { get; set; }
 

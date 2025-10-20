@@ -340,14 +340,25 @@
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {
+                                    "FULL_SCORE": "int32",
                                     "GENERATION_MATCH": "int32",
                                     "GNR_FN": "int32",
                                     "GNR_GN": "int32",
                                     "GNR_ON": "int32",
                                     "GNR_SN": "int32"
                                 },
+                                "CANDIDATE_FEAT_DESC": "string",
+                                "CANDIDATE_FEAT_ID": "int32",
                                 "CANDIDATE_FEAT_USAGE_TYPE": "string",
-                                "INBOUND_FEAT_USAGE_TYPE": "string"
+                                "FTYPE_CODE": "string",
+                                "INBOUND_FEAT_DESC": "string",
+                                "INBOUND_FEAT_ID": "int32",
+                                "INBOUND_FEAT_USAGE_TYPE": "string",
+                                "SCORE": "int32",
+                                "SCORE_BEHAVIOR": "string",
+                                "SCORE_BUCKET": "string",
+                                "SOURCE": "string",
+                                "TOKEN": "string"
                             }
                         ],
                         "DISCLOSED_RELATIONS": [

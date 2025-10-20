@@ -39,6 +39,7 @@ type CfgAttr struct {
 
 	FelemReq string `json:"FELEM_REQ"`
 
+	// Internal use.
 	FtypeCode string `json:"FTYPE_CODE"`
 
 	Internal string `json:"INTERNAL"`
@@ -336,6 +337,7 @@ type CfgFtype struct {
 
 	FclassID int64 `json:"FCLASS_ID"`
 
+	// Internal use.
 	FtypeCode string `json:"FTYPE_CODE"`
 
 	FtypeDesc string `json:"FTYPE_DESC"`
@@ -620,6 +622,7 @@ type EntityNetworkLink struct {
 type EntityPath struct {
 	EndEntityID int64 `json:"END_ENTITY_ID"`
 
+	// List of entity information.
 	Entities []int64 `json:"ENTITIES"`
 
 	StartEntityID int64 `json:"START_ENTITY_ID"`
@@ -649,6 +652,7 @@ type EntityPathLink struct {
 }
 
 type EntityRoles struct {
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	Role string `json:"ROLE"`
@@ -694,6 +698,7 @@ type FeatureDescriptionValueDetails struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
 	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
@@ -718,6 +723,7 @@ type FeatureForAttributes struct {
 	// Describes the attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
+	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
 	ScoringCapReached string `json:"SCORING_CAP_REACHED"`
@@ -738,6 +744,7 @@ type FeatureForGetEntity struct {
 	// Describes the attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
+	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
 	// Label to identify how some features are being used (can also change some
@@ -748,6 +755,7 @@ type FeatureForGetEntity struct {
 }
 
 type FeatureID struct {
+	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
 
 	// Label to identify how some features are being used (can also change some
@@ -782,6 +790,7 @@ type FeatureScores = map[string][]FeatureScoreForAttribute
 type FeatureType struct {
 	Found int64 `json:"FOUND"`
 
+	// Internal use.
 	FtypeCode string `json:"FTYPE_CODE"`
 
 	Generic int64 `json:"GENERIC"`
@@ -800,8 +809,7 @@ type Fixme struct {
 }
 
 type FocusRecord struct {
-	// A label identifying the provenance of the record. FIXME: An example of
-	// differences.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -889,6 +897,7 @@ type HowResults struct {
 }
 
 type InterestingEntities struct {
+	// List of entity information.
 	Entities []InterestingEntity `json:"ENTITIES"`
 
 	Notices []Notice `json:"NOTICES"`
@@ -972,6 +981,7 @@ type MemberRecord struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
+	// A list of (data source code, record id) pairs.
 	Records []Record `json:"RECORDS"`
 }
 
@@ -984,7 +994,7 @@ type Notice struct {
 type Object = any
 
 type Record struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// Identifier of the entity resolution rule that was triggered.
@@ -1040,7 +1050,7 @@ type Record struct {
 }
 
 type RecordForGetEntity struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// Identifier of the entity resolution rule that was triggered.
@@ -1096,7 +1106,7 @@ type RecordForGetEntity struct {
 }
 
 type RecordKey struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -1109,7 +1119,7 @@ type RecordKeys struct {
 }
 
 type RecordSummary struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The number of records for the entity with the same data source code.
@@ -1149,6 +1159,7 @@ type RelLink struct {
 
 	FeatUsageType string `json:"FEAT_USAGE_TYPE"`
 
+	// Internal use.
 	FtypeCode string `json:"FTYPE_CODE"`
 
 	LinkedFeatDesc string `json:"LINKED_FEAT_DESC"`
@@ -1206,6 +1217,7 @@ type RelatedEntity struct {
 	// The type of match that occurred for the record.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
+	// A list of (data source code, record id) pairs.
 	Records []Record `json:"RECORDS"`
 
 	// Overview of the source systems the records came from comprising this related
@@ -1218,6 +1230,7 @@ type RelatedEntity struct {
 }
 
 type RelatedRoles struct {
+	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
 	Role string `json:"ROLE"`
@@ -1258,6 +1271,7 @@ type ResolvedEntity struct {
 
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
+	// A list of (data source code, record id) pairs.
 	Records []Record `json:"RECORDS"`
 
 	// Overview of the source systems the records came from comprising this related
@@ -1306,6 +1320,7 @@ type ResolvedEntityForGetEntity struct {
 
 	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
 
+	// A list of (data source code, record id) pairs.
 	Records []RecordForGetEntity `json:"RECORDS"`
 
 	// Overview of the source systems the records came from comprising this related
@@ -1359,7 +1374,7 @@ type SysOom struct {
 }
 
 type SampleRecord struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	Flags []string `json:"FLAGS"`
@@ -1807,27 +1822,31 @@ type SzDiagnosticGetRepositoryInfoResponse struct {
 }
 
 type SzEngineAddRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
+	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
-	// The unique identifier within the set of records in the DATA_SOURCE.
+	// The unique identifier within the DATA_SOURCE of the newly added record.
 	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineDeleteRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
-	// The unique identifier within the set of records in the DATA_SOURCE.
-	RecordID string `json:"RECORD_ID"`
+	// Internal use.
+	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
-	XxxInterestingEntities InterestingEntities `json:"XXX_INTERESTING_ENTITIES"`
+	// The unique identifier within the DATA_SOURCE of the deleted record.
+	RecordID string `json:"RECORD_ID"`
 }
 
 type SzEngineExportCsvEntityReportCsvColumnList struct {
@@ -1835,14 +1854,19 @@ type SzEngineExportCsvEntityReportCsvColumnList struct {
 }
 
 type SzEngineFetchNextResponse struct {
+	// A small portion of the output initiated by an Export call.
 	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
+// Internal use.
 type SzEngineFindInterestingEntitiesByEntityIDResponse struct {
+	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 }
 
+// Internal use.
 type SzEngineFindInterestingEntitiesByRecordIDResponse struct {
+	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 }
 
@@ -1850,18 +1874,22 @@ type SzEngineFindNetworkByEntityIDEntityIds struct {
 	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
+// A network of relationships among entities.
 type SzEngineFindNetworkByEntityIDResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// Relationship details for all pairs of entities in the network.
 	EntityNetworkLinks []EntityNetworkLink `json:"ENTITY_NETWORK_LINKS"`
 
+	// Best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
+	// Relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
+	// Indicates that the build-out has been truncated.
 	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
-
-	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineFindNetworkByRecordIDRecordKeys struct {
@@ -1869,18 +1897,22 @@ type SzEngineFindNetworkByRecordIDRecordKeys struct {
 	Records []RecordKey `json:"RECORDS"`
 }
 
+// A network of relationships among entities.
 type SzEngineFindNetworkByRecordIDResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// Relationship details for all pairs of entities in the network.
 	EntityNetworkLinks []EntityNetworkLink `json:"ENTITY_NETWORK_LINKS"`
 
+	// Best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
+	// Relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
+	// Indicates that the build-out has been truncated.
 	MaxEntityLimitReached string `json:"MAX_ENTITY_LIMIT_REACHED"`
-
-	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineFindPathByEntityIDAvoidEntityIds struct {
@@ -1892,10 +1924,13 @@ type SzEngineFindPathByEntityIDRequiredDataSources struct {
 }
 
 type SzEngineFindPathByEntityIDResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// Best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
+	// Relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 }
 
@@ -1909,10 +1944,13 @@ type SzEngineFindPathByRecordIDRequiredDataSources struct {
 }
 
 type SzEngineFindPathByRecordIDResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// Best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
+	// Relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 }
 
@@ -1939,7 +1977,7 @@ type SzEngineGetRecordPreviewResponse struct {
 }
 
 type SzEngineGetRecordResponse struct {
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
@@ -2016,9 +2054,10 @@ type SzEngineHowEntityByEntityIDResponse struct {
 }
 
 type SzEngineProcessRedoRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -2030,8 +2069,10 @@ type SzEngineProcessRedoRecordResponse struct {
 }
 
 type SzEngineReevaluateEntityResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
+	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 
 	// A label identifying the provenance of the record.
@@ -2042,9 +2083,10 @@ type SzEngineReevaluateEntityResponse struct {
 }
 
 type SzEngineReevaluateRecordResponse struct {
+	// Entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
-	// A label identifying the provenance of the record.
+	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -2078,18 +2120,21 @@ type SzEngineStreamExportJSONEntityReportResponse struct {
 }
 
 type SzEngineWhyEntitiesResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineWhyRecordInEntityResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineWhyRecordsResponse struct {
+	// List of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
@@ -2100,6 +2145,7 @@ type SzEngineWhySearchAttributes struct {
 }
 
 type SzEngineWhySearchResponse struct {
+	// List of entity information.
 	Entities []EntityForWhySearch `json:"ENTITIES"`
 
 	SearchEntity SearchEntity `json:"SEARCH_ENTITY"`

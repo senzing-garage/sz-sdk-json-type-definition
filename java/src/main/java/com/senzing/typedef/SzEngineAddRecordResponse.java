@@ -25,6 +25,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Getter for affectedEntities.<p>
+     * Entities that were affected as a result of the operation.
      */
     public List<AffectedEntity> getAffectedEntities() {
         return affectedEntities;
@@ -32,6 +33,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Setter for affectedEntities.<p>
+     * Entities that were affected as a result of the operation.
      */
     public void setAffectedEntities(List<AffectedEntity> affectedEntities) {
         this.affectedEntities = affectedEntities;
@@ -39,7 +41,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Getter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public String getDataSource() {
         return dataSource;
@@ -47,7 +49,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Setter for dataSource.<p>
-     * A label identifying the provenance of the record.
+     * Short, stable identifier naming the source system.
      */
     public void setDataSource(String dataSource) {
         this.dataSource = dataSource;
@@ -55,6 +57,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Getter for interestingEntities.<p>
+     * Internal use.
      */
     public InterestingEntities getInterestingEntities() {
         return interestingEntities;
@@ -62,6 +65,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Setter for interestingEntities.<p>
+     * Internal use.
      */
     public void setInterestingEntities(InterestingEntities interestingEntities) {
         this.interestingEntities = interestingEntities;
@@ -69,7 +73,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Getter for recordId.<p>
-     * The unique identifier within the set of records in the DATA_SOURCE.
+     * The unique identifier within the DATA_SOURCE of the newly added record.
      */
     public String getRecordId() {
         return recordId;
@@ -77,7 +81,7 @@ public class SzEngineAddRecordResponse {
 
     /**
      * Setter for recordId.<p>
-     * The unique identifier within the set of records in the DATA_SOURCE.
+     * The unique identifier within the DATA_SOURCE of the newly added record.
      */
     public void setRecordId(String recordId) {
         this.recordId = recordId;

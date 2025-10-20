@@ -10,6 +10,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FOUND")]
         public int Found { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 

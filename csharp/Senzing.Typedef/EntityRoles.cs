@@ -7,6 +7,9 @@ namespace Senzing.Typedef
 {
     public class EntityRoles
     {
+        /// <summary>
+        /// Describes the attributes that make up the feature.
+        /// </summary>
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 

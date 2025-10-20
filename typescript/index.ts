@@ -26,6 +26,10 @@ export interface CfgAttr {
   DEFAULT_VALUE: string;
   FELEM_CODE: string;
   FELEM_REQ: string;
+
+  /**
+   * Internal use.
+   */
   FTYPE_CODE: string;
   INTERNAL: string;
   XXX_ADVANCED: string;
@@ -222,6 +226,10 @@ export interface CfgFtype {
   ANONYMIZE: string;
   DERIVED: string;
   FCLASS_ID: number;
+
+  /**
+   * Internal use.
+   */
   FTYPE_CODE: string;
   FTYPE_DESC: string;
   FTYPE_EXCL: string;
@@ -452,6 +460,10 @@ export interface EntityNetworkLink {
 
 export interface EntityPath {
   END_ENTITY_ID: number;
+
+  /**
+   * List of entity information.
+   */
   ENTITIES: number[];
   START_ENTITY_ID: number;
 }
@@ -487,6 +499,9 @@ export interface EntityPathLink {
 }
 
 export interface EntityRoles {
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   ROLE: string;
 }
@@ -532,6 +547,10 @@ export interface FeatureDescriptionValueDetails {
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * Internal use.
+   */
   LIB_FEAT_ID: number;
   SCORING_CAP_REACHED: string;
   SUPPRESSED: string;
@@ -553,6 +572,10 @@ export interface FeatureForAttributes {
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
+
+  /**
+   * Internal use.
+   */
   LIB_FEAT_ID: number;
   SCORING_CAP_REACHED: string;
 
@@ -575,6 +598,10 @@ export interface FeatureForGetEntity {
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
+
+  /**
+   * Internal use.
+   */
   LIB_FEAT_ID: number;
 
   /**
@@ -586,6 +613,9 @@ export interface FeatureForGetEntity {
 }
 
 export interface FeatureId {
+  /**
+   * Internal use.
+   */
   LIB_FEAT_ID: number;
 
   /**
@@ -612,6 +642,10 @@ export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
 export interface FeatureType {
   FOUND: number;
+
+  /**
+   * Internal use.
+   */
   FTYPE_CODE: string;
   GENERIC: number;
   NOT_FOUND: number;
@@ -628,8 +662,7 @@ export interface Fixme {
 
 export interface FocusRecord {
   /**
-   * A label identifying the provenance of the record. FIXME: An example of
-   * differences.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -686,6 +719,9 @@ export interface HowResults {
 }
 
 export interface InterestingEntities {
+  /**
+   * List of entity information.
+   */
   ENTITIES: InterestingEntity[];
   NOTICES: Notice[];
 }
@@ -766,6 +802,10 @@ export interface MemberRecord {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
+
+  /**
+   * A list of (data source code, record id) pairs.
+   */
   RECORDS: Record[];
 }
 
@@ -778,7 +818,7 @@ export type Object = string;
 
 export interface Record {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -828,7 +868,7 @@ export interface Record {
 
 export interface RecordForGetEntity {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -878,7 +918,7 @@ export interface RecordForGetEntity {
 
 export interface RecordKey {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -897,7 +937,7 @@ export interface RecordKeys {
 
 export interface RecordSummary {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -933,6 +973,10 @@ export interface RelLink {
   FEAT_DESC: string;
   FEAT_ID: number;
   FEAT_USAGE_TYPE: string;
+
+  /**
+   * Internal use.
+   */
   FTYPE_CODE: string;
   LINKED_FEAT_DESC: string;
   LINKED_FEAT_ID: number;
@@ -993,6 +1037,10 @@ export interface RelatedEntity {
    * The type of match that occurred for the record.
    */
   MATCH_LEVEL_CODE: string;
+
+  /**
+   * A list of (data source code, record id) pairs.
+   */
   RECORDS: Record[];
 
   /**
@@ -1005,6 +1053,9 @@ export interface RelatedEntity {
 }
 
 export interface RelatedRoles {
+  /**
+   * Describes the attributes that make up the feature.
+   */
   FEAT_DESC: string;
   ROLE: string;
 }
@@ -1047,6 +1098,10 @@ export interface ResolvedEntity {
    */
   ENTITY_NAME: string;
   FEATURES: { [key: string]: FeatureForAttributes[] };
+
+  /**
+   * A list of (data source code, record id) pairs.
+   */
   RECORDS: Record[];
 
   /**
@@ -1103,6 +1158,10 @@ export interface ResolvedEntityForGetEntity {
    */
   ENTITY_NAME: string;
   FEATURES: { [key: string]: FeatureForGetEntity[] };
+
+  /**
+   * A list of (data source code, record id) pairs.
+   */
   RECORDS: RecordForGetEntity[];
 
   /**
@@ -1156,7 +1215,7 @@ export interface SysOom {
 
 export interface SampleRecord {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
   FLAGS: string[];
@@ -1752,33 +1811,47 @@ export interface SzDiagnosticGetRepositoryInfoResponse {
 }
 
 export interface SzEngineAddRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
+
+  /**
+   * Internal use.
+   */
   INTERESTING_ENTITIES: InterestingEntities;
 
   /**
-   * The unique identifier within the set of records in the DATA_SOURCE.
+   * The unique identifier within the DATA_SOURCE of the newly added record.
    */
   RECORD_ID: string;
 }
 
 export interface SzEngineDeleteRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
   /**
-   * The unique identifier within the set of records in the DATA_SOURCE.
+   * Internal use.
+   */
+  INTERESTING_ENTITIES: InterestingEntities;
+
+  /**
+   * The unique identifier within the DATA_SOURCE of the deleted record.
    */
   RECORD_ID: string;
-  XXX_INTERESTING_ENTITIES: InterestingEntities;
 }
 
 export interface SzEngineExportCsvEntityReportCsvColumnList {
@@ -1786,14 +1859,29 @@ export interface SzEngineExportCsvEntityReportCsvColumnList {
 }
 
 export interface SzEngineFetchNextResponse {
+  /**
+   * A small portion of the output initiated by an Export call.
+   */
   XXX_FIXME: Fixme;
 }
 
+/**
+ * Internal use.
+ */
 export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
+  /**
+   * Internal use.
+   */
   INTERESTING_ENTITIES: InterestingEntities;
 }
 
+/**
+ * Internal use.
+ */
 export interface SzEngineFindInterestingEntitiesByRecordIdResponse {
+  /**
+   * Internal use.
+   */
   INTERESTING_ENTITIES: InterestingEntities;
 }
 
@@ -1801,13 +1889,34 @@ export interface SzEngineFindNetworkByEntityIdEntityIds {
   XXX_FIXME: Fixme;
 }
 
+/**
+ * A network of relationships among entities.
+ */
 export interface SzEngineFindNetworkByEntityIdResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
+
+  /**
+   * Relationship details for all pairs of entities in the network.
+   */
   ENTITY_NETWORK_LINKS: EntityNetworkLink[];
+
+  /**
+   * Best path between all pairs of requested entities.
+   */
   ENTITY_PATHS: EntityPath[];
+
+  /**
+   * Relationship details for all links from ENTITY_PATHS.
+   */
   ENTITY_PATH_LINKS: EntityPathLink[];
+
+  /**
+   * Indicates that the build-out has been truncated.
+   */
   MAX_ENTITY_LIMIT_REACHED: string;
-  WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineFindNetworkByRecordIdRecordKeys {
@@ -1817,13 +1926,34 @@ export interface SzEngineFindNetworkByRecordIdRecordKeys {
   RECORDS: RecordKey[];
 }
 
+/**
+ * A network of relationships among entities.
+ */
 export interface SzEngineFindNetworkByRecordIdResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
+
+  /**
+   * Relationship details for all pairs of entities in the network.
+   */
   ENTITY_NETWORK_LINKS: EntityNetworkLink[];
+
+  /**
+   * Best path between all pairs of requested entities.
+   */
   ENTITY_PATHS: EntityPath[];
+
+  /**
+   * Relationship details for all links from ENTITY_PATHS.
+   */
   ENTITY_PATH_LINKS: EntityPathLink[];
+
+  /**
+   * Indicates that the build-out has been truncated.
+   */
   MAX_ENTITY_LIMIT_REACHED: string;
-  WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineFindPathByEntityIdAvoidEntityIds {
@@ -1835,8 +1965,19 @@ export interface SzEngineFindPathByEntityIdRequiredDataSources {
 }
 
 export interface SzEngineFindPathByEntityIdResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
+
+  /**
+   * Best path between all pairs of requested entities.
+   */
   ENTITY_PATHS: EntityPath[];
+
+  /**
+   * Relationship details for all links from ENTITY_PATHS.
+   */
   ENTITY_PATH_LINKS: EntityPathLink[];
 }
 
@@ -1852,8 +1993,19 @@ export interface SzEngineFindPathByRecordIdRequiredDataSources {
 }
 
 export interface SzEngineFindPathByRecordIdResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
+
+  /**
+   * Best path between all pairs of requested entities.
+   */
   ENTITY_PATHS: EntityPath[];
+
+  /**
+   * Relationship details for all links from ENTITY_PATHS.
+   */
   ENTITY_PATH_LINKS: EntityPathLink[];
 }
 
@@ -1876,7 +2028,7 @@ export interface SzEngineGetRecordPreviewResponse {
 
 export interface SzEngineGetRecordResponse {
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
   FEATURES: { [key: string]: FeatureForAttributes[] };
@@ -1948,10 +2100,13 @@ export interface SzEngineHowEntityByEntityIdResponse {
 }
 
 export interface SzEngineProcessRedoRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -1964,7 +2119,14 @@ export interface SzEngineProcessRedoRecordResponse {
 }
 
 export interface SzEngineReevaluateEntityResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
+
+  /**
+   * Internal use.
+   */
   INTERESTING_ENTITIES: InterestingEntities;
 
   /**
@@ -1979,10 +2141,13 @@ export interface SzEngineReevaluateEntityResponse {
 }
 
 export interface SzEngineReevaluateRecordResponse {
+  /**
+   * Entities that were affected as a result of the operation.
+   */
   AFFECTED_ENTITIES: AffectedEntity[];
 
   /**
-   * A label identifying the provenance of the record.
+   * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
 
@@ -2014,16 +2179,25 @@ export interface SzEngineStreamExportJsonEntityReportResponse {
 }
 
 export interface SzEngineWhyEntitiesResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineWhyRecordInEntityResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineWhyRecordsResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: Entity[];
   WHY_RESULTS: WhyResult[];
 }
@@ -2033,6 +2207,9 @@ export interface SzEngineWhySearchAttributes {
 }
 
 export interface SzEngineWhySearchResponse {
+  /**
+   * List of entity information.
+   */
   ENTITIES: EntityForWhySearch[];
   SEARCH_ENTITY: SearchEntity;
   SEARCH_REQUEST: SearchRequest;

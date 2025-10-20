@@ -7,6 +7,9 @@ namespace Senzing.Typedef
 {
     public class FeatureId
     {
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("LIB_FEAT_ID")]
         public int LibFeatId { get; set; }
 

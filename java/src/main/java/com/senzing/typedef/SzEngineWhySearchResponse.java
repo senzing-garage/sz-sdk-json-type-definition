@@ -28,6 +28,7 @@ public class SzEngineWhySearchResponse {
 
     /**
      * Getter for entities.<p>
+     * List of entity information.
      */
     public List<EntityForWhySearch> getEntities() {
         return entities;
@@ -35,6 +36,7 @@ public class SzEngineWhySearchResponse {
 
     /**
      * Setter for entities.<p>
+     * List of entity information.
      */
     public void setEntities(List<EntityForWhySearch> entities) {
         this.entities = entities;

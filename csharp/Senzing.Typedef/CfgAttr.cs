@@ -25,6 +25,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FELEM_REQ")]
         public string FelemReq { get; set; }
 
+        /// <summary>
+        /// Internal use.
+        /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
