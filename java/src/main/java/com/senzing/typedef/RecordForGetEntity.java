@@ -103,7 +103,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -111,7 +111,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -119,6 +119,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for features.<p>
+     * A dictionary of ...
      */
     public Map<String, List<FeatureForAttributes>> getFeatures() {
         return features;
@@ -126,6 +127,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for features.<p>
+     * A dictionary of ...
      */
     public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
         this.features = features;
@@ -133,6 +135,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for featureIds.<p>
+     * A list of ...
      */
     public List<FeatureId> getFeatureIds() {
         return featureIds;
@@ -140,6 +143,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for featureIds.<p>
+     * A list of ...
      */
     public void setFeatureIds(List<FeatureId> featureIds) {
         this.featureIds = featureIds;
@@ -177,6 +181,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for jsonData.<p>
+     * A dictionary of ...
      */
     public Map<String, Object> getJsonData() {
         return jsonData;
@@ -184,6 +189,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for jsonData.<p>
+     * A dictionary of ...
      */
     public void setJsonData(Map<String, Object> jsonData) {
         this.jsonData = jsonData;
@@ -253,6 +259,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for unmappedData.<p>
+     * A dictionary of ...
      */
     public Map<String, Object> getUnmappedData() {
         return unmappedData;
@@ -260,6 +267,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for unmappedData.<p>
+     * A dictionary of ...
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;
@@ -267,6 +275,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxAddressData.<p>
+     * A list of ...
      */
     public List<String> getXxxAddressData() {
         return xxxAddressData;
@@ -274,6 +283,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxAddressData.<p>
+     * A list of ...
      */
     public void setXxxAddressData(List<String> xxxAddressData) {
         this.xxxAddressData = xxxAddressData;
@@ -281,6 +291,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxAttributeData.<p>
+     * A list of ...
      */
     public List<String> getXxxAttributeData() {
         return xxxAttributeData;
@@ -288,6 +299,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxAttributeData.<p>
+     * A list of ...
      */
     public void setXxxAttributeData(List<String> xxxAttributeData) {
         this.xxxAttributeData = xxxAttributeData;
@@ -295,6 +307,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxEntityData.<p>
+     * A list of ...
      */
     public List<String> getXxxEntityData() {
         return xxxEntityData;
@@ -302,6 +315,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxEntityData.<p>
+     * A list of ...
      */
     public void setXxxEntityData(List<String> xxxEntityData) {
         this.xxxEntityData = xxxEntityData;
@@ -351,6 +365,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxIdentifierData.<p>
+     * A list of ...
      */
     public List<String> getXxxIdentifierData() {
         return xxxIdentifierData;
@@ -358,6 +373,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxIdentifierData.<p>
+     * A list of ...
      */
     public void setXxxIdentifierData(List<String> xxxIdentifierData) {
         this.xxxIdentifierData = xxxIdentifierData;
@@ -379,6 +395,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxNameData.<p>
+     * A list of ...
      */
     public List<String> getXxxNameData() {
         return xxxNameData;
@@ -386,6 +403,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxNameData.<p>
+     * A list of ...
      */
     public void setXxxNameData(List<String> xxxNameData) {
         this.xxxNameData = xxxNameData;
@@ -393,6 +411,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxOtherData.<p>
+     * A list of ...
      */
     public List<String> getXxxOtherData() {
         return xxxOtherData;
@@ -400,6 +419,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxOtherData.<p>
+     * A list of ...
      */
     public void setXxxOtherData(List<String> xxxOtherData) {
         this.xxxOtherData = xxxOtherData;
@@ -407,6 +427,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxPhoneData.<p>
+     * A list of ...
      */
     public List<String> getXxxPhoneData() {
         return xxxPhoneData;
@@ -414,6 +435,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxPhoneData.<p>
+     * A list of ...
      */
     public void setXxxPhoneData(List<String> xxxPhoneData) {
         this.xxxPhoneData = xxxPhoneData;
@@ -421,6 +443,7 @@ public class RecordForGetEntity {
 
     /**
      * Getter for xxxRelationshipData.<p>
+     * A list of ...
      */
     public List<String> getXxxRelationshipData() {
         return xxxRelationshipData;
@@ -428,6 +451,7 @@ public class RecordForGetEntity {
 
     /**
      * Setter for xxxRelationshipData.<p>
+     * A list of ...
      */
     public void setXxxRelationshipData(List<String> xxxRelationshipData) {
         this.xxxRelationshipData = xxxRelationshipData;

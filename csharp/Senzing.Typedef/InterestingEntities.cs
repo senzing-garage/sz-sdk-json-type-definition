@@ -9,11 +9,14 @@ namespace Senzing.Typedef
     public class InterestingEntities
     {
         /// <summary>
-        /// List of entity information.
+        /// A list of entity information.
         /// </summary>
         [JsonPropertyName("ENTITIES")]
         public IList<InterestingEntity> Entities { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("NOTICES")]
         public IList<Notice> Notices { get; set; }
     }

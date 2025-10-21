@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SzConfigManagerGetConfigRegistryResponse
     {
         /// <summary>
-        /// The list of registered configurations.
+        /// A list of registered configurations.
         /// </summary>
         [JsonPropertyName("CONFIGS")]
         public IList<Config> Configs { get; set; }

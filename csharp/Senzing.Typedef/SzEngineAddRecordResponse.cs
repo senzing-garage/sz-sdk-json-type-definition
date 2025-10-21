@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SzEngineAddRecordResponse
     {
         /// <summary>
-        /// Entities that were affected as a result of the operation.
+        /// A list of entities that were affected as a result of the operation.
         /// </summary>
         [JsonPropertyName("AFFECTED_ENTITIES")]
         public IList<AffectedEntity> AffectedEntities { get; set; }

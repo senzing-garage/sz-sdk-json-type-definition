@@ -25,6 +25,7 @@ public class WorkloadReresolve {
 
     /**
      * Getter for newFeatureFtypes.<p>
+     * A dictionary of ...
      */
     public Map<String, Integer> getNewFeatureFtypes() {
         return newFeatureFtypes;
@@ -32,6 +33,7 @@ public class WorkloadReresolve {
 
     /**
      * Setter for newFeatureFtypes.<p>
+     * A dictionary of ...
      */
     public void setNewFeatureFtypes(Map<String, Integer> newFeatureFtypes) {
         this.newFeatureFtypes = newFeatureFtypes;

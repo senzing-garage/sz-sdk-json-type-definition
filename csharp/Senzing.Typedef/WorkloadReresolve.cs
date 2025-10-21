@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class WorkloadReresolve
     {
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("newFeatureFTypes")]
         public IDictionary<string, int> NewFeatureFtypes { get; set; }
 

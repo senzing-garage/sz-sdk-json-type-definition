@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class FeatureDescriptionValue
     {
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("ATTRIBUTES")]
         public IDictionary<string, string> Attributes { get; set; }
 
@@ -23,6 +26,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FEAT_DESC_VALUES")]
         public IList<FeatureDescriptionValueDetails> FeatDescValues { get; set; }
 

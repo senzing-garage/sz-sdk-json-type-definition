@@ -19,6 +19,7 @@ public class WorkloadCandidates {
 
     /**
      * Getter for candidateBuilders.<p>
+     * A dictionary of ...
      */
     public Map<String, Integer> getCandidateBuilders() {
         return candidateBuilders;
@@ -26,6 +27,7 @@ public class WorkloadCandidates {
 
     /**
      * Setter for candidateBuilders.<p>
+     * A dictionary of ...
      */
     public void setCandidateBuilders(Map<String, Integer> candidateBuilders) {
         this.candidateBuilders = candidateBuilders;
@@ -33,6 +35,7 @@ public class WorkloadCandidates {
 
     /**
      * Getter for suppressedCandidateBuilders.<p>
+     * A dictionary of ...
      */
     public Map<String, Integer> getSuppressedCandidateBuilders() {
         return suppressedCandidateBuilders;
@@ -40,6 +43,7 @@ public class WorkloadCandidates {
 
     /**
      * Setter for suppressedCandidateBuilders.<p>
+     * A dictionary of ...
      */
     public void setSuppressedCandidateBuilders(Map<String, Integer> suppressedCandidateBuilders) {
         this.suppressedCandidateBuilders = suppressedCandidateBuilders;

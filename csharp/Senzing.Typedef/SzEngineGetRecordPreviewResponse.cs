@@ -8,15 +8,27 @@ namespace Senzing.Typedef
 {
     public class SzEngineGetRecordPreviewResponse
     {
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("JSON_DATA")]
         public IDictionary<string, Object_> JsonData { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }
     }

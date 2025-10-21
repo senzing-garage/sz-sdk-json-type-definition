@@ -6,8 +6,8 @@
         "SenzingEntitySpecification.ACCOUNT_NUMBER"
     ],
     "ADDITIONAL_SCORES": [
-        "Confirmation.ADDITIONAL_SCORES",
-        "FeatureScoreForAttribute.ADDITIONAL_SCORES"
+        "FeatureScoreForAttribute.ADDITIONAL_SCORES",
+        "FeatureScoreInfo.ADDITIONAL_SCORES"
     ],
     "ADDR_CITY": [
         "SenzingEntitySpecification.ADDR_CITY"
@@ -99,16 +99,16 @@
         "FeatureForAttributes.CANDIDATE_CAP_REACHED"
     ],
     "CANDIDATE_FEAT_DESC": [
-        "Confirmation.CANDIDATE_FEAT_DESC",
-        "FeatureScoreForAttribute.CANDIDATE_FEAT_DESC"
+        "FeatureScoreForAttribute.CANDIDATE_FEAT_DESC",
+        "FeatureScoreInfo.CANDIDATE_FEAT_DESC"
     ],
     "CANDIDATE_FEAT_ID": [
-        "Confirmation.CANDIDATE_FEAT_ID",
-        "FeatureScoreForAttribute.CANDIDATE_FEAT_ID"
+        "FeatureScoreForAttribute.CANDIDATE_FEAT_ID",
+        "FeatureScoreInfo.CANDIDATE_FEAT_ID"
     ],
     "CANDIDATE_FEAT_USAGE_TYPE": [
-        "Confirmation.CANDIDATE_FEAT_USAGE_TYPE",
-        "FeatureScoreForAttribute.CANDIDATE_FEAT_USAGE_TYPE"
+        "FeatureScoreForAttribute.CANDIDATE_FEAT_USAGE_TYPE",
+        "FeatureScoreInfo.CANDIDATE_FEAT_USAGE_TYPE"
     ],
     "CANDIDATE_KEYS": [
         "MatchInfo.CANDIDATE_KEYS",
@@ -615,7 +615,7 @@
     "FTYPE_CODE": [
         "CFG_ATTR.FTYPE_CODE",
         "CFG_FTYPE.FTYPE_CODE",
-        "Confirmation.FTYPE_CODE",
+        "FeatureScoreInfo.FTYPE_CODE",
         "FeatureType.FTYPE_CODE",
         "RelLink.FTYPE_CODE",
         "SzDiagnosticGetFeatureResponse.FTYPE_CODE"
@@ -704,16 +704,16 @@
         "SzEngineHowEntityByEntityIdResponse.HOW_RESULTS"
     ],
     "INBOUND_FEAT_DESC": [
-        "Confirmation.INBOUND_FEAT_DESC",
-        "FeatureScoreForAttribute.INBOUND_FEAT_DESC"
+        "FeatureScoreForAttribute.INBOUND_FEAT_DESC",
+        "FeatureScoreInfo.INBOUND_FEAT_DESC"
     ],
     "INBOUND_FEAT_ID": [
-        "Confirmation.INBOUND_FEAT_ID",
-        "FeatureScoreForAttribute.INBOUND_FEAT_ID"
+        "FeatureScoreForAttribute.INBOUND_FEAT_ID",
+        "FeatureScoreInfo.INBOUND_FEAT_ID"
     ],
     "INBOUND_FEAT_USAGE_TYPE": [
-        "Confirmation.INBOUND_FEAT_USAGE_TYPE",
-        "FeatureScoreForAttribute.INBOUND_FEAT_USAGE_TYPE"
+        "FeatureScoreForAttribute.INBOUND_FEAT_USAGE_TYPE",
+        "FeatureScoreInfo.INBOUND_FEAT_USAGE_TYPE"
     ],
     "INBOUND_VIRTUAL_ENTITY_ID": [
         "ResolutionStep.INBOUND_VIRTUAL_ENTITY_ID"
@@ -822,9 +822,6 @@
         "EntityPathLink.MATCH_KEY_DETAILS",
         "MatchInfo.MATCH_KEY_DETAILS",
         "RelatedEntity.MATCH_KEY_DETAILS"
-    ],
-    "MATCH_LEVEL": [
-        "RelatedEntity.MATCH_LEVEL"
     ],
     "MATCH_LEVEL_CODE": [
         "EntityNetworkLink.MATCH_LEVEL_CODE",
@@ -1059,7 +1056,8 @@
         "SenzingEntitySpecification.RELATIONSHIP_TYPE"
     ],
     "REL_ANCHOR": [
-        "DisclosedRelationsForMatchInfoForWhy.REL_ANCHOR"
+        "DisclosedRelationsForMatchInfoForWhy.REL_ANCHOR",
+        "MatchKeyDetails.REL_ANCHOR"
     ],
     "REL_ANCHOR_DOMAIN": [
         "SenzingEntitySpecification.REL_ANCHOR_DOMAIN"
@@ -1075,7 +1073,8 @@
         "MatchKeyDetails.REL_LINKS"
     ],
     "REL_POINTER": [
-        "DisclosedRelationsForMatchInfoForWhy.REL_POINTER"
+        "DisclosedRelationsForMatchInfoForWhy.REL_POINTER",
+        "MatchKeyDetails.REL_POINTER"
     ],
     "REL_POINTER_DOMAIN": [
         "SenzingEntitySpecification.REL_POINTER_DOMAIN"
@@ -1137,16 +1136,16 @@
         "SzProductGetVersionResponse.SCHEMA_VERSION"
     ],
     "SCORE": [
-        "Confirmation.SCORE",
-        "FeatureScoreForAttribute.SCORE"
+        "FeatureScoreForAttribute.SCORE",
+        "FeatureScoreInfo.SCORE"
     ],
     "SCORE_BEHAVIOR": [
-        "Confirmation.SCORE_BEHAVIOR",
-        "FeatureScoreForAttribute.SCORE_BEHAVIOR"
+        "FeatureScoreForAttribute.SCORE_BEHAVIOR",
+        "FeatureScoreInfo.SCORE_BEHAVIOR"
     ],
     "SCORE_BUCKET": [
-        "Confirmation.SCORE_BUCKET",
-        "FeatureScoreForAttribute.SCORE_BUCKET"
+        "FeatureScoreForAttribute.SCORE_BUCKET",
+        "FeatureScoreInfo.SCORE_BUCKET"
     ],
     "SCORING_CAP": [
         "CFG_GENERIC_THRESHOLD.SCORING_CAP"
@@ -1203,7 +1202,7 @@
         "SenzingEntitySpecification.SKYPE"
     ],
     "SOURCE": [
-        "Confirmation.SOURCE"
+        "FeatureScoreInfo.SOURCE"
     ],
     "SSN_NUMBER": [
         "SenzingEntitySpecification.SSN_NUMBER"
@@ -1250,7 +1249,7 @@
         "SYS_OOM.THRESH1_OOM"
     ],
     "TOKEN": [
-        "Confirmation.TOKEN"
+        "FeatureScoreInfo.TOKEN"
     ],
     "TRUSTED_ID_NUMBER": [
         "SenzingEntitySpecification.TRUSTED_ID_NUMBER"
@@ -1427,7 +1426,6 @@
         "SzEngineGetRecordResponse.XXX_ENTITY_TYPE"
     ],
     "XXX_ERRULE_CODE": [
-        "MatchKeyDetails.XXX_ERRULE_CODE",
         "ResolvedEntity.XXX_ERRULE_CODE",
         "ResolvedEntityForGetEntity.XXX_ERRULE_CODE",
         "SzEngineGetRecordResponse.XXX_ERRULE_CODE"
@@ -1528,7 +1526,6 @@
     ],
     "XXX_LAST_SEEN_DT": [
         "RecordSummary.XXX_LAST_SEEN_DT",
-        "RelatedEntity.XXX_LAST_SEEN_DT",
         "ResolvedEntity.XXX_LAST_SEEN_DT",
         "ResolvedEntityForGetEntity.XXX_LAST_SEEN_DT"
     ],

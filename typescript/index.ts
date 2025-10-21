@@ -170,7 +170,7 @@ export interface CfgErrule {
   DISQ_ERFRAG_CODE: string;
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
   ERRULE_ID: number;
@@ -265,6 +265,9 @@ export interface CfgLens {
   XXX_LENS_ID: number;
 }
 
+/**
+ * A list of ...
+ */
 export type CfgLensrl = Fixme[];
 
 export interface CfgRclass {
@@ -314,9 +317,15 @@ export interface ConfigBaseVersion {
   XXX_PRODUCT_NAME: string;
 }
 
+/**
+ * A dictionary of ...
+ */
 export type CandidateKeysForMatchInfo = { [key: string]: MatchInfoForAttribute[] };
 
 export interface CandidateKeysForSearchStatistic {
+  /**
+   * A list of ...
+   */
   FEATURE_TYPES: FeatureType[];
   SUMMARY: CandidateKeysSummary;
 }
@@ -348,26 +357,6 @@ export interface Config {
   SYS_CREATE_DT: string;
 }
 
-export interface Confirmation {
-  ADDITIONAL_SCORES: AdditionalScores;
-  CANDIDATE_FEAT_DESC: string;
-  CANDIDATE_FEAT_ID: number;
-  CANDIDATE_FEAT_USAGE_TYPE: string;
-
-  /**
-   * Internal use.
-   */
-  FTYPE_CODE: string;
-  INBOUND_FEAT_DESC: string;
-  INBOUND_FEAT_ID: number;
-  INBOUND_FEAT_USAGE_TYPE: string;
-  SCORE: number;
-  SCORE_BEHAVIOR: string;
-  SCORE_BUCKET: string;
-  SOURCE: string;
-  TOKEN: string;
-}
-
 export interface DataSource {
   /**
    * The unique text identifier of the datasource. It should be UPPER_CASE ASCII
@@ -383,10 +372,30 @@ export interface DataSource {
 
 export interface DisclosedRelationsForMatchInfo {
   DOMAIN: string;
+
+  /**
+   * A list of ...
+   */
   ENTITY_ROLES: EntityRoles[];
+
+  /**
+   * A list of ...
+   */
   RELATED_ROLES: RelatedRoles[];
+
+  /**
+   * A list of ...
+   */
   REL_LINK: RelLink[];
+
+  /**
+   * A list of ...
+   */
   XXX_REL_ANCHOR: RelAnchor[];
+
+  /**
+   * A list of ...
+   */
   XXX_REL_POINTER: RelPointer[];
 }
 
@@ -396,8 +405,20 @@ export interface DisclosedRelationsForMatchInfoForWhy {
   FEAT_USAGE_TYPE: string;
   LINKED_FEAT_ID: number;
   LINKED_FEAT_TYPE: string;
+
+  /**
+   * A list of ...
+   */
   REL_ANCHOR: RelAnchor[];
+
+  /**
+   * A list of ...
+   */
   REL_LINK: RelLink[];
+
+  /**
+   * A list of ...
+   */
   REL_POINTER: RelPointer[];
 
   /**
@@ -409,28 +430,45 @@ export interface DisclosedRelationsForMatchInfoForWhy {
 
 export interface DisclosedRelationsForWhyKeyDetails {
   DOMAIN: string;
+
+  /**
+   * A list of ...
+   */
   ENTITY_ROLES: EntityRoles[];
+
+  /**
+   * A list of ...
+   */
   RELATED_ROLES: RelatedRoles[];
 }
 
 export interface Entity {
+  /**
+   * A list of ...
+   */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
 export interface EntityForResolvedEntity {
+  /**
+   * A list of ...
+   */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
 export interface EntityForWhySearch {
+  /**
+   * A list of ...
+   */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
 export interface EntityNetworkLink {
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
 
@@ -462,7 +500,7 @@ export interface EntityPath {
   END_ENTITY_ID: number;
 
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: number[];
   START_ENTITY_ID: number;
@@ -470,7 +508,7 @@ export interface EntityPath {
 
 export interface EntityPathLink {
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
 
@@ -519,6 +557,9 @@ export interface Feature {
 }
 
 export interface FeatureDescriptionValue {
+  /**
+   * A dictionary of ...
+   */
   ATTRIBUTES: { [key: string]: string };
   CANDIDATE_CAP_REACHED: string;
   ENTITY_COUNT: number;
@@ -527,6 +568,10 @@ export interface FeatureDescriptionValue {
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * A list of ...
+   */
   FEAT_DESC_VALUES: FeatureDescriptionValueDetails[];
 
   /**
@@ -569,7 +614,7 @@ export interface FeatureForAttributes {
   FEAT_DESC: string;
 
   /**
-   * Describes the attributes that make up the feature.
+   * A list of attributes that make up the feature.
    */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
 
@@ -595,7 +640,7 @@ export interface FeatureForGetEntity {
   FEAT_DESC: string;
 
   /**
-   * Describes the attributes that make up the feature.
+   * A list of attributes that make up the feature.
    */
   FEAT_DESC_VALUES: FeatureDescriptionValue[];
 
@@ -609,6 +654,10 @@ export interface FeatureForGetEntity {
    * features behavior).
    */
   USAGE_TYPE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_ATTRIBUTES: SenzingEntitySpecification[];
 }
 
@@ -638,6 +687,40 @@ export interface FeatureScoreForAttribute {
   SCORE_BUCKET: string;
 }
 
+export interface FeatureScoreInfo {
+  /**
+   * Itemized scores from comparison function.
+   */
+  ADDITIONAL_SCORES: AdditionalScores;
+  CANDIDATE_FEAT_DESC: string;
+  CANDIDATE_FEAT_ID: number;
+  CANDIDATE_FEAT_USAGE_TYPE: string;
+
+  /**
+   * Internal use.
+   */
+  FTYPE_CODE: string;
+  INBOUND_FEAT_DESC: string;
+  INBOUND_FEAT_ID: number;
+  INBOUND_FEAT_USAGE_TYPE: string;
+
+  /**
+   * Numeric score from the comparison function.
+   */
+  SCORE: number;
+  SCORE_BEHAVIOR: string;
+
+  /**
+   * Category of score strength.
+   */
+  SCORE_BUCKET: string;
+  SOURCE: string;
+  TOKEN: string;
+}
+
+/**
+ * A dictionary of ...
+ */
 export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
 export interface FeatureType {
@@ -653,6 +736,10 @@ export interface FeatureType {
 
 export interface FinalState {
   NEED_REEVALUATION: number;
+
+  /**
+   * A list of ...
+   */
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
 
@@ -672,61 +759,209 @@ export interface FocusRecord {
   RECORD_ID: string;
 }
 
+/**
+ * A list of ...
+ */
 export interface G2configSettings {
   METAPHONE_VERSION: number;
 }
 
 export interface G2config {
+  /**
+   * A list of ...
+   */
   CFG_ATTR: CfgAttr[];
+
+  /**
+   * A list of ...
+   */
   CFG_CFBOM: CfgCfbom[];
+
+  /**
+   * A list of ...
+   */
   CFG_CFCALL: CfgCfcall[];
+
+  /**
+   * A list of ...
+   */
   CFG_CFRTN: CfgCfrtn[];
+
+  /**
+   * A list of ...
+   */
   CFG_CFUNC: CfgCfunc[];
+
+  /**
+   * A list of ...
+   */
   CFG_DFBOM: CfgDfbom[];
+
+  /**
+   * A list of ...
+   */
   CFG_DFCALL: CfgDfcall[];
+
+  /**
+   * A list of ...
+   */
   CFG_DFUNC: CfgDfunc[];
+
+  /**
+   * A list of ...
+   */
   CFG_DSRC: CfgDsrc[];
+
+  /**
+   * A list of ...
+   */
   CFG_DSRC_INTEREST: CfgDsrcInterest[];
+
+  /**
+   * A list of ...
+   */
   CFG_EBOM: CfgEbom[];
+
+  /**
+   * A list of ...
+   */
   CFG_EFBOM: CfgEfbom[];
+
+  /**
+   * A list of ...
+   */
   CFG_EFCALL: CfgEfcall[];
+
+  /**
+   * A list of ...
+   */
   CFG_EFUNC: CfgEfunc[];
+
+  /**
+   * A list of ...
+   */
   CFG_ERFRAG: CfgErfrag[];
+
+  /**
+   * A list of ...
+   */
   CFG_ERRULE: CfgErrule[];
+
+  /**
+   * A list of ...
+   */
   CFG_FBOM: CfgFbom[];
+
+  /**
+   * A list of ...
+   */
   CFG_FBOVR: CfgFbovr[];
+
+  /**
+   * A list of ...
+   */
   CFG_FCLASS: CfgFclass[];
+
+  /**
+   * A list of ...
+   */
   CFG_FELEM: CfgFelem[];
+
+  /**
+   * A list of ...
+   */
   CFG_FTYPE: CfgFtype[];
+
+  /**
+   * A list of ...
+   */
   CFG_GENERIC_THRESHOLD: CfgGenericThreshold[];
+
+  /**
+   * A list of ...
+   */
   CFG_GPLAN: CfgGplan[];
+
+  /**
+   * A list of ...
+   */
   CFG_RCLASS: CfgRclass[];
+
+  /**
+   * A list of ...
+   */
   CFG_RTYPE: CfgRtype[];
+
+  /**
+   * A list of ...
+   */
   CFG_SFCALL: CfgSfcall[];
+
+  /**
+   * A list of ...
+   */
   CFG_SFUNC: CfgSfunc[];
   CONFIG_BASE_VERSION: ConfigBaseVersion;
+
+  /**
+   * A list of ...
+   */
   SETTINGS: G2configSettings;
+
+  /**
+   * A list of ...
+   */
   SYS_OOM: SysOom[];
+
+  /**
+   * A list of ...
+   */
   XXX_CFG_ECLASS: CfgEclass[];
+
+  /**
+   * A list of ...
+   */
   XXX_CFG_ETYPE: CfgEtype[];
+
+  /**
+   * A list of ...
+   */
   XXX_CFG_LENS: CfgLens[];
+
+  /**
+   * A list of ...
+   */
   XXX_CFG_LENSRL: CfgLensrl[];
 }
 
 export interface HowResults {
   FINAL_STATE: FinalState;
+
+  /**
+   * A list of ...
+   */
   RESOLUTION_STEPS: ResolutionStep[];
 }
 
 export interface InterestingEntities {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: InterestingEntity[];
+
+  /**
+   * A list of ...
+   */
   NOTICES: Notice[];
 }
 
+/**
+ * Internal use.
+ */
 export interface InterestingEntity {
+  /**
+   * Degrees of separation.
+   */
   DEGREES: number;
 
   /**
@@ -734,7 +969,15 @@ export interface InterestingEntity {
    * entity. It may change when new information is added.
    */
   ENTITY_ID: number;
+
+  /**
+   * A list of ...
+   */
   FLAGS: string[];
+
+  /**
+   * A list of ...
+   */
   SAMPLE_RECORDS: SampleRecord[];
 }
 
@@ -742,7 +985,7 @@ export interface MatchInfo {
   CANDIDATE_KEYS: CandidateKeysForMatchInfo;
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
   FEATURE_SCORES: FeatureScores;
@@ -772,6 +1015,9 @@ export interface MatchInfoForAttribute {
 }
 
 export interface MatchInfoForWhy {
+  /**
+   * A dictionary of ...
+   */
   CANDIDATE_KEYS: { [key: string]: MatchInfoForAttribute[] };
   DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfoForWhy;
   FEATURE_SCORES: FeatureScores;
@@ -786,15 +1032,36 @@ export interface MatchInfoForWhy {
 }
 
 export interface MatchKeyDetails {
-  CONFIRMATIONS: Confirmation[];
-  DENIALS: Confirmation[];
+  /**
+   * A list of feature data in the match key supporting the match.
+   */
+  CONFIRMATIONS: FeatureScoreInfo[];
+
+  /**
+   * A list of feature data in the match key negating the match.
+   */
+  DENIALS: FeatureScoreInfo[];
+
+  /**
+   * A list of disclosed relationships of various types.
+   */
   DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfo[];
+
+  /**
+   * A list of disclosed relationship anchors.
+   */
+  REL_ANCHOR: RelAnchor[];
+
+  /**
+   * Deprecated. A list of disclosed relationships based on identical shared
+   * keys.
+   */
   REL_LINKS: RelLink[];
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * A list of disclosed relationship pointers.
    */
-  XXX_ERRULE_CODE: string;
+  REL_POINTER: RelPointer[];
 }
 
 export interface MemberRecord {
@@ -823,10 +1090,18 @@ export interface Record {
   DATA_SOURCE: string;
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
+
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureForAttributes[] };
+
+  /**
+   * A list of ...
+   */
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
 
@@ -834,6 +1109,10 @@ export interface Record {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
+
+  /**
+   * A dictionary of ...
+   */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
 
@@ -851,18 +1130,54 @@ export interface Record {
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+
+  /**
+   * A dictionary of ...
+   */
   UNMAPPED_DATA: { [key: string]: Object };
+
+  /**
+   * A list of ...
+   */
   XXX_ADDRESS_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_ATTRIBUTE_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_ENTITY_DATA: string[];
   XXX_ENTITY_DESC: string;
   XXX_ENTITY_KEY: string;
   XXX_ENTITY_TYPE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_IDENTIFIER_DATA: string[];
   XXX_MATCH_LEVEL: number;
+
+  /**
+   * A list of ...
+   */
   XXX_NAME_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_OTHER_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_PHONE_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_RELATIONSHIP_DATA: string[];
 }
 
@@ -873,10 +1188,18 @@ export interface RecordForGetEntity {
   DATA_SOURCE: string;
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
+
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureForAttributes[] };
+
+  /**
+   * A list of ...
+   */
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
 
@@ -884,6 +1207,10 @@ export interface RecordForGetEntity {
    * Internal identifier for the record.
    */
   INTERNAL_ID: number;
+
+  /**
+   * A dictionary of ...
+   */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
 
@@ -901,18 +1228,54 @@ export interface RecordForGetEntity {
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+
+  /**
+   * A dictionary of ...
+   */
   UNMAPPED_DATA: { [key: string]: Object };
+
+  /**
+   * A list of ...
+   */
   XXX_ADDRESS_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_ATTRIBUTE_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_ENTITY_DATA: string[];
   XXX_ENTITY_DESC: string;
   XXX_ENTITY_KEY: string;
   XXX_ENTITY_TYPE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_IDENTIFIER_DATA: string[];
   XXX_MATCH_LEVEL: number;
+
+  /**
+   * A list of ...
+   */
   XXX_NAME_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_OTHER_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_PHONE_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_RELATIONSHIP_DATA: string[];
 }
 
@@ -961,6 +1324,10 @@ export interface RelAnchor {
   LINKED_FEAT_ID: number;
   LINKED_FEAT_TYPE: string;
   LINKED_FEAT_USAGE_TYPE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_REL_POINTER: RelPointer[];
 }
 
@@ -1001,18 +1368,17 @@ export interface RelPointer {
 
 export interface RelatedEntity {
   /**
-   * The ENTITY_ID is the Senzing-generated identifier for the discovered
-   * entity. It may change when new information is added.
+   * The ENTITY_ID is the identifier for the entity.
    */
   ENTITY_ID: number;
 
   /**
-   * A name this entity goes by. An entity could have multiple names.
+   * An arbitrarily selected name for the entity.
    */
   ENTITY_NAME: string;
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   ERRULE_CODE: string;
 
@@ -1027,14 +1393,17 @@ export interface RelatedEntity {
   IS_DISCLOSED: number;
 
   /**
-   * Representation of matched source record features.
+   * Representation of matched source data.
    */
   MATCH_KEY: string;
-  MATCH_KEY_DETAILS: MatchKeyDetails;
-  MATCH_LEVEL: number;
 
   /**
-   * The type of match that occurred for the record.
+   * Contains supporting information for the match key.
+   */
+  MATCH_KEY_DETAILS: MatchKeyDetails;
+
+  /**
+   * The type of relationship.
    */
   MATCH_LEVEL_CODE: string;
 
@@ -1044,12 +1413,15 @@ export interface RelatedEntity {
   RECORDS: Record[];
 
   /**
-   * Overview of the source systems the records came from comprising this
-   * related entity.
+   * A list of tabulated counts of records by source.
    */
   RECORD_SUMMARY: RecordSummary[];
+
+  /**
+   * A list of record types on the entity as defined in the Entity
+   * Specification.
+   */
   RECORD_TYPES: string[];
-  XXX_LAST_SEEN_DT: string;
 }
 
 export interface RelatedRoles {
@@ -1094,9 +1466,13 @@ export interface ResolvedEntity {
   ENTITY_ID: number;
 
   /**
-   * A name this entity goes by. An entity could have multiple names.
+   * An arbitrarily selected name for the entity.
    */
   ENTITY_NAME: string;
+
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
   /**
@@ -1105,16 +1481,24 @@ export interface ResolvedEntity {
   RECORDS: Record[];
 
   /**
-   * Overview of the source systems the records came from comprising this
-   * related entity.
+   * A list of source systems the records came from comprising this related
+   * entity.
    */
   RECORD_SUMMARY: RecordSummary[];
+
+  /**
+   * A list of ...
+   */
   RECORD_TYPES: string[];
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   XXX_ERRULE_CODE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_FEATURE_IDS: FeatureId[];
 
   /**
@@ -1157,6 +1541,10 @@ export interface ResolvedEntityForGetEntity {
    * A name this entity goes by. An entity could have multiple names.
    */
   ENTITY_NAME: string;
+
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureForGetEntity[] };
 
   /**
@@ -1165,16 +1553,24 @@ export interface ResolvedEntityForGetEntity {
   RECORDS: RecordForGetEntity[];
 
   /**
-   * Overview of the source systems the records came from comprising this
-   * related entity.
+   * A list of source systems the records came from comprising this related
+   * entity.
    */
   RECORD_SUMMARY: RecordSummary[];
+
+  /**
+   * A list of ...
+   */
   RECORD_TYPES: string[];
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   XXX_ERRULE_CODE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_FEATURE_IDS: FeatureId[];
 
   /**
@@ -1218,6 +1614,10 @@ export interface SampleRecord {
    * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
+
+  /**
+   * A list of ...
+   */
   FLAGS: string[];
 
   /**
@@ -1233,6 +1633,9 @@ export interface SchemaVersion {
 }
 
 export interface SearchEntity {
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureDescriptionValue[] };
   SUMMARY: SearchEntitySummary;
 }
@@ -1245,6 +1648,9 @@ export interface SearchEntitySummary {
 }
 
 export interface SearchRequest {
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureDescriptionValue[] };
   JSON_DATA: string;
   SEARCH_PROFILE: string;
@@ -1755,14 +2161,14 @@ export interface SzConfigExportResponse {
 
 export interface SzConfigGetDataSourceRegistryResponse {
   /**
-   * The list of registered data sources.
+   * A list of registered data sources.
    */
   DATA_SOURCES: DataSource[];
 }
 
 export interface SzConfigManagerGetConfigRegistryResponse {
   /**
-   * The list of registered configurations.
+   * A list of registered configurations.
    */
   CONFIGS: Config[];
 }
@@ -1812,7 +2218,7 @@ export interface SzDiagnosticGetRepositoryInfoResponse {
 
 export interface SzEngineAddRecordResponse {
   /**
-   * Entities that were affected as a result of the operation.
+   * A list of entities that were affected as a result of the operation.
    */
   AFFECTED_ENTITIES: AffectedEntity[];
 
@@ -1834,7 +2240,7 @@ export interface SzEngineAddRecordResponse {
 
 export interface SzEngineDeleteRecordResponse {
   /**
-   * Entities that were affected as a result of the operation.
+   * A list of entities that were affected as a result of the operation.
    */
   AFFECTED_ENTITIES: AffectedEntity[];
 
@@ -1894,22 +2300,22 @@ export interface SzEngineFindNetworkByEntityIdEntityIds {
  */
 export interface SzEngineFindNetworkByEntityIdResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
 
   /**
-   * Relationship details for all pairs of entities in the network.
+   * A list of relationship details for all pairs of entities in the network.
    */
   ENTITY_NETWORK_LINKS: EntityNetworkLink[];
 
   /**
-   * Best path between all pairs of requested entities.
+   * A list of best path between all pairs of requested entities.
    */
   ENTITY_PATHS: EntityPath[];
 
   /**
-   * Relationship details for all links from ENTITY_PATHS.
+   * A list of relationship details for all links from ENTITY_PATHS.
    */
   ENTITY_PATH_LINKS: EntityPathLink[];
 
@@ -1931,22 +2337,22 @@ export interface SzEngineFindNetworkByRecordIdRecordKeys {
  */
 export interface SzEngineFindNetworkByRecordIdResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
 
   /**
-   * Relationship details for all pairs of entities in the network.
+   * A list of relationship details for all pairs of entities in the network.
    */
   ENTITY_NETWORK_LINKS: EntityNetworkLink[];
 
   /**
-   * Best path between all pairs of requested entities.
+   * A list of best path between all pairs of requested entities.
    */
   ENTITY_PATHS: EntityPath[];
 
   /**
-   * Relationship details for all links from ENTITY_PATHS.
+   * A list of relationship details for all links from ENTITY_PATHS.
    */
   ENTITY_PATH_LINKS: EntityPathLink[];
 
@@ -1966,17 +2372,17 @@ export interface SzEngineFindPathByEntityIdRequiredDataSources {
 
 export interface SzEngineFindPathByEntityIdResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
 
   /**
-   * Best path between all pairs of requested entities.
+   * A list of best path between all pairs of requested entities.
    */
   ENTITY_PATHS: EntityPath[];
 
   /**
-   * Relationship details for all links from ENTITY_PATHS.
+   * A list of relationship details for all links from ENTITY_PATHS.
    */
   ENTITY_PATH_LINKS: EntityPathLink[];
 }
@@ -1994,35 +2400,56 @@ export interface SzEngineFindPathByRecordIdRequiredDataSources {
 
 export interface SzEngineFindPathByRecordIdResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
 
   /**
-   * Best path between all pairs of requested entities.
+   * A list of best path between all pairs of requested entities.
    */
   ENTITY_PATHS: EntityPath[];
 
   /**
-   * Relationship details for all links from ENTITY_PATHS.
+   * A list of relationship details for all links from ENTITY_PATHS.
    */
   ENTITY_PATH_LINKS: EntityPathLink[];
 }
 
 export interface SzEngineGetEntityByEntityIdResponse {
+  /**
+   * A list of ...
+   */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntityForGetEntity;
 }
 
 export interface SzEngineGetEntityByRecordIdResponse {
+  /**
+   * A list of ...
+   */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntityForGetEntity;
 }
 
 export interface SzEngineGetRecordPreviewResponse {
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureForAttributes[] };
+
+  /**
+   * A list of ...
+   */
   FEATURE_IDS: FeatureId[];
+
+  /**
+   * A dictionary of ...
+   */
   JSON_DATA: { [key: string]: Object };
+
+  /**
+   * A dictionary of ...
+   */
   UNMAPPED_DATA: { [key: string]: Object };
 }
 
@@ -2031,9 +2458,21 @@ export interface SzEngineGetRecordResponse {
    * Short, stable identifier naming the source system.
    */
   DATA_SOURCE: string;
+
+  /**
+   * A dictionary of ...
+   */
   FEATURES: { [key: string]: FeatureForAttributes[] };
+
+  /**
+   * A list of ...
+   */
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
+
+  /**
+   * A dictionary of ...
+   */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
 
@@ -2041,18 +2480,38 @@ export interface SzEngineGetRecordResponse {
    * The unique identifier within the set of records in the DATA_SOURCE.
    */
   RECORD_ID: string;
+
+  /**
+   * A dictionary of ...
+   */
   UNMAPPED_DATA: { [key: string]: Object };
+
+  /**
+   * A list of ...
+   */
   XXX_ADDRESS_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_ATTRIBUTE_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_ENTITY_DATA: string[];
   XXX_ENTITY_DESC: string;
   XXX_ENTITY_KEY: string;
   XXX_ENTITY_TYPE: string;
 
   /**
-   * Identifier of the entity resolution rule that was triggered.
+   * Identifier of the entity resolution principle that was triggered.
    */
   XXX_ERRULE_CODE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_IDENTIFIER_DATA: string[];
 
   /**
@@ -2070,9 +2529,25 @@ export interface SzEngineGetRecordResponse {
    * The type of match that occurred for the record.
    */
   XXX_MATCH_LEVEL_CODE: string;
+
+  /**
+   * A list of ...
+   */
   XXX_NAME_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_OTHER_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_PHONE_DATA: string[];
+
+  /**
+   * A list of ...
+   */
   XXX_RELATIONSHIP_DATA: string[];
 }
 
@@ -2101,7 +2576,7 @@ export interface SzEngineHowEntityByEntityIdResponse {
 
 export interface SzEngineProcessRedoRecordResponse {
   /**
-   * Entities that were affected as a result of the operation.
+   * A list of entities that were affected as a result of the operation.
    */
   AFFECTED_ENTITIES: AffectedEntity[];
 
@@ -2120,7 +2595,7 @@ export interface SzEngineProcessRedoRecordResponse {
 
 export interface SzEngineReevaluateEntityResponse {
   /**
-   * Entities that were affected as a result of the operation.
+   * A list of entities that were affected as a result of the operation.
    */
   AFFECTED_ENTITIES: AffectedEntity[];
 
@@ -2142,7 +2617,7 @@ export interface SzEngineReevaluateEntityResponse {
 
 export interface SzEngineReevaluateRecordResponse {
   /**
-   * Entities that were affected as a result of the operation.
+   * A list of entities that were affected as a result of the operation.
    */
   AFFECTED_ENTITIES: AffectedEntity[];
 
@@ -2163,10 +2638,21 @@ export interface SzEngineSearchByAttributesAttributes {
 }
 
 export interface SzEngineSearchByAttributesResponse {
+  /**
+   * A list of ...
+   */
   RELATED_ENTITIES_MJD: RelatedEntity[];
+
+  /**
+   * A list of ...
+   */
   RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
   SEARCH_ENTITY: SearchEntity;
   SEARCH_REQUEST: SearchRequest;
+
+  /**
+   * A list of ...
+   */
   SEARCH_STATISTICS: SearchStatistic[];
 }
 
@@ -2180,25 +2666,37 @@ export interface SzEngineStreamExportJsonEntityReportResponse {
 
 export interface SzEngineWhyEntitiesResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
+
+  /**
+   * A list of ...
+   */
   WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineWhyRecordInEntityResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
+
+  /**
+   * A list of ...
+   */
   WHY_RESULTS: WhyResult[];
 }
 
 export interface SzEngineWhyRecordsResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: Entity[];
+
+  /**
+   * A list of ...
+   */
   WHY_RESULTS: WhyResult[];
 }
 
@@ -2208,12 +2706,20 @@ export interface SzEngineWhySearchAttributes {
 
 export interface SzEngineWhySearchResponse {
   /**
-   * List of entity information.
+   * A list of entity information.
    */
   ENTITIES: EntityForWhySearch[];
   SEARCH_ENTITY: SearchEntity;
   SEARCH_REQUEST: SearchRequest;
+
+  /**
+   * A list of ...
+   */
   SEARCH_STATISTICS: SearchStatistic[];
+
+  /**
+   * A list of ...
+   */
   WHY_RESULTS: WhyResult[];
 }
 
@@ -2245,6 +2751,10 @@ export interface SzProductGetVersionResponse {
 
 export interface UmfProc {
   NAME: string;
+
+  /**
+   * A list of ...
+   */
   PARAMS: UmfProcParams[];
 }
 
@@ -2258,13 +2768,27 @@ export interface UmfProcParams {
 }
 
 export interface VirtualEntitySynopsis {
+  /**
+   * A list of ...
+   */
   MEMBER_RECORDS: MemberRecord[];
   VIRTUAL_ENTITY_ID: string;
 }
 
 export interface WhyKeyDetails {
-  CONFIRMATIONS: Confirmation[];
-  DENIALS: Confirmation[];
+  /**
+   * A list of ...
+   */
+  CONFIRMATIONS: FeatureScoreInfo[];
+
+  /**
+   * A list of ...
+   */
+  DENIALS: FeatureScoreInfo[];
+
+  /**
+   * A list of ...
+   */
   DISCLOSED_RELATIONS: DisclosedRelationsForWhyKeyDetails[];
 }
 
@@ -2275,7 +2799,15 @@ export interface WhyResult {
    */
   ENTITY_ID: number;
   ENTITY_ID_2: number;
+
+  /**
+   * A list of ...
+   */
   FOCUS_RECORDS: FocusRecord[];
+
+  /**
+   * A list of ...
+   */
   FOCUS_RECORDS_2: FocusRecord[];
 
   /**
@@ -2302,6 +2834,10 @@ export interface Workload {
   loadedRecords: number;
   lockWaits: WorkloadLockWaits;
   processing: WorkloadProcessing;
+
+  /**
+   * A dictionary of ...
+   */
   redoTriggers: { [key: string]: number };
   repairDiagnosis: WorkloadRepairDiagnosis;
   reresolve: WorkloadReresolve;
@@ -2323,7 +2859,14 @@ export interface WorkloadCaches {
 }
 
 export interface WorkloadCandidates {
+  /**
+   * A dictionary of ...
+   */
   candidateBuilders: { [key: string]: number };
+
+  /**
+   * A dictionary of ...
+   */
   suppressedCandidateBuilders: { [key: string]: number };
 }
 
@@ -2341,7 +2884,14 @@ export interface WorkloadCurrResources {
 }
 
 export interface WorkloadExpressedFeatures {
+  /**
+   * A list of ...
+   */
   calls: WorkloadExpressedFeaturesCall[];
+
+  /**
+   * A dictionary of ...
+   */
   created: { [key: string]: number };
 }
 
@@ -2409,6 +2959,9 @@ export interface WorkloadRepairDiagnosis {
 }
 
 export interface WorkloadReresolve {
+  /**
+   * A dictionary of ...
+   */
   newFeatureFTypes: { [key: string]: number };
   suppressedCandidateBuildersForReresolve: Fixme;
   suppressedScoredFeatureTypeForReresolve: Fixme;
@@ -2424,8 +2977,19 @@ export interface WorkloadReresolveTriggers {
 }
 
 export interface WorkloadScoring {
+  /**
+   * A dictionary of ...
+   */
   cacheHit: { [key: string]: number };
+
+  /**
+   * A dictionary of ...
+   */
   cacheMiss: { [key: string]: number };
+
+  /**
+   * A dictionary of ...
+   */
   scoredPairs: { [key: string]: number };
   suppressedDisclosedRelationshipDomainCount: number;
   suppressedScoredFeatureType: Fixme;

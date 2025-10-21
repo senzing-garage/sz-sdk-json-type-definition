@@ -19,6 +19,7 @@ public class VirtualEntitySynopsis {
 
     /**
      * Getter for memberRecords.<p>
+     * A list of ...
      */
     public List<MemberRecord> getMemberRecords() {
         return memberRecords;
@@ -26,6 +27,7 @@ public class VirtualEntitySynopsis {
 
     /**
      * Setter for memberRecords.<p>
+     * A list of ...
      */
     public void setMemberRecords(List<MemberRecord> memberRecords) {
         this.memberRecords = memberRecords;

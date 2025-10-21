@@ -113,6 +113,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for relAnchor.<p>
+     * A list of ...
      */
     public List<RelAnchor> getRelAnchor() {
         return relAnchor;
@@ -120,6 +121,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for relAnchor.<p>
+     * A list of ...
      */
     public void setRelAnchor(List<RelAnchor> relAnchor) {
         this.relAnchor = relAnchor;
@@ -127,6 +129,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for relLink.<p>
+     * A list of ...
      */
     public List<RelLink> getRelLink() {
         return relLink;
@@ -134,6 +137,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for relLink.<p>
+     * A list of ...
      */
     public void setRelLink(List<RelLink> relLink) {
         this.relLink = relLink;
@@ -141,6 +145,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for relPointer.<p>
+     * A list of ...
      */
     public List<RelPointer> getRelPointer() {
         return relPointer;
@@ -148,6 +153,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for relPointer.<p>
+     * A list of ...
      */
     public void setRelPointer(List<RelPointer> relPointer) {
         this.relPointer = relPointer;

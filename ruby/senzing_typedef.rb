@@ -566,7 +566,7 @@ module SenzingTypedef
   class CfgErrule
     attr_accessor :disq_erfrag_code
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
     attr_accessor :errule_id
     attr_accessor :errule_tier
@@ -880,6 +880,7 @@ module SenzingTypedef
     end
   end
 
+  # A list of ...
   class CfgLensrl
     attr_accessor :value
 
@@ -1047,6 +1048,7 @@ module SenzingTypedef
     end
   end
 
+  # A dictionary of ...
   class CandidateKeysForMatchInfo
     attr_accessor :value
 
@@ -1062,6 +1064,7 @@ module SenzingTypedef
   end
 
   class CandidateKeysForSearchStatistic
+    # A list of ...
     attr_accessor :feature_types
     attr_accessor :summary
 
@@ -1145,60 +1148,6 @@ module SenzingTypedef
     end
   end
 
-  class Confirmation
-    attr_accessor :additional_scores
-    attr_accessor :candidate_feat_desc
-    attr_accessor :candidate_feat_id
-    attr_accessor :candidate_feat_usage_type
-
-    # Internal use.
-    attr_accessor :ftype_code
-    attr_accessor :inbound_feat_desc
-    attr_accessor :inbound_feat_id
-    attr_accessor :inbound_feat_usage_type
-    attr_accessor :score
-    attr_accessor :score_behavior
-    attr_accessor :score_bucket
-    attr_accessor :source
-    attr_accessor :token
-
-    def self.from_json_data(data)
-      out = Confirmation.new
-      out.additional_scores = SenzingTypedef::from_json_data(AdditionalScores, data["ADDITIONAL_SCORES"])
-      out.candidate_feat_desc = SenzingTypedef::from_json_data(String, data["CANDIDATE_FEAT_DESC"])
-      out.candidate_feat_id = SenzingTypedef::from_json_data(Integer, data["CANDIDATE_FEAT_ID"])
-      out.candidate_feat_usage_type = SenzingTypedef::from_json_data(String, data["CANDIDATE_FEAT_USAGE_TYPE"])
-      out.ftype_code = SenzingTypedef::from_json_data(String, data["FTYPE_CODE"])
-      out.inbound_feat_desc = SenzingTypedef::from_json_data(String, data["INBOUND_FEAT_DESC"])
-      out.inbound_feat_id = SenzingTypedef::from_json_data(Integer, data["INBOUND_FEAT_ID"])
-      out.inbound_feat_usage_type = SenzingTypedef::from_json_data(String, data["INBOUND_FEAT_USAGE_TYPE"])
-      out.score = SenzingTypedef::from_json_data(Integer, data["SCORE"])
-      out.score_behavior = SenzingTypedef::from_json_data(String, data["SCORE_BEHAVIOR"])
-      out.score_bucket = SenzingTypedef::from_json_data(String, data["SCORE_BUCKET"])
-      out.source = SenzingTypedef::from_json_data(String, data["SOURCE"])
-      out.token = SenzingTypedef::from_json_data(String, data["TOKEN"])
-      out
-    end
-
-    def to_json_data
-      data = {}
-      data["ADDITIONAL_SCORES"] = SenzingTypedef::to_json_data(additional_scores)
-      data["CANDIDATE_FEAT_DESC"] = SenzingTypedef::to_json_data(candidate_feat_desc)
-      data["CANDIDATE_FEAT_ID"] = SenzingTypedef::to_json_data(candidate_feat_id)
-      data["CANDIDATE_FEAT_USAGE_TYPE"] = SenzingTypedef::to_json_data(candidate_feat_usage_type)
-      data["FTYPE_CODE"] = SenzingTypedef::to_json_data(ftype_code)
-      data["INBOUND_FEAT_DESC"] = SenzingTypedef::to_json_data(inbound_feat_desc)
-      data["INBOUND_FEAT_ID"] = SenzingTypedef::to_json_data(inbound_feat_id)
-      data["INBOUND_FEAT_USAGE_TYPE"] = SenzingTypedef::to_json_data(inbound_feat_usage_type)
-      data["SCORE"] = SenzingTypedef::to_json_data(score)
-      data["SCORE_BEHAVIOR"] = SenzingTypedef::to_json_data(score_behavior)
-      data["SCORE_BUCKET"] = SenzingTypedef::to_json_data(score_bucket)
-      data["SOURCE"] = SenzingTypedef::to_json_data(source)
-      data["TOKEN"] = SenzingTypedef::to_json_data(token)
-      data
-    end
-  end
-
   class DataSource
     # The unique text identifier of the datasource. It should be UPPER_CASE
     # ASCII without spaces. It will be used as a JSON key.
@@ -1224,10 +1173,20 @@ module SenzingTypedef
 
   class DisclosedRelationsForMatchInfo
     attr_accessor :domain
+
+    # A list of ...
     attr_accessor :entity_roles
+
+    # A list of ...
     attr_accessor :related_roles
+
+    # A list of ...
     attr_accessor :rel_link
+
+    # A list of ...
     attr_accessor :xxx_rel_anchor
+
+    # A list of ...
     attr_accessor :xxx_rel_pointer
 
     def self.from_json_data(data)
@@ -1259,8 +1218,14 @@ module SenzingTypedef
     attr_accessor :feat_usage_type
     attr_accessor :linked_feat_id
     attr_accessor :linked_feat_type
+
+    # A list of ...
     attr_accessor :rel_anchor
+
+    # A list of ...
     attr_accessor :rel_link
+
+    # A list of ...
     attr_accessor :rel_pointer
 
     # Describes the attributes that make up the feature.
@@ -1300,7 +1265,11 @@ module SenzingTypedef
 
   class DisclosedRelationsForWhyKeyDetails
     attr_accessor :domain
+
+    # A list of ...
     attr_accessor :entity_roles
+
+    # A list of ...
     attr_accessor :related_roles
 
     def self.from_json_data(data)
@@ -1321,6 +1290,7 @@ module SenzingTypedef
   end
 
   class Entity
+    # A list of ...
     attr_accessor :related_entities
     attr_accessor :resolved_entity
 
@@ -1340,6 +1310,7 @@ module SenzingTypedef
   end
 
   class EntityForResolvedEntity
+    # A list of ...
     attr_accessor :related_entities
     attr_accessor :resolved_entity
 
@@ -1359,6 +1330,7 @@ module SenzingTypedef
   end
 
   class EntityForWhySearch
+    # A list of ...
     attr_accessor :related_entities
     attr_accessor :resolved_entity
 
@@ -1378,7 +1350,7 @@ module SenzingTypedef
   end
 
   class EntityNetworkLink
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
 
     # Indicates if this is an ambiguous relationship.
@@ -1426,7 +1398,7 @@ module SenzingTypedef
   class EntityPath
     attr_accessor :end_entity_id
 
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
     attr_accessor :start_entity_id
 
@@ -1448,7 +1420,7 @@ module SenzingTypedef
   end
 
   class EntityPathLink
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
 
     # Indicates if this is an ambiguous relationship.
@@ -1536,12 +1508,15 @@ module SenzingTypedef
   end
 
   class FeatureDescriptionValue
+    # A dictionary of ...
     attr_accessor :attributes
     attr_accessor :candidate_cap_reached
     attr_accessor :entity_count
 
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
+
+    # A list of ...
     attr_accessor :feat_desc_values
 
     # Internal use.
@@ -1631,7 +1606,7 @@ module SenzingTypedef
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
 
-    # Describes the attributes that make up the feature.
+    # A list of attributes that make up the feature.
     attr_accessor :feat_desc_values
 
     # Internal use.
@@ -1679,7 +1654,7 @@ module SenzingTypedef
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
 
-    # Describes the attributes that make up the feature.
+    # A list of attributes that make up the feature.
     attr_accessor :feat_desc_values
 
     # Internal use.
@@ -1688,6 +1663,8 @@ module SenzingTypedef
     # Label to identify how some features are being used (can also change some
     # features behavior).
     attr_accessor :usage_type
+
+    # A list of ...
     attr_accessor :xxx_attributes
 
     def self.from_json_data(data)
@@ -1777,6 +1754,66 @@ module SenzingTypedef
     end
   end
 
+  class FeatureScoreInfo
+    # Itemized scores from comparison function.
+    attr_accessor :additional_scores
+    attr_accessor :candidate_feat_desc
+    attr_accessor :candidate_feat_id
+    attr_accessor :candidate_feat_usage_type
+
+    # Internal use.
+    attr_accessor :ftype_code
+    attr_accessor :inbound_feat_desc
+    attr_accessor :inbound_feat_id
+    attr_accessor :inbound_feat_usage_type
+
+    # Numeric score from the comparison function.
+    attr_accessor :score
+    attr_accessor :score_behavior
+
+    # Category of score strength.
+    attr_accessor :score_bucket
+    attr_accessor :source
+    attr_accessor :token
+
+    def self.from_json_data(data)
+      out = FeatureScoreInfo.new
+      out.additional_scores = SenzingTypedef::from_json_data(AdditionalScores, data["ADDITIONAL_SCORES"])
+      out.candidate_feat_desc = SenzingTypedef::from_json_data(String, data["CANDIDATE_FEAT_DESC"])
+      out.candidate_feat_id = SenzingTypedef::from_json_data(Integer, data["CANDIDATE_FEAT_ID"])
+      out.candidate_feat_usage_type = SenzingTypedef::from_json_data(String, data["CANDIDATE_FEAT_USAGE_TYPE"])
+      out.ftype_code = SenzingTypedef::from_json_data(String, data["FTYPE_CODE"])
+      out.inbound_feat_desc = SenzingTypedef::from_json_data(String, data["INBOUND_FEAT_DESC"])
+      out.inbound_feat_id = SenzingTypedef::from_json_data(Integer, data["INBOUND_FEAT_ID"])
+      out.inbound_feat_usage_type = SenzingTypedef::from_json_data(String, data["INBOUND_FEAT_USAGE_TYPE"])
+      out.score = SenzingTypedef::from_json_data(Integer, data["SCORE"])
+      out.score_behavior = SenzingTypedef::from_json_data(String, data["SCORE_BEHAVIOR"])
+      out.score_bucket = SenzingTypedef::from_json_data(String, data["SCORE_BUCKET"])
+      out.source = SenzingTypedef::from_json_data(String, data["SOURCE"])
+      out.token = SenzingTypedef::from_json_data(String, data["TOKEN"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["ADDITIONAL_SCORES"] = SenzingTypedef::to_json_data(additional_scores)
+      data["CANDIDATE_FEAT_DESC"] = SenzingTypedef::to_json_data(candidate_feat_desc)
+      data["CANDIDATE_FEAT_ID"] = SenzingTypedef::to_json_data(candidate_feat_id)
+      data["CANDIDATE_FEAT_USAGE_TYPE"] = SenzingTypedef::to_json_data(candidate_feat_usage_type)
+      data["FTYPE_CODE"] = SenzingTypedef::to_json_data(ftype_code)
+      data["INBOUND_FEAT_DESC"] = SenzingTypedef::to_json_data(inbound_feat_desc)
+      data["INBOUND_FEAT_ID"] = SenzingTypedef::to_json_data(inbound_feat_id)
+      data["INBOUND_FEAT_USAGE_TYPE"] = SenzingTypedef::to_json_data(inbound_feat_usage_type)
+      data["SCORE"] = SenzingTypedef::to_json_data(score)
+      data["SCORE_BEHAVIOR"] = SenzingTypedef::to_json_data(score_behavior)
+      data["SCORE_BUCKET"] = SenzingTypedef::to_json_data(score_bucket)
+      data["SOURCE"] = SenzingTypedef::to_json_data(source)
+      data["TOKEN"] = SenzingTypedef::to_json_data(token)
+      data
+    end
+  end
+
+  # A dictionary of ...
   class FeatureScores
     attr_accessor :value
 
@@ -1820,6 +1857,8 @@ module SenzingTypedef
 
   class FinalState
     attr_accessor :need_reevaluation
+
+    # A list of ...
     attr_accessor :virtual_entities
 
     def self.from_json_data(data)
@@ -1875,6 +1914,7 @@ module SenzingTypedef
     end
   end
 
+  # A list of ...
   class G2configSettings
     attr_accessor :metaphone_version
 
@@ -1892,39 +1932,104 @@ module SenzingTypedef
   end
 
   class G2config
+    # A list of ...
     attr_accessor :cfg_attr
+
+    # A list of ...
     attr_accessor :cfg_cfbom
+
+    # A list of ...
     attr_accessor :cfg_cfcall
+
+    # A list of ...
     attr_accessor :cfg_cfrtn
+
+    # A list of ...
     attr_accessor :cfg_cfunc
+
+    # A list of ...
     attr_accessor :cfg_dfbom
+
+    # A list of ...
     attr_accessor :cfg_dfcall
+
+    # A list of ...
     attr_accessor :cfg_dfunc
+
+    # A list of ...
     attr_accessor :cfg_dsrc
+
+    # A list of ...
     attr_accessor :cfg_dsrc_interest
+
+    # A list of ...
     attr_accessor :cfg_ebom
+
+    # A list of ...
     attr_accessor :cfg_efbom
+
+    # A list of ...
     attr_accessor :cfg_efcall
+
+    # A list of ...
     attr_accessor :cfg_efunc
+
+    # A list of ...
     attr_accessor :cfg_erfrag
+
+    # A list of ...
     attr_accessor :cfg_errule
+
+    # A list of ...
     attr_accessor :cfg_fbom
+
+    # A list of ...
     attr_accessor :cfg_fbovr
+
+    # A list of ...
     attr_accessor :cfg_fclass
+
+    # A list of ...
     attr_accessor :cfg_felem
+
+    # A list of ...
     attr_accessor :cfg_ftype
+
+    # A list of ...
     attr_accessor :cfg_generic_threshold
+
+    # A list of ...
     attr_accessor :cfg_gplan
+
+    # A list of ...
     attr_accessor :cfg_rclass
+
+    # A list of ...
     attr_accessor :cfg_rtype
+
+    # A list of ...
     attr_accessor :cfg_sfcall
+
+    # A list of ...
     attr_accessor :cfg_sfunc
     attr_accessor :config_base_version
+
+    # A list of ...
     attr_accessor :settings
+
+    # A list of ...
     attr_accessor :sys_oom
+
+    # A list of ...
     attr_accessor :xxx_cfg_eclass
+
+    # A list of ...
     attr_accessor :xxx_cfg_etype
+
+    # A list of ...
     attr_accessor :xxx_cfg_lens
+
+    # A list of ...
     attr_accessor :xxx_cfg_lensrl
 
     def self.from_json_data(data)
@@ -2008,6 +2113,8 @@ module SenzingTypedef
 
   class HowResults
     attr_accessor :final_state
+
+    # A list of ...
     attr_accessor :resolution_steps
 
     def self.from_json_data(data)
@@ -2026,8 +2133,10 @@ module SenzingTypedef
   end
 
   class InterestingEntities
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
+
+    # A list of ...
     attr_accessor :notices
 
     def self.from_json_data(data)
@@ -2045,13 +2154,19 @@ module SenzingTypedef
     end
   end
 
+  # Internal use.
   class InterestingEntity
+    # Degrees of separation.
     attr_accessor :degrees
 
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
     attr_accessor :entity_id
+
+    # A list of ...
     attr_accessor :flags
+
+    # A list of ...
     attr_accessor :sample_records
 
     def self.from_json_data(data)
@@ -2076,7 +2191,7 @@ module SenzingTypedef
   class MatchInfo
     attr_accessor :candidate_keys
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
     attr_accessor :feature_scores
 
@@ -2143,6 +2258,7 @@ module SenzingTypedef
   end
 
   class MatchInfoForWhy
+    # A dictionary of ...
     attr_accessor :candidate_keys
     attr_accessor :disclosed_relations
     attr_accessor :feature_scores
@@ -2179,21 +2295,33 @@ module SenzingTypedef
   end
 
   class MatchKeyDetails
+    # A list of feature data in the match key supporting the match.
     attr_accessor :confirmations
+
+    # A list of feature data in the match key negating the match.
     attr_accessor :denials
+
+    # A list of disclosed relationships of various types.
     attr_accessor :disclosed_relations
+
+    # A list of disclosed relationship anchors.
+    attr_accessor :rel_anchor
+
+    # Deprecated. A list of disclosed relationships based on identical shared
+    # keys.
     attr_accessor :rel_links
 
-    # Identifier of the entity resolution rule that was triggered.
-    attr_accessor :xxx_errule_code
+    # A list of disclosed relationship pointers.
+    attr_accessor :rel_pointer
 
     def self.from_json_data(data)
       out = MatchKeyDetails.new
-      out.confirmations = SenzingTypedef::from_json_data(Array[Confirmation], data["CONFIRMATIONS"])
-      out.denials = SenzingTypedef::from_json_data(Array[Confirmation], data["DENIALS"])
+      out.confirmations = SenzingTypedef::from_json_data(Array[FeatureScoreInfo], data["CONFIRMATIONS"])
+      out.denials = SenzingTypedef::from_json_data(Array[FeatureScoreInfo], data["DENIALS"])
       out.disclosed_relations = SenzingTypedef::from_json_data(Array[DisclosedRelationsForMatchInfo], data["DISCLOSED_RELATIONS"])
+      out.rel_anchor = SenzingTypedef::from_json_data(Array[RelAnchor], data["REL_ANCHOR"])
       out.rel_links = SenzingTypedef::from_json_data(Array[RelLink], data["REL_LINKS"])
-      out.xxx_errule_code = SenzingTypedef::from_json_data(String, data["XXX_ERRULE_CODE"])
+      out.rel_pointer = SenzingTypedef::from_json_data(Array[RelPointer], data["REL_POINTER"])
       out
     end
 
@@ -2202,8 +2330,9 @@ module SenzingTypedef
       data["CONFIRMATIONS"] = SenzingTypedef::to_json_data(confirmations)
       data["DENIALS"] = SenzingTypedef::to_json_data(denials)
       data["DISCLOSED_RELATIONS"] = SenzingTypedef::to_json_data(disclosed_relations)
+      data["REL_ANCHOR"] = SenzingTypedef::to_json_data(rel_anchor)
       data["REL_LINKS"] = SenzingTypedef::to_json_data(rel_links)
-      data["XXX_ERRULE_CODE"] = SenzingTypedef::to_json_data(xxx_errule_code)
+      data["REL_POINTER"] = SenzingTypedef::to_json_data(rel_pointer)
       data
     end
   end
@@ -2267,14 +2396,20 @@ module SenzingTypedef
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
+
+    # A dictionary of ...
     attr_accessor :features
+
+    # A list of ...
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
 
     # Internal identifier for the record.
     attr_accessor :internal_id
+
+    # A dictionary of ...
     attr_accessor :json_data
     attr_accessor :last_seen_dt
 
@@ -2286,18 +2421,36 @@ module SenzingTypedef
 
     # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
+
+    # A dictionary of ...
     attr_accessor :unmapped_data
+
+    # A list of ...
     attr_accessor :xxx_address_data
+
+    # A list of ...
     attr_accessor :xxx_attribute_data
+
+    # A list of ...
     attr_accessor :xxx_entity_data
     attr_accessor :xxx_entity_desc
     attr_accessor :xxx_entity_key
     attr_accessor :xxx_entity_type
+
+    # A list of ...
     attr_accessor :xxx_identifier_data
     attr_accessor :xxx_match_level
+
+    # A list of ...
     attr_accessor :xxx_name_data
+
+    # A list of ...
     attr_accessor :xxx_other_data
+
+    # A list of ...
     attr_accessor :xxx_phone_data
+
+    # A list of ...
     attr_accessor :xxx_relationship_data
 
     def self.from_json_data(data)
@@ -2363,14 +2516,20 @@ module SenzingTypedef
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
+
+    # A dictionary of ...
     attr_accessor :features
+
+    # A list of ...
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
 
     # Internal identifier for the record.
     attr_accessor :internal_id
+
+    # A dictionary of ...
     attr_accessor :json_data
     attr_accessor :last_seen_dt
 
@@ -2382,18 +2541,36 @@ module SenzingTypedef
 
     # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
+
+    # A dictionary of ...
     attr_accessor :unmapped_data
+
+    # A list of ...
     attr_accessor :xxx_address_data
+
+    # A list of ...
     attr_accessor :xxx_attribute_data
+
+    # A list of ...
     attr_accessor :xxx_entity_data
     attr_accessor :xxx_entity_desc
     attr_accessor :xxx_entity_key
     attr_accessor :xxx_entity_type
+
+    # A list of ...
     attr_accessor :xxx_identifier_data
     attr_accessor :xxx_match_level
+
+    # A list of ...
     attr_accessor :xxx_name_data
+
+    # A list of ...
     attr_accessor :xxx_other_data
+
+    # A list of ...
     attr_accessor :xxx_phone_data
+
+    # A list of ...
     attr_accessor :xxx_relationship_data
 
     def self.from_json_data(data)
@@ -2532,6 +2709,8 @@ module SenzingTypedef
     attr_accessor :linked_feat_id
     attr_accessor :linked_feat_type
     attr_accessor :linked_feat_usage_type
+
+    # A list of ...
     attr_accessor :xxx_rel_pointer
 
     def self.from_json_data(data)
@@ -2645,14 +2824,13 @@ module SenzingTypedef
   end
 
   class RelatedEntity
-    # The ENTITY_ID is the Senzing-generated identifier for the discovered
-    # entity. It may change when new information is added.
+    # The ENTITY_ID is the identifier for the entity.
     attr_accessor :entity_id
 
-    # A name this entity goes by. An entity could have multiple names.
+    # An arbitrarily selected name for the entity.
     attr_accessor :entity_name
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
 
     # Indicates if this is an ambiguous relationship.
@@ -2661,22 +2839,24 @@ module SenzingTypedef
     # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
 
-    # Representation of matched source record features.
+    # Representation of matched source data.
     attr_accessor :match_key
-    attr_accessor :match_key_details
-    attr_accessor :match_level
 
-    # The type of match that occurred for the record.
+    # Contains supporting information for the match key.
+    attr_accessor :match_key_details
+
+    # The type of relationship.
     attr_accessor :match_level_code
 
     # A list of (data source code, record id) pairs.
     attr_accessor :records
 
-    # Overview of the source systems the records came from comprising this
-    # related entity.
+    # A list of tabulated counts of records by source.
     attr_accessor :record_summary
+
+    # A list of record types on the entity as defined in the Entity
+    # Specification.
     attr_accessor :record_types
-    attr_accessor :xxx_last_seen_dt
 
     def self.from_json_data(data)
       out = RelatedEntity.new
@@ -2687,12 +2867,10 @@ module SenzingTypedef
       out.is_disclosed = SenzingTypedef::from_json_data(Integer, data["IS_DISCLOSED"])
       out.match_key = SenzingTypedef::from_json_data(String, data["MATCH_KEY"])
       out.match_key_details = SenzingTypedef::from_json_data(MatchKeyDetails, data["MATCH_KEY_DETAILS"])
-      out.match_level = SenzingTypedef::from_json_data(Integer, data["MATCH_LEVEL"])
       out.match_level_code = SenzingTypedef::from_json_data(String, data["MATCH_LEVEL_CODE"])
       out.records = SenzingTypedef::from_json_data(Array[Record], data["RECORDS"])
       out.record_summary = SenzingTypedef::from_json_data(Array[RecordSummary], data["RECORD_SUMMARY"])
       out.record_types = SenzingTypedef::from_json_data(Array[String], data["RECORD_TYPES"])
-      out.xxx_last_seen_dt = SenzingTypedef::from_json_data(DateTime, data["XXX_LAST_SEEN_DT"])
       out
     end
 
@@ -2705,12 +2883,10 @@ module SenzingTypedef
       data["IS_DISCLOSED"] = SenzingTypedef::to_json_data(is_disclosed)
       data["MATCH_KEY"] = SenzingTypedef::to_json_data(match_key)
       data["MATCH_KEY_DETAILS"] = SenzingTypedef::to_json_data(match_key_details)
-      data["MATCH_LEVEL"] = SenzingTypedef::to_json_data(match_level)
       data["MATCH_LEVEL_CODE"] = SenzingTypedef::to_json_data(match_level_code)
       data["RECORDS"] = SenzingTypedef::to_json_data(records)
       data["RECORD_SUMMARY"] = SenzingTypedef::to_json_data(record_summary)
       data["RECORD_TYPES"] = SenzingTypedef::to_json_data(record_types)
-      data["XXX_LAST_SEEN_DT"] = SenzingTypedef::to_json_data(xxx_last_seen_dt)
       data
     end
   end
@@ -2798,20 +2974,26 @@ module SenzingTypedef
     # entity. It may change when new information is added.
     attr_accessor :entity_id
 
-    # A name this entity goes by. An entity could have multiple names.
+    # An arbitrarily selected name for the entity.
     attr_accessor :entity_name
+
+    # A dictionary of ...
     attr_accessor :features
 
     # A list of (data source code, record id) pairs.
     attr_accessor :records
 
-    # Overview of the source systems the records came from comprising this
-    # related entity.
+    # A list of source systems the records came from comprising this related
+    # entity.
     attr_accessor :record_summary
+
+    # A list of ...
     attr_accessor :record_types
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :xxx_errule_code
+
+    # A list of ...
     attr_accessor :xxx_feature_ids
 
     # Indicates if this is an ambiguous relationship.
@@ -2896,18 +3078,24 @@ module SenzingTypedef
 
     # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
+
+    # A dictionary of ...
     attr_accessor :features
 
     # A list of (data source code, record id) pairs.
     attr_accessor :records
 
-    # Overview of the source systems the records came from comprising this
-    # related entity.
+    # A list of source systems the records came from comprising this related
+    # entity.
     attr_accessor :record_summary
+
+    # A list of ...
     attr_accessor :record_types
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :xxx_errule_code
+
+    # A list of ...
     attr_accessor :xxx_feature_ids
 
     # Indicates if this is an ambiguous relationship.
@@ -3009,6 +3197,8 @@ module SenzingTypedef
   class SampleRecord
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
+
+    # A list of ...
     attr_accessor :flags
 
     # The unique identifier within the set of records in the DATA_SOURCE.
@@ -3054,6 +3244,7 @@ module SenzingTypedef
   end
 
   class SearchEntity
+    # A dictionary of ...
     attr_accessor :features
     attr_accessor :summary
 
@@ -3098,6 +3289,7 @@ module SenzingTypedef
   end
 
   class SearchRequest
+    # A dictionary of ...
     attr_accessor :features
     attr_accessor :json_data
     attr_accessor :search_profile
@@ -3693,7 +3885,7 @@ module SenzingTypedef
   end
 
   class SzConfigGetDataSourceRegistryResponse
-    # The list of registered data sources.
+    # A list of registered data sources.
     attr_accessor :data_sources
 
     def self.from_json_data(data)
@@ -3710,7 +3902,7 @@ module SenzingTypedef
   end
 
   class SzConfigManagerGetConfigRegistryResponse
-    # The list of registered configurations.
+    # A list of registered configurations.
     attr_accessor :configs
 
     def self.from_json_data(data)
@@ -3810,7 +4002,7 @@ module SenzingTypedef
   end
 
   class SzEngineAddRecordResponse
-    # Entities that were affected as a result of the operation.
+    # A list of entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
     # Short, stable identifier naming the source system.
@@ -3842,7 +4034,7 @@ module SenzingTypedef
   end
 
   class SzEngineDeleteRecordResponse
-    # Entities that were affected as a result of the operation.
+    # A list of entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
     # Short, stable identifier naming the source system.
@@ -3960,16 +4152,16 @@ module SenzingTypedef
 
   # A network of relationships among entities.
   class SzEngineFindNetworkByEntityIDResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
 
-    # Relationship details for all pairs of entities in the network.
+    # A list of relationship details for all pairs of entities in the network.
     attr_accessor :entity_network_links
 
-    # Best path between all pairs of requested entities.
+    # A list of best path between all pairs of requested entities.
     attr_accessor :entity_paths
 
-    # Relationship details for all links from ENTITY_PATHS.
+    # A list of relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
 
     # Indicates that the build-out has been truncated.
@@ -4015,16 +4207,16 @@ module SenzingTypedef
 
   # A network of relationships among entities.
   class SzEngineFindNetworkByRecordIDResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
 
-    # Relationship details for all pairs of entities in the network.
+    # A list of relationship details for all pairs of entities in the network.
     attr_accessor :entity_network_links
 
-    # Best path between all pairs of requested entities.
+    # A list of best path between all pairs of requested entities.
     attr_accessor :entity_paths
 
-    # Relationship details for all links from ENTITY_PATHS.
+    # A list of relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
 
     # Indicates that the build-out has been truncated.
@@ -4084,13 +4276,13 @@ module SenzingTypedef
   end
 
   class SzEngineFindPathByEntityIDResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
 
-    # Best path between all pairs of requested entities.
+    # A list of best path between all pairs of requested entities.
     attr_accessor :entity_paths
 
-    # Relationship details for all links from ENTITY_PATHS.
+    # A list of relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
 
     def self.from_json_data(data)
@@ -4144,13 +4336,13 @@ module SenzingTypedef
   end
 
   class SzEngineFindPathByRecordIDResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
 
-    # Best path between all pairs of requested entities.
+    # A list of best path between all pairs of requested entities.
     attr_accessor :entity_paths
 
-    # Relationship details for all links from ENTITY_PATHS.
+    # A list of relationship details for all links from ENTITY_PATHS.
     attr_accessor :entity_path_links
 
     def self.from_json_data(data)
@@ -4171,6 +4363,7 @@ module SenzingTypedef
   end
 
   class SzEngineGetEntityByEntityIDResponse
+    # A list of ...
     attr_accessor :related_entities
     attr_accessor :resolved_entity
 
@@ -4190,6 +4383,7 @@ module SenzingTypedef
   end
 
   class SzEngineGetEntityByRecordIDResponse
+    # A list of ...
     attr_accessor :related_entities
     attr_accessor :resolved_entity
 
@@ -4209,9 +4403,16 @@ module SenzingTypedef
   end
 
   class SzEngineGetRecordPreviewResponse
+    # A dictionary of ...
     attr_accessor :features
+
+    # A list of ...
     attr_accessor :feature_ids
+
+    # A dictionary of ...
     attr_accessor :json_data
+
+    # A dictionary of ...
     attr_accessor :unmapped_data
 
     def self.from_json_data(data)
@@ -4236,24 +4437,40 @@ module SenzingTypedef
   class SzEngineGetRecordResponse
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
+
+    # A dictionary of ...
     attr_accessor :features
+
+    # A list of ...
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
+
+    # A dictionary of ...
     attr_accessor :json_data
     attr_accessor :last_seen_dt
 
     # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
+
+    # A dictionary of ...
     attr_accessor :unmapped_data
+
+    # A list of ...
     attr_accessor :xxx_address_data
+
+    # A list of ...
     attr_accessor :xxx_attribute_data
+
+    # A list of ...
     attr_accessor :xxx_entity_data
     attr_accessor :xxx_entity_desc
     attr_accessor :xxx_entity_key
     attr_accessor :xxx_entity_type
 
-    # Identifier of the entity resolution rule that was triggered.
+    # Identifier of the entity resolution principle that was triggered.
     attr_accessor :xxx_errule_code
+
+    # A list of ...
     attr_accessor :xxx_identifier_data
 
     # Internal identifier for the record.
@@ -4265,9 +4482,17 @@ module SenzingTypedef
 
     # The type of match that occurred for the record.
     attr_accessor :xxx_match_level_code
+
+    # A list of ...
     attr_accessor :xxx_name_data
+
+    # A list of ...
     attr_accessor :xxx_other_data
+
+    # A list of ...
     attr_accessor :xxx_phone_data
+
+    # A list of ...
     attr_accessor :xxx_relationship_data
 
     def self.from_json_data(data)
@@ -4411,7 +4636,7 @@ module SenzingTypedef
   end
 
   class SzEngineProcessRedoRecordResponse
-    # Entities that were affected as a result of the operation.
+    # A list of entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
     # Short, stable identifier naming the source system.
@@ -4444,7 +4669,7 @@ module SenzingTypedef
   end
 
   class SzEngineReevaluateEntityResponse
-    # Entities that were affected as a result of the operation.
+    # A list of entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
     # Internal use.
@@ -4476,7 +4701,7 @@ module SenzingTypedef
   end
 
   class SzEngineReevaluateRecordResponse
-    # Entities that were affected as a result of the operation.
+    # A list of entities that were affected as a result of the operation.
     attr_accessor :affected_entities
 
     # Short, stable identifier naming the source system.
@@ -4522,10 +4747,15 @@ module SenzingTypedef
   end
 
   class SzEngineSearchByAttributesResponse
+    # A list of ...
     attr_accessor :related_entities_mjd
+
+    # A list of ...
     attr_accessor :resolved_entities
     attr_accessor :search_entity
     attr_accessor :search_request
+
+    # A list of ...
     attr_accessor :search_statistics
 
     def self.from_json_data(data)
@@ -4582,8 +4812,10 @@ module SenzingTypedef
   end
 
   class SzEngineWhyEntitiesResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
+
+    # A list of ...
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -4602,8 +4834,10 @@ module SenzingTypedef
   end
 
   class SzEngineWhyRecordInEntityResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
+
+    # A list of ...
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -4622,8 +4856,10 @@ module SenzingTypedef
   end
 
   class SzEngineWhyRecordsResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
+
+    # A list of ...
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -4658,11 +4894,15 @@ module SenzingTypedef
   end
 
   class SzEngineWhySearchResponse
-    # List of entity information.
+    # A list of entity information.
     attr_accessor :entities
     attr_accessor :search_entity
     attr_accessor :search_request
+
+    # A list of ...
     attr_accessor :search_statistics
+
+    # A list of ...
     attr_accessor :why_results
 
     def self.from_json_data(data)
@@ -4778,6 +5018,8 @@ module SenzingTypedef
 
   class UmfProc
     attr_accessor :name
+
+    # A list of ...
     attr_accessor :params
 
     def self.from_json_data(data)
@@ -4831,6 +5073,7 @@ module SenzingTypedef
   end
 
   class VirtualEntitySynopsis
+    # A list of ...
     attr_accessor :member_records
     attr_accessor :virtual_entity_id
 
@@ -4850,14 +5093,19 @@ module SenzingTypedef
   end
 
   class WhyKeyDetails
+    # A list of ...
     attr_accessor :confirmations
+
+    # A list of ...
     attr_accessor :denials
+
+    # A list of ...
     attr_accessor :disclosed_relations
 
     def self.from_json_data(data)
       out = WhyKeyDetails.new
-      out.confirmations = SenzingTypedef::from_json_data(Array[Confirmation], data["CONFIRMATIONS"])
-      out.denials = SenzingTypedef::from_json_data(Array[Confirmation], data["DENIALS"])
+      out.confirmations = SenzingTypedef::from_json_data(Array[FeatureScoreInfo], data["CONFIRMATIONS"])
+      out.denials = SenzingTypedef::from_json_data(Array[FeatureScoreInfo], data["DENIALS"])
       out.disclosed_relations = SenzingTypedef::from_json_data(Array[DisclosedRelationsForWhyKeyDetails], data["DISCLOSED_RELATIONS"])
       out
     end
@@ -4876,7 +5124,11 @@ module SenzingTypedef
     # entity. It may change when new information is added.
     attr_accessor :entity_id
     attr_accessor :entity_id0
+
+    # A list of ...
     attr_accessor :focus_records
+
+    # A list of ...
     attr_accessor :focus_records0
 
     # Internal identifier for the record.
@@ -4923,6 +5175,8 @@ module SenzingTypedef
     attr_accessor :loaded_records
     attr_accessor :lock_waits
     attr_accessor :processing
+
+    # A dictionary of ...
     attr_accessor :redo_triggers
     attr_accessor :repair_diagnosis
     attr_accessor :reresolve
@@ -5016,7 +5270,10 @@ module SenzingTypedef
   end
 
   class WorkloadCandidates
+    # A dictionary of ...
     attr_accessor :candidate_builders
+
+    # A dictionary of ...
     attr_accessor :suppressed_candidate_builders
 
     def self.from_json_data(data)
@@ -5082,7 +5339,10 @@ module SenzingTypedef
   end
 
   class WorkloadExpressedFeatures
+    # A list of ...
     attr_accessor :calls
+
+    # A dictionary of ...
     attr_accessor :created
 
     def self.from_json_data(data)
@@ -5326,6 +5586,7 @@ module SenzingTypedef
   end
 
   class WorkloadReresolve
+    # A dictionary of ...
     attr_accessor :new_feature_ftypes
     attr_accessor :suppressed_candidate_builders_for_reresolve
     attr_accessor :suppressed_scored_feature_type_for_reresolve
@@ -5379,8 +5640,13 @@ module SenzingTypedef
   end
 
   class WorkloadScoring
+    # A dictionary of ...
     attr_accessor :cache_hit
+
+    # A dictionary of ...
     attr_accessor :cache_miss
+
+    # A dictionary of ...
     attr_accessor :scored_pairs
     attr_accessor :suppressed_disclosed_relationship_domain_count
     attr_accessor :suppressed_scored_feature_type

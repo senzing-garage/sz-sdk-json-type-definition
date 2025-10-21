@@ -8,12 +8,21 @@ namespace Senzing.Typedef
 {
     public class WorkloadScoring
     {
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("cacheHit")]
         public IDictionary<string, int> CacheHit { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("cacheMiss")]
         public IDictionary<string, int> CacheMiss { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("scoredPairs")]
         public IDictionary<string, int> ScoredPairs { get; set; }
 

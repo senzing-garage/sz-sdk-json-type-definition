@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class VirtualEntitySynopsis
     {
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("MEMBER_RECORDS")]
         public IList<MemberRecord> MemberRecords { get; set; }
 

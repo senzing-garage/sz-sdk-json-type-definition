@@ -16,14 +16,20 @@ namespace Senzing.Typedef
         public string DataSource { get; set; }
 
         /// <summary>
-        /// Identifier of the entity resolution rule that was triggered.
+        /// Identifier of the entity resolution principle that was triggered.
         /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }
 
@@ -36,6 +42,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("INTERNAL_ID")]
         public int InternalId { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("JSON_DATA")]
         public IDictionary<string, Object_> JsonData { get; set; }
 
@@ -60,15 +69,27 @@ namespace Senzing.Typedef
         [JsonPropertyName("RECORD_ID")]
         public string RecordId { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_ADDRESS_DATA")]
         public IList<string> XxxAddressData { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_ATTRIBUTE_DATA")]
         public IList<string> XxxAttributeData { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_ENTITY_DATA")]
         public IList<string> XxxEntityData { get; set; }
 
@@ -81,21 +102,36 @@ namespace Senzing.Typedef
         [JsonPropertyName("XXX_ENTITY_TYPE")]
         public string XxxEntityType { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_IDENTIFIER_DATA")]
         public IList<string> XxxIdentifierData { get; set; }
 
         [JsonPropertyName("XXX_MATCH_LEVEL")]
         public int XxxMatchLevel { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_NAME_DATA")]
         public IList<string> XxxNameData { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_OTHER_DATA")]
         public IList<string> XxxOtherData { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_PHONE_DATA")]
         public IList<string> XxxPhoneData { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_RELATIONSHIP_DATA")]
         public IList<string> XxxRelationshipData { get; set; }
     }

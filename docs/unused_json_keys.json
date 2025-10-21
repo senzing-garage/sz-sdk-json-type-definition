@@ -336,7 +336,35 @@
                         "XXX_FEAT_DESC": "string",
                         "XXX_LINKED_FEAT_DESC": "string"
                     },
+                    "FEATURE_SCORES": {
+                        "user_defined_json_key": [
+                            {
+                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                                "INBOUND_FEAT_USAGE_TYPE": "string"
+                            }
+                        ]
+                    },
                     "WHY_KEY_DETAILS": {
+                        "CONFIRMATIONS": [
+                            {
+                                "ADDITIONAL_SCORES": {
+                                    "FULL_SCORE": "int32"
+                                },
+                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                                "INBOUND_FEAT_USAGE_TYPE": "string"
+                            },
+                            {
+                                "ADDITIONAL_SCORES": {
+                                    "GENERATION_MATCH": "int32",
+                                    "GNR_FN": "int32",
+                                    "GNR_GN": "int32",
+                                    "GNR_ON": "int32",
+                                    "GNR_SN": "int32"
+                                },
+                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
+                                "INBOUND_FEAT_USAGE_TYPE": "string"
+                            }
+                        ],
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {

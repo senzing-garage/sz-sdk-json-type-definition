@@ -11,7 +11,7 @@ namespace Senzing.Typedef
         public CandidateKeysForMatchInfo CandidateKeys { get; set; }
 
         /// <summary>
-        /// Identifier of the entity resolution rule that was triggered.
+        /// Identifier of the entity resolution principle that was triggered.
         /// </summary>
         [JsonPropertyName("ERRULE_CODE")]
         public string ErruleCode { get; set; }

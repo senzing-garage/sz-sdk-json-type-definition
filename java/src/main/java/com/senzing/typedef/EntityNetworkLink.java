@@ -36,7 +36,7 @@ public class EntityNetworkLink {
 
     /**
      * Getter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -44,7 +44,7 @@ public class EntityNetworkLink {
 
     /**
      * Setter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;

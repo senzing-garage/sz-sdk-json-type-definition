@@ -8,9 +8,15 @@ namespace Senzing.Typedef
 {
     public class WorkloadExpressedFeatures
     {
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("calls")]
         public IList<WorkloadExpressedFeaturesCall> Calls { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("created")]
         public IDictionary<string, int> Created { get; set; }
     }

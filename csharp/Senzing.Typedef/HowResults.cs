@@ -11,6 +11,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FINAL_STATE")]
         public FinalState FinalState { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("RESOLUTION_STEPS")]
         public IList<ResolutionStep> ResolutionSteps { get; set; }
     }

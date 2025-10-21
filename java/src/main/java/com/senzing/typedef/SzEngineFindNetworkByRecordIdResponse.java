@@ -31,7 +31,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public List<Entity> getEntities() {
         return entities;
@@ -39,7 +39,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public void setEntities(List<Entity> entities) {
         this.entities = entities;
@@ -47,7 +47,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entityNetworkLinks.<p>
-     * Relationship details for all pairs of entities in the network.
+     * A list of relationship details for all pairs of entities in the network.
      */
     public List<EntityNetworkLink> getEntityNetworkLinks() {
         return entityNetworkLinks;
@@ -55,7 +55,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entityNetworkLinks.<p>
-     * Relationship details for all pairs of entities in the network.
+     * A list of relationship details for all pairs of entities in the network.
      */
     public void setEntityNetworkLinks(List<EntityNetworkLink> entityNetworkLinks) {
         this.entityNetworkLinks = entityNetworkLinks;
@@ -63,7 +63,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entityPaths.<p>
-     * Best path between all pairs of requested entities.
+     * A list of best path between all pairs of requested entities.
      */
     public List<EntityPath> getEntityPaths() {
         return entityPaths;
@@ -71,7 +71,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entityPaths.<p>
-     * Best path between all pairs of requested entities.
+     * A list of best path between all pairs of requested entities.
      */
     public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
@@ -79,7 +79,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Getter for entityPathLinks.<p>
-     * Relationship details for all links from ENTITY_PATHS.
+     * A list of relationship details for all links from ENTITY_PATHS.
      */
     public List<EntityPathLink> getEntityPathLinks() {
         return entityPathLinks;
@@ -87,7 +87,7 @@ public class SzEngineFindNetworkByRecordIdResponse {
 
     /**
      * Setter for entityPathLinks.<p>
-     * Relationship details for all links from ENTITY_PATHS.
+     * A list of relationship details for all links from ENTITY_PATHS.
      */
     public void setEntityPathLinks(List<EntityPathLink> entityPathLinks) {
         this.entityPathLinks = entityPathLinks;

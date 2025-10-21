@@ -11,18 +11,33 @@ namespace Senzing.Typedef
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("ENTITY_ROLES")]
         public IList<EntityRoles> EntityRoles { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("RELATED_ROLES")]
         public IList<RelatedRoles> RelatedRoles { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("REL_LINK")]
         public IList<RelLink> RelLink { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_REL_ANCHOR")]
         public IList<RelAnchor> XxxRelAnchor { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_REL_POINTER")]
         public IList<RelPointer> XxxRelPointer { get; set; }
     }

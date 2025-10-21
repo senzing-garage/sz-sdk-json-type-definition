@@ -8,9 +8,15 @@ namespace Senzing.Typedef
 {
     public class WorkloadCandidates
     {
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("candidateBuilders")]
         public IDictionary<string, int> CandidateBuilders { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("suppressedCandidateBuilders")]
         public IDictionary<string, int> SuppressedCandidateBuilders { get; set; }
     }

@@ -16,7 +16,7 @@ public class SzConfigManagerGetConfigRegistryResponse {
 
     /**
      * Getter for configs.<p>
-     * The list of registered configurations.
+     * A list of registered configurations.
      */
     public List<Config> getConfigs() {
         return configs;
@@ -24,7 +24,7 @@ public class SzConfigManagerGetConfigRegistryResponse {
 
     /**
      * Setter for configs.<p>
-     * The list of registered configurations.
+     * A list of registered configurations.
      */
     public void setConfigs(List<Config> configs) {
         this.configs = configs;

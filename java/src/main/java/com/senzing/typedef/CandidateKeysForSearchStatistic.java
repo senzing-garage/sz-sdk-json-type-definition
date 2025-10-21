@@ -19,6 +19,7 @@ public class CandidateKeysForSearchStatistic {
 
     /**
      * Getter for featureTypes.<p>
+     * A list of ...
      */
     public List<FeatureType> getFeatureTypes() {
         return featureTypes;
@@ -26,6 +27,7 @@ public class CandidateKeysForSearchStatistic {
 
     /**
      * Setter for featureTypes.<p>
+     * A list of ...
      */
     public void setFeatureTypes(List<FeatureType> featureTypes) {
         this.featureTypes = featureTypes;

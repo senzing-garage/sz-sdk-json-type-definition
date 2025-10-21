@@ -5,6 +5,9 @@
     "ACCOUNT_NUMBER": [
         "Account number (e.g., bank, card). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "ADDITIONAL_SCORES": [
+        "Itemized scores from comparison function."
+    ],
     "ADDR_CITY": [
         "City/locality. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -42,13 +45,105 @@
         "Optional; include when provided by the source. Common values: HOME, MAILING (persons); BUSINESS (organizations). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "AFFECTED_ENTITIES": [
-        "Entities that were affected as a result of the operation."
+        "A list of entities that were affected as a result of the operation."
+    ],
+    "ATTRIBUTES": [
+        "A dictionary of ...",
+        ""
+    ],
+    "CANDIDATE_KEYS": [
+        "A dictionary of ...",
+        ""
+    ],
+    "CFG_ATTR": [
+        "A list of ..."
+    ],
+    "CFG_CFBOM": [
+        "A list of ..."
+    ],
+    "CFG_CFCALL": [
+        "A list of ..."
+    ],
+    "CFG_CFRTN": [
+        "A list of ..."
+    ],
+    "CFG_CFUNC": [
+        "A list of ..."
+    ],
+    "CFG_DFBOM": [
+        "A list of ..."
+    ],
+    "CFG_DFCALL": [
+        "A list of ..."
+    ],
+    "CFG_DFUNC": [
+        "A list of ..."
+    ],
+    "CFG_DSRC": [
+        "A list of ..."
+    ],
+    "CFG_DSRC_INTEREST": [
+        "A list of ..."
+    ],
+    "CFG_EBOM": [
+        "A list of ..."
+    ],
+    "CFG_EFBOM": [
+        "A list of ..."
+    ],
+    "CFG_EFCALL": [
+        "A list of ..."
+    ],
+    "CFG_EFUNC": [
+        "A list of ..."
+    ],
+    "CFG_ERFRAG": [
+        "A list of ..."
+    ],
+    "CFG_ERRULE": [
+        "A list of ..."
+    ],
+    "CFG_FBOM": [
+        "A list of ..."
+    ],
+    "CFG_FBOVR": [
+        "A list of ..."
+    ],
+    "CFG_FCLASS": [
+        "A list of ..."
+    ],
+    "CFG_FELEM": [
+        "A list of ..."
+    ],
+    "CFG_FTYPE": [
+        "A list of ..."
+    ],
+    "CFG_GENERIC_THRESHOLD": [
+        "A list of ..."
+    ],
+    "CFG_GPLAN": [
+        "A list of ..."
+    ],
+    "CFG_LENSRL": [
+        "A list of ..."
+    ],
+    "CFG_RCLASS": [
+        "A list of ..."
+    ],
+    "CFG_RTYPE": [
+        "A list of ..."
+    ],
+    "CFG_SFCALL": [
+        "A list of ..."
+    ],
+    "CFG_SFUNC": [
+        "A list of ..."
     ],
     "CITIZENSHIP": [
         "Country of citizenship (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "CONFIGS": [
-        "The list of registered configurations."
+        "A list of registered configurations."
     ],
     "CONFIG_COMMENTS": [
         "A user-provided description of the configuration."
@@ -56,17 +151,35 @@
     "CONFIG_ID": [
         "An internally-generated unique identifier of the configuration."
     ],
+    "CONFIRMATIONS": [
+        "A list of feature data in the match key supporting the match.",
+        "A list of ..."
+    ],
+    "CandidateKeysForMatchInfo": [
+        "A dictionary of ..."
+    ],
     "DATA_SOURCE": [
         "Short, stable identifier naming the source system."
     ],
     "DATA_SOURCES": [
-        "The list of registered data sources."
+        "A list of registered data sources."
     ],
     "DATE_OF_BIRTH": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "DATE_OF_DEATH": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "DEGREES": [
+        "Degrees of separation."
+    ],
+    "DENIALS": [
+        "A list of feature data in the match key negating the match.",
+        "A list of ..."
+    ],
+    "DISCLOSED_RELATIONS": [
+        "A list of disclosed relationships of various types.",
+        "A list of ..."
     ],
     "DRIVERS_LICENSE_NUMBER": [
         "Driver's license number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -93,34 +206,49 @@
         "This is the name of the organization the person is employed by. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "ENTITIES": [
-        "List of entity information."
+        "A list of entity information."
     ],
     "ENTITY_ID": [
-        "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added."
+        "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
+        "The ENTITY_ID is the identifier for the entity."
     ],
     "ENTITY_NAME": [
+        "An arbitrarily selected name for the entity.",
         "A name this entity goes by. An entity could have multiple names."
     ],
     "ENTITY_NETWORK_LINKS": [
-        "Relationship details for all pairs of entities in the network."
+        "A list of relationship details for all pairs of entities in the network."
     ],
     "ENTITY_PATHS": [
-        "Best path between all pairs of requested entities."
+        "A list of best path between all pairs of requested entities."
     ],
     "ENTITY_PATH_LINKS": [
-        "Relationship details for all links from ENTITY_PATHS."
+        "A list of relationship details for all links from ENTITY_PATHS."
+    ],
+    "ENTITY_ROLES": [
+        "A list of ..."
     ],
     "ERRULE_CODE": [
-        "Identifier of the entity resolution rule that was triggered."
+        "Identifier of the entity resolution principle that was triggered."
     ],
     "FACEBOOK": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "FEATURES": [
+        "A dictionary of ..."
+    ],
+    "FEATURE_IDS": [
+        "A list of ..."
+    ],
+    "FEATURE_TYPES": [
+        "A list of ..."
     ],
     "FEAT_DESC": [
         "Describes the attributes that make up the feature."
     ],
     "FEAT_DESC_VALUES": [
-        "Describes the attributes that make up the feature."
+        "A list of ...",
+        "A list of attributes that make up the feature."
     ],
     "FELEM_CODE": [
         "Internal use."
@@ -128,8 +256,20 @@
     "FELEM_VALUE": [
         "Internal use."
     ],
+    "FLAGS": [
+        "A list of ..."
+    ],
+    "FOCUS_RECORDS": [
+        "A list of ..."
+    ],
+    "FOCUS_RECORDS_2": [
+        "A list of ..."
+    ],
     "FTYPE_CODE": [
         "Internal use."
+    ],
+    "FeatureScores": [
+        "A dictionary of ..."
     ],
     "GENDER": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -164,6 +304,13 @@
     "IS_DISCLOSED": [
         "Indicates if this is a disclosed relationship."
     ],
+    "InterestingEntity": [
+        "Internal use."
+    ],
+    "JSON_DATA": [
+        "A dictionary of ...",
+        ""
+    ],
     "LEI_NUMBER": [
         "Legal Entity Identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -174,13 +321,21 @@
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "MATCH_KEY": [
-        "Representation of matched source record features."
+        "Representation of matched source record features.",
+        "Representation of matched source data."
+    ],
+    "MATCH_KEY_DETAILS": [
+        "Contains supporting information for the match key."
     ],
     "MATCH_LEVEL_CODE": [
-        "The type of match that occurred for the record."
+        "The type of match that occurred for the record.",
+        "The type of relationship."
     ],
     "MAX_ENTITY_LIMIT_REACHED": [
         "Indicates that the build-out has been truncated."
+    ],
+    "MEMBER_RECORDS": [
+        "A list of ..."
     ],
     "NAME_FIRST": [
         "Person given name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -218,6 +373,9 @@
     "NATIONAL_ID_TYPE": [
         "Use the type label from the source; standardize across sources. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "NOTICES": [
+        "A list of ..."
+    ],
     "NPI_NUMBER": [
         "US healthcare provider identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -229,6 +387,9 @@
     ],
     "OTHER_ID_TYPE": [
         "Standardized source type. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "PARAMS": [
+        "A list of ..."
     ],
     "PASSPORT_COUNTRY": [
         "Issuing country. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -257,10 +418,15 @@
         "The unique identifier within the DATA_SOURCE of the deleted record."
     ],
     "RECORD_SUMMARY": [
-        "Overview of the source systems the records came from comprising this related entity."
+        "A list of tabulated counts of records by source.",
+        "A list of source systems the records came from comprising this related entity."
     ],
     "RECORD_TYPE": [
         "Include when known to prevent cross-type resolution; omit if unknown. Use standardized kinds (PERSON, ORGANIZATION). Often used to determine icon/shape in graphs. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "RECORD_TYPES": [
+        "A list of record types on the entity as defined in the Entity Specification.",
+        "A list of ..."
     ],
     "REGISTRATION_COUNTRY": [
         "Country of registration (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -268,11 +434,34 @@
     "REGISTRATION_DATE": [
         "Organization registration/incorporation date. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "RELATED_ENTITIES": [
+        "A list of ..."
+    ],
+    "RELATED_ENTITIES_MJD": [
+        "A list of ..."
+    ],
+    "RELATED_ROLES": [
+        "A list of ..."
+    ],
+    "REL_ANCHOR": [
+        "A list of ...",
+        "A list of disclosed relationship anchors."
+    ],
     "REL_ANCHOR_DOMAIN": [
         "This code helps keep the REL_ANCHOR_KEY unique. This is a code (without dashes) for the data source or source field that is contributing the relationship. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "REL_ANCHOR_KEY": [
         "This key should be a unique value for the record within the REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID here. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "REL_LINK": [
+        "A list of ..."
+    ],
+    "REL_LINKS": [
+        "Deprecated. A list of disclosed relationships based on identical shared keys."
+    ],
+    "REL_POINTER": [
+        "A list of ...",
+        "A list of disclosed relationship pointers."
     ],
     "REL_POINTER_DOMAIN": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -282,6 +471,27 @@
     ],
     "REL_POINTER_ROLE": [
         "This is the role the pointer record has to the anchor record. Such as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF, BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for display and filtering. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "RESOLUTION_STEPS": [
+        "A list of ..."
+    ],
+    "RESOLVED_ENTITIES": [
+        "A list of ..."
+    ],
+    "SAMPLE_RECORDS": [
+        "A list of ..."
+    ],
+    "SCORE": [
+        "Numeric score from the comparison function."
+    ],
+    "SCORE_BUCKET": [
+        "Category of score strength."
+    ],
+    "SEARCH_STATISTICS": [
+        "A list of ..."
+    ],
+    "SETTINGS": [
+        "A list of ..."
     ],
     "SIGNAL": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -294,6 +504,10 @@
     ],
     "SYS_CREATE_DT": [
         "The timestamp of the original registration of the configuration."
+    ],
+    "SYS_OOM": [
+        "A list of ...",
+        ""
     ],
     "SzEngineFindInterestingEntitiesByEntityIdResponse": [
         "Internal use."
@@ -331,11 +545,17 @@
     "TWITTER": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "UNMAPPED_DATA": [
+        "A dictionary of ..."
+    ],
     "USAGE_TYPE": [
         "Label to identify how some features are being used (can also change some features behavior)."
     ],
     "VIBER": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "VIRTUAL_ENTITIES": [
+        "A list of ..."
     ],
     "WEBSITE_ADDRESS": [
         "Website or domain; typically for organizations. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -346,11 +566,41 @@
     "WHATSAPP": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "WHY_RESULTS": [
+        "A list of ..."
+    ],
+    "XXX_ADDRESS_DATA": [
+        "A list of ..."
+    ],
+    "XXX_ATTRIBUTES": [
+        "A list of ..."
+    ],
+    "XXX_ATTRIBUTE_DATA": [
+        "A list of ..."
+    ],
+    "XXX_CFG_ECLASS": [
+        "A list of ..."
+    ],
+    "XXX_CFG_ETYPE": [
+        "A list of ..."
+    ],
+    "XXX_CFG_LENS": [
+        "A list of ..."
+    ],
+    "XXX_CFG_LENSRL": [
+        "A list of ..."
+    ],
     "XXX_DATA_SOURCE": [
         "A label identifying the provenance of the record."
     ],
+    "XXX_ENTITY_DATA": [
+        "A list of ..."
+    ],
     "XXX_ERRULE_CODE": [
-        "Identifier of the entity resolution rule that was triggered."
+        "Identifier of the entity resolution principle that was triggered."
+    ],
+    "XXX_FEATURE_IDS": [
+        "A list of ..."
     ],
     "XXX_FEAT_DESC": [
         "Describes the attributes that make up the feature."
@@ -358,6 +608,9 @@
     "XXX_FIXME": [
         "A small portion of the output initiated by an Export call.",
         ""
+    ],
+    "XXX_IDENTIFIER_DATA": [
+        "A list of ..."
     ],
     "XXX_INTERNAL_ID": [
         "Internal identifier for the record."
@@ -374,8 +627,41 @@
     "XXX_MATCH_LEVEL_CODE": [
         "The type of match that occurred for the record."
     ],
+    "XXX_NAME_DATA": [
+        "A list of ..."
+    ],
+    "XXX_OTHER_DATA": [
+        "A list of ..."
+    ],
+    "XXX_PHONE_DATA": [
+        "A list of ..."
+    ],
     "XXX_RECORD_ID": [
         "The unique identifier within the set of records in the DATA_SOURCE."
+    ],
+    "XXX_RELATIONSHIP_DATA": [
+        "A list of ..."
+    ],
+    "XXX_REL_ANCHOR": [
+        "A list of ..."
+    ],
+    "XXX_REL_POINTER": [
+        "A list of ..."
+    ],
+    "cacheHit": [
+        "A dictionary of ..."
+    ],
+    "cacheMiss": [
+        "A dictionary of ..."
+    ],
+    "calls": [
+        "A list of ..."
+    ],
+    "candidateBuilders": [
+        "A dictionary of ..."
+    ],
+    "created": [
+        "A dictionary of ..."
     ],
     "dataStores": [
         "A list of database node connection metadata."
@@ -389,11 +675,27 @@
     "location": [
         "Database connection information."
     ],
+    "newFeatureFTypes": [
+        "A dictionary of ..."
+    ],
     "numRecordsInserted": [
         "The total number of records inserted within the insertTime."
     ],
+    "redoTriggers": [
+        "A dictionary of ..."
+    ],
+    "scoredPairs": [
+        "A dictionary of ..."
+    ],
+    "suppressedCandidateBuilders": [
+        "A dictionary of ..."
+    ],
     "type": [
         "Type of database.",
+        ""
+    ],
+    "values": [
+        "A list of ...",
         ""
     ]
 }

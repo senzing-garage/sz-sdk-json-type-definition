@@ -7,6 +7,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A dictionary of ...
+ */
 public class FeatureScores {
     @JsonValue
     private Map<String, List<FeatureScoreForAttribute>> value;

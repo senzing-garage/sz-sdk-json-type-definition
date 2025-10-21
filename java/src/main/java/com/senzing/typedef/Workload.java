@@ -221,6 +221,7 @@ public class Workload {
 
     /**
      * Getter for redoTriggers.<p>
+     * A dictionary of ...
      */
     public Map<String, Integer> getRedoTriggers() {
         return redoTriggers;
@@ -228,6 +229,7 @@ public class Workload {
 
     /**
      * Setter for redoTriggers.<p>
+     * A dictionary of ...
      */
     public void setRedoTriggers(Map<String, Integer> redoTriggers) {
         this.redoTriggers = redoTriggers;

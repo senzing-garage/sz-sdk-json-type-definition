@@ -32,6 +32,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("LINKED_FEAT_USAGE_TYPE")]
         public string LinkedFeatUsageType { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_REL_POINTER")]
         public IList<RelPointer> XxxRelPointer { get; set; }
     }

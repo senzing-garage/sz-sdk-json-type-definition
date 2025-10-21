@@ -33,6 +33,7 @@ public class HowResults {
 
     /**
      * Getter for resolutionSteps.<p>
+     * A list of ...
      */
     public List<ResolutionStep> getResolutionSteps() {
         return resolutionSteps;
@@ -40,6 +41,7 @@ public class HowResults {
 
     /**
      * Setter for resolutionSteps.<p>
+     * A list of ...
      */
     public void setResolutionSteps(List<ResolutionStep> resolutionSteps) {
         this.resolutionSteps = resolutionSteps;

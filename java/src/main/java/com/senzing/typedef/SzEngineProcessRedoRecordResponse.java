@@ -28,7 +28,7 @@ public class SzEngineProcessRedoRecordResponse {
 
     /**
      * Getter for affectedEntities.<p>
-     * Entities that were affected as a result of the operation.
+     * A list of entities that were affected as a result of the operation.
      */
     public List<AffectedEntity> getAffectedEntities() {
         return affectedEntities;
@@ -36,7 +36,7 @@ public class SzEngineProcessRedoRecordResponse {
 
     /**
      * Setter for affectedEntities.<p>
-     * Entities that were affected as a result of the operation.
+     * A list of entities that were affected as a result of the operation.
      */
     public void setAffectedEntities(List<AffectedEntity> affectedEntities) {
         this.affectedEntities = affectedEntities;

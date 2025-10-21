@@ -4,7 +4,6 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @JsonSerialize
@@ -30,9 +29,6 @@ public class RelatedEntity {
     @JsonProperty("MATCH_KEY_DETAILS")
     private MatchKeyDetails matchKeyDetails;
 
-    @JsonProperty("MATCH_LEVEL")
-    private Integer matchLevel;
-
     @JsonProperty("MATCH_LEVEL_CODE")
     private String matchLevelCode;
 
@@ -45,16 +41,12 @@ public class RelatedEntity {
     @JsonProperty("RECORD_TYPES")
     private List<String> recordTypes;
 
-    @JsonProperty("XXX_LAST_SEEN_DT")
-    private OffsetDateTime xxxLastSeenDt;
-
     public RelatedEntity() {
     }
 
     /**
      * Getter for entityId.<p>
-     * The ENTITY_ID is the Senzing-generated identifier for the discovered
-     * entity. It may change when new information is added.
+     * The ENTITY_ID is the identifier for the entity.
      */
     public Integer getEntityId() {
         return entityId;
@@ -62,8 +54,7 @@ public class RelatedEntity {
 
     /**
      * Setter for entityId.<p>
-     * The ENTITY_ID is the Senzing-generated identifier for the discovered
-     * entity. It may change when new information is added.
+     * The ENTITY_ID is the identifier for the entity.
      */
     public void setEntityId(Integer entityId) {
         this.entityId = entityId;
@@ -71,7 +62,7 @@ public class RelatedEntity {
 
     /**
      * Getter for entityName.<p>
-     * A name this entity goes by. An entity could have multiple names.
+     * An arbitrarily selected name for the entity.
      */
     public String getEntityName() {
         return entityName;
@@ -79,7 +70,7 @@ public class RelatedEntity {
 
     /**
      * Setter for entityName.<p>
-     * A name this entity goes by. An entity could have multiple names.
+     * An arbitrarily selected name for the entity.
      */
     public void setEntityName(String entityName) {
         this.entityName = entityName;
@@ -87,7 +78,7 @@ public class RelatedEntity {
 
     /**
      * Getter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public String getErruleCode() {
         return erruleCode;
@@ -95,7 +86,7 @@ public class RelatedEntity {
 
     /**
      * Setter for erruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public void setErruleCode(String erruleCode) {
         this.erruleCode = erruleCode;
@@ -135,7 +126,7 @@ public class RelatedEntity {
 
     /**
      * Getter for matchKey.<p>
-     * Representation of matched source record features.
+     * Representation of matched source data.
      */
     public String getMatchKey() {
         return matchKey;
@@ -143,7 +134,7 @@ public class RelatedEntity {
 
     /**
      * Setter for matchKey.<p>
-     * Representation of matched source record features.
+     * Representation of matched source data.
      */
     public void setMatchKey(String matchKey) {
         this.matchKey = matchKey;
@@ -151,6 +142,7 @@ public class RelatedEntity {
 
     /**
      * Getter for matchKeyDetails.<p>
+     * Contains supporting information for the match key.
      */
     public MatchKeyDetails getMatchKeyDetails() {
         return matchKeyDetails;
@@ -158,28 +150,15 @@ public class RelatedEntity {
 
     /**
      * Setter for matchKeyDetails.<p>
+     * Contains supporting information for the match key.
      */
     public void setMatchKeyDetails(MatchKeyDetails matchKeyDetails) {
         this.matchKeyDetails = matchKeyDetails;
     }
 
     /**
-     * Getter for matchLevel.<p>
-     */
-    public Integer getMatchLevel() {
-        return matchLevel;
-    }
-
-    /**
-     * Setter for matchLevel.<p>
-     */
-    public void setMatchLevel(Integer matchLevel) {
-        this.matchLevel = matchLevel;
-    }
-
-    /**
      * Getter for matchLevelCode.<p>
-     * The type of match that occurred for the record.
+     * The type of relationship.
      */
     public String getMatchLevelCode() {
         return matchLevelCode;
@@ -187,7 +166,7 @@ public class RelatedEntity {
 
     /**
      * Setter for matchLevelCode.<p>
-     * The type of match that occurred for the record.
+     * The type of relationship.
      */
     public void setMatchLevelCode(String matchLevelCode) {
         this.matchLevelCode = matchLevelCode;
@@ -211,8 +190,7 @@ public class RelatedEntity {
 
     /**
      * Getter for recordSummary.<p>
-     * Overview of the source systems the records came from comprising this
-     * related entity.
+     * A list of tabulated counts of records by source.
      */
     public List<RecordSummary> getRecordSummary() {
         return recordSummary;
@@ -220,8 +198,7 @@ public class RelatedEntity {
 
     /**
      * Setter for recordSummary.<p>
-     * Overview of the source systems the records came from comprising this
-     * related entity.
+     * A list of tabulated counts of records by source.
      */
     public void setRecordSummary(List<RecordSummary> recordSummary) {
         this.recordSummary = recordSummary;
@@ -229,6 +206,8 @@ public class RelatedEntity {
 
     /**
      * Getter for recordTypes.<p>
+     * A list of record types on the entity as defined in the Entity
+     * Specification.
      */
     public List<String> getRecordTypes() {
         return recordTypes;
@@ -236,22 +215,10 @@ public class RelatedEntity {
 
     /**
      * Setter for recordTypes.<p>
+     * A list of record types on the entity as defined in the Entity
+     * Specification.
      */
     public void setRecordTypes(List<String> recordTypes) {
         this.recordTypes = recordTypes;
-    }
-
-    /**
-     * Getter for xxxLastSeenDt.<p>
-     */
-    public OffsetDateTime getXxxLastSeenDt() {
-        return xxxLastSeenDt;
-    }
-
-    /**
-     * Setter for xxxLastSeenDt.<p>
-     */
-    public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
-        this.xxxLastSeenDt = xxxLastSeenDt;
     }
 }

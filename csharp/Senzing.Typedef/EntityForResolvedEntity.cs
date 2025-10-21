@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class EntityForResolvedEntity
     {
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("RELATED_ENTITIES")]
         public IList<RelatedEntity> RelatedEntities { get; set; }
 

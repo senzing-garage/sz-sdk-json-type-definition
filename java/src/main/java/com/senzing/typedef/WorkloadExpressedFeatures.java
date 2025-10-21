@@ -20,6 +20,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Getter for calls.<p>
+     * A list of ...
      */
     public List<WorkloadExpressedFeaturesCall> getCalls() {
         return calls;
@@ -27,6 +28,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Setter for calls.<p>
+     * A list of ...
      */
     public void setCalls(List<WorkloadExpressedFeaturesCall> calls) {
         this.calls = calls;
@@ -34,6 +36,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Getter for created.<p>
+     * A dictionary of ...
      */
     public Map<String, Integer> getCreated() {
         return created;
@@ -41,6 +44,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Setter for created.<p>
+     * A dictionary of ...
      */
     public void setCreated(Map<String, Integer> created) {
         this.created = created;

@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 """
-Create docs/labels_used.json
+Create docs/json_keys_used.json
 """
 
 import json

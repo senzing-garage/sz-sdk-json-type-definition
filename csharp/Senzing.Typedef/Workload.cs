@@ -41,6 +41,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("processing")]
         public WorkloadProcessing Processing { get; set; }
 
+        /// <summary>
+        /// A dictionary of ...
+        /// </summary>
         [JsonPropertyName("redoTriggers")]
         public IDictionary<string, int> RedoTriggers { get; set; }
 

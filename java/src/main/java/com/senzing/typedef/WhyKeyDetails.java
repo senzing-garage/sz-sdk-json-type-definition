@@ -9,10 +9,10 @@ import java.util.List;
 @JsonSerialize
 public class WhyKeyDetails {
     @JsonProperty("CONFIRMATIONS")
-    private List<Confirmation> confirmations;
+    private List<FeatureScoreInfo> confirmations;
 
     @JsonProperty("DENIALS")
-    private List<Confirmation> denials;
+    private List<FeatureScoreInfo> denials;
 
     @JsonProperty("DISCLOSED_RELATIONS")
     private List<DisclosedRelationsForWhyKeyDetails> disclosedRelations;
@@ -22,34 +22,39 @@ public class WhyKeyDetails {
 
     /**
      * Getter for confirmations.<p>
+     * A list of ...
      */
-    public List<Confirmation> getConfirmations() {
+    public List<FeatureScoreInfo> getConfirmations() {
         return confirmations;
     }
 
     /**
      * Setter for confirmations.<p>
+     * A list of ...
      */
-    public void setConfirmations(List<Confirmation> confirmations) {
+    public void setConfirmations(List<FeatureScoreInfo> confirmations) {
         this.confirmations = confirmations;
     }
 
     /**
      * Getter for denials.<p>
+     * A list of ...
      */
-    public List<Confirmation> getDenials() {
+    public List<FeatureScoreInfo> getDenials() {
         return denials;
     }
 
     /**
      * Setter for denials.<p>
+     * A list of ...
      */
-    public void setDenials(List<Confirmation> denials) {
+    public void setDenials(List<FeatureScoreInfo> denials) {
         this.denials = denials;
     }
 
     /**
      * Getter for disclosedRelations.<p>
+     * A list of ...
      */
     public List<DisclosedRelationsForWhyKeyDetails> getDisclosedRelations() {
         return disclosedRelations;
@@ -57,6 +62,7 @@ public class WhyKeyDetails {
 
     /**
      * Setter for disclosedRelations.<p>
+     * A list of ...
      */
     public void setDisclosedRelations(List<DisclosedRelationsForWhyKeyDetails> disclosedRelations) {
         this.disclosedRelations = disclosedRelations;

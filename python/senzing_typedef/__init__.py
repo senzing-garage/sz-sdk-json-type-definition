@@ -553,7 +553,7 @@ class CfgErrule:
     disq_erfrag_code: 'str'
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     errule_id: 'int'
@@ -861,6 +861,10 @@ class CfgLens:
 
 @dataclass
 class CfgLensrl:
+    """
+    A list of ...
+    """
+
     value: 'List[Fixme]'
 
     @classmethod
@@ -1023,6 +1027,10 @@ class ConfigBaseVersion:
 
 @dataclass
 class CandidateKeysForMatchInfo:
+    """
+    A dictionary of ...
+    """
+
     value: 'Dict[str, List[MatchInfoForAttribute]]'
 
     @classmethod
@@ -1035,6 +1043,10 @@ class CandidateKeysForMatchInfo:
 @dataclass
 class CandidateKeysForSearchStatistic:
     feature_types: 'List[FeatureType]'
+    """
+    A list of ...
+    """
+
     summary: 'CandidateKeysSummary'
 
     @classmethod
@@ -1120,61 +1132,6 @@ class Config:
         return data
 
 @dataclass
-class Confirmation:
-    additional_scores: 'AdditionalScores'
-    candidate_feat_desc: 'str'
-    candidate_feat_id: 'int'
-    candidate_feat_usage_type: 'str'
-    ftype_code: 'str'
-    """
-    Internal use.
-    """
-
-    inbound_feat_desc: 'str'
-    inbound_feat_id: 'int'
-    inbound_feat_usage_type: 'str'
-    score: 'int'
-    score_behavior: 'str'
-    score_bucket: 'str'
-    source: 'str'
-    token: 'str'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'Confirmation':
-        return cls(
-            _from_json_data(AdditionalScores, data.get("ADDITIONAL_SCORES")),
-            _from_json_data(str, data.get("CANDIDATE_FEAT_DESC")),
-            _from_json_data(int, data.get("CANDIDATE_FEAT_ID")),
-            _from_json_data(str, data.get("CANDIDATE_FEAT_USAGE_TYPE")),
-            _from_json_data(str, data.get("FTYPE_CODE")),
-            _from_json_data(str, data.get("INBOUND_FEAT_DESC")),
-            _from_json_data(int, data.get("INBOUND_FEAT_ID")),
-            _from_json_data(str, data.get("INBOUND_FEAT_USAGE_TYPE")),
-            _from_json_data(int, data.get("SCORE")),
-            _from_json_data(str, data.get("SCORE_BEHAVIOR")),
-            _from_json_data(str, data.get("SCORE_BUCKET")),
-            _from_json_data(str, data.get("SOURCE")),
-            _from_json_data(str, data.get("TOKEN")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["ADDITIONAL_SCORES"] = _to_json_data(self.additional_scores)
-        data["CANDIDATE_FEAT_DESC"] = _to_json_data(self.candidate_feat_desc)
-        data["CANDIDATE_FEAT_ID"] = _to_json_data(self.candidate_feat_id)
-        data["CANDIDATE_FEAT_USAGE_TYPE"] = _to_json_data(self.candidate_feat_usage_type)
-        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
-        data["INBOUND_FEAT_DESC"] = _to_json_data(self.inbound_feat_desc)
-        data["INBOUND_FEAT_ID"] = _to_json_data(self.inbound_feat_id)
-        data["INBOUND_FEAT_USAGE_TYPE"] = _to_json_data(self.inbound_feat_usage_type)
-        data["SCORE"] = _to_json_data(self.score)
-        data["SCORE_BEHAVIOR"] = _to_json_data(self.score_behavior)
-        data["SCORE_BUCKET"] = _to_json_data(self.score_bucket)
-        data["SOURCE"] = _to_json_data(self.source)
-        data["TOKEN"] = _to_json_data(self.token)
-        return data
-
-@dataclass
 class DataSource:
     dsrc_code: 'str'
     """
@@ -1205,10 +1162,30 @@ class DataSource:
 class DisclosedRelationsForMatchInfo:
     domain: 'str'
     entity_roles: 'List[EntityRoles]'
+    """
+    A list of ...
+    """
+
     related_roles: 'List[RelatedRoles]'
+    """
+    A list of ...
+    """
+
     rel_link: 'List[RelLink]'
+    """
+    A list of ...
+    """
+
     xxx_rel_anchor: 'List[RelAnchor]'
+    """
+    A list of ...
+    """
+
     xxx_rel_pointer: 'List[RelPointer]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DisclosedRelationsForMatchInfo':
@@ -1239,8 +1216,20 @@ class DisclosedRelationsForMatchInfoForWhy:
     linked_feat_id: 'int'
     linked_feat_type: 'str'
     rel_anchor: 'List[RelAnchor]'
+    """
+    A list of ...
+    """
+
     rel_link: 'List[RelLink]'
+    """
+    A list of ...
+    """
+
     rel_pointer: 'List[RelPointer]'
+    """
+    A list of ...
+    """
+
     xxx_feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
@@ -1281,7 +1270,15 @@ class DisclosedRelationsForMatchInfoForWhy:
 class DisclosedRelationsForWhyKeyDetails:
     domain: 'str'
     entity_roles: 'List[EntityRoles]'
+    """
+    A list of ...
+    """
+
     related_roles: 'List[RelatedRoles]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'DisclosedRelationsForWhyKeyDetails':
@@ -1301,6 +1298,10 @@ class DisclosedRelationsForWhyKeyDetails:
 @dataclass
 class Entity:
     related_entities: 'List[RelatedEntity]'
+    """
+    A list of ...
+    """
+
     resolved_entity: 'ResolvedEntity'
 
     @classmethod
@@ -1319,6 +1320,10 @@ class Entity:
 @dataclass
 class EntityForResolvedEntity:
     related_entities: 'List[RelatedEntity]'
+    """
+    A list of ...
+    """
+
     resolved_entity: 'ResolvedEntity'
 
     @classmethod
@@ -1337,6 +1342,10 @@ class EntityForResolvedEntity:
 @dataclass
 class EntityForWhySearch:
     related_entities: 'List[RelatedEntity]'
+    """
+    A list of ...
+    """
+
     resolved_entity: 'ResolvedEntity'
 
     @classmethod
@@ -1356,7 +1365,7 @@ class EntityForWhySearch:
 class EntityNetworkLink:
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     is_ambiguous: 'int'
@@ -1413,7 +1422,7 @@ class EntityPath:
     end_entity_id: 'int'
     entities: 'List[int]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     start_entity_id: 'int'
@@ -1437,7 +1446,7 @@ class EntityPath:
 class EntityPathLink:
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     is_ambiguous: 'int'
@@ -1540,6 +1549,10 @@ class Feature:
 @dataclass
 class FeatureDescriptionValue:
     attributes: 'Dict[str, str]'
+    """
+    A dictionary of ...
+    """
+
     candidate_cap_reached: 'str'
     entity_count: 'int'
     feat_desc: 'str'
@@ -1548,6 +1561,10 @@ class FeatureDescriptionValue:
     """
 
     feat_desc_values: 'List[FeatureDescriptionValueDetails]'
+    """
+    A list of ...
+    """
+
     lib_feat_id: 'int'
     """
     Internal use.
@@ -1643,7 +1660,7 @@ class FeatureForAttributes:
 
     feat_desc_values: 'List[FeatureDescriptionValue]'
     """
-    Describes the attributes that make up the feature.
+    A list of attributes that make up the feature.
     """
 
     lib_feat_id: 'int'
@@ -1699,7 +1716,7 @@ class FeatureForGetEntity:
 
     feat_desc_values: 'List[FeatureDescriptionValue]'
     """
-    Describes the attributes that make up the feature.
+    A list of attributes that make up the feature.
     """
 
     lib_feat_id: 'int'
@@ -1714,6 +1731,10 @@ class FeatureForGetEntity:
     """
 
     xxx_attributes: 'List[SenzingEntitySpecification]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureForGetEntity':
@@ -1804,7 +1825,78 @@ class FeatureScoreForAttribute:
         return data
 
 @dataclass
+class FeatureScoreInfo:
+    additional_scores: 'AdditionalScores'
+    """
+    Itemized scores from comparison function.
+    """
+
+    candidate_feat_desc: 'str'
+    candidate_feat_id: 'int'
+    candidate_feat_usage_type: 'str'
+    ftype_code: 'str'
+    """
+    Internal use.
+    """
+
+    inbound_feat_desc: 'str'
+    inbound_feat_id: 'int'
+    inbound_feat_usage_type: 'str'
+    score: 'int'
+    """
+    Numeric score from the comparison function.
+    """
+
+    score_behavior: 'str'
+    score_bucket: 'str'
+    """
+    Category of score strength.
+    """
+
+    source: 'str'
+    token: 'str'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'FeatureScoreInfo':
+        return cls(
+            _from_json_data(AdditionalScores, data.get("ADDITIONAL_SCORES")),
+            _from_json_data(str, data.get("CANDIDATE_FEAT_DESC")),
+            _from_json_data(int, data.get("CANDIDATE_FEAT_ID")),
+            _from_json_data(str, data.get("CANDIDATE_FEAT_USAGE_TYPE")),
+            _from_json_data(str, data.get("FTYPE_CODE")),
+            _from_json_data(str, data.get("INBOUND_FEAT_DESC")),
+            _from_json_data(int, data.get("INBOUND_FEAT_ID")),
+            _from_json_data(str, data.get("INBOUND_FEAT_USAGE_TYPE")),
+            _from_json_data(int, data.get("SCORE")),
+            _from_json_data(str, data.get("SCORE_BEHAVIOR")),
+            _from_json_data(str, data.get("SCORE_BUCKET")),
+            _from_json_data(str, data.get("SOURCE")),
+            _from_json_data(str, data.get("TOKEN")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["ADDITIONAL_SCORES"] = _to_json_data(self.additional_scores)
+        data["CANDIDATE_FEAT_DESC"] = _to_json_data(self.candidate_feat_desc)
+        data["CANDIDATE_FEAT_ID"] = _to_json_data(self.candidate_feat_id)
+        data["CANDIDATE_FEAT_USAGE_TYPE"] = _to_json_data(self.candidate_feat_usage_type)
+        data["FTYPE_CODE"] = _to_json_data(self.ftype_code)
+        data["INBOUND_FEAT_DESC"] = _to_json_data(self.inbound_feat_desc)
+        data["INBOUND_FEAT_ID"] = _to_json_data(self.inbound_feat_id)
+        data["INBOUND_FEAT_USAGE_TYPE"] = _to_json_data(self.inbound_feat_usage_type)
+        data["SCORE"] = _to_json_data(self.score)
+        data["SCORE_BEHAVIOR"] = _to_json_data(self.score_behavior)
+        data["SCORE_BUCKET"] = _to_json_data(self.score_bucket)
+        data["SOURCE"] = _to_json_data(self.source)
+        data["TOKEN"] = _to_json_data(self.token)
+        return data
+
+@dataclass
 class FeatureScores:
+    """
+    A dictionary of ...
+    """
+
     value: 'Dict[str, List[FeatureScoreForAttribute]]'
 
     @classmethod
@@ -1846,6 +1938,10 @@ class FeatureType:
 class FinalState:
     need_reevaluation: 'int'
     virtual_entities: 'List[VirtualEntitySynopsis]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'FinalState':
@@ -1903,6 +1999,10 @@ class FocusRecord:
 
 @dataclass
 class G2configSettings:
+    """
+    A list of ...
+    """
+
     metaphone_version: 'int'
 
     @classmethod
@@ -1919,39 +2019,171 @@ class G2configSettings:
 @dataclass
 class G2config:
     cfg_attr: 'List[CfgAttr]'
+    """
+    A list of ...
+    """
+
     cfg_cfbom: 'List[CfgCfbom]'
+    """
+    A list of ...
+    """
+
     cfg_cfcall: 'List[CfgCfcall]'
+    """
+    A list of ...
+    """
+
     cfg_cfrtn: 'List[CfgCfrtn]'
+    """
+    A list of ...
+    """
+
     cfg_cfunc: 'List[CfgCfunc]'
+    """
+    A list of ...
+    """
+
     cfg_dfbom: 'List[CfgDfbom]'
+    """
+    A list of ...
+    """
+
     cfg_dfcall: 'List[CfgDfcall]'
+    """
+    A list of ...
+    """
+
     cfg_dfunc: 'List[CfgDfunc]'
+    """
+    A list of ...
+    """
+
     cfg_dsrc: 'List[CfgDsrc]'
+    """
+    A list of ...
+    """
+
     cfg_dsrc_interest: 'List[CfgDsrcInterest]'
+    """
+    A list of ...
+    """
+
     cfg_ebom: 'List[CfgEbom]'
+    """
+    A list of ...
+    """
+
     cfg_efbom: 'List[CfgEfbom]'
+    """
+    A list of ...
+    """
+
     cfg_efcall: 'List[CfgEfcall]'
+    """
+    A list of ...
+    """
+
     cfg_efunc: 'List[CfgEfunc]'
+    """
+    A list of ...
+    """
+
     cfg_erfrag: 'List[CfgErfrag]'
+    """
+    A list of ...
+    """
+
     cfg_errule: 'List[CfgErrule]'
+    """
+    A list of ...
+    """
+
     cfg_fbom: 'List[CfgFbom]'
+    """
+    A list of ...
+    """
+
     cfg_fbovr: 'List[CfgFbovr]'
+    """
+    A list of ...
+    """
+
     cfg_fclass: 'List[CfgFclass]'
+    """
+    A list of ...
+    """
+
     cfg_felem: 'List[CfgFelem]'
+    """
+    A list of ...
+    """
+
     cfg_ftype: 'List[CfgFtype]'
+    """
+    A list of ...
+    """
+
     cfg_generic_threshold: 'List[CfgGenericThreshold]'
+    """
+    A list of ...
+    """
+
     cfg_gplan: 'List[CfgGplan]'
+    """
+    A list of ...
+    """
+
     cfg_rclass: 'List[CfgRclass]'
+    """
+    A list of ...
+    """
+
     cfg_rtype: 'List[CfgRtype]'
+    """
+    A list of ...
+    """
+
     cfg_sfcall: 'List[CfgSfcall]'
+    """
+    A list of ...
+    """
+
     cfg_sfunc: 'List[CfgSfunc]'
+    """
+    A list of ...
+    """
+
     config_base_version: 'ConfigBaseVersion'
     settings: 'G2configSettings'
+    """
+    A list of ...
+    """
+
     sys_oom: 'List[SysOom]'
+    """
+    A list of ...
+    """
+
     xxx_cfg_eclass: 'List[CfgEclass]'
+    """
+    A list of ...
+    """
+
     xxx_cfg_etype: 'List[CfgEtype]'
+    """
+    A list of ...
+    """
+
     xxx_cfg_lens: 'List[CfgLens]'
+    """
+    A list of ...
+    """
+
     xxx_cfg_lensrl: 'List[CfgLensrl]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'G2config':
@@ -2034,6 +2266,10 @@ class G2config:
 class HowResults:
     final_state: 'FinalState'
     resolution_steps: 'List[ResolutionStep]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'HowResults':
@@ -2052,10 +2288,14 @@ class HowResults:
 class InterestingEntities:
     entities: 'List[InterestingEntity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     notices: 'List[Notice]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntities':
@@ -2072,7 +2312,15 @@ class InterestingEntities:
 
 @dataclass
 class InterestingEntity:
+    """
+    Internal use.
+    """
+
     degrees: 'int'
+    """
+    Degrees of separation.
+    """
+
     entity_id: 'int'
     """
     The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
@@ -2080,7 +2328,15 @@ class InterestingEntity:
     """
 
     flags: 'List[str]'
+    """
+    A list of ...
+    """
+
     sample_records: 'List[SampleRecord]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'InterestingEntity':
@@ -2104,7 +2360,7 @@ class MatchInfo:
     candidate_keys: 'CandidateKeysForMatchInfo'
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     feature_scores: 'FeatureScores'
@@ -2178,6 +2434,10 @@ class MatchInfoForAttribute:
 @dataclass
 class MatchInfoForWhy:
     candidate_keys: 'Dict[str, List[MatchInfoForAttribute]]'
+    """
+    A dictionary of ...
+    """
+
     disclosed_relations: 'DisclosedRelationsForMatchInfoForWhy'
     feature_scores: 'FeatureScores'
     match_level_code: 'str'
@@ -2214,24 +2474,47 @@ class MatchInfoForWhy:
 
 @dataclass
 class MatchKeyDetails:
-    confirmations: 'List[Confirmation]'
-    denials: 'List[Confirmation]'
-    disclosed_relations: 'List[DisclosedRelationsForMatchInfo]'
-    rel_links: 'List[RelLink]'
-    xxx_errule_code: 'str'
+    confirmations: 'List[FeatureScoreInfo]'
     """
-    Identifier of the entity resolution rule that was triggered.
+    A list of feature data in the match key supporting the match.
+    """
+
+    denials: 'List[FeatureScoreInfo]'
+    """
+    A list of feature data in the match key negating the match.
+    """
+
+    disclosed_relations: 'List[DisclosedRelationsForMatchInfo]'
+    """
+    A list of disclosed relationships of various types.
+    """
+
+    rel_anchor: 'List[RelAnchor]'
+    """
+    A list of disclosed relationship anchors.
+    """
+
+    rel_links: 'List[RelLink]'
+    """
+    Deprecated. A list of disclosed relationships based on identical shared
+    keys.
+    """
+
+    rel_pointer: 'List[RelPointer]'
+    """
+    A list of disclosed relationship pointers.
     """
 
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchKeyDetails':
         return cls(
-            _from_json_data(List[Confirmation], data.get("CONFIRMATIONS")),
-            _from_json_data(List[Confirmation], data.get("DENIALS")),
+            _from_json_data(List[FeatureScoreInfo], data.get("CONFIRMATIONS")),
+            _from_json_data(List[FeatureScoreInfo], data.get("DENIALS")),
             _from_json_data(List[DisclosedRelationsForMatchInfo], data.get("DISCLOSED_RELATIONS")),
+            _from_json_data(List[RelAnchor], data.get("REL_ANCHOR")),
             _from_json_data(List[RelLink], data.get("REL_LINKS")),
-            _from_json_data(str, data.get("XXX_ERRULE_CODE")),
+            _from_json_data(List[RelPointer], data.get("REL_POINTER")),
         )
 
     def to_json_data(self) -> Any:
@@ -2239,8 +2522,9 @@ class MatchKeyDetails:
         data["CONFIRMATIONS"] = _to_json_data(self.confirmations)
         data["DENIALS"] = _to_json_data(self.denials)
         data["DISCLOSED_RELATIONS"] = _to_json_data(self.disclosed_relations)
+        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
         data["REL_LINKS"] = _to_json_data(self.rel_links)
-        data["XXX_ERRULE_CODE"] = _to_json_data(self.xxx_errule_code)
+        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
         return data
 
 @dataclass
@@ -2307,11 +2591,19 @@ class Record:
 
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     features: 'Dict[str, List[FeatureForAttributes]]'
+    """
+    A dictionary of ...
+    """
+
     feature_ids: 'List[FeatureID]'
+    """
+    A list of ...
+    """
+
     first_seen_dt: 'datetime'
     internal_id: 'int'
     """
@@ -2319,6 +2611,10 @@ class Record:
     """
 
     json_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     last_seen_dt: 'datetime'
     match_key: 'str'
     """
@@ -2336,18 +2632,54 @@ class Record:
     """
 
     unmapped_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     xxx_address_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_attribute_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_entity_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_entity_desc: 'str'
     xxx_entity_key: 'str'
     xxx_entity_type: 'str'
     xxx_identifier_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_match_level: 'int'
     xxx_name_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_other_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_phone_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_relationship_data: 'List[str]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Record':
@@ -2415,11 +2747,19 @@ class RecordForGetEntity:
 
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     features: 'Dict[str, List[FeatureForAttributes]]'
+    """
+    A dictionary of ...
+    """
+
     feature_ids: 'List[FeatureID]'
+    """
+    A list of ...
+    """
+
     first_seen_dt: 'datetime'
     internal_id: 'int'
     """
@@ -2427,6 +2767,10 @@ class RecordForGetEntity:
     """
 
     json_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     last_seen_dt: 'datetime'
     match_key: 'str'
     """
@@ -2444,18 +2788,54 @@ class RecordForGetEntity:
     """
 
     unmapped_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     xxx_address_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_attribute_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_entity_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_entity_desc: 'str'
     xxx_entity_key: 'str'
     xxx_entity_type: 'str'
     xxx_identifier_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_match_level: 'int'
     xxx_name_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_other_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_phone_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_relationship_data: 'List[str]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordForGetEntity':
@@ -2605,6 +2985,10 @@ class RelAnchor:
     linked_feat_type: 'str'
     linked_feat_usage_type: 'str'
     xxx_rel_pointer: 'List[RelPointer]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelAnchor':
@@ -2722,18 +3106,17 @@ class RelPointer:
 class RelatedEntity:
     entity_id: 'int'
     """
-    The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
-    It may change when new information is added.
+    The ENTITY_ID is the identifier for the entity.
     """
 
     entity_name: 'str'
     """
-    A name this entity goes by. An entity could have multiple names.
+    An arbitrarily selected name for the entity.
     """
 
     errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     is_ambiguous: 'int'
@@ -2748,14 +3131,17 @@ class RelatedEntity:
 
     match_key: 'str'
     """
-    Representation of matched source record features.
+    Representation of matched source data.
     """
 
     match_key_details: 'MatchKeyDetails'
-    match_level: 'int'
+    """
+    Contains supporting information for the match key.
+    """
+
     match_level_code: 'str'
     """
-    The type of match that occurred for the record.
+    The type of relationship.
     """
 
     records: 'List[Record]'
@@ -2765,12 +3151,14 @@ class RelatedEntity:
 
     record_summary: 'List[RecordSummary]'
     """
-    Overview of the source systems the records came from comprising this related
-    entity.
+    A list of tabulated counts of records by source.
     """
 
     record_types: 'List[str]'
-    xxx_last_seen_dt: 'datetime'
+    """
+    A list of record types on the entity as defined in the Entity Specification.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelatedEntity':
@@ -2782,12 +3170,10 @@ class RelatedEntity:
             _from_json_data(int, data.get("IS_DISCLOSED")),
             _from_json_data(str, data.get("MATCH_KEY")),
             _from_json_data(MatchKeyDetails, data.get("MATCH_KEY_DETAILS")),
-            _from_json_data(int, data.get("MATCH_LEVEL")),
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(List[Record], data.get("RECORDS")),
             _from_json_data(List[RecordSummary], data.get("RECORD_SUMMARY")),
             _from_json_data(List[str], data.get("RECORD_TYPES")),
-            _from_json_data(datetime, data.get("XXX_LAST_SEEN_DT")),
         )
 
     def to_json_data(self) -> Any:
@@ -2799,12 +3185,10 @@ class RelatedEntity:
         data["IS_DISCLOSED"] = _to_json_data(self.is_disclosed)
         data["MATCH_KEY"] = _to_json_data(self.match_key)
         data["MATCH_KEY_DETAILS"] = _to_json_data(self.match_key_details)
-        data["MATCH_LEVEL"] = _to_json_data(self.match_level)
         data["MATCH_LEVEL_CODE"] = _to_json_data(self.match_level_code)
         data["RECORDS"] = _to_json_data(self.records)
         data["RECORD_SUMMARY"] = _to_json_data(self.record_summary)
         data["RECORD_TYPES"] = _to_json_data(self.record_types)
-        data["XXX_LAST_SEEN_DT"] = _to_json_data(self.xxx_last_seen_dt)
         return data
 
 @dataclass
@@ -2902,10 +3286,14 @@ class ResolvedEntity:
 
     entity_name: 'str'
     """
-    A name this entity goes by. An entity could have multiple names.
+    An arbitrarily selected name for the entity.
     """
 
     features: 'Dict[str, List[FeatureForAttributes]]'
+    """
+    A dictionary of ...
+    """
+
     records: 'List[Record]'
     """
     A list of (data source code, record id) pairs.
@@ -2913,17 +3301,25 @@ class ResolvedEntity:
 
     record_summary: 'List[RecordSummary]'
     """
-    Overview of the source systems the records came from comprising this related
+    A list of source systems the records came from comprising this related
     entity.
     """
 
     record_types: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     xxx_feature_ids: 'List[FeatureID]'
+    """
+    A list of ...
+    """
+
     xxx_is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
@@ -3019,6 +3415,10 @@ class ResolvedEntityForGetEntity:
     """
 
     features: 'Dict[str, List[FeatureForGetEntity]]'
+    """
+    A dictionary of ...
+    """
+
     records: 'List[RecordForGetEntity]'
     """
     A list of (data source code, record id) pairs.
@@ -3026,17 +3426,25 @@ class ResolvedEntityForGetEntity:
 
     record_summary: 'List[RecordSummary]'
     """
-    Overview of the source systems the records came from comprising this related
+    A list of source systems the records came from comprising this related
     entity.
     """
 
     record_types: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     xxx_feature_ids: 'List[FeatureID]'
+    """
+    A list of ...
+    """
+
     xxx_is_ambiguous: 'int'
     """
     Indicates if this is an ambiguous relationship.
@@ -3147,6 +3555,10 @@ class SampleRecord:
     """
 
     flags: 'List[str]'
+    """
+    A list of ...
+    """
+
     record_id: 'str'
     """
     The unique identifier within the set of records in the DATA_SOURCE.
@@ -3192,6 +3604,10 @@ class SchemaVersion:
 @dataclass
 class SearchEntity:
     features: 'Dict[str, List[FeatureDescriptionValue]]'
+    """
+    A dictionary of ...
+    """
+
     summary: 'SearchEntitySummary'
 
     @classmethod
@@ -3234,6 +3650,10 @@ class SearchEntitySummary:
 @dataclass
 class SearchRequest:
     features: 'Dict[str, List[FeatureDescriptionValue]]'
+    """
+    A dictionary of ...
+    """
+
     json_data: 'str'
     search_profile: 'str'
 
@@ -3970,7 +4390,7 @@ class SzConfigExportResponse:
 class SzConfigGetDataSourceRegistryResponse:
     data_sources: 'List[DataSource]'
     """
-    The list of registered data sources.
+    A list of registered data sources.
     """
 
 
@@ -3989,7 +4409,7 @@ class SzConfigGetDataSourceRegistryResponse:
 class SzConfigManagerGetConfigRegistryResponse:
     configs: 'List[Config]'
     """
-    The list of registered configurations.
+    A list of registered configurations.
     """
 
 
@@ -4105,7 +4525,7 @@ class SzDiagnosticGetRepositoryInfoResponse:
 class SzEngineAddRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     """
-    Entities that were affected as a result of the operation.
+    A list of entities that were affected as a result of the operation.
     """
 
     data_source: 'str'
@@ -4145,7 +4565,7 @@ class SzEngineAddRecordResponse:
 class SzEngineDeleteRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     """
-    Entities that were affected as a result of the operation.
+    A list of entities that were affected as a result of the operation.
     """
 
     data_source: 'str'
@@ -4284,22 +4704,22 @@ class SzEngineFindNetworkByEntityIDResponse:
 
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     entity_network_links: 'List[EntityNetworkLink]'
     """
-    Relationship details for all pairs of entities in the network.
+    A list of relationship details for all pairs of entities in the network.
     """
 
     entity_paths: 'List[EntityPath]'
     """
-    Best path between all pairs of requested entities.
+    A list of best path between all pairs of requested entities.
     """
 
     entity_path_links: 'List[EntityPathLink]'
     """
-    Relationship details for all links from ENTITY_PATHS.
+    A list of relationship details for all links from ENTITY_PATHS.
     """
 
     max_entity_limit_reached: 'str'
@@ -4354,22 +4774,22 @@ class SzEngineFindNetworkByRecordIDResponse:
 
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     entity_network_links: 'List[EntityNetworkLink]'
     """
-    Relationship details for all pairs of entities in the network.
+    A list of relationship details for all pairs of entities in the network.
     """
 
     entity_paths: 'List[EntityPath]'
     """
-    Best path between all pairs of requested entities.
+    A list of best path between all pairs of requested entities.
     """
 
     entity_path_links: 'List[EntityPathLink]'
     """
-    Relationship details for all links from ENTITY_PATHS.
+    A list of relationship details for all links from ENTITY_PATHS.
     """
 
     max_entity_limit_reached: 'str'
@@ -4431,17 +4851,17 @@ class SzEngineFindPathByEntityIDRequiredDataSources:
 class SzEngineFindPathByEntityIDResponse:
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     entity_paths: 'List[EntityPath]'
     """
-    Best path between all pairs of requested entities.
+    A list of best path between all pairs of requested entities.
     """
 
     entity_path_links: 'List[EntityPathLink]'
     """
-    Relationship details for all links from ENTITY_PATHS.
+    A list of relationship details for all links from ENTITY_PATHS.
     """
 
 
@@ -4498,17 +4918,17 @@ class SzEngineFindPathByRecordIDRequiredDataSources:
 class SzEngineFindPathByRecordIDResponse:
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     entity_paths: 'List[EntityPath]'
     """
-    Best path between all pairs of requested entities.
+    A list of best path between all pairs of requested entities.
     """
 
     entity_path_links: 'List[EntityPathLink]'
     """
-    Relationship details for all links from ENTITY_PATHS.
+    A list of relationship details for all links from ENTITY_PATHS.
     """
 
 
@@ -4530,6 +4950,10 @@ class SzEngineFindPathByRecordIDResponse:
 @dataclass
 class SzEngineGetEntityByEntityIDResponse:
     related_entities: 'List[RelatedEntity]'
+    """
+    A list of ...
+    """
+
     resolved_entity: 'ResolvedEntityForGetEntity'
 
     @classmethod
@@ -4548,6 +4972,10 @@ class SzEngineGetEntityByEntityIDResponse:
 @dataclass
 class SzEngineGetEntityByRecordIDResponse:
     related_entities: 'List[RelatedEntity]'
+    """
+    A list of ...
+    """
+
     resolved_entity: 'ResolvedEntityForGetEntity'
 
     @classmethod
@@ -4566,9 +4994,25 @@ class SzEngineGetEntityByRecordIDResponse:
 @dataclass
 class SzEngineGetRecordPreviewResponse:
     features: 'Dict[str, List[FeatureForAttributes]]'
+    """
+    A dictionary of ...
+    """
+
     feature_ids: 'List[FeatureID]'
+    """
+    A list of ...
+    """
+
     json_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     unmapped_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordPreviewResponse':
@@ -4595,9 +5039,21 @@ class SzEngineGetRecordResponse:
     """
 
     features: 'Dict[str, List[FeatureForAttributes]]'
+    """
+    A dictionary of ...
+    """
+
     feature_ids: 'List[FeatureID]'
+    """
+    A list of ...
+    """
+
     first_seen_dt: 'datetime'
     json_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     last_seen_dt: 'datetime'
     record_id: 'str'
     """
@@ -4605,18 +5061,38 @@ class SzEngineGetRecordResponse:
     """
 
     unmapped_data: 'Dict[str, Object]'
+    """
+    A dictionary of ...
+    """
+
     xxx_address_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_attribute_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_entity_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_entity_desc: 'str'
     xxx_entity_key: 'str'
     xxx_entity_type: 'str'
     xxx_errule_code: 'str'
     """
-    Identifier of the entity resolution rule that was triggered.
+    Identifier of the entity resolution principle that was triggered.
     """
 
     xxx_identifier_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_internal_id: 'int'
     """
     Internal identifier for the record.
@@ -4634,9 +5110,25 @@ class SzEngineGetRecordResponse:
     """
 
     xxx_name_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_other_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_phone_data: 'List[str]'
+    """
+    A list of ...
+    """
+
     xxx_relationship_data: 'List[str]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineGetRecordResponse':
@@ -4778,7 +5270,7 @@ class SzEngineHowEntityByEntityIDResponse:
 class SzEngineProcessRedoRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     """
-    Entities that were affected as a result of the operation.
+    A list of entities that were affected as a result of the operation.
     """
 
     data_source: 'str'
@@ -4817,7 +5309,7 @@ class SzEngineProcessRedoRecordResponse:
 class SzEngineReevaluateEntityResponse:
     affected_entities: 'List[AffectedEntity]'
     """
-    Entities that were affected as a result of the operation.
+    A list of entities that were affected as a result of the operation.
     """
 
     interesting_entities: 'InterestingEntities'
@@ -4857,7 +5349,7 @@ class SzEngineReevaluateEntityResponse:
 class SzEngineReevaluateRecordResponse:
     affected_entities: 'List[AffectedEntity]'
     """
-    Entities that were affected as a result of the operation.
+    A list of entities that were affected as a result of the operation.
     """
 
     data_source: 'str'
@@ -4907,10 +5399,22 @@ class SzEngineSearchByAttributesAttributes:
 @dataclass
 class SzEngineSearchByAttributesResponse:
     related_entities_mjd: 'List[RelatedEntity]'
+    """
+    A list of ...
+    """
+
     resolved_entities: 'List[ResolvedEntityAndMatchInfo]'
+    """
+    A list of ...
+    """
+
     search_entity: 'SearchEntity'
     search_request: 'SearchRequest'
     search_statistics: 'List[SearchStatistic]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineSearchByAttributesResponse':
@@ -4965,10 +5469,14 @@ class SzEngineStreamExportJSONEntityReportResponse:
 class SzEngineWhyEntitiesResponse:
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     why_results: 'List[WhyResult]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhyEntitiesResponse':
@@ -4987,10 +5495,14 @@ class SzEngineWhyEntitiesResponse:
 class SzEngineWhyRecordInEntityResponse:
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     why_results: 'List[WhyResult]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordInEntityResponse':
@@ -5009,10 +5521,14 @@ class SzEngineWhyRecordInEntityResponse:
 class SzEngineWhyRecordsResponse:
     entities: 'List[Entity]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     why_results: 'List[WhyResult]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhyRecordsResponse':
@@ -5046,13 +5562,21 @@ class SzEngineWhySearchAttributes:
 class SzEngineWhySearchResponse:
     entities: 'List[EntityForWhySearch]'
     """
-    List of entity information.
+    A list of entity information.
     """
 
     search_entity: 'SearchEntity'
     search_request: 'SearchRequest'
     search_statistics: 'List[SearchStatistic]'
+    """
+    A list of ...
+    """
+
     why_results: 'List[WhyResult]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'SzEngineWhySearchResponse':
@@ -5164,6 +5688,10 @@ class SzProductGetVersionResponse:
 class UmfProc:
     name: 'str'
     params: 'List[UmfProcParams]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'UmfProc':
@@ -5214,6 +5742,10 @@ class UmfProcParams:
 @dataclass
 class VirtualEntitySynopsis:
     member_records: 'List[MemberRecord]'
+    """
+    A list of ...
+    """
+
     virtual_entity_id: 'str'
 
     @classmethod
@@ -5231,15 +5763,27 @@ class VirtualEntitySynopsis:
 
 @dataclass
 class WhyKeyDetails:
-    confirmations: 'List[Confirmation]'
-    denials: 'List[Confirmation]'
+    confirmations: 'List[FeatureScoreInfo]'
+    """
+    A list of ...
+    """
+
+    denials: 'List[FeatureScoreInfo]'
+    """
+    A list of ...
+    """
+
     disclosed_relations: 'List[DisclosedRelationsForWhyKeyDetails]'
+    """
+    A list of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WhyKeyDetails':
         return cls(
-            _from_json_data(List[Confirmation], data.get("CONFIRMATIONS")),
-            _from_json_data(List[Confirmation], data.get("DENIALS")),
+            _from_json_data(List[FeatureScoreInfo], data.get("CONFIRMATIONS")),
+            _from_json_data(List[FeatureScoreInfo], data.get("DENIALS")),
             _from_json_data(List[DisclosedRelationsForWhyKeyDetails], data.get("DISCLOSED_RELATIONS")),
         )
 
@@ -5260,7 +5804,15 @@ class WhyResult:
 
     entity_id0: 'int'
     focus_records: 'List[FocusRecord]'
+    """
+    A list of ...
+    """
+
     focus_records0: 'List[FocusRecord]'
+    """
+    A list of ...
+    """
+
     internal_id: 'int'
     """
     Internal identifier for the record.
@@ -5310,6 +5862,10 @@ class Workload:
     lock_waits: 'WorkloadLockWaits'
     processing: 'WorkloadProcessing'
     redo_triggers: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
     repair_diagnosis: 'WorkloadRepairDiagnosis'
     reresolve: 'WorkloadReresolve'
     scoring: 'WorkloadScoring'
@@ -5401,7 +5957,15 @@ class WorkloadCaches:
 @dataclass
 class WorkloadCandidates:
     candidate_builders: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
     suppressed_candidate_builders: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadCandidates':
@@ -5464,7 +6028,15 @@ class WorkloadCurrResources:
 @dataclass
 class WorkloadExpressedFeatures:
     calls: 'List[WorkloadExpressedFeaturesCall]'
+    """
+    A list of ...
+    """
+
     created: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadExpressedFeatures':
@@ -5698,6 +6270,10 @@ class WorkloadRepairDiagnosis:
 @dataclass
 class WorkloadReresolve:
     new_feature_ftypes: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
     suppressed_candidate_builders_for_reresolve: 'Fixme'
     suppressed_scored_feature_type_for_reresolve: 'Fixme'
     triggers: 'WorkloadReresolveTriggers'
@@ -5749,8 +6325,20 @@ class WorkloadReresolveTriggers:
 @dataclass
 class WorkloadScoring:
     cache_hit: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
     cache_miss: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
     scored_pairs: 'Dict[str, int]'
+    """
+    A dictionary of ...
+    """
+
     suppressed_disclosed_relationship_domain_count: 'int'
     suppressed_scored_feature_type: 'Fixme'
 

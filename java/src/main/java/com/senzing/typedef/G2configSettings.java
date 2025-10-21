@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * A list of ...
+ */
 @JsonSerialize
 public class G2configSettings {
     @JsonProperty("METAPHONE_VERSION")

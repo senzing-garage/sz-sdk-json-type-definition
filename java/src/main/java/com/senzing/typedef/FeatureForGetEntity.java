@@ -44,7 +44,7 @@ public class FeatureForGetEntity {
 
     /**
      * Getter for featDescValues.<p>
-     * Describes the attributes that make up the feature.
+     * A list of attributes that make up the feature.
      */
     public List<FeatureDescriptionValue> getFeatDescValues() {
         return featDescValues;
@@ -52,7 +52,7 @@ public class FeatureForGetEntity {
 
     /**
      * Setter for featDescValues.<p>
-     * Describes the attributes that make up the feature.
+     * A list of attributes that make up the feature.
      */
     public void setFeatDescValues(List<FeatureDescriptionValue> featDescValues) {
         this.featDescValues = featDescValues;
@@ -94,6 +94,7 @@ public class FeatureForGetEntity {
 
     /**
      * Getter for xxxAttributes.<p>
+     * A list of ...
      */
     public List<SenzingEntitySpecification> getXxxAttributes() {
         return xxxAttributes;
@@ -101,6 +102,7 @@ public class FeatureForGetEntity {
 
     /**
      * Setter for xxxAttributes.<p>
+     * A list of ...
      */
     public void setXxxAttributes(List<SenzingEntitySpecification> xxxAttributes) {
         this.xxxAttributes = xxxAttributes;

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Confirmation {
+public class FeatureScoreInfo {
     @JsonProperty("ADDITIONAL_SCORES")
     private AdditionalScores additionalScores;
 
@@ -46,11 +46,12 @@ public class Confirmation {
     @JsonProperty("TOKEN")
     private String token;
 
-    public Confirmation() {
+    public FeatureScoreInfo() {
     }
 
     /**
      * Getter for additionalScores.<p>
+     * Itemized scores from comparison function.
      */
     public AdditionalScores getAdditionalScores() {
         return additionalScores;
@@ -58,6 +59,7 @@ public class Confirmation {
 
     /**
      * Setter for additionalScores.<p>
+     * Itemized scores from comparison function.
      */
     public void setAdditionalScores(AdditionalScores additionalScores) {
         this.additionalScores = additionalScores;
@@ -165,6 +167,7 @@ public class Confirmation {
 
     /**
      * Getter for score.<p>
+     * Numeric score from the comparison function.
      */
     public Integer getScore() {
         return score;
@@ -172,6 +175,7 @@ public class Confirmation {
 
     /**
      * Setter for score.<p>
+     * Numeric score from the comparison function.
      */
     public void setScore(Integer score) {
         this.score = score;
@@ -193,6 +197,7 @@ public class Confirmation {
 
     /**
      * Getter for scoreBucket.<p>
+     * Category of score strength.
      */
     public String getScoreBucket() {
         return scoreBucket;
@@ -200,6 +205,7 @@ public class Confirmation {
 
     /**
      * Setter for scoreBucket.<p>
+     * Category of score strength.
      */
     public void setScoreBucket(String scoreBucket) {
         this.scoreBucket = scoreBucket;

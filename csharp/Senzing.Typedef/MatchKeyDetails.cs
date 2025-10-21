@@ -8,22 +8,41 @@ namespace Senzing.Typedef
 {
     public class MatchKeyDetails
     {
+        /// <summary>
+        /// A list of feature data in the match key supporting the match.
+        /// </summary>
         [JsonPropertyName("CONFIRMATIONS")]
-        public IList<Confirmation> Confirmations { get; set; }
+        public IList<FeatureScoreInfo> Confirmations { get; set; }
 
+        /// <summary>
+        /// A list of feature data in the match key negating the match.
+        /// </summary>
         [JsonPropertyName("DENIALS")]
-        public IList<Confirmation> Denials { get; set; }
+        public IList<FeatureScoreInfo> Denials { get; set; }
 
+        /// <summary>
+        /// A list of disclosed relationships of various types.
+        /// </summary>
         [JsonPropertyName("DISCLOSED_RELATIONS")]
         public IList<DisclosedRelationsForMatchInfo> DisclosedRelations { get; set; }
 
+        /// <summary>
+        /// A list of disclosed relationship anchors.
+        /// </summary>
+        [JsonPropertyName("REL_ANCHOR")]
+        public IList<RelAnchor> RelAnchor { get; set; }
+
+        /// <summary>
+        /// Deprecated. A list of disclosed relationships based on identical
+        /// shared keys.
+        /// </summary>
         [JsonPropertyName("REL_LINKS")]
         public IList<RelLink> RelLinks { get; set; }
 
         /// <summary>
-        /// Identifier of the entity resolution rule that was triggered.
+        /// A list of disclosed relationship pointers.
         /// </summary>
-        [JsonPropertyName("XXX_ERRULE_CODE")]
-        public string XxxErruleCode { get; set; }
+        [JsonPropertyName("REL_POINTER")]
+        public IList<RelPointer> RelPointer { get; set; }
     }
 }
