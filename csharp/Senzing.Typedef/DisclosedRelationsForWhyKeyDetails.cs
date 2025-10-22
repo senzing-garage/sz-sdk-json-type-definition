@@ -11,9 +11,15 @@ namespace Senzing.Typedef
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("ENTITY_ROLES")]
         public IList<EntityRoles> EntityRoles { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("RELATED_ROLES")]
         public IList<RelatedRoles> RelatedRoles { get; set; }
     }

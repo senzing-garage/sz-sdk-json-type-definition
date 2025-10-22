@@ -348,6 +348,28 @@
                                 ]
                             }
                         ],
+                        "REL_ANCHOR": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string",
+                                "LINKED_FEAT_USAGE_TYPE": "string",
+                                "XXX_REL_POINTER": [
+                                    {
+                                        "DOMAIN": "string",
+                                        "FEAT_DESC": "string",
+                                        "FEAT_ID": "int32",
+                                        "FEAT_USAGE_TYPE": "string",
+                                        "LINKED_FEAT_DESC": "string",
+                                        "LINKED_FEAT_ID": "int32",
+                                        "LINKED_FEAT_TYPE": "string"
+                                    }
+                                ]
+                            }
+                        ],
                         "REL_LINKS": [
                             {
                                 "DOMAIN": "string",
@@ -362,7 +384,17 @@
                                 "REL_TYPE": "string"
                             }
                         ],
-                        "XXX_ERRULE_CODE": "string"
+                        "REL_POINTER": [
+                            {
+                                "DOMAIN": "string",
+                                "FEAT_DESC": "string",
+                                "FEAT_ID": "int32",
+                                "FEAT_USAGE_TYPE": "string",
+                                "LINKED_FEAT_DESC": "string",
+                                "LINKED_FEAT_ID": "int32",
+                                "LINKED_FEAT_TYPE": "string"
+                            }
+                        ]
                     },
                     "MATCH_LEVEL_CODE": "string",
                     "XXX_DISCLOSED_RELATIONS": {

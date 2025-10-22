@@ -17,11 +17,14 @@ namespace Senzing.Typedef
         public int EntityId { get; set; }
 
         /// <summary>
-        /// A name this entity goes by. An entity could have multiple names.
+        /// An arbitrarily selected name for the entity.
         /// </summary>
         [JsonPropertyName("ENTITY_NAME")]
         public string EntityName { get; set; }
 
+        /// <summary>
+        /// A map from ... to ...
+        /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
 
@@ -32,21 +35,27 @@ namespace Senzing.Typedef
         public IList<Record> Records { get; set; }
 
         /// <summary>
-        /// Overview of the source systems the records came from comprising this
+        /// A list of source systems the records came from comprising this
         /// related entity.
         /// </summary>
         [JsonPropertyName("RECORD_SUMMARY")]
         public IList<RecordSummary> RecordSummary { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("RECORD_TYPES")]
         public IList<string> RecordTypes { get; set; }
 
         /// <summary>
-        /// Identifier of the entity resolution rule that was triggered.
+        /// Identifier of the entity resolution principle that was triggered.
         /// </summary>
         [JsonPropertyName("XXX_ERRULE_CODE")]
         public string XxxErruleCode { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("XXX_FEATURE_IDS")]
         public IList<FeatureId> XxxFeatureIds { get; set; }
 

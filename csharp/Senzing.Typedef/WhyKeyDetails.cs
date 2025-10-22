@@ -8,12 +8,21 @@ namespace Senzing.Typedef
 {
     public class WhyKeyDetails
     {
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("CONFIRMATIONS")]
-        public IList<Confirmation> Confirmations { get; set; }
+        public IList<FeatureScoreInfo> Confirmations { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("DENIALS")]
-        public IList<Confirmation> Denials { get; set; }
+        public IList<FeatureScoreInfo> Denials { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("DISCLOSED_RELATIONS")]
         public IList<DisclosedRelationsForWhyKeyDetails> DisclosedRelations { get; set; }
     }

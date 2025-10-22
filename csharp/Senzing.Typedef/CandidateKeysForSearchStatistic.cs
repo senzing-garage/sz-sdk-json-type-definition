@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class CandidateKeysForSearchStatistic
     {
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FEATURE_TYPES")]
         public IList<FeatureType> FeatureTypes { get; set; }
 

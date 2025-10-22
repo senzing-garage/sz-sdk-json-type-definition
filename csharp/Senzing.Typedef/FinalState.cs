@@ -11,6 +11,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("NEED_REEVALUATION")]
         public int NeedReevaluation { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("VIRTUAL_ENTITIES")]
         public IList<VirtualEntitySynopsis> VirtualEntities { get; set; }
     }

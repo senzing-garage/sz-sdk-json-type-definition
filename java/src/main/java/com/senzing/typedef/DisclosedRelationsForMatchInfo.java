@@ -45,6 +45,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for entityRoles.<p>
+     * A list of ...
      */
     public List<EntityRoles> getEntityRoles() {
         return entityRoles;
@@ -52,6 +53,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for entityRoles.<p>
+     * A list of ...
      */
     public void setEntityRoles(List<EntityRoles> entityRoles) {
         this.entityRoles = entityRoles;
@@ -59,6 +61,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for relatedRoles.<p>
+     * A list of ...
      */
     public List<RelatedRoles> getRelatedRoles() {
         return relatedRoles;
@@ -66,6 +69,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for relatedRoles.<p>
+     * A list of ...
      */
     public void setRelatedRoles(List<RelatedRoles> relatedRoles) {
         this.relatedRoles = relatedRoles;
@@ -73,6 +77,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for relLink.<p>
+     * A list of ...
      */
     public List<RelLink> getRelLink() {
         return relLink;
@@ -80,6 +85,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for relLink.<p>
+     * A list of ...
      */
     public void setRelLink(List<RelLink> relLink) {
         this.relLink = relLink;
@@ -87,6 +93,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for xxxRelAnchor.<p>
+     * A list of ...
      */
     public List<RelAnchor> getXxxRelAnchor() {
         return xxxRelAnchor;
@@ -94,6 +101,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for xxxRelAnchor.<p>
+     * A list of ...
      */
     public void setXxxRelAnchor(List<RelAnchor> xxxRelAnchor) {
         this.xxxRelAnchor = xxxRelAnchor;
@@ -101,6 +109,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for xxxRelPointer.<p>
+     * A list of ...
      */
     public List<RelPointer> getXxxRelPointer() {
         return xxxRelPointer;
@@ -108,6 +117,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for xxxRelPointer.<p>
+     * A list of ...
      */
     public void setXxxRelPointer(List<RelPointer> xxxRelPointer) {
         this.xxxRelPointer = xxxRelPointer;

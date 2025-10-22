@@ -8,6 +8,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// A map from ... to ...
+    /// </summary>
     [JsonConverter(typeof(CandidateKeysForMatchInfoJsonConverter))]
     public class CandidateKeysForMatchInfo
     {

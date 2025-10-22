@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class SearchEntity
     {
+        /// <summary>
+        /// A map from ... to ...
+        /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureDescriptionValue>> Features { get; set; }
 

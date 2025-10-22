@@ -18,9 +18,15 @@ namespace Senzing.Typedef
         [JsonPropertyName("ENTITY_ID_2")]
         public int EntityId0 { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FOCUS_RECORDS")]
         public IList<FocusRecord> FocusRecords { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FOCUS_RECORDS_2")]
         public IList<FocusRecord> FocusRecords0 { get; set; }
 

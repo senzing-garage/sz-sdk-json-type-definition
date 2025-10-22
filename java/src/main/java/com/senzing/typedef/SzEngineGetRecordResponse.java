@@ -103,6 +103,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for features.<p>
+     * A map from ... to ...
      */
     public Map<String, List<FeatureForAttributes>> getFeatures() {
         return features;
@@ -110,6 +111,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for features.<p>
+     * A map from ... to ...
      */
     public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
         this.features = features;
@@ -117,6 +119,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for featureIds.<p>
+     * A list of ...
      */
     public List<FeatureId> getFeatureIds() {
         return featureIds;
@@ -124,6 +127,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for featureIds.<p>
+     * A list of ...
      */
     public void setFeatureIds(List<FeatureId> featureIds) {
         this.featureIds = featureIds;
@@ -145,6 +149,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for jsonData.<p>
+     * A map from ... to ...
      */
     public Map<String, Object> getJsonData() {
         return jsonData;
@@ -152,6 +157,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for jsonData.<p>
+     * A map from ... to ...
      */
     public void setJsonData(Map<String, Object> jsonData) {
         this.jsonData = jsonData;
@@ -189,6 +195,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for unmappedData.<p>
+     * A map from ... to ...
      */
     public Map<String, Object> getUnmappedData() {
         return unmappedData;
@@ -196,6 +203,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for unmappedData.<p>
+     * A map from ... to ...
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;
@@ -203,6 +211,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxAddressData.<p>
+     * A list of ...
      */
     public List<String> getXxxAddressData() {
         return xxxAddressData;
@@ -210,6 +219,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxAddressData.<p>
+     * A list of ...
      */
     public void setXxxAddressData(List<String> xxxAddressData) {
         this.xxxAddressData = xxxAddressData;
@@ -217,6 +227,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxAttributeData.<p>
+     * A list of ...
      */
     public List<String> getXxxAttributeData() {
         return xxxAttributeData;
@@ -224,6 +235,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxAttributeData.<p>
+     * A list of ...
      */
     public void setXxxAttributeData(List<String> xxxAttributeData) {
         this.xxxAttributeData = xxxAttributeData;
@@ -231,6 +243,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxEntityData.<p>
+     * A list of ...
      */
     public List<String> getXxxEntityData() {
         return xxxEntityData;
@@ -238,6 +251,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxEntityData.<p>
+     * A list of ...
      */
     public void setXxxEntityData(List<String> xxxEntityData) {
         this.xxxEntityData = xxxEntityData;
@@ -287,7 +301,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxErruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public String getXxxErruleCode() {
         return xxxErruleCode;
@@ -295,7 +309,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxErruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public void setXxxErruleCode(String xxxErruleCode) {
         this.xxxErruleCode = xxxErruleCode;
@@ -303,6 +317,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxIdentifierData.<p>
+     * A list of ...
      */
     public List<String> getXxxIdentifierData() {
         return xxxIdentifierData;
@@ -310,6 +325,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxIdentifierData.<p>
+     * A list of ...
      */
     public void setXxxIdentifierData(List<String> xxxIdentifierData) {
         this.xxxIdentifierData = xxxIdentifierData;
@@ -379,6 +395,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxNameData.<p>
+     * A list of ...
      */
     public List<String> getXxxNameData() {
         return xxxNameData;
@@ -386,6 +403,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxNameData.<p>
+     * A list of ...
      */
     public void setXxxNameData(List<String> xxxNameData) {
         this.xxxNameData = xxxNameData;
@@ -393,6 +411,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxOtherData.<p>
+     * A list of ...
      */
     public List<String> getXxxOtherData() {
         return xxxOtherData;
@@ -400,6 +419,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxOtherData.<p>
+     * A list of ...
      */
     public void setXxxOtherData(List<String> xxxOtherData) {
         this.xxxOtherData = xxxOtherData;
@@ -407,6 +427,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxPhoneData.<p>
+     * A list of ...
      */
     public List<String> getXxxPhoneData() {
         return xxxPhoneData;
@@ -414,6 +435,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxPhoneData.<p>
+     * A list of ...
      */
     public void setXxxPhoneData(List<String> xxxPhoneData) {
         this.xxxPhoneData = xxxPhoneData;
@@ -421,6 +443,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for xxxRelationshipData.<p>
+     * A list of ...
      */
     public List<String> getXxxRelationshipData() {
         return xxxRelationshipData;
@@ -428,6 +451,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for xxxRelationshipData.<p>
+     * A list of ...
      */
     public void setXxxRelationshipData(List<String> xxxRelationshipData) {
         this.xxxRelationshipData = xxxRelationshipData;

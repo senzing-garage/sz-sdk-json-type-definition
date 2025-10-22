@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SzEngineWhySearchResponse
     {
         /// <summary>
-        /// List of entity information.
+        /// A list of entity information.
         /// </summary>
         [JsonPropertyName("ENTITIES")]
         public IList<EntityForWhySearch> Entities { get; set; }
@@ -20,9 +20,15 @@ namespace Senzing.Typedef
         [JsonPropertyName("SEARCH_REQUEST")]
         public SearchRequest SearchRequest { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("SEARCH_STATISTICS")]
         public IList<SearchStatistic> SearchStatistics { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("WHY_RESULTS")]
         public IList<WhyResult> WhyResults { get; set; }
     }

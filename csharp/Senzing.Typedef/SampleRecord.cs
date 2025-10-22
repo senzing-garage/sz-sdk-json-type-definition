@@ -14,6 +14,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("DATA_SOURCE")]
         public string DataSource { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }
 

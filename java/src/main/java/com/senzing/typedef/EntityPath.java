@@ -36,7 +36,7 @@ public class EntityPath {
 
     /**
      * Getter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public List<Integer> getEntities() {
         return entities;
@@ -44,7 +44,7 @@ public class EntityPath {
 
     /**
      * Setter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public void setEntities(List<Integer> entities) {
         this.entities = entities;

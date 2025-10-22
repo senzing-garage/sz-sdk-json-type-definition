@@ -6,8 +6,14 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// Internal use.
+    /// </summary>
     public class InterestingEntity
     {
+        /// <summary>
+        /// Degrees of separation.
+        /// </summary>
         [JsonPropertyName("DEGREES")]
         public int Degrees { get; set; }
 
@@ -18,9 +24,15 @@ namespace Senzing.Typedef
         [JsonPropertyName("ENTITY_ID")]
         public int EntityId { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("SAMPLE_RECORDS")]
         public IList<SampleRecord> SampleRecords { get; set; }
     }

@@ -5,8 +5,11 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
-    public class Confirmation
+    public class FeatureScoreInfo
     {
+        /// <summary>
+        /// Itemized scores from comparison function.
+        /// </summary>
         [JsonPropertyName("ADDITIONAL_SCORES")]
         public AdditionalScores AdditionalScores { get; set; }
 
@@ -34,12 +37,18 @@ namespace Senzing.Typedef
         [JsonPropertyName("INBOUND_FEAT_USAGE_TYPE")]
         public string InboundFeatUsageType { get; set; }
 
+        /// <summary>
+        /// Numeric score from the comparison function.
+        /// </summary>
         [JsonPropertyName("SCORE")]
         public int Score { get; set; }
 
         [JsonPropertyName("SCORE_BEHAVIOR")]
         public string ScoreBehavior { get; set; }
 
+        /// <summary>
+        /// Category of score strength.
+        /// </summary>
         [JsonPropertyName("SCORE_BUCKET")]
         public string ScoreBucket { get; set; }
 

@@ -137,6 +137,7 @@ public class RelAnchor {
 
     /**
      * Getter for xxxRelPointer.<p>
+     * A list of ...
      */
     public List<RelPointer> getXxxRelPointer() {
         return xxxRelPointer;
@@ -144,6 +145,7 @@ public class RelAnchor {
 
     /**
      * Setter for xxxRelPointer.<p>
+     * A list of ...
      */
     public void setXxxRelPointer(List<RelPointer> xxxRelPointer) {
         this.xxxRelPointer = xxxRelPointer;

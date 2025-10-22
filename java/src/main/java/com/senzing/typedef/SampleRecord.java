@@ -38,6 +38,7 @@ public class SampleRecord {
 
     /**
      * Getter for flags.<p>
+     * A list of ...
      */
     public List<String> getFlags() {
         return flags;
@@ -45,6 +46,7 @@ public class SampleRecord {
 
     /**
      * Setter for flags.<p>
+     * A list of ...
      */
     public void setFlags(List<String> flags) {
         this.flags = flags;

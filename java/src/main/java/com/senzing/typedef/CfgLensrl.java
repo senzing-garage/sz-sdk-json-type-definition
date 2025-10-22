@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.List;
 
+/**
+ * A list of ...
+ */
 public class CfgLensrl {
     @JsonValue
     private List<Fixme> value;

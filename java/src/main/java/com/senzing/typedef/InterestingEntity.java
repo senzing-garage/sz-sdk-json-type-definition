@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
+/**
+ * Internal use.
+ */
 @JsonSerialize
 public class InterestingEntity {
     @JsonProperty("DEGREES")
@@ -25,6 +28,7 @@ public class InterestingEntity {
 
     /**
      * Getter for degrees.<p>
+     * Degrees of separation.
      */
     public Integer getDegrees() {
         return degrees;
@@ -32,6 +36,7 @@ public class InterestingEntity {
 
     /**
      * Setter for degrees.<p>
+     * Degrees of separation.
      */
     public void setDegrees(Integer degrees) {
         this.degrees = degrees;
@@ -57,6 +62,7 @@ public class InterestingEntity {
 
     /**
      * Getter for flags.<p>
+     * A list of ...
      */
     public List<String> getFlags() {
         return flags;
@@ -64,6 +70,7 @@ public class InterestingEntity {
 
     /**
      * Setter for flags.<p>
+     * A list of ...
      */
     public void setFlags(List<String> flags) {
         this.flags = flags;
@@ -71,6 +78,7 @@ public class InterestingEntity {
 
     /**
      * Getter for sampleRecords.<p>
+     * A list of ...
      */
     public List<SampleRecord> getSampleRecords() {
         return sampleRecords;
@@ -78,6 +86,7 @@ public class InterestingEntity {
 
     /**
      * Setter for sampleRecords.<p>
+     * A list of ...
      */
     public void setSampleRecords(List<SampleRecord> sampleRecords) {
         this.sampleRecords = sampleRecords;

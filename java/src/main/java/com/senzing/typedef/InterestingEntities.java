@@ -19,7 +19,7 @@ public class InterestingEntities {
 
     /**
      * Getter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public List<InterestingEntity> getEntities() {
         return entities;
@@ -27,7 +27,7 @@ public class InterestingEntities {
 
     /**
      * Setter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public void setEntities(List<InterestingEntity> entities) {
         this.entities = entities;
@@ -35,6 +35,7 @@ public class InterestingEntities {
 
     /**
      * Getter for notices.<p>
+     * A list of ...
      */
     public List<Notice> getNotices() {
         return notices;
@@ -42,6 +43,7 @@ public class InterestingEntities {
 
     /**
      * Setter for notices.<p>
+     * A list of ...
      */
     public void setNotices(List<Notice> notices) {
         this.notices = notices;

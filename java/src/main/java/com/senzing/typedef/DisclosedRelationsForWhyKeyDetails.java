@@ -36,6 +36,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Getter for entityRoles.<p>
+     * A list of ...
      */
     public List<EntityRoles> getEntityRoles() {
         return entityRoles;
@@ -43,6 +44,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Setter for entityRoles.<p>
+     * A list of ...
      */
     public void setEntityRoles(List<EntityRoles> entityRoles) {
         this.entityRoles = entityRoles;
@@ -50,6 +52,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Getter for relatedRoles.<p>
+     * A list of ...
      */
     public List<RelatedRoles> getRelatedRoles() {
         return relatedRoles;
@@ -57,6 +60,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Setter for relatedRoles.<p>
+     * A list of ...
      */
     public void setRelatedRoles(List<RelatedRoles> relatedRoles) {
         this.relatedRoles = relatedRoles;

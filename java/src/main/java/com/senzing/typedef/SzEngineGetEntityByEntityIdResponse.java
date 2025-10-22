@@ -19,6 +19,7 @@ public class SzEngineGetEntityByEntityIdResponse {
 
     /**
      * Getter for relatedEntities.<p>
+     * A list of ...
      */
     public List<RelatedEntity> getRelatedEntities() {
         return relatedEntities;
@@ -26,6 +27,7 @@ public class SzEngineGetEntityByEntityIdResponse {
 
     /**
      * Setter for relatedEntities.<p>
+     * A list of ...
      */
     public void setRelatedEntities(List<RelatedEntity> relatedEntities) {
         this.relatedEntities = relatedEntities;

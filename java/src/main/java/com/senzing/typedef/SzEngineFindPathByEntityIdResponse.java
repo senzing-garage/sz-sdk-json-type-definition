@@ -22,7 +22,7 @@ public class SzEngineFindPathByEntityIdResponse {
 
     /**
      * Getter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public List<Entity> getEntities() {
         return entities;
@@ -30,7 +30,7 @@ public class SzEngineFindPathByEntityIdResponse {
 
     /**
      * Setter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public void setEntities(List<Entity> entities) {
         this.entities = entities;
@@ -38,7 +38,7 @@ public class SzEngineFindPathByEntityIdResponse {
 
     /**
      * Getter for entityPaths.<p>
-     * Best path between all pairs of requested entities.
+     * A list of best path between all pairs of requested entities.
      */
     public List<EntityPath> getEntityPaths() {
         return entityPaths;
@@ -46,7 +46,7 @@ public class SzEngineFindPathByEntityIdResponse {
 
     /**
      * Setter for entityPaths.<p>
-     * Best path between all pairs of requested entities.
+     * A list of best path between all pairs of requested entities.
      */
     public void setEntityPaths(List<EntityPath> entityPaths) {
         this.entityPaths = entityPaths;
@@ -54,7 +54,7 @@ public class SzEngineFindPathByEntityIdResponse {
 
     /**
      * Getter for entityPathLinks.<p>
-     * Relationship details for all links from ENTITY_PATHS.
+     * A list of relationship details for all links from ENTITY_PATHS.
      */
     public List<EntityPathLink> getEntityPathLinks() {
         return entityPathLinks;
@@ -62,7 +62,7 @@ public class SzEngineFindPathByEntityIdResponse {
 
     /**
      * Setter for entityPathLinks.<p>
-     * Relationship details for all links from ENTITY_PATHS.
+     * A list of relationship details for all links from ENTITY_PATHS.
      */
     public void setEntityPathLinks(List<EntityPathLink> entityPathLinks) {
         this.entityPathLinks = entityPathLinks;

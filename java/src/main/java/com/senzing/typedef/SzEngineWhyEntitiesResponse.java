@@ -19,7 +19,7 @@ public class SzEngineWhyEntitiesResponse {
 
     /**
      * Getter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public List<Entity> getEntities() {
         return entities;
@@ -27,7 +27,7 @@ public class SzEngineWhyEntitiesResponse {
 
     /**
      * Setter for entities.<p>
-     * List of entity information.
+     * A list of entity information.
      */
     public void setEntities(List<Entity> entities) {
         this.entities = entities;
@@ -35,6 +35,7 @@ public class SzEngineWhyEntitiesResponse {
 
     /**
      * Getter for whyResults.<p>
+     * A list of ...
      */
     public List<WhyResult> getWhyResults() {
         return whyResults;
@@ -42,6 +43,7 @@ public class SzEngineWhyEntitiesResponse {
 
     /**
      * Setter for whyResults.<p>
+     * A list of ...
      */
     public void setWhyResults(List<WhyResult> whyResults) {
         this.whyResults = whyResults;

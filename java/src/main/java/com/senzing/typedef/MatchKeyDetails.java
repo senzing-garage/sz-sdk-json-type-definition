@@ -9,53 +9,61 @@ import java.util.List;
 @JsonSerialize
 public class MatchKeyDetails {
     @JsonProperty("CONFIRMATIONS")
-    private List<Confirmation> confirmations;
+    private List<FeatureScoreInfo> confirmations;
 
     @JsonProperty("DENIALS")
-    private List<Confirmation> denials;
+    private List<FeatureScoreInfo> denials;
 
     @JsonProperty("DISCLOSED_RELATIONS")
     private List<DisclosedRelationsForMatchInfo> disclosedRelations;
 
+    @JsonProperty("REL_ANCHOR")
+    private List<RelAnchor> relAnchor;
+
     @JsonProperty("REL_LINKS")
     private List<RelLink> relLinks;
 
-    @JsonProperty("XXX_ERRULE_CODE")
-    private String xxxErruleCode;
+    @JsonProperty("REL_POINTER")
+    private List<RelPointer> relPointer;
 
     public MatchKeyDetails() {
     }
 
     /**
      * Getter for confirmations.<p>
+     * A list of feature data in the match key supporting the match.
      */
-    public List<Confirmation> getConfirmations() {
+    public List<FeatureScoreInfo> getConfirmations() {
         return confirmations;
     }
 
     /**
      * Setter for confirmations.<p>
+     * A list of feature data in the match key supporting the match.
      */
-    public void setConfirmations(List<Confirmation> confirmations) {
+    public void setConfirmations(List<FeatureScoreInfo> confirmations) {
         this.confirmations = confirmations;
     }
 
     /**
      * Getter for denials.<p>
+     * A list of feature data in the match key negating the match.
      */
-    public List<Confirmation> getDenials() {
+    public List<FeatureScoreInfo> getDenials() {
         return denials;
     }
 
     /**
      * Setter for denials.<p>
+     * A list of feature data in the match key negating the match.
      */
-    public void setDenials(List<Confirmation> denials) {
+    public void setDenials(List<FeatureScoreInfo> denials) {
         this.denials = denials;
     }
 
     /**
      * Getter for disclosedRelations.<p>
+     * A list of disclosed relationships of various types.
      */
     public List<DisclosedRelationsForMatchInfo> getDisclosedRelations() {
         return disclosedRelations;
@@ -63,13 +71,32 @@ public class MatchKeyDetails {
 
     /**
      * Setter for disclosedRelations.<p>
+     * A list of disclosed relationships of various types.
      */
     public void setDisclosedRelations(List<DisclosedRelationsForMatchInfo> disclosedRelations) {
         this.disclosedRelations = disclosedRelations;
     }
 
     /**
+     * Getter for relAnchor.<p>
+     * A list of disclosed relationship anchors.
+     */
+    public List<RelAnchor> getRelAnchor() {
+        return relAnchor;
+    }
+
+    /**
+     * Setter for relAnchor.<p>
+     * A list of disclosed relationship anchors.
+     */
+    public void setRelAnchor(List<RelAnchor> relAnchor) {
+        this.relAnchor = relAnchor;
+    }
+
+    /**
      * Getter for relLinks.<p>
+     * Deprecated. A list of disclosed relationships based on identical shared
+     * keys.
      */
     public List<RelLink> getRelLinks() {
         return relLinks;
@@ -77,24 +104,26 @@ public class MatchKeyDetails {
 
     /**
      * Setter for relLinks.<p>
+     * Deprecated. A list of disclosed relationships based on identical shared
+     * keys.
      */
     public void setRelLinks(List<RelLink> relLinks) {
         this.relLinks = relLinks;
     }
 
     /**
-     * Getter for xxxErruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Getter for relPointer.<p>
+     * A list of disclosed relationship pointers.
      */
-    public String getXxxErruleCode() {
-        return xxxErruleCode;
+    public List<RelPointer> getRelPointer() {
+        return relPointer;
     }
 
     /**
-     * Setter for xxxErruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Setter for relPointer.<p>
+     * A list of disclosed relationship pointers.
      */
-    public void setXxxErruleCode(String xxxErruleCode) {
-        this.xxxErruleCode = xxxErruleCode;
+    public void setRelPointer(List<RelPointer> relPointer) {
+        this.relPointer = relPointer;
     }
 }

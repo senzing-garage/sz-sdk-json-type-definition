@@ -16,7 +16,7 @@ public class SzConfigGetDataSourceRegistryResponse {
 
     /**
      * Getter for dataSources.<p>
-     * The list of registered data sources.
+     * A list of registered data sources.
      */
     public List<DataSource> getDataSources() {
         return dataSources;
@@ -24,7 +24,7 @@ public class SzConfigGetDataSourceRegistryResponse {
 
     /**
      * Setter for dataSources.<p>
-     * The list of registered data sources.
+     * A list of registered data sources.
      */
     public void setDataSources(List<DataSource> dataSources) {
         this.dataSources = dataSources;

@@ -12,7 +12,7 @@ namespace Senzing.Typedef
         public int EndEntityId { get; set; }
 
         /// <summary>
-        /// List of entity information.
+        /// A list of entity information.
         /// </summary>
         [JsonPropertyName("ENTITIES")]
         public IList<int> Entities { get; set; }

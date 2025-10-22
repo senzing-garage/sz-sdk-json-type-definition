@@ -7,6 +7,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A map from ... to ...
+ */
 public class CandidateKeysForMatchInfo {
     @JsonValue
     private Map<String, List<MatchInfoForAttribute>> value;

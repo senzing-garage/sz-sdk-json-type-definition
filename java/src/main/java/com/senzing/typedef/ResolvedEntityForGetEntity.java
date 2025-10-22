@@ -91,6 +91,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for features.<p>
+     * A map from ... to ...
      */
     public Map<String, List<FeatureForGetEntity>> getFeatures() {
         return features;
@@ -98,6 +99,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for features.<p>
+     * A map from ... to ...
      */
     public void setFeatures(Map<String, List<FeatureForGetEntity>> features) {
         this.features = features;
@@ -121,8 +123,8 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for recordSummary.<p>
-     * Overview of the source systems the records came from comprising this
-     * related entity.
+     * A list of source systems the records came from comprising this related
+     * entity.
      */
     public List<RecordSummary> getRecordSummary() {
         return recordSummary;
@@ -130,8 +132,8 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for recordSummary.<p>
-     * Overview of the source systems the records came from comprising this
-     * related entity.
+     * A list of source systems the records came from comprising this related
+     * entity.
      */
     public void setRecordSummary(List<RecordSummary> recordSummary) {
         this.recordSummary = recordSummary;
@@ -139,6 +141,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for recordTypes.<p>
+     * A list of ...
      */
     public List<String> getRecordTypes() {
         return recordTypes;
@@ -146,6 +149,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for recordTypes.<p>
+     * A list of ...
      */
     public void setRecordTypes(List<String> recordTypes) {
         this.recordTypes = recordTypes;
@@ -153,7 +157,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for xxxErruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public String getXxxErruleCode() {
         return xxxErruleCode;
@@ -161,7 +165,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for xxxErruleCode.<p>
-     * Identifier of the entity resolution rule that was triggered.
+     * Identifier of the entity resolution principle that was triggered.
      */
     public void setXxxErruleCode(String xxxErruleCode) {
         this.xxxErruleCode = xxxErruleCode;
@@ -169,6 +173,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for xxxFeatureIds.<p>
+     * A list of ...
      */
     public List<FeatureId> getXxxFeatureIds() {
         return xxxFeatureIds;
@@ -176,6 +181,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for xxxFeatureIds.<p>
+     * A list of ...
      */
     public void setXxxFeatureIds(List<FeatureId> xxxFeatureIds) {
         this.xxxFeatureIds = xxxFeatureIds;

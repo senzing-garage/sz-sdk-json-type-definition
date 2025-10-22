@@ -8,6 +8,9 @@ namespace Senzing.Typedef
 {
     public class MatchInfoForWhy
     {
+        /// <summary>
+        /// A map from ... to ...
+        /// </summary>
         [JsonPropertyName("CANDIDATE_KEYS")]
         public IDictionary<string, IList<MatchInfoForAttribute>> CandidateKeys { get; set; }
 

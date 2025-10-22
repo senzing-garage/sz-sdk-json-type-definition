@@ -101,7 +101,7 @@ public class FeatureForAttributes {
 
     /**
      * Getter for featDescValues.<p>
-     * Describes the attributes that make up the feature.
+     * A list of attributes that make up the feature.
      */
     public List<FeatureDescriptionValue> getFeatDescValues() {
         return featDescValues;
@@ -109,7 +109,7 @@ public class FeatureForAttributes {
 
     /**
      * Setter for featDescValues.<p>
-     * Describes the attributes that make up the feature.
+     * A list of attributes that make up the feature.
      */
     public void setFeatDescValues(List<FeatureDescriptionValue> featDescValues) {
         this.featDescValues = featDescValues;

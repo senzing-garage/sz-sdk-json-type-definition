@@ -23,12 +23,21 @@ namespace Senzing.Typedef
         [JsonPropertyName("LINKED_FEAT_TYPE")]
         public string LinkedFeatType { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("REL_ANCHOR")]
         public IList<RelAnchor> RelAnchor { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("REL_LINK")]
         public IList<RelLink> RelLink { get; set; }
 
+        /// <summary>
+        /// A list of ...
+        /// </summary>
         [JsonPropertyName("REL_POINTER")]
         public IList<RelPointer> RelPointer { get; set; }
 

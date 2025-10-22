@@ -252,7 +252,7 @@ type CfgErfrag struct {
 type CfgErrule struct {
 	DisqErfragCode string `json:"DISQ_ERFRAG_CODE"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	ErruleID int64 `json:"ERRULE_ID"`
@@ -393,6 +393,7 @@ type CfgLens struct {
 	XxxLensID int64 `json:"XXX_LENS_ID"`
 }
 
+// A list of ...
 type CfgLensrl = []Fixme
 
 type CfgRclass struct {
@@ -464,9 +465,11 @@ type ConfigBaseVersion struct {
 	XxxProductName string `json:"XXX_PRODUCT_NAME"`
 }
 
+// A map from ... to ...
 type CandidateKeysForMatchInfo = map[string][]MatchInfoForAttribute
 
 type CandidateKeysForSearchStatistic struct {
+	// A list of ...
 	FeatureTypes []FeatureType `json:"FEATURE_TYPES"`
 
 	Summary CandidateKeysSummary `json:"SUMMARY"`
@@ -495,35 +498,6 @@ type Config struct {
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
-type Confirmation struct {
-	AdditionalScores AdditionalScores `json:"ADDITIONAL_SCORES"`
-
-	CandidateFeatDesc string `json:"CANDIDATE_FEAT_DESC"`
-
-	CandidateFeatID int64 `json:"CANDIDATE_FEAT_ID"`
-
-	CandidateFeatUsageType string `json:"CANDIDATE_FEAT_USAGE_TYPE"`
-
-	// Internal use.
-	FtypeCode string `json:"FTYPE_CODE"`
-
-	InboundFeatDesc string `json:"INBOUND_FEAT_DESC"`
-
-	InboundFeatID int64 `json:"INBOUND_FEAT_ID"`
-
-	InboundFeatUsageType string `json:"INBOUND_FEAT_USAGE_TYPE"`
-
-	Score int64 `json:"SCORE"`
-
-	ScoreBehavior string `json:"SCORE_BEHAVIOR"`
-
-	ScoreBucket string `json:"SCORE_BUCKET"`
-
-	Source string `json:"SOURCE"`
-
-	Token string `json:"TOKEN"`
-}
-
 type DataSource struct {
 	// The unique text identifier of the datasource. It should be UPPER_CASE ASCII
 	// without spaces. It will be used as a JSON key.
@@ -536,14 +510,19 @@ type DataSource struct {
 type DisclosedRelationsForMatchInfo struct {
 	Domain string `json:"DOMAIN"`
 
+	// A list of ...
 	EntityRoles []EntityRoles `json:"ENTITY_ROLES"`
 
+	// A list of ...
 	RelatedRoles []RelatedRoles `json:"RELATED_ROLES"`
 
+	// A list of ...
 	RelLink []RelLink `json:"REL_LINK"`
 
+	// A list of ...
 	XxxRelAnchor []RelAnchor `json:"XXX_REL_ANCHOR"`
 
+	// A list of ...
 	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
@@ -558,10 +537,13 @@ type DisclosedRelationsForMatchInfoForWhy struct {
 
 	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
 
+	// A list of ...
 	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
 
+	// A list of ...
 	RelLink []RelLink `json:"REL_LINK"`
 
+	// A list of ...
 	RelPointer []RelPointer `json:"REL_POINTER"`
 
 	// Describes the attributes that make up the feature.
@@ -573,31 +555,36 @@ type DisclosedRelationsForMatchInfoForWhy struct {
 type DisclosedRelationsForWhyKeyDetails struct {
 	Domain string `json:"DOMAIN"`
 
+	// A list of ...
 	EntityRoles []EntityRoles `json:"ENTITY_ROLES"`
 
+	// A list of ...
 	RelatedRoles []RelatedRoles `json:"RELATED_ROLES"`
 }
 
 type Entity struct {
+	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
 type EntityForResolvedEntity struct {
+	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
 type EntityForWhySearch struct {
+	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
 type EntityNetworkLink struct {
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	// Indicates if this is an ambiguous relationship.
@@ -622,14 +609,14 @@ type EntityNetworkLink struct {
 type EntityPath struct {
 	EndEntityID int64 `json:"END_ENTITY_ID"`
 
-	// List of entity information.
+	// A list of entity information.
 	Entities []int64 `json:"ENTITIES"`
 
 	StartEntityID int64 `json:"START_ENTITY_ID"`
 }
 
 type EntityPathLink struct {
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	// Indicates if this is an ambiguous relationship.
@@ -667,6 +654,7 @@ type Feature struct {
 }
 
 type FeatureDescriptionValue struct {
+	// A map from ... to ...
 	Attributes map[string]string `json:"ATTRIBUTES"`
 
 	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
@@ -676,6 +664,7 @@ type FeatureDescriptionValue struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
+	// A list of ...
 	FeatDescValues []FeatureDescriptionValueDetails `json:"FEAT_DESC_VALUES"`
 
 	// Internal use.
@@ -720,7 +709,7 @@ type FeatureForAttributes struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
-	// Describes the attributes that make up the feature.
+	// A list of attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
 	// Internal use.
@@ -741,7 +730,7 @@ type FeatureForGetEntity struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
 
-	// Describes the attributes that make up the feature.
+	// A list of attributes that make up the feature.
 	FeatDescValues []FeatureDescriptionValue `json:"FEAT_DESC_VALUES"`
 
 	// Internal use.
@@ -751,6 +740,7 @@ type FeatureForGetEntity struct {
 	// features behavior).
 	UsageType string `json:"USAGE_TYPE"`
 
+	// A list of ...
 	XxxAttributes []SenzingEntitySpecification `json:"XXX_ATTRIBUTES"`
 }
 
@@ -785,6 +775,39 @@ type FeatureScoreForAttribute struct {
 	ScoreBucket string `json:"SCORE_BUCKET"`
 }
 
+type FeatureScoreInfo struct {
+	// Itemized scores from comparison function.
+	AdditionalScores AdditionalScores `json:"ADDITIONAL_SCORES"`
+
+	CandidateFeatDesc string `json:"CANDIDATE_FEAT_DESC"`
+
+	CandidateFeatID int64 `json:"CANDIDATE_FEAT_ID"`
+
+	CandidateFeatUsageType string `json:"CANDIDATE_FEAT_USAGE_TYPE"`
+
+	// Internal use.
+	FtypeCode string `json:"FTYPE_CODE"`
+
+	InboundFeatDesc string `json:"INBOUND_FEAT_DESC"`
+
+	InboundFeatID int64 `json:"INBOUND_FEAT_ID"`
+
+	InboundFeatUsageType string `json:"INBOUND_FEAT_USAGE_TYPE"`
+
+	// Numeric score from the comparison function.
+	Score int64 `json:"SCORE"`
+
+	ScoreBehavior string `json:"SCORE_BEHAVIOR"`
+
+	// Category of score strength.
+	ScoreBucket string `json:"SCORE_BUCKET"`
+
+	Source string `json:"SOURCE"`
+
+	Token string `json:"TOKEN"`
+}
+
+// A map from ... to ...
 type FeatureScores = map[string][]FeatureScoreForAttribute
 
 type FeatureType struct {
@@ -801,6 +824,7 @@ type FeatureType struct {
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
 
+	// A list of ...
 	VirtualEntities []VirtualEntitySynopsis `json:"VIRTUAL_ENTITIES"`
 }
 
@@ -816,109 +840,149 @@ type FocusRecord struct {
 	RecordID string `json:"RECORD_ID"`
 }
 
+// A list of ...
 type G2configSettings struct {
 	MetaphoneVersion int32 `json:"METAPHONE_VERSION"`
 }
 
 type G2config struct {
+	// A list of ...
 	CfgAttr []CfgAttr `json:"CFG_ATTR"`
 
+	// A list of ...
 	CfgCfbom []CfgCfbom `json:"CFG_CFBOM"`
 
+	// A list of ...
 	CfgCfcall []CfgCfcall `json:"CFG_CFCALL"`
 
+	// A list of ...
 	CfgCfrtn []CfgCfrtn `json:"CFG_CFRTN"`
 
+	// A list of ...
 	CfgCfunc []CfgCfunc `json:"CFG_CFUNC"`
 
+	// A list of ...
 	CfgDfbom []CfgDfbom `json:"CFG_DFBOM"`
 
+	// A list of ...
 	CfgDfcall []CfgDfcall `json:"CFG_DFCALL"`
 
+	// A list of ...
 	CfgDfunc []CfgDfunc `json:"CFG_DFUNC"`
 
+	// A list of ...
 	CfgDsrc []CfgDsrc `json:"CFG_DSRC"`
 
+	// A list of ...
 	CfgDsrcInterest []CfgDsrcInterest `json:"CFG_DSRC_INTEREST"`
 
+	// A list of ...
 	CfgEbom []CfgEbom `json:"CFG_EBOM"`
 
+	// A list of ...
 	CfgEfbom []CfgEfbom `json:"CFG_EFBOM"`
 
+	// A list of ...
 	CfgEfcall []CfgEfcall `json:"CFG_EFCALL"`
 
+	// A list of ...
 	CfgEfunc []CfgEfunc `json:"CFG_EFUNC"`
 
+	// A list of ...
 	CfgErfrag []CfgErfrag `json:"CFG_ERFRAG"`
 
+	// A list of ...
 	CfgErrule []CfgErrule `json:"CFG_ERRULE"`
 
+	// A list of ...
 	CfgFbom []CfgFbom `json:"CFG_FBOM"`
 
+	// A list of ...
 	CfgFbovr []CfgFbovr `json:"CFG_FBOVR"`
 
+	// A list of ...
 	CfgFclass []CfgFclass `json:"CFG_FCLASS"`
 
+	// A list of ...
 	CfgFelem []CfgFelem `json:"CFG_FELEM"`
 
+	// A list of ...
 	CfgFtype []CfgFtype `json:"CFG_FTYPE"`
 
+	// A list of ...
 	CfgGenericThreshold []CfgGenericThreshold `json:"CFG_GENERIC_THRESHOLD"`
 
+	// A list of ...
 	CfgGplan []CfgGplan `json:"CFG_GPLAN"`
 
+	// A list of ...
 	CfgRclass []CfgRclass `json:"CFG_RCLASS"`
 
+	// A list of ...
 	CfgRtype []CfgRtype `json:"CFG_RTYPE"`
 
+	// A list of ...
 	CfgSfcall []CfgSfcall `json:"CFG_SFCALL"`
 
+	// A list of ...
 	CfgSfunc []CfgSfunc `json:"CFG_SFUNC"`
 
 	ConfigBaseVersion ConfigBaseVersion `json:"CONFIG_BASE_VERSION"`
 
+	// A list of ...
 	Settings G2configSettings `json:"SETTINGS"`
 
+	// A list of ...
 	SysOom []SysOom `json:"SYS_OOM"`
 
+	// A list of ...
 	XxxCfgEclass []CfgEclass `json:"XXX_CFG_ECLASS"`
 
+	// A list of ...
 	XxxCfgEtype []CfgEtype `json:"XXX_CFG_ETYPE"`
 
+	// A list of ...
 	XxxCfgLens []CfgLens `json:"XXX_CFG_LENS"`
 
+	// A list of ...
 	XxxCfgLensrl []CfgLensrl `json:"XXX_CFG_LENSRL"`
 }
 
 type HowResults struct {
 	FinalState FinalState `json:"FINAL_STATE"`
 
+	// A list of ...
 	ResolutionSteps []ResolutionStep `json:"RESOLUTION_STEPS"`
 }
 
 type InterestingEntities struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []InterestingEntity `json:"ENTITIES"`
 
+	// A list of ...
 	Notices []Notice `json:"NOTICES"`
 }
 
+// Internal use.
 type InterestingEntity struct {
+	// Degrees of separation.
 	Degrees int64 `json:"DEGREES"`
 
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
+	// A list of ...
 	Flags []string `json:"FLAGS"`
 
+	// A list of ...
 	SampleRecords []SampleRecord `json:"SAMPLE_RECORDS"`
 }
 
 type MatchInfo struct {
 	CandidateKeys CandidateKeysForMatchInfo `json:"CANDIDATE_KEYS"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	FeatureScores FeatureScores `json:"FEATURE_SCORES"`
@@ -948,6 +1012,7 @@ type MatchInfoForAttribute struct {
 }
 
 type MatchInfoForWhy struct {
+	// A map from ... to ...
 	CandidateKeys map[string][]MatchInfoForAttribute `json:"CANDIDATE_KEYS"`
 
 	DisclosedRelations DisclosedRelationsForMatchInfoForWhy `json:"DISCLOSED_RELATIONS"`
@@ -965,16 +1030,24 @@ type MatchInfoForWhy struct {
 }
 
 type MatchKeyDetails struct {
-	Confirmations []Confirmation `json:"CONFIRMATIONS"`
+	// A list of feature data in the match key supporting the match.
+	Confirmations []FeatureScoreInfo `json:"CONFIRMATIONS"`
 
-	Denials []Confirmation `json:"DENIALS"`
+	// A list of feature data in the match key negating the match.
+	Denials []FeatureScoreInfo `json:"DENIALS"`
 
+	// A list of disclosed relationships of various types.
 	DisclosedRelations []DisclosedRelationsForMatchInfo `json:"DISCLOSED_RELATIONS"`
 
+	// A list of disclosed relationship anchors.
+	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+
+	// Deprecated. A list of disclosed relationships based on identical shared
+	// keys.
 	RelLinks []RelLink `json:"REL_LINKS"`
 
-	// Identifier of the entity resolution rule that was triggered.
-	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
+	// A list of disclosed relationship pointers.
+	RelPointer []RelPointer `json:"REL_POINTER"`
 }
 
 type MemberRecord struct {
@@ -997,11 +1070,13 @@ type Record struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
+	// A list of ...
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
@@ -1009,6 +1084,7 @@ type Record struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
@@ -1022,12 +1098,16 @@ type Record struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 
+	// A list of ...
 	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
 
+	// A list of ...
 	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
 
+	// A list of ...
 	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
 
 	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
@@ -1036,16 +1116,21 @@ type Record struct {
 
 	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
 
+	// A list of ...
 	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
 
 	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
 
+	// A list of ...
 	XxxNameData []string `json:"XXX_NAME_DATA"`
 
+	// A list of ...
 	XxxOtherData []string `json:"XXX_OTHER_DATA"`
 
+	// A list of ...
 	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
 
+	// A list of ...
 	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
@@ -1053,11 +1138,13 @@ type RecordForGetEntity struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
+	// A list of ...
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
@@ -1065,6 +1152,7 @@ type RecordForGetEntity struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
@@ -1078,12 +1166,16 @@ type RecordForGetEntity struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 
+	// A list of ...
 	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
 
+	// A list of ...
 	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
 
+	// A list of ...
 	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
 
 	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
@@ -1092,16 +1184,21 @@ type RecordForGetEntity struct {
 
 	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
 
+	// A list of ...
 	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
 
 	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
 
+	// A list of ...
 	XxxNameData []string `json:"XXX_NAME_DATA"`
 
+	// A list of ...
 	XxxOtherData []string `json:"XXX_OTHER_DATA"`
 
+	// A list of ...
 	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
 
+	// A list of ...
 	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
@@ -1146,6 +1243,7 @@ type RelAnchor struct {
 
 	LinkedFeatUsageType string `json:"LINKED_FEAT_USAGE_TYPE"`
 
+	// A list of ...
 	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
@@ -1191,14 +1289,13 @@ type RelPointer struct {
 }
 
 type RelatedEntity struct {
-	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
-	// It may change when new information is added.
+	// The ENTITY_ID is the identifier for the entity.
 	EntityID int64 `json:"ENTITY_ID"`
 
-	// A name this entity goes by. An entity could have multiple names.
+	// An arbitrarily selected name for the entity.
 	EntityName string `json:"ENTITY_NAME"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	// Indicates if this is an ambiguous relationship.
@@ -1207,26 +1304,23 @@ type RelatedEntity struct {
 	// Indicates if this is a disclosed relationship.
 	IsDisclosed int64 `json:"IS_DISCLOSED"`
 
-	// Representation of matched source record features.
+	// Representation of matched source data.
 	MatchKey string `json:"MATCH_KEY"`
 
+	// Contains supporting information for the match key.
 	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
 
-	MatchLevel int64 `json:"MATCH_LEVEL"`
-
-	// The type of match that occurred for the record.
+	// The type of relationship.
 	MatchLevelCode string `json:"MATCH_LEVEL_CODE"`
 
 	// A list of (data source code, record id) pairs.
 	Records []Record `json:"RECORDS"`
 
-	// Overview of the source systems the records came from comprising this related
-	// entity.
+	// A list of tabulated counts of records by source.
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
+	// A list of record types on the entity as defined in the Entity Specification.
 	RecordTypes []string `json:"RECORD_TYPES"`
-
-	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
 }
 
 type RelatedRoles struct {
@@ -1266,23 +1360,26 @@ type ResolvedEntity struct {
 	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 
-	// A name this entity goes by. An entity could have multiple names.
+	// An arbitrarily selected name for the entity.
 	EntityName string `json:"ENTITY_NAME"`
 
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
 	// A list of (data source code, record id) pairs.
 	Records []Record `json:"RECORDS"`
 
-	// Overview of the source systems the records came from comprising this related
+	// A list of source systems the records came from comprising this related
 	// entity.
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
+	// A list of ...
 	RecordTypes []string `json:"RECORD_TYPES"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
 
+	// A list of ...
 	XxxFeatureIds []FeatureID `json:"XXX_FEATURE_IDS"`
 
 	// Indicates if this is an ambiguous relationship.
@@ -1318,20 +1415,23 @@ type ResolvedEntityForGetEntity struct {
 	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
+	// A map from ... to ...
 	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
 
 	// A list of (data source code, record id) pairs.
 	Records []RecordForGetEntity `json:"RECORDS"`
 
-	// Overview of the source systems the records came from comprising this related
+	// A list of source systems the records came from comprising this related
 	// entity.
 	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
 
+	// A list of ...
 	RecordTypes []string `json:"RECORD_TYPES"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
 
+	// A list of ...
 	XxxFeatureIds []FeatureID `json:"XXX_FEATURE_IDS"`
 
 	// Indicates if this is an ambiguous relationship.
@@ -1377,6 +1477,7 @@ type SampleRecord struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
+	// A list of ...
 	Flags []string `json:"FLAGS"`
 
 	// The unique identifier within the set of records in the DATA_SOURCE.
@@ -1392,6 +1493,7 @@ type SchemaVersion struct {
 }
 
 type SearchEntity struct {
+	// A map from ... to ...
 	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
 
 	Summary SearchEntitySummary `json:"SUMMARY"`
@@ -1408,6 +1510,7 @@ type SearchEntitySummary struct {
 }
 
 type SearchRequest struct {
+	// A map from ... to ...
 	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
 
 	JSONData string `json:"JSON_DATA"`
@@ -1783,12 +1886,12 @@ type SzConfigExportResponse struct {
 }
 
 type SzConfigGetDataSourceRegistryResponse struct {
-	// The list of registered data sources.
+	// A list of registered data sources.
 	DataSources []DataSource `json:"DATA_SOURCES"`
 }
 
 type SzConfigManagerGetConfigRegistryResponse struct {
-	// The list of registered configurations.
+	// A list of registered configurations.
 	Configs []Config `json:"CONFIGS"`
 }
 
@@ -1822,7 +1925,7 @@ type SzDiagnosticGetRepositoryInfoResponse struct {
 }
 
 type SzEngineAddRecordResponse struct {
-	// Entities that were affected as a result of the operation.
+	// A list of entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	// Short, stable identifier naming the source system.
@@ -1836,7 +1939,7 @@ type SzEngineAddRecordResponse struct {
 }
 
 type SzEngineDeleteRecordResponse struct {
-	// Entities that were affected as a result of the operation.
+	// A list of entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	// Short, stable identifier naming the source system.
@@ -1876,16 +1979,16 @@ type SzEngineFindNetworkByEntityIDEntityIds struct {
 
 // A network of relationships among entities.
 type SzEngineFindNetworkByEntityIDResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
-	// Relationship details for all pairs of entities in the network.
+	// A list of relationship details for all pairs of entities in the network.
 	EntityNetworkLinks []EntityNetworkLink `json:"ENTITY_NETWORK_LINKS"`
 
-	// Best path between all pairs of requested entities.
+	// A list of best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
-	// Relationship details for all links from ENTITY_PATHS.
+	// A list of relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
 	// Indicates that the build-out has been truncated.
@@ -1899,16 +2002,16 @@ type SzEngineFindNetworkByRecordIDRecordKeys struct {
 
 // A network of relationships among entities.
 type SzEngineFindNetworkByRecordIDResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
-	// Relationship details for all pairs of entities in the network.
+	// A list of relationship details for all pairs of entities in the network.
 	EntityNetworkLinks []EntityNetworkLink `json:"ENTITY_NETWORK_LINKS"`
 
-	// Best path between all pairs of requested entities.
+	// A list of best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
-	// Relationship details for all links from ENTITY_PATHS.
+	// A list of relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 
 	// Indicates that the build-out has been truncated.
@@ -1924,13 +2027,13 @@ type SzEngineFindPathByEntityIDRequiredDataSources struct {
 }
 
 type SzEngineFindPathByEntityIDResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
-	// Best path between all pairs of requested entities.
+	// A list of best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
-	// Relationship details for all links from ENTITY_PATHS.
+	// A list of relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 }
 
@@ -1944,35 +2047,41 @@ type SzEngineFindPathByRecordIDRequiredDataSources struct {
 }
 
 type SzEngineFindPathByRecordIDResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
-	// Best path between all pairs of requested entities.
+	// A list of best path between all pairs of requested entities.
 	EntityPaths []EntityPath `json:"ENTITY_PATHS"`
 
-	// Relationship details for all links from ENTITY_PATHS.
+	// A list of relationship details for all links from ENTITY_PATHS.
 	EntityPathLinks []EntityPathLink `json:"ENTITY_PATH_LINKS"`
 }
 
 type SzEngineGetEntityByEntityIDResponse struct {
+	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntityForGetEntity `json:"RESOLVED_ENTITY"`
 }
 
 type SzEngineGetEntityByRecordIDResponse struct {
+	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
 
 	ResolvedEntity ResolvedEntityForGetEntity `json:"RESOLVED_ENTITY"`
 }
 
 type SzEngineGetRecordPreviewResponse struct {
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
+	// A list of ...
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 }
 
@@ -1980,12 +2089,15 @@ type SzEngineGetRecordResponse struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
+	// A list of ...
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
@@ -1993,12 +2105,16 @@ type SzEngineGetRecordResponse struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 
+	// A list of ...
 	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
 
+	// A list of ...
 	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
 
+	// A list of ...
 	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
 
 	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
@@ -2007,9 +2123,10 @@ type SzEngineGetRecordResponse struct {
 
 	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
 
-	// Identifier of the entity resolution rule that was triggered.
+	// Identifier of the entity resolution principle that was triggered.
 	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
 
+	// A list of ...
 	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
 
 	// Internal identifier for the record.
@@ -2023,12 +2140,16 @@ type SzEngineGetRecordResponse struct {
 	// The type of match that occurred for the record.
 	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
 
+	// A list of ...
 	XxxNameData []string `json:"XXX_NAME_DATA"`
 
+	// A list of ...
 	XxxOtherData []string `json:"XXX_OTHER_DATA"`
 
+	// A list of ...
 	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
 
+	// A list of ...
 	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
@@ -2054,7 +2175,7 @@ type SzEngineHowEntityByEntityIDResponse struct {
 }
 
 type SzEngineProcessRedoRecordResponse struct {
-	// Entities that were affected as a result of the operation.
+	// A list of entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	// Short, stable identifier naming the source system.
@@ -2069,7 +2190,7 @@ type SzEngineProcessRedoRecordResponse struct {
 }
 
 type SzEngineReevaluateEntityResponse struct {
-	// Entities that were affected as a result of the operation.
+	// A list of entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	// Internal use.
@@ -2083,7 +2204,7 @@ type SzEngineReevaluateEntityResponse struct {
 }
 
 type SzEngineReevaluateRecordResponse struct {
-	// Entities that were affected as a result of the operation.
+	// A list of entities that were affected as a result of the operation.
 	AffectedEntities []AffectedEntity `json:"AFFECTED_ENTITIES"`
 
 	// Short, stable identifier naming the source system.
@@ -2100,14 +2221,17 @@ type SzEngineSearchByAttributesAttributes struct {
 }
 
 type SzEngineSearchByAttributesResponse struct {
+	// A list of ...
 	RelatedEntitiesMjd []RelatedEntity `json:"RELATED_ENTITIES_MJD"`
 
+	// A list of ...
 	ResolvedEntities []ResolvedEntityAndMatchInfo `json:"RESOLVED_ENTITIES"`
 
 	SearchEntity SearchEntity `json:"SEARCH_ENTITY"`
 
 	SearchRequest SearchRequest `json:"SEARCH_REQUEST"`
 
+	// A list of ...
 	SearchStatistics []SearchStatistic `json:"SEARCH_STATISTICS"`
 }
 
@@ -2120,23 +2244,26 @@ type SzEngineStreamExportJSONEntityReportResponse struct {
 }
 
 type SzEngineWhyEntitiesResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// A list of ...
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineWhyRecordInEntityResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// A list of ...
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
 type SzEngineWhyRecordsResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []Entity `json:"ENTITIES"`
 
+	// A list of ...
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
@@ -2145,15 +2272,17 @@ type SzEngineWhySearchAttributes struct {
 }
 
 type SzEngineWhySearchResponse struct {
-	// List of entity information.
+	// A list of entity information.
 	Entities []EntityForWhySearch `json:"ENTITIES"`
 
 	SearchEntity SearchEntity `json:"SEARCH_ENTITY"`
 
 	SearchRequest SearchRequest `json:"SEARCH_REQUEST"`
 
+	// A list of ...
 	SearchStatistics []SearchStatistic `json:"SEARCH_STATISTICS"`
 
+	// A list of ...
 	WhyResults []WhyResult `json:"WHY_RESULTS"`
 }
 
@@ -2200,6 +2329,7 @@ type SzProductGetVersionResponse struct {
 type UmfProc struct {
 	Name string `json:"NAME"`
 
+	// A list of ...
 	Params []UmfProcParams `json:"PARAMS"`
 }
 
@@ -2214,16 +2344,20 @@ type UmfProcParams struct {
 }
 
 type VirtualEntitySynopsis struct {
+	// A list of ...
 	MemberRecords []MemberRecord `json:"MEMBER_RECORDS"`
 
 	VirtualEntityID string `json:"VIRTUAL_ENTITY_ID"`
 }
 
 type WhyKeyDetails struct {
-	Confirmations []Confirmation `json:"CONFIRMATIONS"`
+	// A list of ...
+	Confirmations []FeatureScoreInfo `json:"CONFIRMATIONS"`
 
-	Denials []Confirmation `json:"DENIALS"`
+	// A list of ...
+	Denials []FeatureScoreInfo `json:"DENIALS"`
 
+	// A list of ...
 	DisclosedRelations []DisclosedRelationsForWhyKeyDetails `json:"DISCLOSED_RELATIONS"`
 }
 
@@ -2234,8 +2368,10 @@ type WhyResult struct {
 
 	EntityID0 int64 `json:"ENTITY_ID_2"`
 
+	// A list of ...
 	FocusRecords []FocusRecord `json:"FOCUS_RECORDS"`
 
+	// A list of ...
 	FocusRecords0 []FocusRecord `json:"FOCUS_RECORDS_2"`
 
 	// Internal identifier for the record.
@@ -2270,6 +2406,7 @@ type Workload struct {
 
 	Processing WorkloadProcessing `json:"processing"`
 
+	// A map from ... to ...
 	RedoTriggers map[string]int64 `json:"redoTriggers"`
 
 	RepairDiagnosis WorkloadRepairDiagnosis `json:"repairDiagnosis"`
@@ -2304,8 +2441,10 @@ type WorkloadCaches struct {
 }
 
 type WorkloadCandidates struct {
+	// A map from ... to ...
 	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
 
+	// A map from ... to ...
 	SuppressedCandidateBuilders map[string]int64 `json:"suppressedCandidateBuilders"`
 }
 
@@ -2328,8 +2467,10 @@ type WorkloadCurrResources struct {
 }
 
 type WorkloadExpressedFeatures struct {
+	// A list of ...
 	Calls []WorkloadExpressedFeaturesCall `json:"calls"`
 
+	// A map from ... to ...
 	Created map[string]int64 `json:"created"`
 }
 
@@ -2424,6 +2565,7 @@ type WorkloadRepairDiagnosis struct {
 }
 
 type WorkloadReresolve struct {
+	// A map from ... to ...
 	NewFeatureFtypes map[string]int64 `json:"newFeatureFTypes"`
 
 	SuppressedCandidateBuildersForReresolve Fixme `json:"suppressedCandidateBuildersForReresolve"`
@@ -2446,10 +2588,13 @@ type WorkloadReresolveTriggers struct {
 }
 
 type WorkloadScoring struct {
+	// A map from ... to ...
 	CacheHit map[string]int64 `json:"cacheHit"`
 
+	// A map from ... to ...
 	CacheMiss map[string]int64 `json:"cacheMiss"`
 
+	// A map from ... to ...
 	ScoredPairs map[string]int64 `json:"scoredPairs"`
 
 	SuppressedDisclosedRelationshipDomainCount int32 `json:"suppressedDisclosedRelationshipDomainCount"`

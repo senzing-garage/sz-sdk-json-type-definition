@@ -33,6 +33,7 @@ public class UmfProc {
 
     /**
      * Getter for params.<p>
+     * A list of ...
      */
     public List<UmfProcParams> getParams() {
         return params;
@@ -40,6 +41,7 @@ public class UmfProc {
 
     /**
      * Setter for params.<p>
+     * A list of ...
      */
     public void setParams(List<UmfProcParams> params) {
         this.params = params;

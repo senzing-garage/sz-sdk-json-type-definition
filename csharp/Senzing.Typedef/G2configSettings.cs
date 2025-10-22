@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// A list of ...
+    /// </summary>
     public class G2configSettings
     {
         [JsonPropertyName("METAPHONE_VERSION")]
