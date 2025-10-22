@@ -982,7 +982,7 @@
         },
         "CandidateKeysForMatchInfo": {
             "metadata": {
-                "description": "A dictionary of ..."
+                "description": "A map from ... to ..."
             },
             "values": {
                 "elements": {
@@ -1413,7 +1413,7 @@
             "properties": {
                 "ATTRIBUTES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "type": "string"
@@ -1710,7 +1710,7 @@
         },
         "FeatureScores": {
             "metadata": {
-                "description": "A dictionary of ..."
+                "description": "A map from ... to ..."
             },
             "values": {
                 "elements": {
@@ -2205,7 +2205,7 @@
             "properties": {
                 "CANDIDATE_KEYS": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -2344,7 +2344,7 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -2375,7 +2375,7 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -2405,7 +2405,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -2508,7 +2508,7 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -2539,7 +2539,7 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -2569,7 +2569,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -2986,7 +2986,7 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -3102,7 +3102,7 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -3288,7 +3288,7 @@
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -3324,7 +3324,7 @@
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -4283,7 +4283,7 @@
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -4304,7 +4304,7 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -4312,7 +4312,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -4330,7 +4330,7 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "elements": {
@@ -4354,7 +4354,7 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -4372,7 +4372,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A dictionary of ..."
+                        "description": "A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -4998,7 +4998,7 @@
                 },
                 "redoTriggers": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5057,7 +5057,7 @@
             "properties": {
                 "candidateBuilders": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5066,7 +5066,7 @@
                 },
                 "suppressedCandidateBuilders": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5116,7 +5116,7 @@
                 },
                 "created": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5273,7 +5273,7 @@
             "properties": {
                 "newFeatureFTypes": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5314,7 +5314,7 @@
             "properties": {
                 "cacheHit": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5323,7 +5323,7 @@
                 },
                 "cacheMiss": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5332,7 +5332,7 @@
                 },
                 "scoredPairs": {
                     "metadata": {
-                        "description": "A dictionary of ...",
+                        "description": "A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {

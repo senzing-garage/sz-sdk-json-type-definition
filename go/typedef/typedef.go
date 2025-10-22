@@ -465,7 +465,7 @@ type ConfigBaseVersion struct {
 	XxxProductName string `json:"XXX_PRODUCT_NAME"`
 }
 
-// A dictionary of ...
+// A map from ... to ...
 type CandidateKeysForMatchInfo = map[string][]MatchInfoForAttribute
 
 type CandidateKeysForSearchStatistic struct {
@@ -654,7 +654,7 @@ type Feature struct {
 }
 
 type FeatureDescriptionValue struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	Attributes map[string]string `json:"ATTRIBUTES"`
 
 	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
@@ -807,7 +807,7 @@ type FeatureScoreInfo struct {
 	Token string `json:"TOKEN"`
 }
 
-// A dictionary of ...
+// A map from ... to ...
 type FeatureScores = map[string][]FeatureScoreForAttribute
 
 type FeatureType struct {
@@ -1012,7 +1012,7 @@ type MatchInfoForAttribute struct {
 }
 
 type MatchInfoForWhy struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	CandidateKeys map[string][]MatchInfoForAttribute `json:"CANDIDATE_KEYS"`
 
 	DisclosedRelations DisclosedRelationsForMatchInfoForWhy `json:"DISCLOSED_RELATIONS"`
@@ -1073,7 +1073,7 @@ type Record struct {
 	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
 	// A list of ...
@@ -1084,7 +1084,7 @@ type Record struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
@@ -1098,7 +1098,7 @@ type Record struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 
 	// A list of ...
@@ -1141,7 +1141,7 @@ type RecordForGetEntity struct {
 	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
 	// A list of ...
@@ -1152,7 +1152,7 @@ type RecordForGetEntity struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
@@ -1166,7 +1166,7 @@ type RecordForGetEntity struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 
 	// A list of ...
@@ -1363,7 +1363,7 @@ type ResolvedEntity struct {
 	// An arbitrarily selected name for the entity.
 	EntityName string `json:"ENTITY_NAME"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
 	// A list of (data source code, record id) pairs.
@@ -1415,7 +1415,7 @@ type ResolvedEntityForGetEntity struct {
 	// A name this entity goes by. An entity could have multiple names.
 	EntityName string `json:"ENTITY_NAME"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
 
 	// A list of (data source code, record id) pairs.
@@ -1493,7 +1493,7 @@ type SchemaVersion struct {
 }
 
 type SearchEntity struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
 
 	Summary SearchEntitySummary `json:"SUMMARY"`
@@ -1510,7 +1510,7 @@ type SearchEntitySummary struct {
 }
 
 type SearchRequest struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
 
 	JSONData string `json:"JSON_DATA"`
@@ -2072,16 +2072,16 @@ type SzEngineGetEntityByRecordIDResponse struct {
 }
 
 type SzEngineGetRecordPreviewResponse struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
 	// A list of ...
 	FeatureIds []FeatureID `json:"FEATURE_IDS"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 }
 
@@ -2089,7 +2089,7 @@ type SzEngineGetRecordResponse struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	Features map[string][]FeatureForAttributes `json:"FEATURES"`
 
 	// A list of ...
@@ -2097,7 +2097,7 @@ type SzEngineGetRecordResponse struct {
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	JSONData map[string]Object `json:"JSON_DATA"`
 
 	LastSeenDt time.Time `json:"LAST_SEEN_DT"`
@@ -2105,7 +2105,7 @@ type SzEngineGetRecordResponse struct {
 	// The unique identifier within the set of records in the DATA_SOURCE.
 	RecordID string `json:"RECORD_ID"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
 
 	// A list of ...
@@ -2406,7 +2406,7 @@ type Workload struct {
 
 	Processing WorkloadProcessing `json:"processing"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	RedoTriggers map[string]int64 `json:"redoTriggers"`
 
 	RepairDiagnosis WorkloadRepairDiagnosis `json:"repairDiagnosis"`
@@ -2441,10 +2441,10 @@ type WorkloadCaches struct {
 }
 
 type WorkloadCandidates struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	SuppressedCandidateBuilders map[string]int64 `json:"suppressedCandidateBuilders"`
 }
 
@@ -2470,7 +2470,7 @@ type WorkloadExpressedFeatures struct {
 	// A list of ...
 	Calls []WorkloadExpressedFeaturesCall `json:"calls"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	Created map[string]int64 `json:"created"`
 }
 
@@ -2565,7 +2565,7 @@ type WorkloadRepairDiagnosis struct {
 }
 
 type WorkloadReresolve struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	NewFeatureFtypes map[string]int64 `json:"newFeatureFTypes"`
 
 	SuppressedCandidateBuildersForReresolve Fixme `json:"suppressedCandidateBuildersForReresolve"`
@@ -2588,13 +2588,13 @@ type WorkloadReresolveTriggers struct {
 }
 
 type WorkloadScoring struct {
-	// A dictionary of ...
+	// A map from ... to ...
 	CacheHit map[string]int64 `json:"cacheHit"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	CacheMiss map[string]int64 `json:"cacheMiss"`
 
-	// A dictionary of ...
+	// A map from ... to ...
 	ScoredPairs map[string]int64 `json:"scoredPairs"`
 
 	SuppressedDisclosedRelationshipDomainCount int32 `json:"suppressedDisclosedRelationshipDomainCount"`

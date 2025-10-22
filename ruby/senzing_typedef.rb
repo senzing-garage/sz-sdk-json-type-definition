@@ -1048,7 +1048,7 @@ module SenzingTypedef
     end
   end
 
-  # A dictionary of ...
+  # A map from ... to ...
   class CandidateKeysForMatchInfo
     attr_accessor :value
 
@@ -1508,7 +1508,7 @@ module SenzingTypedef
   end
 
   class FeatureDescriptionValue
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :attributes
     attr_accessor :candidate_cap_reached
     attr_accessor :entity_count
@@ -1813,7 +1813,7 @@ module SenzingTypedef
     end
   end
 
-  # A dictionary of ...
+  # A map from ... to ...
   class FeatureScores
     attr_accessor :value
 
@@ -2258,7 +2258,7 @@ module SenzingTypedef
   end
 
   class MatchInfoForWhy
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :candidate_keys
     attr_accessor :disclosed_relations
     attr_accessor :feature_scores
@@ -2399,7 +2399,7 @@ module SenzingTypedef
     # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
 
     # A list of ...
@@ -2409,7 +2409,7 @@ module SenzingTypedef
     # Internal identifier for the record.
     attr_accessor :internal_id
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :json_data
     attr_accessor :last_seen_dt
 
@@ -2422,7 +2422,7 @@ module SenzingTypedef
     # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :unmapped_data
 
     # A list of ...
@@ -2519,7 +2519,7 @@ module SenzingTypedef
     # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
 
     # A list of ...
@@ -2529,7 +2529,7 @@ module SenzingTypedef
     # Internal identifier for the record.
     attr_accessor :internal_id
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :json_data
     attr_accessor :last_seen_dt
 
@@ -2542,7 +2542,7 @@ module SenzingTypedef
     # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :unmapped_data
 
     # A list of ...
@@ -2977,7 +2977,7 @@ module SenzingTypedef
     # An arbitrarily selected name for the entity.
     attr_accessor :entity_name
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
 
     # A list of (data source code, record id) pairs.
@@ -3079,7 +3079,7 @@ module SenzingTypedef
     # A name this entity goes by. An entity could have multiple names.
     attr_accessor :entity_name
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
 
     # A list of (data source code, record id) pairs.
@@ -3244,7 +3244,7 @@ module SenzingTypedef
   end
 
   class SearchEntity
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
     attr_accessor :summary
 
@@ -3289,7 +3289,7 @@ module SenzingTypedef
   end
 
   class SearchRequest
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
     attr_accessor :json_data
     attr_accessor :search_profile
@@ -4403,16 +4403,16 @@ module SenzingTypedef
   end
 
   class SzEngineGetRecordPreviewResponse
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
 
     # A list of ...
     attr_accessor :feature_ids
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :json_data
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :unmapped_data
 
     def self.from_json_data(data)
@@ -4438,21 +4438,21 @@ module SenzingTypedef
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :features
 
     # A list of ...
     attr_accessor :feature_ids
     attr_accessor :first_seen_dt
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :json_data
     attr_accessor :last_seen_dt
 
     # The unique identifier within the set of records in the DATA_SOURCE.
     attr_accessor :record_id
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :unmapped_data
 
     # A list of ...
@@ -5176,7 +5176,7 @@ module SenzingTypedef
     attr_accessor :lock_waits
     attr_accessor :processing
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :redo_triggers
     attr_accessor :repair_diagnosis
     attr_accessor :reresolve
@@ -5270,10 +5270,10 @@ module SenzingTypedef
   end
 
   class WorkloadCandidates
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :candidate_builders
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :suppressed_candidate_builders
 
     def self.from_json_data(data)
@@ -5342,7 +5342,7 @@ module SenzingTypedef
     # A list of ...
     attr_accessor :calls
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :created
 
     def self.from_json_data(data)
@@ -5586,7 +5586,7 @@ module SenzingTypedef
   end
 
   class WorkloadReresolve
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :new_feature_ftypes
     attr_accessor :suppressed_candidate_builders_for_reresolve
     attr_accessor :suppressed_scored_feature_type_for_reresolve
@@ -5640,13 +5640,13 @@ module SenzingTypedef
   end
 
   class WorkloadScoring
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :cache_hit
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :cache_miss
 
-    # A dictionary of ...
+    # A map from ... to ...
     attr_accessor :scored_pairs
     attr_accessor :suppressed_disclosed_relationship_domain_count
     attr_accessor :suppressed_scored_feature_type

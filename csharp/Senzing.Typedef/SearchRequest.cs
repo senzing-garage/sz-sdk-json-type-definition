@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SearchRequest
     {
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureDescriptionValue>> Features { get; set; }

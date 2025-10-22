@@ -44,7 +44,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for attributes.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, String> getAttributes() {
         return attributes;
@@ -52,7 +52,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for attributes.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;

@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class FeatureDescriptionValue
     {
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("ATTRIBUTES")]
         public IDictionary<string, string> Attributes { get; set; }

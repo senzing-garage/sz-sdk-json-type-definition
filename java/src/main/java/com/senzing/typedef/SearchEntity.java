@@ -20,7 +20,7 @@ public class SearchEntity {
 
     /**
      * Getter for features.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, List<FeatureDescriptionValue>> getFeatures() {
         return features;
@@ -28,7 +28,7 @@ public class SearchEntity {
 
     /**
      * Setter for features.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setFeatures(Map<String, List<FeatureDescriptionValue>> features) {
         this.features = features;

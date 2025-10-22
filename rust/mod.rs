@@ -691,7 +691,7 @@ pub struct ConfigBaseVersion {
     pub xxxProductName: String,
 }
 
-/// A dictionary of ...
+/// A map from ... to ...
 pub type CandidateKeysForMatchInfo = HashMap<String, Vec<MatchInfoForAttribute>>;
 
 #[derive(Serialize, Deserialize)]
@@ -956,7 +956,7 @@ pub struct Feature {
 
 #[derive(Serialize, Deserialize)]
 pub struct FeatureDescriptionValue {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "ATTRIBUTES")]
     pub attributes: HashMap<String, String>,
 
@@ -1173,7 +1173,7 @@ pub struct FeatureScoreInfo {
     pub token: String,
 }
 
-/// A dictionary of ...
+/// A map from ... to ...
 pub type FeatureScores = HashMap<String, Vec<FeatureScoreForAttribute>>;
 
 #[derive(Serialize, Deserialize)]
@@ -1454,7 +1454,7 @@ pub struct MatchInfoForAttribute {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInfoForWhy {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "CANDIDATE_KEYS")]
     pub candidateKeys: HashMap<String, Vec<MatchInfoForAttribute>>,
 
@@ -1538,7 +1538,7 @@ pub struct Record {
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
 
@@ -1553,7 +1553,7 @@ pub struct Record {
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "JSON_DATA")]
     pub jsonData: HashMap<String, Object>,
 
@@ -1572,7 +1572,7 @@ pub struct Record {
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
 
@@ -1631,7 +1631,7 @@ pub struct RecordForGetEntity {
     #[serde(rename = "ERRULE_CODE")]
     pub erruleCode: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
 
@@ -1646,7 +1646,7 @@ pub struct RecordForGetEntity {
     #[serde(rename = "INTERNAL_ID")]
     pub internalId: i32,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "JSON_DATA")]
     pub jsonData: HashMap<String, Object>,
 
@@ -1665,7 +1665,7 @@ pub struct RecordForGetEntity {
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
 
@@ -1943,7 +1943,7 @@ pub struct ResolvedEntity {
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
 
@@ -2014,7 +2014,7 @@ pub struct ResolvedEntityForGetEntity {
     #[serde(rename = "ENTITY_NAME")]
     pub entityName: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForGetEntity>>,
 
@@ -2124,7 +2124,7 @@ pub struct SchemaVersion {
 
 #[derive(Serialize, Deserialize)]
 pub struct SearchEntity {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureDescriptionValue>>,
 
@@ -2149,7 +2149,7 @@ pub struct SearchEntitySummary {
 
 #[derive(Serialize, Deserialize)]
 pub struct SearchRequest {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureDescriptionValue>>,
 
@@ -2889,7 +2889,7 @@ pub struct SzEngineGetEntityByRecordIdResponse {
 
 #[derive(Serialize, Deserialize)]
 pub struct SzEngineGetRecordPreviewResponse {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
 
@@ -2897,11 +2897,11 @@ pub struct SzEngineGetRecordPreviewResponse {
     #[serde(rename = "FEATURE_IDS")]
     pub featureIds: Vec<FeatureId>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "JSON_DATA")]
     pub jsonData: HashMap<String, Object>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
 }
@@ -2912,7 +2912,7 @@ pub struct SzEngineGetRecordResponse {
     #[serde(rename = "DATA_SOURCE")]
     pub dataSource: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "FEATURES")]
     pub features: HashMap<String, Vec<FeatureForAttributes>>,
 
@@ -2923,7 +2923,7 @@ pub struct SzEngineGetRecordResponse {
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "JSON_DATA")]
     pub jsonData: HashMap<String, Object>,
 
@@ -2934,7 +2934,7 @@ pub struct SzEngineGetRecordResponse {
     #[serde(rename = "RECORD_ID")]
     pub recordId: String,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
 
@@ -3362,7 +3362,7 @@ pub struct Workload {
     #[serde(rename = "processing")]
     pub processing: WorkloadProcessing,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "redoTriggers")]
     pub redoTriggers: HashMap<String, i32>,
 
@@ -3414,11 +3414,11 @@ pub struct WorkloadCaches {
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadCandidates {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "candidateBuilders")]
     pub candidateBuilders: HashMap<String, i32>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "suppressedCandidateBuilders")]
     pub suppressedCandidateBuilders: HashMap<String, i32>,
 }
@@ -3456,7 +3456,7 @@ pub struct WorkloadExpressedFeatures {
     #[serde(rename = "calls")]
     pub calls: Vec<WorkloadExpressedFeaturesCall>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "created")]
     pub created: HashMap<String, i32>,
 }
@@ -3598,7 +3598,7 @@ pub struct WorkloadRepairDiagnosis {
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadReresolve {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "newFeatureFTypes")]
     pub newFeatureFtypes: HashMap<String, i32>,
 
@@ -3632,15 +3632,15 @@ pub struct WorkloadReresolveTriggers {
 
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadScoring {
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "cacheHit")]
     pub cacheHit: HashMap<String, i32>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "cacheMiss")]
     pub cacheMiss: HashMap<String, i32>,
 
-    /// A dictionary of ...
+    /// A map from ... to ...
     #[serde(rename = "scoredPairs")]
     pub scoredPairs: HashMap<String, i32>,
 

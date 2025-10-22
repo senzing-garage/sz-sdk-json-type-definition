@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SzEngineGetRecordPreviewResponse
     {
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
@@ -21,13 +21,13 @@ namespace Senzing.Typedef
         public IList<FeatureId> FeatureIds { get; set; }
 
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("JSON_DATA")]
         public IDictionary<string, Object_> JsonData { get; set; }
 
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }

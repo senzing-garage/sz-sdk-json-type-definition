@@ -1028,7 +1028,7 @@ class ConfigBaseVersion:
 @dataclass
 class CandidateKeysForMatchInfo:
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     value: 'Dict[str, List[MatchInfoForAttribute]]'
@@ -1550,7 +1550,7 @@ class Feature:
 class FeatureDescriptionValue:
     attributes: 'Dict[str, str]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     candidate_cap_reached: 'str'
@@ -1894,7 +1894,7 @@ class FeatureScoreInfo:
 @dataclass
 class FeatureScores:
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     value: 'Dict[str, List[FeatureScoreForAttribute]]'
@@ -2435,7 +2435,7 @@ class MatchInfoForAttribute:
 class MatchInfoForWhy:
     candidate_keys: 'Dict[str, List[MatchInfoForAttribute]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     disclosed_relations: 'DisclosedRelationsForMatchInfoForWhy'
@@ -2596,7 +2596,7 @@ class Record:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     feature_ids: 'List[FeatureID]'
@@ -2612,7 +2612,7 @@ class Record:
 
     json_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     last_seen_dt: 'datetime'
@@ -2633,7 +2633,7 @@ class Record:
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     xxx_address_data: 'List[str]'
@@ -2752,7 +2752,7 @@ class RecordForGetEntity:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     feature_ids: 'List[FeatureID]'
@@ -2768,7 +2768,7 @@ class RecordForGetEntity:
 
     json_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     last_seen_dt: 'datetime'
@@ -2789,7 +2789,7 @@ class RecordForGetEntity:
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     xxx_address_data: 'List[str]'
@@ -3291,7 +3291,7 @@ class ResolvedEntity:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     records: 'List[Record]'
@@ -3416,7 +3416,7 @@ class ResolvedEntityForGetEntity:
 
     features: 'Dict[str, List[FeatureForGetEntity]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     records: 'List[RecordForGetEntity]'
@@ -3605,7 +3605,7 @@ class SchemaVersion:
 class SearchEntity:
     features: 'Dict[str, List[FeatureDescriptionValue]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     summary: 'SearchEntitySummary'
@@ -3651,7 +3651,7 @@ class SearchEntitySummary:
 class SearchRequest:
     features: 'Dict[str, List[FeatureDescriptionValue]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     json_data: 'str'
@@ -4995,7 +4995,7 @@ class SzEngineGetEntityByRecordIDResponse:
 class SzEngineGetRecordPreviewResponse:
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     feature_ids: 'List[FeatureID]'
@@ -5005,12 +5005,12 @@ class SzEngineGetRecordPreviewResponse:
 
     json_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
 
@@ -5040,7 +5040,7 @@ class SzEngineGetRecordResponse:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     feature_ids: 'List[FeatureID]'
@@ -5051,7 +5051,7 @@ class SzEngineGetRecordResponse:
     first_seen_dt: 'datetime'
     json_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     last_seen_dt: 'datetime'
@@ -5062,7 +5062,7 @@ class SzEngineGetRecordResponse:
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     xxx_address_data: 'List[str]'
@@ -5863,7 +5863,7 @@ class Workload:
     processing: 'WorkloadProcessing'
     redo_triggers: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     repair_diagnosis: 'WorkloadRepairDiagnosis'
@@ -5958,12 +5958,12 @@ class WorkloadCaches:
 class WorkloadCandidates:
     candidate_builders: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     suppressed_candidate_builders: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
 
@@ -6034,7 +6034,7 @@ class WorkloadExpressedFeatures:
 
     created: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
 
@@ -6271,7 +6271,7 @@ class WorkloadRepairDiagnosis:
 class WorkloadReresolve:
     new_feature_ftypes: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     suppressed_candidate_builders_for_reresolve: 'Fixme'
@@ -6326,17 +6326,17 @@ class WorkloadReresolveTriggers:
 class WorkloadScoring:
     cache_hit: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     cache_miss: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     scored_pairs: 'Dict[str, int]'
     """
-    A dictionary of ...
+    A map from ... to ...
     """
 
     suppressed_disclosed_relationship_domain_count: 'int'

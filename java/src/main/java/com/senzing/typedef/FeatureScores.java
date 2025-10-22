@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A dictionary of ...
+ * A map from ... to ...
  */
 public class FeatureScores {
     @JsonValue

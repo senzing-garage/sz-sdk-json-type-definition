@@ -36,7 +36,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Getter for created.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, Integer> getCreated() {
         return created;
@@ -44,7 +44,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Setter for created.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setCreated(Map<String, Integer> created) {
         this.created = created;

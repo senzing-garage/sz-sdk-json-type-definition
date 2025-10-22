@@ -28,7 +28,7 @@ public class WorkloadScoring {
 
     /**
      * Getter for cacheHit.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, Integer> getCacheHit() {
         return cacheHit;
@@ -36,7 +36,7 @@ public class WorkloadScoring {
 
     /**
      * Setter for cacheHit.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setCacheHit(Map<String, Integer> cacheHit) {
         this.cacheHit = cacheHit;
@@ -44,7 +44,7 @@ public class WorkloadScoring {
 
     /**
      * Getter for cacheMiss.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, Integer> getCacheMiss() {
         return cacheMiss;
@@ -52,7 +52,7 @@ public class WorkloadScoring {
 
     /**
      * Setter for cacheMiss.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setCacheMiss(Map<String, Integer> cacheMiss) {
         this.cacheMiss = cacheMiss;
@@ -60,7 +60,7 @@ public class WorkloadScoring {
 
     /**
      * Getter for scoredPairs.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, Integer> getScoredPairs() {
         return scoredPairs;
@@ -68,7 +68,7 @@ public class WorkloadScoring {
 
     /**
      * Setter for scoredPairs.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setScoredPairs(Map<String, Integer> scoredPairs) {
         this.scoredPairs = scoredPairs;

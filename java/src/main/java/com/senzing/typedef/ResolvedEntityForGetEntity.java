@@ -91,7 +91,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for features.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, List<FeatureForGetEntity>> getFeatures() {
         return features;
@@ -99,7 +99,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for features.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setFeatures(Map<String, List<FeatureForGetEntity>> features) {
         this.features = features;

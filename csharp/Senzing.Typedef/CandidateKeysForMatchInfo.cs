@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// A dictionary of ...
+    /// A map from ... to ...
     /// </summary>
     [JsonConverter(typeof(CandidateKeysForMatchInfoJsonConverter))]
     public class CandidateKeysForMatchInfo

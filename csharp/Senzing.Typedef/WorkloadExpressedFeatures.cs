@@ -15,7 +15,7 @@ namespace Senzing.Typedef
         public IList<WorkloadExpressedFeaturesCall> Calls { get; set; }
 
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("created")]
         public IDictionary<string, int> Created { get; set; }

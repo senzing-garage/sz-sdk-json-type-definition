@@ -318,7 +318,7 @@ export interface ConfigBaseVersion {
 }
 
 /**
- * A dictionary of ...
+ * A map from ... to ...
  */
 export type CandidateKeysForMatchInfo = { [key: string]: MatchInfoForAttribute[] };
 
@@ -558,7 +558,7 @@ export interface Feature {
 
 export interface FeatureDescriptionValue {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   ATTRIBUTES: { [key: string]: string };
   CANDIDATE_CAP_REACHED: string;
@@ -719,7 +719,7 @@ export interface FeatureScoreInfo {
 }
 
 /**
- * A dictionary of ...
+ * A map from ... to ...
  */
 export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
@@ -1016,7 +1016,7 @@ export interface MatchInfoForAttribute {
 
 export interface MatchInfoForWhy {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   CANDIDATE_KEYS: { [key: string]: MatchInfoForAttribute[] };
   DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfoForWhy;
@@ -1095,7 +1095,7 @@ export interface Record {
   ERRULE_CODE: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
@@ -1111,7 +1111,7 @@ export interface Record {
   INTERNAL_ID: number;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
@@ -1132,7 +1132,7 @@ export interface Record {
   RECORD_ID: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 
@@ -1193,7 +1193,7 @@ export interface RecordForGetEntity {
   ERRULE_CODE: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
@@ -1209,7 +1209,7 @@ export interface RecordForGetEntity {
   INTERNAL_ID: number;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
@@ -1230,7 +1230,7 @@ export interface RecordForGetEntity {
   RECORD_ID: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 
@@ -1471,7 +1471,7 @@ export interface ResolvedEntity {
   ENTITY_NAME: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
@@ -1543,7 +1543,7 @@ export interface ResolvedEntityForGetEntity {
   ENTITY_NAME: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureForGetEntity[] };
 
@@ -1634,7 +1634,7 @@ export interface SchemaVersion {
 
 export interface SearchEntity {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureDescriptionValue[] };
   SUMMARY: SearchEntitySummary;
@@ -1649,7 +1649,7 @@ export interface SearchEntitySummary {
 
 export interface SearchRequest {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureDescriptionValue[] };
   JSON_DATA: string;
@@ -2433,7 +2433,7 @@ export interface SzEngineGetEntityByRecordIdResponse {
 
 export interface SzEngineGetRecordPreviewResponse {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
@@ -2443,12 +2443,12 @@ export interface SzEngineGetRecordPreviewResponse {
   FEATURE_IDS: FeatureId[];
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   JSON_DATA: { [key: string]: Object };
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 }
@@ -2460,7 +2460,7 @@ export interface SzEngineGetRecordResponse {
   DATA_SOURCE: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
@@ -2471,7 +2471,7 @@ export interface SzEngineGetRecordResponse {
   FIRST_SEEN_DT: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
@@ -2482,7 +2482,7 @@ export interface SzEngineGetRecordResponse {
   RECORD_ID: string;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 
@@ -2836,7 +2836,7 @@ export interface Workload {
   processing: WorkloadProcessing;
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   redoTriggers: { [key: string]: number };
   repairDiagnosis: WorkloadRepairDiagnosis;
@@ -2860,12 +2860,12 @@ export interface WorkloadCaches {
 
 export interface WorkloadCandidates {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   candidateBuilders: { [key: string]: number };
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   suppressedCandidateBuilders: { [key: string]: number };
 }
@@ -2890,7 +2890,7 @@ export interface WorkloadExpressedFeatures {
   calls: WorkloadExpressedFeaturesCall[];
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   created: { [key: string]: number };
 }
@@ -2960,7 +2960,7 @@ export interface WorkloadRepairDiagnosis {
 
 export interface WorkloadReresolve {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   newFeatureFTypes: { [key: string]: number };
   suppressedCandidateBuildersForReresolve: Fixme;
@@ -2978,17 +2978,17 @@ export interface WorkloadReresolveTriggers {
 
 export interface WorkloadScoring {
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   cacheHit: { [key: string]: number };
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   cacheMiss: { [key: string]: number };
 
   /**
-   * A dictionary of ...
+   * A map from ... to ...
    */
   scoredPairs: { [key: string]: number };
   suppressedDisclosedRelationshipDomainCount: number;

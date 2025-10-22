@@ -103,7 +103,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for features.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, List<FeatureForAttributes>> getFeatures() {
         return features;
@@ -111,7 +111,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for features.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
         this.features = features;
@@ -149,7 +149,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for jsonData.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, Object> getJsonData() {
         return jsonData;
@@ -157,7 +157,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for jsonData.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setJsonData(Map<String, Object> jsonData) {
         this.jsonData = jsonData;
@@ -195,7 +195,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Getter for unmappedData.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, Object> getUnmappedData() {
         return unmappedData;
@@ -203,7 +203,7 @@ public class SzEngineGetRecordResponse {
 
     /**
      * Setter for unmappedData.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;

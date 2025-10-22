@@ -23,7 +23,7 @@ namespace Senzing.Typedef
         public string EntityName { get; set; }
 
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }

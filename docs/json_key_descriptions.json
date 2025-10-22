@@ -48,11 +48,11 @@
         "A list of entities that were affected as a result of the operation."
     ],
     "ATTRIBUTES": [
-        "A dictionary of ...",
+        "A map from ... to ...",
         ""
     ],
     "CANDIDATE_KEYS": [
-        "A dictionary of ...",
+        "A map from ... to ...",
         ""
     ],
     "CFG_ATTR": [
@@ -156,7 +156,7 @@
         "A list of ..."
     ],
     "CandidateKeysForMatchInfo": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "DATA_SOURCE": [
         "Short, stable identifier naming the source system."
@@ -235,7 +235,7 @@
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "FEATURES": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "FEATURE_IDS": [
         "A list of ..."
@@ -269,7 +269,7 @@
         "Internal use."
     ],
     "FeatureScores": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "GENDER": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -308,7 +308,7 @@
         "Internal use."
     ],
     "JSON_DATA": [
-        "A dictionary of ...",
+        "A map from ... to ...",
         ""
     ],
     "LEI_NUMBER": [
@@ -546,7 +546,7 @@
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "UNMAPPED_DATA": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "USAGE_TYPE": [
         "Label to identify how some features are being used (can also change some features behavior)."
@@ -649,19 +649,19 @@
         "A list of ..."
     ],
     "cacheHit": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "cacheMiss": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "calls": [
         "A list of ..."
     ],
     "candidateBuilders": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "created": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "dataStores": [
         "A list of database node connection metadata."
@@ -676,19 +676,19 @@
         "Database connection information."
     ],
     "newFeatureFTypes": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "numRecordsInserted": [
         "The total number of records inserted within the insertTime."
     ],
     "redoTriggers": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "scoredPairs": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "suppressedCandidateBuilders": [
-        "A dictionary of ..."
+        "A map from ... to ..."
     ],
     "type": [
         "Type of database.",

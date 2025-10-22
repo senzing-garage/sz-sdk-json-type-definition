@@ -35,7 +35,7 @@ public class MatchInfoForWhy {
 
     /**
      * Getter for candidateKeys.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public Map<String, List<MatchInfoForAttribute>> getCandidateKeys() {
         return candidateKeys;
@@ -43,7 +43,7 @@ public class MatchInfoForWhy {
 
     /**
      * Setter for candidateKeys.<p>
-     * A dictionary of ...
+     * A map from ... to ...
      */
     public void setCandidateKeys(Map<String, List<MatchInfoForAttribute>> candidateKeys) {
         this.candidateKeys = candidateKeys;

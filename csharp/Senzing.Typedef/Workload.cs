@@ -42,7 +42,7 @@ namespace Senzing.Typedef
         public WorkloadProcessing Processing { get; set; }
 
         /// <summary>
-        /// A dictionary of ...
+        /// A map from ... to ...
         /// </summary>
         [JsonPropertyName("redoTriggers")]
         public IDictionary<string, int> RedoTriggers { get; set; }
