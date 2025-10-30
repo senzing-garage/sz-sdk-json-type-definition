@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// FIXME: ...
+    /// </summary>
     public class RelatedEntity
     {
         /// <summary>
@@ -44,9 +47,6 @@ namespace Senzing.Typedef
         [JsonPropertyName("MATCH_KEY")]
         public string MatchKey { get; set; }
 
-        /// <summary>
-        /// Contains supporting information for the match key.
-        /// </summary>
         [JsonPropertyName("MATCH_KEY_DETAILS")]
         public MatchKeyDetails MatchKeyDetails { get; set; }
 

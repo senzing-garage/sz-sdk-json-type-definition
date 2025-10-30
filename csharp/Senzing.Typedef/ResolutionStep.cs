@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// FIXME: ...
+    /// </summary>
     public class ResolutionStep
     {
         [JsonPropertyName("INBOUND_VIRTUAL_ENTITY_ID")]

@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class FocusRecord {
     @JsonProperty("DATA_SOURCE")

@@ -5,35 +5,53 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// FIXME: ...
+    /// </summary>
     public class FeatureScoreInfo
     {
-        /// <summary>
-        /// Itemized scores from comparison function.
-        /// </summary>
         [JsonPropertyName("ADDITIONAL_SCORES")]
         public AdditionalScores AdditionalScores { get; set; }
 
+        /// <summary>
+        /// The contents of the candidate feature.
+        /// </summary>
         [JsonPropertyName("CANDIDATE_FEAT_DESC")]
         public string CandidateFeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the candidate feature.
+        /// </summary>
         [JsonPropertyName("CANDIDATE_FEAT_ID")]
         public int CandidateFeatId { get; set; }
 
+        /// <summary>
+        /// The usage type of the candidate feature.
+        /// </summary>
         [JsonPropertyName("CANDIDATE_FEAT_USAGE_TYPE")]
         public string CandidateFeatUsageType { get; set; }
 
         /// <summary>
-        /// Internal use.
+        /// The unique text identifier of the feature type.
         /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
+        /// <summary>
+        /// The contents of the inbound feature.
+        /// </summary>
         [JsonPropertyName("INBOUND_FEAT_DESC")]
         public string InboundFeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the inbound feature.
+        /// </summary>
         [JsonPropertyName("INBOUND_FEAT_ID")]
         public int InboundFeatId { get; set; }
 
+        /// <summary>
+        /// The usage type of the inbound feature.
+        /// </summary>
         [JsonPropertyName("INBOUND_FEAT_USAGE_TYPE")]
         public string InboundFeatUsageType { get; set; }
 
@@ -43,6 +61,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("SCORE")]
         public int Score { get; set; }
 
+        /// <summary>
+        /// The behavior used to score the feature.
+        /// </summary>
         [JsonPropertyName("SCORE_BEHAVIOR")]
         public string ScoreBehavior { get; set; }
 
@@ -52,9 +73,15 @@ namespace Senzing.Typedef
         [JsonPropertyName("SCORE_BUCKET")]
         public string ScoreBucket { get; set; }
 
+        /// <summary>
+        /// Resolution data used in producing the score.
+        /// </summary>
         [JsonPropertyName("SOURCE")]
         public string Source { get; set; }
 
+        /// <summary>
+        /// Artifact label used in match comparison.
+        /// </summary>
         [JsonPropertyName("TOKEN")]
         public string Token { get; set; }
     }

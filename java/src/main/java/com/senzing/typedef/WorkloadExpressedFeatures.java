@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class WorkloadExpressedFeatures {
     @JsonProperty("calls")

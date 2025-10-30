@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// FIXME: ...
+    /// </summary>
     public class WorkloadInitResources
     {
         [JsonPropertyName("XXX_physicalCores")]

@@ -1,6 +1,9 @@
 {
     "definitions": {
         "AdditionalScores": {
+            "metadata": {
+                "description": "Itemized scores from comparison function."
+            },
             "properties": {
                 "FULL_SCORE": {
                     "type": "int32"
@@ -23,6 +26,9 @@
             }
         },
         "AffectedEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
@@ -35,6 +41,9 @@
             }
         },
         "CFG_ATTR": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ATTR_CLASS": {
                     "type": "string"
@@ -73,6 +82,9 @@
             }
         },
         "CFG_CFBOM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CFCALL_ID": {
                     "metadata": {
@@ -101,6 +113,9 @@
             }
         },
         "CFG_CFCALL": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CFCALL_ID": {
                     "metadata": {
@@ -129,6 +144,9 @@
             }
         },
         "CFG_CFRTN": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CFRTN_ID": {
                     "metadata": {
@@ -190,6 +208,9 @@
             }
         },
         "CFG_CFUNC": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ANON_SUPPORT": {
                     "type": "string"
@@ -224,6 +245,9 @@
             }
         },
         "CFG_DFBOM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DFCALL_ID": {
                     "metadata": {
@@ -252,6 +276,9 @@
             }
         },
         "CFG_DFCALL": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DFCALL_ID": {
                     "metadata": {
@@ -280,6 +307,9 @@
             }
         },
         "CFG_DFUNC": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ANON_SUPPORT": {
                     "type": "string"
@@ -314,6 +344,9 @@
             }
         },
         "CFG_DSRC": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DSRC_CODE": {
                     "type": "string"
@@ -342,6 +375,9 @@
             }
         },
         "CFG_DSRC_INTEREST": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "XXX_DSRC_ID": {
                     "metadata": {
@@ -361,6 +397,9 @@
             }
         },
         "CFG_EBOM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "XXX_ETYPE_ID": {
                     "metadata": {
@@ -386,6 +425,9 @@
             }
         },
         "CFG_ECLASS": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "XXX_ECLASS_CODE": {
                     "type": "string"
@@ -405,6 +447,9 @@
             }
         },
         "CFG_EFBOM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "EFCALL_ID": {
                     "metadata": {
@@ -436,6 +481,9 @@
             }
         },
         "CFG_EFCALL": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "EFCALL_ID": {
                     "metadata": {
@@ -479,6 +527,9 @@
             }
         },
         "CFG_EFUNC": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CONNECT_STR": {
                     "type": "string"
@@ -510,6 +561,9 @@
             }
         },
         "CFG_ERFRAG": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ERFRAG_CODE": {
                     "type": "string"
@@ -532,6 +586,9 @@
             }
         },
         "CFG_ERRULE": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DISQ_ERFRAG_CODE": {
                     "type": "string"
@@ -581,6 +638,9 @@
             }
         },
         "CFG_ETYPE": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "XXX_ECLASS_ID": {
                     "metadata": {
@@ -603,6 +663,9 @@
             }
         },
         "CFG_FBOM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DERIVED": {
                     "type": "string"
@@ -637,6 +700,9 @@
             }
         },
         "CFG_FBOVR": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FTYPE_EXCL": {
                     "type": "string"
@@ -665,6 +731,9 @@
             }
         },
         "CFG_FCLASS": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FCLASS_CODE": {
                     "type": "string"
@@ -681,6 +750,9 @@
             }
         },
         "CFG_FELEM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_TYPE": {
                     "type": "string"
@@ -703,6 +775,9 @@
             }
         },
         "CFG_FTYPE": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ANONYMIZE": {
                     "type": "string"
@@ -767,6 +842,9 @@
             }
         },
         "CFG_GENERIC_THRESHOLD": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "BEHAVIOR": {
                     "type": "string"
@@ -801,6 +879,9 @@
             }
         },
         "CFG_GPLAN": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "GPLAN_CODE": {
                     "type": "string"
@@ -817,6 +898,9 @@
             }
         },
         "CFG_LENS": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "XXX_LENS_CODE": {
                     "type": "string"
@@ -841,6 +925,9 @@
             }
         },
         "CFG_RCLASS": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "IS_DISCLOSED": {
                     "metadata": {
@@ -863,6 +950,9 @@
             }
         },
         "CFG_RTYPE": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "BREAK_RES": {
                     "type": "string"
@@ -894,6 +984,9 @@
             }
         },
         "CFG_SFCALL": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "EXEC_ORDER": {
                     "metadata": {
@@ -928,6 +1021,9 @@
             }
         },
         "CFG_SFUNC": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CONNECT_STR": {
                     "type": "string"
@@ -959,6 +1055,9 @@
             }
         },
         "CONFIG_BASE_VERSION": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "BUILD_DATE": {
                     "type": "string"
@@ -994,6 +1093,9 @@
             }
         },
         "CandidateKeysForSearchStatistic": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEATURE_TYPES": {
                     "elements": {
@@ -1009,6 +1111,9 @@
             }
         },
         "CandidateKeysSummary": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FOUND": {
                     "metadata": {
@@ -1031,6 +1136,9 @@
             }
         },
         "CompatibilityVersion": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CONFIG_VERSION": {
                     "type": "string"
@@ -1038,6 +1146,9 @@
             }
         },
         "Config": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CONFIG_COMMENTS": {
                     "metadata": {
@@ -1061,6 +1172,9 @@
             }
         },
         "DataSource": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DSRC_CODE": {
                     "metadata": {
@@ -1078,6 +1192,9 @@
             }
         },
         "DisclosedRelationsForMatchInfo": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -1125,6 +1242,9 @@
             }
         },
         "DisclosedRelationsForMatchInfoForWhy": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -1183,6 +1303,9 @@
             }
         },
         "DisclosedRelationsForWhyKeyDetails": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -1206,6 +1329,9 @@
             }
         },
         "Entity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "RELATED_ENTITIES": {
                     "elements": {
@@ -1221,6 +1347,9 @@
             }
         },
         "EntityForResolvedEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "RELATED_ENTITIES": {
                     "elements": {
@@ -1236,6 +1365,9 @@
             }
         },
         "EntityForWhySearch": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "RELATED_ENTITIES": {
                     "elements": {
@@ -1251,6 +1383,9 @@
             }
         },
         "EntityNetworkLink": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ERRULE_CODE": {
                     "metadata": {
@@ -1303,6 +1438,9 @@
             }
         },
         "EntityPath": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "END_ENTITY_ID": {
                     "metadata": {
@@ -1330,6 +1468,9 @@
             }
         },
         "EntityPathLink": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ERRULE_CODE": {
                     "metadata": {
@@ -1381,6 +1522,9 @@
             }
         },
         "EntityRoles": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEAT_DESC": {
                     "metadata": {
@@ -1394,6 +1538,9 @@
             }
         },
         "Feature": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FELEM_CODE": {
                     "metadata": {
@@ -1410,6 +1557,9 @@
             }
         },
         "FeatureDescriptionValue": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ATTRIBUTES": {
                     "metadata": {
@@ -1464,6 +1614,9 @@
             }
         },
         "FeatureDescriptionValueDetails": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CANDIDATE_CAP_REACHED": {
                     "type": "string"
@@ -1499,6 +1652,9 @@
             }
         },
         "FeatureForAttributes": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ATTRIBUTES": {
                     "ref": "SenzingEntitySpecification"
@@ -1548,6 +1704,9 @@
             }
         },
         "FeatureForGetEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEAT_DESC": {
                     "metadata": {
@@ -1587,6 +1746,9 @@
             }
         },
         "FeatureID": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "LIB_FEAT_ID": {
                     "metadata": {
@@ -1604,6 +1766,9 @@
             }
         },
         "FeatureScoreForAttribute": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ADDITIONAL_SCORES": {
                     "ref": "AdditionalScores"
@@ -1647,11 +1812,11 @@
             }
         },
         "FeatureScoreInfo": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ADDITIONAL_SCORES": {
-                    "metadata": {
-                        "description": "Itemized scores from comparison function."
-                    },
                     "ref": "AdditionalScores"
                 },
                 "CANDIDATE_FEAT_DESC": {
@@ -1663,8 +1828,8 @@
                 "CANDIDATE_FEAT_ID": {
                     "metadata": {
                         "description": "The identifier of the candidate feature.",
-                        "label": "LIB_FEAT_ID",
-                        "goType": "int64"
+                        "goType": "int64",
+                        "label": "LIB_FEAT_ID"
                     },
                     "type": "int32"
                 },
@@ -1690,8 +1855,8 @@
                 "INBOUND_FEAT_ID": {
                     "metadata": {
                         "description": "The identifier of the inbound feature.",
-                        "label": "LIB_FEAT_ID",
-                        "goType": "int64"
+                        "goType": "int64",
+                        "label": "LIB_FEAT_ID"
                     },
                     "type": "int32"
                 },
@@ -1749,6 +1914,9 @@
             }
         },
         "FeatureType": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FOUND": {
                     "metadata": {
@@ -1777,6 +1945,9 @@
             }
         },
         "FinalState": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "NEED_REEVALUATION": {
                     "metadata": {
@@ -1805,6 +1976,9 @@
             }
         },
         "FocusRecord": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -1822,6 +1996,9 @@
             }
         },
         "G2Config": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CFG_ATTR": {
                     "elements": {
@@ -2095,6 +2272,9 @@
             }
         },
         "HowResults": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FINAL_STATE": {
                     "ref": "FinalState"
@@ -2110,6 +2290,9 @@
             }
         },
         "InterestingEntities": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITIES": {
                     "elements": {
@@ -2167,6 +2350,9 @@
             }
         },
         "MatchInfo": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CANDIDATE_KEYS": {
                     "ref": "CandidateKeysForMatchInfo"
@@ -2213,6 +2399,9 @@
             }
         },
         "MatchInfoForAttribute": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEAT_DESC": {
                     "metadata": {
@@ -2229,6 +2418,9 @@
             }
         },
         "MatchInfoForWhy": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CANDIDATE_KEYS": {
                     "metadata": {
@@ -2267,6 +2459,9 @@
             }
         },
         "MatchKeyDetails": {
+            "metadata": {
+                "description": "Contains supporting information for the match key."
+            },
             "properties": {
                 "CONFIRMATIONS": {
                     "elements": {
@@ -2319,6 +2514,9 @@
             }
         },
         "MemberRecord": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "INTERNAL_ID": {
                     "metadata": {
@@ -2338,6 +2536,9 @@
             }
         },
         "Notice": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CODE": {
                     "type": "string"
@@ -2349,6 +2550,7 @@
         },
         "Object": {
             "metadata": {
+                "description": "FIXME: ...",
                 "goType": "any",
                 "javaJacksonType": "Object",
                 "pythonType": "object"
@@ -2356,6 +2558,9 @@
             "type": "string"
         },
         "Record": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -2520,6 +2725,9 @@
             }
         },
         "RecordForGetEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -2684,6 +2892,9 @@
             }
         },
         "RecordKey": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -2701,6 +2912,9 @@
             }
         },
         "RecordKeys": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "RECORDS": {
                     "elements": {
@@ -2713,6 +2927,9 @@
             }
         },
         "RecordSummary": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -2736,6 +2953,9 @@
             }
         },
         "RelAnchor": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -2778,6 +2998,9 @@
             }
         },
         "RelLink": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -2824,6 +3047,9 @@
             }
         },
         "RelPointer": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DOMAIN": {
                     "type": "string"
@@ -2858,6 +3084,9 @@
             }
         },
         "RelatedEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
@@ -2899,9 +3128,6 @@
                     "type": "string"
                 },
                 "MATCH_KEY_DETAILS": {
-                    "metadata": {
-                        "description": "Contains supporting information for the match key."
-                    },
                     "ref": "MatchKeyDetails"
                 },
                 "MATCH_LEVEL_CODE": {
@@ -2937,6 +3163,9 @@
             }
         },
         "RelatedRoles": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEAT_DESC": {
                     "metadata": {
@@ -2950,6 +3179,9 @@
             }
         },
         "Repository": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "id": {
                     "metadata": {
@@ -2972,6 +3204,9 @@
             }
         },
         "ResolutionStep": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "INBOUND_VIRTUAL_ENTITY_ID": {
                     "type": "string"
@@ -2997,6 +3232,9 @@
             }
         },
         "ResolvedEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
@@ -3100,6 +3338,9 @@
             }
         },
         "ResolvedEntityAndMatchInfo": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITY": {
                     "ref": "EntityForResolvedEntity"
@@ -3113,6 +3354,9 @@
             }
         },
         "ResolvedEntityForGetEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
@@ -3216,6 +3460,9 @@
             }
         },
         "SYS_OOM": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FTYPE_ID": {
                     "metadata": {
@@ -3274,6 +3521,9 @@
             }
         },
         "SampleRecord": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "DATA_SOURCE": {
                     "metadata": {
@@ -3299,6 +3549,9 @@
             }
         },
         "SchemaVersion": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENGINE_SCHEMA_VERSION": {
                     "type": "string"
@@ -3312,6 +3565,9 @@
             }
         },
         "SearchEntity": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEATURES": {
                     "metadata": {
@@ -3332,6 +3588,9 @@
             }
         },
         "SearchEntitySummary": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEATURES_ADDED": {
                     "type": "int32"
@@ -3348,6 +3607,9 @@
             }
         },
         "SearchRequest": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "FEATURES": {
                     "metadata": {
@@ -3371,6 +3633,9 @@
             }
         },
         "SearchStatistic": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CANDIDATE_KEYS": {
                     "ref": "CandidateKeysForSearchStatistic"
@@ -3378,6 +3643,9 @@
             }
         },
         "SenzingEntitySpecification": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ACCOUNT_DOMAIN": {
                     "metadata": {
@@ -4053,9 +4321,6 @@
             }
         },
         "SzEngineFindInterestingEntitiesByEntityIdResponse": {
-            "metadata": {
-                "description": "Internal use."
-            },
             "properties": {
                 "INTERESTING_ENTITIES": {
                     "metadata": {
@@ -4066,9 +4331,6 @@
             }
         },
         "SzEngineFindInterestingEntitiesByRecordIdResponse": {
-            "metadata": {
-                "description": "Internal use."
-            },
             "properties": {
                 "INTERESTING_ENTITIES": {
                     "metadata": {
@@ -4864,6 +5126,9 @@
             }
         },
         "UmfProc": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "NAME": {
                     "type": "string"
@@ -4879,6 +5144,9 @@
             }
         },
         "UmfProcParamDetails": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "NAME": {
                     "type": "string"
@@ -4889,6 +5157,9 @@
             }
         },
         "UmfProcParams": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "PARAM": {
                     "ref": "UmfProcParamDetails"
@@ -4896,6 +5167,9 @@
             }
         },
         "VirtualEntitySynopsis": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "MEMBER_RECORDS": {
                     "elements": {
@@ -4911,6 +5185,9 @@
             }
         },
         "WhyKeyDetails": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "CONFIRMATIONS": {
                     "elements": {
@@ -4939,6 +5216,9 @@
             }
         },
         "WhyResult": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ENTITY_ID": {
                     "metadata": {
@@ -4989,6 +5269,9 @@
             }
         },
         "Workload": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "apiVersion": {
                     "type": "string"
@@ -5053,6 +5336,9 @@
             }
         },
         "WorkloadCaches": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "libFeatCacheHit": {
                     "type": "int32"
@@ -5081,6 +5367,9 @@
             }
         },
         "WorkloadCandidates": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "candidateBuilders": {
                     "metadata": {
@@ -5103,6 +5392,9 @@
             }
         },
         "WorkloadContention": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "feature": {
                     "ref": "Fixme"
@@ -5116,6 +5408,9 @@
             }
         },
         "WorkloadCurrResources": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "activeThreads": {
                     "type": "int32"
@@ -5132,6 +5427,9 @@
             }
         },
         "WorkloadExpressedFeatures": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "calls": {
                     "elements": {
@@ -5153,6 +5451,9 @@
             }
         },
         "WorkloadExpressedFeaturesCall": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "EFCALL_ID": {
                     "type": "int32"
@@ -5166,6 +5467,9 @@
             }
         },
         "WorkloadInitResources": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "XXX_physicalCores": {
                     "type": "int32"
@@ -5182,6 +5486,9 @@
             }
         },
         "WorkloadLicense": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "dsrLimit": {
                     "type": "string"
@@ -5195,6 +5502,9 @@
             }
         },
         "WorkloadLockWaits": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "refreshLocks": {
                     "ref": "WorkloadRefreshLocks"
@@ -5202,6 +5512,9 @@
             }
         },
         "WorkloadProcessing": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "addedRecords": {
                     "type": "int32"
@@ -5227,6 +5540,9 @@
             }
         },
         "WorkloadProcessingAmbiguous": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "actualTest": {
                     "type": "int32"
@@ -5237,6 +5553,9 @@
             }
         },
         "WorkloadProcessingDetails": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "addedRecords": {
                     "type": "int32"
@@ -5277,6 +5596,9 @@
             }
         },
         "WorkloadRefreshLocks": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "count": {
                     "type": "int32"
@@ -5290,6 +5612,9 @@
             }
         },
         "WorkloadRepairDiagnosis": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "types": {
                     "type": "int32"
@@ -5297,6 +5622,9 @@
             }
         },
         "WorkloadReresolve": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "newFeatureFTypes": {
                     "metadata": {
@@ -5319,6 +5647,9 @@
             }
         },
         "WorkloadReresolveTriggers": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "abortRetry": {
                     "type": "int32"
@@ -5338,6 +5669,9 @@
             }
         },
         "WorkloadScoring": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "cacheHit": {
                     "metadata": {
@@ -5375,6 +5709,9 @@
             }
         },
         "WorkloadSystemLoad": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "cpuIdle": {
                     "type": "string"
@@ -5391,6 +5728,9 @@
             }
         },
         "WorkloadSystemResources": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "currResources": {
                     "ref": "WorkloadCurrResources"
@@ -5404,6 +5744,9 @@
             }
         },
         "WorkloadThreadState": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "active": {
                     "type": "int32"
@@ -5438,6 +5781,9 @@
             }
         },
         "WorkloadUnresolve": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "abortedUnresolve": {
                     "type": "int32"
@@ -5451,6 +5797,9 @@
             }
         },
         "WorkloadUnresolveTriggers": {
+            "metadata": {
+                "description": "FIXME: ..."
+            },
             "properties": {
                 "ambiguousMultiResolve": {
                     "type": "int32"

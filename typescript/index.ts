@@ -2,6 +2,9 @@
 
 export type Senzingsdk = any;
 
+/**
+ * Itemized scores from comparison function.
+ */
 export interface AdditionalScores {
   FULL_SCORE: number;
   GENERATION_MATCH: number;
@@ -11,6 +14,9 @@ export interface AdditionalScores {
   GNR_SN: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface AffectedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -19,6 +25,9 @@ export interface AffectedEntity {
   ENTITY_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgAttr {
   ATTR_CLASS: string;
   ATTR_CODE: string;
@@ -35,6 +44,9 @@ export interface CfgAttr {
   XXX_ADVANCED: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgCfbom {
   CFCALL_ID: number;
   EXEC_ORDER: number;
@@ -42,6 +54,9 @@ export interface CfgCfbom {
   FTYPE_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgCfcall {
   CFCALL_ID: number;
   CFUNC_ID: number;
@@ -49,6 +64,9 @@ export interface CfgCfcall {
   XXX_EXEC_ORDER: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgCfrtn {
   CFRTN_ID: number;
   CFUNC_ID: number;
@@ -62,6 +80,9 @@ export interface CfgCfrtn {
   UN_LIKELY_SCORE: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgCfunc {
   ANON_SUPPORT: string;
   CFUNC_CODE: string;
@@ -74,6 +95,9 @@ export interface CfgCfunc {
   XXX_LANGUAGE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgDfbom {
   DFCALL_ID: number;
   EXEC_ORDER: number;
@@ -81,6 +105,9 @@ export interface CfgDfbom {
   FTYPE_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgDfcall {
   DFCALL_ID: number;
   DFUNC_ID: number;
@@ -88,6 +115,9 @@ export interface CfgDfcall {
   XXX_EXEC_ORDER: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgDfunc {
   ANON_SUPPORT: string;
   CONNECT_STR: string;
@@ -100,6 +130,9 @@ export interface CfgDfunc {
   XXX_LANGUAGE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgDsrc {
   DSRC_CODE: string;
   DSRC_DESC: string;
@@ -109,12 +142,18 @@ export interface CfgDsrc {
   XXX_DSRC_RELY: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgDsrcInterest {
   XXX_DSRC_ID: number;
   XXX_INTEREST_FLAG: string;
   XXX_MAX_DEGREE: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgEbom {
   XXX_ETYPE_ID: number;
   XXX_EXEC_ORDER: number;
@@ -122,6 +161,9 @@ export interface CfgEbom {
   XXX_UTYPE_CODE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgEclass {
   XXX_ECLASS_CODE: string;
   XXX_ECLASS_DESC: string;
@@ -129,6 +171,9 @@ export interface CfgEclass {
   XXX_RESOLVE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgEfbom {
   EFCALL_ID: number;
   EXEC_ORDER: number;
@@ -137,6 +182,9 @@ export interface CfgEfbom {
   FTYPE_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgEfcall {
   EFCALL_ID: number;
   EFEAT_FTYPE_ID: number;
@@ -147,6 +195,9 @@ export interface CfgEfcall {
   IS_VIRTUAL: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgEfunc {
   CONNECT_STR: string;
   EFUNC_CODE: string;
@@ -158,6 +209,9 @@ export interface CfgEfunc {
   XXX_LANGUAGE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgErfrag {
   ERFRAG_CODE: string;
   ERFRAG_DEPENDS: string;
@@ -166,6 +220,9 @@ export interface CfgErfrag {
   ERFRAG_SOURCE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgErrule {
   DISQ_ERFRAG_CODE: string;
 
@@ -183,6 +240,9 @@ export interface CfgErrule {
   XXX_REF_SCORE: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgEtype {
   XXX_ECLASS_ID: number;
   XXX_ETYPE_CODE: string;
@@ -190,6 +250,9 @@ export interface CfgEtype {
   XXX_ETYPE_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgFbom {
   DERIVED: string;
   DISPLAY_LEVEL: number;
@@ -199,6 +262,9 @@ export interface CfgFbom {
   XXX_DISPLAY_DELIM: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgFbovr {
   FTYPE_EXCL: string;
   FTYPE_FREQ: string;
@@ -208,12 +274,18 @@ export interface CfgFbovr {
   XXX_ECLASS_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgFclass {
   FCLASS_CODE: string;
   FCLASS_DESC: string;
   FCLASS_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgFelem {
   DATA_TYPE: string;
   FELEM_CODE: string;
@@ -222,6 +294,9 @@ export interface CfgFelem {
   XXX_TOKENIZE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgFtype {
   ANONYMIZE: string;
   DERIVED: string;
@@ -244,6 +319,9 @@ export interface CfgFtype {
   XXX_DERIVATION: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgGenericThreshold {
   BEHAVIOR: string;
   CANDIDATE_CAP: number;
@@ -253,12 +331,18 @@ export interface CfgGenericThreshold {
   SEND_TO_REDO: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgGplan {
   GPLAN_CODE: string;
   GPLAN_DESC: string;
   GPLAN_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgLens {
   XXX_LENS_CODE: string;
   XXX_LENS_DESC: string;
@@ -270,6 +354,9 @@ export interface CfgLens {
  */
 export type CfgLensrl = Fixme[];
 
+/**
+ * FIXME: ...
+ */
 export interface CfgRclass {
   /**
    * Indicates if this is a disclosed relationship.
@@ -280,6 +367,9 @@ export interface CfgRclass {
   RCLASS_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgRtype {
   BREAK_RES: string;
   RCLASS_ID: number;
@@ -289,6 +379,9 @@ export interface CfgRtype {
   XXX_REL_STRENGTH: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgSfcall {
   EXEC_ORDER: number;
   FELEM_ID: number;
@@ -297,6 +390,9 @@ export interface CfgSfcall {
   SFUNC_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CfgSfunc {
   CONNECT_STR: string;
   SFUNC_CODE: string;
@@ -308,6 +404,9 @@ export interface CfgSfunc {
   XXX_LANGUAGE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface ConfigBaseVersion {
   BUILD_DATE: string;
   BUILD_NUMBER: string;
@@ -322,6 +421,9 @@ export interface ConfigBaseVersion {
  */
 export type CandidateKeysForMatchInfo = { [key: string]: MatchInfoForAttribute[] };
 
+/**
+ * FIXME: ...
+ */
 export interface CandidateKeysForSearchStatistic {
   /**
    * A list of ...
@@ -330,16 +432,25 @@ export interface CandidateKeysForSearchStatistic {
   SUMMARY: CandidateKeysSummary;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CandidateKeysSummary {
   FOUND: number;
   GENERIC: number;
   NOT_FOUND: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface CompatibilityVersion {
   CONFIG_VERSION: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface Config {
   /**
    * A user-provided description of the configuration.
@@ -357,6 +468,9 @@ export interface Config {
   SYS_CREATE_DT: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface DataSource {
   /**
    * The unique text identifier of the datasource. It should be UPPER_CASE ASCII
@@ -370,6 +484,9 @@ export interface DataSource {
   DSRC_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface DisclosedRelationsForMatchInfo {
   DOMAIN: string;
 
@@ -399,6 +516,9 @@ export interface DisclosedRelationsForMatchInfo {
   XXX_REL_POINTER: RelPointer[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface DisclosedRelationsForMatchInfoForWhy {
   DOMAIN: string;
   FEAT_ID: number;
@@ -428,6 +548,9 @@ export interface DisclosedRelationsForMatchInfoForWhy {
   XXX_LINKED_FEAT_DESC: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface DisclosedRelationsForWhyKeyDetails {
   DOMAIN: string;
 
@@ -442,6 +565,9 @@ export interface DisclosedRelationsForWhyKeyDetails {
   RELATED_ROLES: RelatedRoles[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface Entity {
   /**
    * A list of ...
@@ -450,6 +576,9 @@ export interface Entity {
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface EntityForResolvedEntity {
   /**
    * A list of ...
@@ -458,6 +587,9 @@ export interface EntityForResolvedEntity {
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface EntityForWhySearch {
   /**
    * A list of ...
@@ -466,6 +598,9 @@ export interface EntityForWhySearch {
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface EntityNetworkLink {
   /**
    * Identifier of the entity resolution principle that was triggered.
@@ -496,6 +631,9 @@ export interface EntityNetworkLink {
   MIN_ENTITY_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface EntityPath {
   END_ENTITY_ID: number;
 
@@ -506,6 +644,9 @@ export interface EntityPath {
   START_ENTITY_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface EntityPathLink {
   /**
    * Identifier of the entity resolution principle that was triggered.
@@ -536,6 +677,9 @@ export interface EntityPathLink {
   MIN_ENTITY_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface EntityRoles {
   /**
    * Describes the attributes that make up the feature.
@@ -544,6 +688,9 @@ export interface EntityRoles {
   ROLE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface Feature {
   /**
    * Internal use.
@@ -556,6 +703,9 @@ export interface Feature {
   FELEM_VALUE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureDescriptionValue {
   /**
    * A map from ... to ...
@@ -584,6 +734,9 @@ export interface FeatureDescriptionValue {
   USED_FOR_SCORING: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureDescriptionValueDetails {
   CANDIDATE_CAP_REACHED: string;
   ENTITY_COUNT: number;
@@ -603,6 +756,9 @@ export interface FeatureDescriptionValueDetails {
   USED_FOR_SCORING: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureForAttributes {
   ATTRIBUTES: SenzingEntitySpecification;
   CANDIDATE_CAP_REACHED: string;
@@ -633,6 +789,9 @@ export interface FeatureForAttributes {
   USED_FOR_SCORING: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureForGetEntity {
   /**
    * Describes the attributes that make up the feature.
@@ -661,6 +820,9 @@ export interface FeatureForGetEntity {
   XXX_ATTRIBUTES: SenzingEntitySpecification[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureId {
   /**
    * Internal use.
@@ -674,6 +836,9 @@ export interface FeatureId {
   USAGE_TYPE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureScoreForAttribute {
   ADDITIONAL_SCORES: AdditionalScores;
   CANDIDATE_FEAT_DESC: string;
@@ -687,34 +852,70 @@ export interface FeatureScoreForAttribute {
   SCORE_BUCKET: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureScoreInfo {
-  /**
-   * Itemized scores from comparison function.
-   */
   ADDITIONAL_SCORES: AdditionalScores;
+
+  /**
+   * The contents of the candidate feature.
+   */
   CANDIDATE_FEAT_DESC: string;
+
+  /**
+   * The identifier of the candidate feature.
+   */
   CANDIDATE_FEAT_ID: number;
+
+  /**
+   * The usage type of the candidate feature.
+   */
   CANDIDATE_FEAT_USAGE_TYPE: string;
 
   /**
-   * Internal use.
+   * The unique text identifier of the feature type.
    */
   FTYPE_CODE: string;
+
+  /**
+   * The contents of the inbound feature.
+   */
   INBOUND_FEAT_DESC: string;
+
+  /**
+   * The identifier of the inbound feature.
+   */
   INBOUND_FEAT_ID: number;
+
+  /**
+   * The usage type of the inbound feature.
+   */
   INBOUND_FEAT_USAGE_TYPE: string;
 
   /**
    * Numeric score from the comparison function.
    */
   SCORE: number;
+
+  /**
+   * The behavior used to score the feature.
+   */
   SCORE_BEHAVIOR: string;
 
   /**
    * Category of score strength.
    */
   SCORE_BUCKET: string;
+
+  /**
+   * Resolution data used in producing the score.
+   */
   SOURCE: string;
+
+  /**
+   * Artifact label used in match comparison.
+   */
   TOKEN: string;
 }
 
@@ -723,6 +924,9 @@ export interface FeatureScoreInfo {
  */
 export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
+/**
+ * FIXME: ...
+ */
 export interface FeatureType {
   FOUND: number;
 
@@ -734,6 +938,9 @@ export interface FeatureType {
   NOT_FOUND: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FinalState {
   NEED_REEVALUATION: number;
 
@@ -747,6 +954,9 @@ export interface Fixme {
   FIXME_KEY: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface FocusRecord {
   /**
    * Short, stable identifier naming the source system.
@@ -766,6 +976,9 @@ export interface G2configSettings {
   METAPHONE_VERSION: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface G2config {
   /**
    * A list of ...
@@ -934,6 +1147,9 @@ export interface G2config {
   XXX_CFG_LENSRL: CfgLensrl[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface HowResults {
   FINAL_STATE: FinalState;
 
@@ -943,6 +1159,9 @@ export interface HowResults {
   RESOLUTION_STEPS: ResolutionStep[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface InterestingEntities {
   /**
    * A list of entity information.
@@ -981,6 +1200,9 @@ export interface InterestingEntity {
   SAMPLE_RECORDS: SampleRecord[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface MatchInfo {
   CANDIDATE_KEYS: CandidateKeysForMatchInfo;
 
@@ -1006,6 +1228,9 @@ export interface MatchInfo {
   XXX_WHY_KEY: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface MatchInfoForAttribute {
   /**
    * Describes the attributes that make up the feature.
@@ -1014,6 +1239,9 @@ export interface MatchInfoForAttribute {
   FEAT_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface MatchInfoForWhy {
   /**
    * A map from ... to ...
@@ -1031,6 +1259,9 @@ export interface MatchInfoForWhy {
   WHY_KEY_DETAILS: WhyKeyDetails;
 }
 
+/**
+ * Contains supporting information for the match key.
+ */
 export interface MatchKeyDetails {
   /**
    * A list of feature data in the match key supporting the match.
@@ -1064,6 +1295,9 @@ export interface MatchKeyDetails {
   REL_POINTER: RelPointer[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface MemberRecord {
   /**
    * Internal identifier for the record.
@@ -1076,13 +1310,22 @@ export interface MemberRecord {
   RECORDS: Record[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface Notice {
   CODE: string;
   DESCRIPTION: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export type Object = string;
 
+/**
+ * FIXME: ...
+ */
 export interface Record {
   /**
    * Short, stable identifier naming the source system.
@@ -1181,6 +1424,9 @@ export interface Record {
   XXX_RELATIONSHIP_DATA: string[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RecordForGetEntity {
   /**
    * Short, stable identifier naming the source system.
@@ -1279,6 +1525,9 @@ export interface RecordForGetEntity {
   XXX_RELATIONSHIP_DATA: string[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RecordKey {
   /**
    * Short, stable identifier naming the source system.
@@ -1291,6 +1540,9 @@ export interface RecordKey {
   RECORD_ID: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RecordKeys {
   /**
    * A list of (data source code, record id) pairs.
@@ -1298,6 +1550,9 @@ export interface RecordKeys {
   RECORDS: RecordKey[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RecordSummary {
   /**
    * Short, stable identifier naming the source system.
@@ -1312,6 +1567,9 @@ export interface RecordSummary {
   XXX_LAST_SEEN_DT: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RelAnchor {
   DOMAIN: string;
 
@@ -1331,6 +1589,9 @@ export interface RelAnchor {
   XXX_REL_POINTER: RelPointer[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RelLink {
   DOMAIN: string;
 
@@ -1352,6 +1613,9 @@ export interface RelLink {
   REL_TYPE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RelPointer {
   DOMAIN: string;
 
@@ -1366,6 +1630,9 @@ export interface RelPointer {
   LINKED_FEAT_TYPE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RelatedEntity {
   /**
    * The ENTITY_ID is the identifier for the entity.
@@ -1396,10 +1663,6 @@ export interface RelatedEntity {
    * Representation of matched source data.
    */
   MATCH_KEY: string;
-
-  /**
-   * Contains supporting information for the match key.
-   */
   MATCH_KEY_DETAILS: MatchKeyDetails;
 
   /**
@@ -1424,6 +1687,9 @@ export interface RelatedEntity {
   RECORD_TYPES: string[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface RelatedRoles {
   /**
    * Describes the attributes that make up the feature.
@@ -1432,6 +1698,9 @@ export interface RelatedRoles {
   ROLE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface Repository {
   /**
    * Label for database repository.
@@ -1449,6 +1718,9 @@ export interface Repository {
   type: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface ResolutionStep {
   INBOUND_VIRTUAL_ENTITY_ID: string;
   MATCH_INFO: MatchInfo;
@@ -1458,6 +1730,9 @@ export interface ResolutionStep {
   VIRTUAL_ENTITY_2: VirtualEntitySynopsis;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface ResolvedEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -1524,12 +1799,18 @@ export interface ResolvedEntity {
   XXX_MATCH_LEVEL_CODE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface ResolvedEntityAndMatchInfo {
   ENTITY: EntityForResolvedEntity;
   FEATURES_MJD: EntityForResolvedEntity;
   MATCH_INFO: MatchInfo;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface ResolvedEntityForGetEntity {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -1596,6 +1877,9 @@ export interface ResolvedEntityForGetEntity {
   XXX_MATCH_LEVEL_CODE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SysOom {
   FTYPE_ID: number;
   NEXT_THRESH: number;
@@ -1609,6 +1893,9 @@ export interface SysOom {
   XXX_LIB_FELEM_ID: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SampleRecord {
   /**
    * Short, stable identifier naming the source system.
@@ -1626,12 +1913,18 @@ export interface SampleRecord {
   RECORD_ID: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SchemaVersion {
   ENGINE_SCHEMA_VERSION: string;
   MAXIMUM_REQUIRED_SCHEMA_VERSION: string;
   MINIMUM_REQUIRED_SCHEMA_VERSION: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SearchEntity {
   /**
    * A map from ... to ...
@@ -1640,6 +1933,9 @@ export interface SearchEntity {
   SUMMARY: SearchEntitySummary;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SearchEntitySummary {
   FEATURES_ADDED: number;
   FEATURES_IGNORED: number;
@@ -1647,6 +1943,9 @@ export interface SearchEntitySummary {
   FEATURES_SUBMITTED: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SearchRequest {
   /**
    * A map from ... to ...
@@ -1656,10 +1955,16 @@ export interface SearchRequest {
   SEARCH_PROFILE: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SearchStatistic {
   CANDIDATE_KEYS: CandidateKeysForSearchStatistic;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface SenzingEntitySpecification {
   /**
    * Domain/system for the account number. An attribute in the Senzing Entity
@@ -2271,9 +2576,6 @@ export interface SzEngineFetchNextResponse {
   XXX_FIXME: Fixme;
 }
 
-/**
- * Internal use.
- */
 export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
   /**
    * Internal use.
@@ -2281,9 +2583,6 @@ export interface SzEngineFindInterestingEntitiesByEntityIdResponse {
   INTERESTING_ENTITIES: InterestingEntities;
 }
 
-/**
- * Internal use.
- */
 export interface SzEngineFindInterestingEntitiesByRecordIdResponse {
   /**
    * Internal use.
@@ -2749,6 +3048,9 @@ export interface SzProductGetVersionResponse {
   VERSION: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface UmfProc {
   NAME: string;
 
@@ -2758,15 +3060,24 @@ export interface UmfProc {
   PARAMS: UmfProcParams[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface UmfProcParamDetails {
   NAME: string;
   VALUE: Object;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface UmfProcParams {
   PARAM: UmfProcParamDetails;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface VirtualEntitySynopsis {
   /**
    * A list of ...
@@ -2775,6 +3086,9 @@ export interface VirtualEntitySynopsis {
   VIRTUAL_ENTITY_ID: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WhyKeyDetails {
   /**
    * A list of ...
@@ -2792,6 +3106,9 @@ export interface WhyKeyDetails {
   DISCLOSED_RELATIONS: DisclosedRelationsForWhyKeyDetails[];
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WhyResult {
   /**
    * The ENTITY_ID is the Senzing-generated identifier for the discovered
@@ -2822,6 +3139,9 @@ export interface WhyResult {
   MATCH_INFO: MatchInfoForWhy;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface Workload {
   apiVersion: string;
   caches: WorkloadCaches;
@@ -2847,6 +3167,9 @@ export interface Workload {
   unresolve: WorkloadUnresolve;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadCaches {
   libFeatCacheHit: number;
   libFeatCacheMiss: number;
@@ -2858,6 +3181,9 @@ export interface WorkloadCaches {
   resFeatStatUpdateFail: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadCandidates {
   /**
    * A map from ... to ...
@@ -2870,12 +3196,18 @@ export interface WorkloadCandidates {
   suppressedCandidateBuilders: { [key: string]: number };
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadContention {
   feature: Fixme;
   resEnt: Fixme;
   valuelatch: Fixme;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadCurrResources {
   activeThreads: number;
   availableMemory: string;
@@ -2883,6 +3215,9 @@ export interface WorkloadCurrResources {
   workerThreads: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadExpressedFeatures {
   /**
    * A list of ...
@@ -2895,12 +3230,18 @@ export interface WorkloadExpressedFeatures {
   created: { [key: string]: number };
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadExpressedFeaturesCall {
   EFCALL_ID: number;
   EFUNC_CODE: string;
   numCalls: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadInitResources {
   XXX_physicalCores: number;
   availableMemory: string;
@@ -2908,16 +3249,25 @@ export interface WorkloadInitResources {
   totalMemory: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadLicense {
   dsrLimit: string;
   status: string;
   type: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadLockWaits {
   refreshLocks: WorkloadRefreshLocks;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadProcessing {
   addedRecords: number;
   ambiguous: WorkloadProcessingAmbiguous;
@@ -2928,11 +3278,17 @@ export interface WorkloadProcessing {
   repairedEntities: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadProcessingAmbiguous {
   actualTest: number;
   cachedTest: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadProcessingDetails {
   addedRecords: number;
   candidates: number;
@@ -2948,16 +3304,25 @@ export interface WorkloadProcessingDetails {
   retries: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadRefreshLocks {
   count: number;
   maxMS: number;
   totalMS: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadRepairDiagnosis {
   types: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadReresolve {
   /**
    * A map from ... to ...
@@ -2968,6 +3333,9 @@ export interface WorkloadReresolve {
   triggers: WorkloadReresolveTriggers;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadReresolveTriggers {
   abortRetry: number;
   multipleResolvableCandidates: number;
@@ -2976,6 +3344,9 @@ export interface WorkloadReresolveTriggers {
   unresolveMovement: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadScoring {
   /**
    * A map from ... to ...
@@ -2995,6 +3366,9 @@ export interface WorkloadScoring {
   suppressedScoredFeatureType: Fixme;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadSystemLoad {
   cpuIdle: string;
   cpuSystem: string;
@@ -3002,12 +3376,18 @@ export interface WorkloadSystemLoad {
   cpuWait: string;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadSystemResources {
   currResources: WorkloadCurrResources;
   initResources: WorkloadInitResources;
   systemLoad: WorkloadSystemLoad;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadThreadState {
   active: number;
   dataLatchContention: number;
@@ -3021,12 +3401,18 @@ export interface WorkloadThreadState {
   sqlExecuting: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadUnresolve {
   abortedUnresolve: number;
   triggers: WorkloadUnresolveTriggers;
   unresolveTest: number;
 }
 
+/**
+ * FIXME: ...
+ */
 export interface WorkloadUnresolveTriggers {
   ambiguousMultiResolve: number;
   ambiguousNoResolve: number;

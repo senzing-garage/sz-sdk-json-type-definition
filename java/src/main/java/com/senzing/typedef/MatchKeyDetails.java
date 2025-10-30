@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
+/**
+ * Contains supporting information for the match key.
+ */
 @JsonSerialize
 public class MatchKeyDetails {
     @JsonProperty("CONFIRMATIONS")

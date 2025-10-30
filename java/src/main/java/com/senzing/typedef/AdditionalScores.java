@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * Itemized scores from comparison function.
+ */
 @JsonSerialize
 public class AdditionalScores {
     @JsonProperty("FULL_SCORE")

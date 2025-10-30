@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// Itemized scores from comparison function.
+    /// </summary>
     public class AdditionalScores
     {
         [JsonPropertyName("FULL_SCORE")]

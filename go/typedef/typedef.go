@@ -6,6 +6,7 @@ import "time"
 
 type Senzingsdk = interface{}
 
+// Itemized scores from comparison function.
 type AdditionalScores struct {
 	FullScore int32 `json:"FULL_SCORE"`
 
@@ -20,12 +21,14 @@ type AdditionalScores struct {
 	GnrSn int32 `json:"GNR_SN"`
 }
 
+// FIXME: ...
 type AffectedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
 	EntityID int64 `json:"ENTITY_ID"`
 }
 
+// FIXME: ...
 type CfgAttr struct {
 	AttrClass string `json:"ATTR_CLASS"`
 
@@ -47,6 +50,7 @@ type CfgAttr struct {
 	XxxAdvanced string `json:"XXX_ADVANCED"`
 }
 
+// FIXME: ...
 type CfgCfbom struct {
 	CfcallID int64 `json:"CFCALL_ID"`
 
@@ -57,6 +61,7 @@ type CfgCfbom struct {
 	FtypeID int64 `json:"FTYPE_ID"`
 }
 
+// FIXME: ...
 type CfgCfcall struct {
 	CfcallID int64 `json:"CFCALL_ID"`
 
@@ -67,6 +72,7 @@ type CfgCfcall struct {
 	XxxExecOrder int64 `json:"XXX_EXEC_ORDER"`
 }
 
+// FIXME: ...
 type CfgCfrtn struct {
 	CfrtnID int64 `json:"CFRTN_ID"`
 
@@ -89,6 +95,7 @@ type CfgCfrtn struct {
 	UnLikelyScore int64 `json:"UN_LIKELY_SCORE"`
 }
 
+// FIXME: ...
 type CfgCfunc struct {
 	AnonSupport string `json:"ANON_SUPPORT"`
 
@@ -109,6 +116,7 @@ type CfgCfunc struct {
 	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
+// FIXME: ...
 type CfgDfbom struct {
 	DfcallID int64 `json:"DFCALL_ID"`
 
@@ -119,6 +127,7 @@ type CfgDfbom struct {
 	FtypeID int64 `json:"FTYPE_ID"`
 }
 
+// FIXME: ...
 type CfgDfcall struct {
 	DfcallID int64 `json:"DFCALL_ID"`
 
@@ -129,6 +138,7 @@ type CfgDfcall struct {
 	XxxExecOrder int64 `json:"XXX_EXEC_ORDER"`
 }
 
+// FIXME: ...
 type CfgDfunc struct {
 	AnonSupport string `json:"ANON_SUPPORT"`
 
@@ -149,6 +159,7 @@ type CfgDfunc struct {
 	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
+// FIXME: ...
 type CfgDsrc struct {
 	DsrcCode string `json:"DSRC_CODE"`
 
@@ -163,6 +174,7 @@ type CfgDsrc struct {
 	XxxDsrcRely int64 `json:"XXX_DSRC_RELY"`
 }
 
+// FIXME: ...
 type CfgDsrcInterest struct {
 	XxxDsrcID int64 `json:"XXX_DSRC_ID"`
 
@@ -171,6 +183,7 @@ type CfgDsrcInterest struct {
 	XxxMaxDegree int64 `json:"XXX_MAX_DEGREE"`
 }
 
+// FIXME: ...
 type CfgEbom struct {
 	XxxEtypeID int64 `json:"XXX_ETYPE_ID"`
 
@@ -181,6 +194,7 @@ type CfgEbom struct {
 	XxxUtypeCode string `json:"XXX_UTYPE_CODE"`
 }
 
+// FIXME: ...
 type CfgEclass struct {
 	XxxEclassCode string `json:"XXX_ECLASS_CODE"`
 
@@ -191,6 +205,7 @@ type CfgEclass struct {
 	XxxResolve string `json:"XXX_RESOLVE"`
 }
 
+// FIXME: ...
 type CfgEfbom struct {
 	EfcallID int64 `json:"EFCALL_ID"`
 
@@ -203,6 +218,7 @@ type CfgEfbom struct {
 	FtypeID int64 `json:"FTYPE_ID"`
 }
 
+// FIXME: ...
 type CfgEfcall struct {
 	EfcallID int64 `json:"EFCALL_ID"`
 
@@ -219,6 +235,7 @@ type CfgEfcall struct {
 	IsVirtual string `json:"IS_VIRTUAL"`
 }
 
+// FIXME: ...
 type CfgEfunc struct {
 	ConnectStr string `json:"CONNECT_STR"`
 
@@ -237,6 +254,7 @@ type CfgEfunc struct {
 	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
+// FIXME: ...
 type CfgErfrag struct {
 	ErfragCode string `json:"ERFRAG_CODE"`
 
@@ -249,6 +267,7 @@ type CfgErfrag struct {
 	ErfragSource string `json:"ERFRAG_SOURCE"`
 }
 
+// FIXME: ...
 type CfgErrule struct {
 	DisqErfragCode string `json:"DISQ_ERFRAG_CODE"`
 
@@ -272,6 +291,7 @@ type CfgErrule struct {
 	XxxRefScore int64 `json:"XXX_REF_SCORE"`
 }
 
+// FIXME: ...
 type CfgEtype struct {
 	XxxEclassID int64 `json:"XXX_ECLASS_ID"`
 
@@ -282,6 +302,7 @@ type CfgEtype struct {
 	XxxEtypeID int64 `json:"XXX_ETYPE_ID"`
 }
 
+// FIXME: ...
 type CfgFbom struct {
 	Derived string `json:"DERIVED"`
 
@@ -296,6 +317,7 @@ type CfgFbom struct {
 	XxxDisplayDelim string `json:"XXX_DISPLAY_DELIM"`
 }
 
+// FIXME: ...
 type CfgFbovr struct {
 	FtypeExcl string `json:"FTYPE_EXCL"`
 
@@ -310,6 +332,7 @@ type CfgFbovr struct {
 	XxxEclassID int64 `json:"XXX_ECLASS_ID"`
 }
 
+// FIXME: ...
 type CfgFclass struct {
 	FclassCode string `json:"FCLASS_CODE"`
 
@@ -318,6 +341,7 @@ type CfgFclass struct {
 	FclassID int64 `json:"FCLASS_ID"`
 }
 
+// FIXME: ...
 type CfgFelem struct {
 	DataType string `json:"DATA_TYPE"`
 
@@ -330,6 +354,7 @@ type CfgFelem struct {
 	XxxTokenize string `json:"XXX_TOKENIZE"`
 }
 
+// FIXME: ...
 type CfgFtype struct {
 	Anonymize string `json:"ANONYMIZE"`
 
@@ -363,6 +388,7 @@ type CfgFtype struct {
 	XxxDerivation string `json:"XXX_DERIVATION"`
 }
 
+// FIXME: ...
 type CfgGenericThreshold struct {
 	Behavior string `json:"BEHAVIOR"`
 
@@ -377,6 +403,7 @@ type CfgGenericThreshold struct {
 	SendToRedo string `json:"SEND_TO_REDO"`
 }
 
+// FIXME: ...
 type CfgGplan struct {
 	GplanCode string `json:"GPLAN_CODE"`
 
@@ -385,6 +412,7 @@ type CfgGplan struct {
 	GplanID int64 `json:"GPLAN_ID"`
 }
 
+// FIXME: ...
 type CfgLens struct {
 	XxxLensCode string `json:"XXX_LENS_CODE"`
 
@@ -396,6 +424,7 @@ type CfgLens struct {
 // A list of ...
 type CfgLensrl = []Fixme
 
+// FIXME: ...
 type CfgRclass struct {
 	// Indicates if this is a disclosed relationship.
 	IsDisclosed string `json:"IS_DISCLOSED"`
@@ -407,6 +436,7 @@ type CfgRclass struct {
 	RclassID int64 `json:"RCLASS_ID"`
 }
 
+// FIXME: ...
 type CfgRtype struct {
 	BreakRes string `json:"BREAK_RES"`
 
@@ -421,6 +451,7 @@ type CfgRtype struct {
 	XxxRelStrength int64 `json:"XXX_REL_STRENGTH"`
 }
 
+// FIXME: ...
 type CfgSfcall struct {
 	ExecOrder int64 `json:"EXEC_ORDER"`
 
@@ -433,6 +464,7 @@ type CfgSfcall struct {
 	SfuncID int64 `json:"SFUNC_ID"`
 }
 
+// FIXME: ...
 type CfgSfunc struct {
 	ConnectStr string `json:"CONNECT_STR"`
 
@@ -451,6 +483,7 @@ type CfgSfunc struct {
 	XxxLanguage string `json:"XXX_LANGUAGE"`
 }
 
+// FIXME: ...
 type ConfigBaseVersion struct {
 	BuildDate string `json:"BUILD_DATE"`
 
@@ -468,6 +501,7 @@ type ConfigBaseVersion struct {
 // A map from ... to ...
 type CandidateKeysForMatchInfo = map[string][]MatchInfoForAttribute
 
+// FIXME: ...
 type CandidateKeysForSearchStatistic struct {
 	// A list of ...
 	FeatureTypes []FeatureType `json:"FEATURE_TYPES"`
@@ -475,6 +509,7 @@ type CandidateKeysForSearchStatistic struct {
 	Summary CandidateKeysSummary `json:"SUMMARY"`
 }
 
+// FIXME: ...
 type CandidateKeysSummary struct {
 	Found int64 `json:"FOUND"`
 
@@ -483,10 +518,12 @@ type CandidateKeysSummary struct {
 	NotFound int64 `json:"NOT_FOUND"`
 }
 
+// FIXME: ...
 type CompatibilityVersion struct {
 	ConfigVersion string `json:"CONFIG_VERSION"`
 }
 
+// FIXME: ...
 type Config struct {
 	// A user-provided description of the configuration.
 	ConfigComments string `json:"CONFIG_COMMENTS"`
@@ -498,6 +535,7 @@ type Config struct {
 	SysCreateDt string `json:"SYS_CREATE_DT"`
 }
 
+// FIXME: ...
 type DataSource struct {
 	// The unique text identifier of the datasource. It should be UPPER_CASE ASCII
 	// without spaces. It will be used as a JSON key.
@@ -507,6 +545,7 @@ type DataSource struct {
 	DsrcID int64 `json:"DSRC_ID"`
 }
 
+// FIXME: ...
 type DisclosedRelationsForMatchInfo struct {
 	Domain string `json:"DOMAIN"`
 
@@ -526,6 +565,7 @@ type DisclosedRelationsForMatchInfo struct {
 	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
+// FIXME: ...
 type DisclosedRelationsForMatchInfoForWhy struct {
 	Domain string `json:"DOMAIN"`
 
@@ -552,6 +592,7 @@ type DisclosedRelationsForMatchInfoForWhy struct {
 	XxxLinkedFeatDesc string `json:"XXX_LINKED_FEAT_DESC"`
 }
 
+// FIXME: ...
 type DisclosedRelationsForWhyKeyDetails struct {
 	Domain string `json:"DOMAIN"`
 
@@ -562,6 +603,7 @@ type DisclosedRelationsForWhyKeyDetails struct {
 	RelatedRoles []RelatedRoles `json:"RELATED_ROLES"`
 }
 
+// FIXME: ...
 type Entity struct {
 	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
@@ -569,6 +611,7 @@ type Entity struct {
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
+// FIXME: ...
 type EntityForResolvedEntity struct {
 	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
@@ -576,6 +619,7 @@ type EntityForResolvedEntity struct {
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
+// FIXME: ...
 type EntityForWhySearch struct {
 	// A list of ...
 	RelatedEntities []RelatedEntity `json:"RELATED_ENTITIES"`
@@ -583,6 +627,7 @@ type EntityForWhySearch struct {
 	ResolvedEntity ResolvedEntity `json:"RESOLVED_ENTITY"`
 }
 
+// FIXME: ...
 type EntityNetworkLink struct {
 	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -606,6 +651,7 @@ type EntityNetworkLink struct {
 	MinEntityID int64 `json:"MIN_ENTITY_ID"`
 }
 
+// FIXME: ...
 type EntityPath struct {
 	EndEntityID int64 `json:"END_ENTITY_ID"`
 
@@ -615,6 +661,7 @@ type EntityPath struct {
 	StartEntityID int64 `json:"START_ENTITY_ID"`
 }
 
+// FIXME: ...
 type EntityPathLink struct {
 	// Identifier of the entity resolution principle that was triggered.
 	ErruleCode string `json:"ERRULE_CODE"`
@@ -638,6 +685,7 @@ type EntityPathLink struct {
 	MinEntityID int64 `json:"MIN_ENTITY_ID"`
 }
 
+// FIXME: ...
 type EntityRoles struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
@@ -645,6 +693,7 @@ type EntityRoles struct {
 	Role string `json:"ROLE"`
 }
 
+// FIXME: ...
 type Feature struct {
 	// Internal use.
 	FelemCode string `json:"FELEM_CODE"`
@@ -653,6 +702,7 @@ type Feature struct {
 	FelemValue string `json:"FELEM_VALUE"`
 }
 
+// FIXME: ...
 type FeatureDescriptionValue struct {
 	// A map from ... to ...
 	Attributes map[string]string `json:"ATTRIBUTES"`
@@ -679,6 +729,7 @@ type FeatureDescriptionValue struct {
 	UsedForScoring string `json:"USED_FOR_SCORING"`
 }
 
+// FIXME: ...
 type FeatureDescriptionValueDetails struct {
 	CandidateCapReached string `json:"CANDIDATE_CAP_REACHED"`
 
@@ -699,6 +750,7 @@ type FeatureDescriptionValueDetails struct {
 	UsedForScoring string `json:"USED_FOR_SCORING"`
 }
 
+// FIXME: ...
 type FeatureForAttributes struct {
 	Attributes SenzingEntitySpecification `json:"ATTRIBUTES"`
 
@@ -726,6 +778,7 @@ type FeatureForAttributes struct {
 	UsedForScoring string `json:"USED_FOR_SCORING"`
 }
 
+// FIXME: ...
 type FeatureForGetEntity struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
@@ -744,6 +797,7 @@ type FeatureForGetEntity struct {
 	XxxAttributes []SenzingEntitySpecification `json:"XXX_ATTRIBUTES"`
 }
 
+// FIXME: ...
 type FeatureID struct {
 	// Internal use.
 	LibFeatID int64 `json:"LIB_FEAT_ID"`
@@ -753,6 +807,7 @@ type FeatureID struct {
 	UsageType string `json:"USAGE_TYPE"`
 }
 
+// FIXME: ...
 type FeatureScoreForAttribute struct {
 	AdditionalScores AdditionalScores `json:"ADDITIONAL_SCORES"`
 
@@ -775,41 +830,51 @@ type FeatureScoreForAttribute struct {
 	ScoreBucket string `json:"SCORE_BUCKET"`
 }
 
+// FIXME: ...
 type FeatureScoreInfo struct {
-	// Itemized scores from comparison function.
 	AdditionalScores AdditionalScores `json:"ADDITIONAL_SCORES"`
 
+	// The contents of the candidate feature.
 	CandidateFeatDesc string `json:"CANDIDATE_FEAT_DESC"`
 
+	// The identifier of the candidate feature.
 	CandidateFeatID int64 `json:"CANDIDATE_FEAT_ID"`
 
+	// The usage type of the candidate feature.
 	CandidateFeatUsageType string `json:"CANDIDATE_FEAT_USAGE_TYPE"`
 
-	// Internal use.
+	// The unique text identifier of the feature type.
 	FtypeCode string `json:"FTYPE_CODE"`
 
+	// The contents of the inbound feature.
 	InboundFeatDesc string `json:"INBOUND_FEAT_DESC"`
 
+	// The identifier of the inbound feature.
 	InboundFeatID int64 `json:"INBOUND_FEAT_ID"`
 
+	// The usage type of the inbound feature.
 	InboundFeatUsageType string `json:"INBOUND_FEAT_USAGE_TYPE"`
 
 	// Numeric score from the comparison function.
 	Score int64 `json:"SCORE"`
 
+	// The behavior used to score the feature.
 	ScoreBehavior string `json:"SCORE_BEHAVIOR"`
 
 	// Category of score strength.
 	ScoreBucket string `json:"SCORE_BUCKET"`
 
+	// Resolution data used in producing the score.
 	Source string `json:"SOURCE"`
 
+	// Artifact label used in match comparison.
 	Token string `json:"TOKEN"`
 }
 
 // A map from ... to ...
 type FeatureScores = map[string][]FeatureScoreForAttribute
 
+// FIXME: ...
 type FeatureType struct {
 	Found int64 `json:"FOUND"`
 
@@ -821,6 +886,7 @@ type FeatureType struct {
 	NotFound int64 `json:"NOT_FOUND"`
 }
 
+// FIXME: ...
 type FinalState struct {
 	NeedReevaluation int64 `json:"NEED_REEVALUATION"`
 
@@ -832,6 +898,7 @@ type Fixme struct {
 	FixmeKey any `json:"FIXME_KEY"`
 }
 
+// FIXME: ...
 type FocusRecord struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
@@ -845,6 +912,7 @@ type G2configSettings struct {
 	MetaphoneVersion int32 `json:"METAPHONE_VERSION"`
 }
 
+// FIXME: ...
 type G2config struct {
 	// A list of ...
 	CfgAttr []CfgAttr `json:"CFG_ATTR"`
@@ -948,6 +1016,7 @@ type G2config struct {
 	XxxCfgLensrl []CfgLensrl `json:"XXX_CFG_LENSRL"`
 }
 
+// FIXME: ...
 type HowResults struct {
 	FinalState FinalState `json:"FINAL_STATE"`
 
@@ -955,6 +1024,7 @@ type HowResults struct {
 	ResolutionSteps []ResolutionStep `json:"RESOLUTION_STEPS"`
 }
 
+// FIXME: ...
 type InterestingEntities struct {
 	// A list of entity information.
 	Entities []InterestingEntity `json:"ENTITIES"`
@@ -979,6 +1049,7 @@ type InterestingEntity struct {
 	SampleRecords []SampleRecord `json:"SAMPLE_RECORDS"`
 }
 
+// FIXME: ...
 type MatchInfo struct {
 	CandidateKeys CandidateKeysForMatchInfo `json:"CANDIDATE_KEYS"`
 
@@ -1004,6 +1075,7 @@ type MatchInfo struct {
 	XxxWhyKey string `json:"XXX_WHY_KEY"`
 }
 
+// FIXME: ...
 type MatchInfoForAttribute struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
@@ -1011,6 +1083,7 @@ type MatchInfoForAttribute struct {
 	FeatID int64 `json:"FEAT_ID"`
 }
 
+// FIXME: ...
 type MatchInfoForWhy struct {
 	// A map from ... to ...
 	CandidateKeys map[string][]MatchInfoForAttribute `json:"CANDIDATE_KEYS"`
@@ -1029,6 +1102,7 @@ type MatchInfoForWhy struct {
 	WhyKeyDetails WhyKeyDetails `json:"WHY_KEY_DETAILS"`
 }
 
+// Contains supporting information for the match key.
 type MatchKeyDetails struct {
 	// A list of feature data in the match key supporting the match.
 	Confirmations []FeatureScoreInfo `json:"CONFIRMATIONS"`
@@ -1050,6 +1124,7 @@ type MatchKeyDetails struct {
 	RelPointer []RelPointer `json:"REL_POINTER"`
 }
 
+// FIXME: ...
 type MemberRecord struct {
 	// Internal identifier for the record.
 	InternalID int64 `json:"INTERNAL_ID"`
@@ -1058,14 +1133,17 @@ type MemberRecord struct {
 	Records []Record `json:"RECORDS"`
 }
 
+// FIXME: ...
 type Notice struct {
 	Code string `json:"CODE"`
 
 	Description string `json:"DESCRIPTION"`
 }
 
+// FIXME: ...
 type Object = any
 
+// FIXME: ...
 type Record struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
@@ -1134,6 +1212,7 @@ type Record struct {
 	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
+// FIXME: ...
 type RecordForGetEntity struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
@@ -1202,6 +1281,7 @@ type RecordForGetEntity struct {
 	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
+// FIXME: ...
 type RecordKey struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
@@ -1210,11 +1290,13 @@ type RecordKey struct {
 	RecordID string `json:"RECORD_ID"`
 }
 
+// FIXME: ...
 type RecordKeys struct {
 	// A list of (data source code, record id) pairs.
 	Records []RecordKey `json:"RECORDS"`
 }
 
+// FIXME: ...
 type RecordSummary struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
@@ -1227,6 +1309,7 @@ type RecordSummary struct {
 	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
 }
 
+// FIXME: ...
 type RelAnchor struct {
 	Domain string `json:"DOMAIN"`
 
@@ -1247,6 +1330,7 @@ type RelAnchor struct {
 	XxxRelPointer []RelPointer `json:"XXX_REL_POINTER"`
 }
 
+// FIXME: ...
 type RelLink struct {
 	Domain string `json:"DOMAIN"`
 
@@ -1271,6 +1355,7 @@ type RelLink struct {
 	RelType string `json:"REL_TYPE"`
 }
 
+// FIXME: ...
 type RelPointer struct {
 	Domain string `json:"DOMAIN"`
 
@@ -1288,6 +1373,7 @@ type RelPointer struct {
 	LinkedFeatType string `json:"LINKED_FEAT_TYPE"`
 }
 
+// FIXME: ...
 type RelatedEntity struct {
 	// The ENTITY_ID is the identifier for the entity.
 	EntityID int64 `json:"ENTITY_ID"`
@@ -1307,7 +1393,6 @@ type RelatedEntity struct {
 	// Representation of matched source data.
 	MatchKey string `json:"MATCH_KEY"`
 
-	// Contains supporting information for the match key.
 	MatchKeyDetails MatchKeyDetails `json:"MATCH_KEY_DETAILS"`
 
 	// The type of relationship.
@@ -1323,6 +1408,7 @@ type RelatedEntity struct {
 	RecordTypes []string `json:"RECORD_TYPES"`
 }
 
+// FIXME: ...
 type RelatedRoles struct {
 	// Describes the attributes that make up the feature.
 	FeatDesc string `json:"FEAT_DESC"`
@@ -1330,6 +1416,7 @@ type RelatedRoles struct {
 	Role string `json:"ROLE"`
 }
 
+// FIXME: ...
 type Repository struct {
 	// Label for database repository.
 	ID string `json:"id"`
@@ -1341,6 +1428,7 @@ type Repository struct {
 	Type string `json:"type"`
 }
 
+// FIXME: ...
 type ResolutionStep struct {
 	InboundVirtualEntityID string `json:"INBOUND_VIRTUAL_ENTITY_ID"`
 
@@ -1355,6 +1443,7 @@ type ResolutionStep struct {
 	VirtualEntity0 VirtualEntitySynopsis `json:"VIRTUAL_ENTITY_2"`
 }
 
+// FIXME: ...
 type ResolvedEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -1399,6 +1488,7 @@ type ResolvedEntity struct {
 	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
 }
 
+// FIXME: ...
 type ResolvedEntityAndMatchInfo struct {
 	Entity EntityForResolvedEntity `json:"ENTITY"`
 
@@ -1407,6 +1497,7 @@ type ResolvedEntityAndMatchInfo struct {
 	MatchInfo MatchInfo `json:"MATCH_INFO"`
 }
 
+// FIXME: ...
 type ResolvedEntityForGetEntity struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -1451,6 +1542,7 @@ type ResolvedEntityForGetEntity struct {
 	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
 }
 
+// FIXME: ...
 type SysOom struct {
 	FtypeID int64 `json:"FTYPE_ID"`
 
@@ -1473,6 +1565,7 @@ type SysOom struct {
 	XxxLibFelemID int64 `json:"XXX_LIB_FELEM_ID"`
 }
 
+// FIXME: ...
 type SampleRecord struct {
 	// Short, stable identifier naming the source system.
 	DataSource string `json:"DATA_SOURCE"`
@@ -1484,6 +1577,7 @@ type SampleRecord struct {
 	RecordID string `json:"RECORD_ID"`
 }
 
+// FIXME: ...
 type SchemaVersion struct {
 	EngineSchemaVersion string `json:"ENGINE_SCHEMA_VERSION"`
 
@@ -1492,6 +1586,7 @@ type SchemaVersion struct {
 	MinimumRequiredSchemaVersion string `json:"MINIMUM_REQUIRED_SCHEMA_VERSION"`
 }
 
+// FIXME: ...
 type SearchEntity struct {
 	// A map from ... to ...
 	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
@@ -1499,6 +1594,7 @@ type SearchEntity struct {
 	Summary SearchEntitySummary `json:"SUMMARY"`
 }
 
+// FIXME: ...
 type SearchEntitySummary struct {
 	FeaturesAdded int32 `json:"FEATURES_ADDED"`
 
@@ -1509,6 +1605,7 @@ type SearchEntitySummary struct {
 	FeaturesSubmitted int32 `json:"FEATURES_SUBMITTED"`
 }
 
+// FIXME: ...
 type SearchRequest struct {
 	// A map from ... to ...
 	Features map[string][]FeatureDescriptionValue `json:"FEATURES"`
@@ -1518,10 +1615,12 @@ type SearchRequest struct {
 	SearchProfile string `json:"SEARCH_PROFILE"`
 }
 
+// FIXME: ...
 type SearchStatistic struct {
 	CandidateKeys CandidateKeysForSearchStatistic `json:"CANDIDATE_KEYS"`
 }
 
+// FIXME: ...
 type SenzingEntitySpecification struct {
 	// Domain/system for the account number. An attribute in the Senzing Entity
 	// Specification. See https://www.senzing.com/docs/entity_specification
@@ -1961,13 +2060,11 @@ type SzEngineFetchNextResponse struct {
 	XxxFixme Fixme `json:"XXX_FIXME"`
 }
 
-// Internal use.
 type SzEngineFindInterestingEntitiesByEntityIDResponse struct {
 	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
 }
 
-// Internal use.
 type SzEngineFindInterestingEntitiesByRecordIDResponse struct {
 	// Internal use.
 	InterestingEntities InterestingEntities `json:"INTERESTING_ENTITIES"`
@@ -2326,6 +2423,7 @@ type SzProductGetVersionResponse struct {
 	Version string `json:"VERSION"`
 }
 
+// FIXME: ...
 type UmfProc struct {
 	Name string `json:"NAME"`
 
@@ -2333,16 +2431,19 @@ type UmfProc struct {
 	Params []UmfProcParams `json:"PARAMS"`
 }
 
+// FIXME: ...
 type UmfProcParamDetails struct {
 	Name string `json:"NAME"`
 
 	Value Object `json:"VALUE"`
 }
 
+// FIXME: ...
 type UmfProcParams struct {
 	Param UmfProcParamDetails `json:"PARAM"`
 }
 
+// FIXME: ...
 type VirtualEntitySynopsis struct {
 	// A list of ...
 	MemberRecords []MemberRecord `json:"MEMBER_RECORDS"`
@@ -2350,6 +2451,7 @@ type VirtualEntitySynopsis struct {
 	VirtualEntityID string `json:"VIRTUAL_ENTITY_ID"`
 }
 
+// FIXME: ...
 type WhyKeyDetails struct {
 	// A list of ...
 	Confirmations []FeatureScoreInfo `json:"CONFIRMATIONS"`
@@ -2361,6 +2463,7 @@ type WhyKeyDetails struct {
 	DisclosedRelations []DisclosedRelationsForWhyKeyDetails `json:"DISCLOSED_RELATIONS"`
 }
 
+// FIXME: ...
 type WhyResult struct {
 	// The ENTITY_ID is the Senzing-generated identifier for the discovered entity.
 	// It may change when new information is added.
@@ -2383,6 +2486,7 @@ type WhyResult struct {
 	MatchInfo MatchInfoForWhy `json:"MATCH_INFO"`
 }
 
+// FIXME: ...
 type Workload struct {
 	APIVersion string `json:"apiVersion"`
 
@@ -2422,6 +2526,7 @@ type Workload struct {
 	Unresolve WorkloadUnresolve `json:"unresolve"`
 }
 
+// FIXME: ...
 type WorkloadCaches struct {
 	LibFeatCacheHit int32 `json:"libFeatCacheHit"`
 
@@ -2440,6 +2545,7 @@ type WorkloadCaches struct {
 	ResFeatStatUpdateFail int32 `json:"resFeatStatUpdateFail"`
 }
 
+// FIXME: ...
 type WorkloadCandidates struct {
 	// A map from ... to ...
 	CandidateBuilders map[string]int64 `json:"candidateBuilders"`
@@ -2448,6 +2554,7 @@ type WorkloadCandidates struct {
 	SuppressedCandidateBuilders map[string]int64 `json:"suppressedCandidateBuilders"`
 }
 
+// FIXME: ...
 type WorkloadContention struct {
 	Feature Fixme `json:"feature"`
 
@@ -2456,6 +2563,7 @@ type WorkloadContention struct {
 	Valuelatch Fixme `json:"valuelatch"`
 }
 
+// FIXME: ...
 type WorkloadCurrResources struct {
 	ActiveThreads int32 `json:"activeThreads"`
 
@@ -2466,6 +2574,7 @@ type WorkloadCurrResources struct {
 	WorkerThreads int32 `json:"workerThreads"`
 }
 
+// FIXME: ...
 type WorkloadExpressedFeatures struct {
 	// A list of ...
 	Calls []WorkloadExpressedFeaturesCall `json:"calls"`
@@ -2474,6 +2583,7 @@ type WorkloadExpressedFeatures struct {
 	Created map[string]int64 `json:"created"`
 }
 
+// FIXME: ...
 type WorkloadExpressedFeaturesCall struct {
 	EfcallID int32 `json:"EFCALL_ID"`
 
@@ -2482,6 +2592,7 @@ type WorkloadExpressedFeaturesCall struct {
 	NumCalls int32 `json:"numCalls"`
 }
 
+// FIXME: ...
 type WorkloadInitResources struct {
 	XxxPhysicalCores int32 `json:"XXX_physicalCores"`
 
@@ -2492,6 +2603,7 @@ type WorkloadInitResources struct {
 	TotalMemory string `json:"totalMemory"`
 }
 
+// FIXME: ...
 type WorkloadLicense struct {
 	DsrLimit string `json:"dsrLimit"`
 
@@ -2500,10 +2612,12 @@ type WorkloadLicense struct {
 	Type string `json:"type"`
 }
 
+// FIXME: ...
 type WorkloadLockWaits struct {
 	RefreshLocks WorkloadRefreshLocks `json:"refreshLocks"`
 }
 
+// FIXME: ...
 type WorkloadProcessing struct {
 	AddedRecords int32 `json:"addedRecords"`
 
@@ -2520,12 +2634,14 @@ type WorkloadProcessing struct {
 	RepairedEntities int32 `json:"repairedEntities"`
 }
 
+// FIXME: ...
 type WorkloadProcessingAmbiguous struct {
 	ActualTest int32 `json:"actualTest"`
 
 	CachedTest int32 `json:"cachedTest"`
 }
 
+// FIXME: ...
 type WorkloadProcessingDetails struct {
 	AddedRecords int32 `json:"addedRecords"`
 
@@ -2552,6 +2668,7 @@ type WorkloadProcessingDetails struct {
 	Retries int32 `json:"retries"`
 }
 
+// FIXME: ...
 type WorkloadRefreshLocks struct {
 	Count int32 `json:"count"`
 
@@ -2560,10 +2677,12 @@ type WorkloadRefreshLocks struct {
 	TotalMs int32 `json:"totalMS"`
 }
 
+// FIXME: ...
 type WorkloadRepairDiagnosis struct {
 	Types int32 `json:"types"`
 }
 
+// FIXME: ...
 type WorkloadReresolve struct {
 	// A map from ... to ...
 	NewFeatureFtypes map[string]int64 `json:"newFeatureFTypes"`
@@ -2575,6 +2694,7 @@ type WorkloadReresolve struct {
 	Triggers WorkloadReresolveTriggers `json:"triggers"`
 }
 
+// FIXME: ...
 type WorkloadReresolveTriggers struct {
 	AbortRetry int32 `json:"abortRetry"`
 
@@ -2587,6 +2707,7 @@ type WorkloadReresolveTriggers struct {
 	UnresolveMovement int32 `json:"unresolveMovement"`
 }
 
+// FIXME: ...
 type WorkloadScoring struct {
 	// A map from ... to ...
 	CacheHit map[string]int64 `json:"cacheHit"`
@@ -2602,6 +2723,7 @@ type WorkloadScoring struct {
 	SuppressedScoredFeatureType Fixme `json:"suppressedScoredFeatureType"`
 }
 
+// FIXME: ...
 type WorkloadSystemLoad struct {
 	CPUIdle string `json:"cpuIdle"`
 
@@ -2612,6 +2734,7 @@ type WorkloadSystemLoad struct {
 	CPUWait string `json:"cpuWait"`
 }
 
+// FIXME: ...
 type WorkloadSystemResources struct {
 	CurrResources WorkloadCurrResources `json:"currResources"`
 
@@ -2620,6 +2743,7 @@ type WorkloadSystemResources struct {
 	SystemLoad WorkloadSystemLoad `json:"systemLoad"`
 }
 
+// FIXME: ...
 type WorkloadThreadState struct {
 	Active int32 `json:"active"`
 
@@ -2642,6 +2766,7 @@ type WorkloadThreadState struct {
 	SQLExecuting int32 `json:"sqlExecuting"`
 }
 
+// FIXME: ...
 type WorkloadUnresolve struct {
 	AbortedUnresolve int32 `json:"abortedUnresolve"`
 
@@ -2650,6 +2775,7 @@ type WorkloadUnresolve struct {
 	UnresolveTest int32 `json:"unresolveTest"`
 }
 
+// FIXME: ...
 type WorkloadUnresolveTriggers struct {
 	AmbiguousMultiResolve int32 `json:"ambiguousMultiResolve"`
 
