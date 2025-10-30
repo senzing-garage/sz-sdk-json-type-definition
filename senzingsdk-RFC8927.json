@@ -1655,33 +1655,51 @@
                     "ref": "AdditionalScores"
                 },
                 "CANDIDATE_FEAT_DESC": {
+                    "metadata": {
+                        "description": "The contents of the candidate feature."
+                    },
                     "type": "string"
                 },
                 "CANDIDATE_FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the candidate feature.",
+                        "label": "LIB_FEAT_ID",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "CANDIDATE_FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the candidate feature.",
+                        "label": "USAGE_TYPE"
+                    },
                     "type": "string"
                 },
                 "FTYPE_CODE": {
                     "metadata": {
-                        "description": "Internal use."
+                        "description": "The unique text identifier of the feature type."
                     },
                     "type": "string"
                 },
                 "INBOUND_FEAT_DESC": {
+                    "metadata": {
+                        "description": "The contents of the inbound feature."
+                    },
                     "type": "string"
                 },
                 "INBOUND_FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the inbound feature.",
+                        "label": "LIB_FEAT_ID",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "INBOUND_FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the inbound feature.",
+                        "label": "USAGE_TYPE"
+                    },
                     "type": "string"
                 },
                 "SCORE": {
@@ -1692,6 +1710,9 @@
                     "type": "int32"
                 },
                 "SCORE_BEHAVIOR": {
+                    "metadata": {
+                        "description": "The behavior used to score the feature."
+                    },
                     "type": "string"
                 },
                 "SCORE_BUCKET": {
@@ -1701,9 +1722,15 @@
                     "type": "string"
                 },
                 "SOURCE": {
+                    "metadata": {
+                        "description": "Resolution data used in producing the score."
+                    },
                     "type": "string"
                 },
                 "TOKEN": {
+                    "metadata": {
+                        "description": "Artifact label used in match comparison."
+                    },
                     "type": "string"
                 }
             }
