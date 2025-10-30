@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class FeatureScoreInfo {
     @JsonProperty("ADDITIONAL_SCORES")
@@ -51,7 +54,6 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for additionalScores.<p>
-     * Itemized scores from comparison function.
      */
     public AdditionalScores getAdditionalScores() {
         return additionalScores;
@@ -59,7 +61,6 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for additionalScores.<p>
-     * Itemized scores from comparison function.
      */
     public void setAdditionalScores(AdditionalScores additionalScores) {
         this.additionalScores = additionalScores;
@@ -67,6 +68,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for candidateFeatDesc.<p>
+     * The contents of the candidate feature.
      */
     public String getCandidateFeatDesc() {
         return candidateFeatDesc;
@@ -74,6 +76,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for candidateFeatDesc.<p>
+     * The contents of the candidate feature.
      */
     public void setCandidateFeatDesc(String candidateFeatDesc) {
         this.candidateFeatDesc = candidateFeatDesc;
@@ -81,6 +84,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for candidateFeatId.<p>
+     * The identifier of the candidate feature.
      */
     public Integer getCandidateFeatId() {
         return candidateFeatId;
@@ -88,6 +92,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for candidateFeatId.<p>
+     * The identifier of the candidate feature.
      */
     public void setCandidateFeatId(Integer candidateFeatId) {
         this.candidateFeatId = candidateFeatId;
@@ -95,6 +100,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for candidateFeatUsageType.<p>
+     * The usage type of the candidate feature.
      */
     public String getCandidateFeatUsageType() {
         return candidateFeatUsageType;
@@ -102,6 +108,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for candidateFeatUsageType.<p>
+     * The usage type of the candidate feature.
      */
     public void setCandidateFeatUsageType(String candidateFeatUsageType) {
         this.candidateFeatUsageType = candidateFeatUsageType;
@@ -109,7 +116,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -117,7 +124,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -125,6 +132,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for inboundFeatDesc.<p>
+     * The contents of the inbound feature.
      */
     public String getInboundFeatDesc() {
         return inboundFeatDesc;
@@ -132,6 +140,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for inboundFeatDesc.<p>
+     * The contents of the inbound feature.
      */
     public void setInboundFeatDesc(String inboundFeatDesc) {
         this.inboundFeatDesc = inboundFeatDesc;
@@ -139,6 +148,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for inboundFeatId.<p>
+     * The identifier of the inbound feature.
      */
     public Integer getInboundFeatId() {
         return inboundFeatId;
@@ -146,6 +156,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for inboundFeatId.<p>
+     * The identifier of the inbound feature.
      */
     public void setInboundFeatId(Integer inboundFeatId) {
         this.inboundFeatId = inboundFeatId;
@@ -153,6 +164,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for inboundFeatUsageType.<p>
+     * The usage type of the inbound feature.
      */
     public String getInboundFeatUsageType() {
         return inboundFeatUsageType;
@@ -160,6 +172,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for inboundFeatUsageType.<p>
+     * The usage type of the inbound feature.
      */
     public void setInboundFeatUsageType(String inboundFeatUsageType) {
         this.inboundFeatUsageType = inboundFeatUsageType;
@@ -183,6 +196,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for scoreBehavior.<p>
+     * The behavior used to score the feature.
      */
     public String getScoreBehavior() {
         return scoreBehavior;
@@ -190,6 +204,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for scoreBehavior.<p>
+     * The behavior used to score the feature.
      */
     public void setScoreBehavior(String scoreBehavior) {
         this.scoreBehavior = scoreBehavior;
@@ -213,6 +228,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for source.<p>
+     * Resolution data used in producing the score.
      */
     public String getSource() {
         return source;
@@ -220,6 +236,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for source.<p>
+     * Resolution data used in producing the score.
      */
     public void setSource(String source) {
         this.source = source;
@@ -227,6 +244,7 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for token.<p>
+     * Artifact label used in match comparison.
      */
     public String getToken() {
         return token;
@@ -234,6 +252,7 @@ public class FeatureScoreInfo {
 
     /**
      * Setter for token.<p>
+     * Artifact label used in match comparison.
      */
     public void setToken(String token) {
         this.token = token;

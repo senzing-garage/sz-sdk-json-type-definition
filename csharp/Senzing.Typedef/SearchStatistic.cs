@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// FIXME: ...
+    /// </summary>
     public class SearchStatistic
     {
         [JsonPropertyName("CANDIDATE_KEYS")]

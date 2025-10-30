@@ -4,6 +4,10 @@
         "CFG_ATTR.ATTR_ID",
         "EntityNetworkLink.MAX_ENTITY_ID"
     ],
+    "LIB_FEAT_ID": [
+        "FeatureScoreInfo.CANDIDATE_FEAT_ID",
+        "FeatureScoreInfo.INBOUND_FEAT_ID"
+    ],
     "RECORD_ID": [
         "FocusRecord.RECORD_ID",
         "Record.RECORD_ID",
@@ -16,5 +20,9 @@
         "SzEngineProcessRedoRecordResponse.RECORD_ID",
         "SzEngineReevaluateEntityResponse.XXX_RECORD_ID",
         "SzEngineReevaluateRecordResponse.RECORD_ID"
+    ],
+    "USAGE_TYPE": [
+        "FeatureScoreInfo.CANDIDATE_FEAT_USAGE_TYPE",
+        "FeatureScoreInfo.INBOUND_FEAT_USAGE_TYPE"
     ]
 }

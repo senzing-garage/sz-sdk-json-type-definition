@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class RelatedEntity {
     @JsonProperty("ENTITY_ID")
@@ -142,7 +145,6 @@ public class RelatedEntity {
 
     /**
      * Getter for matchKeyDetails.<p>
-     * Contains supporting information for the match key.
      */
     public MatchKeyDetails getMatchKeyDetails() {
         return matchKeyDetails;
@@ -150,7 +152,6 @@ public class RelatedEntity {
 
     /**
      * Setter for matchKeyDetails.<p>
-     * Contains supporting information for the match key.
      */
     public void setMatchKeyDetails(MatchKeyDetails matchKeyDetails) {
         this.matchKeyDetails = matchKeyDetails;

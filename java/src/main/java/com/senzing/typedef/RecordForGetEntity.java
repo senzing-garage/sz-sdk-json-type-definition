@@ -8,6 +8,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class RecordForGetEntity {
     @JsonProperty("DATA_SOURCE")

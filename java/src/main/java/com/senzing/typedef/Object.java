@@ -5,6 +5,9 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * FIXME: ...
+ */
 public class Object {
     @JsonValue
     private Object value;

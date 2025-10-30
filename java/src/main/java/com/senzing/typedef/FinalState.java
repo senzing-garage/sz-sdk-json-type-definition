@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class FinalState {
     @JsonProperty("NEED_REEVALUATION")

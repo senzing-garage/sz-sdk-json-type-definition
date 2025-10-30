@@ -5,9 +5,6 @@
     "ACCOUNT_NUMBER": [
         "Account number (e.g., bank, card). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
-    "ADDITIONAL_SCORES": [
-        "Itemized scores from comparison function."
-    ],
     "ADDR_CITY": [
         "City/locality. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -51,92 +48,143 @@
         "A map from ... to ...",
         ""
     ],
+    "AdditionalScores": [
+        "Itemized scores from comparison function."
+    ],
+    "AffectedEntity": [
+        "FIXME: ..."
+    ],
+    "CANDIDATE_FEAT_DESC": [
+        "The contents of the candidate feature."
+    ],
+    "CANDIDATE_FEAT_ID": [
+        "The identifier of the candidate feature."
+    ],
+    "CANDIDATE_FEAT_USAGE_TYPE": [
+        "The usage type of the candidate feature."
+    ],
     "CANDIDATE_KEYS": [
         "A map from ... to ...",
         ""
     ],
     "CFG_ATTR": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_CFBOM": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_CFCALL": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_CFRTN": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_CFUNC": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_DFBOM": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_DFCALL": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_DFUNC": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_DSRC": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_DSRC_INTEREST": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_EBOM": [
+        "FIXME: ...",
         "A list of ..."
     ],
+    "CFG_ECLASS": [
+        "FIXME: ..."
+    ],
     "CFG_EFBOM": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_EFCALL": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_EFUNC": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_ERFRAG": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_ERRULE": [
+        "FIXME: ...",
         "A list of ..."
     ],
+    "CFG_ETYPE": [
+        "FIXME: ..."
+    ],
     "CFG_FBOM": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_FBOVR": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_FCLASS": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_FELEM": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_FTYPE": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_GENERIC_THRESHOLD": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_GPLAN": [
+        "FIXME: ...",
         "A list of ..."
+    ],
+    "CFG_LENS": [
+        "FIXME: ..."
     ],
     "CFG_LENSRL": [
         "A list of ..."
     ],
     "CFG_RCLASS": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_RTYPE": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_SFCALL": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CFG_SFUNC": [
+        "FIXME: ...",
         "A list of ..."
     ],
     "CITIZENSHIP": [
@@ -144,6 +192,10 @@
     ],
     "CONFIGS": [
         "A list of registered configurations."
+    ],
+    "CONFIG_BASE_VERSION": [
+        "FIXME: ...",
+        ""
     ],
     "CONFIG_COMMENTS": [
         "A user-provided description of the configuration."
@@ -157,6 +209,18 @@
     ],
     "CandidateKeysForMatchInfo": [
         "A map from ... to ..."
+    ],
+    "CandidateKeysForSearchStatistic": [
+        "FIXME: ..."
+    ],
+    "CandidateKeysSummary": [
+        "FIXME: ..."
+    ],
+    "CompatibilityVersion": [
+        "FIXME: ..."
+    ],
+    "Config": [
+        "FIXME: ..."
     ],
     "DATA_SOURCE": [
         "Short, stable identifier naming the source system."
@@ -196,6 +260,18 @@
     "DUNS_NUMBER": [
         "Dun and Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "DataSource": [
+        "FIXME: ..."
+    ],
+    "DisclosedRelationsForMatchInfo": [
+        "FIXME: ..."
+    ],
+    "DisclosedRelationsForMatchInfoForWhy": [
+        "FIXME: ..."
+    ],
+    "DisclosedRelationsForWhyKeyDetails": [
+        "FIXME: ..."
+    ],
     "ELEMENTS": [
         "Internal use."
     ],
@@ -230,6 +306,27 @@
     ],
     "ERRULE_CODE": [
         "Identifier of the entity resolution principle that was triggered."
+    ],
+    "Entity": [
+        "FIXME: ..."
+    ],
+    "EntityForResolvedEntity": [
+        "FIXME: ..."
+    ],
+    "EntityForWhySearch": [
+        "FIXME: ..."
+    ],
+    "EntityNetworkLink": [
+        "FIXME: ..."
+    ],
+    "EntityPath": [
+        "FIXME: ..."
+    ],
+    "EntityPathLink": [
+        "FIXME: ..."
+    ],
+    "EntityRoles": [
+        "FIXME: ..."
     ],
     "FACEBOOK": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -266,10 +363,47 @@
         "A list of ..."
     ],
     "FTYPE_CODE": [
-        "Internal use."
+        "Internal use.",
+        "The unique text identifier of the feature type."
+    ],
+    "Feature": [
+        "FIXME: ..."
+    ],
+    "FeatureDescriptionValue": [
+        "FIXME: ..."
+    ],
+    "FeatureDescriptionValueDetails": [
+        "FIXME: ..."
+    ],
+    "FeatureForAttributes": [
+        "FIXME: ..."
+    ],
+    "FeatureForGetEntity": [
+        "FIXME: ..."
+    ],
+    "FeatureID": [
+        "FIXME: ..."
+    ],
+    "FeatureScoreForAttribute": [
+        "FIXME: ..."
+    ],
+    "FeatureScoreInfo": [
+        "FIXME: ..."
     ],
     "FeatureScores": [
         "A map from ... to ..."
+    ],
+    "FeatureType": [
+        "FIXME: ..."
+    ],
+    "FinalState": [
+        "FIXME: ..."
+    ],
+    "FocusRecord": [
+        "FIXME: ..."
+    ],
+    "G2Config": [
+        "FIXME: ..."
     ],
     "GENDER": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -285,6 +419,18 @@
     ],
     "GROUP_ASSOCIATION_TYPE": [
         "Specific group/role within the organization; use precise categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve resolution. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "HowResults": [
+        "FIXME: ..."
+    ],
+    "INBOUND_FEAT_DESC": [
+        "The contents of the inbound feature."
+    ],
+    "INBOUND_FEAT_ID": [
+        "The identifier of the inbound feature."
+    ],
+    "INBOUND_FEAT_USAGE_TYPE": [
+        "The usage type of the inbound feature."
     ],
     "INSTAGRAM": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -303,6 +449,9 @@
     ],
     "IS_DISCLOSED": [
         "Indicates if this is a disclosed relationship."
+    ],
+    "InterestingEntities": [
+        "FIXME: ..."
     ],
     "InterestingEntity": [
         "Internal use."
@@ -324,9 +473,6 @@
         "Representation of matched source record features.",
         "Representation of matched source data."
     ],
-    "MATCH_KEY_DETAILS": [
-        "Contains supporting information for the match key."
-    ],
     "MATCH_LEVEL_CODE": [
         "The type of match that occurred for the record.",
         "The type of relationship."
@@ -336,6 +482,21 @@
     ],
     "MEMBER_RECORDS": [
         "A list of ..."
+    ],
+    "MatchInfo": [
+        "FIXME: ..."
+    ],
+    "MatchInfoForAttribute": [
+        "FIXME: ..."
+    ],
+    "MatchInfoForWhy": [
+        "FIXME: ..."
+    ],
+    "MatchKeyDetails": [
+        "Contains supporting information for the match key."
+    ],
+    "MemberRecord": [
+        "FIXME: ..."
     ],
     "NAME_FIRST": [
         "Person given name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -379,6 +540,9 @@
     "NPI_NUMBER": [
         "US healthcare provider identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "Notice": [
+        "FIXME: ..."
+    ],
     "OTHER_ID_COUNTRY": [
         "Optional as country often not known or issued by an organization. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -387,6 +551,9 @@
     ],
     "OTHER_ID_TYPE": [
         "Standardized source type. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "Object": [
+        "FIXME: ..."
     ],
     "PARAMS": [
         "A list of ..."
@@ -478,11 +645,59 @@
     "RESOLVED_ENTITIES": [
         "A list of ..."
     ],
+    "Record": [
+        "FIXME: ..."
+    ],
+    "RecordForGetEntity": [
+        "FIXME: ..."
+    ],
+    "RecordKey": [
+        "FIXME: ..."
+    ],
+    "RecordKeys": [
+        "FIXME: ..."
+    ],
+    "RecordSummary": [
+        "FIXME: ..."
+    ],
+    "RelAnchor": [
+        "FIXME: ..."
+    ],
+    "RelLink": [
+        "FIXME: ..."
+    ],
+    "RelPointer": [
+        "FIXME: ..."
+    ],
+    "RelatedEntity": [
+        "FIXME: ..."
+    ],
+    "RelatedRoles": [
+        "FIXME: ..."
+    ],
+    "Repository": [
+        "FIXME: ..."
+    ],
+    "ResolutionStep": [
+        "FIXME: ..."
+    ],
+    "ResolvedEntity": [
+        "FIXME: ..."
+    ],
+    "ResolvedEntityAndMatchInfo": [
+        "FIXME: ..."
+    ],
+    "ResolvedEntityForGetEntity": [
+        "FIXME: ..."
+    ],
     "SAMPLE_RECORDS": [
         "A list of ..."
     ],
     "SCORE": [
         "Numeric score from the comparison function."
+    ],
+    "SCORE_BEHAVIOR": [
+        "The behavior used to score the feature."
     ],
     "SCORE_BUCKET": [
         "Category of score strength."
@@ -499,6 +714,9 @@
     "SKYPE": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "SOURCE": [
+        "Resolution data used in producing the score."
+    ],
     "SSN_NUMBER": [
         "US Social Security Number; partial accepted. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -507,13 +725,28 @@
     ],
     "SYS_OOM": [
         "A list of ...",
-        ""
+        "FIXME: ..."
     ],
-    "SzEngineFindInterestingEntitiesByEntityIdResponse": [
-        "Internal use."
+    "SampleRecord": [
+        "FIXME: ..."
     ],
-    "SzEngineFindInterestingEntitiesByRecordIdResponse": [
-        "Internal use."
+    "SchemaVersion": [
+        "FIXME: ..."
+    ],
+    "SearchEntity": [
+        "FIXME: ..."
+    ],
+    "SearchEntitySummary": [
+        "FIXME: ..."
+    ],
+    "SearchRequest": [
+        "FIXME: ..."
+    ],
+    "SearchStatistic": [
+        "FIXME: ..."
+    ],
+    "SenzingEntitySpecification": [
+        "FIXME: ..."
     ],
     "SzEngineFindNetworkByEntityIdResponse": [
         "A network of relationships among entities."
@@ -536,6 +769,9 @@
     "TELEGRAM": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "TOKEN": [
+        "Artifact label used in match comparison."
+    ],
     "TRUSTED_ID_NUMBER": [
         "The identifier value shared by records that must resolve together. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -551,11 +787,23 @@
     "USAGE_TYPE": [
         "Label to identify how some features are being used (can also change some features behavior)."
     ],
+    "UmfProc": [
+        "FIXME: ..."
+    ],
+    "UmfProcParamDetails": [
+        "FIXME: ..."
+    ],
+    "UmfProcParams": [
+        "FIXME: ..."
+    ],
     "VIBER": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "VIRTUAL_ENTITIES": [
         "A list of ..."
+    ],
+    "VirtualEntitySynopsis": [
+        "FIXME: ..."
     ],
     "WEBSITE_ADDRESS": [
         "Website or domain; typically for organizations. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -568,6 +816,81 @@
     ],
     "WHY_RESULTS": [
         "A list of ..."
+    ],
+    "WhyKeyDetails": [
+        "FIXME: ..."
+    ],
+    "WhyResult": [
+        "FIXME: ..."
+    ],
+    "Workload": [
+        "FIXME: ..."
+    ],
+    "WorkloadCaches": [
+        "FIXME: ..."
+    ],
+    "WorkloadCandidates": [
+        "FIXME: ..."
+    ],
+    "WorkloadContention": [
+        "FIXME: ..."
+    ],
+    "WorkloadCurrResources": [
+        "FIXME: ..."
+    ],
+    "WorkloadExpressedFeatures": [
+        "FIXME: ..."
+    ],
+    "WorkloadExpressedFeaturesCall": [
+        "FIXME: ..."
+    ],
+    "WorkloadInitResources": [
+        "FIXME: ..."
+    ],
+    "WorkloadLicense": [
+        "FIXME: ..."
+    ],
+    "WorkloadLockWaits": [
+        "FIXME: ..."
+    ],
+    "WorkloadProcessing": [
+        "FIXME: ..."
+    ],
+    "WorkloadProcessingAmbiguous": [
+        "FIXME: ..."
+    ],
+    "WorkloadProcessingDetails": [
+        "FIXME: ..."
+    ],
+    "WorkloadRefreshLocks": [
+        "FIXME: ..."
+    ],
+    "WorkloadRepairDiagnosis": [
+        "FIXME: ..."
+    ],
+    "WorkloadReresolve": [
+        "FIXME: ..."
+    ],
+    "WorkloadReresolveTriggers": [
+        "FIXME: ..."
+    ],
+    "WorkloadScoring": [
+        "FIXME: ..."
+    ],
+    "WorkloadSystemLoad": [
+        "FIXME: ..."
+    ],
+    "WorkloadSystemResources": [
+        "FIXME: ..."
+    ],
+    "WorkloadThreadState": [
+        "FIXME: ..."
+    ],
+    "WorkloadUnresolve": [
+        "FIXME: ..."
+    ],
+    "WorkloadUnresolveTriggers": [
+        "FIXME: ..."
     ],
     "XXX_ADDRESS_DATA": [
         "A list of ..."

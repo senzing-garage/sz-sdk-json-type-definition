@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 
 namespace Senzing.Typedef
 {
+    /// <summary>
+    /// Contains supporting information for the match key.
+    /// </summary>
     public class MatchKeyDetails
     {
         /// <summary>

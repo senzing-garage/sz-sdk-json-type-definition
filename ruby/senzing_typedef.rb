@@ -19,6 +19,7 @@ module SenzingTypedef
     end
   end
 
+  # Itemized scores from comparison function.
   class AdditionalScores
     attr_accessor :full_score
     attr_accessor :generation_match
@@ -50,6 +51,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class AffectedEntity
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
@@ -68,6 +70,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgAttr
     attr_accessor :attr_class
     attr_accessor :attr_code
@@ -110,6 +113,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgCfbom
     attr_accessor :cfcall_id
     attr_accessor :exec_order
@@ -135,6 +139,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgCfcall
     attr_accessor :cfcall_id
     attr_accessor :cfunc_id
@@ -160,6 +165,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgCfrtn
     attr_accessor :cfrtn_id
     attr_accessor :cfunc_id
@@ -203,6 +209,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgCfunc
     attr_accessor :anon_support
     attr_accessor :cfunc_code
@@ -243,6 +250,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgDfbom
     attr_accessor :dfcall_id
     attr_accessor :exec_order
@@ -268,6 +276,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgDfcall
     attr_accessor :dfcall_id
     attr_accessor :dfunc_id
@@ -293,6 +302,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgDfunc
     attr_accessor :anon_support
     attr_accessor :connect_str
@@ -333,6 +343,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgDsrc
     attr_accessor :dsrc_code
     attr_accessor :dsrc_desc
@@ -364,6 +375,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgDsrcInterest
     attr_accessor :xxx_dsrc_id
     attr_accessor :xxx_interest_flag
@@ -386,6 +398,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgEbom
     attr_accessor :xxx_etype_id
     attr_accessor :xxx_exec_order
@@ -411,6 +424,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgEclass
     attr_accessor :xxx_eclass_code
     attr_accessor :xxx_eclass_desc
@@ -436,6 +450,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgEfbom
     attr_accessor :efcall_id
     attr_accessor :exec_order
@@ -464,6 +479,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgEfcall
     attr_accessor :efcall_id
     attr_accessor :efeat_ftype_id
@@ -498,6 +514,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgEfunc
     attr_accessor :connect_str
     attr_accessor :efunc_code
@@ -535,6 +552,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgErfrag
     attr_accessor :erfrag_code
     attr_accessor :erfrag_depends
@@ -563,6 +581,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgErrule
     attr_accessor :disq_erfrag_code
 
@@ -608,6 +627,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgEtype
     attr_accessor :xxx_eclass_id
     attr_accessor :xxx_etype_code
@@ -633,6 +653,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgFbom
     attr_accessor :derived
     attr_accessor :display_level
@@ -664,6 +685,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgFbovr
     attr_accessor :ftype_excl
     attr_accessor :ftype_freq
@@ -695,6 +717,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgFclass
     attr_accessor :fclass_code
     attr_accessor :fclass_desc
@@ -717,6 +740,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgFelem
     attr_accessor :data_type
     attr_accessor :felem_code
@@ -745,6 +769,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgFtype
     attr_accessor :anonymize
     attr_accessor :derived
@@ -805,6 +830,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgGenericThreshold
     attr_accessor :behavior
     attr_accessor :candidate_cap
@@ -836,6 +862,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgGplan
     attr_accessor :gplan_code
     attr_accessor :gplan_desc
@@ -858,6 +885,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgLens
     attr_accessor :xxx_lens_code
     attr_accessor :xxx_lens_desc
@@ -895,6 +923,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgRclass
     # Indicates if this is a disclosed relationship.
     attr_accessor :is_disclosed
@@ -921,6 +950,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgRtype
     attr_accessor :break_res
     attr_accessor :rclass_id
@@ -952,6 +982,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgSfcall
     attr_accessor :exec_order
     attr_accessor :felem_id
@@ -980,6 +1011,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CfgSfunc
     attr_accessor :connect_str
     attr_accessor :sfunc_code
@@ -1017,6 +1049,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class ConfigBaseVersion
     attr_accessor :build_date
     attr_accessor :build_number
@@ -1063,6 +1096,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CandidateKeysForSearchStatistic
     # A list of ...
     attr_accessor :feature_types
@@ -1083,6 +1117,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CandidateKeysSummary
     attr_accessor :found
     attr_accessor :generic
@@ -1105,6 +1140,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class CompatibilityVersion
     attr_accessor :config_version
 
@@ -1121,6 +1157,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Config
     # A user-provided description of the configuration.
     attr_accessor :config_comments
@@ -1148,6 +1185,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class DataSource
     # The unique text identifier of the datasource. It should be UPPER_CASE
     # ASCII without spaces. It will be used as a JSON key.
@@ -1171,6 +1209,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class DisclosedRelationsForMatchInfo
     attr_accessor :domain
 
@@ -1212,6 +1251,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class DisclosedRelationsForMatchInfoForWhy
     attr_accessor :domain
     attr_accessor :feat_id
@@ -1263,6 +1303,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class DisclosedRelationsForWhyKeyDetails
     attr_accessor :domain
 
@@ -1289,6 +1330,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Entity
     # A list of ...
     attr_accessor :related_entities
@@ -1309,6 +1351,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class EntityForResolvedEntity
     # A list of ...
     attr_accessor :related_entities
@@ -1329,6 +1372,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class EntityForWhySearch
     # A list of ...
     attr_accessor :related_entities
@@ -1349,6 +1393,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class EntityNetworkLink
     # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
@@ -1395,6 +1440,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class EntityPath
     attr_accessor :end_entity_id
 
@@ -1419,6 +1465,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class EntityPathLink
     # Identifier of the entity resolution principle that was triggered.
     attr_accessor :errule_code
@@ -1465,6 +1512,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class EntityRoles
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
@@ -1485,6 +1533,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Feature
     # Internal use.
     attr_accessor :felem_code
@@ -1507,6 +1556,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureDescriptionValue
     # A map from ... to ...
     attr_accessor :attributes
@@ -1557,6 +1607,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureDescriptionValueDetails
     attr_accessor :candidate_cap_reached
     attr_accessor :entity_count
@@ -1598,6 +1649,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureForAttributes
     attr_accessor :attributes
     attr_accessor :candidate_cap_reached
@@ -1650,6 +1702,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureForGetEntity
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
@@ -1688,6 +1741,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureID
     # Internal use.
     attr_accessor :lib_feat_id
@@ -1711,6 +1765,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureScoreForAttribute
     attr_accessor :additional_scores
     attr_accessor :candidate_feat_desc
@@ -1754,26 +1809,44 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureScoreInfo
-    # Itemized scores from comparison function.
     attr_accessor :additional_scores
+
+    # The contents of the candidate feature.
     attr_accessor :candidate_feat_desc
+
+    # The identifier of the candidate feature.
     attr_accessor :candidate_feat_id
+
+    # The usage type of the candidate feature.
     attr_accessor :candidate_feat_usage_type
 
-    # Internal use.
+    # The unique text identifier of the feature type.
     attr_accessor :ftype_code
+
+    # The contents of the inbound feature.
     attr_accessor :inbound_feat_desc
+
+    # The identifier of the inbound feature.
     attr_accessor :inbound_feat_id
+
+    # The usage type of the inbound feature.
     attr_accessor :inbound_feat_usage_type
 
     # Numeric score from the comparison function.
     attr_accessor :score
+
+    # The behavior used to score the feature.
     attr_accessor :score_behavior
 
     # Category of score strength.
     attr_accessor :score_bucket
+
+    # Resolution data used in producing the score.
     attr_accessor :source
+
+    # Artifact label used in match comparison.
     attr_accessor :token
 
     def self.from_json_data(data)
@@ -1828,6 +1901,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FeatureType
     attr_accessor :found
 
@@ -1855,6 +1929,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FinalState
     attr_accessor :need_reevaluation
 
@@ -1892,6 +1967,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class FocusRecord
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
@@ -1931,6 +2007,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class G2config
     # A list of ...
     attr_accessor :cfg_attr
@@ -2111,6 +2188,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class HowResults
     attr_accessor :final_state
 
@@ -2132,6 +2210,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class InterestingEntities
     # A list of entity information.
     attr_accessor :entities
@@ -2188,6 +2267,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class MatchInfo
     attr_accessor :candidate_keys
 
@@ -2237,6 +2317,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class MatchInfoForAttribute
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
@@ -2257,6 +2338,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class MatchInfoForWhy
     # A map from ... to ...
     attr_accessor :candidate_keys
@@ -2294,6 +2376,7 @@ module SenzingTypedef
     end
   end
 
+  # Contains supporting information for the match key.
   class MatchKeyDetails
     # A list of feature data in the match key supporting the match.
     attr_accessor :confirmations
@@ -2337,6 +2420,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class MemberRecord
     # Internal identifier for the record.
     attr_accessor :internal_id
@@ -2359,6 +2443,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Notice
     attr_accessor :code
     attr_accessor :description
@@ -2378,6 +2463,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Object
     attr_accessor :value
 
@@ -2392,6 +2478,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Record
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
@@ -2512,6 +2599,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RecordForGetEntity
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
@@ -2632,6 +2720,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RecordKey
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
@@ -2654,6 +2743,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RecordKeys
     # A list of (data source code, record id) pairs.
     attr_accessor :records
@@ -2671,6 +2761,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RecordSummary
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
@@ -2699,6 +2790,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RelAnchor
     attr_accessor :domain
 
@@ -2740,6 +2832,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RelLink
     attr_accessor :domain
 
@@ -2787,6 +2880,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RelPointer
     attr_accessor :domain
 
@@ -2823,6 +2917,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RelatedEntity
     # The ENTITY_ID is the identifier for the entity.
     attr_accessor :entity_id
@@ -2841,8 +2936,6 @@ module SenzingTypedef
 
     # Representation of matched source data.
     attr_accessor :match_key
-
-    # Contains supporting information for the match key.
     attr_accessor :match_key_details
 
     # The type of relationship.
@@ -2891,6 +2984,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class RelatedRoles
     # Describes the attributes that make up the feature.
     attr_accessor :feat_desc
@@ -2911,6 +3005,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Repository
     # Label for database repository.
     attr_accessor :id
@@ -2938,6 +3033,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class ResolutionStep
     attr_accessor :inbound_virtual_entity_id
     attr_accessor :match_info
@@ -2969,6 +3065,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class ResolvedEntity
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
@@ -3049,6 +3146,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class ResolvedEntityAndMatchInfo
     attr_accessor :entity
     attr_accessor :features_mjd
@@ -3071,6 +3169,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class ResolvedEntityForGetEntity
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
@@ -3151,6 +3250,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SysOom
     attr_accessor :ftype_id
     attr_accessor :next_thresh
@@ -3194,6 +3294,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SampleRecord
     # Short, stable identifier naming the source system.
     attr_accessor :data_source
@@ -3221,6 +3322,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SchemaVersion
     attr_accessor :engine_schema_version
     attr_accessor :maximum_required_schema_version
@@ -3243,6 +3345,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SearchEntity
     # A map from ... to ...
     attr_accessor :features
@@ -3263,6 +3366,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SearchEntitySummary
     attr_accessor :features_added
     attr_accessor :features_ignored
@@ -3288,6 +3392,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SearchRequest
     # A map from ... to ...
     attr_accessor :features
@@ -3311,6 +3416,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SearchStatistic
     attr_accessor :candidate_keys
 
@@ -3327,6 +3433,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class SenzingEntitySpecification
     # Domain/system for the account number. An attribute in the Senzing Entity
     # Specification. See https://www.senzing.com/docs/entity_specification
@@ -4098,7 +4205,6 @@ module SenzingTypedef
     end
   end
 
-  # Internal use.
   class SzEngineFindInterestingEntitiesByEntityIDResponse
     # Internal use.
     attr_accessor :interesting_entities
@@ -4116,7 +4222,6 @@ module SenzingTypedef
     end
   end
 
-  # Internal use.
   class SzEngineFindInterestingEntitiesByRecordIDResponse
     # Internal use.
     attr_accessor :interesting_entities
@@ -5016,6 +5121,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class UmfProc
     attr_accessor :name
 
@@ -5037,6 +5143,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class UmfProcParamDetails
     attr_accessor :name
     attr_accessor :value
@@ -5056,6 +5163,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class UmfProcParams
     attr_accessor :param
 
@@ -5072,6 +5180,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class VirtualEntitySynopsis
     # A list of ...
     attr_accessor :member_records
@@ -5092,6 +5201,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WhyKeyDetails
     # A list of ...
     attr_accessor :confirmations
@@ -5119,6 +5229,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WhyResult
     # The ENTITY_ID is the Senzing-generated identifier for the discovered
     # entity. It may change when new information is added.
@@ -5163,6 +5274,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class Workload
     attr_accessor :api_version
     attr_accessor :caches
@@ -5232,6 +5344,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadCaches
     attr_accessor :lib_feat_cache_hit
     attr_accessor :lib_feat_cache_miss
@@ -5269,6 +5382,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadCandidates
     # A map from ... to ...
     attr_accessor :candidate_builders
@@ -5291,6 +5405,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadContention
     attr_accessor :feature
     attr_accessor :res_ent
@@ -5313,6 +5428,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadCurrResources
     attr_accessor :active_threads
     attr_accessor :available_memory
@@ -5338,6 +5454,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadExpressedFeatures
     # A list of ...
     attr_accessor :calls
@@ -5360,6 +5477,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadExpressedFeaturesCall
     attr_accessor :efcall_id
     attr_accessor :efunc_code
@@ -5382,6 +5500,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadInitResources
     attr_accessor :xxx_physical_cores
     attr_accessor :available_memory
@@ -5407,6 +5526,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadLicense
     attr_accessor :dsr_limit
     attr_accessor :status
@@ -5429,6 +5549,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadLockWaits
     attr_accessor :refresh_locks
 
@@ -5445,6 +5566,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadProcessing
     attr_accessor :added_records
     attr_accessor :ambiguous
@@ -5479,6 +5601,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadProcessingAmbiguous
     attr_accessor :actual_test
     attr_accessor :cached_test
@@ -5498,6 +5621,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadProcessingDetails
     attr_accessor :added_records
     attr_accessor :candidates
@@ -5547,6 +5671,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadRefreshLocks
     attr_accessor :count
     attr_accessor :max_ms
@@ -5569,6 +5694,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadRepairDiagnosis
     attr_accessor :types
 
@@ -5585,6 +5711,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadReresolve
     # A map from ... to ...
     attr_accessor :new_feature_ftypes
@@ -5611,6 +5738,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadReresolveTriggers
     attr_accessor :abort_retry
     attr_accessor :multiple_resolvable_candidates
@@ -5639,6 +5767,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadScoring
     # A map from ... to ...
     attr_accessor :cache_hit
@@ -5672,6 +5801,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadSystemLoad
     attr_accessor :cpu_idle
     attr_accessor :cpu_system
@@ -5697,6 +5827,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadSystemResources
     attr_accessor :curr_resources
     attr_accessor :init_resources
@@ -5719,6 +5850,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadThreadState
     attr_accessor :active
     attr_accessor :data_latch_contention
@@ -5762,6 +5894,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadUnresolve
     attr_accessor :aborted_unresolve
     attr_accessor :triggers
@@ -5784,6 +5917,7 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: ...
   class WorkloadUnresolveTriggers
     attr_accessor :ambiguous_multi_resolve
     attr_accessor :ambiguous_no_resolve

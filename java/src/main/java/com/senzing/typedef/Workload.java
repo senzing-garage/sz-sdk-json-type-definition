@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 
+/**
+ * FIXME: ...
+ */
 @JsonSerialize
 public class Workload {
     @JsonProperty("apiVersion")
