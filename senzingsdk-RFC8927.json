@@ -40,18 +40,6 @@
                         "description": "Surname comparison score."
                     },
                     "type": "int32"
-                },
-                "XXX_MATCH_SCORE": {
-                    "metadata": {
-                        "description": "Alternate comparision score of addresses."
-                    },
-                    "type": "int32"
-                },
-                "XXX_ZIP_SCORE": {
-                    "metadata": {
-                        "description": "Postal ZIP code comparison score."
-                    },
-                    "type": "int32"
                 }
             }
         },
