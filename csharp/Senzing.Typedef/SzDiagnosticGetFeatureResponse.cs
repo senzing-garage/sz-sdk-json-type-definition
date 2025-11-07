@@ -15,7 +15,7 @@ namespace Senzing.Typedef
         public IList<Feature> Elements { get; set; }
 
         /// <summary>
-        /// Internal use.
+        /// The unique text identifier of the feature type.
         /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }

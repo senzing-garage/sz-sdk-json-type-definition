@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * FIXME: ...
+ * FIXME: CFG_ATTR
  */
 @JsonSerialize
 public class CfgAttr {
@@ -126,7 +126,7 @@ public class CfgAttr {
 
     /**
      * Getter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -134,7 +134,7 @@ public class CfgAttr {
 
     /**
      * Setter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;

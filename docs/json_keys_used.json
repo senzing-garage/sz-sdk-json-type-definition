@@ -650,33 +650,15 @@
         "CFG_FBOVR.FTYPE_STAB",
         "CFG_FTYPE.FTYPE_STAB"
     ],
-    "FULL_SCORE": [
-        "AdditionalScores.FULL_SCORE"
-    ],
     "G2_CONFIG": [
         "SzConfigExportResponse.G2_CONFIG"
     ],
     "GENDER": [
         "SenzingEntitySpecification.GENDER"
     ],
-    "GENERATION_MATCH": [
-        "AdditionalScores.GENERATION_MATCH"
-    ],
     "GENERIC": [
         "CandidateKeysSummary.GENERIC",
         "FeatureType.GENERIC"
-    ],
-    "GNR_FN": [
-        "AdditionalScores.GNR_FN"
-    ],
-    "GNR_GN": [
-        "AdditionalScores.GNR_GN"
-    ],
-    "GNR_ON": [
-        "AdditionalScores.GNR_ON"
-    ],
-    "GNR_SN": [
-        "AdditionalScores.GNR_SN"
     ],
     "GPLAN_CODE": [
         "CFG_GPLAN.GPLAN_CODE"

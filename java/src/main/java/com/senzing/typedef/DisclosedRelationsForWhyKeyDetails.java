@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: DisclosedRelationsForWhyKeyDetails
  */
 @JsonSerialize
 public class DisclosedRelationsForWhyKeyDetails {
@@ -25,6 +25,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Getter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public String getDomain() {
         return domain;
@@ -32,6 +33,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Setter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -39,7 +41,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Getter for entityRoles.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<EntityRoles> getEntityRoles() {
         return entityRoles;
@@ -47,7 +49,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Setter for entityRoles.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setEntityRoles(List<EntityRoles> entityRoles) {
         this.entityRoles = entityRoles;
@@ -55,7 +57,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Getter for relatedRoles.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelatedRoles> getRelatedRoles() {
         return relatedRoles;
@@ -63,7 +65,7 @@ public class DisclosedRelationsForWhyKeyDetails {
 
     /**
      * Setter for relatedRoles.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setRelatedRoles(List<RelatedRoles> relatedRoles) {
         this.relatedRoles = relatedRoles;

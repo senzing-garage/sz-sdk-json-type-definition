@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: FeatureForGetEntity
  */
 @JsonSerialize
 public class FeatureForGetEntity {
@@ -97,7 +97,7 @@ public class FeatureForGetEntity {
 
     /**
      * Getter for xxxAttributes.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<SenzingEntitySpecification> getXxxAttributes() {
         return xxxAttributes;
@@ -105,7 +105,7 @@ public class FeatureForGetEntity {
 
     /**
      * Setter for xxxAttributes.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxAttributes(List<SenzingEntitySpecification> xxxAttributes) {
         this.xxxAttributes = xxxAttributes;

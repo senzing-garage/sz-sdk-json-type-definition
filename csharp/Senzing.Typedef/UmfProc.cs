@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: UmfProc
     /// </summary>
     public class UmfProc
     {
@@ -15,7 +15,7 @@ namespace Senzing.Typedef
         public string Name { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("PARAMS")]
         public IList<UmfProcParams> Params { get; set; }

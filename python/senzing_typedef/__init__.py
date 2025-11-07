@@ -18,43 +18,9 @@ class Senzingsdk:
         return _to_json_data(self.value)
 
 @dataclass
-class AdditionalScores:
-    """
-    Itemized scores from comparison function.
-    """
-
-    full_score: 'int'
-    generation_match: 'int'
-    gnr_fn: 'int'
-    gnr_gn: 'int'
-    gnr_on: 'int'
-    gnr_sn: 'int'
-
-    @classmethod
-    def from_json_data(cls, data: Any) -> 'AdditionalScores':
-        return cls(
-            _from_json_data(int, data.get("FULL_SCORE")),
-            _from_json_data(int, data.get("GENERATION_MATCH")),
-            _from_json_data(int, data.get("GNR_FN")),
-            _from_json_data(int, data.get("GNR_GN")),
-            _from_json_data(int, data.get("GNR_ON")),
-            _from_json_data(int, data.get("GNR_SN")),
-        )
-
-    def to_json_data(self) -> Any:
-        data: Dict[str, Any] = {}
-        data["FULL_SCORE"] = _to_json_data(self.full_score)
-        data["GENERATION_MATCH"] = _to_json_data(self.generation_match)
-        data["GNR_FN"] = _to_json_data(self.gnr_fn)
-        data["GNR_GN"] = _to_json_data(self.gnr_gn)
-        data["GNR_ON"] = _to_json_data(self.gnr_on)
-        data["GNR_SN"] = _to_json_data(self.gnr_sn)
-        return data
-
-@dataclass
 class AffectedEntity:
     """
-    FIXME: ...
+    FIXME: AffectedEntity
     """
 
     entity_id: 'int'
@@ -78,7 +44,7 @@ class AffectedEntity:
 @dataclass
 class CfgAttr:
     """
-    FIXME: ...
+    FIXME: CFG_ATTR
     """
 
     attr_class: 'str'
@@ -89,7 +55,7 @@ class CfgAttr:
     felem_req: 'str'
     ftype_code: 'str'
     """
-    Internal use.
+    The unique text identifier of the feature type.
     """
 
     internal: 'str'
@@ -125,7 +91,7 @@ class CfgAttr:
 @dataclass
 class CfgCfbom:
     """
-    FIXME: ...
+    FIXME: CFG_CFBOM
     """
 
     cfcall_id: 'int'
@@ -153,7 +119,7 @@ class CfgCfbom:
 @dataclass
 class CfgCfcall:
     """
-    FIXME: ...
+    FIXME: CFG_CFCALL
     """
 
     cfcall_id: 'int'
@@ -181,7 +147,7 @@ class CfgCfcall:
 @dataclass
 class CfgCfrtn:
     """
-    FIXME: ...
+    FIXME: CFG_CFRTN
     """
 
     cfrtn_id: 'int'
@@ -227,7 +193,7 @@ class CfgCfrtn:
 @dataclass
 class CfgCfunc:
     """
-    FIXME: ...
+    FIXME: CFG_CFUNC
     """
 
     anon_support: 'str'
@@ -270,7 +236,7 @@ class CfgCfunc:
 @dataclass
 class CfgDfbom:
     """
-    FIXME: ...
+    FIXME: CFG_DFBOM
     """
 
     dfcall_id: 'int'
@@ -298,7 +264,7 @@ class CfgDfbom:
 @dataclass
 class CfgDfcall:
     """
-    FIXME: ...
+    FIXME: CFG_DFCALL
     """
 
     dfcall_id: 'int'
@@ -326,7 +292,7 @@ class CfgDfcall:
 @dataclass
 class CfgDfunc:
     """
-    FIXME: ...
+    FIXME: CFG_DFUNC
     """
 
     anon_support: 'str'
@@ -369,7 +335,7 @@ class CfgDfunc:
 @dataclass
 class CfgDsrc:
     """
-    FIXME: ...
+    FIXME: CFG_DSRC
     """
 
     dsrc_code: 'str'
@@ -403,7 +369,7 @@ class CfgDsrc:
 @dataclass
 class CfgDsrcInterest:
     """
-    FIXME: ...
+    FIXME: CFG_DSRC_INTEREST
     """
 
     xxx_dsrc_id: 'int'
@@ -428,7 +394,7 @@ class CfgDsrcInterest:
 @dataclass
 class CfgEbom:
     """
-    FIXME: ...
+    FIXME: CFG_EBOM
     """
 
     xxx_etype_id: 'int'
@@ -456,7 +422,7 @@ class CfgEbom:
 @dataclass
 class CfgEclass:
     """
-    FIXME: ...
+    FIXME: CFG_ECLASS
     """
 
     xxx_eclass_code: 'str'
@@ -484,7 +450,7 @@ class CfgEclass:
 @dataclass
 class CfgEfbom:
     """
-    FIXME: ...
+    FIXME: CFG_EFBOM
     """
 
     efcall_id: 'int'
@@ -515,7 +481,7 @@ class CfgEfbom:
 @dataclass
 class CfgEfcall:
     """
-    FIXME: ...
+    FIXME: CFG_EFCALL
     """
 
     efcall_id: 'int'
@@ -552,7 +518,7 @@ class CfgEfcall:
 @dataclass
 class CfgEfunc:
     """
-    FIXME: ...
+    FIXME: CFG_EFUNC
     """
 
     connect_str: 'str'
@@ -592,7 +558,7 @@ class CfgEfunc:
 @dataclass
 class CfgErfrag:
     """
-    FIXME: ...
+    FIXME: CFG_ERFRAG
     """
 
     erfrag_code: 'str'
@@ -623,7 +589,7 @@ class CfgErfrag:
 @dataclass
 class CfgErrule:
     """
-    FIXME: ...
+    FIXME: CFG_ERRULE
     """
 
     disq_erfrag_code: 'str'
@@ -673,7 +639,7 @@ class CfgErrule:
 @dataclass
 class CfgEtype:
     """
-    FIXME: ...
+    FIXME: CFG_ETYPE
     """
 
     xxx_eclass_id: 'int'
@@ -701,7 +667,7 @@ class CfgEtype:
 @dataclass
 class CfgFbom:
     """
-    FIXME: ...
+    FIXME: CFG_FBOM
     """
 
     derived: 'str'
@@ -735,7 +701,7 @@ class CfgFbom:
 @dataclass
 class CfgFbovr:
     """
-    FIXME: ...
+    FIXME: CFG_FBOVR
     """
 
     ftype_excl: 'str'
@@ -769,7 +735,7 @@ class CfgFbovr:
 @dataclass
 class CfgFclass:
     """
-    FIXME: ...
+    FIXME: CFG_FCLASS
     """
 
     fclass_code: 'str'
@@ -794,7 +760,7 @@ class CfgFclass:
 @dataclass
 class CfgFelem:
     """
-    FIXME: ...
+    FIXME: CFG_FELEM
     """
 
     data_type: 'str'
@@ -825,7 +791,7 @@ class CfgFelem:
 @dataclass
 class CfgFtype:
     """
-    FIXME: ...
+    FIXME: CFG_FTYPE
     """
 
     anonymize: 'str'
@@ -833,7 +799,7 @@ class CfgFtype:
     fclass_id: 'int'
     ftype_code: 'str'
     """
-    Internal use.
+    The unique text identifier of the feature type.
     """
 
     ftype_desc: 'str'
@@ -890,7 +856,7 @@ class CfgFtype:
 @dataclass
 class CfgGenericThreshold:
     """
-    FIXME: ...
+    FIXME: CFG_GENERIC_THRESHOLD
     """
 
     behavior: 'str'
@@ -924,7 +890,7 @@ class CfgGenericThreshold:
 @dataclass
 class CfgGplan:
     """
-    FIXME: ...
+    FIXME: CFG_GPLAN
     """
 
     gplan_code: 'str'
@@ -949,7 +915,7 @@ class CfgGplan:
 @dataclass
 class CfgLens:
     """
-    FIXME: ...
+    FIXME: CFG_LENS
     """
 
     xxx_lens_code: 'str'
@@ -974,7 +940,7 @@ class CfgLens:
 @dataclass
 class CfgLensrl:
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     value: 'List[Fixme]'
@@ -989,7 +955,7 @@ class CfgLensrl:
 @dataclass
 class CfgRclass:
     """
-    FIXME: ...
+    FIXME: CFG_RCLASS
     """
 
     is_disclosed: 'str'
@@ -1021,7 +987,7 @@ class CfgRclass:
 @dataclass
 class CfgRtype:
     """
-    FIXME: ...
+    FIXME: CFG_RTYPE
     """
 
     break_res: 'str'
@@ -1055,7 +1021,7 @@ class CfgRtype:
 @dataclass
 class CfgSfcall:
     """
-    FIXME: ...
+    FIXME: CFG_SFCALL
     """
 
     exec_order: 'int'
@@ -1086,7 +1052,7 @@ class CfgSfcall:
 @dataclass
 class CfgSfunc:
     """
-    FIXME: ...
+    FIXME: CFG_SFUNC
     """
 
     connect_str: 'str'
@@ -1126,7 +1092,7 @@ class CfgSfunc:
 @dataclass
 class ConfigBaseVersion:
     """
-    FIXME: ...
+    FIXME: CONFIG_BASE_VERSION
     """
 
     build_date: 'str'
@@ -1160,7 +1126,7 @@ class ConfigBaseVersion:
 @dataclass
 class CandidateKeysForMatchInfo:
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     value: 'Dict[str, List[MatchInfoForAttribute]]'
@@ -1175,12 +1141,12 @@ class CandidateKeysForMatchInfo:
 @dataclass
 class CandidateKeysForSearchStatistic:
     """
-    FIXME: ...
+    FIXME: CandidateKeysForSearchStatistic
     """
 
     feature_types: 'List[FeatureType]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     summary: 'CandidateKeysSummary'
@@ -1201,7 +1167,7 @@ class CandidateKeysForSearchStatistic:
 @dataclass
 class CandidateKeysSummary:
     """
-    FIXME: ...
+    FIXME: CandidateKeysSummary
     """
 
     found: 'int'
@@ -1226,7 +1192,7 @@ class CandidateKeysSummary:
 @dataclass
 class CompatibilityVersion:
     """
-    FIXME: ...
+    FIXME: CompatibilityVersion
     """
 
     config_version: 'str'
@@ -1245,7 +1211,7 @@ class CompatibilityVersion:
 @dataclass
 class Config:
     """
-    FIXME: ...
+    FIXME: Config
     """
 
     config_comments: 'str'
@@ -1282,7 +1248,7 @@ class Config:
 @dataclass
 class DataSource:
     """
-    FIXME: ...
+    FIXME: DataSource
     """
 
     dsrc_code: 'str'
@@ -1313,33 +1279,37 @@ class DataSource:
 @dataclass
 class DisclosedRelationsForMatchInfo:
     """
-    FIXME: ...
+    FIXME: DisclosedRelationsForMatchInfo
     """
 
     domain: 'str'
+    """
+    The domain of the disclosed relationship.
+    """
+
     entity_roles: 'List[EntityRoles]'
     """
-    A list of ...
+    A list of roles in the disclosed relationships of the entity.
     """
 
     related_roles: 'List[RelatedRoles]'
     """
-    A list of ...
+    A list of roles in the disclosed relationships of the related entity.
     """
 
     rel_link: 'List[RelLink]'
     """
-    A list of ...
+    A list of bidirectional disclosed relationship links.
     """
 
     xxx_rel_anchor: 'List[RelAnchor]'
     """
-    A list of ...
+    A list of relationship anchors of the entity.
     """
 
     xxx_rel_pointer: 'List[RelPointer]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -1367,27 +1337,47 @@ class DisclosedRelationsForMatchInfo:
 @dataclass
 class DisclosedRelationsForMatchInfoForWhy:
     """
-    FIXME: ...
+    FIXME: DisclosedRelationsForMatchInfoForWhy
     """
 
     domain: 'str'
+    """
+    FIXME: The domain of the ...
+    """
+
     feat_id: 'int'
+    """
+    The identifier of the main feature.
+    """
+
     feat_usage_type: 'str'
+    """
+    The usage type of the main feature.
+    """
+
     linked_feat_id: 'int'
+    """
+    The identifier of the linked feature.
+    """
+
     linked_feat_type: 'str'
+    """
+    The unique text identifier of the linked feature type.
+    """
+
     rel_anchor: 'List[RelAnchor]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     rel_link: 'List[RelLink]'
     """
-    A list of ...
+    A list of bidirectional disclosed relationship links.
     """
 
     rel_pointer: 'List[RelPointer]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_feat_desc: 'str'
@@ -1429,18 +1419,22 @@ class DisclosedRelationsForMatchInfoForWhy:
 @dataclass
 class DisclosedRelationsForWhyKeyDetails:
     """
-    FIXME: ...
+    FIXME: DisclosedRelationsForWhyKeyDetails
     """
 
     domain: 'str'
+    """
+    FIXME: The domain of the ...
+    """
+
     entity_roles: 'List[EntityRoles]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     related_roles: 'List[RelatedRoles]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -1462,12 +1456,12 @@ class DisclosedRelationsForWhyKeyDetails:
 @dataclass
 class Entity:
     """
-    FIXME: ...
+    FIXME: Entity
     """
 
     related_entities: 'List[RelatedEntity]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     resolved_entity: 'ResolvedEntity'
@@ -1488,12 +1482,12 @@ class Entity:
 @dataclass
 class EntityForResolvedEntity:
     """
-    FIXME: ...
+    FIXME: EntityForResolvedEntity
     """
 
     related_entities: 'List[RelatedEntity]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     resolved_entity: 'ResolvedEntity'
@@ -1514,12 +1508,12 @@ class EntityForResolvedEntity:
 @dataclass
 class EntityForWhySearch:
     """
-    FIXME: ...
+    FIXME: EntityForWhySearch
     """
 
     related_entities: 'List[RelatedEntity]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     resolved_entity: 'ResolvedEntity'
@@ -1540,7 +1534,7 @@ class EntityForWhySearch:
 @dataclass
 class EntityNetworkLink:
     """
-    FIXME: ...
+    FIXME: EntityNetworkLink
     """
 
     errule_code: 'str'
@@ -1600,7 +1594,7 @@ class EntityNetworkLink:
 @dataclass
 class EntityPath:
     """
-    FIXME: ...
+    FIXME: EntityPath
     """
 
     end_entity_id: 'int'
@@ -1629,7 +1623,7 @@ class EntityPath:
 @dataclass
 class EntityPathLink:
     """
-    FIXME: ...
+    FIXME: EntityPathLink
     """
 
     errule_code: 'str'
@@ -1689,7 +1683,7 @@ class EntityPathLink:
 @dataclass
 class EntityRoles:
     """
-    FIXME: ...
+    FIXME: EntityRoles
     """
 
     feat_desc: 'str'
@@ -1698,6 +1692,10 @@ class EntityRoles:
     """
 
     role: 'str'
+    """
+    User-defined description of the role.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'EntityRoles':
@@ -1715,7 +1713,7 @@ class EntityRoles:
 @dataclass
 class Feature:
     """
-    FIXME: ...
+    FIXME: Feature
     """
 
     felem_code: 'str'
@@ -1745,12 +1743,12 @@ class Feature:
 @dataclass
 class FeatureDescriptionValue:
     """
-    FIXME: ...
+    FIXME: FeatureDescriptionValue
     """
 
     attributes: 'Dict[str, str]'
     """
-    A map from ... to ...
+    A map from attribute names to attribute values for the feature.
     """
 
     candidate_cap_reached: 'str'
@@ -1762,7 +1760,7 @@ class FeatureDescriptionValue:
 
     feat_desc_values: 'List[FeatureDescriptionValueDetails]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     lib_feat_id: 'int'
@@ -1807,7 +1805,7 @@ class FeatureDescriptionValue:
 @dataclass
 class FeatureDescriptionValueDetails:
     """
-    FIXME: ...
+    FIXME: FeatureDescriptionValueDetails
     """
 
     candidate_cap_reached: 'str'
@@ -1855,10 +1853,14 @@ class FeatureDescriptionValueDetails:
 @dataclass
 class FeatureForAttributes:
     """
-    FIXME: ...
+    FIXME: FeatureForAttributes
     """
 
-    attributes: 'SenzingEntitySpecification'
+    attributes: 'Dict[str, str]'
+    """
+    A map from attribute names to attribute values for the feature.
+    """
+
     candidate_cap_reached: 'str'
     entity_count: 'int'
     feat_desc: 'str'
@@ -1889,7 +1891,7 @@ class FeatureForAttributes:
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureForAttributes':
         return cls(
-            _from_json_data(SenzingEntitySpecification, data.get("ATTRIBUTES")),
+            _from_json_data(Dict[str, str], data.get("ATTRIBUTES")),
             _from_json_data(str, data.get("CANDIDATE_CAP_REACHED")),
             _from_json_data(int, data.get("ENTITY_COUNT")),
             _from_json_data(str, data.get("FEAT_DESC")),
@@ -1918,7 +1920,7 @@ class FeatureForAttributes:
 @dataclass
 class FeatureForGetEntity:
     """
-    FIXME: ...
+    FIXME: FeatureForGetEntity
     """
 
     feat_desc: 'str'
@@ -1944,7 +1946,7 @@ class FeatureForGetEntity:
 
     xxx_attributes: 'List[SenzingEntitySpecification]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -1970,7 +1972,7 @@ class FeatureForGetEntity:
 @dataclass
 class FeatureID:
     """
-    FIXME: ...
+    FIXME: FeatureID
     """
 
     lib_feat_id: 'int'
@@ -2001,10 +2003,14 @@ class FeatureID:
 @dataclass
 class FeatureScoreForAttribute:
     """
-    FIXME: ...
+    FIXME: FeatureScoreForAttribute
     """
 
-    additional_scores: 'AdditionalScores'
+    additional_scores: 'Dict[str, int]'
+    """
+    A map from score types to score values
+    """
+
     candidate_feat_desc: 'str'
     candidate_feat_id: 'int'
     candidate_feat_usage_type: 'str'
@@ -2018,7 +2024,7 @@ class FeatureScoreForAttribute:
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScoreForAttribute':
         return cls(
-            _from_json_data(AdditionalScores, data.get("ADDITIONAL_SCORES")),
+            _from_json_data(Dict[str, int], data.get("ADDITIONAL_SCORES")),
             _from_json_data(str, data.get("CANDIDATE_FEAT_DESC")),
             _from_json_data(int, data.get("CANDIDATE_FEAT_ID")),
             _from_json_data(str, data.get("CANDIDATE_FEAT_USAGE_TYPE")),
@@ -2047,10 +2053,14 @@ class FeatureScoreForAttribute:
 @dataclass
 class FeatureScoreInfo:
     """
-    FIXME: ...
+    FIXME: FeatureScoreInfo
     """
 
-    additional_scores: 'AdditionalScores'
+    additional_scores: 'Dict[str, int]'
+    """
+    A map from score types to score values.
+    """
+
     candidate_feat_desc: 'str'
     """
     The contents of the candidate feature.
@@ -2115,7 +2125,7 @@ class FeatureScoreInfo:
     @classmethod
     def from_json_data(cls, data: Any) -> 'FeatureScoreInfo':
         return cls(
-            _from_json_data(AdditionalScores, data.get("ADDITIONAL_SCORES")),
+            _from_json_data(Dict[str, int], data.get("ADDITIONAL_SCORES")),
             _from_json_data(str, data.get("CANDIDATE_FEAT_DESC")),
             _from_json_data(int, data.get("CANDIDATE_FEAT_ID")),
             _from_json_data(str, data.get("CANDIDATE_FEAT_USAGE_TYPE")),
@@ -2150,7 +2160,7 @@ class FeatureScoreInfo:
 @dataclass
 class FeatureScores:
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     value: 'Dict[str, List[FeatureScoreForAttribute]]'
@@ -2165,13 +2175,13 @@ class FeatureScores:
 @dataclass
 class FeatureType:
     """
-    FIXME: ...
+    FIXME: FeatureType
     """
 
     found: 'int'
     ftype_code: 'str'
     """
-    Internal use.
+    The unique text identifier of the feature type.
     """
 
     generic: 'int'
@@ -2197,13 +2207,13 @@ class FeatureType:
 @dataclass
 class FinalState:
     """
-    FIXME: ...
+    FIXME: FinalState
     """
 
     need_reevaluation: 'int'
     virtual_entities: 'List[VirtualEntitySynopsis]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -2238,7 +2248,7 @@ class Fixme:
 @dataclass
 class FocusRecord:
     """
-    FIXME: ...
+    FIXME: FocusRecord
     """
 
     data_source: 'str'
@@ -2268,7 +2278,7 @@ class FocusRecord:
 @dataclass
 class G2configSettings:
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     metaphone_version: 'int'
@@ -2287,173 +2297,173 @@ class G2configSettings:
 @dataclass
 class G2config:
     """
-    FIXME: ...
+    FIXME: G2Config
     """
 
     cfg_attr: 'List[CfgAttr]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_cfbom: 'List[CfgCfbom]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_cfcall: 'List[CfgCfcall]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_cfrtn: 'List[CfgCfrtn]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_cfunc: 'List[CfgCfunc]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_dfbom: 'List[CfgDfbom]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_dfcall: 'List[CfgDfcall]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_dfunc: 'List[CfgDfunc]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_dsrc: 'List[CfgDsrc]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_dsrc_interest: 'List[CfgDsrcInterest]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_ebom: 'List[CfgEbom]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_efbom: 'List[CfgEfbom]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_efcall: 'List[CfgEfcall]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_efunc: 'List[CfgEfunc]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_erfrag: 'List[CfgErfrag]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_errule: 'List[CfgErrule]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_fbom: 'List[CfgFbom]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_fbovr: 'List[CfgFbovr]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_fclass: 'List[CfgFclass]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_felem: 'List[CfgFelem]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_ftype: 'List[CfgFtype]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_generic_threshold: 'List[CfgGenericThreshold]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_gplan: 'List[CfgGplan]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_rclass: 'List[CfgRclass]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_rtype: 'List[CfgRtype]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_sfcall: 'List[CfgSfcall]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     cfg_sfunc: 'List[CfgSfunc]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     config_base_version: 'ConfigBaseVersion'
     settings: 'G2configSettings'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     sys_oom: 'List[SysOom]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_cfg_eclass: 'List[CfgEclass]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_cfg_etype: 'List[CfgEtype]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_cfg_lens: 'List[CfgLens]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_cfg_lensrl: 'List[CfgLensrl]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -2537,13 +2547,13 @@ class G2config:
 @dataclass
 class HowResults:
     """
-    FIXME: ...
+    FIXME: HowResults
     """
 
     final_state: 'FinalState'
     resolution_steps: 'List[ResolutionStep]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -2563,7 +2573,7 @@ class HowResults:
 @dataclass
 class InterestingEntities:
     """
-    FIXME: ...
+    FIXME: InterestingEntities
     """
 
     entities: 'List[InterestingEntity]'
@@ -2573,7 +2583,7 @@ class InterestingEntities:
 
     notices: 'List[Notice]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -2609,12 +2619,12 @@ class InterestingEntity:
 
     flags: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     sample_records: 'List[SampleRecord]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -2638,7 +2648,7 @@ class InterestingEntity:
 @dataclass
 class MatchInfo:
     """
-    FIXME: ...
+    FIXME: MatchInfo
     """
 
     candidate_keys: 'CandidateKeysForMatchInfo'
@@ -2696,7 +2706,7 @@ class MatchInfo:
 @dataclass
 class MatchInfoForAttribute:
     """
-    FIXME: ...
+    FIXME: MatchInfoForAttribute
     """
 
     feat_desc: 'str'
@@ -2705,6 +2715,10 @@ class MatchInfoForAttribute:
     """
 
     feat_id: 'int'
+    """
+    The identifier of the main feature.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchInfoForAttribute':
@@ -2722,12 +2736,12 @@ class MatchInfoForAttribute:
 @dataclass
 class MatchInfoForWhy:
     """
-    FIXME: ...
+    FIXME: MatchInfoForWhy
     """
 
     candidate_keys: 'Dict[str, List[MatchInfoForAttribute]]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     disclosed_relations: 'DisclosedRelationsForMatchInfoForWhy'
@@ -2826,7 +2840,7 @@ class MatchKeyDetails:
 @dataclass
 class MemberRecord:
     """
-    FIXME: ...
+    FIXME: MemberRecord
     """
 
     internal_id: 'int'
@@ -2856,7 +2870,7 @@ class MemberRecord:
 @dataclass
 class Notice:
     """
-    FIXME: ...
+    FIXME: Notice
     """
 
     code: 'str'
@@ -2878,7 +2892,7 @@ class Notice:
 @dataclass
 class Object:
     """
-    FIXME: ...
+    FIXME: Object
     """
 
     value: 'object'
@@ -2893,7 +2907,7 @@ class Object:
 @dataclass
 class Record:
     """
-    FIXME: ...
+    FIXME: Record
     """
 
     data_source: 'str'
@@ -2908,12 +2922,12 @@ class Record:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     feature_ids: 'List[FeatureID]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     first_seen_dt: 'datetime'
@@ -2924,7 +2938,7 @@ class Record:
 
     json_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    User source record.
     """
 
     last_seen_dt: 'datetime'
@@ -2945,22 +2959,22 @@ class Record:
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     xxx_address_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_attribute_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_entity_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_entity_desc: 'str'
@@ -2968,28 +2982,28 @@ class Record:
     xxx_entity_type: 'str'
     xxx_identifier_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_match_level: 'int'
     xxx_name_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_other_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_phone_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_relationship_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -3053,7 +3067,7 @@ class Record:
 @dataclass
 class RecordForGetEntity:
     """
-    FIXME: ...
+    FIXME: RecordForGetEntity
     """
 
     data_source: 'str'
@@ -3068,12 +3082,12 @@ class RecordForGetEntity:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     feature_ids: 'List[FeatureID]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     first_seen_dt: 'datetime'
@@ -3084,7 +3098,7 @@ class RecordForGetEntity:
 
     json_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    User source record.
     """
 
     last_seen_dt: 'datetime'
@@ -3105,22 +3119,22 @@ class RecordForGetEntity:
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     xxx_address_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_attribute_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_entity_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_entity_desc: 'str'
@@ -3128,28 +3142,28 @@ class RecordForGetEntity:
     xxx_entity_type: 'str'
     xxx_identifier_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_match_level: 'int'
     xxx_name_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_other_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_phone_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_relationship_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -3213,7 +3227,7 @@ class RecordForGetEntity:
 @dataclass
 class RecordKey:
     """
-    FIXME: ...
+    FIXME: RecordKey
     """
 
     data_source: 'str'
@@ -3243,7 +3257,7 @@ class RecordKey:
 @dataclass
 class RecordKeys:
     """
-    FIXME: ...
+    FIXME: RecordKeys
     """
 
     records: 'List[RecordKey]'
@@ -3266,7 +3280,7 @@ class RecordKeys:
 @dataclass
 class RecordSummary:
     """
-    FIXME: ...
+    FIXME: RecordSummary
     """
 
     data_source: 'str'
@@ -3302,23 +3316,47 @@ class RecordSummary:
 @dataclass
 class RelAnchor:
     """
-    FIXME: ...
+    FIXME: RelAnchor
     """
 
     domain: 'str'
+    """
+    FIXME: The domain of the ...
+    """
+
     feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
     feat_id: 'int'
+    """
+    The identifier of the main feature.
+    """
+
     linked_feat_desc: 'str'
+    """
+    The contents of the linked feature.
+    """
+
     linked_feat_id: 'int'
+    """
+    The identifier of the linked feature.
+    """
+
     linked_feat_type: 'str'
+    """
+    The unique text identifier of the linked feature type.
+    """
+
     linked_feat_usage_type: 'str'
+    """
+    The usage type of the linked feature.
+    """
+
     xxx_rel_pointer: 'List[RelPointer]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -3350,27 +3388,59 @@ class RelAnchor:
 @dataclass
 class RelLink:
     """
-    FIXME: ...
+    FIXME: RelLink
     """
 
     domain: 'str'
+    """
+    The domain of the disclosed relationship.
+    """
+
     feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
     feat_id: 'int'
+    """
+    The identifier of the main feature.
+    """
+
     feat_usage_type: 'str'
+    """
+    The usage type of the main feature.
+    """
+
     ftype_code: 'str'
     """
-    Internal use.
+    The unique text identifier of the feature type.
     """
 
     linked_feat_desc: 'str'
+    """
+    The contents of the linked feature.
+    """
+
     linked_feat_id: 'int'
+    """
+    The identifier of the linked feature.
+    """
+
     linked_feat_type: 'str'
+    """
+    The unique text identifier of the linked feature type.
+    """
+
     linked_feat_usage_type: 'str'
+    """
+    The usage type of the linked feature.
+    """
+
     rel_type: 'str'
+    """
+    The type of the relationship.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelLink':
@@ -3404,20 +3474,44 @@ class RelLink:
 @dataclass
 class RelPointer:
     """
-    FIXME: ...
+    FIXME: RelPointer
     """
 
     domain: 'str'
+    """
+    FIXME: The domain of the ...
+    """
+
     feat_desc: 'str'
     """
     Describes the attributes that make up the feature.
     """
 
     feat_id: 'int'
+    """
+    The identifier of the main feature.
+    """
+
     feat_usage_type: 'str'
+    """
+    The usage type of the main feature.
+    """
+
     linked_feat_desc: 'str'
+    """
+    The contents of the linked feature.
+    """
+
     linked_feat_id: 'int'
+    """
+    The identifier of the linked feature.
+    """
+
     linked_feat_type: 'str'
+    """
+    The unique text identifier of the linked feature type.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelPointer':
@@ -3445,7 +3539,7 @@ class RelPointer:
 @dataclass
 class RelatedEntity:
     """
-    FIXME: ...
+    FIXME: RelatedEntity
     """
 
     entity_id: 'int'
@@ -3534,7 +3628,7 @@ class RelatedEntity:
 @dataclass
 class RelatedRoles:
     """
-    FIXME: ...
+    FIXME: RelatedRoles
     """
 
     feat_desc: 'str'
@@ -3543,6 +3637,10 @@ class RelatedRoles:
     """
 
     role: 'str'
+    """
+    User-defined description of the role.
+    """
+
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RelatedRoles':
@@ -3560,7 +3658,7 @@ class RelatedRoles:
 @dataclass
 class Repository:
     """
-    FIXME: ...
+    FIXME: Repository
     """
 
     id: 'str'
@@ -3597,7 +3695,7 @@ class Repository:
 @dataclass
 class ResolutionStep:
     """
-    FIXME: ...
+    FIXME: ResolutionStep
     """
 
     inbound_virtual_entity_id: 'str'
@@ -3631,7 +3729,7 @@ class ResolutionStep:
 @dataclass
 class ResolvedEntity:
     """
-    FIXME: ...
+    FIXME: ResolvedEntity
     """
 
     entity_id: 'int'
@@ -3647,7 +3745,7 @@ class ResolvedEntity:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     records: 'List[Record]'
@@ -3663,7 +3761,7 @@ class ResolvedEntity:
 
     record_types: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_errule_code: 'str'
@@ -3673,7 +3771,7 @@ class ResolvedEntity:
 
     xxx_feature_ids: 'List[FeatureID]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_is_ambiguous: 'int'
@@ -3739,7 +3837,7 @@ class ResolvedEntity:
 @dataclass
 class ResolvedEntityAndMatchInfo:
     """
-    FIXME: ...
+    FIXME: ResolvedEntityAndMatchInfo
     """
 
     entity: 'EntityForResolvedEntity'
@@ -3764,7 +3862,7 @@ class ResolvedEntityAndMatchInfo:
 @dataclass
 class ResolvedEntityForGetEntity:
     """
-    FIXME: ...
+    FIXME: ResolvedEntityForGetEntity
     """
 
     entity_id: 'int'
@@ -3780,7 +3878,7 @@ class ResolvedEntityForGetEntity:
 
     features: 'Dict[str, List[FeatureForGetEntity]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     records: 'List[RecordForGetEntity]'
@@ -3796,7 +3894,7 @@ class ResolvedEntityForGetEntity:
 
     record_types: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_errule_code: 'str'
@@ -3806,7 +3904,7 @@ class ResolvedEntityForGetEntity:
 
     xxx_feature_ids: 'List[FeatureID]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_is_ambiguous: 'int'
@@ -3872,7 +3970,7 @@ class ResolvedEntityForGetEntity:
 @dataclass
 class SysOom:
     """
-    FIXME: ...
+    FIXME: SYS_OOM
     """
 
     ftype_id: 'int'
@@ -3918,7 +4016,7 @@ class SysOom:
 @dataclass
 class SampleRecord:
     """
-    FIXME: ...
+    FIXME: SampleRecord
     """
 
     data_source: 'str'
@@ -3928,7 +4026,7 @@ class SampleRecord:
 
     flags: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     record_id: 'str'
@@ -3955,7 +4053,7 @@ class SampleRecord:
 @dataclass
 class SchemaVersion:
     """
-    FIXME: ...
+    FIXME: SchemaVersion
     """
 
     engine_schema_version: 'str'
@@ -3980,12 +4078,12 @@ class SchemaVersion:
 @dataclass
 class SearchEntity:
     """
-    FIXME: ...
+    FIXME: SearchEntity
     """
 
     features: 'Dict[str, List[FeatureDescriptionValue]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     summary: 'SearchEntitySummary'
@@ -4006,7 +4104,7 @@ class SearchEntity:
 @dataclass
 class SearchEntitySummary:
     """
-    FIXME: ...
+    FIXME: SearchEntitySummary
     """
 
     features_added: 'int'
@@ -4034,15 +4132,19 @@ class SearchEntitySummary:
 @dataclass
 class SearchRequest:
     """
-    FIXME: ...
+    FIXME: SearchRequest
     """
 
     features: 'Dict[str, List[FeatureDescriptionValue]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     json_data: 'str'
+    """
+    User source record.
+    """
+
     search_profile: 'str'
 
     @classmethod
@@ -4063,7 +4165,7 @@ class SearchRequest:
 @dataclass
 class SearchStatistic:
     """
-    FIXME: ...
+    FIXME: SearchStatistic
     """
 
     candidate_keys: 'CandidateKeysForSearchStatistic'
@@ -4082,7 +4184,7 @@ class SearchStatistic:
 @dataclass
 class SenzingEntitySpecification:
     """
-    FIXME: ...
+    FIXME: SenzingEntitySpecification
     """
 
     account_domain: 'str'
@@ -4874,7 +4976,7 @@ class SzDiagnosticGetFeatureResponse:
 
     ftype_code: 'str'
     """
-    Internal use.
+    The unique text identifier of the feature type.
     """
 
     lib_feat_id: 'int'
@@ -5339,7 +5441,7 @@ class SzEngineFindPathByRecordIDResponse:
 class SzEngineGetEntityByEntityIDResponse:
     related_entities: 'List[RelatedEntity]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     resolved_entity: 'ResolvedEntityForGetEntity'
@@ -5361,7 +5463,7 @@ class SzEngineGetEntityByEntityIDResponse:
 class SzEngineGetEntityByRecordIDResponse:
     related_entities: 'List[RelatedEntity]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     resolved_entity: 'ResolvedEntityForGetEntity'
@@ -5383,22 +5485,22 @@ class SzEngineGetEntityByRecordIDResponse:
 class SzEngineGetRecordPreviewResponse:
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     feature_ids: 'List[FeatureID]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     json_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    User source record.
     """
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
 
@@ -5428,18 +5530,18 @@ class SzEngineGetRecordResponse:
 
     features: 'Dict[str, List[FeatureForAttributes]]'
     """
-    A map from ... to ...
+    A map from feature type names to lists of features.
     """
 
     feature_ids: 'List[FeatureID]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     first_seen_dt: 'datetime'
     json_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    User source record.
     """
 
     last_seen_dt: 'datetime'
@@ -5450,22 +5552,22 @@ class SzEngineGetRecordResponse:
 
     unmapped_data: 'Dict[str, Object]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     xxx_address_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_attribute_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_entity_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_entity_desc: 'str'
@@ -5478,7 +5580,7 @@ class SzEngineGetRecordResponse:
 
     xxx_identifier_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_internal_id: 'int'
@@ -5499,22 +5601,22 @@ class SzEngineGetRecordResponse:
 
     xxx_name_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_other_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_phone_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     xxx_relationship_data: 'List[str]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -5788,19 +5890,19 @@ class SzEngineSearchByAttributesAttributes:
 class SzEngineSearchByAttributesResponse:
     related_entities_mjd: 'List[RelatedEntity]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     resolved_entities: 'List[ResolvedEntityAndMatchInfo]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     search_entity: 'SearchEntity'
     search_request: 'SearchRequest'
     search_statistics: 'List[SearchStatistic]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -5862,7 +5964,7 @@ class SzEngineWhyEntitiesResponse:
 
     why_results: 'List[WhyResult]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -5888,7 +5990,7 @@ class SzEngineWhyRecordInEntityResponse:
 
     why_results: 'List[WhyResult]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -5914,7 +6016,7 @@ class SzEngineWhyRecordsResponse:
 
     why_results: 'List[WhyResult]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -5957,12 +6059,12 @@ class SzEngineWhySearchResponse:
     search_request: 'SearchRequest'
     search_statistics: 'List[SearchStatistic]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     why_results: 'List[WhyResult]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -6075,13 +6177,13 @@ class SzProductGetVersionResponse:
 @dataclass
 class UmfProc:
     """
-    FIXME: ...
+    FIXME: UmfProc
     """
 
     name: 'str'
     params: 'List[UmfProcParams]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -6101,7 +6203,7 @@ class UmfProc:
 @dataclass
 class UmfProcParamDetails:
     """
-    FIXME: ...
+    FIXME: UmfProcParamDetails
     """
 
     name: 'str'
@@ -6123,7 +6225,7 @@ class UmfProcParamDetails:
 @dataclass
 class UmfProcParams:
     """
-    FIXME: ...
+    FIXME: UmfProcParams
     """
 
     param: 'UmfProcParamDetails'
@@ -6142,12 +6244,12 @@ class UmfProcParams:
 @dataclass
 class VirtualEntitySynopsis:
     """
-    FIXME: ...
+    FIXME: VirtualEntitySynopsis
     """
 
     member_records: 'List[MemberRecord]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     virtual_entity_id: 'str'
@@ -6168,22 +6270,22 @@ class VirtualEntitySynopsis:
 @dataclass
 class WhyKeyDetails:
     """
-    FIXME: ...
+    FIXME: WhyKeyDetails
     """
 
     confirmations: 'List[FeatureScoreInfo]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     denials: 'List[FeatureScoreInfo]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     disclosed_relations: 'List[DisclosedRelationsForWhyKeyDetails]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
 
@@ -6205,7 +6307,7 @@ class WhyKeyDetails:
 @dataclass
 class WhyResult:
     """
-    FIXME: ...
+    FIXME: WhyResult
     """
 
     entity_id: 'int'
@@ -6217,12 +6319,12 @@ class WhyResult:
     entity_id0: 'int'
     focus_records: 'List[FocusRecord]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     focus_records0: 'List[FocusRecord]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     internal_id: 'int'
@@ -6263,7 +6365,7 @@ class WhyResult:
 @dataclass
 class Workload:
     """
-    FIXME: ...
+    FIXME: Workload
     """
 
     api_version: 'str'
@@ -6279,7 +6381,7 @@ class Workload:
     processing: 'WorkloadProcessing'
     redo_triggers: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     repair_diagnosis: 'WorkloadRepairDiagnosis'
@@ -6337,7 +6439,7 @@ class Workload:
 @dataclass
 class WorkloadCaches:
     """
-    FIXME: ...
+    FIXME: WorkloadCaches
     """
 
     lib_feat_cache_hit: 'int'
@@ -6377,17 +6479,17 @@ class WorkloadCaches:
 @dataclass
 class WorkloadCandidates:
     """
-    FIXME: ...
+    FIXME: WorkloadCandidates
     """
 
     candidate_builders: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     suppressed_candidate_builders: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
 
@@ -6407,7 +6509,7 @@ class WorkloadCandidates:
 @dataclass
 class WorkloadContention:
     """
-    FIXME: ...
+    FIXME: WorkloadContention
     """
 
     feature: 'Fixme'
@@ -6432,7 +6534,7 @@ class WorkloadContention:
 @dataclass
 class WorkloadCurrResources:
     """
-    FIXME: ...
+    FIXME: WorkloadCurrResources
     """
 
     active_threads: 'int'
@@ -6460,17 +6562,17 @@ class WorkloadCurrResources:
 @dataclass
 class WorkloadExpressedFeatures:
     """
-    FIXME: ...
+    FIXME: WorkloadExpressedFeatures
     """
 
     calls: 'List[WorkloadExpressedFeaturesCall]'
     """
-    A list of ...
+    FIXME: A list of ...
     """
 
     created: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
 
@@ -6490,7 +6592,7 @@ class WorkloadExpressedFeatures:
 @dataclass
 class WorkloadExpressedFeaturesCall:
     """
-    FIXME: ...
+    FIXME: WorkloadExpressedFeaturesCall
     """
 
     efcall_id: 'int'
@@ -6515,7 +6617,7 @@ class WorkloadExpressedFeaturesCall:
 @dataclass
 class WorkloadInitResources:
     """
-    FIXME: ...
+    FIXME: WorkloadInitResources
     """
 
     xxx_physical_cores: 'int'
@@ -6543,7 +6645,7 @@ class WorkloadInitResources:
 @dataclass
 class WorkloadLicense:
     """
-    FIXME: ...
+    FIXME: WorkloadLicense...
     """
 
     dsr_limit: 'str'
@@ -6568,7 +6670,7 @@ class WorkloadLicense:
 @dataclass
 class WorkloadLockWaits:
     """
-    FIXME: ...
+    FIXME: WorkloadLockWaits
     """
 
     refresh_locks: 'WorkloadRefreshLocks'
@@ -6587,7 +6689,7 @@ class WorkloadLockWaits:
 @dataclass
 class WorkloadProcessing:
     """
-    FIXME: ...
+    FIXME: WorkloadProcessing
     """
 
     added_records: 'int'
@@ -6624,7 +6726,7 @@ class WorkloadProcessing:
 @dataclass
 class WorkloadProcessingAmbiguous:
     """
-    FIXME: ...
+    FIXME: WorkloadProcessingAmbiguous
     """
 
     actual_test: 'int'
@@ -6646,7 +6748,7 @@ class WorkloadProcessingAmbiguous:
 @dataclass
 class WorkloadProcessingDetails:
     """
-    FIXME: ...
+    FIXME: WorkloadProcessingDetails
     """
 
     added_records: 'int'
@@ -6698,7 +6800,7 @@ class WorkloadProcessingDetails:
 @dataclass
 class WorkloadRefreshLocks:
     """
-    FIXME: ...
+    FIXME: WorkloadRefreshLocks
     """
 
     count: 'int'
@@ -6723,7 +6825,7 @@ class WorkloadRefreshLocks:
 @dataclass
 class WorkloadRepairDiagnosis:
     """
-    FIXME: ...
+    FIXME: WorkloadRepairDiagnosis
     """
 
     types: 'int'
@@ -6742,12 +6844,12 @@ class WorkloadRepairDiagnosis:
 @dataclass
 class WorkloadReresolve:
     """
-    FIXME: ...
+    FIXME: WorkloadReresolve
     """
 
     new_feature_ftypes: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     suppressed_candidate_builders_for_reresolve: 'Fixme'
@@ -6774,7 +6876,7 @@ class WorkloadReresolve:
 @dataclass
 class WorkloadReresolveTriggers:
     """
-    FIXME: ...
+    FIXME: WorkloadReresolveTriggers
     """
 
     abort_retry: 'int'
@@ -6805,22 +6907,22 @@ class WorkloadReresolveTriggers:
 @dataclass
 class WorkloadScoring:
     """
-    FIXME: ...
+    FIXME: WorkloadScoring
     """
 
     cache_hit: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     cache_miss: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     scored_pairs: 'Dict[str, int]'
     """
-    A map from ... to ...
+    FIXME: A map from ... to ...
     """
 
     suppressed_disclosed_relationship_domain_count: 'int'
@@ -6848,7 +6950,7 @@ class WorkloadScoring:
 @dataclass
 class WorkloadSystemLoad:
     """
-    FIXME: ...
+    FIXME: WorkloadSystemLoad
     """
 
     cpu_idle: 'str'
@@ -6876,7 +6978,7 @@ class WorkloadSystemLoad:
 @dataclass
 class WorkloadSystemResources:
     """
-    FIXME: ...
+    FIXME: WorkloadSystemResources
     """
 
     curr_resources: 'WorkloadCurrResources'
@@ -6901,7 +7003,7 @@ class WorkloadSystemResources:
 @dataclass
 class WorkloadThreadState:
     """
-    FIXME: ...
+    FIXME: WorkloadThreadState
     """
 
     active: 'int'
@@ -6947,7 +7049,7 @@ class WorkloadThreadState:
 @dataclass
 class WorkloadUnresolve:
     """
-    FIXME: ...
+    FIXME: WorkloadUnresolve
     """
 
     aborted_unresolve: 'int'
@@ -6972,7 +7074,7 @@ class WorkloadUnresolve:
 @dataclass
 class WorkloadUnresolveTriggers:
     """
-    FIXME: ...
+    FIXME: WorkloadUnresolveTriggers
     """
 
     ambiguous_multi_resolve: 'int'

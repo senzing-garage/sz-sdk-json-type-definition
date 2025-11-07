@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: InterestingEntities
  */
 @JsonSerialize
 public class InterestingEntities {
@@ -38,7 +38,7 @@ public class InterestingEntities {
 
     /**
      * Getter for notices.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<Notice> getNotices() {
         return notices;
@@ -46,7 +46,7 @@ public class InterestingEntities {
 
     /**
      * Setter for notices.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setNotices(List<Notice> notices) {
         this.notices = notices;

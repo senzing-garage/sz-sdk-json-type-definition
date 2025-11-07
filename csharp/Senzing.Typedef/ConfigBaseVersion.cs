@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: CONFIG_BASE_VERSION
     /// </summary>
     public class ConfigBaseVersion
     {

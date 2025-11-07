@@ -38,7 +38,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Getter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -46,7 +46,7 @@ public class SzDiagnosticGetFeatureResponse {
 
     /**
      * Setter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;

@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: CFG_GENERIC_THRESHOLD
     /// </summary>
     public class CfgGenericThreshold
     {

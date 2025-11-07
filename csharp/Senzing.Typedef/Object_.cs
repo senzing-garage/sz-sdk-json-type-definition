@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: Object
     /// </summary>
     [JsonConverter(typeof(Object_JsonConverter))]
     public class Object_

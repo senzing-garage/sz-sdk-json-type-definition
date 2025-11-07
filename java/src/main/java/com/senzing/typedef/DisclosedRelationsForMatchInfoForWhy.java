@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: DisclosedRelationsForMatchInfoForWhy
  */
 @JsonSerialize
 public class DisclosedRelationsForMatchInfoForWhy {
@@ -46,6 +46,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public String getDomain() {
         return domain;
@@ -53,6 +54,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -60,6 +62,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for featId.<p>
+     * The identifier of the main feature.
      */
     public Integer getFeatId() {
         return featId;
@@ -67,6 +70,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for featId.<p>
+     * The identifier of the main feature.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;
@@ -74,6 +78,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for featUsageType.<p>
+     * The usage type of the main feature.
      */
     public String getFeatUsageType() {
         return featUsageType;
@@ -81,6 +86,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for featUsageType.<p>
+     * The usage type of the main feature.
      */
     public void setFeatUsageType(String featUsageType) {
         this.featUsageType = featUsageType;
@@ -88,6 +94,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public Integer getLinkedFeatId() {
         return linkedFeatId;
@@ -95,6 +102,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public void setLinkedFeatId(Integer linkedFeatId) {
         this.linkedFeatId = linkedFeatId;
@@ -102,6 +110,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public String getLinkedFeatType() {
         return linkedFeatType;
@@ -109,6 +118,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public void setLinkedFeatType(String linkedFeatType) {
         this.linkedFeatType = linkedFeatType;
@@ -116,7 +126,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for relAnchor.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelAnchor> getRelAnchor() {
         return relAnchor;
@@ -124,7 +134,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for relAnchor.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setRelAnchor(List<RelAnchor> relAnchor) {
         this.relAnchor = relAnchor;
@@ -132,7 +142,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for relLink.<p>
-     * A list of ...
+     * A list of bidirectional disclosed relationship links.
      */
     public List<RelLink> getRelLink() {
         return relLink;
@@ -140,7 +150,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for relLink.<p>
-     * A list of ...
+     * A list of bidirectional disclosed relationship links.
      */
     public void setRelLink(List<RelLink> relLink) {
         this.relLink = relLink;
@@ -148,7 +158,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Getter for relPointer.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelPointer> getRelPointer() {
         return relPointer;
@@ -156,7 +166,7 @@ public class DisclosedRelationsForMatchInfoForWhy {
 
     /**
      * Setter for relPointer.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setRelPointer(List<RelPointer> relPointer) {
         this.relPointer = relPointer;

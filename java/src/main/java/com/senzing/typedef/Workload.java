@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: Workload
  */
 @JsonSerialize
 public class Workload {
@@ -224,7 +224,7 @@ public class Workload {
 
     /**
      * Getter for redoTriggers.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Integer> getRedoTriggers() {
         return redoTriggers;
@@ -232,7 +232,7 @@ public class Workload {
 
     /**
      * Setter for redoTriggers.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setRedoTriggers(Map<String, Integer> redoTriggers) {
         this.redoTriggers = redoTriggers;

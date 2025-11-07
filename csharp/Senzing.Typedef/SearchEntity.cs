@@ -7,12 +7,12 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: SearchEntity
     /// </summary>
     public class SearchEntity
     {
         /// <summary>
-        /// A map from ... to ...
+        /// A map from feature type names to lists of features.
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureDescriptionValue>> Features { get; set; }

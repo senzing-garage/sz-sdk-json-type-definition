@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: FinalState
  */
 @JsonSerialize
 public class FinalState {
@@ -36,7 +36,7 @@ public class FinalState {
 
     /**
      * Getter for virtualEntities.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<VirtualEntitySynopsis> getVirtualEntities() {
         return virtualEntities;
@@ -44,7 +44,7 @@ public class FinalState {
 
     /**
      * Setter for virtualEntities.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setVirtualEntities(List<VirtualEntitySynopsis> virtualEntities) {
         this.virtualEntities = virtualEntities;

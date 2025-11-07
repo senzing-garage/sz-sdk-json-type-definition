@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: SenzingEntitySpecification
     /// </summary>
     public class SenzingEntitySpecification
     {

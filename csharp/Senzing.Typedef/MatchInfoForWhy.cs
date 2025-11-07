@@ -7,12 +7,12 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: MatchInfoForWhy
     /// </summary>
     public class MatchInfoForWhy
     {
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("CANDIDATE_KEYS")]
         public IDictionary<string, IList<MatchInfoForAttribute>> CandidateKeys { get; set; }

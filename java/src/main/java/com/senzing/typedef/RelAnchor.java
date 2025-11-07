@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: RelAnchor
  */
 @JsonSerialize
 public class RelAnchor {
@@ -40,6 +40,7 @@ public class RelAnchor {
 
     /**
      * Getter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public String getDomain() {
         return domain;
@@ -47,6 +48,7 @@ public class RelAnchor {
 
     /**
      * Setter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -70,6 +72,7 @@ public class RelAnchor {
 
     /**
      * Getter for featId.<p>
+     * The identifier of the main feature.
      */
     public Integer getFeatId() {
         return featId;
@@ -77,6 +80,7 @@ public class RelAnchor {
 
     /**
      * Setter for featId.<p>
+     * The identifier of the main feature.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;
@@ -84,6 +88,7 @@ public class RelAnchor {
 
     /**
      * Getter for linkedFeatDesc.<p>
+     * The contents of the linked feature.
      */
     public String getLinkedFeatDesc() {
         return linkedFeatDesc;
@@ -91,6 +96,7 @@ public class RelAnchor {
 
     /**
      * Setter for linkedFeatDesc.<p>
+     * The contents of the linked feature.
      */
     public void setLinkedFeatDesc(String linkedFeatDesc) {
         this.linkedFeatDesc = linkedFeatDesc;
@@ -98,6 +104,7 @@ public class RelAnchor {
 
     /**
      * Getter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public Integer getLinkedFeatId() {
         return linkedFeatId;
@@ -105,6 +112,7 @@ public class RelAnchor {
 
     /**
      * Setter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public void setLinkedFeatId(Integer linkedFeatId) {
         this.linkedFeatId = linkedFeatId;
@@ -112,6 +120,7 @@ public class RelAnchor {
 
     /**
      * Getter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public String getLinkedFeatType() {
         return linkedFeatType;
@@ -119,6 +128,7 @@ public class RelAnchor {
 
     /**
      * Setter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public void setLinkedFeatType(String linkedFeatType) {
         this.linkedFeatType = linkedFeatType;
@@ -126,6 +136,7 @@ public class RelAnchor {
 
     /**
      * Getter for linkedFeatUsageType.<p>
+     * The usage type of the linked feature.
      */
     public String getLinkedFeatUsageType() {
         return linkedFeatUsageType;
@@ -133,6 +144,7 @@ public class RelAnchor {
 
     /**
      * Setter for linkedFeatUsageType.<p>
+     * The usage type of the linked feature.
      */
     public void setLinkedFeatUsageType(String linkedFeatUsageType) {
         this.linkedFeatUsageType = linkedFeatUsageType;
@@ -140,7 +152,7 @@ public class RelAnchor {
 
     /**
      * Getter for xxxRelPointer.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelPointer> getXxxRelPointer() {
         return xxxRelPointer;
@@ -148,7 +160,7 @@ public class RelAnchor {
 
     /**
      * Setter for xxxRelPointer.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxRelPointer(List<RelPointer> xxxRelPointer) {
         this.xxxRelPointer = xxxRelPointer;

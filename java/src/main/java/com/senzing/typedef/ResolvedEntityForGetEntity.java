@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: ResolvedEntityForGetEntity
  */
 @JsonSerialize
 public class ResolvedEntityForGetEntity {
@@ -94,7 +94,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public Map<String, List<FeatureForGetEntity>> getFeatures() {
         return features;
@@ -102,7 +102,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public void setFeatures(Map<String, List<FeatureForGetEntity>> features) {
         this.features = features;
@@ -144,7 +144,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for recordTypes.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getRecordTypes() {
         return recordTypes;
@@ -152,7 +152,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for recordTypes.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setRecordTypes(List<String> recordTypes) {
         this.recordTypes = recordTypes;
@@ -176,7 +176,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Getter for xxxFeatureIds.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FeatureId> getXxxFeatureIds() {
         return xxxFeatureIds;
@@ -184,7 +184,7 @@ public class ResolvedEntityForGetEntity {
 
     /**
      * Setter for xxxFeatureIds.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxFeatureIds(List<FeatureId> xxxFeatureIds) {
         this.xxxFeatureIds = xxxFeatureIds;

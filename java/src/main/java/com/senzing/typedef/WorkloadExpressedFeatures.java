@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadExpressedFeatures
  */
 @JsonSerialize
 public class WorkloadExpressedFeatures {
@@ -23,7 +23,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Getter for calls.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<WorkloadExpressedFeaturesCall> getCalls() {
         return calls;
@@ -31,7 +31,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Setter for calls.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setCalls(List<WorkloadExpressedFeaturesCall> calls) {
         this.calls = calls;
@@ -39,7 +39,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Getter for created.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Integer> getCreated() {
         return created;
@@ -47,7 +47,7 @@ public class WorkloadExpressedFeatures {
 
     /**
      * Setter for created.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setCreated(Map<String, Integer> created) {
         this.created = created;

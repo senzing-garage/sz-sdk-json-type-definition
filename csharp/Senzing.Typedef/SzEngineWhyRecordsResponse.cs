@@ -15,7 +15,7 @@ namespace Senzing.Typedef
         public IList<Entity> Entities { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("WHY_RESULTS")]
         public IList<WhyResult> WhyResults { get; set; }

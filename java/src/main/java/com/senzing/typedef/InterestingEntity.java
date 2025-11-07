@@ -62,7 +62,7 @@ public class InterestingEntity {
 
     /**
      * Getter for flags.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getFlags() {
         return flags;
@@ -70,7 +70,7 @@ public class InterestingEntity {
 
     /**
      * Setter for flags.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFlags(List<String> flags) {
         this.flags = flags;
@@ -78,7 +78,7 @@ public class InterestingEntity {
 
     /**
      * Getter for sampleRecords.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<SampleRecord> getSampleRecords() {
         return sampleRecords;
@@ -86,7 +86,7 @@ public class InterestingEntity {
 
     /**
      * Setter for sampleRecords.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setSampleRecords(List<SampleRecord> sampleRecords) {
         this.sampleRecords = sampleRecords;

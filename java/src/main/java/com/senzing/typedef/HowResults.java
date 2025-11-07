@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: HowResults
  */
 @JsonSerialize
 public class HowResults {
@@ -36,7 +36,7 @@ public class HowResults {
 
     /**
      * Getter for resolutionSteps.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<ResolutionStep> getResolutionSteps() {
         return resolutionSteps;
@@ -44,7 +44,7 @@ public class HowResults {
 
     /**
      * Setter for resolutionSteps.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setResolutionSteps(List<ResolutionStep> resolutionSteps) {
         this.resolutionSteps = resolutionSteps;

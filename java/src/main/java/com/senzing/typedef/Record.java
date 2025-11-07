@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: Record
  */
 @JsonSerialize
 public class Record {
@@ -122,7 +122,7 @@ public class Record {
 
     /**
      * Getter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public Map<String, List<FeatureForAttributes>> getFeatures() {
         return features;
@@ -130,7 +130,7 @@ public class Record {
 
     /**
      * Setter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
         this.features = features;
@@ -138,7 +138,7 @@ public class Record {
 
     /**
      * Getter for featureIds.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FeatureId> getFeatureIds() {
         return featureIds;
@@ -146,7 +146,7 @@ public class Record {
 
     /**
      * Setter for featureIds.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFeatureIds(List<FeatureId> featureIds) {
         this.featureIds = featureIds;
@@ -184,7 +184,7 @@ public class Record {
 
     /**
      * Getter for jsonData.<p>
-     * A map from ... to ...
+     * User source record.
      */
     public Map<String, Object> getJsonData() {
         return jsonData;
@@ -192,7 +192,7 @@ public class Record {
 
     /**
      * Setter for jsonData.<p>
-     * A map from ... to ...
+     * User source record.
      */
     public void setJsonData(Map<String, Object> jsonData) {
         this.jsonData = jsonData;
@@ -262,7 +262,7 @@ public class Record {
 
     /**
      * Getter for unmappedData.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Object> getUnmappedData() {
         return unmappedData;
@@ -270,7 +270,7 @@ public class Record {
 
     /**
      * Setter for unmappedData.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;
@@ -278,7 +278,7 @@ public class Record {
 
     /**
      * Getter for xxxAddressData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxAddressData() {
         return xxxAddressData;
@@ -286,7 +286,7 @@ public class Record {
 
     /**
      * Setter for xxxAddressData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxAddressData(List<String> xxxAddressData) {
         this.xxxAddressData = xxxAddressData;
@@ -294,7 +294,7 @@ public class Record {
 
     /**
      * Getter for xxxAttributeData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxAttributeData() {
         return xxxAttributeData;
@@ -302,7 +302,7 @@ public class Record {
 
     /**
      * Setter for xxxAttributeData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxAttributeData(List<String> xxxAttributeData) {
         this.xxxAttributeData = xxxAttributeData;
@@ -310,7 +310,7 @@ public class Record {
 
     /**
      * Getter for xxxEntityData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxEntityData() {
         return xxxEntityData;
@@ -318,7 +318,7 @@ public class Record {
 
     /**
      * Setter for xxxEntityData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxEntityData(List<String> xxxEntityData) {
         this.xxxEntityData = xxxEntityData;
@@ -368,7 +368,7 @@ public class Record {
 
     /**
      * Getter for xxxIdentifierData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxIdentifierData() {
         return xxxIdentifierData;
@@ -376,7 +376,7 @@ public class Record {
 
     /**
      * Setter for xxxIdentifierData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxIdentifierData(List<String> xxxIdentifierData) {
         this.xxxIdentifierData = xxxIdentifierData;
@@ -398,7 +398,7 @@ public class Record {
 
     /**
      * Getter for xxxNameData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxNameData() {
         return xxxNameData;
@@ -406,7 +406,7 @@ public class Record {
 
     /**
      * Setter for xxxNameData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxNameData(List<String> xxxNameData) {
         this.xxxNameData = xxxNameData;
@@ -414,7 +414,7 @@ public class Record {
 
     /**
      * Getter for xxxOtherData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxOtherData() {
         return xxxOtherData;
@@ -422,7 +422,7 @@ public class Record {
 
     /**
      * Setter for xxxOtherData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxOtherData(List<String> xxxOtherData) {
         this.xxxOtherData = xxxOtherData;
@@ -430,7 +430,7 @@ public class Record {
 
     /**
      * Getter for xxxPhoneData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxPhoneData() {
         return xxxPhoneData;
@@ -438,7 +438,7 @@ public class Record {
 
     /**
      * Setter for xxxPhoneData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxPhoneData(List<String> xxxPhoneData) {
         this.xxxPhoneData = xxxPhoneData;
@@ -446,7 +446,7 @@ public class Record {
 
     /**
      * Getter for xxxRelationshipData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getXxxRelationshipData() {
         return xxxRelationshipData;
@@ -454,7 +454,7 @@ public class Record {
 
     /**
      * Setter for xxxRelationshipData.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxRelationshipData(List<String> xxxRelationshipData) {
         this.xxxRelationshipData = xxxRelationshipData;

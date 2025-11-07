@@ -21,13 +21,13 @@ namespace Senzing.Typedef
         public SearchRequest SearchRequest { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("SEARCH_STATISTICS")]
         public IList<SearchStatistic> SearchStatistics { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("WHY_RESULTS")]
         public IList<WhyResult> WhyResults { get; set; }

@@ -72,7 +72,7 @@ public class SzEngineWhySearchResponse {
 
     /**
      * Getter for searchStatistics.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<SearchStatistic> getSearchStatistics() {
         return searchStatistics;
@@ -80,7 +80,7 @@ public class SzEngineWhySearchResponse {
 
     /**
      * Setter for searchStatistics.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setSearchStatistics(List<SearchStatistic> searchStatistics) {
         this.searchStatistics = searchStatistics;
@@ -88,7 +88,7 @@ public class SzEngineWhySearchResponse {
 
     /**
      * Getter for whyResults.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<WhyResult> getWhyResults() {
         return whyResults;
@@ -96,7 +96,7 @@ public class SzEngineWhySearchResponse {
 
     /**
      * Setter for whyResults.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setWhyResults(List<WhyResult> whyResults) {
         this.whyResults = whyResults;

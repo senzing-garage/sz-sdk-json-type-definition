@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: DisclosedRelationsForMatchInfo
  */
 @JsonSerialize
 public class DisclosedRelationsForMatchInfo {
@@ -34,6 +34,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for domain.<p>
+     * The domain of the disclosed relationship.
      */
     public String getDomain() {
         return domain;
@@ -41,6 +42,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for domain.<p>
+     * The domain of the disclosed relationship.
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -48,7 +50,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for entityRoles.<p>
-     * A list of ...
+     * A list of roles in the disclosed relationships of the entity.
      */
     public List<EntityRoles> getEntityRoles() {
         return entityRoles;
@@ -56,7 +58,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for entityRoles.<p>
-     * A list of ...
+     * A list of roles in the disclosed relationships of the entity.
      */
     public void setEntityRoles(List<EntityRoles> entityRoles) {
         this.entityRoles = entityRoles;
@@ -64,7 +66,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for relatedRoles.<p>
-     * A list of ...
+     * A list of roles in the disclosed relationships of the related entity.
      */
     public List<RelatedRoles> getRelatedRoles() {
         return relatedRoles;
@@ -72,7 +74,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for relatedRoles.<p>
-     * A list of ...
+     * A list of roles in the disclosed relationships of the related entity.
      */
     public void setRelatedRoles(List<RelatedRoles> relatedRoles) {
         this.relatedRoles = relatedRoles;
@@ -80,7 +82,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for relLink.<p>
-     * A list of ...
+     * A list of bidirectional disclosed relationship links.
      */
     public List<RelLink> getRelLink() {
         return relLink;
@@ -88,7 +90,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for relLink.<p>
-     * A list of ...
+     * A list of bidirectional disclosed relationship links.
      */
     public void setRelLink(List<RelLink> relLink) {
         this.relLink = relLink;
@@ -96,7 +98,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for xxxRelAnchor.<p>
-     * A list of ...
+     * A list of relationship anchors of the entity.
      */
     public List<RelAnchor> getXxxRelAnchor() {
         return xxxRelAnchor;
@@ -104,7 +106,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for xxxRelAnchor.<p>
-     * A list of ...
+     * A list of relationship anchors of the entity.
      */
     public void setXxxRelAnchor(List<RelAnchor> xxxRelAnchor) {
         this.xxxRelAnchor = xxxRelAnchor;
@@ -112,7 +114,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Getter for xxxRelPointer.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelPointer> getXxxRelPointer() {
         return xxxRelPointer;
@@ -120,7 +122,7 @@ public class DisclosedRelationsForMatchInfo {
 
     /**
      * Setter for xxxRelPointer.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setXxxRelPointer(List<RelPointer> xxxRelPointer) {
         this.xxxRelPointer = xxxRelPointer;

@@ -25,13 +25,13 @@ namespace Senzing.Typedef
         public int EntityId { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("SAMPLE_RECORDS")]
         public IList<SampleRecord> SampleRecords { get; set; }

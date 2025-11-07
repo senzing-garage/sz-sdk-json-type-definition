@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: WhyResult
     /// </summary>
     public class WhyResult
     {
@@ -22,13 +22,13 @@ namespace Senzing.Typedef
         public int EntityId0 { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FOCUS_RECORDS")]
         public IList<FocusRecord> FocusRecords { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FOCUS_RECORDS_2")]
         public IList<FocusRecord> FocusRecords0 { get; set; }

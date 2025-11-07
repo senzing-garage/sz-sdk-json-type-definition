@@ -3,19 +3,7 @@
 export type Senzingsdk = any;
 
 /**
- * Itemized scores from comparison function.
- */
-export interface AdditionalScores {
-  FULL_SCORE: number;
-  GENERATION_MATCH: number;
-  GNR_FN: number;
-  GNR_GN: number;
-  GNR_ON: number;
-  GNR_SN: number;
-}
-
-/**
- * FIXME: ...
+ * FIXME: AffectedEntity
  */
 export interface AffectedEntity {
   /**
@@ -26,7 +14,7 @@ export interface AffectedEntity {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_ATTR
  */
 export interface CfgAttr {
   ATTR_CLASS: string;
@@ -37,7 +25,7 @@ export interface CfgAttr {
   FELEM_REQ: string;
 
   /**
-   * Internal use.
+   * The unique text identifier of the feature type.
    */
   FTYPE_CODE: string;
   INTERNAL: string;
@@ -45,7 +33,7 @@ export interface CfgAttr {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_CFBOM
  */
 export interface CfgCfbom {
   CFCALL_ID: number;
@@ -55,7 +43,7 @@ export interface CfgCfbom {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_CFCALL
  */
 export interface CfgCfcall {
   CFCALL_ID: number;
@@ -65,7 +53,7 @@ export interface CfgCfcall {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_CFRTN
  */
 export interface CfgCfrtn {
   CFRTN_ID: number;
@@ -81,7 +69,7 @@ export interface CfgCfrtn {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_CFUNC
  */
 export interface CfgCfunc {
   ANON_SUPPORT: string;
@@ -96,7 +84,7 @@ export interface CfgCfunc {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_DFBOM
  */
 export interface CfgDfbom {
   DFCALL_ID: number;
@@ -106,7 +94,7 @@ export interface CfgDfbom {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_DFCALL
  */
 export interface CfgDfcall {
   DFCALL_ID: number;
@@ -116,7 +104,7 @@ export interface CfgDfcall {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_DFUNC
  */
 export interface CfgDfunc {
   ANON_SUPPORT: string;
@@ -131,7 +119,7 @@ export interface CfgDfunc {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_DSRC
  */
 export interface CfgDsrc {
   DSRC_CODE: string;
@@ -143,7 +131,7 @@ export interface CfgDsrc {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_DSRC_INTEREST
  */
 export interface CfgDsrcInterest {
   XXX_DSRC_ID: number;
@@ -152,7 +140,7 @@ export interface CfgDsrcInterest {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_EBOM
  */
 export interface CfgEbom {
   XXX_ETYPE_ID: number;
@@ -162,7 +150,7 @@ export interface CfgEbom {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_ECLASS
  */
 export interface CfgEclass {
   XXX_ECLASS_CODE: string;
@@ -172,7 +160,7 @@ export interface CfgEclass {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_EFBOM
  */
 export interface CfgEfbom {
   EFCALL_ID: number;
@@ -183,7 +171,7 @@ export interface CfgEfbom {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_EFCALL
  */
 export interface CfgEfcall {
   EFCALL_ID: number;
@@ -196,7 +184,7 @@ export interface CfgEfcall {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_EFUNC
  */
 export interface CfgEfunc {
   CONNECT_STR: string;
@@ -210,7 +198,7 @@ export interface CfgEfunc {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_ERFRAG
  */
 export interface CfgErfrag {
   ERFRAG_CODE: string;
@@ -221,7 +209,7 @@ export interface CfgErfrag {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_ERRULE
  */
 export interface CfgErrule {
   DISQ_ERFRAG_CODE: string;
@@ -241,7 +229,7 @@ export interface CfgErrule {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_ETYPE
  */
 export interface CfgEtype {
   XXX_ECLASS_ID: number;
@@ -251,7 +239,7 @@ export interface CfgEtype {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_FBOM
  */
 export interface CfgFbom {
   DERIVED: string;
@@ -263,7 +251,7 @@ export interface CfgFbom {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_FBOVR
  */
 export interface CfgFbovr {
   FTYPE_EXCL: string;
@@ -275,7 +263,7 @@ export interface CfgFbovr {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_FCLASS
  */
 export interface CfgFclass {
   FCLASS_CODE: string;
@@ -284,7 +272,7 @@ export interface CfgFclass {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_FELEM
  */
 export interface CfgFelem {
   DATA_TYPE: string;
@@ -295,7 +283,7 @@ export interface CfgFelem {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_FTYPE
  */
 export interface CfgFtype {
   ANONYMIZE: string;
@@ -303,7 +291,7 @@ export interface CfgFtype {
   FCLASS_ID: number;
 
   /**
-   * Internal use.
+   * The unique text identifier of the feature type.
    */
   FTYPE_CODE: string;
   FTYPE_DESC: string;
@@ -320,7 +308,7 @@ export interface CfgFtype {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_GENERIC_THRESHOLD
  */
 export interface CfgGenericThreshold {
   BEHAVIOR: string;
@@ -332,7 +320,7 @@ export interface CfgGenericThreshold {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_GPLAN
  */
 export interface CfgGplan {
   GPLAN_CODE: string;
@@ -341,7 +329,7 @@ export interface CfgGplan {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_LENS
  */
 export interface CfgLens {
   XXX_LENS_CODE: string;
@@ -350,12 +338,12 @@ export interface CfgLens {
 }
 
 /**
- * A list of ...
+ * FIXME: A list of ...
  */
 export type CfgLensrl = Fixme[];
 
 /**
- * FIXME: ...
+ * FIXME: CFG_RCLASS
  */
 export interface CfgRclass {
   /**
@@ -368,7 +356,7 @@ export interface CfgRclass {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_RTYPE
  */
 export interface CfgRtype {
   BREAK_RES: string;
@@ -380,7 +368,7 @@ export interface CfgRtype {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_SFCALL
  */
 export interface CfgSfcall {
   EXEC_ORDER: number;
@@ -391,7 +379,7 @@ export interface CfgSfcall {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CFG_SFUNC
  */
 export interface CfgSfunc {
   CONNECT_STR: string;
@@ -405,7 +393,7 @@ export interface CfgSfunc {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CONFIG_BASE_VERSION
  */
 export interface ConfigBaseVersion {
   BUILD_DATE: string;
@@ -417,23 +405,23 @@ export interface ConfigBaseVersion {
 }
 
 /**
- * A map from ... to ...
+ * FIXME: A map from ... to ...
  */
 export type CandidateKeysForMatchInfo = { [key: string]: MatchInfoForAttribute[] };
 
 /**
- * FIXME: ...
+ * FIXME: CandidateKeysForSearchStatistic
  */
 export interface CandidateKeysForSearchStatistic {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FEATURE_TYPES: FeatureType[];
   SUMMARY: CandidateKeysSummary;
 }
 
 /**
- * FIXME: ...
+ * FIXME: CandidateKeysSummary
  */
 export interface CandidateKeysSummary {
   FOUND: number;
@@ -442,14 +430,14 @@ export interface CandidateKeysSummary {
 }
 
 /**
- * FIXME: ...
+ * FIXME: CompatibilityVersion
  */
 export interface CompatibilityVersion {
   CONFIG_VERSION: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: Config
  */
 export interface Config {
   /**
@@ -469,7 +457,7 @@ export interface Config {
 }
 
 /**
- * FIXME: ...
+ * FIXME: DataSource
  */
 export interface DataSource {
   /**
@@ -485,59 +473,81 @@ export interface DataSource {
 }
 
 /**
- * FIXME: ...
+ * FIXME: DisclosedRelationsForMatchInfo
  */
 export interface DisclosedRelationsForMatchInfo {
+  /**
+   * The domain of the disclosed relationship.
+   */
   DOMAIN: string;
 
   /**
-   * A list of ...
+   * A list of roles in the disclosed relationships of the entity.
    */
   ENTITY_ROLES: EntityRoles[];
 
   /**
-   * A list of ...
+   * A list of roles in the disclosed relationships of the related entity.
    */
   RELATED_ROLES: RelatedRoles[];
 
   /**
-   * A list of ...
+   * A list of bidirectional disclosed relationship links.
    */
   REL_LINK: RelLink[];
 
   /**
-   * A list of ...
+   * A list of relationship anchors of the entity.
    */
   XXX_REL_ANCHOR: RelAnchor[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_REL_POINTER: RelPointer[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: DisclosedRelationsForMatchInfoForWhy
  */
 export interface DisclosedRelationsForMatchInfoForWhy {
+  /**
+   * FIXME: The domain of the ...
+   */
   DOMAIN: string;
+
+  /**
+   * The identifier of the main feature.
+   */
   FEAT_ID: number;
+
+  /**
+   * The usage type of the main feature.
+   */
   FEAT_USAGE_TYPE: string;
+
+  /**
+   * The identifier of the linked feature.
+   */
   LINKED_FEAT_ID: number;
+
+  /**
+   * The unique text identifier of the linked feature type.
+   */
   LINKED_FEAT_TYPE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   REL_ANCHOR: RelAnchor[];
 
   /**
-   * A list of ...
+   * A list of bidirectional disclosed relationship links.
    */
   REL_LINK: RelLink[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   REL_POINTER: RelPointer[];
 
@@ -549,57 +559,60 @@ export interface DisclosedRelationsForMatchInfoForWhy {
 }
 
 /**
- * FIXME: ...
+ * FIXME: DisclosedRelationsForWhyKeyDetails
  */
 export interface DisclosedRelationsForWhyKeyDetails {
+  /**
+   * FIXME: The domain of the ...
+   */
   DOMAIN: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   ENTITY_ROLES: EntityRoles[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ROLES: RelatedRoles[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: Entity
  */
 export interface Entity {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
 /**
- * FIXME: ...
+ * FIXME: EntityForResolvedEntity
  */
 export interface EntityForResolvedEntity {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
 /**
- * FIXME: ...
+ * FIXME: EntityForWhySearch
  */
 export interface EntityForWhySearch {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntity;
 }
 
 /**
- * FIXME: ...
+ * FIXME: EntityNetworkLink
  */
 export interface EntityNetworkLink {
   /**
@@ -632,7 +645,7 @@ export interface EntityNetworkLink {
 }
 
 /**
- * FIXME: ...
+ * FIXME: EntityPath
  */
 export interface EntityPath {
   END_ENTITY_ID: number;
@@ -645,7 +658,7 @@ export interface EntityPath {
 }
 
 /**
- * FIXME: ...
+ * FIXME: EntityPathLink
  */
 export interface EntityPathLink {
   /**
@@ -678,18 +691,22 @@ export interface EntityPathLink {
 }
 
 /**
- * FIXME: ...
+ * FIXME: EntityRoles
  */
 export interface EntityRoles {
   /**
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * User-defined description of the role.
+   */
   ROLE: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: Feature
  */
 export interface Feature {
   /**
@@ -704,11 +721,11 @@ export interface Feature {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureDescriptionValue
  */
 export interface FeatureDescriptionValue {
   /**
-   * A map from ... to ...
+   * A map from attribute names to attribute values for the feature.
    */
   ATTRIBUTES: { [key: string]: string };
   CANDIDATE_CAP_REACHED: string;
@@ -720,7 +737,7 @@ export interface FeatureDescriptionValue {
   FEAT_DESC: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FEAT_DESC_VALUES: FeatureDescriptionValueDetails[];
 
@@ -735,7 +752,7 @@ export interface FeatureDescriptionValue {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureDescriptionValueDetails
  */
 export interface FeatureDescriptionValueDetails {
   CANDIDATE_CAP_REACHED: string;
@@ -757,10 +774,13 @@ export interface FeatureDescriptionValueDetails {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureForAttributes
  */
 export interface FeatureForAttributes {
-  ATTRIBUTES: SenzingEntitySpecification;
+  /**
+   * A map from attribute names to attribute values for the feature.
+   */
+  ATTRIBUTES: { [key: string]: string };
   CANDIDATE_CAP_REACHED: string;
   ENTITY_COUNT: number;
 
@@ -790,7 +810,7 @@ export interface FeatureForAttributes {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureForGetEntity
  */
 export interface FeatureForGetEntity {
   /**
@@ -815,13 +835,13 @@ export interface FeatureForGetEntity {
   USAGE_TYPE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ATTRIBUTES: SenzingEntitySpecification[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureID
  */
 export interface FeatureId {
   /**
@@ -837,10 +857,13 @@ export interface FeatureId {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureScoreForAttribute
  */
 export interface FeatureScoreForAttribute {
-  ADDITIONAL_SCORES: AdditionalScores;
+  /**
+   * A map from score types to score values
+   */
+  ADDITIONAL_SCORES: { [key: string]: number };
   CANDIDATE_FEAT_DESC: string;
   CANDIDATE_FEAT_ID: number;
   CANDIDATE_FEAT_USAGE_TYPE: string;
@@ -853,10 +876,13 @@ export interface FeatureScoreForAttribute {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FeatureScoreInfo
  */
 export interface FeatureScoreInfo {
-  ADDITIONAL_SCORES: AdditionalScores;
+  /**
+   * A map from score types to score values.
+   */
+  ADDITIONAL_SCORES: { [key: string]: number };
 
   /**
    * The contents of the candidate feature.
@@ -920,18 +946,18 @@ export interface FeatureScoreInfo {
 }
 
 /**
- * A map from ... to ...
+ * FIXME: A map from ... to ...
  */
 export type FeatureScores = { [key: string]: FeatureScoreForAttribute[] };
 
 /**
- * FIXME: ...
+ * FIXME: FeatureType
  */
 export interface FeatureType {
   FOUND: number;
 
   /**
-   * Internal use.
+   * The unique text identifier of the feature type.
    */
   FTYPE_CODE: string;
   GENERIC: number;
@@ -939,13 +965,13 @@ export interface FeatureType {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FinalState
  */
 export interface FinalState {
   NEED_REEVALUATION: number;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   VIRTUAL_ENTITIES: VirtualEntitySynopsis[];
 }
@@ -955,7 +981,7 @@ export interface Fixme {
 }
 
 /**
- * FIXME: ...
+ * FIXME: FocusRecord
  */
 export interface FocusRecord {
   /**
@@ -970,197 +996,197 @@ export interface FocusRecord {
 }
 
 /**
- * A list of ...
+ * FIXME: A list of ...
  */
 export interface G2configSettings {
   METAPHONE_VERSION: number;
 }
 
 /**
- * FIXME: ...
+ * FIXME: G2Config
  */
 export interface G2config {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_ATTR: CfgAttr[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_CFBOM: CfgCfbom[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_CFCALL: CfgCfcall[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_CFRTN: CfgCfrtn[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_CFUNC: CfgCfunc[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_DFBOM: CfgDfbom[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_DFCALL: CfgDfcall[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_DFUNC: CfgDfunc[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_DSRC: CfgDsrc[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_DSRC_INTEREST: CfgDsrcInterest[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_EBOM: CfgEbom[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_EFBOM: CfgEfbom[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_EFCALL: CfgEfcall[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_EFUNC: CfgEfunc[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_ERFRAG: CfgErfrag[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_ERRULE: CfgErrule[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_FBOM: CfgFbom[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_FBOVR: CfgFbovr[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_FCLASS: CfgFclass[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_FELEM: CfgFelem[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_FTYPE: CfgFtype[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_GENERIC_THRESHOLD: CfgGenericThreshold[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_GPLAN: CfgGplan[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_RCLASS: CfgRclass[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_RTYPE: CfgRtype[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_SFCALL: CfgSfcall[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CFG_SFUNC: CfgSfunc[];
   CONFIG_BASE_VERSION: ConfigBaseVersion;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   SETTINGS: G2configSettings;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   SYS_OOM: SysOom[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_CFG_ECLASS: CfgEclass[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_CFG_ETYPE: CfgEtype[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_CFG_LENS: CfgLens[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_CFG_LENSRL: CfgLensrl[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: HowResults
  */
 export interface HowResults {
   FINAL_STATE: FinalState;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RESOLUTION_STEPS: ResolutionStep[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: InterestingEntities
  */
 export interface InterestingEntities {
   /**
@@ -1169,7 +1195,7 @@ export interface InterestingEntities {
   ENTITIES: InterestingEntity[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   NOTICES: Notice[];
 }
@@ -1190,18 +1216,18 @@ export interface InterestingEntity {
   ENTITY_ID: number;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FLAGS: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   SAMPLE_RECORDS: SampleRecord[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: MatchInfo
  */
 export interface MatchInfo {
   CANDIDATE_KEYS: CandidateKeysForMatchInfo;
@@ -1229,22 +1255,26 @@ export interface MatchInfo {
 }
 
 /**
- * FIXME: ...
+ * FIXME: MatchInfoForAttribute
  */
 export interface MatchInfoForAttribute {
   /**
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * The identifier of the main feature.
+   */
   FEAT_ID: number;
 }
 
 /**
- * FIXME: ...
+ * FIXME: MatchInfoForWhy
  */
 export interface MatchInfoForWhy {
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   CANDIDATE_KEYS: { [key: string]: MatchInfoForAttribute[] };
   DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfoForWhy;
@@ -1296,7 +1326,7 @@ export interface MatchKeyDetails {
 }
 
 /**
- * FIXME: ...
+ * FIXME: MemberRecord
  */
 export interface MemberRecord {
   /**
@@ -1311,7 +1341,7 @@ export interface MemberRecord {
 }
 
 /**
- * FIXME: ...
+ * FIXME: Notice
  */
 export interface Notice {
   CODE: string;
@@ -1319,12 +1349,12 @@ export interface Notice {
 }
 
 /**
- * FIXME: ...
+ * FIXME: Object
  */
 export type Object = string;
 
 /**
- * FIXME: ...
+ * FIXME: Record
  */
 export interface Record {
   /**
@@ -1338,12 +1368,12 @@ export interface Record {
   ERRULE_CODE: string;
 
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
@@ -1354,7 +1384,7 @@ export interface Record {
   INTERNAL_ID: number;
 
   /**
-   * A map from ... to ...
+   * User source record.
    */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
@@ -1375,22 +1405,22 @@ export interface Record {
   RECORD_ID: string;
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ADDRESS_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ATTRIBUTE_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ENTITY_DATA: string[];
   XXX_ENTITY_DESC: string;
@@ -1398,34 +1428,34 @@ export interface Record {
   XXX_ENTITY_TYPE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_IDENTIFIER_DATA: string[];
   XXX_MATCH_LEVEL: number;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_NAME_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_OTHER_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_PHONE_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_RELATIONSHIP_DATA: string[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: RecordForGetEntity
  */
 export interface RecordForGetEntity {
   /**
@@ -1439,12 +1469,12 @@ export interface RecordForGetEntity {
   ERRULE_CODE: string;
 
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
@@ -1455,7 +1485,7 @@ export interface RecordForGetEntity {
   INTERNAL_ID: number;
 
   /**
-   * A map from ... to ...
+   * User source record.
    */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
@@ -1476,22 +1506,22 @@ export interface RecordForGetEntity {
   RECORD_ID: string;
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ADDRESS_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ATTRIBUTE_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ENTITY_DATA: string[];
   XXX_ENTITY_DESC: string;
@@ -1499,34 +1529,34 @@ export interface RecordForGetEntity {
   XXX_ENTITY_TYPE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_IDENTIFIER_DATA: string[];
   XXX_MATCH_LEVEL: number;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_NAME_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_OTHER_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_PHONE_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_RELATIONSHIP_DATA: string[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: RecordKey
  */
 export interface RecordKey {
   /**
@@ -1541,7 +1571,7 @@ export interface RecordKey {
 }
 
 /**
- * FIXME: ...
+ * FIXME: RecordKeys
  */
 export interface RecordKeys {
   /**
@@ -1551,7 +1581,7 @@ export interface RecordKeys {
 }
 
 /**
- * FIXME: ...
+ * FIXME: RecordSummary
  */
 export interface RecordSummary {
   /**
@@ -1568,70 +1598,147 @@ export interface RecordSummary {
 }
 
 /**
- * FIXME: ...
+ * FIXME: RelAnchor
  */
 export interface RelAnchor {
+  /**
+   * FIXME: The domain of the ...
+   */
   DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * The identifier of the main feature.
+   */
   FEAT_ID: number;
+
+  /**
+   * The contents of the linked feature.
+   */
   LINKED_FEAT_DESC: string;
+
+  /**
+   * The identifier of the linked feature.
+   */
   LINKED_FEAT_ID: number;
+
+  /**
+   * The unique text identifier of the linked feature type.
+   */
   LINKED_FEAT_TYPE: string;
+
+  /**
+   * The usage type of the linked feature.
+   */
   LINKED_FEAT_USAGE_TYPE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_REL_POINTER: RelPointer[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: RelLink
  */
 export interface RelLink {
+  /**
+   * The domain of the disclosed relationship.
+   */
   DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * The identifier of the main feature.
+   */
   FEAT_ID: number;
+
+  /**
+   * The usage type of the main feature.
+   */
   FEAT_USAGE_TYPE: string;
 
   /**
-   * Internal use.
+   * The unique text identifier of the feature type.
    */
   FTYPE_CODE: string;
+
+  /**
+   * The contents of the linked feature.
+   */
   LINKED_FEAT_DESC: string;
+
+  /**
+   * The identifier of the linked feature.
+   */
   LINKED_FEAT_ID: number;
+
+  /**
+   * The unique text identifier of the linked feature type.
+   */
   LINKED_FEAT_TYPE: string;
+
+  /**
+   * The usage type of the linked feature.
+   */
   LINKED_FEAT_USAGE_TYPE: string;
+
+  /**
+   * The type of the relationship.
+   */
   REL_TYPE: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: RelPointer
  */
 export interface RelPointer {
+  /**
+   * FIXME: The domain of the ...
+   */
   DOMAIN: string;
 
   /**
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * The identifier of the main feature.
+   */
   FEAT_ID: number;
+
+  /**
+   * The usage type of the main feature.
+   */
   FEAT_USAGE_TYPE: string;
+
+  /**
+   * The contents of the linked feature.
+   */
   LINKED_FEAT_DESC: string;
+
+  /**
+   * The identifier of the linked feature.
+   */
   LINKED_FEAT_ID: number;
+
+  /**
+   * The unique text identifier of the linked feature type.
+   */
   LINKED_FEAT_TYPE: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: RelatedEntity
  */
 export interface RelatedEntity {
   /**
@@ -1688,18 +1795,22 @@ export interface RelatedEntity {
 }
 
 /**
- * FIXME: ...
+ * FIXME: RelatedRoles
  */
 export interface RelatedRoles {
   /**
    * Describes the attributes that make up the feature.
    */
   FEAT_DESC: string;
+
+  /**
+   * User-defined description of the role.
+   */
   ROLE: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: Repository
  */
 export interface Repository {
   /**
@@ -1719,7 +1830,7 @@ export interface Repository {
 }
 
 /**
- * FIXME: ...
+ * FIXME: ResolutionStep
  */
 export interface ResolutionStep {
   INBOUND_VIRTUAL_ENTITY_ID: string;
@@ -1731,7 +1842,7 @@ export interface ResolutionStep {
 }
 
 /**
- * FIXME: ...
+ * FIXME: ResolvedEntity
  */
 export interface ResolvedEntity {
   /**
@@ -1746,7 +1857,7 @@ export interface ResolvedEntity {
   ENTITY_NAME: string;
 
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
@@ -1762,7 +1873,7 @@ export interface ResolvedEntity {
   RECORD_SUMMARY: RecordSummary[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RECORD_TYPES: string[];
 
@@ -1772,7 +1883,7 @@ export interface ResolvedEntity {
   XXX_ERRULE_CODE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_FEATURE_IDS: FeatureId[];
 
@@ -1800,7 +1911,7 @@ export interface ResolvedEntity {
 }
 
 /**
- * FIXME: ...
+ * FIXME: ResolvedEntityAndMatchInfo
  */
 export interface ResolvedEntityAndMatchInfo {
   ENTITY: EntityForResolvedEntity;
@@ -1809,7 +1920,7 @@ export interface ResolvedEntityAndMatchInfo {
 }
 
 /**
- * FIXME: ...
+ * FIXME: ResolvedEntityForGetEntity
  */
 export interface ResolvedEntityForGetEntity {
   /**
@@ -1824,7 +1935,7 @@ export interface ResolvedEntityForGetEntity {
   ENTITY_NAME: string;
 
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureForGetEntity[] };
 
@@ -1840,7 +1951,7 @@ export interface ResolvedEntityForGetEntity {
   RECORD_SUMMARY: RecordSummary[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RECORD_TYPES: string[];
 
@@ -1850,7 +1961,7 @@ export interface ResolvedEntityForGetEntity {
   XXX_ERRULE_CODE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_FEATURE_IDS: FeatureId[];
 
@@ -1878,7 +1989,7 @@ export interface ResolvedEntityForGetEntity {
 }
 
 /**
- * FIXME: ...
+ * FIXME: SYS_OOM
  */
 export interface SysOom {
   FTYPE_ID: number;
@@ -1894,7 +2005,7 @@ export interface SysOom {
 }
 
 /**
- * FIXME: ...
+ * FIXME: SampleRecord
  */
 export interface SampleRecord {
   /**
@@ -1903,7 +2014,7 @@ export interface SampleRecord {
   DATA_SOURCE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FLAGS: string[];
 
@@ -1914,7 +2025,7 @@ export interface SampleRecord {
 }
 
 /**
- * FIXME: ...
+ * FIXME: SchemaVersion
  */
 export interface SchemaVersion {
   ENGINE_SCHEMA_VERSION: string;
@@ -1923,18 +2034,18 @@ export interface SchemaVersion {
 }
 
 /**
- * FIXME: ...
+ * FIXME: SearchEntity
  */
 export interface SearchEntity {
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureDescriptionValue[] };
   SUMMARY: SearchEntitySummary;
 }
 
 /**
- * FIXME: ...
+ * FIXME: SearchEntitySummary
  */
 export interface SearchEntitySummary {
   FEATURES_ADDED: number;
@@ -1944,26 +2055,30 @@ export interface SearchEntitySummary {
 }
 
 /**
- * FIXME: ...
+ * FIXME: SearchRequest
  */
 export interface SearchRequest {
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureDescriptionValue[] };
+
+  /**
+   * User source record.
+   */
   JSON_DATA: string;
   SEARCH_PROFILE: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: SearchStatistic
  */
 export interface SearchStatistic {
   CANDIDATE_KEYS: CandidateKeysForSearchStatistic;
 }
 
 /**
- * FIXME: ...
+ * FIXME: SenzingEntitySpecification
  */
 export interface SenzingEntitySpecification {
   /**
@@ -2504,7 +2619,7 @@ export interface SzDiagnosticGetFeatureResponse {
   ELEMENTS: Feature[];
 
   /**
-   * Internal use.
+   * The unique text identifier of the feature type.
    */
   FTYPE_CODE: string;
 
@@ -2716,7 +2831,7 @@ export interface SzEngineFindPathByRecordIdResponse {
 
 export interface SzEngineGetEntityByEntityIdResponse {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntityForGetEntity;
@@ -2724,7 +2839,7 @@ export interface SzEngineGetEntityByEntityIdResponse {
 
 export interface SzEngineGetEntityByRecordIdResponse {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ENTITIES: RelatedEntity[];
   RESOLVED_ENTITY: ResolvedEntityForGetEntity;
@@ -2732,22 +2847,22 @@ export interface SzEngineGetEntityByRecordIdResponse {
 
 export interface SzEngineGetRecordPreviewResponse {
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FEATURE_IDS: FeatureId[];
 
   /**
-   * A map from ... to ...
+   * User source record.
    */
   JSON_DATA: { [key: string]: Object };
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 }
@@ -2759,18 +2874,18 @@ export interface SzEngineGetRecordResponse {
   DATA_SOURCE: string;
 
   /**
-   * A map from ... to ...
+   * A map from feature type names to lists of features.
    */
   FEATURES: { [key: string]: FeatureForAttributes[] };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FEATURE_IDS: FeatureId[];
   FIRST_SEEN_DT: string;
 
   /**
-   * A map from ... to ...
+   * User source record.
    */
   JSON_DATA: { [key: string]: Object };
   LAST_SEEN_DT: string;
@@ -2781,22 +2896,22 @@ export interface SzEngineGetRecordResponse {
   RECORD_ID: string;
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ADDRESS_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ATTRIBUTE_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_ENTITY_DATA: string[];
   XXX_ENTITY_DESC: string;
@@ -2809,7 +2924,7 @@ export interface SzEngineGetRecordResponse {
   XXX_ERRULE_CODE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_IDENTIFIER_DATA: string[];
 
@@ -2830,22 +2945,22 @@ export interface SzEngineGetRecordResponse {
   XXX_MATCH_LEVEL_CODE: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_NAME_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_OTHER_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_PHONE_DATA: string[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   XXX_RELATIONSHIP_DATA: string[];
 }
@@ -2938,19 +3053,19 @@ export interface SzEngineSearchByAttributesAttributes {
 
 export interface SzEngineSearchByAttributesResponse {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RELATED_ENTITIES_MJD: RelatedEntity[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   RESOLVED_ENTITIES: ResolvedEntityAndMatchInfo[];
   SEARCH_ENTITY: SearchEntity;
   SEARCH_REQUEST: SearchRequest;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   SEARCH_STATISTICS: SearchStatistic[];
 }
@@ -2970,7 +3085,7 @@ export interface SzEngineWhyEntitiesResponse {
   ENTITIES: Entity[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   WHY_RESULTS: WhyResult[];
 }
@@ -2982,7 +3097,7 @@ export interface SzEngineWhyRecordInEntityResponse {
   ENTITIES: Entity[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   WHY_RESULTS: WhyResult[];
 }
@@ -2994,7 +3109,7 @@ export interface SzEngineWhyRecordsResponse {
   ENTITIES: Entity[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   WHY_RESULTS: WhyResult[];
 }
@@ -3012,12 +3127,12 @@ export interface SzEngineWhySearchResponse {
   SEARCH_REQUEST: SearchRequest;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   SEARCH_STATISTICS: SearchStatistic[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   WHY_RESULTS: WhyResult[];
 }
@@ -3049,19 +3164,19 @@ export interface SzProductGetVersionResponse {
 }
 
 /**
- * FIXME: ...
+ * FIXME: UmfProc
  */
 export interface UmfProc {
   NAME: string;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   PARAMS: UmfProcParams[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: UmfProcParamDetails
  */
 export interface UmfProcParamDetails {
   NAME: string;
@@ -3069,45 +3184,45 @@ export interface UmfProcParamDetails {
 }
 
 /**
- * FIXME: ...
+ * FIXME: UmfProcParams
  */
 export interface UmfProcParams {
   PARAM: UmfProcParamDetails;
 }
 
 /**
- * FIXME: ...
+ * FIXME: VirtualEntitySynopsis
  */
 export interface VirtualEntitySynopsis {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   MEMBER_RECORDS: MemberRecord[];
   VIRTUAL_ENTITY_ID: string;
 }
 
 /**
- * FIXME: ...
+ * FIXME: WhyKeyDetails
  */
 export interface WhyKeyDetails {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   CONFIRMATIONS: FeatureScoreInfo[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   DENIALS: FeatureScoreInfo[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   DISCLOSED_RELATIONS: DisclosedRelationsForWhyKeyDetails[];
 }
 
 /**
- * FIXME: ...
+ * FIXME: WhyResult
  */
 export interface WhyResult {
   /**
@@ -3118,12 +3233,12 @@ export interface WhyResult {
   ENTITY_ID_2: number;
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FOCUS_RECORDS: FocusRecord[];
 
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   FOCUS_RECORDS_2: FocusRecord[];
 
@@ -3140,7 +3255,7 @@ export interface WhyResult {
 }
 
 /**
- * FIXME: ...
+ * FIXME: Workload
  */
 export interface Workload {
   apiVersion: string;
@@ -3156,7 +3271,7 @@ export interface Workload {
   processing: WorkloadProcessing;
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   redoTriggers: { [key: string]: number };
   repairDiagnosis: WorkloadRepairDiagnosis;
@@ -3168,7 +3283,7 @@ export interface Workload {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadCaches
  */
 export interface WorkloadCaches {
   libFeatCacheHit: number;
@@ -3182,22 +3297,22 @@ export interface WorkloadCaches {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadCandidates
  */
 export interface WorkloadCandidates {
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   candidateBuilders: { [key: string]: number };
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   suppressedCandidateBuilders: { [key: string]: number };
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadContention
  */
 export interface WorkloadContention {
   feature: Fixme;
@@ -3206,7 +3321,7 @@ export interface WorkloadContention {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadCurrResources
  */
 export interface WorkloadCurrResources {
   activeThreads: number;
@@ -3216,22 +3331,22 @@ export interface WorkloadCurrResources {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadExpressedFeatures
  */
 export interface WorkloadExpressedFeatures {
   /**
-   * A list of ...
+   * FIXME: A list of ...
    */
   calls: WorkloadExpressedFeaturesCall[];
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   created: { [key: string]: number };
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadExpressedFeaturesCall
  */
 export interface WorkloadExpressedFeaturesCall {
   EFCALL_ID: number;
@@ -3240,7 +3355,7 @@ export interface WorkloadExpressedFeaturesCall {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadInitResources
  */
 export interface WorkloadInitResources {
   XXX_physicalCores: number;
@@ -3250,7 +3365,7 @@ export interface WorkloadInitResources {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadLicense...
  */
 export interface WorkloadLicense {
   dsrLimit: string;
@@ -3259,14 +3374,14 @@ export interface WorkloadLicense {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadLockWaits
  */
 export interface WorkloadLockWaits {
   refreshLocks: WorkloadRefreshLocks;
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadProcessing
  */
 export interface WorkloadProcessing {
   addedRecords: number;
@@ -3279,7 +3394,7 @@ export interface WorkloadProcessing {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadProcessingAmbiguous
  */
 export interface WorkloadProcessingAmbiguous {
   actualTest: number;
@@ -3287,7 +3402,7 @@ export interface WorkloadProcessingAmbiguous {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadProcessingDetails
  */
 export interface WorkloadProcessingDetails {
   addedRecords: number;
@@ -3305,7 +3420,7 @@ export interface WorkloadProcessingDetails {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadRefreshLocks
  */
 export interface WorkloadRefreshLocks {
   count: number;
@@ -3314,18 +3429,18 @@ export interface WorkloadRefreshLocks {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadRepairDiagnosis
  */
 export interface WorkloadRepairDiagnosis {
   types: number;
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadReresolve
  */
 export interface WorkloadReresolve {
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   newFeatureFTypes: { [key: string]: number };
   suppressedCandidateBuildersForReresolve: Fixme;
@@ -3334,7 +3449,7 @@ export interface WorkloadReresolve {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadReresolveTriggers
  */
 export interface WorkloadReresolveTriggers {
   abortRetry: number;
@@ -3345,21 +3460,21 @@ export interface WorkloadReresolveTriggers {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadScoring
  */
 export interface WorkloadScoring {
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   cacheHit: { [key: string]: number };
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   cacheMiss: { [key: string]: number };
 
   /**
-   * A map from ... to ...
+   * FIXME: A map from ... to ...
    */
   scoredPairs: { [key: string]: number };
   suppressedDisclosedRelationshipDomainCount: number;
@@ -3367,7 +3482,7 @@ export interface WorkloadScoring {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadSystemLoad
  */
 export interface WorkloadSystemLoad {
   cpuIdle: string;
@@ -3377,7 +3492,7 @@ export interface WorkloadSystemLoad {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadSystemResources
  */
 export interface WorkloadSystemResources {
   currResources: WorkloadCurrResources;
@@ -3386,7 +3501,7 @@ export interface WorkloadSystemResources {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadThreadState
  */
 export interface WorkloadThreadState {
   active: number;
@@ -3402,7 +3517,7 @@ export interface WorkloadThreadState {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadUnresolve
  */
 export interface WorkloadUnresolve {
   abortedUnresolve: number;
@@ -3411,7 +3526,7 @@ export interface WorkloadUnresolve {
 }
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadUnresolveTriggers
  */
 export interface WorkloadUnresolveTriggers {
   ambiguousMultiResolve: number;

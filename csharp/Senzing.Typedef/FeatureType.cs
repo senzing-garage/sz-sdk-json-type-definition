@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: FeatureType
     /// </summary>
     public class FeatureType
     {
@@ -14,7 +14,7 @@ namespace Senzing.Typedef
         public int Found { get; set; }
 
         /// <summary>
-        /// Internal use.
+        /// The unique text identifier of the feature type.
         /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }

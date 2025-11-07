@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * FIXME: ...
+ * FIXME: RelLink
  */
 @JsonSerialize
 public class RelLink {
@@ -45,6 +45,7 @@ public class RelLink {
 
     /**
      * Getter for domain.<p>
+     * The domain of the disclosed relationship.
      */
     public String getDomain() {
         return domain;
@@ -52,6 +53,7 @@ public class RelLink {
 
     /**
      * Setter for domain.<p>
+     * The domain of the disclosed relationship.
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -75,6 +77,7 @@ public class RelLink {
 
     /**
      * Getter for featId.<p>
+     * The identifier of the main feature.
      */
     public Integer getFeatId() {
         return featId;
@@ -82,6 +85,7 @@ public class RelLink {
 
     /**
      * Setter for featId.<p>
+     * The identifier of the main feature.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;
@@ -89,6 +93,7 @@ public class RelLink {
 
     /**
      * Getter for featUsageType.<p>
+     * The usage type of the main feature.
      */
     public String getFeatUsageType() {
         return featUsageType;
@@ -96,6 +101,7 @@ public class RelLink {
 
     /**
      * Setter for featUsageType.<p>
+     * The usage type of the main feature.
      */
     public void setFeatUsageType(String featUsageType) {
         this.featUsageType = featUsageType;
@@ -103,7 +109,7 @@ public class RelLink {
 
     /**
      * Getter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public String getFtypeCode() {
         return ftypeCode;
@@ -111,7 +117,7 @@ public class RelLink {
 
     /**
      * Setter for ftypeCode.<p>
-     * Internal use.
+     * The unique text identifier of the feature type.
      */
     public void setFtypeCode(String ftypeCode) {
         this.ftypeCode = ftypeCode;
@@ -119,6 +125,7 @@ public class RelLink {
 
     /**
      * Getter for linkedFeatDesc.<p>
+     * The contents of the linked feature.
      */
     public String getLinkedFeatDesc() {
         return linkedFeatDesc;
@@ -126,6 +133,7 @@ public class RelLink {
 
     /**
      * Setter for linkedFeatDesc.<p>
+     * The contents of the linked feature.
      */
     public void setLinkedFeatDesc(String linkedFeatDesc) {
         this.linkedFeatDesc = linkedFeatDesc;
@@ -133,6 +141,7 @@ public class RelLink {
 
     /**
      * Getter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public Integer getLinkedFeatId() {
         return linkedFeatId;
@@ -140,6 +149,7 @@ public class RelLink {
 
     /**
      * Setter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public void setLinkedFeatId(Integer linkedFeatId) {
         this.linkedFeatId = linkedFeatId;
@@ -147,6 +157,7 @@ public class RelLink {
 
     /**
      * Getter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public String getLinkedFeatType() {
         return linkedFeatType;
@@ -154,6 +165,7 @@ public class RelLink {
 
     /**
      * Setter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public void setLinkedFeatType(String linkedFeatType) {
         this.linkedFeatType = linkedFeatType;
@@ -161,6 +173,7 @@ public class RelLink {
 
     /**
      * Getter for linkedFeatUsageType.<p>
+     * The usage type of the linked feature.
      */
     public String getLinkedFeatUsageType() {
         return linkedFeatUsageType;
@@ -168,6 +181,7 @@ public class RelLink {
 
     /**
      * Setter for linkedFeatUsageType.<p>
+     * The usage type of the linked feature.
      */
     public void setLinkedFeatUsageType(String linkedFeatUsageType) {
         this.linkedFeatUsageType = linkedFeatUsageType;
@@ -175,6 +189,7 @@ public class RelLink {
 
     /**
      * Getter for relType.<p>
+     * The type of the relationship.
      */
     public String getRelType() {
         return relType;
@@ -182,6 +197,7 @@ public class RelLink {
 
     /**
      * Setter for relType.<p>
+     * The type of the relationship.
      */
     public void setRelType(String relType) {
         this.relType = relType;

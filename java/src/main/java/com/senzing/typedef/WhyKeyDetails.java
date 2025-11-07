@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: WhyKeyDetails
  */
 @JsonSerialize
 public class WhyKeyDetails {
@@ -25,7 +25,7 @@ public class WhyKeyDetails {
 
     /**
      * Getter for confirmations.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FeatureScoreInfo> getConfirmations() {
         return confirmations;
@@ -33,7 +33,7 @@ public class WhyKeyDetails {
 
     /**
      * Setter for confirmations.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setConfirmations(List<FeatureScoreInfo> confirmations) {
         this.confirmations = confirmations;
@@ -41,7 +41,7 @@ public class WhyKeyDetails {
 
     /**
      * Getter for denials.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FeatureScoreInfo> getDenials() {
         return denials;
@@ -49,7 +49,7 @@ public class WhyKeyDetails {
 
     /**
      * Setter for denials.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setDenials(List<FeatureScoreInfo> denials) {
         this.denials = denials;
@@ -57,7 +57,7 @@ public class WhyKeyDetails {
 
     /**
      * Getter for disclosedRelations.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<DisclosedRelationsForWhyKeyDetails> getDisclosedRelations() {
         return disclosedRelations;
@@ -65,7 +65,7 @@ public class WhyKeyDetails {
 
     /**
      * Setter for disclosedRelations.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setDisclosedRelations(List<DisclosedRelationsForWhyKeyDetails> disclosedRelations) {
         this.disclosedRelations = disclosedRelations;

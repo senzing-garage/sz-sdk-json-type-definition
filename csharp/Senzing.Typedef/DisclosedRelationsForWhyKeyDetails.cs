@@ -7,21 +7,24 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: DisclosedRelationsForWhyKeyDetails
     /// </summary>
     public class DisclosedRelationsForWhyKeyDetails
     {
+        /// <summary>
+        /// FIXME: The domain of the ...
+        /// </summary>
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("ENTITY_ROLES")]
         public IList<EntityRoles> EntityRoles { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("RELATED_ROLES")]
         public IList<RelatedRoles> RelatedRoles { get; set; }

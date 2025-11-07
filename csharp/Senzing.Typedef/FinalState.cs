@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: FinalState
     /// </summary>
     public class FinalState
     {
@@ -15,7 +15,7 @@ namespace Senzing.Typedef
         public int NeedReevaluation { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("VIRTUAL_ENTITIES")]
         public IList<VirtualEntitySynopsis> VirtualEntities { get; set; }

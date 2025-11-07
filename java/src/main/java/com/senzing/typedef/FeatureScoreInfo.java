@@ -4,14 +4,15 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: FeatureScoreInfo
  */
 @JsonSerialize
 public class FeatureScoreInfo {
     @JsonProperty("ADDITIONAL_SCORES")
-    private AdditionalScores additionalScores;
+    private Map<String, Integer> additionalScores;
 
     @JsonProperty("CANDIDATE_FEAT_DESC")
     private String candidateFeatDesc;
@@ -54,15 +55,17 @@ public class FeatureScoreInfo {
 
     /**
      * Getter for additionalScores.<p>
+     * A map from score types to score values.
      */
-    public AdditionalScores getAdditionalScores() {
+    public Map<String, Integer> getAdditionalScores() {
         return additionalScores;
     }
 
     /**
      * Setter for additionalScores.<p>
+     * A map from score types to score values.
      */
-    public void setAdditionalScores(AdditionalScores additionalScores) {
+    public void setAdditionalScores(Map<String, Integer> additionalScores) {
         this.additionalScores = additionalScores;
     }
 

@@ -7,12 +7,15 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: FeatureForAttributes
     /// </summary>
     public class FeatureForAttributes
     {
+        /// <summary>
+        /// A map from attribute names to attribute values for the feature.
+        /// </summary>
         [JsonPropertyName("ATTRIBUTES")]
-        public SenzingEntitySpecification Attributes { get; set; }
+        public IDictionary<string, string> Attributes { get; set; }
 
         [JsonPropertyName("CANDIDATE_CAP_REACHED")]
         public string CandidateCapReached { get; set; }

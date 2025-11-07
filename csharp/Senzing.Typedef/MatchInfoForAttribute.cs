@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: MatchInfoForAttribute
     /// </summary>
     public class MatchInfoForAttribute
     {
@@ -16,6 +16,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the main feature.
+        /// </summary>
         [JsonPropertyName("FEAT_ID")]
         public int FeatId { get; set; }
     }

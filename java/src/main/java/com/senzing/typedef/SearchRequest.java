@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: SearchRequest
  */
 @JsonSerialize
 public class SearchRequest {
@@ -26,7 +26,7 @@ public class SearchRequest {
 
     /**
      * Getter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public Map<String, List<FeatureDescriptionValue>> getFeatures() {
         return features;
@@ -34,7 +34,7 @@ public class SearchRequest {
 
     /**
      * Setter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public void setFeatures(Map<String, List<FeatureDescriptionValue>> features) {
         this.features = features;
@@ -42,6 +42,7 @@ public class SearchRequest {
 
     /**
      * Getter for jsonData.<p>
+     * User source record.
      */
     public String getJsonData() {
         return jsonData;
@@ -49,6 +50,7 @@ public class SearchRequest {
 
     /**
      * Setter for jsonData.<p>
+     * User source record.
      */
     public void setJsonData(String jsonData) {
         this.jsonData = jsonData;

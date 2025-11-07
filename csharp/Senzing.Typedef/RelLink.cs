@@ -6,10 +6,13 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: RelLink
     /// </summary>
     public class RelLink
     {
+        /// <summary>
+        /// The domain of the disclosed relationship.
+        /// </summary>
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
@@ -19,30 +22,51 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the main feature.
+        /// </summary>
         [JsonPropertyName("FEAT_ID")]
         public int FeatId { get; set; }
 
+        /// <summary>
+        /// The usage type of the main feature.
+        /// </summary>
         [JsonPropertyName("FEAT_USAGE_TYPE")]
         public string FeatUsageType { get; set; }
 
         /// <summary>
-        /// Internal use.
+        /// The unique text identifier of the feature type.
         /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }
 
+        /// <summary>
+        /// The contents of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_DESC")]
         public string LinkedFeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_ID")]
         public int LinkedFeatId { get; set; }
 
+        /// <summary>
+        /// The unique text identifier of the linked feature type.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_TYPE")]
         public string LinkedFeatType { get; set; }
 
+        /// <summary>
+        /// The usage type of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_USAGE_TYPE")]
         public string LinkedFeatUsageType { get; set; }
 
+        /// <summary>
+        /// The type of the relationship.
+        /// </summary>
         [JsonPropertyName("REL_TYPE")]
         public string RelType { get; set; }
     }

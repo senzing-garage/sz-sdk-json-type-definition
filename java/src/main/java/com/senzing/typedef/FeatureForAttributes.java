@@ -5,14 +5,15 @@ package com.senzing.typedef;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
+import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: FeatureForAttributes
  */
 @JsonSerialize
 public class FeatureForAttributes {
     @JsonProperty("ATTRIBUTES")
-    private SenzingEntitySpecification attributes;
+    private Map<String, String> attributes;
 
     @JsonProperty("CANDIDATE_CAP_REACHED")
     private String candidateCapReached;
@@ -46,15 +47,17 @@ public class FeatureForAttributes {
 
     /**
      * Getter for attributes.<p>
+     * A map from attribute names to attribute values for the feature.
      */
-    public SenzingEntitySpecification getAttributes() {
+    public Map<String, String> getAttributes() {
         return attributes;
     }
 
     /**
      * Setter for attributes.<p>
+     * A map from attribute names to attribute values for the feature.
      */
-    public void setAttributes(SenzingEntitySpecification attributes) {
+    public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }
 

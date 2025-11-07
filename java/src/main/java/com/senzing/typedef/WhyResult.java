@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: WhyResult
  */
 @JsonSerialize
 public class WhyResult {
@@ -69,7 +69,7 @@ public class WhyResult {
 
     /**
      * Getter for focusRecords.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FocusRecord> getFocusRecords() {
         return focusRecords;
@@ -77,7 +77,7 @@ public class WhyResult {
 
     /**
      * Setter for focusRecords.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFocusRecords(List<FocusRecord> focusRecords) {
         this.focusRecords = focusRecords;
@@ -85,7 +85,7 @@ public class WhyResult {
 
     /**
      * Getter for focusRecords0.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FocusRecord> getFocusRecords0() {
         return focusRecords0;
@@ -93,7 +93,7 @@ public class WhyResult {
 
     /**
      * Setter for focusRecords0.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFocusRecords0(List<FocusRecord> focusRecords0) {
         this.focusRecords0 = focusRecords0;

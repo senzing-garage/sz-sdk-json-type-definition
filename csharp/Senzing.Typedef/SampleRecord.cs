@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: SampleRecord
     /// </summary>
     public class SampleRecord
     {
@@ -18,7 +18,7 @@ namespace Senzing.Typedef
         public string DataSource { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FLAGS")]
         public IList<string> Flags { get; set; }

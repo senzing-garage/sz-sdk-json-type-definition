@@ -7,10 +7,13 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: RelAnchor
     /// </summary>
     public class RelAnchor
     {
+        /// <summary>
+        /// FIXME: The domain of the ...
+        /// </summary>
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
@@ -20,23 +23,38 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the main feature.
+        /// </summary>
         [JsonPropertyName("FEAT_ID")]
         public int FeatId { get; set; }
 
+        /// <summary>
+        /// The contents of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_DESC")]
         public string LinkedFeatDesc { get; set; }
 
+        /// <summary>
+        /// The identifier of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_ID")]
         public int LinkedFeatId { get; set; }
 
+        /// <summary>
+        /// The unique text identifier of the linked feature type.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_TYPE")]
         public string LinkedFeatType { get; set; }
 
+        /// <summary>
+        /// The usage type of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_USAGE_TYPE")]
         public string LinkedFeatUsageType { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_REL_POINTER")]
         public IList<RelPointer> XxxRelPointer { get; set; }
