@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: RelatedRoles
     /// </summary>
     public class RelatedRoles
     {
@@ -16,6 +16,9 @@ namespace Senzing.Typedef
         [JsonPropertyName("FEAT_DESC")]
         public string FeatDesc { get; set; }
 
+        /// <summary>
+        /// User-defined description of the role.
+        /// </summary>
         [JsonPropertyName("ROLE")]
         public string Role { get; set; }
     }

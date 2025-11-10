@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: VirtualEntitySynopsis
  */
 @JsonSerialize
 public class VirtualEntitySynopsis {
@@ -22,7 +22,7 @@ public class VirtualEntitySynopsis {
 
     /**
      * Getter for memberRecords.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<MemberRecord> getMemberRecords() {
         return memberRecords;
@@ -30,7 +30,7 @@ public class VirtualEntitySynopsis {
 
     /**
      * Setter for memberRecords.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setMemberRecords(List<MemberRecord> memberRecords) {
         this.memberRecords = memberRecords;

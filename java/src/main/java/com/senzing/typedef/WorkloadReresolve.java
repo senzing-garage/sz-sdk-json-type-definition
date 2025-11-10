@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadReresolve
  */
 @JsonSerialize
 public class WorkloadReresolve {
@@ -28,7 +28,7 @@ public class WorkloadReresolve {
 
     /**
      * Getter for newFeatureFtypes.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Integer> getNewFeatureFtypes() {
         return newFeatureFtypes;
@@ -36,7 +36,7 @@ public class WorkloadReresolve {
 
     /**
      * Setter for newFeatureFtypes.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setNewFeatureFtypes(Map<String, Integer> newFeatureFtypes) {
         this.newFeatureFtypes = newFeatureFtypes;

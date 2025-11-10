@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// A map from ... to ...
+    /// FIXME: A map from ... to ...
     /// </summary>
     [JsonConverter(typeof(FeatureScoresJsonConverter))]
     public class FeatureScores

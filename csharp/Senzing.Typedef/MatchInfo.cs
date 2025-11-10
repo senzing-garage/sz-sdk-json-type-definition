@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: MatchInfo
     /// </summary>
     public class MatchInfo
     {

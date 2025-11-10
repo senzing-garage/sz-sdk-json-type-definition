@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: RelatedEntity
  */
 @JsonSerialize
 public class RelatedEntity {

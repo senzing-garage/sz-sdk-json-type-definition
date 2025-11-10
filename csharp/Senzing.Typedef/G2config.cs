@@ -7,168 +7,168 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: G2Config
     /// </summary>
     public class G2config
     {
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_ATTR")]
         public IList<CfgAttr> CfgAttr { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_CFBOM")]
         public IList<CfgCfbom> CfgCfbom { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_CFCALL")]
         public IList<CfgCfcall> CfgCfcall { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_CFRTN")]
         public IList<CfgCfrtn> CfgCfrtn { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_CFUNC")]
         public IList<CfgCfunc> CfgCfunc { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_DFBOM")]
         public IList<CfgDfbom> CfgDfbom { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_DFCALL")]
         public IList<CfgDfcall> CfgDfcall { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_DFUNC")]
         public IList<CfgDfunc> CfgDfunc { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_DSRC")]
         public IList<CfgDsrc> CfgDsrc { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_DSRC_INTEREST")]
         public IList<CfgDsrcInterest> CfgDsrcInterest { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_EBOM")]
         public IList<CfgEbom> CfgEbom { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_EFBOM")]
         public IList<CfgEfbom> CfgEfbom { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_EFCALL")]
         public IList<CfgEfcall> CfgEfcall { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_EFUNC")]
         public IList<CfgEfunc> CfgEfunc { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_ERFRAG")]
         public IList<CfgErfrag> CfgErfrag { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_ERRULE")]
         public IList<CfgErrule> CfgErrule { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_FBOM")]
         public IList<CfgFbom> CfgFbom { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_FBOVR")]
         public IList<CfgFbovr> CfgFbovr { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_FCLASS")]
         public IList<CfgFclass> CfgFclass { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_FELEM")]
         public IList<CfgFelem> CfgFelem { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_FTYPE")]
         public IList<CfgFtype> CfgFtype { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_GENERIC_THRESHOLD")]
         public IList<CfgGenericThreshold> CfgGenericThreshold { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_GPLAN")]
         public IList<CfgGplan> CfgGplan { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_RCLASS")]
         public IList<CfgRclass> CfgRclass { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_RTYPE")]
         public IList<CfgRtype> CfgRtype { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_SFCALL")]
         public IList<CfgSfcall> CfgSfcall { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("CFG_SFUNC")]
         public IList<CfgSfunc> CfgSfunc { get; set; }
@@ -177,37 +177,37 @@ namespace Senzing.Typedef
         public ConfigBaseVersion ConfigBaseVersion { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("SETTINGS")]
         public G2configSettings Settings { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("SYS_OOM")]
         public IList<SysOom> SysOom { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_CFG_ECLASS")]
         public IList<CfgEclass> XxxCfgEclass { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_CFG_ETYPE")]
         public IList<CfgEtype> XxxCfgEtype { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_CFG_LENS")]
         public IList<CfgLens> XxxCfgLens { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_CFG_LENSRL")]
         public IList<CfgLensrl> XxxCfgLensrl { get; set; }

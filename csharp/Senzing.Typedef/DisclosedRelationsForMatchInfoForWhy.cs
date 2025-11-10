@@ -7,39 +7,54 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: DisclosedRelationsForMatchInfoForWhy
     /// </summary>
     public class DisclosedRelationsForMatchInfoForWhy
     {
+        /// <summary>
+        /// FIXME: The domain of the ...
+        /// </summary>
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
+        /// <summary>
+        /// The identifier of the main feature.
+        /// </summary>
         [JsonPropertyName("FEAT_ID")]
         public int FeatId { get; set; }
 
+        /// <summary>
+        /// The usage type of the main feature.
+        /// </summary>
         [JsonPropertyName("FEAT_USAGE_TYPE")]
         public string FeatUsageType { get; set; }
 
+        /// <summary>
+        /// The identifier of the linked feature.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_ID")]
         public int LinkedFeatId { get; set; }
 
+        /// <summary>
+        /// The unique text identifier of the linked feature type.
+        /// </summary>
         [JsonPropertyName("LINKED_FEAT_TYPE")]
         public string LinkedFeatType { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("REL_ANCHOR")]
         public IList<RelAnchor> RelAnchor { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// A list of bidirectional disclosed relationship links.
         /// </summary>
         [JsonPropertyName("REL_LINK")]
         public IList<RelLink> RelLink { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("REL_POINTER")]
         public IList<RelPointer> RelPointer { get; set; }

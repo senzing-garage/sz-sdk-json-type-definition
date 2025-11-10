@@ -9,7 +9,7 @@ namespace Senzing.Typedef
     public class SzEngineGetEntityByRecordIdResponse
     {
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("RELATED_ENTITIES")]
         public IList<RelatedEntity> RelatedEntities { get; set; }

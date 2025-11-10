@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: MemberRecord
  */
 @JsonSerialize
 public class MemberRecord {

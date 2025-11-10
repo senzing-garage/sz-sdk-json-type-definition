@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: RecordForGetEntity
     /// </summary>
     public class RecordForGetEntity
     {
@@ -25,13 +25,13 @@ namespace Senzing.Typedef
         public string ErruleCode { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// A map from feature type names to lists of features.
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }
@@ -46,7 +46,7 @@ namespace Senzing.Typedef
         public int InternalId { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// User source record.
         /// </summary>
         [JsonPropertyName("JSON_DATA")]
         public IDictionary<string, Object_> JsonData { get; set; }
@@ -73,25 +73,25 @@ namespace Senzing.Typedef
         public string RecordId { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_ADDRESS_DATA")]
         public IList<string> XxxAddressData { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_ATTRIBUTE_DATA")]
         public IList<string> XxxAttributeData { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_ENTITY_DATA")]
         public IList<string> XxxEntityData { get; set; }
@@ -106,7 +106,7 @@ namespace Senzing.Typedef
         public string XxxEntityType { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_IDENTIFIER_DATA")]
         public IList<string> XxxIdentifierData { get; set; }
@@ -115,25 +115,25 @@ namespace Senzing.Typedef
         public int XxxMatchLevel { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_NAME_DATA")]
         public IList<string> XxxNameData { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_OTHER_DATA")]
         public IList<string> XxxOtherData { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_PHONE_DATA")]
         public IList<string> XxxPhoneData { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_RELATIONSHIP_DATA")]
         public IList<string> XxxRelationshipData { get; set; }

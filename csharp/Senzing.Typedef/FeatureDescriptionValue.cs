@@ -7,12 +7,12 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: FeatureDescriptionValue
     /// </summary>
     public class FeatureDescriptionValue
     {
         /// <summary>
-        /// A map from ... to ...
+        /// A map from attribute names to attribute values for the feature.
         /// </summary>
         [JsonPropertyName("ATTRIBUTES")]
         public IDictionary<string, string> Attributes { get; set; }
@@ -30,7 +30,7 @@ namespace Senzing.Typedef
         public string FeatDesc { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FEAT_DESC_VALUES")]
         public IList<FeatureDescriptionValueDetails> FeatDescValues { get; set; }

@@ -7,16 +7,19 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: SearchRequest
     /// </summary>
     public class SearchRequest
     {
         /// <summary>
-        /// A map from ... to ...
+        /// A map from feature type names to lists of features.
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureDescriptionValue>> Features { get; set; }
 
+        /// <summary>
+        /// User source record.
+        /// </summary>
         [JsonPropertyName("JSON_DATA")]
         public string JsonData { get; set; }
 

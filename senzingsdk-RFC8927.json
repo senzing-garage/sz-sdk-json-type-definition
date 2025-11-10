@@ -1,33 +1,8 @@
 {
     "definitions": {
-        "AdditionalScores": {
-            "metadata": {
-                "description": "Itemized scores from comparison function."
-            },
-            "properties": {
-                "FULL_SCORE": {
-                    "type": "int32"
-                },
-                "GENERATION_MATCH": {
-                    "type": "int32"
-                },
-                "GNR_FN": {
-                    "type": "int32"
-                },
-                "GNR_GN": {
-                    "type": "int32"
-                },
-                "GNR_ON": {
-                    "type": "int32"
-                },
-                "GNR_SN": {
-                    "type": "int32"
-                }
-            }
-        },
         "AffectedEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: AffectedEntity"
             },
             "properties": {
                 "ENTITY_ID": {
@@ -42,7 +17,7 @@
         },
         "CFG_ATTR": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_ATTR"
             },
             "properties": {
                 "ATTR_CLASS": {
@@ -69,7 +44,7 @@
                 },
                 "FTYPE_CODE": {
                     "metadata": {
-                        "description": "Internal use."
+                        "description": "The unique text identifier of the feature type."
                     },
                     "type": "string"
                 },
@@ -83,7 +58,7 @@
         },
         "CFG_CFBOM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_CFBOM"
             },
             "properties": {
                 "CFCALL_ID": {
@@ -114,7 +89,7 @@
         },
         "CFG_CFCALL": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_CFCALL"
             },
             "properties": {
                 "CFCALL_ID": {
@@ -145,7 +120,7 @@
         },
         "CFG_CFRTN": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_CFRTN"
             },
             "properties": {
                 "CFRTN_ID": {
@@ -209,7 +184,7 @@
         },
         "CFG_CFUNC": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_CFUNC"
             },
             "properties": {
                 "ANON_SUPPORT": {
@@ -246,7 +221,7 @@
         },
         "CFG_DFBOM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_DFBOM"
             },
             "properties": {
                 "DFCALL_ID": {
@@ -277,7 +252,7 @@
         },
         "CFG_DFCALL": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_DFCALL"
             },
             "properties": {
                 "DFCALL_ID": {
@@ -308,7 +283,7 @@
         },
         "CFG_DFUNC": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_DFUNC"
             },
             "properties": {
                 "ANON_SUPPORT": {
@@ -345,7 +320,7 @@
         },
         "CFG_DSRC": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_DSRC"
             },
             "properties": {
                 "DSRC_CODE": {
@@ -376,7 +351,7 @@
         },
         "CFG_DSRC_INTEREST": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_DSRC_INTEREST"
             },
             "properties": {
                 "XXX_DSRC_ID": {
@@ -398,7 +373,7 @@
         },
         "CFG_EBOM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_EBOM"
             },
             "properties": {
                 "XXX_ETYPE_ID": {
@@ -426,7 +401,7 @@
         },
         "CFG_ECLASS": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_ECLASS"
             },
             "properties": {
                 "XXX_ECLASS_CODE": {
@@ -448,7 +423,7 @@
         },
         "CFG_EFBOM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_EFBOM"
             },
             "properties": {
                 "EFCALL_ID": {
@@ -482,7 +457,7 @@
         },
         "CFG_EFCALL": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_EFCALL"
             },
             "properties": {
                 "EFCALL_ID": {
@@ -528,7 +503,7 @@
         },
         "CFG_EFUNC": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_EFUNC"
             },
             "properties": {
                 "CONNECT_STR": {
@@ -562,7 +537,7 @@
         },
         "CFG_ERFRAG": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_ERFRAG"
             },
             "properties": {
                 "ERFRAG_CODE": {
@@ -587,7 +562,7 @@
         },
         "CFG_ERRULE": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_ERRULE"
             },
             "properties": {
                 "DISQ_ERFRAG_CODE": {
@@ -639,7 +614,7 @@
         },
         "CFG_ETYPE": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_ETYPE"
             },
             "properties": {
                 "XXX_ECLASS_ID": {
@@ -664,7 +639,7 @@
         },
         "CFG_FBOM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_FBOM"
             },
             "properties": {
                 "DERIVED": {
@@ -701,7 +676,7 @@
         },
         "CFG_FBOVR": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_FBOVR"
             },
             "properties": {
                 "FTYPE_EXCL": {
@@ -732,7 +707,7 @@
         },
         "CFG_FCLASS": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_FCLASS"
             },
             "properties": {
                 "FCLASS_CODE": {
@@ -751,7 +726,7 @@
         },
         "CFG_FELEM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_FELEM"
             },
             "properties": {
                 "DATA_TYPE": {
@@ -776,7 +751,7 @@
         },
         "CFG_FTYPE": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_FTYPE"
             },
             "properties": {
                 "ANONYMIZE": {
@@ -793,7 +768,7 @@
                 },
                 "FTYPE_CODE": {
                     "metadata": {
-                        "description": "Internal use."
+                        "description": "The unique text identifier of the feature type."
                     },
                     "type": "string"
                 },
@@ -843,7 +818,7 @@
         },
         "CFG_GENERIC_THRESHOLD": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_GENERIC_THRESHOLD"
             },
             "properties": {
                 "BEHAVIOR": {
@@ -880,7 +855,7 @@
         },
         "CFG_GPLAN": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_GPLAN"
             },
             "properties": {
                 "GPLAN_CODE": {
@@ -899,7 +874,7 @@
         },
         "CFG_LENS": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_LENS"
             },
             "properties": {
                 "XXX_LENS_CODE": {
@@ -921,12 +896,12 @@
                 "ref": "Fixme"
             },
             "metadata": {
-                "description": "A list of ..."
+                "description": "FIXME: A list of ..."
             }
         },
         "CFG_RCLASS": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_RCLASS"
             },
             "properties": {
                 "IS_DISCLOSED": {
@@ -951,7 +926,7 @@
         },
         "CFG_RTYPE": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_RTYPE"
             },
             "properties": {
                 "BREAK_RES": {
@@ -985,7 +960,7 @@
         },
         "CFG_SFCALL": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_SFCALL"
             },
             "properties": {
                 "EXEC_ORDER": {
@@ -1022,7 +997,7 @@
         },
         "CFG_SFUNC": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CFG_SFUNC"
             },
             "properties": {
                 "CONNECT_STR": {
@@ -1056,7 +1031,7 @@
         },
         "CONFIG_BASE_VERSION": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CONFIG_BASE_VERSION"
             },
             "properties": {
                 "BUILD_DATE": {
@@ -1081,20 +1056,20 @@
         },
         "CandidateKeysForMatchInfo": {
             "metadata": {
-                "description": "A map from ... to ..."
+                "description": "FIXME: A map from ... to ..."
             },
             "values": {
                 "elements": {
                     "ref": "MatchInfoForAttribute"
                 },
                 "metadata": {
-                    "description": "A list of ..."
+                    "description": "FIXME: A list of ..."
                 }
             }
         },
         "CandidateKeysForSearchStatistic": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CandidateKeysForSearchStatistic"
             },
             "properties": {
                 "FEATURE_TYPES": {
@@ -1102,7 +1077,7 @@
                         "ref": "FeatureType"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "SUMMARY": {
@@ -1112,7 +1087,7 @@
         },
         "CandidateKeysSummary": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CandidateKeysSummary"
             },
             "properties": {
                 "FOUND": {
@@ -1137,7 +1112,7 @@
         },
         "CompatibilityVersion": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: CompatibilityVersion"
             },
             "properties": {
                 "CONFIG_VERSION": {
@@ -1147,7 +1122,7 @@
         },
         "Config": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Config"
             },
             "properties": {
                 "CONFIG_COMMENTS": {
@@ -1173,7 +1148,7 @@
         },
         "DataSource": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: DataSource"
             },
             "properties": {
                 "DSRC_CODE": {
@@ -1193,10 +1168,13 @@
         },
         "DisclosedRelationsForMatchInfo": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: DisclosedRelationsForMatchInfo"
             },
             "properties": {
                 "DOMAIN": {
+                    "metadata": {
+                        "description": "The domain of the disclosed relationship."
+                    },
                     "type": "string"
                 },
                 "ENTITY_ROLES": {
@@ -1204,7 +1182,7 @@
                         "ref": "EntityRoles"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "A list of roles in the disclosed relationships of the entity."
                     }
                 },
                 "RELATED_ROLES": {
@@ -1212,7 +1190,7 @@
                         "ref": "RelatedRoles"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "A list of roles in the disclosed relationships of the related entity."
                     }
                 },
                 "REL_LINK": {
@@ -1220,7 +1198,7 @@
                         "ref": "RelLink"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "A list of bidirectional disclosed relationship links."
                     }
                 },
                 "XXX_REL_ANCHOR": {
@@ -1228,7 +1206,7 @@
                         "ref": "RelAnchor"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "A list of relationship anchors of the entity."
                     }
                 },
                 "XXX_REL_POINTER": {
@@ -1236,35 +1214,46 @@
                         "ref": "RelPointer"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "DisclosedRelationsForMatchInfoForWhy": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: DisclosedRelationsForMatchInfoForWhy"
             },
             "properties": {
                 "DOMAIN": {
+                    "metadata": {
+                        "description": "FIXME: The domain of the ..."
+                    },
                     "type": "string"
                 },
                 "FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the main feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the main feature."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the linked feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "LINKED_FEAT_TYPE": {
+                    "metadata": {
+                        "description": "The unique text identifier of the linked feature type."
+                    },
                     "type": "string"
                 },
                 "REL_ANCHOR": {
@@ -1272,7 +1261,7 @@
                         "ref": "RelAnchor"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "REL_LINK": {
@@ -1280,7 +1269,7 @@
                         "ref": "RelLink"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "A list of bidirectional disclosed relationship links."
                     }
                 },
                 "REL_POINTER": {
@@ -1288,7 +1277,7 @@
                         "ref": "RelPointer"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_FEAT_DESC": {
@@ -1304,10 +1293,13 @@
         },
         "DisclosedRelationsForWhyKeyDetails": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: DisclosedRelationsForWhyKeyDetails"
             },
             "properties": {
                 "DOMAIN": {
+                    "metadata": {
+                        "description": "FIXME: The domain of the ..."
+                    },
                     "type": "string"
                 },
                 "ENTITY_ROLES": {
@@ -1315,7 +1307,7 @@
                         "ref": "EntityRoles"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RELATED_ROLES": {
@@ -1323,14 +1315,14 @@
                         "ref": "RelatedRoles"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "Entity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Entity"
             },
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1338,7 +1330,7 @@
                         "ref": "RelatedEntity"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RESOLVED_ENTITY": {
@@ -1348,7 +1340,7 @@
         },
         "EntityForResolvedEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: EntityForResolvedEntity"
             },
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1356,7 +1348,7 @@
                         "ref": "RelatedEntity"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RESOLVED_ENTITY": {
@@ -1366,7 +1358,7 @@
         },
         "EntityForWhySearch": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: EntityForWhySearch"
             },
             "properties": {
                 "RELATED_ENTITIES": {
@@ -1374,7 +1366,7 @@
                         "ref": "RelatedEntity"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RESOLVED_ENTITY": {
@@ -1384,7 +1376,7 @@
         },
         "EntityNetworkLink": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: EntityNetworkLink"
             },
             "properties": {
                 "ERRULE_CODE": {
@@ -1439,7 +1431,7 @@
         },
         "EntityPath": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: EntityPath"
             },
             "properties": {
                 "END_ENTITY_ID": {
@@ -1469,7 +1461,7 @@
         },
         "EntityPathLink": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: EntityPathLink"
             },
             "properties": {
                 "ERRULE_CODE": {
@@ -1523,7 +1515,7 @@
         },
         "EntityRoles": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: EntityRoles"
             },
             "properties": {
                 "FEAT_DESC": {
@@ -1533,13 +1525,16 @@
                     "type": "string"
                 },
                 "ROLE": {
+                    "metadata": {
+                        "description": "User-defined description of the role."
+                    },
                     "type": "string"
                 }
             }
         },
         "Feature": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Feature"
             },
             "properties": {
                 "FELEM_CODE": {
@@ -1558,14 +1553,17 @@
         },
         "FeatureDescriptionValue": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureDescriptionValue"
             },
             "properties": {
                 "ATTRIBUTES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from attribute names to attribute values for the feature."
                     },
                     "values": {
+                        "metadata": {
+                            "description": "Attribute name."
+                        },
                         "type": "string"
                     }
                 },
@@ -1589,7 +1587,7 @@
                         "ref": "FeatureDescriptionValueDetails"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "LIB_FEAT_ID": {
@@ -1615,7 +1613,7 @@
         },
         "FeatureDescriptionValueDetails": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureDescriptionValueDetails"
             },
             "properties": {
                 "CANDIDATE_CAP_REACHED": {
@@ -1653,11 +1651,19 @@
         },
         "FeatureForAttributes": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureForAttributes"
             },
             "properties": {
                 "ATTRIBUTES": {
-                    "ref": "SenzingEntitySpecification"
+                    "metadata": {
+                        "description": "A map from attribute names to attribute values for the feature."
+                    },
+                    "values": {
+                        "metadata": {
+                            "description": "Attribute name."
+                        },
+                        "type": "string"
+                    }
                 },
                 "CANDIDATE_CAP_REACHED": {
                     "type": "string"
@@ -1705,7 +1711,7 @@
         },
         "FeatureForGetEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureForGetEntity"
             },
             "properties": {
                 "FEAT_DESC": {
@@ -1740,14 +1746,14 @@
                         "ref": "SenzingEntitySpecification"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "FeatureID": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureID"
             },
             "properties": {
                 "LIB_FEAT_ID": {
@@ -1767,11 +1773,19 @@
         },
         "FeatureScoreForAttribute": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureScoreForAttribute"
             },
             "properties": {
                 "ADDITIONAL_SCORES": {
-                    "ref": "AdditionalScores"
+                    "metadata": {
+                        "description": "A map from score types to score values"
+                    },
+                    "values": {
+                        "metadata": {
+                            "description": "Score type"
+                        },
+                        "type": "int32"
+                    }
                 },
                 "CANDIDATE_FEAT_DESC": {
                     "type": "string"
@@ -1813,11 +1827,19 @@
         },
         "FeatureScoreInfo": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureScoreInfo"
             },
             "properties": {
                 "ADDITIONAL_SCORES": {
-                    "ref": "AdditionalScores"
+                    "metadata": {
+                        "description": "A map from score types to score values."
+                    },
+                    "values": {
+                        "metadata": {
+                            "description": "Score type"
+                        },
+                        "type": "int32"
+                    }
                 },
                 "CANDIDATE_FEAT_DESC": {
                     "metadata": {
@@ -1902,20 +1924,20 @@
         },
         "FeatureScores": {
             "metadata": {
-                "description": "A map from ... to ..."
+                "description": "FIXME: A map from ... to ..."
             },
             "values": {
                 "elements": {
                     "ref": "FeatureScoreForAttribute"
                 },
                 "metadata": {
-                    "description": "A list of ..."
+                    "description": "FIXME: A list of ..."
                 }
             }
         },
         "FeatureType": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FeatureType"
             },
             "properties": {
                 "FOUND": {
@@ -1926,7 +1948,7 @@
                 },
                 "FTYPE_CODE": {
                     "metadata": {
-                        "description": "Internal use."
+                        "description": "The unique text identifier of the feature type."
                     },
                     "type": "string"
                 },
@@ -1946,7 +1968,7 @@
         },
         "FinalState": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FinalState"
             },
             "properties": {
                 "NEED_REEVALUATION": {
@@ -1960,7 +1982,7 @@
                         "ref": "VirtualEntitySynopsis"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -1977,7 +1999,7 @@
         },
         "FocusRecord": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: FocusRecord"
             },
             "properties": {
                 "DATA_SOURCE": {
@@ -1997,7 +2019,7 @@
         },
         "G2Config": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: G2Config"
             },
             "properties": {
                 "CFG_ATTR": {
@@ -2005,7 +2027,7 @@
                         "ref": "CFG_ATTR"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_CFBOM": {
@@ -2013,7 +2035,7 @@
                         "ref": "CFG_CFBOM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_CFCALL": {
@@ -2021,7 +2043,7 @@
                         "ref": "CFG_CFCALL"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_CFRTN": {
@@ -2029,7 +2051,7 @@
                         "ref": "CFG_CFRTN"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_CFUNC": {
@@ -2037,7 +2059,7 @@
                         "ref": "CFG_CFUNC"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_DFBOM": {
@@ -2045,7 +2067,7 @@
                         "ref": "CFG_DFBOM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_DFCALL": {
@@ -2053,7 +2075,7 @@
                         "ref": "CFG_DFCALL"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_DFUNC": {
@@ -2061,7 +2083,7 @@
                         "ref": "CFG_DFUNC"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_DSRC": {
@@ -2069,7 +2091,7 @@
                         "ref": "CFG_DSRC"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_DSRC_INTEREST": {
@@ -2077,7 +2099,7 @@
                         "ref": "CFG_DSRC_INTEREST"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_EBOM": {
@@ -2085,7 +2107,7 @@
                         "ref": "CFG_EBOM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_EFBOM": {
@@ -2093,7 +2115,7 @@
                         "ref": "CFG_EFBOM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_EFCALL": {
@@ -2101,7 +2123,7 @@
                         "ref": "CFG_EFCALL"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_EFUNC": {
@@ -2109,7 +2131,7 @@
                         "ref": "CFG_EFUNC"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_ERFRAG": {
@@ -2117,7 +2139,7 @@
                         "ref": "CFG_ERFRAG"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_ERRULE": {
@@ -2125,7 +2147,7 @@
                         "ref": "CFG_ERRULE"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_FBOM": {
@@ -2133,7 +2155,7 @@
                         "ref": "CFG_FBOM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_FBOVR": {
@@ -2141,7 +2163,7 @@
                         "ref": "CFG_FBOVR"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_FCLASS": {
@@ -2149,7 +2171,7 @@
                         "ref": "CFG_FCLASS"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_FELEM": {
@@ -2157,7 +2179,7 @@
                         "ref": "CFG_FELEM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_FTYPE": {
@@ -2165,7 +2187,7 @@
                         "ref": "CFG_FTYPE"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_GENERIC_THRESHOLD": {
@@ -2173,7 +2195,7 @@
                         "ref": "CFG_GENERIC_THRESHOLD"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_GPLAN": {
@@ -2181,7 +2203,7 @@
                         "ref": "CFG_GPLAN"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_RCLASS": {
@@ -2189,7 +2211,7 @@
                         "ref": "CFG_RCLASS"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_RTYPE": {
@@ -2197,7 +2219,7 @@
                         "ref": "CFG_RTYPE"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_SFCALL": {
@@ -2205,7 +2227,7 @@
                         "ref": "CFG_SFCALL"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CFG_SFUNC": {
@@ -2213,7 +2235,7 @@
                         "ref": "CFG_SFUNC"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "CONFIG_BASE_VERSION": {
@@ -2221,7 +2243,7 @@
                 },
                 "SETTINGS": {
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     },
                     "properties": {
                         "METAPHONE_VERSION": {
@@ -2234,7 +2256,7 @@
                         "ref": "SYS_OOM"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_CFG_ECLASS": {
@@ -2242,7 +2264,7 @@
                         "ref": "CFG_ECLASS"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_CFG_ETYPE": {
@@ -2250,7 +2272,7 @@
                         "ref": "CFG_ETYPE"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_CFG_LENS": {
@@ -2258,7 +2280,7 @@
                         "ref": "CFG_LENS"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_CFG_LENSRL": {
@@ -2266,14 +2288,14 @@
                         "ref": "CFG_LENSRL"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "HowResults": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: HowResults"
             },
             "properties": {
                 "FINAL_STATE": {
@@ -2284,14 +2306,14 @@
                         "ref": "ResolutionStep"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "InterestingEntities": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: InterestingEntities"
             },
             "properties": {
                 "ENTITIES": {
@@ -2307,7 +2329,7 @@
                         "ref": "Notice"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -2336,7 +2358,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "SAMPLE_RECORDS": {
@@ -2344,14 +2366,14 @@
                         "ref": "SampleRecord"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "MatchInfo": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: MatchInfo"
             },
             "properties": {
                 "CANDIDATE_KEYS": {
@@ -2400,7 +2422,7 @@
         },
         "MatchInfoForAttribute": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: MatchInfoForAttribute"
             },
             "properties": {
                 "FEAT_DESC": {
@@ -2411,6 +2433,7 @@
                 },
                 "FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the main feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
@@ -2419,19 +2442,19 @@
         },
         "MatchInfoForWhy": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: MatchInfoForWhy"
             },
             "properties": {
                 "CANDIDATE_KEYS": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "FIXME: A map from ... to ..."
                     },
                     "values": {
                         "elements": {
                             "ref": "MatchInfoForAttribute"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -2515,7 +2538,7 @@
         },
         "MemberRecord": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: MemberRecord"
             },
             "properties": {
                 "INTERNAL_ID": {
@@ -2537,7 +2560,7 @@
         },
         "Notice": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Notice"
             },
             "properties": {
                 "CODE": {
@@ -2550,7 +2573,7 @@
         },
         "Object": {
             "metadata": {
-                "description": "FIXME: ...",
+                "description": "FIXME: Object",
                 "goType": "any",
                 "javaJacksonType": "Object",
                 "pythonType": "object"
@@ -2559,7 +2582,7 @@
         },
         "Record": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Record"
             },
             "properties": {
                 "DATA_SOURCE": {
@@ -2576,14 +2599,15 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "jsonKeyforMapValues": "FIXME: ...",
+                            "description": "A list of features for given key."
                         }
                     }
                 },
@@ -2592,7 +2616,7 @@
                         "ref": "FeatureID"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "FIRST_SEEN_DT": {
@@ -2607,9 +2631,12 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "User source record."
                     },
                     "values": {
+                        "metadata": {
+                            "description": "User-defined JSON key in source record."
+                        },
                         "ref": "Object"
                     }
                 },
@@ -2637,7 +2664,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "FIXME: A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -2648,7 +2675,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ATTRIBUTE_DATA": {
@@ -2656,7 +2683,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ENTITY_DATA": {
@@ -2664,7 +2691,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ENTITY_DESC": {
@@ -2681,7 +2708,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_MATCH_LEVEL": {
@@ -2695,7 +2722,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_OTHER_DATA": {
@@ -2703,7 +2730,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_PHONE_DATA": {
@@ -2711,7 +2738,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_RELATIONSHIP_DATA": {
@@ -2719,14 +2746,14 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "RecordForGetEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RecordForGetEntity"
             },
             "properties": {
                 "DATA_SOURCE": {
@@ -2743,14 +2770,14 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -2759,7 +2786,7 @@
                         "ref": "FeatureID"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "FIRST_SEEN_DT": {
@@ -2774,9 +2801,12 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "User source record."
                     },
                     "values": {
+                        "metadata": {
+                            "description": "User-defined JSON key in source record."
+                        },
                         "ref": "Object"
                     }
                 },
@@ -2804,7 +2834,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "FIXME: A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -2815,7 +2845,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ATTRIBUTE_DATA": {
@@ -2823,7 +2853,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ENTITY_DATA": {
@@ -2831,7 +2861,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ENTITY_DESC": {
@@ -2848,7 +2878,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_MATCH_LEVEL": {
@@ -2862,7 +2892,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_OTHER_DATA": {
@@ -2870,7 +2900,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_PHONE_DATA": {
@@ -2878,7 +2908,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_RELATIONSHIP_DATA": {
@@ -2886,14 +2916,14 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "RecordKey": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RecordKey"
             },
             "properties": {
                 "DATA_SOURCE": {
@@ -2913,7 +2943,7 @@
         },
         "RecordKeys": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RecordKeys"
             },
             "properties": {
                 "RECORDS": {
@@ -2928,7 +2958,7 @@
         },
         "RecordSummary": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RecordSummary"
             },
             "properties": {
                 "DATA_SOURCE": {
@@ -2954,10 +2984,13 @@
         },
         "RelAnchor": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RelAnchor"
             },
             "properties": {
                 "DOMAIN": {
+                    "metadata": {
+                        "description": "FIXME: The domain of the ..."
+                    },
                     "type": "string"
                 },
                 "FEAT_DESC": {
@@ -2968,23 +3001,34 @@
                 },
                 "FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the main feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "LINKED_FEAT_DESC": {
+                    "metadata": {
+                        "description": "The contents of the linked feature."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the linked feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "LINKED_FEAT_TYPE": {
+                    "metadata": {
+                        "description": "The unique text identifier of the linked feature type."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the linked feature."
+                    },
                     "type": "string"
                 },
                 "XXX_REL_POINTER": {
@@ -2992,17 +3036,20 @@
                         "ref": "RelPointer"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "RelLink": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RelLink"
             },
             "properties": {
                 "DOMAIN": {
+                    "metadata": {
+                        "description": "The domain of the disclosed relationship."
+                    },
                     "type": "string"
                 },
                 "FEAT_DESC": {
@@ -3013,45 +3060,65 @@
                 },
                 "FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the main feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the main feature."
+                    },
                     "type": "string"
                 },
                 "FTYPE_CODE": {
                     "metadata": {
-                        "description": "Internal use."
+                        "description": "The unique text identifier of the feature type."
                     },
                     "type": "string"
                 },
                 "LINKED_FEAT_DESC": {
+                    "metadata": {
+                        "description": "The contents of the linked feature."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the linked feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "LINKED_FEAT_TYPE": {
+                    "metadata": {
+                        "description": "The unique text identifier of the linked feature type."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the linked feature."
+                    },
                     "type": "string"
                 },
                 "REL_TYPE": {
+                    "metadata": {
+                        "description": "The type of the relationship."
+                    },
                     "type": "string"
                 }
             }
         },
         "RelPointer": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RelPointer"
             },
             "properties": {
                 "DOMAIN": {
+                    "metadata": {
+                        "description": "FIXME: The domain of the ..."
+                    },
                     "type": "string"
                 },
                 "FEAT_DESC": {
@@ -3062,30 +3129,41 @@
                 },
                 "FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the main feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "FEAT_USAGE_TYPE": {
+                    "metadata": {
+                        "description": "The usage type of the main feature."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_DESC": {
+                    "metadata": {
+                        "description": "The contents of the linked feature."
+                    },
                     "type": "string"
                 },
                 "LINKED_FEAT_ID": {
                     "metadata": {
+                        "description": "The identifier of the linked feature.",
                         "goType": "int64"
                     },
                     "type": "int32"
                 },
                 "LINKED_FEAT_TYPE": {
+                    "metadata": {
+                        "description": "The unique text identifier of the linked feature type."
+                    },
                     "type": "string"
                 }
             }
         },
         "RelatedEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RelatedEntity"
             },
             "properties": {
                 "ENTITY_ID": {
@@ -3164,7 +3242,7 @@
         },
         "RelatedRoles": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: RelatedRoles"
             },
             "properties": {
                 "FEAT_DESC": {
@@ -3174,13 +3252,16 @@
                     "type": "string"
                 },
                 "ROLE": {
+                    "metadata": {
+                        "description": "User-defined description of the role."
+                    },
                     "type": "string"
                 }
             }
         },
         "Repository": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Repository"
             },
             "properties": {
                 "id": {
@@ -3205,7 +3286,7 @@
         },
         "ResolutionStep": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: ResolutionStep"
             },
             "properties": {
                 "INBOUND_VIRTUAL_ENTITY_ID": {
@@ -3233,7 +3314,7 @@
         },
         "ResolvedEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: ResolvedEntity"
             },
             "properties": {
                 "ENTITY_ID": {
@@ -3251,14 +3332,14 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -3283,7 +3364,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ERRULE_CODE": {
@@ -3297,7 +3378,7 @@
                         "ref": "FeatureID"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_IS_AMBIGUOUS": {
@@ -3339,7 +3420,7 @@
         },
         "ResolvedEntityAndMatchInfo": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: ResolvedEntityAndMatchInfo"
             },
             "properties": {
                 "ENTITY": {
@@ -3355,7 +3436,7 @@
         },
         "ResolvedEntityForGetEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: ResolvedEntityForGetEntity"
             },
             "properties": {
                 "ENTITY_ID": {
@@ -3373,14 +3454,14 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureForGetEntity"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -3405,7 +3486,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ERRULE_CODE": {
@@ -3419,7 +3500,7 @@
                         "ref": "FeatureID"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_IS_AMBIGUOUS": {
@@ -3461,7 +3542,7 @@
         },
         "SYS_OOM": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SYS_OOM"
             },
             "properties": {
                 "FTYPE_ID": {
@@ -3522,7 +3603,7 @@
         },
         "SampleRecord": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SampleRecord"
             },
             "properties": {
                 "DATA_SOURCE": {
@@ -3536,7 +3617,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RECORD_ID": {
@@ -3550,7 +3631,7 @@
         },
         "SchemaVersion": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SchemaVersion"
             },
             "properties": {
                 "ENGINE_SCHEMA_VERSION": {
@@ -3566,19 +3647,19 @@
         },
         "SearchEntity": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SearchEntity"
             },
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureDescriptionValue"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -3589,7 +3670,7 @@
         },
         "SearchEntitySummary": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SearchEntitySummary"
             },
             "properties": {
                 "FEATURES_ADDED": {
@@ -3608,23 +3689,26 @@
         },
         "SearchRequest": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SearchRequest"
             },
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureDescriptionValue"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
                 "JSON_DATA": {
+                    "metadata": {
+                        "description": "User source record."
+                    },
                     "type": "string"
                 },
                 "SEARCH_PROFILE": {
@@ -3634,7 +3718,7 @@
         },
         "SearchStatistic": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SearchStatistic"
             },
             "properties": {
                 "CANDIDATE_KEYS": {
@@ -3644,7 +3728,7 @@
         },
         "SenzingEntitySpecification": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: SenzingEntitySpecification"
             },
             "properties": {
                 "ACCOUNT_DOMAIN": {
@@ -4216,7 +4300,7 @@
                 },
                 "FTYPE_CODE": {
                     "metadata": {
-                        "description": "Internal use."
+                        "description": "The unique text identifier of the feature type."
                     },
                     "type": "string"
                 },
@@ -4545,7 +4629,7 @@
                         "ref": "RelatedEntity"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RESOLVED_ENTITY": {
@@ -4560,7 +4644,7 @@
                         "ref": "RelatedEntity"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RESOLVED_ENTITY": {
@@ -4572,14 +4656,14 @@
             "properties": {
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -4588,20 +4672,23 @@
                         "ref": "FeatureID"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "User source record."
                     },
                     "values": {
+                        "metadata": {
+                            "description": "User-defined JSON key in source record."
+                        },
                         "ref": "Object"
                     }
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "FIXME: A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -4619,14 +4706,14 @@
                 },
                 "FEATURES": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "A map from feature type names to lists of features."
                     },
                     "values": {
                         "elements": {
                             "ref": "FeatureForAttributes"
                         },
                         "metadata": {
-                            "description": "A list of ..."
+                            "description": "FIXME: A list of ..."
                         }
                     }
                 },
@@ -4635,7 +4722,7 @@
                         "ref": "FeatureID"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "FIRST_SEEN_DT": {
@@ -4643,9 +4730,12 @@
                 },
                 "JSON_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "User source record."
                     },
                     "values": {
+                        "metadata": {
+                            "description": "User-defined JSON key in source record."
+                        },
                         "ref": "Object"
                     }
                 },
@@ -4661,7 +4751,7 @@
                 },
                 "UNMAPPED_DATA": {
                     "metadata": {
-                        "description": "A map from ... to ..."
+                        "description": "FIXME: A map from ... to ..."
                     },
                     "values": {
                         "ref": "Object"
@@ -4672,7 +4762,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ATTRIBUTE_DATA": {
@@ -4680,7 +4770,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ENTITY_DATA": {
@@ -4688,7 +4778,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_ENTITY_DESC": {
@@ -4711,7 +4801,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_INTERNAL_ID": {
@@ -4744,7 +4834,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_OTHER_DATA": {
@@ -4752,7 +4842,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_PHONE_DATA": {
@@ -4760,7 +4850,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "XXX_RELATIONSHIP_DATA": {
@@ -4768,7 +4858,7 @@
                         "type": "string"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -4917,7 +5007,7 @@
                         "ref": "RelatedEntity"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "RESOLVED_ENTITIES": {
@@ -4925,7 +5015,7 @@
                         "ref": "ResolvedEntityAndMatchInfo"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "SEARCH_ENTITY": {
@@ -4939,7 +5029,7 @@
                         "ref": "SearchStatistic"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -4973,7 +5063,7 @@
                         "ref": "WhyResult"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -4993,7 +5083,7 @@
                         "ref": "WhyResult"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -5013,7 +5103,7 @@
                         "ref": "WhyResult"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -5046,7 +5136,7 @@
                         "ref": "SearchStatistic"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "WHY_RESULTS": {
@@ -5054,7 +5144,7 @@
                         "ref": "WhyResult"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -5127,7 +5217,7 @@
         },
         "UmfProc": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: UmfProc"
             },
             "properties": {
                 "NAME": {
@@ -5138,14 +5228,14 @@
                         "ref": "UmfProcParams"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "UmfProcParamDetails": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: UmfProcParamDetails"
             },
             "properties": {
                 "NAME": {
@@ -5158,7 +5248,7 @@
         },
         "UmfProcParams": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: UmfProcParams"
             },
             "properties": {
                 "PARAM": {
@@ -5168,7 +5258,7 @@
         },
         "VirtualEntitySynopsis": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: VirtualEntitySynopsis"
             },
             "properties": {
                 "MEMBER_RECORDS": {
@@ -5176,7 +5266,7 @@
                         "ref": "MemberRecord"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "VIRTUAL_ENTITY_ID": {
@@ -5186,7 +5276,7 @@
         },
         "WhyKeyDetails": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WhyKeyDetails"
             },
             "properties": {
                 "CONFIRMATIONS": {
@@ -5194,7 +5284,7 @@
                         "ref": "FeatureScoreInfo"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "DENIALS": {
@@ -5202,7 +5292,7 @@
                         "ref": "FeatureScoreInfo"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "DISCLOSED_RELATIONS": {
@@ -5210,14 +5300,14 @@
                         "ref": "DisclosedRelationsForWhyKeyDetails"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 }
             }
         },
         "WhyResult": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WhyResult"
             },
             "properties": {
                 "ENTITY_ID": {
@@ -5238,7 +5328,7 @@
                         "ref": "FocusRecord"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "FOCUS_RECORDS_2": {
@@ -5246,7 +5336,7 @@
                         "ref": "FocusRecord"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "INTERNAL_ID": {
@@ -5270,7 +5360,7 @@
         },
         "Workload": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: Workload"
             },
             "properties": {
                 "apiVersion": {
@@ -5308,7 +5398,7 @@
                 },
                 "redoTriggers": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5337,7 +5427,7 @@
         },
         "WorkloadCaches": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadCaches"
             },
             "properties": {
                 "libFeatCacheHit": {
@@ -5368,12 +5458,12 @@
         },
         "WorkloadCandidates": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadCandidates"
             },
             "properties": {
                 "candidateBuilders": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5382,7 +5472,7 @@
                 },
                 "suppressedCandidateBuilders": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5393,7 +5483,7 @@
         },
         "WorkloadContention": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadContention"
             },
             "properties": {
                 "feature": {
@@ -5409,7 +5499,7 @@
         },
         "WorkloadCurrResources": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadCurrResources"
             },
             "properties": {
                 "activeThreads": {
@@ -5428,7 +5518,7 @@
         },
         "WorkloadExpressedFeatures": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadExpressedFeatures"
             },
             "properties": {
                 "calls": {
@@ -5436,12 +5526,12 @@
                         "ref": "WorkloadExpressedFeaturesCall"
                     },
                     "metadata": {
-                        "description": "A list of ..."
+                        "description": "FIXME: A list of ..."
                     }
                 },
                 "created": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5452,7 +5542,7 @@
         },
         "WorkloadExpressedFeaturesCall": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadExpressedFeaturesCall"
             },
             "properties": {
                 "EFCALL_ID": {
@@ -5468,7 +5558,7 @@
         },
         "WorkloadInitResources": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadInitResources"
             },
             "properties": {
                 "XXX_physicalCores": {
@@ -5487,7 +5577,7 @@
         },
         "WorkloadLicense": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadLicense..."
             },
             "properties": {
                 "dsrLimit": {
@@ -5503,7 +5593,7 @@
         },
         "WorkloadLockWaits": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadLockWaits"
             },
             "properties": {
                 "refreshLocks": {
@@ -5513,7 +5603,7 @@
         },
         "WorkloadProcessing": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadProcessing"
             },
             "properties": {
                 "addedRecords": {
@@ -5541,7 +5631,7 @@
         },
         "WorkloadProcessingAmbiguous": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadProcessingAmbiguous"
             },
             "properties": {
                 "actualTest": {
@@ -5554,7 +5644,7 @@
         },
         "WorkloadProcessingDetails": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadProcessingDetails"
             },
             "properties": {
                 "addedRecords": {
@@ -5597,7 +5687,7 @@
         },
         "WorkloadRefreshLocks": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadRefreshLocks"
             },
             "properties": {
                 "count": {
@@ -5613,7 +5703,7 @@
         },
         "WorkloadRepairDiagnosis": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadRepairDiagnosis"
             },
             "properties": {
                 "types": {
@@ -5623,12 +5713,12 @@
         },
         "WorkloadReresolve": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadReresolve"
             },
             "properties": {
                 "newFeatureFTypes": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5648,7 +5738,7 @@
         },
         "WorkloadReresolveTriggers": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadReresolveTriggers"
             },
             "properties": {
                 "abortRetry": {
@@ -5670,12 +5760,12 @@
         },
         "WorkloadScoring": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadScoring"
             },
             "properties": {
                 "cacheHit": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5684,7 +5774,7 @@
                 },
                 "cacheMiss": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5693,7 +5783,7 @@
                 },
                 "scoredPairs": {
                     "metadata": {
-                        "description": "A map from ... to ...",
+                        "description": "FIXME: A map from ... to ...",
                         "goType": "map[string]int64"
                     },
                     "values": {
@@ -5710,7 +5800,7 @@
         },
         "WorkloadSystemLoad": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadSystemLoad"
             },
             "properties": {
                 "cpuIdle": {
@@ -5729,7 +5819,7 @@
         },
         "WorkloadSystemResources": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadSystemResources"
             },
             "properties": {
                 "currResources": {
@@ -5745,7 +5835,7 @@
         },
         "WorkloadThreadState": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadThreadState"
             },
             "properties": {
                 "active": {
@@ -5782,7 +5872,7 @@
         },
         "WorkloadUnresolve": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadUnresolve"
             },
             "properties": {
                 "abortedUnresolve": {
@@ -5798,7 +5888,7 @@
         },
         "WorkloadUnresolveTriggers": {
             "metadata": {
-                "description": "FIXME: ..."
+                "description": "FIXME: WorkloadUnresolveTriggers"
             },
             "properties": {
                 "ambiguousMultiResolve": {

@@ -207,8 +207,12 @@ def handle_json_values(level, key, value) -> str:
     description = value.get("metadata", {}).get("description")
 
     result = make_json_key(key, description, "{")
-    if ref_type in ["int32", "string"]:
-        result += html_println(level + 1, f'"{VARIABLE_JSON_KEY}": "{ref_type}"')
+    if ref_type in ["int32", "string", "Object"]:
+        interior_description = value.get("values", {}).get("metadata", {}).get("description")
+        html_line = f'"{VARIABLE_JSON_KEY}": "{ref_type}"'
+        if interior_description and not interior_description.startswith("FIXME:"):
+            html_line = f'"<a href="#" data-toggle="tooltip" data-placement="bottom" title="{interior_description}">{VARIABLE_JSON_KEY}</a>": {ref_type}'
+        result += html_println(level + 1, html_line)
     elif ref_type:
         result += recurse_json(level + 1, VARIABLE_JSON_KEY, DEFINITIONS.get(ref_type, {}))[:-1]
     else:
@@ -229,9 +233,12 @@ def make_json_key(key, description, suffix) -> str:
     """Create a JSON key with or without an HTML anchor."""
     result = suffix
     if description and key:
-        result = (
-            f'"<a href="#" data-toggle="tooltip" data-placement="bottom" title="{description}">{key}</a>": {suffix}'
-        )
+        if not description.startswith("FIXME:"):
+            result = (
+                f'"<a href="#" data-toggle="tooltip" data-placement="bottom" title="{description}">{key}</a>": {suffix}'
+            )
+        else:
+            result = f'"{key}": {suffix}'
     elif key:
         result = f'"{key}": {suffix}'
     return result

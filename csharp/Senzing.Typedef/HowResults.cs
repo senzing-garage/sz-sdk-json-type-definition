@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: HowResults
     /// </summary>
     public class HowResults
     {
@@ -15,7 +15,7 @@ namespace Senzing.Typedef
         public FinalState FinalState { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("RESOLUTION_STEPS")]
         public IList<ResolutionStep> ResolutionSteps { get; set; }

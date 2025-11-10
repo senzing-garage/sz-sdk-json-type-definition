@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * FIXME: ...
+ * FIXME: SchemaVersion
  */
 @JsonSerialize
 public class SchemaVersion {

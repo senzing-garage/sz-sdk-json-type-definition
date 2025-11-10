@@ -7,39 +7,43 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: DisclosedRelationsForMatchInfo
     /// </summary>
     public class DisclosedRelationsForMatchInfo
     {
+        /// <summary>
+        /// The domain of the disclosed relationship.
+        /// </summary>
         [JsonPropertyName("DOMAIN")]
         public string Domain { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// A list of roles in the disclosed relationships of the entity.
         /// </summary>
         [JsonPropertyName("ENTITY_ROLES")]
         public IList<EntityRoles> EntityRoles { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// A list of roles in the disclosed relationships of the related
+        /// entity.
         /// </summary>
         [JsonPropertyName("RELATED_ROLES")]
         public IList<RelatedRoles> RelatedRoles { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// A list of bidirectional disclosed relationship links.
         /// </summary>
         [JsonPropertyName("REL_LINK")]
         public IList<RelLink> RelLink { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// A list of relationship anchors of the entity.
         /// </summary>
         [JsonPropertyName("XXX_REL_ANCHOR")]
         public IList<RelAnchor> XxxRelAnchor { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_REL_POINTER")]
         public IList<RelPointer> XxxRelPointer { get; set; }

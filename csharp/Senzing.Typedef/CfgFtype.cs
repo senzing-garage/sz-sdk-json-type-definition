@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: CFG_FTYPE
     /// </summary>
     public class CfgFtype
     {
@@ -20,7 +20,7 @@ namespace Senzing.Typedef
         public int FclassId { get; set; }
 
         /// <summary>
-        /// Internal use.
+        /// The unique text identifier of the feature type.
         /// </summary>
         [JsonPropertyName("FTYPE_CODE")]
         public string FtypeCode { get; set; }

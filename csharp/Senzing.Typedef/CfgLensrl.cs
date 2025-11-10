@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// A list of ...
+    /// FIXME: A list of ...
     /// </summary>
     [JsonConverter(typeof(CfgLensrlJsonConverter))]
     public class CfgLensrl

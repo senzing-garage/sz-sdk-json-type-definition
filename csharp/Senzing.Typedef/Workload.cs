@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: Workload
     /// </summary>
     public class Workload
     {
@@ -45,7 +45,7 @@ namespace Senzing.Typedef
         public WorkloadProcessing Processing { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("redoTriggers")]
         public IDictionary<string, int> RedoTriggers { get; set; }

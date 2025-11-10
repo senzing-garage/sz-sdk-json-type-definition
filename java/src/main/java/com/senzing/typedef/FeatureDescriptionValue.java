@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: FeatureDescriptionValue
  */
 @JsonSerialize
 public class FeatureDescriptionValue {
@@ -47,7 +47,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for attributes.<p>
-     * A map from ... to ...
+     * A map from attribute names to attribute values for the feature.
      */
     public Map<String, String> getAttributes() {
         return attributes;
@@ -55,7 +55,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for attributes.<p>
-     * A map from ... to ...
+     * A map from attribute names to attribute values for the feature.
      */
     public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
@@ -107,7 +107,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Getter for featDescValues.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FeatureDescriptionValueDetails> getFeatDescValues() {
         return featDescValues;
@@ -115,7 +115,7 @@ public class FeatureDescriptionValue {
 
     /**
      * Setter for featDescValues.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFeatDescValues(List<FeatureDescriptionValueDetails> featDescValues) {
         this.featDescValues = featDescValues;

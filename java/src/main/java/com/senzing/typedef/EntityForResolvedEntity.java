@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: EntityForResolvedEntity
  */
 @JsonSerialize
 public class EntityForResolvedEntity {
@@ -22,7 +22,7 @@ public class EntityForResolvedEntity {
 
     /**
      * Getter for relatedEntities.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelatedEntity> getRelatedEntities() {
         return relatedEntities;
@@ -30,7 +30,7 @@ public class EntityForResolvedEntity {
 
     /**
      * Setter for relatedEntities.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setRelatedEntities(List<RelatedEntity> relatedEntities) {
         this.relatedEntities = relatedEntities;

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.OffsetDateTime;
 
 /**
- * FIXME: ...
+ * FIXME: RecordSummary
  */
 @JsonSerialize
 public class RecordSummary {

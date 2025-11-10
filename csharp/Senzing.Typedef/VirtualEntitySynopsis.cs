@@ -7,12 +7,12 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: VirtualEntitySynopsis
     /// </summary>
     public class VirtualEntitySynopsis
     {
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("MEMBER_RECORDS")]
         public IList<MemberRecord> MemberRecords { get; set; }

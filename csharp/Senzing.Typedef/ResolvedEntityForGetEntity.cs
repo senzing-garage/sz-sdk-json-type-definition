@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: ResolvedEntityForGetEntity
     /// </summary>
     public class ResolvedEntityForGetEntity
     {
@@ -26,7 +26,7 @@ namespace Senzing.Typedef
         public string EntityName { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// A map from feature type names to lists of features.
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForGetEntity>> Features { get; set; }
@@ -45,7 +45,7 @@ namespace Senzing.Typedef
         public IList<RecordSummary> RecordSummary { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("RECORD_TYPES")]
         public IList<string> RecordTypes { get; set; }
@@ -57,7 +57,7 @@ namespace Senzing.Typedef
         public string XxxErruleCode { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_FEATURE_IDS")]
         public IList<FeatureId> XxxFeatureIds { get; set; }

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: MemberRecord
     /// </summary>
     public class MemberRecord
     {

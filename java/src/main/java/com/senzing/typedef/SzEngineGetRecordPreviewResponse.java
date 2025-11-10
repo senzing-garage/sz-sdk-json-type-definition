@@ -26,7 +26,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Getter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public Map<String, List<FeatureForAttributes>> getFeatures() {
         return features;
@@ -34,7 +34,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Setter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
         this.features = features;
@@ -42,7 +42,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Getter for featureIds.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<FeatureId> getFeatureIds() {
         return featureIds;
@@ -50,7 +50,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Setter for featureIds.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFeatureIds(List<FeatureId> featureIds) {
         this.featureIds = featureIds;
@@ -58,7 +58,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Getter for jsonData.<p>
-     * A map from ... to ...
+     * User source record.
      */
     public Map<String, Object> getJsonData() {
         return jsonData;
@@ -66,7 +66,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Setter for jsonData.<p>
-     * A map from ... to ...
+     * User source record.
      */
     public void setJsonData(Map<String, Object> jsonData) {
         this.jsonData = jsonData;
@@ -74,7 +74,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Getter for unmappedData.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Object> getUnmappedData() {
         return unmappedData;
@@ -82,7 +82,7 @@ public class SzEngineGetRecordPreviewResponse {
 
     /**
      * Setter for unmappedData.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;

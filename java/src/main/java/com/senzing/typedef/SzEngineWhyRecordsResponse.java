@@ -35,7 +35,7 @@ public class SzEngineWhyRecordsResponse {
 
     /**
      * Getter for whyResults.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<WhyResult> getWhyResults() {
         return whyResults;
@@ -43,7 +43,7 @@ public class SzEngineWhyRecordsResponse {
 
     /**
      * Setter for whyResults.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setWhyResults(List<WhyResult> whyResults) {
         this.whyResults = whyResults;

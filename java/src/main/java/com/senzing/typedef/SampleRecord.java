@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 
 /**
- * FIXME: ...
+ * FIXME: SampleRecord
  */
 @JsonSerialize
 public class SampleRecord {
@@ -41,7 +41,7 @@ public class SampleRecord {
 
     /**
      * Getter for flags.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<String> getFlags() {
         return flags;
@@ -49,7 +49,7 @@ public class SampleRecord {
 
     /**
      * Setter for flags.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setFlags(List<String> flags) {
         this.flags = flags;

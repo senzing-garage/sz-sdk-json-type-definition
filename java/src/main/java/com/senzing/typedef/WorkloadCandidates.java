@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: WorkloadCandidates
  */
 @JsonSerialize
 public class WorkloadCandidates {
@@ -22,7 +22,7 @@ public class WorkloadCandidates {
 
     /**
      * Getter for candidateBuilders.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Integer> getCandidateBuilders() {
         return candidateBuilders;
@@ -30,7 +30,7 @@ public class WorkloadCandidates {
 
     /**
      * Setter for candidateBuilders.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setCandidateBuilders(Map<String, Integer> candidateBuilders) {
         this.candidateBuilders = candidateBuilders;
@@ -38,7 +38,7 @@ public class WorkloadCandidates {
 
     /**
      * Getter for suppressedCandidateBuilders.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public Map<String, Integer> getSuppressedCandidateBuilders() {
         return suppressedCandidateBuilders;
@@ -46,7 +46,7 @@ public class WorkloadCandidates {
 
     /**
      * Setter for suppressedCandidateBuilders.<p>
-     * A map from ... to ...
+     * FIXME: A map from ... to ...
      */
     public void setSuppressedCandidateBuilders(Map<String, Integer> suppressedCandidateBuilders) {
         this.suppressedCandidateBuilders = suppressedCandidateBuilders;

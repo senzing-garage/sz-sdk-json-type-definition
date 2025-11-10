@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * FIXME: ...
+ * FIXME: SearchEntity
  */
 @JsonSerialize
 public class SearchEntity {
@@ -23,7 +23,7 @@ public class SearchEntity {
 
     /**
      * Getter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public Map<String, List<FeatureDescriptionValue>> getFeatures() {
         return features;
@@ -31,7 +31,7 @@ public class SearchEntity {
 
     /**
      * Setter for features.<p>
-     * A map from ... to ...
+     * A map from feature type names to lists of features.
      */
     public void setFeatures(Map<String, List<FeatureDescriptionValue>> features) {
         this.features = features;

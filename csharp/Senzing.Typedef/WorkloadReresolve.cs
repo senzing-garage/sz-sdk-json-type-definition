@@ -7,12 +7,12 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: WorkloadReresolve
     /// </summary>
     public class WorkloadReresolve
     {
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("newFeatureFTypes")]
         public IDictionary<string, int> NewFeatureFtypes { get; set; }

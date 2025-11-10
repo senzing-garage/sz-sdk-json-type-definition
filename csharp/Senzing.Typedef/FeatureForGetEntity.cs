@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: FeatureForGetEntity
     /// </summary>
     public class FeatureForGetEntity
     {
@@ -37,7 +37,7 @@ namespace Senzing.Typedef
         public string UsageType { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("XXX_ATTRIBUTES")]
         public IList<SenzingEntitySpecification> XxxAttributes { get; set; }

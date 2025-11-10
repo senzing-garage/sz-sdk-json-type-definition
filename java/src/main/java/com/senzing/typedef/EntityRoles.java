@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * FIXME: ...
+ * FIXME: EntityRoles
  */
 @JsonSerialize
 public class EntityRoles {
@@ -37,6 +37,7 @@ public class EntityRoles {
 
     /**
      * Getter for role.<p>
+     * User-defined description of the role.
      */
     public String getRole() {
         return role;
@@ -44,6 +45,7 @@ public class EntityRoles {
 
     /**
      * Setter for role.<p>
+     * User-defined description of the role.
      */
     public void setRole(String role) {
         this.role = role;

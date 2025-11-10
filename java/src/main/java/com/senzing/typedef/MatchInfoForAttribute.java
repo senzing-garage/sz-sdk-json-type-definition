@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * FIXME: ...
+ * FIXME: MatchInfoForAttribute
  */
 @JsonSerialize
 public class MatchInfoForAttribute {
@@ -37,6 +37,7 @@ public class MatchInfoForAttribute {
 
     /**
      * Getter for featId.<p>
+     * The identifier of the main feature.
      */
     public Integer getFeatId() {
         return featId;
@@ -44,6 +45,7 @@ public class MatchInfoForAttribute {
 
     /**
      * Setter for featId.<p>
+     * The identifier of the main feature.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;

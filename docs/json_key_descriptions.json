@@ -5,6 +5,10 @@
     "ACCOUNT_NUMBER": [
         "Account number (e.g., bank, card). An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "ADDITIONAL_SCORES": [
+        "A map from score types to score values",
+        "A map from score types to score values."
+    ],
     "ADDR_CITY": [
         "City/locality. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
@@ -45,14 +49,10 @@
         "A list of entities that were affected as a result of the operation."
     ],
     "ATTRIBUTES": [
-        "A map from ... to ...",
-        ""
-    ],
-    "AdditionalScores": [
-        "Itemized scores from comparison function."
+        "A map from attribute names to attribute values for the feature."
     ],
     "AffectedEntity": [
-        "FIXME: ..."
+        "FIXME: AffectedEntity"
     ],
     "CANDIDATE_FEAT_DESC": [
         "The contents of the candidate feature."
@@ -64,128 +64,128 @@
         "The usage type of the candidate feature."
     ],
     "CANDIDATE_KEYS": [
-        "A map from ... to ...",
+        "FIXME: A map from ... to ...",
         ""
     ],
     "CFG_ATTR": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_ATTR",
+        "FIXME: A list of ..."
     ],
     "CFG_CFBOM": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_CFBOM",
+        "FIXME: A list of ..."
     ],
     "CFG_CFCALL": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_CFCALL",
+        "FIXME: A list of ..."
     ],
     "CFG_CFRTN": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_CFRTN",
+        "FIXME: A list of ..."
     ],
     "CFG_CFUNC": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_CFUNC",
+        "FIXME: A list of ..."
     ],
     "CFG_DFBOM": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_DFBOM",
+        "FIXME: A list of ..."
     ],
     "CFG_DFCALL": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_DFCALL",
+        "FIXME: A list of ..."
     ],
     "CFG_DFUNC": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_DFUNC",
+        "FIXME: A list of ..."
     ],
     "CFG_DSRC": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_DSRC",
+        "FIXME: A list of ..."
     ],
     "CFG_DSRC_INTEREST": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_DSRC_INTEREST",
+        "FIXME: A list of ..."
     ],
     "CFG_EBOM": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_EBOM",
+        "FIXME: A list of ..."
     ],
     "CFG_ECLASS": [
-        "FIXME: ..."
+        "FIXME: CFG_ECLASS"
     ],
     "CFG_EFBOM": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_EFBOM",
+        "FIXME: A list of ..."
     ],
     "CFG_EFCALL": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_EFCALL",
+        "FIXME: A list of ..."
     ],
     "CFG_EFUNC": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_EFUNC",
+        "FIXME: A list of ..."
     ],
     "CFG_ERFRAG": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_ERFRAG",
+        "FIXME: A list of ..."
     ],
     "CFG_ERRULE": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_ERRULE",
+        "FIXME: A list of ..."
     ],
     "CFG_ETYPE": [
-        "FIXME: ..."
+        "FIXME: CFG_ETYPE"
     ],
     "CFG_FBOM": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_FBOM",
+        "FIXME: A list of ..."
     ],
     "CFG_FBOVR": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_FBOVR",
+        "FIXME: A list of ..."
     ],
     "CFG_FCLASS": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_FCLASS",
+        "FIXME: A list of ..."
     ],
     "CFG_FELEM": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_FELEM",
+        "FIXME: A list of ..."
     ],
     "CFG_FTYPE": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_FTYPE",
+        "FIXME: A list of ..."
     ],
     "CFG_GENERIC_THRESHOLD": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_GENERIC_THRESHOLD",
+        "FIXME: A list of ..."
     ],
     "CFG_GPLAN": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_GPLAN",
+        "FIXME: A list of ..."
     ],
     "CFG_LENS": [
-        "FIXME: ..."
+        "FIXME: CFG_LENS"
     ],
     "CFG_LENSRL": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "CFG_RCLASS": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_RCLASS",
+        "FIXME: A list of ..."
     ],
     "CFG_RTYPE": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_RTYPE",
+        "FIXME: A list of ..."
     ],
     "CFG_SFCALL": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_SFCALL",
+        "FIXME: A list of ..."
     ],
     "CFG_SFUNC": [
-        "FIXME: ...",
-        "A list of ..."
+        "FIXME: CFG_SFUNC",
+        "FIXME: A list of ..."
     ],
     "CITIZENSHIP": [
         "Country of citizenship (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -194,7 +194,7 @@
         "A list of registered configurations."
     ],
     "CONFIG_BASE_VERSION": [
-        "FIXME: ...",
+        "FIXME: CONFIG_BASE_VERSION",
         ""
     ],
     "CONFIG_COMMENTS": [
@@ -205,22 +205,22 @@
     ],
     "CONFIRMATIONS": [
         "A list of feature data in the match key supporting the match.",
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "CandidateKeysForMatchInfo": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "CandidateKeysForSearchStatistic": [
-        "FIXME: ..."
+        "FIXME: CandidateKeysForSearchStatistic"
     ],
     "CandidateKeysSummary": [
-        "FIXME: ..."
+        "FIXME: CandidateKeysSummary"
     ],
     "CompatibilityVersion": [
-        "FIXME: ..."
+        "FIXME: CompatibilityVersion"
     ],
     "Config": [
-        "FIXME: ..."
+        "FIXME: Config"
     ],
     "DATA_SOURCE": [
         "Short, stable identifier naming the source system."
@@ -239,11 +239,15 @@
     ],
     "DENIALS": [
         "A list of feature data in the match key negating the match.",
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "DISCLOSED_RELATIONS": [
         "A list of disclosed relationships of various types.",
-        "A list of ..."
+        "FIXME: A list of ..."
+    ],
+    "DOMAIN": [
+        "The domain of the disclosed relationship.",
+        "FIXME: The domain of the ..."
     ],
     "DRIVERS_LICENSE_NUMBER": [
         "Driver's license number. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -261,16 +265,16 @@
         "Dun and Bradstreet company identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "DataSource": [
-        "FIXME: ..."
+        "FIXME: DataSource"
     ],
     "DisclosedRelationsForMatchInfo": [
-        "FIXME: ..."
+        "FIXME: DisclosedRelationsForMatchInfo"
     ],
     "DisclosedRelationsForMatchInfoForWhy": [
-        "FIXME: ..."
+        "FIXME: DisclosedRelationsForMatchInfoForWhy"
     ],
     "DisclosedRelationsForWhyKeyDetails": [
-        "FIXME: ..."
+        "FIXME: DisclosedRelationsForWhyKeyDetails"
     ],
     "ELEMENTS": [
         "Internal use."
@@ -302,50 +306,57 @@
         "A list of relationship details for all links from ENTITY_PATHS."
     ],
     "ENTITY_ROLES": [
-        "A list of ..."
+        "A list of roles in the disclosed relationships of the entity.",
+        "FIXME: A list of ..."
     ],
     "ERRULE_CODE": [
         "Identifier of the entity resolution principle that was triggered."
     ],
     "Entity": [
-        "FIXME: ..."
+        "FIXME: Entity"
     ],
     "EntityForResolvedEntity": [
-        "FIXME: ..."
+        "FIXME: EntityForResolvedEntity"
     ],
     "EntityForWhySearch": [
-        "FIXME: ..."
+        "FIXME: EntityForWhySearch"
     ],
     "EntityNetworkLink": [
-        "FIXME: ..."
+        "FIXME: EntityNetworkLink"
     ],
     "EntityPath": [
-        "FIXME: ..."
+        "FIXME: EntityPath"
     ],
     "EntityPathLink": [
-        "FIXME: ..."
+        "FIXME: EntityPathLink"
     ],
     "EntityRoles": [
-        "FIXME: ..."
+        "FIXME: EntityRoles"
     ],
     "FACEBOOK": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "FEATURES": [
-        "A map from ... to ..."
+        "A map from feature type names to lists of features."
     ],
     "FEATURE_IDS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "FEATURE_TYPES": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "FEAT_DESC": [
         "Describes the attributes that make up the feature."
     ],
     "FEAT_DESC_VALUES": [
-        "A list of ...",
+        "FIXME: A list of ...",
         "A list of attributes that make up the feature."
+    ],
+    "FEAT_ID": [
+        "The identifier of the main feature."
+    ],
+    "FEAT_USAGE_TYPE": [
+        "The usage type of the main feature."
     ],
     "FELEM_CODE": [
         "Internal use."
@@ -354,56 +365,55 @@
         "Internal use."
     ],
     "FLAGS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "FOCUS_RECORDS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "FOCUS_RECORDS_2": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "FTYPE_CODE": [
-        "Internal use.",
         "The unique text identifier of the feature type."
     ],
     "Feature": [
-        "FIXME: ..."
+        "FIXME: Feature"
     ],
     "FeatureDescriptionValue": [
-        "FIXME: ..."
+        "FIXME: FeatureDescriptionValue"
     ],
     "FeatureDescriptionValueDetails": [
-        "FIXME: ..."
+        "FIXME: FeatureDescriptionValueDetails"
     ],
     "FeatureForAttributes": [
-        "FIXME: ..."
+        "FIXME: FeatureForAttributes"
     ],
     "FeatureForGetEntity": [
-        "FIXME: ..."
+        "FIXME: FeatureForGetEntity"
     ],
     "FeatureID": [
-        "FIXME: ..."
+        "FIXME: FeatureID"
     ],
     "FeatureScoreForAttribute": [
-        "FIXME: ..."
+        "FIXME: FeatureScoreForAttribute"
     ],
     "FeatureScoreInfo": [
-        "FIXME: ..."
+        "FIXME: FeatureScoreInfo"
     ],
     "FeatureScores": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "FeatureType": [
-        "FIXME: ..."
+        "FIXME: FeatureType"
     ],
     "FinalState": [
-        "FIXME: ..."
+        "FIXME: FinalState"
     ],
     "FocusRecord": [
-        "FIXME: ..."
+        "FIXME: FocusRecord"
     ],
     "G2Config": [
-        "FIXME: ..."
+        "FIXME: G2Config"
     ],
     "GENDER": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -421,7 +431,7 @@
         "Specific group/role within the organization; use precise categories (e.g., OWNER_EXEC, BOARD_MEMBER) to improve resolution. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "HowResults": [
-        "FIXME: ..."
+        "FIXME: HowResults"
     ],
     "INBOUND_FEAT_DESC": [
         "The contents of the inbound feature."
@@ -451,14 +461,13 @@
         "Indicates if this is a disclosed relationship."
     ],
     "InterestingEntities": [
-        "FIXME: ..."
+        "FIXME: InterestingEntities"
     ],
     "InterestingEntity": [
         "Internal use."
     ],
     "JSON_DATA": [
-        "A map from ... to ...",
-        ""
+        "User source record."
     ],
     "LEI_NUMBER": [
         "Legal Entity Identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -468,6 +477,18 @@
     ],
     "LINKEDIN": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
+    ],
+    "LINKED_FEAT_DESC": [
+        "The contents of the linked feature."
+    ],
+    "LINKED_FEAT_ID": [
+        "The identifier of the linked feature."
+    ],
+    "LINKED_FEAT_TYPE": [
+        "The unique text identifier of the linked feature type."
+    ],
+    "LINKED_FEAT_USAGE_TYPE": [
+        "The usage type of the linked feature."
     ],
     "MATCH_KEY": [
         "Representation of matched source record features.",
@@ -481,22 +502,22 @@
         "Indicates that the build-out has been truncated."
     ],
     "MEMBER_RECORDS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "MatchInfo": [
-        "FIXME: ..."
+        "FIXME: MatchInfo"
     ],
     "MatchInfoForAttribute": [
-        "FIXME: ..."
+        "FIXME: MatchInfoForAttribute"
     ],
     "MatchInfoForWhy": [
-        "FIXME: ..."
+        "FIXME: MatchInfoForWhy"
     ],
     "MatchKeyDetails": [
         "Contains supporting information for the match key."
     ],
     "MemberRecord": [
-        "FIXME: ..."
+        "FIXME: MemberRecord"
     ],
     "NAME_FIRST": [
         "Person given name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -535,13 +556,13 @@
         "Use the type label from the source; standardize across sources. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "NOTICES": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "NPI_NUMBER": [
         "US healthcare provider identifier. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "Notice": [
-        "FIXME: ..."
+        "FIXME: Notice"
     ],
     "OTHER_ID_COUNTRY": [
         "Optional as country often not known or issued by an organization. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -553,10 +574,10 @@
         "Standardized source type. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "Object": [
-        "FIXME: ..."
+        "FIXME: Object"
     ],
     "PARAMS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "PASSPORT_COUNTRY": [
         "Issuing country. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -593,7 +614,7 @@
     ],
     "RECORD_TYPES": [
         "A list of record types on the entity as defined in the Entity Specification.",
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "REGISTRATION_COUNTRY": [
         "Country of registration (code or label) as provided by the source. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -602,16 +623,17 @@
         "Organization registration/incorporation date. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "RELATED_ENTITIES": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "RELATED_ENTITIES_MJD": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "RELATED_ROLES": [
-        "A list of ..."
+        "A list of roles in the disclosed relationships of the related entity.",
+        "FIXME: A list of ..."
     ],
     "REL_ANCHOR": [
-        "A list of ...",
+        "FIXME: A list of ...",
         "A list of disclosed relationship anchors."
     ],
     "REL_ANCHOR_DOMAIN": [
@@ -621,13 +643,13 @@
         "This key should be a unique value for the record within the REL_ANCHOR_DOMAIN. You can just use the current record's RECORD_ID here. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "REL_LINK": [
-        "A list of ..."
+        "A list of bidirectional disclosed relationship links."
     ],
     "REL_LINKS": [
         "Deprecated. A list of disclosed relationships based on identical shared keys."
     ],
     "REL_POINTER": [
-        "A list of ...",
+        "FIXME: A list of ...",
         "A list of disclosed relationship pointers."
     ],
     "REL_POINTER_DOMAIN": [
@@ -639,59 +661,65 @@
     "REL_POINTER_ROLE": [
         "This is the role the pointer record has to the anchor record. Such as SPOUSE_OF, SON_OF, FATHER_OF, EMPLOYED_BY, PRINCIPAL_OF, OWNER_OF, BRANCH_OF, DIRECT_PARENT, ULTIMATE_PARENT. Standardize these role codes for display and filtering. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
+    "REL_TYPE": [
+        "The type of the relationship."
+    ],
     "RESOLUTION_STEPS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "RESOLVED_ENTITIES": [
-        "A list of ..."
+        "FIXME: A list of ..."
+    ],
+    "ROLE": [
+        "User-defined description of the role."
     ],
     "Record": [
-        "FIXME: ..."
+        "FIXME: Record"
     ],
     "RecordForGetEntity": [
-        "FIXME: ..."
+        "FIXME: RecordForGetEntity"
     ],
     "RecordKey": [
-        "FIXME: ..."
+        "FIXME: RecordKey"
     ],
     "RecordKeys": [
-        "FIXME: ..."
+        "FIXME: RecordKeys"
     ],
     "RecordSummary": [
-        "FIXME: ..."
+        "FIXME: RecordSummary"
     ],
     "RelAnchor": [
-        "FIXME: ..."
+        "FIXME: RelAnchor"
     ],
     "RelLink": [
-        "FIXME: ..."
+        "FIXME: RelLink"
     ],
     "RelPointer": [
-        "FIXME: ..."
+        "FIXME: RelPointer"
     ],
     "RelatedEntity": [
-        "FIXME: ..."
+        "FIXME: RelatedEntity"
     ],
     "RelatedRoles": [
-        "FIXME: ..."
+        "FIXME: RelatedRoles"
     ],
     "Repository": [
-        "FIXME: ..."
+        "FIXME: Repository"
     ],
     "ResolutionStep": [
-        "FIXME: ..."
+        "FIXME: ResolutionStep"
     ],
     "ResolvedEntity": [
-        "FIXME: ..."
+        "FIXME: ResolvedEntity"
     ],
     "ResolvedEntityAndMatchInfo": [
-        "FIXME: ..."
+        "FIXME: ResolvedEntityAndMatchInfo"
     ],
     "ResolvedEntityForGetEntity": [
-        "FIXME: ..."
+        "FIXME: ResolvedEntityForGetEntity"
     ],
     "SAMPLE_RECORDS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "SCORE": [
         "Numeric score from the comparison function."
@@ -703,10 +731,10 @@
         "Category of score strength."
     ],
     "SEARCH_STATISTICS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "SETTINGS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "SIGNAL": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -724,29 +752,29 @@
         "The timestamp of the original registration of the configuration."
     ],
     "SYS_OOM": [
-        "A list of ...",
-        "FIXME: ..."
+        "FIXME: A list of ...",
+        "FIXME: SYS_OOM"
     ],
     "SampleRecord": [
-        "FIXME: ..."
+        "FIXME: SampleRecord"
     ],
     "SchemaVersion": [
-        "FIXME: ..."
+        "FIXME: SchemaVersion"
     ],
     "SearchEntity": [
-        "FIXME: ..."
+        "FIXME: SearchEntity"
     ],
     "SearchEntitySummary": [
-        "FIXME: ..."
+        "FIXME: SearchEntitySummary"
     ],
     "SearchRequest": [
-        "FIXME: ..."
+        "FIXME: SearchRequest"
     ],
     "SearchStatistic": [
-        "FIXME: ..."
+        "FIXME: SearchStatistic"
     ],
     "SenzingEntitySpecification": [
-        "FIXME: ..."
+        "FIXME: SenzingEntitySpecification"
     ],
     "SzEngineFindNetworkByEntityIdResponse": [
         "A network of relationships among entities."
@@ -782,28 +810,28 @@
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "UNMAPPED_DATA": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "USAGE_TYPE": [
         "Label to identify how some features are being used (can also change some features behavior)."
     ],
     "UmfProc": [
-        "FIXME: ..."
+        "FIXME: UmfProc"
     ],
     "UmfProcParamDetails": [
-        "FIXME: ..."
+        "FIXME: UmfProcParamDetails"
     ],
     "UmfProcParams": [
-        "FIXME: ..."
+        "FIXME: UmfProcParams"
     ],
     "VIBER": [
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "VIRTUAL_ENTITIES": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "VirtualEntitySynopsis": [
-        "FIXME: ..."
+        "FIXME: VirtualEntitySynopsis"
     ],
     "WEBSITE_ADDRESS": [
         "Website or domain; typically for organizations. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -815,115 +843,115 @@
         "Social medial user name. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
     ],
     "WHY_RESULTS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "WhyKeyDetails": [
-        "FIXME: ..."
+        "FIXME: WhyKeyDetails"
     ],
     "WhyResult": [
-        "FIXME: ..."
+        "FIXME: WhyResult"
     ],
     "Workload": [
-        "FIXME: ..."
+        "FIXME: Workload"
     ],
     "WorkloadCaches": [
-        "FIXME: ..."
+        "FIXME: WorkloadCaches"
     ],
     "WorkloadCandidates": [
-        "FIXME: ..."
+        "FIXME: WorkloadCandidates"
     ],
     "WorkloadContention": [
-        "FIXME: ..."
+        "FIXME: WorkloadContention"
     ],
     "WorkloadCurrResources": [
-        "FIXME: ..."
+        "FIXME: WorkloadCurrResources"
     ],
     "WorkloadExpressedFeatures": [
-        "FIXME: ..."
+        "FIXME: WorkloadExpressedFeatures"
     ],
     "WorkloadExpressedFeaturesCall": [
-        "FIXME: ..."
+        "FIXME: WorkloadExpressedFeaturesCall"
     ],
     "WorkloadInitResources": [
-        "FIXME: ..."
+        "FIXME: WorkloadInitResources"
     ],
     "WorkloadLicense": [
-        "FIXME: ..."
+        "FIXME: WorkloadLicense..."
     ],
     "WorkloadLockWaits": [
-        "FIXME: ..."
+        "FIXME: WorkloadLockWaits"
     ],
     "WorkloadProcessing": [
-        "FIXME: ..."
+        "FIXME: WorkloadProcessing"
     ],
     "WorkloadProcessingAmbiguous": [
-        "FIXME: ..."
+        "FIXME: WorkloadProcessingAmbiguous"
     ],
     "WorkloadProcessingDetails": [
-        "FIXME: ..."
+        "FIXME: WorkloadProcessingDetails"
     ],
     "WorkloadRefreshLocks": [
-        "FIXME: ..."
+        "FIXME: WorkloadRefreshLocks"
     ],
     "WorkloadRepairDiagnosis": [
-        "FIXME: ..."
+        "FIXME: WorkloadRepairDiagnosis"
     ],
     "WorkloadReresolve": [
-        "FIXME: ..."
+        "FIXME: WorkloadReresolve"
     ],
     "WorkloadReresolveTriggers": [
-        "FIXME: ..."
+        "FIXME: WorkloadReresolveTriggers"
     ],
     "WorkloadScoring": [
-        "FIXME: ..."
+        "FIXME: WorkloadScoring"
     ],
     "WorkloadSystemLoad": [
-        "FIXME: ..."
+        "FIXME: WorkloadSystemLoad"
     ],
     "WorkloadSystemResources": [
-        "FIXME: ..."
+        "FIXME: WorkloadSystemResources"
     ],
     "WorkloadThreadState": [
-        "FIXME: ..."
+        "FIXME: WorkloadThreadState"
     ],
     "WorkloadUnresolve": [
-        "FIXME: ..."
+        "FIXME: WorkloadUnresolve"
     ],
     "WorkloadUnresolveTriggers": [
-        "FIXME: ..."
+        "FIXME: WorkloadUnresolveTriggers"
     ],
     "XXX_ADDRESS_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_ATTRIBUTES": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_ATTRIBUTE_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_CFG_ECLASS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_CFG_ETYPE": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_CFG_LENS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_CFG_LENSRL": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_DATA_SOURCE": [
         "A label identifying the provenance of the record."
     ],
     "XXX_ENTITY_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_ERRULE_CODE": [
         "Identifier of the entity resolution principle that was triggered."
     ],
     "XXX_FEATURE_IDS": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_FEAT_DESC": [
         "Describes the attributes that make up the feature."
@@ -933,7 +961,7 @@
         ""
     ],
     "XXX_IDENTIFIER_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_INTERNAL_ID": [
         "Internal identifier for the record."
@@ -951,40 +979,40 @@
         "The type of match that occurred for the record."
     ],
     "XXX_NAME_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_OTHER_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_PHONE_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_RECORD_ID": [
         "The unique identifier within the set of records in the DATA_SOURCE."
     ],
     "XXX_RELATIONSHIP_DATA": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "XXX_REL_ANCHOR": [
-        "A list of ..."
+        "A list of relationship anchors of the entity."
     ],
     "XXX_REL_POINTER": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "cacheHit": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "cacheMiss": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "calls": [
-        "A list of ..."
+        "FIXME: A list of ..."
     ],
     "candidateBuilders": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "created": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "dataStores": [
         "A list of database node connection metadata."
@@ -999,26 +1027,30 @@
         "Database connection information."
     ],
     "newFeatureFTypes": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "numRecordsInserted": [
         "The total number of records inserted within the insertTime."
     ],
     "redoTriggers": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "scoredPairs": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "suppressedCandidateBuilders": [
-        "A map from ... to ..."
+        "FIXME: A map from ... to ..."
     ],
     "type": [
         "Type of database.",
         ""
     ],
     "values": [
-        "A list of ...",
+        "FIXME: A list of ...",
+        "Attribute name.",
+        "Score type",
+        "A list of features for given key.",
+        "User-defined JSON key in source record.",
         ""
     ]
 }

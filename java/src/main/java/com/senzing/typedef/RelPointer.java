@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
- * FIXME: ...
+ * FIXME: RelPointer
  */
 @JsonSerialize
 public class RelPointer {
@@ -36,6 +36,7 @@ public class RelPointer {
 
     /**
      * Getter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public String getDomain() {
         return domain;
@@ -43,6 +44,7 @@ public class RelPointer {
 
     /**
      * Setter for domain.<p>
+     * FIXME: The domain of the ...
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -66,6 +68,7 @@ public class RelPointer {
 
     /**
      * Getter for featId.<p>
+     * The identifier of the main feature.
      */
     public Integer getFeatId() {
         return featId;
@@ -73,6 +76,7 @@ public class RelPointer {
 
     /**
      * Setter for featId.<p>
+     * The identifier of the main feature.
      */
     public void setFeatId(Integer featId) {
         this.featId = featId;
@@ -80,6 +84,7 @@ public class RelPointer {
 
     /**
      * Getter for featUsageType.<p>
+     * The usage type of the main feature.
      */
     public String getFeatUsageType() {
         return featUsageType;
@@ -87,6 +92,7 @@ public class RelPointer {
 
     /**
      * Setter for featUsageType.<p>
+     * The usage type of the main feature.
      */
     public void setFeatUsageType(String featUsageType) {
         this.featUsageType = featUsageType;
@@ -94,6 +100,7 @@ public class RelPointer {
 
     /**
      * Getter for linkedFeatDesc.<p>
+     * The contents of the linked feature.
      */
     public String getLinkedFeatDesc() {
         return linkedFeatDesc;
@@ -101,6 +108,7 @@ public class RelPointer {
 
     /**
      * Setter for linkedFeatDesc.<p>
+     * The contents of the linked feature.
      */
     public void setLinkedFeatDesc(String linkedFeatDesc) {
         this.linkedFeatDesc = linkedFeatDesc;
@@ -108,6 +116,7 @@ public class RelPointer {
 
     /**
      * Getter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public Integer getLinkedFeatId() {
         return linkedFeatId;
@@ -115,6 +124,7 @@ public class RelPointer {
 
     /**
      * Setter for linkedFeatId.<p>
+     * The identifier of the linked feature.
      */
     public void setLinkedFeatId(Integer linkedFeatId) {
         this.linkedFeatId = linkedFeatId;
@@ -122,6 +132,7 @@ public class RelPointer {
 
     /**
      * Getter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public String getLinkedFeatType() {
         return linkedFeatType;
@@ -129,6 +140,7 @@ public class RelPointer {
 
     /**
      * Setter for linkedFeatType.<p>
+     * The unique text identifier of the linked feature type.
      */
     public void setLinkedFeatType(String linkedFeatType) {
         this.linkedFeatType = linkedFeatType;

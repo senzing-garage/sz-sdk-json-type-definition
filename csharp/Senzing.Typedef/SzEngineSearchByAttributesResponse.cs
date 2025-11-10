@@ -9,13 +9,13 @@ namespace Senzing.Typedef
     public class SzEngineSearchByAttributesResponse
     {
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("RELATED_ENTITIES_MJD")]
         public IList<RelatedEntity> RelatedEntitiesMjd { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("RESOLVED_ENTITIES")]
         public IList<ResolvedEntityAndMatchInfo> ResolvedEntities { get; set; }
@@ -27,7 +27,7 @@ namespace Senzing.Typedef
         public SearchRequest SearchRequest { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("SEARCH_STATISTICS")]
         public IList<SearchStatistic> SearchStatistics { get; set; }

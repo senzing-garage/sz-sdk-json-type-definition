@@ -28,7 +28,7 @@ public class SzEngineSearchByAttributesResponse {
 
     /**
      * Getter for relatedEntitiesMjd.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<RelatedEntity> getRelatedEntitiesMjd() {
         return relatedEntitiesMjd;
@@ -36,7 +36,7 @@ public class SzEngineSearchByAttributesResponse {
 
     /**
      * Setter for relatedEntitiesMjd.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setRelatedEntitiesMjd(List<RelatedEntity> relatedEntitiesMjd) {
         this.relatedEntitiesMjd = relatedEntitiesMjd;
@@ -44,7 +44,7 @@ public class SzEngineSearchByAttributesResponse {
 
     /**
      * Getter for resolvedEntities.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<ResolvedEntityAndMatchInfo> getResolvedEntities() {
         return resolvedEntities;
@@ -52,7 +52,7 @@ public class SzEngineSearchByAttributesResponse {
 
     /**
      * Setter for resolvedEntities.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setResolvedEntities(List<ResolvedEntityAndMatchInfo> resolvedEntities) {
         this.resolvedEntities = resolvedEntities;
@@ -88,7 +88,7 @@ public class SzEngineSearchByAttributesResponse {
 
     /**
      * Getter for searchStatistics.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public List<SearchStatistic> getSearchStatistics() {
         return searchStatistics;
@@ -96,7 +96,7 @@ public class SzEngineSearchByAttributesResponse {
 
     /**
      * Setter for searchStatistics.<p>
-     * A list of ...
+     * FIXME: A list of ...
      */
     public void setSearchStatistics(List<SearchStatistic> searchStatistics) {
         this.searchStatistics = searchStatistics;

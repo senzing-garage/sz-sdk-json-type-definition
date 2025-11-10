@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * FIXME: ...
+ * FIXME: Object
  */
 public class Object {
     @JsonValue

@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: WorkloadUnresolveTriggers
     /// </summary>
     public class WorkloadUnresolveTriggers
     {

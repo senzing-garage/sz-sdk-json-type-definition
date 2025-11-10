@@ -7,18 +7,18 @@ using System.Text.Json.Serialization;
 namespace Senzing.Typedef
 {
     /// <summary>
-    /// FIXME: ...
+    /// FIXME: WorkloadCandidates
     /// </summary>
     public class WorkloadCandidates
     {
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("candidateBuilders")]
         public IDictionary<string, int> CandidateBuilders { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("suppressedCandidateBuilders")]
         public IDictionary<string, int> SuppressedCandidateBuilders { get; set; }

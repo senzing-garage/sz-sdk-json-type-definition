@@ -9,25 +9,25 @@ namespace Senzing.Typedef
     public class SzEngineGetRecordPreviewResponse
     {
         /// <summary>
-        /// A map from ... to ...
+        /// A map from feature type names to lists of features.
         /// </summary>
         [JsonPropertyName("FEATURES")]
         public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
 
         /// <summary>
-        /// A list of ...
+        /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FEATURE_IDS")]
         public IList<FeatureId> FeatureIds { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// User source record.
         /// </summary>
         [JsonPropertyName("JSON_DATA")]
         public IDictionary<string, Object_> JsonData { get; set; }
 
         /// <summary>
-        /// A map from ... to ...
+        /// FIXME: A map from ... to ...
         /// </summary>
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }
