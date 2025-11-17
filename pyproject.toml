@@ -79,7 +79,7 @@ lint = [
   "pylint-per-file-ignores==2.0.3; python_version < '3.10'",
   "pylint-per-file-ignores==3.1.0; python_version > '3.9'",
   "pylint==3.3.9; python_version < '3.10'",
-  "pylint==4.0.2; python_version > '3.9'",
+  "pylint==4.0.3; python_version > '3.9'",
 ]
 test = ["coverage==7.11.3", "pytest==9.0.1"]
 
