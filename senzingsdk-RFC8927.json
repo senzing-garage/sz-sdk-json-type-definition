@@ -2488,7 +2488,7 @@
             "properties": {
                 "CONFIRMATIONS": {
                     "elements": {
-                        "ref": "FeatureScoreInfo"
+                        "ref": "xFeatureScoreInfo"
                     },
                     "metadata": {
                         "description": "A list of feature data in the match key supporting the match."
@@ -2496,7 +2496,7 @@
                 },
                 "DENIALS": {
                     "elements": {
-                        "ref": "FeatureScoreInfo"
+                        "ref": "xFeatureScoreInfo"
                     },
                     "metadata": {
                         "description": "A list of feature data in the match key negating the match."
@@ -2504,13 +2504,13 @@
                 },
                 "DISCLOSED_RELATIONS": {
                     "elements": {
-                        "ref": "DisclosedRelationsForMatchInfo"
+                        "ref": "xDisclosedRelationsForMatchInfo"
                     },
                     "metadata": {
                         "description": "A list of disclosed relationships of various types."
                     }
                 },
-                "REL_ANCHOR": {
+                "ZZZ_REL_ANCHOR": {
                     "elements": {
                         "ref": "RelAnchor"
                     },
@@ -2520,13 +2520,13 @@
                 },
                 "REL_LINKS": {
                     "elements": {
-                        "ref": "RelLink"
+                        "ref": "xRelLink"
                     },
                     "metadata": {
                         "description": "Deprecated. A list of disclosed relationships based on identical shared keys."
                     }
                 },
-                "REL_POINTER": {
+                "ZZZ_REL_POINTER": {
                     "elements": {
                         "ref": "RelPointer"
                     },
@@ -2603,7 +2603,7 @@
                     },
                     "values": {
                         "elements": {
-                            "ref": "FeatureForAttributes"
+                            "ref": "xFeatureForAttributes"
                         },
                         "metadata": {
                             "jsonKeyforMapValues": "FIXME: ...",
@@ -2613,7 +2613,7 @@
                 },
                 "FEATURE_IDS": {
                     "elements": {
-                        "ref": "FeatureID"
+                        "ref": "xFeatureID"
                     },
                     "metadata": {
                         "description": "FIXME: A list of ..."
@@ -2668,85 +2668,6 @@
                     },
                     "values": {
                         "ref": "Object"
-                    }
-                },
-                "XXX_ADDRESS_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_ATTRIBUTE_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_ENTITY_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_ENTITY_DESC": {
-                    "type": "string"
-                },
-                "XXX_ENTITY_KEY": {
-                    "type": "string"
-                },
-                "XXX_ENTITY_TYPE": {
-                    "type": "string"
-                },
-                "XXX_IDENTIFIER_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_MATCH_LEVEL": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_NAME_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_OTHER_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_PHONE_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_RELATIONSHIP_DATA": {
-                    "elements": {
-                        "type": "string"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
                     }
                 }
             }
@@ -2973,12 +2894,6 @@
                         "goType": "int64"
                     },
                     "type": "int32"
-                },
-                "XXX_FIRST_SEEN_DT": {
-                    "type": "timestamp"
-                },
-                "XXX_LAST_SEEN_DT": {
-                    "type": "timestamp"
                 }
             }
         },
@@ -3458,7 +3373,7 @@
                     },
                     "values": {
                         "elements": {
-                            "ref": "FeatureForGetEntity"
+                            "ref": "xFeatureForGetEntity"
                         },
                         "metadata": {
                             "description": "FIXME: A list of ..."
@@ -3467,7 +3382,7 @@
                 },
                 "RECORDS": {
                     "elements": {
-                        "ref": "RecordForGetEntity"
+                        "ref": "xRecordForGetEntity"
                     },
                     "metadata": {
                         "description": "A list of (data source code, record id) pairs."
@@ -3475,7 +3390,7 @@
                 },
                 "RECORD_SUMMARY": {
                     "elements": {
-                        "ref": "RecordSummary"
+                        "ref": "xRecordSummary"
                     },
                     "metadata": {
                         "description": "A list of source systems the records came from comprising this related entity."
@@ -3488,55 +3403,6 @@
                     "metadata": {
                         "description": "FIXME: A list of ..."
                     }
-                },
-                "XXX_ERRULE_CODE": {
-                    "metadata": {
-                        "description": "Identifier of the entity resolution principle that was triggered."
-                    },
-                    "type": "string"
-                },
-                "XXX_FEATURE_IDS": {
-                    "elements": {
-                        "ref": "FeatureID"
-                    },
-                    "metadata": {
-                        "description": "FIXME: A list of ..."
-                    }
-                },
-                "XXX_IS_AMBIGUOUS": {
-                    "metadata": {
-                        "description": "Indicates if this is an ambiguous relationship.",
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_IS_DISCLOSED": {
-                    "metadata": {
-                        "description": "Indicates if this is a disclosed relationship.",
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_LAST_SEEN_DT": {
-                    "type": "timestamp"
-                },
-                "XXX_MATCH_KEY": {
-                    "metadata": {
-                        "description": "Representation of matched source record features."
-                    },
-                    "type": "string"
-                },
-                "XXX_MATCH_LEVEL": {
-                    "metadata": {
-                        "goType": "int64"
-                    },
-                    "type": "int32"
-                },
-                "XXX_MATCH_LEVEL_CODE": {
-                    "metadata": {
-                        "description": "The type of match that occurred for the record."
-                    },
-                    "type": "string"
                 }
             }
         },
