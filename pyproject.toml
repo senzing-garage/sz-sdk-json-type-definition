@@ -9,7 +9,7 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
 ]
-dependencies = ["senzing==4.0.4", "senzing-core==1.0.3"]
+dependencies = ["senzing==4.1.0", "senzing-core==1.0.3"]
 license = "Apache-2.0"
 license-files = [
   "LICENSE",
