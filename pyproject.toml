@@ -62,7 +62,7 @@ documentation = [
   "sphinx-toolbox==4.1.1; python_version > '3.11'",
   "sphinx==7.4.7; python_version == '3.9'",
   "sphinx==8.1.3; python_version == '3.10'",
-  "sphinx==9.0.4; python_version >= '3.11'",
+  "sphinx==8.1.3; python_version >= '3.11'",
   "sphinxcontrib-applehelp==2.0.0; python_version > '3.11'",
   "sphinxcontrib-devhelp==2.0.0; python_version > '3.11'",
   "sphinxcontrib-htmlhelp==2.1.0; python_version > '3.11'",
