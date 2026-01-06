@@ -3,7 +3,7 @@ module github.com/senzing-garage/sz-sdk-json-type-definition
 go 1.24.4
 
 require (
-	github.com/senzing-garage/go-helpers v0.6.13
+	github.com/senzing-garage/go-helpers v0.6.14
 	github.com/senzing-garage/sz-sdk-go v0.15.11
 	github.com/senzing-garage/sz-sdk-go-core v0.9.12
 	github.com/stretchr/testify v1.11.1
@@ -15,7 +15,7 @@ require (
 	github.com/senzing-garage/go-logging v1.5.3 // indirect
 	github.com/senzing-garage/go-messaging v1.5.3 // indirect
 	github.com/senzing-garage/go-observing v0.3.6 // indirect
-	golang.org/x/exp v0.0.0-20251023183803-a4bb9ffd2546 // indirect
+	golang.org/x/exp v0.0.0-20251219203646-944ab1f22d93 // indirect
 	golang.org/x/net v0.46.0 // indirect
 	golang.org/x/sys v0.37.0 // indirect
 	golang.org/x/text v0.30.0 // indirect
