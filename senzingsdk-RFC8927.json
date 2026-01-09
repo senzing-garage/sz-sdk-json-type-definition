@@ -5567,11 +5567,29 @@
         }
       }
     },
+    "WorkloadRepairCorruptionFound": {
+      "metadata": {
+        "description": "FIXME: WorkloadRepairCorruptionFound"
+      },
+      "properties": {
+        "details": {
+          "type": "string"
+        },
+        "resEntID": {
+          "type": "int32"
+        }
+      }
+    },
     "WorkloadRepairDiagnosis": {
       "metadata": {
         "description": "FIXME: WorkloadRepairDiagnosis"
       },
       "properties": {
+        "CORRUPTION_FOUND": {
+          "elements": {
+            "ref": "WorkloadRepairCorruptionFound"
+          }
+        },
         "types": {
           "type": "int32"
         }
@@ -5744,10 +5762,28 @@
         "abortedUnresolve": {
           "type": "int32"
         },
+        "analysis": {
+          "elements": {
+            "ref": "WorkloadUnresolveAnalysis"
+          }
+        },
         "triggers": {
           "ref": "WorkloadUnresolveTriggers"
         },
         "unresolveTest": {
+          "type": "int32"
+        }
+      }
+    },
+    "WorkloadUnresolveAnalysis": {
+      "metadata": {
+        "description": "FIXME: WorkloadUnresolveAnalysis"
+      },
+      "properties": {
+        "count": {
+          "type": "int32"
+        },
+        "matchIterations": {
           "type": "int32"
         }
       }
