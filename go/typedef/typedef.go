@@ -2696,8 +2696,17 @@ type WorkloadRefreshLocks struct {
 	TotalMs int32 `json:"totalMS"`
 }
 
+// FIXME: WorkloadRepairCorruptionFound
+type WorkloadRepairCorruptionFound struct {
+	Details string `json:"details"`
+
+	ResEntID int32 `json:"resEntID"`
+}
+
 // FIXME: WorkloadRepairDiagnosis
 type WorkloadRepairDiagnosis struct {
+	CorruptionFound []WorkloadRepairCorruptionFound `json:"CORRUPTION_FOUND"`
+
 	Types int32 `json:"types"`
 }
 
@@ -2789,9 +2798,18 @@ type WorkloadThreadState struct {
 type WorkloadUnresolve struct {
 	AbortedUnresolve int32 `json:"abortedUnresolve"`
 
+	Analysis []WorkloadUnresolveAnalysis `json:"analysis"`
+
 	Triggers WorkloadUnresolveTriggers `json:"triggers"`
 
 	UnresolveTest int32 `json:"unresolveTest"`
+}
+
+// FIXME: WorkloadUnresolveAnalysis
+type WorkloadUnresolveAnalysis struct {
+	Count int32 `json:"count"`
+
+	MatchIterations int32 `json:"matchIterations"`
 }
 
 // FIXME: WorkloadUnresolveTriggers
