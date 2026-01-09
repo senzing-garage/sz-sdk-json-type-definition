@@ -4,6 +4,7 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 /**
  * FIXME: WorkloadUnresolve
@@ -12,6 +13,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class WorkloadUnresolve {
     @JsonProperty("abortedUnresolve")
     private Integer abortedUnresolve;
+
+    @JsonProperty("analysis")
+    private List<WorkloadUnresolveAnalysis> analysis;
 
     @JsonProperty("triggers")
     private WorkloadUnresolveTriggers triggers;
@@ -34,6 +38,20 @@ public class WorkloadUnresolve {
      */
     public void setAbortedUnresolve(Integer abortedUnresolve) {
         this.abortedUnresolve = abortedUnresolve;
+    }
+
+    /**
+     * Getter for analysis.<p>
+     */
+    public List<WorkloadUnresolveAnalysis> getAnalysis() {
+        return analysis;
+    }
+
+    /**
+     * Setter for analysis.<p>
+     */
+    public void setAnalysis(List<WorkloadUnresolveAnalysis> analysis) {
+        this.analysis = analysis;
     }
 
     /**

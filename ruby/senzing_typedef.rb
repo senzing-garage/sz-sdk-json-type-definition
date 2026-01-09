@@ -5721,18 +5721,41 @@ module SenzingTypedef
     end
   end
 
+  # FIXME: WorkloadRepairCorruptionFound
+  class WorkloadRepairCorruptionFound
+    attr_accessor :details
+    attr_accessor :res_ent_id
+
+    def self.from_json_data(data)
+      out = WorkloadRepairCorruptionFound.new
+      out.details = SenzingTypedef::from_json_data(String, data["details"])
+      out.res_ent_id = SenzingTypedef::from_json_data(Integer, data["resEntID"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["details"] = SenzingTypedef::to_json_data(details)
+      data["resEntID"] = SenzingTypedef::to_json_data(res_ent_id)
+      data
+    end
+  end
+
   # FIXME: WorkloadRepairDiagnosis
   class WorkloadRepairDiagnosis
+    attr_accessor :corruption_found
     attr_accessor :types
 
     def self.from_json_data(data)
       out = WorkloadRepairDiagnosis.new
+      out.corruption_found = SenzingTypedef::from_json_data(Array[WorkloadRepairCorruptionFound], data["CORRUPTION_FOUND"])
       out.types = SenzingTypedef::from_json_data(Integer, data["types"])
       out
     end
 
     def to_json_data
       data = {}
+      data["CORRUPTION_FOUND"] = SenzingTypedef::to_json_data(corruption_found)
       data["types"] = SenzingTypedef::to_json_data(types)
       data
     end
@@ -5924,12 +5947,14 @@ module SenzingTypedef
   # FIXME: WorkloadUnresolve
   class WorkloadUnresolve
     attr_accessor :aborted_unresolve
+    attr_accessor :analysis
     attr_accessor :triggers
     attr_accessor :unresolve_test
 
     def self.from_json_data(data)
       out = WorkloadUnresolve.new
       out.aborted_unresolve = SenzingTypedef::from_json_data(Integer, data["abortedUnresolve"])
+      out.analysis = SenzingTypedef::from_json_data(Array[WorkloadUnresolveAnalysis], data["analysis"])
       out.triggers = SenzingTypedef::from_json_data(WorkloadUnresolveTriggers, data["triggers"])
       out.unresolve_test = SenzingTypedef::from_json_data(Integer, data["unresolveTest"])
       out
@@ -5938,8 +5963,29 @@ module SenzingTypedef
     def to_json_data
       data = {}
       data["abortedUnresolve"] = SenzingTypedef::to_json_data(aborted_unresolve)
+      data["analysis"] = SenzingTypedef::to_json_data(analysis)
       data["triggers"] = SenzingTypedef::to_json_data(triggers)
       data["unresolveTest"] = SenzingTypedef::to_json_data(unresolve_test)
+      data
+    end
+  end
+
+  # FIXME: WorkloadUnresolveAnalysis
+  class WorkloadUnresolveAnalysis
+    attr_accessor :count
+    attr_accessor :match_iterations
+
+    def self.from_json_data(data)
+      out = WorkloadUnresolveAnalysis.new
+      out.count = SenzingTypedef::from_json_data(Integer, data["count"])
+      out.match_iterations = SenzingTypedef::from_json_data(Integer, data["matchIterations"])
+      out
+    end
+
+    def to_json_data
+      data = {}
+      data["count"] = SenzingTypedef::to_json_data(count)
+      data["matchIterations"] = SenzingTypedef::to_json_data(match_iterations)
       data
     end
   end
