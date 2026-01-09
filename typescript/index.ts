@@ -3429,9 +3429,18 @@ export interface WorkloadRefreshLocks {
 }
 
 /**
+ * FIXME: WorkloadRepairCorruptionFound
+ */
+export interface WorkloadRepairCorruptionFound {
+  details: string;
+  resEntID: number;
+}
+
+/**
  * FIXME: WorkloadRepairDiagnosis
  */
 export interface WorkloadRepairDiagnosis {
+  CORRUPTION_FOUND: WorkloadRepairCorruptionFound[];
   types: number;
 }
 
@@ -3521,8 +3530,17 @@ export interface WorkloadThreadState {
  */
 export interface WorkloadUnresolve {
   abortedUnresolve: number;
+  analysis: WorkloadUnresolveAnalysis[];
   triggers: WorkloadUnresolveTriggers;
   unresolveTest: number;
+}
+
+/**
+ * FIXME: WorkloadUnresolveAnalysis
+ */
+export interface WorkloadUnresolveAnalysis {
+  count: number;
+  matchIterations: number;
 }
 
 /**

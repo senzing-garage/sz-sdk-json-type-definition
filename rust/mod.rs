@@ -3719,9 +3719,22 @@ pub struct WorkloadRefreshLocks {
     pub totalMs: i32,
 }
 
+/// FIXME: WorkloadRepairCorruptionFound
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadRepairCorruptionFound {
+    #[serde(rename = "details")]
+    pub details: String,
+
+    #[serde(rename = "resEntID")]
+    pub resEntId: i32,
+}
+
 /// FIXME: WorkloadRepairDiagnosis
 #[derive(Serialize, Deserialize)]
 pub struct WorkloadRepairDiagnosis {
+    #[serde(rename = "CORRUPTION_FOUND")]
+    pub corruptionFound: Vec<WorkloadRepairCorruptionFound>,
+
     #[serde(rename = "types")]
     pub types: i32,
 }
@@ -3853,11 +3866,24 @@ pub struct WorkloadUnresolve {
     #[serde(rename = "abortedUnresolve")]
     pub abortedUnresolve: i32,
 
+    #[serde(rename = "analysis")]
+    pub analysis: Vec<WorkloadUnresolveAnalysis>,
+
     #[serde(rename = "triggers")]
     pub triggers: WorkloadUnresolveTriggers,
 
     #[serde(rename = "unresolveTest")]
     pub unresolveTest: i32,
+}
+
+/// FIXME: WorkloadUnresolveAnalysis
+#[derive(Serialize, Deserialize)]
+pub struct WorkloadUnresolveAnalysis {
+    #[serde(rename = "count")]
+    pub count: i32,
+
+    #[serde(rename = "matchIterations")]
+    pub matchIterations: i32,
 }
 
 /// FIXME: WorkloadUnresolveTriggers

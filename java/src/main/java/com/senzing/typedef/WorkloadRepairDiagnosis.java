@@ -4,16 +4,34 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 
 /**
  * FIXME: WorkloadRepairDiagnosis
  */
 @JsonSerialize
 public class WorkloadRepairDiagnosis {
+    @JsonProperty("CORRUPTION_FOUND")
+    private List<WorkloadRepairCorruptionFound> corruptionFound;
+
     @JsonProperty("types")
     private Integer types;
 
     public WorkloadRepairDiagnosis() {
+    }
+
+    /**
+     * Getter for corruptionFound.<p>
+     */
+    public List<WorkloadRepairCorruptionFound> getCorruptionFound() {
+        return corruptionFound;
+    }
+
+    /**
+     * Setter for corruptionFound.<p>
+     */
+    public void setCorruptionFound(List<WorkloadRepairCorruptionFound> corruptionFound) {
+        this.corruptionFound = corruptionFound;
     }
 
     /**

@@ -6823,21 +6823,46 @@ class WorkloadRefreshLocks:
         return data
 
 @dataclass
+class WorkloadRepairCorruptionFound:
+    """
+    FIXME: WorkloadRepairCorruptionFound
+    """
+
+    details: 'str'
+    res_ent_id: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'WorkloadRepairCorruptionFound':
+        return cls(
+            _from_json_data(str, data.get("details")),
+            _from_json_data(int, data.get("resEntID")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["details"] = _to_json_data(self.details)
+        data["resEntID"] = _to_json_data(self.res_ent_id)
+        return data
+
+@dataclass
 class WorkloadRepairDiagnosis:
     """
     FIXME: WorkloadRepairDiagnosis
     """
 
+    corruption_found: 'List[WorkloadRepairCorruptionFound]'
     types: 'int'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'WorkloadRepairDiagnosis':
         return cls(
+            _from_json_data(List[WorkloadRepairCorruptionFound], data.get("CORRUPTION_FOUND")),
             _from_json_data(int, data.get("types")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
+        data["CORRUPTION_FOUND"] = _to_json_data(self.corruption_found)
         data["types"] = _to_json_data(self.types)
         return data
 
@@ -7053,6 +7078,7 @@ class WorkloadUnresolve:
     """
 
     aborted_unresolve: 'int'
+    analysis: 'List[WorkloadUnresolveAnalysis]'
     triggers: 'WorkloadUnresolveTriggers'
     unresolve_test: 'int'
 
@@ -7060,6 +7086,7 @@ class WorkloadUnresolve:
     def from_json_data(cls, data: Any) -> 'WorkloadUnresolve':
         return cls(
             _from_json_data(int, data.get("abortedUnresolve")),
+            _from_json_data(List[WorkloadUnresolveAnalysis], data.get("analysis")),
             _from_json_data(WorkloadUnresolveTriggers, data.get("triggers")),
             _from_json_data(int, data.get("unresolveTest")),
         )
@@ -7067,8 +7094,31 @@ class WorkloadUnresolve:
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["abortedUnresolve"] = _to_json_data(self.aborted_unresolve)
+        data["analysis"] = _to_json_data(self.analysis)
         data["triggers"] = _to_json_data(self.triggers)
         data["unresolveTest"] = _to_json_data(self.unresolve_test)
+        return data
+
+@dataclass
+class WorkloadUnresolveAnalysis:
+    """
+    FIXME: WorkloadUnresolveAnalysis
+    """
+
+    count: 'int'
+    match_iterations: 'int'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'WorkloadUnresolveAnalysis':
+        return cls(
+            _from_json_data(int, data.get("count")),
+            _from_json_data(int, data.get("matchIterations")),
+        )
+
+    def to_json_data(self) -> Any:
+        data: Dict[str, Any] = {}
+        data["count"] = _to_json_data(self.count)
+        data["matchIterations"] = _to_json_data(self.match_iterations)
         return data
 
 @dataclass
