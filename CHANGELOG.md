@@ -171,7 +171,6 @@ This project adheres to [Semantic Versioning].
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [markdownlint]: https://dlaa.me/markdownlint/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
-
 [CommonMark]: https://commonmark.org/
 [Keep a Changelog]: https://keepachangelog.com/
 [Semantic Versioning]: https://semver.org/

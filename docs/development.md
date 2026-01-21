@@ -79,12 +79,12 @@ These are "one-time tasks" which may already have been completed.
    ```
 
 1. Review analysis:
-    1. **TEST 1:** Make sure JSON keys are in sorted order.
-    1. **TEST 2:**
-    1. **TEST 3:** Report how many times a JSON key has been specified.
-    1. **TEST 4:** Report JSON keys that have more than one datatype.
-    1. **TEST 5:** Report any `ref` keys that have a bad value.
-    1. **TEST 6:** Report JSON keys that are not used.
+   1. **TEST 1:** Make sure JSON keys are in sorted order.
+   1. **TEST 2:**
+   1. **TEST 3:** Report how many times a JSON key has been specified.
+   1. **TEST 4:** Report JSON keys that have more than one datatype.
+   1. **TEST 5:** Report any `ref` keys that have a bad value.
+   1. **TEST 6:** Report JSON keys that are not used.
 
 1. Address any issues in the `diff` between `senzingsdk-RFC8927.json` and the temporary `senzingsdk-RFC8927-pretty.json`.
 
@@ -105,7 +105,7 @@ These instructions create the contents of the `testdata/responses_th4` directory
 
 1. Extract TH4 testcases to a directory.
 1. In `bin/make_testdata_responses_th4.py`,
-    1. Modify `INPUT_DIRECTORY` to point to the extracted TH4 testcase directory.
+   1. Modify `INPUT_DIRECTORY` to point to the extracted TH4 testcase directory.
 1. Run `make make-testdata-responses-th4` to update files in the `testdata/responses_th4` directory.
    Example:
 
@@ -162,7 +162,7 @@ These instructions create the contents of the `testdata/responses_th4` directory
 
    Example return:
 
-    > senzing-typedef @ file:///home/senzing/senzing-garage.git/sz-sdk-json-type-definition/dist/senzing_typedef-0.2.0-py3-none-any.whl#sha256=ff40b60c764d867c0450f0370673b53b44cf8161e61cab012f2aa21c9db24e3e
+   > senzing-typedef @ file:///home/senzing/senzing-garage.git/sz-sdk-json-type-definition/dist/senzing_typedef-0.2.0-py3-none-any.whl#sha256=ff40b60c764d867c0450f0370673b53b44cf8161e61cab012f2aa21c9db24e3e
 
 1. Uninstall the `senzing-core` python package.
    Example:
