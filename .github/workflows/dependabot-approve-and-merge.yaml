@@ -4,13 +4,29 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 permissions: {}
 
 jobs:
-  dependabot-approve-and-merge:
+  dependabot-approve-and-merge-minor:
     permissions:
       contents: write
       pull-requests: write
     secrets:
       SENZING_GITHUB_CODEOWNER_PR_RW_TOKEN: ${{ secrets.SENZING_GITHUB_CODEOWNER_PR_RW_TOKEN }}
     uses: senzing-factory/build-resources/.github/workflows/dependabot-approve-and-merge.yaml@v3
+    with:
+      update-type: "minor"
+
+  dependabot-approve-and-merge-patch:
+    permissions:
+      contents: write
+      pull-requests: write
+    secrets:
+      SENZING_GITHUB_CODEOWNER_PR_RW_TOKEN: ${{ secrets.SENZING_GITHUB_CODEOWNER_PR_RW_TOKEN }}
+    uses: senzing-factory/build-resources/.github/workflows/dependabot-approve-and-merge.yaml@v3
+    with:
+      update-type: "patch"
