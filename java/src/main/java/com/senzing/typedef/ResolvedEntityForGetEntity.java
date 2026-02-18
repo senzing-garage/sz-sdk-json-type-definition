@@ -4,7 +4,6 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -20,40 +19,16 @@ public class ResolvedEntityForGetEntity {
     private String entityName;
 
     @JsonProperty("FEATURES")
-    private Map<String, List<FeatureForGetEntity>> features;
+    private Map<String, List<XFeatureForGetEntity>> features;
 
     @JsonProperty("RECORDS")
-    private List<RecordForGetEntity> records;
+    private List<XRecordForGetEntity> records;
 
     @JsonProperty("RECORD_SUMMARY")
-    private List<RecordSummary> recordSummary;
+    private List<XRecordSummary> recordSummary;
 
     @JsonProperty("RECORD_TYPES")
     private List<String> recordTypes;
-
-    @JsonProperty("XXX_ERRULE_CODE")
-    private String xxxErruleCode;
-
-    @JsonProperty("XXX_FEATURE_IDS")
-    private List<FeatureId> xxxFeatureIds;
-
-    @JsonProperty("XXX_IS_AMBIGUOUS")
-    private Integer xxxIsAmbiguous;
-
-    @JsonProperty("XXX_IS_DISCLOSED")
-    private Integer xxxIsDisclosed;
-
-    @JsonProperty("XXX_LAST_SEEN_DT")
-    private OffsetDateTime xxxLastSeenDt;
-
-    @JsonProperty("XXX_MATCH_KEY")
-    private String xxxMatchKey;
-
-    @JsonProperty("XXX_MATCH_LEVEL")
-    private Integer xxxMatchLevel;
-
-    @JsonProperty("XXX_MATCH_LEVEL_CODE")
-    private String xxxMatchLevelCode;
 
     public ResolvedEntityForGetEntity() {
     }
@@ -96,7 +71,7 @@ public class ResolvedEntityForGetEntity {
      * Getter for features.<p>
      * A map from feature type names to lists of features.
      */
-    public Map<String, List<FeatureForGetEntity>> getFeatures() {
+    public Map<String, List<XFeatureForGetEntity>> getFeatures() {
         return features;
     }
 
@@ -104,7 +79,7 @@ public class ResolvedEntityForGetEntity {
      * Setter for features.<p>
      * A map from feature type names to lists of features.
      */
-    public void setFeatures(Map<String, List<FeatureForGetEntity>> features) {
+    public void setFeatures(Map<String, List<XFeatureForGetEntity>> features) {
         this.features = features;
     }
 
@@ -112,7 +87,7 @@ public class ResolvedEntityForGetEntity {
      * Getter for records.<p>
      * A list of (data source code, record id) pairs.
      */
-    public List<RecordForGetEntity> getRecords() {
+    public List<XRecordForGetEntity> getRecords() {
         return records;
     }
 
@@ -120,7 +95,7 @@ public class ResolvedEntityForGetEntity {
      * Setter for records.<p>
      * A list of (data source code, record id) pairs.
      */
-    public void setRecords(List<RecordForGetEntity> records) {
+    public void setRecords(List<XRecordForGetEntity> records) {
         this.records = records;
     }
 
@@ -129,7 +104,7 @@ public class ResolvedEntityForGetEntity {
      * A list of source systems the records came from comprising this related
      * entity.
      */
-    public List<RecordSummary> getRecordSummary() {
+    public List<XRecordSummary> getRecordSummary() {
         return recordSummary;
     }
 
@@ -138,7 +113,7 @@ public class ResolvedEntityForGetEntity {
      * A list of source systems the records came from comprising this related
      * entity.
      */
-    public void setRecordSummary(List<RecordSummary> recordSummary) {
+    public void setRecordSummary(List<XRecordSummary> recordSummary) {
         this.recordSummary = recordSummary;
     }
 
@@ -156,129 +131,5 @@ public class ResolvedEntityForGetEntity {
      */
     public void setRecordTypes(List<String> recordTypes) {
         this.recordTypes = recordTypes;
-    }
-
-    /**
-     * Getter for xxxErruleCode.<p>
-     * Identifier of the entity resolution principle that was triggered.
-     */
-    public String getXxxErruleCode() {
-        return xxxErruleCode;
-    }
-
-    /**
-     * Setter for xxxErruleCode.<p>
-     * Identifier of the entity resolution principle that was triggered.
-     */
-    public void setXxxErruleCode(String xxxErruleCode) {
-        this.xxxErruleCode = xxxErruleCode;
-    }
-
-    /**
-     * Getter for xxxFeatureIds.<p>
-     * FIXME: A list of ...
-     */
-    public List<FeatureId> getXxxFeatureIds() {
-        return xxxFeatureIds;
-    }
-
-    /**
-     * Setter for xxxFeatureIds.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxFeatureIds(List<FeatureId> xxxFeatureIds) {
-        this.xxxFeatureIds = xxxFeatureIds;
-    }
-
-    /**
-     * Getter for xxxIsAmbiguous.<p>
-     * Indicates if this is an ambiguous relationship.
-     */
-    public Integer getXxxIsAmbiguous() {
-        return xxxIsAmbiguous;
-    }
-
-    /**
-     * Setter for xxxIsAmbiguous.<p>
-     * Indicates if this is an ambiguous relationship.
-     */
-    public void setXxxIsAmbiguous(Integer xxxIsAmbiguous) {
-        this.xxxIsAmbiguous = xxxIsAmbiguous;
-    }
-
-    /**
-     * Getter for xxxIsDisclosed.<p>
-     * Indicates if this is a disclosed relationship.
-     */
-    public Integer getXxxIsDisclosed() {
-        return xxxIsDisclosed;
-    }
-
-    /**
-     * Setter for xxxIsDisclosed.<p>
-     * Indicates if this is a disclosed relationship.
-     */
-    public void setXxxIsDisclosed(Integer xxxIsDisclosed) {
-        this.xxxIsDisclosed = xxxIsDisclosed;
-    }
-
-    /**
-     * Getter for xxxLastSeenDt.<p>
-     */
-    public OffsetDateTime getXxxLastSeenDt() {
-        return xxxLastSeenDt;
-    }
-
-    /**
-     * Setter for xxxLastSeenDt.<p>
-     */
-    public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
-        this.xxxLastSeenDt = xxxLastSeenDt;
-    }
-
-    /**
-     * Getter for xxxMatchKey.<p>
-     * Representation of matched source record features.
-     */
-    public String getXxxMatchKey() {
-        return xxxMatchKey;
-    }
-
-    /**
-     * Setter for xxxMatchKey.<p>
-     * Representation of matched source record features.
-     */
-    public void setXxxMatchKey(String xxxMatchKey) {
-        this.xxxMatchKey = xxxMatchKey;
-    }
-
-    /**
-     * Getter for xxxMatchLevel.<p>
-     */
-    public Integer getXxxMatchLevel() {
-        return xxxMatchLevel;
-    }
-
-    /**
-     * Setter for xxxMatchLevel.<p>
-     */
-    public void setXxxMatchLevel(Integer xxxMatchLevel) {
-        this.xxxMatchLevel = xxxMatchLevel;
-    }
-
-    /**
-     * Getter for xxxMatchLevelCode.<p>
-     * The type of match that occurred for the record.
-     */
-    public String getXxxMatchLevelCode() {
-        return xxxMatchLevelCode;
-    }
-
-    /**
-     * Setter for xxxMatchLevelCode.<p>
-     * The type of match that occurred for the record.
-     */
-    public void setXxxMatchLevelCode(String xxxMatchLevelCode) {
-        this.xxxMatchLevelCode = xxxMatchLevelCode;
     }
 }

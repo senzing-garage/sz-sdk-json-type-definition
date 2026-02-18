@@ -110,7 +110,7 @@
                         ]
                     }
                 ],
-                "REL_ANCHOR": [
+                "ZZZ_REL_ANCHOR": [
                     {
                         "DOMAIN": "string",
                         "FEAT_DESC": "string",
@@ -146,7 +146,7 @@
                         "REL_TYPE": "string"
                     }
                 ],
-                "REL_POINTER": [
+                "ZZZ_REL_POINTER": [
                     {
                         "DOMAIN": "string",
                         "FEAT_DESC": "string",
@@ -224,43 +224,13 @@
                     "RECORD_ID": "string",
                     "UNMAPPED_DATA": {
                         "user_defined_json_key": "object"
-                    },
-                    "XXX_ADDRESS_DATA": [
-                        "string"
-                    ],
-                    "XXX_ATTRIBUTE_DATA": [
-                        "string"
-                    ],
-                    "XXX_ENTITY_DATA": [
-                        "string"
-                    ],
-                    "XXX_ENTITY_DESC": "string",
-                    "XXX_ENTITY_KEY": "string",
-                    "XXX_ENTITY_TYPE": "string",
-                    "XXX_IDENTIFIER_DATA": [
-                        "string"
-                    ],
-                    "XXX_MATCH_LEVEL": "int32",
-                    "XXX_NAME_DATA": [
-                        "string"
-                    ],
-                    "XXX_OTHER_DATA": [
-                        "string"
-                    ],
-                    "XXX_PHONE_DATA": [
-                        "string"
-                    ],
-                    "XXX_RELATIONSHIP_DATA": [
-                        "string"
-                    ]
+                    }
                 }
             ],
             "RECORD_SUMMARY": [
                 {
                     "DATA_SOURCE": "string",
-                    "RECORD_COUNT": "int32",
-                    "XXX_FIRST_SEEN_DT": "timestamp",
-                    "XXX_LAST_SEEN_DT": "timestamp"
+                    "RECORD_COUNT": "int32"
                 }
             ],
             "RECORD_TYPES": [
@@ -382,7 +352,7 @@
                                     ]
                                 }
                             ],
-                            "REL_ANCHOR": [
+                            "ZZZ_REL_ANCHOR": [
                                 {
                                     "DOMAIN": "string",
                                     "FEAT_DESC": "string",
@@ -418,7 +388,7 @@
                                     "REL_TYPE": "string"
                                 }
                             ],
-                            "REL_POINTER": [
+                            "ZZZ_REL_POINTER": [
                                 {
                                     "DOMAIN": "string",
                                     "FEAT_DESC": "string",
@@ -496,43 +466,13 @@
                                 "RECORD_ID": "string",
                                 "UNMAPPED_DATA": {
                                     "user_defined_json_key": "object"
-                                },
-                                "XXX_ADDRESS_DATA": [
-                                    "string"
-                                ],
-                                "XXX_ATTRIBUTE_DATA": [
-                                    "string"
-                                ],
-                                "XXX_ENTITY_DATA": [
-                                    "string"
-                                ],
-                                "XXX_ENTITY_DESC": "string",
-                                "XXX_ENTITY_KEY": "string",
-                                "XXX_ENTITY_TYPE": "string",
-                                "XXX_IDENTIFIER_DATA": [
-                                    "string"
-                                ],
-                                "XXX_MATCH_LEVEL": "int32",
-                                "XXX_NAME_DATA": [
-                                    "string"
-                                ],
-                                "XXX_OTHER_DATA": [
-                                    "string"
-                                ],
-                                "XXX_PHONE_DATA": [
-                                    "string"
-                                ],
-                                "XXX_RELATIONSHIP_DATA": [
-                                    "string"
-                                ]
+                                }
                             }
                         ],
                         "RECORD_SUMMARY": [
                             {
                                 "DATA_SOURCE": "string",
-                                "RECORD_COUNT": "int32",
-                                "XXX_FIRST_SEEN_DT": "timestamp",
-                                "XXX_LAST_SEEN_DT": "timestamp"
+                                "RECORD_COUNT": "int32"
                             }
                         ],
                         "RECORD_TYPES": [
@@ -652,43 +592,13 @@
                             "RECORD_ID": "string",
                             "UNMAPPED_DATA": {
                                 "user_defined_json_key": "object"
-                            },
-                            "XXX_ADDRESS_DATA": [
-                                "string"
-                            ],
-                            "XXX_ATTRIBUTE_DATA": [
-                                "string"
-                            ],
-                            "XXX_ENTITY_DATA": [
-                                "string"
-                            ],
-                            "XXX_ENTITY_DESC": "string",
-                            "XXX_ENTITY_KEY": "string",
-                            "XXX_ENTITY_TYPE": "string",
-                            "XXX_IDENTIFIER_DATA": [
-                                "string"
-                            ],
-                            "XXX_MATCH_LEVEL": "int32",
-                            "XXX_NAME_DATA": [
-                                "string"
-                            ],
-                            "XXX_OTHER_DATA": [
-                                "string"
-                            ],
-                            "XXX_PHONE_DATA": [
-                                "string"
-                            ],
-                            "XXX_RELATIONSHIP_DATA": [
-                                "string"
-                            ]
+                            }
                         }
                     ],
                     "RECORD_SUMMARY": [
                         {
                             "DATA_SOURCE": "string",
-                            "RECORD_COUNT": "int32",
-                            "XXX_FIRST_SEEN_DT": "timestamp",
-                            "XXX_LAST_SEEN_DT": "timestamp"
+                            "RECORD_COUNT": "int32"
                         }
                     ],
                     "RECORD_TYPES": [
@@ -821,7 +731,7 @@
                                     ]
                                 }
                             ],
-                            "REL_ANCHOR": [
+                            "ZZZ_REL_ANCHOR": [
                                 {
                                     "DOMAIN": "string",
                                     "FEAT_DESC": "string",
@@ -857,7 +767,7 @@
                                     "REL_TYPE": "string"
                                 }
                             ],
-                            "REL_POINTER": [
+                            "ZZZ_REL_POINTER": [
                                 {
                                     "DOMAIN": "string",
                                     "FEAT_DESC": "string",
@@ -935,43 +845,13 @@
                                 "RECORD_ID": "string",
                                 "UNMAPPED_DATA": {
                                     "user_defined_json_key": "object"
-                                },
-                                "XXX_ADDRESS_DATA": [
-                                    "string"
-                                ],
-                                "XXX_ATTRIBUTE_DATA": [
-                                    "string"
-                                ],
-                                "XXX_ENTITY_DATA": [
-                                    "string"
-                                ],
-                                "XXX_ENTITY_DESC": "string",
-                                "XXX_ENTITY_KEY": "string",
-                                "XXX_ENTITY_TYPE": "string",
-                                "XXX_IDENTIFIER_DATA": [
-                                    "string"
-                                ],
-                                "XXX_MATCH_LEVEL": "int32",
-                                "XXX_NAME_DATA": [
-                                    "string"
-                                ],
-                                "XXX_OTHER_DATA": [
-                                    "string"
-                                ],
-                                "XXX_PHONE_DATA": [
-                                    "string"
-                                ],
-                                "XXX_RELATIONSHIP_DATA": [
-                                    "string"
-                                ]
+                                }
                             }
                         ],
                         "RECORD_SUMMARY": [
                             {
                                 "DATA_SOURCE": "string",
-                                "RECORD_COUNT": "int32",
-                                "XXX_FIRST_SEEN_DT": "timestamp",
-                                "XXX_LAST_SEEN_DT": "timestamp"
+                                "RECORD_COUNT": "int32"
                             }
                         ],
                         "RECORD_TYPES": [
@@ -1091,43 +971,13 @@
                             "RECORD_ID": "string",
                             "UNMAPPED_DATA": {
                                 "user_defined_json_key": "object"
-                            },
-                            "XXX_ADDRESS_DATA": [
-                                "string"
-                            ],
-                            "XXX_ATTRIBUTE_DATA": [
-                                "string"
-                            ],
-                            "XXX_ENTITY_DATA": [
-                                "string"
-                            ],
-                            "XXX_ENTITY_DESC": "string",
-                            "XXX_ENTITY_KEY": "string",
-                            "XXX_ENTITY_TYPE": "string",
-                            "XXX_IDENTIFIER_DATA": [
-                                "string"
-                            ],
-                            "XXX_MATCH_LEVEL": "int32",
-                            "XXX_NAME_DATA": [
-                                "string"
-                            ],
-                            "XXX_OTHER_DATA": [
-                                "string"
-                            ],
-                            "XXX_PHONE_DATA": [
-                                "string"
-                            ],
-                            "XXX_RELATIONSHIP_DATA": [
-                                "string"
-                            ]
+                            }
                         }
                     ],
                     "RECORD_SUMMARY": [
                         {
                             "DATA_SOURCE": "string",
-                            "RECORD_COUNT": "int32",
-                            "XXX_FIRST_SEEN_DT": "timestamp",
-                            "XXX_LAST_SEEN_DT": "timestamp"
+                            "RECORD_COUNT": "int32"
                         }
                     ],
                     "RECORD_TYPES": [
@@ -1280,7 +1130,7 @@
                             ]
                         }
                     ],
-                    "REL_ANCHOR": [
+                    "ZZZ_REL_ANCHOR": [
                         {
                             "DOMAIN": "string",
                             "FEAT_DESC": "string",
@@ -1316,7 +1166,7 @@
                             "REL_TYPE": "string"
                         }
                     ],
-                    "REL_POINTER": [
+                    "ZZZ_REL_POINTER": [
                         {
                             "DOMAIN": "string",
                             "FEAT_DESC": "string",

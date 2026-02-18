@@ -28,13 +28,13 @@ namespace Senzing.Typedef
         /// A map from feature type names to lists of features.
         /// </summary>
         [JsonPropertyName("FEATURES")]
-        public IDictionary<string, IList<FeatureForAttributes>> Features { get; set; }
+        public IDictionary<string, IList<XFeatureForAttributes>> Features { get; set; }
 
         /// <summary>
         /// FIXME: A list of ...
         /// </summary>
         [JsonPropertyName("FEATURE_IDS")]
-        public IList<FeatureId> FeatureIds { get; set; }
+        public IList<XFeatureId> FeatureIds { get; set; }
 
         [JsonPropertyName("FIRST_SEEN_DT")]
         public DateTimeOffset FirstSeenDt { get; set; }
@@ -77,65 +77,5 @@ namespace Senzing.Typedef
         /// </summary>
         [JsonPropertyName("UNMAPPED_DATA")]
         public IDictionary<string, Object_> UnmappedData { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_ADDRESS_DATA")]
-        public IList<string> XxxAddressData { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_ATTRIBUTE_DATA")]
-        public IList<string> XxxAttributeData { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_ENTITY_DATA")]
-        public IList<string> XxxEntityData { get; set; }
-
-        [JsonPropertyName("XXX_ENTITY_DESC")]
-        public string XxxEntityDesc { get; set; }
-
-        [JsonPropertyName("XXX_ENTITY_KEY")]
-        public string XxxEntityKey { get; set; }
-
-        [JsonPropertyName("XXX_ENTITY_TYPE")]
-        public string XxxEntityType { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_IDENTIFIER_DATA")]
-        public IList<string> XxxIdentifierData { get; set; }
-
-        [JsonPropertyName("XXX_MATCH_LEVEL")]
-        public int XxxMatchLevel { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_NAME_DATA")]
-        public IList<string> XxxNameData { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_OTHER_DATA")]
-        public IList<string> XxxOtherData { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_PHONE_DATA")]
-        public IList<string> XxxPhoneData { get; set; }
-
-        /// <summary>
-        /// FIXME: A list of ...
-        /// </summary>
-        [JsonPropertyName("XXX_RELATIONSHIP_DATA")]
-        public IList<string> XxxRelationshipData { get; set; }
     }
 }

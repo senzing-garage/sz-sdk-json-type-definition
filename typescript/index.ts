@@ -1296,33 +1296,33 @@ export interface MatchKeyDetails {
   /**
    * A list of feature data in the match key supporting the match.
    */
-  CONFIRMATIONS: FeatureScoreInfo[];
+  CONFIRMATIONS: XFeatureScoreInfo[];
 
   /**
    * A list of feature data in the match key negating the match.
    */
-  DENIALS: FeatureScoreInfo[];
+  DENIALS: XFeatureScoreInfo[];
 
   /**
    * A list of disclosed relationships of various types.
    */
-  DISCLOSED_RELATIONS: DisclosedRelationsForMatchInfo[];
-
-  /**
-   * A list of disclosed relationship anchors.
-   */
-  REL_ANCHOR: RelAnchor[];
+  DISCLOSED_RELATIONS: XDisclosedRelationsForMatchInfo[];
 
   /**
    * Deprecated. A list of disclosed relationships based on identical shared
    * keys.
    */
-  REL_LINKS: RelLink[];
+  REL_LINKS: XRelLink[];
+
+  /**
+   * A list of disclosed relationship anchors.
+   */
+  ZZZ_REL_ANCHOR: RelAnchor[];
 
   /**
    * A list of disclosed relationship pointers.
    */
-  REL_POINTER: RelPointer[];
+  ZZZ_REL_POINTER: RelPointer[];
 }
 
 /**
@@ -1370,12 +1370,12 @@ export interface Record {
   /**
    * A map from feature type names to lists of features.
    */
-  FEATURES: { [key: string]: FeatureForAttributes[] };
+  FEATURES: { [key: string]: XFeatureForAttributes[] };
 
   /**
    * FIXME: A list of ...
    */
-  FEATURE_IDS: FeatureId[];
+  FEATURE_IDS: XFeatureId[];
   FIRST_SEEN_DT: string;
 
   /**
@@ -1408,50 +1408,6 @@ export interface Record {
    * FIXME: A map from ... to ...
    */
   UNMAPPED_DATA: { [key: string]: Object };
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_ADDRESS_DATA: string[];
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_ATTRIBUTE_DATA: string[];
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_ENTITY_DATA: string[];
-  XXX_ENTITY_DESC: string;
-  XXX_ENTITY_KEY: string;
-  XXX_ENTITY_TYPE: string;
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_IDENTIFIER_DATA: string[];
-  XXX_MATCH_LEVEL: number;
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_NAME_DATA: string[];
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_OTHER_DATA: string[];
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_PHONE_DATA: string[];
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_RELATIONSHIP_DATA: string[];
 }
 
 /**
@@ -1593,8 +1549,6 @@ export interface RecordSummary {
    * The number of records for the entity with the same data source code.
    */
   RECORD_COUNT: number;
-  XXX_FIRST_SEEN_DT: string;
-  XXX_LAST_SEEN_DT: string;
 }
 
 /**
@@ -1937,55 +1891,23 @@ export interface ResolvedEntityForGetEntity {
   /**
    * A map from feature type names to lists of features.
    */
-  FEATURES: { [key: string]: FeatureForGetEntity[] };
+  FEATURES: { [key: string]: XFeatureForGetEntity[] };
 
   /**
    * A list of (data source code, record id) pairs.
    */
-  RECORDS: RecordForGetEntity[];
+  RECORDS: XRecordForGetEntity[];
 
   /**
    * A list of source systems the records came from comprising this related
    * entity.
    */
-  RECORD_SUMMARY: RecordSummary[];
+  RECORD_SUMMARY: XRecordSummary[];
 
   /**
    * FIXME: A list of ...
    */
   RECORD_TYPES: string[];
-
-  /**
-   * Identifier of the entity resolution principle that was triggered.
-   */
-  XXX_ERRULE_CODE: string;
-
-  /**
-   * FIXME: A list of ...
-   */
-  XXX_FEATURE_IDS: FeatureId[];
-
-  /**
-   * Indicates if this is an ambiguous relationship.
-   */
-  XXX_IS_AMBIGUOUS: number;
-
-  /**
-   * Indicates if this is a disclosed relationship.
-   */
-  XXX_IS_DISCLOSED: number;
-  XXX_LAST_SEEN_DT: string;
-
-  /**
-   * Representation of matched source record features.
-   */
-  XXX_MATCH_KEY: string;
-  XXX_MATCH_LEVEL: number;
-
-  /**
-   * The type of match that occurred for the record.
-   */
-  XXX_MATCH_LEVEL_CODE: string;
 }
 
 /**
@@ -3554,3 +3476,19 @@ export interface WorkloadUnresolveTriggers {
   relLink: number;
   update: number;
 }
+
+export type XDisclosedRelationsForMatchInfo = DisclosedRelationsForMatchInfo;
+
+export type XFeatureForAttributes = FeatureForAttributes;
+
+export type XFeatureForGetEntity = FeatureForGetEntity;
+
+export type XFeatureId = FeatureId;
+
+export type XFeatureScoreInfo = FeatureScoreInfo;
+
+export type XRecordForGetEntity = RecordForGetEntity;
+
+export type XRecordSummary = RecordSummary;
+
+export type XRelLink = RelLink;

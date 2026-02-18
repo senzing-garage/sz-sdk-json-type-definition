@@ -15,37 +15,37 @@ namespace Senzing.Typedef
         /// A list of feature data in the match key supporting the match.
         /// </summary>
         [JsonPropertyName("CONFIRMATIONS")]
-        public IList<FeatureScoreInfo> Confirmations { get; set; }
+        public IList<XFeatureScoreInfo> Confirmations { get; set; }
 
         /// <summary>
         /// A list of feature data in the match key negating the match.
         /// </summary>
         [JsonPropertyName("DENIALS")]
-        public IList<FeatureScoreInfo> Denials { get; set; }
+        public IList<XFeatureScoreInfo> Denials { get; set; }
 
         /// <summary>
         /// A list of disclosed relationships of various types.
         /// </summary>
         [JsonPropertyName("DISCLOSED_RELATIONS")]
-        public IList<DisclosedRelationsForMatchInfo> DisclosedRelations { get; set; }
-
-        /// <summary>
-        /// A list of disclosed relationship anchors.
-        /// </summary>
-        [JsonPropertyName("REL_ANCHOR")]
-        public IList<RelAnchor> RelAnchor { get; set; }
+        public IList<XDisclosedRelationsForMatchInfo> DisclosedRelations { get; set; }
 
         /// <summary>
         /// Deprecated. A list of disclosed relationships based on identical
         /// shared keys.
         /// </summary>
         [JsonPropertyName("REL_LINKS")]
-        public IList<RelLink> RelLinks { get; set; }
+        public IList<XRelLink> RelLinks { get; set; }
+
+        /// <summary>
+        /// A list of disclosed relationship anchors.
+        /// </summary>
+        [JsonPropertyName("ZZZ_REL_ANCHOR")]
+        public IList<RelAnchor> ZzzRelAnchor { get; set; }
 
         /// <summary>
         /// A list of disclosed relationship pointers.
         /// </summary>
-        [JsonPropertyName("REL_POINTER")]
-        public IList<RelPointer> RelPointer { get; set; }
+        [JsonPropertyName("ZZZ_REL_POINTER")]
+        public IList<RelPointer> ZzzRelPointer { get; set; }
     }
 }

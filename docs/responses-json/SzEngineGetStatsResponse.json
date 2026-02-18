@@ -88,6 +88,12 @@
             "user_defined_json_key": "int32"
         },
         "repairDiagnosis": {
+            "CORRUPTION_FOUND": [
+                {
+                    "details": "string",
+                    "resEntID": "int32"
+                }
+            ],
             "types": "int32"
         },
         "reresolve": {
@@ -157,6 +163,12 @@
         },
         "unresolve": {
             "abortedUnresolve": "int32",
+            "analysis": [
+                {
+                    "count": "int32",
+                    "matchIterations": "int32"
+                }
+            ],
             "triggers": {
                 "ambiguousMultiResolve": "int32",
                 "ambiguousNoResolve": "int32",

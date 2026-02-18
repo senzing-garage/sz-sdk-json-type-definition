@@ -633,8 +633,7 @@
         "FIXME: A list of ..."
     ],
     "REL_ANCHOR": [
-        "FIXME: A list of ...",
-        "A list of disclosed relationship anchors."
+        "FIXME: A list of ..."
     ],
     "REL_ANCHOR_DOMAIN": [
         "This code helps keep the REL_ANCHOR_KEY unique. This is a code (without dashes) for the data source or source field that is contributing the relationship. An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -649,8 +648,7 @@
         "Deprecated. A list of disclosed relationships based on identical shared keys."
     ],
     "REL_POINTER": [
-        "FIXME: A list of ...",
-        "A list of disclosed relationship pointers."
+        "FIXME: A list of ..."
     ],
     "REL_POINTER_DOMAIN": [
         "An attribute in the Senzing Entity Specification. See https://www.senzing.com/docs/entity_specification"
@@ -893,6 +891,9 @@
     "WorkloadRefreshLocks": [
         "FIXME: WorkloadRefreshLocks"
     ],
+    "WorkloadRepairCorruptionFound": [
+        "FIXME: WorkloadRepairCorruptionFound"
+    ],
     "WorkloadRepairDiagnosis": [
         "FIXME: WorkloadRepairDiagnosis"
     ],
@@ -916,6 +917,9 @@
     ],
     "WorkloadUnresolve": [
         "FIXME: WorkloadUnresolve"
+    ],
+    "WorkloadUnresolveAnalysis": [
+        "FIXME: WorkloadUnresolveAnalysis"
     ],
     "WorkloadUnresolveTriggers": [
         "FIXME: WorkloadUnresolveTriggers"
@@ -998,6 +1002,12 @@
     ],
     "XXX_REL_POINTER": [
         "FIXME: A list of ..."
+    ],
+    "ZZZ_REL_ANCHOR": [
+        "A list of disclosed relationship anchors."
+    ],
+    "ZZZ_REL_POINTER": [
+        "A list of disclosed relationship pointers."
     ],
     "cacheHit": [
         "FIXME: A map from ... to ..."

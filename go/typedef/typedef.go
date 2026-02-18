@@ -1102,23 +1102,23 @@ type MatchInfoForWhy struct {
 // Contains supporting information for the match key.
 type MatchKeyDetails struct {
 	// A list of feature data in the match key supporting the match.
-	Confirmations []FeatureScoreInfo `json:"CONFIRMATIONS"`
+	Confirmations []XFeatureScoreInfo `json:"CONFIRMATIONS"`
 
 	// A list of feature data in the match key negating the match.
-	Denials []FeatureScoreInfo `json:"DENIALS"`
+	Denials []XFeatureScoreInfo `json:"DENIALS"`
 
 	// A list of disclosed relationships of various types.
-	DisclosedRelations []DisclosedRelationsForMatchInfo `json:"DISCLOSED_RELATIONS"`
-
-	// A list of disclosed relationship anchors.
-	RelAnchor []RelAnchor `json:"REL_ANCHOR"`
+	DisclosedRelations []XDisclosedRelationsForMatchInfo `json:"DISCLOSED_RELATIONS"`
 
 	// Deprecated. A list of disclosed relationships based on identical shared
 	// keys.
-	RelLinks []RelLink `json:"REL_LINKS"`
+	RelLinks []XRelLink `json:"REL_LINKS"`
+
+	// A list of disclosed relationship anchors.
+	ZzzRelAnchor []RelAnchor `json:"ZZZ_REL_ANCHOR"`
 
 	// A list of disclosed relationship pointers.
-	RelPointer []RelPointer `json:"REL_POINTER"`
+	ZzzRelPointer []RelPointer `json:"ZZZ_REL_POINTER"`
 }
 
 // FIXME: MemberRecord
@@ -1149,10 +1149,10 @@ type Record struct {
 	ErruleCode string `json:"ERRULE_CODE"`
 
 	// A map from feature type names to lists of features.
-	Features map[string][]FeatureForAttributes `json:"FEATURES"`
+	Features map[string][]XFeatureForAttributes `json:"FEATURES"`
 
 	// FIXME: A list of ...
-	FeatureIds []FeatureID `json:"FEATURE_IDS"`
+	FeatureIds []XFeatureID `json:"FEATURE_IDS"`
 
 	FirstSeenDt time.Time `json:"FIRST_SEEN_DT"`
 
@@ -1175,38 +1175,6 @@ type Record struct {
 
 	// FIXME: A map from ... to ...
 	UnmappedData map[string]Object `json:"UNMAPPED_DATA"`
-
-	// FIXME: A list of ...
-	XxxAddressData []string `json:"XXX_ADDRESS_DATA"`
-
-	// FIXME: A list of ...
-	XxxAttributeData []string `json:"XXX_ATTRIBUTE_DATA"`
-
-	// FIXME: A list of ...
-	XxxEntityData []string `json:"XXX_ENTITY_DATA"`
-
-	XxxEntityDesc string `json:"XXX_ENTITY_DESC"`
-
-	XxxEntityKey string `json:"XXX_ENTITY_KEY"`
-
-	XxxEntityType string `json:"XXX_ENTITY_TYPE"`
-
-	// FIXME: A list of ...
-	XxxIdentifierData []string `json:"XXX_IDENTIFIER_DATA"`
-
-	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
-
-	// FIXME: A list of ...
-	XxxNameData []string `json:"XXX_NAME_DATA"`
-
-	// FIXME: A list of ...
-	XxxOtherData []string `json:"XXX_OTHER_DATA"`
-
-	// FIXME: A list of ...
-	XxxPhoneData []string `json:"XXX_PHONE_DATA"`
-
-	// FIXME: A list of ...
-	XxxRelationshipData []string `json:"XXX_RELATIONSHIP_DATA"`
 }
 
 // FIXME: RecordForGetEntity
@@ -1300,10 +1268,6 @@ type RecordSummary struct {
 
 	// The number of records for the entity with the same data source code.
 	RecordCount int64 `json:"RECORD_COUNT"`
-
-	XxxFirstSeenDt time.Time `json:"XXX_FIRST_SEEN_DT"`
-
-	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
 }
 
 // FIXME: RelAnchor
@@ -1525,39 +1489,17 @@ type ResolvedEntityForGetEntity struct {
 	EntityName string `json:"ENTITY_NAME"`
 
 	// A map from feature type names to lists of features.
-	Features map[string][]FeatureForGetEntity `json:"FEATURES"`
+	Features map[string][]XFeatureForGetEntity `json:"FEATURES"`
 
 	// A list of (data source code, record id) pairs.
-	Records []RecordForGetEntity `json:"RECORDS"`
+	Records []XRecordForGetEntity `json:"RECORDS"`
 
 	// A list of source systems the records came from comprising this related
 	// entity.
-	RecordSummary []RecordSummary `json:"RECORD_SUMMARY"`
+	RecordSummary []XRecordSummary `json:"RECORD_SUMMARY"`
 
 	// FIXME: A list of ...
 	RecordTypes []string `json:"RECORD_TYPES"`
-
-	// Identifier of the entity resolution principle that was triggered.
-	XxxErruleCode string `json:"XXX_ERRULE_CODE"`
-
-	// FIXME: A list of ...
-	XxxFeatureIds []FeatureID `json:"XXX_FEATURE_IDS"`
-
-	// Indicates if this is an ambiguous relationship.
-	XxxIsAmbiguous int64 `json:"XXX_IS_AMBIGUOUS"`
-
-	// Indicates if this is a disclosed relationship.
-	XxxIsDisclosed int64 `json:"XXX_IS_DISCLOSED"`
-
-	XxxLastSeenDt time.Time `json:"XXX_LAST_SEEN_DT"`
-
-	// Representation of matched source record features.
-	XxxMatchKey string `json:"XXX_MATCH_KEY"`
-
-	XxxMatchLevel int64 `json:"XXX_MATCH_LEVEL"`
-
-	// The type of match that occurred for the record.
-	XxxMatchLevelCode string `json:"XXX_MATCH_LEVEL_CODE"`
 }
 
 // FIXME: SYS_OOM
@@ -2826,3 +2768,19 @@ type WorkloadUnresolveTriggers struct {
 
 	Update int32 `json:"update"`
 }
+
+type XDisclosedRelationsForMatchInfo = DisclosedRelationsForMatchInfo
+
+type XFeatureForAttributes = FeatureForAttributes
+
+type XFeatureForGetEntity = FeatureForGetEntity
+
+type XFeatureID = FeatureID
+
+type XFeatureScoreInfo = FeatureScoreInfo
+
+type XRecordForGetEntity = RecordForGetEntity
+
+type XRecordSummary = RecordSummary
+
+type XRelLink = RelLink
