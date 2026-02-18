@@ -12,22 +12,22 @@ import java.util.List;
 @JsonSerialize
 public class MatchKeyDetails {
     @JsonProperty("CONFIRMATIONS")
-    private List<FeatureScoreInfo> confirmations;
+    private List<XFeatureScoreInfo> confirmations;
 
     @JsonProperty("DENIALS")
-    private List<FeatureScoreInfo> denials;
+    private List<XFeatureScoreInfo> denials;
 
     @JsonProperty("DISCLOSED_RELATIONS")
-    private List<DisclosedRelationsForMatchInfo> disclosedRelations;
-
-    @JsonProperty("REL_ANCHOR")
-    private List<RelAnchor> relAnchor;
+    private List<XDisclosedRelationsForMatchInfo> disclosedRelations;
 
     @JsonProperty("REL_LINKS")
-    private List<RelLink> relLinks;
+    private List<XRelLink> relLinks;
 
-    @JsonProperty("REL_POINTER")
-    private List<RelPointer> relPointer;
+    @JsonProperty("ZZZ_REL_ANCHOR")
+    private List<RelAnchor> zzzRelAnchor;
+
+    @JsonProperty("ZZZ_REL_POINTER")
+    private List<RelPointer> zzzRelPointer;
 
     public MatchKeyDetails() {
     }
@@ -36,7 +36,7 @@ public class MatchKeyDetails {
      * Getter for confirmations.<p>
      * A list of feature data in the match key supporting the match.
      */
-    public List<FeatureScoreInfo> getConfirmations() {
+    public List<XFeatureScoreInfo> getConfirmations() {
         return confirmations;
     }
 
@@ -44,7 +44,7 @@ public class MatchKeyDetails {
      * Setter for confirmations.<p>
      * A list of feature data in the match key supporting the match.
      */
-    public void setConfirmations(List<FeatureScoreInfo> confirmations) {
+    public void setConfirmations(List<XFeatureScoreInfo> confirmations) {
         this.confirmations = confirmations;
     }
 
@@ -52,7 +52,7 @@ public class MatchKeyDetails {
      * Getter for denials.<p>
      * A list of feature data in the match key negating the match.
      */
-    public List<FeatureScoreInfo> getDenials() {
+    public List<XFeatureScoreInfo> getDenials() {
         return denials;
     }
 
@@ -60,7 +60,7 @@ public class MatchKeyDetails {
      * Setter for denials.<p>
      * A list of feature data in the match key negating the match.
      */
-    public void setDenials(List<FeatureScoreInfo> denials) {
+    public void setDenials(List<XFeatureScoreInfo> denials) {
         this.denials = denials;
     }
 
@@ -68,7 +68,7 @@ public class MatchKeyDetails {
      * Getter for disclosedRelations.<p>
      * A list of disclosed relationships of various types.
      */
-    public List<DisclosedRelationsForMatchInfo> getDisclosedRelations() {
+    public List<XDisclosedRelationsForMatchInfo> getDisclosedRelations() {
         return disclosedRelations;
     }
 
@@ -76,24 +76,8 @@ public class MatchKeyDetails {
      * Setter for disclosedRelations.<p>
      * A list of disclosed relationships of various types.
      */
-    public void setDisclosedRelations(List<DisclosedRelationsForMatchInfo> disclosedRelations) {
+    public void setDisclosedRelations(List<XDisclosedRelationsForMatchInfo> disclosedRelations) {
         this.disclosedRelations = disclosedRelations;
-    }
-
-    /**
-     * Getter for relAnchor.<p>
-     * A list of disclosed relationship anchors.
-     */
-    public List<RelAnchor> getRelAnchor() {
-        return relAnchor;
-    }
-
-    /**
-     * Setter for relAnchor.<p>
-     * A list of disclosed relationship anchors.
-     */
-    public void setRelAnchor(List<RelAnchor> relAnchor) {
-        this.relAnchor = relAnchor;
     }
 
     /**
@@ -101,7 +85,7 @@ public class MatchKeyDetails {
      * Deprecated. A list of disclosed relationships based on identical shared
      * keys.
      */
-    public List<RelLink> getRelLinks() {
+    public List<XRelLink> getRelLinks() {
         return relLinks;
     }
 
@@ -110,23 +94,39 @@ public class MatchKeyDetails {
      * Deprecated. A list of disclosed relationships based on identical shared
      * keys.
      */
-    public void setRelLinks(List<RelLink> relLinks) {
+    public void setRelLinks(List<XRelLink> relLinks) {
         this.relLinks = relLinks;
     }
 
     /**
-     * Getter for relPointer.<p>
-     * A list of disclosed relationship pointers.
+     * Getter for zzzRelAnchor.<p>
+     * A list of disclosed relationship anchors.
      */
-    public List<RelPointer> getRelPointer() {
-        return relPointer;
+    public List<RelAnchor> getZzzRelAnchor() {
+        return zzzRelAnchor;
     }
 
     /**
-     * Setter for relPointer.<p>
+     * Setter for zzzRelAnchor.<p>
+     * A list of disclosed relationship anchors.
+     */
+    public void setZzzRelAnchor(List<RelAnchor> zzzRelAnchor) {
+        this.zzzRelAnchor = zzzRelAnchor;
+    }
+
+    /**
+     * Getter for zzzRelPointer.<p>
      * A list of disclosed relationship pointers.
      */
-    public void setRelPointer(List<RelPointer> relPointer) {
-        this.relPointer = relPointer;
+    public List<RelPointer> getZzzRelPointer() {
+        return zzzRelPointer;
+    }
+
+    /**
+     * Setter for zzzRelPointer.<p>
+     * A list of disclosed relationship pointers.
+     */
+    public void setZzzRelPointer(List<RelPointer> zzzRelPointer) {
+        this.zzzRelPointer = zzzRelPointer;
     }
 }

@@ -20,10 +20,10 @@ public class Record {
     private String erruleCode;
 
     @JsonProperty("FEATURES")
-    private Map<String, List<FeatureForAttributes>> features;
+    private Map<String, List<XFeatureForAttributes>> features;
 
     @JsonProperty("FEATURE_IDS")
-    private List<FeatureId> featureIds;
+    private List<XFeatureId> featureIds;
 
     @JsonProperty("FIRST_SEEN_DT")
     private OffsetDateTime firstSeenDt;
@@ -48,42 +48,6 @@ public class Record {
 
     @JsonProperty("UNMAPPED_DATA")
     private Map<String, Object> unmappedData;
-
-    @JsonProperty("XXX_ADDRESS_DATA")
-    private List<String> xxxAddressData;
-
-    @JsonProperty("XXX_ATTRIBUTE_DATA")
-    private List<String> xxxAttributeData;
-
-    @JsonProperty("XXX_ENTITY_DATA")
-    private List<String> xxxEntityData;
-
-    @JsonProperty("XXX_ENTITY_DESC")
-    private String xxxEntityDesc;
-
-    @JsonProperty("XXX_ENTITY_KEY")
-    private String xxxEntityKey;
-
-    @JsonProperty("XXX_ENTITY_TYPE")
-    private String xxxEntityType;
-
-    @JsonProperty("XXX_IDENTIFIER_DATA")
-    private List<String> xxxIdentifierData;
-
-    @JsonProperty("XXX_MATCH_LEVEL")
-    private Integer xxxMatchLevel;
-
-    @JsonProperty("XXX_NAME_DATA")
-    private List<String> xxxNameData;
-
-    @JsonProperty("XXX_OTHER_DATA")
-    private List<String> xxxOtherData;
-
-    @JsonProperty("XXX_PHONE_DATA")
-    private List<String> xxxPhoneData;
-
-    @JsonProperty("XXX_RELATIONSHIP_DATA")
-    private List<String> xxxRelationshipData;
 
     public Record() {
     }
@@ -124,7 +88,7 @@ public class Record {
      * Getter for features.<p>
      * A map from feature type names to lists of features.
      */
-    public Map<String, List<FeatureForAttributes>> getFeatures() {
+    public Map<String, List<XFeatureForAttributes>> getFeatures() {
         return features;
     }
 
@@ -132,7 +96,7 @@ public class Record {
      * Setter for features.<p>
      * A map from feature type names to lists of features.
      */
-    public void setFeatures(Map<String, List<FeatureForAttributes>> features) {
+    public void setFeatures(Map<String, List<XFeatureForAttributes>> features) {
         this.features = features;
     }
 
@@ -140,7 +104,7 @@ public class Record {
      * Getter for featureIds.<p>
      * FIXME: A list of ...
      */
-    public List<FeatureId> getFeatureIds() {
+    public List<XFeatureId> getFeatureIds() {
         return featureIds;
     }
 
@@ -148,7 +112,7 @@ public class Record {
      * Setter for featureIds.<p>
      * FIXME: A list of ...
      */
-    public void setFeatureIds(List<FeatureId> featureIds) {
+    public void setFeatureIds(List<XFeatureId> featureIds) {
         this.featureIds = featureIds;
     }
 
@@ -274,189 +238,5 @@ public class Record {
      */
     public void setUnmappedData(Map<String, Object> unmappedData) {
         this.unmappedData = unmappedData;
-    }
-
-    /**
-     * Getter for xxxAddressData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxAddressData() {
-        return xxxAddressData;
-    }
-
-    /**
-     * Setter for xxxAddressData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxAddressData(List<String> xxxAddressData) {
-        this.xxxAddressData = xxxAddressData;
-    }
-
-    /**
-     * Getter for xxxAttributeData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxAttributeData() {
-        return xxxAttributeData;
-    }
-
-    /**
-     * Setter for xxxAttributeData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxAttributeData(List<String> xxxAttributeData) {
-        this.xxxAttributeData = xxxAttributeData;
-    }
-
-    /**
-     * Getter for xxxEntityData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxEntityData() {
-        return xxxEntityData;
-    }
-
-    /**
-     * Setter for xxxEntityData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxEntityData(List<String> xxxEntityData) {
-        this.xxxEntityData = xxxEntityData;
-    }
-
-    /**
-     * Getter for xxxEntityDesc.<p>
-     */
-    public String getXxxEntityDesc() {
-        return xxxEntityDesc;
-    }
-
-    /**
-     * Setter for xxxEntityDesc.<p>
-     */
-    public void setXxxEntityDesc(String xxxEntityDesc) {
-        this.xxxEntityDesc = xxxEntityDesc;
-    }
-
-    /**
-     * Getter for xxxEntityKey.<p>
-     */
-    public String getXxxEntityKey() {
-        return xxxEntityKey;
-    }
-
-    /**
-     * Setter for xxxEntityKey.<p>
-     */
-    public void setXxxEntityKey(String xxxEntityKey) {
-        this.xxxEntityKey = xxxEntityKey;
-    }
-
-    /**
-     * Getter for xxxEntityType.<p>
-     */
-    public String getXxxEntityType() {
-        return xxxEntityType;
-    }
-
-    /**
-     * Setter for xxxEntityType.<p>
-     */
-    public void setXxxEntityType(String xxxEntityType) {
-        this.xxxEntityType = xxxEntityType;
-    }
-
-    /**
-     * Getter for xxxIdentifierData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxIdentifierData() {
-        return xxxIdentifierData;
-    }
-
-    /**
-     * Setter for xxxIdentifierData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxIdentifierData(List<String> xxxIdentifierData) {
-        this.xxxIdentifierData = xxxIdentifierData;
-    }
-
-    /**
-     * Getter for xxxMatchLevel.<p>
-     */
-    public Integer getXxxMatchLevel() {
-        return xxxMatchLevel;
-    }
-
-    /**
-     * Setter for xxxMatchLevel.<p>
-     */
-    public void setXxxMatchLevel(Integer xxxMatchLevel) {
-        this.xxxMatchLevel = xxxMatchLevel;
-    }
-
-    /**
-     * Getter for xxxNameData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxNameData() {
-        return xxxNameData;
-    }
-
-    /**
-     * Setter for xxxNameData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxNameData(List<String> xxxNameData) {
-        this.xxxNameData = xxxNameData;
-    }
-
-    /**
-     * Getter for xxxOtherData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxOtherData() {
-        return xxxOtherData;
-    }
-
-    /**
-     * Setter for xxxOtherData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxOtherData(List<String> xxxOtherData) {
-        this.xxxOtherData = xxxOtherData;
-    }
-
-    /**
-     * Getter for xxxPhoneData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxPhoneData() {
-        return xxxPhoneData;
-    }
-
-    /**
-     * Setter for xxxPhoneData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxPhoneData(List<String> xxxPhoneData) {
-        this.xxxPhoneData = xxxPhoneData;
-    }
-
-    /**
-     * Getter for xxxRelationshipData.<p>
-     * FIXME: A list of ...
-     */
-    public List<String> getXxxRelationshipData() {
-        return xxxRelationshipData;
-    }
-
-    /**
-     * Setter for xxxRelationshipData.<p>
-     * FIXME: A list of ...
-     */
-    public void setXxxRelationshipData(List<String> xxxRelationshipData) {
-        this.xxxRelationshipData = xxxRelationshipData;
     }
 }

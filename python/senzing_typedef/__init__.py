@@ -2784,33 +2784,33 @@ class MatchKeyDetails:
     Contains supporting information for the match key.
     """
 
-    confirmations: 'List[FeatureScoreInfo]'
+    confirmations: 'List[XFeatureScoreInfo]'
     """
     A list of feature data in the match key supporting the match.
     """
 
-    denials: 'List[FeatureScoreInfo]'
+    denials: 'List[XFeatureScoreInfo]'
     """
     A list of feature data in the match key negating the match.
     """
 
-    disclosed_relations: 'List[DisclosedRelationsForMatchInfo]'
+    disclosed_relations: 'List[XDisclosedRelationsForMatchInfo]'
     """
     A list of disclosed relationships of various types.
     """
 
-    rel_anchor: 'List[RelAnchor]'
-    """
-    A list of disclosed relationship anchors.
-    """
-
-    rel_links: 'List[RelLink]'
+    rel_links: 'List[XRelLink]'
     """
     Deprecated. A list of disclosed relationships based on identical shared
     keys.
     """
 
-    rel_pointer: 'List[RelPointer]'
+    zzz_rel_anchor: 'List[RelAnchor]'
+    """
+    A list of disclosed relationship anchors.
+    """
+
+    zzz_rel_pointer: 'List[RelPointer]'
     """
     A list of disclosed relationship pointers.
     """
@@ -2819,12 +2819,12 @@ class MatchKeyDetails:
     @classmethod
     def from_json_data(cls, data: Any) -> 'MatchKeyDetails':
         return cls(
-            _from_json_data(List[FeatureScoreInfo], data.get("CONFIRMATIONS")),
-            _from_json_data(List[FeatureScoreInfo], data.get("DENIALS")),
-            _from_json_data(List[DisclosedRelationsForMatchInfo], data.get("DISCLOSED_RELATIONS")),
-            _from_json_data(List[RelAnchor], data.get("REL_ANCHOR")),
-            _from_json_data(List[RelLink], data.get("REL_LINKS")),
-            _from_json_data(List[RelPointer], data.get("REL_POINTER")),
+            _from_json_data(List[XFeatureScoreInfo], data.get("CONFIRMATIONS")),
+            _from_json_data(List[XFeatureScoreInfo], data.get("DENIALS")),
+            _from_json_data(List[XDisclosedRelationsForMatchInfo], data.get("DISCLOSED_RELATIONS")),
+            _from_json_data(List[XRelLink], data.get("REL_LINKS")),
+            _from_json_data(List[RelAnchor], data.get("ZZZ_REL_ANCHOR")),
+            _from_json_data(List[RelPointer], data.get("ZZZ_REL_POINTER")),
         )
 
     def to_json_data(self) -> Any:
@@ -2832,9 +2832,9 @@ class MatchKeyDetails:
         data["CONFIRMATIONS"] = _to_json_data(self.confirmations)
         data["DENIALS"] = _to_json_data(self.denials)
         data["DISCLOSED_RELATIONS"] = _to_json_data(self.disclosed_relations)
-        data["REL_ANCHOR"] = _to_json_data(self.rel_anchor)
         data["REL_LINKS"] = _to_json_data(self.rel_links)
-        data["REL_POINTER"] = _to_json_data(self.rel_pointer)
+        data["ZZZ_REL_ANCHOR"] = _to_json_data(self.zzz_rel_anchor)
+        data["ZZZ_REL_POINTER"] = _to_json_data(self.zzz_rel_pointer)
         return data
 
 @dataclass
@@ -2920,12 +2920,12 @@ class Record:
     Identifier of the entity resolution principle that was triggered.
     """
 
-    features: 'Dict[str, List[FeatureForAttributes]]'
+    features: 'Dict[str, List[XFeatureForAttributes]]'
     """
     A map from feature type names to lists of features.
     """
 
-    feature_ids: 'List[FeatureID]'
+    feature_ids: 'List[XFeatureID]'
     """
     FIXME: A list of ...
     """
@@ -2962,58 +2962,14 @@ class Record:
     FIXME: A map from ... to ...
     """
 
-    xxx_address_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_attribute_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_entity_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_entity_desc: 'str'
-    xxx_entity_key: 'str'
-    xxx_entity_type: 'str'
-    xxx_identifier_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_match_level: 'int'
-    xxx_name_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_other_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_phone_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_relationship_data: 'List[str]'
-    """
-    FIXME: A list of ...
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'Record':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(str, data.get("ERRULE_CODE")),
-            _from_json_data(Dict[str, List[FeatureForAttributes]], data.get("FEATURES")),
-            _from_json_data(List[FeatureID], data.get("FEATURE_IDS")),
+            _from_json_data(Dict[str, List[XFeatureForAttributes]], data.get("FEATURES")),
+            _from_json_data(List[XFeatureID], data.get("FEATURE_IDS")),
             _from_json_data(datetime, data.get("FIRST_SEEN_DT")),
             _from_json_data(int, data.get("INTERNAL_ID")),
             _from_json_data(Dict[str, Object], data.get("JSON_DATA")),
@@ -3022,18 +2978,6 @@ class Record:
             _from_json_data(str, data.get("MATCH_LEVEL_CODE")),
             _from_json_data(str, data.get("RECORD_ID")),
             _from_json_data(Dict[str, Object], data.get("UNMAPPED_DATA")),
-            _from_json_data(List[str], data.get("XXX_ADDRESS_DATA")),
-            _from_json_data(List[str], data.get("XXX_ATTRIBUTE_DATA")),
-            _from_json_data(List[str], data.get("XXX_ENTITY_DATA")),
-            _from_json_data(str, data.get("XXX_ENTITY_DESC")),
-            _from_json_data(str, data.get("XXX_ENTITY_KEY")),
-            _from_json_data(str, data.get("XXX_ENTITY_TYPE")),
-            _from_json_data(List[str], data.get("XXX_IDENTIFIER_DATA")),
-            _from_json_data(int, data.get("XXX_MATCH_LEVEL")),
-            _from_json_data(List[str], data.get("XXX_NAME_DATA")),
-            _from_json_data(List[str], data.get("XXX_OTHER_DATA")),
-            _from_json_data(List[str], data.get("XXX_PHONE_DATA")),
-            _from_json_data(List[str], data.get("XXX_RELATIONSHIP_DATA")),
         )
 
     def to_json_data(self) -> Any:
@@ -3050,18 +2994,6 @@ class Record:
         data["MATCH_LEVEL_CODE"] = _to_json_data(self.match_level_code)
         data["RECORD_ID"] = _to_json_data(self.record_id)
         data["UNMAPPED_DATA"] = _to_json_data(self.unmapped_data)
-        data["XXX_ADDRESS_DATA"] = _to_json_data(self.xxx_address_data)
-        data["XXX_ATTRIBUTE_DATA"] = _to_json_data(self.xxx_attribute_data)
-        data["XXX_ENTITY_DATA"] = _to_json_data(self.xxx_entity_data)
-        data["XXX_ENTITY_DESC"] = _to_json_data(self.xxx_entity_desc)
-        data["XXX_ENTITY_KEY"] = _to_json_data(self.xxx_entity_key)
-        data["XXX_ENTITY_TYPE"] = _to_json_data(self.xxx_entity_type)
-        data["XXX_IDENTIFIER_DATA"] = _to_json_data(self.xxx_identifier_data)
-        data["XXX_MATCH_LEVEL"] = _to_json_data(self.xxx_match_level)
-        data["XXX_NAME_DATA"] = _to_json_data(self.xxx_name_data)
-        data["XXX_OTHER_DATA"] = _to_json_data(self.xxx_other_data)
-        data["XXX_PHONE_DATA"] = _to_json_data(self.xxx_phone_data)
-        data["XXX_RELATIONSHIP_DATA"] = _to_json_data(self.xxx_relationship_data)
         return data
 
 @dataclass
@@ -3293,24 +3225,18 @@ class RecordSummary:
     The number of records for the entity with the same data source code.
     """
 
-    xxx_first_seen_dt: 'datetime'
-    xxx_last_seen_dt: 'datetime'
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'RecordSummary':
         return cls(
             _from_json_data(str, data.get("DATA_SOURCE")),
             _from_json_data(int, data.get("RECORD_COUNT")),
-            _from_json_data(datetime, data.get("XXX_FIRST_SEEN_DT")),
-            _from_json_data(datetime, data.get("XXX_LAST_SEEN_DT")),
         )
 
     def to_json_data(self) -> Any:
         data: Dict[str, Any] = {}
         data["DATA_SOURCE"] = _to_json_data(self.data_source)
         data["RECORD_COUNT"] = _to_json_data(self.record_count)
-        data["XXX_FIRST_SEEN_DT"] = _to_json_data(self.xxx_first_seen_dt)
-        data["XXX_LAST_SEEN_DT"] = _to_json_data(self.xxx_last_seen_dt)
         return data
 
 @dataclass
@@ -3876,17 +3802,17 @@ class ResolvedEntityForGetEntity:
     A name this entity goes by. An entity could have multiple names.
     """
 
-    features: 'Dict[str, List[FeatureForGetEntity]]'
+    features: 'Dict[str, List[XFeatureForGetEntity]]'
     """
     A map from feature type names to lists of features.
     """
 
-    records: 'List[RecordForGetEntity]'
+    records: 'List[XRecordForGetEntity]'
     """
     A list of (data source code, record id) pairs.
     """
 
-    record_summary: 'List[RecordSummary]'
+    record_summary: 'List[XRecordSummary]'
     """
     A list of source systems the records came from comprising this related
     entity.
@@ -3897,56 +3823,16 @@ class ResolvedEntityForGetEntity:
     FIXME: A list of ...
     """
 
-    xxx_errule_code: 'str'
-    """
-    Identifier of the entity resolution principle that was triggered.
-    """
-
-    xxx_feature_ids: 'List[FeatureID]'
-    """
-    FIXME: A list of ...
-    """
-
-    xxx_is_ambiguous: 'int'
-    """
-    Indicates if this is an ambiguous relationship.
-    """
-
-    xxx_is_disclosed: 'int'
-    """
-    Indicates if this is a disclosed relationship.
-    """
-
-    xxx_last_seen_dt: 'datetime'
-    xxx_match_key: 'str'
-    """
-    Representation of matched source record features.
-    """
-
-    xxx_match_level: 'int'
-    xxx_match_level_code: 'str'
-    """
-    The type of match that occurred for the record.
-    """
-
 
     @classmethod
     def from_json_data(cls, data: Any) -> 'ResolvedEntityForGetEntity':
         return cls(
             _from_json_data(int, data.get("ENTITY_ID")),
             _from_json_data(str, data.get("ENTITY_NAME")),
-            _from_json_data(Dict[str, List[FeatureForGetEntity]], data.get("FEATURES")),
-            _from_json_data(List[RecordForGetEntity], data.get("RECORDS")),
-            _from_json_data(List[RecordSummary], data.get("RECORD_SUMMARY")),
+            _from_json_data(Dict[str, List[XFeatureForGetEntity]], data.get("FEATURES")),
+            _from_json_data(List[XRecordForGetEntity], data.get("RECORDS")),
+            _from_json_data(List[XRecordSummary], data.get("RECORD_SUMMARY")),
             _from_json_data(List[str], data.get("RECORD_TYPES")),
-            _from_json_data(str, data.get("XXX_ERRULE_CODE")),
-            _from_json_data(List[FeatureID], data.get("XXX_FEATURE_IDS")),
-            _from_json_data(int, data.get("XXX_IS_AMBIGUOUS")),
-            _from_json_data(int, data.get("XXX_IS_DISCLOSED")),
-            _from_json_data(datetime, data.get("XXX_LAST_SEEN_DT")),
-            _from_json_data(str, data.get("XXX_MATCH_KEY")),
-            _from_json_data(int, data.get("XXX_MATCH_LEVEL")),
-            _from_json_data(str, data.get("XXX_MATCH_LEVEL_CODE")),
         )
 
     def to_json_data(self) -> Any:
@@ -3957,14 +3843,6 @@ class ResolvedEntityForGetEntity:
         data["RECORDS"] = _to_json_data(self.records)
         data["RECORD_SUMMARY"] = _to_json_data(self.record_summary)
         data["RECORD_TYPES"] = _to_json_data(self.record_types)
-        data["XXX_ERRULE_CODE"] = _to_json_data(self.xxx_errule_code)
-        data["XXX_FEATURE_IDS"] = _to_json_data(self.xxx_feature_ids)
-        data["XXX_IS_AMBIGUOUS"] = _to_json_data(self.xxx_is_ambiguous)
-        data["XXX_IS_DISCLOSED"] = _to_json_data(self.xxx_is_disclosed)
-        data["XXX_LAST_SEEN_DT"] = _to_json_data(self.xxx_last_seen_dt)
-        data["XXX_MATCH_KEY"] = _to_json_data(self.xxx_match_key)
-        data["XXX_MATCH_LEVEL"] = _to_json_data(self.xxx_match_level)
-        data["XXX_MATCH_LEVEL_CODE"] = _to_json_data(self.xxx_match_level_code)
         return data
 
 @dataclass
@@ -7154,6 +7032,94 @@ class WorkloadUnresolveTriggers:
         data["relLink"] = _to_json_data(self.rel_link)
         data["update"] = _to_json_data(self.update)
         return data
+
+@dataclass
+class XDisclosedRelationsForMatchInfo:
+    value: 'DisclosedRelationsForMatchInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XDisclosedRelationsForMatchInfo':
+        return cls(_from_json_data(DisclosedRelationsForMatchInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XFeatureForAttributes:
+    value: 'FeatureForAttributes'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XFeatureForAttributes':
+        return cls(_from_json_data(FeatureForAttributes, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XFeatureForGetEntity:
+    value: 'FeatureForGetEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XFeatureForGetEntity':
+        return cls(_from_json_data(FeatureForGetEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XFeatureID:
+    value: 'FeatureID'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XFeatureID':
+        return cls(_from_json_data(FeatureID, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XFeatureScoreInfo:
+    value: 'FeatureScoreInfo'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XFeatureScoreInfo':
+        return cls(_from_json_data(FeatureScoreInfo, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XRecordForGetEntity:
+    value: 'RecordForGetEntity'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XRecordForGetEntity':
+        return cls(_from_json_data(RecordForGetEntity, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XRecordSummary:
+    value: 'RecordSummary'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XRecordSummary':
+        return cls(_from_json_data(RecordSummary, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
+
+@dataclass
+class XRelLink:
+    value: 'RelLink'
+
+    @classmethod
+    def from_json_data(cls, data: Any) -> 'XRelLink':
+        return cls(_from_json_data(RelLink, data))
+
+    def to_json_data(self) -> Any:
+        return _to_json_data(self.value)
 
 def _from_json_data(cls: Any, data: Any) -> Any:
     if data is None or cls in [bool, int, float, str, object] or cls is Any:

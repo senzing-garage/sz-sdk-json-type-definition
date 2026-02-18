@@ -4,7 +4,6 @@ package com.senzing.typedef;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.OffsetDateTime;
 
 /**
  * FIXME: RecordSummary
@@ -16,12 +15,6 @@ public class RecordSummary {
 
     @JsonProperty("RECORD_COUNT")
     private Integer recordCount;
-
-    @JsonProperty("XXX_FIRST_SEEN_DT")
-    private OffsetDateTime xxxFirstSeenDt;
-
-    @JsonProperty("XXX_LAST_SEEN_DT")
-    private OffsetDateTime xxxLastSeenDt;
 
     public RecordSummary() {
     }
@@ -56,33 +49,5 @@ public class RecordSummary {
      */
     public void setRecordCount(Integer recordCount) {
         this.recordCount = recordCount;
-    }
-
-    /**
-     * Getter for xxxFirstSeenDt.<p>
-     */
-    public OffsetDateTime getXxxFirstSeenDt() {
-        return xxxFirstSeenDt;
-    }
-
-    /**
-     * Setter for xxxFirstSeenDt.<p>
-     */
-    public void setXxxFirstSeenDt(OffsetDateTime xxxFirstSeenDt) {
-        this.xxxFirstSeenDt = xxxFirstSeenDt;
-    }
-
-    /**
-     * Getter for xxxLastSeenDt.<p>
-     */
-    public OffsetDateTime getXxxLastSeenDt() {
-        return xxxLastSeenDt;
-    }
-
-    /**
-     * Setter for xxxLastSeenDt.<p>
-     */
-    public void setXxxLastSeenDt(OffsetDateTime xxxLastSeenDt) {
-        this.xxxLastSeenDt = xxxLastSeenDt;
     }
 }

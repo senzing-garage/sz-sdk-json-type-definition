@@ -1546,28 +1546,28 @@ pub struct MatchInfoForWhy {
 pub struct MatchKeyDetails {
     /// A list of feature data in the match key supporting the match.
     #[serde(rename = "CONFIRMATIONS")]
-    pub confirmations: Vec<FeatureScoreInfo>,
+    pub confirmations: Vec<XFeatureScoreInfo>,
 
     /// A list of feature data in the match key negating the match.
     #[serde(rename = "DENIALS")]
-    pub denials: Vec<FeatureScoreInfo>,
+    pub denials: Vec<XFeatureScoreInfo>,
 
     /// A list of disclosed relationships of various types.
     #[serde(rename = "DISCLOSED_RELATIONS")]
-    pub disclosedRelations: Vec<DisclosedRelationsForMatchInfo>,
-
-    /// A list of disclosed relationship anchors.
-    #[serde(rename = "REL_ANCHOR")]
-    pub relAnchor: Vec<RelAnchor>,
+    pub disclosedRelations: Vec<XDisclosedRelationsForMatchInfo>,
 
     /// Deprecated. A list of disclosed relationships based on identical shared
     /// keys.
     #[serde(rename = "REL_LINKS")]
-    pub relLinks: Vec<RelLink>,
+    pub relLinks: Vec<XRelLink>,
+
+    /// A list of disclosed relationship anchors.
+    #[serde(rename = "ZZZ_REL_ANCHOR")]
+    pub zzzRelAnchor: Vec<RelAnchor>,
 
     /// A list of disclosed relationship pointers.
-    #[serde(rename = "REL_POINTER")]
-    pub relPointer: Vec<RelPointer>,
+    #[serde(rename = "ZZZ_REL_POINTER")]
+    pub zzzRelPointer: Vec<RelPointer>,
 }
 
 /// FIXME: MemberRecord
@@ -1608,11 +1608,11 @@ pub struct Record {
 
     /// A map from feature type names to lists of features.
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForAttributes>>,
+    pub features: HashMap<String, Vec<XFeatureForAttributes>>,
 
     /// FIXME: A list of ...
     #[serde(rename = "FEATURE_IDS")]
-    pub featureIds: Vec<FeatureId>,
+    pub featureIds: Vec<XFeatureId>,
 
     #[serde(rename = "FIRST_SEEN_DT")]
     pub firstSeenDt: DateTime<FixedOffset>,
@@ -1643,50 +1643,6 @@ pub struct Record {
     /// FIXME: A map from ... to ...
     #[serde(rename = "UNMAPPED_DATA")]
     pub unmappedData: HashMap<String, Object>,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_ADDRESS_DATA")]
-    pub xxxAddressData: Vec<String>,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_ATTRIBUTE_DATA")]
-    pub xxxAttributeData: Vec<String>,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_ENTITY_DATA")]
-    pub xxxEntityData: Vec<String>,
-
-    #[serde(rename = "XXX_ENTITY_DESC")]
-    pub xxxEntityDesc: String,
-
-    #[serde(rename = "XXX_ENTITY_KEY")]
-    pub xxxEntityKey: String,
-
-    #[serde(rename = "XXX_ENTITY_TYPE")]
-    pub xxxEntityType: String,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_IDENTIFIER_DATA")]
-    pub xxxIdentifierData: Vec<String>,
-
-    #[serde(rename = "XXX_MATCH_LEVEL")]
-    pub xxxMatchLevel: i32,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_NAME_DATA")]
-    pub xxxNameData: Vec<String>,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_OTHER_DATA")]
-    pub xxxOtherData: Vec<String>,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_PHONE_DATA")]
-    pub xxxPhoneData: Vec<String>,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_RELATIONSHIP_DATA")]
-    pub xxxRelationshipData: Vec<String>,
 }
 
 /// FIXME: RecordForGetEntity
@@ -1813,12 +1769,6 @@ pub struct RecordSummary {
     /// The number of records for the entity with the same data source code.
     #[serde(rename = "RECORD_COUNT")]
     pub recordCount: i32,
-
-    #[serde(rename = "XXX_FIRST_SEEN_DT")]
-    pub xxxFirstSeenDt: DateTime<FixedOffset>,
-
-    #[serde(rename = "XXX_LAST_SEEN_DT")]
-    pub xxxLastSeenDt: DateTime<FixedOffset>,
 }
 
 /// FIXME: RelAnchor
@@ -2118,50 +2068,20 @@ pub struct ResolvedEntityForGetEntity {
 
     /// A map from feature type names to lists of features.
     #[serde(rename = "FEATURES")]
-    pub features: HashMap<String, Vec<FeatureForGetEntity>>,
+    pub features: HashMap<String, Vec<XFeatureForGetEntity>>,
 
     /// A list of (data source code, record id) pairs.
     #[serde(rename = "RECORDS")]
-    pub records: Vec<RecordForGetEntity>,
+    pub records: Vec<XRecordForGetEntity>,
 
     /// A list of source systems the records came from comprising this related
     /// entity.
     #[serde(rename = "RECORD_SUMMARY")]
-    pub recordSummary: Vec<RecordSummary>,
+    pub recordSummary: Vec<XRecordSummary>,
 
     /// FIXME: A list of ...
     #[serde(rename = "RECORD_TYPES")]
     pub recordTypes: Vec<String>,
-
-    /// Identifier of the entity resolution principle that was triggered.
-    #[serde(rename = "XXX_ERRULE_CODE")]
-    pub xxxErruleCode: String,
-
-    /// FIXME: A list of ...
-    #[serde(rename = "XXX_FEATURE_IDS")]
-    pub xxxFeatureIds: Vec<FeatureId>,
-
-    /// Indicates if this is an ambiguous relationship.
-    #[serde(rename = "XXX_IS_AMBIGUOUS")]
-    pub xxxIsAmbiguous: i32,
-
-    /// Indicates if this is a disclosed relationship.
-    #[serde(rename = "XXX_IS_DISCLOSED")]
-    pub xxxIsDisclosed: i32,
-
-    #[serde(rename = "XXX_LAST_SEEN_DT")]
-    pub xxxLastSeenDt: DateTime<FixedOffset>,
-
-    /// Representation of matched source record features.
-    #[serde(rename = "XXX_MATCH_KEY")]
-    pub xxxMatchKey: String,
-
-    #[serde(rename = "XXX_MATCH_LEVEL")]
-    pub xxxMatchLevel: i32,
-
-    /// The type of match that occurred for the record.
-    #[serde(rename = "XXX_MATCH_LEVEL_CODE")]
-    pub xxxMatchLevelCode: String,
 }
 
 /// FIXME: SYS_OOM
@@ -3907,3 +3827,19 @@ pub struct WorkloadUnresolveTriggers {
     #[serde(rename = "update")]
     pub update: i32,
 }
+
+pub type XDisclosedRelationsForMatchInfo = DisclosedRelationsForMatchInfo;
+
+pub type XFeatureForAttributes = FeatureForAttributes;
+
+pub type XFeatureForGetEntity = FeatureForGetEntity;
+
+pub type XFeatureId = FeatureId;
+
+pub type XFeatureScoreInfo = FeatureScoreInfo;
+
+pub type XRecordForGetEntity = RecordForGetEntity;
+
+pub type XRecordSummary = RecordSummary;
+
+pub type XRelLink = RelLink;

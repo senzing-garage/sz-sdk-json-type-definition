@@ -255,6 +255,9 @@
         "CFG_EFUNC.CONNECT_STR",
         "CFG_SFUNC.CONNECT_STR"
     ],
+    "CORRUPTION_FOUND": [
+        "WorkloadRepairDiagnosis.CORRUPTION_FOUND"
+    ],
     "DATA_SOURCE": [
         "FocusRecord.DATA_SOURCE",
         "Record.DATA_SOURCE",
@@ -1038,8 +1041,7 @@
         "SenzingEntitySpecification.RELATIONSHIP_TYPE"
     ],
     "REL_ANCHOR": [
-        "DisclosedRelationsForMatchInfoForWhy.REL_ANCHOR",
-        "MatchKeyDetails.REL_ANCHOR"
+        "DisclosedRelationsForMatchInfoForWhy.REL_ANCHOR"
     ],
     "REL_ANCHOR_DOMAIN": [
         "SenzingEntitySpecification.REL_ANCHOR_DOMAIN"
@@ -1055,8 +1057,7 @@
         "MatchKeyDetails.REL_LINKS"
     ],
     "REL_POINTER": [
-        "DisclosedRelationsForMatchInfoForWhy.REL_POINTER",
-        "MatchKeyDetails.REL_POINTER"
+        "DisclosedRelationsForMatchInfoForWhy.REL_POINTER"
     ],
     "REL_POINTER_DOMAIN": [
         "SenzingEntitySpecification.REL_POINTER_DOMAIN"
@@ -1322,7 +1323,6 @@
         "SzEngineWhySearchResponse.WHY_RESULTS"
     ],
     "XXX_ADDRESS_DATA": [
-        "Record.XXX_ADDRESS_DATA",
         "RecordForGetEntity.XXX_ADDRESS_DATA",
         "SzEngineGetRecordResponse.XXX_ADDRESS_DATA"
     ],
@@ -1339,7 +1339,6 @@
         "FeatureForGetEntity.XXX_ATTRIBUTES"
     ],
     "XXX_ATTRIBUTE_DATA": [
-        "Record.XXX_ATTRIBUTE_DATA",
         "RecordForGetEntity.XXX_ATTRIBUTE_DATA",
         "SzEngineGetRecordResponse.XXX_ATTRIBUTE_DATA"
     ],
@@ -1388,28 +1387,23 @@
         "CFG_FBOVR.XXX_ECLASS_ID"
     ],
     "XXX_ENTITY_DATA": [
-        "Record.XXX_ENTITY_DATA",
         "RecordForGetEntity.XXX_ENTITY_DATA",
         "SzEngineGetRecordResponse.XXX_ENTITY_DATA"
     ],
     "XXX_ENTITY_DESC": [
-        "Record.XXX_ENTITY_DESC",
         "RecordForGetEntity.XXX_ENTITY_DESC",
         "SzEngineGetRecordResponse.XXX_ENTITY_DESC"
     ],
     "XXX_ENTITY_KEY": [
-        "Record.XXX_ENTITY_KEY",
         "RecordForGetEntity.XXX_ENTITY_KEY",
         "SzEngineGetRecordResponse.XXX_ENTITY_KEY"
     ],
     "XXX_ENTITY_TYPE": [
-        "Record.XXX_ENTITY_TYPE",
         "RecordForGetEntity.XXX_ENTITY_TYPE",
         "SzEngineGetRecordResponse.XXX_ENTITY_TYPE"
     ],
     "XXX_ERRULE_CODE": [
         "ResolvedEntity.XXX_ERRULE_CODE",
-        "ResolvedEntityForGetEntity.XXX_ERRULE_CODE",
         "SzEngineGetRecordResponse.XXX_ERRULE_CODE"
     ],
     "XXX_ERRULE_DESC": [
@@ -1431,17 +1425,13 @@
         "CFG_EBOM.XXX_EXEC_ORDER"
     ],
     "XXX_FEATURE_IDS": [
-        "ResolvedEntity.XXX_FEATURE_IDS",
-        "ResolvedEntityForGetEntity.XXX_FEATURE_IDS"
+        "ResolvedEntity.XXX_FEATURE_IDS"
     ],
     "XXX_FEAT_DESC": [
         "DisclosedRelationsForMatchInfoForWhy.XXX_FEAT_DESC"
     ],
     "XXX_FELEM_ID": [
         "SYS_OOM.XXX_FELEM_ID"
-    ],
-    "XXX_FIRST_SEEN_DT": [
-        "RecordSummary.XXX_FIRST_SEEN_DT"
     ],
     "XXX_FIXME": [
         "SzEngineExportCsvEntityReportCsvColumnList.XXX_FIXME",
@@ -1472,7 +1462,6 @@
         "CFG_SFUNC.XXX_FUNC_VER"
     ],
     "XXX_IDENTIFIER_DATA": [
-        "Record.XXX_IDENTIFIER_DATA",
         "RecordForGetEntity.XXX_IDENTIFIER_DATA",
         "SzEngineGetRecordResponse.XXX_IDENTIFIER_DATA"
     ],
@@ -1487,12 +1476,10 @@
         "SzEngineGetRecordResponse.XXX_INTERNAL_ID"
     ],
     "XXX_IS_AMBIGUOUS": [
-        "ResolvedEntity.XXX_IS_AMBIGUOUS",
-        "ResolvedEntityForGetEntity.XXX_IS_AMBIGUOUS"
+        "ResolvedEntity.XXX_IS_AMBIGUOUS"
     ],
     "XXX_IS_DISCLOSED": [
-        "ResolvedEntity.XXX_IS_DISCLOSED",
-        "ResolvedEntityForGetEntity.XXX_IS_DISCLOSED"
+        "ResolvedEntity.XXX_IS_DISCLOSED"
     ],
     "XXX_JAVA_CLASS_NAME": [
         "CFG_CFUNC.XXX_JAVA_CLASS_NAME",
@@ -1507,9 +1494,7 @@
         "CFG_SFUNC.XXX_LANGUAGE"
     ],
     "XXX_LAST_SEEN_DT": [
-        "RecordSummary.XXX_LAST_SEEN_DT",
-        "ResolvedEntity.XXX_LAST_SEEN_DT",
-        "ResolvedEntityForGetEntity.XXX_LAST_SEEN_DT"
+        "ResolvedEntity.XXX_LAST_SEEN_DT"
     ],
     "XXX_LENS_CODE": [
         "CFG_LENS.XXX_LENS_CODE"
@@ -1532,37 +1517,30 @@
     ],
     "XXX_MATCH_KEY": [
         "ResolvedEntity.XXX_MATCH_KEY",
-        "ResolvedEntityForGetEntity.XXX_MATCH_KEY",
         "SzEngineGetRecordResponse.XXX_MATCH_KEY"
     ],
     "XXX_MATCH_LEVEL": [
         "MatchInfo.XXX_MATCH_LEVEL",
-        "Record.XXX_MATCH_LEVEL",
         "RecordForGetEntity.XXX_MATCH_LEVEL",
         "ResolvedEntity.XXX_MATCH_LEVEL",
-        "ResolvedEntityForGetEntity.XXX_MATCH_LEVEL",
         "SzEngineGetRecordResponse.XXX_MATCH_LEVEL"
     ],
     "XXX_MATCH_LEVEL_CODE": [
         "ResolvedEntity.XXX_MATCH_LEVEL_CODE",
-        "ResolvedEntityForGetEntity.XXX_MATCH_LEVEL_CODE",
         "SzEngineGetRecordResponse.XXX_MATCH_LEVEL_CODE"
     ],
     "XXX_MAX_DEGREE": [
         "CFG_DSRC_INTEREST.XXX_MAX_DEGREE"
     ],
     "XXX_NAME_DATA": [
-        "Record.XXX_NAME_DATA",
         "RecordForGetEntity.XXX_NAME_DATA",
         "SzEngineGetRecordResponse.XXX_NAME_DATA"
     ],
     "XXX_OTHER_DATA": [
-        "Record.XXX_OTHER_DATA",
         "RecordForGetEntity.XXX_OTHER_DATA",
         "SzEngineGetRecordResponse.XXX_OTHER_DATA"
     ],
     "XXX_PHONE_DATA": [
-        "Record.XXX_PHONE_DATA",
         "RecordForGetEntity.XXX_PHONE_DATA",
         "SzEngineGetRecordResponse.XXX_PHONE_DATA"
     ],
@@ -1582,7 +1560,6 @@
         "CFG_ERRULE.XXX_REF_SCORE"
     ],
     "XXX_RELATIONSHIP_DATA": [
-        "Record.XXX_RELATIONSHIP_DATA",
         "RecordForGetEntity.XXX_RELATIONSHIP_DATA",
         "SzEngineGetRecordResponse.XXX_RELATIONSHIP_DATA"
     ],
@@ -1617,6 +1594,12 @@
     "ZOOMROOM": [
         "SenzingEntitySpecification.ZOOMROOM"
     ],
+    "ZZZ_REL_ANCHOR": [
+        "MatchKeyDetails.ZZZ_REL_ANCHOR"
+    ],
+    "ZZZ_REL_POINTER": [
+        "MatchKeyDetails.ZZZ_REL_POINTER"
+    ],
     "abortRetry": [
         "WorkloadReresolveTriggers.abortRetry"
     ],
@@ -1647,6 +1630,9 @@
     ],
     "ambiguousNoResolve": [
         "WorkloadUnresolveTriggers.ambiguousNoResolve"
+    ],
+    "analysis": [
+        "WorkloadUnresolve.analysis"
     ],
     "apiVersion": [
         "Workload.apiVersion"
@@ -1693,7 +1679,8 @@
         "SzProductGetLicenseResponse.contract"
     ],
     "count": [
-        "WorkloadRefreshLocks.count"
+        "WorkloadRefreshLocks.count",
+        "WorkloadUnresolveAnalysis.count"
     ],
     "cpuIdle": [
         "WorkloadSystemLoad.cpuIdle"
@@ -1729,7 +1716,8 @@
         "WorkloadProcessing.deletedRecords"
     ],
     "details": [
-        "WorkloadProcessing.details"
+        "WorkloadProcessing.details",
+        "WorkloadRepairCorruptionFound.details"
     ],
     "dsrLimit": [
         "WorkloadLicense.dsrLimit"
@@ -1806,6 +1794,9 @@
     "logicalCores": [
         "WorkloadInitResources.logicalCores"
     ],
+    "matchIterations": [
+        "WorkloadUnresolveAnalysis.matchIterations"
+    ],
     "maxMS": [
         "WorkloadRefreshLocks.maxMS"
     ],
@@ -1880,6 +1871,9 @@
     ],
     "resEntContention": [
         "WorkloadThreadState.resEntContention"
+    ],
+    "resEntID": [
+        "WorkloadRepairCorruptionFound.resEntID"
     ],
     "resFeatStatCacheHit": [
         "WorkloadCaches.resFeatStatCacheHit"

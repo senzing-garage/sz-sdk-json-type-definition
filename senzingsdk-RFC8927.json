@@ -5812,6 +5812,30 @@
           "type": "int32"
         }
       }
+    },
+    "xDisclosedRelationsForMatchInfo": {
+      "ref": "DisclosedRelationsForMatchInfo"
+    },
+    "xFeatureForAttributes": {
+      "ref": "FeatureForAttributes"
+    },
+    "xFeatureForGetEntity": {
+      "ref": "FeatureForGetEntity"
+    },
+    "xFeatureID": {
+      "ref": "FeatureID"
+    },
+    "xFeatureScoreInfo": {
+      "ref": "FeatureScoreInfo"
+    },
+    "xRecordForGetEntity": {
+      "ref": "RecordForGetEntity"
+    },
+    "xRecordSummary": {
+      "ref": "RecordSummary"
+    },
+    "xRelLink": {
+      "ref": "RelLink"
     }
   }
 }

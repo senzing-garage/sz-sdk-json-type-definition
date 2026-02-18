@@ -86,41 +86,7 @@
                                 {
                                     "USAGE_TYPE": "string"
                                 }
-                            ],
-                            "XXX_ADDRESS_DATA": [
-                                "string"
-                            ],
-                            "XXX_ATTRIBUTE_DATA": [
-                                "string"
-                            ],
-                            "XXX_ENTITY_DATA": [
-                                "string"
-                            ],
-                            "XXX_ENTITY_DESC": "string",
-                            "XXX_ENTITY_KEY": "string",
-                            "XXX_ENTITY_TYPE": "string",
-                            "XXX_IDENTIFIER_DATA": [
-                                "string"
-                            ],
-                            "XXX_MATCH_LEVEL": "int32",
-                            "XXX_NAME_DATA": [
-                                "string"
-                            ],
-                            "XXX_OTHER_DATA": [
-                                "string"
-                            ],
-                            "XXX_PHONE_DATA": [
-                                "string"
-                            ],
-                            "XXX_RELATIONSHIP_DATA": [
-                                "string"
                             ]
-                        }
-                    ],
-                    "RECORD_SUMMARY": [
-                        {
-                            "XXX_FIRST_SEEN_DT": "timestamp",
-                            "XXX_LAST_SEEN_DT": "timestamp"
                         }
                     ],
                     "XXX_ERRULE_CODE": "string",
@@ -175,12 +141,6 @@
                         "XXX_LINKED_FEAT_DESC": "string"
                     },
                     "WHY_KEY_DETAILS": {
-                        "CONFIRMATIONS": [
-                            {
-                                "CANDIDATE_FEAT_USAGE_TYPE": "string",
-                                "INBOUND_FEAT_USAGE_TYPE": "string"
-                            }
-                        ],
                         "DENIALS": [
                             {
                                 "ADDITIONAL_SCORES": {
