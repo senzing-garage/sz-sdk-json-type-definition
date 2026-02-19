@@ -503,6 +503,12 @@ analyze-RFC8927:
 		./bin/analyze_rfc8927.py
 
 
+.PHONY: verify-json-coverage
+verify-json-coverage:
+	$(activate-venv); \
+		./bin/verify_json_coverage.py
+
+
 .PHONY: black
 black:
 	$(info ${\n})
