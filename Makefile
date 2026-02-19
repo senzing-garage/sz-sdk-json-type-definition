@@ -460,8 +460,15 @@ clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-
 
 .PHONY: restore
 restore:
+	git restore csharp/Senzing.Typedef/
+	git restore go/typedef/
+	git restore java/src/main/java/com/senzing/typedef/
+	git restore python/senzing_typedef/
+	git restore ruby/
+	git restore rust/
 	git restore testdata/responses_truthsets/*.jsonl
 	git restore testdata/responses/*.jsonl
+	git restore typescript/
 
 # -----------------------------------------------------------------------------
 # Utility targets

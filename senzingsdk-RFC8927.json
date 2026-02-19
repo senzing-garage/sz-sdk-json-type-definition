@@ -2,7 +2,7 @@
   "definitions": {
     "AffectedEntity": {
       "metadata": {
-        "description": "FIXME: AffectedEntity"
+        "description": "SUGGESTION: An entity whose resolution state changed as a result of a record add, delete, or reevaluate operation."
       },
       "properties": {
         "ENTITY_ID": {
@@ -17,7 +17,7 @@
     },
     "CFG_ATTR": {
       "metadata": {
-        "description": "FIXME: CFG_ATTR"
+        "description": "SUGGESTION: Configuration record for a Senzing attribute, mapping attribute codes to feature types, elements, and defaults."
       },
       "properties": {
         "ATTR_CLASS": {
@@ -44,7 +44,8 @@
         },
         "FTYPE_CODE": {
           "metadata": {
-            "description": "The unique text identifier of the feature type."
+            "description": "The unique text identifier of the feature type.",
+            "label": "SUGGESTION: FTYPE_CODE"
           },
           "type": "string"
         },
@@ -58,7 +59,7 @@
     },
     "CFG_CFBOM": {
       "metadata": {
-        "description": "FIXME: CFG_CFBOM"
+        "description": "SUGGESTION: Bill of materials entry for a comparison function call, specifying the feature elements and execution order."
       },
       "properties": {
         "CFCALL_ID": {
@@ -89,7 +90,7 @@
     },
     "CFG_CFCALL": {
       "metadata": {
-        "description": "FIXME: CFG_CFCALL"
+        "description": "SUGGESTION: A comparison function call configuration, associating a feature type with a comparison function."
       },
       "properties": {
         "CFCALL_ID": {
@@ -120,7 +121,7 @@
     },
     "CFG_CFRTN": {
       "metadata": {
-        "description": "FIXME: CFG_CFRTN"
+        "description": "SUGGESTION: Score threshold return values for a comparison function, defining resolution score bands."
       },
       "properties": {
         "CFRTN_ID": {
@@ -184,7 +185,7 @@
     },
     "CFG_CFUNC": {
       "metadata": {
-        "description": "FIXME: CFG_CFUNC"
+        "description": "SUGGESTION: A comparison function configuration, with its code, description, and connection string."
       },
       "properties": {
         "ANON_SUPPORT": {
@@ -221,7 +222,7 @@
     },
     "CFG_DFBOM": {
       "metadata": {
-        "description": "FIXME: CFG_DFBOM"
+        "description": "SUGGESTION: Bill of materials entry for a distinct feature function call, specifying element inputs and execution order."
       },
       "properties": {
         "DFCALL_ID": {
@@ -252,7 +253,7 @@
     },
     "CFG_DFCALL": {
       "metadata": {
-        "description": "FIXME: CFG_DFCALL"
+        "description": "SUGGESTION: A distinct feature function call configuration, associating a feature type with a distinct function."
       },
       "properties": {
         "DFCALL_ID": {
@@ -283,7 +284,7 @@
     },
     "CFG_DFUNC": {
       "metadata": {
-        "description": "FIXME: CFG_DFUNC"
+        "description": "SUGGESTION: A distinct feature function configuration, with its code, description, and connection string."
       },
       "properties": {
         "ANON_SUPPORT": {
@@ -320,7 +321,7 @@
     },
     "CFG_DSRC": {
       "metadata": {
-        "description": "FIXME: CFG_DSRC"
+        "description": "SUGGESTION: A data source configuration record, with its code, description, and retention settings."
       },
       "properties": {
         "DSRC_CODE": {
@@ -351,7 +352,7 @@
     },
     "CFG_DSRC_INTEREST": {
       "metadata": {
-        "description": "FIXME: CFG_DSRC_INTEREST"
+        "description": "SUGGESTION: Internal configuration for data source interest scoring (deprecated/internal use)."
       },
       "properties": {
         "XXX_DSRC_ID": {
@@ -373,7 +374,7 @@
     },
     "CFG_EBOM": {
       "metadata": {
-        "description": "FIXME: CFG_EBOM"
+        "description": "SUGGESTION: Internal bill of materials entry for entity type features (deprecated/internal use)."
       },
       "properties": {
         "XXX_ETYPE_ID": {
@@ -401,7 +402,7 @@
     },
     "CFG_ECLASS": {
       "metadata": {
-        "description": "FIXME: CFG_ECLASS"
+        "description": "SUGGESTION: Internal entity class configuration (deprecated/internal use)."
       },
       "properties": {
         "XXX_ECLASS_CODE": {
@@ -423,7 +424,7 @@
     },
     "CFG_EFBOM": {
       "metadata": {
-        "description": "FIXME: CFG_EFBOM"
+        "description": "SUGGESTION: Bill of materials entry for an expressed feature function call, specifying element inputs and execution order."
       },
       "properties": {
         "EFCALL_ID": {
@@ -457,7 +458,7 @@
     },
     "CFG_EFCALL": {
       "metadata": {
-        "description": "FIXME: CFG_EFCALL"
+        "description": "SUGGESTION: An expressed feature function call configuration, associating a feature type with an express function."
       },
       "properties": {
         "EFCALL_ID": {
@@ -503,7 +504,7 @@
     },
     "CFG_EFUNC": {
       "metadata": {
-        "description": "FIXME: CFG_EFUNC"
+        "description": "SUGGESTION: An expressed feature function configuration, with its code, description, and connection string."
       },
       "properties": {
         "CONNECT_STR": {
@@ -537,7 +538,7 @@
     },
     "CFG_ERFRAG": {
       "metadata": {
-        "description": "FIXME: CFG_ERFRAG"
+        "description": "SUGGESTION: An entity resolution rule fragment, defining a reusable sub-expression for rule evaluation."
       },
       "properties": {
         "ERFRAG_CODE": {
@@ -562,7 +563,7 @@
     },
     "CFG_ERRULE": {
       "metadata": {
-        "description": "FIXME: CFG_ERRULE"
+        "description": "SUGGESTION: An entity resolution rule, defining when records should be resolved or related."
       },
       "properties": {
         "DISQ_ERFRAG_CODE": {
@@ -570,7 +571,8 @@
         },
         "ERRULE_CODE": {
           "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
           },
           "type": "string"
         },
@@ -614,7 +616,7 @@
     },
     "CFG_ETYPE": {
       "metadata": {
-        "description": "FIXME: CFG_ETYPE"
+        "description": "SUGGESTION: Internal entity type configuration (deprecated/internal use)."
       },
       "properties": {
         "XXX_ECLASS_ID": {
@@ -639,7 +641,7 @@
     },
     "CFG_FBOM": {
       "metadata": {
-        "description": "FIXME: CFG_FBOM"
+        "description": "SUGGESTION: Bill of materials entry for a feature type, specifying which elements compose the feature."
       },
       "properties": {
         "DERIVED": {
@@ -676,7 +678,7 @@
     },
     "CFG_FBOVR": {
       "metadata": {
-        "description": "FIXME: CFG_FBOVR"
+        "description": "SUGGESTION: A feature behavior override for a specific usage type, overriding default exclusivity and frequency settings."
       },
       "properties": {
         "FTYPE_EXCL": {
@@ -707,7 +709,7 @@
     },
     "CFG_FCLASS": {
       "metadata": {
-        "description": "FIXME: CFG_FCLASS"
+        "description": "SUGGESTION: A feature class grouping related feature types (e.g., NAME, ADDRESS, IDENTIFIER)."
       },
       "properties": {
         "FCLASS_CODE": {
@@ -726,7 +728,7 @@
     },
     "CFG_FELEM": {
       "metadata": {
-        "description": "FIXME: CFG_FELEM"
+        "description": "SUGGESTION: A feature element definition, representing an individual atomic component of a feature."
       },
       "properties": {
         "DATA_TYPE": {
@@ -751,7 +753,7 @@
     },
     "CFG_FTYPE": {
       "metadata": {
-        "description": "FIXME: CFG_FTYPE"
+        "description": "SUGGESTION: A feature type definition, with its scoring behavior, frequency, exclusivity, and element composition."
       },
       "properties": {
         "ANONYMIZE": {
@@ -768,7 +770,8 @@
         },
         "FTYPE_CODE": {
           "metadata": {
-            "description": "The unique text identifier of the feature type."
+            "description": "The unique text identifier of the feature type.",
+            "label": "SUGGESTION: FTYPE_CODE"
           },
           "type": "string"
         },
@@ -818,7 +821,7 @@
     },
     "CFG_GENERIC_THRESHOLD": {
       "metadata": {
-        "description": "FIXME: CFG_GENERIC_THRESHOLD"
+        "description": "SUGGESTION: Generic suppression thresholds for a feature type, defining when features are treated as too common to be useful."
       },
       "properties": {
         "BEHAVIOR": {
@@ -855,7 +858,7 @@
     },
     "CFG_GPLAN": {
       "metadata": {
-        "description": "FIXME: CFG_GPLAN"
+        "description": "SUGGESTION: A scoring plan configuration grouping related comparison and scoring behaviors."
       },
       "properties": {
         "GPLAN_CODE": {
@@ -874,7 +877,7 @@
     },
     "CFG_LENS": {
       "metadata": {
-        "description": "FIXME: CFG_LENS"
+        "description": "SUGGESTION: Internal lens configuration for multi-lens resolution (deprecated/internal use)."
       },
       "properties": {
         "XXX_LENS_CODE": {
@@ -896,17 +899,17 @@
         "ref": "Fixme"
       },
       "metadata": {
-        "description": "FIXME: A list of ..."
+        "description": "SUGGESTION: Internal lens-to-rule mapping configuration (deprecated/internal use)."
       }
     },
     "CFG_RCLASS": {
       "metadata": {
-        "description": "FIXME: CFG_RCLASS"
+        "description": "SUGGESTION: A relationship class configuration, distinguishing disclosed from ambiguous relationships."
       },
       "properties": {
         "IS_DISCLOSED": {
           "metadata": {
-            "description": "Indicates if this is a disclosed relationship."
+            "description": "IMPROVEMENT: Indicates if this is a disclosed relationship (1 = disclosed, 0 = not disclosed)."
           },
           "type": "string"
         },
@@ -926,7 +929,7 @@
     },
     "CFG_RTYPE": {
       "metadata": {
-        "description": "FIXME: CFG_RTYPE"
+        "description": "SUGGESTION: A relationship type configuration, defining relationship codes and their resolution behavior."
       },
       "properties": {
         "BREAK_RES": {
@@ -960,7 +963,7 @@
     },
     "CFG_SFCALL": {
       "metadata": {
-        "description": "FIXME: CFG_SFCALL"
+        "description": "SUGGESTION: A standardization function call configuration, associating a feature type with a standardization function."
       },
       "properties": {
         "EXEC_ORDER": {
@@ -997,7 +1000,7 @@
     },
     "CFG_SFUNC": {
       "metadata": {
-        "description": "FIXME: CFG_SFUNC"
+        "description": "SUGGESTION: A standardization function configuration, with its code, description, and connection string."
       },
       "properties": {
         "CONNECT_STR": {
@@ -1031,7 +1034,7 @@
     },
     "CONFIG_BASE_VERSION": {
       "metadata": {
-        "description": "FIXME: CONFIG_BASE_VERSION"
+        "description": "SUGGESTION: Version and build information for the base Senzing configuration."
       },
       "properties": {
         "BUILD_DATE": {
@@ -1056,20 +1059,20 @@
     },
     "CandidateKeysForMatchInfo": {
       "metadata": {
-        "description": "FIXME: A map from ... to ..."
+        "description": "SUGGESTION: A map from feature type codes to lists of candidate key feature matches used in entity resolution."
       },
       "values": {
         "elements": {
           "ref": "MatchInfoForAttribute"
         },
         "metadata": {
-          "description": "FIXME: A list of ..."
+          "description": "SUGGESTION: A list of candidate key attribute matches for this feature type."
         }
       }
     },
     "CandidateKeysForSearchStatistic": {
       "metadata": {
-        "description": "FIXME: CandidateKeysForSearchStatistic"
+        "description": "SUGGESTION: Statistics about candidate key retrieval by feature type during a search operation."
       },
       "properties": {
         "FEATURE_TYPES": {
@@ -1077,7 +1080,7 @@
             "ref": "FeatureType"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureType items."
           }
         },
         "SUMMARY": {
@@ -1087,7 +1090,7 @@
     },
     "CandidateKeysSummary": {
       "metadata": {
-        "description": "FIXME: CandidateKeysSummary"
+        "description": "SUGGESTION: Summary counts of candidate keys found, not found, and suppressed as generic during a search."
       },
       "properties": {
         "FOUND": {
@@ -1112,7 +1115,7 @@
     },
     "CompatibilityVersion": {
       "metadata": {
-        "description": "FIXME: CompatibilityVersion"
+        "description": "SUGGESTION: The compatibility version of the Senzing configuration, used to detect configuration incompatibilities."
       },
       "properties": {
         "CONFIG_VERSION": {
@@ -1122,7 +1125,7 @@
     },
     "Config": {
       "metadata": {
-        "description": "FIXME: Config"
+        "description": "SUGGESTION: A registered Senzing configuration with its identifier, comments, and creation timestamp."
       },
       "properties": {
         "CONFIG_COMMENTS": {
@@ -1148,7 +1151,7 @@
     },
     "DataSource": {
       "metadata": {
-        "description": "FIXME: DataSource"
+        "description": "SUGGESTION: A registered data source with its unique text code and internal numeric identifier."
       },
       "properties": {
         "DSRC_CODE": {
@@ -1168,7 +1171,7 @@
     },
     "DisclosedRelationsForMatchInfo": {
       "metadata": {
-        "description": "FIXME: DisclosedRelationsForMatchInfo"
+        "description": "SUGGESTION: Disclosed relationship details for a match key, including entity roles and relationship links."
       },
       "properties": {
         "DOMAIN": {
@@ -1214,26 +1217,27 @@
             "ref": "RelPointer"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: Deprecated. A list of relationship pointer features for this disclosed relationship."
           }
         }
       }
     },
     "DisclosedRelationsForMatchInfoForWhy": {
       "metadata": {
-        "description": "FIXME: DisclosedRelationsForMatchInfoForWhy"
+        "description": "SUGGESTION: Disclosed relationship details for a why-result match, including feature identifiers and relationship links."
       },
       "properties": {
         "DOMAIN": {
           "metadata": {
-            "description": "FIXME: The domain of the ..."
+            "description": "IMPROVEMENT: The domain of the disclosed relationship (e.g., the REL_ANCHOR_DOMAIN value)."
           },
           "type": "string"
         },
         "FEAT_ID": {
           "metadata": {
             "description": "The identifier of the main feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: FEAT_ID"
           },
           "type": "int32"
         },
@@ -1246,7 +1250,8 @@
         "LINKED_FEAT_ID": {
           "metadata": {
             "description": "The identifier of the linked feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: LINKED_FEAT_ID"
           },
           "type": "int32"
         },
@@ -1261,7 +1266,7 @@
             "ref": "RelAnchor"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of relationship anchor features establishing this disclosed relationship."
           }
         },
         "REL_LINK": {
@@ -1277,7 +1282,7 @@
             "ref": "RelPointer"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of relationship pointer features pointing to the counterpart of this disclosed relationship."
           }
         },
         "XXX_FEAT_DESC": {
@@ -1293,12 +1298,12 @@
     },
     "DisclosedRelationsForWhyKeyDetails": {
       "metadata": {
-        "description": "FIXME: DisclosedRelationsForWhyKeyDetails"
+        "description": "SUGGESTION: Disclosed relationship details for a why-key, including entity and related entity roles."
       },
       "properties": {
         "DOMAIN": {
           "metadata": {
-            "description": "FIXME: The domain of the ..."
+            "description": "IMPROVEMENT: The domain of the disclosed relationship (e.g., the REL_ANCHOR_DOMAIN value)."
           },
           "type": "string"
         },
@@ -1307,7 +1312,7 @@
             "ref": "EntityRoles"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of roles played by the entity in this disclosed relationship."
           }
         },
         "RELATED_ROLES": {
@@ -1315,14 +1320,14 @@
             "ref": "RelatedRoles"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of roles played by the related entity in this disclosed relationship."
           }
         }
       }
     },
     "Entity": {
       "metadata": {
-        "description": "FIXME: Entity"
+        "description": "SUGGESTION: A resolved entity with its related entities, as returned by find, get, search, and why operations."
       },
       "properties": {
         "RELATED_ENTITIES": {
@@ -1330,43 +1335,7 @@
             "ref": "RelatedEntity"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
-          }
-        },
-        "RESOLVED_ENTITY": {
-          "ref": "ResolvedEntity"
-        }
-      }
-    },
-    "EntityForResolvedEntity": {
-      "metadata": {
-        "description": "FIXME: EntityForResolvedEntity"
-      },
-      "properties": {
-        "RELATED_ENTITIES": {
-          "elements": {
-            "ref": "RelatedEntity"
-          },
-          "metadata": {
-            "description": "FIXME: A list of ..."
-          }
-        },
-        "RESOLVED_ENTITY": {
-          "ref": "ResolvedEntity"
-        }
-      }
-    },
-    "EntityForWhySearch": {
-      "metadata": {
-        "description": "FIXME: EntityForWhySearch"
-      },
-      "properties": {
-        "RELATED_ENTITIES": {
-          "elements": {
-            "ref": "RelatedEntity"
-          },
-          "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of entities related to the resolved entity."
           }
         },
         "RESOLVED_ENTITY": {
@@ -1376,32 +1345,34 @@
     },
     "EntityNetworkLink": {
       "metadata": {
-        "description": "FIXME: EntityNetworkLink"
+        "description": "SUGGESTION: A relationship link between two entities in a network, with match and relationship details."
       },
       "properties": {
         "ERRULE_CODE": {
           "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
           },
           "type": "string"
         },
         "IS_AMBIGUOUS": {
           "metadata": {
-            "description": "Indicates if this is an ambiguous relationship.",
+            "description": "IMPROVEMENT: Indicates if this is an ambiguous relationship (1 = ambiguous, 0 = not ambiguous).",
             "goType": "int64"
           },
           "type": "int32"
         },
         "IS_DISCLOSED": {
           "metadata": {
-            "description": "Indicates if this is a disclosed relationship.",
+            "description": "IMPROVEMENT: Indicates if this is a disclosed relationship (1 = disclosed, 0 = not disclosed).",
             "goType": "int64"
           },
           "type": "int32"
         },
         "MATCH_KEY": {
           "metadata": {
-            "description": "Representation of matched source record features."
+            "description": "Representation of matched source record features.",
+            "label": "SUGGESTION: MATCH_KEY"
           },
           "type": "string"
         },
@@ -1410,7 +1381,8 @@
         },
         "MATCH_LEVEL_CODE": {
           "metadata": {
-            "description": "The type of match that occurred for the record."
+            "description": "The type of match that occurred for the record.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
           },
           "type": "string"
         },
@@ -1423,7 +1395,8 @@
         },
         "MIN_ENTITY_ID": {
           "metadata": {
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         }
@@ -1431,12 +1404,13 @@
     },
     "EntityPath": {
       "metadata": {
-        "description": "FIXME: EntityPath"
+        "description": "SUGGESTION: A path between two entities in a network, listing the entity IDs traversed."
       },
       "properties": {
         "END_ENTITY_ID": {
           "metadata": {
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
@@ -1448,12 +1422,13 @@
             "type": "int32"
           },
           "metadata": {
-            "description": "A list of entity information."
+            "description": "IMPROVEMENT: A list of entity IDs comprising the path from start to end entity."
           }
         },
         "START_ENTITY_ID": {
           "metadata": {
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         }
@@ -1461,32 +1436,34 @@
     },
     "EntityPathLink": {
       "metadata": {
-        "description": "FIXME: EntityPathLink"
+        "description": "SUGGESTION: A relationship link along an entity path, with match and relationship details."
       },
       "properties": {
         "ERRULE_CODE": {
           "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
           },
           "type": "string"
         },
         "IS_AMBIGUOUS": {
           "metadata": {
-            "description": "Indicates if this is an ambiguous relationship.",
+            "description": "IMPROVEMENT: Indicates if this is an ambiguous relationship (1 = ambiguous, 0 = not ambiguous).",
             "goType": "int64"
           },
           "type": "int32"
         },
         "IS_DISCLOSED": {
           "metadata": {
-            "description": "Indicates if this is a disclosed relationship.",
+            "description": "IMPROVEMENT: Indicates if this is a disclosed relationship (1 = disclosed, 0 = not disclosed).",
             "goType": "int64"
           },
           "type": "int32"
         },
         "MATCH_KEY": {
           "metadata": {
-            "description": "Representation of matched source record features."
+            "description": "Representation of matched source record features.",
+            "label": "SUGGESTION: MATCH_KEY"
           },
           "type": "string"
         },
@@ -1495,19 +1472,22 @@
         },
         "MATCH_LEVEL_CODE": {
           "metadata": {
-            "description": "The type of match that occurred for the record."
+            "description": "The type of match that occurred for the record.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
           },
           "type": "string"
         },
         "MAX_ENTITY_ID": {
           "metadata": {
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
         "MIN_ENTITY_ID": {
           "metadata": {
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         }
@@ -1515,12 +1495,13 @@
     },
     "EntityRoles": {
       "metadata": {
-        "description": "FIXME: EntityRoles"
+        "description": "SUGGESTION: A disclosed relationship role played by an entity, associating a feature description with a role code."
       },
       "properties": {
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
@@ -1534,7 +1515,7 @@
     },
     "Feature": {
       "metadata": {
-        "description": "FIXME: Feature"
+        "description": "SUGGESTION: A feature element with its code and resolved value, as returned by SzDiagnostic_getFeature (internal use)."
       },
       "properties": {
         "FELEM_CODE": {
@@ -1553,7 +1534,7 @@
     },
     "FeatureDescriptionValue": {
       "metadata": {
-        "description": "FIXME: FeatureDescriptionValue"
+        "description": "SUGGESTION: A feature value with its description, usage metadata, and optional normalized sub-descriptions."
       },
       "properties": {
         "ATTRIBUTES": {
@@ -1578,7 +1559,8 @@
         },
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
@@ -1587,7 +1569,7 @@
             "ref": "FeatureDescriptionValueDetails"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureDescriptionValueDetails items."
           }
         },
         "LIB_FEAT_ID": {
@@ -1613,7 +1595,7 @@
     },
     "FeatureDescriptionValueDetails": {
       "metadata": {
-        "description": "FIXME: FeatureDescriptionValueDetails"
+        "description": "SUGGESTION: A normalized sub-value within a feature description, with entity count and usage statistics."
       },
       "properties": {
         "CANDIDATE_CAP_REACHED": {
@@ -1624,7 +1606,8 @@
         },
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
@@ -1651,7 +1634,7 @@
     },
     "FeatureForAttributes": {
       "metadata": {
-        "description": "FIXME: FeatureForAttributes"
+        "description": "SUGGESTION: A feature instance with its description, usage type, attributes, and statistics, as returned in record and entity responses."
       },
       "properties": {
         "ATTRIBUTES": {
@@ -1673,7 +1656,8 @@
         },
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
@@ -1711,12 +1695,13 @@
     },
     "FeatureForGetEntity": {
       "metadata": {
-        "description": "FIXME: FeatureForGetEntity"
+        "description": "SUGGESTION: A feature instance with its description and usage type, as returned by getEntity operations."
       },
       "properties": {
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
@@ -1746,14 +1731,14 @@
             "ref": "SenzingEntitySpecification"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of SenzingEntitySpecification items."
           }
         }
       }
     },
     "FeatureID": {
       "metadata": {
-        "description": "FIXME: FeatureID"
+        "description": "SUGGESTION: A feature identifier pairing an internal library feature ID with its usage type."
       },
       "properties": {
         "LIB_FEAT_ID": {
@@ -1773,12 +1758,12 @@
     },
     "FeatureScoreForAttribute": {
       "metadata": {
-        "description": "FIXME: FeatureScoreForAttribute"
+        "description": "SUGGESTION: Comparison scores for a single attribute pair evaluated during entity resolution scoring."
       },
       "properties": {
         "ADDITIONAL_SCORES": {
           "metadata": {
-            "description": "A map from score types to score values"
+            "description": "IMPROVEMENT: A map from score type names to additional numeric score values."
           },
           "values": {
             "metadata": {
@@ -1827,7 +1812,7 @@
     },
     "FeatureScoreInfo": {
       "metadata": {
-        "description": "FIXME: FeatureScoreInfo"
+        "description": "SUGGESTION: Comparison scores for a feature pair (inbound vs. candidate) evaluated during entity resolution."
       },
       "properties": {
         "ADDITIONAL_SCORES": {
@@ -1864,7 +1849,8 @@
         },
         "FTYPE_CODE": {
           "metadata": {
-            "description": "The unique text identifier of the feature type."
+            "description": "The unique text identifier of the feature type.",
+            "label": "SUGGESTION: FTYPE_CODE"
           },
           "type": "string"
         },
@@ -1924,20 +1910,20 @@
     },
     "FeatureScores": {
       "metadata": {
-        "description": "FIXME: A map from ... to ..."
+        "description": "SUGGESTION: A map from feature type codes to lists of attribute-level feature comparison scores."
       },
       "values": {
         "elements": {
           "ref": "FeatureScoreForAttribute"
         },
         "metadata": {
-          "description": "FIXME: A list of ..."
+          "description": "SUGGESTION: A list of attribute-level comparison scores for this feature type."
         }
       }
     },
     "FeatureType": {
       "metadata": {
-        "description": "FIXME: FeatureType"
+        "description": "SUGGESTION: Candidate key statistics for a single feature type, showing counts found, not found, and generic."
       },
       "properties": {
         "FOUND": {
@@ -1948,7 +1934,8 @@
         },
         "FTYPE_CODE": {
           "metadata": {
-            "description": "The unique text identifier of the feature type."
+            "description": "The unique text identifier of the feature type.",
+            "label": "SUGGESTION: FTYPE_CODE"
           },
           "type": "string"
         },
@@ -1968,7 +1955,7 @@
     },
     "FinalState": {
       "metadata": {
-        "description": "FIXME: FinalState"
+        "description": "SUGGESTION: The final resolved state after how-entity analysis, listing virtual entities and reevaluation status."
       },
       "properties": {
         "NEED_REEVALUATION": {
@@ -1982,7 +1969,7 @@
             "ref": "VirtualEntitySynopsis"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of virtual entities in the final resolved state."
           }
         }
       }
@@ -1995,16 +1982,20 @@
           },
           "type": "string"
         }
+      },
+      "metadata": {
+        "description": "SUGGESTION: Placeholder definition for not-yet-specified response structures (internal use)."
       }
     },
     "FocusRecord": {
       "metadata": {
-        "description": "FIXME: FocusRecord"
+        "description": "SUGGESTION: A source record (data source + record ID) that is the focus of a why analysis."
       },
       "properties": {
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -2019,7 +2010,7 @@
     },
     "G2Config": {
       "metadata": {
-        "description": "FIXME: G2Config"
+        "description": "SUGGESTION: The full Senzing configuration export, containing all CFG_* configuration tables as returned by SzConfig_export."
       },
       "properties": {
         "CFG_ATTR": {
@@ -2027,7 +2018,7 @@
             "ref": "CFG_ATTR"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_ATTR items."
           }
         },
         "CFG_CFBOM": {
@@ -2035,7 +2026,7 @@
             "ref": "CFG_CFBOM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_CFBOM items."
           }
         },
         "CFG_CFCALL": {
@@ -2043,7 +2034,7 @@
             "ref": "CFG_CFCALL"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_CFCALL items."
           }
         },
         "CFG_CFRTN": {
@@ -2051,7 +2042,7 @@
             "ref": "CFG_CFRTN"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_CFRTN items."
           }
         },
         "CFG_CFUNC": {
@@ -2059,7 +2050,7 @@
             "ref": "CFG_CFUNC"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_CFUNC items."
           }
         },
         "CFG_DFBOM": {
@@ -2067,7 +2058,7 @@
             "ref": "CFG_DFBOM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_DFBOM items."
           }
         },
         "CFG_DFCALL": {
@@ -2075,7 +2066,7 @@
             "ref": "CFG_DFCALL"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_DFCALL items."
           }
         },
         "CFG_DFUNC": {
@@ -2083,7 +2074,7 @@
             "ref": "CFG_DFUNC"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_DFUNC items."
           }
         },
         "CFG_DSRC": {
@@ -2091,7 +2082,7 @@
             "ref": "CFG_DSRC"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_DSRC items."
           }
         },
         "CFG_DSRC_INTEREST": {
@@ -2099,7 +2090,7 @@
             "ref": "CFG_DSRC_INTEREST"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_DSRC_INTEREST items."
           }
         },
         "CFG_EBOM": {
@@ -2107,7 +2098,7 @@
             "ref": "CFG_EBOM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_EBOM items."
           }
         },
         "CFG_EFBOM": {
@@ -2115,7 +2106,7 @@
             "ref": "CFG_EFBOM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_EFBOM items."
           }
         },
         "CFG_EFCALL": {
@@ -2123,7 +2114,7 @@
             "ref": "CFG_EFCALL"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_EFCALL items."
           }
         },
         "CFG_EFUNC": {
@@ -2131,7 +2122,7 @@
             "ref": "CFG_EFUNC"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_EFUNC items."
           }
         },
         "CFG_ERFRAG": {
@@ -2139,7 +2130,7 @@
             "ref": "CFG_ERFRAG"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_ERFRAG items."
           }
         },
         "CFG_ERRULE": {
@@ -2147,7 +2138,7 @@
             "ref": "CFG_ERRULE"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_ERRULE items."
           }
         },
         "CFG_FBOM": {
@@ -2155,7 +2146,7 @@
             "ref": "CFG_FBOM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_FBOM items."
           }
         },
         "CFG_FBOVR": {
@@ -2163,7 +2154,7 @@
             "ref": "CFG_FBOVR"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_FBOVR items."
           }
         },
         "CFG_FCLASS": {
@@ -2171,7 +2162,7 @@
             "ref": "CFG_FCLASS"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_FCLASS items."
           }
         },
         "CFG_FELEM": {
@@ -2179,7 +2170,7 @@
             "ref": "CFG_FELEM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_FELEM items."
           }
         },
         "CFG_FTYPE": {
@@ -2187,7 +2178,7 @@
             "ref": "CFG_FTYPE"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_FTYPE items."
           }
         },
         "CFG_GENERIC_THRESHOLD": {
@@ -2195,7 +2186,7 @@
             "ref": "CFG_GENERIC_THRESHOLD"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_GENERIC_THRESHOLD items."
           }
         },
         "CFG_GPLAN": {
@@ -2203,7 +2194,7 @@
             "ref": "CFG_GPLAN"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_GPLAN items."
           }
         },
         "CFG_RCLASS": {
@@ -2211,7 +2202,7 @@
             "ref": "CFG_RCLASS"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_RCLASS items."
           }
         },
         "CFG_RTYPE": {
@@ -2219,7 +2210,7 @@
             "ref": "CFG_RTYPE"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_RTYPE items."
           }
         },
         "CFG_SFCALL": {
@@ -2227,7 +2218,7 @@
             "ref": "CFG_SFCALL"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_SFCALL items."
           }
         },
         "CFG_SFUNC": {
@@ -2235,7 +2226,7 @@
             "ref": "CFG_SFUNC"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_SFUNC items."
           }
         },
         "CONFIG_BASE_VERSION": {
@@ -2243,7 +2234,7 @@
         },
         "SETTINGS": {
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: Engine-level settings included in the configuration export."
           },
           "properties": {
             "METAPHONE_VERSION": {
@@ -2256,7 +2247,7 @@
             "ref": "SYS_OOM"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of SYS_OOM items."
           }
         },
         "XXX_CFG_ECLASS": {
@@ -2264,7 +2255,7 @@
             "ref": "CFG_ECLASS"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_ECLASS items."
           }
         },
         "XXX_CFG_ETYPE": {
@@ -2272,7 +2263,7 @@
             "ref": "CFG_ETYPE"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_ETYPE items."
           }
         },
         "XXX_CFG_LENS": {
@@ -2280,7 +2271,7 @@
             "ref": "CFG_LENS"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_LENS items."
           }
         },
         "XXX_CFG_LENSRL": {
@@ -2288,14 +2279,14 @@
             "ref": "CFG_LENSRL"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of CFG_LENSRL items."
           }
         }
       }
     },
     "HowResults": {
       "metadata": {
-        "description": "FIXME: HowResults"
+        "description": "SUGGESTION: The result of a howEntityByEntityID call, showing the resolution steps and final virtual entity state."
       },
       "properties": {
         "FINAL_STATE": {
@@ -2306,14 +2297,14 @@
             "ref": "ResolutionStep"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of resolution steps showing how source records were merged into the entity."
           }
         }
       }
     },
     "InterestingEntities": {
       "metadata": {
-        "description": "FIXME: InterestingEntities"
+        "description": "SUGGESTION: Interesting entities and notices detected around a record or entity (internal use)."
       },
       "properties": {
         "ENTITIES": {
@@ -2329,7 +2320,7 @@
             "ref": "Notice"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of system notices associated with the interesting entity detection."
           }
         }
       }
@@ -2349,7 +2340,8 @@
         "ENTITY_ID": {
           "metadata": {
             "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
@@ -2358,7 +2350,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of flag codes describing why this entity is interesting."
           }
         },
         "SAMPLE_RECORDS": {
@@ -2366,14 +2358,14 @@
             "ref": "SampleRecord"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of sample source records for this interesting entity."
           }
         }
       }
     },
     "MatchInfo": {
       "metadata": {
-        "description": "FIXME: MatchInfo"
+        "description": "SUGGESTION: Match details between two virtual entities, including the match key, errule code, candidate keys, and feature scores."
       },
       "properties": {
         "CANDIDATE_KEYS": {
@@ -2381,7 +2373,8 @@
         },
         "ERRULE_CODE": {
           "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
           },
           "type": "string"
         },
@@ -2390,7 +2383,8 @@
         },
         "MATCH_KEY": {
           "metadata": {
-            "description": "Representation of matched source record features."
+            "description": "Representation of matched source record features.",
+            "label": "SUGGESTION: MATCH_KEY"
           },
           "type": "string"
         },
@@ -2399,7 +2393,8 @@
         },
         "MATCH_LEVEL_CODE": {
           "metadata": {
-            "description": "The type of match that occurred for the record."
+            "description": "The type of match that occurred for the record.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
           },
           "type": "string"
         },
@@ -2422,19 +2417,21 @@
     },
     "MatchInfoForAttribute": {
       "metadata": {
-        "description": "FIXME: MatchInfoForAttribute"
+        "description": "SUGGESTION: A candidate key attribute match, pairing a feature description with its library feature ID."
       },
       "properties": {
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
         "FEAT_ID": {
           "metadata": {
             "description": "The identifier of the main feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: FEAT_ID"
           },
           "type": "int32"
         }
@@ -2442,19 +2439,19 @@
     },
     "MatchInfoForWhy": {
       "metadata": {
-        "description": "FIXME: MatchInfoForWhy"
+        "description": "SUGGESTION: Why-analysis match details between two records or entities, including disclosed relationships and feature scores."
       },
       "properties": {
         "CANDIDATE_KEYS": {
           "metadata": {
-            "description": "FIXME: A map from ... to ..."
+            "description": "SUGGESTION: A map from string keys to typed values."
           },
           "values": {
             "elements": {
               "ref": "MatchInfoForAttribute"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of candidate key attribute matches for this feature type."
             }
           }
         },
@@ -2466,7 +2463,8 @@
         },
         "MATCH_LEVEL_CODE": {
           "metadata": {
-            "description": "The type of match that occurred for the record."
+            "description": "The type of match that occurred for the record.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
           },
           "type": "string"
         },
@@ -2488,7 +2486,7 @@
       "properties": {
         "CONFIRMATIONS": {
           "elements": {
-            "ref": "xFeatureScoreInfo"
+            "ref": "FeatureScoreInfo"
           },
           "metadata": {
             "description": "A list of feature data in the match key supporting the match."
@@ -2496,7 +2494,7 @@
         },
         "DENIALS": {
           "elements": {
-            "ref": "xFeatureScoreInfo"
+            "ref": "FeatureScoreInfo"
           },
           "metadata": {
             "description": "A list of feature data in the match key negating the match."
@@ -2504,7 +2502,7 @@
         },
         "DISCLOSED_RELATIONS": {
           "elements": {
-            "ref": "xDisclosedRelationsForMatchInfo"
+            "ref": "DisclosedRelationsForMatchInfo"
           },
           "metadata": {
             "description": "A list of disclosed relationships of various types."
@@ -2520,7 +2518,7 @@
         },
         "REL_LINKS": {
           "elements": {
-            "ref": "xRelLink"
+            "ref": "RelLink"
           },
           "metadata": {
             "description": "Deprecated. A list of disclosed relationships based on identical shared keys."
@@ -2538,13 +2536,14 @@
     },
     "MemberRecord": {
       "metadata": {
-        "description": "FIXME: MemberRecord"
+        "description": "SUGGESTION: An internal record identifier with its source records, representing membership in a virtual entity."
       },
       "properties": {
         "INTERNAL_ID": {
           "metadata": {
             "description": "Internal identifier for the record.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: INTERNAL_ID"
           },
           "type": "int32"
         },
@@ -2560,7 +2559,7 @@
     },
     "Notice": {
       "metadata": {
-        "description": "FIXME: Notice"
+        "description": "SUGGESTION: A system notice code and description associated with an interesting entity detection."
       },
       "properties": {
         "CODE": {
@@ -2573,7 +2572,7 @@
     },
     "Object": {
       "metadata": {
-        "description": "FIXME: Object",
+        "description": "SUGGESTION: An opaque JSON value used for user-defined or unstructured data (e.g., JSON_DATA, UNMAPPED_DATA values).",
         "goType": "any",
         "javaJacksonType": "Object",
         "pythonType": "object"
@@ -2582,110 +2581,20 @@
     },
     "Record": {
       "metadata": {
-        "description": "FIXME: Record"
+        "description": "SUGGESTION: A source record with its features, match information, and original JSON data as stored in the Senzing repository."
       },
       "properties": {
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
         "ERRULE_CODE": {
           "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
-          },
-          "type": "string"
-        },
-        "FEATURES": {
-          "metadata": {
-            "description": "A map from feature type names to lists of features."
-          },
-          "values": {
-            "elements": {
-              "ref": "xFeatureForAttributes"
-            },
-            "metadata": {
-              "jsonKeyforMapValues": "FIXME: ...",
-              "description": "A list of features for given key."
-            }
-          }
-        },
-        "FEATURE_IDS": {
-          "elements": {
-            "ref": "xFeatureID"
-          },
-          "metadata": {
-            "description": "FIXME: A list of ..."
-          }
-        },
-        "FIRST_SEEN_DT": {
-          "type": "timestamp"
-        },
-        "INTERNAL_ID": {
-          "metadata": {
-            "description": "Internal identifier for the record.",
-            "goType": "int64"
-          },
-          "type": "int32"
-        },
-        "JSON_DATA": {
-          "metadata": {
-            "description": "User source record."
-          },
-          "values": {
-            "metadata": {
-              "description": "User-defined JSON key in source record."
-            },
-            "ref": "Object"
-          }
-        },
-        "LAST_SEEN_DT": {
-          "type": "timestamp"
-        },
-        "MATCH_KEY": {
-          "metadata": {
-            "description": "Representation of matched source record features."
-          },
-          "type": "string"
-        },
-        "MATCH_LEVEL_CODE": {
-          "metadata": {
-            "description": "The type of match that occurred for the record."
-          },
-          "type": "string"
-        },
-        "RECORD_ID": {
-          "metadata": {
-            "description": "The unique identifier within the set of records in the DATA_SOURCE.",
-            "label": "RECORD_ID"
-          },
-          "type": "string"
-        },
-        "UNMAPPED_DATA": {
-          "metadata": {
-            "description": "FIXME: A map from ... to ..."
-          },
-          "values": {
-            "ref": "Object"
-          }
-        }
-      }
-    },
-    "RecordForGetEntity": {
-      "metadata": {
-        "description": "FIXME: RecordForGetEntity"
-      },
-      "properties": {
-        "DATA_SOURCE": {
-          "metadata": {
-            "description": "Short, stable identifier naming the source system."
-          },
-          "type": "string"
-        },
-        "ERRULE_CODE": {
-          "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
           },
           "type": "string"
         },
@@ -2698,7 +2607,8 @@
               "ref": "FeatureForAttributes"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "jsonKeyforMapValues": "SUGGESTION: The feature type code used as the JSON map key (e.g., \"NAME\", \"ADDRESS\").",
+              "description": "A list of features for given key."
             }
           }
         },
@@ -2707,7 +2617,7 @@
             "ref": "FeatureID"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureID items."
           }
         },
         "FIRST_SEEN_DT": {
@@ -2716,7 +2626,8 @@
         "INTERNAL_ID": {
           "metadata": {
             "description": "Internal identifier for the record.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: INTERNAL_ID"
           },
           "type": "int32"
         },
@@ -2736,13 +2647,15 @@
         },
         "MATCH_KEY": {
           "metadata": {
-            "description": "Representation of matched source record features."
+            "description": "Representation of matched source record features.",
+            "label": "SUGGESTION: MATCH_KEY"
           },
           "type": "string"
         },
         "MATCH_LEVEL_CODE": {
           "metadata": {
-            "description": "The type of match that occurred for the record."
+            "description": "The type of match that occurred for the record.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
           },
           "type": "string"
         },
@@ -2755,10 +2668,108 @@
         },
         "UNMAPPED_DATA": {
           "metadata": {
-            "description": "FIXME: A map from ... to ..."
+            "description": "SUGGESTION: A map from user field names to values that could not be mapped to Senzing attributes."
           },
           "values": {
+            "ref": "Object",
+            "metadata": {}
+          }
+        }
+      }
+    },
+    "RecordForGetEntity": {
+      "metadata": {
+        "description": "SUGGESTION: A source record with its features, match information, and original JSON data as returned by getEntity operations."
+      },
+      "properties": {
+        "DATA_SOURCE": {
+          "metadata": {
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
+          },
+          "type": "string"
+        },
+        "ERRULE_CODE": {
+          "metadata": {
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
+          },
+          "type": "string"
+        },
+        "FEATURES": {
+          "metadata": {
+            "description": "A map from feature type names to lists of features."
+          },
+          "values": {
+            "elements": {
+              "ref": "FeatureForAttributes"
+            },
+            "metadata": {
+              "description": "SUGGESTION: A list of feature instances of this type."
+            }
+          }
+        },
+        "FEATURE_IDS": {
+          "elements": {
+            "ref": "FeatureID"
+          },
+          "metadata": {
+            "description": "SUGGESTION: A list of FeatureID items."
+          }
+        },
+        "FIRST_SEEN_DT": {
+          "type": "timestamp"
+        },
+        "INTERNAL_ID": {
+          "metadata": {
+            "description": "Internal identifier for the record.",
+            "goType": "int64",
+            "label": "SUGGESTION: INTERNAL_ID"
+          },
+          "type": "int32"
+        },
+        "JSON_DATA": {
+          "metadata": {
+            "description": "User source record."
+          },
+          "values": {
+            "metadata": {
+              "description": "User-defined JSON key in source record."
+            },
             "ref": "Object"
+          }
+        },
+        "LAST_SEEN_DT": {
+          "type": "timestamp"
+        },
+        "MATCH_KEY": {
+          "metadata": {
+            "description": "Representation of matched source record features.",
+            "label": "SUGGESTION: MATCH_KEY"
+          },
+          "type": "string"
+        },
+        "MATCH_LEVEL_CODE": {
+          "metadata": {
+            "description": "The type of match that occurred for the record.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
+          },
+          "type": "string"
+        },
+        "RECORD_ID": {
+          "metadata": {
+            "description": "The unique identifier within the set of records in the DATA_SOURCE.",
+            "label": "RECORD_ID"
+          },
+          "type": "string"
+        },
+        "UNMAPPED_DATA": {
+          "metadata": {
+            "description": "SUGGESTION: A map from user field names to values that could not be mapped to Senzing attributes."
+          },
+          "values": {
+            "ref": "Object",
+            "metadata": {}
           }
         },
         "XXX_ADDRESS_DATA": {
@@ -2766,7 +2777,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_ATTRIBUTE_DATA": {
@@ -2774,7 +2785,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_ENTITY_DATA": {
@@ -2782,7 +2793,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_ENTITY_DESC": {
@@ -2799,7 +2810,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_MATCH_LEVEL": {
@@ -2813,7 +2824,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_OTHER_DATA": {
@@ -2821,7 +2832,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_PHONE_DATA": {
@@ -2829,7 +2840,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_RELATIONSHIP_DATA": {
@@ -2837,19 +2848,20 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         }
       }
     },
     "RecordKey": {
       "metadata": {
-        "description": "FIXME: RecordKey"
+        "description": "SUGGESTION: A (data source code, record ID) pair that uniquely identifies a source record."
       },
       "properties": {
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -2864,7 +2876,7 @@
     },
     "RecordKeys": {
       "metadata": {
-        "description": "FIXME: RecordKeys"
+        "description": "SUGGESTION: A list of record keys, used as input to virtual entity and network operations."
       },
       "properties": {
         "RECORDS": {
@@ -2879,12 +2891,13 @@
     },
     "RecordSummary": {
       "metadata": {
-        "description": "FIXME: RecordSummary"
+        "description": "SUGGESTION: A count of records from a single data source contributing to an entity."
       },
       "properties": {
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -2899,38 +2912,42 @@
     },
     "RelAnchor": {
       "metadata": {
-        "description": "FIXME: RelAnchor"
+        "description": "SUGGESTION: A relationship anchor feature that establishes one end of a disclosed relationship, with linked feature details."
       },
       "properties": {
         "DOMAIN": {
           "metadata": {
-            "description": "FIXME: The domain of the ..."
+            "description": "IMPROVEMENT: The domain of the disclosed relationship anchor (the REL_ANCHOR_DOMAIN value from the entity specification)."
           },
           "type": "string"
         },
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
         "FEAT_ID": {
           "metadata": {
             "description": "The identifier of the main feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: FEAT_ID"
           },
           "type": "int32"
         },
         "LINKED_FEAT_DESC": {
           "metadata": {
-            "description": "The contents of the linked feature."
+            "description": "The contents of the linked feature.",
+            "label": "SUGGESTION: LINKED_FEAT_DESC"
           },
           "type": "string"
         },
         "LINKED_FEAT_ID": {
           "metadata": {
             "description": "The identifier of the linked feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: LINKED_FEAT_ID"
           },
           "type": "int32"
         },
@@ -2951,14 +2968,14 @@
             "ref": "RelPointer"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: Deprecated. A list of relationship pointers for this anchor."
           }
         }
       }
     },
     "RelLink": {
       "metadata": {
-        "description": "FIXME: RelLink"
+        "description": "SUGGESTION: A bidirectional disclosed relationship link between two features, with domain, type, and usage information."
       },
       "properties": {
         "DOMAIN": {
@@ -2969,14 +2986,16 @@
         },
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
         "FEAT_ID": {
           "metadata": {
             "description": "The identifier of the main feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: FEAT_ID"
           },
           "type": "int32"
         },
@@ -2988,20 +3007,23 @@
         },
         "FTYPE_CODE": {
           "metadata": {
-            "description": "The unique text identifier of the feature type."
+            "description": "The unique text identifier of the feature type.",
+            "label": "SUGGESTION: FTYPE_CODE"
           },
           "type": "string"
         },
         "LINKED_FEAT_DESC": {
           "metadata": {
-            "description": "The contents of the linked feature."
+            "description": "The contents of the linked feature.",
+            "label": "SUGGESTION: LINKED_FEAT_DESC"
           },
           "type": "string"
         },
         "LINKED_FEAT_ID": {
           "metadata": {
             "description": "The identifier of the linked feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: LINKED_FEAT_ID"
           },
           "type": "int32"
         },
@@ -3027,25 +3049,27 @@
     },
     "RelPointer": {
       "metadata": {
-        "description": "FIXME: RelPointer"
+        "description": "SUGGESTION: A relationship pointer feature that references the other end of a disclosed relationship."
       },
       "properties": {
         "DOMAIN": {
           "metadata": {
-            "description": "FIXME: The domain of the ..."
+            "description": "IMPROVEMENT: The domain of the disclosed relationship pointer (the REL_ANCHOR_DOMAIN value of the referenced anchor)."
           },
           "type": "string"
         },
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
         "FEAT_ID": {
           "metadata": {
             "description": "The identifier of the main feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: FEAT_ID"
           },
           "type": "int32"
         },
@@ -3057,14 +3081,16 @@
         },
         "LINKED_FEAT_DESC": {
           "metadata": {
-            "description": "The contents of the linked feature."
+            "description": "The contents of the linked feature.",
+            "label": "SUGGESTION: LINKED_FEAT_DESC"
           },
           "type": "string"
         },
         "LINKED_FEAT_ID": {
           "metadata": {
             "description": "The identifier of the linked feature.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: LINKED_FEAT_ID"
           },
           "type": "int32"
         },
@@ -3078,13 +3104,14 @@
     },
     "RelatedEntity": {
       "metadata": {
-        "description": "FIXME: RelatedEntity"
+        "description": "SUGGESTION: An entity related to the primary resolved entity, with match level, match key, records, and relationship details."
       },
       "properties": {
         "ENTITY_ID": {
           "metadata": {
             "description": "The ENTITY_ID is the identifier for the entity.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
@@ -3096,27 +3123,29 @@
         },
         "ERRULE_CODE": {
           "metadata": {
-            "description": "Identifier of the entity resolution principle that was triggered."
+            "description": "Identifier of the entity resolution principle that was triggered.",
+            "label": "SUGGESTION: ERRULE_CODE"
           },
           "type": "string"
         },
         "IS_AMBIGUOUS": {
           "metadata": {
-            "description": "Indicates if this is an ambiguous relationship.",
+            "description": "IMPROVEMENT: Indicates if this is an ambiguous relationship (1 = ambiguous, 0 = not ambiguous).",
             "goType": "int64"
           },
           "type": "int32"
         },
         "IS_DISCLOSED": {
           "metadata": {
-            "description": "Indicates if this is a disclosed relationship.",
+            "description": "IMPROVEMENT: Indicates if this is a disclosed relationship (1 = disclosed, 0 = not disclosed).",
             "goType": "int64"
           },
           "type": "int32"
         },
         "MATCH_KEY": {
           "metadata": {
-            "description": "Representation of matched source data."
+            "description": "Representation of matched source data.",
+            "label": "SUGGESTION: MATCH_KEY"
           },
           "type": "string"
         },
@@ -3125,7 +3154,8 @@
         },
         "MATCH_LEVEL_CODE": {
           "metadata": {
-            "description": "The type of relationship."
+            "description": "The type of relationship.",
+            "label": "SUGGESTION: MATCH_LEVEL_CODE"
           },
           "type": "string"
         },
@@ -3157,12 +3187,13 @@
     },
     "RelatedRoles": {
       "metadata": {
-        "description": "FIXME: RelatedRoles"
+        "description": "SUGGESTION: A disclosed relationship role played by the related entity, associating a feature description with a role code."
       },
       "properties": {
         "FEAT_DESC": {
           "metadata": {
-            "description": "Describes the attributes that make up the feature."
+            "description": "Describes the attributes that make up the feature.",
+            "label": "SUGGESTION: FEAT_DESC"
           },
           "type": "string"
         },
@@ -3176,7 +3207,7 @@
     },
     "Repository": {
       "metadata": {
-        "description": "FIXME: Repository"
+        "description": "SUGGESTION: Connection metadata for a Senzing repository database node, as returned by SzDiagnostic_getRepositoryInfo."
       },
       "properties": {
         "id": {
@@ -3201,7 +3232,7 @@
     },
     "ResolutionStep": {
       "metadata": {
-        "description": "FIXME: ResolutionStep"
+        "description": "SUGGESTION: A single step in the entity resolution process, merging two virtual entities with match details."
       },
       "properties": {
         "INBOUND_VIRTUAL_ENTITY_ID": {
@@ -3229,13 +3260,14 @@
     },
     "ResolvedEntity": {
       "metadata": {
-        "description": "FIXME: ResolvedEntity"
+        "description": "SUGGESTION: The resolved (merged) entity with its name, features, source records, and record summary statistics."
       },
       "properties": {
         "ENTITY_ID": {
           "metadata": {
             "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
@@ -3254,7 +3286,7 @@
               "ref": "FeatureForAttributes"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of feature instances of this type."
             }
           }
         },
@@ -3279,7 +3311,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of record type values (e.g., PERSON, ORGANIZATION) present on the entity."
           }
         },
         "XXX_ERRULE_CODE": {
@@ -3293,7 +3325,7 @@
             "ref": "FeatureID"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: Deprecated. A list of feature identifiers for the resolved entity."
           }
         },
         "XXX_IS_AMBIGUOUS": {
@@ -3335,14 +3367,14 @@
     },
     "ResolvedEntityAndMatchInfo": {
       "metadata": {
-        "description": "FIXME: ResolvedEntityAndMatchInfo"
+        "description": "SUGGESTION: A resolved entity paired with its match information, as returned in search results."
       },
       "properties": {
         "ENTITY": {
-          "ref": "EntityForResolvedEntity"
+          "ref": "Entity"
         },
         "FEATURES_MJD": {
-          "ref": "EntityForResolvedEntity"
+          "ref": "Entity"
         },
         "MATCH_INFO": {
           "ref": "MatchInfo"
@@ -3351,13 +3383,14 @@
     },
     "ResolvedEntityForGetEntity": {
       "metadata": {
-        "description": "FIXME: ResolvedEntityForGetEntity"
+        "description": "SUGGESTION: The resolved entity as returned by getEntityByEntityID and getEntityByRecordID operations."
       },
       "properties": {
         "ENTITY_ID": {
           "metadata": {
             "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
@@ -3373,16 +3406,16 @@
           },
           "values": {
             "elements": {
-              "ref": "xFeatureForGetEntity"
+              "ref": "FeatureForGetEntity"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of feature instances of this type."
             }
           }
         },
         "RECORDS": {
           "elements": {
-            "ref": "xRecordForGetEntity"
+            "ref": "RecordForGetEntity"
           },
           "metadata": {
             "description": "A list of (data source code, record id) pairs."
@@ -3390,7 +3423,7 @@
         },
         "RECORD_SUMMARY": {
           "elements": {
-            "ref": "xRecordSummary"
+            "ref": "RecordSummary"
           },
           "metadata": {
             "description": "A list of source systems the records came from comprising this related entity."
@@ -3401,14 +3434,14 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         }
       }
     },
     "SYS_OOM": {
       "metadata": {
-        "description": "FIXME: SYS_OOM"
+        "description": "SUGGESTION: Configuration thresholds for out-of-memory (OOM) detection per feature type."
       },
       "properties": {
         "FTYPE_ID": {
@@ -3469,12 +3502,13 @@
     },
     "SampleRecord": {
       "metadata": {
-        "description": "FIXME: SampleRecord"
+        "description": "SUGGESTION: A sample source record associated with an interesting entity, including its flags."
       },
       "properties": {
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -3483,7 +3517,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "RECORD_ID": {
@@ -3497,7 +3531,7 @@
     },
     "SchemaVersion": {
       "metadata": {
-        "description": "FIXME: SchemaVersion"
+        "description": "SUGGESTION: Schema version information from SzProduct_getVersion, indicating the engine and required schema versions."
       },
       "properties": {
         "ENGINE_SCHEMA_VERSION": {
@@ -3513,7 +3547,7 @@
     },
     "SearchEntity": {
       "metadata": {
-        "description": "FIXME: SearchEntity"
+        "description": "SUGGESTION: The search query entity with its extracted features and search statistics, as returned by search operations."
       },
       "properties": {
         "FEATURES": {
@@ -3525,7 +3559,7 @@
               "ref": "FeatureDescriptionValue"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of feature description values for this feature type."
             }
           }
         },
@@ -3536,7 +3570,7 @@
     },
     "SearchEntitySummary": {
       "metadata": {
-        "description": "FIXME: SearchEntitySummary"
+        "description": "SUGGESTION: Counts of features added, ignored, searched, and submitted during a search operation."
       },
       "properties": {
         "FEATURES_ADDED": {
@@ -3555,7 +3589,7 @@
     },
     "SearchRequest": {
       "metadata": {
-        "description": "FIXME: SearchRequest"
+        "description": "SUGGESTION: The original search request features and JSON data, echoed back in search responses when requested."
       },
       "properties": {
         "FEATURES": {
@@ -3567,7 +3601,7 @@
               "ref": "FeatureDescriptionValue"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of feature description values for this feature type."
             }
           }
         },
@@ -3584,7 +3618,7 @@
     },
     "SearchStatistic": {
       "metadata": {
-        "description": "FIXME: SearchStatistic"
+        "description": "SUGGESTION: Search statistics including candidate key counts per feature type, as returned by search operations."
       },
       "properties": {
         "CANDIDATE_KEYS": {
@@ -3594,7 +3628,7 @@
     },
     "SenzingEntitySpecification": {
       "metadata": {
-        "description": "FIXME: SenzingEntitySpecification"
+        "description": "SUGGESTION: The Senzing Entity Specification — all recognized input attributes for mapping source data to Senzing features. See https://www.senzing.com/docs/entity_specification"
       },
       "properties": {
         "ACCOUNT_DOMAIN": {
@@ -4166,7 +4200,8 @@
         },
         "FTYPE_CODE": {
           "metadata": {
-            "description": "The unique text identifier of the feature type."
+            "description": "The unique text identifier of the feature type.",
+            "label": "SUGGESTION: FTYPE_CODE"
           },
           "type": "string"
         },
@@ -4203,7 +4238,8 @@
         },
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -4234,7 +4270,8 @@
         },
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -4495,7 +4532,7 @@
             "ref": "RelatedEntity"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of entities related to the resolved entity."
           }
         },
         "RESOLVED_ENTITY": {
@@ -4510,7 +4547,7 @@
             "ref": "RelatedEntity"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of entities related to the resolved entity."
           }
         },
         "RESOLVED_ENTITY": {
@@ -4529,7 +4566,7 @@
               "ref": "FeatureForAttributes"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of feature instances of this type."
             }
           }
         },
@@ -4538,7 +4575,7 @@
             "ref": "FeatureID"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureID items."
           }
         },
         "JSON_DATA": {
@@ -4554,10 +4591,11 @@
         },
         "UNMAPPED_DATA": {
           "metadata": {
-            "description": "FIXME: A map from ... to ..."
+            "description": "SUGGESTION: A map from user field names to values that could not be mapped to Senzing attributes."
           },
           "values": {
-            "ref": "Object"
+            "ref": "Object",
+            "metadata": {}
           }
         }
       }
@@ -4566,7 +4604,8 @@
       "properties": {
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -4579,7 +4618,7 @@
               "ref": "FeatureForAttributes"
             },
             "metadata": {
-              "description": "FIXME: A list of ..."
+              "description": "SUGGESTION: A list of feature instances of this type."
             }
           }
         },
@@ -4588,7 +4627,7 @@
             "ref": "FeatureID"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureID items."
           }
         },
         "FIRST_SEEN_DT": {
@@ -4617,10 +4656,11 @@
         },
         "UNMAPPED_DATA": {
           "metadata": {
-            "description": "FIXME: A map from ... to ..."
+            "description": "SUGGESTION: A map from user field names to values that could not be mapped to Senzing attributes."
           },
           "values": {
-            "ref": "Object"
+            "ref": "Object",
+            "metadata": {}
           }
         },
         "XXX_ADDRESS_DATA": {
@@ -4628,7 +4668,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_ATTRIBUTE_DATA": {
@@ -4636,7 +4676,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_ENTITY_DATA": {
@@ -4644,7 +4684,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_ENTITY_DESC": {
@@ -4667,7 +4707,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_INTERNAL_ID": {
@@ -4700,7 +4740,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_OTHER_DATA": {
@@ -4708,7 +4748,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_PHONE_DATA": {
@@ -4716,7 +4756,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         },
         "XXX_RELATIONSHIP_DATA": {
@@ -4724,7 +4764,7 @@
             "type": "string"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of items."
           }
         }
       }
@@ -4781,7 +4821,8 @@
         },
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -4843,7 +4884,8 @@
         },
         "DATA_SOURCE": {
           "metadata": {
-            "description": "Short, stable identifier naming the source system."
+            "description": "Short, stable identifier naming the source system.",
+            "label": "SUGGESTION: DATA_SOURCE"
           },
           "type": "string"
         },
@@ -4873,7 +4915,7 @@
             "ref": "RelatedEntity"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: Deprecated. A list of related entities from the search result."
           }
         },
         "RESOLVED_ENTITIES": {
@@ -4881,7 +4923,7 @@
             "ref": "ResolvedEntityAndMatchInfo"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of resolved entities matching the search attributes."
           }
         },
         "SEARCH_ENTITY": {
@@ -4895,7 +4937,7 @@
             "ref": "SearchStatistic"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of search statistics by feature type."
           }
         }
       }
@@ -4929,7 +4971,7 @@
             "ref": "WhyResult"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of why-result explanations for the requested entity pairs or records."
           }
         }
       }
@@ -4949,7 +4991,7 @@
             "ref": "WhyResult"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of why-result explanations for the requested entity pairs or records."
           }
         }
       }
@@ -4969,7 +5011,7 @@
             "ref": "WhyResult"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of why-result explanations for the requested entity pairs or records."
           }
         }
       }
@@ -4985,7 +5027,7 @@
       "properties": {
         "ENTITIES": {
           "elements": {
-            "ref": "EntityForWhySearch"
+            "ref": "Entity"
           },
           "metadata": {
             "description": "A list of entity information."
@@ -5002,7 +5044,7 @@
             "ref": "SearchStatistic"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of search statistics by feature type."
           }
         },
         "WHY_RESULTS": {
@@ -5010,7 +5052,7 @@
             "ref": "WhyResult"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of why-result explanations for the requested entity pairs or records."
           }
         }
       }
@@ -5083,7 +5125,7 @@
     },
     "UmfProc": {
       "metadata": {
-        "description": "FIXME: UmfProc"
+        "description": "SUGGESTION: A Universal Message Format (UMF) processing record from the internal redo queue, as returned by getRedoRecord."
       },
       "properties": {
         "NAME": {
@@ -5094,14 +5136,14 @@
             "ref": "UmfProcParams"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of UmfProcParams items."
           }
         }
       }
     },
     "UmfProcParamDetails": {
       "metadata": {
-        "description": "FIXME: UmfProcParamDetails"
+        "description": "SUGGESTION: A single name/value parameter within a UMF processing record."
       },
       "properties": {
         "NAME": {
@@ -5114,7 +5156,7 @@
     },
     "UmfProcParams": {
       "metadata": {
-        "description": "FIXME: UmfProcParams"
+        "description": "SUGGESTION: A parameter container within a UMF processing record."
       },
       "properties": {
         "PARAM": {
@@ -5124,7 +5166,7 @@
     },
     "VirtualEntitySynopsis": {
       "metadata": {
-        "description": "FIXME: VirtualEntitySynopsis"
+        "description": "SUGGESTION: A synopsis of a virtual entity in the how-entity resolution graph, with its member records."
       },
       "properties": {
         "MEMBER_RECORDS": {
@@ -5132,7 +5174,7 @@
             "ref": "MemberRecord"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of member records (internal ID + source records) comprising this virtual entity."
           }
         },
         "VIRTUAL_ENTITY_ID": {
@@ -5142,7 +5184,7 @@
     },
     "WhyKeyDetails": {
       "metadata": {
-        "description": "FIXME: WhyKeyDetails"
+        "description": "SUGGESTION: Detailed breakdown of a why-key, listing confirmation and denial features and disclosed relationships."
       },
       "properties": {
         "CONFIRMATIONS": {
@@ -5150,7 +5192,7 @@
             "ref": "FeatureScoreInfo"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureScoreInfo items."
           }
         },
         "DENIALS": {
@@ -5158,7 +5200,7 @@
             "ref": "FeatureScoreInfo"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of FeatureScoreInfo items."
           }
         },
         "DISCLOSED_RELATIONS": {
@@ -5166,26 +5208,28 @@
             "ref": "DisclosedRelationsForWhyKeyDetails"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of DisclosedRelationsForWhyKeyDetails items."
           }
         }
       }
     },
     "WhyResult": {
       "metadata": {
-        "description": "FIXME: WhyResult"
+        "description": "SUGGESTION: An explanation of why two entities or records are (or are not) resolved together, from why* operations."
       },
       "properties": {
         "ENTITY_ID": {
           "metadata": {
             "description": "The ENTITY_ID is the Senzing-generated identifier for the discovered entity. It may change when new information is added.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
         "ENTITY_ID_2": {
           "metadata": {
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: ENTITY_ID"
           },
           "type": "int32"
         },
@@ -5194,7 +5238,7 @@
             "ref": "FocusRecord"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of source records for the first entity in this why result."
           }
         },
         "FOCUS_RECORDS_2": {
@@ -5202,20 +5246,22 @@
             "ref": "FocusRecord"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of source records for the second entity in this why result."
           }
         },
         "INTERNAL_ID": {
           "metadata": {
             "description": "Internal identifier for the record.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: INTERNAL_ID"
           },
           "type": "int32"
         },
         "INTERNAL_ID_2": {
           "metadata": {
             "description": "Internal identifier for the record.",
-            "goType": "int64"
+            "goType": "int64",
+            "label": "SUGGESTION: INTERNAL_ID"
           },
           "type": "int32"
         },
@@ -5226,7 +5272,7 @@
     },
     "Workload": {
       "metadata": {
-        "description": "FIXME: Workload"
+        "description": "SUGGESTION: Workload and performance statistics snapshot from SzEngine_getStats, covering processing, scoring, caching, and system resources."
       },
       "properties": {
         "apiVersion": {
@@ -5264,11 +5310,12 @@
         },
         "redoTriggers": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from redo trigger type codes to trigger counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         },
         "repairDiagnosis": {
@@ -5293,7 +5340,7 @@
     },
     "WorkloadCaches": {
       "metadata": {
-        "description": "FIXME: WorkloadCaches"
+        "description": "SUGGESTION: Library feature and result-feature-stat cache hit/miss/insert statistics from getStats."
       },
       "properties": {
         "libFeatCacheHit": {
@@ -5324,32 +5371,34 @@
     },
     "WorkloadCandidates": {
       "metadata": {
-        "description": "FIXME: WorkloadCandidates"
+        "description": "SUGGESTION: Candidate builder call counts by feature type, from getStats."
       },
       "properties": {
         "candidateBuilders": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to candidate builder call counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         },
         "suppressedCandidateBuilders": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to suppressed candidate builder call counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         }
       }
     },
     "WorkloadContention": {
       "metadata": {
-        "description": "FIXME: WorkloadContention"
+        "description": "SUGGESTION: Thread contention statistics for features, entities, and value latches, from getStats."
       },
       "properties": {
         "feature": {
@@ -5365,7 +5414,7 @@
     },
     "WorkloadCurrResources": {
       "metadata": {
-        "description": "FIXME: WorkloadCurrResources"
+        "description": "SUGGESTION: Current system resource snapshot (threads, memory) from getStats."
       },
       "properties": {
         "activeThreads": {
@@ -5384,7 +5433,7 @@
     },
     "WorkloadExpressedFeatures": {
       "metadata": {
-        "description": "FIXME: WorkloadExpressedFeatures"
+        "description": "SUGGESTION: Expressed feature function call counts and creation statistics by feature type, from getStats."
       },
       "properties": {
         "calls": {
@@ -5392,23 +5441,24 @@
             "ref": "WorkloadExpressedFeaturesCall"
           },
           "metadata": {
-            "description": "FIXME: A list of ..."
+            "description": "SUGGESTION: A list of WorkloadExpressedFeaturesCall items."
           }
         },
         "created": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to expressed feature creation counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         }
       }
     },
     "WorkloadExpressedFeaturesCall": {
       "metadata": {
-        "description": "FIXME: WorkloadExpressedFeaturesCall"
+        "description": "SUGGESTION: A single expressed feature function call entry with its call ID, function code, and call count."
       },
       "properties": {
         "EFCALL_ID": {
@@ -5424,7 +5474,7 @@
     },
     "WorkloadInitResources": {
       "metadata": {
-        "description": "FIXME: WorkloadInitResources"
+        "description": "SUGGESTION: Initial system resource snapshot captured at engine initialization, from getStats."
       },
       "properties": {
         "XXX_physicalCores": {
@@ -5443,7 +5493,7 @@
     },
     "WorkloadLicense": {
       "metadata": {
-        "description": "FIXME: WorkloadLicense..."
+        "description": "SUGGESTION: License status and type information included in the workload stats."
       },
       "properties": {
         "dsrLimit": {
@@ -5459,7 +5509,7 @@
     },
     "WorkloadLockWaits": {
       "metadata": {
-        "description": "FIXME: WorkloadLockWaits"
+        "description": "SUGGESTION: Lock wait statistics including refresh lock counts and durations, from getStats."
       },
       "properties": {
         "refreshLocks": {
@@ -5469,7 +5519,7 @@
     },
     "WorkloadProcessing": {
       "metadata": {
-        "description": "FIXME: WorkloadProcessing"
+        "description": "SUGGESTION: Record processing counts (adds, deletes, reevaluations, repairs) and detail breakdowns, from getStats."
       },
       "properties": {
         "addedRecords": {
@@ -5497,7 +5547,7 @@
     },
     "WorkloadProcessingAmbiguous": {
       "metadata": {
-        "description": "FIXME: WorkloadProcessingAmbiguous"
+        "description": "SUGGESTION: Counts of actual vs. cached ambiguity test results during processing, from getStats."
       },
       "properties": {
         "actualTest": {
@@ -5510,7 +5560,7 @@
     },
     "WorkloadProcessingDetails": {
       "metadata": {
-        "description": "FIXME: WorkloadProcessingDetails"
+        "description": "SUGGESTION: Per-record processing detail counts (candidates, hash comparisons, optimizations), from getStats."
       },
       "properties": {
         "addedRecords": {
@@ -5553,7 +5603,7 @@
     },
     "WorkloadRefreshLocks": {
       "metadata": {
-        "description": "FIXME: WorkloadRefreshLocks"
+        "description": "SUGGESTION: Statistics for refresh lock waits including count, max, and total duration in milliseconds."
       },
       "properties": {
         "count": {
@@ -5569,7 +5619,7 @@
     },
     "WorkloadRepairCorruptionFound": {
       "metadata": {
-        "description": "FIXME: WorkloadRepairCorruptionFound"
+        "description": "SUGGESTION: Details of a repository corruption instance found during a repair diagnosis operation."
       },
       "properties": {
         "details": {
@@ -5582,12 +5632,15 @@
     },
     "WorkloadRepairDiagnosis": {
       "metadata": {
-        "description": "FIXME: WorkloadRepairDiagnosis"
+        "description": "SUGGESTION: Repository repair diagnosis results including corruption instances found and type counts."
       },
       "properties": {
         "CORRUPTION_FOUND": {
           "elements": {
             "ref": "WorkloadRepairCorruptionFound"
+          },
+          "metadata": {
+            "description": "SUGGESTION: A list of repository corruption instances found during diagnosis."
           }
         },
         "types": {
@@ -5597,16 +5650,17 @@
     },
     "WorkloadReresolve": {
       "metadata": {
-        "description": "FIXME: WorkloadReresolve"
+        "description": "SUGGESTION: Reresolve trigger and suppression statistics by feature type, from getStats."
       },
       "properties": {
         "newFeatureFTypes": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to new feature reresolve trigger counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         },
         "suppressedCandidateBuildersForReresolve": {
@@ -5622,7 +5676,7 @@
     },
     "WorkloadReresolveTriggers": {
       "metadata": {
-        "description": "FIXME: WorkloadReresolveTriggers"
+        "description": "SUGGESTION: Counts of reresolve trigger types (new features, retry, skipped, movement), from getStats."
       },
       "properties": {
         "abortRetry": {
@@ -5644,34 +5698,37 @@
     },
     "WorkloadScoring": {
       "metadata": {
-        "description": "FIXME: WorkloadScoring"
+        "description": "SUGGESTION: Feature scoring cache hit/miss and scored-pair counts by feature type, from getStats."
       },
       "properties": {
         "cacheHit": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to scoring cache hit counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         },
         "cacheMiss": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to scoring cache miss counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         },
         "scoredPairs": {
           "metadata": {
-            "description": "FIXME: A map from ... to ...",
+            "description": "SUGGESTION: A map from feature type codes to scored pair counts.",
             "goType": "map[string]int64"
           },
           "values": {
-            "type": "int32"
+            "type": "int32",
+            "metadata": {}
           }
         },
         "suppressedDisclosedRelationshipDomainCount": {
@@ -5684,7 +5741,7 @@
     },
     "WorkloadSystemLoad": {
       "metadata": {
-        "description": "FIXME: WorkloadSystemLoad"
+        "description": "SUGGESTION: System CPU load percentages (user, system, idle, wait) from getStats."
       },
       "properties": {
         "cpuIdle": {
@@ -5703,7 +5760,7 @@
     },
     "WorkloadSystemResources": {
       "metadata": {
-        "description": "FIXME: WorkloadSystemResources"
+        "description": "SUGGESTION: System resource statistics including initial, current, and load snapshots, from getStats."
       },
       "properties": {
         "currResources": {
@@ -5719,7 +5776,7 @@
     },
     "WorkloadThreadState": {
       "metadata": {
-        "description": "FIXME: WorkloadThreadState"
+        "description": "SUGGESTION: Thread state counts (active, idle, loader, resolver, scorer, contention types), from getStats."
       },
       "properties": {
         "active": {
@@ -5756,7 +5813,7 @@
     },
     "WorkloadUnresolve": {
       "metadata": {
-        "description": "FIXME: WorkloadUnresolve"
+        "description": "SUGGESTION: Unresolve operation counts, analysis entries, and trigger breakdowns, from getStats."
       },
       "properties": {
         "abortedUnresolve": {
@@ -5765,6 +5822,9 @@
         "analysis": {
           "elements": {
             "ref": "WorkloadUnresolveAnalysis"
+          },
+          "metadata": {
+            "description": "SUGGESTION: A list of unresolve analysis entries with operation and iteration counts."
           }
         },
         "triggers": {
@@ -5777,7 +5837,7 @@
     },
     "WorkloadUnresolveAnalysis": {
       "metadata": {
-        "description": "FIXME: WorkloadUnresolveAnalysis"
+        "description": "SUGGESTION: A single unresolve analysis entry with its operation count and match iteration count."
       },
       "properties": {
         "count": {
@@ -5790,7 +5850,7 @@
     },
     "WorkloadUnresolveTriggers": {
       "metadata": {
-        "description": "FIXME: WorkloadUnresolveTriggers"
+        "description": "SUGGESTION: Counts of unresolve trigger types (ambiguous, extensive, normal, rel-link, update), from getStats."
       },
       "properties": {
         "ambiguousMultiResolve": {
@@ -5812,30 +5872,6 @@
           "type": "int32"
         }
       }
-    },
-    "xDisclosedRelationsForMatchInfo": {
-      "ref": "DisclosedRelationsForMatchInfo"
-    },
-    "xFeatureForAttributes": {
-      "ref": "FeatureForAttributes"
-    },
-    "xFeatureForGetEntity": {
-      "ref": "FeatureForGetEntity"
-    },
-    "xFeatureID": {
-      "ref": "FeatureID"
-    },
-    "xFeatureScoreInfo": {
-      "ref": "FeatureScoreInfo"
-    },
-    "xRecordForGetEntity": {
-      "ref": "RecordForGetEntity"
-    },
-    "xRecordSummary": {
-      "ref": "RecordSummary"
-    },
-    "xRelLink": {
-      "ref": "RelLink"
     }
   }
 }

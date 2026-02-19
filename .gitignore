@@ -194,3 +194,4 @@ main.js
 node_modules/
 
 testdata/th4_tests
+settings.local.json
