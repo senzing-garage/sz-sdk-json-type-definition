@@ -994,9 +994,6 @@
         },
         "FTYPE_ID": {
           "metadata": {
-            "metadata": {
-              "description": "FIXME:"
-            },
             "goType": "int64"
           },
           "type": "int32"
