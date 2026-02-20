@@ -38,14 +38,45 @@ CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
 OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_cord")
 
 CORD_URLS = [
-    "https://senzing.com/datasets/icij-lasvegas.jsonl",
+    "https://senzing.com/datasets/brightquery_companies-lasvegas.jsonl",
+    "https://senzing.com/datasets/enformion-lasvegas_A.jsonl",
+    "https://senzing.com/datasets/equifax-lasvegas_A.jsonl",
     "https://senzing.com/datasets/gleif-lasvegas.jsonl",
+    "https://senzing.com/datasets/gleif-london.jsonl",
+    "https://senzing.com/datasets/gleif-moscow.jsonl",
+    "https://senzing.com/datasets/globaldata-london_central_a.jsonl",
+    "https://senzing.com/datasets/icij-lasvegas.jsonl",
+    "https://senzing.com/datasets/icij-london.jsonl",
+    "https://senzing.com/datasets/icij-moscow.jsonl",
+    "https://senzing.com/datasets/nominodata_combined-lasvegas.jsonl",
+    "https://senzing.com/datasets/nominodata_risk-moscow.jsonl",
+    "https://senzing.com/datasets/npi-lasvegas.jsonl",
+    "https://senzing.com/datasets/ofac-london.jsonl",
+    "https://senzing.com/datasets/ofac-moscow.jsonl",
+    "https://senzing.com/datasets/open_ownership-lasvegas.jsonl",
+    "https://senzing.com/datasets/open_ownership-moscow.jsonl",
+    "https://senzing.com/datasets/open_sanctions-london.jsonl",
+    "https://senzing.com/datasets/open_sanctions-moscow.jsonl",
+    "https://senzing.com/datasets/ppp_loans_over_150k-lasvegas.jsonl",
+    "https://senzing.com/datasets/profound-lasvegas.jsonl",
     "https://senzing.com/datasets/us_labor_violations-lasvegas.jsonl",
 ]
 
 CORD_DATA_SOURCES = [
-    "ICIJ",
+    "BQ-COMPANY",
+    "ENFORMION",
+    "EQUIFAX",
     "GLEIF",
+    "GLOBALDATA",
+    "ICIJ",
+    "NOMINO-RISK",
+    "NOMINODATA",
+    "NPI-PROVIDERS",
+    "OFAC",
+    "OPEN-OWNERSHIP",
+    "OPEN-SANCTIONS",
+    "PPP_LOANS",
+    "PROFOUND",
     "US-LABOR-VIOLATIONS",
 ]
 

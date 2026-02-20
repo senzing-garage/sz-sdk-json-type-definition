@@ -9,7 +9,7 @@ Generate test data by fetching truth-set records from GitHub and calling
 every abstract method that returns str across all 5 Senzing SDK abstract
 classes, using flags=-1 (all flag bits on).
 
-Output: testdata/responses_new_truthsets/
+Output: testdata/responses_truthsets/
 """
 
 import json
@@ -35,7 +35,7 @@ BUILD_OUT_MAX_ENTITIES = 5
 PATH_VARIATION_COUNT = 5  # Iterations for start_*/end_* param pairs
 
 CURRENT_PATH = pathlib.Path(__file__).parent.resolve()
-OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_new_truthsets")
+OUTPUT_DIRECTORY = os.path.abspath(f"{CURRENT_PATH}/../testdata/responses_truthsets")
 
 TRUTHSET_URLS = [
     "https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/customers.jsonl",

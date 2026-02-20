@@ -175,7 +175,7 @@ test-java:
 .PHONY: test-python
 test-python:
 	$(activate-venv); \
-		./main.py; \
+		$(MAKEFILE_DIRECTORY)/main.py; \
 		pytest test.py --verbose
 
 
@@ -230,7 +230,7 @@ generate-code: \
 generate-csharp: clean-csharp
 	jtd-codegen \
 		--csharp-system-text-namespace Senzing.Typedef \
-		--csharp-system-text-out ./csharp/Senzing.Typedef \
+		--csharp-system-text-out $(MAKEFILE_DIRECTORY)/csharp/Senzing.Typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
 	@for file in $(MAKEFILE_DIRECTORY)/csharp/Senzing.Typedef/*; do \
@@ -241,7 +241,7 @@ generate-csharp: clean-csharp
 .PHONY: generate-go
 generate-go: clean-go
 	jtd-codegen \
-		--go-out ./go/typedef \
+		--go-out $(MAKEFILE_DIRECTORY)/go/typedef \
 		--go-package typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
@@ -250,7 +250,7 @@ generate-go: clean-go
 .PHONY: generate-java
 generate-java: clean-java
 	jtd-codegen \
-		--java-jackson-out ./java/src/main/java/com/senzing/typedef \
+		--java-jackson-out $(MAKEFILE_DIRECTORY)/java/src/main/java/com/senzing/typedef \
 		--java-jackson-package com.senzing.typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
@@ -259,7 +259,7 @@ generate-java: clean-java
 .PHONY: generate-python
 generate-python: clean-python
 	jtd-codegen \
-		--python-out ./python/senzing_typedef \
+		--python-out $(MAKEFILE_DIRECTORY)/python/senzing_typedef \
 		--root-name senzingsdk \
 		senzingsdk-RFC8927.json
 
@@ -269,7 +269,7 @@ generate-ruby: clean-ruby
 	jtd-codegen \
 		--root-name senzingsdk \
 		--ruby-module SenzingTypedef \
-		--ruby-out ./ruby \
+		--ruby-out $(MAKEFILE_DIRECTORY)/ruby \
 		--ruby-sig-module SenzingSig \
 		senzingsdk-RFC8927.json
 
@@ -278,7 +278,7 @@ generate-ruby: clean-ruby
 generate-rust: clean-rust
 	jtd-codegen \
 		--root-name senzingsdk \
-		--rust-out ./rust \
+		--rust-out $(MAKEFILE_DIRECTORY)/rust \
 		senzingsdk-RFC8927.json
 
 
@@ -286,7 +286,7 @@ generate-rust: clean-rust
 generate-typescript: clean-typescript
 	jtd-codegen \
 		--root-name senzingsdk \
-		--typescript-out ./typescript \
+		--typescript-out $(MAKEFILE_DIRECTORY)/typescript \
 		senzingsdk-RFC8927.json
 
 # -----------------------------------------------------------------------------
@@ -295,27 +295,27 @@ generate-typescript: clean-typescript
 
 .PHONY: go-typedef-generated-typedef-test-go
 go-typedef-generated-typedef-test-go:
-	@rm ./go/typedef/generated_typedef_test.go || true
+	@rm $(MAKEFILE_DIRECTORY)/go/typedef/generated_typedef_test.go || true
 	$(activate-venv); \
-		./bin/make_go_typedef_generated_typedef_test_go.py
+		$(MAKEFILE_DIRECTORY)/bin/make_go_typedef_generated_typedef_test_go.py
 
 
 .PHONY: testdata-responses
 testdata-responses: clean-testdata-responses
 	$(activate-venv); \
-		./bin/make_testdata_responses.py
+		$(MAKEFILE_DIRECTORY)/bin/make_testdata_responses.py
 
 
 .PHONY: testdata-responses-th4
 testdata-responses-th4: clean-testdata-responses-th4
 	$(activate-venv); \
-		./bin/make_testdata_responses_th4.py
+		$(MAKEFILE_DIRECTORY)/bin/make_testdata_responses_th4.py
 
 
 .PHONY: testdata-responses-truthsets
 testdata-responses-truthsets: clean-testdata-responses-truthsets
 	$(activate-venv); \
-		./bin/make_testdata_responses_truthsets.py
+		$(MAKEFILE_DIRECTORY)/bin/make_testdata_responses_truthsets.py
 
 
 .PHONY: generate-tests
@@ -331,37 +331,37 @@ generate-tests: \
 .PHONY: docs-json-key-descriptions
 docs-json-key-descriptions:
 	$(activate-venv); \
-		./bin/make_docs_json_key_descriptions.py
+		$(MAKEFILE_DIRECTORY)/bin/make_docs_json_key_descriptions.py
 
 
 .PHONY: docs-json-keys-used
 docs-json-keys-used:
 	$(activate-venv); \
-		./bin/make_docs_json_keys_used.py
+		$(MAKEFILE_DIRECTORY)/bin/make_docs_json_keys_used.py
 
 
 .PHONY: docs-labels-used
 docs-labels-used:
 	$(activate-venv); \
-		./bin/make_docs_labels_used.py
+		$(MAKEFILE_DIRECTORY)/bin/make_docs_labels_used.py
 
 
 .PHONY: docs-responses-html
 docs-responses-html: clean-docs-responses-html
 	$(activate-venv); \
-		./bin/make_docs_responses_html.py
+		$(MAKEFILE_DIRECTORY)/bin/make_docs_responses_html.py
 
 
 .PHONY: docs-responses-json
 docs-responses-json: clean-docs-responses-json
 	$(activate-venv); \
-		./bin/make_docs_responses_json.py
+		$(MAKEFILE_DIRECTORY)/bin/make_docs_responses_json.py
 
 
 .PHONY: unused-json-keys
 unused-json-keys:
 	$(activate-venv); \
-		./bin/unused_json_keys.py
+		$(MAKEFILE_DIRECTORY)/bin/unused_json_keys.py
 
 
 .PHONY: documentation
@@ -509,7 +509,7 @@ update-pkg-cache:
 .PHONY: analyze-RFC8927
 analyze-RFC8927:
 	$(activate-venv); \
-		./bin/analyze_rfc8927.py
+		$(MAKEFILE_DIRECTORY)/bin/analyze_rfc8927.py
 
 
 .PHONY: black
@@ -526,11 +526,11 @@ cspell:
 
 .PHONY: download-truthsets
 download-truthsets:
-	curl -X GET --output ./testdata/truthsets/customers.jsonl \
+	curl -X GET --output $(MAKEFILE_DIRECTORY)/testdata/truthsets/customers.jsonl \
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/customers.jsonl
-	curl -X GET --output ./testdata/truthsets/reference.jsonl \
+	curl -X GET --output $(MAKEFILE_DIRECTORY)/testdata/truthsets/reference.jsonl \
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/reference.jsonl
-	curl -X GET --output ./testdata/truthsets/watchlist.jsonl \
+	curl -X GET --output $(MAKEFILE_DIRECTORY)/testdata/truthsets/watchlist.jsonl \
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
 
 
@@ -542,13 +542,13 @@ fix-wsl:
 .PHONY: generate-testdata-from-cord
 generate-testdata-from-cord:
 	$(activate-venv); \
-		./bin/generate_testdata_from_cord.py
+		$(MAKEFILE_DIRECTORY)/bin/generate_testdata_from_cord.py
 
 
 .PHONY: generate-testdata-from-truthsets
 generate-testdata-from-truthsets:
 	$(activate-venv); \
-		./bin/generate_testdata_from_truthsets.py
+		$(MAKEFILE_DIRECTORY)/bin/generate_testdata_from_truthsets.py
 
 
 .PHONY: golangci-lint
@@ -559,12 +559,12 @@ golangci-lint:
 .PHONY: load-database-with-truthsets
 load-database-with-truthsets:
 	$(activate-venv); \
-		./bin/load_database_with_truthsets.py
+		$(MAKEFILE_DIRECTORY)/bin/load_database_with_truthsets.py
 
 
 .PHONY: pretty-print
 pretty-print:
-	@./bin/pretty_print.py
+	@$(MAKEFILE_DIRECTORY)/bin/pretty_print.py
 	diff -w senzingsdk-RFC8927-pretty.json senzingsdk-RFC8927.json
 
 
@@ -577,22 +577,22 @@ pylint:
 .PHONY: test-rfc8927-reconstitution
 test-rfc8927-reconstitution:
 	$(activate-venv); \
-		./bin/test_rfc8927_reconstitution.py
+		$(MAKEFILE_DIRECTORY)/bin/test_rfc8927_reconstitution.py
 
 
 .PHONY: test-using-senzing.py
 test-using-senzing:
 	$(activate-venv); \
-		./bin/test_using_senzing.py
+		$(MAKEFILE_DIRECTORY)/bin/test_using_senzing.py
 
 
 .PHONY: test-using-testdata-responses
 test-using-testdata-responses:
 	$(activate-venv); \
-		./bin/test_using_testdata_responses.py
+		$(MAKEFILE_DIRECTORY)/bin/test_using_testdata_responses.py
 
 
 .PHONY: verify-json-coverage
 verify-json-coverage:
 	$(activate-venv); \
-		./bin/verify_json_coverage.py
+		$(MAKEFILE_DIRECTORY)/bin/verify_json_coverage.py
