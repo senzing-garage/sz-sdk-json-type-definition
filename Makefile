@@ -541,8 +541,11 @@ fix-wsl:
 
 .PHONY: generate-testdata-from-cord
 generate-testdata-from-cord:
+	@rm -fr /tmp/sqlite || true
+	@mkdir  /tmp/sqlite
+	@cp $(HOME)/Downloads/G2C-with-CORD.db /tmp/sqlite/G2C.db
 	$(activate-venv); \
-		$(MAKEFILE_DIRECTORY)/bin/generate_testdata_from_cord.py
+		$(MAKEFILE_DIRECTORY)/bin/generate_testdata_from_cord.py extract-responses
 
 
 .PHONY: generate-testdata-from-truthsets

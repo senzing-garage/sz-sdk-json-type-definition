@@ -12,10 +12,12 @@ all 5 Senzing SDK abstract classes, using flags=-1 (all flag bits on).
 Output: testdata/responses_cord/
 """
 
+import argparse
 import json
 import logging
 import os
 import pathlib
+import sys
 import urllib.request
 
 from senzing import SzAbstractFactory, SzError
@@ -767,12 +769,8 @@ def collect_szproduct_responses(sz_abstract_factory: SzAbstractFactory):
 # -----------------------------------------------------------------------------
 
 
-if __name__ == "__main__":
-
-    logger.info("Begin %s", os.path.basename(__file__))
-
-    # Ensure output directory exists
-    os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
+def do_load_database():
+    """Download CORD data and populate Senzing (Phase 1 only)."""
 
     # Fetch CORD records from senzing.com
     logger.info("Fetching CORD records from senzing.com...")
@@ -790,10 +788,43 @@ if __name__ == "__main__":
     logger.info("Phase 1: Adding records...")
     add_records(the_factory, all_cord_records)
 
-    # Collect entity IDs
+
+def do_extract_responses():
+    """Query Senzing and extract responses (Phase 2 through Phase 9)."""
+
+    # Create SzAbstractFactory
+    the_factory = create_sz_abstract_factory()
+
+    # Ensure output directory exists
+    os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
+
+    # Collect entity IDs from existing records
     logger.info("Collecting entity IDs...")
-    LOADED_ENTITY_IDS = get_entity_ids(the_factory)
+    sz_engine = the_factory.create_engine()
+    for data_source in CORD_DATA_SOURCES:
+        try:
+            export_handle = sz_engine.export_json_entity_report(ALL_FLAGS)
+            while True:
+                row = sz_engine.fetch_next(export_handle)
+                if not row:
+                    break
+                row_dict = json.loads(row)
+                entity_id = row_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
+                if entity_id and entity_id not in LOADED_ENTITY_IDS:
+                    LOADED_ENTITY_IDS.append(entity_id)
+                for record in row_dict.get("RESOLVED_ENTITY", {}).get("RECORDS", []):
+                    record_key = {
+                        "data_source": record.get("DATA_SOURCE", ""),
+                        "record_id": record.get("RECORD_ID", ""),
+                        "record_definition": json.dumps(record),
+                    }
+                    LOADED_RECORD_KEYS.append(record_key)
+            sz_engine.close_export_report(export_handle)
+        except SzError as err:
+            logger.warning("Error exporting for data source %s: %s", data_source, err)
+            break
     logger.info("Found %d unique entity IDs", len(LOADED_ENTITY_IDS))
+    logger.info("Found %d records", len(LOADED_RECORD_KEYS))
 
     # Phase 2: SzConfig responses
     logger.info("Phase 2: Collecting SzConfig responses...")
@@ -831,4 +862,40 @@ if __name__ == "__main__":
     logger.info("Normalizing output files...")
     normalize_files(OUTPUT_DIRECTORY)
 
-    logger.info("End   %s", os.path.basename(__file__))
+
+def parse_args():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Generate test data from CORD (Collections Of Relatable Data).",
+    )
+    subparsers = parser.add_subparsers(dest="command")
+
+    subparsers.add_parser(
+        "load-database",
+        help="Download CORD data and populate Senzing (Phase 1 only).",
+    )
+
+    subparsers.add_parser(
+        "extract-responses",
+        help="Query Senzing and extract responses (Phase 2-9), then normalize output files.",
+    )
+
+    if len(sys.argv) < 2:
+        parser.print_help()
+        sys.exit(1)
+
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+
+    args = parse_args()
+
+    logger.info("Begin %s %s", os.path.basename(__file__), args.command)
+
+    if args.command == "load-database":
+        do_load_database()
+    elif args.command == "extract-responses":
+        do_extract_responses()
+
+    logger.info("End   %s %s", os.path.basename(__file__), args.command)
