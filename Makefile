@@ -89,13 +89,13 @@ dependencies: venv
 		python3 -m pip install -e .
 
 # -----------------------------------------------------------------------------
-# Setup
+# Create a version
 # -----------------------------------------------------------------------------
 
 .PHONY: version
 version: \
 	clean \
-	setup \
+	setup-for-version \
 	documentation
 
 # -----------------------------------------------------------------------------
@@ -103,7 +103,11 @@ version: \
 # -----------------------------------------------------------------------------
 
 .PHONY: setup
-setup: \
+setup: setup-osarch-specific
+
+
+.PHONY: setup-for-version
+setup-for-version: \
 	setup-osarch-specific \
 	load-database-with-truthsets \
 	generate
@@ -434,6 +438,11 @@ clean-rust:
 	@rm $(MAKEFILE_DIRECTORY)/rust/* || true
 
 
+.PHONY: clean-testdata-responses-cord
+clean-testdata-responses-cord:
+	@find $(MAKEFILE_DIRECTORY)/testdata/responses_cord/ -type f -name "*.jsonl" -delete
+
+
 .PHONY: clean-testdata-responses
 clean-testdata-responses:
 	@find $(MAKEFILE_DIRECTORY)/testdata/responses/ -type f -name "*.jsonl" -delete
@@ -457,19 +466,6 @@ clean-typescript:
 .PHONY: clean-generated
 clean-generated: clean-csharp clean-go clean-java clean-python clean-ruby clean-rust clean-typescript clean-docs
 
-
-.PHONY: restore
-restore:
-	git restore csharp/Senzing.Typedef/
-	git restore go/typedef/
-	git restore java/src/main/java/com/senzing/typedef/
-	git restore python/senzing_typedef/
-	git restore ruby/
-	git restore rust/
-	git restore testdata/responses_truthsets/*.jsonl
-	git restore testdata/responses/*.jsonl
-	git restore typescript/
-
 # -----------------------------------------------------------------------------
 # Utility targets
 # -----------------------------------------------------------------------------
@@ -488,6 +484,19 @@ print-make-variables:
 		$(origin $V)),$(info $V=$($V) ($(value $V)))))
 
 
+.PHONY: restore
+restore:
+	git restore csharp/Senzing.Typedef/
+	git restore go/typedef/
+	git restore java/src/main/java/com/senzing/typedef/
+	git restore python/senzing_typedef/
+	git restore ruby/
+	git restore rust/
+	git restore testdata/responses_truthsets/*.jsonl
+	git restore testdata/responses/*.jsonl
+	git restore typescript/
+
+
 .PHONY: update-pkg-cache
 update-pkg-cache:
 	@GOPROXY=https://proxy.golang.org GO111MODULE=on \
@@ -501,12 +510,6 @@ update-pkg-cache:
 analyze-RFC8927:
 	$(activate-venv); \
 		./bin/analyze_rfc8927.py
-
-
-.PHONY: verify-json-coverage
-verify-json-coverage:
-	$(activate-venv); \
-		./bin/verify_json_coverage.py
 
 
 .PHONY: black
@@ -531,6 +534,23 @@ download-truthsets:
 		https://raw.githubusercontent.com/Senzing/truth-sets/refs/heads/main/truthsets/demo/watchlist.jsonl
 
 
+.PHONY: fix-wsl
+fix-wsl:
+	@wsl --fix ./...
+
+
+.PHONY: generate-testdata-from-cord
+generate-testdata-from-cord:
+	$(activate-venv); \
+		./bin/generate_testdata_from_cord.py
+
+
+.PHONY: generate-testdata-from-truthsets
+generate-testdata-from-truthsets:
+	$(activate-venv); \
+		./bin/generate_testdata_from_truthsets.py
+
+
 .PHONY: golangci-lint
 golangci-lint:
 	@${GOBIN}/golangci-lint run --config=.github/linters/.golangci.yaml
@@ -540,11 +560,6 @@ golangci-lint:
 load-database-with-truthsets:
 	$(activate-venv); \
 		./bin/load_database_with_truthsets.py
-
-
-.PHONY: fix-wsl
-fix-wsl:
-	@wsl --fix ./...
 
 
 .PHONY: pretty-print
@@ -565,7 +580,7 @@ test-rfc8927-reconstitution:
 		./bin/test_rfc8927_reconstitution.py
 
 
-.PHONY: test_using_senzing.py
+.PHONY: test-using-senzing.py
 test-using-senzing:
 	$(activate-venv); \
 		./bin/test_using_senzing.py
@@ -575,3 +590,9 @@ test-using-senzing:
 test-using-testdata-responses:
 	$(activate-venv); \
 		./bin/test_using_testdata_responses.py
+
+
+.PHONY: verify-json-coverage
+verify-json-coverage:
+	$(activate-venv); \
+		./bin/verify_json_coverage.py

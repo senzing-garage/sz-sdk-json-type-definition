@@ -178,6 +178,16 @@ These instructions create the contents of the `testdata/responses_th4` directory
    deactivate
    ```
 
+## Generate test data
+
+1. Generate testdata from truth-sets
+
+   ```console
+   cd ${GIT_REPOSITORY_DIR}
+   make clean setup generate-testdata-from-truthsets
+
+   ```
+
 ## References
 
 1. [JSON TypeDef]
