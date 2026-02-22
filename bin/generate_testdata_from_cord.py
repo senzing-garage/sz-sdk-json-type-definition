@@ -800,29 +800,7 @@ def do_extract_responses():
 
     # Collect entity IDs from existing records
     logger.info("Collecting entity IDs...")
-    sz_engine = the_factory.create_engine()
-    for data_source in CORD_DATA_SOURCES:
-        try:
-            export_handle = sz_engine.export_json_entity_report(ALL_FLAGS)
-            while True:
-                row = sz_engine.fetch_next(export_handle)
-                if not row:
-                    break
-                row_dict = json.loads(row)
-                entity_id = row_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
-                if entity_id and entity_id not in LOADED_ENTITY_IDS:
-                    LOADED_ENTITY_IDS.append(entity_id)
-                for record in row_dict.get("RESOLVED_ENTITY", {}).get("RECORDS", []):
-                    record_key = {
-                        "data_source": record.get("DATA_SOURCE", ""),
-                        "record_id": record.get("RECORD_ID", ""),
-                        "record_definition": json.dumps(record),
-                    }
-                    LOADED_RECORD_KEYS.append(record_key)
-            sz_engine.close_export_report(export_handle)
-        except SzError as err:
-            logger.warning("Error exporting for data source %s: %s", data_source, err)
-            break
+    LOADED_ENTITY_IDS = get_entity_ids(the_factory)
     logger.info("Found %d unique entity IDs", len(LOADED_ENTITY_IDS))
     logger.info("Found %d records", len(LOADED_RECORD_KEYS))
 
