@@ -194,4 +194,5 @@ main.js
 node_modules/
 
 testdata/th4_tests
+testdata/responses_cord_raw/
 settings.local.json

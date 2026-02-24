@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     # Process data.
 
-    DIRECTORIES = ["responses_static", "responses_truthsets", "responses_th4"]
+    DIRECTORIES = ["responses_static", "responses_truthsets", "responses_th4", "responses_cord"]
     for DIRECTORY in DIRECTORIES:
         append_files(os.path.join(TESTDATA_DIRECTORY, DIRECTORY), OUTPUT_DIRECTORY)
 

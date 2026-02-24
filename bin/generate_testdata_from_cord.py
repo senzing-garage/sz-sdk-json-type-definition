@@ -13,6 +13,7 @@ Output: testdata/responses_cord/
 """
 
 import argparse
+import contextlib
 import json
 import logging
 import os
@@ -20,7 +21,7 @@ import pathlib
 import sys
 import urllib.request
 
-from senzing import SzAbstractFactory, SzError
+from senzing import SzAbstractFactory
 from senzing_core import SzAbstractFactoryCore
 
 # Logging
@@ -147,7 +148,7 @@ def create_sz_abstract_factory() -> SzAbstractFactory:
 
     try:
         sz_abstract_factory = SzAbstractFactoryCore(instance_name, settings)
-    except SzError as err:
+    except Exception as err:
         logger.error("%s", err)
 
     return sz_abstract_factory
@@ -174,34 +175,64 @@ def register_datasources(sz_abstract_factory: SzAbstractFactory):
 # -----------------------------------------------------------------------------
 
 
-def collect(responses_dict, title, response):
-    """Add a non-empty response string to the appropriate list, avoiding duplicates."""
-    if not response:
-        return
-    bucket = responses_dict.setdefault(title, [])
-    if response not in bucket:
-        bucket.append(response)
+def progress(iterable, label, total=None):
+    """Yield items from iterable with a visual progress bar on stderr."""
+    if total is None:
+        total = len(iterable)
+    for i, item in enumerate(iterable, 1):
+        filled = (i * 50) // total if total else 0
+        bar = "\u2588" * filled + "\u2591" * (50 - filled)
+        pct = (i * 100) // total if total else 0
+        print(f"\r  {label}: |{bar}| {i}/{total} ({pct}%)", end="", flush=True, file=sys.stderr)
+        yield item
+    if total > 0:
+        print(file=sys.stderr)
 
 
-def output_file(title, responses):
-    """Write list of JSON strings to {OUTPUT_DIRECTORY}/{title}.jsonl.
+@contextlib.contextmanager
+def safe_iteration(label):
+    """Context manager that catches and logs any exception, allowing loop continuation.
 
-    Always includes an empty-JSON sentinel line ("{}") so every file has
-    at least one entry and test scaffolding can safely parse the file.
+    Only KeyboardInterrupt and GeneratorExit are re-raised so that
+    Ctrl-C and generator cleanup still work.  Everything else —
+    including BaseException subclasses the Senzing C library may
+    raise — is logged and suppressed so the enclosing loop can
+    advance to the next iteration.
+    """
+    try:
+        yield
+    except (KeyboardInterrupt, GeneratorExit):
+        raise
+    except BaseException as err:
+        logger.warning("%s: %s", label, err)
+
+
+@contextlib.contextmanager
+def streaming_output(title):
+    """Context manager that yields a write function for streaming lines to a file.
+
+    Each call to the returned function writes one JSON line immediately,
+    avoiding the need to accumulate responses in memory.  Deduplication
+    is handled later by normalize_files().
     """
     os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
     filepath = os.path.join(OUTPUT_DIRECTORY, f"{title}.jsonl")
-    lines = list(responses)
-    if "{}" not in lines:
-        lines.insert(0, "{}")
-    with open(filepath, "w", encoding="utf-8") as file:
-        for line in lines:
-            file.write(f"{line}\n")
-    logger.info("Wrote %d lines to %s", len(lines), filepath)
+    with open(filepath, "w", encoding="utf-8") as fh:
+
+        def write_line(line):
+            if line:
+                fh.write(f"{line}\n")
+
+        yield write_line
+    logger.info("Wrote %s", filepath)
 
 
 def remove_duplicate_lines(input_filepath, output_filepath=None):
-    """Remove duplicate JSON lines from a file, sort remaining lines."""
+    """Remove duplicate JSON lines from a file, sort remaining lines.
+
+    Always ensures an empty-JSON sentinel line ("{}") so every file has
+    at least one entry and test scaffolding can safely parse the file.
+    """
     unique_lines = set()
     try:
         with open(input_filepath, "r", encoding="utf-8") as infile:
@@ -213,6 +244,10 @@ def remove_duplicate_lines(input_filepath, output_filepath=None):
     except FileNotFoundError:
         logger.warning("Error: Input file '%s' not found.", input_filepath)
         return
+
+    # Ensure the empty-JSON sentinel is present
+    if "{}" not in unique_lines:
+        unique_lines.add("{}")
 
     if output_filepath is None:
         output_filepath = input_filepath
@@ -238,15 +273,13 @@ def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
     """Get unique entity IDs for all loaded records."""
     result = []
     sz_engine = sz_abstract_factory.create_engine()
-    for record in LOADED_RECORD_KEYS:
-        try:
+    for record in progress(LOADED_RECORD_KEYS, "get_entity_ids"):
+        with safe_iteration("get_entity_ids"):
             response = sz_engine.get_entity_by_record_id(record.get("data_source", ""), record.get("record_id", ""))
             response_dict = json.loads(response)
             entity_id = response_dict.get("RESOLVED_ENTITY", {}).get("ENTITY_ID", 0)
             if entity_id and entity_id not in result:
                 result.append(entity_id)
-        except SzError:
-            pass
     return result
 
 
@@ -258,29 +291,32 @@ def get_entity_ids(sz_abstract_factory: SzAbstractFactory):
 def add_records(sz_abstract_factory: SzAbstractFactory, cord_records):
     """Add CORD records to Senzing, collect AddRecord responses."""
     sz_engine = sz_abstract_factory.create_engine()
-    title = "SzEngineAddRecordResponse"
-    responses = []
+    total = len(cord_records)
 
-    for line_str, line_dict in cord_records:
-        data_source = line_dict.get("DATA_SOURCE")
-        record_id = line_dict.get("RECORD_ID")
+    with streaming_output("SzEngineAddRecordResponse") as write_line:
+        for i, (line_str, line_dict) in enumerate(cord_records, 1):
+            data_source = line_dict.get("DATA_SOURCE")
+            record_id = line_dict.get("RECORD_ID")
 
-        LOADED_RECORD_KEYS.append(
-            {
-                "data_source": data_source,
-                "record_id": record_id,
-                "record_definition": line_str,
-            }
-        )
+            LOADED_RECORD_KEYS.append(
+                {
+                    "data_source": data_source,
+                    "record_id": record_id,
+                    "record_definition": line_str,
+                }
+            )
 
-        try:
-            response = sz_engine.add_record(data_source, record_id, line_str, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("add_record failed for %s/%s: %s", data_source, record_id, err)
+            with safe_iteration(f"add_record {data_source}/{record_id}"):
+                response = sz_engine.add_record(data_source, record_id, line_str, ALL_FLAGS)
+                write_line(response)
 
-    output_file(title, responses)
+            filled = (i * 50) // total if total else 0
+            bar = "\u2588" * filled + "\u2591" * (50 - filled)
+            pct = (i * 100) // total if total else 0
+            print(f"\r  add_records: |{bar}| {i}/{total} ({pct}%)", end="", flush=True, file=sys.stderr)
+
+    if total > 0:
+        print(file=sys.stderr)
 
 
 # -----------------------------------------------------------------------------
@@ -295,32 +331,26 @@ def collect_szconfig_responses(sz_abstract_factory: SzAbstractFactory):
     sz_config = sz_config_manager.create_config_from_config_id(current_config_id)
 
     # export
-    response = sz_config.export()
-    output_file("SzConfigExportResponse", [response] if response else [])
+    with streaming_output("SzConfigExportResponse") as write_line:
+        response = sz_config.export()
+        write_line(response)
 
     # get_data_source_registry
-    response = sz_config.get_data_source_registry()
-    output_file("SzConfigGetDataSourceRegistryResponse", [response] if response else [])
+    with streaming_output("SzConfigGetDataSourceRegistryResponse") as write_line:
+        response = sz_config.get_data_source_registry()
+        write_line(response)
 
     # register_data_source (use a temp DS that won't be persisted)
-    reg_responses = []
-    try:
-        response = sz_config.register_data_source("GENERATE_TEST_DS")
-        if response:
-            reg_responses.append(response)
-    except SzError as err:
-        logger.warning("register_data_source failed: %s", err)
-    output_file("SzConfigRegisterDataSourceResponse", reg_responses)
+    with streaming_output("SzConfigRegisterDataSourceResponse") as write_line:
+        with safe_iteration("register_data_source"):
+            response = sz_config.register_data_source("GENERATE_TEST_DS")
+            write_line(response)
 
     # unregister_data_source
-    unreg_responses = []
-    try:
-        response = sz_config.unregister_data_source("GENERATE_TEST_DS")
-        if response:
-            unreg_responses.append(response)
-    except SzError as err:
-        logger.warning("unregister_data_source failed: %s", err)
-    output_file("SzConfigUnregisterDataSourceResponse", unreg_responses)
+    with streaming_output("SzConfigUnregisterDataSourceResponse") as write_line:
+        with safe_iteration("unregister_data_source"):
+            response = sz_config.unregister_data_source("GENERATE_TEST_DS")
+            write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -333,8 +363,9 @@ def collect_szconfigmanager_responses(sz_abstract_factory: SzAbstractFactory):
     sz_config_manager = sz_abstract_factory.create_configmanager()
 
     # get_config_registry
-    response = sz_config_manager.get_config_registry()
-    output_file("SzConfigManagerGetConfigRegistryResponse", [response] if response else [])
+    with streaming_output("SzConfigManagerGetConfigRegistryResponse") as write_line:
+        response = sz_config_manager.get_config_registry()
+        write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -348,17 +379,19 @@ def collect_szdiagnostic_responses(sz_abstract_factory: SzAbstractFactory):
     sz_engine = sz_abstract_factory.create_engine()
 
     # check_repository_performance
-    response = sz_diagnostic.check_repository_performance(2)
-    output_file("SzDiagnosticCheckRepositoryPerformanceResponse", [response] if response else [])
+    with streaming_output("SzDiagnosticCheckRepositoryPerformanceResponse") as write_line:
+        response = sz_diagnostic.check_repository_performance(2)
+        write_line(response)
 
     # get_repository_info
-    response = sz_diagnostic.get_repository_info()
-    output_file("SzDiagnosticGetRepositoryInfoResponse", [response] if response else [])
+    with streaming_output("SzDiagnosticGetRepositoryInfoResponse") as write_line:
+        response = sz_diagnostic.get_repository_info()
+        write_line(response)
 
     # get_feature — extract feature IDs from entity responses
     feature_ids = []
-    for entity_id in LOADED_ENTITY_IDS:
-        try:
+    for entity_id in progress(LOADED_ENTITY_IDS, "get_feature (scan entity features)"):
+        with safe_iteration("get_feature (scan entity features)"):
             response = sz_engine.get_entity_by_entity_id(entity_id, ALL_FLAGS)
             response_dict = json.loads(response)
             features = response_dict.get("RESOLVED_ENTITY", {}).get("FEATURES", {})
@@ -367,18 +400,12 @@ def collect_szdiagnostic_responses(sz_abstract_factory: SzAbstractFactory):
                     fid = feature_value.get("LIB_FEAT_ID")
                     if fid and fid not in feature_ids:
                         feature_ids.append(fid)
-        except SzError:
-            pass
 
-    feat_responses = []
-    for fid in feature_ids:
-        try:
-            response = sz_diagnostic.get_feature(fid)
-            if response and response not in feat_responses:
-                feat_responses.append(response)
-        except SzError as err:
-            logger.warning("get_feature(%s) failed: %s", fid, err)
-    output_file("SzDiagnosticGetFeatureResponse", feat_responses)
+    with streaming_output("SzDiagnosticGetFeatureResponse") as write_line:
+        for fid in progress(feature_ids, "get_feature"):
+            with safe_iteration("get_feature"):
+                response = sz_diagnostic.get_feature(fid)
+                write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -393,264 +420,198 @@ def collect_szengine_responses(sz_abstract_factory: SzAbstractFactory):
     n_records = len(LOADED_RECORD_KEYS)
 
     # --- find_interesting_entities_by_entity_id ---
-    responses = []
-    for entity_id in LOADED_ENTITY_IDS:
-        try:
-            response = sz_engine.find_interesting_entities_by_entity_id(entity_id, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("find_interesting_entities_by_entity_id(%s): %s", entity_id, err)
-    output_file("SzEngineFindInterestingEntitiesByEntityIdResponse", responses)
+    with streaming_output("SzEngineFindInterestingEntitiesByEntityIdResponse") as write_line:
+        for entity_id in progress(LOADED_ENTITY_IDS, "find_interesting_entities_by_entity_id"):
+            with safe_iteration("find_interesting_entities_by_entity_id"):
+                response = sz_engine.find_interesting_entities_by_entity_id(entity_id, ALL_FLAGS)
+                write_line(response)
 
     # --- find_interesting_entities_by_record_id ---
-    responses = []
-    for record in LOADED_RECORD_KEYS:
-        try:
-            response = sz_engine.find_interesting_entities_by_record_id(
-                record["data_source"], record["record_id"], ALL_FLAGS
-            )
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("find_interesting_entities_by_record_id: %s", err)
-    output_file("SzEngineFindInterestingEntitiesByRecordIdResponse", responses)
+    with streaming_output("SzEngineFindInterestingEntitiesByRecordIdResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "find_interesting_entities_by_record_id"):
+            with safe_iteration("find_interesting_entities_by_record_id"):
+                response = sz_engine.find_interesting_entities_by_record_id(
+                    record["data_source"], record["record_id"], ALL_FLAGS
+                )
+                write_line(response)
 
     # --- find_network_by_entity_id ---
-    responses = []
-    for i, entity_id in enumerate(LOADED_ENTITY_IDS):
-        entity_ids = [LOADED_ENTITY_IDS[(i + j) % n_entities] for j in range(min(5, n_entities))]
-        try:
-            response = sz_engine.find_network_by_entity_id(
-                entity_ids, MAX_DEGREES, BUILD_OUT_DEGREES, BUILD_OUT_MAX_ENTITIES, ALL_FLAGS
-            )
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("find_network_by_entity_id: %s", err)
-    output_file("SzEngineFindNetworkByEntityIdResponse", responses)
+    with streaming_output("SzEngineFindNetworkByEntityIdResponse") as write_line:
+        for i, entity_id in enumerate(progress(LOADED_ENTITY_IDS, "find_network_by_entity_id")):
+            with safe_iteration("find_network_by_entity_id"):
+                entity_ids = [LOADED_ENTITY_IDS[(i + j) % n_entities] for j in range(min(5, n_entities))]
+                response = sz_engine.find_network_by_entity_id(
+                    entity_ids, MAX_DEGREES, BUILD_OUT_DEGREES, BUILD_OUT_MAX_ENTITIES, ALL_FLAGS
+                )
+                write_line(response)
 
     # --- find_network_by_record_id ---
-    responses = []
-    for i, record in enumerate(LOADED_RECORD_KEYS):
-        record_keys = [
-            (
-                LOADED_RECORD_KEYS[(i + j) % n_records]["data_source"],
-                LOADED_RECORD_KEYS[(i + j) % n_records]["record_id"],
-            )
-            for j in range(min(5, n_records))
-        ]
-        try:
-            response = sz_engine.find_network_by_record_id(
-                record_keys, MAX_DEGREES, BUILD_OUT_DEGREES, BUILD_OUT_MAX_ENTITIES, ALL_FLAGS
-            )
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("find_network_by_record_id: %s", err)
-    output_file("SzEngineFindNetworkByRecordIdResponse", responses)
+    with streaming_output("SzEngineFindNetworkByRecordIdResponse") as write_line:
+        for i, record in enumerate(progress(LOADED_RECORD_KEYS, "find_network_by_record_id")):
+            with safe_iteration("find_network_by_record_id"):
+                record_keys = [
+                    (
+                        LOADED_RECORD_KEYS[(i + j) % n_records]["data_source"],
+                        LOADED_RECORD_KEYS[(i + j) % n_records]["record_id"],
+                    )
+                    for j in range(min(5, n_records))
+                ]
+                response = sz_engine.find_network_by_record_id(
+                    record_keys, MAX_DEGREES, BUILD_OUT_DEGREES, BUILD_OUT_MAX_ENTITIES, ALL_FLAGS
+                )
+                write_line(response)
 
     # --- find_path_by_entity_id ---
-    responses = []
-    for i in range(PATH_VARIATION_COUNT):
-        if n_entities < 2:
-            break
-        start_id = LOADED_ENTITY_IDS[i % n_entities]
-        end_id = LOADED_ENTITY_IDS[(i + 1) % n_entities]
-        try:
-            response = sz_engine.find_path_by_entity_id(start_id, end_id, MAX_DEGREES, None, None, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("find_path_by_entity_id: %s", err)
-    output_file("SzEngineFindPathByEntityIdResponse", responses)
+    with streaming_output("SzEngineFindPathByEntityIdResponse") as write_line:
+        for i in range(PATH_VARIATION_COUNT):
+            if n_entities < 2:
+                break
+            with safe_iteration("find_path_by_entity_id"):
+                start_id = LOADED_ENTITY_IDS[i % n_entities]
+                end_id = LOADED_ENTITY_IDS[(i + 1) % n_entities]
+                response = sz_engine.find_path_by_entity_id(start_id, end_id, MAX_DEGREES, None, None, ALL_FLAGS)
+                write_line(response)
 
     # --- find_path_by_record_id ---
-    responses = []
-    for i in range(PATH_VARIATION_COUNT):
-        if n_records < 2:
-            break
-        start = LOADED_RECORD_KEYS[i % n_records]
-        end = LOADED_RECORD_KEYS[(i + 1) % n_records]
-        try:
-            response = sz_engine.find_path_by_record_id(
-                start["data_source"],
-                start["record_id"],
-                end["data_source"],
-                end["record_id"],
-                MAX_DEGREES,
-                None,
-                None,
-                ALL_FLAGS,
-            )
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("find_path_by_record_id: %s", err)
-    output_file("SzEngineFindPathByRecordIdResponse", responses)
+    with streaming_output("SzEngineFindPathByRecordIdResponse") as write_line:
+        for i in range(PATH_VARIATION_COUNT):
+            if n_records < 2:
+                break
+            with safe_iteration("find_path_by_record_id"):
+                start = LOADED_RECORD_KEYS[i % n_records]
+                end = LOADED_RECORD_KEYS[(i + 1) % n_records]
+                response = sz_engine.find_path_by_record_id(
+                    start["data_source"],
+                    start["record_id"],
+                    end["data_source"],
+                    end["record_id"],
+                    MAX_DEGREES,
+                    None,
+                    None,
+                    ALL_FLAGS,
+                )
+                write_line(response)
 
     # --- get_entity_by_entity_id ---
-    responses = []
-    for entity_id in LOADED_ENTITY_IDS:
-        try:
-            response = sz_engine.get_entity_by_entity_id(entity_id, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("get_entity_by_entity_id(%s): %s", entity_id, err)
-    output_file("SzEngineGetEntityByEntityIdResponse", responses)
+    with streaming_output("SzEngineGetEntityByEntityIdResponse") as write_line:
+        for entity_id in progress(LOADED_ENTITY_IDS, "get_entity_by_entity_id"):
+            with safe_iteration("get_entity_by_entity_id"):
+                response = sz_engine.get_entity_by_entity_id(entity_id, ALL_FLAGS)
+                write_line(response)
 
     # --- get_entity_by_record_id ---
-    responses = []
-    for record in LOADED_RECORD_KEYS:
-        try:
-            response = sz_engine.get_entity_by_record_id(record["data_source"], record["record_id"], ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("get_entity_by_record_id: %s", err)
-    output_file("SzEngineGetEntityByRecordIdResponse", responses)
+    with streaming_output("SzEngineGetEntityByRecordIdResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "get_entity_by_record_id"):
+            with safe_iteration("get_entity_by_record_id"):
+                response = sz_engine.get_entity_by_record_id(record["data_source"], record["record_id"], ALL_FLAGS)
+                write_line(response)
 
     # --- get_record ---
-    responses = []
-    for record in LOADED_RECORD_KEYS:
-        try:
-            response = sz_engine.get_record(record["data_source"], record["record_id"], ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("get_record: %s", err)
-    output_file("SzEngineGetRecordResponse", responses)
+    with streaming_output("SzEngineGetRecordResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "get_record"):
+            with safe_iteration("get_record"):
+                response = sz_engine.get_record(record["data_source"], record["record_id"], ALL_FLAGS)
+                write_line(response)
 
     # --- get_record_preview ---
-    responses = []
-    for record in LOADED_RECORD_KEYS:
-        record_definition = record.get("record_definition", "")
-        try:
-            response = sz_engine.get_record_preview(record_definition, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("get_record_preview: %s", err)
-    output_file("SzEngineGetRecordPreviewResponse", responses)
+    with streaming_output("SzEngineGetRecordPreviewResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "get_record_preview"):
+            with safe_iteration("get_record_preview"):
+                record_definition = record.get("record_definition", "")
+                response = sz_engine.get_record_preview(record_definition, ALL_FLAGS)
+                write_line(response)
 
     # --- get_stats ---
-    try:
-        response = sz_engine.get_stats()
-        output_file("SzEngineGetStatsResponse", [response] if response else [])
-    except SzError as err:
-        logger.warning("get_stats: %s", err)
-        output_file("SzEngineGetStatsResponse", [])
+    with streaming_output("SzEngineGetStatsResponse") as write_line:
+        with safe_iteration("get_stats"):
+            response = sz_engine.get_stats()
+            write_line(response)
 
     # --- get_virtual_entity_by_record_id ---
-    responses = []
-    for i, record in enumerate(LOADED_RECORD_KEYS):
-        record_keys = [
-            (
-                LOADED_RECORD_KEYS[(i + j) % n_records]["data_source"],
-                LOADED_RECORD_KEYS[(i + j) % n_records]["record_id"],
-            )
-            for j in range(min(5, n_records))
-        ]
-        try:
-            response = sz_engine.get_virtual_entity_by_record_id(record_keys, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("get_virtual_entity_by_record_id: %s", err)
-    output_file("SzEngineGetVirtualEntityByRecordIdResponse", responses)
+    with streaming_output("SzEngineGetVirtualEntityByRecordIdResponse") as write_line:
+        for i, record in enumerate(progress(LOADED_RECORD_KEYS, "get_virtual_entity_by_record_id")):
+            with safe_iteration("get_virtual_entity_by_record_id"):
+                record_keys = [
+                    (
+                        LOADED_RECORD_KEYS[(i + j) % n_records]["data_source"],
+                        LOADED_RECORD_KEYS[(i + j) % n_records]["record_id"],
+                    )
+                    for j in range(min(5, n_records))
+                ]
+                response = sz_engine.get_virtual_entity_by_record_id(record_keys, ALL_FLAGS)
+                write_line(response)
 
     # --- how_entity_by_entity_id ---
-    responses = []
-    for entity_id in LOADED_ENTITY_IDS:
-        try:
-            response = sz_engine.how_entity_by_entity_id(entity_id, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("how_entity_by_entity_id(%s): %s", entity_id, err)
-    output_file("SzEngineHowEntityByEntityIdResponse", responses)
+    with streaming_output("SzEngineHowEntityByEntityIdResponse") as write_line:
+        for entity_id in progress(LOADED_ENTITY_IDS, "how_entity_by_entity_id"):
+            with safe_iteration("how_entity_by_entity_id"):
+                response = sz_engine.how_entity_by_entity_id(entity_id, ALL_FLAGS)
+                write_line(response)
 
     # --- search_by_attributes ---
-    responses = []
-    for search_record in SEARCH_RECORDS:
-        attributes = json.dumps(search_record)
-        try:
-            response = sz_engine.search_by_attributes(attributes, ALL_FLAGS, "")
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("search_by_attributes: %s", err)
-    output_file("SzEngineSearchByAttributesResponse", responses)
+    with streaming_output("SzEngineSearchByAttributesResponse") as write_line:
+        for search_record in SEARCH_RECORDS:
+            with safe_iteration("search_by_attributes"):
+                attributes = json.dumps(search_record)
+                response = sz_engine.search_by_attributes(attributes, ALL_FLAGS, "")
+                write_line(response)
 
     # --- why_entities ---
-    responses = []
-    for i, entity_id in enumerate(LOADED_ENTITY_IDS):
-        entity_id_2 = LOADED_ENTITY_IDS[(i + 1) % n_entities]
-        try:
-            response = sz_engine.why_entities(entity_id, entity_id_2, ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("why_entities: %s", err)
-    output_file("SzEngineWhyEntitiesResponse", responses)
+    with streaming_output("SzEngineWhyEntitiesResponse") as write_line:
+        for i, entity_id in enumerate(progress(LOADED_ENTITY_IDS, "why_entities")):
+            with safe_iteration("why_entities"):
+                entity_id_2 = LOADED_ENTITY_IDS[(i + 1) % n_entities]
+                response = sz_engine.why_entities(entity_id, entity_id_2, ALL_FLAGS)
+                write_line(response)
 
     # --- why_record_in_entity ---
-    responses = []
-    for record in LOADED_RECORD_KEYS:
-        try:
-            response = sz_engine.why_record_in_entity(record["data_source"], record["record_id"], ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("why_record_in_entity: %s", err)
-    output_file("SzEngineWhyRecordInEntityResponse", responses)
+    with streaming_output("SzEngineWhyRecordInEntityResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "why_record_in_entity"):
+            with safe_iteration("why_record_in_entity"):
+                response = sz_engine.why_record_in_entity(record["data_source"], record["record_id"], ALL_FLAGS)
+                write_line(response)
 
     # --- why_records ---
-    responses = []
-    for i, record in enumerate(LOADED_RECORD_KEYS):
-        record_2 = LOADED_RECORD_KEYS[(i + 1) % n_records]
-        try:
-            response = sz_engine.why_records(
-                record["data_source"],
-                record["record_id"],
-                record_2["data_source"],
-                record_2["record_id"],
-                ALL_FLAGS,
-            )
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("why_records: %s", err)
-    output_file("SzEngineWhyRecordsResponse", responses)
+    with streaming_output("SzEngineWhyRecordsResponse") as write_line:
+        for i, record in enumerate(progress(LOADED_RECORD_KEYS, "why_records")):
+            with safe_iteration("why_records"):
+                record_2 = LOADED_RECORD_KEYS[(i + 1) % n_records]
+                response = sz_engine.why_records(
+                    record["data_source"],
+                    record["record_id"],
+                    record_2["data_source"],
+                    record_2["record_id"],
+                    ALL_FLAGS,
+                )
+                write_line(response)
 
     # --- why_search ---
-    responses = []
-    for entity_id in LOADED_ENTITY_IDS:
-        for search_record in SEARCH_RECORDS:
-            attributes = json.dumps(search_record)
-            try:
-                response = sz_engine.why_search(attributes, entity_id, ALL_FLAGS, "")
-                if response and response not in responses:
-                    responses.append(response)
-            except SzError as err:
-                logger.warning("why_search: %s", err)
-    output_file("SzEngineWhySearchResponse", responses)
+    with streaming_output("SzEngineWhySearchResponse") as write_line:
+        for entity_id in progress(LOADED_ENTITY_IDS, "why_search"):
+            for search_record in SEARCH_RECORDS:
+                with safe_iteration("why_search"):
+                    attributes = json.dumps(search_record)
+                    response = sz_engine.why_search(attributes, entity_id, ALL_FLAGS, "")
+                    write_line(response)
 
     # --- fetch_next (via export_json_entity_report) ---
-    fetch_responses = []
-    try:
-        handle = sz_engine.export_json_entity_report(ALL_FLAGS)
-        while True:
-            response = sz_engine.fetch_next(handle)
-            if not response:
-                break
-            if response not in fetch_responses:
-                fetch_responses.append(response)
-        sz_engine.close_export_report(handle)
-    except SzError as err:
-        logger.warning("fetch_next: %s", err)
-    output_file("SzEngineFetchNextResponse", fetch_responses)
+    with streaming_output("SzEngineFetchNextResponse") as write_line:
+        handle = None
+        with safe_iteration("export_json_entity_report"):
+            handle = sz_engine.export_json_entity_report(ALL_FLAGS)
+        if handle is not None:
+            while True:
+                try:
+                    response = sz_engine.fetch_next(handle)
+                    if not response:
+                        break
+                    write_line(response)
+                except (KeyboardInterrupt, GeneratorExit):
+                    raise
+                except BaseException as err:
+                    logger.warning("fetch_next: %s", err)
+            with safe_iteration("close_export_report"):
+                sz_engine.close_export_report(handle)
 
 
 # -----------------------------------------------------------------------------
@@ -664,30 +625,26 @@ def collect_redo_responses(sz_abstract_factory: SzAbstractFactory):
 
     # Drain all redo records
     redo_records = []
-    get_redo_responses = []
-    while True:
-        try:
-            response = sz_engine.get_redo_record()
-        except SzError as err:
-            logger.warning("get_redo_record: %s", err)
-            break
-        if not response:
-            break
-        redo_records.append(response)
-        if response not in get_redo_responses:
-            get_redo_responses.append(response)
-    output_file("SzEngineGetRedoRecordResponse", get_redo_responses)
+    with streaming_output("SzEngineGetRedoRecordResponse") as write_line:
+        while True:
+            try:
+                response = sz_engine.get_redo_record()
+            except (KeyboardInterrupt, GeneratorExit):
+                raise
+            except BaseException as err:
+                logger.warning("get_redo_record: %s", err)
+                continue
+            if not response:
+                break
+            redo_records.append(response)
+            write_line(response)
 
     # Process redo records
-    process_responses = []
-    for redo_record in redo_records:
-        try:
-            response = sz_engine.process_redo_record(redo_record, ALL_FLAGS)
-            if response and response not in process_responses:
-                process_responses.append(response)
-        except SzError as err:
-            logger.warning("process_redo_record: %s", err)
-    output_file("SzEngineProcessRedoRecordResponse", process_responses)
+    with streaming_output("SzEngineProcessRedoRecordResponse") as write_line:
+        for redo_record in progress(redo_records, "process_redo_record"):
+            with safe_iteration("process_redo_record"):
+                response = sz_engine.process_redo_record(redo_record, ALL_FLAGS)
+                write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -700,30 +657,18 @@ def collect_reevaluate_responses(sz_abstract_factory: SzAbstractFactory):
     sz_engine = sz_abstract_factory.create_engine()
 
     # reevaluate_entity
-    responses = []
-    for entity_id in LOADED_ENTITY_IDS:
-        try:
-            response = sz_engine.reevaluate_entity(entity_id, ALL_FLAGS)
-            if not response:
-                continue
-            if response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("reevaluate_entity(%s): %s", entity_id, err)
-    output_file("SzEngineReevaluateEntityResponse", responses)
+    with streaming_output("SzEngineReevaluateEntityResponse") as write_line:
+        for entity_id in progress(LOADED_ENTITY_IDS, "reevaluate_entity"):
+            with safe_iteration("reevaluate_entity"):
+                response = sz_engine.reevaluate_entity(entity_id, ALL_FLAGS)
+                write_line(response)
 
     # reevaluate_record
-    responses = []
-    for record in LOADED_RECORD_KEYS:
-        try:
-            response = sz_engine.reevaluate_record(record["data_source"], record["record_id"], ALL_FLAGS)
-            if not response:
-                continue
-            if response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("reevaluate_record: %s", err)
-    output_file("SzEngineReevaluateRecordResponse", responses)
+    with streaming_output("SzEngineReevaluateRecordResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "reevaluate_record"):
+            with safe_iteration("reevaluate_record"):
+                response = sz_engine.reevaluate_record(record["data_source"], record["record_id"], ALL_FLAGS)
+                write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -734,18 +679,12 @@ def collect_reevaluate_responses(sz_abstract_factory: SzAbstractFactory):
 def delete_records(sz_abstract_factory: SzAbstractFactory):
     """Delete all loaded records, collect DeleteRecord responses."""
     sz_engine = sz_abstract_factory.create_engine()
-    title = "SzEngineDeleteRecordResponse"
-    responses = []
 
-    for record in LOADED_RECORD_KEYS:
-        try:
-            response = sz_engine.delete_record(record["data_source"], record["record_id"], ALL_FLAGS)
-            if response and response not in responses:
-                responses.append(response)
-        except SzError as err:
-            logger.warning("delete_record: %s", err)
-
-    output_file(title, responses)
+    with streaming_output("SzEngineDeleteRecordResponse") as write_line:
+        for record in progress(LOADED_RECORD_KEYS, "delete_record"):
+            with safe_iteration("delete_record"):
+                response = sz_engine.delete_record(record["data_source"], record["record_id"], ALL_FLAGS)
+                write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -757,11 +696,13 @@ def collect_szproduct_responses(sz_abstract_factory: SzAbstractFactory):
     """Collect responses from SzProduct methods."""
     sz_product = sz_abstract_factory.create_product()
 
-    response = sz_product.get_license()
-    output_file("SzProductGetLicenseResponse", [response] if response else [])
+    with streaming_output("SzProductGetLicenseResponse") as write_line:
+        response = sz_product.get_license()
+        write_line(response)
 
-    response = sz_product.get_version()
-    output_file("SzProductGetVersionResponse", [response] if response else [])
+    with streaming_output("SzProductGetVersionResponse") as write_line:
+        response = sz_product.get_version()
+        write_line(response)
 
 
 # -----------------------------------------------------------------------------
@@ -797,6 +738,19 @@ def do_extract_responses():
 
     # Ensure output directory exists
     os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
+
+    # Populate LOADED_RECORD_KEYS from CORD URLs
+    logger.info("Fetching CORD records to build LOADED_RECORD_KEYS...")
+    all_cord_records = load_cord_data()
+    for line_str, line_dict in all_cord_records:
+        LOADED_RECORD_KEYS.append(
+            {
+                "data_source": line_dict.get("DATA_SOURCE"),
+                "record_id": line_dict.get("RECORD_ID"),
+                "record_definition": line_str,
+            }
+        )
+    logger.info("Loaded %d record keys", len(LOADED_RECORD_KEYS))
 
     # Collect entity IDs from existing records
     logger.info("Collecting entity IDs...")

@@ -2857,6 +2857,12 @@
         "description": "Contains supporting information for the match key."
       },
       "properties": {
+        "AMBIGUOUS": {
+          "metadata": {
+            "description": "Indicates whether the match is ambiguous."
+          },
+          "type": "boolean"
+        },
         "CONFIRMATIONS": {
           "elements": {
             "ref": "FeatureScoreInfo"
@@ -4774,9 +4780,6 @@
           },
           "type": "string"
         },
-        "INTERESTING_ENTITIES": {
-          "ref": "InterestingEntities"
-        },
         "RECORD_ID": {
           "metadata": {
             "description": "The unique identifier within the DATA_SOURCE of the deleted record.",
@@ -4801,11 +4804,19 @@
         "description": "FIXME:"
       },
       "properties": {
-        "XXX_FIXME": {
-          "metadata": {
-            "description": "A small portion of the output initiated by an Export call."
+        "RELATED_ENTITIES": {
+          "elements": {
+            "ref": "RelatedEntity"
           },
-          "ref": "Fixme"
+          "metadata": {
+            "description": "FIXME:"
+          }
+        },
+        "RESOLVED_ENTITY": {
+          "metadata": {
+            "description": "FIXME:"
+          },
+          "ref": "ResolvedEntity"
         }
       }
     },
@@ -4844,14 +4855,6 @@
         "description": "A network of relationships among entities."
       },
       "properties": {
-        "ENTITIES": {
-          "elements": {
-            "ref": "Entity"
-          },
-          "metadata": {
-            "description": "A list of entity information."
-          }
-        },
         "ENTITY_NETWORK_LINKS": {
           "elements": {
             "ref": "EntityNetworkLink"
@@ -5922,6 +5925,14 @@
         },
         "MATCH_INFO": {
           "ref": "MatchInfoForWhy"
+        },
+        "NOTICES": {
+          "elements": {
+            "ref": "Notice"
+          },
+          "metadata": {
+            "description": "FIXME:"
+          }
         }
       }
     },
