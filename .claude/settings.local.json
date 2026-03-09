@@ -1,3 +1,13 @@
 {
-  "includeCoAuthoredBy": false
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(gh pr:*)",
+      "Bash(gh run:*)",
+      "Bash(git push:*)",
+      "Bash(gh issue:*)",
+      "Skill(git-branch)",
+      "Bash(git:*)"
+    ]
+  }
 }
