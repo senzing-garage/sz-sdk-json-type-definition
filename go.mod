@@ -1,6 +1,6 @@
 module github.com/senzing-garage/sz-sdk-json-type-definition
 
-go 1.26.0
+go 1.26
 
 require (
 	github.com/senzing-garage/go-helpers v0.6.15
