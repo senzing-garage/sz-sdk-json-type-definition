@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning].
 
 -
 
+## [0.3.0] - 2026-09-18
+
+### Changed in 0.3.0
+
+- Updated to Go 1.27.1
+- Updated dependencies
+
 ## [0.2.19] - 2026-08-12
 
 ### Changed in 0.2.19
