@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import pathlib
+import re
 
 from python.senzing_typedef import (
     SzConfigExportResponse,
@@ -70,13 +71,16 @@ def file(filename: str) -> dict:
         return json.loads(input_file.read())
 
 
-def print_fmt(response, value):  # pylint: disable=redefined-outer-name eval-used, unused-argument
+def print_fmt(response, value):  # pylint: disable=redefined-outer-name
     """
-    Tricky code:
-    The "response" passed in needs to be part of the "value" string to be evaluated.
+    Print the value at a path such as "response.entities[0].entity_id".
+    The path starts with "response" and continues with ".attribute" and "[index]" steps.
     """
     if value:
-        print(f"    {value} = {eval(value)}")  # pylint: disable=eval-used
+        result = response
+        for attribute, index in re.findall(r"\.(\w+)|\[(\d+)\]", value.removeprefix("response")):
+            result = getattr(result, attribute) if attribute else result[int(index)]
+        print(f"    {value} = {result}")
 
 
 # -----------------------------------------------------------------------------

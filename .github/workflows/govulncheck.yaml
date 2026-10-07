@@ -11,7 +11,18 @@ concurrency:
 permissions: {}
 
 jobs:
+  sdk-versions:
+    # Emits a static version matrix; needs no token.
+    permissions: {}
+    runs-on: ubuntu-latest
+    outputs:
+      senzingsdk-versions: ${{ steps.cfg.outputs.senzingsdk-versions }}
+    steps:
+      - id: cfg
+        uses: senzing-factory/build-resources/sdk-versions@v4
+
   govulncheck:
+    needs: sdk-versions
     permissions:
       contents: read
     runs-on: ubuntu-latest
@@ -19,6 +30,7 @@ jobs:
       fail-fast: false
       matrix:
         go: ["1.27"]
+        senzingsdk-version: ${{ fromJSON(needs.sdk-versions.outputs.senzingsdk-versions) }}
     timeout-minutes: 10
 
     steps:
@@ -31,6 +43,12 @@ jobs:
         uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version: ${{ matrix.go }}
+
+      # sz-sdk-go-core uses cgo, so govulncheck needs the Senzing C headers.
+      - name: Install Senzing SDK
+        uses: senzing-factory/github-action-install-senzing-sdk@v5
+        with:
+          senzingsdk-version: ${{ matrix.senzingsdk-version }}
 
       - uses: golang/govulncheck-action@032d45514ae346b1db93c04b0c90b841c370344f # v1.1.0
         with:
