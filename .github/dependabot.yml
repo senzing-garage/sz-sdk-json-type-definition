@@ -22,6 +22,8 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gomod"
+    assignees:
+      - "docktermj"
     cooldown:
       default-days: 21
     directory: "/"

@@ -24,7 +24,7 @@ linters:
     - errname
     - errorlint
     - exhaustive
-    - exhaustruct
+    - exhaustruct_v5
     - exptostd
     - fatcontext
     - forbidigo
@@ -44,7 +44,7 @@ linters:
     - godox
     - goheader
     - gomoddirectives
-    - gomodguard
+    - gomodguard_v2
     - goprintffuncname
     - gosec
     - gosmopolitan
@@ -108,6 +108,8 @@ linters:
     - wsl_v5
     - zerologlint
   disable:
+    - gochecknoglobals
+    - gochecknoinits
     - paralleltest
   exclusions:
     generated: lax
@@ -124,14 +126,14 @@ linters:
     depguard:
       rules:
         prevent_unmaintained_packages:
-          list-mode: lax # allow unless explicitely denied
+          list-mode: lax # allow unless explicitly denied
           allow:
             - github.com/stretchr/testify/*
           deny:
             - pkg: io/ioutil
               desc: "replaced by io and os packages since Go 1.16: https://tip.golang.org/doc/go1.16#ioutil"
-    exhaustruct:
-      exclude:
+    exhaustruct_v5:
+      ignore-patterns:
         - '.+/typedef\.VirtualEntity$'
         - '.+/typedef\.FeatureForAttributes$'
         - '.+/typedef\.GetDataSourceRegistry$'
@@ -169,7 +171,14 @@ linters:
       statements: 50
     ireturn:
       allow:
+        - anon
+        - empty
+        - error
+        - stdlib
         - senzing.SzAbstractFactory
+    mnd:
+      ignored-functions:
+        - '^logger\.Log$'
 
 formatters:
   enable:

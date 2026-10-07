@@ -1,0 +1,10 @@
+rule:
+  # Every finding for these rules is in development-only code, not in a
+  # shipped package:
+  #   - bin/*.py generate test data from local files named on the command
+  #     line, and use `random` only to sample records for that test data.
+  #   - main.ts is an example that prints the parsed JSON to the console.
+  skip-rule:
+    - javascript_lang_logger_leak
+    - python_lang_path_traversal
+    - python_lang_weak_random
