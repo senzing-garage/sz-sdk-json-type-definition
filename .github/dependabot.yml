@@ -15,6 +15,12 @@ updates:
           - "senzing-factory/*"
     schedule:
       interval: "daily"
+  - package-ecosystem: "docker"
+    cooldown:
+      default-days: 21
+    directory: "/"
+    schedule:
+      interval: "daily"
   - package-ecosystem: "gomod"
     assignees:
       - "docktermj"
