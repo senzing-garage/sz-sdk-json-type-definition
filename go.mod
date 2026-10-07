@@ -11,7 +11,7 @@ require (
 
 require (
 	github.com/senzing-garage/go-logging v1.5.4 // indirect
-	github.com/senzing-garage/go-messaging v1.5.4 // indirect
+	github.com/senzing-garage/go-messaging v1.5.3 // indirect
 	github.com/senzing-garage/go-observing v0.3.7 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/exp v0.0.0-20261007180756-3d68b386da03 // indirect
