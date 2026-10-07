@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning].
 
 -
 
+## [0.4.0] - 2026-10-07
+
+### Changed in 0.4.0
+
+- Synchronized repository setup files with [template-go v0.5.0]
+- Pinned GitHub Actions to commit SHAs
+- Pinned golangci-lint to v2.13.2
+- Updated dependencies
+
 ## [0.3.0] - 2026-09-18
 
 ### Changed in 0.3.0
@@ -185,3 +194,4 @@ This project adheres to [Semantic Versioning].
 [CommonMark]: https://commonmark.org/
 [Keep a Changelog]: https://keepachangelog.com/
 [Semantic Versioning]: https://semver.org/
+[template-go v0.5.0]: https://github.com/senzing-garage/template-go/tree/v0.5.0
