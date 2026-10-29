@@ -4,7 +4,7 @@ go 1.27.1
 
 require (
 	github.com/senzing-garage/go-helpers v0.7.0
-	github.com/senzing-garage/sz-sdk-go v0.15.14
+	github.com/senzing-garage/sz-sdk-go v0.16.0
 	github.com/senzing-garage/sz-sdk-go-core v0.9.14
 	github.com/stretchr/testify v1.12.1
 )
